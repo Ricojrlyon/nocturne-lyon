@@ -1,85 +1,7 @@
 {
-  "generated_at": "2026-05-03T09:59:19.588061+00:00",
-  "count": 582,
+  "generated_at": "2026-05-04T12:14:16.308524+00:00",
+  "count": 574,
   "events": [
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Thibault Cauvin - Alter Ego Tour",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-05-03",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/thibault-cauvin-alter-ego-tour-286465.html",
-      "image": null,
-      "id": "acb1ffdf1b3c"
-    },
-    {
-      "venue": "Comédie Odéon",
-      "venue_slug": "comedie-odeon",
-      "title": "Le prix de l’ascension",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-05-03",
-      "date_end": "2026-05-02",
-      "time": null,
-      "url": "https://www.comedieodeon.com/spectacle/le-prix-de-lascension-2/",
-      "image": "https://www.comedieodeon.com/wp-content/uploads/2020/06/AFFICHE_LPDLA_BD-scaled.jpg",
-      "id": "6c4124da11d5"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "MINIMAXXX : friperie",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-03",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/minimaxxx-friperie/",
-      "image": "https://h-eat.eu/wp-content/uploads/2025/03/4x5_LYON-MAI-576x720.jpg",
-      "id": "64d38740e021"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Pimp My Vinyl Lyon",
-      "subtitle": null,
-      "category": "atelier",
-      "date_start": "2026-05-03",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/pimp-my-vinyl/",
-      "image": null,
-      "id": "4e85263f1b72"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "S.society x TSSRCT",
-      "subtitle": "Exuvie · Hadone · UFO95(live)",
-      "category": "club",
-      "date_start": "2026-05-03",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/s-society-x-tssrct/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/TSSRCT_-600x338.png",
-      "id": "7e1258a38c8a"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "[Un été à La Rayonne] OUTRANCE Daylight Gathering – Psytrance & Psytech",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-05-03",
-      "date_end": null,
-      "time": "15:00",
-      "url": "https://larayonne.org/evenement/outrance-daylight-gathering-psytrance-psytech/",
-      "image": null,
-      "id": "b1846cc1c652"
-    },
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
@@ -298,7 +220,7 @@
       "date_end": "2026-05-16",
       "time": null,
       "url": "https://www.theatredescelestins.com/fr/programmation/2025-2026/grande-salle/le-misanthrope",
-      "image": "https://www.theatredescelestins.com/assets/q75-w330-h434-c330x434-abottom/84e1161f/misanthrope_letizia_le_fur.jpg.webp",
+      "image": "https://www.theatredescelestins.com/assets/q75-w330-h434-c330x434-abottom/69de3be7/lemisanthrope_jeanlouisfernandez_022.jpg.webp",
       "id": "b3a6875726ea"
     },
     {
@@ -772,7 +694,7 @@
     {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
-      "title": "S.society",
+      "title": "Extra ! Nuits sonores x S.society",
       "subtitle": "Hyas · Mézigue",
       "category": "club",
       "date_start": "2026-05-10",
@@ -780,7 +702,7 @@
       "time": null,
       "url": "https://le-sucre.eu/events/s-society-x-tssrct-2/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/03/Mezigue-Hyas-600x338.png",
-      "id": "9ce7a9e782bc"
+      "id": "deb0ac71d614"
     },
     {
       "venue": "Les Subsistances",
@@ -1864,19 +1786,6 @@
     {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "Open platine : le Labo est à vous !",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/open-platine-le-labo-est-a-vous/",
-      "image": "https://h-eat.eu/wp-content/uploads/2024/07/JulietteValero_42-480x720.jpg",
-      "id": "d32003b5a6fe"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
       "title": "Chess Bar x HEAT",
       "subtitle": null,
       "category": null,
@@ -1886,6 +1795,19 @@
       "url": "https://h-eat.eu/events/chess-bar-x-heat-9/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
       "id": "2a15ff905f9d"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Open platine : le Labo est à vous !",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-27",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/open-platine-le-labo-est-a-vous/",
+      "image": "https://h-eat.eu/wp-content/uploads/2024/07/JulietteValero_42-480x720.jpg",
+      "id": "d32003b5a6fe"
     },
     {
       "venue": "La Commune",
@@ -2805,10 +2727,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "15:00",
+      "time": "19:30",
       "url": "https://larayonne.org/evenement/atelier-les-bases-sur-les-droits-dauteur-dans-la-musique/",
       "image": null,
-      "id": "b592c06a639a"
+      "id": "be935b5d8f60"
     },
     {
       "venue": "La Rayonne",
@@ -2818,10 +2740,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "15:00",
+      "time": "19:30",
       "url": "https://larayonne.org/evenement/la-fiscalite-des-associations-3/",
       "image": null,
-      "id": "7891fd08d85d"
+      "id": "00e5eb185831"
     },
     {
       "venue": "La Rayonne",
@@ -2831,10 +2753,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "15:00",
+      "time": "19:30",
       "url": "https://larayonne.org/evenement/mettre-en-place-une-gouvernance-partagee-atelier-theorique-1-2/",
       "image": null,
-      "id": "4967f8ecc177"
+      "id": "21600668cd8e"
     },
     {
       "venue": "La Rayonne",
@@ -2844,10 +2766,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "15:00",
+      "time": "19:30",
       "url": "https://larayonne.org/evenement/mettre-en-place-une-gouvernance-partagee-atelier-de-co-developpement-2-2/",
       "image": null,
-      "id": "2708d57de53a"
+      "id": "af6095180ca1"
     },
     {
       "venue": "La Rayonne",
@@ -2857,10 +2779,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "15:00",
+      "time": "19:30",
       "url": "https://larayonne.org/evenement/comment-attirer-et-fideliser-des-benevoles/",
       "image": null,
-      "id": "215cc109ecb7"
+      "id": "66e4a8431779"
     },
     {
       "venue": "La Rayonne",
@@ -2870,10 +2792,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "15:00",
+      "time": "19:30",
       "url": "https://larayonne.org/evenement/mettre-en-place-une-comptabilite-pour-les-petites-associations-5/",
       "image": null,
-      "id": "3afe9ca42400"
+      "id": "43eae69463fe"
     },
     {
       "venue": "La Rayonne",
@@ -2883,10 +2805,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "15:00",
+      "time": "19:30",
       "url": "https://larayonne.org/evenement/sinitier-aux-techniques-danimation-participative-2/",
       "image": null,
-      "id": "403c7ba4dfcc"
+      "id": "0553c0f53f46"
     },
     {
       "venue": "La Rayonne",
@@ -2896,10 +2818,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "15:00",
+      "time": "19:30",
       "url": "https://larayonne.org/evenement/atelier-soccuper-du-conflit-avant-quil-ne-soccupe-de-nous/",
       "image": null,
-      "id": "50beab0a2a7e"
+      "id": "9404b33c8e56"
     },
     {
       "venue": "La Rayonne",
@@ -2909,10 +2831,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "15:00",
+      "time": "19:30",
       "url": "https://larayonne.org/evenement/les-obligations-des-associations-employeuses-3/",
       "image": null,
-      "id": "5f686ed30c9e"
+      "id": "da20f912c21f"
     },
     {
       "venue": "La Rayonne",
@@ -2922,10 +2844,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "15:00",
+      "time": "19:30",
       "url": "https://larayonne.org/evenement/mieux-apprehender-les-reseaux-sociaux/",
       "image": null,
-      "id": "acc160ae6b04"
+      "id": "303772c68579"
     },
     {
       "venue": "La Rayonne",
@@ -2935,10 +2857,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "15:00",
+      "time": "19:30",
       "url": "https://larayonne.org/evenement/presenter-et-mettre-en-valeur-son-projet-a-loral-atelier-theorique-1-2/",
       "image": null,
-      "id": "b9ecdc3af09c"
+      "id": "e63f89efc8ba"
     },
     {
       "venue": "La Rayonne",
@@ -2948,10 +2870,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "15:00",
+      "time": "19:30",
       "url": "https://larayonne.org/evenement/presenter-et-mettre-en-valeur-son-projet-a-loral-atelier-pratique-2-2/",
       "image": null,
-      "id": "0b0a489e0b25"
+      "id": "d0cb5235095a"
     },
     {
       "venue": "La Rayonne",
@@ -2961,10 +2883,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "15:00",
+      "time": "19:30",
       "url": "https://larayonne.org/evenement/comprendre-les-principales-aides-a-lemploi-dans-le-spectacle-vivant/",
       "image": null,
-      "id": "a5f80a55bf5a"
+      "id": "2ea5af9273b4"
     },
     {
       "venue": "La Rayonne",
@@ -2974,10 +2896,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "15:00",
+      "time": "19:30",
       "url": "https://larayonne.org/evenement/construire-un-budget-et-un-plan-de-tresorerie-atelier-theorique-1-2-2/",
       "image": null,
-      "id": "7c78769a1b80"
+      "id": "ff928d6195b2"
     },
     {
       "venue": "La Rayonne",
@@ -2987,10 +2909,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "15:00",
+      "time": "19:30",
       "url": "https://larayonne.org/evenement/construire-un-budget-et-un-plan-de-tresorerie-atelier-pratique-2-2-2/",
       "image": null,
-      "id": "7a386d26ce6c"
+      "id": "b64255f6b24c"
     },
     {
       "venue": "Marché Gare",
@@ -3520,10 +3442,10 @@
       "category": null,
       "date_start": "2026-06-19",
       "date_end": null,
-      "time": "19:30",
+      "time": "19:15",
       "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-rencontres-improvisees-2/",
       "image": null,
-      "id": "1db687fca5e1"
+      "id": "880998eea370"
     },
     {
       "venue": "Les Subsistances",
@@ -6685,6 +6607,19 @@
       "id": "9922e78a05bc"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "REVNOIR + ICE SEALED EYES",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-04",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/revnoir-ice-sealed-eyes-04022027/",
+      "image": null,
+      "id": "7072edb1d0d2"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Post-Rock MONO",
@@ -7307,45 +7242,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/serge-papagalli/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/serge-papagelli_radiant-bellevue-500x500.jpg",
       "id": "15ea6374c40a"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Chess Bar x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-04-29",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/chess-bar-x-heat/",
-      "image": "https://h-eat.eu/wp-content/uploads/2025/07/jeu-echecs-mains-reine-jeu-societe-strategie-competition-domicile-echiquier-checkmate-homme-homme-intelligent-jouant-dans-concours-sportif-defi-resolution-problemes-pour-esprit_590464-143092.jpg",
-      "id": "8ae8c7953be8"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Jazz Day x Ultrason",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-04-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/jazz-day-x-ultrason/",
-      "image": "https://h-eat.eu/wp-content/uploads/2025/03/jazzday-heat4-576x720.jpg",
-      "id": "fcd8076c2423"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "MINIMAXXX : friperie & dj sets",
-      "subtitle": null,
-      "category": "dj-set",
-      "date_start": "2027-05-02",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/minimaxxx-friperie-dj-sets/",
-      "image": "https://h-eat.eu/wp-content/uploads/2025/03/4x5_LYON-MAI-576x720.jpg",
-      "id": "4993fe00a343"
     },
     {
       "venue": "Radiant-Bellevue",
