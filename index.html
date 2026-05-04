@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>À l'affiche · Lyon</title>
-<meta name="description" content="Agenda culturel — concerts, théâtre, danse, clubs à Lyon.">
+<title>*nocturne · lyon</title>
+<meta name="description" content="Guide nocturne — concerts, théâtre, danse, clubs à Lyon.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -93,11 +93,25 @@
   .wordmark-main {
     font-family: 'Instrument Serif', Georgia, serif;
     font-weight: 400;
+    font-style: italic;
     font-size: clamp(64px, 14vw, 180px);
     line-height: 0.85;
     letter-spacing: -0.04em;
     color: var(--ink);
     display: block;
+  }
+  .wordmark-main .ast {
+    color: var(--warm);
+    font-style: normal;
+    display: inline-block;
+    transform: translateY(-0.18em);
+    margin-right: 0.04em;
+    font-size: 0.7em;
+    animation: ast-pulse 3.6s ease-in-out infinite;
+  }
+  @keyframes ast-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
   }
   .wordmark-main em {
     font-style: italic;
@@ -472,15 +486,10 @@
   /* ---------- event grid ---------- */
   .events {
     display: grid;
-    /* Cards stay reasonable in width even if alone on a row.
-       Each cell is between 280px and 380px wide. */
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    grid-auto-rows: 230px;
     gap: 12px;
     align-items: stretch;
   }
-  /* On wider viewports, cap individual card width so a lone card
-     doesn't stretch absurdly wide */
   @media (min-width: 1100px) {
     .events {
       grid-template-columns: repeat(auto-fill, minmax(280px, calc(33.333% - 8px)));
@@ -493,7 +502,7 @@
   .event {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     padding: 18px 20px 16px;
     border: 1px solid var(--rule-strong);
     border-radius: 8px;
@@ -501,12 +510,11 @@
     text-decoration: none;
     color: inherit;
     transition: all 0.18s ease;
-    height: 100%;
+    min-height: 170px;
     position: relative;
     overflow: hidden;
   }
   .event::before {
-    /* numerical event index, top-right */
     content: attr(data-num);
     position: absolute;
     top: 12px;
@@ -517,7 +525,6 @@
     letter-spacing: 0.12em;
   }
   .event::after {
-    /* underline accent on hover */
     content: "";
     position: absolute;
     left: 18px; right: 18px; bottom: 0;
@@ -535,21 +542,27 @@
   .event:hover::after {
     transform: scaleX(1);
   }
+
+  /* New hierarchy:
+     1. VENUE — big, mono uppercase, full ink color (most prominent)
+     2. TIME — secondary mono, warm accent color
+     3. TITLE — instrument serif italique, smaller than before
+     4. CATEGORY — at the bottom in mono lowercase
+  */
   .event-head {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
-    padding-right: 32px; /* room for the data-num */
+    flex-direction: column;
+    gap: 4px;
+    padding-right: 36px; /* room for data-num */
   }
   .event-venue {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    color: var(--ink-soft);
+    font-size: 13px;
+    color: var(--ink);
     text-transform: uppercase;
-    letter-spacing: 0.16em;
-    line-height: 1.4;
-    flex: 1;
+    letter-spacing: 0.14em;
+    line-height: 1.25;
+    font-weight: 700;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -558,31 +571,48 @@
   }
   .event-time {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--ink);
+    font-size: 11px;
+    color: var(--warm);
     font-weight: 500;
     white-space: nowrap;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
   .event-time.empty { color: var(--ink-mute); font-weight: 400; }
+  .event-time::before {
+    content: "→ ";
+    color: var(--ink-mute);
+  }
+  .event-time.empty::before {
+    content: "";
+  }
+
   .event-title {
     font-family: 'Instrument Serif', Georgia, serif;
-    font-size: 21px;
+    font-style: italic;
+    font-size: 18px;
     font-weight: 400;
-    line-height: 1.1;
+    line-height: 1.2;
     margin: 0;
-    letter-spacing: -0.01em;
-    color: var(--ink);
+    letter-spacing: -0.005em;
+    color: var(--ink-soft);
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .event-subtitle {
+  .event-title.placeholder {
+    color: var(--ink-mute);
     font-size: 12px;
-    color: var(--ink-soft);
-    margin: -4px 0 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-style: normal;
+    letter-spacing: 0.06em;
+  }
+  .event-subtitle {
+    font-size: 11px;
+    color: var(--ink-mute);
+    margin: -6px 0 0;
     line-height: 1.3;
     font-style: italic;
     font-family: 'Instrument Serif', Georgia, serif;
@@ -597,6 +627,7 @@
     align-items: center;
     margin-top: auto;
     gap: 8px;
+    padding-top: 4px;
   }
   .event-cat {
     font-family: 'JetBrains Mono', monospace;
@@ -605,6 +636,7 @@
     text-transform: lowercase;
     letter-spacing: 0.1em;
   }
+  .event-cat:empty { display: none; }
   .event-cat::before {
     content: "[ ";
     color: var(--ink-mute);
@@ -613,6 +645,7 @@
     content: " ]";
     color: var(--ink-mute);
   }
+  .event-cat:empty::before, .event-cat:empty::after { display: none; }
   .event-run {
     display: inline-block;
     font-family: 'JetBrains Mono', monospace;
@@ -684,8 +717,8 @@
 <header class="masthead">
   <div class="container">
     <h1 class="wordmark">
-      <span class="label">programme · lyon · 2026</span>
-      <span class="wordmark-main">à l'<em>affiche</em></span>
+      <span class="label">guide de nuit · lyon · 2026</span>
+      <span class="wordmark-main"><span class="ast">*</span>nocturne</span>
     </h1>
     <div class="meta">
       <div class="row"><span class="key">[index]</span> <span class="val" id="eventCount">—</span></div>
@@ -1286,13 +1319,17 @@ function eventCard(e, num) {
   const time = e.time
     ? '<span class="event-time">' + escapeHtml(e.time) + '</span>'
     : '<span class="event-time empty">—</span>';
-  // Fallback for missing/empty titles — render a discreet placeholder so we
-  // never produce visually empty cards (the underlying data is still flagged
-  // upstream by aggregate.py)
-  const titleText = (e.title && e.title.trim()) || '(sans titre)';
-  const sub = e.subtitle
+
+  // Title fallback: drop discreet placeholder if missing.
+  const hasTitle = !!(e.title && e.title.trim());
+  const titleHtml = hasTitle
+    ? '<h3 class="event-title">' + escapeHtml(e.title.trim()) + '</h3>'
+    : '<h3 class="event-title placeholder">titre non précisé</h3>';
+
+  const sub = hasTitle && e.subtitle
     ? '<p class="event-subtitle">' + escapeHtml(e.subtitle) + '</p>'
     : '';
+
   const cat = e.category
     ? '<span class="event-cat">' + escapeHtml(e.category) + '</span>'
     : '<span class="event-cat"></span>';
@@ -1319,7 +1356,7 @@ function eventCard(e, num) {
     '    <span class="event-venue">' + escapeHtml(e.venue) + '</span>',
     '    ' + time,
     '  </div>',
-    '  <h3 class="event-title">' + escapeHtml(titleText) + '</h3>',
+    '  ' + titleHtml,
     '  ' + sub,
     '  <div class="event-foot">',
     '    ' + cat,
