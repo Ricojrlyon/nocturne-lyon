@@ -487,7 +487,7 @@
   .events {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    grid-auto-rows: 160px;            /* rectangular cards, fixed height */
+    grid-auto-rows: 160px;
     gap: 12px;
   }
   @media (min-width: 1100px) {
@@ -502,9 +502,12 @@
     }
   }
 
+  /* Inner layout uses GRID with explicit row tracks. This is much more
+     predictable than flex + line-clamp inside a fixed-height container. */
   .event {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 6px;
     padding: 14px 18px 12px;
     border: 1px solid var(--rule-strong);
     border-radius: 8px;
@@ -526,6 +529,7 @@
     font-size: 9px;
     color: var(--ink-mute);
     letter-spacing: 0.12em;
+    z-index: 2;
   }
   .event::after {
     content: "";
@@ -545,20 +549,15 @@
     transform: scaleX(1);
   }
 
-  /* Hierarchy:
-     1. VENUE (top) — most prominent, mono uppercase, full ink
-     2. TIME (right of venue OR below venue) — mono small, warm
-     3. TITLE — middle/bottom, serif italic, soft color
-     4. CATEGORY — bottom-left, mono small
-  */
+  /* Row 1: header (venue + time) */
   .event-head {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
     gap: 12px;
-    padding-right: 36px; /* room for data-num */
-    margin-bottom: 8px;
+    padding-right: 36px;
+    min-width: 0;
   }
   .event-venue {
     font-family: 'JetBrains Mono', monospace;
@@ -588,20 +587,22 @@
     font-weight: 400;
   }
 
+  /* Row 2: title fills available space; uses CSS line-clamp via max-height */
   .event-title {
     font-family: 'Instrument Serif', Georgia, serif;
     font-style: italic;
     font-size: 18px;
     font-weight: 400;
-    line-height: 1.15;
+    line-height: 1.2;
     margin: 0;
     letter-spacing: -0.005em;
     color: var(--ink-soft);
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    /* Display block ensures it always has dimensions in the grid cell */
+    display: block;
     overflow: hidden;
-    text-overflow: ellipsis;
+    /* Clamp to ~3 lines max via height (line-height 1.2 * 18px = 21.6px per line) */
+    max-height: calc(1.2em * 3);
+    align-self: start;
   }
   .event-title.placeholder {
     color: var(--ink-mute);
@@ -610,25 +611,14 @@
     font-style: normal;
     letter-spacing: 0.06em;
   }
-  .event-subtitle {
-    font-size: 11px;
-    color: var(--ink-mute);
-    margin: 4px 0 0;
-    line-height: 1.3;
-    font-style: italic;
-    font-family: 'Instrument Serif', Georgia, serif;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
+
+  /* Row 3: footer */
   .event-foot {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: auto;
     gap: 8px;
-    padding-top: 8px;
+    align-self: end;
   }
   .event-cat {
     font-family: 'JetBrains Mono', monospace;
@@ -659,6 +649,12 @@
     border-radius: 999px;
     font-weight: 500;
     white-space: nowrap;
+  }
+
+  /* Subtitle removed from main grid layout — too noisy in compact cards.
+     Keep style for if we re-enable later. */
+  .event-subtitle {
+    display: none;
   }
 
   /* ---------- empty state ---------- */
@@ -1327,10 +1323,6 @@ function eventCard(e, num) {
     ? '<h3 class="event-title">' + escapeHtml(e.title.trim()) + '</h3>'
     : '<h3 class="event-title placeholder">titre non précisé</h3>';
 
-  const sub = hasTitle && e.subtitle
-    ? '<p class="event-subtitle">' + escapeHtml(e.subtitle) + '</p>'
-    : '';
-
   const cat = e.category
     ? '<span class="event-cat">' + escapeHtml(e.category) + '</span>'
     : '<span class="event-cat"></span>';
@@ -1351,6 +1343,7 @@ function eventCard(e, num) {
     ? ' href="' + escapeHtml(e.url) + '" target="_blank" rel="noopener"'
     : '';
 
+  // Layout = 3 grid rows: head / title / foot
   return [
     '<' + tag + ' class="event" data-num="' + num + '"' + linkAttrs + '>',
     '  <div class="event-head">',
@@ -1358,7 +1351,6 @@ function eventCard(e, num) {
     '    ' + time,
     '  </div>',
     '  ' + titleHtml,
-    '  ' + sub,
     '  <div class="event-foot">',
     '    ' + cat,
     '    ' + runBadge,
