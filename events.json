@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-04T14:22:28.381880+00:00",
-  "count": 575,
+  "generated_at": "2026-05-04T19:44:15.536991+00:00",
+  "count": 580,
   "events": [
     {
       "venue": "Radiant-Bellevue",
@@ -2187,6 +2187,19 @@
       "id": "29d83257ac88"
     },
     {
+      "venue": "Théâtre des Célestins",
+      "venue_slug": "celestins",
+      "title": "Évènement",
+      "subtitle": "Lancement de la saison 26/27",
+      "category": "evenement",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.theatredescelestins.com/fr/programmation/2025-2026/evenement/lancement-de-la-saison-26-27",
+      "image": "https://www.theatredescelestins.com/assets/q75-w330-h434-c330x434/7602c6c8/visuel_saison_myriam_boulos.jpg.webp",
+      "id": "5027ca9f0629"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Minipousses Danse",
@@ -2718,6 +2731,19 @@
       "url": "https://www.les-subs.com/evenement/nuits-de-fourviere-2026-ce-que-le-ciel-ne-sait-pas-feda-wardak/",
       "image": null,
       "id": "f44b6ceb3f99"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "JAST / CATIBA / WARUM & MORE",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://yp.events/aa17f2ce-9a32-4e3b-aeed-c185bde760b0/Jast-Catiba-Warum-more?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/JAST_06062026_lepetitsalon-1024x576.jpg",
+      "id": "90f7a4d7488f"
     },
     {
       "venue": "Bourse du Travail",
@@ -3485,6 +3511,19 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/outworld",
       "image": null,
       "id": "4dfb2d70d839"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS HIT MACHINE 90-2000 : NO2T / VYKTOR NOVA & MORE",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-06-19",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://yp.events/cd579693-d188-423d-ae33-28478118f599/THIS-IS-HIT-MACHINE-90-2000-NO2-T-Vyktor-Nova-more?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisisHitmachine_19062026_lepetitsalon-1024x576.jpg",
+      "id": "a8e1b56b5c4a"
     },
     {
       "venue": "Le Transbordeur",
@@ -4889,6 +4928,19 @@
       "url": "https://www.bourse-du-travail.com/toute-l-histoire-de-la-peinture-en-moins-de-deux-heures-par-hector-obalk-tournee-321077.html",
       "image": null,
       "id": "1e275a4e1410"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "ZOUFRIS MARACAS",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-30",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/zoufris-maracas-30102026/",
+      "image": null,
+      "id": "02bd982e2dcd"
     },
     {
       "venue": "Le Transbordeur",
@@ -6449,6 +6501,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/levi-sct/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/levi-sct_radiant-bellevue-2-500x500.jpg",
       "id": "141d5b0e1be5"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "JUSTE SHANI",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2027-01-22",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/juste-shani",
+      "image": null,
+      "id": "00cd7a11e39f"
     },
     {
       "venue": "Bourse du Travail",
