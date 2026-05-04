@@ -85,6 +85,23 @@ def main() -> int:
         print(f"[URL!] {bad_urls} event(s) had non-absolute URLs — cleared.",
               file=sys.stderr)
 
+    # Sanity-check titles. Events with empty/missing title are silently dropped
+    # (they would render as visually empty cards in the UI).
+    bad_titles = 0
+    clean_upcoming = []
+    for e in upcoming:
+        if not e.title or not e.title.strip():
+            print(f"[TITLE!] {e.venue} — empty title for event on {e.date_start} "
+                  f"(url: {e.url!r}) — dropping",
+                  file=sys.stderr)
+            bad_titles += 1
+            continue
+        clean_upcoming.append(e)
+    if bad_titles:
+        print(f"[TITLE!] {bad_titles} event(s) had empty titles — dropped.",
+              file=sys.stderr)
+    upcoming = clean_upcoming
+
     # Sort by date then time then venue.
     upcoming.sort(key=lambda e: (e.date_start, e.time or "00:00", e.venue))
 
