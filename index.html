@@ -7,118 +7,134 @@
 <meta name="description" content="Agenda culturel — concerts, théâtre, danse, clubs à Lyon.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Dark techno palette */
-    --bg:           #0a0e12;
-    --bg-elev:      #11161c;
-    --bg-elev-2:    #161d25;
-    --ink:          #e8eef4;
-    --ink-soft:     #6c7986;
-    --ink-mute:     #3d4651;
-    --rule:         #1d2731;
-    --rule-strong:  #2c3845;
-    --cyan:         #00e5ff;
-    --cyan-glow:    #00e5ff33;
-    --cyan-soft:    #003d4a;
-    --magenta:      #ff2d8a;
-    --violet:       #8b5cf6;
+    --bg:           #161f25;
+    --bg-elev:      #1c272f;
+    --bg-elev-2:    #243038;
+    --ink:          #e7dfbe;        /* cream — main text */
+    --ink-soft:     #a59f86;        /* faded cream — secondary */
+    --ink-mute:     #5e6973;        /* muted blue-gray — tertiary */
+    --rule:         #2a363f;        /* very subtle line */
+    --rule-strong:  #3a4853;
+    --accent:       #e7dfbe;        /* cream accent (same as ink) */
+    --accent-glow:  rgba(231, 223, 190, 0.12);
+    --warm:         #d4a574;        /* warm tan for badges/highlights */
+    --hot:          #ff6b4a;        /* coral red for urgent / multi-day */
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
 
-  /* Subtle film grain overlay — pure CSS noise via SVG fragment */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 100;
-    opacity: 0.05;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
-    background-size: 200px 200px;
-  }
-
   body {
     background: var(--bg);
     color: var(--ink);
-    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
+    font-family: 'Inter Tight', -apple-system, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
-    line-height: 1.45;
+    line-height: 1.5;
     min-height: 100vh;
-    /* Subtle radial glow at top to soften the void */
-    background-image: radial-gradient(
-      ellipse 80% 50% at 50% 0%,
-      rgba(0, 229, 255, 0.04),
-      transparent 70%
-    );
-    background-attachment: fixed;
+    font-feature-settings: 'ss01' on, 'cv11' on;
   }
-  .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  @media (max-width: 720px) {
+    .container { padding: 0 20px; }
+  }
+
+  /* ---------- type primitives ---------- */
+  .display {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+  }
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-feature-settings: 'ss03' on;
+  }
 
   /* ---------- masthead ---------- */
   header.masthead {
+    padding: 36px 0 28px;
     border-bottom: 1px solid var(--rule);
-    padding: 40px 0 28px;
-    position: relative;
   }
   .masthead .container {
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 16px;
+    gap: 32px;
     align-items: end;
   }
   .wordmark {
-    font-family: 'Bagel Fat One', sans-serif;
-    font-size: clamp(56px, 11vw, 130px);
-    font-weight: 400;
-    line-height: 0.85;
-    letter-spacing: -0.03em;
     margin: 0;
-    color: var(--ink);
-    text-transform: uppercase;
-    position: relative;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
   }
-  .wordmark .accent { color: var(--cyan); }
-  .wordmark .small {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.18em;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    text-transform: lowercase;
-    display: inline-block;
-    transform: translateY(-0.3em);
-    margin-right: 0.1em;
-    color: var(--ink-soft);
-  }
-  .meta {
+  .wordmark .label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    color: var(--ink-soft);
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    text-align: right;
-    line-height: 1.6;
+    letter-spacing: 0.16em;
+    color: var(--ink-soft);
+    display: block;
+    margin-bottom: 14px;
   }
-  .meta .updated {
-    color: var(--cyan);
+  .wordmark .label::before {
+    content: "(— ";
+    color: var(--ink-mute);
   }
-  .meta .updated::before {
-    content: "● ";
-    color: var(--cyan);
-    text-shadow: 0 0 6px var(--cyan-glow);
+  .wordmark .label::after {
+    content: " —)";
+    color: var(--ink-mute);
+  }
+  .wordmark-main {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(64px, 14vw, 180px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    display: block;
+  }
+  .wordmark-main em {
+    font-style: italic;
+    color: var(--warm);
+    margin-left: 0.04em;
   }
 
-  /* ---------- filters (sticky, collapsible) ---------- */
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    text-align: right;
+    line-height: 1.7;
+  }
+  .meta .row {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    align-items: baseline;
+  }
+  .meta .key { color: var(--ink-mute); }
+  .meta .val { color: var(--ink); }
+  .meta .updated::before {
+    content: "● ";
+    color: var(--warm);
+  }
+
+  /* ---------- filters bar (sticky, collapsible) ---------- */
   .filters {
     position: sticky;
     top: 0;
     z-index: 20;
-    background: rgba(10, 14, 18, 0.85);
-    backdrop-filter: blur(14px) saturate(140%);
-    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    background: rgba(22, 31, 37, 0.86);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
     border-bottom: 1px solid var(--rule);
     padding: 14px 0;
     transition: padding 0.18s ease;
@@ -129,9 +145,6 @@
   .filters.collapsed .filter-row.expanded-only {
     display: none;
   }
-  .filters.collapsed .filter-row.always-visible {
-    padding: 0;
-  }
   .filters.collapsed .filter-row + .filter-row {
     border-top: none;
     margin-top: 0;
@@ -139,45 +152,49 @@
   }
 
   .filter-row {
-    display: flex; flex-wrap: wrap; gap: 6px 12px;
+    display: flex; flex-wrap: wrap; gap: 8px 14px;
     align-items: center;
     padding: 4px 0;
   }
   .filter-row + .filter-row {
     border-top: 1px dashed var(--rule);
-    padding-top: 8px;
+    padding-top: 10px;
     margin-top: 6px;
   }
   .filter-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--ink-soft);
-    flex: 0 0 56px;
+    text-transform: lowercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-mute);
+    flex: 0 0 auto;
     align-self: center;
+    min-width: 64px;
   }
+  .filter-label::before { content: "("; color: var(--ink-mute); }
+  .filter-label::after { content: ")"; color: var(--ink-mute); }
+
   .filter-group { display: flex; flex-wrap: wrap; gap: 5px; flex: 1; min-width: 0; }
 
-  /* expand button (visible only when filters are collapsed) */
+  /* expand-on-collapse toggle */
   .filters-toggle {
     background: transparent;
     border: 1px solid var(--rule-strong);
     color: var(--ink-soft);
-    padding: 4px 10px;
+    padding: 4px 11px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
+    text-transform: lowercase;
+    letter-spacing: 0.08em;
     border-radius: 999px;
     cursor: pointer;
     margin-left: auto;
     display: none;
-    transition: all 0.12s ease;
+    transition: all 0.14s ease;
   }
   .filters-toggle:hover {
-    border-color: var(--cyan);
-    color: var(--cyan);
+    border-color: var(--ink);
+    color: var(--ink);
   }
   .filters.collapsed .filters-toggle {
     display: inline-block;
@@ -189,53 +206,52 @@
   /* chips */
   .chip {
     border: 1px solid var(--rule-strong);
-    background: var(--bg-elev);
-    color: var(--ink);
-    padding: 5px 11px;
+    background: transparent;
+    color: var(--ink-soft);
+    padding: 5px 12px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     border-radius: 999px;
     cursor: pointer;
-    transition: all 0.14s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    transition: all 0.16s ease;
+    text-transform: lowercase;
+    letter-spacing: 0.04em;
     white-space: nowrap;
     line-height: 1.5;
   }
   .chip:hover {
-    border-color: var(--cyan);
-    color: var(--cyan);
-    background: var(--bg-elev-2);
+    border-color: var(--ink);
+    color: var(--ink);
   }
   .chip.active {
-    background: var(--cyan);
+    background: var(--ink);
     color: var(--bg);
-    border-color: var(--cyan);
-    box-shadow: 0 0 12px var(--cyan-glow);
+    border-color: var(--ink);
   }
   .chip.partial {
-    background: var(--cyan-soft);
-    border-color: var(--cyan);
-    color: var(--cyan);
+    border-color: var(--warm);
+    color: var(--warm);
+    background: transparent;
   }
   .chip-group {
     font-weight: 700;
+    text-transform: lowercase;
   }
   .chip-group::after {
-    content: "▾";
+    content: "↘";
     margin-left: 6px;
-    font-size: 9px;
+    font-size: 10px;
     display: inline-block;
-    transition: transform 0.15s ease;
-    opacity: 0.7;
+    transition: transform 0.18s ease;
+    opacity: 0.6;
   }
   .venue-group.expanded .chip-group::after {
-    transform: rotate(180deg);
+    transform: rotate(45deg);
     opacity: 1;
   }
-  .chip-sub { font-size: 10px; padding: 4px 9px; }
+  .chip-sub { font-size: 10px; padding: 4px 10px; font-weight: 400; }
 
-  /* venue groups: each group can expand to show its sub-chips */
+  /* venue groups */
   .venue-groups {
     display: flex; flex-wrap: wrap; gap: 5px;
     flex: 1;
@@ -245,7 +261,7 @@
     display: none;
     flex-wrap: wrap;
     gap: 4px;
-    padding: 8px 10px;
+    padding: 9px 12px;
     background: var(--bg-elev);
     border: 1px solid var(--rule);
     border-radius: 8px;
@@ -254,7 +270,7 @@
   }
   .venue-group.expanded .venue-sublist { display: flex; }
 
-  /* date picker popover */
+  /* date picker */
   .datepicker-wrap { position: relative; display: inline-block; }
   .datepicker {
     display: none;
@@ -263,18 +279,16 @@
     left: 0;
     z-index: 30;
     background: var(--bg-elev);
-    border: 1px solid var(--cyan);
+    border: 1px solid var(--ink-mute);
     border-radius: 12px;
-    padding: 12px;
-    box-shadow:
-      0 4px 24px rgba(0,0,0,0.5),
-      0 0 24px var(--cyan-glow);
+    padding: 14px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.5);
     min-width: 280px;
   }
   .datepicker.open { display: block; }
   .datepicker-head {
     display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     text-transform: uppercase;
@@ -290,11 +304,11 @@
     color: var(--ink);
     font-size: 14px;
     line-height: 1;
-    transition: all 0.12s ease;
+    transition: all 0.14s ease;
   }
   .datepicker-nav:hover {
-    border-color: var(--cyan);
-    color: var(--cyan);
+    border-color: var(--ink);
+    background: var(--bg-elev-2);
   }
   .datepicker-grid {
     display: grid;
@@ -319,42 +333,41 @@
     padding: 6px 0;
     border-radius: 6px;
     cursor: pointer;
-    transition: all 0.1s ease;
+    transition: all 0.12s ease;
   }
   .datepicker-day:hover:not(.disabled) {
-    background: var(--cyan-soft);
-    color: var(--cyan);
+    background: var(--bg-elev-2);
   }
-  .datepicker-day.disabled { color: var(--ink-mute); cursor: not-allowed; }
+  .datepicker-day.disabled { color: var(--ink-mute); cursor: not-allowed; opacity: 0.5; }
   .datepicker-day.muted { color: var(--ink-mute); }
   .datepicker-day.selected,
   .datepicker-day.range-start,
   .datepicker-day.range-end {
-    background: var(--cyan);
+    background: var(--ink);
     color: var(--bg);
   }
   .datepicker-day.in-range {
-    background: var(--cyan-soft);
-    color: var(--cyan);
+    background: var(--bg-elev-2);
+    color: var(--ink);
     border-radius: 0;
   }
   .datepicker-day.range-start { border-radius: 6px 0 0 6px; }
   .datepicker-day.range-end { border-radius: 0 6px 6px 0; }
   .datepicker-day.range-start.range-end { border-radius: 6px; }
   .datepicker-day.today {
-    box-shadow: inset 0 0 0 1px var(--cyan);
+    box-shadow: inset 0 0 0 1px var(--warm);
   }
   .datepicker-foot {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 12px;
-    padding-top: 8px;
+    margin-top: 14px;
+    padding-top: 10px;
     border-top: 1px solid var(--rule);
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    text-transform: lowercase;
+    letter-spacing: 0.06em;
     color: var(--ink-soft);
     gap: 8px;
   }
@@ -362,7 +375,7 @@
   .datepicker-foot button {
     background: transparent;
     border: none;
-    color: var(--cyan);
+    color: var(--warm);
     font-family: inherit;
     font-size: inherit;
     text-transform: inherit;
@@ -375,84 +388,96 @@
   .clear-link {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--cyan);
+    text-transform: lowercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
     cursor: pointer;
     background: transparent;
     border: none;
     padding: 0;
     margin-left: auto;
+    transition: color 0.14s ease;
   }
-  .clear-link:hover { text-shadow: 0 0 6px var(--cyan-glow); }
+  .clear-link:hover { color: var(--ink); }
+  .clear-link::after {
+    content: " →";
+    color: var(--warm);
+  }
 
-  /* ---------- day section ---------- */
-  main.feed { padding: 32px 0 80px; }
+  /* ---------- feed / day blocks ---------- */
+  main.feed { padding: 40px 0 80px; }
+
   .day {
-    padding: 28px 0;
+    padding: 32px 0;
     border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    align-items: start;
   }
   .day:last-child { border-bottom: none; }
-  .day-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 24px;
-    margin-bottom: 22px;
-    flex-wrap: wrap;
+  @media (max-width: 960px) {
+    .day { grid-template-columns: 1fr; gap: 16px; }
   }
-  .day-date {
-    font-family: 'Bagel Fat One', sans-serif;
+
+  .day-stamp {
+    position: sticky;
+    top: 110px;
+    align-self: start;
+  }
+  @media (max-width: 960px) {
+    .day-stamp { position: relative; top: auto; }
+  }
+  .day-num {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(56px, 7vw, 96px);
     font-weight: 400;
-    line-height: 0.88;
-    letter-spacing: -0.02em;
-    margin: 0;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
     color: var(--ink);
-    text-transform: uppercase;
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
+    margin: 0;
   }
-  .day-date .dow {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
+  .day-num .slash {
+    color: var(--ink-mute);
+    font-style: normal;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 300;
+  }
+  .day-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
     letter-spacing: 0.16em;
     color: var(--ink-soft);
-    text-transform: uppercase;
-    align-self: center;
+    margin-top: 12px;
+    line-height: 1.7;
   }
-  .day-date .num {
-    font-size: clamp(48px, 7vw, 84px);
-  }
-  .day-date .month {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 500;
-    font-size: clamp(18px, 2vw, 22px);
-    color: var(--ink-soft);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    align-self: center;
+  .day-meta .ord {
+    color: var(--ink-mute);
+    margin-right: 6px;
   }
   .day-tag {
+    display: inline-block;
+    margin-top: 6px;
+    color: var(--warm);
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.14em;
-    color: var(--cyan);
-    text-shadow: 0 0 8px var(--cyan-glow);
-    align-self: center;
   }
+  .day-tag::before { content: "(— "; color: var(--ink-mute); }
+  .day-tag::after { content: " —)"; color: var(--ink-mute); }
 
-  /* ---------- event grid (cards) ---------- */
+  /* ---------- event grid ---------- */
   .events {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
     align-items: stretch;
   }
-  @media (max-width: 960px) {
-    .events { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1100px) {
+    .events { grid-template-columns: repeat(3, 1fr); }
   }
   @media (max-width: 560px) {
     .events { grid-template-columns: 1fr; }
@@ -462,34 +487,43 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 16px 18px;
+    padding: 18px 20px 16px;
     border: 1px solid var(--rule-strong);
-    border-radius: 10px;
+    border-radius: 8px;
     background: var(--bg-elev);
     text-decoration: none;
     color: inherit;
-    transition: all 0.14s ease;
-    /* fixed height = uniform rectangles */
-    height: 220px;
+    transition: all 0.18s ease;
+    height: 230px;
     position: relative;
     overflow: hidden;
   }
+  .event::before {
+    /* numerical event index, top-right */
+    content: attr(data-num);
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--ink-mute);
+    letter-spacing: 0.12em;
+  }
   .event::after {
-    /* The "neon underline" on hover */
+    /* underline accent on hover */
     content: "";
     position: absolute;
-    left: 0; right: 0; bottom: 0;
-    height: 2px;
-    background: var(--cyan);
+    left: 18px; right: 18px; bottom: 0;
+    height: 1px;
+    background: var(--ink);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.18s ease;
-    box-shadow: 0 0 8px var(--cyan-glow);
+    transition: transform 0.24s ease;
   }
   .event:hover {
-    border-color: var(--cyan);
+    border-color: var(--ink-soft);
     background: var(--bg-elev-2);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
   }
   .event:hover::after {
     transform: scaleX(1);
@@ -499,16 +533,16 @@
     justify-content: space-between;
     align-items: baseline;
     gap: 12px;
+    padding-right: 32px; /* room for the data-num */
   }
   .event-venue {
     font-family: 'JetBrains Mono', monospace;
     font-size: 9px;
     color: var(--ink-soft);
     text-transform: uppercase;
-    letter-spacing: 0.14em;
-    line-height: 1.3;
+    letter-spacing: 0.16em;
+    line-height: 1.4;
     flex: 1;
-    /* keep on one or two lines max */
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -517,22 +551,21 @@
   }
   .event-time {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    color: var(--cyan);
-    font-weight: 700;
+    font-size: 12px;
+    color: var(--ink);
+    font-weight: 500;
     white-space: nowrap;
     letter-spacing: 0.04em;
   }
   .event-time.empty { color: var(--ink-mute); font-weight: 400; }
   .event-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 17px;
-    font-weight: 600;
-    line-height: 1.18;
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.1;
     margin: 0;
-    letter-spacing: -0.005em;
+    letter-spacing: -0.01em;
     color: var(--ink);
-    /* Clamp to fit */
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -546,6 +579,7 @@
     margin: -4px 0 0;
     line-height: 1.3;
     font-style: italic;
+    font-family: 'Instrument Serif', Georgia, serif;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -562,23 +596,26 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 9px;
     color: var(--ink-soft);
-    text-transform: uppercase;
+    text-transform: lowercase;
     letter-spacing: 0.1em;
   }
   .event-cat::before {
-    content: "#";
-    color: var(--cyan);
-    margin-right: 1px;
+    content: "[ ";
+    color: var(--ink-mute);
+  }
+  .event-cat::after {
+    content: " ]";
+    color: var(--ink-mute);
   }
   .event-run {
     display: inline-block;
     font-family: 'JetBrains Mono', monospace;
     font-size: 9px;
-    color: var(--magenta);
+    color: var(--hot);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    padding: 2px 7px;
-    border: 1px solid var(--magenta);
+    padding: 2px 8px;
+    border: 1px solid var(--hot);
     border-radius: 999px;
     font-weight: 500;
     white-space: nowrap;
@@ -587,40 +624,51 @@
   /* ---------- empty state ---------- */
   .empty {
     text-align: center;
-    padding: 80px 24px;
+    padding: 100px 24px;
     color: var(--ink-soft);
   }
   .empty p {
-    font-family: 'Bagel Fat One', sans-serif;
-    font-size: 28px;
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 36px;
+    font-style: italic;
+    color: var(--ink);
   }
+  .empty p::before { content: "( "; color: var(--ink-mute); }
+  .empty p::after { content: " )"; color: var(--ink-mute); }
 
   /* ---------- footer ---------- */
   footer {
     border-top: 1px solid var(--rule);
-    padding: 32px 0;
+    padding: 32px 0 48px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    color: var(--ink-soft);
+    color: var(--ink-mute);
     text-transform: uppercase;
     letter-spacing: 0.12em;
   }
   footer .container {
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: end;
   }
-  footer a { color: var(--cyan); text-decoration: none; }
-  footer a:hover { text-shadow: 0 0 6px var(--cyan-glow); }
+  footer .col { line-height: 1.7; }
+  footer .col-right { text-align: right; }
+  footer a { color: var(--ink-soft); text-decoration: none; }
+  footer a:hover { color: var(--ink); }
+  footer .ind {
+    color: var(--warm);
+    margin-right: 4px;
+  }
 
   /* ---------- mobile ---------- */
   @media (max-width: 720px) {
-    .masthead .container { grid-template-columns: 1fr; }
+    .masthead .container { grid-template-columns: 1fr; gap: 18px; }
     .meta { text-align: left; }
+    .meta .row { justify-content: flex-start; }
     .filter-row { gap: 6px 10px; }
-    .filter-label { flex: 0 0 100%; margin-bottom: 4px; }
-    .day-date { flex-wrap: wrap; gap: 6px; }
-    .day-date .num { line-height: 1; }
+    .filter-label { flex: 0 0 100%; margin-bottom: 4px; min-width: 0; }
+    .day-stamp { padding-bottom: 4px; }
     .event { height: auto; min-height: 200px; }
   }
 </style>
@@ -629,10 +677,14 @@
 
 <header class="masthead">
   <div class="container">
-    <h1 class="wordmark"><span class="small">à l'</span><span class="accent">affiche</span></h1>
+    <h1 class="wordmark">
+      <span class="label">programme · lyon · 2026</span>
+      <span class="wordmark-main">à l'<em>affiche</em></span>
+    </h1>
     <div class="meta">
-      <div>Lyon · agenda culturel</div>
-      <div class="updated" id="lastUpdated">—</div>
+      <div class="row"><span class="key">[index]</span> <span class="val" id="eventCount">—</span></div>
+      <div class="row"><span class="key">[lieux]</span> <span class="val" id="venueCount">—</span></div>
+      <div class="row updated"><span class="val" id="lastUpdated">—</span></div>
     </div>
   </div>
 </header>
@@ -649,7 +701,7 @@
         <button class="chip" data-when="week">cette semaine</button>
         <button class="chip" data-when="month">ce mois-ci</button>
         <span class="datepicker-wrap">
-          <button class="chip" id="dateBtn" type="button">📅 choisir</button>
+          <button class="chip" id="dateBtn" type="button">date custom →</button>
           <div class="datepicker" id="datepicker"></div>
         </span>
       </div>
@@ -664,7 +716,7 @@
     <div class="filter-row expanded-only">
       <span class="filter-label">type</span>
       <div class="filter-group" id="filterCategory"></div>
-      <button class="clear-link" id="clearFilters">tout effacer →</button>
+      <button class="clear-link" id="clearFilters">tout effacer</button>
     </div>
 
   </div>
@@ -676,14 +728,20 @@
 
 <footer>
   <div class="container">
-    <span>Données scrapées sur les sites des lieux · MAJ quotidienne</span>
-    <span><a href="https://github.com/" target="_blank" rel="noopener">code source</a></span>
+    <div class="col">
+      <div><span class="ind">§</span> données scrapées sur les sites des lieux</div>
+      <div><span class="ind">§</span> mise à jour quotidienne · 06h00 utc</div>
+    </div>
+    <div class="col col-right">
+      <div><a href="https://github.com/" target="_blank" rel="noopener">code source ↗</a></div>
+      <div>lyon · mmxxvi</div>
+    </div>
   </div>
 </footer>
 
 <script>
 const FR_DAYS_FULL = ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
-const FR_DAYS_SHORT = ['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'];
+const FR_DAYS_SHORT = ['dim','lun','mar','mer','jeu','ven','sam'];
 const FR_MONTHS = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
 
 /* ---------- venue groups ---------- */
@@ -695,7 +753,7 @@ const VENUE_GROUPS = [
   { name: 'théâtre & danse',       venues: ['Opéra de Lyon', 'Théâtre des Célestins', 'TNP', 'Théâtre de la Croix-Rousse', 'Comédie Odéon', 'TNG'] },
 ];
 
-/* ---------- type buckets (no emojis) ---------- */
+/* ---------- type buckets ---------- */
 const TYPE_BUCKETS = [
   { key: 'musique',  label: 'musique',  match: /musique|concert|jazz|classique|rock|chanson|pop|folk|electro|symphon|fado|opéra/i },
   { key: 'theatre',  label: 'théâtre',  match: /th[ée]atre|spectacle\s*musical|comédie\s*musicale|cabaret/i },
@@ -741,7 +799,7 @@ function renderDatepicker() {
   const today = new Date(); today.setHours(0,0,0,0);
 
   const monthName = FR_MONTHS[month] + ' ' + year;
-  const firstWeekday = (new Date(year, month, 1).getDay() + 6) % 7; // Mon=0
+  const firstWeekday = (new Date(year, month, 1).getDay() + 6) % 7;
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const daysInPrevMonth = new Date(year, month, 0).getDate();
 
@@ -898,8 +956,15 @@ async function load() {
   const res = await fetch('events.json', { cache: 'no-store' });
   const data = await res.json();
   state.events = data.events || [];
+
+  // Counts in the masthead
+  const totalCount = state.events.length;
+  const venueCount = new Set(state.events.map(e => e.venue)).size;
+  document.getElementById('eventCount').textContent = String(totalCount).padStart(3, '0') + ' évts';
+  document.getElementById('venueCount').textContent = String(venueCount).padStart(2, '0');
   document.getElementById('lastUpdated').textContent =
     'maj ' + formatUpdated(data.generated_at);
+
   buildVenueFilters();
   buildTypeFilters();
   render();
@@ -956,14 +1021,12 @@ function buildVenueFilters() {
 }
 
 function handleGroupClick(group, groupEl, groupChip) {
-  // Toggle expand on every click. Selection logic only triggers when
-  // the chip is *clicked again while already expanded*. This makes
-  // the chevron behave as a real "open/close" trigger.
+  // First click: just expand/collapse
   if (!groupEl.classList.contains('expanded')) {
     groupEl.classList.add('expanded');
     return;
   }
-  // Already expanded: behave as before (select all / deselect all)
+  // Already expanded: behave as bulk select / deselect
   const wasFullySelected = group.venues.every(v => state.venues.has(v));
   if (wasFullySelected) {
     group.venues.forEach(v => state.venues.delete(v));
@@ -1062,20 +1125,13 @@ let userExpandedWhileCollapsed = false;
 
 function updateFiltersCollapsed() {
   const shouldCollapse = window.scrollY > 120 && !userExpandedWhileCollapsed;
-  if (shouldCollapse) {
-    filtersEl.classList.add('collapsed');
-    toggleEl.textContent = '+ filtres';
-  } else {
-    filtersEl.classList.remove('collapsed');
-    toggleEl.textContent = '+ filtres';
-  }
+  filtersEl.classList.toggle('collapsed', shouldCollapse);
 }
 toggleEl.addEventListener('click', () => {
   userExpandedWhileCollapsed = !userExpandedWhileCollapsed;
   updateFiltersCollapsed();
 });
 window.addEventListener('scroll', () => {
-  // Reset the manual override if we scroll back to the top
   if (window.scrollY < 60) userExpandedWhileCollapsed = false;
   updateFiltersCollapsed();
 }, { passive: true });
@@ -1178,31 +1234,38 @@ function render() {
   const today = new Date(); today.setHours(0,0,0,0);
   const html = [];
 
+  let dayOrd = 0;
   for (const iso of sortedDates) {
+    dayOrd++;
     const list = groups.get(iso);
     list.sort((a, b) => (a.time || '99:99').localeCompare(b.time || '99:99'));
     const d = parseIso(iso);
     const isToday = d.getTime() === today.getTime();
     const isTomorrow = d.getTime() === today.getTime() + 86400000;
     let tag = '';
-    if (isToday) tag = '· aujourd\'hui';
-    else if (isTomorrow) tag = '· demain';
-    else if (d < new Date(today.getTime() + 7 * 86400000)) tag = '· cette semaine';
+    if (isToday) tag = "aujourd'hui";
+    else if (isTomorrow) tag = 'demain';
+    else if (d < new Date(today.getTime() + 7 * 86400000)) tag = 'cette semaine';
 
     const dd = String(d.getDate()).padStart(2, '0');
     const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const ord = String(dayOrd).padStart(2, '0');
 
     html.push('<section class="day">');
-    html.push('  <div class="day-head">');
-    html.push('    <h2 class="day-date">');
-    html.push('      <span class="dow">' + FR_DAYS_SHORT[d.getDay()] + '</span>');
-    html.push('      <span class="num">' + dd + '/' + mm + '</span>');
-    html.push('      <span class="month">' + FR_MONTHS[d.getMonth()] + '</span>');
-    html.push('    </h2>');
-    if (tag) html.push('    <div class="day-tag">' + tag + '</div>');
+    html.push('  <div class="day-stamp">');
+    html.push('    <h2 class="day-num">' + dd + '<span class="slash">/</span>' + mm + '</h2>');
+    html.push('    <div class="day-meta">');
+    html.push('      <span class="ord">[' + ord + ']</span>');
+    html.push('      ' + FR_DAYS_FULL[d.getDay()] + ' · ' + FR_MONTHS[d.getMonth()]);
+    if (tag) html.push('      <br><span class="day-tag">' + tag + '</span>');
+    html.push('    </div>');
     html.push('  </div>');
     html.push('  <div class="events">');
-    for (const e of list) html.push(eventCard(e));
+    let evtOrd = 0;
+    for (const e of list) {
+      evtOrd++;
+      html.push(eventCard(e, ord + '·' + String(evtOrd).padStart(2, '0')));
+    }
     html.push('  </div>');
     html.push('</section>');
   }
@@ -1213,7 +1276,7 @@ function escapeHtml(s) {
   return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
-function eventCard(e) {
+function eventCard(e, num) {
   const time = e.time
     ? '<span class="event-time">' + escapeHtml(e.time) + '</span>'
     : '<span class="event-time empty">—</span>';
@@ -1241,7 +1304,7 @@ function eventCard(e) {
     : '';
 
   return [
-    '<' + tag + ' class="event"' + linkAttrs + '>',
+    '<' + tag + ' class="event" data-num="' + num + '"' + linkAttrs + '>',
     '  <div class="event-head">',
     '    <span class="event-venue">' + escapeHtml(e.venue) + '</span>',
     '    ' + time,
@@ -1258,7 +1321,7 @@ function eventCard(e) {
 
 load().catch(err => {
   document.getElementById('feed').innerHTML =
-    '<div class="empty"><p>erreur de chargement</p><p style="font-family:monospace;font-size:12px;text-transform:none">' + err + '</p></div>';
+    '<div class="empty"><p>erreur de chargement</p><p style="font-family:monospace;font-size:12px;text-transform:none;color:#a59f86">' + err + '</p></div>';
 });
 </script>
 
