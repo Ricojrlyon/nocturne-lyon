@@ -792,8 +792,22 @@ const VENUE_GROUPS = [
   { name: 'soirée',                venues: ['Le Sucre', 'Le Petit Salon', 'Le Transbordeur', 'La Rayonne'] },
   { name: 'concerts',              venues: ['Marché Gare', 'Le Sonic', 'Le Périscope'] },
   { name: 'lieux hybrides',        venues: ['La Commune', 'HEAT', 'Les Subsistances'] },
-  { name: 'théâtre & danse',       venues: ['Opéra de Lyon', 'Théâtre des Célestins', 'TNP', 'Théâtre de la Croix-Rousse', 'Comédie Odéon', 'TNG'] },
+  { name: 'théâtre & danse',       venues: ['Opéra national de Lyon', 'Théâtre des Célestins', 'TNP', 'Théâtre de la Croix-Rousse', 'Comédie Odéon', 'TNG'] },
 ];
+
+/* Display order within a day:
+   concerts → soirée → lieux hybrides → spectacles & musiques → théâtre & danse.
+   Map each venue to its rank so we can sort cards by group. */
+const VENUE_DISPLAY_ORDER = ['concerts', 'soirée', 'lieux hybrides', 'spectacles & musiques', 'théâtre & danse'];
+const VENUE_GROUP_ORDER_INDEX = new Map();
+VENUE_DISPLAY_ORDER.forEach((groupName, idx) => {
+  const group = VENUE_GROUPS.find(g => g.name === groupName);
+  if (group) {
+    for (const venue of group.venues) {
+      VENUE_GROUP_ORDER_INDEX.set(venue, idx);
+    }
+  }
+});
 
 /* ---------- type buckets ---------- */
 const TYPE_BUCKETS = [
@@ -1280,7 +1294,25 @@ function render() {
   for (const iso of sortedDates) {
     dayOrd++;
     const list = groups.get(iso);
-    list.sort((a, b) => (a.time || '99:99').localeCompare(b.time || '99:99'));
+    // Sort within a day:
+    //   1. by venue group (concerts → soirée → hybrides → spectacles & musiques → théâtre)
+    //   2. then by time (events without a time go last, sorted alphabetically by venue)
+    list.sort((a, b) => {
+      const ga = VENUE_GROUP_ORDER_INDEX.get(a.venue);
+      const gb = VENUE_GROUP_ORDER_INDEX.get(b.venue);
+      // venues not found in any group fall to the end (large index)
+      const ia = ga === undefined ? 999 : ga;
+      const ib = gb === undefined ? 999 : gb;
+      if (ia !== ib) return ia - ib;
+      // same group: compare time (missing time = 99:99 = last)
+      const ta = a.time || '99:99';
+      const tb = b.time || '99:99';
+      if (ta !== tb) return ta.localeCompare(tb);
+      // same time: alphabetical by venue then title for stable ordering
+      const va = (a.venue || '').localeCompare(b.venue || '');
+      if (va !== 0) return va;
+      return (a.title || '').localeCompare(b.title || '');
+    });
     const d = parseIso(iso);
     const isToday = d.getTime() === today.getTime();
     const isTomorrow = d.getTime() === today.getTime() + 86400000;
