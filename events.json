@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-05T07:05:19.229951+00:00",
-  "count": 579,
+  "generated_at": "2026-05-05T11:08:29.470203+00:00",
+  "count": 585,
   "events": [
     {
       "venue": "Bourse du Travail",
@@ -369,7 +369,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Épuisé sur ce point de vente Pop-Rock BANDIT BANDIT + BLUE SALT",
+      "title": "Pop-Rock BANDIT BANDIT + BLUE SALT",
       "subtitle": null,
       "category": null,
       "date_start": "2026-05-07",
@@ -377,7 +377,7 @@
       "time": "20:30",
       "url": "https://marchegare.fr/agenda/bandit-bandit",
       "image": null,
-      "id": "b8c7ca340872"
+      "id": "be893e1a58db"
     },
     {
       "venue": "Le Petit Salon",
@@ -1004,6 +1004,19 @@
       "id": "cd1df3374b96"
     },
     {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Houria Les Yeux Verts Dans Enfin Moi",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-05-16",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/houria-les-yeux-verts-dans-enfin-moi-379265.html",
+      "image": null,
+      "id": "b421f8526e8d"
+    },
+    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Nuits sonores open air : 10 years of Seoul community Radio",
@@ -1132,6 +1145,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/les-intemperies-de-sami/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/08/les-intemperies-de-sam_radiant-bellevue-500x500.jpg",
       "id": "3cde15ca03b4"
+    },
+    {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Saison 2026-2027",
+      "subtitle": "18 mai",
+      "category": "théâtre",
+      "date_start": "2026-05-18",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/saison-26-27/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/lancement_de_saison2-465x301.v1777301309.jpg",
+      "id": "c13efc74beac"
     },
     {
       "venue": "Théâtre de la Croix-Rousse",
@@ -1683,13 +1709,13 @@
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Magic Mardi",
-      "subtitle": "Line-up soon !",
+      "subtitle": "Marija · Equinoxe · IMA:R",
       "category": "club",
       "date_start": "2026-05-26",
       "date_end": null,
       "time": null,
       "url": "https://le-sucre.eu/events/magic-mardi-78/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/Plan-de-travail-7-480x600.png",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/Plan-de-travail-12-480x600.png",
       "id": "285d334d3ac3"
     },
     {
@@ -4189,6 +4215,19 @@
       "id": "535bf99ebb30"
     },
     {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Guihome Dans Guihome Vous Détend",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-09-19",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/guihome-dans-guihome-vous-detend-379266.html",
+      "image": null,
+      "id": "19877e4e093a"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "ASGEIR",
@@ -5905,6 +5944,19 @@
       "id": "dab5c131060d"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Jazz daoud",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-12-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/daoud",
+      "image": null,
+      "id": "1e559dd931ce"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Gauvain Sers - Tournée",
@@ -6921,6 +6973,19 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
+      "title": "Manon Bril Dans 300 000 Ans",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-03-03",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/manon-bril-dans-300-000-ans-379268.html",
+      "image": null,
+      "id": "425119f738db"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
       "title": "Pierre Thevenoux - Life Coach - Tournée",
       "subtitle": null,
       "category": "humour",
@@ -7307,6 +7372,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/serge-papagalli/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/serge-papagelli_radiant-bellevue-500x500.jpg",
       "id": "15ea6374c40a"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Mam' Issabré Au Festival Les Lions Du Rire",
+      "subtitle": null,
+      "category": "festival",
+      "date_start": "2027-05-09",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/mam-issabre-au-festival-les-lions-du-rire-379267.html",
+      "image": null,
+      "id": "009fd03a963e"
     },
     {
       "venue": "Radiant-Bellevue",
