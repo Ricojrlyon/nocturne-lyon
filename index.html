@@ -549,15 +549,20 @@
     transform: scaleX(1);
   }
 
-  /* Row 1: header (venue + time) */
+  /* Row 1: header (venue + time) — using inline-block layout instead of flex
+     to avoid baseline-alignment height bugs in grid cells */
   .event-head {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;       /* center, not baseline — baseline causes height calc bugs */
     gap: 12px;
     padding-right: 36px;
     min-width: 0;
+    line-height: 1.25;
+    /* Force a stable, predictable height regardless of flex quirks */
+    height: 18px;
+    flex: 0 0 auto;
   }
   .event-venue {
     font-family: 'JetBrains Mono', monospace;
