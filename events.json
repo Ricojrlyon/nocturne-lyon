@@ -1,111 +1,7 @@
 {
-  "generated_at": "2026-05-05T11:08:29.470203+00:00",
-  "count": 585,
+  "generated_at": "2026-05-06T12:19:56.137550+00:00",
+  "count": 582,
   "events": [
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Koto & Crayons - Concert Dessiné",
-      "subtitle": null,
-      "category": "musique classique",
-      "date_start": "2026-05-05",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/koto-crayons-concert-dessine-378736.html",
-      "image": null,
-      "id": "0487bb697383"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Human Jukebox – Concert participatif",
-      "subtitle": null,
-      "category": "karaoké et blind test",
-      "date_start": "2026-05-05",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/human-jukebox-karaoke-geant-live-la-commune-lyon/",
-      "image": null,
-      "id": "db7e082bcb0e"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Yoga Solidaire : cours femmes Fondation des Femmes",
-      "subtitle": null,
-      "category": "bien-être",
-      "date_start": "2026-05-05",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/yoga-solidaire-lyon/",
-      "image": null,
-      "id": "edf7ce5e1774"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Magic Mardi",
-      "subtitle": "Kauzie · Jo Kovaa · Shakti",
-      "category": "club",
-      "date_start": "2026-05-05",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/magic-mardi-76/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/04/Plan-de-travail-10-480x600.png",
-      "id": "96b302729878"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "La Vérité",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-05-05",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/la-verite-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/05/la-verite-500x500.jpg",
-      "id": "7abf2279392a"
-    },
-    {
-      "venue": "Théâtre de la Croix-Rousse",
-      "venue_slug": "croix-rousse",
-      "title": "CHASSELAY ET AUTRES MASSACRES",
-      "subtitle": "Eva Doumbia",
-      "category": "théâtre",
-      "date_start": "2026-05-05",
-      "date_end": "2026-05-07",
-      "time": null,
-      "url": "https://www.croix-rousse.com/au-programme/chasselay-et-autres-massacres/",
-      "image": "https://www.croix-rousse.com/wp-content/uploads/2025/05/30.Chasselay_1080x1080-300x300-c-default.png",
-      "id": "84b1020fff2b"
-    },
-    {
-      "venue": "Théâtre des Célestins",
-      "venue_slug": "celestins",
-      "title": "Toutes les petites choses que j’ai pu voir",
-      "subtitle": "Raymond Carver, Olivia Corsini",
-      "category": "celestine",
-      "date_start": "2026-05-05",
-      "date_end": "2026-05-16",
-      "time": null,
-      "url": "https://www.theatredescelestins.com/fr/programmation/2025-2026/celestine/toutes-les-petites-choses-que-jai-pu-voir",
-      "image": "https://www.theatredescelestins.com/assets/q75-w330-h434-c330x434/0b9610dc/toutes_ces_petites_choses32_julien_piffaut.jpg.webp",
-      "id": "fe7324fb1e63"
-    },
-    {
-      "venue": "Le Sonic",
-      "venue_slug": "sonic",
-      "title": "Public Circuit + La Peau Douce",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-05-05",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://sonic-lyon.fr/evenement/public-circuit/",
-      "image": null,
-      "id": "9ba35bb8e54e"
-    },
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
@@ -369,7 +265,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Pop-Rock BANDIT BANDIT + BLUE SALT",
+      "title": "Bientôt épuisé sur ce point de vente Pop-Rock BANDIT BANDIT + BLUE SALT",
       "subtitle": null,
       "category": null,
       "date_start": "2026-05-07",
@@ -377,7 +273,7 @@
       "time": "20:30",
       "url": "https://marchegare.fr/agenda/bandit-bandit",
       "image": null,
-      "id": "be893e1a58db"
+      "id": "e12a83f5be47"
     },
     {
       "venue": "Le Petit Salon",
@@ -482,6 +378,19 @@
       "url": "https://www.les-subs.com/evenement/ouverture-ete-2026-cruise-my-mountain-the-darvish/",
       "image": null,
       "id": "fea400ccea0d"
+    },
+    {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "2000’S PARTY",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-05-08",
+      "date_end": null,
+      "time": "23:15",
+      "url": "https://sonic-lyon.fr/evenement/2000s-party-4/",
+      "image": null,
+      "id": "674cb3a9bb54"
     },
     {
       "venue": "Le Petit Salon",
@@ -638,6 +547,19 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/world-of-warcraft",
       "image": null,
       "id": "f110b1ebdaa0"
+    },
+    {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "DARK 80’s PARTY",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-05-09",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://sonic-lyon.fr/evenement/dark-80s-party-11/",
+      "image": null,
+      "id": "76cce47b07f9"
     },
     {
       "venue": "Le Petit Salon",
@@ -848,19 +770,6 @@
       "id": "5773ebb374fb"
     },
     {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Chess Bar x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-13",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/chess-bar-x-heat-7/",
-      "image": "https://h-eat.eu/wp-content/uploads/2025/07/jeu-echecs-mains-reine-jeu-societe-strategie-competition-domicile-echiquier-checkmate-homme-homme-intelligent-jouant-dans-concours-sportif-defi-resolution-problemes-pour-esprit_590464-143092.jpg",
-      "id": "e81da0666468"
-    },
-    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Soirée Nokia 3310",
@@ -1045,7 +954,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Bientôt épuisé sur ce point de vente Metal PALEDUSK + KNOSIS + GREYHAVEN + HEADWRECK",
+      "title": "Metal PALEDUSK + KNOSIS + GREYHAVEN + HEADWRECK",
       "subtitle": null,
       "category": null,
       "date_start": "2026-05-16",
@@ -1053,7 +962,7 @@
       "time": "19:00",
       "url": "https://marchegare.fr/agenda/paledusk",
       "image": null,
-      "id": "85cb68cd8545"
+      "id": "eb534c245846"
     },
     {
       "venue": "Les Subsistances",
@@ -1236,6 +1145,19 @@
       "url": "https://www.theatredescelestins.com/fr/programmation/2025-2026/grande-salle/timber",
       "image": "https://www.theatredescelestins.com/assets/q75-w330-h434-c330x434/e195bafa/timber_alice_piemme2.jpg.webp",
       "id": "e249d83d5ba9"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Formation Discriminations raciales dans la musique : comprendre et agir Collectif Les Canutes",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-19",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://marchegare.fr/agenda/discriminations-raciales-dans-la-musique-comprendre-et-agir",
+      "image": null,
+      "id": "2f3ed1f65c43"
     },
     {
       "venue": "Le Sonic",
@@ -1457,6 +1379,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/diva-syndicat-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/08/diva-syndicat_radiant-bellevue-500x500.jpg",
       "id": "2f2d19669e77"
+    },
+    {
+      "venue": "Les Subsistances",
+      "venue_slug": "les-subs",
+      "title": "Litterature Live Vendredi 22 Mai",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-22",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.les-subs.com/evenement/litterature-live-vendredi-22-mai/",
+      "image": null,
+      "id": "b3aff47c8bea"
     },
     {
       "venue": "La Rayonne",
@@ -1955,7 +1890,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "LES 20 ANS ! Animation KARAOKÉ LIVE SURF Eddy Cover et ses Silhouettes",
+      "title": "LES 20 ANS ! Animation THE ULTIMATE SURFING PARTY Eddy Cover et ses Silhouettes",
       "subtitle": null,
       "category": null,
       "date_start": "2026-05-27",
@@ -1963,7 +1898,7 @@
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/karaoke-live-les-20-ans",
       "image": null,
-      "id": "7ee072910850"
+      "id": "67cabc685e5d"
     },
     {
       "venue": "HEAT",
@@ -2163,6 +2098,19 @@
     {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
+      "title": "FLO MASSE + LUMBAGO + JOLLY + LEGRAM VG",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/flo-masse-lumbago-jolly-legram-vg-30052026/",
+      "image": null,
+      "id": "dbb1c8c87e60"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
       "title": "ECZODIA + KALNIE + SAMUEL MORIERO + TOXIC MACHINERY",
       "subtitle": null,
       "category": "concert",
@@ -2203,12 +2151,12 @@
       "venue": "Théâtre des Célestins",
       "venue_slug": "celestins",
       "title": "Évènement",
-      "subtitle": "Lancement de la saison 26/27",
+      "subtitle": "Lancement de saison 26/27",
       "category": "evenement",
       "date_start": "2026-05-30",
       "date_end": null,
       "time": null,
-      "url": "https://www.theatredescelestins.com/fr/programmation/2025-2026/evenement/lancement-de-la-saison-26-27",
+      "url": "https://www.theatredescelestins.com/fr/programmation/2025-2026/evenement/lancement-de-saison-26-27",
       "image": "https://www.theatredescelestins.com/assets/q75-w330-h434-c330x434/7602c6c8/visuel_saison_myriam_boulos.jpg.webp",
       "id": "5027ca9f0629"
     },
@@ -2406,6 +2354,19 @@
       "url": "https://www.transbordeur.fr/evenement/clutch-bokassa-02062026/",
       "image": null,
       "id": "f771009651f6"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "mardi Mar. 02. juin 06 Jeune Public Tu t’es regardé·e ? - Spectacle CFMI Spectacle musical à partir de 10 ans",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-02",
+      "date_end": null,
+      "time": null,
+      "url": "https://marchegare.fr/agenda/tu-tes-regardee-spectacle-cfmi",
+      "image": null,
+      "id": "3073c8807581"
     },
     {
       "venue": "Théâtre des Célestins",
@@ -3212,6 +3173,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/nicky-doll-1ere-partie/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/nicky-doll_radiant-bellevue-500x500.jpg",
       "id": "efd238ca555c"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Bientôt en vente WEST SIDE FEST 26 Avec l'ENM Villeurbanne",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-12",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/west-side-fest-26",
+      "image": null,
+      "id": "8a9a0f1cb26e"
     },
     {
       "venue": "Les Subsistances",
@@ -4035,6 +4009,19 @@
     {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
+      "title": "CAVALERA",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-30",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/cavalera-30062026/",
+      "image": null,
+      "id": "97e334f2b9a6"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
       "title": "ALTIN GÜN",
       "subtitle": null,
       "category": "concert",
@@ -4217,15 +4204,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Guihome Dans Guihome Vous Détend",
+      "title": "Guihome Vous Détend - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-09-19",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/guihome-dans-guihome-vous-detend-379266.html",
+      "url": "https://www.bourse-du-travail.com/guihome-vous-detend-tournee-379266.html",
       "image": null,
-      "id": "19877e4e093a"
+      "id": "c25496cdd472"
     },
     {
       "venue": "Le Transbordeur",
@@ -5944,19 +5931,6 @@
       "id": "dab5c131060d"
     },
     {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Jazz daoud",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-12-10",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://marchegare.fr/agenda/daoud",
-      "image": null,
-      "id": "1e559dd931ce"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Gauvain Sers - Tournée",
@@ -5981,6 +5955,19 @@
       "url": "https://www.transbordeur.fr/evenement/marguerite-11122026/",
       "image": null,
       "id": "5389e8218cf6"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Le Noël Fantasmagique De William Arribart",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-12-12",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/le-noel-fantasmagique-de-william-arribart-379750.html",
+      "image": null,
+      "id": "e77a9b1bb970"
     },
     {
       "venue": "Le Transbordeur",
@@ -6542,19 +6529,6 @@
       "id": "141d5b0e1be5"
     },
     {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "JUSTE SHANI",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-01-22",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://marchegare.fr/agenda/juste-shani",
-      "image": null,
-      "id": "00cd7a11e39f"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Noëlle Perna - Mado Fait Son Cabaret",
@@ -6735,19 +6709,6 @@
       "url": "https://www.transbordeur.fr/evenement/revnoir-ice-sealed-eyes-04022027/",
       "image": null,
       "id": "7072edb1d0d2"
-    },
-    {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Post-Rock MONO",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-02-04",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://marchegare.fr/agenda/mono",
-      "image": null,
-      "id": "ec4bc109650b"
     },
     {
       "venue": "Bourse du Travail",
