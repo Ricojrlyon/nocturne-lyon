@@ -1,150 +1,7 @@
 {
-  "generated_at": "2026-05-07T12:22:48.609641+00:00",
-  "count": 591,
+  "generated_at": "2026-05-08T10:56:45.808904+00:00",
+  "count": 585,
   "events": [
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Afterwork : Food, Drink & Happy Hour !",
-      "subtitle": null,
-      "category": "afterwork",
-      "date_start": "2026-05-07",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/afterwork-food-drink-happy-hour/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/JulietteVlr_08-480x720.jpg",
-      "id": "e2825b28cc91"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Karaoké Klub",
-      "subtitle": null,
-      "category": "karaoké et blind test",
-      "date_start": "2026-05-07",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/karaoke-blind-test/",
-      "image": null,
-      "id": "abae6d464ccd"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Sauges + Soleil Rouge",
-      "subtitle": "En partenariat avec Wabi-Sabi Tapes",
-      "category": "musique",
-      "date_start": "2026-05-07",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/sauges-soleil-rouge/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/Sauge-Portrait-Montage-Invert-650x793.jpg",
-      "id": "84d5eb14c088"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "club x Virtual Forest",
-      "subtitle": "Andy Martin · Emily Jeanne · Jacky Jeane · Natural Limit · Solma · Fluid Matter",
-      "category": "club",
-      "date_start": "2026-05-07",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/club-x-virtual-forests-5-ans/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/final_text_square-600x600.png",
-      "id": "1e00459018ff"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "ABA SHANTI I + BLACKBOARD JUNGLE SOUND SYSTEM + MARKY LYRICAL + MINTY + DUBFACT + FELIXCULPAH",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-05-07",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/aba-shanti-i-blackboard-jungle-sound-system-marky-lyrical-minty-dubfact-felixculpah-07052026/",
-      "image": null,
-      "id": "f21f629524d1"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "MOGUIZ",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-05-07",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/moguiz/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/04/mog-1-scaled.jpg",
-      "id": "24989f20e555"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Prova Wael Ali Simon Dubois",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-07",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.les-subs.com/evenement/prova-wael-ali-simon-dubois/",
-      "image": null,
-      "id": "f5be3862cb4c"
-    },
-    {
-      "venue": "Le Sonic",
-      "venue_slug": "sonic",
-      "title": "Loa Mercury + Leomid",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-05-07",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://sonic-lyon.fr/evenement/loa-mercury/",
-      "image": null,
-      "id": "591b8c771c49"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Zeid Hamdan Live",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-07",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.les-subs.com/evenement/ouverture-ete-2026-zeid-hamdan-live/",
-      "image": null,
-      "id": "d77c4b7a24b9"
-    },
-    {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Pop-Rock BANDIT BANDIT + BLUE SALT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-07",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://marchegare.fr/agenda/bandit-bandit",
-      "image": null,
-      "id": "be893e1a58db"
-    },
-    {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "2MUCH X ENCORE : T E S T P R E S S / TRANCEMASTER KRAUSE / KICHTA /DJ SCHNAKE & MORE",
-      "subtitle": null,
-      "category": "club",
-      "date_start": "2026-05-07",
-      "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/fc262f12-ff2b-47d3-a74a-a6e0f63823a4/t-e-s-t-p-r-e-s-s-Trancemaster-Krause-Kichta-DJ-Schnake-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/03/2MUCH_ENCORE_07052026_lepetitsalon-1024x576.png",
-      "id": "86bb88a65c78"
-    },
     {
       "venue": "HEAT",
       "venue_slug": "heat",
@@ -811,7 +668,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Metal PALEDUSK + KNOSIS + GREYHAVEN + HEADWRECK",
+      "title": "Bientôt épuisé sur ce point de vente Metal PALEDUSK + KNOSIS + GREYHAVEN + HEADWRECK",
       "subtitle": null,
       "category": null,
       "date_start": "2026-05-16",
@@ -819,7 +676,7 @@
       "time": "19:00",
       "url": "https://marchegare.fr/agenda/paledusk",
       "image": null,
-      "id": "eb534c245846"
+      "id": "85cb68cd8545"
     },
     {
       "venue": "Les Subsistances",
@@ -939,6 +796,19 @@
       "id": "7c2dfc6bb488"
     },
     {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Orchestre De Chambre De Lyon - Musiques De Films",
+      "subtitle": null,
+      "category": "musique classique",
+      "date_start": "2026-05-19",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/orchestre-de-chambre-de-lyon-musiques-de-films-380241.html",
+      "image": null,
+      "id": "e2ad4d868b76"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Quizz Drag",
@@ -1041,6 +911,19 @@
       "url": "https://www.bourse-du-travail.com/berengere-krief-sexe-tournee-300882.html",
       "image": null,
       "id": "a2c335035b09"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "RAWRUN PARTY x HEAT",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-20",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/rawrun-party-x-heat/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/05/AFFICHE-HEAT-RAWRUN-576x720.png",
+      "id": "49724240c865"
     },
     {
       "venue": "HEAT",
@@ -1312,7 +1195,7 @@
       "date_end": null,
       "time": null,
       "url": "https://h-eat.eu/events/gamay-days-le-festival-des-vins-de-gamay-2/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/03/Capture-decran-2026-03-11-a-17.00.45.png",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/03/gamay-heat-570x720.png",
       "id": "90306177aa47"
     },
     {
@@ -1416,7 +1299,7 @@
       "date_end": null,
       "time": null,
       "url": "https://h-eat.eu/events/gamay-days-le-festival-des-vins-de-gamay/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/03/Capture-decran-2026-03-11-a-17.00.45.png",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/03/gamay-heat-570x720.png",
       "id": "e4fb9556eb9c"
     },
     {
@@ -1604,19 +1487,6 @@
     {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "Chess Bar x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/chess-bar-x-heat-9/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
-      "id": "2a15ff905f9d"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
       "title": "Open platine : le Labo est à vous !",
       "subtitle": null,
       "category": null,
@@ -1626,6 +1496,19 @@
       "url": "https://h-eat.eu/events/open-platine-le-labo-est-a-vous/",
       "image": "https://h-eat.eu/wp-content/uploads/2024/07/JulietteValero_42-480x720.jpg",
       "id": "d32003b5a6fe"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Chess Bar x HEAT",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-27",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/chess-bar-x-heat-9/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
+      "id": "2a15ff905f9d"
     },
     {
       "venue": "La Commune",
@@ -6035,6 +5918,19 @@
       "id": "dab5c131060d"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Jazz daoud",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-12-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/daoud",
+      "image": null,
+      "id": "1e559dd931ce"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Gauvain Sers - Tournée",
@@ -6635,15 +6531,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Putain De Renaud - Pas Un Hommage, Une Révérence !",
+      "title": "Noëlle Perna - Mado Fait Son Cabaret",
       "subtitle": null,
-      "category": "concert",
+      "category": "humour",
       "date_start": "2027-01-24",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/putain-de-renaud-pas-un-hommage-une-reverence-321138.html",
+      "url": "https://www.bourse-du-travail.com/noelle-perna-mado-fait-son-cabaret-321138.html",
       "image": null,
-      "id": "b1360a0e60b8"
+      "id": "003f6d0055ae"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -7439,6 +7335,19 @@
       "id": "15ea6374c40a"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Studiolo de l’Exil",
+      "subtitle": "avril      \t      \t >",
+      "category": "théâtre",
+      "date_start": "2027-04-22",
+      "date_end": "2027-06-30",
+      "time": null,
+      "url": "https://www.tng-lyon.fr/evenement/studiolo-de-lexil/",
+      "image": null,
+      "id": "f1b1ee028705"
+    },
+    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Chess Bar x HEAT",
@@ -7450,6 +7359,19 @@
       "url": "https://h-eat.eu/events/chess-bar-x-heat-6/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
       "id": "fab05a96b682"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Afterwork : Food, Drink & Happy Hour !",
+      "subtitle": null,
+      "category": "afterwork",
+      "date_start": "2027-05-07",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/afterwork-food-drink-happy-hour/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/04/JulietteVlr_08-480x720.jpg",
+      "id": "6245d1a73f65"
     },
     {
       "venue": "Bourse du Travail",
