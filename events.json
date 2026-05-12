@@ -1,33 +1,7 @@
 {
-  "generated_at": "2026-05-11T16:19:42.299496+00:00",
-  "count": 566,
+  "generated_at": "2026-05-12T12:30:48.516004+00:00",
+  "count": 572,
   "events": [
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Ciné-débat",
-      "subtitle": null,
-      "category": "conférences et tables rondes",
-      "date_start": "2026-05-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/cine-debat-la-sociale-securite-sociale-services-publics-debat-entree-libre/",
-      "image": null,
-      "id": "6e22ce8c2d9a"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "Bleu Nuit",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-05-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/bleu-nuit/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/08/bleu-nuit2_radiant-bellevue-500x500.jpg",
-      "id": "5988729d284f"
-    },
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
@@ -573,6 +547,19 @@
       "url": "https://h-eat.eu/events/rawrun-party-x-heat/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/05/AFFICHE-HEAT-RAWRUN-576x720.png",
       "id": "49724240c865"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Spectacle d’improvisation – Improfusion",
+      "subtitle": null,
+      "category": "spectacle",
+      "date_start": "2026-05-20",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/spectacle-dimprovisation-improfusion/",
+      "image": null,
+      "id": "fbc52da5bf2a"
     },
     {
       "venue": "Le Périscope",
@@ -2185,6 +2172,19 @@
       "url": "https://www.bourse-du-travail.com/haroun-bonjour-quand-meme-tournee-349635.html",
       "image": null,
       "id": "e1ae74c29086"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Yoga Solidaire : cours femmes Fondation des Femmes",
+      "subtitle": null,
+      "category": "bien-être",
+      "date_start": "2026-06-07",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/yoga-solidaire-lyon/",
+      "image": null,
+      "id": "e817f790c4d2"
     },
     {
       "venue": "Le Sucre",
@@ -3812,6 +3812,19 @@
       "id": "5db429245cdf"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Icônes",
+      "subtitle": "Lucinda Childs - Alessandro Sciarroni",
+      "category": "danse",
+      "date_start": "2026-09-05",
+      "date_end": "2026-09-10",
+      "time": null,
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/danse/icones",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/76032385/icones_2880x1926.jpg",
+      "id": "58ad7a251764"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "TVOD",
@@ -3875,6 +3888,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/yanns/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/yanns_radiant-bellevue-500x500.jpg",
       "id": "3a7e063ba883"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Wagner / Bruckner",
+      "subtitle": "Daniele Rustioni",
+      "category": "concert",
+      "date_start": "2026-09-13",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/wagner-bruckner",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/9d3eb0fb/wagner_bruckner_2880x192_v2.jpg",
+      "id": "afed3ffa90b5"
     },
     {
       "venue": "Le Transbordeur",
@@ -4096,6 +4122,19 @@
       "url": "https://www.bourse-du-travail.com/amine-radi-la-suivette-tournee-368696.html",
       "image": null,
       "id": "27656491fd54"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "L'Amour des trois oranges",
+      "subtitle": "Sergueï Prokofiev",
+      "category": "opéra",
+      "date_start": "2026-10-04",
+      "date_end": "2026-10-20",
+      "time": null,
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/lamour-des-trois-oranges",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/11f32de7/anour_trois_oranges_principal.jpg",
+      "id": "8eae488edf1a"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4733,6 +4772,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/stephan-eicher-2/",
       "image": null,
       "id": "f1ba192f4256"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Le Sacre du printemps - House",
+      "subtitle": "Mats Ek - Sharon Eyal",
+      "category": "danse",
+      "date_start": "2026-11-03",
+      "date_end": "2026-11-14",
+      "time": null,
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/danse/le-sacre-du-printemps-house",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/29b8e90d/principal_sacre.jpg",
+      "id": "36a0ee1d140f"
     },
     {
       "venue": "Marché Gare",
@@ -5671,6 +5723,19 @@
       "id": "e32f8230b8d2"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "LA RVFLEUZE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-12-06",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/la-rvfleuze-06122026/",
+      "image": null,
+      "id": "2b16a70e2448"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Samuel Bambi - Machine ! - Tournée",
@@ -6089,15 +6154,15 @@
     {
       "venue": "Comédie Odéon",
       "venue_slug": "comedie-odeon",
-      "title": "Léandre",
+      "title": "Léandre – Privilégié",
       "subtitle": null,
       "category": "théâtre",
       "date_start": "2027-01-15",
       "date_end": null,
       "time": null,
       "url": "https://www.comedieodeon.com/spectacle/leandre-dans-sablier/",
-      "image": "https://www.comedieodeon.com/wp-content/uploads/2025/10/LEANDRE-AFFICHE-PROVISOIRE_BD.jpg",
-      "id": "a4af16011da0"
+      "image": "https://www.comedieodeon.com/wp-content/uploads/2025/10/LEANDRE-40x60_BD.jpg",
+      "id": "854598ec4889"
     },
     {
       "venue": "Le Transbordeur",
@@ -6297,15 +6362,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Noëlle Perna - Mado Fait Son Cabaret",
+      "title": "Putain De Renaud - Pas Un Hommage, Une Révérence !",
       "subtitle": null,
-      "category": "humour",
+      "category": "concert",
       "date_start": "2027-01-24",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/noelle-perna-mado-fait-son-cabaret-321138.html",
+      "url": "https://www.bourse-du-travail.com/putain-de-renaud-pas-un-hommage-une-reverence-321138.html",
       "image": null,
-      "id": "003f6d0055ae"
+      "id": "b1360a0e60b8"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -7125,6 +7190,19 @@
       "url": "https://www.tng-lyon.fr/evenement/studiolo-de-lexil/",
       "image": null,
       "id": "f1b1ee028705"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Nuit de mai",
+      "subtitle": "Nikolaï Rimski-Korsakov",
+      "category": "opéra",
+      "date_start": "2027-05-03",
+      "date_end": "2027-05-16",
+      "time": null,
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/nuit-de-mai",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/256ae14b/nui_de_mai_visuel_principal.jpg",
+      "id": "499d99937e63"
     },
     {
       "venue": "Bourse du Travail",
