@@ -1,72 +1,7 @@
 {
-  "generated_at": "2026-05-12T12:30:48.516004+00:00",
-  "count": 572,
+  "generated_at": "2026-05-13T13:40:33.779385+00:00",
+  "count": 578,
   "events": [
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Bliss Show #2",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-05-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/bliss-show-2-341392.html",
-      "image": null,
-      "id": "cf632a937f90"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Atelier linogravure",
-      "subtitle": null,
-      "category": "atelier",
-      "date_start": "2026-05-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/atelier-linogravure-lyon-studio-pimento/",
-      "image": null,
-      "id": "6c1f3df9aba2"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Pali Meursault",
-      "subtitle": "I'm free : concert gratuit",
-      "category": "musique",
-      "date_start": "2026-05-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/pali-meursau/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/03/LW2-650x433.jpg",
-      "id": "532ece94d602"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "Bleu Nuit",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-05-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/bleu-nuit/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/08/bleu-nuit2_radiant-bellevue-500x500.jpg",
-      "id": "71965b1f6cbc"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "JASON BROKERSS",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-05-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/jason-brokerss/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/03/40x60-AFFICHE-JASON_-scaled-e1772118309637-500x500.jpg",
-      "id": "a7514dd12469"
-    },
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
@@ -135,7 +70,7 @@
     {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "Nuits sonores Open Air : Global festival x Dure Vie",
+      "title": "Nuits sonores Open Air : Glowball festival x Dure Vie",
       "subtitle": null,
       "category": "festival",
       "date_start": "2026-05-14",
@@ -143,7 +78,7 @@
       "time": null,
       "url": "https://h-eat.eu/events/nuits-sonores-open-air-2026-3/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/03/Nuits-sonores-open-air-HEAT-GLOWBALL-576x720.png",
-      "id": "e2bb04b45a33"
+      "id": "bb7cb57f96c8"
     },
     {
       "venue": "La Commune",
@@ -211,6 +146,19 @@
       "id": "76e34a0f1805"
     },
     {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "CLUB SONIC",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-05-15",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://sonic-lyon.fr/evenement/club-sonic-3/",
+      "image": null,
+      "id": "41d393ec4495"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "CLTX / NOISE MAFIA / RADAR / URVA ESTREVA & MORE",
@@ -265,7 +213,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Bientôt épuisé sur ce point de vente Metal PALEDUSK + KNOSIS + GREYHAVEN + HEADWRECK",
+      "title": "Épuisé sur ce point de vente Metal PALEDUSK + KNOSIS + GREYHAVEN + HEADWRECK",
       "subtitle": null,
       "category": null,
       "date_start": "2026-05-16",
@@ -273,7 +221,7 @@
       "time": "19:00",
       "url": "https://marchegare.fr/agenda/paledusk",
       "image": null,
-      "id": "85cb68cd8545"
+      "id": "5868068c2fd3"
     },
     {
       "venue": "Les Subsistances",
@@ -525,19 +473,6 @@
     {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "Chess Bar x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/chess-bar-x-heat-8/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
-      "id": "e2fd6e0433e6"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
       "title": "RAWRUN PARTY x HEAT",
       "subtitle": null,
       "category": null,
@@ -547,6 +482,19 @@
       "url": "https://h-eat.eu/events/rawrun-party-x-heat/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/05/AFFICHE-HEAT-RAWRUN-576x720.png",
       "id": "49724240c865"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Chess Bar x HEAT",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-20",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/chess-bar-x-heat-8/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
+      "id": "e2fd6e0433e6"
     },
     {
       "venue": "La Commune",
@@ -564,7 +512,7 @@
     {
       "venue": "Le Périscope",
       "venue_slug": "periscope",
-      "title": "Nout",
+      "title": "Nout (duo) + Mélanie Virot",
       "subtitle": null,
       "category": "musique",
       "date_start": "2026-05-20",
@@ -572,7 +520,7 @@
       "time": null,
       "url": "https://www.periscope-lyon.com/concerts/nout/",
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/03/NOUT-HORIZONTAL-NOIR-ORANGE-BD-1024x709-1-650x450.jpg",
-      "id": "eda6f1dacd75"
+      "id": "b151c3a1f986"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -638,6 +586,19 @@
       "url": "https://h-eat.eu/events/bingo-by-la-menagerie/",
       "image": "https://h-eat.eu/wp-content/uploads/2025/10/bingo-405x720.jpg",
       "id": "31b1bbd5c558"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Soirée Hip-Hop",
+      "subtitle": null,
+      "category": "conférences et tables rondes",
+      "date_start": "2026-05-21",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/soiree-hip-hop-la-commune-open-mic-quiz-dj-set-21-mai/",
+      "image": null,
+      "id": "60c3ead97daf"
     },
     {
       "venue": "Le Transbordeur",
@@ -1149,19 +1110,6 @@
     {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "Open platine : le Labo est à vous !",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/open-platine-le-labo-est-a-vous/",
-      "image": "https://h-eat.eu/wp-content/uploads/2024/07/JulietteValero_42-480x720.jpg",
-      "id": "d32003b5a6fe"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
       "title": "Chess Bar x HEAT",
       "subtitle": null,
       "category": null,
@@ -1171,6 +1119,19 @@
       "url": "https://h-eat.eu/events/chess-bar-x-heat-9/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
       "id": "2a15ff905f9d"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Open platine : le Labo est à vous !",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-27",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/open-platine-le-labo-est-a-vous/",
+      "image": "https://h-eat.eu/wp-content/uploads/2024/07/JulietteValero_42-480x720.jpg",
+      "id": "d32003b5a6fe"
     },
     {
       "venue": "La Commune",
@@ -1836,6 +1797,19 @@
       "id": "e05988c04bc9"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Quartier Libre x Strate",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-03",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/quartier-libre-special-voisin-x-strate/",
+      "image": "https://h-eat.eu/wp-content/uploads/2025/08/JulietteVlr_28-480x720.jpg",
+      "id": "320b747f122c"
+    },
+    {
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "Claude Tchamitchian solo – “In Spirit”",
@@ -2202,19 +2176,6 @@
     {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
-      "title": "ATELIER // Les bases sur les droits d'auteur dans la musique 18h > 20h",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-07",
-      "date_end": "2026-06-07",
-      "time": "18:00",
-      "url": "https://larayonne.org/evenement/atelier-les-bases-sur-les-droits-dauteur-dans-la-musique/",
-      "image": null,
-      "id": "2195c493e5b7"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
       "title": "La fiscalité des associations 18h > 21h",
       "subtitle": null,
       "category": null,
@@ -2406,6 +2367,19 @@
       "url": "https://marchegare.fr/agenda/touche-amore",
       "image": null,
       "id": "ace7f9e4fff2"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Atelier créatif Lyon | découverte à La Commune",
+      "subtitle": null,
+      "category": "atelier",
+      "date_start": "2026-06-09",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/atelier-decouverte/",
+      "image": null,
+      "id": "2fdf373c54b4"
     },
     {
       "venue": "Le Sucre",
@@ -2657,7 +2631,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Bientôt en vente WEST SIDE FEST 26 Avec l'ENM Villeurbanne",
+      "title": "WEST SIDE FEST 26 Avec l'ENM Villeurbanne",
       "subtitle": null,
       "category": null,
       "date_start": "2026-06-12",
@@ -2665,7 +2639,7 @@
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/west-side-fest-26",
       "image": null,
-      "id": "8a9a0f1cb26e"
+      "id": "c6146685f9ca"
     },
     {
       "venue": "Les Subsistances",
@@ -2770,6 +2744,19 @@
       "url": "https://www.bourse-du-travail.com/les-fo-plafonds-tournee-327971.html",
       "image": null,
       "id": "11f751850ebc"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Pimp My Vinyl Lyon",
+      "subtitle": null,
+      "category": "atelier",
+      "date_start": "2026-06-14",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/pimp-my-vinyl/",
+      "image": null,
+      "id": "1a9fe01a3f72"
     },
     {
       "venue": "Le Sucre",
@@ -2928,6 +2915,19 @@
       "id": "1dd74b0976ce"
     },
     {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Soirée Salsa et Bachata",
+      "subtitle": null,
+      "category": "danse",
+      "date_start": "2026-06-17",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/salsa-bachata-2/",
+      "image": null,
+      "id": "a2bfdc1f0518"
+    },
+    {
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "Hearscape + Blême + Yann Ponthus",
@@ -2965,6 +2965,19 @@
       "url": "https://larayonne.org/evenement/portugal-congo-diffusion-coupe-du-monde-2026/",
       "image": null,
       "id": "17a557a281f1"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Bingo by La Ménagerie",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-18",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/bingo-by-la-menagerie-4/",
+      "image": "https://h-eat.eu/wp-content/uploads/2025/03/BINGO_HEAT-NOEMIELACOTE-34-480x720.jpg",
+      "id": "fe619dcd2d3d"
     },
     {
       "venue": "Le Périscope",
@@ -3435,6 +3448,19 @@
       "id": "ee16e3e864fe"
     },
     {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Concert live et Blind Test",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-23",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/concert-lyon/",
+      "image": null,
+      "id": "a397e8aa3d4a"
+    },
+    {
       "venue": "Comédie Odéon",
       "venue_slug": "comedie-odeon",
       "title": "La Prière du Hamster",
@@ -3554,7 +3580,7 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
-      "title": "COMPAGNIE DCA / PHILIPPE DÉCOUFLÉ",
+      "title": "COMPAGNIE DCA / PHILIPPE DECOUFLÉ",
       "subtitle": null,
       "category": "danse",
       "date_start": "2026-06-26",
@@ -3562,7 +3588,7 @@
       "time": null,
       "url": "https://radiant-bellevue.fr/spectacles/compagnie-dca-philippe-decoufle/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/philippe-decoufle_radiant-bellevue-500x500.jpg",
-      "id": "0589a3e0dead"
+      "id": "5ffe95709e69"
     },
     {
       "venue": "Le Petit Salon",
@@ -3593,7 +3619,7 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
-      "title": "COMPAGNIE DCA / PHILIPPE DÉCOUFLÉ",
+      "title": "COMPAGNIE DCA / PHILIPPE DECOUFLÉ",
       "subtitle": null,
       "category": "danse",
       "date_start": "2026-06-27",
@@ -3601,7 +3627,7 @@
       "time": null,
       "url": "https://radiant-bellevue.fr/spectacles/compagnie-dca-philippe-decoufle/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/philippe-decoufle_radiant-bellevue-500x500.jpg",
-      "id": "79f7f6e11934"
+      "id": "f23d1f39188c"
     },
     {
       "venue": "Les Subsistances",
@@ -3628,6 +3654,19 @@
       "url": "https://www.les-subs.com/evenement/minipousses-cirque/",
       "image": null,
       "id": "821aff9cde7e"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Refugee Food Festival : Banquet de clôture",
+      "subtitle": null,
+      "category": "festival",
+      "date_start": "2026-06-28",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/refugee-food-festival-banquet-de-cloture/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/05/refugee-food-heat-509x720.jpeg",
+      "id": "10a4a2fde344"
     },
     {
       "venue": "Le Sucre",
@@ -3658,7 +3697,7 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
-      "title": "COMPAGNIE DCA / PHILIPPE DÉCOUFLÉ",
+      "title": "COMPAGNIE DCA / PHILIPPE DECOUFLÉ",
       "subtitle": null,
       "category": "danse",
       "date_start": "2026-06-28",
@@ -3666,7 +3705,7 @@
       "time": null,
       "url": "https://radiant-bellevue.fr/spectacles/compagnie-dca-philippe-decoufle/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/philippe-decoufle_radiant-bellevue-500x500.jpg",
-      "id": "48da0530b57d"
+      "id": "f3ec60313652"
     },
     {
       "venue": "Le Sucre",
@@ -5049,7 +5088,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Metal Pop FUTURE PALACE + LUNA KILLS",
+      "title": "Metal Pop FUTURE PALACE + AS EVERYTHING UNFOLDS + LUNA KILLS",
       "subtitle": null,
       "category": null,
       "date_start": "2026-11-10",
@@ -5057,7 +5096,7 @@
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/future-palace",
       "image": null,
-      "id": "a21302e31221"
+      "id": "9d91d2ca61ce"
     },
     {
       "venue": "La Rayonne",
@@ -5736,6 +5775,19 @@
       "id": "2b16a70e2448"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "CORY WONG",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-12-07",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/cory-wong-07122026/",
+      "image": null,
+      "id": "a8b706a683ea"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Samuel Bambi - Machine ! - Tournée",
@@ -6360,6 +6412,19 @@
       "id": "141d5b0e1be5"
     },
     {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "VULVES ASSASSINES & POÉSIE ZÉRO + CITRON SUCRÉ",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2027-01-22",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://larayonne.org/evenement/vulves-assassines-poesie-zero-citron-sucre/",
+      "image": null,
+      "id": "aa28fc5264ba"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Putain De Renaud - Pas Un Hommage, Une Révérence !",
@@ -6631,6 +6696,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/mathieu-stepson/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/MATHIEU-STEPSON_radiant-bellevue-500x500.jpg",
       "id": "b1e0d95c2a2c"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "JEANJASS",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-17",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/jeanjass-17022027/",
+      "image": null,
+      "id": "13707b6a464f"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7292,7 +7370,7 @@
       "date_end": null,
       "time": null,
       "url": "https://radiant-bellevue.fr/spectacles/greg-duth/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/greg-duth_radiant-bellevue-3-500x500.jpg",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/greg-duth_radiant-bellevue-4-500x500.jpg",
       "id": "4f9bc7325739"
     },
     {
