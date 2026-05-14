@@ -1,72 +1,7 @@
 {
-  "generated_at": "2026-05-13T13:40:33.779385+00:00",
-  "count": 578,
+  "generated_at": "2026-05-14T12:15:00.174292+00:00",
+  "count": 579,
   "events": [
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Antonio - Le Phénomentaliste",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-05-13",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/antonio-le-phenomentaliste-290976.html",
-      "image": null,
-      "id": "5773ebb374fb"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Soirée Nokia 3310",
-      "subtitle": null,
-      "category": "dj set",
-      "date_start": "2026-05-13",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/soiree-nokia-3310-annees-90-2000-retro-dancefloor/",
-      "image": null,
-      "id": "0b9f701746dc"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "club",
-      "subtitle": "aamourocean x PLEUR (live) · amne · Lisa More · No Plexus (live A/V) · notinbed",
-      "category": "club",
-      "date_start": "2026-05-13",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/night-1/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/NUITS-1-600x600.png",
-      "id": "4dbb6ba9589d"
-    },
-    {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-lyon",
-      "title": "Etienne Dupuis",
-      "subtitle": "Récital grande voix",
-      "category": "concert",
-      "date_start": "2026-05-13",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.opera-lyon.com/fr/programmation/saison-2025-2026/concert/etienne-dupuis",
-      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/b44e5b3f/etienne_dupuis_web.jpg",
-      "id": "79a2d81c1424"
-    },
-    {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "THIS IS TECHNO RAVE : DISSONNE / NOVOPOL & MORE",
-      "subtitle": null,
-      "category": "club",
-      "date_start": "2026-05-13",
-      "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/1aa6d58a-216b-4089-a89e-d96bef0bc685/THIS-IS-TECHNO-Rave-Dissonne-Novopol-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/04/ThisisTechnoRAVE_DISSONNE_13052026_lepetitsalon-1024x576.jpg",
-      "id": "717cc93f0e5c"
-    },
     {
       "venue": "HEAT",
       "venue_slug": "heat",
@@ -148,15 +83,15 @@
     {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
-      "title": "CLUB SONIC",
+      "title": "eat-girls (en dj set) // Club Sonic",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-05-15",
       "date_end": null,
       "time": "22:00",
-      "url": "https://sonic-lyon.fr/evenement/club-sonic-3/",
+      "url": "https://sonic-lyon.fr/evenement/eat-girls-en-dj-set-club-sonic/",
       "image": null,
-      "id": "41d393ec4495"
+      "id": "5906cacf5bdc"
     },
     {
       "venue": "Le Petit Salon",
@@ -235,6 +170,19 @@
       "url": "https://www.les-subs.com/evenement/concert-special-nuits-sonores/",
       "image": null,
       "id": "3909ce6d133c"
+    },
+    {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "CLUB SONIC",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-05-16",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://sonic-lyon.fr/evenement/club-sonic-3/",
+      "image": null,
+      "id": "d8b276912685"
     },
     {
       "venue": "Le Petit Salon",
@@ -1773,7 +1721,7 @@
     {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
-      "title": "La Sécurité",
+      "title": "La Sécurité + Under45",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-06-02",
@@ -1781,7 +1729,7 @@
       "time": "20:00",
       "url": "https://sonic-lyon.fr/evenement/la-securite/",
       "image": null,
-      "id": "0f22d32d5aee"
+      "id": "72fe1ebdaa3f"
     },
     {
       "venue": "Bourse du Travail",
@@ -1903,7 +1851,7 @@
     {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
-      "title": "Snuggle",
+      "title": "Snuggle + Elisa Flores",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-06-04",
@@ -1911,7 +1859,7 @@
       "time": "20:00",
       "url": "https://sonic-lyon.fr/evenement/snuggle/",
       "image": null,
-      "id": "b4d4ae334418"
+      "id": "7128844b7a20"
     },
     {
       "venue": "Les Subsistances",
@@ -2967,6 +2915,19 @@
       "id": "17a557a281f1"
     },
     {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "James Leg",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-17",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://sonic-lyon.fr/evenement/james-leg/",
+      "image": null,
+      "id": "f1b2d9409484"
+    },
+    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Bingo by La Ménagerie",
@@ -3303,6 +3264,19 @@
       "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-le-sacre-du-printemps-roger-bernat/",
       "image": null,
       "id": "5fc9a9b0f45e"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS TECHNO RAVE : COIL / CHECHE & MORE",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-06-20",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://yp.events/afae3c7a-0148-4311-81a2-61f50da505ea/THIS-IS-TECHNO-Rave-COIL-Cheche-more?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisisTechnoRave_20062026_lepetitsalon-1024x576.jpg",
+      "id": "a2eb507dd4ff"
     },
     {
       "venue": "HEAT",
@@ -4213,6 +4187,19 @@
       "url": "https://larayonne.org/evenement/didier-super-metal/",
       "image": null,
       "id": "dd9cb6652884"
+    },
+    {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "Pisse + Güner Künier",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-08",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://sonic-lyon.fr/evenement/pisse-guner-kunier/",
+      "image": null,
+      "id": "c5b56ac2f4b8"
     },
     {
       "venue": "Bourse du Travail",
@@ -6347,6 +6334,19 @@
       "id": "d0c6f1a9f536"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "TÉTÉ",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-20",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/tete-20012027/",
+      "image": null,
+      "id": "d3078f1825de"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Orden Ogan",
@@ -6427,15 +6427,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Putain De Renaud - Pas Un Hommage, Une Révérence !",
+      "title": "Noëlle Perna - Mado Fait Son Cabaret",
       "subtitle": null,
-      "category": "concert",
+      "category": "humour",
       "date_start": "2027-01-24",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/putain-de-renaud-pas-un-hommage-une-reverence-321138.html",
+      "url": "https://www.bourse-du-travail.com/noelle-perna-mado-fait-son-cabaret-321138.html",
       "image": null,
-      "id": "b1360a0e60b8"
+      "id": "003f6d0055ae"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -6843,15 +6843,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Manon Bril Dans 300 000 Ans",
+      "title": "Manon Bril - 300 000 Ans - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-03-03",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/manon-bril-dans-300-000-ans-379268.html",
+      "url": "https://www.bourse-du-travail.com/manon-bril-300-000-ans-tournee-379268.html",
       "image": null,
-      "id": "425119f738db"
+      "id": "f40e2e3c5349"
     },
     {
       "venue": "Bourse du Travail",
@@ -7346,6 +7346,19 @@
       "url": "https://www.bourse-du-travail.com/les-gros-patinent-bien-tournee-378482.html",
       "image": null,
       "id": "ac5e3d027f84"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Florence Mendez - Délicate - Tournée",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-05-21",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/florence-mendez-delicate-tournee-381205.html",
+      "image": null,
+      "id": "b8dcbcc0d50e"
     },
     {
       "venue": "Comédie Odéon",
