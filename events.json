@@ -1,98 +1,7 @@
 {
-  "generated_at": "2026-05-16T10:45:40.753605+00:00",
-  "count": 574,
+  "generated_at": "2026-05-17T10:54:48.686651+00:00",
+  "count": 570,
   "events": [
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Houria Les Yeux Verts Dans Enfin Moi",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-05-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/houria-les-yeux-verts-dans-enfin-moi-379265.html",
-      "image": null,
-      "id": "b421f8526e8d"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Nuits sonores open air : 10 years of Seoul community Radio",
-      "subtitle": null,
-      "category": "open-air",
-      "date_start": "2026-05-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/nuits-sonores-open-air-2026/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/03/Nuits-sonores-open-air-HEAT-SCR-1-576x720.png",
-      "id": "8a390c38237d"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "club",
-      "subtitle": "Benedikt Frey · Jokkoo Collective presents Organic Intelligence (live av) · Noémi Büchi presents Exuvie (live av) · NVST · Powell (live)",
-      "category": "club",
-      "date_start": "2026-05-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/nuits-sonores-nuit-4-2/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/NUITS4-1-600x600.png",
-      "id": "bfb320421f18"
-    },
-    {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Épuisé sur ce point de vente Metal PALEDUSK + KNOSIS + GREYHAVEN + HEADWRECK",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-16",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://marchegare.fr/agenda/paledusk",
-      "image": null,
-      "id": "5868068c2fd3"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Concert Special Nuits Sonores",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-16",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.les-subs.com/evenement/concert-special-nuits-sonores/",
-      "image": null,
-      "id": "3909ce6d133c"
-    },
-    {
-      "venue": "Le Sonic",
-      "venue_slug": "sonic",
-      "title": "CLUB SONIC",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-05-16",
-      "date_end": null,
-      "time": "22:00",
-      "url": "https://sonic-lyon.fr/evenement/club-sonic-3/",
-      "image": null,
-      "id": "d8b276912685"
-    },
-    {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "VITESSE : GIØ / PIX / KIDÖ & MORE",
-      "subtitle": null,
-      "category": "club",
-      "date_start": "2026-05-16",
-      "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/b5da4543-0a74-4ed3-ab63-80a7722b4d51/VITESSE-GIO-PIX-KID-Oe-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/04/Vitesse_GIO_16052026_lepetitsalon-1024x576.jpg",
-      "id": "e0f9b974dc9c"
-    },
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
@@ -482,6 +391,19 @@
       "url": "https://www.les-subs.com/evenement/litterature-live-si-la-langue-fourche-no-anger-elisabeth-lebovici/",
       "image": null,
       "id": "5ee50d09dc99"
+    },
+    {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "AJNIGHT #4",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-05-21",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://sonic-lyon.fr/evenement/ajnight-4/",
+      "image": null,
+      "id": "3cff75003b10"
     },
     {
       "venue": "Marché Gare",
@@ -1418,6 +1340,19 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/lorie",
       "image": null,
       "id": "e8df837db659"
+    },
+    {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "SUAVE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://sonic-lyon.fr/evenement/suave-2/",
+      "image": null,
+      "id": "45b5e799580e"
     },
     {
       "venue": "Le Petit Salon",
@@ -5684,6 +5619,19 @@
       "id": "dab5c131060d"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Jazz daoud",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-12-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/daoud",
+      "image": null,
+      "id": "1e559dd931ce"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Gauvain Sers - Tournée",
@@ -7244,17 +7192,17 @@
       "id": "177a55d6b8e4"
     },
     {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "CLTX / NOISE MAFIA / RADAR / URVA ESTREVA & MORE",
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Nuits sonores open air : 10 years of Seoul community Radio",
       "subtitle": null,
-      "category": "club",
-      "date_start": "2027-05-15",
+      "category": "open-air",
+      "date_start": "2027-05-16",
       "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/c1521a1d-5010-4597-b2c7-b50248e6fdf5/CLTX-Noise-Mafia-RADAR-Urva-Estreva-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/03/2359_CLTX_NOISEMAFIA_-1024x536.jpg",
-      "id": "aed5fce5a727"
+      "time": null,
+      "url": "https://h-eat.eu/events/nuits-sonores-open-air-2026/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/03/Nuits-sonores-open-air-HEAT-SCR-1-576x720.png",
+      "id": "184359b74933"
     },
     {
       "venue": "La Halle Tony Garnier",
