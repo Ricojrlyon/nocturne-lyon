@@ -1,46 +1,7 @@
 {
-  "generated_at": "2026-05-17T10:54:48.686651+00:00",
-  "count": 570,
+  "generated_at": "2026-05-18T16:45:21.789751+00:00",
+  "count": 594,
   "events": [
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Anne Tuffigo - Les Signes De L'au-delà, Tournée",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-05-17",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/anne-tuffigo-les-signes-de-l-au-dela-tournee-244580.html",
-      "image": null,
-      "id": "176cf10aad8b"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Mini sonore 2026",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-17",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/mini-sonore-2026/",
-      "image": "https://h-eat.eu/wp-content/uploads/2024/04/mini-sonore-2026-576x720.jpg",
-      "id": "af0bca515be1"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Yoga Sonore – Unlock Studio",
-      "subtitle": null,
-      "category": "bien-être",
-      "date_start": "2026-05-17",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/yoga-sonore-lyon-bain-sonore-yoga-nuits-sonores/",
-      "image": null,
-      "id": "6f22a3bb5e97"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -90,7 +51,7 @@
       "date_end": null,
       "time": null,
       "url": "https://www.tnp-villeurbanne.com/spectacle/saison-26-27/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/lancement_de_saison2-465x301.v1777301309.jpg",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/05/lancement_de_saison-465x301.v1778504704.jpg",
       "id": "c13efc74beac"
     },
     {
@@ -187,7 +148,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Formation Discriminations raciales dans la musique : comprendre et agir Collectif Les Canutes",
+      "title": "Annulé Formation Discriminations raciales dans la musique : comprendre et agir Collectif Les Canutes",
       "subtitle": null,
       "category": null,
       "date_start": "2026-05-19",
@@ -195,7 +156,7 @@
       "time": "10:00",
       "url": "https://marchegare.fr/agenda/discriminations-raciales-dans-la-musique-comprendre-et-agir",
       "image": null,
-      "id": "2f3ed1f65c43"
+      "id": "a4db7eade8da"
     },
     {
       "venue": "Le Sonic",
@@ -226,19 +187,6 @@
     {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "RAWRUN PARTY x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/rawrun-party-x-heat/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/AFFICHE-HEAT-RAWRUN-576x720.png",
-      "id": "49724240c865"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
       "title": "Chess Bar x HEAT",
       "subtitle": null,
       "category": null,
@@ -248,6 +196,19 @@
       "url": "https://h-eat.eu/events/chess-bar-x-heat-8/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
       "id": "e2fd6e0433e6"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "RAWRUN PARTY x HEAT",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-20",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/rawrun-party-x-heat/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/05/AFFICHE-HEAT-RAWRUN-576x720.png",
+      "id": "49724240c865"
     },
     {
       "venue": "La Commune",
@@ -876,19 +837,6 @@
     {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "Chess Bar x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/chess-bar-x-heat-9/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
-      "id": "2a15ff905f9d"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
       "title": "Open platine : le Labo est à vous !",
       "subtitle": null,
       "category": null,
@@ -898,6 +846,19 @@
       "url": "https://h-eat.eu/events/open-platine-le-labo-est-a-vous/",
       "image": "https://h-eat.eu/wp-content/uploads/2024/07/JulietteValero_42-480x720.jpg",
       "id": "d32003b5a6fe"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Chess Bar x HEAT",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-27",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/chess-bar-x-heat-9/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
+      "id": "2a15ff905f9d"
     },
     {
       "venue": "La Commune",
@@ -1615,6 +1576,19 @@
       "id": "23b2d29b4096"
     },
     {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "Everglow",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-03",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://larayonne.org/evenement/everglow/",
+      "image": null,
+      "id": "6cb3297804cc"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "LA LEGENDE DE MONTE-CRISTO, LE MUSICAL",
@@ -2319,7 +2293,7 @@
     {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
-      "title": "Otomo Yoshihide (solo)",
+      "title": "Otomo Yoshihide (solo) + Table",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-06-11",
@@ -2327,7 +2301,7 @@
       "time": "20:00",
       "url": "https://sonic-lyon.fr/evenement/otomo/",
       "image": null,
-      "id": "e2796c0bac46"
+      "id": "cabc2faf2697"
     },
     {
       "venue": "Les Subsistances",
@@ -2484,6 +2458,19 @@
       "url": "https://www.tng-lyon.fr/evenement/fete-de-presentation-de-saison/",
       "image": null,
       "id": "1c1b5541c28c"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "[Un été à La Rayonne] L’Autre Fête",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-13",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://larayonne.org/evenement/un-ete-a-la-rayonne-lautre-fete/",
+      "image": null,
+      "id": "7b2a2802177f"
     },
     {
       "venue": "Les Subsistances",
@@ -3255,6 +3242,19 @@
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
+      "title": "Atelier Phonograffiti Lyon | Custom vinyles & street art",
+      "subtitle": null,
+      "category": "atelier",
+      "date_start": "2026-06-22",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/pimp-my-vinyl-a-la-commune/",
+      "image": null,
+      "id": "7dcc23225e29"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
       "title": "Concert live et Blind Test",
       "subtitle": null,
       "category": "concert",
@@ -3630,6 +3630,19 @@
       "id": "2af3a48e4793"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "DOPE SAINT JUDE + YANKA + SLMVX",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-07-10",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/dope-saint-jude-yanka-slmvx-10072026/",
+      "image": null,
+      "id": "502e62cb1a99"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Nuits De Fourviere 2026 Le Bal Shangwe Wanjiru Kamuyu",
@@ -3680,6 +3693,19 @@
       "url": "https://sonic-lyon.fr/evenement/tvod/",
       "image": null,
       "id": "370c09e168d2"
+    },
+    {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Mémoire de fille",
+      "subtitle": "Annie Ernaux - Veronika Bachfischer - Sarah Kohm - Élisa Leroy - Suzanne de Baecque",
+      "category": "théâtre",
+      "date_start": "2026-09-10",
+      "date_end": "2026-09-20",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/memoire-de-fille/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/3_Memoire_de_fillecMarie_Clauzade-465x301.v1776240148.jpg",
+      "id": "ea99b56e5e5f"
     },
     {
       "venue": "Bourse du Travail",
@@ -3836,6 +3862,19 @@
       "url": "https://www.bourse-du-travail.com/mesdames-en-vraies-on-monte-sur-scene-venez-nous-voir-tournee-366978.html",
       "image": null,
       "id": "b5905945c8e7"
+    },
+    {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Seul dans Berlin — Une petite affaire",
+      "subtitle": "Seul dans Berlin",
+      "category": "théâtre",
+      "date_start": "2026-09-29",
+      "date_end": "2026-10-17",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/seul-dans-berlin/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/2_Seul_dans_Berlin_cdomaine_public-465x301.v1777381976.jpg",
+      "id": "4c979ed16ebd"
     },
     {
       "venue": "Bourse du Travail",
@@ -4070,6 +4109,19 @@
       "url": "https://www.transbordeur.fr/evenement/guy2bezbar-09102026/",
       "image": null,
       "id": "242003a4006d"
+    },
+    {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Rapport pour une académie",
+      "subtitle": "Franz Kafka - Georges Lavaudant - Manuel Le Lièvre",
+      "category": "théâtre",
+      "date_start": "2026-10-09",
+      "date_end": "2026-10-17",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/rapport-pour-une-acadmie/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/3_Rapport_academiecMarie_Clauzade-465x301.v1776265332.jpg",
+      "id": "6d7ed695db63"
     },
     {
       "venue": "La Rayonne",
@@ -4436,6 +4488,19 @@
       "id": "3a17da648b15"
     },
     {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "La Troupe éphémère #précipité — Message personnel",
+      "subtitle": "Jean Bellorini",
+      "category": "théâtre",
+      "date_start": "2026-10-24",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/la-troupe-ephemere-precipite/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2024/05/250504_RdL_0321-465x310.v1746542257.jpg",
+      "id": "7ccb470d3fdb"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "EDGAR-YVES Jr.",
@@ -4447,6 +4512,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/edgar-yves-jr/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/edgar-yves_radiant-bellevue-500x500.jpg",
       "id": "918c56b2c344"
+    },
+    {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Piano solo #précipité — Pour te comprendre",
+      "subtitle": "Piano solo #précipité",
+      "category": "théâtre",
+      "date_start": "2026-10-25",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/piano-solo-precipite/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/05/1_solo_piano_pour_te_comprendre-465x301.v1777900928.jpg",
+      "id": "110209ae1d4b"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4644,6 +4722,19 @@
       "id": "36a0ee1d140f"
     },
     {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Amadoca",
+      "subtitle": "Sofia Andrukhovych - Jules Audry - Yuriy Zavalnyouk",
+      "category": "théâtre",
+      "date_start": "2026-11-04",
+      "date_end": "2026-11-06",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/amadoca-2026/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2025/04/Amadoca_Christophe-Raynaud-de-Lage4-465x301.v1760445864.jpg",
+      "id": "5a85b2525bb9"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Metal Post-Rock LONG DISTANCE CALLING",
@@ -4681,6 +4772,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/alan-stivell/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/02/alan-stivell_radiant-bellevue-500x500.jpg",
       "id": "647044e6d7b7"
+    },
+    {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Barber Shop Chronicles",
+      "subtitle": "Inua Ellams - Junior Mthombeni - Michael De Cock",
+      "category": "théâtre",
+      "date_start": "2026-11-05",
+      "date_end": "2026-11-11",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/barber-shop-chronicles/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Barber_ShopcStef_Stessel-465x301.v1776343416.jpg",
+      "id": "049a95537bd4"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -4852,6 +4956,19 @@
       "id": "be8fff629ea8"
     },
     {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "Little Big",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-09",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://larayonne.org/evenement/little-big/",
+      "image": null,
+      "id": "7825cc02173f"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "David Castello-lopes - Délicieux (tournée)",
@@ -5021,6 +5138,19 @@
       "id": "76488555ce3f"
     },
     {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Martin Eden",
+      "subtitle": "Jack London - Francis Kerline - Mélodie-Amy Wallet",
+      "category": "théâtre",
+      "date_start": "2026-11-14",
+      "date_end": "2026-11-22",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/martin-eden-2026/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2025/04/Martin-Eden_RdL1-465x301.v1764256912.jpg",
+      "id": "f5a1edb81b1f"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Nono La Grinta",
@@ -5058,6 +5188,19 @@
       "url": "https://www.transbordeur.fr/evenement/beast-in-black-frozen-crown-sonata-arctica-15112026/",
       "image": null,
       "id": "264e5916c4da"
+    },
+    {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Oh les beaux jours",
+      "subtitle": "Samuel Beckett - Alain Françon",
+      "category": "théâtre",
+      "date_start": "2026-11-17",
+      "date_end": "2026-11-25",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/oh-les-beaux-jours/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/2_Oh_les_beaux_jourscJean_Louis_Fernandez-465x301.v1776345806.jpg",
+      "id": "dbdf930d23c8"
     },
     {
       "venue": "Bourse du Travail",
@@ -5437,6 +5580,19 @@
       "id": "3353a8440cc9"
     },
     {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "L’hors-présence ou Chimères du pays de Morsan",
+      "subtitle": "Tiphaine Raffier",
+      "category": "théâtre",
+      "date_start": "2026-12-01",
+      "date_end": "2026-12-05",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/lhors-presence-ou-chimeres-du-pays-de-morsan/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Lhors_presencecDroits-reserves-_Photographyartwork_Ian-Strange_Dalison-1_2022-465x301.v1776346597.jpg",
+      "id": "022b656dcd80"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Marine Leonardi - Mauvaise Graine - Tournée",
@@ -5474,6 +5630,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/la-grande-sophie-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/la-grande-sophie_radiant-bellevue-500x500.jpg",
       "id": "b5f482f818be"
+    },
+    {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Les corps incorruptibles",
+      "subtitle": "Aurélia Lüscher",
+      "category": "théâtre",
+      "date_start": "2026-12-02",
+      "date_end": "2026-12-12",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/les-corps-incorruptibles/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Les_corps_incorruptiblescJean_Louis_Fernandez-465x301.v1776347741.jpg",
+      "id": "f835783f88ad"
     },
     {
       "venue": "Marché Gare",
@@ -6022,6 +6191,19 @@
       "id": "86ca449f0ee3"
     },
     {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Zone d’Attente",
+      "subtitle": "Macha Makeïeff",
+      "category": "théâtre",
+      "date_start": "2027-01-14",
+      "date_end": "2027-01-30",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/zone-dattente/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Zone_dattentecMacha-Makeieff-465x301.v1776349243.jpg",
+      "id": "0f6750fb0d63"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Festival Drôlement Bien",
@@ -6230,6 +6412,19 @@
       "id": "a61f63ef7b3d"
     },
     {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Mobile Homes",
+      "subtitle": "Tristan Dubois",
+      "category": "théâtre",
+      "date_start": "2027-01-21",
+      "date_end": "2027-01-30",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/mobile-homes/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Mobile_homescTristan_Dubois-465x301.v1776695063.jpg",
+      "id": "dc0d1f153d32"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "RESOLVE + SILENT PLANET + SPLEEN",
@@ -6271,15 +6466,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Noëlle Perna - Mado Fait Son Cabaret",
+      "title": "Putain De Renaud - Pas Un Hommage, Une Révérence !",
       "subtitle": null,
-      "category": "humour",
+      "category": "concert",
       "date_start": "2027-01-24",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/noelle-perna-mado-fait-son-cabaret-321138.html",
+      "url": "https://www.bourse-du-travail.com/putain-de-renaud-pas-un-hommage-une-reverence-321138.html",
       "image": null,
-      "id": "003f6d0055ae"
+      "id": "b1360a0e60b8"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -6332,6 +6527,19 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-3",
       "image": null,
       "id": "dc7d10130199"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "SKIP THE USE",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2027-01-30",
+      "date_end": null,
+      "time": null,
+      "url": "https://radiant-bellevue.fr/spectacles/skip-the-use-2/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/skip-the-use_radiant-bellevue-500x500.jpg",
+      "id": "1a3851ab5122"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -6449,6 +6657,19 @@
       "url": "https://www.transbordeur.fr/evenement/revnoir-ice-sealed-eyes-04022027/",
       "image": null,
       "id": "7072edb1d0d2"
+    },
+    {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Tout est calme dans les hauteurs",
+      "subtitle": "Thomas Bernhard - Claude Porcell - Jean-François Sivadier",
+      "category": "théâtre",
+      "date_start": "2027-02-05",
+      "date_end": "2027-02-14",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/tout-est-calme-dans-les-hauteurs/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/5_Tout_est_calmecJean-Louis_Fernandez-465x301.v1777300007.jpg",
+      "id": "bb7edb4437e4"
     },
     {
       "venue": "Bourse du Travail",
@@ -6698,6 +6919,19 @@
       "id": "f40e2e3c5349"
     },
     {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "7 minutes",
+      "subtitle": "Stefano Massini - Pietro Pizzuti - Maëlle Poésy",
+      "category": "théâtre",
+      "date_start": "2027-03-03",
+      "date_end": "2027-03-13",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/7-minutes/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_7minutescFelipe_Dupouy-465x301.v1776848314.jpg",
+      "id": "c6b43eb7bba3"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Pierre Thevenoux - Life Coach - Tournée",
@@ -6709,6 +6943,19 @@
       "url": "https://www.bourse-du-travail.com/pierre-thevenoux-life-coach-tournee-379019.html",
       "image": null,
       "id": "0c75874a4d6e"
+    },
+    {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Une soirée avec Fatima Daas",
+      "subtitle": "20h30",
+      "category": "théâtre",
+      "date_start": "2027-03-04",
+      "date_end": "2027-03-05",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/une-soire-avec-fatima-daas/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_EcransMixtescEcrans_Mixtes-465x301.v1776849130.jpg",
+      "id": "2eab47e8c6c7"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -6761,6 +7008,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/le-cas-pucine/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/lecaspucine-radiant_bellevue-500x500.jpg",
       "id": "e79a51623332"
+    },
+    {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Ma maison est noire",
+      "subtitle": "Forough Farrokhzad - Mina Kavani - Erik Truffaz - Murcof",
+      "category": "théâtre",
+      "date_start": "2027-03-10",
+      "date_end": "2027-03-20",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/ma-maison-est-noire/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/2_Ma_Maison_est_noirecChristophe_Raynaud_de_Lage-465x301.v1776850214.jpg",
+      "id": "7b39f82086df"
     },
     {
       "venue": "Bourse du Travail",
@@ -6945,6 +7205,19 @@
       "id": "8f7fda5d4582"
     },
     {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Le Voyage d’hiver",
+      "subtitle": "Franz Schubert - Wilhelm Müller - Deborah Warner",
+      "category": "théâtre",
+      "date_start": "2027-03-23",
+      "date_end": "2027-03-27",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/le-voyage-dhiver/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Le_voyage_dhivercStephane_Lagoutte-465x301.v1776850981.jpg",
+      "id": "592ec920203f"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Edouard Deloignon Grandira Plus Tard - Tournée",
@@ -6995,6 +7268,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/laurent-baffie-3/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/laurent-baffie_radiant-bellevue-500x500.jpg",
       "id": "c3521617ac6b"
+    },
+    {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "L’Épatante Épopée",
+      "subtitle": "Jeanne Bleuse - Élise Caron - Sylvain Lemêtre",
+      "category": "théâtre",
+      "date_start": "2027-04-01",
+      "date_end": "2027-04-08",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/l-epatante-epopee/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_LEpatante_EpopeecChristophe_Raynaud_de_Lage-465x301.v1776851937.jpg",
+      "id": "01371408dd2b"
     },
     {
       "venue": "Comédie Odéon",
@@ -7153,19 +7439,6 @@
       "id": "fb360cb6cb3c"
     },
     {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Nuits sonores Open Air : Glowball festival x Dure Vie",
-      "subtitle": null,
-      "category": "festival",
-      "date_start": "2027-05-14",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/nuits-sonores-open-air-2026-3/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/03/Nuits-sonores-open-air-HEAT-GLOWBALL-576x720.png",
-      "id": "9ead4784abef"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Tom Baldetti - Tome 1 - Tournée",
@@ -7177,32 +7450,6 @@
       "url": "https://www.bourse-du-travail.com/tom-baldetti-tome-1-tournee-370295.html",
       "image": null,
       "id": "3fff25797271"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Nuits sonores open air 2026",
-      "subtitle": null,
-      "category": "open-air",
-      "date_start": "2027-05-15",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/nuits-sonores-open-air-2026-2/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/03/Nuits-sonores-open-air-HEAT-DAVID-BOLA-GRUNT-576x720.png",
-      "id": "177a55d6b8e4"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Nuits sonores open air : 10 years of Seoul community Radio",
-      "subtitle": null,
-      "category": "open-air",
-      "date_start": "2027-05-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/nuits-sonores-open-air-2026/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/03/Nuits-sonores-open-air-HEAT-SCR-1-576x720.png",
-      "id": "184359b74933"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -7231,6 +7478,19 @@
       "id": "ac5e3d027f84"
     },
     {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Deux cavaliers de l’orage",
+      "subtitle": "Jean Giono - Hugo Roux",
+      "category": "théâtre",
+      "date_start": "2027-05-19",
+      "date_end": "2027-05-29",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/deux-cavaliers-de-lorage/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/2_2_cavaliers_de_loragecRodolphe-Gonzales_Yann_Rabanier-Modds-465x301.v1778159893.jpg",
+      "id": "cca391e2f669"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Florence Mendez - Délicate - Tournée",
@@ -7257,6 +7517,19 @@
       "id": "9931f22c8ef8"
     },
     {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Le Livre de K",
+      "subtitle": "Simon Falguières",
+      "category": "théâtre",
+      "date_start": "2027-05-21",
+      "date_end": "2027-05-29",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/le-livre-de-k/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/3_Le_livre_de_KcChristophe_Raynaud_de_Lage-465x301.v1776869075.jpg",
+      "id": "def48f4d2191"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "GREG DUTH",
@@ -7281,6 +7554,19 @@
       "url": "https://www.bourse-du-travail.com/edgar-yves-jr-vigilance-tournee-359465.html",
       "image": null,
       "id": "4e523b4ab099"
+    },
+    {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Le Malade imaginaire ou le silence de Molière",
+      "subtitle": "Molière - Giovanni Macchia - Arthur Nauzyciel",
+      "category": "théâtre",
+      "date_start": "2027-06-05",
+      "date_end": "2027-06-12",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/le-malade-imaginaire-ou-le-silence-de-moliere/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Le_malade_imaginairecPhilippe_Chancel-465x301.v1776869691.jpg",
+      "id": "e7c08999702d"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7335,6 +7621,19 @@
       "id": "0c3f99395062"
     },
     {
+      "venue": "TNP",
+      "venue_slug": "tnp",
+      "title": "Prix Incandescences 2027",
+      "subtitle": "Talents de la scène théâtrale régionale",
+      "category": "théâtre",
+      "date_start": "2027-06-15",
+      "date_end": "2027-06-17",
+      "time": null,
+      "url": "https://www.tnp-villeurbanne.com/spectacle/prix-incandescences-2027/",
+      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/Prix_Incandescences_2027-465x301.v1776873340.png",
+      "id": "60c470cc979e"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Sofia Belabbes - Ketchup Mayo Nouvelle Version - Tournée",
@@ -7359,6 +7658,19 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/generation-celine-2",
       "image": null,
       "id": "397f993e2acf"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "LOUIS BERTIGNAC",
+      "subtitle": null,
+      "category": "chanson",
+      "date_start": "2027-11-16",
+      "date_end": null,
+      "time": null,
+      "url": "https://radiant-bellevue.fr/spectacles/louis-bertignac/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/louis-bertignac_radiant-bellevue-500x500.jpg",
+      "id": "2b3f11578826"
     },
     {
       "venue": "La Halle Tony Garnier",
