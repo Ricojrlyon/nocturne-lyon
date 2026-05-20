@@ -1,111 +1,7 @@
 {
-  "generated_at": "2026-05-19T16:56:42.337140+00:00",
-  "count": 599,
+  "generated_at": "2026-05-20T17:45:15.796047+00:00",
+  "count": 602,
   "events": [
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Orchestre De Chambre De Lyon - Musiques De Films",
-      "subtitle": null,
-      "category": "musique classique",
-      "date_start": "2026-05-19",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/orchestre-de-chambre-de-lyon-musiques-de-films-380241.html",
-      "image": null,
-      "id": "e2ad4d868b76"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Quizz Drag",
-      "subtitle": null,
-      "category": "drag",
-      "date_start": "2026-05-19",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/quizz-drag/",
-      "image": null,
-      "id": "6b0eb562d794"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "Les intempéries de Sami",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-05-19",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/les-intemperies-de-sami/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/08/les-intemperies-de-sam_radiant-bellevue-500x500.jpg",
-      "id": "b794d49bfae4"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "PV",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-05-19",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/pv/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/06/PV-500x500.jpg",
-      "id": "dcd245fd9d2b"
-    },
-    {
-      "venue": "Théâtre de la Croix-Rousse",
-      "venue_slug": "croix-rousse",
-      "title": "TIMBER",
-      "subtitle": "Compagnie Still Life",
-      "category": "théâtre",
-      "date_start": "2026-05-19",
-      "date_end": "2026-05-23",
-      "time": null,
-      "url": "https://www.croix-rousse.com/au-programme/timber/",
-      "image": "https://www.croix-rousse.com/wp-content/uploads/2025/05/31.Timber_1080x1080-300x300-c-default.png",
-      "id": "02d86927523e"
-    },
-    {
-      "venue": "Théâtre des Célestins",
-      "venue_slug": "celestins",
-      "title": "Timber",
-      "subtitle": "Sophie Linsmaux et Aurelio Mergola",
-      "category": "grande salle",
-      "date_start": "2026-05-19",
-      "date_end": "2026-05-23",
-      "time": null,
-      "url": "https://www.theatredescelestins.com/fr/programmation/2025-2026/grande-salle/timber",
-      "image": "https://www.theatredescelestins.com/assets/q75-w330-h434-c330x434/e195bafa/timber_alice_piemme2.jpg.webp",
-      "id": "e249d83d5ba9"
-    },
-    {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Annulé Formation Discriminations raciales dans la musique : comprendre et agir Collectif Les Canutes",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-19",
-      "date_end": null,
-      "time": "10:00",
-      "url": "https://marchegare.fr/agenda/discriminations-raciales-dans-la-musique-comprendre-et-agir",
-      "image": null,
-      "id": "a4db7eade8da"
-    },
-    {
-      "venue": "Le Sonic",
-      "venue_slug": "sonic",
-      "title": "Lorelle Meets the Obsolete + Bergiès",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-05-19",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://sonic-lyon.fr/evenement/lorelle-meets-the-obsolete/",
-      "image": null,
-      "id": "89cb3b1d90f2"
-    },
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
@@ -432,6 +328,19 @@
       "id": "9fa5b527bdc3"
     },
     {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "DARK 80s PARTY",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-05-22",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://sonic-lyon.fr/evenement/dark-80s-party-10/",
+      "image": null,
+      "id": "421971393f02"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "ALIGNMENT / JOWF0 / YASMIN GARDEZI & MORE",
@@ -746,7 +655,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Déjeuner-Concert YAO Déjeuner-Concert",
+      "title": "Gratuit Déjeuner-Concert YAO Déjeuner-Concert",
       "subtitle": null,
       "category": null,
       "date_start": "2026-05-26",
@@ -754,7 +663,7 @@
       "time": "12:30",
       "url": "https://marchegare.fr/agenda/yao",
       "image": null,
-      "id": "99551c092747"
+      "id": "b7eb16960a85"
     },
     {
       "venue": "Les Subsistances",
@@ -820,6 +729,19 @@
       "url": "https://lacommune.co/event/grand-defi/",
       "image": null,
       "id": "3e040b96808b"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "TURBO TERRASSE : Passage de Disques",
+      "subtitle": "Avec Pablo Boudet & Anthony Dupuy",
+      "category": "musique",
+      "date_start": "2026-05-27",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/091924_Sarab_web_paul-650x433.jpg",
+      "id": "894712373f5e"
     },
     {
       "venue": "Le Transbordeur",
@@ -928,15 +850,15 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "LES 20 ANS ! Animation THE ULTIMATE SURFING PARTY Eddy Cover et ses Silhouettes",
+      "title": "LES 20 ANS ! Animation THE ULTIMATE KARAOKE SURF PARTY Eddy Djé & ses Silhouettes + Harry Cover",
       "subtitle": null,
       "category": null,
       "date_start": "2026-05-27",
       "date_end": null,
       "time": "20:00",
-      "url": "https://marchegare.fr/agenda/karaoke-live-les-20-ans",
+      "url": "https://marchegare.fr/agenda/karaoke-surf-party-les-20-ans",
       "image": null,
-      "id": "67cabc685e5d"
+      "id": "9463d695659f"
     },
     {
       "venue": "HEAT",
@@ -963,6 +885,19 @@
       "url": "https://lacommune.co/event/les-suntrax-metisskyla-dj-set-house-lyon/",
       "image": null,
       "id": "fea8f2c7cc9b"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "TURBO TERRASSE : Passage de Disques",
+      "subtitle": "Avec Jean-Claude Sarrasin",
+      "category": "musique",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-2/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/052124_Accident_du_travail_Lukas_De_Clerk_web_paul-650x433.jpg",
+      "id": "77207b9ef9a6"
     },
     {
       "venue": "Le Périscope",
@@ -1357,7 +1292,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "LES 20 ANS ! FÊTE DES VOISIN·ES Concert et buffet partagé",
+      "title": "Gratuit LES 20 ANS ! FÊTE DES VOISIN·ES Concert et buffet partagé",
       "subtitle": null,
       "category": null,
       "date_start": "2026-05-31",
@@ -1365,7 +1300,7 @@
       "time": "18:00",
       "url": "https://marchegare.fr/agenda/fete-des-voisines-les-20-ans",
       "image": null,
-      "id": "b3ea53a754df"
+      "id": "8172f8987c22"
     },
     {
       "venue": "Bourse du Travail",
@@ -1416,7 +1351,7 @@
       "date_end": null,
       "time": null,
       "url": "https://le-sucre.eu/events/magic-mardi-82/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/Plan-de-travail-7-480x600.png",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/04/magic_mardi-600x600.png",
       "id": "0a56ce915a75"
     },
     {
@@ -1435,7 +1370,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "mardi Mar. 02. juin 06 Jeune Public Tu t’es regardé·e ? - Spectacle CFMI Spectacle musical à partir de 10 ans",
+      "title": "mardi Mar. 02. juin 06 Gratuit Jeune Public Tu t’es regardé·e ? - Spectacle CFMI Spectacle musical à partir de 10 ans",
       "subtitle": null,
       "category": null,
       "date_start": "2026-06-02",
@@ -1443,7 +1378,7 @@
       "time": null,
       "url": "https://marchegare.fr/agenda/tu-tes-regardee-spectacle-cfmi",
       "image": null,
-      "id": "3073c8807581"
+      "id": "8ed24df826a0"
     },
     {
       "venue": "Théâtre des Célestins",
@@ -1747,6 +1682,19 @@
     {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
+      "title": "Concert",
+      "subtitle": "Toshiki Soejima",
+      "category": "concert",
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": null,
+      "url": "https://le-sucre.eu/events/toshiki-soejima-live/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/IMG_3036-600x399.jpg",
+      "id": "193c3e48ffcf"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
       "title": "club x Principe 15 ans",
       "subtitle": "DJ Nigga Fox · DJ Lycox · XEXA (live)",
       "category": "club",
@@ -1756,6 +1704,19 @@
       "url": "https://le-sucre.eu/events/club-x-principe-15-ans/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/04/IG-PORTARTIOT-450x600.jpg",
       "id": "5b81c7eeddc5"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "CARLALA + IZEM + DAN’ILÊ + KARISSA",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/carlala-izem-danile-karissa-06062026/",
+      "image": null,
+      "id": "be958614cfb6"
     },
     {
       "venue": "Le Transbordeur",
@@ -1890,28 +1851,15 @@
     {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
-      "title": "La fiscalité des associations 18h > 21h",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-07",
-      "date_end": "2026-06-07",
-      "time": "18:00",
-      "url": "https://larayonne.org/evenement/la-fiscalite-des-associations-3/",
-      "image": null,
-      "id": "2df5e84d1343"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
       "title": "Mettre en place une gouvernance partagée : atelier théorique (1/2) 18h30 > 21h",
       "subtitle": null,
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/mettre-en-place-une-gouvernance-partagee-atelier-theorique-1-2/",
       "image": null,
-      "id": "af55d50a6e7f"
+      "id": "cf6c093d4672"
     },
     {
       "venue": "La Rayonne",
@@ -1921,10 +1869,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/mettre-en-place-une-gouvernance-partagee-atelier-de-co-developpement-2-2/",
       "image": null,
-      "id": "fa02878c2ab6"
+      "id": "bd601530aee5"
     },
     {
       "venue": "La Rayonne",
@@ -1934,10 +1882,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/comment-attirer-et-fideliser-des-benevoles/",
       "image": null,
-      "id": "c14b52fca752"
+      "id": "afcc5c7ab171"
     },
     {
       "venue": "La Rayonne",
@@ -1947,10 +1895,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/mettre-en-place-une-comptabilite-pour-les-petites-associations-5/",
       "image": null,
-      "id": "fd45ce37a389"
+      "id": "f65e4f334c00"
     },
     {
       "venue": "La Rayonne",
@@ -1960,10 +1908,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/sinitier-aux-techniques-danimation-participative-2/",
       "image": null,
-      "id": "dfb89c98ba7c"
+      "id": "9263bd8fa2ff"
     },
     {
       "venue": "La Rayonne",
@@ -1973,10 +1921,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/atelier-soccuper-du-conflit-avant-quil-ne-soccupe-de-nous/",
       "image": null,
-      "id": "de86f4081dee"
+      "id": "d5c7822aba75"
     },
     {
       "venue": "La Rayonne",
@@ -1986,10 +1934,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/les-obligations-des-associations-employeuses-3/",
       "image": null,
-      "id": "fca426e00c1e"
+      "id": "c100097da4da"
     },
     {
       "venue": "La Rayonne",
@@ -1999,10 +1947,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/mieux-apprehender-les-reseaux-sociaux/",
       "image": null,
-      "id": "ea3291276727"
+      "id": "9c76193e74ad"
     },
     {
       "venue": "La Rayonne",
@@ -2012,10 +1960,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/presenter-et-mettre-en-valeur-son-projet-a-loral-atelier-theorique-1-2/",
       "image": null,
-      "id": "9ec70a66dfc8"
+      "id": "8fdf36241476"
     },
     {
       "venue": "La Rayonne",
@@ -2025,10 +1973,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/presenter-et-mettre-en-valeur-son-projet-a-loral-atelier-pratique-2-2/",
       "image": null,
-      "id": "2497ea909ad1"
+      "id": "6a709242157e"
     },
     {
       "venue": "La Rayonne",
@@ -2038,10 +1986,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/comprendre-les-principales-aides-a-lemploi-dans-le-spectacle-vivant/",
       "image": null,
-      "id": "bef6e058ad9f"
+      "id": "0fc73fb0de80"
     },
     {
       "venue": "La Rayonne",
@@ -2051,10 +1999,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/construire-un-budget-et-un-plan-de-tresorerie-atelier-theorique-1-2-2/",
       "image": null,
-      "id": "609f9ff5aae8"
+      "id": "ac3f5cd40f64"
     },
     {
       "venue": "La Rayonne",
@@ -2064,10 +2012,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/construire-un-budget-et-un-plan-de-tresorerie-atelier-pratique-2-2-2/",
       "image": null,
-      "id": "36bd23ce665f"
+      "id": "a93b78174bc5"
     },
     {
       "venue": "Marché Gare",
@@ -2094,6 +2042,19 @@
       "url": "https://lacommune.co/event/atelier-decouverte/",
       "image": null,
       "id": "2fdf373c54b4"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "TURBO TERRASSE : Passage de Disques",
+      "subtitle": "Avec Magic Stomp",
+      "category": "musique",
+      "date_start": "2026-06-09",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-3/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/091324_Grand_Tabazu_web_paul-650x433.jpg",
+      "id": "7b0f21f333c8"
     },
     {
       "venue": "Le Sucre",
@@ -2159,6 +2120,19 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/architect-at-work-3",
       "image": null,
       "id": "a06219cac015"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Gratuit Chanson Folk MO(I) + SEDR",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-10",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://marchegare.fr/agenda/moi-sedr",
+      "image": null,
+      "id": "9f4297efefc9"
     },
     {
       "venue": "Comédie Odéon",
@@ -2358,7 +2332,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "WEST SIDE FEST 26 Avec l'ENM Villeurbanne",
+      "title": "Gratuit WEST SIDE FEST 26 Avec l'ENM Villeurbanne",
       "subtitle": null,
       "category": null,
       "date_start": "2026-06-12",
@@ -2366,7 +2340,7 @@
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/west-side-fest-26",
       "image": null,
-      "id": "c6146685f9ca"
+      "id": "e7c1dff58ca0"
     },
     {
       "venue": "Les Subsistances",
@@ -2421,10 +2395,23 @@
       "id": "9bd5636c432e"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "ABSTRAAL + AMANN + LUCYE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-13",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/abstraal-amann-lucye-13062026/",
+      "image": null,
+      "id": "5007dab2114f"
+    },
+    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "Fête de présentation de saison",
-      "subtitle": "SAMEDI 13 JUIN\ngratuit\n14H30 – 16H ATELIERS\nAtelier maquillage \navec l’association des clowns « Vivre aux écl…",
+      "subtitle": null,
       "category": "théâtre",
       "date_start": "2026-06-13",
       "date_end": null,
@@ -2694,6 +2681,19 @@
       "id": "989a63a7c092"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Day Off Indie Rock FLEUR SOUS BITUME (Sol FM radio session) Day Off \"Scènes Découvertes\"",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-17",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://marchegare.fr/agenda/fleur-sous-bitume-sol-fm-radio-session",
+      "image": null,
+      "id": "d8336ae57267"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Portugal / Congo: diffusion Coupe du Monde 2026",
@@ -2943,7 +2943,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Jeune Public MÊME PAS CAP ! 6e édition LA FÊTE DE LA MUSIQUE DES ENFANTS",
+      "title": "Gratuit Jeune Public MÊME PAS CAP ! 6e édition LA FÊTE DE LA MUSIQUE DES ENFANTS",
       "subtitle": null,
       "category": null,
       "date_start": "2026-06-20",
@@ -2951,7 +2951,7 @@
       "time": "15:30",
       "url": "https://marchegare.fr/agenda/meme-pas-cap-6e-edition",
       "image": null,
-      "id": "82f864d09281"
+      "id": "5f4a360051d7"
     },
     {
       "venue": "Les Subsistances",
@@ -3240,6 +3240,19 @@
       "id": "a397e8aa3d4a"
     },
     {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "TURBO TERRASSE : Passage de Disques",
+      "subtitle": "Avec Armelle Llop & Gaëlle Collet",
+      "category": "musique",
+      "date_start": "2026-06-23",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-4/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/091324_Grand_Tabazu_web_paul-1-650x433.jpg",
+      "id": "b22a10a49144"
+    },
+    {
       "venue": "Comédie Odéon",
       "venue_slug": "comedie-odeon",
       "title": "La Prière du Hamster",
@@ -3290,6 +3303,19 @@
       "url": "https://www.bourse-du-travail.com/anne-roumanoff-l-experience-de-la-vie-tournee-285885.html",
       "image": null,
       "id": "5234e729222e"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "TURBO TERRASSE : Passage de Disques",
+      "subtitle": "Avec Lou-Miléna Fouquet & Fanny",
+      "category": "musique",
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-5/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/041826_Recif_Cloture_web_paul-650x433.jpg",
+      "id": "fb521ebcaa83"
     },
     {
       "venue": "Le Transbordeur",
@@ -3498,6 +3524,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/compagnie-dca-philippe-decoufle/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/philippe-decoufle_radiant-bellevue-500x500.jpg",
       "id": "f3ec60313652"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "TURBO TERRASSE : Passage de Disques",
+      "subtitle": "Avec Steve Cook",
+      "category": "musique",
+      "date_start": "2026-06-30",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-6/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/041826_Recif_Cloture_web_paul-1-650x433.jpg",
+      "id": "a89138236c65"
     },
     {
       "venue": "Le Sucre",
@@ -4213,6 +4252,19 @@
       "url": "https://www.transbordeur.fr/evenement/fredz-14102026/",
       "image": null,
       "id": "13d776f8ffb8"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "FAKEAR",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-14",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://larayonne.org/evenement/fakear/",
+      "image": null,
+      "id": "fc42470ceb78"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5786,19 +5838,6 @@
       "url": "https://www.bourse-du-travail.com/samuel-bambi-357727.html",
       "image": null,
       "id": "e2d84f309c62"
-    },
-    {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Jazz daoud",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-12-10",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://marchegare.fr/agenda/daoud",
-      "image": null,
-      "id": "1e559dd931ce"
     },
     {
       "venue": "Bourse du Travail",
