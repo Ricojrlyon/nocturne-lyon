@@ -1,111 +1,7 @@
 {
-  "generated_at": "2026-05-20T17:45:15.796047+00:00",
-  "count": 602,
+  "generated_at": "2026-05-21T16:31:50.564126+00:00",
+  "count": 599,
   "events": [
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Berengere Krief",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-05-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/berengere-krief-300882.html",
-      "image": null,
-      "id": "0d2cea88ce7c"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Chess Bar x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/chess-bar-x-heat-8/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
-      "id": "e2fd6e0433e6"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "RAWRUN PARTY x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/rawrun-party-x-heat/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/AFFICHE-HEAT-RAWRUN-576x720.png",
-      "id": "49724240c865"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Spectacle d’improvisation – Improfusion",
-      "subtitle": null,
-      "category": "spectacle",
-      "date_start": "2026-05-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/spectacle-dimprovisation-improfusion/",
-      "image": null,
-      "id": "fbc52da5bf2a"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Nout (duo) + Mélanie Virot",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-05-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/nout/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/03/NOUT-HORIZONTAL-NOIR-ORANGE-BD-1024x709-1-650x450.jpg",
-      "id": "b151c3a1f986"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "CHIMENE BADI",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/chimene-badi/",
-      "image": null,
-      "id": "1490c4d7a77f"
-    },
-    {
-      "venue": "Théâtre de la Croix-Rousse",
-      "venue_slug": "croix-rousse",
-      "title": "MJC. UN JOURNAL CLANDESTIN",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-05-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.croix-rousse.com/au-programme/mjc-un-journal-clandestin/",
-      "image": "https://www.croix-rousse.com/wp-content/uploads/2026/03/quartier-libre_500x500-300x300-c-default.png",
-      "id": "0c1d3f336837"
-    },
-    {
-      "venue": "Théâtre des Célestins",
-      "venue_slug": "celestins",
-      "title": "Le Pays innocent",
-      "subtitle": "Samuel Gallet",
-      "category": "celestine",
-      "date_start": "2026-05-20",
-      "date_end": "2026-05-29",
-      "time": null,
-      "url": "https://www.theatredescelestins.com/fr/programmation/2025-2026/celestine/le-pays-innocent",
-      "image": "https://www.theatredescelestins.com/assets/q75-w330-h434-c330x434/87fd9d31/le_pays_innocent_simon_gosselin60.jpg.webp",
-      "id": "1c8929e6011f"
-    },
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
@@ -1056,6 +952,19 @@
       "id": "f093ef5cc1d5"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Club Classics",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/club-classics/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/05/CLUB-CLASSIC-HEAT_.jpeg",
+      "id": "3f4ee3eb6752"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "club",
@@ -1784,6 +1693,19 @@
       "id": "7e785ad07f54"
     },
     {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "Bœuf & Brocoli // Biribi Tattoo Meeting",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://sonic-lyon.fr/evenement/boeuf-brocoli-biribi-tattoo-meeting/",
+      "image": null,
+      "id": "a5276ac77e96"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Nuits De Fourviere 2026 Ce Que Le Ciel Ne Sait Pas Feda Wardak",
@@ -2150,7 +2072,7 @@
     {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
-      "title": "Good Flying Birds",
+      "title": "Good Flying Birds + Minitelle Xeroxe",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-06-10",
@@ -2158,7 +2080,7 @@
       "time": "20:00",
       "url": "https://sonic-lyon.fr/evenement/good-flying-birds/",
       "image": null,
-      "id": "adbedc3dbc0f"
+      "id": "89e022d75731"
     },
     {
       "venue": "Le Périscope",
@@ -2629,6 +2551,32 @@
       "id": "04b06c59280a"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Formation Réseaux sociaux : comment reprendre le pouvoir ? Collectif Les Canutes",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-16",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://marchegare.fr/agenda/reseaux-sociaux-comment-reprendre-le-pouvoir",
+      "image": null,
+      "id": "e3263edfee62"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Day Off Indie Rock FLEUR SOUS BITUME (Sol FM radio session) Day Off \"Scènes Découvertes\"",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-16",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://marchegare.fr/agenda/fleur-sous-bitume-sol-fm-radio-session",
+      "image": null,
+      "id": "e3e89ced53d2"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "France / Sénégal : diffusion Coupe du Monde 2026",
@@ -2679,19 +2627,6 @@
       "url": "https://www.transbordeur.fr/evenement/counting-crows-will-varley-17062026/",
       "image": null,
       "id": "989a63a7c092"
-    },
-    {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Day Off Indie Rock FLEUR SOUS BITUME (Sol FM radio session) Day Off \"Scènes Découvertes\"",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-17",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://marchegare.fr/agenda/fleur-sous-bitume-sol-fm-radio-session",
-      "image": null,
-      "id": "d8336ae57267"
     },
     {
       "venue": "La Rayonne",
@@ -4869,12 +4804,12 @@
       "venue_slug": "radiant-bellevue",
       "title": "LP",
       "subtitle": null,
-      "category": "musique",
+      "category": null,
       "date_start": "2026-11-06",
       "date_end": null,
       "time": null,
       "url": "https://radiant-bellevue.fr/spectacles/lp/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/LP_radiant-bellevue-500x500.jpg",
+      "image": null,
       "id": "f580202aac50"
     },
     {
@@ -5695,19 +5630,6 @@
       "url": "https://www.tnp-villeurbanne.com/spectacle/les-corps-incorruptibles/",
       "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Les_corps_incorruptiblescJean_Louis_Fernandez-465x301.v1776347741.jpg",
       "id": "f835783f88ad"
-    },
-    {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Soul Urban Pop WAMEN",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-12-02",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://marchegare.fr/agenda/wamen",
-      "image": null,
-      "id": "e385962dca52"
     },
     {
       "venue": "Bourse du Travail",
@@ -6585,12 +6507,12 @@
       "venue_slug": "radiant-bellevue",
       "title": "SKIP THE USE",
       "subtitle": null,
-      "category": "musique",
+      "category": null,
       "date_start": "2027-01-30",
       "date_end": null,
       "time": null,
       "url": "https://radiant-bellevue.fr/spectacles/skip-the-use-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/skip-the-use_radiant-bellevue-500x500.jpg",
+      "image": null,
       "id": "1a3851ab5122"
     },
     {
@@ -6839,6 +6761,19 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/nawell-madani",
       "image": null,
       "id": "c3fbb4575931"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Akim Omiri - Contexte - Tournée",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-02-11",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/akim-omiri-contexte-tournee-382475.html",
+      "image": null,
+      "id": "7317e34e2578"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7593,6 +7528,32 @@
       "url": "https://www.tnp-villeurbanne.com/spectacle/deux-cavaliers-de-lorage/",
       "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/2_2_cavaliers_de_loragecRodolphe-Gonzales_Yann_Rabanier-Modds-465x301.v1778159893.jpg",
       "id": "cca391e2f669"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Chess Bar x HEAT",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2027-05-20",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/chess-bar-x-heat-8/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
+      "id": "9577165839c9"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "RAWRUN PARTY x HEAT",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2027-05-20",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/rawrun-party-x-heat/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/05/AFFICHE-HEAT-RAWRUN-576x720.png",
+      "id": "613e99ebba10"
     },
     {
       "venue": "Bourse du Travail",
