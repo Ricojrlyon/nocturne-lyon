@@ -1,111 +1,7 @@
 {
-  "generated_at": "2026-05-21T16:31:50.564126+00:00",
-  "count": 599,
+  "generated_at": "2026-05-22T16:01:03.422537+00:00",
+  "count": 600,
   "events": [
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Florian Lex",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-05-21",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/florian-lex-186360.html",
-      "image": null,
-      "id": "474dd78237b0"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Bingo by La Ménagerie",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-21",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/bingo-by-la-menagerie/",
-      "image": "https://h-eat.eu/wp-content/uploads/2025/10/bingo-405x720.jpg",
-      "id": "31b1bbd5c558"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Soirée Hip-Hop",
-      "subtitle": null,
-      "category": "conférences et tables rondes",
-      "date_start": "2026-05-21",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/soiree-hip-hop-la-commune-open-mic-quiz-dj-set-21-mai/",
-      "image": null,
-      "id": "60c3ead97daf"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "ELEPHANZ + LOUISE COMBIER",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-05-21",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/elephanz-louise-combier-21052026/",
-      "image": null,
-      "id": "c65c3adb57d6"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "[Un été à La Rayonne] La Rayonne ouvre le Bal",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-05-21",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://larayonne.org/evenement/un-ete-a-la-rayonne-la-rayonne-ouvre-le-bal-folk/",
-      "image": null,
-      "id": "ccf580d2e5f1"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Litterature Live Si La Langue Fourche No Anger Elisabeth Lebovici",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-21",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.les-subs.com/evenement/litterature-live-si-la-langue-fourche-no-anger-elisabeth-lebovici/",
-      "image": null,
-      "id": "5ee50d09dc99"
-    },
-    {
-      "venue": "Le Sonic",
-      "venue_slug": "sonic",
-      "title": "AJNIGHT #4",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-05-21",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://sonic-lyon.fr/evenement/ajnight-4/",
-      "image": null,
-      "id": "3cff75003b10"
-    },
-    {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "LES 20 ANS ! Concert du Labo Claire Days + Citron Sucré + JIA Concert du Labo anniversaire",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-21",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://marchegare.fr/agenda/claire-days-citron-sucre-jia",
-      "image": null,
-      "id": "ebf5f7a13284"
-    },
     {
       "venue": "HEAT",
       "venue_slug": "heat",
@@ -1409,6 +1305,19 @@
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
+      "title": "DJ set house à Lyon – Suntrax",
+      "subtitle": null,
+      "category": "dj set",
+      "date_start": "2026-06-04",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/suntrax-id-yot-dj-set-house-disco-electro/",
+      "image": null,
+      "id": "1e8711280cea"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
       "title": "Les Trax",
       "subtitle": null,
       "category": "dj set",
@@ -1435,7 +1344,7 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
-      "title": "Présentation Saison 26-27",
+      "title": "Présentation Saison",
       "subtitle": null,
       "category": null,
       "date_start": "2026-06-04",
@@ -1443,7 +1352,7 @@
       "time": null,
       "url": "https://radiant-bellevue.fr/spectacles/presentation-saison-26-27/",
       "image": null,
-      "id": "8e58c7b967c0"
+      "id": "38848b743fca"
     },
     {
       "venue": "Le Sonic",
@@ -1773,28 +1682,15 @@
     {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
-      "title": "Mettre en place une gouvernance partagée : atelier théorique (1/2) 18h30 > 21h",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-07",
-      "date_end": "2026-06-07",
-      "time": "18:30",
-      "url": "https://larayonne.org/evenement/mettre-en-place-une-gouvernance-partagee-atelier-theorique-1-2/",
-      "image": null,
-      "id": "cf6c093d4672"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
       "title": "Mettre en place une gouvernance partagée : atelier de co-développement (2/2) 14h30 > 17h30",
       "subtitle": null,
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:30",
+      "time": "19:00",
       "url": "https://larayonne.org/evenement/mettre-en-place-une-gouvernance-partagee-atelier-de-co-developpement-2-2/",
       "image": null,
-      "id": "bd601530aee5"
+      "id": "a20b23b5269b"
     },
     {
       "venue": "La Rayonne",
@@ -1804,10 +1700,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:30",
+      "time": "19:00",
       "url": "https://larayonne.org/evenement/comment-attirer-et-fideliser-des-benevoles/",
       "image": null,
-      "id": "afcc5c7ab171"
+      "id": "efe0e2c2f58b"
     },
     {
       "venue": "La Rayonne",
@@ -1817,10 +1713,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:30",
+      "time": "19:00",
       "url": "https://larayonne.org/evenement/mettre-en-place-une-comptabilite-pour-les-petites-associations-5/",
       "image": null,
-      "id": "f65e4f334c00"
+      "id": "1363c4dce4fd"
     },
     {
       "venue": "La Rayonne",
@@ -1830,10 +1726,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:30",
+      "time": "19:00",
       "url": "https://larayonne.org/evenement/sinitier-aux-techniques-danimation-participative-2/",
       "image": null,
-      "id": "9263bd8fa2ff"
+      "id": "5ee9ccec95c2"
     },
     {
       "venue": "La Rayonne",
@@ -1843,10 +1739,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:30",
+      "time": "19:00",
       "url": "https://larayonne.org/evenement/atelier-soccuper-du-conflit-avant-quil-ne-soccupe-de-nous/",
       "image": null,
-      "id": "d5c7822aba75"
+      "id": "010c3977bd8e"
     },
     {
       "venue": "La Rayonne",
@@ -1856,10 +1752,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:30",
+      "time": "19:00",
       "url": "https://larayonne.org/evenement/les-obligations-des-associations-employeuses-3/",
       "image": null,
-      "id": "c100097da4da"
+      "id": "84801375c89e"
     },
     {
       "venue": "La Rayonne",
@@ -1869,10 +1765,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:30",
+      "time": "19:00",
       "url": "https://larayonne.org/evenement/mieux-apprehender-les-reseaux-sociaux/",
       "image": null,
-      "id": "9c76193e74ad"
+      "id": "35c014ee232f"
     },
     {
       "venue": "La Rayonne",
@@ -1882,10 +1778,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:30",
+      "time": "19:00",
       "url": "https://larayonne.org/evenement/presenter-et-mettre-en-valeur-son-projet-a-loral-atelier-theorique-1-2/",
       "image": null,
-      "id": "8fdf36241476"
+      "id": "85130ddd6990"
     },
     {
       "venue": "La Rayonne",
@@ -1895,10 +1791,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:30",
+      "time": "19:00",
       "url": "https://larayonne.org/evenement/presenter-et-mettre-en-valeur-son-projet-a-loral-atelier-pratique-2-2/",
       "image": null,
-      "id": "6a709242157e"
+      "id": "0b11607a66d9"
     },
     {
       "venue": "La Rayonne",
@@ -1908,10 +1804,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:30",
+      "time": "19:00",
       "url": "https://larayonne.org/evenement/comprendre-les-principales-aides-a-lemploi-dans-le-spectacle-vivant/",
       "image": null,
-      "id": "0fc73fb0de80"
+      "id": "ca89d30fd54c"
     },
     {
       "venue": "La Rayonne",
@@ -1921,10 +1817,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:30",
+      "time": "19:00",
       "url": "https://larayonne.org/evenement/construire-un-budget-et-un-plan-de-tresorerie-atelier-theorique-1-2-2/",
       "image": null,
-      "id": "ac3f5cd40f64"
+      "id": "6e7d203f38be"
     },
     {
       "venue": "La Rayonne",
@@ -1934,10 +1830,10 @@
       "category": null,
       "date_start": "2026-06-07",
       "date_end": "2026-06-07",
-      "time": "18:30",
+      "time": "19:00",
       "url": "https://larayonne.org/evenement/construire-un-budget-et-un-plan-de-tresorerie-atelier-pratique-2-2-2/",
       "image": null,
-      "id": "a93b78174bc5"
+      "id": "91101b43dbc7"
     },
     {
       "venue": "Marché Gare",
@@ -2694,6 +2590,19 @@
       "id": "e67f86ee20db"
     },
     {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Les Grandes Heures",
+      "subtitle": null,
+      "category": "festival",
+      "date_start": "2026-06-19",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/fete-de-la-musique-a-lyon-2025-le-21-juin-a-la-commune/",
+      "image": null,
+      "id": "0b17cd675b8a"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "club corps x La Waw !",
@@ -2796,6 +2705,19 @@
       "url": "https://yp.events/cd579693-d188-423d-ae33-28478118f599/THIS-IS-HIT-MACHINE-90-2000-NO2-T-Vyktor-Nova-more?from=siteweb",
       "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisisHitmachine_19062026_lepetitsalon-1024x576.jpg",
       "id": "a8e1b56b5c4a"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "[Un été à La Rayonne] Fête de la musique x ENCORE – Kirsty all night long",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-20",
+      "date_end": "2026-06-21",
+      "time": "00:00",
+      "url": "https://larayonne.org/evenement/un-ete-a-la-rayonne-fete-de-la-musique-x-encore-kirsty-all-night-long/",
+      "image": null,
+      "id": "d7db3e4b67f2"
     },
     {
       "venue": "Le Sucre",
@@ -3243,7 +3165,7 @@
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "TURBO TERRASSE : Passage de Disques",
-      "subtitle": "Avec Lou-Miléna Fouquet & Fanny",
+      "subtitle": "Avec Lou & Fanny",
       "category": "musique",
       "date_start": "2026-06-25",
       "date_end": null,
@@ -3342,6 +3264,19 @@
       "url": "https://yp.events/173813ce-7d03-400c-85d5-8afa200da354/THIS-IS-TECHNO-Rave-SUNT-Evy-Joy-more?from=siteweb",
       "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisisTechnoRave_26062026_lepetitsalon-1024x576.jpg",
       "id": "dedfdd81bf19"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "BOILER YUFRIP",
+      "subtitle": null,
+      "category": "marchés",
+      "date_start": "2026-06-27",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/boiler-yufrip-pride-after-party-lyon-2026/",
+      "image": null,
+      "id": "92655d2fbf94"
     },
     {
       "venue": "Le Sucre",
@@ -4486,6 +4421,19 @@
       "url": "https://www.tnp-villeurbanne.com/spectacle/la-troupe-ephemere-precipite/",
       "image": "https://www.tnp-villeurbanne.com/app/uploads/2024/05/250504_RdL_0321-465x310.v1746542257.jpg",
       "id": "7ccb470d3fdb"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Urban Pop NOOR",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-10-24",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/noor",
+      "image": null,
+      "id": "09415190cd55"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6037,6 +5985,19 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
+      "title": "Des étoiles Plein Les Yeux",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-12-23",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/des-etoiles-plein-les-yeux-382489.html",
+      "image": null,
+      "id": "c3236610fe43"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
       "title": "K-pop Shadow Hunters - Tournée",
       "subtitle": null,
       "category": "humour",
@@ -6789,6 +6750,19 @@
       "id": "b1e0d95c2a2c"
     },
     {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "The Rasmus",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2027-02-12",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://larayonne.org/evenement/the-rasmus/",
+      "image": null,
+      "id": "cf7efd566f8e"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "JEANJASS",
@@ -7439,6 +7413,19 @@
       "id": "f1b1ee028705"
     },
     {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Gilbert Montagne",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-05-02",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/gilbert-montagne-382483.html",
+      "image": null,
+      "id": "b75ecb500802"
+    },
+    {
       "venue": "Opéra national de Lyon",
       "venue_slug": "opera-lyon",
       "title": "Nuit de mai",
@@ -7450,6 +7437,19 @@
       "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/nuit-de-mai",
       "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/256ae14b/nui_de_mai_visuel_principal.jpg",
       "id": "499d99937e63"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Festival Les Lions Du Rire",
+      "subtitle": null,
+      "category": "festival",
+      "date_start": "2027-05-07",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/festival-les-lions-du-rire-382488.html",
+      "image": null,
+      "id": "727aaf95d822"
     },
     {
       "venue": "Bourse du Travail",
@@ -7580,6 +7580,19 @@
       "url": "https://www.comedieodeon.com/spectacle/cedric-salaun-en-rodage/",
       "image": "https://www.comedieodeon.com/wp-content/uploads/2026/01/CEDRIC-SALAUN-40x60-1.jpg",
       "id": "9931f22c8ef8"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Bingo by La Ménagerie",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2027-05-21",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/bingo-by-la-menagerie/",
+      "image": "https://h-eat.eu/wp-content/uploads/2025/10/bingo-405x720.jpg",
+      "id": "1b3e717c1d24"
     },
     {
       "venue": "TNP",
