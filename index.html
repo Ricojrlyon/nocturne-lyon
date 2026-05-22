@@ -664,19 +664,19 @@
   }
 
   /* ---------- empty state ---------- */
-  .empty {
+  .empty-state {
     text-align: center;
     padding: 100px 24px;
     color: var(--ink-soft);
   }
-  .empty p {
+  .empty-state p {
     font-family: 'Instrument Serif', Georgia, serif;
     font-size: 36px;
     font-style: italic;
     color: var(--ink);
   }
-  .empty p::before { content: "( "; color: var(--ink-mute); }
-  .empty p::after { content: " )"; color: var(--ink-mute); }
+  .empty-state p::before { content: "( "; color: var(--ink-mute); }
+  .empty-state p::after { content: " )"; color: var(--ink-mute); }
 
   /* ---------- footer ---------- */
   footer {
@@ -1321,7 +1321,7 @@ function render() {
   const events = filtered();
 
   if (events.length === 0) {
-    feed.innerHTML = '<div class="empty"><p>rien dans ce filtre</p></div>';
+    feed.innerHTML = '<div class="empty-state"><p>rien dans ce filtre</p></div>';
     return;
   }
 
@@ -1443,7 +1443,7 @@ function eventCard(e, num) {
 
 load().catch(err => {
   document.getElementById('feed').innerHTML =
-    '<div class="empty"><p>erreur de chargement</p><p style="font-family:monospace;font-size:12px;text-transform:none;color:#a59f86">' + err + '</p></div>';
+    '<div class="empty-state"><p>erreur de chargement</p><p style="font-family:monospace;font-size:12px;text-transform:none;color:#a59f86">' + err + '</p></div>';
 });
 </script>
 
