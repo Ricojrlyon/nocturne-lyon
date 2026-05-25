@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-25T20:48:54.220177+00:00",
-  "count": 623,
+  "generated_at": "2026-05-25T21:13:19.538896+00:00",
+  "count": 594,
   "events": [
     {
       "venue": "La Commune",
@@ -120,7 +120,7 @@
       "id": "b7eb16960a85"
     },
     {
-      "venue": "BosKop",
+      "venue": "Boskop",
       "venue_slug": "boskop",
       "title": "QUEER METRAGES II | Programme de courts métrages sur les sexualités queer",
       "subtitle": null,
@@ -289,7 +289,7 @@
       "id": "bace523d9e6f"
     },
     {
-      "venue": "Maison de l’écologie",
+      "venue": "Maison de l'écologie",
       "venue_slug": "maison-de-l-ecologie",
       "title": "LA FIN DU MONDE POUR LES NUL·LE·S",
       "subtitle": null,
@@ -393,20 +393,7 @@
       "id": "1459a2313dc8"
     },
     {
-      "venue": "La multi",
-      "venue_slug": "la-multi",
-      "title": "Quizz Cohabiter et Partager La Rue",
-      "subtitle": null,
-      "category": "rencontre",
-      "date_start": "2026-05-28",
-      "date_end": null,
-      "time": "16:30",
-      "url": "https://agenda.villemorte.fr/event/quizz-cohabiter-et-partager-la-rue",
-      "image": null,
-      "id": "445e99ca0c2c"
-    },
-    {
-      "venue": "Maison de l’écologie",
+      "venue": "Maison de l'écologie",
       "venue_slug": "maison-de-l-ecologie",
       "title": "TOUTE UNE VIE À S'ÉTEINDRE · CHRONIQUE D'UN FOYER DE TRAVAILLEURS IMMIGRÉS",
       "subtitle": null,
@@ -419,20 +406,7 @@
       "id": "6c8f946b27f0"
     },
     {
-      "venue": "Bulle de Son",
-      "venue_slug": "bulle-de-son",
-      "title": "The Midnight Computers",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-28",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/the-midnight-computers",
-      "image": null,
-      "id": "fede5af4d72d"
-    },
-    {
-      "venue": "BosKop",
+      "venue": "Boskop",
       "venue_slug": "boskop",
       "title": "SEL ACIDE Release Party · Exposition · Lecture · Performance · Dj set",
       "subtitle": null,
@@ -575,19 +549,6 @@
       "id": "acb6e68e521f"
     },
     {
-      "venue": "Les Grandes Voisines",
-      "venue_slug": "les-grandes-voisines",
-      "title": "LES INCANDESCENTES - Festival de Cirque féministe",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-05-29",
-      "date_end": "2026-05-31",
-      "time": "16:00",
-      "url": "https://agenda.villemorte.fr/event/les-incandescentes-festival-de-cirque-feministe",
-      "image": null,
-      "id": "9e7febaac4c2"
-    },
-    {
       "venue": "Toï Toï le Zinc",
       "venue_slug": "toi-toi-le-zinc",
       "title": "FeFan - La soirée du public",
@@ -614,20 +575,7 @@
       "id": "9ccf78d0c95b"
     },
     {
-      "venue": "Maison de l’écologie",
-      "venue_slug": "maison-de-l-ecologie",
-      "title": "POUBELLES AU DD · CONTES POST-APOCALYPTIQUES",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-29",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/poubelles-au-dd-contes-post-apocalyptiques",
-      "image": null,
-      "id": "4050f428fa4f"
-    },
-    {
-      "venue": "agend'arts",
+      "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Concert Cadencia Project",
       "subtitle": null,
@@ -640,17 +588,17 @@
       "id": "047d37534e72"
     },
     {
-      "venue": "Trokson",
-      "venue_slug": "trokson",
-      "title": "ROOZALEPRES (punk rock'n'roll)",
+      "venue": "Maison de l'écologie",
+      "venue_slug": "maison-de-l-ecologie",
+      "title": "POUBELLES AU DD · CONTES POST-APOCALYPTIQUES",
       "subtitle": null,
       "category": null,
       "date_start": "2026-05-29",
       "date_end": null,
-      "time": "18:45",
-      "url": "https://agenda.villemorte.fr/event/roozalepres-punk-rocknroll",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/poubelles-au-dd-contes-post-apocalyptiques",
       "image": null,
-      "id": "f4850606f8c0"
+      "id": "4050f428fa4f"
     },
     {
       "venue": "Le Sonic",
@@ -809,6 +757,19 @@
       "id": "1fb895e33811"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert Keller",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-05-30",
+      "date_end": "2026-05-31",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-gabriel-keller-trio",
+      "image": null,
+      "id": "e56324b55092"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Bal afro à Grrrnd Zéro",
@@ -822,19 +783,6 @@
       "id": "ecef6e8bd44f"
     },
     {
-      "venue": "agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Concert Keller",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-05-30",
-      "date_end": "2026-05-31",
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/concert-gabriel-keller-trio",
-      "image": null,
-      "id": "e56324b55092"
-    },
-    {
       "venue": "Toï Toï le Zinc",
       "venue_slug": "toi-toi-le-zinc",
       "title": "We Are The New Generation + WQ Productions",
@@ -846,19 +794,6 @@
       "url": "https://agenda.villemorte.fr/event/we-are-the-new-generation-wq-productions",
       "image": null,
       "id": "0004a291eb50"
-    },
-    {
-      "venue": "Trokson",
-      "venue_slug": "trokson",
-      "title": "Blâmes.(Shoegaze) Lyon",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-30",
-      "date_end": null,
-      "time": "18:45",
-      "url": "https://agenda.villemorte.fr/event/blamesshoegaze-lyon",
-      "image": null,
-      "id": "706c4d73b1c0"
     },
     {
       "venue": "Bar des Capucins",
@@ -1030,6 +965,19 @@
       "id": "8172f8987c22"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Spectacle A la recherche des mémoires perdues",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-01",
+      "date_end": "2026-06-02",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/spectacle-a-la-recherche-des-memoires-perdues-1",
+      "image": null,
+      "id": "dc9bab4f86fe"
+    },
+    {
       "venue": "Big White",
       "venue_slug": "big-white",
       "title": "Big Comedy Club",
@@ -1041,19 +989,6 @@
       "url": "https://agenda.villemorte.fr/event/big-comedy-club-12",
       "image": null,
       "id": "a6baaa66cf9a"
-    },
-    {
-      "venue": "agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Spectacle A la recherche des mémoires perdues",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-01",
-      "date_end": "2026-06-02",
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/spectacle-a-la-recherche-des-memoires-perdues-1",
-      "image": null,
-      "id": "dc9bab4f86fe"
     },
     {
       "venue": "Bourse du Travail",
@@ -1212,19 +1147,6 @@
       "id": "47c33022adc7"
     },
     {
-      "venue": "Rita-Plage",
-      "venue_slug": "rita-plage",
-      "title": "Conférence gesticulée \"Le bon filon de l’écoterrorisme\" x Julien Dupoux",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-03",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/conference-gesticulee-le-bon-filon-de-lecoterrorisme-x-julien-dupoux",
-      "image": null,
-      "id": "44b5c536d30d"
-    },
-    {
       "venue": "A Thou Bout d'Chant",
       "venue_slug": "a-thou-bout-d-chant",
       "title": "CONCERT | Soirée ENM",
@@ -1340,19 +1262,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/presentation-saison-26-27/",
       "image": null,
       "id": "38848b743fca"
-    },
-    {
-      "venue": "Rita-Plage",
-      "venue_slug": "rita-plage",
-      "title": "Concert Angelina Pelluet",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-04",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/concert-angelina-pelluet",
-      "image": null,
-      "id": "7049ae63693d"
     },
     {
       "venue": "La Pente",
@@ -1472,7 +1381,7 @@
       "id": "7bab0d344deb"
     },
     {
-      "venue": "BosKop",
+      "venue": "Boskop",
       "venue_slug": "boskop",
       "title": "Vernissage · Exposition Collective Jaquettes VHS imaginaires",
       "subtitle": null,
@@ -1496,19 +1405,6 @@
       "url": "https://agenda.villemorte.fr/event/bound-by-endogamy-sacrifice-seul-ha-kyoon",
       "image": null,
       "id": "4c57dc1efd4d"
-    },
-    {
-      "venue": "Rita-Plage",
-      "venue_slug": "rita-plage",
-      "title": "Concert Tupac & JPablo y Papacho",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-05",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/concert-tupac-and-jpablo-y-papacho",
-      "image": null,
-      "id": "5372dfae0b59"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -2057,19 +1953,6 @@
       "id": "a06219cac015"
     },
     {
-      "venue": "Rita-Plage",
-      "venue_slug": "rita-plage",
-      "title": "Café des libertés - Féminisme et Queer",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-10",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://agenda.villemorte.fr/event/cafe-des-libertes-feminisme-et-queer",
-      "image": null,
-      "id": "074537a52d15"
-    },
-    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "Good Flying Birds + première partie",
@@ -2146,19 +2029,6 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/architect-at-work-4",
       "image": null,
       "id": "a5d007730a6e"
-    },
-    {
-      "venue": "Rita-Plage",
-      "venue_slug": "rita-plage",
-      "title": "Karaoke piano live",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/karaoke-piano-live-4",
-      "image": null,
-      "id": "0aa08d239e46"
     },
     {
       "venue": "Villeurbanne ENM",
@@ -2317,19 +2187,6 @@
       "id": "efd238ca555c"
     },
     {
-      "venue": "Bulle de Son",
-      "venue_slug": "bulle-de-son",
-      "title": "Isla Dorada + Maguiba",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-12",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://agenda.villemorte.fr/event/isla-dorada-maguiba",
-      "image": null,
-      "id": "93173552580e"
-    },
-    {
       "venue": "Lieu Privé à Montchat 69003",
       "venue_slug": "lieu-prive-a-montchat-69003",
       "title": "FRANTZ LORIOT & BERTRAND DENZLER / Musique improvisée et questions politiques",
@@ -2354,19 +2211,6 @@
       "url": "https://agenda.villemorte.fr/event/tresque-tzii-and-hilal-can",
       "image": null,
       "id": "4f7f29a03bd4"
-    },
-    {
-      "venue": "Rita-Plage",
-      "venue_slug": "rita-plage",
-      "title": "Drag Show Les Dérailleurs",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-12",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/drag-show-les-derailleurs-1",
-      "image": null,
-      "id": "50f8e9bbe75b"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -2785,19 +2629,6 @@
       "id": "9b3f294a8be7"
     },
     {
-      "venue": "Rita-Plage",
-      "venue_slug": "rita-plage",
-      "title": "Peña/Jam session des andes",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-17",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/penajam-session-des-andes",
-      "image": null,
-      "id": "44ffaeeb3a4b"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Portugal / Congo: diffusion Coupe du Monde 2026",
@@ -2848,19 +2679,6 @@
       "url": "https://www.periscope-lyon.com/concerts/lexil-nest-pas-un-voyage-2/",
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/Affiche-Exil-650x520.jpg",
       "id": "94b9902d295e"
-    },
-    {
-      "venue": "Rita-Plage",
-      "venue_slug": "rita-plage",
-      "title": "Karaoke live spéciale \"Collective compositriceS\"",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-18",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/karaoke-live-speciale-collective-compositrices",
-      "image": null,
-      "id": "b7e8cc823597"
     },
     {
       "venue": "Grrrnd Zero",
@@ -2967,7 +2785,7 @@
       "id": "6a35fffd3429"
     },
     {
-      "venue": "BosKop",
+      "venue": "Boskop",
       "venue_slug": "boskop",
       "title": "Scène Stand-Up : C Kool Comedy Club",
       "subtitle": null,
@@ -3149,7 +2967,7 @@
       "id": "b4eb95d40f77"
     },
     {
-      "venue": "BosKop",
+      "venue": "Boskop",
       "venue_slug": "boskop",
       "title": "Entretien avec nos vampires · Drag Show + Projection surprise",
       "subtitle": null,
@@ -3173,19 +2991,6 @@
       "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-rencontres-improvisees-2/",
       "image": null,
       "id": "5ee92e1c36a0"
-    },
-    {
-      "venue": "Warmaudio",
-      "venue_slug": "warmaudio",
-      "title": "END IT (Baltimore) + UPxRIGHTS + RUPTURE @Warmaudio, Lyon",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/end-it-baltimore-upxrights-rupture-warmaudio-lyon",
-      "image": null,
-      "id": "a7a09370a7ac"
     },
     {
       "venue": "Les Subsistances",
@@ -3435,32 +3240,6 @@
       "id": "17cc7abc7883"
     },
     {
-      "venue": "Les Grandes Voisines",
-      "venue_slug": "les-grandes-voisines",
-      "title": "Fête des Grandes Voisines",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-24",
-      "date_end": null,
-      "time": "13:00",
-      "url": "https://agenda.villemorte.fr/event/fete-des-grandes-voisines",
-      "image": null,
-      "id": "207455cc9590"
-    },
-    {
-      "venue": "Rita-Plage",
-      "venue_slug": "rita-plage",
-      "title": "Vernissage expo photo Azir + Concert Rockswell",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-24",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://agenda.villemorte.fr/event/vernissage-expo-photo-azir-concert-rockswell",
-      "image": null,
-      "id": "19aa4ffc5ded"
-    },
-    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Vic Bang + Kakofonico + Tundra + Le Frit",
@@ -3472,19 +3251,6 @@
       "url": "https://agenda.villemorte.fr/event/vic-bang-kakofonico-tundra-le-frit",
       "image": null,
       "id": "541c5c6ca36b"
-    },
-    {
-      "venue": "Trokson",
-      "venue_slug": "trokson",
-      "title": "Racoon Trace (Folk Punk, Espagne) + Hector Bauer (Folk, Lyon) au Trokson",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-24",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://agenda.villemorte.fr/event/racoon-trace-folk-punk-espagne-hector-bauer-folk-lyon-au-trokson",
-      "image": null,
-      "id": "2eaa8831c625"
     },
     {
       "venue": "Bourse du Travail",
@@ -3524,19 +3290,6 @@
       "url": "https://www.transbordeur.fr/evenement/le-prince-harry-no-sex-last-night-monika-25062026/",
       "image": null,
       "id": "e3b8a1e62e53"
-    },
-    {
-      "venue": "Rita-Plage",
-      "venue_slug": "rita-plage",
-      "title": "Open mic un micro pour toustes + atelier d'écriture",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-25",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://agenda.villemorte.fr/event/open-mic-un-micro-pour-toustes-atelier-decriture",
-      "image": null,
-      "id": "4e27a4487eaa"
     },
     {
       "venue": "Toï Toï le Zinc",
@@ -3864,19 +3617,6 @@
       "id": "97e334f2b9a6"
     },
     {
-      "venue": "Warmaudio",
-      "venue_slug": "warmaudio",
-      "title": "GRIDIRON + CONTENTION + CLIQUE",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-30",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/gridiron-contention-clique",
-      "image": null,
-      "id": "29b7c6961344"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "ALTIN GÜN",
@@ -3903,19 +3643,6 @@
       "id": "2a3845c73ef0"
     },
     {
-      "venue": "Rita-Plage",
-      "venue_slug": "rita-plage",
-      "title": "Conférence gesticulée - L'Odyssée d'Anette",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-01",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/conferene-gesticulee-lodyssee-danette",
-      "image": null,
-      "id": "900f7feb0308"
-    },
-    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Intérieur Queer : Comedy Club",
@@ -3927,19 +3654,6 @@
       "url": "https://h-eat.eu/events/interieur-queer-comedy-club/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/03/IQ-STAND-UP-@POLISSES-24-1079x720.jpg",
       "id": "80e6746b0882"
-    },
-    {
-      "venue": "Rita-Plage",
-      "venue_slug": "rita-plage",
-      "title": "Stand up Shneck up",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-02",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/stand-up-shneck-up-1",
-      "image": null,
-      "id": "9107a840fff0"
     },
     {
       "venue": "HEAT",
@@ -3955,7 +3669,7 @@
       "id": "c253161a236c"
     },
     {
-      "venue": "Maison de l’écologie",
+      "venue": "Maison de l'écologie",
       "venue_slug": "maison-de-l-ecologie",
       "title": "RÊVER SOUS LE FUTUR · GROUPE DE RÊVE COLLECTIF - Cycle de 7 séances",
       "subtitle": null,
@@ -3966,19 +3680,6 @@
       "url": "https://agenda.villemorte.fr/event/rever-sous-le-futur-groupe-de-reve-collectif-cycle-de-7-seances-1",
       "image": null,
       "id": "beda7f8b48e1"
-    },
-    {
-      "venue": "Rita-Plage",
-      "venue_slug": "rita-plage",
-      "title": "Concert Lonesome Lou + Froissée",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-03",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://agenda.villemorte.fr/event/concert-lonesome-lou-froissee",
-      "image": null,
-      "id": "bc21515f9a62"
     },
     {
       "venue": "L'Épicerie Moderne",
@@ -4072,19 +3773,6 @@
       "id": "ef0f12527323"
     },
     {
-      "venue": "Bulle de Son",
-      "venue_slug": "bulle-de-son",
-      "title": "Death Before Dishonor (Boston hardcore) + Shall Remain + Rümex",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-07-05",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/death-before-dishonor-boston-hardcore-shall-remain-rumex",
-      "image": null,
-      "id": "96d1ed1d19ef"
-    },
-    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "RISE AGAINST",
@@ -4109,19 +3797,6 @@
       "url": "https://agenda.villemorte.fr/event/sulfuric-cautery-morgue-breath-fosseseptique",
       "image": null,
       "id": "c909207b8298"
-    },
-    {
-      "venue": "Rita-Plage",
-      "venue_slug": "rita-plage",
-      "title": "KARAOKÉ CHANTONS SUR LA PLAGE / PIANO LIVE",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/karaoke-chantons-sur-la-plage-piano-live",
-      "image": null,
-      "id": "276403dacc65"
     },
     {
       "venue": "Le Transbordeur",
@@ -4189,19 +3864,6 @@
       "id": "586589ad8abd"
     },
     {
-      "venue": "Bulle de Son",
-      "venue_slug": "bulle-de-son",
-      "title": "Noé Talbot",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-16",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/noe-talbot",
-      "image": null,
-      "id": "fbf8a1f23841"
-    },
-    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Violent Magic Orchestra + Eau Chaude Sanitaire (Matti) + Nuage Rose",
@@ -4213,19 +3875,6 @@
       "url": "https://agenda.villemorte.fr/event/violent-magic-orchestra-eau-chaude-sanitaire-matti-nuage-rose",
       "image": null,
       "id": "55cd98494b70"
-    },
-    {
-      "venue": "Bulle de Son",
-      "venue_slug": "bulle-de-son",
-      "title": "The Real McKenzies",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-20",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/the-real-mckenzies",
-      "image": null,
-      "id": "89eb8a5d9050"
     },
     {
       "venue": "Le Sonic",
@@ -4306,19 +3955,6 @@
       "id": "8c9574883121"
     },
     {
-      "venue": "Bulle de Son",
-      "venue_slug": "bulle-de-son",
-      "title": "Jango Janice et Margot Viotti Co plateau",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-09-03",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/jango-janice-et-margot-viotti-co-plateau",
-      "image": null,
-      "id": "54edcd793b36"
-    },
-    {
       "venue": "Opéra national de Lyon",
       "venue_slug": "opera-lyon",
       "title": "Icônes",
@@ -4369,19 +4005,6 @@
       "url": "https://www.transbordeur.fr/evenement/marie-sarah-11092026/",
       "image": null,
       "id": "eef3ce44c2bb"
-    },
-    {
-      "venue": "Rontalon",
-      "venue_slug": "rontalon",
-      "title": "LA CABRIOLE FEST4 #2",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-09-11",
-      "date_end": "2026-09-13",
-      "time": "17:00",
-      "url": "https://agenda.villemorte.fr/event/la-cabriole-fest4-2",
-      "image": null,
-      "id": "ea91fffc3883"
     },
     {
       "venue": "La Halle Tony Garnier",
