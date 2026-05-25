@@ -4,6 +4,13 @@ Each scraper returns a list of Event objects. Failures in one venue do NOT
 abort the run — the bad venue is skipped, the others succeed. This is
 critical: in a daily cron job, if one venue's HTML changes you don't want
 the whole pipeline to break.
+
+v34 changes:
+  - Removed Célestins, TNP, Croix-Rousse, Comédie Odéon (theatres dropped)
+  - Added Ville Morte as an aggregator (cross-venue source)
+  - Cross-source deduplication: when the same event is reported by both a
+    venue scraper and an aggregator, the venue scraper wins (it's
+    authoritative). See scrapers/dedup.py.
 """
 from __future__ import annotations
 import json
@@ -18,11 +25,13 @@ from scrapers import (
     le_sucre, les_subs, marche_gare, radiant, la_rayonne, transbordeur,
     petit_salon, sonic, periscope, la_commune,
     heat, halle_tony_garnier,
-    opera_lyon, celestins, croix_rousse,
-    tnp, comedie_odeon, tng,
+    opera_lyon, tng,
     bourse_du_travail,
 )
+from scrapers.aggregators import villemorte
+from scrapers.dedup import deduplicate
 
+# Venue-specific scrapers — priority 100 (authoritative for their venue).
 # Each entry is (display_name, callable returning List[Event]).
 SCRAPERS: list[tuple[str, Callable[[], List[Event]]]] = [
     ("Le Sucre",                le_sucre.fetch),
@@ -38,43 +47,60 @@ SCRAPERS: list[tuple[str, Callable[[], List[Event]]]] = [
     ("HEAT",                    heat.fetch),
     ("La Halle Tony Garnier",   halle_tony_garnier.fetch),
     ("Opéra de Lyon",           opera_lyon.fetch),
-    ("Théâtre des Célestins",   celestins.fetch),
-    ("Théâtre de la Croix-Rousse", croix_rousse.fetch),
-    ("TNP",                     tnp.fetch),
-    ("Comédie Odéon",           comedie_odeon.fetch),
     ("TNG",                     tng.fetch),
     ("Bourse du Travail",       bourse_du_travail.fetch),
 ]
 
+# Aggregators — priority 50 (lose against venue scrapers on duplicates).
+# Each entry is (display_name, callable, priority).
+AGGREGATORS: list[tuple[str, Callable[[], List[Event]], int]] = [
+    ("Ville Morte",             villemorte.fetch, 50),
+]
+
 
 def main() -> int:
-    all_events: list[Event] = []
+    # Each event is tagged with a (source) priority for deduplication.
+    all_tagged: list[tuple[Event, int]] = []
     report = []
 
+    # 1) Venue-specific scrapers
     for name, fn in SCRAPERS:
         try:
             events = fn()
-            all_events.extend(events)
+            for e in events:
+                all_tagged.append((e, 100))
             report.append((name, len(events), None))
         except Exception as e:  # noqa: BLE001
             tb = traceback.format_exc(limit=2)
             report.append((name, 0, f"{type(e).__name__}: {e}"))
             print(f"[FAIL] {name}: {tb}", file=sys.stderr)
 
-    # Drop past events (keep today and future).
+    # 2) Aggregators (multi-venue sources)
+    for name, fn, prio in AGGREGATORS:
+        try:
+            events = fn()
+            for e in events:
+                all_tagged.append((e, prio))
+            report.append((name, len(events), None))
+        except Exception as e:  # noqa: BLE001
+            tb = traceback.format_exc(limit=2)
+            report.append((name, 0, f"{type(e).__name__}: {e}"))
+            print(f"[FAIL aggregator] {name}: {tb}", file=sys.stderr)
+
+    # 3) Drop past events (keep today and future).
     today = date.today()
-    upcoming = [
-        e for e in all_events
+    upcoming_tagged = [
+        (e, p) for e, p in all_tagged
         if e.date_start and e.date_start >= today.isoformat()
     ]
 
-    # Sanity-check URLs. Any event whose URL is not absolute (http/https)
+    # 4) Sanity-check URLs. Any event whose URL is not absolute (http/https)
     # gets logged and replaced with the empty string — which the frontend
     # treats as "no link" rather than rendering a relative href that would
     # 404 on GitHub Pages. We do NOT drop such events; their info is still
     # useful even without a clickable source link.
     bad_urls = 0
-    for e in upcoming:
+    for e, _ in upcoming_tagged:
         if not e.url or not (e.url.startswith("http://")
                              or e.url.startswith("https://")):
             print(f"[URL!] {e.venue} — non-absolute url for {e.title!r}: "
@@ -85,34 +111,33 @@ def main() -> int:
         print(f"[URL!] {bad_urls} event(s) had non-absolute URLs — cleared.",
               file=sys.stderr)
 
-    # Sanity-check titles. Events with empty/missing title are silently dropped
-    # (they would render as visually empty cards in the UI).
+    # 5) Sanity-check titles. Events with empty/missing title are silently
+    # dropped (they would render as visually empty cards in the UI).
     bad_titles = 0
-    clean_upcoming = []
-    for e in upcoming:
+    clean_tagged = []
+    for e, p in upcoming_tagged:
         if not e.title or not e.title.strip():
             print(f"[TITLE!] {e.venue} — empty title for event on {e.date_start} "
                   f"(url: {e.url!r}) — dropping",
                   file=sys.stderr)
             bad_titles += 1
             continue
-        clean_upcoming.append(e)
+        clean_tagged.append((e, p))
     if bad_titles:
         print(f"[TITLE!] {bad_titles} event(s) had empty titles — dropped.",
               file=sys.stderr)
-    upcoming = clean_upcoming
+    upcoming_tagged = clean_tagged
 
-    # Sort by date then time then venue.
-    upcoming.sort(key=lambda e: (e.date_start, e.time or "00:00", e.venue))
+    # 6) Cross-source deduplication. Groups events by (venue, date), then
+    # fuzzy-matches titles within each group. On duplicates, keeps the
+    # highest-priority source.
+    before = len(upcoming_tagged)
+    unique = deduplicate(upcoming_tagged)
+    print(f"\n[dedup] {before} candidates → {len(unique)} unique "
+          f"(-{before - len(unique)})")
 
-    # Deduplicate by stable id
-    seen = set()
-    unique = []
-    for e in upcoming:
-        if e.id in seen:
-            continue
-        seen.add(e.id)
-        unique.append(e)
+    # 7) Sort by date then time then venue.
+    unique.sort(key=lambda e: (e.date_start, e.time or "00:00", e.venue))
 
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
