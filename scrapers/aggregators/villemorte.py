@@ -30,8 +30,8 @@ EXCLUDED_TAGS = {
 }
 
 # Venues we don't want from Ville Morte. Match is SUBSTRING on the
-# normalized venue name (lowercase, no accents). Each pattern is itself
-# already normalized — add new entries in normalized form.
+# normalized venue name (lowercase, no accents, punctuation → space).
+# Each pattern is already normalized — add new entries in normalized form.
 EXCLUDED_VENUE_PATTERNS = [
     "radio canut",
     "amicale du futur",
@@ -39,14 +39,29 @@ EXCLUDED_VENUE_PATTERNS = [
     "ens site descartes",
     "ens descartes",
     "librairie",           # all bookstores
+    # Added in v34.2
+    "rita plage",          # also matches "Rita-Plage"
+    "bulle de son",
+    "trokson",
+    "grandes voisines",    # matches "Les Grandes Voisines"
+    "warmaudio",
+    "la multi",
+    "rontalon",
 ]
 
 
 def _norm_tag(t: str) -> str:
-    """Normalize a tag for blocklist comparison: lowercase, no accents."""
+    """Normalize a tag or venue name for blocklist comparison.
+
+    Lowercase, strip accents, replace all punctuation with spaces, collapse
+    consecutive whitespace. So "Rita-Plage" and "Rita Plage" both become
+    "rita plage" and a single pattern matches both.
+    """
     import unicodedata
     s = (t or "").lower().strip()
     s = "".join(c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn")
+    s = re.sub(r"[^\w\s]", " ", s)
+    s = re.sub(r"\s+", " ", s).strip()
     return s
 
 
