@@ -834,8 +834,8 @@ const FR_MONTHS = ['janvier','février','mars','avril','mai','juin','juillet','a
 const VENUE_GROUPS = [
   { name: 'spectacles & musiques', venues: ['La Halle Tony Garnier', 'Bourse du Travail', 'Radiant-Bellevue'] },
   { name: 'soirée',                venues: ['Le Sucre', 'Le Petit Salon', 'Le Transbordeur', 'La Rayonne'] },
-  { name: 'concerts',              venues: ['Marché Gare', 'Le Sonic', 'Le Périscope'] },
-  { name: 'lieux hybrides',        venues: ['La Commune', 'HEAT', 'Les Subsistances'] },
+  { name: 'concerts',              venues: ['Marché Gare', 'Le Sonic', 'Le Périscope', 'Toï Toï le Zinc', "L'Épicerie Moderne"] },
+  { name: 'lieux hybrides',        venues: ['La Commune', 'HEAT', 'Les Subsistances', 'Grrrnd Zero'] },
   { name: 'théâtre & danse',       venues: ['Opéra national de Lyon', 'TNG'] },
   /* 'autre' is dynamically populated at runtime with venues that appear
      in events but aren't listed in any group above (e.g. from aggregators). */
@@ -1081,18 +1081,64 @@ function formatUpdated(iso) {
 }
 
 /* ---------- build venue groups ---------- */
+
+/* Auto-promotion: when a new venue from aggregators contains "théâtre"
+   in its name (accents/case-insensitive), it goes to the théâtre & danse
+   group instead of falling into 'autre'. Returns the group name, or null. */
+function inferGroupForVenue(venueName) {
+  const norm = (venueName || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+  if (norm.includes('theatre')) return 'théâtre & danse';
+  return null;
+}
+
+/* Rebuilds VENUE_GROUP_ORDER_INDEX from VENUE_GROUPS — call this after any
+   dynamic mutation (auto-promotion or autre population) so card sorting
+   picks up the new venues. */
+function rebuildVenueGroupOrderIndex() {
+  VENUE_GROUP_ORDER_INDEX.clear();
+  VENUE_DISPLAY_ORDER.forEach((groupName, idx) => {
+    const group = VENUE_GROUPS.find(g => g.name === groupName);
+    if (group) {
+      for (const venue of group.venues) {
+        VENUE_GROUP_ORDER_INDEX.set(venue, idx);
+      }
+    }
+  });
+}
+
 function buildVenueFilters() {
   const container = document.getElementById('filterVenue');
   container.innerHTML = '';
   const venuesWithEvents = new Set(state.events.map(e => e.venue));
 
-  // Dynamically populate 'autre' with venues that appear in events but
-  // aren't listed in any curated group. Threshold: >= 1 upcoming event.
+  // Step 1: collect all venues currently known (static groups, NOT including 'autre').
   const knownVenues = new Set();
   for (const g of VENUE_GROUPS) {
     if (g.name === 'autre') continue;
     for (const v of g.venues) knownVenues.add(v);
   }
+
+  // Step 2: auto-promote unknown venues whose name implies a specific group
+  // (e.g. anything with "théâtre" -> théâtre & danse). This must happen
+  // BEFORE we compute 'autre', so promoted venues don't double-appear.
+  const unknownInEvents = new Set();
+  for (const e of state.events) {
+    if (e.venue && !knownVenues.has(e.venue)) unknownInEvents.add(e.venue);
+  }
+  for (const v of unknownInEvents) {
+    const targetGroupName = inferGroupForVenue(v);
+    if (!targetGroupName) continue;
+    const targetGroup = VENUE_GROUPS.find(g => g.name === targetGroupName);
+    if (targetGroup && !targetGroup.venues.includes(v)) {
+      targetGroup.venues.push(v);
+      knownVenues.add(v);
+    }
+  }
+
+  // Step 3: everything still unknown falls into 'autre'. Threshold: >= 1 event.
   const autreVenueCounts = new Map();
   for (const e of state.events) {
     if (!e.venue || knownVenues.has(e.venue)) continue;
@@ -1106,6 +1152,10 @@ function buildVenueFilters() {
       .sort((a, b) => (b[1] - a[1]) || a[0].localeCompare(b[0]))
       .map(([name]) => name);
   }
+
+  // Step 4: refresh the venue-to-group sort index so dynamically added
+  // venues sort correctly in the day-by-day card listing.
+  rebuildVenueGroupOrderIndex();
 
   for (const group of VENUE_GROUPS) {
     // Skip 'autre' if no venues
