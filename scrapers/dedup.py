@@ -1,10 +1,13 @@
-"""Cross-source event deduplication.
+"""Cross-source event deduplication + venue name canonicalization.
 
 Strategy:
   1. Group by (canonical_venue, date_start)
   2. Within a group of 1: keep as-is.
   3. Within a group of N: fuzzy-cluster by title similarity (>=0.7);
      keep the highest-priority event from each cluster.
+  4. Rewrite each surviving event's `venue` field to its canonical display
+     name, so the frontend doesn't show duplicate chips (e.g. "Le Sonic"
+     from a venue scraper alongside "sonic" from Ville Morte).
 
 Priority is provided by the caller (e.g. venue scrapers = 100,
 aggregators like Ville Morte = 50). On ties, prefer the event with
@@ -21,39 +24,47 @@ from .base import Event
 
 
 # ============================================================================
-# Venue aliases — different spellings of the same physical place
+# Canonical venue names
 # ============================================================================
 #
-# canonical_normalized_form: [alternative_normalized_forms]
-# Add entries as you spot real duplicates in production.
+# Format: canonical_display_name -> list of normalized alternative forms
+# (lowercase, no accents, no leading articles).
 #
-VENUE_ALIASES: dict[str, list[str]] = {
-    "periscope":     ["le periscope"],
-    "sucre":         ["le sucre"],
-    "petit salon":   ["le petit salon"],
-    "transbordeur":  ["le transbordeur"],
-    "sonic":         ["le sonic"],
-    "rayonne":       ["la rayonne", "cco la rayonne", "cco-la rayonne"],
-    "subsistances":  ["les subsistances", "les subs"],
-    "commune":       ["la commune"],
-    "marche gare":   ["marché gare", "la marche gare"],
-    "radiant":       ["radiant-bellevue", "radiant bellevue", "le radiant",
-                      "le radiant-bellevue"],
-    "opera lyon":    ["opera national de lyon", "opera de lyon",
-                      "operanational de lyon", "l opera de lyon"],
-    "tng":           ["theatre nouvelle generation"],
-    "confluences":   ["musee des confluences"],
-    "beaux-arts":    ["musee des beaux-arts", "musee des beaux arts"],
-    "mac":           ["musee d art contemporain", "musee d'art contemporain"],
-    "heat":          ["le heat"],
+# After deduplication, every surviving event's `venue` field is rewritten
+# to the canonical display name. This is what guarantees that the frontend
+# (which does exact-string matching on `e.venue`) sees ONE chip per real
+# venue, no matter how many sources spell it differently.
+#
+# Add entries here as you spot variations in production logs.
+#
+VENUE_CANONICAL: dict[str, list[str]] = {
+    # === Venues we scrape directly ===
+    "Le Périscope":           ["periscope"],
+    "Le Sucre":               ["sucre"],
+    "Le Sonic":               ["sonic"],
+    "Le Petit Salon":         ["petit salon"],
+    "Le Transbordeur":        ["transbordeur"],
+    "La Rayonne":             ["rayonne", "cco la rayonne", "cco-la rayonne",
+                               "cco rayonne"],
+    "Les Subsistances":       ["subsistances", "subs"],
+    "La Commune":             ["commune"],
+    "Marché Gare":            ["marche gare"],
+    "Radiant-Bellevue":       ["radiant", "radiant bellevue"],
+    "Opéra national de Lyon": ["opera lyon", "opera national de lyon",
+                               "opera de lyon"],
+    "TNG":                    ["tng", "theatre nouvelle generation"],
+    "HEAT":                   ["heat"],
+    "La Halle Tony Garnier":  ["halle tony garnier", "halle tony-garnier"],
+    "Bourse du Travail":      ["bourse du travail"],
+    # === New venues from aggregators (canonical names) ===
+    "Toï Toï le Zinc":        ["toi toi le zinc", "toi toi", "toitoi"],
+    "Grrrnd Zero":            ["grrrnd zero", "grrnd zero", "grrrnd-zero",
+                               "grrrnd zero fort"],
+    "L'Épicerie Moderne":     ["epicerie moderne"],
 }
 
-# Build reverse-lookup: alt_form -> canonical
-_ALIAS_REVERSE: dict[str, str] = {}
-for canonical, alts in VENUE_ALIASES.items():
-    _ALIAS_REVERSE[canonical] = canonical
-    for alt in alts:
-        _ALIAS_REVERSE[alt] = canonical
+# Build reverse lookup: normalized_form -> canonical_display
+_CANONICAL_LOOKUP: dict[str, str] = {}
 
 
 def _normalize_text(s: str) -> str:
@@ -70,10 +81,37 @@ def _normalize_text(s: str) -> str:
     return s
 
 
+# Initialize the reverse lookup after _normalize_text is defined
+for _canonical, _alts in VENUE_CANONICAL.items():
+    _norm_canonical = _normalize_text(_canonical)
+    _CANONICAL_LOOKUP[_norm_canonical] = _canonical
+    for _alt in _alts:
+        _CANONICAL_LOOKUP[_alt] = _canonical
+
+
+def canonical_venue_name(venue_str: str) -> str:
+    """Return the canonical display name for a venue, or the input unchanged.
+
+    Examples:
+      "sonic"           -> "Le Sonic"
+      "Le Sonic"        -> "Le Sonic"
+      "LE PERISCOPE"    -> "Le Périscope"
+      "Toï toï"         -> "Toï Toï le Zinc"
+      "Inconnu Random"  -> "Inconnu Random"  (no canonical form known)
+    """
+    if not venue_str:
+        return venue_str
+    norm = _normalize_text(venue_str)
+    return _CANONICAL_LOOKUP.get(norm, venue_str)
+
+
 def _venue_key(venue: str) -> str:
-    """Canonical venue key: normalize + alias lookup."""
-    norm = _normalize_text(venue)
-    return _ALIAS_REVERSE.get(norm, norm)
+    """Canonical key for grouping — same canonical form, normalized.
+
+    Two venues that share a canonical display name get the same key here,
+    which is what makes events from different sources cluster together.
+    """
+    return _normalize_text(canonical_venue_name(venue))
 
 
 def _title_similarity(a: str, b: str) -> float:
@@ -94,14 +132,15 @@ def _title_similarity(a: str, b: str) -> float:
 
 
 def deduplicate(tagged_events: List[Tuple[Event, int]]) -> List[Event]:
-    """Deduplicate events across sources.
+    """Deduplicate events across sources + canonicalize venue display names.
 
     Args:
       tagged_events: list of (event, source_priority) tuples.
         Higher priority means more authoritative.
 
     Returns:
-      Deduplicated list of events (in the same relative order as input).
+      Deduplicated list of events, each with its `venue` field rewritten
+      to the canonical display name. Order is by group iteration (not sorted).
     """
     # Group by (venue_key, date_start)
     groups: dict[tuple[str, str], list[tuple[Event, int]]] = defaultdict(list)
@@ -139,5 +178,10 @@ def deduplicate(tagged_events: List[Tuple[Event, int]]) -> List[Event]:
                 )
             )
             result.append(best[0])
+
+    # Final pass: canonicalize each surviving event's venue display name
+    # so the frontend doesn't render duplicate chips for "sonic" vs "Le Sonic".
+    for e in result:
+        e.venue = canonical_venue_name(e.venue)
 
     return result
