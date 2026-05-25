@@ -836,13 +836,16 @@ const VENUE_GROUPS = [
   { name: 'soirée',                venues: ['Le Sucre', 'Le Petit Salon', 'Le Transbordeur', 'La Rayonne'] },
   { name: 'concerts',              venues: ['Marché Gare', 'Le Sonic', 'Le Périscope'] },
   { name: 'lieux hybrides',        venues: ['La Commune', 'HEAT', 'Les Subsistances'] },
-  { name: 'théâtre & danse',       venues: ['Opéra national de Lyon', 'Théâtre des Célestins', 'TNP', 'Théâtre de la Croix-Rousse', 'Comédie Odéon', 'TNG'] },
+  { name: 'théâtre & danse',       venues: ['Opéra national de Lyon', 'TNG'] },
+  /* 'autre' is dynamically populated at runtime with venues that appear
+     in events but aren't listed in any group above (e.g. from aggregators). */
+  { name: 'autre',                 venues: [], dynamic: true },
 ];
 
 /* Display order within a day:
-   concerts → soirée → lieux hybrides → spectacles & musiques → théâtre & danse.
+   concerts → soirée → lieux hybrides → spectacles & musiques → théâtre & danse → autre.
    Map each venue to its rank so we can sort cards by group. */
-const VENUE_DISPLAY_ORDER = ['concerts', 'soirée', 'lieux hybrides', 'spectacles & musiques', 'théâtre & danse'];
+const VENUE_DISPLAY_ORDER = ['concerts', 'soirée', 'lieux hybrides', 'spectacles & musiques', 'théâtre & danse', 'autre'];
 const VENUE_GROUP_ORDER_INDEX = new Map();
 VENUE_DISPLAY_ORDER.forEach((groupName, idx) => {
   const group = VENUE_GROUPS.find(g => g.name === groupName);
@@ -1083,14 +1086,43 @@ function buildVenueFilters() {
   container.innerHTML = '';
   const venuesWithEvents = new Set(state.events.map(e => e.venue));
 
+  // Dynamically populate 'autre' with venues that appear in events but
+  // aren't listed in any curated group. Threshold: >= 1 upcoming event.
+  const knownVenues = new Set();
+  for (const g of VENUE_GROUPS) {
+    if (g.name === 'autre') continue;
+    for (const v of g.venues) knownVenues.add(v);
+  }
+  const autreVenueCounts = new Map();
+  for (const e of state.events) {
+    if (!e.venue || knownVenues.has(e.venue)) continue;
+    autreVenueCounts.set(e.venue, (autreVenueCounts.get(e.venue) || 0) + 1);
+  }
+  const autreGroup = VENUE_GROUPS.find(g => g.name === 'autre');
+  if (autreGroup) {
+    // Sorted by event count desc, then by name asc
+    autreGroup.venues = [...autreVenueCounts.entries()]
+      .filter(([, count]) => count >= 1)
+      .sort((a, b) => (b[1] - a[1]) || a[0].localeCompare(b[0]))
+      .map(([name]) => name);
+  }
+
   for (const group of VENUE_GROUPS) {
+    // Skip 'autre' if no venues
+    if (group.name === 'autre' && (!group.venues || group.venues.length === 0)) continue;
+
     const groupEl = document.createElement('div');
     groupEl.className = 'venue-group';
     groupEl.dataset.group = group.name;
 
     const groupChip = document.createElement('button');
     groupChip.className = 'chip chip-group';
-    groupChip.textContent = group.name;
+    // For 'autre', show a counter "(+N)"
+    if (group.name === 'autre') {
+      groupChip.textContent = `autre (+${group.venues.length})`;
+    } else {
+      groupChip.textContent = group.name;
+    }
     groupChip.addEventListener('click', e => {
       e.stopPropagation();
       handleGroupClick(group, groupEl, groupChip);
