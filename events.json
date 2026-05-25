@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-25T16:08:32.286909+00:00",
-  "count": 578,
+  "generated_at": "2026-05-25T20:08:08.608752+00:00",
+  "count": 633,
   "events": [
     {
       "venue": "La Commune",
@@ -107,19 +107,6 @@
       "id": "60446e8f47bb"
     },
     {
-      "venue": "Théâtre de la Croix-Rousse",
-      "venue_slug": "croix-rousse",
-      "title": "LES MOMENTS DOUX",
-      "subtitle": "Élise Chatauret",
-      "category": "théâtre",
-      "date_start": "2026-05-26",
-      "date_end": "2026-05-29",
-      "time": null,
-      "url": "https://www.croix-rousse.com/au-programme/les-moments-doux/",
-      "image": "https://www.croix-rousse.com/wp-content/uploads/2025/05/32.Les-moments-doux_1080x1080-300x300-c-default.png",
-      "id": "03b5b2dd88db"
-    },
-    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Gratuit Déjeuner-Concert YAO Déjeuner-Concert",
@@ -131,6 +118,45 @@
       "url": "https://marchegare.fr/agenda/yao",
       "image": null,
       "id": "b7eb16960a85"
+    },
+    {
+      "venue": "Radio Canut",
+      "venue_slug": "radio-canut",
+      "title": "Radio Canut - Arrêtez de nous écouter ... Rejoignez nous !",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-26",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/radio-canut-arretez-de-nous-ecouter-rejoignez-nous-1",
+      "image": null,
+      "id": "ed81b3624626"
+    },
+    {
+      "venue": "BosKop",
+      "venue_slug": "boskop",
+      "title": "QUEER METRAGES II | Programme de courts métrages sur les sexualités queer",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-26",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/queer-metrages-ii-or-programme-de-courts-metrages-sur-les-sexualites-queer",
+      "image": null,
+      "id": "08293ebcd12c"
+    },
+    {
+      "venue": "Théâtre de l’Elysée",
+      "venue_slug": "theatre-de-l-elysee",
+      "title": "LA SOCIOLOGUE, LA PSYCHIATRE ET LA BOULANGÈRE Léa Porracchia / La Compagnie du Déluge",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-26",
+      "date_end": "2026-05-29",
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/la-sociologue-la-psychiatre-et-la-boulangere-lea-porracchia-la-compagnie-du-deluge",
+      "image": null,
+      "id": "3c19e97f1c41"
     },
     {
       "venue": "Les Subsistances",
@@ -250,30 +276,17 @@
       "id": "0c43b2af8501"
     },
     {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Pouvoir",
-      "subtitle": "UNE TRIBU Collectif - Cécile Maidon - Noémie Vincart - Michel Villée",
-      "category": "théâtre",
+      "venue": "L’Amicale Du Futur",
+      "venue_slug": "l-amicale-du-futur",
+      "title": "Ouverture hebdomadaire de l'Amicale du futur - Tous les mercredi - Cantine le midi, snack le soir, bar café en continu",
+      "subtitle": null,
+      "category": null,
       "date_start": "2026-05-27",
-      "date_end": "2026-05-30",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/pouvoir/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2025/05/16pouvoir-celinechariot2022-465x310.v1746538907.jpg",
-      "id": "93a1d8fbcddb"
-    },
-    {
-      "venue": "Théâtre des Célestins",
-      "venue_slug": "celestins",
-      "title": "Marius",
-      "subtitle": "librement inspiré de Marcel Pagnol, Joël Pommerat",
-      "category": "grande salle",
-      "date_start": "2026-05-27",
-      "date_end": "2026-06-06",
-      "time": null,
-      "url": "https://www.theatredescelestins.com/fr/programmation/2025-2026/grande-salle/marius",
-      "image": "https://www.theatredescelestins.com/assets/q75-w330-h434-c330x434/84e1161f/marius_letizia_le_fur.jpg.webp",
-      "id": "0a78e80aa66a"
+      "date_end": null,
+      "time": "08:00",
+      "url": "https://agenda.villemorte.fr/event/ouverture-hebdomadaire-de-lamicale-du-futur-tous-les-mercredi-cantine-le-midi-snack-le-soir-bar-cafe-en-continu-21",
+      "image": null,
+      "id": "c6d8f557598d"
     },
     {
       "venue": "Les Subsistances",
@@ -289,30 +302,43 @@
       "id": "620e78b15dd9"
     },
     {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Nocturne Parade Phia Menard",
+      "venue": "Théâtre de l’Elysée",
+      "venue_slug": "theatre-de-l-elysee",
+      "title": "Conférence : UN BON ÉLÈVE EST-IL TOUJOURS UN ÉLÈVE QUI VA BIEN ? Sidonie Vacher (ECP, Université Lyon 2)",
       "subtitle": null,
       "category": null,
       "date_start": "2026-05-27",
       "date_end": null,
-      "time": "19:00",
-      "url": "https://www.les-subs.com/evenement/nocturne-parade-phia-menard/",
+      "time": "16:15",
+      "url": "https://agenda.villemorte.fr/event/conference-un-bon-eleve-est-il-toujours-un-eleve-qui-va-bien-sidonie-vacher-ecp-universite-lyon-2",
       "image": null,
-      "id": "fc80db93a67b"
+      "id": "bace523d9e6f"
     },
     {
-      "venue": "Comédie Odéon",
-      "venue_slug": "comedie-odeon",
-      "title": "Pourquoi j’ai jeté ma grand-mère dans le Vieux-Port",
+      "venue": "Maison de l’écologie",
+      "venue_slug": "maison-de-l-ecologie",
+      "title": "LA FIN DU MONDE POUR LES NUL·LE·S",
       "subtitle": null,
-      "category": "théâtre",
+      "category": null,
       "date_start": "2026-05-27",
-      "date_end": "2026-06-06",
-      "time": "20:00",
-      "url": "https://www.comedieodeon.com/spectacle/pourquoi-jai-jete-ma-grand-mere-dans-le-vieux-port/",
-      "image": "https://www.comedieodeon.com/wp-content/uploads/2025/03/affiche-pourquoi-jai-jete-ma-grand-mere-.jpg",
-      "id": "c59cea382d64"
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/la-fin-du-monde-pour-les-nulles",
+      "image": null,
+      "id": "feae45c3929e"
+    },
+    {
+      "venue": "La Comète",
+      "venue_slug": "la-comete",
+      "title": "Concert de soutien à La Comète par la chorale Les Deter-chantent - mercredi 27 mai à 20h",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-05-27",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-soutien-a-la-comete-par-la-chorale-les-deter-chantent-mercredi-27-mai-a-20h",
+      "image": null,
+      "id": "695c519e05ab"
     },
     {
       "venue": "Marché Gare",
@@ -406,6 +432,97 @@
       "id": "1459a2313dc8"
     },
     {
+      "venue": "La multi",
+      "venue_slug": "la-multi",
+      "title": "Quizz Cohabiter et Partager La Rue",
+      "subtitle": null,
+      "category": "rencontre",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://agenda.villemorte.fr/event/quizz-cohabiter-et-partager-la-rue",
+      "image": null,
+      "id": "445e99ca0c2c"
+    },
+    {
+      "venue": "Maison de l’écologie",
+      "venue_slug": "maison-de-l-ecologie",
+      "title": "TOUTE UNE VIE À S'ÉTEINDRE · CHRONIQUE D'UN FOYER DE TRAVAILLEURS IMMIGRÉS",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/toute-une-vie-a-seteindre-chronique-dun-foyer-de-travailleurs-immigres",
+      "image": null,
+      "id": "6c8f946b27f0"
+    },
+    {
+      "venue": "Bulle de Son",
+      "venue_slug": "bulle-de-son",
+      "title": "The Midnight Computers",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/the-midnight-computers",
+      "image": null,
+      "id": "fede5af4d72d"
+    },
+    {
+      "venue": "BosKop",
+      "venue_slug": "boskop",
+      "title": "SEL ACIDE Release Party · Exposition · Lecture · Performance · Dj set",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/sel-acide-release-party-exposition-lecture-performance-dj-set",
+      "image": null,
+      "id": "3f42cc9de91c"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Eric Frye + Michael Flora + WK Werkowicz",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/eric-frye-michael-flora-wk-werkowicz",
+      "image": null,
+      "id": "873374eba1b5"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CONCERT | KARPATT",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/concert-or-karpatt",
+      "image": null,
+      "id": "d838800f2c01"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "Baïkal (Release Party) + KLM x Kaynixe -  Toï Toï Le Zinc",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/baikal-release-party-klm-x-kaynixe-toi-toi-le-zinc",
+      "image": null,
+      "id": "579230296c40"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Nocturne Parade Phia Menard",
@@ -484,6 +601,58 @@
       "id": "f1d88b07d940"
     },
     {
+      "venue": "Villeurbanne",
+      "venue_slug": "villeurbanne",
+      "title": "FeFan #5",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-29",
+      "date_end": "2026-05-31",
+      "time": "09:00",
+      "url": "https://agenda.villemorte.fr/event/fefan-5",
+      "image": null,
+      "id": "acb6e68e521f"
+    },
+    {
+      "venue": "Les Grandes Voisines",
+      "venue_slug": "les-grandes-voisines",
+      "title": "LES INCANDESCENTES - Festival de Cirque féministe",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-05-29",
+      "date_end": "2026-05-31",
+      "time": "16:00",
+      "url": "https://agenda.villemorte.fr/event/les-incandescentes-festival-de-cirque-feministe",
+      "image": null,
+      "id": "9e7febaac4c2"
+    },
+    {
+      "venue": "La Comète",
+      "venue_slug": "la-comete",
+      "title": "Atelier d'écriture en mixité choisie sans homme cis",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://agenda.villemorte.fr/event/atelier-decriture-en-mixite-choisie-sans-homme-cis-1",
+      "image": null,
+      "id": "34cd40f47c11"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "FeFan - La soirée du public",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://agenda.villemorte.fr/event/fefan-la-soiree-du-public",
+      "image": null,
+      "id": "fe6e5546a855"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Fais Ton Cirque",
@@ -495,6 +664,45 @@
       "url": "https://www.les-subs.com/evenement/fais-ton-cirque/",
       "image": null,
       "id": "9ccf78d0c95b"
+    },
+    {
+      "venue": "Maison de l’écologie",
+      "venue_slug": "maison-de-l-ecologie",
+      "title": "POUBELLES AU DD · CONTES POST-APOCALYPTIQUES",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/poubelles-au-dd-contes-post-apocalyptiques",
+      "image": null,
+      "id": "4050f428fa4f"
+    },
+    {
+      "venue": "agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert Cadencia Project",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-cadencia-project",
+      "image": null,
+      "id": "047d37534e72"
+    },
+    {
+      "venue": "Trokson",
+      "venue_slug": "trokson",
+      "title": "ROOZALEPRES (punk rock'n'roll)",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": "18:45",
+      "url": "https://agenda.villemorte.fr/event/roozalepres-punk-rocknroll",
+      "image": null,
+      "id": "f4850606f8c0"
     },
     {
       "venue": "Le Sonic",
@@ -601,30 +809,43 @@
       "id": "232464836f4f"
     },
     {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Le Petit Prince",
-      "subtitle": "Antoine de Saint-Exupéry - Jean Bellorini - Yang Hua Theatre",
-      "category": "théâtre",
+      "venue": "ENS site Descartes",
+      "venue_slug": "ens-site-descartes",
+      "title": "Journées du Logiciel Libre",
+      "subtitle": null,
+      "category": "expo",
       "date_start": "2026-05-30",
-      "date_end": "2026-06-06",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/le-petit-prince/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2025/05/Le_Petit_Prince_Wuhan_DR-465x301.v1764255072.jpg",
-      "id": "29d83257ac88"
+      "date_end": "2026-05-31",
+      "time": "08:00",
+      "url": "https://agenda.villemorte.fr/event/journees-du-logiciel-libre-1",
+      "image": null,
+      "id": "b91ef8467fb1"
     },
     {
-      "venue": "Théâtre des Célestins",
-      "venue_slug": "celestins",
-      "title": "Évènement",
-      "subtitle": "Lancement de saison 26/27",
-      "category": "evenement",
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "KERMESSE DE SOUTIEN À ATBC",
+      "subtitle": null,
+      "category": "musique",
       "date_start": "2026-05-30",
       "date_end": null,
-      "time": null,
-      "url": "https://www.theatredescelestins.com/fr/programmation/2025-2026/evenement/lancement-de-saison-26-27",
-      "image": "https://www.theatredescelestins.com/assets/q75-w330-h434-c330x434/7602c6c8/visuel_saison_myriam_boulos.jpg.webp",
-      "id": "5027ca9f0629"
+      "time": "12:00",
+      "url": "https://agenda.villemorte.fr/event/kermesse-de-soutien-a-atbc",
+      "image": null,
+      "id": "0065de74eaee"
+    },
+    {
+      "venue": "Place Gabriel Péri",
+      "venue_slug": "place-gabriel-peri",
+      "title": "ÉCRANS PARTAGÉS - événement",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://agenda.villemorte.fr/event/ecrans-partages-evenement",
+      "image": null,
+      "id": "98a96cf12be2"
     },
     {
       "venue": "Les Subsistances",
@@ -640,17 +861,95 @@
       "id": "63fd8ea7f294"
     },
     {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Minipousses Danse",
+      "venue": "Court Circuit",
+      "venue_slug": "court-circuit",
+      "title": "Fête de Printemps du Court-Circuit ft. Artis",
       "subtitle": null,
       "category": null,
       "date_start": "2026-05-30",
       "date_end": null,
-      "time": "16:00",
-      "url": "https://www.les-subs.com/evenement/minipousses-danse/",
+      "time": "15:00",
+      "url": "https://agenda.villemorte.fr/event/fete-de-printemps-du-court-circuit-ft-artis",
       "image": null,
-      "id": "2d1a4e95cdde"
+      "id": "1fb895e33811"
+    },
+    {
+      "venue": "L’Amicale Du Futur",
+      "venue_slug": "l-amicale-du-futur",
+      "title": "Concert punk : AXXIDENT (punk Metz) + RADIX PARADOX (all star punk rock Lyon)",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/concert-punk-axxident-punk-metz",
+      "image": null,
+      "id": "6dfeb40cfc7b"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Bal afro à Grrrnd Zéro",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/bal-africain",
+      "image": null,
+      "id": "ecef6e8bd44f"
+    },
+    {
+      "venue": "agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert Keller",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-05-30",
+      "date_end": "2026-05-31",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-gabriel-keller-trio",
+      "image": null,
+      "id": "e56324b55092"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "We Are The New Generation + WQ Productions",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/we-are-the-new-generation-wq-productions",
+      "image": null,
+      "id": "0004a291eb50"
+    },
+    {
+      "venue": "Trokson",
+      "venue_slug": "trokson",
+      "title": "Blâmes.(Shoegaze) Lyon",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "18:45",
+      "url": "https://agenda.villemorte.fr/event/blamesshoegaze-lyon",
+      "image": null,
+      "id": "706c4d73b1c0"
+    },
+    {
+      "venue": "Bar des Capucins",
+      "venue_slug": "bar-des-capucins",
+      "title": "URGENTE PISSE #3: Ardente (blackmetal) + DragonKeep (dungeon synth) + Dreaming Corpse (noise/dark ambient)",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/urgente-pisse-3-ardente-blackmetal-dragonkeep-dungeon-synth-dreaming-corpse-noisedark-ambient",
+      "image": null,
+      "id": "47ad0182f814"
     },
     {
       "venue": "La Rayonne",
@@ -798,7 +1097,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Bientôt complet ! Gratuit LES 20 ANS ! FÊTE DES VOISIN·ES Concert et buffet partagé",
+      "title": "Gratuit LES 20 ANS ! FÊTE DES VOISIN·ES Concert et buffet partagé",
       "subtitle": null,
       "category": null,
       "date_start": "2026-05-31",
@@ -806,7 +1105,33 @@
       "time": "18:00",
       "url": "https://marchegare.fr/agenda/fete-des-voisines-les-20-ans",
       "image": null,
-      "id": "f9b57d7c4a9f"
+      "id": "8172f8987c22"
+    },
+    {
+      "venue": "Big White",
+      "venue_slug": "big-white",
+      "title": "Big Comedy Club",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-06-01",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/big-comedy-club-12",
+      "image": null,
+      "id": "a6baaa66cf9a"
+    },
+    {
+      "venue": "agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Spectacle A la recherche des mémoires perdues",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-01",
+      "date_end": "2026-06-02",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/spectacle-a-la-recherche-des-memoires-perdues-1",
+      "image": null,
+      "id": "dc9bab4f86fe"
     },
     {
       "venue": "Bourse du Travail",
@@ -887,17 +1212,30 @@
       "id": "8ed24df826a0"
     },
     {
-      "venue": "Théâtre des Célestins",
-      "venue_slug": "celestins",
-      "title": "Le soleil brille pourtant dehors",
-      "subtitle": "Marine Chartrain, Louen Poppé",
-      "category": "celestine",
+      "venue": "Les Clameurs",
+      "venue_slug": "les-clameurs",
+      "title": "Stand Up Politique",
+      "subtitle": null,
+      "category": null,
       "date_start": "2026-06-02",
-      "date_end": "2026-06-13",
-      "time": null,
-      "url": "https://www.theatredescelestins.com/fr/programmation/2025-2026/celestine/le-soleil-brille-pourtant-dehors",
-      "image": "https://www.theatredescelestins.com/assets/q75-w330-h434-c330x434/9008ce42/le_soleil_brille_pourtant_dehors_mathilda_bouttau_1_.jpg.webp",
-      "id": "d95bafc45ab1"
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/stand-up-politique-9",
+      "image": null,
+      "id": "e527e94dc219"
+    },
+    {
+      "venue": "L’Amicale Du Futur",
+      "venue_slug": "l-amicale-du-futur",
+      "title": "BRANDAMARIA (Maria Violenza et Irtumbranda) + DARK MIMOSA",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-02",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/brandamaria-maria-violenza-et-irtumbranda-dark-mimosa",
+      "image": null,
+      "id": "759dc0abac90"
     },
     {
       "venue": "Les Subsistances",
@@ -963,6 +1301,32 @@
       "url": "https://www.periscope-lyon.com/concerts/claude-tchamitchian-solo-in-spirit/",
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/Claude-Tchamitchian-@C.Charpenel-650x520.jpg",
       "id": "47c33022adc7"
+    },
+    {
+      "venue": "Rita-Plage",
+      "venue_slug": "rita-plage",
+      "title": "Conférence gesticulée \"Le bon filon de l’écoterrorisme\" x Julien Dupoux",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-03",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/conference-gesticulee-le-bon-filon-de-lecoterrorisme-x-julien-dupoux",
+      "image": null,
+      "id": "44b5c536d30d"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CONCERT | Soirée ENM",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-03",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/concert-or-soiree-enm",
+      "image": null,
+      "id": "ceda99e7d6b7"
     },
     {
       "venue": "Les Subsistances",
@@ -1069,6 +1433,58 @@
       "id": "38848b743fca"
     },
     {
+      "venue": "Rita-Plage",
+      "venue_slug": "rita-plage",
+      "title": "Concert Angelina Pelluet",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-04",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/concert-angelina-pelluet",
+      "image": null,
+      "id": "7049ae63693d"
+    },
+    {
+      "venue": "La Pente",
+      "venue_slug": "la-pente",
+      "title": "Pente de Punks (Single Ladies, Gagner de l'Argent & Penser Saboter)",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-04",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/pente-de-punks-single-ladies-gagner-de-largent-and-penser-saboter",
+      "image": null,
+      "id": "e0f2a087029b"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "LIOR SHOOV",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-04",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/lior-shoov",
+      "image": null,
+      "id": "7fb9f3b81851"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "SOIREE DE SOUTIEN // Ca Déménage!",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-04",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/soiree-de-soutien-ca-demenage",
+      "image": null,
+      "id": "786b19a9c2b0"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "Snuggle + Elisa Flores",
@@ -1134,17 +1550,82 @@
       "id": "8ea0622672f7"
     },
     {
-      "venue": "Théâtre de la Croix-Rousse",
-      "venue_slug": "croix-rousse",
-      "title": "NORMAN C’EST COMME NORMAL, À UNE LETTRE PRÈS",
-      "subtitle": "Clément Thirion",
-      "category": "théâtre",
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "Festival Les Intergalactiques",
+      "subtitle": null,
+      "category": "musique",
       "date_start": "2026-06-05",
-      "date_end": "2026-06-06",
-      "time": null,
-      "url": "https://www.croix-rousse.com/au-programme/norman-cest-comme-normal-a-une-lettre-pres/",
-      "image": "https://www.croix-rousse.com/wp-content/uploads/2025/05/33.Norman_1080x1080-300x300-c-default.png",
-      "id": "cd9a2e2cd65f"
+      "date_end": "2026-06-07",
+      "time": "08:00",
+      "url": "https://agenda.villemorte.fr/event/festival-les-intergalactiques",
+      "image": null,
+      "id": "7bab0d344deb"
+    },
+    {
+      "venue": "BosKop",
+      "venue_slug": "boskop",
+      "title": "Vernissage · Exposition Collective Jaquettes VHS imaginaires",
+      "subtitle": null,
+      "category": "expo",
+      "date_start": "2026-06-05",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/vernissage-exposition-collective-jaquettes-vhs-imaginaires",
+      "image": null,
+      "id": "2cb619e4ef95"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Bound By Endogamy + Sacrifice Seul + Ha Kyoon + Anomalie Magnétique",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-05",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/bound-by-endogamy-sacrifice-seul-ha-kyoon",
+      "image": null,
+      "id": "4c57dc1efd4d"
+    },
+    {
+      "venue": "Rita-Plage",
+      "venue_slug": "rita-plage",
+      "title": "Concert Tupac & JPablo y Papacho",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-05",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/concert-tupac-and-jpablo-y-papacho",
+      "image": null,
+      "id": "5372dfae0b59"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "NO MAD",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-05",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/no-mad",
+      "image": null,
+      "id": "29a426d63bbf"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "Soirée forró: Festa junina",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-05",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/soiree-forro-festa-junina",
+      "image": null,
+      "id": "ce48ce33856e"
     },
     {
       "venue": "Les Subsistances",
@@ -1277,6 +1758,32 @@
       "id": "baf905104196"
     },
     {
+      "venue": "Théâtre de l'Île Ô",
+      "venue_slug": "theatre-de-l-ile-o",
+      "title": "Balade ''Sur les traces de la Rize oubliée''",
+      "subtitle": null,
+      "category": "rencontre",
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": "06:30",
+      "url": "https://agenda.villemorte.fr/event/balade-sur-les-traces-de-la-rize-oubliee",
+      "image": null,
+      "id": "c97bdc71060b"
+    },
+    {
+      "venue": "la cantina",
+      "venue_slug": "la-cantina",
+      "title": "Coup d'éclat #6 - Faire collectif",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://agenda.villemorte.fr/event/coup-declat-6-faire-collectif",
+      "image": null,
+      "id": "932374e65a22"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Minipousses Cirque",
@@ -1290,30 +1797,56 @@
       "id": "8025c5134f83"
     },
     {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Minipousses Cirque",
+      "venue": "Librairie La Tanière",
+      "venue_slug": "librairie-la-taniere",
+      "title": "Atelier-labofiction à partir de l’utopie « Bâtir aussi »",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": "14:45",
+      "url": "https://agenda.villemorte.fr/event/atelier-labofiction-a-partir-de-lutopie-batir-aussi",
+      "image": null,
+      "id": "f8ae7d297e70"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Samba So Good #2",
       "subtitle": null,
       "category": null,
       "date_start": "2026-06-06",
       "date_end": null,
       "time": "16:00",
-      "url": "https://www.les-subs.com/evenement/minipousses-cirque/",
+      "url": "https://agenda.villemorte.fr/event/samba-so-good-2",
       "image": null,
-      "id": "dc1aee91bd72"
+      "id": "beba7314298c"
     },
     {
-      "venue": "Comédie Odéon",
-      "venue_slug": "comedie-odeon",
-      "title": "Epic Drag Battle – N’avalez pas n’importe quoi",
+      "venue": "L’Amicale Du Futur",
+      "venue_slug": "l-amicale-du-futur",
+      "title": "SOGA (MEXIQUE) + CASSE-DALLE (BREST) @ L'AMICALE",
       "subtitle": null,
-      "category": "théâtre",
+      "category": null,
       "date_start": "2026-06-06",
       "date_end": null,
-      "time": "19:00",
-      "url": "https://www.comedieodeon.com/spectacle/epic-drag-battle/",
-      "image": "https://www.comedieodeon.com/wp-content/uploads/2026/01/AFFICHE-HALL-V4.jpg",
-      "id": "7e785ad07f54"
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/soga-mexique-casse-dalle-brest-lamicale",
+      "image": null,
+      "id": "140480aeb952"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "Ibrahima CISSOKHO et la Mandingue Foly - Sortie de Vinyl \"LIBERTE\"",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/ibrahima-cissokho-et-la-mandingue-foly-sortie-de-vinyl-liberte-1",
+      "image": null,
+      "id": "765595a63ec2"
     },
     {
       "venue": "Le Sonic",
@@ -1392,6 +1925,19 @@
       "url": "https://le-sucre.eu/events/s-society-x-molekul-10-ans/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/04/HORIZONTAL-INDUSTRIAL-COPERA-20233-600x400.jpg",
       "id": "d15f06bf113b"
+    },
+    {
+      "venue": "Gamut",
+      "venue_slug": "gamut",
+      "title": "expo sortie de résidence \"à bords perdus\" Yoan Lafragette & floxus + concerts Nhi, Lône, Polën Biotope, dj set Cleseph",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-07",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://agenda.villemorte.fr/event/expo-sortie-de-residence-a-bords-perdus-yoan-lafragette-and-floxus-concerts-nhi-lone-polen-biotope-dj-set-cleseph",
+      "image": null,
+      "id": "533f289fd8a8"
     },
     {
       "venue": "La Rayonne",
@@ -1500,19 +2046,6 @@
     {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
-      "title": "Présenter et mettre en valeur son projet à l'oral : atelier pratique (2/2) 14h30 > 17h30",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-07",
-      "date_end": "2026-06-07",
-      "time": "14:30",
-      "url": "https://larayonne.org/evenement/presenter-et-mettre-en-valeur-son-projet-a-loral-atelier-pratique-2-2/",
-      "image": null,
-      "id": "edf9b5bee716"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
       "title": "Comprendre les principales aides à l'emploi dans le spectacle vivant 18h30 > 20h30",
       "subtitle": null,
       "category": null,
@@ -1537,17 +2070,17 @@
       "id": "1fdab811507d"
     },
     {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "Construire un budget et un plan de trésorerie : atelier pratique (2/2) 14h30 > 17h30",
+      "venue": "Théâtre de l’Elysée",
+      "venue_slug": "theatre-de-l-elysee",
+      "title": "PILOTE, UNE SÉRIE THÉÂTRALE EN CINQ ÉPISODES",
       "subtitle": null,
       "category": null,
-      "date_start": "2026-06-07",
-      "date_end": "2026-06-07",
-      "time": "14:30",
-      "url": "https://larayonne.org/evenement/construire-un-budget-et-un-plan-de-tresorerie-atelier-pratique-2-2-2/",
+      "date_start": "2026-06-08",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/pilote-une-serie-theatrale-en-cinq-episodes-1",
       "image": null,
-      "id": "a7c4cd5b8216"
+      "id": "0405bdde8dc3"
     },
     {
       "venue": "Marché Gare",
@@ -1602,17 +2135,17 @@
       "id": "6c58402d2002"
     },
     {
-      "venue": "Théâtre de la Croix-Rousse",
-      "venue_slug": "croix-rousse",
-      "title": "Présentation de saison 26-27",
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "MELT BANANA + PNEU",
       "subtitle": null,
-      "category": "théâtre",
+      "category": "musique",
       "date_start": "2026-06-09",
-      "date_end": "2026-06-10",
-      "time": null,
-      "url": "https://www.croix-rousse.com/au-programme/presentation-de-saison-26-27/",
-      "image": "https://www.croix-rousse.com/wp-content/uploads/2026/03/pres-de-sais_1080x1080-300x300-c-default.png",
-      "id": "40e39f226a51"
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/melt-banana-pneu",
+      "image": null,
+      "id": "6a3bceff050a"
     },
     {
       "venue": "Le Périscope",
@@ -1628,19 +2161,6 @@
       "id": "92fedb3a331e"
     },
     {
-      "venue": "Théâtre des Célestins",
-      "venue_slug": "celestins",
-      "title": "Portrait de famille",
-      "subtitle": "Une histoire des Atrides",
-      "category": "grande salle",
-      "date_start": "2026-06-10",
-      "date_end": "2026-06-13",
-      "time": null,
-      "url": "https://www.theatredescelestins.com/fr/programmation/2025-2026/grande-salle/portrait-de-famille",
-      "image": "https://www.theatredescelestins.com/assets/q75-w330-h434-c330x434-atop/01150b48/portrait_de_famille_christophe_raynaud_de_lage2ter.jpg.webp",
-      "id": "984074d7deab"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "ARCHITECT AT WORK",
@@ -1654,6 +2174,45 @@
       "id": "a06219cac015"
     },
     {
+      "venue": "Rita-Plage",
+      "venue_slug": "rita-plage",
+      "title": "Café des libertés - Féminisme et Queer",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-10",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://agenda.villemorte.fr/event/cafe-des-libertes-feminisme-et-queer",
+      "image": null,
+      "id": "074537a52d15"
+    },
+    {
+      "venue": "Librairie La Gryffe",
+      "venue_slug": "librairie-la-gryffe",
+      "title": "Apérozine de juin",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-10",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/aperozine-de-juin-1",
+      "image": null,
+      "id": "6db05e9a5a66"
+    },
+    {
+      "venue": "Sonic",
+      "venue_slug": "sonic",
+      "title": "Good Flying Birds + première partie",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-10",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/good-flying-birds-premiere-partie",
+      "image": null,
+      "id": "3e2db40b3ccf"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Gratuit Chanson Folk MO(I) + SEDR",
@@ -1665,19 +2224,6 @@
       "url": "https://marchegare.fr/agenda/moi-sedr",
       "image": null,
       "id": "9f4297efefc9"
-    },
-    {
-      "venue": "Comédie Odéon",
-      "venue_slug": "comedie-odeon",
-      "title": "Une minute de silence (à peu près)",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-06-10",
-      "date_end": "2026-06-20",
-      "time": "20:00",
-      "url": "https://www.comedieodeon.com/spectacle/une-minute-de-silence/",
-      "image": "https://www.comedieodeon.com/wp-content/uploads/2026/04/Affiche_A4_150dpi_RVB.jpg",
-      "id": "a0e7e3c9931e"
     },
     {
       "venue": "Le Sonic",
@@ -1730,6 +2276,45 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/architect-at-work-4",
       "image": null,
       "id": "a5d007730a6e"
+    },
+    {
+      "venue": "Rita-Plage",
+      "venue_slug": "rita-plage",
+      "title": "Karaoke piano live",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-11",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/karaoke-piano-live-4",
+      "image": null,
+      "id": "0aa08d239e46"
+    },
+    {
+      "venue": "Villeurbanne ENM",
+      "venue_slug": "villeurbanne-enm",
+      "title": "Festival  Objectif scène",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-11",
+      "date_end": "2026-06-14",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/festival-objectif-scene",
+      "image": null,
+      "id": "e23af8bebce8"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "EMMA CASTELLINO (full band) + MAXENCE GRINOZ + ARKANGE",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-11",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/emma-castellino-full-band-maxence-grinoz-arkange",
+      "image": null,
+      "id": "2f8e47e7049b"
     },
     {
       "venue": "La Rayonne",
@@ -1862,6 +2447,71 @@
       "id": "efd238ca555c"
     },
     {
+      "venue": "Bulle de Son",
+      "venue_slug": "bulle-de-son",
+      "title": "Isla Dorada + Maguiba",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-12",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/isla-dorada-maguiba",
+      "image": null,
+      "id": "93173552580e"
+    },
+    {
+      "venue": "Lieu Privé à Montchat 69003",
+      "venue_slug": "lieu-prive-a-montchat-69003",
+      "title": "FRANTZ LORIOT & BERTRAND DENZLER / Musique improvisée et questions politiques",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-12",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/frantz-loriot-and-bertrand-denzler-musique-improvisee-et-questions-politiques",
+      "image": null,
+      "id": "a1e81bd24cc5"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Tresque + Tzii & Hilal Can + Gardeurs + Dourdou",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-12",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/tresque-tzii-and-hilal-can",
+      "image": null,
+      "id": "4f7f29a03bd4"
+    },
+    {
+      "venue": "Rita-Plage",
+      "venue_slug": "rita-plage",
+      "title": "Drag Show Les Dérailleurs",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-12",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/drag-show-les-derailleurs-1",
+      "image": null,
+      "id": "50f8e9bbe75b"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CONCERT | JÉRÉMIE BOSSONE",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-12",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/concert-or-jeremie-bossone",
+      "image": null,
+      "id": "3d6c03cac9cf"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Gratuit WEST SIDE FEST 26 Avec l'ENM Villeurbanne",
@@ -1979,6 +2629,32 @@
       "id": "3ef475183017"
     },
     {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Vélorution Universelle : JOUBe + Pondérale + Rima",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-13",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/velorution-universelle-joube-les-oiseaux-de-trottoir-rima",
+      "image": null,
+      "id": "beab93c3591a"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "A l'Ouest des Balkans invite Nostos et Samay",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-13",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/a-louest-des-balkans-invite-nostos-et-samay",
+      "image": null,
+      "id": "00feb7a16f83"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "THIS IS TECHNO RAVE : KEUSMO / ALMØ & MORE",
@@ -2029,6 +2705,19 @@
       "url": "https://le-sucre.eu/events/s-society-150/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/04/ALWAYS-TAG-@CAPTURECHARLES-IMG1-405x600.jpeg",
       "id": "bf641f98a8b0"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Mangez Bougez avec Radio Béguin",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-14",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://agenda.villemorte.fr/event/mangez-bougez-avec-radio-beguin",
+      "image": null,
+      "id": "c5c901854603"
     },
     {
       "venue": "La Rayonne",
@@ -2083,19 +2772,6 @@
       "id": "23d1891f36f8"
     },
     {
-      "venue": "Comédie Odéon",
-      "venue_slug": "comedie-odeon",
-      "title": "Process Comedy",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-06-15",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.comedieodeon.com/spectacle/process-comedy-2/",
-      "image": "https://www.comedieodeon.com/wp-content/uploads/2019/07/Affiche-globale-PROCESS-COMEDY-scaled.jpg",
-      "id": "97c3ca32942a"
-    },
-    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "France V/S Sénégal : CDM 2026",
@@ -2146,19 +2822,6 @@
       "url": "https://www.transbordeur.fr/evenement/thornhill-lafayette-16062026/",
       "image": null,
       "id": "c43231082c39"
-    },
-    {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Prix Incandescences 2026",
-      "subtitle": "Talents de la scène théâtrale régionale",
-      "category": "théâtre",
-      "date_start": "2026-06-16",
-      "date_end": "2026-06-18",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/prix-incandescences-26/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2025/05/Prix_incandescences_2026_visuel_page_spectacle-465x301.v1766398248.jpg",
-      "id": "04b06c59280a"
     },
     {
       "venue": "Marché Gare",
@@ -2239,6 +2902,32 @@
       "id": "989a63a7c092"
     },
     {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "SCÈNE SLAM/RAP",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-17",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/scene-slamrap-2",
+      "image": null,
+      "id": "9b3f294a8be7"
+    },
+    {
+      "venue": "Rita-Plage",
+      "venue_slug": "rita-plage",
+      "title": "Peña/Jam session des andes",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-17",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/penajam-session-des-andes",
+      "image": null,
+      "id": "44ffaeeb3a4b"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Portugal / Congo: diffusion Coupe du Monde 2026",
@@ -2289,6 +2978,45 @@
       "url": "https://www.periscope-lyon.com/concerts/lexil-nest-pas-un-voyage-2/",
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/Affiche-Exil-650x520.jpg",
       "id": "94b9902d295e"
+    },
+    {
+      "venue": "Rita-Plage",
+      "venue_slug": "rita-plage",
+      "title": "Karaoke live spéciale \"Collective compositriceS\"",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-18",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/karaoke-live-speciale-collective-compositrices",
+      "image": null,
+      "id": "b7e8cc823597"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Aaron Dilloway + Blood Stereo + id m theft able",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-18",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/aaron-dilloway-blood-stereo-id-m-theft-able",
+      "image": null,
+      "id": "f7c392337e34"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CONCERT | CAÏMAN sortie d'album remixé",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-18",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/concert-or-caiman-sortie-dalbum-remixe",
+      "image": null,
+      "id": "38b01a3ec288"
     },
     {
       "venue": "Marché Gare",
@@ -2356,30 +3084,43 @@
       "id": "e05cb9312ad8"
     },
     {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 60 Secondes 60 Minutes",
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Lixiviat Festival N°4 (Grindcore)",
       "subtitle": null,
-      "category": null,
+      "category": "musique",
       "date_start": "2026-06-19",
-      "date_end": null,
-      "time": "18:15",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-60-secondes-60-minutes/",
+      "date_end": "2026-06-20",
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/lixiviat-festival-ndegree4-grindcore",
       "image": null,
-      "id": "d9721bb1104c"
+      "id": "6a35fffd3429"
     },
     {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 Rencontres Improvisees 2",
+      "venue": "BosKop",
+      "venue_slug": "boskop",
+      "title": "Scène Stand-Up : C Kool Comedy Club",
       "subtitle": null,
-      "category": null,
+      "category": "théâtre",
       "date_start": "2026-06-19",
       "date_end": null,
-      "time": "19:15",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-rencontres-improvisees-2/",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/scene-stand-up-c-kool-comedy-club",
       "image": null,
-      "id": "880998eea370"
+      "id": "b911006bade4"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CONCERT | VIRGINIE NOURRY (LÀ PIETÀ)",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-19",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/concert-or-virginie-nourry-la-pieta",
+      "image": null,
+      "id": "510236499cf0"
     },
     {
       "venue": "Les Subsistances",
@@ -2473,6 +3214,19 @@
       "id": "c4e2be4a8c12"
     },
     {
+      "venue": "Le Rize",
+      "venue_slug": "le-rize",
+      "title": "Balade ''Remonter la Rize jusqu'à sa source\"",
+      "subtitle": null,
+      "category": "rencontre",
+      "date_start": "2026-06-20",
+      "date_end": null,
+      "time": "06:30",
+      "url": "https://agenda.villemorte.fr/event/balade-remonter-la-rize-jusqua-sa-source",
+      "image": null,
+      "id": "dbaa8fc12199"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Festival Dance People 2026 Breakfast Dialogues",
@@ -2497,19 +3251,6 @@
       "url": "https://www.les-subs.com/evenement/atelier-danse-pour-enfants/",
       "image": null,
       "id": "74fef6e5d978"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 Quatre Quarts",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "14:30",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-quatre-quarts/",
-      "image": null,
-      "id": "b4cc9685938d"
     },
     {
       "venue": "Marché Gare",
@@ -2538,17 +3279,17 @@
       "id": "b4eb95d40f77"
     },
     {
-      "venue": "Comédie Odéon",
-      "venue_slug": "comedie-odeon",
-      "title": "Le Petit Théâtre des Opérations – Julien Hervieux",
+      "venue": "BosKop",
+      "venue_slug": "boskop",
+      "title": "Entretien avec nos vampires · Drag Show + Projection surprise",
       "subtitle": null,
       "category": "théâtre",
       "date_start": "2026-06-20",
       "date_end": null,
-      "time": "17:00",
-      "url": "https://www.comedieodeon.com/spectacle/le-petit-theatre-des-operations-julien-hervieux/",
-      "image": "https://www.comedieodeon.com/wp-content/uploads/2026/04/PTDO_Affiche_spectacle__affiche_BD.png",
-      "id": "18b47d0b2a1c"
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/entretien-avec-nos-vampires-drag-show-projection-surprise",
+      "image": null,
+      "id": "f2298e7a26f8"
     },
     {
       "venue": "Les Subsistances",
@@ -2562,6 +3303,19 @@
       "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-rencontres-improvisees-2/",
       "image": null,
       "id": "5ee92e1c36a0"
+    },
+    {
+      "venue": "Warmaudio",
+      "venue_slug": "warmaudio",
+      "title": "END IT (Baltimore) + UPxRIGHTS + RUPTURE @Warmaudio, Lyon",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-20",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/end-it-baltimore-upxrights-rupture-warmaudio-lyon",
+      "image": null,
+      "id": "a7a09370a7ac"
     },
     {
       "venue": "Les Subsistances",
@@ -2614,19 +3368,6 @@
       "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-bless-the-sound-that-saved-a-witch-like-me-benjamin-kahn/",
       "image": null,
       "id": "fc46f5de8144"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 Le Sacre Du Printemps Roger Bernat",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "21:00",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-le-sacre-du-printemps-roger-bernat/",
-      "image": null,
-      "id": "5fc9a9b0f45e"
     },
     {
       "venue": "Le Petit Salon",
@@ -2746,32 +3487,6 @@
       "id": "a18d96657a06"
     },
     {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 Souls Power Hamdi Dridi",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-souls-power-hamdi-dridi/",
-      "image": null,
-      "id": "5c228488cbfc"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 Fete De La Musique",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-fete-de-la-musique/",
-      "image": null,
-      "id": "9c5e3b52a329"
-    },
-    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "France V/S Irak : CDM 2026",
@@ -2824,19 +3539,6 @@
       "id": "b22a10a49144"
     },
     {
-      "venue": "Comédie Odéon",
-      "venue_slug": "comedie-odeon",
-      "title": "La Prière du Hamster",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-06-24",
-      "date_end": "2026-08-29",
-      "time": null,
-      "url": "https://www.comedieodeon.com/spectacle/priere-hamster/",
-      "image": "https://www.comedieodeon.com/wp-content/uploads/2025/05/2025_05_LA_PRIERE_DU_HAMSTER_Affiche_420x594_TOURNEE_BD-pdf.jpg",
-      "id": "6bdbc03046e0"
-    },
-    {
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "Emmanuelle Parrenin , Delphine Dora & Mocke + Muon S (Anna Gaïotti et Jean Bender)",
@@ -2861,6 +3563,58 @@
       "url": "https://www.transbordeur.fr/evenement/show-me-the-body-truck-violence-24062026/",
       "image": null,
       "id": "17cc7abc7883"
+    },
+    {
+      "venue": "Les Grandes Voisines",
+      "venue_slug": "les-grandes-voisines",
+      "title": "Fête des Grandes Voisines",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-24",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://agenda.villemorte.fr/event/fete-des-grandes-voisines",
+      "image": null,
+      "id": "207455cc9590"
+    },
+    {
+      "venue": "Rita-Plage",
+      "venue_slug": "rita-plage",
+      "title": "Vernissage expo photo Azir + Concert Rockswell",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-24",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://agenda.villemorte.fr/event/vernissage-expo-photo-azir-concert-rockswell",
+      "image": null,
+      "id": "19aa4ffc5ded"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Vic Bang + Kakofonico + Tundra + Le Frit",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-24",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/vic-bang-kakofonico-tundra-le-frit",
+      "image": null,
+      "id": "541c5c6ca36b"
+    },
+    {
+      "venue": "Trokson",
+      "venue_slug": "trokson",
+      "title": "Racoon Trace (Folk Punk, Espagne) + Hector Bauer (Folk, Lyon) au Trokson",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-24",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/racoon-trace-folk-punk-espagne-hector-bauer-folk-lyon-au-trokson",
+      "image": null,
+      "id": "2eaa8831c625"
     },
     {
       "venue": "Bourse du Travail",
@@ -2900,6 +3654,32 @@
       "url": "https://www.transbordeur.fr/evenement/le-prince-harry-no-sex-last-night-monika-25062026/",
       "image": null,
       "id": "e3b8a1e62e53"
+    },
+    {
+      "venue": "Rita-Plage",
+      "venue_slug": "rita-plage",
+      "title": "Open mic un micro pour toustes + atelier d'écriture",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/open-mic-un-micro-pour-toustes-atelier-decriture",
+      "image": null,
+      "id": "4e27a4487eaa"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "CONCERT ET DJ SET // Fai Lo Tieu #2",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/concert-et-dj-set-fai-lo-tieu-2",
+      "image": null,
+      "id": "fa53f6817248"
     },
     {
       "venue": "Le Sonic",
@@ -2980,6 +3760,19 @@
       "id": "5ffe95709e69"
     },
     {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Lxs Assoiffxs + Orga Shlag Club",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-26",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/lxs-assoiffxs-orga-shlag-club",
+      "image": null,
+      "id": "3d84b947256b"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "THIS IS TECHNO RAVE : SUNT / EVY JOY & MORE",
@@ -3045,17 +3838,30 @@
       "id": "83718993e3e8"
     },
     {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Minipousses Cirque",
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Sans Transition After Prrride",
       "subtitle": null,
       "category": null,
       "date_start": "2026-06-27",
       "date_end": null,
       "time": "16:00",
-      "url": "https://www.les-subs.com/evenement/minipousses-cirque/",
+      "url": "https://agenda.villemorte.fr/event/afterpride-1",
       "image": null,
-      "id": "821aff9cde7e"
+      "id": "1d82fa6aa0c0"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "DRAG SHOWS // Le Cabaret des Oliviers #3",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-27",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/drag-shows-le-cabaret-des-oliviers-3",
+      "image": null,
+      "id": "82c80208dac7"
     },
     {
       "venue": "Le Petit Salon",
@@ -3136,6 +3942,19 @@
       "id": "f3ec60313652"
     },
     {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Projection de Hélène Trésore Transnationale",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-28",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/projection-de-helene-tresore-transnationale",
+      "image": null,
+      "id": "aa2dc9c42db4"
+    },
+    {
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "TURBO TERRASSE : Passage de Disques",
@@ -3175,6 +3994,19 @@
       "id": "97e334f2b9a6"
     },
     {
+      "venue": "Warmaudio",
+      "venue_slug": "warmaudio",
+      "title": "GRIDIRON + CONTENTION + CLIQUE",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-30",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/gridiron-contention-clique",
+      "image": null,
+      "id": "29b7c6961344"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "ALTIN GÜN",
@@ -3186,6 +4018,32 @@
       "url": "https://www.transbordeur.fr/evenement/altin-gun-01072026/",
       "image": null,
       "id": "2e1f7e7c67b6"
+    },
+    {
+      "venue": "La Salle de Bains",
+      "venue_slug": "la-salle-de-bains",
+      "title": "Street Queer",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-01",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://agenda.villemorte.fr/event/street-queer",
+      "image": null,
+      "id": "2a3845c73ef0"
+    },
+    {
+      "venue": "Rita-Plage",
+      "venue_slug": "rita-plage",
+      "title": "Conférence gesticulée - L'Odyssée d'Anette",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-01",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/conferene-gesticulee-lodyssee-danette",
+      "image": null,
+      "id": "900f7feb0308"
     },
     {
       "venue": "HEAT",
@@ -3201,6 +4059,19 @@
       "id": "80e6746b0882"
     },
     {
+      "venue": "Rita-Plage",
+      "venue_slug": "rita-plage",
+      "title": "Stand up Shneck up",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-02",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/stand-up-shneck-up-1",
+      "image": null,
+      "id": "9107a840fff0"
+    },
+    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Intérieur Queer : Drag Rendez-vous & Garçon sauvage",
@@ -3212,6 +4083,45 @@
       "url": "https://h-eat.eu/events/interieur-queer-drag-rendez-vous-garcon-sauvage/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/03/2025-07-12-Preview-IQ-GragRdv-HEAT-bd-Credit-Gaetan-CLEMENT-031-1080x720.jpg",
       "id": "c253161a236c"
+    },
+    {
+      "venue": "Maison de l’écologie",
+      "venue_slug": "maison-de-l-ecologie",
+      "title": "RÊVER SOUS LE FUTUR · GROUPE DE RÊVE COLLECTIF - Cycle de 7 séances",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-03",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://agenda.villemorte.fr/event/rever-sous-le-futur-groupe-de-reve-collectif-cycle-de-7-seances-1",
+      "image": null,
+      "id": "beda7f8b48e1"
+    },
+    {
+      "venue": "Rita-Plage",
+      "venue_slug": "rita-plage",
+      "title": "Concert Lonesome Lou + Froissée",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-03",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/concert-lonesome-lou-froissee",
+      "image": null,
+      "id": "bc21515f9a62"
+    },
+    {
+      "venue": "L’Épicerie Moderne",
+      "venue_slug": "l-epicerie-moderne",
+      "title": "OSEES + Dream_Mega",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-03",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/osees",
+      "image": null,
+      "id": "1567eb18e503"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -3238,6 +4148,19 @@
       "url": "https://h-eat.eu/events/interieur-queer-ball-afterball/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/03/IQ-AMBIANCE-@POLISSES-1-1080x720.jpg",
       "id": "62739d3676e7"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Bal folk d'été",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://agenda.villemorte.fr/event/bal-folk-dete",
+      "image": null,
+      "id": "604f47665189"
     },
     {
       "venue": "La Rayonne",
@@ -3279,6 +4202,19 @@
       "id": "ef0f12527323"
     },
     {
+      "venue": "Bulle de Son",
+      "venue_slug": "bulle-de-son",
+      "title": "Death Before Dishonor (Boston hardcore) + Shall Remain + Rümex",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-05",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/death-before-dishonor-boston-hardcore-shall-remain-rumex",
+      "image": null,
+      "id": "96d1ed1d19ef"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "RISE AGAINST",
@@ -3290,6 +4226,32 @@
       "url": "https://radiant-bellevue.fr/spectacles/rise-against/",
       "image": null,
       "id": "2af3a48e4793"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Sulfuric Cautery + Morgue Breath + Fosseseptique",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-08",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/sulfuric-cautery-morgue-breath-fosseseptique",
+      "image": null,
+      "id": "c909207b8298"
+    },
+    {
+      "venue": "Rita-Plage",
+      "venue_slug": "rita-plage",
+      "title": "KARAOKÉ CHANTONS SUR LA PLAGE / PIANO LIVE",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-09",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/karaoke-chantons-sur-la-plage-piano-live",
+      "image": null,
+      "id": "276403dacc65"
     },
     {
       "venue": "Le Transbordeur",
@@ -3305,6 +4267,45 @@
       "id": "502e62cb1a99"
     },
     {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Soirée Gender Reveal Party : Gui + John Travelota  + Messalina Mescalina + DJ Miss Joli Butt Kunt",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-10",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/soiree-gender-reveal-party-gui-john-travelota-messalina-mescalina-dj-miss-joli-butt-kunt",
+      "image": null,
+      "id": "04f5c344edaf"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Silence Collapse Soundsystem",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-11",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://agenda.villemorte.fr/event/silence-collapse-soundsystem",
+      "image": null,
+      "id": "9244cbac4c3d"
+    },
+    {
+      "venue": "Friche Artistique Lamartine | La Robinetterie",
+      "venue_slug": "friche-artistique-lamartine-la-robinetterie",
+      "title": "Un été à la Friche dans le cadre de Tout le Monde Dehors 2026",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-12",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://agenda.villemorte.fr/event/un-ete-a-la-friche-dans-le-cadre-de-tout-le-monde-dehors-2026",
+      "image": null,
+      "id": "c506f2f0c184"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Nuits De Fourviere 2026 Le Bal Shangwe Wanjiru Kamuyu",
@@ -3318,6 +4319,45 @@
       "id": "586589ad8abd"
     },
     {
+      "venue": "Bulle de Son",
+      "venue_slug": "bulle-de-son",
+      "title": "Noé Talbot",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-16",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/noe-talbot",
+      "image": null,
+      "id": "fbf8a1f23841"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Violent Magic Orchestra + Eau Chaude Sanitaire (Matti) + Nuage Rose",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-16",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/violent-magic-orchestra-eau-chaude-sanitaire-matti-nuage-rose",
+      "image": null,
+      "id": "55cd98494b70"
+    },
+    {
+      "venue": "Bulle de Son",
+      "venue_slug": "bulle-de-son",
+      "title": "The Real McKenzies",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-20",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/the-real-mckenzies",
+      "image": null,
+      "id": "89eb8a5d9050"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "Ulrika Spacek + Sharon Tate Modern",
@@ -3329,6 +4369,84 @@
       "url": "https://sonic-lyon.fr/evenement/ulrika-spacek-sharon-tate-modern/",
       "image": null,
       "id": "5db429245cdf"
+    },
+    {
+      "venue": "Rock n Eat",
+      "venue_slug": "rock-n-eat",
+      "title": "SHUTDOWN (New York hardcore) + IVY + guest",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-26",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/shutdown-new-york-hardcore-ivy-guest",
+      "image": null,
+      "id": "c21c846dd4a1"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Brigitte NRV +  Sarah Maï + Tony Geranno",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-08-06",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/brigitte-nrv-sarah-mai-tony-geranno",
+      "image": null,
+      "id": "18ae1be190d5"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Ragana + tba",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-08-15",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/ragana-tba",
+      "image": null,
+      "id": "a16a97dd6707"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Fossilization + Phobocosm + tba",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-08-16",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/fossilization-phobocosm-tba",
+      "image": null,
+      "id": "89e72c824d3d"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "PΞB + TBA",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-08-30",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/p3b-tba",
+      "image": null,
+      "id": "8c9574883121"
+    },
+    {
+      "venue": "Bulle de Son",
+      "venue_slug": "bulle-de-son",
+      "title": "Jango Janice et Margot Viotti Co plateau",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-03",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/jango-janice-et-margot-viotti-co-plateau",
+      "image": null,
+      "id": "54edcd793b36"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -3357,19 +4475,6 @@
       "id": "370c09e168d2"
     },
     {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Mémoire de fille",
-      "subtitle": "Annie Ernaux - Veronika Bachfischer - Sarah Kohm - Élisa Leroy - Suzanne de Baecque",
-      "category": "théâtre",
-      "date_start": "2026-09-10",
-      "date_end": "2026-09-20",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/memoire-de-fille/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/3_Memoire_de_fillecMarie_Clauzade-465x301.v1776240148.jpg",
-      "id": "ea99b56e5e5f"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Covertramp - Hommage à Supertramp",
@@ -3394,6 +4499,19 @@
       "url": "https://www.transbordeur.fr/evenement/marie-sarah-11092026/",
       "image": null,
       "id": "eef3ce44c2bb"
+    },
+    {
+      "venue": "Rontalon",
+      "venue_slug": "rontalon",
+      "title": "LA CABRIOLE FEST4 #2",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-11",
+      "date_end": "2026-09-13",
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/la-cabriole-fest4-2",
+      "image": null,
+      "id": "ea91fffc3883"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -3524,19 +4642,6 @@
       "url": "https://www.bourse-du-travail.com/mesdames-en-vraies-366978.html",
       "image": null,
       "id": "590417c1cdd1"
-    },
-    {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Seul dans Berlin — Une petite affaire",
-      "subtitle": "Seul dans Berlin",
-      "category": "théâtre",
-      "date_start": "2026-09-29",
-      "date_end": "2026-10-17",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/seul-dans-berlin/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/2_Seul_dans_Berlin_cdomaine_public-465x301.v1777381976.jpg",
-      "id": "4c979ed16ebd"
     },
     {
       "venue": "Bourse du Travail",
@@ -3771,19 +4876,6 @@
       "url": "https://www.transbordeur.fr/evenement/guy2bezbar-09102026/",
       "image": null,
       "id": "242003a4006d"
-    },
-    {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Rapport pour une académie",
-      "subtitle": "Franz Kafka - Georges Lavaudant - Manuel Le Lièvre",
-      "category": "théâtre",
-      "date_start": "2026-10-09",
-      "date_end": "2026-10-17",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/rapport-pour-une-acadmie/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/3_Rapport_academiecMarie_Clauzade-465x301.v1776265332.jpg",
-      "id": "6d7ed695db63"
     },
     {
       "venue": "La Rayonne",
@@ -4163,19 +5255,6 @@
       "id": "3a17da648b15"
     },
     {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "La Troupe éphémère #précipité — Message personnel",
-      "subtitle": "Jean Bellorini",
-      "category": "théâtre",
-      "date_start": "2026-10-24",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/la-troupe-ephemere-precipite/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2024/05/250504_RdL_0321-465x310.v1746542257.jpg",
-      "id": "7ccb470d3fdb"
-    },
-    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Urban Pop NOOR",
@@ -4200,19 +5279,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/edgar-yves-jr/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/edgar-yves_radiant-bellevue-500x500.jpg",
       "id": "918c56b2c344"
-    },
-    {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Piano solo #précipité — Pour te comprendre",
-      "subtitle": "Piano solo #précipité",
-      "category": "théâtre",
-      "date_start": "2026-10-25",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/piano-solo-precipite/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/05/1_solo_piano_pour_te_comprendre-465x301.v1777900928.jpg",
-      "id": "110209ae1d4b"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4304,6 +5370,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/jeremy-hababou/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/jeremy-hababou_radiant-bellevue-500x500.jpg",
       "id": "8242e4f78810"
+    },
+    {
+      "venue": "L’Épicerie Moderne",
+      "venue_slug": "l-epicerie-moderne",
+      "title": "THE NOTWIST",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-29",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/the-notwist",
+      "image": null,
+      "id": "1a05b312c57d"
     },
     {
       "venue": "Bourse du Travail",
@@ -4410,19 +5489,6 @@
       "id": "36a0ee1d140f"
     },
     {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Amadoca",
-      "subtitle": "Sofia Andrukhovych - Jules Audry - Yuriy Zavalnyouk",
-      "category": "théâtre",
-      "date_start": "2026-11-04",
-      "date_end": "2026-11-06",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/amadoca-2026/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2025/04/Amadoca_Christophe-Raynaud-de-Lage4-465x301.v1760445864.jpg",
-      "id": "5a85b2525bb9"
-    },
-    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Metal Post-Rock LONG DISTANCE CALLING",
@@ -4460,19 +5526,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/alan-stivell/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/02/alan-stivell_radiant-bellevue-500x500.jpg",
       "id": "647044e6d7b7"
-    },
-    {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Barber Shop Chronicles",
-      "subtitle": "Inua Ellams - Junior Mthombeni - Michael De Cock",
-      "category": "théâtre",
-      "date_start": "2026-11-05",
-      "date_end": "2026-11-11",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/barber-shop-chronicles/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Barber_ShopcStef_Stessel-465x301.v1776343416.jpg",
-      "id": "049a95537bd4"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -4826,17 +5879,17 @@
       "id": "76488555ce3f"
     },
     {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Martin Eden",
-      "subtitle": "Jack London - Francis Kerline - Mélodie-Amy Wallet",
-      "category": "théâtre",
+      "venue": "L’Épicerie Moderne",
+      "venue_slug": "l-epicerie-moderne",
+      "title": "INFINITY SONG",
+      "subtitle": null,
+      "category": "musique",
       "date_start": "2026-11-14",
-      "date_end": "2026-11-22",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/martin-eden-2026/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2025/04/Martin-Eden_RdL1-465x301.v1764256912.jpg",
-      "id": "f5a1edb81b1f"
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/infinity-song",
+      "image": null,
+      "id": "a42c4d528118"
     },
     {
       "venue": "La Rayonne",
@@ -4876,19 +5929,6 @@
       "url": "https://www.transbordeur.fr/evenement/beast-in-black-frozen-crown-sonata-arctica-15112026/",
       "image": null,
       "id": "264e5916c4da"
-    },
-    {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Oh les beaux jours",
-      "subtitle": "Samuel Beckett - Alain Françon",
-      "category": "théâtre",
-      "date_start": "2026-11-17",
-      "date_end": "2026-11-25",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/oh-les-beaux-jours/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/2_Oh_les_beaux_jourscJean_Louis_Fernandez-465x301.v1776345806.jpg",
-      "id": "dbdf930d23c8"
     },
     {
       "venue": "Bourse du Travail",
@@ -5268,19 +6308,6 @@
       "id": "ee616746e6d6"
     },
     {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "L’hors-présence ou Chimères du pays de Morsan",
-      "subtitle": "Tiphaine Raffier",
-      "category": "théâtre",
-      "date_start": "2026-12-01",
-      "date_end": "2026-12-05",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/lhors-presence-ou-chimeres-du-pays-de-morsan/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Lhors_presencecDroits-reserves-_Photographyartwork_Ian-Strange_Dalison-1_2022-465x301.v1776346597.jpg",
-      "id": "022b656dcd80"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Marine Leonardi",
@@ -5318,19 +6345,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/la-grande-sophie-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/la-grande-sophie_radiant-bellevue-500x500.jpg",
       "id": "b5f482f818be"
-    },
-    {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Les corps incorruptibles",
-      "subtitle": "Aurélia Lüscher",
-      "category": "théâtre",
-      "date_start": "2026-12-02",
-      "date_end": "2026-12-12",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/les-corps-incorruptibles/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Les_corps_incorruptiblescJean_Louis_Fernandez-465x301.v1776347741.jpg",
-      "id": "f835783f88ad"
     },
     {
       "venue": "Bourse du Travail",
@@ -5487,19 +6501,6 @@
       "url": "https://www.bourse-du-travail.com/le-noel-fantasmagique-de-william-arribart-379750.html",
       "image": null,
       "id": "2422f756607b"
-    },
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Le Noël Fantasmagique De William Arribart",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-12-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/le-noel-fantasmagique-de-william-arribart-379751.html",
-      "image": null,
-      "id": "e77a9b1bb970"
     },
     {
       "venue": "Le Transbordeur",
@@ -5866,19 +6867,6 @@
       "id": "71ee594b1f4c"
     },
     {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Zone d’Attente",
-      "subtitle": "Macha Makeïeff",
-      "category": "théâtre",
-      "date_start": "2027-01-14",
-      "date_end": "2027-01-30",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/zone-dattente/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Zone_dattentecMacha-Makeieff-465x301.v1776349243.jpg",
-      "id": "0f6750fb0d63"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Philippe Caveriviere",
@@ -5890,19 +6878,6 @@
       "url": "https://www.bourse-du-travail.com/philippe-caveriviere-363777.html",
       "image": null,
       "id": "3a5eed4a6205"
-    },
-    {
-      "venue": "Comédie Odéon",
-      "venue_slug": "comedie-odeon",
-      "title": "Léandre – Privilégié",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-01-15",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.comedieodeon.com/spectacle/leandre-dans-sablier/",
-      "image": "https://www.comedieodeon.com/wp-content/uploads/2025/10/LEANDRE-40x60_BD.jpg",
-      "id": "854598ec4889"
     },
     {
       "venue": "Le Transbordeur",
@@ -6087,19 +7062,6 @@
       "id": "a61f63ef7b3d"
     },
     {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Mobile Homes",
-      "subtitle": "Tristan Dubois",
-      "category": "théâtre",
-      "date_start": "2027-01-21",
-      "date_end": "2027-01-30",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/mobile-homes/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Mobile_homescTristan_Dubois-465x301.v1776695063.jpg",
-      "id": "dc0d1f153d32"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "RESOLVE + SILENT PLANET + SPLEEN",
@@ -6165,19 +7127,6 @@
       "id": "1e14a3c1296e"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "DISNEY SUR GLACE - LE VOYAGE ENCHANTE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-27",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-2",
-      "image": null,
-      "id": "f28077f68cdc"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Akim Omiri - Contexte - Tournée",
@@ -6230,32 +7179,6 @@
       "id": "c459f2399be6"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "DISNEY SUR GLACE - LE VOYAGE ENCHANTE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-30",
-      "date_end": null,
-      "time": "14:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-5",
-      "image": null,
-      "id": "3a53b65589fa"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "DISNEY SUR GLACE - LE VOYAGE ENCHANTE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-30",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-6",
-      "image": null,
-      "id": "b4d3ccfd00ba"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Ilyes Djadel",
@@ -6280,19 +7203,6 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-7",
       "image": null,
       "id": "6ddc25fd7aa2"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "DISNEY SUR GLACE - LE VOYAGE ENCHANTE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-31",
-      "date_end": null,
-      "time": "14:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-8",
-      "image": null,
-      "id": "a9f9cad35272"
     },
     {
       "venue": "Le Transbordeur",
@@ -6384,19 +7294,6 @@
       "url": "https://www.bourse-du-travail.com/pierre-emmanuel-barre-aymeric-lompret-une-heure-trente-tournee-382075.html",
       "image": null,
       "id": "f1f501436e80"
-    },
-    {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Tout est calme dans les hauteurs",
-      "subtitle": "Thomas Bernhard - Claude Porcell - Jean-François Sivadier",
-      "category": "théâtre",
-      "date_start": "2027-02-05",
-      "date_end": "2027-02-14",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/tout-est-calme-dans-les-hauteurs/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/5_Tout_est_calmecJean-Louis_Fernandez-465x301.v1777300007.jpg",
-      "id": "bb7edb4437e4"
     },
     {
       "venue": "Bourse du Travail",
@@ -6573,38 +7470,12 @@
       "title": "HOLIDAY ON ICE - CINEMA OF DREAMS",
       "subtitle": null,
       "category": "concert",
-      "date_start": "2027-02-20",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-3",
-      "image": null,
-      "id": "4e5a9e573079"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "HOLIDAY ON ICE - CINEMA OF DREAMS",
-      "subtitle": null,
-      "category": "concert",
       "date_start": "2027-02-21",
       "date_end": null,
       "time": "13:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-4",
       "image": null,
       "id": "30ff6eb444ff"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "HOLIDAY ON ICE - CINEMA OF DREAMS",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-02-21",
-      "date_end": null,
-      "time": "16:30",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-5",
-      "image": null,
-      "id": "d63d8786bef3"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6672,19 +7543,6 @@
       "id": "b87b3d63ea2c"
     },
     {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "7 minutes",
-      "subtitle": "Stefano Massini - Pietro Pizzuti - Maëlle Poésy",
-      "category": "théâtre",
-      "date_start": "2027-03-03",
-      "date_end": "2027-03-13",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/7-minutes/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_7minutescFelipe_Dupouy-465x301.v1776848314.jpg",
-      "id": "c6b43eb7bba3"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Pierre Thevenoux",
@@ -6696,19 +7554,6 @@
       "url": "https://www.bourse-du-travail.com/pierre-thevenoux-379019.html",
       "image": null,
       "id": "43ae9228b5d2"
-    },
-    {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Une soirée avec Fatima Daas",
-      "subtitle": "20h30",
-      "category": "théâtre",
-      "date_start": "2027-03-04",
-      "date_end": "2027-03-05",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/une-soire-avec-fatima-daas/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_EcransMixtescEcrans_Mixtes-465x301.v1776849130.jpg",
-      "id": "2eab47e8c6c7"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -6763,19 +7608,6 @@
       "id": "e79a51623332"
     },
     {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Ma maison est noire",
-      "subtitle": "Forough Farrokhzad - Mina Kavani - Erik Truffaz - Murcof",
-      "category": "théâtre",
-      "date_start": "2027-03-10",
-      "date_end": "2027-03-20",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/ma-maison-est-noire/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/2_Ma_Maison_est_noirecChristophe_Raynaud_de_Lage-465x301.v1776850214.jpg",
-      "id": "7b39f82086df"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Blandine Lehout",
@@ -6800,19 +7632,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/thea/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/thea_radiant-bellevue-500x500.jpg",
       "id": "d0a62cf618b4"
-    },
-    {
-      "venue": "Comédie Odéon",
-      "venue_slug": "comedie-odeon",
-      "title": "María Moreno",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-03-12",
-      "date_end": "2027-03-13",
-      "time": null,
-      "url": "https://www.comedieodeon.com/spectacle/maria-moreno/",
-      "image": "https://www.comedieodeon.com/wp-content/uploads/2026/02/MariaMoreno_Affiche_Neutre_40x60.jpg",
-      "id": "9259c4b68d09"
     },
     {
       "venue": "Bourse du Travail",
@@ -6971,19 +7790,6 @@
       "id": "8f7fda5d4582"
     },
     {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Le Voyage d’hiver",
-      "subtitle": "Franz Schubert - Wilhelm Müller - Deborah Warner",
-      "category": "théâtre",
-      "date_start": "2027-03-23",
-      "date_end": "2027-03-27",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/le-voyage-dhiver/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Le_voyage_dhivercStephane_Lagoutte-465x301.v1776850981.jpg",
-      "id": "592ec920203f"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Edouard Deloignon",
@@ -7034,32 +7840,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/laurent-baffie-3/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/laurent-baffie_radiant-bellevue-500x500.jpg",
       "id": "c3521617ac6b"
-    },
-    {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "L’Épatante Épopée",
-      "subtitle": "Jeanne Bleuse - Élise Caron - Sylvain Lemêtre",
-      "category": "théâtre",
-      "date_start": "2027-04-01",
-      "date_end": "2027-04-08",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/l-epatante-epopee/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_LEpatante_EpopeecChristophe_Raynaud_de_Lage-465x301.v1776851937.jpg",
-      "id": "01371408dd2b"
-    },
-    {
-      "venue": "Comédie Odéon",
-      "venue_slug": "comedie-odeon",
-      "title": "Nadim – Fraîcheur de vivre",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-04-03",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.comedieodeon.com/spectacle/nadim-fraicheur-de-vivre/",
-      "image": "https://www.comedieodeon.com/wp-content/uploads/2026/03/NADIM-REVENDEURS-SS-LOGO.jpg",
-      "id": "389b79cd1a5a"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -7270,19 +8050,6 @@
       "id": "caa9e95bd727"
     },
     {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Deux cavaliers de l’orage",
-      "subtitle": "Jean Giono - Hugo Roux",
-      "category": "théâtre",
-      "date_start": "2027-05-19",
-      "date_end": "2027-05-29",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/deux-cavaliers-de-lorage/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/2_2_cavaliers_de_loragecRodolphe-Gonzales_Yann_Rabanier-Modds-465x301.v1778159893.jpg",
-      "id": "cca391e2f669"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Florence Mendez - Délicate - Tournée",
@@ -7294,32 +8061,6 @@
       "url": "https://www.bourse-du-travail.com/florence-mendez-delicate-tournee-381205.html",
       "image": null,
       "id": "b8dcbcc0d50e"
-    },
-    {
-      "venue": "Comédie Odéon",
-      "venue_slug": "comedie-odeon",
-      "title": "Cédric Salaun – En rodage",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-05-21",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.comedieodeon.com/spectacle/cedric-salaun-en-rodage/",
-      "image": "https://www.comedieodeon.com/wp-content/uploads/2026/01/CEDRIC-SALAUN-40x60-1.jpg",
-      "id": "9931f22c8ef8"
-    },
-    {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Le Livre de K",
-      "subtitle": "Simon Falguières",
-      "category": "théâtre",
-      "date_start": "2027-05-21",
-      "date_end": "2027-05-29",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/le-livre-de-k/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/3_Le_livre_de_KcChristophe_Raynaud_de_Lage-465x301.v1776869075.jpg",
-      "id": "def48f4d2191"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7346,19 +8087,6 @@
       "url": "https://www.bourse-du-travail.com/edgar-yves-jr-359465.html",
       "image": null,
       "id": "7ed676c5de4a"
-    },
-    {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Le Malade imaginaire ou le silence de Molière",
-      "subtitle": "Molière - Giovanni Macchia - Arthur Nauzyciel",
-      "category": "théâtre",
-      "date_start": "2027-06-05",
-      "date_end": "2027-06-12",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/le-malade-imaginaire-ou-le-silence-de-moliere/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Le_malade_imaginairecPhilippe_Chancel-465x301.v1776869691.jpg",
-      "id": "e7c08999702d"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7411,19 +8139,6 @@
       "url": "https://www.bourse-du-travail.com/julien-santini-358214.html",
       "image": null,
       "id": "e808eda4bc91"
-    },
-    {
-      "venue": "TNP",
-      "venue_slug": "tnp",
-      "title": "Prix Incandescences 2027",
-      "subtitle": "Talents de la scène théâtrale régionale",
-      "category": "théâtre",
-      "date_start": "2027-06-15",
-      "date_end": "2027-06-17",
-      "time": null,
-      "url": "https://www.tnp-villeurbanne.com/spectacle/prix-incandescences-2027/",
-      "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/Prix_Incandescences_2027-465x301.v1776873340.png",
-      "id": "60c470cc979e"
     },
     {
       "venue": "Bourse du Travail",
