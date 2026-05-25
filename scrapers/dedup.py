@@ -61,6 +61,15 @@ VENUE_CANONICAL: dict[str, list[str]] = {
     "Grrrnd Zero":            ["grrrnd zero", "grrnd zero", "grrrnd-zero",
                                "grrrnd zero fort"],
     "L'Épicerie Moderne":     ["epicerie moderne"],
+    # Added in v34.2 — venues seen in Ville Morte we want in specific groups
+    "A Thou Bout d'Chant":    ["a thou bout d chant", "thou bout d chant",
+                               "a thoubout d chant"],
+    "Boskop":                 ["boskop"],
+    "Maison de l'écologie":   ["maison de l ecologie",
+                               "maison ecologie",
+                               "maison de lecologie"],
+    "Agend'arts":             ["agend arts", "agendarts"],
+    "Big White":              ["big white"],
 }
 
 # Build reverse lookup: normalized_form -> canonical_display
