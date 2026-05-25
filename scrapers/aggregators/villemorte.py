@@ -29,6 +29,18 @@ EXCLUDED_TAGS = {
     "marché", "marche",
 }
 
+# Venues we don't want from Ville Morte. Match is SUBSTRING on the
+# normalized venue name (lowercase, no accents). Each pattern is itself
+# already normalized — add new entries in normalized form.
+EXCLUDED_VENUE_PATTERNS = [
+    "radio canut",
+    "amicale du futur",
+    "comete",              # matches "La Comète", "Comète Bar", etc.
+    "ens site descartes",
+    "ens descartes",
+    "librairie",           # all bookstores
+]
+
 
 def _norm_tag(t: str) -> str:
     """Normalize a tag for blocklist comparison: lowercase, no accents."""
@@ -108,6 +120,13 @@ def fetch() -> List[Event]:
         if any(_norm_tag(t) in EXCLUDED_TAGS for t in tag_names):
             continue
 
+        # ----- Filtering: excluded venues -----
+        place = item.get("place") or {}
+        venue_name_raw = (place.get("name") or "").strip()
+        venue_norm = _norm_tag(venue_name_raw)  # reuse norm helper
+        if any(p in venue_norm for p in EXCLUDED_VENUE_PATTERNS):
+            continue
+
         # ----- Date/time parsing -----
         start_ts = item.get("start_datetime")
         if start_ts is None:
@@ -135,8 +154,7 @@ def fetch() -> List[Event]:
                 pass
 
         # ----- Venue info -----
-        place = item.get("place") or {}
-        venue_name = (place.get("name") or "Inconnu").strip()
+        venue_name = venue_name_raw or "Inconnu"
         venue_slug = _slugify(venue_name)
 
         # ----- URL -----
