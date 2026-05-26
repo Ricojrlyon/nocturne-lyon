@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-26T07:53:25.589661+00:00",
-  "count": 692,
+  "generated_at": "2026-05-26T13:21:55.385007+00:00",
+  "count": 701,
   "events": [
     {
       "venue": "HEAT",
@@ -29,58 +29,6 @@
       "id": "35eec8bcab48"
     },
     {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "The Dwarfs of East Agouza",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-05-26",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/the-dwarfs-of-east-agouza/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/03/Dwarfs4_©Maged_Nader_300dpi-Kopie-680x440-1-650x421.jpg",
-      "id": "06bd082f921c"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Magic Mardi",
-      "subtitle": "Marija · Equinoxe · IMA:R",
-      "category": "club",
-      "date_start": "2026-05-26",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/magic-mardi-78/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/Plan-de-travail-12-480x600.png",
-      "id": "285d334d3ac3"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "KNOCKED LOOSE + STATIC DRESS",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-05-26",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/knocked-loose-static-dress-26052026/",
-      "image": null,
-      "id": "5c99e5247cac"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "TRICKY",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-05-26",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/tricky/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/10/tricky_radiant-bellevue-500x500.jpg",
-      "id": "32fcbfc0a0a7"
-    },
-    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "GénérationS en scène",
@@ -98,7 +46,7 @@
       "venue_slug": "marche-gare",
       "title": "Gratuit Déjeuner-Concert YAO Déjeuner-Concert",
       "subtitle": null,
-      "category": null,
+      "category": "Soul & Funk",
       "date_start": "2026-05-26",
       "date_end": null,
       "time": "12:30",
@@ -118,6 +66,32 @@
       "url": "https://agenda.villemorte.fr/event/queer-metrages-ii-or-programme-de-courts-metrages-sur-les-sexualites-queer",
       "image": null,
       "id": "08293ebcd12c"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Magic Mardi",
+      "subtitle": "Marija · Equinoxe · IMA:R",
+      "category": "club",
+      "date_start": "2026-05-26",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://le-sucre.eu/events/magic-mardi-78/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/Plan-de-travail-12-480x600.png",
+      "id": "24fc54e33800"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "KNOCKED LOOSE + AURORE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-05-26",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.transbordeur.fr/evenement/knocked-loose-aurore-26052026/",
+      "image": null,
+      "id": "db488b80c2dc"
     },
     {
       "venue": "Les Subsistances",
@@ -146,6 +120,19 @@
       "id": "fb23693d73f3"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "TRICKY",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-05-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/tricky/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/10/tricky_radiant-bellevue-500x500.jpg",
+      "id": "14a3fd1921f1"
+    },
+    {
       "venue": "Salle Molière",
       "venue_slug": "salle-moliere",
       "title": "Strohl / Chausson",
@@ -159,17 +146,17 @@
       "id": "0cce09d90c8e"
     },
     {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Blandine Lehout",
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "The Dwarfs of East Agouza",
       "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-05-27",
+      "category": "musique",
+      "date_start": "2026-05-26",
       "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/blandine-lehout-253056.html",
-      "image": null,
-      "id": "36281ee2aa72"
+      "time": "21:00",
+      "url": "https://www.periscope-lyon.com/concerts/the-dwarfs-of-east-agouza/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/03/Dwarfs4_©Maged_Nader_300dpi-Kopie-680x440-1-650x421.jpg",
+      "id": "f2e7a7fedbe9"
     },
     {
       "venue": "HEAT",
@@ -185,19 +172,6 @@
       "id": "d32003b5a6fe"
     },
     {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Chess Bar x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/chess-bar-x-heat-9/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
-      "id": "2a15ff905f9d"
-    },
-    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Grand Défi Télécrochet – Blind test & karaoké à Lyon",
@@ -209,32 +183,6 @@
       "url": "https://lacommune.co/event/grand-defi/",
       "image": null,
       "id": "3e040b96808b"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "TURBO TERRASSE : Passage de Disques",
-      "subtitle": "Avec Pablo Boudet & Anthony Dupuy",
-      "category": "musique",
-      "date_start": "2026-05-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/091924_Sarab_web_paul-650x433.jpg",
-      "id": "894712373f5e"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "ARMA JACKSON + BONKA",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-05-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/arma-jackson-bonka-27052026/",
-      "image": null,
-      "id": "a0955af4acb3"
     },
     {
       "venue": "Le Transbordeur",
@@ -276,6 +224,19 @@
       "id": "620e78b15dd9"
     },
     {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "TURBO TERRASSE : Passage de Disques",
+      "subtitle": "Avec Pablo Boudet & Anthony Dupuy",
+      "category": "musique",
+      "date_start": "2026-05-27",
+      "date_end": null,
+      "time": "15:30",
+      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/091924_Sarab_web_paul-650x433.jpg",
+      "id": "8084e40b0fee"
+    },
+    {
       "venue": "Maison de l'écologie",
       "venue_slug": "maison-de-l-ecologie",
       "title": "LA FIN DU MONDE POUR LES NUL·LE·S",
@@ -289,6 +250,19 @@
       "id": "feae45c3929e"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Chess Bar x HEAT",
+      "subtitle": null,
+      "category": "Jeux",
+      "date_start": "2026-05-27",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://h-eat.eu/events/chess-bar-x-heat-9/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
+      "id": "67d4f93db4bc"
+    },
+    {
       "venue": "Institut Lumière",
       "venue_slug": "institut-lumiere",
       "title": "Le plaisir du 35mm",
@@ -300,6 +274,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-312416-le-plaisir-du-35mm.html",
       "image": null,
       "id": "b1e58bab9116"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "ARMA JACKSON + BONKA",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-05-27",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/arma-jackson-bonka-27052026/",
+      "image": null,
+      "id": "30525f4b114f"
     },
     {
       "venue": "La Commune",
@@ -326,6 +313,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-318341-goteborgsoperans-danskompani.html",
       "image": null,
       "id": "1f1f20014f6a"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Blandine Lehout",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-05-27",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.bourse-du-travail.com/blandine-lehout-253056.html",
+      "image": null,
+      "id": "605a838ede51"
     },
     {
       "venue": "Marché Gare",
@@ -393,58 +393,6 @@
       "id": "fea8f2c7cc9b"
     },
     {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "TURBO TERRASSE : Passage de Disques",
-      "subtitle": "Avec Jean-Claude Sarrasin",
-      "category": "musique",
-      "date_start": "2026-05-28",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-2/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/052124_Accident_du_travail_Lukas_De_Clerk_web_paul-650x433.jpg",
-      "id": "77207b9ef9a6"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Liam Szymonik Quartet",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-05-28",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/liam-szymonik-quartet/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/Liam-Szymonik-Quartet.jpeg",
-      "id": "7ba08361877a"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "SCRATCH MASSIVE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-05-28",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/scratch-massive-28052026/",
-      "image": null,
-      "id": "7d7047a59a3b"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "YANNICK NOAH",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-05-28",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/yannick-noah/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/04/aNOAHLYONDEV001byANDRED_19photoshop-500x500.jpg",
-      "id": "1459a2313dc8"
-    },
-    {
       "venue": "Archives municipales de Lyon",
       "venue_slug": "archives-municipales-de-lyon",
       "title": "Les lieux de loisirs à Lyon",
@@ -469,6 +417,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-316530-midi-de-l-audi-3.html",
       "image": null,
       "id": "b4d96622500c"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "TURBO TERRASSE : Passage de Disques",
+      "subtitle": "Avec Jean-Claude Sarrasin",
+      "category": "musique",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "15:30",
+      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-2/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/052124_Accident_du_travail_Lukas_De_Clerk_web_paul-650x433.jpg",
+      "id": "234c2303fad6"
     },
     {
       "venue": "Maison de l'écologie",
@@ -534,6 +495,19 @@
       "url": "https://agenda.villemorte.fr/event/baikal-release-party-klm-x-kaynixe-toi-toi-le-zinc",
       "image": null,
       "id": "579230296c40"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "SCRATCH MASSIVE + WARUM",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/scratch-massive-warum-28052026/",
+      "image": null,
+      "id": "1e559bb50460"
     },
     {
       "venue": "Les Subsistances",
@@ -614,6 +588,19 @@
       "id": "dbab6975bb28"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "YANNICK NOAH",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/yannick-noah/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/04/aNOAHLYONDEV001byANDRED_19photoshop-500x500.jpg",
+      "id": "52779100d32a"
+    },
+    {
       "venue": "Toï Toï le Zinc",
       "venue_slug": "toi-toi-le-zinc",
       "title": "Baïkal + KLM x Kaynixe",
@@ -627,17 +614,17 @@
       "id": "9d8d14bdc76a"
     },
     {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Verino",
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "Liam Szymonik Quartet",
       "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-05-29",
+      "category": "musique",
+      "date_start": "2026-05-28",
       "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/verino-278010.html",
-      "image": null,
-      "id": "71f434873d4a"
+      "time": "21:00",
+      "url": "https://www.periscope-lyon.com/concerts/liam-szymonik-quartet/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/Liam-Szymonik-Quartet.jpeg",
+      "id": "8753e91e0650"
     },
     {
       "venue": "HEAT",
@@ -664,45 +651,6 @@
       "url": "https://lacommune.co/event/bal-swing-lyon-2/",
       "image": null,
       "id": "21620981cf16"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "club x Asian Core",
-      "subtitle": "Animistic Beliefs · FEIYI · To Van Kao",
-      "category": "club",
-      "date_start": "2026-05-29",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/club-x-asian-core/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/04/VISUAL-480x600.png",
-      "id": "9107b2443e5f"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "BEN HOWARD + CLARA MANN",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-05-29",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/ben-howard-clara-mann-29052026/",
-      "image": null,
-      "id": "ac2ccd33361b"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "ELIES ZOGHLAMI",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-05-29",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/elies-zoghlami/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/06/elies_zoghlami-500x500.jpg",
-      "id": "f1d88b07d940"
     },
     {
       "venue": "Villeurbanne",
@@ -783,6 +731,19 @@
       "id": "2655ec8a0b58"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "BEN HOWARD + CLARA MANN",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/ben-howard-clara-mann-29052026/",
+      "image": null,
+      "id": "7dc905ed81d3"
+    },
+    {
       "venue": "Maison de la Danse",
       "venue_slug": "maison-de-la-danse",
       "title": "GöteborgsOperans Danskompani",
@@ -794,6 +755,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-318341-goteborgsoperans-danskompani.html",
       "image": null,
       "id": "5a8d47c1866a"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Verino",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.bourse-du-travail.com/verino-278010.html",
+      "image": null,
+      "id": "5bc48b92b1ac"
     },
     {
       "venue": "Espace Gerson",
@@ -809,6 +783,19 @@
       "id": "7912cb1e8056"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "ELIES ZOGHLAMI",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/elies-zoghlami/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/06/elies_zoghlami-500x500.jpg",
+      "id": "9235932481f8"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "BLIND.001",
@@ -820,6 +807,19 @@
       "url": "https://sonic-lyon.fr/evenement/blind-001/",
       "image": null,
       "id": "bb19d008d801"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "club x Asian Core",
+      "subtitle": "Animistic Beliefs · FEIYI · To Van Kao",
+      "category": "club",
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://le-sucre.eu/events/club-x-asian-core/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/04/VISUAL-480x600.png",
+      "id": "fb89af7e6b98"
     },
     {
       "venue": "Le Petit Salon",
@@ -874,19 +874,6 @@
       "id": "e90d2e118f19"
     },
     {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "club",
-      "subtitle": "Karissa · SALOME · Toccororo",
-      "category": "club",
-      "date_start": "2026-05-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/karissa-salome-tocorroro/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/toccororo-600x600.jpg",
-      "id": "5b4591a40fdc"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "FLO MASSE + LUMBAGO + JOLLY + LEGRAM VG",
@@ -911,19 +898,6 @@
       "url": "https://www.transbordeur.fr/evenement/eczodia-kalnie-samuel-moriero-toxic-machinery-30052026/",
       "image": null,
       "id": "eed87560a758"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "ROSA BURSZTEIN",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-05-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/rosa-bursztein/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/06/credit-Audouin-Desforges-e1749735860252-500x500.jpeg",
-      "id": "232464836f4f"
     },
     {
       "venue": "Musées Gadagne",
@@ -1173,6 +1147,19 @@
       "id": "7c7e748300f3"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "ROSA BURSZTEIN",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/rosa-bursztein/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/06/credit-Audouin-Desforges-e1749735860252-500x500.jpeg",
+      "id": "96d3db691e51"
+    },
+    {
       "venue": "Toï Toï le Zinc",
       "venue_slug": "toi-toi-le-zinc",
       "title": "We are the new generation + WQ Productions",
@@ -1197,6 +1184,19 @@
       "url": "https://sonic-lyon.fr/evenement/suave-2/",
       "image": null,
       "id": "45b5e799580e"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "club",
+      "subtitle": "Karissa · SALOME · Toccororo",
+      "category": "club",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://le-sucre.eu/events/karissa-salome-tocorroro/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/toccororo-600x600.jpg",
+      "id": "42c3823f206a"
     },
     {
       "venue": "Le Petit Salon",
@@ -1225,22 +1225,9 @@
       "id": "618d35454e50"
     },
     {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "José Cruz Dans Portugal, Voyage Au Centre Du Monde",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-05-31",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/jose-cruz-dans-portugal-voyage-au-centre-du-monde-186635.html",
-      "image": null,
-      "id": "1638b3fe2dd7"
-    },
-    {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "Truck Soundsystem",
+      "title": "Red Bull x Marcel present Truck Soundsystem by Crush x La Fièvre",
       "subtitle": null,
       "category": null,
       "date_start": "2026-05-31",
@@ -1248,7 +1235,7 @@
       "time": null,
       "url": "https://h-eat.eu/events/truck-soundsystem/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/05/truck_soundsystem-632x720.jpg",
-      "id": "1b50937a67bc"
+      "id": "44c6ffb3c478"
     },
     {
       "venue": "La Commune",
@@ -1277,32 +1264,6 @@
       "id": "53a378a1f359"
     },
     {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "S.society",
-      "subtitle": "Elix · Mischluft",
-      "category": "club",
-      "date_start": "2026-05-31",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/s-society-149/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/31_05-600x338.png",
-      "id": "dee3dcdb4799"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "D.I.V.A",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-05-31",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/d-i-v-a-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/06/DIVA-fond-blanc-scaled-e1749127927749-500x500.jpg",
-      "id": "314435a63037"
-    },
-    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LOLA YOUNG",
@@ -1314,6 +1275,45 @@
       "url": "https://radiant-bellevue.fr/spectacles/lola-young/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/09/lola-young_radiant-bellevue-500x500.jpg",
       "id": "66510805924d"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "José Cruz Dans Portugal, Voyage Au Centre Du Monde",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-05-31",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://www.bourse-du-travail.com/jose-cruz-dans-portugal-voyage-au-centre-du-monde-186635.html",
+      "image": null,
+      "id": "1fa3ac52f973"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "D.I.V.A",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-05-31",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://radiant-bellevue.fr/spectacles/d-i-v-a-2/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/06/DIVA-fond-blanc-scaled-e1749127927749-500x500.jpg",
+      "id": "9c155482055f"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "S.society",
+      "subtitle": "Elix · Mischluft",
+      "category": "club",
+      "date_start": "2026-05-31",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://le-sucre.eu/events/s-society-149/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/31_05-600x338.png",
+      "id": "76c934e46c6b"
     },
     {
       "venue": "Marché Gare",
@@ -1394,19 +1394,6 @@
       "id": "a1b6b231f81a"
     },
     {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Les Goguettes",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-06-02",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/les-goguettes-319487.html",
-      "image": null,
-      "id": "a631ae0392b3"
-    },
-    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Atelier initiation dessin BD",
@@ -1420,17 +1407,17 @@
       "id": "f7db1ac99417"
     },
     {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Arlt + Gilles Poizat",
-      "subtitle": "Les 20 ans de Arlt • En partenariat avec Murailles Music",
-      "category": "musique",
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "mardi Mar. 02. juin 06 Gratuit Jeune Public Tu t’es regardé·e ? - Spectacle CFMI Spectacle musical à partir de 10 ans",
+      "subtitle": null,
+      "category": "Spectacles Divers",
       "date_start": "2026-06-02",
       "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/arlt-gilles-poizat/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/03/Arlt-©-Marie-Losier-1-e1776953997826-650x433.jpg",
-      "id": "96d5bae9cb8f"
+      "time": "10:00",
+      "url": "https://marchegare.fr/agenda/tu-tes-regardee-spectacle-cfmi",
+      "image": null,
+      "id": "5738427ab103"
     },
     {
       "venue": "Le Sucre",
@@ -1440,36 +1427,10 @@
       "category": "club",
       "date_start": "2026-06-02",
       "date_end": null,
-      "time": null,
+      "time": "18:00",
       "url": "https://le-sucre.eu/events/magic-mardi-82/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/04/magic_mardi-600x600.png",
-      "id": "0a56ce915a75"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "CLUTCH + BOKASSA",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-02",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/clutch-bokassa-02062026/",
-      "image": null,
-      "id": "f771009651f6"
-    },
-    {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "mardi Mar. 02. juin 06 Gratuit Jeune Public Tu t’es regardé·e ? - Spectacle CFMI Spectacle musical à partir de 10 ans",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-02",
-      "date_end": null,
-      "time": null,
-      "url": "https://marchegare.fr/agenda/tu-tes-regardee-spectacle-cfmi",
-      "image": null,
-      "id": "8ed24df826a0"
+      "id": "413902ba3100"
     },
     {
       "venue": "Les Clameurs",
@@ -1483,6 +1444,19 @@
       "url": "https://agenda.villemorte.fr/event/stand-up-politique-9",
       "image": null,
       "id": "e527e94dc219"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "CLUTCH + BOKASSA",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-02",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/clutch-bokassa-02062026/",
+      "image": null,
+      "id": "96ca439e651b"
     },
     {
       "venue": "Les Subsistances",
@@ -1526,15 +1500,28 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Sasha Velour",
+      "title": "Les Goguettes",
       "subtitle": null,
       "category": "humour",
-      "date_start": "2026-06-03",
+      "date_start": "2026-06-02",
       "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/sasha-velour-369818.html",
+      "time": "20:30",
+      "url": "https://www.bourse-du-travail.com/les-goguettes-319487.html",
       "image": null,
-      "id": "2fd68febee49"
+      "id": "dee6a34a0ae6"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "Arlt + Gilles Poizat",
+      "subtitle": "Les 20 ans de Arlt • En partenariat avec Murailles Music",
+      "category": "musique",
+      "date_start": "2026-06-02",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.periscope-lyon.com/concerts/arlt-gilles-poizat/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/03/Arlt-©-Marie-Losier-1-e1776953997826-650x433.jpg",
+      "id": "230820c9600f"
     },
     {
       "venue": "HEAT",
@@ -1548,19 +1535,6 @@
       "url": "https://h-eat.eu/events/quartier-libre-special-voisin-x-strate/",
       "image": "https://h-eat.eu/wp-content/uploads/2025/08/JulietteVlr_28-480x720.jpg",
       "id": "320b747f122c"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Claude Tchamitchian solo – “In Spirit”",
-      "subtitle": "I'm free • concert gratuit",
-      "category": "musique",
-      "date_start": "2026-06-03",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/claude-tchamitchian-solo-in-spirit/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/Claude-Tchamitchian-@C.Charpenel-650x520.jpg",
-      "id": "47c33022adc7"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -1602,6 +1576,19 @@
       "id": "6cb3297804cc"
     },
     {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "Claude Tchamitchian solo – “In Spirit”",
+      "subtitle": "I'm free • concert gratuit",
+      "category": "musique",
+      "date_start": "2026-06-03",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.periscope-lyon.com/concerts/claude-tchamitchian-solo-in-spirit/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/Claude-Tchamitchian-@C.Charpenel-650x520.jpg",
+      "id": "1d93192d25f7"
+    },
+    {
       "venue": "Bar Rock'n Eat",
       "venue_slug": "bar-rock-n-eat",
       "title": "Nastyjoe",
@@ -1613,6 +1600,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-318377-nastyjoe.html",
       "image": null,
       "id": "b8ee4f6e7119"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Sasha Velour",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-06-03",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.bourse-du-travail.com/sasha-velour-369818.html",
+      "image": null,
+      "id": "bd8528eb37de"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -1632,7 +1632,7 @@
       "venue_slug": "marche-gare",
       "title": "LES 20 ANS ! Animation Le Qu'ouis-je? spécial Marché Gare Blindtest décalé",
       "subtitle": null,
-      "category": null,
+      "category": "Jeux",
       "date_start": "2026-06-03",
       "date_end": null,
       "time": "20:00",
@@ -1652,6 +1652,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-295655-lucie-carbone.html",
       "image": null,
       "id": "aa32a4dc5b49"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Vandale Radio",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-04",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/vandale-radio-2/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/05/format-insta-post-576x720.png",
+      "id": "74eeed4d2ad2"
     },
     {
       "venue": "La Commune",
@@ -1678,19 +1691,6 @@
       "url": "https://lacommune.co/event/dj-set-lyon/",
       "image": null,
       "id": "17874a894711"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "nötile",
-      "subtitle": "Release Party • En partenariat avec La Compagnie Mangouste",
-      "category": "musique",
-      "date_start": "2026-06-04",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/notile-3/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/2-notile-photo-presse-HD-©-bertrand-gaudillere-item-1-650x434.jpg",
-      "id": "d670abe13f37"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -1784,56 +1784,30 @@
       "id": "e10d33fe4581"
     },
     {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "nötile",
+      "subtitle": "Release Party • En partenariat avec La Compagnie Mangouste",
+      "category": "musique",
+      "date_start": "2026-06-04",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.periscope-lyon.com/concerts/notile-3/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/2-notile-photo-presse-HD-©-bertrand-gaudillere-item-1-650x434.jpg",
+      "id": "c9f69f0d04f2"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Nuits De Fourviere 2026 Ce Que Le Ciel Ne Sait Pas Feda Wardak",
       "subtitle": null,
-      "category": null,
+      "category": "Danse",
       "date_start": "2026-06-04",
       "date_end": null,
       "time": "21:30",
       "url": "https://www.les-subs.com/evenement/nuits-de-fourviere-2026-ce-que-le-ciel-ne-sait-pas-feda-wardak/",
       "image": null,
       "id": "ec348bcdaacf"
-    },
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Elena Nagapetyan",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-06-05",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/elena-nagapetyan-334511.html",
-      "image": null,
-      "id": "11e98b326b83"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "live club",
-      "subtitle": "Adult DVD · ROÜGE · NƵM99",
-      "category": "club",
-      "date_start": "2026-06-05",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/live-club/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/Adult-DVD-2026-600x600.jpg",
-      "id": "9cee93da79c2"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "PUBLIC IMAGE LTD + SOCIETE ETRANGE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-05",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/public-image-ltd-societe-etrange-05062026/",
-      "image": null,
-      "id": "8ea0622672f7"
     },
     {
       "venue": "La Rayonne",
@@ -1888,6 +1862,19 @@
       "id": "29a426d63bbf"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "PUBLIC IMAGE LTD + SOCIETE ETRANGE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-05",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/public-image-ltd-societe-etrange-05062026/",
+      "image": null,
+      "id": "8cf91af0a8da"
+    },
+    {
       "venue": "Auditorium de Lyon",
       "venue_slug": "auditorium-de-lyon",
       "title": "Le piano de Brahms",
@@ -1899,6 +1886,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-318388-le-piano-de-brahms.html",
       "image": null,
       "id": "89b5e244ac7b"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Elena Nagapetyan",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-06-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.bourse-du-travail.com/elena-nagapetyan-334511.html",
+      "image": null,
+      "id": "c2fe9244c4e3"
     },
     {
       "venue": "La Marquise",
@@ -1944,13 +1944,26 @@
       "venue_slug": "les-subs",
       "title": "Nuits De Fourviere 2026 Ce Que Le Ciel Ne Sait Pas Feda Wardak",
       "subtitle": null,
-      "category": null,
+      "category": "Danse",
       "date_start": "2026-06-05",
       "date_end": null,
       "time": "21:30",
       "url": "https://www.les-subs.com/evenement/nuits-de-fourviere-2026-ce-que-le-ciel-ne-sait-pas-feda-wardak/",
       "image": null,
       "id": "933e1eb079f7"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "live club",
+      "subtitle": "Adult DVD · ROÜGE · NƵM99",
+      "category": "club",
+      "date_start": "2026-06-05",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://le-sucre.eu/events/live-club/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/Adult-DVD-2026-600x600.jpg",
+      "id": "c55005867959"
     },
     {
       "venue": "Le Petit Salon",
@@ -1964,19 +1977,6 @@
       "url": "https://yp.events/376cf12f-69aa-4ae1-bd72-949589dd42dd/THIS-IS-TECHNO-Rave-BSTKTZ-Ki-TTS-more?from=siteweb",
       "image": "https://www.lpslyon.fr/wp-content/uploads/2026/04/ThisisTechnoRAVE_06052026_lepetitsalon-1024x576.jpg",
       "id": "c39e35a7fd30"
-    },
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Haroun - Bonjour Quand Même - Tournée",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-06-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/haroun-bonjour-quand-meme-tournee-186402.html",
-      "image": null,
-      "id": "b0a2361ad924"
     },
     {
       "venue": "La Commune",
@@ -2018,19 +2018,6 @@
       "id": "193c3e48ffcf"
     },
     {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "club x Principe 15 ans",
-      "subtitle": "DJ Nigga Fox · DJ Lycox · XEXA (live)",
-      "category": "club",
-      "date_start": "2026-06-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/club-x-principe-15-ans/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/04/IG-PORTARTIOT-450x600.jpg",
-      "id": "5b81c7eeddc5"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "CARLALA + IZEM + DAN’ILÊ + KARISSA",
@@ -2042,19 +2029,6 @@
       "url": "https://www.transbordeur.fr/evenement/carlala-izem-danile-karissa-06062026/",
       "image": null,
       "id": "be958614cfb6"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "MEN I TRUST",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/men-i-trust-06062026/",
-      "image": null,
-      "id": "d7dc3175749d"
     },
     {
       "venue": "TNG",
@@ -2174,6 +2148,19 @@
       "id": "fb949f8b38e1"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "MEN I TRUST",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/men-i-trust-06062026/",
+      "image": null,
+      "id": "55fab5560a54"
+    },
+    {
       "venue": "LDLC Arena",
       "venue_slug": "ldlc-arena",
       "title": "Doja Cat",
@@ -2213,30 +2200,43 @@
       "id": "fd131e5e553b"
     },
     {
-      "venue": "Le Sonic",
-      "venue_slug": "sonic",
-      "title": "Bœuf & Brocoli // Biribi Tattoo Meeting",
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Haroun - Bonjour Quand Même - Tournée",
       "subtitle": null,
-      "category": "concert",
+      "category": "humour",
       "date_start": "2026-06-06",
       "date_end": null,
       "time": "21:00",
-      "url": "https://sonic-lyon.fr/evenement/boeuf-brocoli-biribi-tattoo-meeting/",
+      "url": "https://www.bourse-du-travail.com/haroun-bonjour-quand-meme-tournee-186402.html",
       "image": null,
-      "id": "a5276ac77e96"
+      "id": "91e025e849c6"
     },
     {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Nuits De Fourviere 2026 Ce Que Le Ciel Ne Sait Pas Feda Wardak",
       "subtitle": null,
-      "category": null,
+      "category": "Danse",
       "date_start": "2026-06-06",
       "date_end": null,
       "time": "21:30",
       "url": "https://www.les-subs.com/evenement/nuits-de-fourviere-2026-ce-que-le-ciel-ne-sait-pas-feda-wardak/",
       "image": null,
       "id": "f44b6ceb3f99"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "club x Principe 15 ans",
+      "subtitle": "DJ Nigga Fox · DJ Lycox · XEXA (live)",
+      "category": "club",
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://le-sucre.eu/events/club-x-principe-15-ans/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/04/IG-PORTARTIOT-450x600.jpg",
+      "id": "17bcd9758454"
     },
     {
       "venue": "Le Petit Salon",
@@ -2276,19 +2276,6 @@
       "url": "https://lacommune.co/event/yoga-solidaire-lyon/",
       "image": null,
       "id": "e817f790c4d2"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "S.society x Molekul 10 ans",
-      "subtitle": "Sicion · KUSS · RUIZ OSC1 · Seigg",
-      "category": "club",
-      "date_start": "2026-06-07",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/s-society-x-molekul-10-ans/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/04/HORIZONTAL-INDUSTRIAL-COPERA-20233-600x400.jpg",
-      "id": "d15f06bf113b"
     },
     {
       "venue": "La Rayonne",
@@ -2460,6 +2447,19 @@
       "id": "32f9730f9028"
     },
     {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "S.society x Molekul 10 ans",
+      "subtitle": "Sicion · KUSS · RUIZ OSC1 · Seigg",
+      "category": "club",
+      "date_start": "2026-06-07",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://le-sucre.eu/events/s-society-x-molekul-10-ans/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/04/HORIZONTAL-INDUSTRIAL-COPERA-20233-600x400.jpg",
+      "id": "61d8b3d84eed"
+    },
+    {
       "venue": "L'Aqueduc",
       "venue_slug": "l-aqueduc",
       "title": "Happy Ends",
@@ -2477,7 +2477,7 @@
       "venue_slug": "marche-gare",
       "title": "Punk-Rock TOUCHÉ AMORÉ Stage Four 10 Year Anniversary",
       "subtitle": null,
-      "category": null,
+      "category": "Rock & Pop",
       "date_start": "2026-06-08",
       "date_end": null,
       "time": "20:30",
@@ -2506,23 +2506,10 @@
       "category": "musique",
       "date_start": "2026-06-09",
       "date_end": null,
-      "time": null,
+      "time": "15:30",
       "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-3/",
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/091324_Grand_Tabazu_web_paul-650x433.jpg",
-      "id": "7b0f21f333c8"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Magic Mardi",
-      "subtitle": "Line-up soon !",
-      "category": "club",
-      "date_start": "2026-06-09",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/magic-mardi-77/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/Plan-de-travail-7-480x600.png",
-      "id": "6c58402d2002"
+      "id": "cc16f4d70cef"
     },
     {
       "venue": "Fnac Bellecour",
@@ -2536,6 +2523,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-317803-loup-garou-geant.html",
       "image": null,
       "id": "8feb06327061"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Magic Mardi",
+      "subtitle": "Line-up soon !",
+      "category": "club",
+      "date_start": "2026-06-09",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://le-sucre.eu/events/magic-mardi-77/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/Plan-de-travail-7-480x600.png",
+      "id": "4d0708c40992"
     },
     {
       "venue": "Grrrnd Zero",
@@ -2590,17 +2590,17 @@
       "id": "99a97bfe5b94"
     },
     {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Whitney Johnson , Lia Kohl, Macie Stewart",
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Balafre : Lancement de Bi·es !",
       "subtitle": null,
-      "category": "musique",
+      "category": null,
       "date_start": "2026-06-10",
       "date_end": null,
       "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/whitney-johnson-lia-kohl-macie-stewart/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/WhitneyLiaMacie-by-Leah-Wendzinski-1-1-650x431.jpg",
-      "id": "92fedb3a331e"
+      "url": "https://h-eat.eu/events/balafre-lancement-de-bi%c2%b7es/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/05/🔥Mercredi-10-juin-on-organise-la-soiree-de-lancement-lyonnaise-de-louvrage-collectif-Bi·es--573x720.jpg",
+      "id": "72a3de8a6998"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -2616,6 +2616,19 @@
       "id": "a06219cac015"
     },
     {
+      "venue": "Groom",
+      "venue_slug": "groom",
+      "title": "SPEEDWAY + FEELS LIKE HEAVEN + FOXHOLE + BIG MOUTH",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-10",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/speedway-feels-like-heaven-foxhole-big-mouth",
+      "image": null,
+      "id": "cfef505de6e2"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "Good Flying Birds + première partie",
@@ -2627,6 +2640,19 @@
       "url": "https://agenda.villemorte.fr/event/good-flying-birds-premiere-partie",
       "image": null,
       "id": "3e2db40b3ccf"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "Whitney Johnson , Lia Kohl, Macie Stewart",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-10",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.periscope-lyon.com/concerts/whitney-johnson-lia-kohl-macie-stewart/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/WhitneyLiaMacie-by-Leah-Wendzinski-1-1-650x431.jpg",
+      "id": "ecdcd7c612ca"
     },
     {
       "venue": "Marché Gare",
@@ -2666,19 +2692,6 @@
       "url": "https://www.petit-bulletin.fr/agenda-316766-honda-romance.html",
       "image": null,
       "id": "ca03ddc7c5db"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Rien Faire + Bilboquets",
-      "subtitle": "Release Party • En partenariat avec Dur & Doux",
-      "category": "musique",
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/rien-faire-bilboquets/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2025/02/BBE6068-Rien-Faire-credit-Bruno-Belleudy-650x433.jpg",
-      "id": "e45b2284d3f8"
     },
     {
       "venue": "Le Transbordeur",
@@ -2744,6 +2757,19 @@
       "url": "https://larayonne.org/evenement/david-mc-fly/",
       "image": null,
       "id": "4463a48a3a12"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "Rien Faire + Bilboquets",
+      "subtitle": "Release Party • En partenariat avec Dur & Doux",
+      "category": "musique",
+      "date_start": "2026-06-11",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.periscope-lyon.com/concerts/rien-faire-bilboquets/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2025/02/BBE6068-Rien-Faire-credit-Bruno-Belleudy-650x433.jpg",
+      "id": "d77ebc3ef0d6"
     },
     {
       "venue": "Les Subsistances",
@@ -2837,6 +2863,19 @@
       "id": "105d901f2d8b"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Twerk-Mania by Jamais Le Mardi",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-12",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/twerk-mania-by-jamais-le-mardi/",
+      "image": "https://h-eat.eu/wp-content/uploads/2025/09/1-509x720.png",
+      "id": "e9f69b846b8d"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Le Philtre d’Amour #3",
@@ -2848,19 +2887,6 @@
       "url": "https://lacommune.co/event/le-philtre-damour-2/",
       "image": null,
       "id": "ef28210b386a"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Groumpf + Grand CFA",
-      "subtitle": "Festival Les Utopiales #5",
-      "category": "musique",
-      "date_start": "2026-06-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/groumpf-grand-cfa/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/401833536_389561593398910_2238175300709684748_n-650x650.jpg",
-      "id": "03bf3affb604"
     },
     {
       "venue": "Le Sucre",
@@ -2900,6 +2926,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/nicky-doll-1ere-partie/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/nicky-doll_radiant-bellevue-500x500.jpg",
       "id": "efd238ca555c"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "Groumpf + Grand CFA",
+      "subtitle": "Festival Les Utopiales #5",
+      "category": "musique",
+      "date_start": "2026-06-12",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://www.periscope-lyon.com/concerts/groumpf-grand-cfa/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/401833536_389561593398910_2238175300709684748_n-650x650.jpg",
+      "id": "4a42cebb75e1"
     },
     {
       "venue": "Lieu Privé à Montchat 69003",
@@ -3214,6 +3253,19 @@
       "id": "3fce76fd8944"
     },
     {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Happy Hour de l’écologie politique",
+      "subtitle": null,
+      "category": "conférences et tables rondes",
+      "date_start": "2026-06-15",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/happy-hour-la-commune/",
+      "image": null,
+      "id": "06e67bbe4cd7"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "BILMURI",
@@ -3279,19 +3331,6 @@
       "id": "04bf3ec73f20"
     },
     {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Alpha Cassiopeiae",
-      "subtitle": "Release Party · En partenariat avec Tamya Production",
-      "category": "musique",
-      "date_start": "2026-06-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/alpha-cassiopeiae/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2022/11/AC-©Benoit-Michaely-650x650.jpg",
-      "id": "719cfc592cd9"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "THORNHILL + LAFAYETTE",
@@ -3331,6 +3370,19 @@
       "id": "e3e89ced53d2"
     },
     {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "Alpha Cassiopeiae",
+      "subtitle": "Release Party · En partenariat avec Tamya Production",
+      "category": "musique",
+      "date_start": "2026-06-16",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.periscope-lyon.com/concerts/alpha-cassiopeiae/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2022/11/AC-©Benoit-Michaely-650x650.jpg",
+      "id": "bded1efd13cc"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "France / Sénégal : diffusion Coupe du Monde 2026",
@@ -3355,19 +3407,6 @@
       "url": "https://lacommune.co/event/salsa-bachata-2/",
       "image": null,
       "id": "a2bfdc1f0518"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Hearscape + Blême + Yann Ponthus",
-      "subtitle": "Labo du Conservatoire · Dispositif Open Tour",
-      "category": "musique",
-      "date_start": "2026-06-17",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/hearscape-bleme-yann-ponthus/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/Shooting-1-650x434.jpg",
-      "id": "b03d74614b08"
     },
     {
       "venue": "Le Transbordeur",
@@ -3396,6 +3435,19 @@
       "id": "9b3f294a8be7"
     },
     {
+      "venue": "Salle Des Rancy",
+      "venue_slug": "salle-des-rancy",
+      "title": "Le Feu au Lac - J·oui·r !",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-06-17",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/le-feu-au-lac-jouir",
+      "image": null,
+      "id": "5b3578a40a47"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Portugal / Congo: diffusion Coupe du Monde 2026",
@@ -3407,6 +3459,19 @@
       "url": "https://larayonne.org/evenement/portugal-congo-diffusion-coupe-du-monde-2026/",
       "image": null,
       "id": "17a557a281f1"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "Hearscape + Blême + Yann Ponthus",
+      "subtitle": "Labo du Conservatoire · Dispositif Open Tour",
+      "category": "musique",
+      "date_start": "2026-06-17",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.periscope-lyon.com/concerts/hearscape-bleme-yann-ponthus/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/Shooting-1-650x434.jpg",
+      "id": "c08d82462300"
     },
     {
       "venue": "Maison de la Danse",
@@ -3446,19 +3511,6 @@
       "url": "https://h-eat.eu/events/bingo-by-la-menagerie-4/",
       "image": "https://h-eat.eu/wp-content/uploads/2025/03/BINGO_HEAT-NOEMIELACOTE-34-480x720.jpg",
       "id": "fe619dcd2d3d"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "L’Exil n’est pas un voyage",
-      "subtitle": "En partenariat avec Pince-Oreilles",
-      "category": "musique",
-      "date_start": "2026-06-18",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/lexil-nest-pas-un-voyage-2/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/Affiche-Exil-650x520.jpg",
-      "id": "94b9902d295e"
     },
     {
       "venue": "Grrrnd Zero",
@@ -3511,6 +3563,19 @@
       "url": "https://marchegare.fr/agenda/chorale-le-truc-les-20-ans",
       "image": null,
       "id": "e67f86ee20db"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "L’Exil n’est pas un voyage",
+      "subtitle": "En partenariat avec Pince-Oreilles",
+      "category": "musique",
+      "date_start": "2026-06-18",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.periscope-lyon.com/concerts/lexil-nest-pas-un-voyage-2/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/Affiche-Exil-650x520.jpg",
+      "id": "a1ce9f507b3e"
     },
     {
       "venue": "La Commune",
@@ -3654,6 +3719,19 @@
       "url": "https://yp.events/cd579693-d188-423d-ae33-28478118f599/THIS-IS-HIT-MACHINE-90-2000-NO2-T-Vyktor-Nova-more?from=siteweb",
       "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisisHitmachine_19062026_lepetitsalon-1024x576.jpg",
       "id": "a8e1b56b5c4a"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Nana Groov’ : Danse, Expo & Musique",
+      "subtitle": null,
+      "category": "danse",
+      "date_start": "2026-06-20",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/nanagroov-expo-danse-musique/",
+      "image": "https://h-eat.eu/wp-content/uploads/2025/09/nanagroov-heat-576x720.jpg",
+      "id": "9424e358146a"
     },
     {
       "venue": "La Rayonne",
@@ -4014,23 +4092,10 @@
       "category": "musique",
       "date_start": "2026-06-23",
       "date_end": null,
-      "time": null,
+      "time": "15:30",
       "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-4/",
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/091324_Grand_Tabazu_web_paul-1-650x433.jpg",
-      "id": "b22a10a49144"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Emmanuelle Parrenin , Delphine Dora & Mocke + Muon S (Anna Gaïotti et Jean Bender)",
-      "subtitle": "I'm free • concert gratuit",
-      "category": "musique",
-      "date_start": "2026-06-24",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/emmanuelle-parrenin-delphine-dora-mocke-muon-s-anna-gaiotti-et-jean-bender/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/MUON-S-26-650x488.jpeg",
-      "id": "733e10469337"
+      "id": "0a31f36506fd"
     },
     {
       "venue": "Le Transbordeur",
@@ -4044,6 +4109,19 @@
       "url": "https://www.transbordeur.fr/evenement/show-me-the-body-truck-violence-24062026/",
       "image": null,
       "id": "17cc7abc7883"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "Emmanuelle Parrenin , Delphine Dora & Mocke + Muon S (Anna Gaïotti et Jean Bender)",
+      "subtitle": "I'm free • concert gratuit",
+      "category": "musique",
+      "date_start": "2026-06-24",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://www.periscope-lyon.com/concerts/emmanuelle-parrenin-delphine-dora-mocke-muon-s-anna-gaiotti-et-jean-bender/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/MUON-S-26-650x488.jpeg",
+      "id": "275844fb2fb8"
     },
     {
       "venue": "Grrrnd Zero",
@@ -4072,19 +4150,6 @@
       "id": "5234e729222e"
     },
     {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "TURBO TERRASSE : Passage de Disques",
-      "subtitle": "Avec Lou & Fanny",
-      "category": "musique",
-      "date_start": "2026-06-25",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-5/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/041826_Recif_Cloture_web_paul-650x433.jpg",
-      "id": "fb521ebcaa83"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "LE PRINCE HARRY + NO SEX LAST NIGHT + MONIKA",
@@ -4096,6 +4161,19 @@
       "url": "https://www.transbordeur.fr/evenement/le-prince-harry-no-sex-last-night-monika-25062026/",
       "image": null,
       "id": "e3b8a1e62e53"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "TURBO TERRASSE : Passage de Disques",
+      "subtitle": "Avec Lou & Fanny",
+      "category": "musique",
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": "15:30",
+      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-5/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/041826_Recif_Cloture_web_paul-650x433.jpg",
+      "id": "d3dda4986bab"
     },
     {
       "venue": "Toï Toï le Zinc",
@@ -4449,19 +4527,6 @@
       "id": "c615b0a89f2f"
     },
     {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "TURBO TERRASSE : Passage de Disques",
-      "subtitle": "Avec Steve Cook",
-      "category": "musique",
-      "date_start": "2026-06-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-6/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/041826_Recif_Cloture_web_paul-1-650x433.jpg",
-      "id": "a89138236c65"
-    },
-    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Magic Mardi",
@@ -4486,6 +4551,19 @@
       "url": "https://www.transbordeur.fr/evenement/cavalera-30062026/",
       "image": null,
       "id": "97e334f2b9a6"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "TURBO TERRASSE : Passage de Disques",
+      "subtitle": "Avec Steve Cook",
+      "category": "musique",
+      "date_start": "2026-06-30",
+      "date_end": null,
+      "time": "15:30",
+      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-6/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/041826_Recif_Cloture_web_paul-1-650x433.jpg",
+      "id": "3e15518d5cee"
     },
     {
       "venue": "Le Transbordeur",
@@ -4553,19 +4631,6 @@
       "id": "271e728a6813"
     },
     {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Intérieur Queer : Drag Rendez-vous & Garçon sauvage",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-03",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/interieur-queer-drag-rendez-vous-garcon-sauvage/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/03/2025-07-12-Preview-IQ-GragRdv-HEAT-bd-Credit-Gaetan-CLEMENT-031-1080x720.jpg",
-      "id": "c253161a236c"
-    },
-    {
       "venue": "Maison de l'écologie",
       "venue_slug": "maison-de-l-ecologie",
       "title": "RÊVER SOUS LE FUTUR · GROUPE DE RÊVE COLLECTIF - Cycle de 7 séances",
@@ -4592,6 +4657,19 @@
       "id": "1567eb18e503"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Intérieur Queer : Drag Rendez-vous & Garçon sauvage",
+      "subtitle": null,
+      "category": "Spectacles Divers",
+      "date_start": "2026-07-03",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://h-eat.eu/events/interieur-queer-drag-rendez-vous-garcon-sauvage/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/03/2025-07-12-Preview-IQ-GragRdv-HEAT-bd-Credit-Gaetan-CLEMENT-031-1080x720.jpg",
+      "id": "c3f0fe484d0d"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "CERCLES - NUITS DE FOURVIERE",
@@ -4605,22 +4683,22 @@
       "id": "a3d645869957"
     },
     {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Intérieur Queer : Ball & Afterball",
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS DISCO : VYKTOR NOVA / TERROR MIKE",
       "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-04",
+      "category": "club",
+      "date_start": "2026-07-03",
       "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/interieur-queer-ball-afterball/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/03/IQ-AMBIANCE-@POLISSES-1-1080x720.jpg",
-      "id": "62739d3676e7"
+      "time": "23:30",
+      "url": "https://yp.events/d2a85eaa-f0d2-4a8b-b8c7-839eef6912f1/THIS-IS-DISCO-Vyktor-Nova-Terror-Mike?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisisDisco_03072026_lepetitsalon-1024x576.jpg",
+      "id": "8d8b596ed8a9"
     },
     {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
-      "title": "Bal folk d'été",
+      "title": "Panotii Cantii - Bal folk d'été ☀️",
       "subtitle": null,
       "category": null,
       "date_start": "2026-07-04",
@@ -4628,7 +4706,20 @@
       "time": "14:00",
       "url": "https://agenda.villemorte.fr/event/bal-folk-dete",
       "image": null,
-      "id": "604f47665189"
+      "id": "2ebaaf194a29"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Intérieur Queer : Ball & Afterball",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://h-eat.eu/events/interieur-queer-ball-afterball/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/03/IQ-AMBIANCE-@POLISSES-1-1080x720.jpg",
+      "id": "938de8c38f5b"
     },
     {
       "venue": "La Rayonne",
@@ -5372,19 +5463,6 @@
       "id": "2b67a2dd1336"
     },
     {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Arnaud Tsamere",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-09-25",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/arnaud-tsamere-253951.html",
-      "image": null,
-      "id": "3bbcf747a565"
-    },
-    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "COMME ÇA VOUS CHANTE !",
@@ -5396,6 +5474,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/comme-ca-vous-chante-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/comme-ca-vous-chante_radiant-bellevue-500x500.jpg",
       "id": "710696b10de8"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Arnaud Tsamere",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-09-25",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.bourse-du-travail.com/arnaud-tsamere-253951.html",
+      "image": null,
+      "id": "80e383d5032f"
     },
     {
       "venue": "Bourse du Travail",
@@ -5606,19 +5697,6 @@
       "id": "c5b56ac2f4b8"
     },
     {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Tanguy Pastureau - Un Monde Hostile - Tournée",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-10-09",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/tanguy-pastureau-un-monde-hostile-tournee-255969.html",
-      "image": null,
-      "id": "581a15c31555"
-    },
-    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Concert",
@@ -5656,6 +5734,19 @@
       "url": "https://larayonne.org/evenement/swing/",
       "image": null,
       "id": "6fa30636e67d"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Tanguy Pastureau - Un Monde Hostile - Tournée",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-10-09",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.bourse-du-travail.com/tanguy-pastureau-un-monde-hostile-tournee-255969.html",
+      "image": null,
+      "id": "c98ce00f98f5"
     },
     {
       "venue": "Bourse du Travail",
@@ -5762,6 +5853,19 @@
       "id": "fc42470ceb78"
     },
     {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "LEYA",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-14",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://sonic-lyon.fr/evenement/leya/",
+      "image": null,
+      "id": "72241909fb71"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "GEOFFREY SECCO",
@@ -5788,19 +5892,6 @@
       "id": "5f72634edaa6"
     },
     {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Panayotis Pascot - Entre Les Deux - Tournée",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-10-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/panayotis-pascot-entre-les-deux-tournee-373805.html",
-      "image": null,
-      "id": "f2b3c1524d19"
-    },
-    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LES WRIGGLES",
@@ -5825,6 +5916,19 @@
       "url": "https://larayonne.org/evenement/chinese-man-records-party-bold-feat-youthstar-rumble-tha-trickaz/",
       "image": null,
       "id": "f47e0b3b8561"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Panayotis Pascot - Entre Les Deux - Tournée",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-10-16",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.bourse-du-travail.com/panayotis-pascot-entre-les-deux-tournee-373805.html",
+      "image": null,
+      "id": "609ccb022ef8"
     },
     {
       "venue": "Bourse du Travail",
@@ -6800,6 +6904,19 @@
       "url": "https://le-sucre.eu/events/concert-4/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/04/insta-2-480x600.jpg",
       "id": "9b7820d0d4af"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "IBEYI",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-20",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/ibeyi-20112026/",
+      "image": null,
+      "id": "55086a6301e2"
     },
     {
       "venue": "La Rayonne",
