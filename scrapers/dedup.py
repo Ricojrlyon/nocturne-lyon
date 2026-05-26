@@ -144,8 +144,17 @@ def _title_similarity(a: str, b: str) -> float:
 
 
 def _pick_best(cluster: list[tuple[Event, int]]) -> tuple[Event, int]:
-    """Highest priority wins; tie-break on info completeness."""
-    return max(
+    """Highest priority wins; tie-break on info completeness.
+
+    Then ENRICH the winner with missing fields from the losers in the
+    cluster. Identity fields (title, url, venue) stay as the winner's
+    (the venue scraper is authoritative for those), but fill-in fields
+    (time, category, subtitle, image) get filled from any cluster member
+    that has them. This way, if the venue scraper has the event but no
+    time, and Petit Bulletin has the same event WITH time, we keep the
+    venue scraper's identity but gain the time.
+    """
+    best = max(
         cluster,
         key=lambda x: (
             x[1],                          # priority
@@ -154,6 +163,19 @@ def _pick_best(cluster: list[tuple[Event, int]]) -> tuple[Event, int]:
             len(x[0].category or ""),
         )
     )
+    winner_event = best[0]
+    # Fields we can safely import from losers
+    ENRICHABLE = ("time", "category", "subtitle", "image")
+    for field in ENRICHABLE:
+        if not getattr(winner_event, field, None):
+            for ev, _ in cluster:
+                if ev is winner_event:
+                    continue
+                val = getattr(ev, field, None)
+                if val:
+                    setattr(winner_event, field, val)
+                    break
+    return best
 
 
 def _primary_dedup(tagged_events: List[Tuple[Event, int]]) -> List[Tuple[Event, int]]:
