@@ -51,6 +51,10 @@ EXCLUDED_CATEGORIES = {
 # civic spaces, not bookstores.
 EXCLUDED_VENUE_PATTERNS = [
     "librairie",
+    "theatre",
+    # Umbrella festival listings without a specific venue. These create
+    # visual duplicates with the per-concert listings at real venues.
+    "dans toute la ville",
 ]
 
 MONTHS_FR = {
