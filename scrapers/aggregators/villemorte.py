@@ -47,6 +47,8 @@ EXCLUDED_VENUE_PATTERNS = [
     "warmaudio",
     "la multi",
     "rontalon",
+    # Added in v34.3: block all theatre venues (user wants them gone)
+    "theatre",
 ]
 
 
