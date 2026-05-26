@@ -1,20 +1,7 @@
 {
-  "generated_at": "2026-05-25T21:13:19.538896+00:00",
-  "count": 594,
+  "generated_at": "2026-05-26T07:20:37.323196+00:00",
+  "count": 780,
   "events": [
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Phonograffiti : atelier graffiti sur vinyle",
-      "subtitle": null,
-      "category": "atelier",
-      "date_start": "2026-05-25",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/phonograffiti-lyon/",
-      "image": null,
-      "id": "97075997a8f2"
-    },
     {
       "venue": "HEAT",
       "venue_slug": "heat",
@@ -159,6 +146,32 @@
       "id": "ed1d1f16805b"
     },
     {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "Blind Delon + Yann Ponthus",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-05-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-310390-blind-delon-yann-ponthus.html",
+      "image": null,
+      "id": "fb23693d73f3"
+    },
+    {
+      "venue": "Salle Molière",
+      "venue_slug": "salle-moliere",
+      "title": "Strohl / Chausson",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-05-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318263-strohl-chausson.html",
+      "image": null,
+      "id": "0cce09d90c8e"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Blandine Lehout",
@@ -276,6 +289,19 @@
       "id": "620e78b15dd9"
     },
     {
+      "venue": "Théâtre de la Renaissance",
+      "venue_slug": "theatre-de-la-renaissance",
+      "title": "Les Enfants du Levant",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-05-27",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318390-les-enfants-du-levant.html",
+      "image": null,
+      "id": "13edf43e4b95"
+    },
+    {
       "venue": "Théâtre de l’Elysée",
       "venue_slug": "theatre-de-l-elysee",
       "title": "Conférence : UN BON ÉLÈVE EST-IL TOUJOURS UN ÉLÈVE QUI VA BIEN ? Sidonie Vacher (ECP, Université Lyon 2)",
@@ -302,6 +328,45 @@
       "id": "feae45c3929e"
     },
     {
+      "venue": "Institut Lumière",
+      "venue_slug": "institut-lumiere",
+      "title": "Le plaisir du 35mm",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-05-27",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.petit-bulletin.fr/agenda-312416-le-plaisir-du-35mm.html",
+      "image": null,
+      "id": "b1e58bab9116"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Grand défi spécial télécrochet",
+      "subtitle": null,
+      "category": "Jeux",
+      "date_start": "2026-05-27",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318430-grand-defi-special-telecrochet.html",
+      "image": null,
+      "id": "cdc9aeaa5c4b"
+    },
+    {
+      "venue": "Maison de la Danse",
+      "venue_slug": "maison-de-la-danse",
+      "title": "GöteborgsOperans Danskompani",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-05-27",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318341-goteborgsoperans-danskompani.html",
+      "image": null,
+      "id": "1f1f20014f6a"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "LES 20 ANS ! Animation THE ULTIMATE KARAOKE SURF PARTY Eddy Djé & ses Silhouettes + Harry Cover",
@@ -313,6 +378,32 @@
       "url": "https://marchegare.fr/agenda/karaoke-surf-party-les-20-ans",
       "image": null,
       "id": "9463d695659f"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "The ultimate surfing party",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-05-27",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318396-the-ultimate-surfing-party.html",
+      "image": null,
+      "id": "d6e88fec5a6d"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Chicandier et Mathou",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-05-27",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-296462-chicandier-et-mathou.html",
+      "image": null,
+      "id": "2aa22e3ca18a"
     },
     {
       "venue": "HEAT",
@@ -393,6 +484,45 @@
       "id": "1459a2313dc8"
     },
     {
+      "venue": "Archives municipales de Lyon",
+      "venue_slug": "archives-municipales-de-lyon",
+      "title": "Les lieux de loisirs à Lyon",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "09:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318423-les-lieux-de-loisirs-a-lyon.html",
+      "image": null,
+      "id": "e147dc7f85f3"
+    },
+    {
+      "venue": "Auditorium de Lyon",
+      "venue_slug": "auditorium-de-lyon",
+      "title": "Midi de l'Audi #3",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "12:30",
+      "url": "https://www.petit-bulletin.fr/agenda-316530-midi-de-l-audi-3.html",
+      "image": null,
+      "id": "b4d96622500c"
+    },
+    {
+      "venue": "Théâtre de la Renaissance",
+      "venue_slug": "theatre-de-la-renaissance",
+      "title": "Les Enfants du Levant",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318390-les-enfants-du-levant.html",
+      "image": null,
+      "id": "456cc38c37c4"
+    },
+    {
       "venue": "Maison de l'écologie",
       "venue_slug": "maison-de-l-ecologie",
       "title": "TOUTE UNE VIE À S'ÉTEINDRE · CHRONIQUE D'UN FOYER DE TRAVAILLEURS IMMIGRÉS",
@@ -471,6 +601,97 @@
       "id": "4ebd0ccefa01"
     },
     {
+      "venue": "Maison de la Danse",
+      "venue_slug": "maison-de-la-danse",
+      "title": "GöteborgsOperans Danskompani",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318341-goteborgsoperans-danskompani.html",
+      "image": null,
+      "id": "e38c2d03a35f"
+    },
+    {
+      "venue": "Bar Rock\\'n eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Dysentry + Anhedonia +.357 Homicide",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318375-dysentry-anhedonia-357-homicide.html",
+      "image": null,
+      "id": "efb9ea3b9956"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Choeurs a cappella",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-290449-choeurs-a-cappella.html",
+      "image": null,
+      "id": "9f38a87522ec"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Chicandier et Mathou",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-296462-chicandier-et-mathou.html",
+      "image": null,
+      "id": "e4392ec8e1f8"
+    },
+    {
+      "venue": "Kraspek Myzik",
+      "venue_slug": "kraspek-myzik",
+      "title": "Second Major + Blue Salt",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-315522-second-major-blue-salt.html",
+      "image": null,
+      "id": "dbab6975bb28"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "Baïkal + KLM x Kaynixe",
+      "subtitle": null,
+      "category": "Rap",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318371-baikal-klm-x-kaynixe.html",
+      "image": null,
+      "id": "9d8d14bdc76a"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Revoir les étoiles",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-05-28",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317598-revoir-les-etoiles.html",
+      "image": null,
+      "id": "469a5783741f"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Verino",
@@ -482,6 +703,32 @@
       "url": "https://www.bourse-du-travail.com/verino-278010.html",
       "image": null,
       "id": "71f434873d4a"
+    },
+    {
+      "venue": "Dans toute la ville",
+      "venue_slug": "dans-toute-la-ville",
+      "title": "FeFan - Festival de Fanfare de Villeurbanne",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-302951-fefan-festival-de-fanfare-de-villeurbanne.html",
+      "image": null,
+      "id": "7494b3acb3eb"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Afterwork : Food, Drink & Happy Hour !",
+      "subtitle": null,
+      "category": "afterwork",
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/afterwork-food-drink-happy-hour/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/04/JulietteVlr_08-480x720.jpg",
+      "id": "97a82c9ecdb3"
     },
     {
       "venue": "La Commune",
@@ -549,17 +796,17 @@
       "id": "acb6e68e521f"
     },
     {
-      "venue": "Toï Toï le Zinc",
-      "venue_slug": "toi-toi-le-zinc",
-      "title": "FeFan - La soirée du public",
+      "venue": "Théâtre de la Renaissance",
+      "venue_slug": "theatre-de-la-renaissance",
+      "title": "Les Enfants du Levant",
       "subtitle": null,
-      "category": null,
+      "category": "Classique et Lyrique",
       "date_start": "2026-05-29",
       "date_end": null,
-      "time": "16:30",
-      "url": "https://agenda.villemorte.fr/event/fefan-la-soiree-du-public",
+      "time": "16:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318390-les-enfants-du-levant.html",
       "image": null,
-      "id": "fe6e5546a855"
+      "id": "0a9b8be1994e"
     },
     {
       "venue": "Les Subsistances",
@@ -601,6 +848,58 @@
       "id": "4050f428fa4f"
     },
     {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "FeFan - la soirée du public",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.petit-bulletin.fr/agenda-302826-fefan-la-soiree-du-public.html",
+      "image": null,
+      "id": "3bbcd8153ba9"
+    },
+    {
+      "venue": "Auditorium de Lyon",
+      "venue_slug": "auditorium-de-lyon",
+      "title": "Duo Lakmé",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318386-duo-lakme.html",
+      "image": null,
+      "id": "2655ec8a0b58"
+    },
+    {
+      "venue": "Maison de la Danse",
+      "venue_slug": "maison-de-la-danse",
+      "title": "GöteborgsOperans Danskompani",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318341-goteborgsoperans-danskompani.html",
+      "image": null,
+      "id": "5a8d47c1866a"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Chicandier et Mathou",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-296462-chicandier-et-mathou.html",
+      "image": null,
+      "id": "7912cb1e8056"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "BLIND.001",
@@ -612,6 +911,19 @@
       "url": "https://sonic-lyon.fr/evenement/blind-001/",
       "image": null,
       "id": "bb19d008d801"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Revoir les étoiles",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317598-revoir-les-etoiles.html",
+      "image": null,
+      "id": "547ca8816107"
     },
     {
       "venue": "Le Petit Salon",
@@ -627,6 +939,19 @@
       "id": "73815eb57b1f"
     },
     {
+      "venue": "Le Petit Salon",
+      "venue_slug": "le-petit-salon",
+      "title": "Monochromi #20",
+      "subtitle": null,
+      "category": "Musique Electronique",
+      "date_start": "2026-05-29",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318365-monochromi-20.html",
+      "image": null,
+      "id": "a3d438fb463e"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Verino",
@@ -638,6 +963,19 @@
       "url": "https://www.bourse-du-travail.com/verino-278011.html",
       "image": null,
       "id": "f093ef5cc1d5"
+    },
+    {
+      "venue": "Dans toute la ville",
+      "venue_slug": "dans-toute-la-ville",
+      "title": "FeFan - Festival de Fanfare de Villeurbanne",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-302951-fefan-festival-de-fanfare-de-villeurbanne.html",
+      "image": null,
+      "id": "d0d040e049e0"
     },
     {
       "venue": "HEAT",
@@ -705,6 +1043,19 @@
       "id": "232464836f4f"
     },
     {
+      "venue": "Musées Gadagne",
+      "venue_slug": "musees-gadagne",
+      "title": "Une merveilleuse créature",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://www.petit-bulletin.fr/agenda-316030-une-merveilleuse-creature.html",
+      "image": null,
+      "id": "4994ebe02368"
+    },
+    {
       "venue": "A Thou Bout d'Chant",
       "venue_slug": "a-thou-bout-d-chant",
       "title": "KERMESSE DE SOUTIEN À ATBC",
@@ -744,6 +1095,19 @@
       "id": "63fd8ea7f294"
     },
     {
+      "venue": "Musée des Confluences",
+      "venue_slug": "musee-des-confluences",
+      "title": "Radio Live - Vivantes, Nos vies à venir, Réuni·es",
+      "subtitle": null,
+      "category": "Spectacles Divers",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317636-radio-live-vivantes-nos-vies-a-venir-reuni-es.html",
+      "image": null,
+      "id": "228533baf4b7"
+    },
+    {
       "venue": "Court Circuit",
       "venue_slug": "court-circuit",
       "title": "Fête de Printemps du Court-Circuit ft. Artis",
@@ -755,6 +1119,32 @@
       "url": "https://agenda.villemorte.fr/event/fete-de-printemps-du-court-circuit-ft-artis",
       "image": null,
       "id": "1fb895e33811"
+    },
+    {
+      "venue": "Musées Gadagne",
+      "venue_slug": "musees-gadagne",
+      "title": "Concert Express - Pépites médiévales",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318391-concert-express-pepites-medievales.html",
+      "image": null,
+      "id": "d96c185bf49d"
+    },
+    {
+      "venue": "Théâtre de la Renaissance",
+      "venue_slug": "theatre-de-la-renaissance",
+      "title": "Les Enfants du Levant",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318390-les-enfants-du-levant.html",
+      "image": null,
+      "id": "09a8d0cc96f4"
     },
     {
       "venue": "Agend'arts",
@@ -770,6 +1160,19 @@
       "id": "e56324b55092"
     },
     {
+      "venue": "Auditorium de Lyon",
+      "venue_slug": "auditorium-de-lyon",
+      "title": "Face-à-face",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318387-face-a-face.html",
+      "image": null,
+      "id": "b0b3fb813a2a"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Bal afro à Grrrnd Zéro",
@@ -783,17 +1186,17 @@
       "id": "ecef6e8bd44f"
     },
     {
-      "venue": "Toï Toï le Zinc",
-      "venue_slug": "toi-toi-le-zinc",
-      "title": "We Are The New Generation + WQ Productions",
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "Transcendia x Transbo open-air",
       "subtitle": null,
-      "category": null,
+      "category": "Musique Electronique",
       "date_start": "2026-05-30",
       "date_end": null,
-      "time": "18:30",
-      "url": "https://agenda.villemorte.fr/event/we-are-the-new-generation-wq-productions",
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318346-transcendia-x-transbo-open-air.html",
       "image": null,
-      "id": "0004a291eb50"
+      "id": "1690033a7113"
     },
     {
       "venue": "Bar des Capucins",
@@ -809,6 +1212,19 @@
       "id": "47ad0182f814"
     },
     {
+      "venue": "Jack Jack - MJC Aragon",
+      "venue_slug": "jack-jack-mjc-aragon",
+      "title": "Une heure c'est trop court",
+      "subtitle": null,
+      "category": "Chanson",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318378-une-heure-c-est-trop-court.html",
+      "image": null,
+      "id": "0dc0ad937c6f"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "[Un été à La Rayonne] 2L",
@@ -822,6 +1238,45 @@
       "id": "d723818076c7"
     },
     {
+      "venue": "La Rayonne",
+      "venue_slug": "cco-la-rayonne",
+      "title": "2L + Takis + DJ Kaynixe",
+      "subtitle": null,
+      "category": "Rap",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318368-2l-takis-dj-kaynixe.html",
+      "image": null,
+      "id": "46682026d20b"
+    },
+    {
+      "venue": "Maison de la Danse",
+      "venue_slug": "maison-de-la-danse",
+      "title": "GöteborgsOperans Danskompani",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318341-goteborgsoperans-danskompani.html",
+      "image": null,
+      "id": "683423ed0711"
+    },
+    {
+      "venue": "Aquarium ciné-café",
+      "venue_slug": "aquarium-cine-cafe",
+      "title": "Ciné Blind-test",
+      "subtitle": null,
+      "category": "Jeux",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-314386-cine-blind-test.html",
+      "image": null,
+      "id": "a7e2b2a442ab"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "LORIE",
@@ -833,6 +1288,45 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/lorie",
       "image": null,
       "id": "e8df837db659"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Chicandier et Mathou",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-296462-chicandier-et-mathou.html",
+      "image": null,
+      "id": "7c7e748300f3"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "We are the new generation + WQ Productions",
+      "subtitle": null,
+      "category": "Rap",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318372-we-are-the-new-generation-wq-productions.html",
+      "image": null,
+      "id": "fab77a73e8ed"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Revoir les étoiles",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317598-revoir-les-etoiles.html",
+      "image": null,
+      "id": "a77a6626f644"
     },
     {
       "venue": "Le Sonic",
@@ -861,6 +1355,19 @@
       "id": "a87ccd6a3c41"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "23:59 X Organik",
+      "subtitle": null,
+      "category": "Musique Electronique",
+      "date_start": "2026-05-30",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318347-23-59-x-organik.html",
+      "image": null,
+      "id": "618d35454e50"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "José Cruz Dans Portugal, Voyage Au Centre Du Monde",
@@ -872,6 +1379,19 @@
       "url": "https://www.bourse-du-travail.com/jose-cruz-dans-portugal-voyage-au-centre-du-monde-186635.html",
       "image": null,
       "id": "1638b3fe2dd7"
+    },
+    {
+      "venue": "Dans toute la ville",
+      "venue_slug": "dans-toute-la-ville",
+      "title": "FeFan - Festival de Fanfare de Villeurbanne",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-05-31",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-302951-fefan-festival-de-fanfare-de-villeurbanne.html",
+      "image": null,
+      "id": "5fb72700579c"
     },
     {
       "venue": "HEAT",
@@ -952,6 +1472,19 @@
       "id": "66510805924d"
     },
     {
+      "venue": "Théâtre des Marronniers",
+      "venue_slug": "theatre-des-marronniers",
+      "title": "Sur les pas de René Leynaud",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-05-31",
+      "date_end": null,
+      "time": "09:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318394-sur-les-pas-de-rene-leynaud.html",
+      "image": null,
+      "id": "ec0af789ebbb"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Gratuit LES 20 ANS ! FÊTE DES VOISIN·ES Concert et buffet partagé",
@@ -963,6 +1496,19 @@
       "url": "https://marchegare.fr/agenda/fete-des-voisines-les-20-ans",
       "image": null,
       "id": "8172f8987c22"
+    },
+    {
+      "venue": "Maison de la Danse",
+      "venue_slug": "maison-de-la-danse",
+      "title": "GöteborgsOperans Danskompani",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-05-31",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318341-goteborgsoperans-danskompani.html",
+      "image": null,
+      "id": "6ef57b7e2670"
     },
     {
       "venue": "Agend'arts",
@@ -989,6 +1535,32 @@
       "url": "https://agenda.villemorte.fr/event/big-comedy-club-12",
       "image": null,
       "id": "a6baaa66cf9a"
+    },
+    {
+      "venue": "Bar Rock\\'n eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Cancer Bats",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-06-01",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318376-cancer-bats.html",
+      "image": null,
+      "id": "f128a25834ef"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Sacha Bonpain",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-06-01",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318332-sacha-bonpain.html",
+      "image": null,
+      "id": "a1b6b231f81a"
     },
     {
       "venue": "Bourse du Travail",
@@ -1095,6 +1667,19 @@
       "id": "8d6f35cc99f2"
     },
     {
+      "venue": "Aquarium ciné-café",
+      "venue_slug": "aquarium-cine-cafe",
+      "title": "BD Bagarre",
+      "subtitle": null,
+      "category": "Débats",
+      "date_start": "2026-06-02",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-316729-bd-bagarre.html",
+      "image": null,
+      "id": "26a78d6a50fe"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "La Sécurité + Under45",
@@ -1106,6 +1691,19 @@
       "url": "https://sonic-lyon.fr/evenement/la-securite/",
       "image": null,
       "id": "72fe1ebdaa3f"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "MC Solaar & Youssoupha + Malaka",
+      "subtitle": null,
+      "category": "Rap",
+      "date_start": "2026-06-02",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317600-mc-solaar-youssoupha-malaka.html",
+      "image": null,
+      "id": "ad7a4d1a424f"
     },
     {
       "venue": "Bourse du Travail",
@@ -1173,6 +1771,19 @@
       "id": "23b2d29b4096"
     },
     {
+      "venue": "Amphithéâtre de l'Opéra",
+      "venue_slug": "amphitheatre-de-l-opera",
+      "title": "Concert Express - Groove ! Ravel et Vivaldi",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-06-03",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318392-concert-express-groove-ravel-et-vivaldi.html",
+      "image": null,
+      "id": "dce2d9c45530"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Everglow",
@@ -1184,6 +1795,19 @@
       "url": "https://larayonne.org/evenement/everglow/",
       "image": null,
       "id": "6cb3297804cc"
+    },
+    {
+      "venue": "Bar Rock\\'n eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Nastyjoe",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-06-03",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318377-nastyjoe.html",
+      "image": null,
+      "id": "b8ee4f6e7119"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -1210,6 +1834,32 @@
       "url": "https://marchegare.fr/agenda/blindest-quouis-je-les-20-ans",
       "image": null,
       "id": "cf21bcbb46c2"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Lucie Carbone",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-06-03",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-295655-lucie-carbone.html",
+      "image": null,
+      "id": "aa32a4dc5b49"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Bertrand Belin + Yael Naim",
+      "subtitle": null,
+      "category": "Chanson",
+      "date_start": "2026-06-03",
+      "date_end": null,
+      "time": "21:15",
+      "url": "https://www.petit-bulletin.fr/agenda-317601-bertrand-belin-yael-naim.html",
+      "image": null,
+      "id": "3c61affcb6fd"
     },
     {
       "venue": "La Commune",
@@ -1264,6 +1914,19 @@
       "id": "38848b743fca"
     },
     {
+      "venue": "L'Épicerie Moderne",
+      "venue_slug": "l-epicerie-moderne",
+      "title": "Les relâches - Roller disco",
+      "subtitle": null,
+      "category": "Jeux",
+      "date_start": "2026-06-04",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-310421-les-relaches-roller-disco.html",
+      "image": null,
+      "id": "5aa85073361b"
+    },
+    {
       "venue": "La Pente",
       "venue_slug": "la-pente",
       "title": "Pente de Punks (Single Ladies, Gagner de l'Argent & Penser Saboter)",
@@ -1314,6 +1977,32 @@
       "url": "https://sonic-lyon.fr/evenement/snuggle/",
       "image": null,
       "id": "7128844b7a20"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Lucie Carbone",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-06-04",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-295655-lucie-carbone.html",
+      "image": null,
+      "id": "e10d33fe4581"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Little Simz",
+      "subtitle": null,
+      "category": "Rap",
+      "date_start": "2026-06-04",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317602-little-simz.html",
+      "image": null,
+      "id": "787190c10493"
     },
     {
       "venue": "Les Subsistances",
@@ -1369,16 +2058,16 @@
     },
     {
       "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
+      "venue_slug": "cco-la-rayonne",
       "title": "Festival Les Intergalactiques",
       "subtitle": null,
-      "category": "musique",
+      "category": "Salons et foires",
       "date_start": "2026-06-05",
-      "date_end": "2026-06-07",
-      "time": "08:00",
-      "url": "https://agenda.villemorte.fr/event/festival-les-intergalactiques",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-310051-festival-les-intergalactiques.html",
       "image": null,
-      "id": "7bab0d344deb"
+      "id": "1ab8ad393563"
     },
     {
       "venue": "Boskop",
@@ -1420,17 +2109,69 @@
       "id": "29a426d63bbf"
     },
     {
-      "venue": "Toï Toï le Zinc",
-      "venue_slug": "toi-toi-le-zinc",
-      "title": "Soirée forró: Festa junina",
+      "venue": "Auditorium de Lyon",
+      "venue_slug": "auditorium-de-lyon",
+      "title": "Le piano de Brahms",
       "subtitle": null,
-      "category": null,
+      "category": "Classique et Lyrique",
       "date_start": "2026-06-05",
       "date_end": null,
-      "time": "18:30",
-      "url": "https://agenda.villemorte.fr/event/soiree-forro-festa-junina",
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318388-le-piano-de-brahms.html",
       "image": null,
-      "id": "ce48ce33856e"
+      "id": "89b5e244ac7b"
+    },
+    {
+      "venue": "La Marquise",
+      "venue_slug": "la-marquise",
+      "title": "Surprise",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-06-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318381-surprise.html",
+      "image": null,
+      "id": "e599dae3bac6"
+    },
+    {
+      "venue": "Théâtre Théo Argence",
+      "venue_slug": "theatre-theo-argence",
+      "title": "House",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-06-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318342-house.html",
+      "image": null,
+      "id": "2e216264e793"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Lucie Carbone",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-06-05",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-295655-lucie-carbone.html",
+      "image": null,
+      "id": "f9f8305274e5"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "Soirée forró",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-06-05",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318373-soiree-forro.html",
+      "image": null,
+      "id": "f78d12919913"
     },
     {
       "venue": "Les Subsistances",
@@ -1444,6 +2185,19 @@
       "url": "https://www.les-subs.com/evenement/nuits-de-fourviere-2026-ce-que-le-ciel-ne-sait-pas-feda-wardak/",
       "image": null,
       "id": "933e1eb079f7"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Gaël Faye",
+      "subtitle": null,
+      "category": "Chanson",
+      "date_start": "2026-06-05",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317604-gael-faye.html",
+      "image": null,
+      "id": "3f8cd594397b"
     },
     {
       "venue": "Le Petit Salon",
@@ -1576,6 +2330,32 @@
       "id": "c97bdc71060b"
     },
     {
+      "venue": "La Rayonne",
+      "venue_slug": "cco-la-rayonne",
+      "title": "Festival Les Intergalactiques",
+      "subtitle": null,
+      "category": "Salons et foires",
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-310051-festival-les-intergalactiques.html",
+      "image": null,
+      "id": "161b9fc04ced"
+    },
+    {
+      "venue": "Métro Vieux Lyon",
+      "venue_slug": "metro-vieux-lyon",
+      "title": "Monstres, démons et merveilles",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": "10:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317538-monstres-demons-et-merveilles.html",
+      "image": null,
+      "id": "24a5ea2c26a2"
+    },
+    {
       "venue": "la cantina",
       "venue_slug": "la-cantina",
       "title": "Coup d'éclat #6 - Faire collectif",
@@ -1602,6 +2382,32 @@
       "id": "8025c5134f83"
     },
     {
+      "venue": "Place d\\'Ainay",
+      "venue_slug": "place-d-ainay",
+      "title": "Quand l'architecture nous raconte le goût du médiéval",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317539-quand-l-architecture-nous-raconte-le-gout-du-medieval.html",
+      "image": null,
+      "id": "1d59e2726fa4"
+    },
+    {
+      "venue": "Place de la trinité",
+      "venue_slug": "place-de-la-trinite",
+      "title": "La quête médiévale : Les artefacts sacrés",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317542-la-quete-medievale-les-artefacts-sacres.html",
+      "image": null,
+      "id": "fa58c2f58b12"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Samba So Good #2",
@@ -1615,17 +2421,69 @@
       "id": "beba7314298c"
     },
     {
-      "venue": "Toï Toï le Zinc",
-      "venue_slug": "toi-toi-le-zinc",
-      "title": "Ibrahima CISSOKHO et la Mandingue Foly - Sortie de Vinyl \"LIBERTE\"",
+      "venue": "Comédie Odéon",
+      "venue_slug": "comedie-odeon",
+      "title": "Epic Drag Battle - N'avalez pas n'importe quoi",
       "subtitle": null,
-      "category": null,
+      "category": "Spectacles Divers",
       "date_start": "2026-06-06",
       "date_end": null,
-      "time": "18:30",
-      "url": "https://agenda.villemorte.fr/event/ibrahima-cissokho-et-la-mandingue-foly-sortie-de-vinyl-liberte-1",
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317480-epic-drag-battle-n-avalez-pas-n-importe-quoi.html",
       "image": null,
-      "id": "765595a63ec2"
+      "id": "fb949f8b38e1"
+    },
+    {
+      "venue": "LDLC Arena",
+      "venue_slug": "ldlc-arena",
+      "title": "Doja Cat",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318369-doja-cat.html",
+      "image": null,
+      "id": "a58bc7f2ec15"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Odezenne + Yelle + Melba",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317605-odezenne-yelle-melba.html",
+      "image": null,
+      "id": "ef76b056c871"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Lucie Carbone",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-295655-lucie-carbone.html",
+      "image": null,
+      "id": "d662adb1a721"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "Ibrahima Cissokho et le Mandingue Foly",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-06-06",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-311113-ibrahima-cissokho-et-le-mandingue-foly.html",
+      "image": null,
+      "id": "fd131e5e553b"
     },
     {
       "venue": "Le Sonic",
@@ -1704,6 +2562,19 @@
       "url": "https://le-sucre.eu/events/s-society-x-molekul-10-ans/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/04/HORIZONTAL-INDUSTRIAL-COPERA-20233-600x400.jpg",
       "id": "d15f06bf113b"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "cco-la-rayonne",
+      "title": "Festival Les Intergalactiques",
+      "subtitle": null,
+      "category": "Salons et foires",
+      "date_start": "2026-06-07",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-310051-festival-les-intergalactiques.html",
+      "image": null,
+      "id": "c88824520abb"
     },
     {
       "venue": "Gamut",
@@ -1849,6 +2720,45 @@
       "id": "1fdab811507d"
     },
     {
+      "venue": "Salle des Vieilles Tours",
+      "venue_slug": "salle-des-vieilles-tours",
+      "title": "Bastien Bürcher",
+      "subtitle": null,
+      "category": "Peinture & Dessin",
+      "date_start": "2026-06-07",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318492-bastien-burcher.html",
+      "image": null,
+      "id": "32f9730f9028"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Les Dames du raï",
+      "subtitle": null,
+      "category": "Spectacles Divers",
+      "date_start": "2026-06-07",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317606-les-dames-du-rai.html",
+      "image": null,
+      "id": "b2052ab1fdbf"
+    },
+    {
+      "venue": "L'Aqueduc",
+      "venue_slug": "l-aqueduc",
+      "title": "Happy Ends",
+      "subtitle": null,
+      "category": "Spectacles Divers",
+      "date_start": "2026-06-07",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318336-happy-ends.html",
+      "image": null,
+      "id": "560141b62745"
+    },
+    {
       "venue": "Théâtre de l’Elysée",
       "venue_slug": "theatre-de-l-elysee",
       "title": "PILOTE, UNE SÉRIE THÉÂTRALE EN CINQ ÉPISODES",
@@ -1873,6 +2783,19 @@
       "url": "https://marchegare.fr/agenda/touche-amore",
       "image": null,
       "id": "ace7f9e4fff2"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Vanessa Paradis + Billie",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-06-08",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317607-vanessa-paradis-billie.html",
+      "image": null,
+      "id": "a2e5bdcdc84b"
     },
     {
       "venue": "La Commune",
@@ -1914,6 +2837,19 @@
       "id": "6c58402d2002"
     },
     {
+      "venue": "Fnac Bellecour",
+      "venue_slug": "fnac-bellecour",
+      "title": "Loup Garou géant",
+      "subtitle": null,
+      "category": "Jeux",
+      "date_start": "2026-06-09",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317803-loup-garou-geant.html",
+      "image": null,
+      "id": "8feb06327061"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "MELT BANANA + PNEU",
@@ -1925,6 +2861,45 @@
       "url": "https://agenda.villemorte.fr/event/melt-banana-pneu",
       "image": null,
       "id": "6a3bceff050a"
+    },
+    {
+      "venue": "Fnac Bellecour",
+      "venue_slug": "fnac-bellecour",
+      "title": "Olivia Ruiz",
+      "subtitle": null,
+      "category": "Lectures",
+      "date_start": "2026-06-09",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318419-olivia-ruiz.html",
+      "image": null,
+      "id": "5baf986e70cd"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Furioso",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-06-09",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318367-furioso.html",
+      "image": null,
+      "id": "5c7a39ce1513"
+    },
+    {
+      "venue": "Salle Molière",
+      "venue_slug": "salle-moliere",
+      "title": "Sur les ailes du chant",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-06-09",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318389-sur-les-ailes-du-chant.html",
+      "image": null,
+      "id": "99a97bfe5b94"
     },
     {
       "venue": "Le Périscope",
@@ -1990,6 +2965,32 @@
       "url": "https://sonic-lyon.fr/evenement/good-flying-birds/",
       "image": null,
       "id": "89e022d75731"
+    },
+    {
+      "venue": "Maison de la Danse",
+      "venue_slug": "maison-de-la-danse",
+      "title": "Honda Romance",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-06-10",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-316766-honda-romance.html",
+      "image": null,
+      "id": "ca03ddc7c5db"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Massive Attack",
+      "subtitle": null,
+      "category": "Musique Electronique",
+      "date_start": "2026-06-10",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317608-massive-attack.html",
+      "image": null,
+      "id": "40a8d3f2b80d"
     },
     {
       "venue": "Le Périscope",
@@ -2083,6 +3084,19 @@
       "id": "af6802b5cab9"
     },
     {
+      "venue": "Auditorium de Lyon",
+      "venue_slug": "auditorium-de-lyon",
+      "title": "Zarathoustra",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-06-11",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318360-zarathoustra.html",
+      "image": null,
+      "id": "0a19fb7cae79"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "Otomo Yoshihide (solo) + Table",
@@ -2094,6 +3108,32 @@
       "url": "https://sonic-lyon.fr/evenement/otomo/",
       "image": null,
       "id": "cabc2faf2697"
+    },
+    {
+      "venue": "Rock N Eat",
+      "venue_slug": "rock-n-eat",
+      "title": "Telegraph + Bey",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-06-11",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318493-telegraph-bey.html",
+      "image": null,
+      "id": "2045fb675f16"
+    },
+    {
+      "venue": "Maison de la Danse",
+      "venue_slug": "maison-de-la-danse",
+      "title": "Honda Romance",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-06-11",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-316766-honda-romance.html",
+      "image": null,
+      "id": "7c1990d9cf03"
     },
     {
       "venue": "Les Subsistances",
@@ -2226,6 +3266,19 @@
       "id": "3d6c03cac9cf"
     },
     {
+      "venue": "Auditorium de Lyon",
+      "venue_slug": "auditorium-de-lyon",
+      "title": "Zarathoustra",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-06-12",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318360-zarathoustra.html",
+      "image": null,
+      "id": "279caf4adc7a"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Gratuit WEST SIDE FEST 26 Avec l'ENM Villeurbanne",
@@ -2239,6 +3292,32 @@
       "id": "e7c1dff58ca0"
     },
     {
+      "venue": "Palais de la Mutualité - Salle Édouard Herriot",
+      "venue_slug": "palais-de-la-mutualite-salle-edouard-herriot",
+      "title": "Adel Fugazi",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-06-12",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318357-adel-fugazi.html",
+      "image": null,
+      "id": "f069f70b9633"
+    },
+    {
+      "venue": "Maison de la Danse",
+      "venue_slug": "maison-de-la-danse",
+      "title": "Honda Romance",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-06-12",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-316766-honda-romance.html",
+      "image": null,
+      "id": "265195a86c48"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Mirages Et Tendresses Ivana Muller",
@@ -2250,6 +3329,19 @@
       "url": "https://www.les-subs.com/evenement/mirages-et-tendresses-ivana-muller/",
       "image": null,
       "id": "f7d32aba93a8"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Cesária Évora Orchestra",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-06-12",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317609-cesaria-evora-orchestra.html",
+      "image": null,
+      "id": "8a24974f5d05"
     },
     {
       "venue": "Le Petit Salon",
@@ -2369,6 +3461,32 @@
       "id": "00feb7a16f83"
     },
     {
+      "venue": "Auditorium de Lyon",
+      "venue_slug": "auditorium-de-lyon",
+      "title": "Zarathoustra",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-06-13",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318360-zarathoustra.html",
+      "image": null,
+      "id": "5de119f6817e"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Bal masqué",
+      "subtitle": null,
+      "category": "Spectacles Divers",
+      "date_start": "2026-06-13",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317610-bal-masque.html",
+      "image": null,
+      "id": "c7c21d94cd4c"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "THIS IS TECHNO RAVE : KEUSMO / ALMØ & MORE",
@@ -2447,6 +3565,19 @@
       "id": "3fce76fd8944"
     },
     {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Ten thousand hours",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-06-14",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-311266-ten-thousand-hours.html",
+      "image": null,
+      "id": "59082c178ed4"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "BILMURI",
@@ -2484,6 +3615,19 @@
       "url": "https://larayonne.org/evenement/espagne-cap-vert-diffusion-coupe-du-monde-2026/",
       "image": null,
       "id": "23d1891f36f8"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Ten thousand hours",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-06-15",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-311266-ten-thousand-hours.html",
+      "image": null,
+      "id": "5a619491c211"
     },
     {
       "venue": "La Commune",
@@ -2564,6 +3708,19 @@
       "id": "e3e89ced53d2"
     },
     {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Ten thousand hours",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-06-16",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-311266-ten-thousand-hours.html",
+      "image": null,
+      "id": "7b88363c4803"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "France / Sénégal : diffusion Coupe du Monde 2026",
@@ -2642,6 +3799,19 @@
       "id": "17a557a281f1"
     },
     {
+      "venue": "Maison de la Danse",
+      "venue_slug": "maison-de-la-danse",
+      "title": "Gesualdo Passione",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-06-17",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317612-gesualdo-passione.html",
+      "image": null,
+      "id": "edf16bc7cd10"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "James Leg + Thee Bliss",
@@ -2653,6 +3823,32 @@
       "url": "https://sonic-lyon.fr/evenement/james-leg/",
       "image": null,
       "id": "092d43b1854d"
+    },
+    {
+      "venue": "Théâtre à l'Ouest",
+      "venue_slug": "theatre-a-l-ouest",
+      "title": "Umut Köker",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-06-17",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318490-umut-koker.html",
+      "image": null,
+      "id": "538ebc4d01d5"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Résurrection",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-06-17",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317613-resurrection.html",
+      "image": null,
+      "id": "fa0f6c19af89"
     },
     {
       "venue": "HEAT",
@@ -2707,6 +3903,19 @@
       "id": "38b01a3ec288"
     },
     {
+      "venue": "Maison de la Danse",
+      "venue_slug": "maison-de-la-danse",
+      "title": "Gesualdo Passione",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-06-18",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317612-gesualdo-passione.html",
+      "image": null,
+      "id": "8c5e52478926"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "LES 20 ANS ! Animation LE TRUC Chorale participative XXL",
@@ -2718,6 +3927,32 @@
       "url": "https://marchegare.fr/agenda/chorale-le-truc-les-20-ans",
       "image": null,
       "id": "e67f86ee20db"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Jack White + Treaks",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-06-18",
+      "date_end": null,
+      "time": "21:15",
+      "url": "https://www.petit-bulletin.fr/agenda-290002-jack-white-treaks.html",
+      "image": null,
+      "id": "ed58e2ec5bf4"
+    },
+    {
+      "venue": "Dans toute la ville",
+      "venue_slug": "dans-toute-la-ville",
+      "title": "Les invites de Villeurbanne",
+      "subtitle": null,
+      "category": "Spectacles Divers",
+      "date_start": "2026-06-19",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-310500-les-invites-de-villeurbanne.html",
+      "image": null,
+      "id": "57255cff1901"
     },
     {
       "venue": "La Commune",
@@ -2811,6 +4046,19 @@
       "id": "510236499cf0"
     },
     {
+      "venue": "Maison de la Danse",
+      "venue_slug": "maison-de-la-danse",
+      "title": "Gesualdo Passione",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-06-19",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317612-gesualdo-passione.html",
+      "image": null,
+      "id": "bb8b32bcdbab"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Festial Dance People 2026 Maqamat",
@@ -2822,6 +4070,19 @@
       "url": "https://www.les-subs.com/evenement/festial-dance-people-2026-maqamat/",
       "image": null,
       "id": "7c2f33268318"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Sébastien Tellier + Giorgio Poi",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-06-19",
+      "date_end": null,
+      "time": "21:15",
+      "url": "https://www.petit-bulletin.fr/agenda-317614-sebastien-tellier-giorgio-poi.html",
+      "image": null,
+      "id": "3139747a8a32"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -2848,6 +4109,19 @@
       "url": "https://yp.events/cd579693-d188-423d-ae33-28478118f599/THIS-IS-HIT-MACHINE-90-2000-NO2-T-Vyktor-Nova-more?from=siteweb",
       "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisisHitmachine_19062026_lepetitsalon-1024x576.jpg",
       "id": "a8e1b56b5c4a"
+    },
+    {
+      "venue": "Dans toute la ville",
+      "venue_slug": "dans-toute-la-ville",
+      "title": "Les invites de Villeurbanne",
+      "subtitle": null,
+      "category": "Spectacles Divers",
+      "date_start": "2026-06-20",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-310500-les-invites-de-villeurbanne.html",
+      "image": null,
+      "id": "18baee999fb0"
     },
     {
       "venue": "La Rayonne",
@@ -2939,6 +4213,19 @@
       "url": "https://www.les-subs.com/evenement/atelier-danse-pour-enfants/",
       "image": null,
       "id": "74fef6e5d978"
+    },
+    {
+      "venue": "Galerie Jean-Louis Mandon",
+      "venue_slug": "galerie-jean-louis-mandon",
+      "title": "Florence Rérolle",
+      "subtitle": null,
+      "category": "Peinture & Dessin",
+      "date_start": "2026-06-20",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318328-florence-rerolle.html",
+      "image": null,
+      "id": "b87f83e207f0"
     },
     {
       "venue": "Marché Gare",
@@ -3045,6 +4332,19 @@
       "id": "fc46f5de8144"
     },
     {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Ino Casablanca + Yamê + Asfar Shamsi",
+      "subtitle": null,
+      "category": "Rap",
+      "date_start": "2026-06-20",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317615-ino-casablanca-yame-asfar-shamsi.html",
+      "image": null,
+      "id": "e03340bf6cc1"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "THIS IS TECHNO RAVE : COIL / CHECHE & MORE",
@@ -3056,6 +4356,19 @@
       "url": "https://yp.events/afae3c7a-0148-4311-81a2-61f50da505ea/THIS-IS-TECHNO-Rave-COIL-Cheche-more?from=siteweb",
       "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisisTechnoRave_20062026_lepetitsalon-1024x576.jpg",
       "id": "a2eb507dd4ff"
+    },
+    {
+      "venue": "Dans toute la ville",
+      "venue_slug": "dans-toute-la-ville",
+      "title": "Les invites de Villeurbanne",
+      "subtitle": null,
+      "category": "Spectacles Divers",
+      "date_start": "2026-06-21",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-310500-les-invites-de-villeurbanne.html",
+      "image": null,
+      "id": "3749a14feacc"
     },
     {
       "venue": "HEAT",
@@ -3214,6 +4527,19 @@
       "id": "b22a10a49144"
     },
     {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Delay the Sadness & House",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-06-23",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317618-delay-the-sadness-house.html",
+      "image": null,
+      "id": "49122668ff8e"
+    },
+    {
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "Emmanuelle Parrenin , Delphine Dora & Mocke + Muon S (Anna Gaïotti et Jean Bender)",
@@ -3292,6 +4618,19 @@
       "id": "e3b8a1e62e53"
     },
     {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 1",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317867-jazz-a-vienne-jour-1.html",
+      "image": null,
+      "id": "20277ac5b896"
+    },
+    {
       "venue": "Toï Toï le Zinc",
       "venue_slug": "toi-toi-le-zinc",
       "title": "CONCERT ET DJ SET // Fai Lo Tieu #2",
@@ -3329,6 +4668,19 @@
       "url": "https://www.les-subs.com/evenement/hudge/",
       "image": null,
       "id": "dd2dc6fee0c2"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Selah Sue and The Gallands",
+      "subtitle": null,
+      "category": "Soul & Funk",
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": "21:15",
+      "url": "https://www.petit-bulletin.fr/agenda-317620-selah-sue-and-the-gallands.html",
+      "image": null,
+      "id": "5f0de7af624b"
     },
     {
       "venue": "Bourse du Travail",
@@ -3383,6 +4735,19 @@
       "id": "5ffe95709e69"
     },
     {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 2",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-06-26",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317868-jazz-a-vienne-jour-2.html",
+      "image": null,
+      "id": "b008fec295f1"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Lxs Assoiffxs + Orga Shlag Club",
@@ -3394,6 +4759,32 @@
       "url": "https://agenda.villemorte.fr/event/lxs-assoiffxs-orga-shlag-club",
       "image": null,
       "id": "3d84b947256b"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Extra Bal, un karaoké de la danse",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-06-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317621-extra-bal-un-karaoke-de-la-danse.html",
+      "image": null,
+      "id": "b50e8caab77d"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Eddy de Pretto",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-06-26",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317622-eddy-de-pretto.html",
+      "image": null,
+      "id": "788ea1051f68"
     },
     {
       "venue": "Le Petit Salon",
@@ -3448,6 +4839,32 @@
       "id": "f23d1f39188c"
     },
     {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 3",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-06-27",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317869-jazz-a-vienne-jour-3.html",
+      "image": null,
+      "id": "800668a79ddb"
+    },
+    {
+      "venue": "Plage de l'Atol",
+      "venue_slug": "plage-de-l-atol",
+      "title": "Évasion festival - jour 1",
+      "subtitle": null,
+      "category": "Musique Electronique",
+      "date_start": "2026-06-27",
+      "date_end": null,
+      "time": "12:00",
+      "url": "https://www.petit-bulletin.fr/agenda-310647-evasion-festival-jour-1.html",
+      "image": null,
+      "id": "3faf298a58b3"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Minipousses Cirque",
@@ -3485,6 +4902,32 @@
       "url": "https://agenda.villemorte.fr/event/drag-shows-le-cabaret-des-oliviers-3",
       "image": null,
       "id": "82c80208dac7"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Extra Bal, un karaoké de la danse",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-06-27",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317621-extra-bal-un-karaoke-de-la-danse.html",
+      "image": null,
+      "id": "ae19d8fa8a9a"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Nuit soul",
+      "subtitle": null,
+      "category": "Soul & Funk",
+      "date_start": "2026-06-27",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317623-nuit-soul.html",
+      "image": null,
+      "id": "26edf9fbf3e8"
     },
     {
       "venue": "Le Petit Salon",
@@ -3565,6 +5008,32 @@
       "id": "f3ec60313652"
     },
     {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 4",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-06-28",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317870-jazz-a-vienne-jour-4.html",
+      "image": null,
+      "id": "f7fd4ee9dba5"
+    },
+    {
+      "venue": "Plage de l'Atol",
+      "venue_slug": "plage-de-l-atol",
+      "title": "Évasion festival - jour 2",
+      "subtitle": null,
+      "category": "Musique Electronique",
+      "date_start": "2026-06-28",
+      "date_end": null,
+      "time": "12:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318041-evasion-festival-jour-2.html",
+      "image": null,
+      "id": "d54bc7f6fd36"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Projection de Hélène Trésore Transnationale",
@@ -3576,6 +5045,32 @@
       "url": "https://agenda.villemorte.fr/event/projection-de-helene-tresore-transnationale",
       "image": null,
       "id": "aa2dc9c42db4"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Extra Bal, un karaoké de la danse",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-06-28",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317621-extra-bal-un-karaoke-de-la-danse.html",
+      "image": null,
+      "id": "c615b0a89f2f"
+    },
+    {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 5",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-06-29",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317871-jazz-a-vienne-jour-5.html",
+      "image": null,
+      "id": "43f4f5c19395"
     },
     {
       "venue": "Le Périscope",
@@ -3617,6 +5112,19 @@
       "id": "97e334f2b9a6"
     },
     {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 6",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-06-30",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317872-jazz-a-vienne-jour-6.html",
+      "image": null,
+      "id": "27728d3ffaa2"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "ALTIN GÜN",
@@ -3628,6 +5136,19 @@
       "url": "https://www.transbordeur.fr/evenement/altin-gun-01072026/",
       "image": null,
       "id": "2e1f7e7c67b6"
+    },
+    {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 7",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-07-01",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317873-jazz-a-vienne-jour-7.html",
+      "image": null,
+      "id": "e578fe7367c5"
     },
     {
       "venue": "La Salle de Bains",
@@ -3643,6 +5164,19 @@
       "id": "2a3845c73ef0"
     },
     {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Le Lac des cygnes",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-07-01",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317625-le-lac-des-cygnes.html",
+      "image": null,
+      "id": "94519b8a29f1"
+    },
+    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Intérieur Queer : Comedy Club",
@@ -3656,6 +5190,71 @@
       "id": "80e6746b0882"
     },
     {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 8",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-07-02",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317874-jazz-a-vienne-jour-8.html",
+      "image": null,
+      "id": "40f2a046a5e0"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "IQ comedy club",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-07-02",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317855-iq-comedy-club.html",
+      "image": null,
+      "id": "371accff02ab"
+    },
+    {
+      "venue": "Parc Blandan",
+      "venue_slug": "parc-blandan",
+      "title": "Bal Folk",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-07-02",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317626-bal-folk.html",
+      "image": null,
+      "id": "271e728a6813"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Block Party for kids",
+      "subtitle": null,
+      "category": "Rap",
+      "date_start": "2026-07-02",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317627-block-party-for-kids.html",
+      "image": null,
+      "id": "5e2f978abd5d"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Le Lac des cygnes",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-07-02",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317625-le-lac-des-cygnes.html",
+      "image": null,
+      "id": "e3e7f2026e33"
+    },
+    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Intérieur Queer : Drag Rendez-vous & Garçon sauvage",
@@ -3667,6 +5266,19 @@
       "url": "https://h-eat.eu/events/interieur-queer-drag-rendez-vous-garcon-sauvage/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/03/2025-07-12-Preview-IQ-GragRdv-HEAT-bd-Credit-Gaetan-CLEMENT-031-1080x720.jpg",
       "id": "c253161a236c"
+    },
+    {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 9",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-07-03",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317875-jazz-a-vienne-jour-9.html",
+      "image": null,
+      "id": "ca21cbddf150"
     },
     {
       "venue": "Maison de l'écologie",
@@ -3708,6 +5320,19 @@
       "id": "a3d645869957"
     },
     {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Le Lac des cygnes",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-07-03",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317625-le-lac-des-cygnes.html",
+      "image": null,
+      "id": "c2aaf0277603"
+    },
+    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Intérieur Queer : Ball & Afterball",
@@ -3719,6 +5344,19 @@
       "url": "https://h-eat.eu/events/interieur-queer-ball-afterball/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/03/IQ-AMBIANCE-@POLISSES-1-1080x720.jpg",
       "id": "62739d3676e7"
+    },
+    {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 10",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317876-jazz-a-vienne-jour-10.html",
+      "image": null,
+      "id": "5a5f7f9e2746"
     },
     {
       "venue": "Grrrnd Zero",
@@ -3760,6 +5398,45 @@
       "id": "7a0bff245b10"
     },
     {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Nuit 100 % Lyon",
+      "subtitle": null,
+      "category": "Musique Electronique",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317629-nuit-100-lyon.html",
+      "image": null,
+      "id": "bcc1eb45ca76"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Da capo",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-294401-da-capo.html",
+      "image": null,
+      "id": "ac222d273958"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Croire aux fauves",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "22:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317630-croire-aux-fauves.html",
+      "image": null,
+      "id": "1909c7818099"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "THIS IS TECHNO RAVE : ENFONCÉ / URVA ESTREVA & MORE",
@@ -3771,6 +5448,162 @@
       "url": "https://yp.events/a8a7e2d0-f823-4d67-8654-505c815d5c05/THIS-IS-TECHNO-Rave-Urva-Estreva-Enfonc-E-more?from=siteweb",
       "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisIsTechnoRave_Enfonce_04072026_lepetitsalon-1024x576.jpg",
       "id": "ef0f12527323"
+    },
+    {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 11",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-07-05",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317877-jazz-a-vienne-jour-11.html",
+      "image": null,
+      "id": "5c9c646758d2"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Da capo",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-05",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-294401-da-capo.html",
+      "image": null,
+      "id": "74b92e342b41"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Nuit de la poésie",
+      "subtitle": null,
+      "category": "Lectures",
+      "date_start": "2026-07-05",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317631-nuit-de-la-poesie.html",
+      "image": null,
+      "id": "c1b573869c20"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Croire aux fauves",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-05",
+      "date_end": null,
+      "time": "22:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317630-croire-aux-fauves.html",
+      "image": null,
+      "id": "273ef836e123"
+    },
+    {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 12",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-07-06",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317878-jazz-a-vienne-jour-12.html",
+      "image": null,
+      "id": "f0932487e535"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Da capo",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-06",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-294401-da-capo.html",
+      "image": null,
+      "id": "4a7039fd76b0"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Croire aux fauves",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-06",
+      "date_end": null,
+      "time": "22:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317630-croire-aux-fauves.html",
+      "image": null,
+      "id": "44acd386844b"
+    },
+    {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 13",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-07-07",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317879-jazz-a-vienne-jour-13.html",
+      "image": null,
+      "id": "fd3abf1b5cfc"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Da capo",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-07",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-294401-da-capo.html",
+      "image": null,
+      "id": "b24776d7f8ed"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Camille",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-07",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317633-camille.html",
+      "image": null,
+      "id": "d47ade14005b"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Moya",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-07",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://www.petit-bulletin.fr/agenda-311812-moya.html",
+      "image": null,
+      "id": "0b36a0286c3e"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Croire aux fauves",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-07",
+      "date_end": null,
+      "time": "22:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317630-croire-aux-fauves.html",
+      "image": null,
+      "id": "0343bedc708d"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3786,6 +5619,19 @@
       "id": "2af3a48e4793"
     },
     {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 14",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-07-08",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317880-jazz-a-vienne-jour-14.html",
+      "image": null,
+      "id": "2970a941e506"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Sulfuric Cautery + Morgue Breath + Fosseseptique",
@@ -3797,6 +5643,123 @@
       "url": "https://agenda.villemorte.fr/event/sulfuric-cautery-morgue-breath-fosseseptique",
       "image": null,
       "id": "c909207b8298"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Da capo",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-08",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-294401-da-capo.html",
+      "image": null,
+      "id": "29a9773660e0"
+    },
+    {
+      "venue": "Les Subsistances",
+      "venue_slug": "les-subs",
+      "title": "Orchestre vide, longing for you",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-07-08",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-316458-orchestre-vide-longing-for-you.html",
+      "image": null,
+      "id": "862f364752e8"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Pulp",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-08",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317634-pulp.html",
+      "image": null,
+      "id": "7c414b6519db"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Croire aux fauves",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-08",
+      "date_end": null,
+      "time": "22:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317630-croire-aux-fauves.html",
+      "image": null,
+      "id": "227a8ae5a1d3"
+    },
+    {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 15",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-07-09",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317881-jazz-a-vienne-jour-15.html",
+      "image": null,
+      "id": "ff62692b3630"
+    },
+    {
+      "venue": "Théâtre Théo Argence",
+      "venue_slug": "theatre-theo-argence",
+      "title": "Le bal de Paris",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-07-09",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317637-le-bal-de-paris.html",
+      "image": null,
+      "id": "b1e39f72f6e0"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Da capo",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-09",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-294401-da-capo.html",
+      "image": null,
+      "id": "809d0df56c37"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Agnes Obel + Quatuor Debussy",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-09",
+      "date_end": null,
+      "time": "21:15",
+      "url": "https://www.petit-bulletin.fr/agenda-289353-agnes-obel-quatuor-debussy.html",
+      "image": null,
+      "id": "5cb04525e8e0"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Croire aux fauves",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-09",
+      "date_end": null,
+      "time": "22:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317630-croire-aux-fauves.html",
+      "image": null,
+      "id": "c310f4868893"
     },
     {
       "venue": "Le Transbordeur",
@@ -3812,6 +5775,32 @@
       "id": "502e62cb1a99"
     },
     {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 16",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-07-10",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317882-jazz-a-vienne-jour-16.html",
+      "image": null,
+      "id": "d7181012c782"
+    },
+    {
+      "venue": "Théâtre Théo Argence",
+      "venue_slug": "theatre-theo-argence",
+      "title": "Le bal de Paris",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-07-10",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317637-le-bal-de-paris.html",
+      "image": null,
+      "id": "f77a24ea0e07"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Soirée Gender Reveal Party : Gui + John Travelota  + Messalina Mescalina + DJ Miss Joli Butt Kunt",
@@ -3823,6 +5812,58 @@
       "url": "https://agenda.villemorte.fr/event/soiree-gender-reveal-party-gui-john-travelota-messalina-mescalina-dj-miss-joli-butt-kunt",
       "image": null,
       "id": "04f5c344edaf"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Da capo",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-10",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-294401-da-capo.html",
+      "image": null,
+      "id": "59a246677c58"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Darkside + Suuns",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-10",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-300467-darkside-suuns.html",
+      "image": null,
+      "id": "39e388d4097f"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Croire aux fauves",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-10",
+      "date_end": null,
+      "time": "22:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317630-croire-aux-fauves.html",
+      "image": null,
+      "id": "bd60dc167dc9"
+    },
+    {
+      "venue": "Théâtre antique de Vienne",
+      "venue_slug": "theatre-antique-de-vienne",
+      "title": "Jazz à Vienne - Jour 17",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-07-11",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-317883-jazz-a-vienne-jour-17.html",
+      "image": null,
+      "id": "04976a6c9610"
     },
     {
       "venue": "Grrrnd Zero",
@@ -3838,6 +5879,71 @@
       "id": "9244cbac4c3d"
     },
     {
+      "venue": "Théâtre Théo Argence",
+      "venue_slug": "theatre-theo-argence",
+      "title": "Le bal de Paris",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-07-11",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317637-le-bal-de-paris.html",
+      "image": null,
+      "id": "0160235f01d9"
+    },
+    {
+      "venue": "Galerie Test du Bailler",
+      "venue_slug": "galerie-test-du-bailler",
+      "title": "Daniel Peyreplane et François Robin",
+      "subtitle": null,
+      "category": "Art graphique",
+      "date_start": "2026-07-11",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317884-daniel-peyreplane-et-francois-robin.html",
+      "image": null,
+      "id": "9e2983666a55"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Nuit cubaine",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-07-11",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317638-nuit-cubaine.html",
+      "image": null,
+      "id": "178992cea14a"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Da capo",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-11",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-294401-da-capo.html",
+      "image": null,
+      "id": "e7bad729ca1c"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Croire aux fauves",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-11",
+      "date_end": null,
+      "time": "22:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317630-croire-aux-fauves.html",
+      "image": null,
+      "id": "01de463ab828"
+    },
+    {
       "venue": "Friche Artistique Lamartine | La Robinetterie",
       "venue_slug": "friche-artistique-lamartine-la-robinetterie",
       "title": "Un été à la Friche dans le cadre de Tout le Monde Dehors 2026",
@@ -3849,6 +5955,19 @@
       "url": "https://agenda.villemorte.fr/event/un-ete-a-la-friche-dans-le-cadre-de-tout-le-monde-dehors-2026",
       "image": null,
       "id": "c506f2f0c184"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Wet Leg + Lambrini Girls",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-13",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317635-wet-leg-lambrini-girls.html",
+      "image": null,
+      "id": "986126d83d26"
     },
     {
       "venue": "Les Subsistances",
@@ -3864,6 +5983,58 @@
       "id": "586589ad8abd"
     },
     {
+      "venue": "Les Subsistances",
+      "venue_slug": "les-subs",
+      "title": "Shangwe, le bal",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-07-14",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317639-shangwe-le-bal.html",
+      "image": null,
+      "id": "52ddbc89af82"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Frames",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-15",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317640-frames.html",
+      "image": null,
+      "id": "7acf1c704d45"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Sono io?",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-15",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317641-sono-io.html",
+      "image": null,
+      "id": "f0d116c08732"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Lorde",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-15",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317642-lorde.html",
+      "image": null,
+      "id": "767c5652e822"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Violent Magic Orchestra + Eau Chaude Sanitaire (Matti) + Nuage Rose",
@@ -3877,6 +6048,201 @@
       "id": "55cd98494b70"
     },
     {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Frames",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-16",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317640-frames.html",
+      "image": null,
+      "id": "69c3d67488ae"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Sono io?",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-16",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317641-sono-io.html",
+      "image": null,
+      "id": "f929434b4b1b"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Asaf Avidan + Mina Tindle",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-16",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-302419-asaf-avidan-mina-tindle.html",
+      "image": null,
+      "id": "71581e5c4e4c"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Frames",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-17",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317640-frames.html",
+      "image": null,
+      "id": "00fa24ffbbeb"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Sono io?",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-17",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317641-sono-io.html",
+      "image": null,
+      "id": "769e0552cc4e"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Charlotte Cardin",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-17",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-251115-charlotte-cardin.html",
+      "image": null,
+      "id": "53d5fa367b06"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Frames",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-18",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317640-frames.html",
+      "image": null,
+      "id": "0805bbc724ef"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Club Disco",
+      "subtitle": null,
+      "category": "Soul & Funk",
+      "date_start": "2026-07-18",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317644-club-disco.html",
+      "image": null,
+      "id": "a72b4a65fff8"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Sono io?",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-18",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317641-sono-io.html",
+      "image": null,
+      "id": "5a832572a540"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Frames",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-19",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317640-frames.html",
+      "image": null,
+      "id": "76e4b6397960"
+    },
+    {
+      "venue": "Domaine de Lacroix-Laval",
+      "venue_slug": "domaine-de-lacroix-laval",
+      "title": "Sono io?",
+      "subtitle": null,
+      "category": "Cirque",
+      "date_start": "2026-07-19",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317641-sono-io.html",
+      "image": null,
+      "id": "cd6aad62fa84"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "The Köln Concert",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-07-19",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317645-the-koln-concert.html",
+      "image": null,
+      "id": "4437706779f5"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Patrick Watson + Gildaa",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-20",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-315661-patrick-watson-gildaa.html",
+      "image": null,
+      "id": "f7bef01a583e"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Vincent Delerm et Vincent Dedienne",
+      "subtitle": null,
+      "category": "Chanson",
+      "date_start": "2026-07-21",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317646-vincent-delerm-et-vincent-dedienne.html",
+      "image": null,
+      "id": "a9643463601d"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Kery James + Isha x Limsa d'Aulnay",
+      "subtitle": null,
+      "category": "Rap",
+      "date_start": "2026-07-22",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317647-kery-james-isha-x-limsa-d-aulnay.html",
+      "image": null,
+      "id": "06d67ab32513"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "Ulrika Spacek + Sharon Tate Modern",
@@ -3888,6 +6254,58 @@
       "url": "https://sonic-lyon.fr/evenement/ulrika-spacek-sharon-tate-modern/",
       "image": null,
       "id": "5db429245cdf"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "The divine comedy",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-23",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317648-the-divine-comedy.html",
+      "image": null,
+      "id": "4900442217bc"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Clair Obscur: Expedition 33",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-07-24",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317649-clair-obscur-expedition-33.html",
+      "image": null,
+      "id": "80ef18883535"
+    },
+    {
+      "venue": "Galerie Henri Chartier",
+      "venue_slug": "galerie-henri-chartier",
+      "title": "Philippe Hortala",
+      "subtitle": null,
+      "category": "Peinture & Dessin",
+      "date_start": "2026-07-25",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318329-philippe-hortala.html",
+      "image": null,
+      "id": "814ae0833654"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "La nuit du raï",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-07-25",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317617-la-nuit-du-rai.html",
+      "image": null,
+      "id": "a9a15b390080"
     },
     {
       "venue": "Rock n Eat",
