@@ -70,6 +70,9 @@ VENUE_CANONICAL: dict[str, list[str]] = {
                                "maison de lecologie"],
     "Agend'arts":             ["agend arts", "agendarts"],
     "Big White":              ["big white"],
+    # Added in v34.3: Bar Rock'n Eat (PB) === Rock'n Eat (Ville Morte)
+    "Bar Rock'n Eat":         ["bar rock n eat", "rock n eat", "rocknreat",
+                               "bar rock n'eat", "rock n'eat"],
 }
 
 # Build reverse lookup: normalized_form -> canonical_display
@@ -140,29 +143,30 @@ def _title_similarity(a: str, b: str) -> float:
     return SequenceMatcher(None, na, nb).ratio()
 
 
-def deduplicate(tagged_events: List[Tuple[Event, int]]) -> List[Event]:
-    """Deduplicate events across sources + canonicalize venue display names.
+def _pick_best(cluster: list[tuple[Event, int]]) -> tuple[Event, int]:
+    """Highest priority wins; tie-break on info completeness."""
+    return max(
+        cluster,
+        key=lambda x: (
+            x[1],                          # priority
+            1 if x[0].time else 0,         # has time
+            len(x[0].subtitle or ""),
+            len(x[0].category or ""),
+        )
+    )
 
-    Args:
-      tagged_events: list of (event, source_priority) tuples.
-        Higher priority means more authoritative.
 
-    Returns:
-      Deduplicated list of events, each with its `venue` field rewritten
-      to the canonical display name. Order is by group iteration (not sorted).
-    """
-    # Group by (venue_key, date_start)
+def _primary_dedup(tagged_events: List[Tuple[Event, int]]) -> List[Tuple[Event, int]]:
+    """Group by (canonical_venue, date) then fuzzy-cluster titles >= 0.7."""
     groups: dict[tuple[str, str], list[tuple[Event, int]]] = defaultdict(list)
     for ev, prio in tagged_events:
         groups[(_venue_key(ev.venue), ev.date_start)].append((ev, prio))
 
-    result: List[Event] = []
+    result: List[Tuple[Event, int]] = []
     for key, group in groups.items():
         if len(group) == 1:
-            result.append(group[0][0])
+            result.append(group[0])
             continue
-
-        # Cluster by fuzzy title match (O(n^2) but n is small per group)
         clusters: list[list[tuple[Event, int]]] = []
         for ev, prio in group:
             placed = False
@@ -174,23 +178,76 @@ def deduplicate(tagged_events: List[Tuple[Event, int]]) -> List[Event]:
                     break
             if not placed:
                 clusters.append([(ev, prio)])
-
-        # Per cluster: pick highest priority; tie-break on info completeness
         for cluster in clusters:
-            best = max(
-                cluster,
-                key=lambda x: (
-                    x[1],                                # priority
-                    1 if x[0].time else 0,               # has time
-                    len(x[0].subtitle or ""),
-                    len(x[0].category or ""),
-                )
-            )
-            result.append(best[0])
-
-    # Final pass: canonicalize each surviving event's venue display name
-    # so the frontend doesn't render duplicate chips for "sonic" vs "Le Sonic".
-    for e in result:
-        e.venue = canonical_venue_name(e.venue)
-
+            result.append(_pick_best(cluster))
     return result
+
+
+def _secondary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Event, int]]:
+    """Cross-venue dedup pass: same date + very high title similarity.
+
+    Catches cases where the same event appears at different venue spellings
+    that aren't covered by canonical aliases. Example: "FeFan" listed at
+    "Toï Toï le Zinc" in one source vs at "Dans toute la ville" in another.
+
+    Uses a stricter threshold (0.85) than the primary pass to avoid merging
+    distinct events that happen to have similar names.
+    """
+    by_date: dict[str, list[tuple[Event, int]]] = defaultdict(list)
+    for ev, prio in events_with_prio:
+        by_date[ev.date_start].append((ev, prio))
+
+    result: List[Tuple[Event, int]] = []
+    for date_iso, group in by_date.items():
+        if len(group) <= 1:
+            result.extend(group)
+            continue
+        clusters: list[list[tuple[Event, int]]] = []
+        for ev, prio in group:
+            placed = False
+            # Require min length to avoid merging short generic titles
+            # like "Concert" or "Jam".
+            if len((ev.title or "").strip()) < 5:
+                clusters.append([(ev, prio)])
+                continue
+            for cluster in clusters:
+                ref_ev = cluster[0][0]
+                if len((ref_ev.title or "").strip()) < 5:
+                    continue
+                if _title_similarity(ev.title, ref_ev.title) >= 0.85:
+                    cluster.append((ev, prio))
+                    placed = True
+                    break
+            if not placed:
+                clusters.append([(ev, prio)])
+        for cluster in clusters:
+            result.append(_pick_best(cluster))
+    return result
+
+
+def deduplicate(tagged_events: List[Tuple[Event, int]]) -> List[Event]:
+    """Deduplicate events across sources + canonicalize venue display names.
+
+    Two-pass strategy:
+      1. PRIMARY — group by (canonical_venue, date_start), fuzzy-cluster
+         titles >= 0.7. Catches same-venue duplicates from multiple sources.
+      2. SECONDARY — group by date_start only, fuzzy-cluster titles >= 0.85.
+         Catches cross-venue duplicates (e.g. FeFan reported at Toï Toï by
+         one source and at "Dans toute la ville" by another).
+
+    Args:
+      tagged_events: list of (event, source_priority) tuples.
+        Higher priority means more authoritative.
+
+    Returns:
+      Deduplicated list of events, each with its `venue` field rewritten
+      to the canonical display name. Order is by group iteration (not sorted).
+    """
+    primary_result = _primary_dedup(tagged_events)
+    secondary_result = _secondary_dedup(primary_result)
+    final = [ev for ev, _ in secondary_result]
+    # Canonicalize venue display names so the frontend doesn't render
+    # duplicate chips for "sonic" vs "Le Sonic".
+    for e in final:
+        e.venue = canonical_venue_name(e.venue)
+    return final
