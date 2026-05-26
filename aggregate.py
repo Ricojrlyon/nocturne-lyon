@@ -28,7 +28,7 @@ from scrapers import (
     opera_lyon, tng,
     bourse_du_travail,
 )
-from scrapers.aggregators import villemorte
+from scrapers.aggregators import villemorte, petit_bulletin
 from scrapers.dedup import deduplicate
 
 # Venue-specific scrapers — priority 100 (authoritative for their venue).
@@ -51,10 +51,12 @@ SCRAPERS: list[tuple[str, Callable[[], List[Event]]]] = [
     ("Bourse du Travail",       bourse_du_travail.fetch),
 ]
 
-# Aggregators — priority 50 (lose against venue scrapers on duplicates).
+# Aggregators — priority lower than venue scrapers (lose against them on
+# duplicates). Among themselves, higher priority wins.
 # Each entry is (display_name, callable, priority).
 AGGREGATORS: list[tuple[str, Callable[[], List[Event]], int]] = [
-    ("Ville Morte",             villemorte.fetch, 50),
+    ("Petit Bulletin",          petit_bulletin.fetch, 60),
+    ("Ville Morte",             villemorte.fetch,     50),
 ]
 
 
