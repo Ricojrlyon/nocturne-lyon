@@ -656,6 +656,30 @@
     font-weight: 500;
     white-space: nowrap;
   }
+  .event-foot-right {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .event-source {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    text-transform: lowercase;
+    letter-spacing: 0.08em;
+    padding: 2px 7px;
+    border-radius: 999px;
+    white-space: nowrap;
+    font-weight: 400;
+  }
+  .event-source.pb {
+    color: #5a7042;
+    background: rgba(90, 112, 66, 0.10);
+  }
+  .event-source.vm {
+    color: #8a5530;
+    background: rgba(138, 85, 48, 0.10);
+  }
 
   /* Subtitle removed from main grid layout — too noisy in compact cards.
      Keep style for if we re-enable later. */
@@ -832,11 +856,15 @@ const FR_MONTHS = ['janvier','février','mars','avril','mai','juin','juillet','a
 
 /* ---------- venue groups ---------- */
 const VENUE_GROUPS = [
-  { name: 'spectacles & musiques', venues: ['La Halle Tony Garnier', 'Bourse du Travail', 'Radiant-Bellevue', "Agend'arts", 'Big White'] },
+  { name: 'spectacles & musiques', venues: ['La Halle Tony Garnier', 'Bourse du Travail', 'Radiant-Bellevue', "Agend'arts", 'Big White', 'LDLC Arena'] },
   { name: 'soirée',                venues: ['Le Sucre', 'Le Petit Salon', 'Le Transbordeur', 'La Rayonne'] },
-  { name: 'concerts',              venues: ['Marché Gare', 'Le Sonic', 'Le Périscope', 'Toï Toï le Zinc', "L'Épicerie Moderne", "A Thou Bout d'Chant"] },
+  { name: 'concerts',              venues: ['Marché Gare', 'Le Sonic', 'Le Périscope', 'Toï Toï le Zinc', "L'Épicerie Moderne", "A Thou Bout d'Chant", "Bar Rock'n Eat"] },
   { name: 'lieux hybrides',        venues: ['La Commune', 'HEAT', 'Les Subsistances', 'Grrrnd Zero', 'Boskop', "Maison de l'écologie"] },
-  { name: 'théâtre & danse',       venues: ['Opéra national de Lyon', 'TNG'] },
+  { name: 'théâtre & danse',       venues: ['Opéra national de Lyon', 'TNG', 'Maison de la Danse'] },
+  { name: 'classique',             venues: ['Auditorium de Lyon', 'Chapelle de la Trinité', 'Salle Molière'] },
+  /* 'musées & galeries' is dynamically populated by inferGroupForVenue
+     (anything containing musée / galerie / institut). */
+  { name: 'musées & galeries',     venues: [], dynamic: true },
   /* 'autre' is dynamically populated at runtime with venues that appear
      in events but aren't listed in any group above (e.g. from aggregators). */
   { name: 'autre',                 venues: [], dynamic: true },
@@ -845,7 +873,7 @@ const VENUE_GROUPS = [
 /* Display order within a day:
    concerts → soirée → lieux hybrides → spectacles & musiques → théâtre & danse → autre.
    Map each venue to its rank so we can sort cards by group. */
-const VENUE_DISPLAY_ORDER = ['concerts', 'soirée', 'lieux hybrides', 'spectacles & musiques', 'théâtre & danse', 'autre'];
+const VENUE_DISPLAY_ORDER = ['concerts', 'soirée', 'lieux hybrides', 'spectacles & musiques', 'théâtre & danse', 'classique', 'musées & galeries', 'autre'];
 const VENUE_GROUP_ORDER_INDEX = new Map();
 VENUE_DISPLAY_ORDER.forEach((groupName, idx) => {
   const group = VENUE_GROUPS.find(g => g.name === groupName);
@@ -1080,17 +1108,45 @@ function formatUpdated(iso) {
        + ' · ' + d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
 }
 
+/* ---------- source detection (Petit Bulletin / Ville Morte / venue scraper) ---------- */
+function eventSource(e) {
+  const url = (e.url || '').toLowerCase();
+  if (url.includes('petit-bulletin.fr')) return 'pb';
+  if (url.includes('villemorte.fr')) return 'vm';
+  return 'venue';
+}
+
+function sourceSortIndex(e) {
+  const s = eventSource(e);
+  if (s === 'venue') return 0;
+  if (s === 'pb') return 1;
+  if (s === 'vm') return 2;
+  return 3;
+}
+
+function sourceBadgeHtml(e) {
+  const s = eventSource(e);
+  if (s === 'pb') return '<span class="event-source pb">petit bulletin</span>';
+  if (s === 'vm') return '<span class="event-source vm">ville morte</span>';
+  return '';
+}
+
 /* ---------- build venue groups ---------- */
 
-/* Auto-promotion: when a new venue from aggregators contains "théâtre"
-   in its name (accents/case-insensitive), it goes to the théâtre & danse
-   group instead of falling into 'autre'. Returns the group name, or null. */
+/* Auto-promotion: when a new venue from aggregators contains certain
+   keywords in its name (accents/case-insensitive), it goes to the matching
+   group instead of falling into 'autre'.
+   - musée / musee / galerie / institut → musées & galeries
+   (Theatre venues are blocked at the scraper level — see EXCLUDED_VENUE_PATTERNS
+   in villemorte.py and petit_bulletin.py — so they never reach this code.) */
 function inferGroupForVenue(venueName) {
   const norm = (venueName || '')
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '');
-  if (norm.includes('theatre')) return 'théâtre & danse';
+  if (norm.includes('musee') || norm.includes('galerie') || norm.includes('institut')) {
+    return 'musées & galeries';
+  }
   return null;
 }
 
@@ -1422,7 +1478,8 @@ function render() {
     const list = groups.get(iso);
     // Sort within a day:
     //   1. by venue group (concerts → soirée → hybrides → spectacles & musiques → théâtre)
-    //   2. then by time (events without a time go last, sorted alphabetically by venue)
+    //   2. by source (venue scraper first, then Petit Bulletin, then Ville Morte)
+    //   3. then by time (events without a time go last, sorted alphabetically by venue)
     list.sort((a, b) => {
       const ga = VENUE_GROUP_ORDER_INDEX.get(a.venue);
       const gb = VENUE_GROUP_ORDER_INDEX.get(b.venue);
@@ -1430,7 +1487,11 @@ function render() {
       const ia = ga === undefined ? 999 : ga;
       const ib = gb === undefined ? 999 : gb;
       if (ia !== ib) return ia - ib;
-      // same group: compare time (missing time = 99:99 = last)
+      // same group: scraped venues first, then aggregators
+      const sa = sourceSortIndex(a);
+      const sb = sourceSortIndex(b);
+      if (sa !== sb) return sa - sb;
+      // same group + same source: compare time (missing time = 99:99 = last)
       const ta = a.time || '99:99';
       const tb = b.time || '99:99';
       if (ta !== tb) return ta.localeCompare(tb);
@@ -1500,6 +1561,8 @@ function eventCard(e, num) {
     else runBadge = '<span class="event-run">' + e._dayIndex + '/' + e._totalDays + '</span>';
   }
 
+  const sourceBadge = sourceBadgeHtml(e);
+
   const isHttpUrl = typeof e.url === 'string'
     && (e.url.startsWith('http://') || e.url.startsWith('https://'));
   const tag = isHttpUrl ? 'a' : 'div';
@@ -1517,7 +1580,10 @@ function eventCard(e, num) {
     '  ' + titleHtml,
     '  <div class="event-foot">',
     '    ' + cat,
-    '    ' + runBadge,
+    '    <div class="event-foot-right">',
+    '      ' + sourceBadge,
+    '      ' + runBadge,
+    '    </div>',
     '  </div>',
     '</' + tag + '>'
   ].join('\n');
