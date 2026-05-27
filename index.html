@@ -850,16 +850,19 @@ const FR_MONTHS = ['janvier','février','mars','avril','mai','juin','juillet','a
 const VENUE_GROUPS = [
   { name: 'spectacles & musiques', venues: ['La Halle Tony Garnier', 'Bourse du Travail', 'Radiant-Bellevue', "Agend'arts", 'Big White', 'LDLC Arena'] },
   { name: 'soirée',                venues: ['Le Sucre', 'Le Petit Salon', 'Le Transbordeur', 'La Rayonne', 'La Marquise'] },
-  { name: 'concerts',              venues: ['Marché Gare', 'Le Sonic', 'Le Périscope', 'Toï Toï le Zinc', "L'Épicerie Moderne", "A Thou Bout d'Chant", "Bar Rock'n Eat", 'Kraspek Myzik', 'La Machinerie - Bizarre !', 'Le Bec de Jazz', 'Hot Club', 'Le Ninkasi'] },
-  { name: 'lieux hybrides',        venues: ['La Commune', 'HEAT', 'Les Subsistances', 'Grrrnd Zero', 'Boskop', "Maison de l'écologie", 'Café Nanoum', 'Alternatibar', 'La Boulangerie du Prado', 'Le 6e Continent'] },
+  { name: 'concerts',              venues: ['Marché Gare', 'Le Sonic', 'Le Périscope', 'Toï Toï le Zinc', "L'Épicerie Moderne", "A Thou Bout d'Chant", "Bar Rock'n Eat"] },
+  { name: 'lieux hybrides',        venues: ['La Commune', 'HEAT', 'Les Subsistances', 'Grrrnd Zero', 'Boskop', "Maison de l'écologie"] },
   { name: 'théâtre & danse',       venues: ['Opéra national de Lyon', 'TNG', 'Maison de la Danse', 'Comédie Odéon'] },
-  { name: 'classique',             venues: ['Auditorium de Lyon', 'Chapelle de la Trinité', 'Salle Molière', 'Salle Rameau'] },
+  { name: 'classique',             venues: ['Auditorium de Lyon', 'Chapelle de la Trinité', 'Salle Molière'] },
   /* 'musées & galeries' is dynamically populated by inferGroupForVenue
-     (anything containing musée / galerie / institut). Static entries below
-     are venues that don't match those keywords but belong here. */
-  { name: 'musées & galeries',     venues: ['La Salle de Bains'], dynamic: true },
+     (anything containing musée / galerie / institut). */
+  { name: 'musées & galeries',     venues: [], dynamic: true },
   /* 'autre' is dynamically populated at runtime with venues that appear
-     in events but aren't listed in any group above (e.g. from aggregators). */
+     in events but aren't listed in any group above (e.g. from aggregators).
+     Note: many venues do have arrondissement mappings in VENUE_ARRONDISSEMENT
+     for the arr. filter and card label, but intentionally stay in 'autre'
+     for the venue group filter (e.g. La Salle de Bains, Café Nanoum,
+     Kraspek Myzik, Boulangerie du Prado, etc.). */
   { name: 'autre',                 venues: [], dynamic: true },
 ];
 
@@ -880,7 +883,9 @@ const VENUE_ARRONDISSEMENT = {
   "A Thou Bout d'Chant": '1er',
   "Maison de l'écologie": '1er',
   'La Salle de Bains': '1er',          // galerie d'art contemporain, 1 rue Louis Vitet
+  'La Salle de bains': '1er',          // case variant seen in events.json
   'Alternatibar': '1er',                // 126 Montée de la Grande-Côte
+  "L'Alternatibar": '1er',              // case variant seen in events.json
   'Kraspek Myzik': '1er',               // 20 Montée Saint-Sébastien
   'Le Bec de Jazz': '1er',              // 19 rue Burdeau
   'Hot Club': '1er',                    // 26 rue Lanterne, jazz
@@ -895,6 +900,7 @@ const VENUE_ARRONDISSEMENT = {
   'Goethe-Institut': '2e',
   'Galerie Henri Chartier': '2e',
   'Comédie Odéon': '2e',
+  'Fnac Bellecour': '2e',               // Place Bellecour
 
   // Lyon 3e (Part-Dieu, Préfecture)
   'Bourse du Travail': '3e',
@@ -909,6 +915,7 @@ const VENUE_ARRONDISSEMENT = {
   'Salle Molière': '5e',
   'Le Sonic': '5e',                     // péniche 4 quai des Étroits
   'Big White': '5e',
+  'Espace Gerson': '5e',                // 1 place Gerson, café-théâtre (humour)
 
   // Lyon 6e (Brotteaux, Tête d'Or, Cité Internationale)
   "Musée d'Art Contemporain": '6e',
@@ -944,6 +951,7 @@ const VENUE_ARRONDISSEMENT = {
   "L'Épicerie Moderne": 'Autre',        // Feyzin
   'Grrrnd Zero': 'Autre',               // Vaulx-en-Velin
   'La Machinerie - Bizarre !': 'Autre', // Vénissieux, 9 rue Louis Jouvet
+  'Domaine de Lacroix-Laval': 'Autre',  // Marcy-l'Étoile, parc départemental
 };
 
 const ARRONDISSEMENT_ORDER = ['1er', '2e', '3e', '4e', '5e', '6e', '7e', '8e', '9e', 'Villeurbanne', 'Autre'];
