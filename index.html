@@ -849,10 +849,10 @@ const FR_MONTHS = ['janvier','février','mars','avril','mai','juin','juillet','a
 /* ---------- venue groups ---------- */
 const VENUE_GROUPS = [
   { name: 'spectacles & musiques', venues: ['La Halle Tony Garnier', 'Bourse du Travail', 'Radiant-Bellevue', "Agend'arts", 'Big White', 'LDLC Arena'] },
-  { name: 'soirée',                venues: ['Le Sucre', 'Le Petit Salon', 'Le Transbordeur', 'La Rayonne'] },
+  { name: 'soirée',                venues: ['Le Sucre', 'Le Petit Salon', 'Le Transbordeur', 'La Rayonne', 'La Marquise'] },
   { name: 'concerts',              venues: ['Marché Gare', 'Le Sonic', 'Le Périscope', 'Toï Toï le Zinc', "L'Épicerie Moderne", "A Thou Bout d'Chant", "Bar Rock'n Eat"] },
   { name: 'lieux hybrides',        venues: ['La Commune', 'HEAT', 'Les Subsistances', 'Grrrnd Zero', 'Boskop', "Maison de l'écologie"] },
-  { name: 'théâtre & danse',       venues: ['Opéra national de Lyon', 'TNG', 'Maison de la Danse'] },
+  { name: 'théâtre & danse',       venues: ['Opéra national de Lyon', 'TNG', 'Maison de la Danse', 'Comédie Odéon'] },
   { name: 'classique',             venues: ['Auditorium de Lyon', 'Chapelle de la Trinité', 'Salle Molière'] },
   /* 'musées & galeries' is dynamically populated by inferGroupForVenue
      (anything containing musée / galerie / institut). */
@@ -863,9 +863,10 @@ const VENUE_GROUPS = [
 ];
 
 /* Display order within a day:
-   concerts → soirée → lieux hybrides → spectacles & musiques → théâtre & danse → autre.
+   soirée → concerts → spectacles & musiques → lieux hybrides
+   → théâtre & danse → classique → musées & galeries → autre.
    Map each venue to its rank so we can sort cards by group. */
-const VENUE_DISPLAY_ORDER = ['concerts', 'soirée', 'lieux hybrides', 'spectacles & musiques', 'théâtre & danse', 'classique', 'musées & galeries', 'autre'];
+const VENUE_DISPLAY_ORDER = ['soirée', 'concerts', 'spectacles & musiques', 'lieux hybrides', 'théâtre & danse', 'classique', 'musées & galeries', 'autre'];
 
 /* venue -> arrondissement mapping. Researched against Wikipedia, the
    official Lyon city directory, and venue websites. Unmapped venues
@@ -886,10 +887,14 @@ const VENUE_ARRONDISSEMENT = {
   'Musée des Confluences': '2e',
   'Goethe-Institut': '2e',
   'Galerie Henri Chartier': '2e',
+  'Comédie Odéon': '2e',
+  'Comédie Odéon': '2e',
 
   // Lyon 3e (Part-Dieu, Préfecture)
   'Bourse du Travail': '3e',
   'Auditorium de Lyon': '3e',
+  'La Marquise': '3e',         // péniche 20 quai Victor Augagneur
+  'La Marquise': '3e',
 
   // Lyon 4e (Croix-Rousse)
   "Agend'arts": '4e',
@@ -948,11 +953,36 @@ VENUE_DISPLAY_ORDER.forEach((groupName, idx) => {
 
 /* ---------- type buckets ---------- */
 const TYPE_BUCKETS = [
-  { key: 'musique',  label: 'musique',  match: /musique|concert|jazz|classique|rock|chanson|pop|folk|electro|symphon|fado|opéra/i },
-  { key: 'theatre',  label: 'théâtre',  match: /th[ée]atre|spectacle\s*musical|comédie\s*musicale|cabaret/i },
-  { key: 'danse',    label: 'danse',    match: /danse|ballet|cho[ré]graph/i },
-  { key: 'humour',   label: 'humour',   match: /humour|stand[\s-]?up|one[\s-]?man|comedy/i },
-  { key: 'club',     label: 'club',     match: /club|soir[ée]e|dj|after/i },
+  // Music sub-genres FIRST (order matters: first regex match wins).
+  // The previous single "musique" bucket was too broad; with aggregators
+  // bringing in 100+ events per scrape, having sub-genres is essential.
+  { key: 'club',        label: 'club',        match: /\belectro|techno|house|trance|drum.?n.?bass|\bdnb\b|\bdj\b|soir[ée]e|club\b|after/i },
+  { key: 'jazz',        label: 'jazz',        match: /\bjazz|\bblues|\bswing\b|\bimpro\b/i },
+  { key: 'rock',        label: 'rock & pop',  match: /\brock\b|\bpop\b|m[ée]tal|punk\b|indie|garage\b|hardcore/i },
+  // 'rap' BEFORE 'chanson' so "Hip Hop / Rap" doesn't get caught by chanson's
+  // \brap\b leftover (which has now been removed). Trap is rare but distinct.
+  { key: 'rap',         label: 'rap',         match: /\brap\b|hip[\s-]?hop|\btrap\b|\brnb\b|\br&b\b/i },
+  { key: 'chanson',     label: 'chanson',     match: /chanson|\bfolk\b|country|francophone|slam\b|po[ée]sie/i },
+  // 'reggae' BEFORE 'monde' since reggae sometimes gets bundled under 'world music'.
+  { key: 'reggae',      label: 'reggae',      match: /reggae|\bdub\b|\bska\b|dancehall|rocksteady/i },
+  { key: 'classique',   label: 'classique',   match: /classique|symphon|op[ée]ra|musique\s*sacr|musique\s*de\s*chambre|baroque/i },
+  { key: 'monde',       label: 'monde',       match: /sono\s*mondiale|fado|musique\s*du\s*monde|\bworld\b|tradition|flamenco|tango|fanfare/i },
+  // 'atelier' BEFORE the 'musique' catch-all so "Atelier de musique" goes to
+  // atelier rather than musique.
+  { key: 'atelier',     label: 'atelier',     match: /atelier|workshop|stage\s+de|masterclass|formation/i },
+  // Generic music catch-all (for events tagged just "concert" or "musique"
+  // without specifying a subgenre). Comes AFTER the specific genres.
+  { key: 'musique',     label: 'musique',     match: /musique|concert/i },
+  // Non-music. humour BEFORE theatre because "Humour & Café Théâtre" must
+  // go to humour (theatre regex would match the "Théâtre" substring).
+  // Note: 'théâtre' has circumflex â, so the regex uses [aâ]tre to match
+  // both "theatre" (no accent) and "théâtre" (with accent) variants.
+  { key: 'humour',      label: 'humour',      match: /humour|stand[\s-]?up|one[\s-]?man|comedy|caf[ée][\s-]*th[ée][aâ]tre/i },
+  { key: 'theatre',     label: 'théâtre',     match: /th[ée][aâ]tre|spectacle\s*musical|com[ée]die\s*musicale|cabaret/i },
+  { key: 'danse',       label: 'danse',       match: /danse|ballet|cho[ré]graph/i },
+  { key: 'expo',        label: 'expo',        match: /\bexpo|exposition|vernissage|installation/i },
+  { key: 'cine',        label: 'ciné',        match: /cin[ée]ma|projection|s[ée]ance|documentaire|court[\s-]?m[ée]trage/i },
+  { key: 'conference',  label: 'conférence',  match: /conf[ée]rence|rencontre|d[ée]bat|table\s*ronde|discussion|colloque|lecture/i },
 ];
 function bucketOf(rawCategory) {
   if (!rawCategory) return 'autre';
