@@ -247,15 +247,118 @@ def _secondary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Ev
     return result
 
 
+def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Event, int]]:
+    """Venue+date count-matching pairing pass.
+
+    Catches duplicates where the SAME event is reported by the venue scraper
+    (priority >= 100) with a lineup-style title (e.g. "ARTIST1 + ARTIST2 + ...")
+    and by an aggregator (priority < 100) with an event-name title (e.g.
+    "Festival X" or "Soirée Y") — titles too different for fuzzy matching.
+
+    Rules at each (venue, date_start):
+      * Bucket events: SCRAPER (prio >= 100) vs AGGREGATOR (prio < 100).
+      * If one of the buckets is empty: nothing to pair, leave alone.
+      * If counts are equal (N scrapers == N aggregators):
+          - Sort both by (time or 'zz', title) to align them.
+          - Pair them index-by-index.
+          - Each scraper wins identity (title, url, venue).
+          - Scraper inherits missing fields (time, category, subtitle, image).
+          - Aggregator is dropped.
+        Time-safety: if N == 1 AND both have time AND they differ by more
+        than 4 hours, treat as distinct events (don't pair).
+      * If counts differ: ambiguous, leave alone.
+
+    Real-world examples this catches in production:
+      * Le Transbordeur 2026-05-30: 2 scraper untimed lineups + 2 PB timed
+        event names ("Transcendia x Transbo open-air", "23:59 X Organik").
+      * HEAT 2026-07-02: "Intérieur Queer : Comedy Club" (scraper) vs
+        "IQ comedy club" (PB 18:00).
+      * Radiant 06-26/27/28: same "COMPAGNIE DCA / PHILIPPE DECOUFLÉ" (scraper)
+        vs "Extra Bal, un karaoké de la danse" (PB) on each of 3 nights.
+    """
+    SCRAPER_PRIO_MIN = 100  # priorities >= this are venue scrapers
+
+    by_venue_date: dict[tuple[str, str], list[tuple[Event, int]]] = defaultdict(list)
+    for ev, prio in events_with_prio:
+        by_venue_date[(_venue_key(ev.venue), ev.date_start)].append((ev, prio))
+
+    result: List[Tuple[Event, int]] = []
+    for key, group in by_venue_date.items():
+        if len(group) < 2:
+            result.extend(group)
+            continue
+
+        scrapers = [(e, p) for e, p in group if p >= SCRAPER_PRIO_MIN]
+        aggs = [(e, p) for e, p in group if p < SCRAPER_PRIO_MIN]
+
+        # Nothing to pair (single source only)
+        if not scrapers or not aggs:
+            result.extend(group)
+            continue
+
+        # Counts must match for a deterministic pairing
+        if len(scrapers) != len(aggs):
+            result.extend(group)
+            continue
+
+        # Time-safety check for the 1:1 case: if both have time and diverge
+        # by more than 4 hours, they're probably distinct events at the same
+        # venue (e.g. afternoon kids show vs evening rock concert).
+        if len(scrapers) == 1:
+            s_ev = scrapers[0][0]
+            a_ev = aggs[0][0]
+            if s_ev.time and a_ev.time and _time_diff_minutes(s_ev.time, a_ev.time) > 240:
+                result.extend(group)
+                continue
+
+        # Pair by sort order: untimed events go last, then alphabetical.
+        sort_key = lambda x: (x[0].time or "zz:zz", (x[0].title or "").lower())
+        scrapers_sorted = sorted(scrapers, key=sort_key)
+        aggs_sorted = sorted(aggs, key=sort_key)
+
+        for (s_ev, s_prio), (a_ev, _) in zip(scrapers_sorted, aggs_sorted):
+            # Enrich scraper with missing fields from aggregator
+            for field in ("time", "category", "subtitle", "image"):
+                if not getattr(s_ev, field, None):
+                    val = getattr(a_ev, field, None)
+                    if val:
+                        setattr(s_ev, field, val)
+            result.append((s_ev, s_prio))
+        # Aggregator events dropped
+
+    return result
+
+
+def _time_diff_minutes(t1: str, t2: str) -> int:
+    """Difference between 'HH:MM' time strings in minutes (circular,
+    handles midnight wraparound so 23:30 and 00:30 are 60 minutes apart).
+    """
+    try:
+        h1, m1 = t1.split(':')
+        h2, m2 = t2.split(':')
+        mins1 = int(h1) * 60 + int(m1)
+        mins2 = int(h2) * 60 + int(m2)
+    except (ValueError, AttributeError):
+        return 99999  # invalid time string treated as very distant
+    diff = abs(mins1 - mins2)
+    return min(diff, 1440 - diff)
+
+
 def deduplicate(tagged_events: List[Tuple[Event, int]]) -> List[Event]:
     """Deduplicate events across sources + canonicalize venue display names.
 
-    Two-pass strategy:
+    Three-pass strategy:
       1. PRIMARY — group by (canonical_venue, date_start), fuzzy-cluster
-         titles >= 0.7. Catches same-venue duplicates from multiple sources.
+         titles >= 0.7. Catches same-venue duplicates from multiple sources
+         when their titles are similar enough.
       2. SECONDARY — group by date_start only, fuzzy-cluster titles >= 0.85.
          Catches cross-venue duplicates (e.g. FeFan reported at Toï Toï by
          one source and at "Dans toute la ville" by another).
+      3. TERTIARY — at each (venue, date), if N venue-scraper events ==
+         N aggregator events, pair by sort order. Catches duplicates where
+         the venue scraper has a lineup-style title ("ARTIST1 + ARTIST2 + ...")
+         and the aggregator has an event-name title ("Festival X") — too
+         different for fuzzy matching.
 
     Args:
       tagged_events: list of (event, source_priority) tuples.
@@ -267,7 +370,8 @@ def deduplicate(tagged_events: List[Tuple[Event, int]]) -> List[Event]:
     """
     primary_result = _primary_dedup(tagged_events)
     secondary_result = _secondary_dedup(primary_result)
-    final = [ev for ev, _ in secondary_result]
+    tertiary_result = _tertiary_dedup(secondary_result)
+    final = [ev for ev, _ in tertiary_result]
     # Canonicalize venue display names so the frontend doesn't render
     # duplicate chips for "sonic" vs "Le Sonic".
     for e in final:
