@@ -1,111 +1,7 @@
 {
-  "generated_at": "2026-05-31T08:36:50.906036+00:00",
-  "count": 669,
+  "generated_at": "2026-06-01T11:13:45.653176+00:00",
+  "count": 662,
   "events": [
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Red Bull x Marcel present Truck Soundsystem by Crush x La Fièvre",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-31",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/truck-soundsystem/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/visuel-final-576x720.jpeg",
-      "id": "44c6ffb3c478"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Tosepela #2",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-05-31",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/tosepela-2-celebration-des-cultures-congolaises-concert-dj-set-sape/",
-      "image": null,
-      "id": "f65d3e6911c5"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Atelier créatif Lyon | découverte à La Commune",
-      "subtitle": null,
-      "category": "atelier",
-      "date_start": "2026-05-31",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/atelier-decouverte-cyanotype/",
-      "image": null,
-      "id": "53a378a1f359"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LOLA YOUNG",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-05-31",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/lola-young/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/09/lola-young_radiant-bellevue-500x500.jpg",
-      "id": "66510805924d"
-    },
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "José Cruz Dans Portugal, Voyage Au Centre Du Monde",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-05-31",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://www.bourse-du-travail.com/jose-cruz-dans-portugal-voyage-au-centre-du-monde-186635.html",
-      "image": null,
-      "id": "1fa3ac52f973"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "D.I.V.A",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-05-31",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://radiant-bellevue.fr/spectacles/d-i-v-a-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/06/DIVA-fond-blanc-scaled-e1749127927749-500x500.jpg",
-      "id": "9c155482055f"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "S.society",
-      "subtitle": "Elix · Mischluft",
-      "category": "club",
-      "date_start": "2026-05-31",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://le-sucre.eu/events/s-society-149/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/31_05-600x338.png",
-      "id": "76c934e46c6b"
-    },
-    {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Gratuit LES 20 ANS ! FÊTE DES VOISIN·ES Concert et buffet partagé",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-05-31",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://marchegare.fr/agenda/fete-des-voisines-les-20-ans",
-      "image": null,
-      "id": "8172f8987c22"
-    },
     {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
@@ -315,6 +211,19 @@
       "id": "54a3de829923"
     },
     {
+      "venue": "Maison de l'écologie",
+      "venue_slug": "maison-de-l-ecologie",
+      "title": "L'ARTISAN & L'ALGORITHME --",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-03",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/lartisan-and-lalgorithme-",
+      "image": null,
+      "id": "54fa9654c3e4"
+    },
+    {
       "venue": "A Thou Bout d'Chant",
       "venue_slug": "a-thou-bout-d-chant",
       "title": "CONCERT | Soirée ENM",
@@ -508,6 +417,19 @@
       "url": "https://agenda.villemorte.fr/event/pente-de-punks-single-ladies-gagner-de-largent-and-penser-saboter",
       "image": null,
       "id": "e0f2a087029b"
+    },
+    {
+      "venue": "Maison de l'écologie",
+      "venue_slug": "maison-de-l-ecologie",
+      "title": "INARRÊTABLE -- spectacle autobiographique théâtre et danse sur les violences",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-04",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/inarretable-spectacle-autobiographique-theatre-et-danse-sur-les-violences",
+      "image": null,
+      "id": "b980d2ea8ab3"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -770,6 +692,19 @@
       "id": "933e1eb079f7"
     },
     {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "CLUB SONIC",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-05",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://sonic-lyon.fr/evenement/club-sonic-3/",
+      "image": null,
+      "id": "cbaf1c34b3ef"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "live club",
@@ -980,15 +915,15 @@
     {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
-      "title": "MEN I TRUST",
+      "title": "MEN I TRUST + EVAN WRIGHT",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-06-06",
       "date_end": null,
       "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/men-i-trust-06062026/",
+      "url": "https://www.transbordeur.fr/evenement/men-i-trust-evan-wright-06062026/",
       "image": null,
-      "id": "55fab5560a54"
+      "id": "3d12af0f9012"
     },
     {
       "venue": "LDLC Arena",
@@ -1407,6 +1342,19 @@
       "id": "72a3de8a6998"
     },
     {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Kick Off Garden",
+      "subtitle": null,
+      "category": "diffusion de match",
+      "date_start": "2026-06-10",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/kick-off-garden-lyon-dj-set-friperie-foot/",
+      "image": null,
+      "id": "2841da90d1a5"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "ARCHITECT AT WORK",
@@ -1747,15 +1695,15 @@
     {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
-      "title": "LES WAMPAS",
+      "title": "LES WAMPAS + SEX SHOP MUSHROOMS",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-06-12",
       "date_end": null,
       "time": null,
-      "url": "https://www.transbordeur.fr/evenement/les-wampas-12062026/",
+      "url": "https://www.transbordeur.fr/evenement/les-wampas-sex-shop-mushrooms-12062026/",
       "image": null,
-      "id": "ce7e41195afd"
+      "id": "7a566313dd76"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -2343,6 +2291,19 @@
       "id": "f76474f0fba4"
     },
     {
+      "venue": "Maison de l'écologie",
+      "venue_slug": "maison-de-l-ecologie",
+      "title": "LE CONSENTEMENT -- Cercle d'écoute féministe pour hommes avec le collectif Nous Sommes",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-16",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/le-consentement-cercle-decoute-feministe-pour-hommes-avec-le-collectif-nous-sommes",
+      "image": null,
+      "id": "7aa8e05d7274"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Day Off Indie Rock FLEUR SOUS BITUME (Sol FM radio session) Day Off \"Scènes Découvertes\"",
@@ -2384,19 +2345,6 @@
     {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "Chess Bar x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-17",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/chess-bar-x-heat-3/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/03/L1300825-480x720.jpg",
-      "id": "cfb51d54d59b"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
       "title": "Portugal — RD Congo",
       "subtitle": null,
       "category": null,
@@ -2406,6 +2354,19 @@
       "url": "https://h-eat.eu/events/portugal-rd-congo/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-264-576x720.png",
       "id": "cba6d8c5af7f"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Chess Bar x HEAT",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-17",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/chess-bar-x-heat-3/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/03/L1300825-480x720.jpg",
+      "id": "cfb51d54d59b"
     },
     {
       "venue": "La Commune",
@@ -2445,6 +2406,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-313893-agapie.html",
       "image": null,
       "id": "20a355f4a4a5"
+    },
+    {
+      "venue": "Maison de l'écologie",
+      "venue_slug": "maison-de-l-ecologie",
+      "title": "LES COURANTS DU SOIN -- Expérience aqua·sonore interactive - Sortie de résidence de création artistique de Tish & Mo du collectif Les Aragantes",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-17",
+      "date_end": null,
+      "time": "12:00",
+      "url": "https://agenda.villemorte.fr/event/les-courants-du-soin-experience-aquasonore-interactive-sortie-de-residence-de-creation-artistique-de-tish-and-mo-du-collectif-les-aragantes",
+      "image": null,
+      "id": "f5754f68f7b7"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -2553,7 +2527,7 @@
     {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
-      "title": "Aaron Dilloway + Blood Stereo + id m theft able",
+      "title": "Karen Constance & Dylan Nyoukis + id m theft able",
       "subtitle": null,
       "category": null,
       "date_start": "2026-06-18",
@@ -2561,7 +2535,7 @@
       "time": "18:00",
       "url": "https://agenda.villemorte.fr/event/aaron-dilloway-blood-stereo-id-m-theft-able",
       "image": null,
-      "id": "f7c392337e34"
+      "id": "072c0a890a70"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -3381,6 +3355,19 @@
       "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-5/",
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/041826_Recif_Cloture_web_paul-650x433.jpg",
       "id": "d3dda4986bab"
+    },
+    {
+      "venue": "Maison de l'écologie",
+      "venue_slug": "maison-de-l-ecologie",
+      "title": "ÉPISODE XIV : HABITER LE DÉSASTRE",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/episode-xiv-habiter-le-desastre",
+      "image": null,
+      "id": "b160084be681"
     },
     {
       "venue": "Toï Toï le Zinc",
@@ -4646,7 +4633,7 @@
     {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
-      "title": "Brigitte NRV +  Sarah Maï + Tony Geranno",
+      "title": "Brigitte NRV + Sarah-Maï + Tony Geranno + point de suture",
       "subtitle": null,
       "category": null,
       "date_start": "2026-08-06",
@@ -4654,12 +4641,12 @@
       "time": "18:00",
       "url": "https://agenda.villemorte.fr/event/brigitte-nrv-sarah-mai-tony-geranno",
       "image": null,
-      "id": "18ae1be190d5"
+      "id": "71380f391172"
     },
     {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
-      "title": "Ragana + tba",
+      "title": "Ragana + basseville + Maléore",
       "subtitle": null,
       "category": null,
       "date_start": "2026-08-15",
@@ -4667,7 +4654,7 @@
       "time": "18:00",
       "url": "https://agenda.villemorte.fr/event/ragana-tba",
       "image": null,
-      "id": "a16a97dd6707"
+      "id": "9a8cc6187d98"
     },
     {
       "venue": "Grrrnd Zero",
@@ -6685,6 +6672,19 @@
       "id": "b5f482f818be"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Soul Urban Pop WAMEN",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-12-02",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/wamen",
+      "image": null,
+      "id": "e385962dca52"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Marine Leonardi",
@@ -8438,97 +8438,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/greg-duth/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/greg-duth_radiant-bellevue-4-500x500.jpg",
       "id": "4f9bc7325739"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Deep Dating by Discultons",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-05-26",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/deep-dating-by-discultons/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/DEEP-DATING-POST-112-576x720.png",
-      "id": "7a947fb78fd1"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Open platine : le Labo est à vous !",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-05-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/open-platine-le-labo-est-a-vous/",
-      "image": "https://h-eat.eu/wp-content/uploads/2024/07/JulietteValero_42-480x720.jpg",
-      "id": "ce9c81af7873"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Chess Bar x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-05-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/chess-bar-x-heat-9/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
-      "id": "dc89864d7496"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Zero to one : l’événement start-up",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-05-28",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/zero-to-one-levenement-start-up/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/ZTO-5_KV-21avril-576x720.jpg",
-      "id": "c9d2e4201087"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Afterwork : Food, Drink & Happy Hour !",
-      "subtitle": null,
-      "category": "afterwork",
-      "date_start": "2027-05-29",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/afterwork-food-drink-happy-hour/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/JulietteVlr_08-480x720.jpg",
-      "id": "cae81728cf7f"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Charli Party  « Club Classics »",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-05-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/club-classics/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/CLUB-CLASSIC-HEAT_.jpeg",
-      "id": "a557416e4af0"
-    },
-    {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "THIS IS TECHNO RAVE : JAUKS / BAB' & MORE",
-      "subtitle": null,
-      "category": "club",
-      "date_start": "2027-05-30",
-      "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/c056f0fd-6e6d-4a01-8907-2fbacd9d11b9/THIS-IS-TECHNO-Rave-JAUKS-Bab-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/04/ThisisTECHNORAVE_30052026_lepetitsalon-1024x576.jpg",
-      "id": "b121bd984688"
     },
     {
       "venue": "Bourse du Travail",
