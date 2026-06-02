@@ -1,59 +1,7 @@
 {
-  "generated_at": "2026-06-01T11:13:45.653176+00:00",
-  "count": 662,
+  "generated_at": "2026-06-02T10:09:36.577300+00:00",
+  "count": 675,
   "events": [
-    {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Spectacle A la recherche des mémoires perdues",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-01",
-      "date_end": "2026-06-02",
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/spectacle-a-la-recherche-des-memoires-perdues-1",
-      "image": null,
-      "id": "dc9bab4f86fe"
-    },
-    {
-      "venue": "Big White",
-      "venue_slug": "big-white",
-      "title": "Big Comedy Club",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-06-01",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/big-comedy-club-12",
-      "image": null,
-      "id": "a6baaa66cf9a"
-    },
-    {
-      "venue": "Bar Rock'n Eat",
-      "venue_slug": "bar-rock-n-eat",
-      "title": "Cancer Bats",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-06-01",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318376-cancer-bats.html",
-      "image": null,
-      "id": "f128a25834ef"
-    },
-    {
-      "venue": "Espace Gerson",
-      "venue_slug": "espace-gerson",
-      "title": "Sacha Bonpain",
-      "subtitle": null,
-      "category": "Humour & Café Théâtre",
-      "date_start": "2026-06-01",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318332-sacha-bonpain.html",
-      "image": null,
-      "id": "a1b6b231f81a"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -317,7 +265,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Bientôt complet ! LES 20 ANS ! Animation Le Qu'ouis-je? spécial Marché Gare Blindtest décalé",
+      "title": "LES 20 ANS ! Animation Le Qu'ouis-je? spécial Marché Gare Blindtest décalé",
       "subtitle": null,
       "category": "Jeux",
       "date_start": "2026-06-03",
@@ -325,7 +273,7 @@
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/blindest-quouis-je-les-20-ans",
       "image": null,
-      "id": "a226d7b9e559"
+      "id": "cf21bcbb46c2"
     },
     {
       "venue": "Espace Gerson",
@@ -443,6 +391,19 @@
       "url": "https://agenda.villemorte.fr/event/lior-shoov",
       "image": null,
       "id": "7fb9f3b81851"
+    },
+    {
+      "venue": "Alternatibar",
+      "venue_slug": "alternatibar",
+      "title": "Blind test années 2010",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-04",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/blind-test-annees-2010",
+      "image": null,
+      "id": "90da7630712b"
     },
     {
       "venue": "Toï Toï le Zinc",
@@ -588,6 +549,19 @@
       "id": "29a426d63bbf"
     },
     {
+      "venue": "Alternatibar",
+      "venue_slug": "alternatibar",
+      "title": "Concert des Sing Together à l'Alternatibar !",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-05",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/concert-des-sing-together-a-lalternatibar",
+      "image": null,
+      "id": "9820f84b1446"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "PUBLIC IMAGE LTD + SOCIETE ETRANGE",
@@ -629,15 +603,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Elena Nagapetyan",
+      "title": "Elena Nagapetyan - Ça Valait Le Coup - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-06-05",
       "date_end": null,
       "time": "20:00",
-      "url": "https://www.bourse-du-travail.com/elena-nagapetyan-334511.html",
+      "url": "https://www.bourse-du-travail.com/elena-nagapetyan-Ca-valait-le-coup-tournee-334511.html",
       "image": null,
-      "id": "c2fe9244c4e3"
+      "id": "faf607920588"
     },
     {
       "venue": "La Marquise",
@@ -1212,6 +1186,19 @@
       "id": "560141b62745"
     },
     {
+      "venue": "Big White",
+      "venue_slug": "big-white",
+      "title": "Big Comedy Club",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-06-08",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/big-comedy-club-13",
+      "image": null,
+      "id": "859fe4301878"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Punk-Rock TOUCHÉ AMORÉ + GREET DEATH",
@@ -1554,7 +1541,7 @@
       "venue_slug": "les-subs",
       "title": "Rodeo Lea Drouet",
       "subtitle": null,
-      "category": null,
+      "category": "Danse",
       "date_start": "2026-06-11",
       "date_end": null,
       "time": "19:00",
@@ -1632,26 +1619,13 @@
       "venue_slug": "les-subs",
       "title": "Mirages Et Tendresses Ivana Muller",
       "subtitle": null,
-      "category": null,
+      "category": "Danse",
       "date_start": "2026-06-11",
       "date_end": null,
       "time": "21:00",
       "url": "https://www.les-subs.com/evenement/mirages-et-tendresses-ivana-muller/",
       "image": null,
       "id": "30ecf104959b"
-    },
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Sellig - Episode 6 - Tournée",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-06-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/sellig-episode-6-tournee-314978.html",
-      "image": null,
-      "id": "105d901f2d8b"
     },
     {
       "venue": "HEAT",
@@ -1836,6 +1810,19 @@
       "id": "f069f70b9633"
     },
     {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Sellig - Episode 6 - Tournée",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-06-12",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.bourse-du-travail.com/sellig-episode-6-tournee-314978.html",
+      "image": null,
+      "id": "aa2a84773f77"
+    },
+    {
       "venue": "Espace Gerson",
       "venue_slug": "espace-gerson",
       "title": "Élisabeth Buffet",
@@ -1890,7 +1877,7 @@
     {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "So Good Maif Festival : Ebony & Kiddy Smile",
+      "title": "So Good Maif Festival : Lordslay, Ebony, Kiddy Smile & Miel de Montagne",
       "subtitle": null,
       "category": "festival",
       "date_start": "2026-06-13",
@@ -1898,7 +1885,7 @@
       "time": null,
       "url": "https://h-eat.eu/events/so-good-maif-festival-ebony-kiddy-smile/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/03/Imaginez-le-soleil-de-juin-sur-les-quais-une-ancienne-usine-transformee-en-fabrique-a-solutio-576x720.jpg",
-      "id": "fd7f807874f2"
+      "id": "c877a7df698f"
     },
     {
       "venue": "La Commune",
@@ -2213,6 +2200,19 @@
       "id": "23d1891f36f8"
     },
     {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Hinde",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-06-15",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318510-hinde.html",
+      "image": null,
+      "id": "8e34d8b0b3e1"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "France V/S Sénégal : CDM 2026",
@@ -2328,6 +2328,19 @@
       "url": "https://www.periscope-lyon.com/concerts/alpha-cassiopeiae/",
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2022/11/AC-©Benoit-Michaely-650x650.jpg",
       "id": "bded1efd13cc"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "Crash impro",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-06-16",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318525-crash-impro.html",
+      "image": null,
+      "id": "3a9f8b798f19"
     },
     {
       "venue": "La Rayonne",
@@ -2527,7 +2540,7 @@
     {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
-      "title": "Karen Constance & Dylan Nyoukis + id m theft able",
+      "title": "Aaron Dilloway (annulé)+ Karen Constance & Dylan Nyoukis + id m theft able + Billy",
       "subtitle": null,
       "category": null,
       "date_start": "2026-06-18",
@@ -2535,7 +2548,7 @@
       "time": "18:00",
       "url": "https://agenda.villemorte.fr/event/aaron-dilloway-blood-stereo-id-m-theft-able",
       "image": null,
-      "id": "072c0a890a70"
+      "id": "48077e1bed30"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -2642,6 +2655,19 @@
       "id": "6dc965432692"
     },
     {
+      "venue": "Observatoire de Lyon",
+      "venue_slug": "observatoire-de-lyon",
+      "title": "Portes ouvertes de l'observatoire de Lyon",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-19",
+      "date_end": "2026-06-20",
+      "time": "08:00",
+      "url": "https://agenda.villemorte.fr/event/portes-ouvertes-de-lobservatoire-de-lyon",
+      "image": null,
+      "id": "4b5fe7db6d40"
+    },
+    {
       "venue": "Galerie Imag'In",
       "venue_slug": "galerie-imag-in",
       "title": "Agapie",
@@ -2659,7 +2685,7 @@
       "venue_slug": "les-subs",
       "title": "Festival Dance People 2026 Rencontre Culture Politique",
       "subtitle": null,
-      "category": null,
+      "category": "Danse",
       "date_start": "2026-06-19",
       "date_end": null,
       "time": "11:00",
@@ -2692,6 +2718,19 @@
       "url": "https://agenda.villemorte.fr/event/scene-stand-up-c-kool-comedy-club",
       "image": null,
       "id": "b911006bade4"
+    },
+    {
+      "venue": "Les Subsistances",
+      "venue_slug": "les-subs",
+      "title": "60 secondes / 60 minutes",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-06-19",
+      "date_end": null,
+      "time": "18:15",
+      "url": "https://www.petit-bulletin.fr/agenda-318514-60-secondes-60-minutes.html",
+      "image": null,
+      "id": "f6539b1c3aa5"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -2915,6 +2954,19 @@
       "id": "010982ce186d"
     },
     {
+      "venue": "Les Subsistances",
+      "venue_slug": "les-subs",
+      "title": "Quatre-quarts",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-06-20",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318516-quatre-quarts.html",
+      "image": null,
+      "id": "38a2ad4992c5"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Gratuit Jeune Public MÊME PAS CAP ! 6e édition LA FÊTE DE LA MUSIQUE DES ENFANTS",
@@ -2939,6 +2991,19 @@
       "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-prelude-to-violenceghida-hachicho/",
       "image": null,
       "id": "b4eb95d40f77"
+    },
+    {
+      "venue": "Les Subsistances",
+      "venue_slug": "les-subs",
+      "title": "Prelude to violence",
+      "subtitle": null,
+      "category": "Spectacles Divers",
+      "date_start": "2026-06-20",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318517-prelude-to-violence.html",
+      "image": null,
+      "id": "a7cd95d349dc"
     },
     {
       "venue": "Boskop",
@@ -2971,7 +3036,7 @@
       "venue_slug": "les-subs",
       "title": "Festival Dance People 2026 Heartquake Ekin Tunceli",
       "subtitle": null,
-      "category": null,
+      "category": "Danse",
       "date_start": "2026-06-20",
       "date_end": null,
       "time": "18:00",
@@ -2997,7 +3062,7 @@
       "venue_slug": "les-subs",
       "title": "Festival Dance People 2026 Le Sacre Du Printemps Roger Bernat",
       "subtitle": null,
-      "category": null,
+      "category": "Danse",
       "date_start": "2026-06-20",
       "date_end": null,
       "time": "19:00",
@@ -3010,7 +3075,7 @@
       "venue_slug": "les-subs",
       "title": "Festival Dance People 2026 Bless The Sound That Saved A Witch Like Me Benjamin Kahn",
       "subtitle": null,
-      "category": null,
+      "category": "Danse",
       "date_start": "2026-06-20",
       "date_end": null,
       "time": "20:00",
@@ -3101,7 +3166,7 @@
       "venue_slug": "les-subs",
       "title": "Festival Dance People 2026 La Cite Bouge Cie Relevant",
       "subtitle": null,
-      "category": null,
+      "category": "Danse",
       "date_start": "2026-06-21",
       "date_end": null,
       "time": "16:00",
@@ -3125,9 +3190,22 @@
     {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
+      "title": "Pode Ser",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-06-21",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318522-pode-ser.html",
+      "image": null,
+      "id": "c5756541c73e"
+    },
+    {
+      "venue": "Les Subsistances",
+      "venue_slug": "les-subs",
       "title": "Festival Dance People 2026 Kms Of Resistance Mehdi Dahkan",
       "subtitle": null,
-      "category": null,
+      "category": "Danse",
       "date_start": "2026-06-21",
       "date_end": null,
       "time": "17:30",
@@ -3147,6 +3225,19 @@
       "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-rencontres-improvisees-2/",
       "image": null,
       "id": "a18d96657a06"
+    },
+    {
+      "venue": "Les Subsistances",
+      "venue_slug": "les-subs",
+      "title": "Soul(s) Power",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-06-21",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318524-soul-s-power.html",
+      "image": null,
+      "id": "a214e0586e82"
     },
     {
       "venue": "La Commune",
@@ -3186,6 +3277,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-314529-bern-dodet.html",
       "image": null,
       "id": "4150038834c1"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "#Scapin",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-06-22",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-282123-scapin.html",
+      "image": null,
+      "id": "c9f5a1b9a990"
     },
     {
       "venue": "La Commune",
@@ -3316,6 +3420,19 @@
       "url": "https://www.bourse-du-travail.com/anne-roumanoff-l-experience-de-la-vie-tournee-285885.html",
       "image": null,
       "id": "5234e729222e"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Doua Jazz",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/doua-jazz-soiree-tremplin/",
+      "image": null,
+      "id": "2b2ac46097e0"
     },
     {
       "venue": "Le Transbordeur",
@@ -6243,6 +6360,19 @@
       "id": "264e5916c4da"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "COLOURS IN THE STREET",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-17",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/colours-in-the-street-17112026/",
+      "image": null,
+      "id": "3d05a8ee4243"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Marine Leonardi",
@@ -6462,6 +6592,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/locura/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/locura_radiant-bellevue-500x500.jpg",
       "id": "5d956b131823"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "BEN PLG",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-26",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/ben-plg-26112026/",
+      "image": null,
+      "id": "e68f24c4a2e3"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -8206,6 +8349,19 @@
       "id": "f52842f16b6e"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "JAHNERATION",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-04-01",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/jahneration-01042027/",
+      "image": null,
+      "id": "f8011a988a6c"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "PATRICK FIORI",
@@ -8308,6 +8464,19 @@
       "url": "https://www.tng-lyon.fr/evenement/studiolo-de-lexil/",
       "image": null,
       "id": "f1b1ee028705"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Le Lac Des Cygnes",
+      "subtitle": null,
+      "category": "danse",
+      "date_start": "2027-04-30",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/le-lac-des-cygnes-382546.html",
+      "image": null,
+      "id": "2915d9f92eb2"
     },
     {
       "venue": "Bourse du Travail",
