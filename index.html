@@ -1199,6 +1199,7 @@ async function load() {
   const res = await fetch('events.json', { cache: 'no-store' });
   const data = await res.json();
   state.events = data.events || [];
+  buildVenueHomepages();
 
   // Counts in the masthead
   const totalCount = state.events.length;
@@ -1242,6 +1243,33 @@ function sourceBadgeHtml(e) {
   if (s === 'pb') return '<span class="event-source pb">petit bulletin</span>';
   if (s === 'vm') return '<span class="event-source vm">ville morte</span>';
   return '';
+}
+
+/* ---------- prefer the scraped venue's own site over aggregator links ----------
+   Built at load time: for each venue we scrape directly, record the homepage
+   (scheme://host) taken from any of its scraper events. Then, when an event is
+   sourced from an aggregator (Petit Bulletin / Ville Morte) but happens at a
+   venue we also scrape, the card links to the venue's own site instead of the
+   aggregator's event page. Venues we don't scrape keep their aggregator link
+   (it's the best/only URL we have for them). */
+const venueHomepage = {};
+function buildVenueHomepages() {
+  for (const e of state.events) {
+    if (eventSource(e) !== 'venue') continue;       // only real scraper events
+    if (venueHomepage[e.venue]) continue;           // first one wins
+    try {
+      const u = new URL(e.url);
+      venueHomepage[e.venue] = u.protocol + '//' + u.host + '/';
+    } catch (_) { /* ignore malformed URLs */ }
+  }
+}
+
+function eventHref(e) {
+  // Aggregator-sourced event at a venue we scrape -> link to the venue's site.
+  if (eventSource(e) !== 'venue' && venueHomepage[e.venue]) {
+    return venueHomepage[e.venue];
+  }
+  return e.url;
 }
 
 /* ---------- build venue groups ---------- */
@@ -1700,11 +1728,12 @@ function eventCard(e) {
 
   const sourceBadge = sourceBadgeHtml(e);
 
-  const isHttpUrl = typeof e.url === 'string'
-    && (e.url.startsWith('http://') || e.url.startsWith('https://'));
+  const href = eventHref(e);
+  const isHttpUrl = typeof href === 'string'
+    && (href.startsWith('http://') || href.startsWith('https://'));
   const tag = isHttpUrl ? 'a' : 'div';
   const linkAttrs = isHttpUrl
-    ? ' href="' + escapeHtml(e.url) + '" target="_blank" rel="noopener"'
+    ? ' href="' + escapeHtml(href) + '" target="_blank" rel="noopener"'
     : '';
 
   const arr = eventArrondissement(e);
