@@ -1239,6 +1239,11 @@ function sourceSortIndex(e) {
 }
 
 function sourceBadgeHtml(e) {
+  // If this event happens at a venue we scrape directly, the card links to the
+  // venue's own site (see eventHref) and is shown as a venue card — so we don't
+  // tag it "petit bulletin" / "ville morte", even when the data originally came
+  // from an aggregator. Only events at venues we DON'T scrape keep their badge.
+  if (venueHomepage[e.venue]) return '';
   const s = eventSource(e);
   if (s === 'pb') return '<span class="event-source pb">petit bulletin</span>';
   if (s === 'vm') return '<span class="event-source vm">ville morte</span>';
