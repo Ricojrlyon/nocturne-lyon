@@ -1,72 +1,7 @@
 {
-  "generated_at": "2026-06-07T08:47:40.520623+00:00",
-  "count": 740,
+  "generated_at": "2026-06-08T10:22:08.175988+00:00",
+  "count": 731,
   "events": [
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Haroun - Bonjour Quand Même - Tournée",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-06-07",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/haroun-bonjour-quand-meme-tournee-349635.html",
-      "image": null,
-      "id": "e1ae74c29086"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Yoga Solidaire : cours femmes Fondation des Femmes",
-      "subtitle": null,
-      "category": "bien-être",
-      "date_start": "2026-06-07",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/yoga-solidaire-lyon/",
-      "image": null,
-      "id": "e817f790c4d2"
-    },
-    {
-      "venue": "Gamut",
-      "venue_slug": "gamut",
-      "title": "expo sortie de résidence \"à bords perdus\" Yoan Lafragette & floxus + concerts Nhi, Lône, Polën Biotope, dj set Cleseph",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-07",
-      "date_end": null,
-      "time": "13:00",
-      "url": "https://agenda.villemorte.fr/event/expo-sortie-de-residence-a-bords-perdus-yoan-lafragette-and-floxus-concerts-nhi-lone-polen-biotope-dj-set-cleseph",
-      "image": null,
-      "id": "533f289fd8a8"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "S.society x Molekul 10 ans",
-      "subtitle": "Sicion · KUSS · RUIZ OSC1 · Seigg",
-      "category": "club",
-      "date_start": "2026-06-07",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://le-sucre.eu/events/s-society-x-molekul-10-ans/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/04/HORIZONTAL-INDUSTRIAL-COPERA-20233-600x400.jpg",
-      "id": "61d8b3d84eed"
-    },
-    {
-      "venue": "L'Aqueduc",
-      "venue_slug": "l-aqueduc",
-      "title": "Happy Ends",
-      "subtitle": null,
-      "category": "Spectacles Divers",
-      "date_start": "2026-06-07",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318336-happy-ends.html",
-      "image": null,
-      "id": "560141b62745"
-    },
     {
       "venue": "Big White",
       "venue_slug": "big-white",
@@ -1121,19 +1056,6 @@
       "id": "1a9fe01a3f72"
     },
     {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "Mangez Bougez avec Radio Béguin",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-14",
-      "date_end": null,
-      "time": "11:00",
-      "url": "https://agenda.villemorte.fr/event/mangez-bougez-avec-radio-beguin",
-      "image": null,
-      "id": "c5c901854603"
-    },
-    {
       "venue": "Musée des Beaux-Arts",
       "venue_slug": "musee-des-beaux-arts",
       "title": "Visite guidée à deux voix",
@@ -1145,6 +1067,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-318605-visite-guidee-a-deux-voix.html",
       "image": null,
       "id": "a8e9e727f963"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Mangez Bougez avec Radio Béguin et la 7ème Sono",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-14",
+      "date_end": null,
+      "time": "12:00",
+      "url": "https://agenda.villemorte.fr/event/mangez-bougez-avec-radio-beguin",
+      "image": null,
+      "id": "bdaa83e93f1f"
     },
     {
       "venue": "La Rayonne",
@@ -1474,19 +1409,6 @@
     {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "Portugal — RD Congo",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-17",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/portugal-rd-congo/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-264-576x720.png",
-      "id": "cba6d8c5af7f"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
       "title": "Chess Bar x HEAT",
       "subtitle": null,
       "category": null,
@@ -1496,6 +1418,19 @@
       "url": "https://h-eat.eu/events/chess-bar-x-heat-3/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/03/L1300825-480x720.jpg",
       "id": "cfb51d54d59b"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Portugal — RD Congo",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-17",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/portugal-rd-congo/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-264-576x720.png",
+      "id": "cba6d8c5af7f"
     },
     {
       "venue": "La Commune",
@@ -2720,6 +2655,19 @@
       "id": "96947908d81f"
     },
     {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Danse Musique Rhônes-Alpes + Hochiwah + Kakofonico + Tundra & Le Frit + Sabines.333",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-24",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/vic-bang-kakofonico-tundra-le-frit",
+      "image": null,
+      "id": "028648d1cc6d"
+    },
+    {
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "Emmanuelle Parrenin , Delphine Dora & Mocke + Muon S (Anna Gaïotti et Jean Bender)",
@@ -2731,19 +2679,6 @@
       "url": "https://www.periscope-lyon.com/concerts/emmanuelle-parrenin-delphine-dora-mocke-muon-s-anna-gaiotti-et-jean-bender/",
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/MUON-S-26-650x488.jpeg",
       "id": "275844fb2fb8"
-    },
-    {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "Vic Bang + Kakofonico + Tundra + Le Frit",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-24",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/vic-bang-kakofonico-tundra-le-frit",
-      "image": null,
-      "id": "541c5c6ca36b"
     },
     {
       "venue": "Bourse du Travail",
@@ -2832,7 +2767,7 @@
       "date_start": "2026-06-25",
       "date_end": null,
       "time": "18:30",
-      "url": "https://agenda.villemorte.fr/event/concert-et-dj-set-fai-lo-tieu-2-1",
+      "url": "https://agenda.villemorte.fr/event/concert-et-dj-set-fai-lo-tieu-2",
       "image": null,
       "id": "fa53f6817248"
     },
@@ -2943,7 +2878,7 @@
     {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
-      "title": "Lxs Assoiffxs + Orga Shlag Club",
+      "title": "Lxs Assoiffxs + Laurele2n + Animal Nocturne + Tekosaure1312 + Grabuge 404",
       "subtitle": null,
       "category": null,
       "date_start": "2026-06-26",
@@ -2951,7 +2886,7 @@
       "time": "18:00",
       "url": "https://agenda.villemorte.fr/event/lxs-assoiffxs-orga-shlag-club",
       "image": null,
-      "id": "3d84b947256b"
+      "id": "8ae7fc17962a"
     },
     {
       "venue": "Toï Toï le Zinc",
@@ -2978,6 +2913,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/compagnie-dca-philippe-decoufle/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/philippe-decoufle_radiant-bellevue-500x500.jpg",
       "id": "d1759e9f6d4a"
+    },
+    {
+      "venue": "MJC Villeurbanne",
+      "venue_slug": "mjc-villeurbanne",
+      "title": "Concert Aamer.wav",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-26",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://agenda.villemorte.fr/event/concert-aamerwav",
+      "image": null,
+      "id": "e11028121fe4"
     },
     {
       "venue": "Le Petit Salon",
@@ -7686,19 +7634,6 @@
       "id": "141d5b0e1be5"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "GUILLAUME MEURICE",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-01-23",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/guillaume-meurice/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/guillaume-meurice-500x500.jpg",
-      "id": "7cd7d5b6842d"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Noelle Perna",
@@ -7723,19 +7658,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/immo/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/immo-500x500.jpg",
       "id": "5580890f178b"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "GUILLAUME MEURICE",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-01-24",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/guillaume-meurice/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/guillaume-meurice-500x500.jpg",
-      "id": "92567de848df"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -8178,6 +8100,19 @@
       "url": "https://larayonne.org/evenement/the-rasmus/",
       "image": null,
       "id": "cf7efd566f8e"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "JEAN-BENOÎT DIALLO",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-02-13",
+      "date_end": null,
+      "time": null,
+      "url": "https://radiant-bellevue.fr/spectacles/jean-benoit-diallo/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/jean-benoit-diallo-2.jpg",
+      "id": "8e9321fa4e64"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -9131,6 +9066,32 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
+      "title": "GUILLAUME MEURICE",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-04-23",
+      "date_end": null,
+      "time": null,
+      "url": "https://radiant-bellevue.fr/spectacles/guillaume-meurice/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/guillaume-meurice-500x500.jpg",
+      "id": "751417ea35e5"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "GUILLAUME MEURICE",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-04-24",
+      "date_end": null,
+      "time": null,
+      "url": "https://radiant-bellevue.fr/spectacles/guillaume-meurice/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/guillaume-meurice-500x500.jpg",
+      "id": "db5311e07d05"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
       "title": "MENOPAUSE",
       "subtitle": null,
       "category": "théâtre",
@@ -9363,45 +9324,6 @@
       "id": "6af1e7af68c3"
     },
     {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Quartier Libre x Strate",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-06-03",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/quartier-libre-special-voisin-x-strate/",
-      "image": "https://h-eat.eu/wp-content/uploads/2025/08/JulietteVlr_28-480x720.jpg",
-      "id": "bd226bd1089f"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Chess Bar x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-06-03",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/chess-bar-x-heat-5/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/03/L1300825-480x720.jpg",
-      "id": "cd99dd577a13"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Vandale Radio",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-06-04",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/vandale-radio-2/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/format-insta-post-576x720.png",
-      "id": "10aa63d1e978"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Edgar-yves Jr.",
@@ -9413,45 +9335,6 @@
       "url": "https://www.bourse-du-travail.com/edgar-yves-jr-359465.html",
       "image": null,
       "id": "7ed676c5de4a"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "cred is dead. & Quidam? // 69_digit #01",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-06-05",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/cred-is-dead-quidam-69_digit-01/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/heat-lyon-576x720.webp",
-      "id": "746fb771ea60"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Château Sonic Takeover",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-06-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/chateau-sonic-takeover/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/CHATEAU-SONIC-TOUR-–-10-ANS-🎉Une-etape-de-plus-pour-faire-raisonner-la-culture-💥📍Troisieme--576x720.webp",
-      "id": "32fb8f274d33"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "[Un été à La Rayonne] Les Intergalactiques · 14e édition",
-      "subtitle": null,
-      "category": "rencontre",
-      "date_start": "2027-06-06",
-      "date_end": "2026-06-07",
-      "time": null,
-      "url": "https://larayonne.org/evenement/les-intergalactiques-%c2%b7-14e-edition/",
-      "image": null,
-      "id": "56565e1647f1"
     },
     {
       "venue": "Radiant-Bellevue",
