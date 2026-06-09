@@ -1,33 +1,7 @@
 {
-  "generated_at": "2026-06-08T10:22:08.175988+00:00",
-  "count": 731,
+  "generated_at": "2026-06-09T09:27:55.980886+00:00",
+  "count": 735,
   "events": [
-    {
-      "venue": "Big White",
-      "venue_slug": "big-white",
-      "title": "Big Comedy Club",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-06-08",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/big-comedy-club-13",
-      "image": null,
-      "id": "859fe4301878"
-    },
-    {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Punk-Rock TOUCHÉ AMORÉ + GREET DEATH",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-06-08",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://marchegare.fr/agenda/touche-amore",
-      "image": null,
-      "id": "874fdea4a2eb"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -131,6 +105,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-318389-sur-les-ailes-du-chant.html",
       "image": null,
       "id": "99a97bfe5b94"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Chess Bar x HEAT",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-10",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/chess-bar-x-heat-5/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/03/L1300825-480x720.jpg",
+      "id": "ea2b41bdfdc3"
     },
     {
       "venue": "HEAT",
@@ -328,6 +315,19 @@
       "id": "e23af8bebce8"
     },
     {
+      "venue": "Aquarium ciné café",
+      "venue_slug": "aquarium-cine-cafe",
+      "title": "L'ovaire du décor - Conférence gesticulée",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-06-11",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/lovaire-du-decor-conference-gesticulee-2",
+      "image": null,
+      "id": "d98f5ea86d8d"
+    },
+    {
       "venue": "Bar Rock'n Eat",
       "venue_slug": "bar-rock-n-eat",
       "title": "Bey + Telegraph",
@@ -343,7 +343,7 @@
     {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
-      "title": "[Un Eté à La Rayonne] DAVID MC FLY",
+      "title": "ANNULE // [Un Eté à La Rayonne] DAVID MC FLY",
       "subtitle": null,
       "category": "musique",
       "date_start": "2026-06-11",
@@ -351,7 +351,7 @@
       "time": "19:00",
       "url": "https://larayonne.org/evenement/david-mc-fly/",
       "image": null,
-      "id": "4463a48a3a12"
+      "id": "923aa5fbcf6d"
     },
     {
       "venue": "Le Transbordeur",
@@ -508,6 +508,19 @@
       "url": "https://h-eat.eu/events/twerk-mania-by-jamais-le-mardi/",
       "image": "https://h-eat.eu/wp-content/uploads/2025/09/1-509x720.png",
       "id": "e9f69b846b8d"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Lyon BD 2026",
+      "subtitle": null,
+      "category": "underground",
+      "date_start": "2026-06-12",
+      "date_end": "2026-06-13",
+      "time": null,
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2025-2026/opera-underground/lyon-bd-2026",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/b0375f1f/bd_festival_26.jpg",
+      "id": "d3f1b3028504"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -913,6 +926,19 @@
       "id": "2aa7181d3672"
     },
     {
+      "venue": "IAC Villeurbanne",
+      "venue_slug": "iac-villeurbanne",
+      "title": "PERFORMANCE : 𝘓𝘈 𝘎𝘙𝘈𝘕𝘋𝘌 𝘍𝘖𝘓𝘐𝘌",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-06-13",
+      "date_end": null,
+      "time": "17:15",
+      "url": "https://agenda.villemorte.fr/event/performance",
+      "image": null,
+      "id": "20f7fc216241"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "EXT.12 CONTRE RIPOST",
@@ -1184,6 +1210,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-313893-agapie.html",
       "image": null,
       "id": "430a48e53cf0"
+    },
+    {
+      "venue": "Big White",
+      "venue_slug": "big-white",
+      "title": "Big Comedy Club",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-06-15",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/big-comedy-club-14",
+      "image": null,
+      "id": "0c361d2c04d7"
     },
     {
       "venue": "La Rayonne",
@@ -1669,15 +1708,15 @@
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
-      "title": "Fête de la Musique",
+      "title": "Fête de la musique : vendredi émergence",
       "subtitle": null,
-      "category": "concert",
+      "category": "festival",
       "date_start": "2026-06-19",
       "date_end": null,
       "time": null,
-      "url": "https://lacommune.co/event/fete-de-la-musique-lyon/",
+      "url": "https://lacommune.co/event/fete-de-la-musique-lyon-vendredi/",
       "image": null,
-      "id": "b5a58a6571cd"
+      "id": "18fd2ab9f4f2"
     },
     {
       "venue": "Observatoire de Lyon",
@@ -1875,17 +1914,30 @@
       "id": "9424e358146a"
     },
     {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "[Un été à La Rayonne] Fête de la musique x ENCORE – Kirsty all night long",
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Fête de la musique : samedi drag & club",
       "subtitle": null,
-      "category": "musique",
+      "category": "festival",
       "date_start": "2026-06-20",
-      "date_end": "2026-06-21",
-      "time": "00:00",
-      "url": "https://larayonne.org/evenement/un-ete-a-la-rayonne-fete-de-la-musique-x-encore-kirsty-all-night-long/",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/fete-de-la-musique-lyon-samedi/",
       "image": null,
-      "id": "d7db3e4b67f2"
+      "id": "c253388a7a0a"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "cco-la-rayonne",
+      "title": "Fête de la musique x Encore",
+      "subtitle": null,
+      "category": "Musique Electronique",
+      "date_start": "2026-06-20",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-318546-fete-de-la-musique-x-encore.html",
+      "image": null,
+      "id": "eabb4275fa4e"
     },
     {
       "venue": "Le Rize",
@@ -2124,15 +2176,15 @@
     {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
-      "title": "[Un été à La Rayonne] Blood Incantation (Europe tour 2026) + Nate Mercereau",
+      "title": "[Un été à La Rayonne] Blood Incantation (Europe tour 2026) +  TSCHAIKOWSKY & KANN",
       "subtitle": null,
       "category": "musique",
       "date_start": "2026-06-20",
-      "date_end": "2026-06-20",
+      "date_end": null,
       "time": "19:00",
       "url": "https://larayonne.org/evenement/blood-incantation-absolute-elsetour-europe-2026-nate-mercereau/",
       "image": null,
-      "id": "fd21a4ed912f"
+      "id": "866486c8a349"
     },
     {
       "venue": "La Rayonne",
@@ -2224,6 +2276,32 @@
       "url": "https://yp.events/afae3c7a-0148-4311-81a2-61f50da505ea/THIS-IS-TECHNO-Rave-COIL-Cheche-more?from=siteweb",
       "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisisTechnoRave_20062026_lepetitsalon-1024x576.jpg",
       "id": "a2eb507dd4ff"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Fête de la musique : dimanche en plein air",
+      "subtitle": null,
+      "category": "festival",
+      "date_start": "2026-06-21",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/fete-de-la-musique-lyon-dimanche/",
+      "image": null,
+      "id": "5d3ba42f072d"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "[Un été à La Rayonne] Fête de la musique x ENCORE – Kirsty all night long",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-21",
+      "date_end": null,
+      "time": "00:00",
+      "url": "https://larayonne.org/evenement/un-ete-a-la-rayonne-fete-de-la-musique-x-encore-kirsty-all-night-long/",
+      "image": null,
+      "id": "8d7a79b4a03e"
     },
     {
       "venue": "Galerie Imag'In",
@@ -2330,110 +2408,6 @@
       "id": "0f2da930d4ad"
     },
     {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "ANNULE // S'initier aux techniques d'animation participative 18h > 21h",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-21",
-      "date_end": "2026-06-21",
-      "time": "18:00",
-      "url": "https://larayonne.org/evenement/sinitier-aux-techniques-danimation-participative-2/",
-      "image": null,
-      "id": "c085ab34a02e"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "Atelier : \"S'occuper du conflit avant qu'il ne s'occupe de nous\" 18h > 20h",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-21",
-      "date_end": "2026-06-21",
-      "time": "18:00",
-      "url": "https://larayonne.org/evenement/atelier-soccuper-du-conflit-avant-quil-ne-soccupe-de-nous/",
-      "image": null,
-      "id": "3e2a678f7905"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "Les obligations des associations employeuses 18h > 20h",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-21",
-      "date_end": "2026-06-21",
-      "time": "18:00",
-      "url": "https://larayonne.org/evenement/les-obligations-des-associations-employeuses-3/",
-      "image": null,
-      "id": "bd6d781404ec"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "Mieux appréhender les réseaux sociaux 18h30 > 21h",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-21",
-      "date_end": "2026-06-21",
-      "time": "18:00",
-      "url": "https://larayonne.org/evenement/mieux-apprehender-les-reseaux-sociaux/",
-      "image": null,
-      "id": "d75b581454eb"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "Présenter et mettre en valeur son projet à l'oral : atelier théorique (1/2) 18h30 > 20h30",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-21",
-      "date_end": "2026-06-21",
-      "time": "18:00",
-      "url": "https://larayonne.org/evenement/presenter-et-mettre-en-valeur-son-projet-a-loral-atelier-theorique-1-2/",
-      "image": null,
-      "id": "0f2574b3cb8e"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "Comprendre les principales aides à l'emploi dans le spectacle vivant 18h30 > 20h30",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-21",
-      "date_end": "2026-06-21",
-      "time": "18:00",
-      "url": "https://larayonne.org/evenement/comprendre-les-principales-aides-a-lemploi-dans-le-spectacle-vivant/",
-      "image": null,
-      "id": "2e3522eaabd5"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "Construire un budget et un plan de trésorerie : atelier théorique (1/2) 18h > 20h30",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-21",
-      "date_end": "2026-06-21",
-      "time": "18:00",
-      "url": "https://larayonne.org/evenement/construire-un-budget-et-un-plan-de-tresorerie-atelier-theorique-1-2-2/",
-      "image": null,
-      "id": "1774c5e659c5"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "Mettre en place une comptabilité pour les petites associations 17h30 > 20h30",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-21",
-      "date_end": "2026-06-21",
-      "time": "18:00",
-      "url": "https://larayonne.org/evenement/mettre-en-place-une-comptabilite-pour-les-petites-associations-6/",
-      "image": null,
-      "id": "190742bf3318"
-    },
-    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Festival Dance People 2026 Rencontres Improvisees 2",
@@ -2527,15 +2501,15 @@
     {
       "venue": "Bar Rock'n Eat",
       "venue_slug": "bar-rock-n-eat",
-      "title": "The Bridge City Sinners",
+      "title": "Bridge City Sinners",
       "subtitle": null,
       "category": "Rock & Pop",
       "date_start": "2026-06-22",
       "date_end": null,
       "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318531-the-bridge-city-sinners.html",
+      "url": "https://www.petit-bulletin.fr/agenda-318531-bridge-city-sinners.html",
       "image": null,
-      "id": "47e796f75258"
+      "id": "472174fb0b8b"
     },
     {
       "venue": "Espace Gerson",
@@ -2629,19 +2603,6 @@
       "id": "20ae1b2c27cb"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "SHOW ME THE BODY + TRUCK VIOLENCE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-24",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/show-me-the-body-truck-violence-24062026/",
-      "image": null,
-      "id": "17cc7abc7883"
-    },
-    {
       "venue": "Galerie Imag'In",
       "venue_slug": "galerie-imag-in",
       "title": "Bern Dodet",
@@ -2679,6 +2640,19 @@
       "url": "https://www.periscope-lyon.com/concerts/emmanuelle-parrenin-delphine-dora-mocke-muon-s-anna-gaiotti-et-jean-bender/",
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/MUON-S-26-650x488.jpeg",
       "id": "275844fb2fb8"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "SHOW ME THE BODY + TRUCK VIOLENCE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-24",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/show-me-the-body-truck-violence-24062026/",
+      "image": null,
+      "id": "1b0ad9ad66cd"
     },
     {
       "venue": "Bourse du Travail",
@@ -2767,7 +2741,7 @@
       "date_start": "2026-06-25",
       "date_end": null,
       "time": "18:30",
-      "url": "https://agenda.villemorte.fr/event/concert-et-dj-set-fai-lo-tieu-2",
+      "url": "https://agenda.villemorte.fr/event/concert-et-dj-set-fai-lo-tieu-2-1",
       "image": null,
       "id": "fa53f6817248"
     },
@@ -3188,6 +3162,19 @@
       "id": "aa2dc9c42db4"
     },
     {
+      "venue": "Groupama Stadium",
+      "venue_slug": "groupama-stadium",
+      "title": "Iron Maiden",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-06-28",
+      "date_end": null,
+      "time": "19:20",
+      "url": "https://www.petit-bulletin.fr/agenda-318624-iron-maiden.html",
+      "image": null,
+      "id": "2d7058972a4c"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "COMPAGNIE DCA / PHILIPPE DECOUFLÉ",
@@ -3214,19 +3201,6 @@
       "id": "516608e488ad"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "CAVALERA",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/cavalera-30062026/",
-      "image": null,
-      "id": "97e334f2b9a6"
-    },
-    {
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "TURBO TERRASSE : Passage de Disques",
@@ -3251,6 +3225,19 @@
       "url": "https://agenda.villemorte.fr/event/theatre-creation-en-cours-debat-rage",
       "image": null,
       "id": "bc332334627f"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "CAVALERA",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-30",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.transbordeur.fr/evenement/cavalera-30062026/",
+      "image": null,
+      "id": "ca8f96866f19"
     },
     {
       "venue": "Le Transbordeur",
@@ -4527,6 +4514,19 @@
       "id": "fcfc8fdcd62c"
     },
     {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "Holy Wave",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-09-23",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://sonic-lyon.fr/evenement/holy-wave/",
+      "image": null,
+      "id": "8f195e0a4520"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "MARION MEZADORIAN",
@@ -4980,6 +4980,19 @@
       "url": "https://marchegare.fr/agenda/hypno5e-hippotraktor",
       "image": null,
       "id": "97773a76ce7f"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "FOLAMOUR",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-11",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/folamour-11102026/",
+      "image": null,
+      "id": "6dfb49dcd207"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6813,6 +6826,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/le-bourgeois-gentilhomme/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-bourgeois-gentilhomme-500x500.jpg",
       "id": "15ea3c0ffff1"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Jazz daoud",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-12-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/daoud",
+      "image": null,
+      "id": "1e559dd931ce"
     },
     {
       "venue": "Bourse du Travail",
@@ -8934,6 +8960,19 @@
       "id": "31797fab5101"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "MADAME ARTHUR",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-04-10",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/madame-arthur-10042027/",
+      "image": null,
+      "id": "7383d2999331"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "ART",
@@ -9387,6 +9426,19 @@
       "url": "https://www.bourse-du-travail.com/julien-santini-358214.html",
       "image": null,
       "id": "e808eda4bc91"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Frédéric François - Tournée",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-06-13",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/frederic-francois-tournee-382773.html",
+      "image": null,
+      "id": "33f9814d08a8"
     },
     {
       "venue": "Bourse du Travail",
