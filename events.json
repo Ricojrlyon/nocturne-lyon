@@ -1,111 +1,7 @@
 {
-  "generated_at": "2026-06-09T09:27:55.980886+00:00",
-  "count": 735,
+  "generated_at": "2026-06-10T09:43:20.178347+00:00",
+  "count": 737,
   "events": [
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Atelier créatif Lyon | découverte à La Commune",
-      "subtitle": null,
-      "category": "atelier",
-      "date_start": "2026-06-09",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/atelier-decouverte/",
-      "image": null,
-      "id": "2fdf373c54b4"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "TURBO TERRASSE : Passage de Disques",
-      "subtitle": "Avec Magic Stomp",
-      "category": "musique",
-      "date_start": "2026-06-09",
-      "date_end": null,
-      "time": "15:30",
-      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-3/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/091324_Grand_Tabazu_web_paul-650x433.jpg",
-      "id": "cc16f4d70cef"
-    },
-    {
-      "venue": "Fnac Bellecour",
-      "venue_slug": "fnac-bellecour",
-      "title": "Loup Garou géant",
-      "subtitle": null,
-      "category": "Jeux",
-      "date_start": "2026-06-09",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://www.petit-bulletin.fr/agenda-317803-loup-garou-geant.html",
-      "image": null,
-      "id": "8feb06327061"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Magic Mardi",
-      "subtitle": "Axonberg · Diki · Elon Skum",
-      "category": "club",
-      "date_start": "2026-06-09",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://le-sucre.eu/events/magic-mardi-77/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Plan-de-travail-11-480x600.png",
-      "id": "4d0708c40992"
-    },
-    {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "MELT BANANA + PNEU",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-09",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://agenda.villemorte.fr/event/melt-banana-pneu",
-      "image": null,
-      "id": "6a3bceff050a"
-    },
-    {
-      "venue": "Fnac Bellecour",
-      "venue_slug": "fnac-bellecour",
-      "title": "Olivia Ruiz",
-      "subtitle": null,
-      "category": "Lectures",
-      "date_start": "2026-06-09",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318419-olivia-ruiz.html",
-      "image": null,
-      "id": "5baf986e70cd"
-    },
-    {
-      "venue": "Chapelle de la Trinité",
-      "venue_slug": "chapelle-de-la-trinite",
-      "title": "Furioso",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
-      "date_start": "2026-06-09",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318367-furioso.html",
-      "image": null,
-      "id": "5c7a39ce1513"
-    },
-    {
-      "venue": "Salle Molière",
-      "venue_slug": "salle-moliere",
-      "title": "Sur les ailes du chant",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
-      "date_start": "2026-06-09",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318389-sur-les-ailes-du-chant.html",
-      "image": null,
-      "id": "99a97bfe5b94"
-    },
     {
       "venue": "HEAT",
       "venue_slug": "heat",
@@ -224,43 +120,17 @@
       "id": "89e022d75731"
     },
     {
-      "venue": "Espace Albert Camus",
-      "venue_slug": "espace-albert-camus",
-      "title": "Beauséjour",
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Roméo Et Juliette à Travers Les Siècles",
       "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-06-10",
+      "category": "humour",
+      "date_start": "2026-06-11",
       "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-309928-beausejour.html",
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/romeo-et-juliette-a-travers-les-siecles-382788.html",
       "image": null,
-      "id": "79ce5ff16126"
-    },
-    {
-      "venue": "Espace Gerson",
-      "venue_slug": "espace-gerson",
-      "title": "Élisabeth Buffet",
-      "subtitle": null,
-      "category": "Humour & Café Théâtre",
-      "date_start": "2026-06-10",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-284644-elisabeth-buffet.html",
-      "image": null,
-      "id": "a9470c776678"
-    },
-    {
-      "venue": "Maison de la Danse",
-      "venue_slug": "maison-de-la-danse",
-      "title": "Honda Romance",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
-      "date_start": "2026-06-10",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-316766-honda-romance.html",
-      "image": null,
-      "id": "ca03ddc7c5db"
+      "id": "9081e277be6b"
     },
     {
       "venue": "HEAT",
@@ -417,45 +287,6 @@
       "url": "https://sonic-lyon.fr/evenement/otomo/",
       "image": null,
       "id": "cabc2faf2697"
-    },
-    {
-      "venue": "Espace Albert Camus",
-      "venue_slug": "espace-albert-camus",
-      "title": "Beauséjour",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-309928-beausejour.html",
-      "image": null,
-      "id": "d509ff9ee15a"
-    },
-    {
-      "venue": "Espace Gerson",
-      "venue_slug": "espace-gerson",
-      "title": "Élisabeth Buffet",
-      "subtitle": null,
-      "category": "Humour & Café Théâtre",
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-284644-elisabeth-buffet.html",
-      "image": null,
-      "id": "3c650c7dbf0f"
-    },
-    {
-      "venue": "Maison de la Danse",
-      "venue_slug": "maison-de-la-danse",
-      "title": "Honda Romance",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-316766-honda-romance.html",
-      "image": null,
-      "id": "7c1990d9cf03"
     },
     {
       "venue": "Toï Toï le Zinc",
@@ -616,7 +447,7 @@
     {
       "venue": "Alternatibar",
       "venue_slug": "alternatibar",
-      "title": "Dance for Climate DJ set Dançalà",
+      "title": "DJ set Lory PH X GFG + open platines !",
       "subtitle": null,
       "category": "musique",
       "date_start": "2026-06-12",
@@ -624,7 +455,7 @@
       "time": "19:00",
       "url": "https://agenda.villemorte.fr/event/dance-for-climate-dj-set-dancala-3",
       "image": null,
-      "id": "6c8d0eb0f869"
+      "id": "fd5d6dedf911"
     },
     {
       "venue": "Le Périscope",
@@ -731,45 +562,6 @@
       "id": "aa2a84773f77"
     },
     {
-      "venue": "Espace Albert Camus",
-      "venue_slug": "espace-albert-camus",
-      "title": "Beauséjour",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-06-12",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-309928-beausejour.html",
-      "image": null,
-      "id": "11e1cdd2d423"
-    },
-    {
-      "venue": "Espace Gerson",
-      "venue_slug": "espace-gerson",
-      "title": "Élisabeth Buffet",
-      "subtitle": null,
-      "category": "Humour & Café Théâtre",
-      "date_start": "2026-06-12",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-284644-elisabeth-buffet.html",
-      "image": null,
-      "id": "b6ce45c1be36"
-    },
-    {
-      "venue": "Maison de la Danse",
-      "venue_slug": "maison-de-la-danse",
-      "title": "Honda Romance",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
-      "date_start": "2026-06-12",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-316766-honda-romance.html",
-      "image": null,
-      "id": "265195a86c48"
-    },
-    {
       "venue": "Toï Toï le Zinc",
       "venue_slug": "toi-toi-le-zinc",
       "title": "Un Doua de Jazz : Summer Night",
@@ -805,7 +597,7 @@
       "date_end": null,
       "time": "23:00",
       "url": "https://le-sucre.eu/events/club-x-antidoto/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/KDD-NEW-_1-Global-Studio-400x600.jpg",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/POST-2-480x600.png",
       "id": "af2f03a8e979"
     },
     {
@@ -1017,19 +809,6 @@
       "id": "5de119f6817e"
     },
     {
-      "venue": "Espace Gerson",
-      "venue_slug": "espace-gerson",
-      "title": "Élisabeth Buffet",
-      "subtitle": null,
-      "category": "Humour & Café Théâtre",
-      "date_start": "2026-06-13",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-284644-elisabeth-buffet.html",
-      "image": null,
-      "id": "f6a03c811dc2"
-    },
-    {
       "venue": "Toï Toï le Zinc",
       "venue_slug": "toi-toi-le-zinc",
       "title": "Lubenica + Nostros + Trio Samay",
@@ -1219,10 +998,10 @@
       "category": "théâtre",
       "date_start": "2026-06-15",
       "date_end": null,
-      "time": "18:00",
+      "time": "17:00",
       "url": "https://agenda.villemorte.fr/event/big-comedy-club-14",
       "image": null,
-      "id": "0c361d2c04d7"
+      "id": "4617afe4e9df"
     },
     {
       "venue": "La Rayonne",
@@ -1641,6 +1420,19 @@
       "id": "48077e1bed30"
     },
     {
+      "venue": "Lavoir Public",
+      "venue_slug": "lavoir-public",
+      "title": "S280F + LEGACY + Saku Sahara + Wayatt x Mixsoup",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-18",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/s280f-legacy-saku-sahara-wayatt-x-mixsoup",
+      "image": null,
+      "id": "69715c454d22"
+    },
+    {
       "venue": "A Thou Bout d'Chant",
       "venue_slug": "a-thou-bout-d-chant",
       "title": "CONCERT | CAÏMAN sortie d'album remixé",
@@ -1669,7 +1461,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Bientôt complet ! LES 20 ANS ! Animation LE TRUC Chorale participative XXL",
+      "title": "LES 20 ANS ! Animation LE TRUC Chorale participative XXL",
       "subtitle": null,
       "category": null,
       "date_start": "2026-06-18",
@@ -1677,7 +1469,7 @@
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/chorale-le-truc-les-20-ans",
       "image": null,
-      "id": "2c088d8e7a7a"
+      "id": "e67f86ee20db"
     },
     {
       "venue": "Le Périscope",
@@ -1710,7 +1502,7 @@
       "venue_slug": "la-commune",
       "title": "Fête de la musique : vendredi émergence",
       "subtitle": null,
-      "category": "festival",
+      "category": "concert",
       "date_start": "2026-06-19",
       "date_end": null,
       "time": null,
@@ -1795,6 +1587,19 @@
       "url": "https://agenda.villemorte.fr/event/concert-or-virginie-nourry-la-pieta",
       "image": null,
       "id": "510236499cf0"
+    },
+    {
+      "venue": "Alternatibar",
+      "venue_slug": "alternatibar",
+      "title": "Show \"Femmes Re-belles\" par Hisope",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-19",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/show-femmes-re-belles-par-hisope",
+      "image": null,
+      "id": "58a007ec4bda"
     },
     {
       "venue": "Le Transbordeur",
@@ -2328,6 +2133,19 @@
       "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-breakfast-dialogues/",
       "image": null,
       "id": "3e336c579af7"
+    },
+    {
+      "venue": "Lyon",
+      "venue_slug": "lyon",
+      "title": "DUB ADDICT x HIGH BUDUB 16 BASS - PARC DE LA CERISAIE",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-21",
+      "date_end": "2026-06-22",
+      "time": "12:00",
+      "url": "https://agenda.villemorte.fr/event/dub-addict-x-high-budub-16-bass-parc-de-la-cerisaie",
+      "image": null,
+      "id": "a016513574ea"
     },
     {
       "venue": "la luttine",
@@ -2915,6 +2733,19 @@
       "id": "dedfdd81bf19"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Plan à trois : Dyckness x Silk x HEAT — Afterpride",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-27",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/plan-a-trois-dyckness-x-silk-x-heat-afterpride/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/06/afterpride-heat-silk-pdf-503x720.jpg",
+      "id": "62aa78221933"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "BOILER YUFRIP",
@@ -2937,7 +2768,7 @@
       "date_end": null,
       "time": null,
       "url": "https://le-sucre.eu/events/club-xmknk/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/MANU-LE-MALIN-©Julian-Rousseau-338x600.jpeg",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/Shotgun_1080x1440-450x600.jpg",
       "id": "61e0d8b32d9d"
     },
     {
@@ -3461,6 +3292,19 @@
       "id": "ef0f12527323"
     },
     {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Leo Fotka",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-07-05",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318681-leo-fotka.html",
+      "image": null,
+      "id": "7d24db17126f"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Kiki Ball en marge du Major Ball de Vinni Revlon",
@@ -3500,6 +3344,19 @@
       "id": "273ef836e123"
     },
     {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Sundar Thapa Magar",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-07-06",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318682-sundar-thapa-magar.html",
+      "image": null,
+      "id": "af7d335e1904"
+    },
+    {
       "venue": "Domaine de Lacroix-Laval",
       "venue_slug": "domaine-de-lacroix-laval",
       "title": "Da capo",
@@ -3524,6 +3381,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-317630-croire-aux-fauves.html",
       "image": null,
       "id": "44acd386844b"
+    },
+    {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Sundar Thapa Magar",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-07-07",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318682-sundar-thapa-magar.html",
+      "image": null,
+      "id": "58eceea50596"
     },
     {
       "venue": "Les Clameurs",
@@ -3578,6 +3448,19 @@
       "id": "2af3a48e4793"
     },
     {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Sundar Thapa Magar",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-07-08",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318682-sundar-thapa-magar.html",
+      "image": null,
+      "id": "bcee4a095c7b"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Sulfuric Cautery + Morgue Breath + Fosse Septique",
@@ -3630,6 +3513,19 @@
       "id": "227a8ae5a1d3"
     },
     {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Sundar Thapa Magar",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-07-09",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318682-sundar-thapa-magar.html",
+      "image": null,
+      "id": "0eb70f932440"
+    },
+    {
       "venue": "Domaine de Lacroix-Laval",
       "venue_slug": "domaine-de-lacroix-laval",
       "title": "Da capo",
@@ -3667,6 +3563,19 @@
       "url": "https://www.transbordeur.fr/evenement/dope-saint-jude-yanka-slmvx-10072026/",
       "image": null,
       "id": "502e62cb1a99"
+    },
+    {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Sundar Thapa Magar",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-07-10",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318682-sundar-thapa-magar.html",
+      "image": null,
+      "id": "53eb027d45cb"
     },
     {
       "venue": "Place du 8 mai 1945, Lyon 8e",
@@ -3721,6 +3630,19 @@
       "id": "05f407725799"
     },
     {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Sundar Thapa Magar",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-07-11",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318682-sundar-thapa-magar.html",
+      "image": null,
+      "id": "a62d77f8afec"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Silence Collapse Soundsystem",
@@ -3771,6 +3693,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-317630-croire-aux-fauves.html",
       "image": null,
       "id": "01de463ab828"
+    },
+    {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Sundar Thapa Magar",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-07-12",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318682-sundar-thapa-magar.html",
+      "image": null,
+      "id": "d75e89464c1d"
     },
     {
       "venue": "Friche Artistique Lamartine | La Robinetterie",
@@ -4031,6 +3966,19 @@
       "url": "https://sonic-lyon.fr/evenement/ulrika-spacek-sharon-tate-modern/",
       "image": null,
       "id": "5db429245cdf"
+    },
+    {
+      "venue": "Galerie Roger Tator",
+      "venue_slug": "galerie-roger-tator",
+      "title": "Floris Dutoit",
+      "subtitle": null,
+      "category": "Peinture & Dessin",
+      "date_start": "2026-07-24",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://www.petit-bulletin.fr/agenda-283273-floris-dutoit.html",
+      "image": null,
+      "id": "c0fe5e147c30"
     },
     {
       "venue": "La BF15",
@@ -4356,6 +4304,19 @@
       "url": "https://www.transbordeur.fr/evenement/marie-sarah-11092026/",
       "image": null,
       "id": "eef3ce44c2bb"
+    },
+    {
+      "venue": "Galerie Kashagan",
+      "venue_slug": "galerie-kashagan",
+      "title": "Lucas Zambon",
+      "subtitle": null,
+      "category": "Peinture & Dessin",
+      "date_start": "2026-09-11",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318683-lucas-zambon.html",
+      "image": null,
+      "id": "1e0b6c6b077e"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -5463,6 +5424,19 @@
       "id": "8242e4f78810"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "SALON DES VIGNERONS INDEPENDANTS",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-29",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-6",
+      "image": null,
+      "id": "f6bf714aafaf"
+    },
+    {
       "venue": "L'Épicerie Moderne",
       "venue_slug": "l-epicerie-moderne",
       "title": "THE NOTWIST",
@@ -5528,6 +5502,19 @@
       "id": "7723a7394aeb"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "SALON DES VIGNERONS INDEPENDANTS",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-30",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-7",
+      "image": null,
+      "id": "607dbbe31861"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Julien Lieb - Naufragés Tour",
@@ -5565,6 +5552,32 @@
       "url": "https://radiant-bellevue.fr/spectacles/stephan-eicher-2/",
       "image": null,
       "id": "f1ba192f4256"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "SALON DES VIGNERONS INDEPENDANTS",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-31",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-8",
+      "image": null,
+      "id": "556f78490ee9"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "SALON DES VIGNERONS INDEPENDANTS",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-01",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-9",
+      "image": null,
+      "id": "9fb7d9e7718e"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -8917,7 +8930,7 @@
       "date_end": null,
       "time": null,
       "url": "https://radiant-bellevue.fr/spectacles/rodrigo-y-gabriela-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/rodrigo-y-gabriela-500x500.jpg",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/rodrigo-y-gabriela-v2-500x500.jpg",
       "id": "987d5616e153"
     },
     {
@@ -8951,7 +8964,7 @@
       "venue_slug": "radiant-bellevue",
       "title": "FABIEN OLICARD",
       "subtitle": null,
-      "category": "magie",
+      "category": null,
       "date_start": "2027-04-09",
       "date_end": null,
       "time": null,
@@ -9556,6 +9569,19 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/era-2",
       "image": null,
       "id": "76077a9e7641"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "CHIMENE BADI",
+      "subtitle": null,
+      "category": "chanson",
+      "date_start": "2028-03-26",
+      "date_end": null,
+      "time": null,
+      "url": "https://radiant-bellevue.fr/spectacles/chimene-badi-2/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/chimene-badi-500x500.jpg",
+      "id": "792d701c0acd"
     }
   ]
 }
