@@ -1,176 +1,7 @@
 {
-  "generated_at": "2026-06-11T10:12:20.015310+00:00",
-  "count": 678,
+  "generated_at": "2026-06-12T09:59:40.418970+00:00",
+  "count": 720,
   "events": [
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Roméo Et Juliette à Travers Les Siècles",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/romeo-et-juliette-a-travers-les-siecles-382788.html",
-      "image": null,
-      "id": "9081e277be6b"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Afterwork : Food, Drink & Happy Hour !",
-      "subtitle": null,
-      "category": "afterwork",
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/afterwork-food-drink-happy-hour-2/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/marceau-bergeroux98-1080x720.jpg",
-      "id": "f352ba5ce187"
-    },
-    {
-      "venue": "Villeurbanne ENM",
-      "venue_slug": "villeurbanne-enm",
-      "title": "Festival  Objectif scène",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-11",
-      "date_end": "2026-06-14",
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/festival-objectif-scene",
-      "image": null,
-      "id": "e23af8bebce8"
-    },
-    {
-      "venue": "Aquarium ciné café",
-      "venue_slug": "aquarium-cine-cafe",
-      "title": "L'ovaire du décor - Conférence gesticulée",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://agenda.villemorte.fr/event/lovaire-du-decor-conference-gesticulee-2",
-      "image": null,
-      "id": "d98f5ea86d8d"
-    },
-    {
-      "venue": "Bar Rock'n Eat",
-      "venue_slug": "bar-rock-n-eat",
-      "title": "Bey + Telegraph",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318534-bey-telegraph.html",
-      "image": null,
-      "id": "fc5e32f51591"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "ANNULE // [Un Eté à La Rayonne] DAVID MC FLY",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://larayonne.org/evenement/david-mc-fly/",
-      "image": null,
-      "id": "923aa5fbcf6d"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "ZERZURA + MORENICA + SHAHZEN(XXX)",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/zerzura-morenica-shahzenxxx-11062026/",
-      "image": null,
-      "id": "17cdfb587110"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Rodeo Lea Drouet",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.les-subs.com/evenement/rodeo-lea-drouet/",
-      "image": null,
-      "id": "af6802b5cab9"
-    },
-    {
-      "venue": "Bar Rock'n Eat",
-      "venue_slug": "rock-n-eat",
-      "title": "Telegraph + Bey",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318493-telegraph-bey.html",
-      "image": null,
-      "id": "2045fb675f16"
-    },
-    {
-      "venue": "Le Sonic",
-      "venue_slug": "sonic",
-      "title": "Otomo Yoshihide (solo) + Table",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://sonic-lyon.fr/evenement/otomo/",
-      "image": null,
-      "id": "cabc2faf2697"
-    },
-    {
-      "venue": "Toï Toï le Zinc",
-      "venue_slug": "toi-toi-le-zinc",
-      "title": "Emma Castellino + Maxence Grinoz + Arkange",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318541-emma-castellino-maxence-grinoz-arkange.html",
-      "image": null,
-      "id": "7d5b4038fda3"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Rien Faire + Bilboquets",
-      "subtitle": "Release Party • En partenariat avec Dur & Doux",
-      "category": "musique",
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": "21:00",
-      "url": "https://www.periscope-lyon.com/concerts/rien-faire-bilboquets/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2025/02/BBE6068-Rien-Faire-credit-Bruno-Belleudy-650x433.jpg",
-      "id": "324d7492342c"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Mirages Et Tendresses Ivana Muller",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-06-11",
-      "date_end": null,
-      "time": "21:00",
-      "url": "https://www.les-subs.com/evenement/mirages-et-tendresses-ivana-muller/",
-      "image": null,
-      "id": "30ecf104959b"
-    },
     {
       "venue": "HEAT",
       "venue_slug": "heat",
@@ -185,19 +16,6 @@
       "id": "e9f69b846b8d"
     },
     {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-lyon",
-      "title": "Lyon BD 2026",
-      "subtitle": null,
-      "category": "underground",
-      "date_start": "2026-06-12",
-      "date_end": "2026-06-13",
-      "time": null,
-      "url": "https://www.opera-lyon.com/fr/programmation/saison-2025-2026/opera-underground/lyon-bd-2026",
-      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/b0375f1f/bd_festival_26.jpg",
-      "id": "d3f1b3028504"
-    },
-    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "NICKY DOLL + 1ère partie",
@@ -209,19 +27,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/nicky-doll-1ere-partie/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/nicky-doll_radiant-bellevue-500x500.jpg",
       "id": "efd238ca555c"
-    },
-    {
-      "venue": "Musée des Confluences",
-      "venue_slug": "musee-des-confluences",
-      "title": "Stéphan Gladieu",
-      "subtitle": null,
-      "category": "Photographie",
-      "date_start": "2026-06-12",
-      "date_end": null,
-      "time": "10:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318496-stephan-gladieu.html",
-      "image": null,
-      "id": "21ab414b379f"
     },
     {
       "venue": "Boomerang",
@@ -486,15 +291,15 @@
     {
       "venue": "TNG",
       "venue_slug": "tng",
-      "title": "Fête de présentation de saison",
-      "subtitle": null,
+      "title": "Présentation de saison + cirque + ateliers – gratuit",
+      "subtitle": "Un spectacle de cirque gratuit et des ateliers jonglage, origami, paillettes... \r\nUne après-midi de fête pour vous présenter la nouvelle saison !\r\nRejoignez la fabrique des souvenirs, saison 2 !",
       "category": "théâtre",
       "date_start": "2026-06-13",
       "date_end": null,
       "time": null,
       "url": "https://www.tng-lyon.fr/evenement/fete-de-presentation-de-saison/",
       "image": null,
-      "id": "1c1b5541c28c"
+      "id": "7216113550ac"
     },
     {
       "venue": "Bar Rock'n Eat",
@@ -976,6 +781,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-318532-midnight-odyssey-waveland-funeste.html",
       "image": null,
       "id": "54bdee598c27"
+    },
+    {
+      "venue": "Blue Monday",
+      "venue_slug": "blue-monday",
+      "title": "COUPE DU MONDE sur grand écran",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-16",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/coupe-du-monde-sur-grand-ecran",
+      "image": null,
+      "id": "78de279ed0b0"
     },
     {
       "venue": "Groupama Stadium",
@@ -1487,15 +1305,15 @@
     {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
-      "title": "Klangkuenstler",
+      "title": "OUTWORLD",
       "subtitle": null,
-      "category": "Musique Electronique",
+      "category": "concert",
       "date_start": "2026-06-19",
       "date_end": null,
       "time": "22:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318542-klangkuenstler.html",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/outworld",
       "image": null,
-      "id": "4642ca07d283"
+      "id": "4dfb2d70d839"
     },
     {
       "venue": "Le Sucre",
@@ -1561,6 +1379,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-318546-fete-de-la-musique-x-encore.html",
       "image": null,
       "id": "eabb4275fa4e"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Skeletos – Festival Kaléïdoscope de la Villa Gillet",
+      "subtitle": "Spectacle musical et dessiné avec Denis Baronnet & Gaëtan Dorémus",
+      "category": "théâtre",
+      "date_start": "2026-06-20",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.tng-lyon.fr/evenement/skeletos-festival-kaleidoscope-de-la-villa-gillet/",
+      "image": null,
+      "id": "2b1009ee3853"
     },
     {
       "venue": "Le Rize",
@@ -1979,6 +1810,19 @@
       "id": "a016513574ea"
     },
     {
+      "venue": "parc de Gerland",
+      "venue_slug": "parc-de-gerland",
+      "title": "Open air XXL Fête de la musique Parc ELECTRO",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-21",
+      "date_end": null,
+      "time": "12:00",
+      "url": "https://agenda.villemorte.fr/event/open-air-xxl-fete-de-la-musique-parc-electro",
+      "image": null,
+      "id": "5e6a3eb8d1b1"
+    },
+    {
       "venue": "la luttine",
       "venue_slug": "la-luttine",
       "title": "CONCERTS PUNK - LA LUTTINE",
@@ -1992,17 +1836,30 @@
       "id": "edb1d8eb6302"
     },
     {
+      "venue": "Blue Monday",
+      "venue_slug": "blue-monday",
+      "title": "FÊTE DE LA MUSIQUE JAM EXTERIEURE !",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-21",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://agenda.villemorte.fr/event/fete-de-la-musique-jam-exterieure",
+      "image": null,
+      "id": "37678107172e"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
-      "title": "Encore X 23:59",
+      "title": "ENCORE x 23:59 - FÊTE DE LA MUSIQUE",
       "subtitle": null,
-      "category": "Musique Electronique",
+      "category": "concert",
       "date_start": "2026-06-21",
       "date_end": null,
       "time": "16:00",
-      "url": "https://www.petit-bulletin.fr/agenda-314660-encore-x-23-59.html",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/encore-x-23-59-fete-de-la-musique",
       "image": null,
-      "id": "e596cf9ddec1"
+      "id": "310c29d384a5"
     },
     {
       "venue": "Les Subsistances",
@@ -2099,13 +1956,13 @@
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "After de la musique",
-      "subtitle": "VOA · Roxo · Ramtarr · Neskeh · Warum",
+      "subtitle": "VOA · Roxo · Neskeh · Warum · Ramtarr",
       "category": "club",
       "date_start": "2026-06-21",
       "date_end": null,
       "time": "23:00",
       "url": "https://le-sucre.eu/events/after-de-la-musique/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/MAGIC-MARDI-182-400x600.jpg",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/visuel-filtre-vertical_-450x600.png",
       "id": "c5b076c3d4d8"
     },
     {
@@ -2203,13 +2060,13 @@
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Magic Mardi",
-      "subtitle": "CTRL",
+      "subtitle": "CTRL · JOWF0 · COCOX",
       "category": "club",
       "date_start": "2026-06-23",
       "date_end": null,
       "time": "18:00",
       "url": "https://le-sucre.eu/events/magic-mardi-80/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/Plan-de-travail-7-480x600.png",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Plan-de-travail-5-1-480x600.png",
       "id": "6470a9be5597"
     },
     {
@@ -2364,7 +2221,7 @@
       "date_start": "2026-06-25",
       "date_end": null,
       "time": "18:30",
-      "url": "https://agenda.villemorte.fr/event/concert-et-dj-set-fai-lo-tieu-2-1",
+      "url": "https://agenda.villemorte.fr/event/concert-et-dj-set-fai-lo-tieu-2",
       "image": null,
       "id": "fa53f6817248"
     },
@@ -2592,15 +2449,15 @@
     {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
-      "title": "REALO & DEELEE S + RECKLESSBOISE + SANDERSCORE + 09PEAS + VERTT",
+      "title": "REALO X DEELEE S + RECKLESSBOISE + SANDERSCORE + 09PEAS + VERTT",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-06-27",
       "date_end": null,
       "time": null,
-      "url": "https://www.transbordeur.fr/evenement/realo-deelee-s-recklessboise-sanderscore-09peas-vertt-27062026/",
+      "url": "https://www.transbordeur.fr/evenement/realo-x-deelee-s-recklessboise-sanderscore-09peas-vertt-27062026/",
       "image": null,
-      "id": "03c2fa074739"
+      "id": "81f071fb7e9a"
     },
     {
       "venue": "Galerie Imag'In",
@@ -2928,6 +2785,19 @@
       "id": "2a3845c73ef0"
     },
     {
+      "venue": "Boskop",
+      "venue_slug": "boskop",
+      "title": "DramaQueer : techno et cinéma queer · Festival Intérieur Queer",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-01",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/dramaqueer-techno-et-cinema-queer-festival-interieur-queer",
+      "image": null,
+      "id": "47dde01bf28e"
+    },
+    {
       "venue": "Espace Gerson",
       "venue_slug": "espace-gerson",
       "title": "Hélène Sido",
@@ -3021,15 +2891,15 @@
     {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
-      "title": "Cercles",
+      "title": "CERCLES - NUITS DE FOURVIERE",
       "subtitle": null,
-      "category": "Danse",
+      "category": "concert",
       "date_start": "2026-07-03",
       "date_end": null,
       "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-317628-cercles.html",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/cercles-nuits-de-fourviere",
       "image": null,
-      "id": "2edb604e0751"
+      "id": "a3d645869957"
     },
     {
       "venue": "Le Petit Salon",
@@ -3082,6 +2952,19 @@
       "url": "https://larayonne.org/evenement/un-ete-a-la-rayonne-afro-night-x-team-paiya/",
       "image": null,
       "id": "3f940d801586"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "CERCLES - NUITS DE FOURVIERE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/cercles-nuits-de-fourviere-2",
+      "image": null,
+      "id": "7a0bff245b10"
     },
     {
       "venue": "Domaine de Lacroix-Laval",
@@ -3799,32 +3682,6 @@
       "id": "5db429245cdf"
     },
     {
-      "venue": "Galerie Roger Tator",
-      "venue_slug": "galerie-roger-tator",
-      "title": "Floris Dutoit",
-      "subtitle": null,
-      "category": "Peinture & Dessin",
-      "date_start": "2026-07-24",
-      "date_end": null,
-      "time": "14:00",
-      "url": "https://www.petit-bulletin.fr/agenda-283273-floris-dutoit.html",
-      "image": null,
-      "id": "c0fe5e147c30"
-    },
-    {
-      "venue": "La BF15",
-      "venue_slug": "la-bf15",
-      "title": "Roni Burger-Leenhardt",
-      "subtitle": null,
-      "category": "Art contemporain et numérique",
-      "date_start": "2026-07-25",
-      "date_end": null,
-      "time": "14:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318497-roni-burger-leenhardt.html",
-      "image": null,
-      "id": "c5b8c3ff6ecd"
-    },
-    {
       "venue": "Bar Rock'n Eat",
       "venue_slug": "rock-n-eat",
       "title": "SHUTDOWN (New York hardcore) + IVY + Nø.V.D",
@@ -3945,7 +3802,7 @@
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "club",
-      "subtitle": "deBasement · Mastaï · TTristana",
+      "subtitle": "deBasement(live) · Mastaï · TTristana",
       "category": "club",
       "date_start": "2026-08-15",
       "date_end": null,
@@ -4137,6 +3994,19 @@
       "id": "eef3ce44c2bb"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "M POKORA",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-09-11",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/m-pokora-3",
+      "image": null,
+      "id": "daa620f30fd7"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "YANNS",
@@ -4176,6 +4046,19 @@
       "id": "535bf99ebb30"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "THE INK FACTORY",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-09-18",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/the-ink-factory-7",
+      "image": null,
+      "id": "572769c0bc35"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Lancement de saison #GO2627 M.A.O CORMONTREUIL + SOCIAL DANCE + LES ONDES CREUSES dj set",
@@ -4202,6 +4085,19 @@
       "id": "c7c1894e196a"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "THE INK FACTORY",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-09-19",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/the-ink-factory-8",
+      "image": null,
+      "id": "6c52f7999e18"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "ASGEIR",
@@ -4226,6 +4122,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/quatuor-leonis/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/quatuor-leonis_radiant-bellevue-500x500.jpg",
       "id": "c76695d08268"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "THE INK FACTORY",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-09-20",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/the-ink-factory-9",
+      "image": null,
+      "id": "dc7cfe42a1e0"
     },
     {
       "venue": "Le Transbordeur",
@@ -4382,6 +4291,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/podkatz-tour-avec-juliette-katz/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/10/podkatz-tour-500x500.jpg",
       "id": "d7122382c78b"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "THE WORLD OF QUEEN",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-01",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/the-world-of-queen",
+      "image": null,
+      "id": "4960f0a10e44"
     },
     {
       "venue": "Marché Gare",
@@ -4878,6 +4800,19 @@
       "id": "bcdbeac7ffd9"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "TIF",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-18",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/tif-18102026/",
+      "image": null,
+      "id": "0744acb2790e"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "PHILIPPE LELLOUCHE",
@@ -5060,6 +4995,19 @@
       "id": "09415190cd55"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "NUIT ENCORE X 23:59",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-24",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/nuit-encore-x-23-59",
+      "image": null,
+      "id": "fd22a993df2f"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "EDGAR-YVES Jr.",
@@ -5164,6 +5112,19 @@
       "id": "8242e4f78810"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "SALON DES VIGNERONS INDEPENDANTS",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-29",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-6",
+      "image": null,
+      "id": "f6bf714aafaf"
+    },
+    {
       "venue": "L'Épicerie Moderne",
       "venue_slug": "l-epicerie-moderne",
       "title": "THE NOTWIST",
@@ -5229,6 +5190,19 @@
       "id": "7723a7394aeb"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "SALON DES VIGNERONS INDEPENDANTS",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-30",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-7",
+      "image": null,
+      "id": "607dbbe31861"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Julien Lieb - Naufragés Tour",
@@ -5266,6 +5240,32 @@
       "url": "https://radiant-bellevue.fr/spectacles/stephan-eicher-2/",
       "image": null,
       "id": "f1ba192f4256"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "SALON DES VIGNERONS INDEPENDANTS",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-31",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-8",
+      "image": null,
+      "id": "556f78490ee9"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "SALON DES VIGNERONS INDEPENDANTS",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-01",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-9",
+      "image": null,
+      "id": "9fb7d9e7718e"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -5333,6 +5333,19 @@
       "id": "647044e6d7b7"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "DJADJA & DINAZ",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/djadja-dinaz-2",
+      "image": null,
+      "id": "b1cc423a6c84"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "LA P’TITE FUMEE",
@@ -5370,6 +5383,19 @@
       "url": "https://larayonne.org/evenement/zelie/",
       "image": null,
       "id": "dc1addf7b1c6"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "DJADJA & DINAZ",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-06",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/djadja-dinaz-3",
+      "image": null,
+      "id": "d74b995d789b"
     },
     {
       "venue": "Bourse du Travail",
@@ -5422,6 +5448,19 @@
       "url": "https://larayonne.org/evenement/kamelot-exit-eden-temperance/",
       "image": null,
       "id": "d473928662e4"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "JOSMAN",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-07",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/josman-2",
+      "image": null,
+      "id": "b2caaeeb065d"
     },
     {
       "venue": "Marché Gare",
@@ -5528,6 +5567,19 @@
       "id": "9225684a9a11"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "THE WORLD OF HANS ZIMMER",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/the-world-of-hans-zimmer-2",
+      "image": null,
+      "id": "39d2f7b50d48"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Metal Pop FUTURE PALACE + AS EVERYTHING UNFOLDS + LUNA KILLS",
@@ -5565,6 +5617,19 @@
       "url": "https://larayonne.org/evenement/luiza/",
       "image": null,
       "id": "b53bc4467397"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "MALIK BENTALHA",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-11",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/malik-bentalha-2",
+      "image": null,
+      "id": "0a1de66e9fd7"
     },
     {
       "venue": "Bourse du Travail",
@@ -5812,6 +5877,19 @@
       "url": "https://larayonne.org/evenement/java-winston-mcanuff/",
       "image": null,
       "id": "3ecd9204e5ee"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "L'HERITAGE GOLDMAN 2",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-19",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/l-heritage-goldman-2-2",
+      "image": null,
+      "id": "7338b507c2c0"
     },
     {
       "venue": "Le Sucre",
@@ -6334,6 +6412,19 @@
       "id": "baf5e7dd1085"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "disiz",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-12-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/disiz",
+      "image": null,
+      "id": "8ccde2d1c8ab"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "ROUNHAA",
@@ -6345,6 +6436,19 @@
       "url": "https://www.transbordeur.fr/evenement/rounhaa-05122026/",
       "image": null,
       "id": "ab4039dfccf2"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "SEBASTIEN TELLIER",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-12-05",
+      "date_end": null,
+      "time": null,
+      "url": "https://radiant-bellevue.fr/spectacles/sebastien-tellier/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/sebastien-tellier-500x500.jpg",
+      "id": "779ec2d36ef1"
     },
     {
       "venue": "La Rayonne",
@@ -6685,6 +6789,19 @@
       "id": "7779dd22faba"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "DISNEY EN CONCERT- SUIVEZ VOS REVES",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-12-18",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-en-concert-suivez-vos-reves",
+      "image": null,
+      "id": "09c915d1621b"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Bernard Werber",
@@ -6778,15 +6895,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "K-pop Shadow Hunters - Tournée",
+      "title": "K-pop Shadow Slayers - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-01-03",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/k-pop-shadow-hunters-tournee-375689.html",
+      "url": "https://www.bourse-du-travail.com/k-pop-shadow-slayers-tournee-375689.html",
       "image": null,
-      "id": "4a2e17fc10b9"
+      "id": "287066c6d89e"
     },
     {
       "venue": "Bourse du Travail",
@@ -6867,6 +6984,19 @@
       "id": "2bc9f50e335e"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "GOLDMEN - CONCERT 100 % GOLDMAN",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-08",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/goldmen-concert-100-goldman",
+      "image": null,
+      "id": "ec92e0bdfaa4"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Thomas Marty",
@@ -6891,6 +7021,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/quatuor-debussy-4/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/quatuor-debussy-500x500.jpg",
       "id": "bba321068f51"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "HARRY POTTER ET LE PRINCE DE SANG-MÉLÉ",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-09",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/harry-potter-et-le-prince-de-sang-mele",
+      "image": null,
+      "id": "209f82847657"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6956,6 +7099,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/laurent-voulzy-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/laurent-voulzy-500x500.jpg",
       "id": "4879a4df52e0"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "ONE NIGHT OF QUEEN",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-13",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/one-night-of-queen-2",
+      "image": null,
+      "id": "04453a839517"
     },
     {
       "venue": "Bourse du Travail",
@@ -7062,6 +7218,32 @@
       "id": "13d54541c128"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "LION, LE ROI EST DE RETOUR",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-16",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/lion-le-roi-est-de-retour",
+      "image": null,
+      "id": "24e177287d53"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "OLIVIER DE BENOIST",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-16",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/olivier-de-benoist",
+      "image": null,
+      "id": "f2a29273ab88"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Paul De Saint Sernin",
@@ -7099,6 +7281,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/cosmos-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/cosmos-500x500.jpg",
       "id": "21d54129f289"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "CLEMENT VIKTOROVITCH",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-19",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/clement-viktorovitch",
+      "image": null,
+      "id": "d0c6f1a9f536"
     },
     {
       "venue": "Le Transbordeur",
@@ -7244,6 +7439,19 @@
       "id": "79fbf3f25756"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "DISNEY SUR GLACE - LE VOYAGE ENCHANTE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-27",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante",
+      "image": null,
+      "id": "1e14a3c1296e"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Akim Omiri - Contexte - Tournée",
@@ -7283,6 +7491,19 @@
       "id": "6f3be52e7251"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "DISNEY SUR GLACE - LE VOYAGE ENCHANTE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-29",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-3",
+      "image": null,
+      "id": "dc7d10130199"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "SKIP THE USE",
@@ -7294,6 +7515,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/skip-the-use-2/",
       "image": null,
       "id": "1a3851ab5122"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "DISNEY SUR GLACE - LE VOYAGE ENCHANTE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-30",
+      "date_end": null,
+      "time": "10:15",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-4",
+      "image": null,
+      "id": "c459f2399be6"
     },
     {
       "venue": "Bourse du Travail",
@@ -7322,6 +7556,19 @@
       "id": "7b16bafac9a6"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "DISNEY SUR GLACE - LE VOYAGE ENCHANTE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-31",
+      "date_end": null,
+      "time": "10:15",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-7",
+      "image": null,
+      "id": "6ddc25fd7aa2"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "JF PAUZE",
@@ -7346,6 +7593,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/maldonne/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/maldonne-500x500.jpg",
       "id": "915187f0515c"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "FOREVER - TRIBUTE MICHAEL JACKSON",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-02",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/forever-tribute-michael-jackson",
+      "image": null,
+      "id": "9922e78a05bc"
     },
     {
       "venue": "Bourse du Travail",
@@ -7465,6 +7725,19 @@
       "id": "ee70147ac814"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "ALDEBERT",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-06",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/aldebert-3",
+      "image": null,
+      "id": "bf943250adf8"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "BAZAR CIRCUS",
@@ -7476,6 +7749,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/bazar-circus/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/bazar-circus-500x500.jpg",
       "id": "38960eba47a9"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "SQUARE ENIX",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-07",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/square-enix",
+      "image": null,
+      "id": "78358ff6e208"
     },
     {
       "venue": "La Rayonne",
@@ -7515,6 +7801,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/clash-rock-de-schubert-a-nirvana/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/Affiche_Rock_1920x1080-RVB-sans-texte-logo2-500x500.jpg",
       "id": "d27f8f5373c9"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "NAWELL MADANI",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/nawell-madani",
+      "image": null,
+      "id": "c3fbb4575931"
     },
     {
       "venue": "Bourse du Travail",
@@ -7647,6 +7946,45 @@
       "id": "301479fec107"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "HOLIDAY ON ICE - CINEMA OF DREAMS",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-19",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams",
+      "image": null,
+      "id": "c8f5a9b3b6db"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "HOLIDAY ON ICE - CINEMA OF DREAMS",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-20",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-2",
+      "image": null,
+      "id": "9769b7c5282e"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "HOLIDAY ON ICE - CINEMA OF DREAMS",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-21",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-4",
+      "image": null,
+      "id": "30ff6eb444ff"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LIO",
@@ -7777,6 +8115,19 @@
       "id": "97db4614abbc"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "MARINE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-03-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/marine",
+      "image": null,
+      "id": "d9ab369a78e0"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Arnaud Tsamere",
@@ -7801,6 +8152,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/la-jalousie/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-jalousie-500x500.jpg",
       "id": "ded7e3527b83"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "LES ANNEES 80",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-03-06",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/les-annees-80-2",
+      "image": null,
+      "id": "f2203f90a9cc"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7998,6 +8362,19 @@
       "id": "22556bba9285"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "BERNARD LAVILLIERS",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-03-17",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/bernard-lavilliers",
+      "image": null,
+      "id": "ecf6cb583dfe"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Messmer - 13hz",
@@ -8050,6 +8427,19 @@
       "id": "52956a3b56ca"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "MICHELE LAROQUE & KAD MERAD - L'AGE BETE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-03-19",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/michele-laroque-kad-merad-l-age-bete",
+      "image": null,
+      "id": "ab31a78bac04"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LA NOCE D’ALFONSE",
@@ -8061,6 +8451,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/la-noce-dalfonse/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-noce-d-alphonse-500x500.jpg",
       "id": "443c43eaf43c"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "TOUJOURS VIVANT - 500 CHORISTES CHANTENT AVEC JOHNNY HALLYDAY",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-03-20",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/toujours-vivant-500-choristes-chantent-avec-johnny-hallyday",
+      "image": null,
+      "id": "8f7fda5d4582"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -8219,6 +8622,19 @@
       "id": "cdec24ceb9ac"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "PATRICK FIORI",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-04-03",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/patrick-fiori-2",
+      "image": null,
+      "id": "ad884cc0bdb7"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LES AVENTURIERS DE MINUIT",
@@ -8230,6 +8646,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/les-aventuriers-de-minuit/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/les-aventuriers-500x500.jpg",
       "id": "245f974bc579"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "GLORIOUS",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-04-04",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/glorious",
+      "image": null,
+      "id": "7b96eb0ba33b"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -8308,6 +8737,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/art-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/ART-V2-500x500.jpg",
       "id": "7c96323a9540"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "STAR WARS IN CONCERT : UN NOUVEL ESPOIR",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-04-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/star-wars-in-concert-un-nouvel-espoir",
+      "image": null,
+      "id": "68e361abf55d"
     },
     {
       "venue": "Bourse du Travail",
@@ -8583,6 +9025,19 @@
       "id": "fd2dbd11a0c5"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "SUZANE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-05-18",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/suzane",
+      "image": null,
+      "id": "064cf993f528"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Les Gros Patinent Bien",
@@ -8739,6 +9194,19 @@
       "id": "20f5a3ecd5f4"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Afterwork : Food, Drink & Happy Hour !",
+      "subtitle": null,
+      "category": "afterwork",
+      "date_start": "2027-06-11",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/afterwork-food-drink-happy-hour-2/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/05/marceau-bergeroux98-1080x720.jpg",
+      "id": "d8135be6edec"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Julien Santini",
@@ -8754,15 +9222,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Frédéric François - Tournée",
+      "title": "Frederic Francois",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-06-13",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/frederic-francois-tournee-382773.html",
+      "url": "https://www.bourse-du-travail.com/frederic-francois-382773.html",
       "image": null,
-      "id": "33f9814d08a8"
+      "id": "457449b0dc0d"
     },
     {
       "venue": "Bourse du Travail",
@@ -8778,6 +9246,19 @@
       "id": "e7ead1cc74bb"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "GENERATION CELINE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-09-29",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/generation-celine-2",
+      "image": null,
+      "id": "397f993e2acf"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LOUIS BERTIGNAC",
@@ -8791,6 +9272,19 @@
       "id": "2b3f11578826"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "I GOTTA FEELING – SAISON 3",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-11-18",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/i-gotta-feeling-saison-3",
+      "image": null,
+      "id": "4ec50a30dde6"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "La Troupe Du Jamel Comedy Club",
@@ -8802,6 +9296,58 @@
       "url": "https://www.bourse-du-travail.com/la-troupe-du-jamel-comedy-club-382518.html",
       "image": null,
       "id": "1a1f57f7583b"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "GAEL FAYE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-11-27",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/gael-faye",
+      "image": null,
+      "id": "911fbf3c4758"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "PHILIPPE CAVERIVIERE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-12-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/philippe-caveriviere",
+      "image": null,
+      "id": "99b5837cebad"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "FESTIVAL MONDIAL DE LA MAGIE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2028-01-14",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/festival-mondial-de-la-magie",
+      "image": null,
+      "id": "348acee203b5"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "ERA",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2028-03-01",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/era-2",
+      "image": null,
+      "id": "76077a9e7641"
     },
     {
       "venue": "Radiant-Bellevue",
