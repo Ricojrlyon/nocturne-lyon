@@ -30,6 +30,7 @@ from scrapers import (
 )
 from scrapers.aggregators import villemorte, petit_bulletin
 from scrapers.dedup import deduplicate
+from scrapers.geo import resolve_new_venues
 
 # Venue-specific scrapers — priority 100 (authoritative for their venue).
 # Each entry is (display_name, callable returning List[Event]).
@@ -140,6 +141,34 @@ def main() -> int:
 
     # 7) Sort by date then time then venue.
     unique.sort(key=lambda e: (e.date_start, e.time or "00:00", e.venue))
+
+
+    # 8) Geocode any new venues not already in the frontend's hardcoded
+    #    VENUE_ARRONDISSEMENT map. Results are cached in
+    #    venue_arrondissements.json. Only truly new venues trigger HTTP
+    #    requests (1 req/sec). The frontend merges this file with its
+    #    hardcoded map at load time (hardcoded entries win on conflict).
+    all_venues = list({e.venue for e in unique})
+    # Venues already hardcoded in index.html — no need to geocode.
+    FRONTEND_HARDCODED = {
+        "Opéra national de Lyon", "Les Subsistances", "Musée des Beaux-Arts",
+        "A Thou Bout d'Chant", "Maison de l'écologie", "La Salle de Bains",
+        "Alternatibar", "Kraspek Myzik", "Le Bec de Jazz", "Hot Club",
+        "Salle Rameau", "Le Sucre", "Marché Gare", "Le Périscope",
+        "Chapelle de la Trinité", "Musée des Confluences", "Goethe-Institut",
+        "Galerie Henri Chartier", "Comédie Odéon", "Fnac Bellecour",
+        "Bourse du Travail", "Auditorium de Lyon", "La Marquise",
+        "Agend'arts", "Musées Gadagne", "Salle Molière", "Le Sonic",
+        "Big White", "Musée d'Art Contemporain", "La Halle Tony Garnier",
+        "La Commune", "Le Petit Salon", "Boskop", "Galerie Roger Tator",
+        "La Boulangerie du Prado", "Le Ninkasi", "Le 6e Continent",
+        "Maison de la Danse", "HEAT", "Institut Lumière", "TNG",
+        "Bar Rock'n Eat", "Le Transbordeur", "La Rayonne",
+        "Toï Toï le Zinc", "Café Nanoum", "Radiant-Bellevue", "LDLC Arena",
+        "L'Épicerie Moderne", "Grrrnd Zero", "La Machinerie - Bizarre !",
+        "Domaine de Lacroix-Laval", "Espace Gerson",
+    }
+    resolve_new_venues(all_venues, known_venues=FRONTEND_HARDCODED, verbose=True)
 
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
