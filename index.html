@@ -874,8 +874,8 @@ const VENUE_GROUPS = [
 const VENUE_DISPLAY_ORDER = ['soirée', 'concerts', 'spectacles & musiques', 'lieux hybrides', 'théâtre & danse', 'classique', 'musées & galeries', 'autre'];
 
 /* venue -> arrondissement mapping. Researched against Wikipedia, the
-   official Lyon city directory, and venue websites. Unmapped venues
-   default to 'Autre' via eventArrondissement(). */
+   official Lyon city directory, Petit Bulletin, and venue websites.
+   Unmapped venues default to 'Autre' via eventArrondissement(). */
 const VENUE_ARRONDISSEMENT = {
   // Lyon 1er (Terreaux, Pentes Croix-Rousse)
   'Opéra national de Lyon': '1er',
@@ -883,14 +883,16 @@ const VENUE_ARRONDISSEMENT = {
   'Musée des Beaux-Arts': '1er',
   "A Thou Bout d'Chant": '1er',
   "Maison de l'écologie": '1er',
-  'La Salle de Bains': '1er',          // galerie d'art contemporain, 1 rue Louis Vitet
-  'La Salle de bains': '1er',          // case variant seen in events.json
-  'Alternatibar': '1er',                // 126 Montée de la Grande-Côte
-  "L'Alternatibar": '1er',              // case variant seen in events.json
-  'Kraspek Myzik': '1er',               // 20 Montée Saint-Sébastien
-  'Le Bec de Jazz': '1er',              // 19 rue Burdeau
-  'Hot Club': '1er',                    // 26 rue Lanterne, jazz
-  'Salle Rameau': '1er',                // 29 rue de la Martinière
+  'La Salle de Bains': '1er',     // 1 rue Louis Vitet
+  'La Salle de bains': '1er',     // case variant
+  "L'Alternatibar": '1er',        // case variant
+  'Alternatibar': '1er',          // 126 montée Grande-Côte
+  'Kraspek Myzik': '1er',         // 20 montée Saint-Sébastien
+  'Le Bec de Jazz': '1er',        // 19 rue Burdeau
+  'Hot Club': '1er',              // 26 rue Lanterne
+  'Salle Rameau': '1er',          // 29 rue de la Martinière
+  'La BF15': '1er',               // quai de la Pêcherie
+  'Le Bleu du Ciel': '1er',       // 12 rue des Fantasques
 
   // Lyon 2e (Presqu'île, Confluence)
   'Le Sucre': '2e',
@@ -900,59 +902,77 @@ const VENUE_ARRONDISSEMENT = {
   'Musée des Confluences': '2e',
   'Goethe-Institut': '2e',
   'Galerie Henri Chartier': '2e',
-  'Comédie Odéon': '2e',
-  'Fnac Bellecour': '2e',               // Place Bellecour
+  'Comédie Odéon': '2e',          // 6 rue Grôlée
+  'Fnac Bellecour': '2e',
 
-  // Lyon 3e (Part-Dieu, Préfecture)
+  // Lyon 3e (Part-Dieu, Guillotière)
   'Bourse du Travail': '3e',
   'Auditorium de Lyon': '3e',
-  'La Marquise': '3e',                  // péniche 20 quai Victor Augagneur
+  'La Marquise': '3e',            // péniche 20 quai Victor Augagneur
+  'Palais de la Mutualité - Salle Édouard Herriot': '3e', // 1 place Antonin Jutard
+  'Palais de la Mutualité Salle Edouard Herriot': '3e',   // variante sans tiret/accent
+  'Salle Des Rancy': '3e',        // 249 rue Vendôme
+  'Lieu Privé à Montchat 69003': '3e',
 
-  // Lyon 4e (Croix-Rousse)
+  // Lyon 4e (Croix-Rousse plateau)
   "Agend'arts": '4e',
+  'Aquarium ciné-café': '4e',     // 10 rue Dumont
 
-  // Lyon 5e (Vieux Lyon, Fourvière)
+  // Lyon 5e (Vieux Lyon, Fourvière, Saint-Just)
   'Musées Gadagne': '5e',
-  'Salle Molière': '5e',
-  'Le Sonic': '5e',                     // péniche 4 quai des Étroits
-  'Big White': '5e',
-  'Espace Gerson': '5e',                // 1 place Gerson, café-théâtre (humour)
+  'Salle Molière': '5e',          // 18 quai de Bondy
+  'Le Sonic': '5e',               // péniche 4 quai des Étroits
+  'Big White': '5e',              // 22 rue Lainerie
+  'Espace Gerson': '5e',          // 1 place Gerson
+  'Maison des Passages': '5e',    // 44 rue Saint-Georges
 
   // Lyon 6e (Brotteaux, Tête d'Or, Cité Internationale)
   "Musée d'Art Contemporain": '6e',
 
-  // Lyon 7e (Gerland, Guillotière)
+  // Lyon 7e (Gerland, Guillotière, Jean Macé)
   'La Halle Tony Garnier': '7e',
-  'La Commune': '7e',
-  'Le Petit Salon': '7e',
-  'Boskop': '7e',
-  'Galerie Roger Tator': '7e',
-  'La Boulangerie du Prado': '7e',      // 69 rue Sébastien Gryphe
-  'Le Ninkasi': '7e',                    // 267 rue Marcel Mérieux, Gerland
-  'Le 6e Continent': '7e',              // 51 rue Saint-Michel
+  'La Commune': '7e',             // 3 rue Pré-Gaudry
+  'Le Petit Salon': '7e',         // 3 rue de Cronstadt
+  'Boskop': '7e',                 // 60 rue Sébastien Gryphe
+  'Galerie Roger Tator': '7e',    // 36 rue d'Anvers
+  'La Boulangerie du Prado': '7e',// 69 rue Sébastien Gryphe
+  'Le Ninkasi': '7e',             // 267 rue Marcel Mérieux
+  'Le 6e Continent': '7e',        // 51 rue Saint-Michel
+  'Gamut': '7e',                  // 7 rue Prosper Chappet
+  'La Luttine': '7e',             // 91 rue Montesquieu
+  'Blue Monday': '7e',            // 32 rue Pasteur
+  'Parc Blandan': '7e',           // parc militaire réhabilité, av Berthelot
+  'Parc de Gerland': '7e',        // 24 allée Pierre de Coubertin
 
-  // Lyon 8e (Monplaisir, Etats-Unis)
+  // Lyon 8e (Monplaisir, États-Unis, Bachut)
   'Maison de la Danse': '8e',
   'HEAT': '8e',
-  'Institut Lumière': '8e',
+  'Institut Lumière': '8e',       // 25 rue du Premier Film
+  'Place du 8 mai 1945, Lyon 8e': '8e',
 
   // Lyon 9e (Vaise, La Duchère)
-  'TNG': '9e',
-  "Bar Rock'n Eat": '9e',
+  'TNG': '9e',                    // 23 rue de Bourgogne
+  "Bar Rock'n Eat": '9e',         // 32 quai d'Arloing
 
   // Villeurbanne
   'Le Transbordeur': 'Villeurbanne',
   'La Rayonne': 'Villeurbanne',
   'Toï Toï le Zinc': 'Villeurbanne',
-  'Café Nanoum': 'Villeurbanne',        // 16 rue Branly
+  'Café Nanoum': 'Villeurbanne',  // 16 rue Branly
+  'Le Rize': 'Villeurbanne',      // 23 cours de la République
+  'Villeurbanne': 'Villeurbanne', // venue générique VM
+  'Villeurbanne ENM': 'Villeurbanne',
 
   // Autre (banlieue, Métropole)
-  'Radiant-Bellevue': 'Autre',          // Caluire-et-Cuire
-  'LDLC Arena': 'Autre',                // Décines
-  "L'Épicerie Moderne": 'Autre',        // Feyzin
-  'Grrrnd Zero': 'Autre',               // Vaulx-en-Velin
-  'La Machinerie - Bizarre !': 'Autre', // Vénissieux, 9 rue Louis Jouvet
-  'Domaine de Lacroix-Laval': 'Autre',  // Marcy-l'Étoile, parc départemental
+  'Radiant-Bellevue': 'Autre',    // Caluire-et-Cuire
+  'LDLC Arena': 'Autre',          // Décines
+  "L'Épicerie Moderne": 'Autre',  // Feyzin
+  'Grrrnd Zero': 'Autre',         // Vaulx-en-Velin
+  'La Machinerie - Bizarre !': 'Autre', // Vénissieux
+  'Domaine de Lacroix-Laval': 'Autre',  // Marcy-l'Étoile
+  "L'Aqueduc": 'Autre',           // Dardilly
+  'Jack Jack - MJC Aragon': 'Autre', // Bron
+  'Bois de Sermenaz à Rillieux-la-Pape': 'Autre',
 };
 
 const ARRONDISSEMENT_ORDER = ['1er', '2e', '3e', '4e', '5e', '6e', '7e', '8e', '9e', 'Villeurbanne', 'Autre'];
