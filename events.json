@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-15T08:16:37.792919+00:00",
-  "count": 710,
+  "generated_at": "2026-06-15T11:50:50.090215+00:00",
+  "count": 715,
   "events": [
     {
       "venue": "La Commune",
@@ -44,7 +44,7 @@
     {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
-      "title": "Espagne / Cap Vert : diffusion Coupe du Monde 2026",
+      "title": "ANNULE / Espagne vs Cap Vert : diffusion Coupe du Monde 2026",
       "subtitle": null,
       "category": "rencontre",
       "date_start": "2026-06-15",
@@ -52,7 +52,7 @@
       "time": "18:00",
       "url": "https://larayonne.org/evenement/espagne-cap-vert-diffusion-coupe-du-monde-2026/",
       "image": null,
-      "id": "23d1891f36f8"
+      "id": "7cee1d32b025"
     },
     {
       "venue": "Le Transbordeur",
@@ -926,6 +926,19 @@
       "id": "5ee92e1c36a0"
     },
     {
+      "venue": "Grand Temple de Lyon",
+      "venue_slug": "grand-temple-de-lyon",
+      "title": "SACRE VOYAGE - Spiritus sanctus et paillettes",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-20",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/sacre-voyage-spiritus-sanctus-et-paillettes",
+      "image": null,
+      "id": "e7540c9957ce"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "JETLAG GANG",
@@ -1093,6 +1106,19 @@
       "url": "https://yp.events/afae3c7a-0148-4311-81a2-61f50da505ea/THIS-IS-TECHNO-Rave-COIL-Cheche-more?from=siteweb",
       "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisisTechnoRave_20062026_lepetitsalon-1024x576.jpg",
       "id": "a2eb507dd4ff"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Fête de la musique : Boum Boum Kids",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-06-21",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/fete-de-la-musique/",
+      "image": "https://h-eat.eu/wp-content/uploads/2024/06/HEAT-Mini-Sonores-bd-@gcplyon-067-480x720.jpg",
+      "id": "e6a130a9dc49"
     },
     {
       "venue": "La Commune",
@@ -1524,19 +1550,6 @@
       "id": "2b2ac46097e0"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "LE PRINCE HARRY + NO SEX LAST NIGHT + MONIKA",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-25",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/le-prince-harry-no-sex-last-night-monika-25062026/",
-      "image": null,
-      "id": "e3b8a1e62e53"
-    },
-    {
       "venue": "Galerie Imag'In",
       "venue_slug": "galerie-imag-in",
       "title": "Bern Dodet",
@@ -1587,6 +1600,19 @@
       "url": "https://agenda.villemorte.fr/event/concert-et-dj-set-fai-lo-tieu-2-1",
       "image": null,
       "id": "fa53f6817248"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "LE PRINCE HARRY + NO SEX LAST NIGHT + MONIKA",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/le-prince-harry-no-sex-last-night-monika-25062026/",
+      "image": null,
+      "id": "8881b0e5cecb"
     },
     {
       "venue": "Improvidence",
@@ -1680,32 +1706,6 @@
       "id": "c12fa9aed947"
     },
     {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "club x RHR Curates",
-      "subtitle": "Cashu · Kontronatura · RHR",
-      "category": "club",
-      "date_start": "2026-06-26",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/club-x-rhr-curates/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/04/RHR_edited_lowress-3468-1-1-600x400.jpg",
-      "id": "700858ca6d02"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "MUSA + VVS237 + AYUUR + NESBO + TRAPPERS ONLY + GOUAP + ELI + KIMANI",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-26",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/musa-vvs237-ayuur-nesbo-trappers-only-gouap-eli-kimani-26062026/",
-      "image": null,
-      "id": "116180b20256"
-    },
-    {
       "venue": "Galerie Imag'In",
       "venue_slug": "galerie-imag-in",
       "title": "Bern Dodet",
@@ -1797,6 +1797,32 @@
       "id": "e11028121fe4"
     },
     {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "club x RHR Curates",
+      "subtitle": "Cashu · Kontronatura · RHR",
+      "category": "club",
+      "date_start": "2026-06-26",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://le-sucre.eu/events/club-x-rhr-curates/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/04/RHR_edited_lowress-3468-1-1-600x400.jpg",
+      "id": "86e2fc6e33d2"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "MUSA + VVS237 + AYUUR + NESBO + TRAPPERS ONLY + GOUAP + ELI + KIMANI",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-26",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://www.transbordeur.fr/evenement/musa-vvs237-ayuur-nesbo-trappers-only-gouap-eli-kimani-26062026/",
+      "image": null,
+      "id": "12011f152261"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "THIS IS TECHNO RAVE : SUNT / EVY JOY & MORE",
@@ -1834,19 +1860,6 @@
       "url": "https://lacommune.co/event/boiler-yufrip-pride-after-party-lyon-2026/",
       "image": null,
       "id": "92655d2fbf94"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "club xMKNK",
-      "subtitle": "Densha Crisis · Kilbourne · Manu Le Malin · RABBeAT",
-      "category": "club",
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/club-xmknk/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/Shotgun_1080x1440-450x600.jpg",
-      "id": "61e0d8b32d9d"
     },
     {
       "venue": "Le Transbordeur",
@@ -1901,6 +1914,19 @@
       "id": "8b2ec34ba2e7"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "Hip Hop Talents",
+      "subtitle": null,
+      "category": "Rap",
+      "date_start": "2026-06-27",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.petit-bulletin.fr/agenda-310675-hip-hop-talents.html",
+      "image": null,
+      "id": "27c0fd374229"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Minipousses Cirque",
@@ -1938,6 +1964,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-318695-toi-moi.html",
       "image": null,
       "id": "f0132feca39e"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "Blob Party X Transbo open-air",
+      "subtitle": null,
+      "category": "Musique Electronique",
+      "date_start": "2026-06-27",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318705-blob-party-x-transbo-open-air.html",
+      "image": null,
+      "id": "b8fcc12d7350"
     },
     {
       "venue": "Aquarium ciné-café",
@@ -1979,6 +2018,19 @@
       "id": "9bff3a4764b4"
     },
     {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "club xMKNK",
+      "subtitle": "Densha Crisis · Kilbourne · Manu Le Malin · RABBeAT",
+      "category": "club",
+      "date_start": "2026-06-27",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://le-sucre.eu/events/club-xmknk/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/Shotgun_1080x1440-450x600.jpg",
+      "id": "dd185b00d265"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "25EMEHEURE / ANDEREX / SO JUICE & MORE",
@@ -2016,32 +2068,6 @@
       "url": "https://lacommune.co/event/atelier-broderie-vetements-seconde-main-le-dressing-de-lea-lieu-dit/",
       "image": null,
       "id": "7c9c5bf7355e"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "S.society",
-      "subtitle": "Lacchesi · JKS",
-      "category": "club",
-      "date_start": "2026-06-28",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/s-society-151/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/JKS-LACCHESI_-600x338.png",
-      "id": "d9d779f30208"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "BBNO$",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-28",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/bbno/",
-      "image": null,
-      "id": "053a6bca8843"
     },
     {
       "venue": "Galerie Imag'In",
@@ -2094,6 +2120,32 @@
       "url": "https://larayonne.org/evenement/un-ete-a-la-rayonne-au-choeur-de-soie-un-temps-soie-rock/",
       "image": null,
       "id": "17f1f0606bd9"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "S.society",
+      "subtitle": "Lacchesi · JKS",
+      "category": "club",
+      "date_start": "2026-06-28",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://le-sucre.eu/events/s-society-151/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/JKS-LACCHESI_-600x338.png",
+      "id": "69edcb4c54e8"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "BBNO$",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-28",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/bbno/",
+      "image": null,
+      "id": "bf7d268be773"
     },
     {
       "venue": "Groupama Stadium",
@@ -2226,19 +2278,6 @@
       "id": "ee046872cc93"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "ALTIN GÜN",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-07-01",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/altin-gun-01072026/",
-      "image": null,
-      "id": "2e1f7e7c67b6"
-    },
-    {
       "venue": "La Salle de Bains",
       "venue_slug": "la-salle-de-bains",
       "title": "Street Queer",
@@ -2263,6 +2302,19 @@
       "url": "https://agenda.villemorte.fr/event/dramaqueer-techno-et-cinema-queer-festival-interieur-queer",
       "image": null,
       "id": "47dde01bf28e"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "ALTIN GÜN",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-07-01",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/altin-gun-01072026/",
+      "image": null,
+      "id": "fc5fffbb0217"
     },
     {
       "venue": "Improvidence",
@@ -2939,6 +2991,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-317630-croire-aux-fauves.html",
       "image": null,
       "id": "01de463ab828"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS HOUSE : SHAMANISM",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-07-11",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://yp.events/033aee85-4057-405d-86a2-894edbb7c85f/THIS-IS-HOUSE-Shamanism-Crew-more?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/Shamanism_11072026_lepetitsalon-1024x564.jpg",
+      "id": "26ab15ae1c45"
     },
     {
       "venue": "Galerie Imag'In",
