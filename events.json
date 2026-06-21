@@ -1,410 +1,7 @@
 {
-  "generated_at": "2026-06-20T08:45:47.397549+00:00",
-  "count": 708,
+  "generated_at": "2026-06-21T09:40:54.187491+00:00",
+  "count": 686,
   "events": [
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Nana Groov’ : Danse, Expo & Musique",
-      "subtitle": null,
-      "category": "danse",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/nanagroov-expo-danse-musique/",
-      "image": "https://h-eat.eu/wp-content/uploads/2025/09/nanagroov-heat-576x720.jpg",
-      "id": "9424e358146a"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Fête de la musique : samedi drag & club",
-      "subtitle": null,
-      "category": "festival",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/fete-de-la-musique-lyon-samedi/",
-      "image": null,
-      "id": "c253388a7a0a"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "cco-la-rayonne",
-      "title": "Fête de la musique x Encore",
-      "subtitle": null,
-      "category": "Musique Electronique",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.petit-bulletin.fr/agenda-318546-fete-de-la-musique-x-encore.html",
-      "image": null,
-      "id": "eabb4275fa4e"
-    },
-    {
-      "venue": "Le Rize",
-      "venue_slug": "le-rize",
-      "title": "[REPORTÉ CAUSE CANICULE] Balade ''Remonter la Rize jusqu'à sa source\"",
-      "subtitle": null,
-      "category": "rencontre",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "06:30",
-      "url": "https://agenda.villemorte.fr/event/balade-remonter-la-rize-jusqua-sa-source",
-      "image": null,
-      "id": "6516486a371e"
-    },
-    {
-      "venue": "Maison des Passages",
-      "venue_slug": "maison-des-passages",
-      "title": "Salon du livre indépendant et politique Lyon - Livres - Nouvelles Résistances",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "08:00",
-      "url": "https://agenda.villemorte.fr/event/salon-du-livre-independant-et-politique-lyon-livres-nouvelles-resistances",
-      "image": null,
-      "id": "26a22495b150"
-    },
-    {
-      "venue": "Le jusqu'ici",
-      "venue_slug": "le-jusqu-ici",
-      "title": "Semaine Mujawara, construire un internationalisme par le bas. Discussion avec des membres du collectif Roja sur la situation en Iran.",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "08:30",
-      "url": "https://agenda.villemorte.fr/event/semaine-mujawara-construire-un-internationalisme-par-le-bas-discussion-avec-des-membres-du-collectif-roja-sur-la-situation-en-iran",
-      "image": null,
-      "id": "b9732265102a"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 Breakfast Dialogues",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "10:00",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-breakfast-dialogues/",
-      "image": null,
-      "id": "a0491c1da573"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Atelier Danse Pour Enfants",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "11:00",
-      "url": "https://www.les-subs.com/evenement/atelier-danse-pour-enfants/",
-      "image": null,
-      "id": "74fef6e5d978"
-    },
-    {
-      "venue": "berges du Rhône",
-      "venue_slug": "berges-du-rhone",
-      "title": "GZ hors les murs : Omar Ayari + Empire Sauvage + Unom + Nati Boomboom + Eau Chaude Sanitaire + Warzou",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "13:00",
-      "url": "https://agenda.villemorte.fr/event/gz-hors-les-murs-omar-ayari-empire-sauvage-unom-nati-boomboom-eau-chaude-sanitaire",
-      "image": null,
-      "id": "23f4ce3710a6"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Quatre-quarts",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "14:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318516-quatre-quarts.html",
-      "image": null,
-      "id": "38a2ad4992c5"
-    },
-    {
-      "venue": "Musée des Beaux-Arts",
-      "venue_slug": "musee-des-beaux-arts",
-      "title": "L'Égypte, histoire d'une passion",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "14:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318763-l-egypte-histoire-d-une-passion.html",
-      "image": null,
-      "id": "7d10137f287e"
-    },
-    {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-lyon",
-      "title": "Concert Express",
-      "subtitle": "Pleins feux sur les instruments anciens",
-      "category": "concert",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "15:15",
-      "url": "https://www.opera-lyon.com/fr/programmation/saison-2025-2026/concert/concert-express-6",
-      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/cf1f9d3d/concert_20_06_ok.jpg",
-      "id": "8840a665ae02"
-    },
-    {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Gratuit Jeune Public MÊME PAS CAP ! 6e édition LA FÊTE DE LA MUSIQUE DES ENFANTS",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "15:30",
-      "url": "https://marchegare.fr/agenda/meme-pas-cap-6e-edition",
-      "image": null,
-      "id": "5f4a360051d7"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 Prelude To Violenceghida Hachicho",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "16:30",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-prelude-to-violenceghida-hachicho/",
-      "image": null,
-      "id": "b4eb95d40f77"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Prelude to violence",
-      "subtitle": null,
-      "category": "Spectacles Divers",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "16:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318517-prelude-to-violence.html",
-      "image": null,
-      "id": "a7cd95d349dc"
-    },
-    {
-      "venue": "Boskop",
-      "venue_slug": "boskop",
-      "title": "Entretien avec nos vampires · Drag Show + Projection surprise",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/entretien-avec-nos-vampires-drag-show-projection-surprise",
-      "image": null,
-      "id": "f2298e7a26f8"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 Rencontres Improvisees 2",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-rencontres-improvisees-2/",
-      "image": null,
-      "id": "5ee92e1c36a0"
-    },
-    {
-      "venue": "Grand Temple de Lyon",
-      "venue_slug": "grand-temple-de-lyon",
-      "title": "SACRE VOYAGE - Spiritus sanctus et paillettes",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/sacre-voyage-spiritus-sanctus-et-paillettes",
-      "image": null,
-      "id": "e7540c9957ce"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "AKAJU + L-ROBIN + EVA",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.transbordeur.fr/evenement/akaju-l-robin-eva-20062026/",
-      "image": null,
-      "id": "24a3f3ace411"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 Heartquake Ekin Tunceli",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-heartquake-ekin-tunceli/",
-      "image": null,
-      "id": "c69fb61bd0b4"
-    },
-    {
-      "venue": "Alternatibar",
-      "venue_slug": "alternatibar",
-      "title": "CONCERTS :  Graine de chien  / Tom et Léo  Avitabile",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://agenda.villemorte.fr/event/concerts-graine-de-chien-tom-et-leo-avitabile",
-      "image": null,
-      "id": "d0b4d7bb6ad9"
-    },
-    {
-      "venue": "Kotopo",
-      "venue_slug": "kotopo",
-      "title": "Fitili en concert au Kotopo",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://agenda.villemorte.fr/event/fitili-en-concert-au-kotopo",
-      "image": null,
-      "id": "83e30e106145"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "[Un été à La Rayonne] Blood Incantation (Europe tour 2026) +  TSCHAIKOWSKY & KANN",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://larayonne.org/evenement/blood-incantation-absolute-elsetour-europe-2026-nate-mercereau/",
-      "image": null,
-      "id": "866486c8a349"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "cco-la-rayonne",
-      "title": "Blood Incantation + Nate Mercereau",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318545-blood-incantation-nate-mercereau.html",
-      "image": null,
-      "id": "292d067d8fb0"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 Le Sacre Du Printemps Roger Bernat",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-le-sacre-du-printemps-roger-bernat/",
-      "image": null,
-      "id": "787fde456b53"
-    },
-    {
-      "venue": "Auditorium de Lyon",
-      "venue_slug": "auditorium-de-lyon",
-      "title": "Réseau Démos",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318566-reseau-demos.html",
-      "image": null,
-      "id": "81c82df8d6f6"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 Bless The Sound That Saved A Witch Like Me Benjamin Kahn",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-bless-the-sound-that-saved-a-witch-like-me-benjamin-kahn/",
-      "image": null,
-      "id": "fc46f5de8144"
-    },
-    {
-      "venue": "Le Sonic",
-      "venue_slug": "sonic",
-      "title": "KIRARA // BLAME – RELEASE PARTY",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "21:00",
-      "url": "https://sonic-lyon.fr/evenement/kirara-blame-release-party/",
-      "image": null,
-      "id": "739e90fce0da"
-    },
-    {
-      "venue": "Auditorium de Lyon",
-      "venue_slug": "auditorium-de-lyon",
-      "title": "Grand concert gratuit",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "21:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318567-grand-concert-gratuit.html",
-      "image": null,
-      "id": "03727a12678b"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "club x Union Trance Mission",
-      "subtitle": "Abr. (live) · Astra Obscura (live) · Dica (live) · LNAX",
-      "category": "club",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "23:00",
-      "url": "https://le-sucre.eu/events/club-x-union-trance-mission/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/04/Shoot7_EyeLOUISE-468x600.jpg",
-      "id": "473759fd0415"
-    },
-    {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "THIS IS TECHNO RAVE : COIL / CHECHE & MORE",
-      "subtitle": null,
-      "category": "club",
-      "date_start": "2026-06-20",
-      "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/afae3c7a-0148-4311-81a2-61f50da505ea/THIS-IS-TECHNO-Rave-COIL-Cheche-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisisTechnoRave_20062026_lepetitsalon-1024x576.jpg",
-      "id": "a2eb507dd4ff"
-    },
     {
       "venue": "HEAT",
       "venue_slug": "heat",
@@ -547,6 +144,19 @@
       "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-la-cite-bouge-cie-relevant/",
       "image": null,
       "id": "0ad323cf4eb3"
+    },
+    {
+      "venue": "Boskop",
+      "venue_slug": "boskop",
+      "title": "Cafard Moisi + J€4N M0UL4 + Edward Morton",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-21",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/cafard-moisi-jeuro4n-m0ul4-edward-morton",
+      "image": null,
+      "id": "70fbdaf32ad6"
     },
     {
       "venue": "Les Subsistances",
@@ -1459,6 +1069,19 @@
       "id": "83718993e3e8"
     },
     {
+      "venue": "Musée des Beaux-Arts",
+      "venue_slug": "musee-des-beaux-arts",
+      "title": "L'Égypte, histoire d'une passion",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-06-27",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318763-l-egypte-histoire-d-une-passion.html",
+      "image": null,
+      "id": "de08588c84f8"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Sans Transition After Prrride",
@@ -2187,6 +1810,19 @@
       "id": "65ae0d3f0e2d"
     },
     {
+      "venue": "Boskop",
+      "venue_slug": "boskop",
+      "title": "Vernsisage · exposition collective · TOUT CHAOS",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-03",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://agenda.villemorte.fr/event/vernsisage-exposition-collective-tout-chaos",
+      "image": null,
+      "id": "df98f19e0c1a"
+    },
+    {
       "venue": "Maison de l'écologie",
       "venue_slug": "maison-de-l-ecologie",
       "title": "RÊVER SOUS LE FUTUR · GROUPE DE RÊVE COLLECTIF - Cycle de 7 séances",
@@ -2527,15 +2163,15 @@
     {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
-      "title": "Kiki Ball en marge du Major Ball de Vinni Revlon",
+      "title": "Kuntry Kiki Ball",
       "subtitle": null,
       "category": null,
       "date_start": "2026-07-05",
       "date_end": null,
-      "time": "14:00",
+      "time": "13:00",
       "url": "https://agenda.villemorte.fr/event/kiki-ball-en-marge-du-major-ball-de-vinni-revlon",
       "image": null,
-      "id": "a306fd0758fc"
+      "id": "d273965ce002"
     },
     {
       "venue": "Chapelle de la Trinité",
@@ -2614,6 +2250,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-317630-croire-aux-fauves.html",
       "image": null,
       "id": "273ef836e123"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Phonograffiti : atelier graffiti sur vinyle",
+      "subtitle": null,
+      "category": "atelier",
+      "date_start": "2026-07-06",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/phonograffiti-lyon/",
+      "image": null,
+      "id": "1f3e6f9351ea"
     },
     {
       "venue": "Galerie Imag'In",
@@ -2915,6 +2564,19 @@
       "id": "7e12d093f9b6"
     },
     {
+      "venue": "Boskop",
+      "venue_slug": "boskop",
+      "title": "Concert ÁGUA · Rebel Girl",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-10",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/concert-agua-rebel-girl",
+      "image": null,
+      "id": "b36ee759de41"
+    },
+    {
       "venue": "Domaine de Lacroix-Laval",
       "venue_slug": "domaine-de-lacroix-laval",
       "title": "Da capo",
@@ -3117,10 +2779,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "00:00",
       "url": "https://larayonne.org/evenement/presenter-et-mettre-en-valeur-son-projet-a-loral-atelier-theorique-1-2/",
       "image": null,
-      "id": "f823af4fcba3"
+      "id": "c9b3dc1c73ba"
     },
     {
       "venue": "La Rayonne",
@@ -3130,10 +2792,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "00:00",
       "url": "https://larayonne.org/evenement/mieux-apprhender-les-rseaux-sociaux-exemplaire/",
       "image": null,
-      "id": "4d52fba25991"
+      "id": "e94cd0983b9e"
     },
     {
       "venue": "La Rayonne",
@@ -3143,10 +2805,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "00:00",
       "url": "https://larayonne.org/evenement/comprendre-les-principales-aides-a-lemploi-dans-le-spectacle-vivant/",
       "image": null,
-      "id": "2f5cb8a0739a"
+      "id": "5544871ad39a"
     },
     {
       "venue": "La Rayonne",
@@ -3156,10 +2818,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "00:00",
       "url": "https://larayonne.org/evenement/construire-un-budget-et-un-plan-de-tresorerie-atelier-theorique-1-2-2/",
       "image": null,
-      "id": "8f86a881d89c"
+      "id": "ecdee4d73a42"
     },
     {
       "venue": "La Rayonne",
@@ -3169,10 +2831,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "00:00",
       "url": "https://larayonne.org/evenement/mettre-en-place-une-comptabilite-pour-les-petites-associations-6/",
       "image": null,
-      "id": "b14f58369b76"
+      "id": "5ea5a0802e26"
     },
     {
       "venue": "Les Subsistances",
@@ -3407,6 +3069,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-317641-sono-io.html",
       "image": null,
       "id": "cd6aad62fa84"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Yoga Dynamique- Unlock Studio",
+      "subtitle": null,
+      "category": "bien-être",
+      "date_start": "2026-07-20",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/yoga-sonore-lyon-bain-sonore-yoga-nuits-sonores/",
+      "image": null,
+      "id": "733a8f0b3896"
     },
     {
       "venue": "HEAT",
@@ -6282,6 +5957,19 @@
       "id": "b5f482f818be"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Soul Urban Pop WAMEN",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-12-02",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/wamen",
+      "image": null,
+      "id": "e385962dca52"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Marine Leonardi",
@@ -8986,6 +8674,19 @@
       "id": "7ed676c5de4a"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Brassards et nénuphars",
+      "subtitle": "Claire Petit et Sylvain Desplagnes, artistes associé·es Cie Entre Eux Deux Rives",
+      "category": "théâtre",
+      "date_start": "2027-06-05",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.tng-lyon.fr/evenement/brassards-et-nenuphars/",
+      "image": null,
+      "id": "c6b6cbacd89c"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "ANA GODEFROY",
@@ -9129,17 +8830,30 @@
       "id": "ff376345c852"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Nana Groov’ : Danse, Expo & Musique",
+      "subtitle": null,
+      "category": "danse",
+      "date_start": "2027-06-20",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/nanagroov-expo-danse-musique/",
+      "image": "https://h-eat.eu/wp-content/uploads/2025/09/nanagroov-heat-576x720.jpg",
+      "id": "8090d4486f2d"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
-      "title": "THIS IS HIT MACHINE 90-2000 : NO2T / VYKTOR NOVA & MORE",
+      "title": "THIS IS TECHNO RAVE : COIL / CHECHE & MORE",
       "subtitle": null,
       "category": "club",
-      "date_start": "2027-06-19",
+      "date_start": "2027-06-20",
       "date_end": null,
       "time": "23:30",
-      "url": "https://yp.events/cd579693-d188-423d-ae33-28478118f599/THIS-IS-HIT-MACHINE-90-2000-NO2-T-Vyktor-Nova-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisisHitmachine_19062026_lepetitsalon-1024x576.jpg",
-      "id": "2c18ca964095"
+      "url": "https://yp.events/afae3c7a-0148-4311-81a2-61f50da505ea/THIS-IS-TECHNO-Rave-COIL-Cheche-more?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisisTechnoRave_20062026_lepetitsalon-1024x576.jpg",
+      "id": "e32e7d12347c"
     },
     {
       "venue": "Bourse du Travail",
