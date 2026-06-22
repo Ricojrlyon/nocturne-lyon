@@ -1,254 +1,7 @@
 {
-  "generated_at": "2026-06-21T09:40:54.187491+00:00",
-  "count": 686,
+  "generated_at": "2026-06-22T11:39:44.035721+00:00",
+  "count": 659,
   "events": [
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Fête de la musique : Boum Boum Kids",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/fete-de-la-musique/",
-      "image": "https://h-eat.eu/wp-content/uploads/2024/06/HEAT-Mini-Sonores-bd-@gcplyon-067-480x720.jpg",
-      "id": "e6a130a9dc49"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Fête de la musique : dimanche en plein air",
-      "subtitle": null,
-      "category": "festival",
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/fete-de-la-musique-lyon-dimanche/",
-      "image": null,
-      "id": "5d3ba42f072d"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "[Un été à La Rayonne] Fête de la musique x ENCORE – Kirsty all night long",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "00:00",
-      "url": "https://larayonne.org/evenement/un-ete-a-la-rayonne-fete-de-la-musique-x-encore-kirsty-all-night-long/",
-      "image": null,
-      "id": "8d7a79b4a03e"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 Breakfast Dialogues",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "10:00",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-breakfast-dialogues/",
-      "image": null,
-      "id": "3e336c579af7"
-    },
-    {
-      "venue": "Lyon",
-      "venue_slug": "lyon",
-      "title": "DUB ADDICT x HIGH BUDUB 16 BASS - PARC DE LA CERISAIE",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-21",
-      "date_end": "2026-06-22",
-      "time": "12:00",
-      "url": "https://agenda.villemorte.fr/event/dub-addict-x-high-budub-16-bass-parc-de-la-cerisaie",
-      "image": null,
-      "id": "a016513574ea"
-    },
-    {
-      "venue": "parc de Gerland",
-      "venue_slug": "parc-de-gerland",
-      "title": "Open air XXL Fête de la musique Parc ELECTRO",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "12:00",
-      "url": "https://agenda.villemorte.fr/event/open-air-xxl-fete-de-la-musique-parc-electro",
-      "image": null,
-      "id": "5e6a3eb8d1b1"
-    },
-    {
-      "venue": "Les Clameurs",
-      "venue_slug": "les-clameurs",
-      "title": "Fête de la Musique aux Clameurs, Radio béguin x HATCH",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "14:00",
-      "url": "https://agenda.villemorte.fr/event/fete-de-la-musique-aux-clameurs-radio-beguin-x-hatch",
-      "image": null,
-      "id": "277e446506db"
-    },
-    {
-      "venue": "la luttine",
-      "venue_slug": "la-luttine",
-      "title": "CONCERTS PUNK - LA LUTTINE",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "14:30",
-      "url": "https://agenda.villemorte.fr/event/concerts-punk-la-luttine",
-      "image": null,
-      "id": "edb1d8eb6302"
-    },
-    {
-      "venue": "Blue Monday",
-      "venue_slug": "blue-monday",
-      "title": "FÊTE DE LA MUSIQUE JAM EXTERIEURE !",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "15:00",
-      "url": "https://agenda.villemorte.fr/event/fete-de-la-musique-jam-exterieure",
-      "image": null,
-      "id": "37678107172e"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Encore X 23:59",
-      "subtitle": null,
-      "category": "Musique Electronique",
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://www.petit-bulletin.fr/agenda-314660-encore-x-23-59.html",
-      "image": null,
-      "id": "e596cf9ddec1"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 La Cite Bouge Cie Relevant",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-la-cite-bouge-cie-relevant/",
-      "image": null,
-      "id": "0ad323cf4eb3"
-    },
-    {
-      "venue": "Boskop",
-      "venue_slug": "boskop",
-      "title": "Cafard Moisi + J€4N M0UL4 + Edward Morton",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://agenda.villemorte.fr/event/cafard-moisi-jeuro4n-m0ul4-edward-morton",
-      "image": null,
-      "id": "70fbdaf32ad6"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 Poder Ser Leila Ka",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-poder-ser-leila-ka/",
-      "image": null,
-      "id": "5f89d4c61a09"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Pode Ser",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318522-pode-ser.html",
-      "image": null,
-      "id": "c5756541c73e"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 Kms Of Resistance Mehdi Dahkan",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-kms-of-resistance-mehdi-dahkan/",
-      "image": null,
-      "id": "0f2da930d4ad"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Festival Dance People 2026 Rencontres Improvisees 2",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.les-subs.com/evenement/festival-dance-people-2026-rencontres-improvisees-2/",
-      "image": null,
-      "id": "a18d96657a06"
-    },
-    {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-lyon",
-      "title": "Sabine Devieilhe - Mathieu Pordoy",
-      "subtitle": "Récital grande voix",
-      "category": "concert",
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.opera-lyon.com/fr/programmation/saison-2025-2026/concert/sabine-devieilhe-mathieu-pordoy",
-      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/f5d89cc5/sabine.jpg",
-      "id": "d074f9c31928"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Soul(s) Power",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318524-soul-s-power.html",
-      "image": null,
-      "id": "a214e0586e82"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "After de la musique",
-      "subtitle": "VOA · Roxo · Neskeh · Warum · Ramtarr",
-      "category": "club",
-      "date_start": "2026-06-21",
-      "date_end": null,
-      "time": "23:00",
-      "url": "https://le-sucre.eu/events/after-de-la-musique/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/visuel-filtre-vertical_-450x600.png",
-      "id": "c5b076c3d4d8"
-    },
     {
       "venue": "HEAT",
       "venue_slug": "heat",
@@ -289,19 +42,6 @@
       "id": "7dcc23225e29"
     },
     {
-      "venue": "Galerie Imag'In",
-      "venue_slug": "galerie-imag-in",
-      "title": "Bern Dodet",
-      "subtitle": null,
-      "category": "Peinture & Dessin",
-      "date_start": "2026-06-22",
-      "date_end": null,
-      "time": "10:00",
-      "url": "https://www.petit-bulletin.fr/agenda-314529-bern-dodet.html",
-      "image": null,
-      "id": "4150038834c1"
-    },
-    {
       "venue": "Big White",
       "venue_slug": "big-white",
       "title": "Big Comedy Club",
@@ -339,19 +79,6 @@
       "url": "https://www.petit-bulletin.fr/agenda-282123-scapin.html",
       "image": null,
       "id": "c9f5a1b9a990"
-    },
-    {
-      "venue": "Galerie Imag'In",
-      "venue_slug": "galerie-imag-in",
-      "title": "Bern Dodet",
-      "subtitle": null,
-      "category": "Peinture & Dessin",
-      "date_start": "2026-06-23",
-      "date_end": null,
-      "time": "10:00",
-      "url": "https://www.petit-bulletin.fr/agenda-314529-bern-dodet.html",
-      "image": null,
-      "id": "134bfd8ea9b7"
     },
     {
       "venue": "Le Périscope",
@@ -430,19 +157,6 @@
       "url": "https://lacommune.co/event/spectacle-dimprovisation-improfusion/",
       "image": null,
       "id": "20ae1b2c27cb"
-    },
-    {
-      "venue": "Galerie Imag'In",
-      "venue_slug": "galerie-imag-in",
-      "title": "Bern Dodet",
-      "subtitle": null,
-      "category": "Peinture & Dessin",
-      "date_start": "2026-06-24",
-      "date_end": null,
-      "time": "10:00",
-      "url": "https://www.petit-bulletin.fr/agenda-314529-bern-dodet.html",
-      "image": null,
-      "id": "96947908d81f"
     },
     {
       "venue": "L'Épicerie Moderne",
@@ -547,19 +261,6 @@
       "url": "https://lacommune.co/event/doua-jazz-soiree-tremplin/",
       "image": null,
       "id": "2b2ac46097e0"
-    },
-    {
-      "venue": "Galerie Imag'In",
-      "venue_slug": "galerie-imag-in",
-      "title": "Bern Dodet",
-      "subtitle": null,
-      "category": "Peinture & Dessin",
-      "date_start": "2026-06-25",
-      "date_end": null,
-      "time": "10:00",
-      "url": "https://www.petit-bulletin.fr/agenda-314529-bern-dodet.html",
-      "image": null,
-      "id": "d89f9d573ed4"
     },
     {
       "venue": "Le Périscope",
@@ -742,19 +443,6 @@
       "url": "https://lacommune.co/event/france-norvege/",
       "image": null,
       "id": "c12fa9aed947"
-    },
-    {
-      "venue": "Galerie Imag'In",
-      "venue_slug": "galerie-imag-in",
-      "title": "Bern Dodet",
-      "subtitle": null,
-      "category": "Peinture & Dessin",
-      "date_start": "2026-06-26",
-      "date_end": null,
-      "time": "10:00",
-      "url": "https://www.petit-bulletin.fr/agenda-314529-bern-dodet.html",
-      "image": null,
-      "id": "5c8146a75b3d"
     },
     {
       "venue": "Toï Toï le Zinc",
@@ -989,19 +677,6 @@
       "url": "https://www.transbordeur.fr/evenement/realo-x-deelee-s-recklessboise-sanderscore-09peas-vertt-27062026/",
       "image": null,
       "id": "81f071fb7e9a"
-    },
-    {
-      "venue": "Galerie Imag'In",
-      "venue_slug": "galerie-imag-in",
-      "title": "Bern Dodet",
-      "subtitle": null,
-      "category": "Peinture & Dessin",
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": "10:00",
-      "url": "https://www.petit-bulletin.fr/agenda-314529-bern-dodet.html",
-      "image": null,
-      "id": "111f7ead4c67"
     },
     {
       "venue": "Musée des Beaux-Arts",
@@ -1288,19 +963,6 @@
       "url": "https://lacommune.co/event/atelier-broderie-vetements-seconde-main-le-dressing-de-lea-lieu-dit/",
       "image": null,
       "id": "7c9c5bf7355e"
-    },
-    {
-      "venue": "Galerie Imag'In",
-      "venue_slug": "galerie-imag-in",
-      "title": "Bern Dodet",
-      "subtitle": null,
-      "category": "Peinture & Dessin",
-      "date_start": "2026-06-28",
-      "date_end": null,
-      "time": "10:00",
-      "url": "https://www.petit-bulletin.fr/agenda-314529-bern-dodet.html",
-      "image": null,
-      "id": "27f50d198605"
     },
     {
       "venue": "Plage de l'Atol",
@@ -2779,10 +2441,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "00:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/presenter-et-mettre-en-valeur-son-projet-a-loral-atelier-theorique-1-2/",
       "image": null,
-      "id": "c9b3dc1c73ba"
+      "id": "381e83b37857"
     },
     {
       "venue": "La Rayonne",
@@ -2792,10 +2454,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "00:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/mieux-apprhender-les-rseaux-sociaux-exemplaire/",
       "image": null,
-      "id": "e94cd0983b9e"
+      "id": "bf2e9b3bd1f5"
     },
     {
       "venue": "La Rayonne",
@@ -2805,10 +2467,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "00:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/comprendre-les-principales-aides-a-lemploi-dans-le-spectacle-vivant/",
       "image": null,
-      "id": "5544871ad39a"
+      "id": "42905751a4c9"
     },
     {
       "venue": "La Rayonne",
@@ -2818,10 +2480,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "00:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/construire-un-budget-et-un-plan-de-tresorerie-atelier-theorique-1-2-2/",
       "image": null,
-      "id": "ecdee4d73a42"
+      "id": "5f1a1e811e97"
     },
     {
       "venue": "La Rayonne",
@@ -2831,10 +2493,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "00:00",
+      "time": "18:30",
       "url": "https://larayonne.org/evenement/mettre-en-place-une-comptabilite-pour-les-petites-associations-6/",
       "image": null,
-      "id": "5ea5a0802e26"
+      "id": "7c1c452d2049"
     },
     {
       "venue": "Les Subsistances",
@@ -2967,17 +2629,30 @@
       "id": "769e0552cc4e"
     },
     {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS HIT MACHINE 90-2000 : NO2T / DANY FROM ST BARTH & TERROR MIKE",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-07-17",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://yp.events/54f7c577-3db3-4390-b393-48d419a6fec2/THIS-IS-HIT-MACHINE-90-2000-NO2-T-Dany-From-St-Barth-more?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/ThisisHitmachine_17072026_lepetitsalon-1024x576.jpg",
+      "id": "413fd13ffadc"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
-      "title": "KENDAL + ANDI",
+      "title": "KENDAL + ANDI + LAVION + SPACER WOMAN",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-07-18",
       "date_end": null,
       "time": null,
-      "url": "https://www.transbordeur.fr/evenement/kendal-andi-18072026/",
+      "url": "https://www.transbordeur.fr/evenement/kendal-andi-lavion-spacer-woman-18072026/",
       "image": null,
-      "id": "4f29d5c80037"
+      "id": "c11753d272bb"
     },
     {
       "venue": "Grrrnd Zero",
@@ -3121,6 +2796,32 @@
       "url": "https://lacommune.co/event/summer-second-hand-market/",
       "image": null,
       "id": "04bf67e83c51"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "KLOUD / BAB' / CHAST / KITTS",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-07-25",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://yp.events/5046d719-bb7d-4586-8372-ec9b7d736de4/KLOUD-Bab-CHAST-Ki-TTS-more?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/Kloud_25072026_lepetitsalon-1024x536.jpg",
+      "id": "b08e33558a8c"
+    },
+    {
+      "venue": "Fort de Vaise - Fondation Renaud",
+      "venue_slug": "fort-de-vaise-fondation-renaud",
+      "title": "Laure Subreville",
+      "subtitle": null,
+      "category": "Peinture & Dessin",
+      "date_start": "2026-07-26",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318774-laure-subreville.html",
+      "image": null,
+      "id": "1d1cdc95145a"
     },
     {
       "venue": "Bar Rock'n Eat",
@@ -4501,6 +4202,19 @@
       "id": "c668347a30f2"
     },
     {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "The Homesick + group-ensemble",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-20",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://sonic-lyon.fr/evenement/the-homesick-group-ensemble/",
+      "image": null,
+      "id": "e5cd71040a5a"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "THE CELTIC SOCIAL CLUB",
@@ -5504,7 +5218,7 @@
     {
       "venue": "TNG",
       "venue_slug": "tng",
-      "title": "RDV POp’Corn – L’Abolition des privilèges",
+      "title": "RDV Pop’Corn – L’Abolition des privilèges",
       "subtitle": "Un jour par mois le TNG vous donne rendez-vous et c’est gratuit !\nDécouverte des spectacles, ateliers créatifs, Pop�…",
       "category": "théâtre",
       "date_start": "2026-11-20",
@@ -5512,7 +5226,7 @@
       "time": null,
       "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-labolition-des-privileges/",
       "image": null,
-      "id": "019b1b2e9250"
+      "id": "44e8fa130b6e"
     },
     {
       "venue": "La Machinerie - Bizarre !",
@@ -7403,7 +7117,7 @@
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "Bazar Circus, l’orchestre fait son cirque !",
-      "subtitle": "Carl Norac",
+      "subtitle": "Un conte de Carl Norac – Dessin en direct, Juliette Barbanègre Récitant, Dominique Pinon – Conception musicale, David Pastor Orchestre de l’Opéra de Lyon",
       "category": "théâtre",
       "date_start": "2027-02-12",
       "date_end": null,
@@ -8648,6 +8362,19 @@
       "id": "fcc461bfcf08"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Olympe la rebelle",
+      "subtitle": "Musique Isabelle Aboulker Mise en espace Odile Grosset-Grange",
+      "category": "théâtre",
+      "date_start": "2027-05-28",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.tng-lyon.fr/evenement/olympe-la-rebelle/",
+      "image": null,
+      "id": "84dbbd13af8f"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LE TOUR DU MONDE EN 80 MINUTES",
@@ -8685,6 +8412,19 @@
       "url": "https://www.tng-lyon.fr/evenement/brassards-et-nenuphars/",
       "image": null,
       "id": "c6b6cbacd89c"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "ALLEZ, OLLIE… À L’EAU !",
+      "subtitle": "juin      \t      \t >",
+      "category": "théâtre",
+      "date_start": "2027-06-06",
+      "date_end": "2027-07-06",
+      "time": null,
+      "url": "https://www.tng-lyon.fr/evenement/allez-ollie-a-leau/",
+      "image": null,
+      "id": "97103e6f3037"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -8752,45 +8492,6 @@
       "id": "457449b0dc0d"
     },
     {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "France — Sénégal",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-06-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/cdm-26-france-senegal/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-261-576x720.png",
-      "id": "04bbadb4b62b"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Chess Bar x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-06-17",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/chess-bar-x-heat-3/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/03/L1300825-480x720.jpg",
-      "id": "bf78ce041969"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Portugal — RD Congo",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-06-17",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/portugal-rd-congo/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-264-576x720.png",
-      "id": "5d5222c7e2e3"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Sofia Belabbes",
@@ -8802,58 +8503,6 @@
       "url": "https://www.bourse-du-travail.com/sofia-belabbes-376106.html",
       "image": null,
       "id": "e7ead1cc74bb"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Bingo by La Ménagerie",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-06-18",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/bingo-by-la-menagerie-4/",
-      "image": "https://h-eat.eu/wp-content/uploads/2025/03/BINGO_HEAT-NOEMIELACOTE-34-480x720.jpg",
-      "id": "94b9969cd1e7"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "HippoH Dance Bar",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-06-19",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/hippoh-dance-bar/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/HDB-HEAT-FLYER-576x720.png",
-      "id": "ff376345c852"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Nana Groov’ : Danse, Expo & Musique",
-      "subtitle": null,
-      "category": "danse",
-      "date_start": "2027-06-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/nanagroov-expo-danse-musique/",
-      "image": "https://h-eat.eu/wp-content/uploads/2025/09/nanagroov-heat-576x720.jpg",
-      "id": "8090d4486f2d"
-    },
-    {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "THIS IS TECHNO RAVE : COIL / CHECHE & MORE",
-      "subtitle": null,
-      "category": "club",
-      "date_start": "2027-06-20",
-      "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/afae3c7a-0148-4311-81a2-61f50da505ea/THIS-IS-TECHNO-Rave-COIL-Cheche-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisisTechnoRave_20062026_lepetitsalon-1024x576.jpg",
-      "id": "e32e7d12347c"
     },
     {
       "venue": "Bourse du Travail",
