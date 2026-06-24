@@ -1,72 +1,7 @@
 {
-  "generated_at": "2026-06-23T09:25:52.723863+00:00",
-  "count": 558,
+  "generated_at": "2026-06-24T08:56:13.037506+00:00",
+  "count": 564,
   "events": [
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "TURBO TERRASSE : Passage de Disques",
-      "subtitle": "Avec Armelle & Gaëlle",
-      "category": "musique",
-      "date_start": "2026-06-23",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-4/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/091324_Grand_Tabazu_web_paul-1-650x433.jpg",
-      "id": "4b85dac5be1c"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Magic Mardi",
-      "subtitle": "CTRL · JOWF0 · COCOX",
-      "category": "club",
-      "date_start": "2026-06-23",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://le-sucre.eu/events/magic-mardi-80/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Plan-de-travail-5-1-480x600.png",
-      "id": "6470a9be5597"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Ça handi long",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2026-06-23",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
-      "image": null,
-      "id": "f88682d2fc1f"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Concert live et Blind Test",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-23",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://lacommune.co/event/concert-lyon/",
-      "image": null,
-      "id": "de0917f451dd"
-    },
-    {
-      "venue": "Toï Toï le Zinc",
-      "venue_slug": "toi-toi-le-zinc",
-      "title": "Crash impro",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2026-06-23",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318525-crash-impro.html",
-      "image": null,
-      "id": "95c84910a903"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -92,6 +27,19 @@
       "url": "https://www.opera-lyon.com/fr/programmation/saison-2025-2026/visites/visites-decouverte-commentees-2",
       "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/ca8e7a20/opera_visite.png",
       "id": "039645021f4f"
+    },
+    {
+      "venue": "L'Épicerie Moderne",
+      "venue_slug": "l-epicerie-moderne",
+      "title": "Les relâches - Aprèm' Boum Kids",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-06-24",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://www.petit-bulletin.fr/agenda-314640-les-rel-ches-apr-m-boum-kids.html",
+      "image": null,
+      "id": "2cb66137ef0a"
     },
     {
       "venue": "Grrrnd Zero",
@@ -148,6 +96,19 @@
     {
       "venue": "Improvidence",
       "venue_slug": "improvidence",
+      "title": "Ça handi long",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-06-24",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
+      "image": null,
+      "id": "a88dcc702a4b"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
       "title": "Les mots, des notes",
       "subtitle": null,
       "category": "Impro",
@@ -157,19 +118,6 @@
       "url": "https://www.petit-bulletin.fr/agenda-318693-les-mots-des-notes.html",
       "image": null,
       "id": "7eb2c3644bd3"
-    },
-    {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Anne Roumanoff Dans L'expérience De La Vie",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-06-25",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/anne-roumanoff-dans-l-experience-de-la-vie-285885.html",
-      "image": null,
-      "id": "e92b93c606b3"
     },
     {
       "venue": "La Commune",
@@ -183,19 +131,6 @@
       "url": "https://lacommune.co/event/doua-jazz-soiree-tremplin/",
       "image": null,
       "id": "2b2ac46097e0"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "LE PRINCE HARRY + NO SEX LAST NIGHT + MONIKA",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-25",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/le-prince-harry-no-sex-last-night-monika-25062026/",
-      "image": null,
-      "id": "e3b8a1e62e53"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -250,6 +185,58 @@
       "id": "fa53f6817248"
     },
     {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "HOLOLIVE : ALL FOR ONE",
+      "subtitle": null,
+      "category": "spectacle",
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://larayonne.org/evenement/hololive-all-for-one/",
+      "image": null,
+      "id": "01f386ba518a"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "LE PRINCE HARRY + NO SEX LAST NIGHT + MONIKA",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/le-prince-harry-no-sex-last-night-monika-25062026/",
+      "image": null,
+      "id": "8881b0e5cecb"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Oralce",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318694-oralce.html",
+      "image": null,
+      "id": "69e1d7453635"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Anne Roumanoff Dans L'expérience De La Vie",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.bourse-du-travail.com/anne-roumanoff-dans-l-experience-de-la-vie-285885.html",
+      "image": null,
+      "id": "3edf95e2f9c6"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "Sasha Fleury + Technically not a bird",
@@ -274,6 +261,19 @@
       "url": "https://www.les-subs.com/evenement/hudge/",
       "image": null,
       "id": "dd2dc6fee0c2"
+    },
+    {
+      "venue": "Sous le caillou",
+      "venue_slug": "sous-le-caillou",
+      "title": "J'ai une question pour vous",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318691-j-ai-une-question-pour-vous.html",
+      "image": null,
+      "id": "71e3eb4f4baa"
     },
     {
       "venue": "Bourse du Travail",
@@ -695,13 +695,13 @@
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Magic Mardi",
-      "subtitle": "Line-up soon !",
+      "subtitle": "MRXY · Helia Kiani · Kiana · LUNR",
       "category": "club",
       "date_start": "2026-06-30",
       "date_end": null,
       "time": null,
       "url": "https://le-sucre.eu/events/magic-mardi-83/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/Plan-de-travail-7-480x600.png",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Plan-de-travail-24_3-480x600.png",
       "id": "516608e488ad"
     },
     {
@@ -1006,7 +1006,7 @@
     {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
-      "title": "[Open Air] SAUCE PIQUANTE",
+      "title": "[Open Air] SAUCE PIQUANTE avec THK",
       "subtitle": null,
       "category": "musique",
       "date_start": "2026-07-05",
@@ -1014,7 +1014,7 @@
       "time": "15:00",
       "url": "https://larayonne.org/evenement/open-air-sauce-piquante/",
       "image": null,
-      "id": "7a0b5e5bc420"
+      "id": "3edd9ae652df"
     },
     {
       "venue": "La Commune",
@@ -1045,15 +1045,15 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Hors les murs Pop Rock HEARSCAPE (Sol FM radio session) Day Off - Le concert à la radio",
+      "title": "Hors les murs Pop Rock ÆLIA (Sol FM radio session) Day Off - Le concert à la radio",
       "subtitle": null,
       "category": null,
       "date_start": "2026-07-07",
       "date_end": null,
       "time": "18:30",
-      "url": "https://marchegare.fr/agenda/hearscape-sol-fm-radio-session",
+      "url": "https://marchegare.fr/agenda/aelia-sol-fm-radio-session",
       "image": null,
-      "id": "41c7edbede9e"
+      "id": "323f162e6f45"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -1134,6 +1134,19 @@
       "id": "ced1173236a8"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Grand tournoi de pétanque de l’été",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-11",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/grand-tournoi-de-petanque-de-lete/",
+      "image": "https://h-eat.eu/wp-content/uploads/2024/07/COUPEDUMONDE_HEAT@noemielact-18-480x720.jpg",
+      "id": "fb35a97bd140"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "DYLAN DYLAN + PEDRO BERTHO + PATXI",
@@ -1188,7 +1201,7 @@
     {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
-      "title": "[Open Air] Bubble Boom Party",
+      "title": "[Open Air] Bubble Boom Party avec Reperkusound",
       "subtitle": null,
       "category": "musique",
       "date_start": "2026-07-12",
@@ -1196,7 +1209,7 @@
       "time": "15:00",
       "url": "https://larayonne.org/evenement/open-air-bubble-boom-party/",
       "image": null,
-      "id": "e82bf82785b3"
+      "id": "d9dd523576f4"
     },
     {
       "venue": "La Commune",
@@ -1227,15 +1240,28 @@
     {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
-      "title": "Présenter et mettre en valeur son projet à l'oral : atelier théorique 18h30 > 20h30",
+      "title": "ANNULÉ // Présenter et mettre en valeur son projet à l'oral : atelier pratique (2/2) 14h30 > 17h30",
       "subtitle": null,
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "18:30",
-      "url": "https://larayonne.org/evenement/presenter-et-mettre-en-valeur-son-projet-a-loral-atelier-theorique-1-2/",
+      "time": "19:00",
+      "url": "https://larayonne.org/evenement/presenter-et-mettre-en-valeur-son-projet-a-loral-atelier-pratique-2-2/",
       "image": null,
-      "id": "381e83b37857"
+      "id": "65017cba32f5"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "[OPEN AIR] OPA#2 avec Physical Tool 15h > 22h gratuit",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-14",
+      "date_end": "2026-07-14",
+      "time": "19:00",
+      "url": "https://larayonne.org/evenement/open-air-opa2-avec-physical-tool/",
+      "image": null,
+      "id": "134477eac050"
     },
     {
       "venue": "La Rayonne",
@@ -1245,10 +1271,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "18:30",
+      "time": "19:00",
       "url": "https://larayonne.org/evenement/mieux-apprhender-les-rseaux-sociaux-exemplaire/",
       "image": null,
-      "id": "bf2e9b3bd1f5"
+      "id": "4d52fba25991"
     },
     {
       "venue": "La Rayonne",
@@ -1258,10 +1284,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "18:30",
+      "time": "19:00",
       "url": "https://larayonne.org/evenement/comprendre-les-principales-aides-a-lemploi-dans-le-spectacle-vivant/",
       "image": null,
-      "id": "42905751a4c9"
+      "id": "2f5cb8a0739a"
     },
     {
       "venue": "La Rayonne",
@@ -1271,10 +1297,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "18:30",
+      "time": "19:00",
       "url": "https://larayonne.org/evenement/construire-un-budget-et-un-plan-de-tresorerie-atelier-theorique-1-2-2/",
       "image": null,
-      "id": "5f1a1e811e97"
+      "id": "8f86a881d89c"
     },
     {
       "venue": "La Rayonne",
@@ -1284,10 +1310,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "18:30",
+      "time": "19:00",
       "url": "https://larayonne.org/evenement/mettre-en-place-une-comptabilite-pour-les-petites-associations-6/",
       "image": null,
-      "id": "7c1c452d2049"
+      "id": "b14f58369b76"
     },
     {
       "venue": "Les Subsistances",
@@ -1592,13 +1618,13 @@
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "club x Hidden Garden",
-      "subtitle": "Marcal",
+      "subtitle": "Marcal · MELATO",
       "category": "club",
       "date_start": "2026-08-14",
       "date_end": null,
       "time": null,
       "url": "https://le-sucre.eu/events/club-x-hidden-garden/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/MAGIC-MARDI-182-400x600.jpg",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/MARCAL-17-of-1-400x600.jpg",
       "id": "cf0a82b8e8b9"
     },
     {
@@ -2072,7 +2098,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Chanson Indie Pop OSCAR LES VACANCES Release Party",
+      "title": "Release Party Chanson Indie Pop OSCAR LES VACANCES + KÉZIAH MA",
       "subtitle": null,
       "category": null,
       "date_start": "2026-09-25",
@@ -2080,7 +2106,7 @@
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/oscar-les-vacances-2026",
       "image": null,
-      "id": "c58df3d60d69"
+      "id": "bec75eda91f7"
     },
     {
       "venue": "Bourse du Travail",
@@ -2111,7 +2137,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "mercredi Mer. 30. septembre 09 Jeune Public L'écho du large Voyage musical dès 6 mois",
+      "title": "mercredi Mer. 30. septembre 09 Jeune Public Jeune Public L'écho du large Voyage musical dès 6 mois",
       "subtitle": null,
       "category": null,
       "date_start": "2026-09-30",
@@ -2119,7 +2145,7 @@
       "time": null,
       "url": "https://marchegare.fr/agenda/lecho-du-large",
       "image": null,
-      "id": "21697dc4f493"
+      "id": "a204f52d0fcd"
     },
     {
       "venue": "Bourse du Travail",
@@ -2449,7 +2475,7 @@
     {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
-      "title": "REPORTÉ // Swing",
+      "title": "Swing",
       "subtitle": null,
       "category": "musique",
       "date_start": "2026-10-09",
@@ -2457,7 +2483,7 @@
       "time": "19:00",
       "url": "https://larayonne.org/evenement/swing/",
       "image": null,
-      "id": "6fa30636e67d"
+      "id": "7ccc395c645d"
     },
     {
       "venue": "Marché Gare",
@@ -5424,6 +5450,19 @@
       "id": "063fa8d43d43"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "NTO",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-28",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/nto-28012027/",
+      "image": null,
+      "id": "7a159b4e956c"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LE FANTÔME DE L’OPÉRA",
@@ -6867,6 +6906,19 @@
       "id": "2915d9f92eb2"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "PHILIPPINE DELAIRE",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-04-30",
+      "date_end": null,
+      "time": null,
+      "url": "https://radiant-bellevue.fr/spectacles/philippine-delaire/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/philippine-delaire-vignette.jpg",
+      "id": "c2ca03b50046"
+    },
+    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "RDV Pop’Corn – Catharsis",
@@ -7114,6 +7166,19 @@
       "id": "f5212204025a"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "GénérationS en scène",
+      "subtitle": "Restitutions des pratiques amateurs",
+      "category": "théâtre",
+      "date_start": "2027-06-08",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.tng-lyon.fr/evenement/generations-en-scene-5/",
+      "image": null,
+      "id": "f6a222b56ad2"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Mourir D'aimer, Les Amants Maudits",
@@ -7229,6 +7294,19 @@
       "url": "https://www.bourse-du-travail.com/la-troupe-du-jamel-comedy-club-382518.html",
       "image": null,
       "id": "1a1f57f7583b"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "David Castello-lopes",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-11-25",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/david-castello-lopes-410446.html",
+      "image": null,
+      "id": "0c5e6208533e"
     },
     {
       "venue": "Bourse du Travail",
