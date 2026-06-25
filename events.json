@@ -1,124 +1,7 @@
 {
-  "generated_at": "2026-06-24T08:56:13.037506+00:00",
-  "count": 564,
+  "generated_at": "2026-06-25T08:50:24.322682+00:00",
+  "count": 563,
   "events": [
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Spectacle d’improvisation – Improfusion",
-      "subtitle": null,
-      "category": "spectacle",
-      "date_start": "2026-06-24",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/spectacle-dimprovisation-improfusion/",
-      "image": null,
-      "id": "20ae1b2c27cb"
-    },
-    {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-lyon",
-      "title": "Visites découverte commentées",
-      "subtitle": null,
-      "category": "visite",
-      "date_start": "2026-06-24",
-      "date_end": "2026-07-11",
-      "time": null,
-      "url": "https://www.opera-lyon.com/fr/programmation/saison-2025-2026/visites/visites-decouverte-commentees-2",
-      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/ca8e7a20/opera_visite.png",
-      "id": "039645021f4f"
-    },
-    {
-      "venue": "L'Épicerie Moderne",
-      "venue_slug": "l-epicerie-moderne",
-      "title": "Les relâches - Aprèm' Boum Kids",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-06-24",
-      "date_end": null,
-      "time": "14:00",
-      "url": "https://www.petit-bulletin.fr/agenda-314640-les-rel-ches-apr-m-boum-kids.html",
-      "image": null,
-      "id": "2cb66137ef0a"
-    },
-    {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "Danse Musique Rhônes-Alpes + Hochiwah + Kakofonico + Tundra & Le Frit + Sabines.333",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-24",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://agenda.villemorte.fr/event/vic-bang-kakofonico-tundra-le-frit",
-      "image": null,
-      "id": "028648d1cc6d"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Muon S (Anna Gaïotti et Jean Bender)",
-      "subtitle": "I'm free • concert gratuit",
-      "category": "musique",
-      "date_start": "2026-06-24",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://www.periscope-lyon.com/concerts/emmanuelle-parrenin-delphine-dora-mocke-muon-s-anna-gaiotti-et-jean-bender/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/04/MUON-S-26-650x488.jpeg",
-      "id": "ae1b676445ad"
-    },
-    {
-      "venue": "Bar Rock'n Eat",
-      "venue_slug": "bar-rock-n-eat",
-      "title": "Sektarism + Mordor",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-06-24",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318714-sektarism-mordor.html",
-      "image": null,
-      "id": "d84d04d43c76"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "SHOW ME THE BODY + TRUCK VIOLENCE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-24",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/show-me-the-body-truck-violence-24062026/",
-      "image": null,
-      "id": "1b0ad9ad66cd"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Ça handi long",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2026-06-24",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
-      "image": null,
-      "id": "a88dcc702a4b"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Les mots, des notes",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2026-06-24",
-      "date_end": null,
-      "time": "21:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318693-les-mots-des-notes.html",
-      "image": null,
-      "id": "7eb2c3644bd3"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -146,19 +29,6 @@
       "id": "c52e52d5f11d"
     },
     {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "TURBO TERRASSE : Passage de Disques",
-      "subtitle": "Avec Lou & Fanny",
-      "category": "musique",
-      "date_start": "2026-06-25",
-      "date_end": null,
-      "time": "15:30",
-      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-5/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/041826_Recif_Cloture_web_paul-650x433.jpg",
-      "id": "d3dda4986bab"
-    },
-    {
       "venue": "Maison de l'écologie",
       "venue_slug": "maison-de-l-ecologie",
       "title": "ÉPISODE XIV : HABITER LE DÉSASTRE",
@@ -172,30 +42,43 @@
       "id": "b160084be681"
     },
     {
-      "venue": "Toï Toï le Zinc",
-      "venue_slug": "toi-toi-le-zinc",
-      "title": "CONCERT ET DJ SET // Fai Lo Tieu #2",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-25",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://agenda.villemorte.fr/event/concert-et-dj-set-fai-lo-tieu-2",
-      "image": null,
-      "id": "fa53f6817248"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
-      "title": "HOLOLIVE : ALL FOR ONE",
+      "title": "HOLOLIVE : 2 PROJECTIONS « ALL FOR ONE »",
       "subtitle": null,
       "category": "spectacle",
       "date_start": "2026-06-25",
       "date_end": null,
-      "time": "19:00",
+      "time": "17:30",
       "url": "https://larayonne.org/evenement/hololive-all-for-one/",
       "image": null,
-      "id": "01f386ba518a"
+      "id": "7f8b448fa4cf"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "TURBO TERRASSE : Passage de Disques",
+      "subtitle": "Avec Lou & Fanny",
+      "category": "musique",
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://www.periscope-lyon.com/concerts/turbo-terrasse-passage-de-disques-5/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/05/041826_Recif_Cloture_web_paul-650x433.jpg",
+      "id": "fb7fb627e2d3"
+    },
+    {
+      "venue": "Péristyle Opéra",
+      "venue_slug": "peristyle-opera",
+      "title": "Monoloco System + James Stewart",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318727-monoloco-system-james-stewart.html",
+      "image": null,
+      "id": "0b7caf251af4"
     },
     {
       "venue": "Le Transbordeur",
@@ -237,6 +120,19 @@
       "id": "3edf95e2f9c6"
     },
     {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Trauerode",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318721-trauerode.html",
+      "image": null,
+      "id": "f12d3afd11cb"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "Sasha Fleury + Technically not a bird",
@@ -254,7 +150,7 @@
       "venue_slug": "les-subs",
       "title": "Hudge",
       "subtitle": null,
-      "category": null,
+      "category": "Soul & Funk",
       "date_start": "2026-06-25",
       "date_end": null,
       "time": "20:00",
@@ -274,6 +170,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-318691-j-ai-une-question-pour-vous.html",
       "image": null,
       "id": "71e3eb4f4baa"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "Fai Lo Tieu #2",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-06-25",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318716-fai-lo-tieu-2.html",
+      "image": null,
+      "id": "bb4257255f1f"
     },
     {
       "venue": "Bourse du Travail",
@@ -419,6 +328,19 @@
       "id": "f78986a22bbc"
     },
     {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "DARK 80´S PARTY",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-26",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://sonic-lyon.fr/evenement/dark-80s-party-20ans-du-sonic/",
+      "image": null,
+      "id": "12db66fc3f96"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "THIS IS TECHNO RAVE : SUNT / EVY JOY & MORE",
@@ -495,6 +417,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/compagnie-dca-philippe-decoufle/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/philippe-decoufle_radiant-bellevue-500x500.jpg",
       "id": "f23d1f39188c"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "EDDIE’S DIVE BAR : LE POP UP STORE D’IRON MAIDEN",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-27",
+      "date_end": null,
+      "time": "12:00",
+      "url": "https://larayonne.org/evenement/eddies-dive-bar-le-pop-up-store-diron-maiden/",
+      "image": null,
+      "id": "f72f239964a8"
     },
     {
       "venue": "Palais de la Mutualité Salle Edouard Herriot",
@@ -664,6 +599,19 @@
       "url": "https://agenda.villemorte.fr/event/projection-de-helene-tresore-transnationale",
       "image": null,
       "id": "cfb15d227b00"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "EDDIE’S DIVE BAR : LE POP UP STORE D’IRON MAIDEN",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-06-28",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://larayonne.org/evenement/eddies-dive-bar-le-pop-up-store-diron-maiden-copy/",
+      "image": null,
+      "id": "24f9e856e880"
     },
     {
       "venue": "La Rayonne",
@@ -1019,15 +967,15 @@
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
-      "title": "Phonograffiti : atelier graffiti sur vinyle",
+      "title": "Atelier Phonograffiti Lyon | Custom vinyles & street art",
       "subtitle": null,
       "category": "atelier",
       "date_start": "2026-07-06",
       "date_end": null,
       "time": null,
-      "url": "https://lacommune.co/event/phonograffiti-lyon/",
+      "url": "https://lacommune.co/event/pimp-my-vinyl-a-la-commune/",
       "image": null,
-      "id": "1f3e6f9351ea"
+      "id": "189124e9b568"
     },
     {
       "venue": "Les Clameurs",
@@ -1054,6 +1002,19 @@
       "url": "https://marchegare.fr/agenda/aelia-sol-fm-radio-session",
       "image": null,
       "id": "323f162e6f45"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Spectacle des Polissonnes",
+      "subtitle": null,
+      "category": "spectacle",
+      "date_start": "2026-07-08",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/spectacle-des-polissonnes/",
+      "image": null,
+      "id": "31332180e4f5"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -1245,10 +1206,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "17:30",
       "url": "https://larayonne.org/evenement/presenter-et-mettre-en-valeur-son-projet-a-loral-atelier-pratique-2-2/",
       "image": null,
-      "id": "65017cba32f5"
+      "id": "2496e4a7b830"
     },
     {
       "venue": "La Rayonne",
@@ -1258,10 +1219,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "17:30",
       "url": "https://larayonne.org/evenement/open-air-opa2-avec-physical-tool/",
       "image": null,
-      "id": "134477eac050"
+      "id": "32a46d97e0d0"
     },
     {
       "venue": "La Rayonne",
@@ -1271,10 +1232,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "17:30",
       "url": "https://larayonne.org/evenement/mieux-apprhender-les-rseaux-sociaux-exemplaire/",
       "image": null,
-      "id": "4d52fba25991"
+      "id": "6bcc6eab8252"
     },
     {
       "venue": "La Rayonne",
@@ -1284,10 +1245,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "17:30",
       "url": "https://larayonne.org/evenement/comprendre-les-principales-aides-a-lemploi-dans-le-spectacle-vivant/",
       "image": null,
-      "id": "2f5cb8a0739a"
+      "id": "6c43f70627ce"
     },
     {
       "venue": "La Rayonne",
@@ -1297,10 +1258,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "17:30",
       "url": "https://larayonne.org/evenement/construire-un-budget-et-un-plan-de-tresorerie-atelier-theorique-1-2-2/",
       "image": null,
-      "id": "8f86a881d89c"
+      "id": "3da25ddd5e53"
     },
     {
       "venue": "La Rayonne",
@@ -1310,10 +1271,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "17:30",
       "url": "https://larayonne.org/evenement/mettre-en-place-une-comptabilite-pour-les-petites-associations-6/",
       "image": null,
-      "id": "b14f58369b76"
+      "id": "d522b4553d16"
     },
     {
       "venue": "Les Subsistances",
@@ -1357,15 +1318,15 @@
     {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
-      "title": "INDUS + SABOR A MI",
+      "title": "INDUS + SABOR A MI + FERVINHO",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-07-17",
       "date_end": null,
       "time": null,
-      "url": "https://www.transbordeur.fr/evenement/indus-sabor-a-mi-17072026/",
+      "url": "https://www.transbordeur.fr/evenement/indus-sabor-a-mi-fervinho-17072026/",
       "image": null,
-      "id": "4c97fdc9db1b"
+      "id": "52fd3939d0e8"
     },
     {
       "venue": "Le Petit Salon",
@@ -1431,6 +1392,19 @@
       "url": "https://h-eat.eu/events/finale-cdm/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-266-576x720.png",
       "id": "7bce76684956"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "A la découverte du chocolat",
+      "subtitle": null,
+      "category": "atelier",
+      "date_start": "2026-07-19",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/atelier-chocolat-enfants-lyon-kitchen-street/",
+      "image": null,
+      "id": "59c83370bd35"
     },
     {
       "venue": "La Commune",
@@ -1735,7 +1709,7 @@
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "club x Stand with Lebanon",
-      "subtitle": "Lyss · jaad! · Halpipe Records · Paloma Colombe · Klorofil · KasbaH",
+      "subtitle": "Lyss · jaad! · Halfpipe Records · Paloma Colombe · Klorofil · KasbaH",
       "category": "club",
       "date_start": "2026-08-28",
       "date_end": null,
@@ -4150,6 +4124,19 @@
       "id": "aeaa45bfcd8a"
     },
     {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Concert",
+      "subtitle": "Lisa Pariente",
+      "category": "concert",
+      "date_start": "2026-11-27",
+      "date_end": null,
+      "time": null,
+      "url": "https://le-sucre.eu/events/concert-10/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/CARRE-lisa-pariente-600x600.jpg",
+      "id": "34bea0e2106e"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "KID FRANCESCOLI + WOODY",
@@ -6139,6 +6126,19 @@
       "id": "b6e4854fae15"
     },
     {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Charlie Haid",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-03-07",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/charlie-haid-410726.html",
+      "image": null,
+      "id": "2487b4b2569c"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "Bertrand Belin",
@@ -6800,19 +6800,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/serge-papagalli/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/serge-papagelli_radiant-bellevue-500x500.jpg",
       "id": "15ea6374c40a"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Studiolo de l’Exil",
-      "subtitle": "avril      \t      \t >",
-      "category": "théâtre",
-      "date_start": "2027-04-22",
-      "date_end": "2027-06-30",
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/studiolo-de-lexil/",
-      "image": null,
-      "id": "f1b1ee028705"
     },
     {
       "venue": "Radiant-Bellevue",
