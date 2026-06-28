@@ -1,267 +1,7 @@
 {
-  "generated_at": "2026-06-27T08:29:55.929853+00:00",
-  "count": 554,
+  "generated_at": "2026-06-28T08:43:33.368973+00:00",
+  "count": 541,
   "events": [
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Plan à trois : Dykeness x Silk x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/plan-a-trois-dyckness-x-silk-x-heat/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/06/Affiche-finale-_-PRIDE_Post-insta-Pride-576x720.png",
-      "id": "992e2353a55e"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "BOILER YUFRIP",
-      "subtitle": null,
-      "category": "marchés",
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/boiler-yufrip-pride-after-party-lyon-2026/",
-      "image": null,
-      "id": "92655d2fbf94"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "REALO X DEELEE S + RECKLESSBOISE + SANDERSCORE + 09PEAS + VERTT",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/realo-x-deelee-s-recklessboise-sanderscore-09peas-vertt-27062026/",
-      "image": null,
-      "id": "81f071fb7e9a"
-    },
-    {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-lyon",
-      "title": "Visites découverte commentées",
-      "subtitle": null,
-      "category": "visite",
-      "date_start": "2026-06-27",
-      "date_end": "2026-07-11",
-      "time": null,
-      "url": "https://www.opera-lyon.com/fr/programmation/saison-2025-2026/visites/visites-decouverte-commentees-2",
-      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/ca8e7a20/opera_visite.png",
-      "id": "1c35703ca1ab"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "PHILIPPE DECOUFLÉ",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/compagnie-dca-philippe-decoufle/",
-      "image": null,
-      "id": "329b027c2ac1"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "EDDIE’S DIVE BAR : LE POP UP STORE D’IRON MAIDEN",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": "12:00",
-      "url": "https://larayonne.org/evenement/eddies-dive-bar-le-pop-up-store-diron-maiden/",
-      "image": null,
-      "id": "f72f239964a8"
-    },
-    {
-      "venue": "Plage de l'Atol",
-      "venue_slug": "plage-de-l-atol",
-      "title": "Évasion festival - jour 1",
-      "subtitle": null,
-      "category": "Musique Electronique",
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": "12:00",
-      "url": "https://www.petit-bulletin.fr/agenda-310647-vasion-festival-jour-1.html",
-      "image": null,
-      "id": "3faf298a58b3"
-    },
-    {
-      "venue": "Palais de la Mutualité Salle Edouard Herriot",
-      "venue_slug": "palais-de-la-mutualite-salle-edouard-herriot",
-      "title": "Bonjour le monde !",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": "14:00",
-      "url": "https://agenda.villemorte.fr/event/bonjour-le-monde",
-      "image": null,
-      "id": "8b2ec34ba2e7"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "Hip Hop Talents",
-      "subtitle": null,
-      "category": "Rap",
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": "14:30",
-      "url": "https://www.petit-bulletin.fr/agenda-310675-hip-hop-talents.html",
-      "image": null,
-      "id": "27c0fd374229"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Minipousses Cirque",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": "14:30",
-      "url": "https://www.les-subs.com/evenement/minipousses-cirque/",
-      "image": null,
-      "id": "83718993e3e8"
-    },
-    {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "(ANNULÉ) Sans Transition After Prrride",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://agenda.villemorte.fr/event/afterpride-1",
-      "image": null,
-      "id": "853444f9e32f"
-    },
-    {
-      "venue": "Auditorium de Lyon",
-      "venue_slug": "auditorium-de-lyon",
-      "title": "À vos instruments",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.petit-bulletin.fr/agenda-289937-vos-instruments.html",
-      "image": null,
-      "id": "ef79695201d7"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Toi + Moi = ?",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318695-toi-moi.html",
-      "image": null,
-      "id": "f0132feca39e"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "Blob Party X Transbo open-air",
-      "subtitle": null,
-      "category": "Musique Electronique",
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318705-blob-party-x-transbo-open-air.html",
-      "image": null,
-      "id": "b8fcc12d7350"
-    },
-    {
-      "venue": "Alternatibar",
-      "venue_slug": "alternatibar",
-      "title": "Scène ouverte !",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://agenda.villemorte.fr/event/scene-ouverte-6",
-      "image": null,
-      "id": "a6c982f9bb6b"
-    },
-    {
-      "venue": "Le Sonic",
-      "venue_slug": "sonic",
-      "title": "AFTER PRIDE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://sonic-lyon.fr/evenement/after-pride/",
-      "image": null,
-      "id": "d1df67af9be0"
-    },
-    {
-      "venue": "Aquarium ciné-café",
-      "venue_slug": "aquarium-cine-cafe",
-      "title": "Double jeu",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318702-double-jeu.html",
-      "image": null,
-      "id": "586e3f9e1d71"
-    },
-    {
-      "venue": "Toï Toï le Zinc",
-      "venue_slug": "toi-toi-le-zinc",
-      "title": "Le Cabaret des Oliviers",
-      "subtitle": null,
-      "category": "Spectacles Divers",
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318701-le-cabaret-des-oliviers.html",
-      "image": null,
-      "id": "9bff3a4764b4"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "club xMKNK",
-      "subtitle": "Densha Crisis · Kilbourne · Manu Le Malin · RABBeAT",
-      "category": "club",
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": "23:00",
-      "url": "https://le-sucre.eu/events/club-xmknk/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/POSTIG-copie-480x600.jpg",
-      "id": "dd185b00d265"
-    },
-    {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "25EMEHEURE / ANDEREX / SO JUICE & MORE",
-      "subtitle": null,
-      "category": "club",
-      "date_start": "2026-06-27",
-      "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/453bf898-4170-430e-9269-2cfbe6bab7b0/25-EMEHEURE-Anderex-So-Juice-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/RSLCE_25EMEHEURE_27062026_lepetitsalon-1024x576.jpg",
-      "id": "593a2b73f6d3"
-    },
     {
       "venue": "HEAT",
       "venue_slug": "heat",
@@ -287,32 +27,6 @@
       "url": "https://lacommune.co/event/atelier-broderie-vetements-seconde-main-le-dressing-de-lea-lieu-dit/",
       "image": null,
       "id": "7c9c5bf7355e"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "S.society",
-      "subtitle": "Lacchesi · JKS",
-      "category": "club",
-      "date_start": "2026-06-28",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/s-society-151/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/JKS-LACCHESI_-600x338.png",
-      "id": "d9d779f30208"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "BBNO$",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-28",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/bbno/",
-      "image": null,
-      "id": "053a6bca8843"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -341,6 +55,19 @@
       "id": "742b124a9c2e"
     },
     {
+      "venue": "Plage de l'Atol",
+      "venue_slug": "plage-de-l-atol",
+      "title": "Évasion festival - jour 2",
+      "subtitle": null,
+      "category": "Musique Electronique",
+      "date_start": "2026-06-28",
+      "date_end": null,
+      "time": "12:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318041-vasion-festival-jour-2.html",
+      "image": null,
+      "id": "d54bc7f6fd36"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "(ANNULÉ) Projection de Hélène Trésore Transnationale",
@@ -367,6 +94,45 @@
       "id": "17f1f0606bd9"
     },
     {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "S.society",
+      "subtitle": "Lacchesi · JKS",
+      "category": "club",
+      "date_start": "2026-06-28",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://le-sucre.eu/events/s-society-151/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/JKS-LACCHESI_-600x338.png",
+      "id": "69edcb4c54e8"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "BBNO$",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-28",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/bbno/",
+      "image": null,
+      "id": "bf7d268be773"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Catch impro",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-06-28",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318699-catch-impro.html",
+      "image": null,
+      "id": "b6f55aed4454"
+    },
+    {
       "venue": "Big White",
       "venue_slug": "big-white",
       "title": "Big Comedy Club",
@@ -380,6 +146,19 @@
       "id": "f2eb7f59353f"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Nos futurs",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-06-29",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318696-nos-futurs.html",
+      "image": null,
+      "id": "ee8bddf323ed"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Magic Mardi",
@@ -391,19 +170,6 @@
       "url": "https://le-sucre.eu/events/magic-mardi-83/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Plan-de-travail-24_3-480x600.png",
       "id": "516608e488ad"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "CAVALERA",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-06-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/cavalera-30062026/",
-      "image": null,
-      "id": "97e334f2b9a6"
     },
     {
       "venue": "Le Périscope",
@@ -430,6 +196,19 @@
       "url": "https://agenda.villemorte.fr/event/theatre-creation-en-cours-debat-rage",
       "image": null,
       "id": "bc332334627f"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "CAVALERA",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-06-30",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.transbordeur.fr/evenement/cavalera-30062026/",
+      "image": null,
+      "id": "ca8f96866f19"
     },
     {
       "venue": "La Commune",
@@ -638,6 +417,19 @@
       "url": "https://lacommune.co/event/atelier-enfant/",
       "image": null,
       "id": "170a22b7b701"
+    },
+    {
+      "venue": "Place Mazagran",
+      "venue_slug": "place-mazagran",
+      "title": "Mazafest",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "12:00",
+      "url": "https://agenda.villemorte.fr/event/mazafest",
+      "image": null,
+      "id": "146fb90a07d9"
     },
     {
       "venue": "IAC Villeurbanne",
@@ -972,10 +764,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "12:00",
+      "time": "15:15",
       "url": "https://larayonne.org/evenement/presenter-et-mettre-en-valeur-son-projet-a-loral-atelier-pratique-2-2/",
       "image": null,
-      "id": "520855e724e0"
+      "id": "339872367949"
     },
     {
       "venue": "La Rayonne",
@@ -985,10 +777,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "12:00",
+      "time": "15:15",
       "url": "https://larayonne.org/evenement/open-air-opa2-avec-physical-tool/",
       "image": null,
-      "id": "8b85952d0f4c"
+      "id": "a31ec1ea9d46"
     },
     {
       "venue": "La Rayonne",
@@ -998,10 +790,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "12:00",
+      "time": "15:15",
       "url": "https://larayonne.org/evenement/mieux-apprhender-les-rseaux-sociaux-exemplaire/",
       "image": null,
-      "id": "328c47cb9a7e"
+      "id": "ad6a7b15c04b"
     },
     {
       "venue": "La Rayonne",
@@ -1011,10 +803,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "12:00",
+      "time": "15:15",
       "url": "https://larayonne.org/evenement/comprendre-les-principales-aides-a-lemploi-dans-le-spectacle-vivant/",
       "image": null,
-      "id": "a48994f2c203"
+      "id": "aa21376c4114"
     },
     {
       "venue": "La Rayonne",
@@ -1024,10 +816,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "12:00",
+      "time": "15:15",
       "url": "https://larayonne.org/evenement/construire-un-budget-et-un-plan-de-tresorerie-atelier-theorique-1-2-2/",
       "image": null,
-      "id": "a0154599ca56"
+      "id": "b8f3ea672d93"
     },
     {
       "venue": "La Rayonne",
@@ -1037,10 +829,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "12:00",
+      "time": "15:15",
       "url": "https://larayonne.org/evenement/mettre-en-place-une-comptabilite-pour-les-petites-associations-6/",
       "image": null,
-      "id": "429726ee8855"
+      "id": "b4c16f86c7ef"
     },
     {
       "venue": "Les Subsistances",
@@ -7075,6 +6867,19 @@
       "id": "e808eda4bc91"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Cou erture",
+      "subtitle": "Pauline Valentin, MA Compagnie",
+      "category": "théâtre",
+      "date_start": "2027-06-12",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.tng-lyon.fr/evenement/cou-erture/",
+      "image": null,
+      "id": "4ea14dd4b3a0"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Frederic Francois",
@@ -7125,6 +6930,32 @@
       "url": "https://h-eat.eu/events/france-norvege/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-263-576x720.png",
       "id": "090968ed4ec8"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Plan à trois : Dykeness x Silk x HEAT",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2027-06-27",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/plan-a-trois-dyckness-x-silk-x-heat/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/06/Affiche-finale-_-PRIDE_Post-insta-Pride-576x720.png",
+      "id": "5d070a8dfcf4"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "25EMEHEURE / ANDEREX / SO JUICE & MORE",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2027-06-27",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://yp.events/453bf898-4170-430e-9269-2cfbe6bab7b0/25-EMEHEURE-Anderex-So-Juice-more?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/RSLCE_25EMEHEURE_27062026_lepetitsalon-1024x576.jpg",
+      "id": "f4d06c87aa6f"
     },
     {
       "venue": "Bourse du Travail",
