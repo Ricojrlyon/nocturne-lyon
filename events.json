@@ -1,33 +1,7 @@
 {
-  "generated_at": "2026-06-29T10:27:45.079476+00:00",
-  "count": 540,
+  "generated_at": "2026-06-30T08:59:43.155171+00:00",
+  "count": 548,
   "events": [
-    {
-      "venue": "Big White",
-      "venue_slug": "big-white",
-      "title": "Big Comedy Club",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-06-29",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://agenda.villemorte.fr/event/big-comedy-club-16",
-      "image": null,
-      "id": "f2eb7f59353f"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Nos futurs",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2026-06-29",
-      "date_end": null,
-      "time": "21:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318696-nos-futurs.html",
-      "image": null,
-      "id": "ee8bddf323ed"
-    },
     {
       "venue": "Jardin Gilibert (géré par la MJC Confluence)",
       "venue_slug": "jardin-gilibert-gere-par-la-mjc-confluence",
@@ -58,7 +32,7 @@
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Magic Mardi",
-      "subtitle": "MRXY · Helia Kiani · Kiana Bahrami · LUNR",
+      "subtitle": "MRXY · Helia Kiani · LUNR",
       "category": "club",
       "date_start": "2026-06-30",
       "date_end": null,
@@ -83,15 +57,15 @@
     {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
-      "title": "CAVALERA",
+      "title": "CAVALERA + KAMIZOL-K",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-06-30",
       "date_end": null,
       "time": "18:30",
-      "url": "https://www.transbordeur.fr/evenement/cavalera-30062026/",
+      "url": "https://www.transbordeur.fr/evenement/cavalera-kamizol-k-30062026/",
       "image": null,
-      "id": "ca8f96866f19"
+      "id": "082156795915"
     },
     {
       "venue": "Péristyle Opéra",
@@ -185,6 +159,19 @@
       "id": "47dde01bf28e"
     },
     {
+      "venue": "L'Épicerie Moderne",
+      "venue_slug": "l-epicerie-moderne",
+      "title": "Les relâches - Soirée blind test et cinéma plein air",
+      "subtitle": null,
+      "category": "Jeux",
+      "date_start": "2026-07-01",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318760-les-rel-ches-soir-e-blind-test-et-cin-ma-plein-air.html",
+      "image": null,
+      "id": "1eef9ebedad7"
+    },
+    {
       "venue": "Musée des Beaux-Arts",
       "venue_slug": "musee-des-beaux-arts",
       "title": "Cartes postales du Japon",
@@ -200,15 +187,15 @@
     {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
-      "title": "ALTIN GÜN",
+      "title": "ALTIN GÜN + SABABA 5",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-07-01",
       "date_end": null,
       "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/altin-gun-01072026/",
+      "url": "https://www.transbordeur.fr/evenement/altin-gun-sababa-5-01072026/",
       "image": null,
-      "id": "fc5fffbb0217"
+      "id": "9e4aa39b5b2b"
     },
     {
       "venue": "Improvidence",
@@ -237,9 +224,22 @@
       "id": "fe79c7dad546"
     },
     {
+      "venue": "Péristyle Opéra",
+      "venue_slug": "peristyle-opera",
+      "title": "Kabar Maloya - Ti'kaniki + KapKap + Ravaz",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-07-01",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318730-kabar-maloya-tiekaniki-kapkap-ravaz.html",
+      "image": null,
+      "id": "d2a3ca131c9b"
+    },
+    {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "Intérieur Queer : Comedy Club",
+      "title": "Intérieur Queer : Comedy Club [complet]",
       "subtitle": null,
       "category": null,
       "date_start": "2026-07-02",
@@ -247,7 +247,7 @@
       "time": null,
       "url": "https://h-eat.eu/events/interieur-queer-comedy-club/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/03/💍-La-9e-edition-du-festival-se-devoile-Decouvrez-a-present-la-nouvelle-identite-et-larmature-2-576x720.jpg",
-      "id": "80e6746b0882"
+      "id": "8f9013e2ce3d"
     },
     {
       "venue": "La Commune",
@@ -354,6 +354,19 @@
       "id": "1567eb18e503"
     },
     {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "CLUB SONIC",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-07-03",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://sonic-lyon.fr/evenement/club-sonic-4/",
+      "image": null,
+      "id": "ec575c14ccf8"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "THIS IS DISCO : VYKTOR NOVA / TERROR MIKE",
@@ -443,6 +456,19 @@
       "url": "https://larayonne.org/evenement/un-ete-a-la-rayonne-afro-night-x-team-paiya/",
       "image": null,
       "id": "3f940d801586"
+    },
+    {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "2000’S PARTY",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://sonic-lyon.fr/evenement/2000s-party-4/",
+      "image": null,
+      "id": "e5ba67200015"
     },
     {
       "venue": "Le Petit Salon",
@@ -692,6 +718,19 @@
       "id": "9244cbac4c3d"
     },
     {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "[Open Air] OPA#2 avec Physical Tool",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-11",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://larayonne.org/evenement/open-air-opa2-avec-physical-tool/",
+      "image": null,
+      "id": "6bf9704b9891"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "THIS IS HOUSE : SHAMANISM",
@@ -785,19 +824,6 @@
     {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
-      "title": "[OPEN AIR] OPA#2 avec Physical Tool 15h > 22h gratuit",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-14",
-      "date_end": "2026-07-14",
-      "time": "14:30",
-      "url": "https://larayonne.org/evenement/open-air-opa2-avec-physical-tool/",
-      "image": null,
-      "id": "9926ac301147"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
       "title": "Mieux appréhender les réseaux sociaux 18h30 > 21h",
       "subtitle": null,
       "category": null,
@@ -811,6 +837,19 @@
     {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
+      "title": "Définir sa stratégie de diffusion 18h > 20h",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-14",
+      "date_end": "2026-07-14",
+      "time": "14:30",
+      "url": "https://larayonne.org/evenement/dfinir-sa-stratgie-de-diffusion/",
+      "image": null,
+      "id": "504a98f304bd"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
       "title": "Comprendre les principales aides à l'emploi dans le spectacle vivant 18h30 > 20h30",
       "subtitle": null,
       "category": null,
@@ -820,6 +859,58 @@
       "url": "https://larayonne.org/evenement/comprendre-les-principales-aides-a-lemploi-dans-le-spectacle-vivant/",
       "image": null,
       "id": "e2ded27e6326"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "Elaborer un dossier de diffusion 18h > 20h",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-14",
+      "date_end": "2026-07-14",
+      "time": "14:30",
+      "url": "https://larayonne.org/evenement/elaborer-un-dossier-de-diffusion/",
+      "image": null,
+      "id": "3e80f3d15714"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "Formaliser sa production artistique 17h > 19h30",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-14",
+      "date_end": "2026-07-14",
+      "time": "14:30",
+      "url": "https://larayonne.org/evenement/formaliser-sa-production-artistique-3/",
+      "image": null,
+      "id": "e816bb722f14"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "Construire son budget de production pour son projet artistique 17h > 20h",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-14",
+      "date_end": "2026-07-14",
+      "time": "14:30",
+      "url": "https://larayonne.org/evenement/construire-son-budget-de-production-pour-son-projet-artistique/",
+      "image": null,
+      "id": "6efb49b9d454"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "L'emploi dans le spectacle vivant 18h30 > 21h",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-14",
+      "date_end": "2026-07-14",
+      "time": "14:30",
+      "url": "https://larayonne.org/evenement/lemploi-dans-le-spectacle-vivant-2/",
+      "image": null,
+      "id": "d7b380a36917"
     },
     {
       "venue": "La Rayonne",
@@ -1732,6 +1823,19 @@
       "id": "590417c1cdd1"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Gratuit Déjeuner-Concert Déjeuner-Concert Dispositif Avant-Scène",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-09-29",
+      "date_end": null,
+      "time": "12:30",
+      "url": "https://marchegare.fr/agenda/dejeuner-concert",
+      "image": null,
+      "id": "02a85733100d"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Brel ! Le Spectacle",
@@ -1964,6 +2068,19 @@
       "url": "https://www.tng-lyon.fr/evenement/boule-de-neige/",
       "image": null,
       "id": "b73d6abebbc6"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Gratuit Déjeuner-Concert Déjeuner-Concert Labo du Conservatoire",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-10-06",
+      "date_end": null,
+      "time": "12:30",
+      "url": "https://marchegare.fr/agenda/dejeuner-concert-0",
+      "image": null,
+      "id": "723fb5cef99c"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -2980,6 +3097,19 @@
       "id": "dc1addf7b1c6"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Rap PLAVACE - 5 ANS JAYMEE · MANDYSPIE · GEMEN",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-11-06",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/plavace-5ans",
+      "image": null,
+      "id": "3bdb0297b0a8"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Naim",
@@ -3773,19 +3903,6 @@
       "id": "b4b3fd0a36c0"
     },
     {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Urban Pop KALIKA",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-11-26",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://marchegare.fr/agenda/kalika-26",
-      "image": null,
-      "id": "64ad9f1ecdd3"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Fabrice Eboue",
@@ -3890,19 +4007,6 @@
       "id": "4876aad118f4"
     },
     {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Indie Pop Pi Ja Ma + MILENA",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-11-28",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://marchegare.fr/agenda/pi-ja-ma",
-      "image": null,
-      "id": "c5edbdc2d9bd"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Gus Illusionniste",
@@ -4005,19 +4109,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/la-grande-sophie-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/la-grande-sophie_radiant-bellevue-500x500.jpg",
       "id": "b5f482f818be"
-    },
-    {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Soul Urban Pop WAMEN",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-12-02",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://marchegare.fr/agenda/wamen",
-      "image": null,
-      "id": "e385962dca52"
     },
     {
       "venue": "Bourse du Travail",
@@ -5864,6 +5955,19 @@
       "url": "https://www.bourse-du-travail.com/blandine-lehout-359464.html",
       "image": null,
       "id": "4696c2dd3f87"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "KEMMLER",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-03-11",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/kemmler-11032027/",
+      "image": null,
+      "id": "c7d5f15ac247"
     },
     {
       "venue": "Radiant-Bellevue",
