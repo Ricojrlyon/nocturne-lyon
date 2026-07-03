@@ -1,98 +1,7 @@
 {
-  "generated_at": "2026-07-02T08:47:45.816948+00:00",
-  "count": 517,
+  "generated_at": "2026-07-03T08:52:36.782580+00:00",
+  "count": 597,
   "events": [
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "DJ set house à Lyon – Suntrax Rho Shi",
-      "subtitle": null,
-      "category": "dj set",
-      "date_start": "2026-07-02",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/dj-set-house-a-lyon-suntrax/",
-      "image": "https://lacommune.co/wp-content/uploads/2026/06/1080x1350_juillet-programmation-1-768x960.jpg",
-      "id": "50ecbf8f2fed"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Intérieur Queer : Comedy Club [complet]",
-      "subtitle": null,
-      "category": "Humour & Café Théâtre",
-      "date_start": "2026-07-02",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://h-eat.eu/events/interieur-queer-comedy-club/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/03/💍-La-9e-edition-du-festival-se-devoile-Decouvrez-a-present-la-nouvelle-identite-et-larmature-2-576x720.jpg",
-      "id": "08421ba11728"
-    },
-    {
-      "venue": "Péristyle Opéra",
-      "venue_slug": "peristyle-opera",
-      "title": "Karaoké piano",
-      "subtitle": null,
-      "category": "Jeux",
-      "date_start": "2026-07-02",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318759-karaok-piano.html",
-      "image": null,
-      "id": "cfece69d2609"
-    },
-    {
-      "venue": "Parc Blandan",
-      "venue_slug": "parc-blandan",
-      "title": "Bal Folk",
-      "subtitle": null,
-      "category": "Sono Mondiale",
-      "date_start": "2026-07-02",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.petit-bulletin.fr/agenda-317626-bal-folk.html",
-      "image": null,
-      "id": "271e728a6813"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Le Putsch",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2026-07-02",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-314737-le-putsch.html",
-      "image": null,
-      "id": "8a051bdee957"
-    },
-    {
-      "venue": "Chapelle de la Trinité",
-      "venue_slug": "chapelle-de-la-trinite",
-      "title": "Pulse",
-      "subtitle": null,
-      "category": "Sono Mondiale",
-      "date_start": "2026-07-02",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318723-pulse.html",
-      "image": null,
-      "id": "65ae0d3f0e2d"
-    },
-    {
-      "venue": "Le Sonic",
-      "venue_slug": "sonic",
-      "title": "SESSION SILK",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-07-02",
-      "date_end": null,
-      "time": "22:00",
-      "url": "https://sonic-lyon.fr/evenement/session-silk/",
-      "image": null,
-      "id": "8a5932d7ea40"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -103,8 +12,34 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/bal-swing-lyon-2/",
-      "image": "https://lacommune.co/wp-content/uploads/2025/07/1080x1350_juillet-programmation-1-768x960.jpg",
+      "image": "https://lacommune.co/wp-content/uploads/2025/07/1080x1350_juillet-programmation-3-768x960.jpg",
       "id": "d3dc17e9b795"
+    },
+    {
+      "venue": "Boskop",
+      "venue_slug": "boskop",
+      "title": "Vernsisage · exposition collective · TOUT CHAOS",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-03",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://agenda.villemorte.fr/event/vernsisage-exposition-collective-tout-chaos",
+      "image": null,
+      "id": "df98f19e0c1a"
+    },
+    {
+      "venue": "Maison de l'écologie",
+      "venue_slug": "maison-de-l-ecologie",
+      "title": "RÊVER SOUS LE FUTUR · GROUPE DE RÊVE COLLECTIF - Cycle de 7 séances",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-03",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://agenda.villemorte.fr/event/rever-sous-le-futur-groupe-de-reve-collectif-cycle-de-7-seances-1",
+      "image": null,
+      "id": "beda7f8b48e1"
     },
     {
       "venue": "HEAT",
@@ -224,19 +159,6 @@
       "id": "8d8b596ed8a9"
     },
     {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Intérieur Queer : Ball & Afterball",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/interieur-queer-ball-afterball/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/03/💍-La-9e-edition-du-festival-se-devoile-Decouvrez-a-present-la-nouvelle-identite-et-larmature--576x720.jpg",
-      "id": "62739d3676e7"
-    },
-    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "France V/S Paraguay : CDM 2026",
@@ -263,17 +185,108 @@
       "id": "170a22b7b701"
     },
     {
+      "venue": "Place Mazagran",
+      "venue_slug": "place-mazagran",
+      "title": "Mazafest",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "12:00",
+      "url": "https://agenda.villemorte.fr/event/mazafest",
+      "image": null,
+      "id": "146fb90a07d9"
+    },
+    {
+      "venue": "IAC Villeurbanne",
+      "venue_slug": "iac-villeurbanne",
+      "title": "(PSYCHO)SOMATIC STORIES x EXTÉRIEUR QUEER",
+      "subtitle": null,
+      "category": "cinéma",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "12:30",
+      "url": "https://agenda.villemorte.fr/event/psychosomatic-stories-x-exterieur-queer",
+      "image": null,
+      "id": "c0cc0c6c652e"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Panotii Cantii - Bal folk d'été ☀️",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://agenda.villemorte.fr/event/bal-folk-dete",
+      "image": null,
+      "id": "2ebaaf194a29"
+    },
+    {
+      "venue": "Black Hole",
+      "venue_slug": "black-hole",
+      "title": "DEBARULERS - HEAVY GRUNGE (LYON) au BLACK HOLE",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/debarulers-heavy-grunge-lyon-au-black-hole",
+      "image": null,
+      "id": "6177ef3a8444"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Intérieur Queer : Ball & Afterball",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://h-eat.eu/events/interieur-queer-ball-afterball/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/03/💍-La-9e-edition-du-festival-se-devoile-Decouvrez-a-present-la-nouvelle-identite-et-larmature--576x720.jpg",
+      "id": "938de8c38f5b"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "[Un été à La Rayonne] Afro Night x Team Paiya",
       "subtitle": null,
-      "category": null,
+      "category": "Sono Mondiale",
       "date_start": "2026-07-04",
       "date_end": null,
       "time": "19:00",
       "url": "https://larayonne.org/evenement/un-ete-a-la-rayonne-afro-night-x-team-paiya/",
       "image": null,
       "id": "3f940d801586"
+    },
+    {
+      "venue": "LDLC Arena",
+      "venue_slug": "ldlc-arena",
+      "title": "Wfads World Cup 2026",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318700-wfads-world-cup-2026.html",
+      "image": null,
+      "id": "5a273d0f51d9"
+    },
+    {
+      "venue": "Auditorium de Lyon",
+      "venue_slug": "auditorium-de-lyon",
+      "title": "En fanfare(s)",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318711-en-fanfare-s.html",
+      "image": null,
+      "id": "5a883539aced"
     },
     {
       "venue": "Le Sonic",
@@ -287,6 +300,19 @@
       "url": "https://sonic-lyon.fr/evenement/2000s-party-4/",
       "image": null,
       "id": "e5ba67200015"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Club",
+      "subtitle": null,
+      "category": "Musique Electronique",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://www.petit-bulletin.fr/agenda-316823-club.html",
+      "image": null,
+      "id": "d07681cb1b89"
     },
     {
       "venue": "Le Petit Salon",
@@ -315,6 +341,19 @@
       "id": "fb73e820ceea"
     },
     {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Kuntry Kiki Ball",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-05",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://agenda.villemorte.fr/event/kiki-ball-en-marge-du-major-ball-de-vinni-revlon",
+      "image": null,
+      "id": "d273965ce002"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "[Open Air] SAUCE PIQUANTE avec THK",
@@ -339,6 +378,32 @@
       "url": "https://lacommune.co/event/pimp-my-vinyl-a-la-commune/",
       "image": "https://lacommune.co/wp-content/uploads/2025/11/6-1-768x960.jpg",
       "id": "189124e9b568"
+    },
+    {
+      "venue": "Jardin Gilibert",
+      "venue_slug": "jardin-gilibert",
+      "title": "[Concert gratuit] Violetazul au Jardin Gilibert",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-07",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://agenda.villemorte.fr/event/concert-gratuit-violetazul-au-jardin-gilibert",
+      "image": null,
+      "id": "ceee8bb03d35"
+    },
+    {
+      "venue": "Les Clameurs",
+      "venue_slug": "les-clameurs",
+      "title": "Stand Up Politique",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-07",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/stand-up-politique-10",
+      "image": null,
+      "id": "f186df82e751"
     },
     {
       "venue": "Marché Gare",
@@ -393,6 +458,32 @@
       "id": "2af3a48e4793"
     },
     {
+      "venue": "Le Zibou Lab",
+      "venue_slug": "le-zibou-lab",
+      "title": "[Concert gratuit] Tempus Fluens au Zibou Lab",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-08",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/concert-gratuit-tempus-fluens-au-zibou-lab",
+      "image": null,
+      "id": "b580f2d2d7ee"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Sulfuric Cautery + Morgue Breath + Fosse Septique",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-08",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/sulfuric-cautery-morgue-breath-fosseseptique",
+      "image": null,
+      "id": "c39b9e637cda"
+    },
+    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Diversions : Edredon Sensible (live)",
@@ -417,6 +508,19 @@
       "url": "https://h-eat.eu/events/quart-de-final/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-264-576x720.png",
       "id": "439767b36491"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "[Concert gratuit] Edredon Sensible au HEAT",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-09",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/concert-gratuit-edredon-sensible-au-heat",
+      "image": null,
+      "id": "b9f8feeb53c0"
     },
     {
       "venue": "HEAT",
@@ -458,6 +562,45 @@
       "id": "502e62cb1a99"
     },
     {
+      "venue": "Place du 8 mai 1945, Lyon 8e",
+      "venue_slug": "place-du-8-mai-1945-lyon-8e",
+      "title": "Festival La Brise – un temps fort populaire, festif et intergénérationnel !",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-10",
+      "date_end": null,
+      "time": "15:30",
+      "url": "https://agenda.villemorte.fr/event/festival-la-brise-un-temps-fort-populaire-festif-et-intergenerationnel",
+      "image": null,
+      "id": "7e12d093f9b6"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "[Concerts gratuits] Kenz Quintet + ilanga au Périscope",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-10",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/concerts-gratuits-kenz-quintet-ilanga-au-periscope",
+      "image": null,
+      "id": "e184044beea3"
+    },
+    {
+      "venue": "Boskop",
+      "venue_slug": "boskop",
+      "title": "Concert ÁGUA · Rebel Girl",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-10",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/concert-agua-rebel-girl",
+      "image": null,
+      "id": "b36ee759de41"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "THIS IS TECHNO RAVE : CRYMØ / GALLOP",
@@ -497,6 +640,19 @@
       "id": "e69a4ac6d19e"
     },
     {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Silence Collapse Soundsystem",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-11",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://agenda.villemorte.fr/event/silence-collapse-soundsystem",
+      "image": null,
+      "id": "9244cbac4c3d"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "[Open Air] OPA#2 avec Physical Tool",
@@ -523,6 +679,19 @@
       "id": "26ab15ae1c45"
     },
     {
+      "venue": "Friche Artistique Lamartine | La Robinetterie",
+      "venue_slug": "friche-artistique-lamartine-la-robinetterie",
+      "title": "Un été à la Friche dans le cadre de Tout le Monde Dehors 2026",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-12",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://agenda.villemorte.fr/event/un-ete-a-la-friche-dans-le-cadre-de-tout-le-monde-dehors-2026",
+      "image": null,
+      "id": "c506f2f0c184"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "[Open Air] Bubble Boom Party avec Reperkusound",
@@ -534,19 +703,6 @@
       "url": "https://larayonne.org/evenement/open-air-bubble-boom-party/",
       "image": null,
       "id": "d9dd523576f4"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Pimp My Vinyl Lyon",
-      "subtitle": null,
-      "category": "atelier",
-      "date_start": "2026-07-13",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/pimp-my-vinyl/",
-      "image": "https://lacommune.co/wp-content/uploads/2025/11/1080x1350_juillet-programmation-1-768x960.jpg",
-      "id": "dc3368882c4f"
     },
     {
       "venue": "La Rayonne",
@@ -718,6 +874,32 @@
       "id": "c75e0fe6a39b"
     },
     {
+      "venue": "Jardin Envie Partagée quai Rambaud",
+      "venue_slug": "jardin-envie-partagee-quai-rambaud",
+      "title": "[Concert gratuit] FAZAZ au jardin Envie Partagée quai Rambaud",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-15",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/concert-gratuit-fazaz-au-jardin-envie-partagee-quai-rambaud",
+      "image": null,
+      "id": "699b46b4742b"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "GHETTO HEAT Party by Sapristi",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-16",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/ghetto-heat-party-by-sapristi/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/07/sapristi-heat2-1095x720.jpeg",
+      "id": "d955d6cb41a0"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Roda de samba",
@@ -729,6 +911,32 @@
       "url": "https://lacommune.co/event/roda-de-samba-2/",
       "image": "https://lacommune.co/wp-content/uploads/2025/01/1080x1350_juillet-programmation-768x960.jpg",
       "id": "f570dae40543"
+    },
+    {
+      "venue": "Escale Solidaire du 2",
+      "venue_slug": "escale-solidaire-du-2",
+      "title": "[Concert gratuit] Watchdog à l'Escale Solidaire du 2",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-16",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://agenda.villemorte.fr/event/concert-gratuit-watchdog-a-lescale-solidaire-du-2",
+      "image": null,
+      "id": "d52f46796ea3"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Violent Magic Orchestra + Eau Chaude Sanitaire + Nuage Rose + Badaboum",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-16",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/violent-magic-orchestra-eau-chaude-sanitaire-matti-nuage-rose",
+      "image": null,
+      "id": "19efa1040054"
     },
     {
       "venue": "Le Transbordeur",
@@ -768,6 +976,19 @@
       "url": "https://www.transbordeur.fr/evenement/kendal-andi-lavion-spacer-woman-18072026/",
       "image": null,
       "id": "c11753d272bb"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Bos'tock festival",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-18",
+      "date_end": null,
+      "time": "12:00",
+      "url": "https://agenda.villemorte.fr/event/boskop-festival",
+      "image": null,
+      "id": "6da4801ac08a"
     },
     {
       "venue": "Le Petit Salon",
@@ -861,6 +1082,19 @@
       "id": "5db429245cdf"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Club Labo : Happiness Therapy x Klubvivison",
+      "subtitle": null,
+      "category": "club-labo",
+      "date_start": "2026-07-25",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/club-labo-happiness-therapy-x-klubvivison/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/07/post-insta-576x720.png",
+      "id": "fb1ade0ff8d4"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Market La Tu Sap",
@@ -885,6 +1119,32 @@
       "url": "https://yp.events/5046d719-bb7d-4586-8372-ec9b7d736de4/KLOUD-Bab-CHAST-Ki-TTS-more?from=siteweb",
       "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/Kloud_25072026_lepetitsalon-1024x536.jpg",
       "id": "b08e33558a8c"
+    },
+    {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "rock-n-eat",
+      "title": "SHUTDOWN (New York hardcore) + IVY + Nø.V.D",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-26",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/shutdown-new-york-hardcore-ivy-guest",
+      "image": null,
+      "id": "fa3797d51f83"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Pimp My Vinyl Lyon",
+      "subtitle": null,
+      "category": "atelier",
+      "date_start": "2026-07-27",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/pimp-my-vinyl/",
+      "image": "https://lacommune.co/wp-content/uploads/2025/11/27-1-1-768x960.jpg",
+      "id": "f8779a528788"
     },
     {
       "venue": "La Commune",
@@ -952,10 +1212,23 @@
       "id": "d9b4259e5ba0"
     },
     {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Brigitte NRV + Sarah-Maï + Tony Geranno + point de suture",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-08-06",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/brigitte-nrv-sarah-mai-tony-geranno",
+      "image": null,
+      "id": "71380f391172"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Type Beat",
-      "subtitle": "Encore une autre · 32 (live) · Le Kaiju",
+      "subtitle": "Encore une autre · 32 (live) · Le Kaiju · Li$on",
       "category": "club",
       "date_start": "2026-08-07",
       "date_end": null,
@@ -1000,7 +1273,7 @@
       "date_end": null,
       "time": null,
       "url": "https://le-sucre.eu/events/club-x-hidden-garden/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/MARCAL-17-of-1-400x600.jpg",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Le-Sucre_14.08-480x600.jpg",
       "id": "cf0a82b8e8b9"
     },
     {
@@ -1017,6 +1290,19 @@
       "id": "302d900ac033"
     },
     {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Ragana + basseville + Maléore",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-08-15",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/ragana-tba",
+      "image": null,
+      "id": "9a8cc6187d98"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "S.society",
@@ -1028,6 +1314,19 @@
       "url": "https://le-sucre.eu/events/s-society-158/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/DSCF0298-400x600.jpg",
       "id": "0c77cebc1e85"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Fossilization + Phobocosm + tba",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-08-16",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/fossilization-phobocosm-tba",
+      "image": null,
+      "id": "89e72c824d3d"
     },
     {
       "venue": "HEAT",
@@ -1186,6 +1485,19 @@
       "id": "e6dbe304b110"
     },
     {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "PΞB + TBA",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-08-30",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/p3b-tba",
+      "image": null,
+      "id": "8c9574883121"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Formation FORMATION PRO 'Mixage & Mastering' Du 31 août au 11 septembre 2026",
@@ -1197,6 +1509,19 @@
       "url": "https://marchegare.fr/agenda/formation-pro-mixage-mastering-septembre-26",
       "image": null,
       "id": "9dbeac2abfde"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Basem Al-Ashkar et Emmanuelle Miton",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-01",
+      "date_end": "2026-09-02",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-basem-al-ashkar-et-emmanuelle-miton",
+      "image": null,
+      "id": "10e037bc4c71"
     },
     {
       "venue": "Le Sonic",
@@ -1225,6 +1550,19 @@
       "id": "58ad7a251764"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Lucas Rocher + LeHache all stars en première partie",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-05",
+      "date_end": "2026-09-06",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-lucas-rocher-lehache-all-stars-en-premiere-partie",
+      "image": null,
+      "id": "0184923c5e6b"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "TVOD",
@@ -1236,6 +1574,19 @@
       "url": "https://sonic-lyon.fr/evenement/tvod/",
       "image": null,
       "id": "370c09e168d2"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert d'Agnès Bihl",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-09",
+      "date_end": "2026-09-10",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-dagnes-bihl",
+      "image": null,
+      "id": "5d96bfa558f2"
     },
     {
       "venue": "Bourse du Travail",
@@ -1264,6 +1615,19 @@
       "id": "eef3ce44c2bb"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Scène ouverte slam – session de septembre",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-11",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/scene-ouverte-slam-session-de-septembre",
+      "image": null,
+      "id": "791e1d9b3213"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "YANNS",
@@ -1275,6 +1639,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/yanns/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/yanns_radiant-bellevue-500x500.jpg",
       "id": "3a7e063ba883"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Spectacle de Perrine Rouland – Blouse",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-09-12",
+      "date_end": "2026-09-13",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/spectacle-de-perrine-rouland-blouse",
+      "image": null,
+      "id": "ab166977ca79"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -1290,6 +1667,19 @@
       "id": "afed3ffa90b5"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Les Mardis du 4 – session de septembre",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-09-15",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/les-mardis-du-4-session-de-septembre",
+      "image": null,
+      "id": "d34d0ca493e2"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "LA COLONIE DE VACANCES",
@@ -1301,6 +1691,45 @@
       "url": "https://www.transbordeur.fr/evenement/la-colonie-de-vacances-17092026/",
       "image": null,
       "id": "535bf99ebb30"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CONCERT | LÉONID",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-17",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-or-leonid",
+      "image": null,
+      "id": "f28f13e4d4a9"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Merienne & d'Alias Blob",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-17",
+      "date_end": "2026-09-18",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-merienne-and-dalias-blob",
+      "image": null,
+      "id": "f7f0aee1d1ab"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CONCERT | CYRIL MOKAIESH",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-18",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-or-cyril-mokaiesh",
+      "image": null,
+      "id": "4472de7086a7"
     },
     {
       "venue": "Marché Gare",
@@ -1340,6 +1769,45 @@
       "url": "https://www.tng-lyon.fr/evenement/journees-europeennes-du-patrimoine/",
       "image": null,
       "id": "8e3a5cdfbc6a"
+    },
+    {
+      "venue": "La Machinerie - Bizarre !",
+      "venue_slug": "la-machinerie-bizarre",
+      "title": "Fête de rentrée de La Machinerie",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-19",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://agenda.villemorte.fr/event/fete-de-rentree-de-la-machinerie",
+      "image": null,
+      "id": "dc098320baa3"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CO-PLATEAU | CÉCILE HERCULE + JOHANNA BAGET",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-19",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-or-cecile-hercule-johanna-baget",
+      "image": null,
+      "id": "193952daa00e"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Spectacle Des 3 becs – “La centième nuit, chansons d’Anne Sylvestre”",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-19",
+      "date_end": "2026-09-20",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/les-3-becs-la-centieme-nuit-chansons-danne-sylvestre",
+      "image": null,
+      "id": "4e67d37bf08f"
     },
     {
       "venue": "Le Transbordeur",
@@ -1433,6 +1901,32 @@
       "id": "5b381d87e428"
     },
     {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CONCERT | MARION ROCH",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-24",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-or-marion-roch",
+      "image": null,
+      "id": "cf524b7ebf59"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Spectacle de Simon Pichetti – Je suis là",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-24",
+      "date_end": "2026-09-25",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/simon-pichetti-je-suis-la",
+      "image": null,
+      "id": "774ee76baaf2"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "Sofia",
@@ -1485,6 +1979,19 @@
       "id": "710696b10de8"
     },
     {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CONCERT | FREDO DES OGRES DE BARBACK",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-25",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-or-fredo-des-ogres-de-barback",
+      "image": null,
+      "id": "fbcad02fed78"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Release Party Chanson Indie Pop OSCAR LES VACANCES + KÉZIAH MA",
@@ -1511,17 +2018,43 @@
       "id": "590417c1cdd1"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de TÉKLASH",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-26",
+      "date_end": "2026-09-27",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-teklash",
+      "image": null,
+      "id": "07402a24c09d"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Gratuit Déjeuner-Concert Déjeuner-Concert Dispositif Avant-Scène",
+      "title": "Gratuit Déjeuner-Concert TULIPE TULIPE Dispositif Avant-Scène",
       "subtitle": null,
       "category": null,
       "date_start": "2026-09-29",
       "date_end": null,
       "time": "12:30",
-      "url": "https://marchegare.fr/agenda/dejeuner-concert",
+      "url": "https://marchegare.fr/agenda/tulipe-tulipe",
       "image": null,
-      "id": "02a85733100d"
+      "id": "372a63054c79"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Bouches de coton",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-29",
+      "date_end": "2026-09-30",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/bouches-de-coton",
+      "image": null,
+      "id": "29409d262485"
     },
     {
       "venue": "Bourse du Travail",
@@ -1589,6 +2122,19 @@
       "id": "d7122382c78b"
     },
     {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CONCERT | JULIETTE MAGNEVASOA",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-01",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-or-juliette-magnevasoa",
+      "image": null,
+      "id": "b7dcb0936224"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Chanson Pop DINAA",
@@ -1613,6 +2159,32 @@
       "url": "https://www.bourse-du-travail.com/france-gall-michel-berger-l-hommage-tournee-274718.html",
       "image": null,
       "id": "2e5204723b6e"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CO-PLATEAU | NINE + LOUFOX",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-02",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/co-plateau-or-nine-loufox",
+      "image": null,
+      "id": "bae08332bc6f"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "L’amour selon Anton Tchekhov",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-10-02",
+      "date_end": "2026-10-04",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/lamour-selon-anton-tchekhov",
+      "image": null,
+      "id": "f5e0cf988ff9"
     },
     {
       "venue": "Bourse du Travail",
@@ -1652,6 +2224,32 @@
       "url": "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-boule-de-neige/",
       "image": null,
       "id": "fa65056ac236"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CONCERT | CLAUDE LEMESLES",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-or-claude-lemesles",
+      "image": null,
+      "id": "f3b9a2493ce0"
+    },
+    {
+      "venue": "La Machinerie - Bizarre !",
+      "venue_slug": "la-machinerie-bizarre",
+      "title": "34MURPHY + ARTEL + NOBODYLIKESBIRDIE",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/34murphy-artel-nobodylikesbirdie",
+      "image": null,
+      "id": "fcb6fb0af22b"
     },
     {
       "venue": "La Rayonne",
@@ -1771,6 +2369,19 @@
       "id": "446e25bdcf06"
     },
     {
+      "venue": "La Machinerie - Bizarre !",
+      "venue_slug": "la-machinerie-bizarre",
+      "title": "Hold Fast - Cie Ma’, Marion Alzieu",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-07",
+      "date_end": "2026-10-09",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/hold-fast-cie-ma-marion-alzieu",
+      "image": null,
+      "id": "5996037b5355"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "SECRET(S) MEDICAL",
@@ -1782,6 +2393,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/secrets-medical/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/secret-medical_radiant-bellevue-500x500.jpg",
       "id": "c576942bdf19"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Federica e Marco – È una canzone d’amore",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-08",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-federica-e-marco-e-una-canzone-damore",
+      "image": null,
+      "id": "03f7daf73846"
     },
     {
       "venue": "La Rayonne",
@@ -1836,19 +2460,6 @@
       "id": "0eb59d4e1628"
     },
     {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Concert",
-      "subtitle": "Liv Del Estal",
-      "category": "concert",
-      "date_start": "2026-10-09",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/concert-5/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/carre-600x600.png",
-      "id": "b5169ffcbdae"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "GUY2BEZBAR",
@@ -1873,6 +2484,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/kyle-eastwood/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/kyle-eastwood_radiant-bellevue-500x500.jpg",
       "id": "d440b6955c02"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Concert",
+      "subtitle": "Liv Del Estal",
+      "category": "concert",
+      "date_start": "2026-10-09",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://le-sucre.eu/events/concert-5/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/carre-600x600.png",
+      "id": "065b14a0b8bf"
     },
     {
       "venue": "La Rayonne",
@@ -1940,6 +2564,32 @@
       "id": "463af06a0c3a"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert d'Electric Louve & de Da Capo",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-10",
+      "date_end": "2026-10-11",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/concert-delectric-louve-and-de-da-capo",
+      "image": null,
+      "id": "55707a9b5096"
+    },
+    {
+      "venue": "La Machinerie - Bizarre !",
+      "venue_slug": "la-machinerie-bizarre",
+      "title": "GARS SÛRS MUNICIPAUX & FRIENDS",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-10",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/gars-surs-municipaux-and-friends",
+      "image": null,
+      "id": "754cb6c1176a"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Post-Metal HYPNO5E + HIPPOTRAKTOR",
@@ -2003,6 +2653,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/joe-jackson/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/joe-jackson_radiant-bellevue-500x500.jpg",
       "id": "97c248ef47fb"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Les Mardis du 4 – session d’octobre",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-10-13",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/les-mardis-du-4-session-doctobre",
+      "image": null,
+      "id": "570393a895c9"
     },
     {
       "venue": "Le Transbordeur",
@@ -2070,6 +2733,19 @@
       "id": "2800330f1738"
     },
     {
+      "venue": "La Machinerie - Bizarre !",
+      "venue_slug": "la-machinerie-bizarre",
+      "title": "Danyl + Cyrious",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-15",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/danyl-cyrious",
+      "image": null,
+      "id": "66ecf151e4b7"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Rock Soul THE BUTTSHAKERS 'XXL' Concert spécial",
@@ -2107,6 +2783,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/les-wriggles/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/02/les-wriggles-credit-Pauline-Desanneaux-500x500.png",
       "id": "2029125c4f84"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Scène ouverte slam – session d’octobre",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-16",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/scene-ouverte-slam-session-doctobre",
+      "image": null,
+      "id": "fa7f709d8ac7"
     },
     {
       "venue": "La Rayonne",
@@ -2159,6 +2848,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/jesse/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/09/jesse_radiant-bellevue-500x500.jpg",
       "id": "6ca6b54ad1af"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Spectacle de Christine Brotons – “Chansons déshabillées”",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-17",
+      "date_end": "2026-10-18",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/spectacle-de-christine-brotons-chansons-deshabillees",
+      "image": null,
+      "id": "d65468858a5c"
     },
     {
       "venue": "La Rayonne",
@@ -2408,6 +3110,19 @@
       "id": "3a17da648b15"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Spectacle de D@di et Ch@rlie",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-24",
+      "date_end": "2026-10-25",
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/spectacle-de-ddi-et-chrlie",
+      "image": null,
+      "id": "eaeab3090758"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Urban Pop NOOR",
@@ -2525,6 +3240,32 @@
       "id": "8242e4f78810"
     },
     {
+      "venue": "L'Épicerie Moderne",
+      "venue_slug": "l-epicerie-moderne",
+      "title": "THE NOTWIST",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-29",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/the-notwist",
+      "image": null,
+      "id": "1a05b312c57d"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Thibaut Préciat & de Marco Carollo",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-29",
+      "date_end": "2026-10-30",
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-thibaut-preciat-and-de-marco-carollo",
+      "image": null,
+      "id": "3f3ec855369b"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Toute L'histoire De La Peinture En Moins De Deux Heures",
@@ -2629,6 +3370,19 @@
       "id": "f1ba192f4256"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Matildy & de Nico Etoile",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-31",
+      "date_end": "2026-11-01",
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-matildy-and-de-nico-etoile",
+      "image": null,
+      "id": "7a3e2e7a47a3"
+    },
+    {
       "venue": "Opéra national de Lyon",
       "venue_slug": "opera-lyon",
       "title": "Le Sacre du printemps - House",
@@ -2653,6 +3407,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/emily-loizeau-quatuor-debussy/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/emily-loizeau_radiant-bellevue-500x500.jpg",
       "id": "c7c64dd4e4ac"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "37 minutes et des poussières",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-11-03",
+      "date_end": "2026-11-04",
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/37-minutes-et-des-poussieres",
+      "image": null,
+      "id": "fe8bd2c11802"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -2824,6 +3591,19 @@
       "id": "ba91f339a657"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Nicolas Jules",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-07",
+      "date_end": "2026-11-08",
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-nicolas-jules",
+      "image": null,
+      "id": "554b78b96797"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Kamelot + Exit Eden + Temperance",
@@ -2954,6 +3734,19 @@
       "id": "9225684a9a11"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Les Mardis du 4 – session de novembre",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-11-10",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/les-mardis-du-4-session-de-novembre",
+      "image": null,
+      "id": "3a9f2f126e58"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Metal Pop FUTURE PALACE + AS EVERYTHING UNFOLDS + LUNA KILLS",
@@ -2978,6 +3771,19 @@
       "url": "https://www.transbordeur.fr/evenement/schur-jeanie-11112026/",
       "image": null,
       "id": "ba520385a76d"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Chante avec agend’Arts – La KaraChorale – novembre",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-11",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/chante-avec-agendarts-la-karachorale-novembre",
+      "image": null,
+      "id": "9a02a722ec61"
     },
     {
       "venue": "La Rayonne",
@@ -3045,6 +3851,19 @@
       "id": "04a85d2be8ed"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Laurent Berger & de Christopher Murray",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-laurent-berger-and-de-christopher-murray",
+      "image": null,
+      "id": "fe0f07d31848"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Emma",
@@ -3069,6 +3888,19 @@
       "url": "https://le-sucre.eu/events/high-lo-presente-12/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/03/insta-480x600.jpg",
       "id": "76488555ce3f"
+    },
+    {
+      "venue": "L'Épicerie Moderne",
+      "venue_slug": "l-epicerie-moderne",
+      "title": "INFINITY SONG",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-14",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://agenda.villemorte.fr/event/infinity-song",
+      "image": null,
+      "id": "a42c4d528118"
     },
     {
       "venue": "La Rayonne",
@@ -3136,6 +3968,19 @@
       "id": "890e7302644d"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de LeHache all stars",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-15",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-lehache-all-stars",
+      "image": null,
+      "id": "3c16446dd720"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "COLOURS IN THE STREET",
@@ -3160,6 +4005,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/la-salida/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-salida-500x500.jpg",
       "id": "cf0d097e7da2"
+    },
+    {
+      "venue": "La Ruche industrielle",
+      "venue_slug": "la-ruche-industrielle",
+      "title": "Ma République et moi - Compagnie Iwa, Issam Rachyq-Ahrad",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-11-17",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/ma-republique-et-moi-compagnie-iwa-issam-rachyq-ahrad",
+      "image": null,
+      "id": "5daed642e39a"
     },
     {
       "venue": "Bourse du Travail",
@@ -3305,6 +4163,19 @@
       "id": "44e8fa130b6e"
     },
     {
+      "venue": "La Machinerie - Bizarre !",
+      "venue_slug": "la-machinerie-bizarre",
+      "title": "Zinée + T2LS",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-20",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/zinee-t2ls",
+      "image": null,
+      "id": "27beb97dbd95"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Elmer Food Beat",
@@ -3331,19 +4202,6 @@
       "id": "db8557647313"
     },
     {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Concert",
-      "subtitle": "Ajna",
-      "category": "concert",
-      "date_start": "2026-11-21",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/concert-8/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/carre-6-600x600.jpg",
-      "id": "f2dc081ca255"
-    },
-    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LES PEINTRES AU CHARBON",
@@ -3368,6 +4226,19 @@
       "url": "https://larayonne.org/evenement/zebrahead-punk-rock-factory/",
       "image": null,
       "id": "008e087d6e1c"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Concert",
+      "subtitle": "Ajna",
+      "category": "concert",
+      "date_start": "2026-11-21",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://le-sucre.eu/events/concert-8/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/carre-6-600x600.jpg",
+      "id": "648d604673c1"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3407,6 +4278,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/locura/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/locura_radiant-bellevue-500x500.jpg",
       "id": "b3ce02fc652e"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Cercles Carmins – Quinzaine « Paroles de femmes »",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-11-24",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/cercles-carmins-quinzaine-paroles-de-femmes",
+      "image": null,
+      "id": "8402f2791016"
     },
     {
       "venue": "La Rayonne",
@@ -3472,6 +4356,32 @@
       "url": "https://radiant-bellevue.fr/spectacles/renan-luce/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/renan-luce_radiant-bellevue-1-500x500.jpg",
       "id": "15dcaf3789a3"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Puissantes – Quinzaine « Paroles de femmes »",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-11-26",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/puissantes-quinzaine-paroles-de-femmes",
+      "image": null,
+      "id": "925db7bf3e81"
+    },
+    {
+      "venue": "La Machinerie - Bizarre !",
+      "venue_slug": "la-machinerie-bizarre",
+      "title": "Sheldon + Lupi'o + Asna",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-26",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/sheldon-lupio-asna",
+      "image": null,
+      "id": "7f509ca8150c"
     },
     {
       "venue": "La Rayonne",
@@ -3630,6 +4540,19 @@
       "id": "88f5a3785628"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Une fille comme les autres – Quinzaine « Paroles de femmes »",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-11-29",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/une-fille-comme-les-autres-quinzaine-paroles-de-femmes",
+      "image": null,
+      "id": "b28f7927adbc"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "THE STRANGLERS",
@@ -3771,6 +4694,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/garou/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/04/recadre-500x500.jpg",
       "id": "74ea4cb0b025"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert d'Erwan Pinard",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-12-04",
+      "date_end": "2026-12-06",
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/concert-derwan-pinard",
+      "image": null,
+      "id": "6e43c39de9c1"
     },
     {
       "venue": "Le Transbordeur",
@@ -3916,6 +4852,19 @@
       "id": "15ea3c0ffff1"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert d'Antoine Gasse & de K.LOHË",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-12-10",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/concert-dantoine-gasse-and-de-klohe",
+      "image": null,
+      "id": "f2a1aa5fa4f6"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Gauvain Sers",
@@ -3953,6 +4902,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/le-bourgeois-gentilhomme/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-bourgeois-gentilhomme-500x500.jpg",
       "id": "71ce445d41cc"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Scène ouverte slam – session de décembre",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-12-11",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/scene-ouverte-slam-session-de-decembre",
+      "image": null,
+      "id": "2efe3bd87c4d"
     },
     {
       "venue": "Bourse du Travail",
@@ -4005,6 +4967,32 @@
       "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-superstrat/",
       "image": null,
       "id": "0de6cb52de6b"
+    },
+    {
+      "venue": "La Machinerie - Bizarre !",
+      "venue_slug": "la-machinerie-bizarre",
+      "title": "Track - Cie La Boîte à sel, Céline Garnavault",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-12-12",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://agenda.villemorte.fr/event/track-cie-la-boite-a-sel-celine-garnavault",
+      "image": null,
+      "id": "e5577bcfe410"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Fleur de Tempête",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-12-12",
+      "date_end": "2026-12-13",
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-fleur-de-tempete",
+      "image": null,
+      "id": "bcdca3d44ccb"
     },
     {
       "venue": "La Rayonne",
@@ -4150,6 +5138,19 @@
       "id": "7779dd22faba"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Sapperlot ! Ou l’origine de mes névroses – Anne Fromm",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-12-18",
+      "date_end": "2026-12-20",
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/sapperlot-ou-lorigine-de-mes-nevroses-anne-fromm",
+      "image": null,
+      "id": "56dc953ffee9"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "DJ PONE & friends",
@@ -4265,6 +5266,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/fabrice-luchini-3/",
       "image": null,
       "id": "e28496420410"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Chante avec agend’Arts – La KaraChorale – décembre",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-12-22",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/chante-avec-agendarts-la-karachorale-decembre",
+      "image": null,
+      "id": "bf3f9a356fd9"
     },
     {
       "venue": "Bourse du Travail",
@@ -5409,6 +6423,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/le-chant-des-lions/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-chant-des-lions-v2-500x500.jpg",
       "id": "4cdf636b2029"
+    },
+    {
+      "venue": "La Machinerie - Bizarre !",
+      "venue_slug": "la-machinerie-bizarre",
+      "title": "Boum Kids",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2027-03-03",
+      "date_end": null,
+      "time": "13:30",
+      "url": "https://agenda.villemorte.fr/event/boum-kids",
+      "image": null,
+      "id": "ddd55058c6d7"
     },
     {
       "venue": "Bourse du Travail",
@@ -6644,6 +7671,19 @@
       "url": "https://www.bourse-du-travail.com/sofia-belabbes-376106.html",
       "image": null,
       "id": "e7ead1cc74bb"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Intérieur Queer : Comedy Club [complet]",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2027-07-02",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/interieur-queer-comedy-club/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/03/💍-La-9e-edition-du-festival-se-devoile-Decouvrez-a-present-la-nouvelle-identite-et-larmature-2-576x720.jpg",
+      "id": "ae7ff21568b1"
     },
     {
       "venue": "Bourse du Travail",
