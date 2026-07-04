@@ -1,163 +1,7 @@
 {
-  "generated_at": "2026-07-03T08:52:36.782580+00:00",
-  "count": 597,
+  "generated_at": "2026-07-04T08:27:20.644823+00:00",
+  "count": 596,
   "events": [
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Bal swing",
-      "subtitle": null,
-      "category": "danse",
-      "date_start": "2026-07-03",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/bal-swing-lyon-2/",
-      "image": "https://lacommune.co/wp-content/uploads/2025/07/1080x1350_juillet-programmation-3-768x960.jpg",
-      "id": "d3dc17e9b795"
-    },
-    {
-      "venue": "Boskop",
-      "venue_slug": "boskop",
-      "title": "Vernsisage · exposition collective · TOUT CHAOS",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-03",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://agenda.villemorte.fr/event/vernsisage-exposition-collective-tout-chaos",
-      "image": null,
-      "id": "df98f19e0c1a"
-    },
-    {
-      "venue": "Maison de l'écologie",
-      "venue_slug": "maison-de-l-ecologie",
-      "title": "RÊVER SOUS LE FUTUR · GROUPE DE RÊVE COLLECTIF - Cycle de 7 séances",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-03",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://agenda.villemorte.fr/event/rever-sous-le-futur-groupe-de-reve-collectif-cycle-de-7-seances-1",
-      "image": null,
-      "id": "beda7f8b48e1"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Intérieur Queer : Drag Rendez-vous & Garçon sauvage",
-      "subtitle": null,
-      "category": "Spectacles Divers",
-      "date_start": "2026-07-03",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://h-eat.eu/events/interieur-queer-drag-rendez-vous-garcon-sauvage/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/03/💍-La-9e-edition-du-festival-se-devoile-Decouvrez-a-present-la-nouvelle-identite-et-larmature-4-576x720.jpg",
-      "id": "c3f0fe484d0d"
-    },
-    {
-      "venue": "Warmaudio",
-      "venue_slug": "warmaudio",
-      "title": "Malevolence + Malignant + Iron Decifiency",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-07-03",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318793-malevolence-malignant-iron-decifiency.html",
-      "image": null,
-      "id": "968148489873"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Cercles",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-07-03",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-317628-cercles.html",
-      "image": null,
-      "id": "2edb604e0751"
-    },
-    {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Osees + Dream_Mega",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-07-03",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-290062-osees-dream-mega.html",
-      "image": null,
-      "id": "959a3bfaa68f"
-    },
-    {
-      "venue": "Chapelle de la Trinité",
-      "venue_slug": "chapelle-de-la-trinite",
-      "title": "Chassol",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
-      "date_start": "2026-07-03",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318724-chassol.html",
-      "image": null,
-      "id": "1a20a606b9a2"
-    },
-    {
-      "venue": "Chapelle de la Trinité",
-      "venue_slug": "chapelle-de-la-trinite",
-      "title": "Black Atlantic Club",
-      "subtitle": null,
-      "category": "Sono Mondiale",
-      "date_start": "2026-07-03",
-      "date_end": null,
-      "time": "22:00",
-      "url": "https://www.petit-bulletin.fr/agenda-315950-black-atlantic-club.html",
-      "image": null,
-      "id": "d05aeea8903c"
-    },
-    {
-      "venue": "Le Sonic",
-      "venue_slug": "sonic",
-      "title": "CLUB SONIC",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-07-03",
-      "date_end": null,
-      "time": "22:00",
-      "url": "https://sonic-lyon.fr/evenement/club-sonic-4/",
-      "image": null,
-      "id": "ec575c14ccf8"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Club x Nashton records",
-      "subtitle": null,
-      "category": "Musique Electronique",
-      "date_start": "2026-07-03",
-      "date_end": null,
-      "time": "23:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318709-club-x-nashton-records.html",
-      "image": null,
-      "id": "10c344be946d"
-    },
-    {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "THIS IS DISCO : VYKTOR NOVA / TERROR MIKE",
-      "subtitle": null,
-      "category": "club",
-      "date_start": "2026-07-03",
-      "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/d2a85eaa-f0d2-4a8b-b8c7-839eef6912f1/THIS-IS-DISCO-Vyktor-Nova-Terror-Mike?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisisDisco_03072026_lepetitsalon-1024x576.jpg",
-      "id": "8d8b596ed8a9"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -183,6 +27,19 @@
       "url": "https://lacommune.co/event/atelier-enfant/",
       "image": "https://lacommune.co/wp-content/uploads/2025/07/1080x1350_juillet-programmation-2-768x960.jpg",
       "id": "170a22b7b701"
+    },
+    {
+      "venue": "Musée des Beaux-Arts",
+      "venue_slug": "musee-des-beaux-arts",
+      "title": "Invitation au voyage au Japon",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "10:30",
+      "url": "https://www.petit-bulletin.fr/agenda-314104-invitation-au-voyage-au-japon.html",
+      "image": null,
+      "id": "127076717daa"
     },
     {
       "venue": "Place Mazagran",
@@ -224,6 +81,19 @@
       "id": "2ebaaf194a29"
     },
     {
+      "venue": "Musée des Beaux-Arts",
+      "venue_slug": "musee-des-beaux-arts",
+      "title": "L'Égypte, histoire d'une passion",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318763-le-gypte-histoire-deune-passion.html",
+      "image": null,
+      "id": "a8cdfc6d202a"
+    },
+    {
       "venue": "Black Hole",
       "venue_slug": "black-hole",
       "title": "DEBARULERS - HEAVY GRUNGE (LYON) au BLACK HOLE",
@@ -263,6 +133,32 @@
       "id": "3f940d801586"
     },
     {
+      "venue": "Les Subsistances",
+      "venue_slug": "les-subs",
+      "title": "Le Grand Couturier",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-316057-le-grand-couturier.html",
+      "image": null,
+      "id": "36a99d6ce709"
+    },
+    {
+      "venue": "Kraspek Myzik",
+      "venue_slug": "kraspek-myzik",
+      "title": "Mantra + Bliss",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318794-mantra-bliss.html",
+      "image": null,
+      "id": "4a6b9f631089"
+    },
+    {
       "venue": "LDLC Arena",
       "venue_slug": "ldlc-arena",
       "title": "Wfads World Cup 2026",
@@ -274,6 +170,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-318700-wfads-world-cup-2026.html",
       "image": null,
       "id": "5a273d0f51d9"
+    },
+    {
+      "venue": "Les Subsistances",
+      "venue_slug": "les-subs",
+      "title": "Polyphème",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-07-04",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318725-polyph-me.html",
+      "image": null,
+      "id": "6e0c791f7a8e"
     },
     {
       "venue": "Auditorium de Lyon",
@@ -575,6 +484,19 @@
       "id": "7e12d093f9b6"
     },
     {
+      "venue": "Maison de l'écologie",
+      "venue_slug": "maison-de-l-ecologie",
+      "title": "RÊVER SOUS LE FUTUR · GROUPE DE RÊVE COLLECTIF - Cycle de 7 séances",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-10",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://agenda.villemorte.fr/event/rever-sous-le-futur-groupe-de-reve-collectif-cycle-de-7-seances-2",
+      "image": null,
+      "id": "36d178b86cb4"
+    },
+    {
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "[Concerts gratuits] Kenz Quintet + ilanga au Périscope",
@@ -629,15 +551,15 @@
     {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
-      "title": "DYLAN DYLAN + PEDRO BERTHO + PATXI + P ERRINE",
+      "title": "DYLAN DYLAN + P ERRINE + PEDRO BERTHO + PATXI",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-07-11",
       "date_end": null,
       "time": null,
-      "url": "https://www.transbordeur.fr/evenement/dylan-dylan-pedro-bertho-patxi-p-errine-11072026/",
+      "url": "https://www.transbordeur.fr/evenement/dylan-dylan-p-errine-pedro-bertho-patxi-11072026/",
       "image": null,
-      "id": "e69a4ac6d19e"
+      "id": "ca06c5708dc8"
     },
     {
       "venue": "Grrrnd Zero",
@@ -677,6 +599,19 @@
       "url": "https://yp.events/033aee85-4057-405d-86a2-894edbb7c85f/THIS-IS-HOUSE-Shamanism-Crew-more?from=siteweb",
       "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/Shamanism_11072026_lepetitsalon-1024x564.jpg",
       "id": "26ab15ae1c45"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Spritz électronique",
+      "subtitle": null,
+      "category": "immersif",
+      "date_start": "2026-07-12",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/spritz-electronique-soiree-ete-la-commune/",
+      "image": "https://lacommune.co/wp-content/uploads/2026/05/12-2-768x960.jpg",
+      "id": "21d1944dfdcd"
     },
     {
       "venue": "Friche Artistique Lamartine | La Robinetterie",
@@ -967,15 +902,15 @@
     {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
-      "title": "KENDAL + ANDI + LAVION + SPACER WOMAN",
+      "title": "ANDI + KENDAL + LAVION + SPACER WOMAN",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-07-18",
       "date_end": null,
       "time": null,
-      "url": "https://www.transbordeur.fr/evenement/kendal-andi-lavion-spacer-woman-18072026/",
+      "url": "https://www.transbordeur.fr/evenement/andi-kendal-lavion-spacer-woman-18072026/",
       "image": null,
-      "id": "c11753d272bb"
+      "id": "f5739bfb3c1c"
     },
     {
       "venue": "Grrrnd Zero",
@@ -1080,6 +1015,19 @@
       "url": "https://sonic-lyon.fr/evenement/ulrika-spacek-sharon-tate-modern/",
       "image": null,
       "id": "5db429245cdf"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS TECHNO RAVE : PAPA SUCRE & VTEK",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-07-24",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://yp.events/e0332daf-9490-4db2-967f-4038c4373ffd/THIS-IS-TECHNO-Rave-Papa-Sucre-V-T-E-K?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/07/ThisisTechnoRave_24072026_lepetitsalon-1024x576.jpg",
+      "id": "0751ec40cb07"
     },
     {
       "venue": "HEAT",
@@ -1370,7 +1318,7 @@
     {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
-      "title": "club",
+      "title": "live club",
       "subtitle": "Nana Benz Du Togo (live) · Flore Benguigui · Maka",
       "category": "club",
       "date_start": "2026-08-22",
@@ -1378,7 +1326,7 @@
       "time": null,
       "url": "https://le-sucre.eu/events/club-60/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/NBT-by-Arnold-Anani-600x600.jpg",
-      "id": "8b7dae5fe1d0"
+      "id": "05a5daff861e"
     },
     {
       "venue": "Le Sucre",
@@ -5554,6 +5502,19 @@
       "id": "8f5410f00750"
     },
     {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "club",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2027-01-16",
+      "date_end": null,
+      "time": null,
+      "url": "https://le-sucre.eu/events/club-62/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/07/BELLAIRE-BORN-FUNKY-PRESS-PICTURES-FUNKY-BREAKFAST-BANNER-2-600x400.jpg",
+      "id": "9a58b6857c8b"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "FILLS MONKEY",
@@ -6306,6 +6267,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/eric-fraticelli/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/eric-fraticelli_radiant-bellevue-500x500.png",
       "id": "301479fec107"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "EZRA COLLECTIVE + JOY (ANONYMOUS)",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-23",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.transbordeur.fr/evenement/ezra-collective-joy-anonymous-23022027/",
+      "image": null,
+      "id": "c2424b369be7"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7684,6 +7658,19 @@
       "url": "https://h-eat.eu/events/interieur-queer-comedy-club/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/03/💍-La-9e-edition-du-festival-se-devoile-Decouvrez-a-present-la-nouvelle-identite-et-larmature-2-576x720.jpg",
       "id": "ae7ff21568b1"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Intérieur Queer : Drag Rendez-vous & Garçon sauvage",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2027-07-03",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/interieur-queer-drag-rendez-vous-garcon-sauvage/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/03/💍-La-9e-edition-du-festival-se-devoile-Decouvrez-a-present-la-nouvelle-identite-et-larmature-4-576x720.jpg",
+      "id": "4eeb85845a4b"
     },
     {
       "venue": "Bourse du Travail",
