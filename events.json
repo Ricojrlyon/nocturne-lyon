@@ -1,241 +1,7 @@
 {
-  "generated_at": "2026-07-04T08:27:20.644823+00:00",
-  "count": 596,
+  "generated_at": "2026-07-05T08:43:45.275739+00:00",
+  "count": 588,
   "events": [
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "France V/S Paraguay : CDM 2026",
-      "subtitle": null,
-      "category": "diffusion de match",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/france-v-s-paraguay-cdm-2026/",
-      "image": "https://lacommune.co/wp-content/uploads/2026/06/1080x1350_juillet-8emes-768x960.jpg",
-      "id": "c3a0e6de2d10"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Gones Crazy – Mini Supporters",
-      "subtitle": null,
-      "category": "kids",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/atelier-enfant/",
-      "image": "https://lacommune.co/wp-content/uploads/2025/07/1080x1350_juillet-programmation-2-768x960.jpg",
-      "id": "170a22b7b701"
-    },
-    {
-      "venue": "Musée des Beaux-Arts",
-      "venue_slug": "musee-des-beaux-arts",
-      "title": "Invitation au voyage au Japon",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": "10:30",
-      "url": "https://www.petit-bulletin.fr/agenda-314104-invitation-au-voyage-au-japon.html",
-      "image": null,
-      "id": "127076717daa"
-    },
-    {
-      "venue": "Place Mazagran",
-      "venue_slug": "place-mazagran",
-      "title": "Mazafest",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": "12:00",
-      "url": "https://agenda.villemorte.fr/event/mazafest",
-      "image": null,
-      "id": "146fb90a07d9"
-    },
-    {
-      "venue": "IAC Villeurbanne",
-      "venue_slug": "iac-villeurbanne",
-      "title": "(PSYCHO)SOMATIC STORIES x EXTÉRIEUR QUEER",
-      "subtitle": null,
-      "category": "cinéma",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": "12:30",
-      "url": "https://agenda.villemorte.fr/event/psychosomatic-stories-x-exterieur-queer",
-      "image": null,
-      "id": "c0cc0c6c652e"
-    },
-    {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "Panotii Cantii - Bal folk d'été ☀️",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": "14:00",
-      "url": "https://agenda.villemorte.fr/event/bal-folk-dete",
-      "image": null,
-      "id": "2ebaaf194a29"
-    },
-    {
-      "venue": "Musée des Beaux-Arts",
-      "venue_slug": "musee-des-beaux-arts",
-      "title": "L'Égypte, histoire d'une passion",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": "14:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318763-le-gypte-histoire-deune-passion.html",
-      "image": null,
-      "id": "a8cdfc6d202a"
-    },
-    {
-      "venue": "Black Hole",
-      "venue_slug": "black-hole",
-      "title": "DEBARULERS - HEAVY GRUNGE (LYON) au BLACK HOLE",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/debarulers-heavy-grunge-lyon-au-black-hole",
-      "image": null,
-      "id": "6177ef3a8444"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Intérieur Queer : Ball & Afterball",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://h-eat.eu/events/interieur-queer-ball-afterball/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/03/💍-La-9e-edition-du-festival-se-devoile-Decouvrez-a-present-la-nouvelle-identite-et-larmature--576x720.jpg",
-      "id": "938de8c38f5b"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "[Un été à La Rayonne] Afro Night x Team Paiya",
-      "subtitle": null,
-      "category": "Sono Mondiale",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://larayonne.org/evenement/un-ete-a-la-rayonne-afro-night-x-team-paiya/",
-      "image": null,
-      "id": "3f940d801586"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Le Grand Couturier",
-      "subtitle": null,
-      "category": "Jazz",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.petit-bulletin.fr/agenda-316057-le-grand-couturier.html",
-      "image": null,
-      "id": "36a99d6ce709"
-    },
-    {
-      "venue": "Kraspek Myzik",
-      "venue_slug": "kraspek-myzik",
-      "title": "Mantra + Bliss",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318794-mantra-bliss.html",
-      "image": null,
-      "id": "4a6b9f631089"
-    },
-    {
-      "venue": "LDLC Arena",
-      "venue_slug": "ldlc-arena",
-      "title": "Wfads World Cup 2026",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318700-wfads-world-cup-2026.html",
-      "image": null,
-      "id": "5a273d0f51d9"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Polyphème",
-      "subtitle": null,
-      "category": "Sono Mondiale",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318725-polyph-me.html",
-      "image": null,
-      "id": "6e0c791f7a8e"
-    },
-    {
-      "venue": "Auditorium de Lyon",
-      "venue_slug": "auditorium-de-lyon",
-      "title": "En fanfare(s)",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": "21:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318711-en-fanfare-s.html",
-      "image": null,
-      "id": "5a883539aced"
-    },
-    {
-      "venue": "Le Sonic",
-      "venue_slug": "sonic",
-      "title": "2000’S PARTY",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": "22:00",
-      "url": "https://sonic-lyon.fr/evenement/2000s-party-4/",
-      "image": null,
-      "id": "e5ba67200015"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Club",
-      "subtitle": null,
-      "category": "Musique Electronique",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": "23:00",
-      "url": "https://www.petit-bulletin.fr/agenda-316823-club.html",
-      "image": null,
-      "id": "d07681cb1b89"
-    },
-    {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "THIS IS TECHNO RAVE : ENFONCÉ / URVA ESTREVA & MORE",
-      "subtitle": null,
-      "category": "club",
-      "date_start": "2026-07-04",
-      "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/a8a7e2d0-f823-4d67-8654-505c815d5c05/THIS-IS-TECHNO-Rave-Urva-Estreva-Enfonc-E-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisIsTechnoRave_Enfonce_04072026_lepetitsalon-1024x576.jpg",
-      "id": "ef0f12527323"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -274,6 +40,45 @@
       "url": "https://larayonne.org/evenement/open-air-sauce-piquante/",
       "image": null,
       "id": "3edd9ae652df"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "François Mardirossian",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-07-05",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://www.petit-bulletin.fr/agenda-288800-fran-ois-mardirossian.html",
+      "image": null,
+      "id": "fa7823de07be"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "S. society",
+      "subtitle": null,
+      "category": "Musique Electronique",
+      "date_start": "2026-07-05",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-312640-s-society.html",
+      "image": null,
+      "id": "f2410d7d90ba"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "The piano music of Emahoy Tsegue-Maryam Guebrou",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-07-05",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318726-the-piano-music-of-emahoy-tsegue-maryam-guebrou.html",
+      "image": null,
+      "id": "5d8c34d9f775"
     },
     {
       "venue": "La Commune",
@@ -326,6 +131,32 @@
       "url": "https://marchegare.fr/agenda/aelia-sol-fm-radio-session",
       "image": null,
       "id": "323f162e6f45"
+    },
+    {
+      "venue": "Péristyle Opéra",
+      "venue_slug": "peristyle-opera",
+      "title": "Mitsune",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-07-07",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318731-mitsune.html",
+      "image": null,
+      "id": "885fa5d5e0d6"
+    },
+    {
+      "venue": "LDLC Arena",
+      "venue_slug": "ldlc-arena",
+      "title": "OneRepublic",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-07",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318718-onerepublic.html",
+      "image": null,
+      "id": "3969b1bc6767"
     },
     {
       "venue": "HEAT",
@@ -391,6 +222,45 @@
       "url": "https://agenda.villemorte.fr/event/sulfuric-cautery-morgue-breath-fosseseptique",
       "image": null,
       "id": "c39b9e637cda"
+    },
+    {
+      "venue": "Péristyle Opéra",
+      "venue_slug": "peristyle-opera",
+      "title": "La Rueda del Colectivo Cimarrones + James Stewart",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-07-08",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318732-la-rueda-del-colectivo-cimarrones-james-stewart.html",
+      "image": null,
+      "id": "d03f0e0ef2d8"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Le monde est à nous",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-07-08",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318788-le-monde-est-nous.html",
+      "image": null,
+      "id": "e75f56b1065b"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Smile Appeal",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-07-08",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318789-smile-appeal.html",
+      "image": null,
+      "id": "229e4bfa9d66"
     },
     {
       "venue": "HEAT",
@@ -673,10 +543,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "15:00",
       "url": "https://larayonne.org/evenement/mieux-apprhender-les-rseaux-sociaux-exemplaire/",
       "image": null,
-      "id": "4d52fba25991"
+      "id": "1654dc722e3c"
     },
     {
       "venue": "La Rayonne",
@@ -686,10 +556,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "15:00",
       "url": "https://larayonne.org/evenement/dfinir-sa-stratgie-de-diffusion/",
       "image": null,
-      "id": "e06da9003450"
+      "id": "9db8482b2bb2"
     },
     {
       "venue": "La Rayonne",
@@ -699,10 +569,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "15:00",
       "url": "https://larayonne.org/evenement/comprendre-les-principales-aides-a-lemploi-dans-le-spectacle-vivant/",
       "image": null,
-      "id": "2f5cb8a0739a"
+      "id": "fc1d7eda5fd2"
     },
     {
       "venue": "La Rayonne",
@@ -712,10 +582,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "15:00",
       "url": "https://larayonne.org/evenement/elaborer-un-dossier-de-diffusion/",
       "image": null,
-      "id": "294e2a79844a"
+      "id": "fd3972bdec51"
     },
     {
       "venue": "La Rayonne",
@@ -725,10 +595,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "15:00",
       "url": "https://larayonne.org/evenement/formaliser-sa-production-artistique-3/",
       "image": null,
-      "id": "857519ec65f0"
+      "id": "ab7486988616"
     },
     {
       "venue": "La Rayonne",
@@ -738,10 +608,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "15:00",
       "url": "https://larayonne.org/evenement/construire-son-budget-de-production-pour-son-projet-artistique/",
       "image": null,
-      "id": "e58434b3172f"
+      "id": "a00d924cb1a2"
     },
     {
       "venue": "La Rayonne",
@@ -751,10 +621,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "15:00",
       "url": "https://larayonne.org/evenement/lemploi-dans-le-spectacle-vivant-2/",
       "image": null,
-      "id": "346553d85b89"
+      "id": "83fcc759a8a7"
     },
     {
       "venue": "La Rayonne",
@@ -764,10 +634,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "15:00",
       "url": "https://larayonne.org/evenement/construire-un-budget-et-un-plan-de-tresorerie-atelier-theorique-1-2-2/",
       "image": null,
-      "id": "8f86a881d89c"
+      "id": "e7b5fe929248"
     },
     {
       "venue": "La Rayonne",
@@ -777,10 +647,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": "2026-07-14",
-      "time": "19:00",
+      "time": "15:00",
       "url": "https://larayonne.org/evenement/mettre-en-place-une-comptabilite-pour-les-petites-associations-6/",
       "image": null,
-      "id": "b14f58369b76"
+      "id": "6d48ed6a3fa5"
     },
     {
       "venue": "Les Subsistances",
@@ -1240,7 +1110,7 @@
     {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
-      "title": "Ragana + basseville + Maléore",
+      "title": "Ragana + Margarita + basseville + Maléore",
       "subtitle": null,
       "category": null,
       "date_start": "2026-08-15",
@@ -1248,7 +1118,7 @@
       "time": "18:00",
       "url": "https://agenda.villemorte.fr/event/ragana-tba",
       "image": null,
-      "id": "9a8cc6187d98"
+      "id": "ef9e4b067c91"
     },
     {
       "venue": "Le Sucre",
@@ -7671,6 +7541,32 @@
       "url": "https://h-eat.eu/events/interieur-queer-drag-rendez-vous-garcon-sauvage/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/03/💍-La-9e-edition-du-festival-se-devoile-Decouvrez-a-present-la-nouvelle-identite-et-larmature-4-576x720.jpg",
       "id": "4eeb85845a4b"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Intérieur Queer : Ball & Afterball",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2027-07-04",
+      "date_end": null,
+      "time": null,
+      "url": "https://h-eat.eu/events/interieur-queer-ball-afterball/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/03/💍-La-9e-edition-du-festival-se-devoile-Decouvrez-a-present-la-nouvelle-identite-et-larmature--576x720.jpg",
+      "id": "126fccc04688"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS TECHNO RAVE : ENFONCÉ / URVA ESTREVA & MORE",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2027-07-04",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://yp.events/a8a7e2d0-f823-4d67-8654-505c815d5c05/THIS-IS-TECHNO-Rave-Urva-Estreva-Enfonc-E-more?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/05/ThisIsTechnoRave_Enfonce_04072026_lepetitsalon-1024x576.jpg",
+      "id": "4331b8160294"
     },
     {
       "venue": "Bourse du Travail",
