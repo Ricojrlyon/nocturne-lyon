@@ -1,20 +1,7 @@
 {
-  "generated_at": "2026-07-06T10:00:41.181653+00:00",
-  "count": 586,
+  "generated_at": "2026-07-07T09:29:24.648217+00:00",
+  "count": 597,
   "events": [
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Atelier Phonograffiti Lyon | Custom vinyles & street art",
-      "subtitle": null,
-      "category": "atelier",
-      "date_start": "2026-07-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/pimp-my-vinyl-a-la-commune/",
-      "image": "https://lacommune.co/wp-content/uploads/2025/11/6-1-768x960.jpg",
-      "id": "189124e9b568"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -133,19 +120,6 @@
       "id": "b580f2d2d7ee"
     },
     {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "Sulfuric Cautery + Morgue Breath + Fosse Septique",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-08",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/sulfuric-cautery-morgue-breath-fosseseptique",
-      "image": null,
-      "id": "c39b9e637cda"
-    },
-    {
       "venue": "Péristyle Opéra",
       "venue_slug": "peristyle-opera",
       "title": "La Rueda del Colectivo Cimarrones + James Stewart",
@@ -183,6 +157,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/rise-against/",
       "image": null,
       "id": "0038da17d600"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Sulfuric Cautery + Morgue Breath + Fosse Septique",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-08",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318853-sulfuric-cautery-morgue-breath-fosse-septique.html",
+      "image": null,
+      "id": "09caee5afdf2"
     },
     {
       "venue": "Improvidence",
@@ -250,6 +237,32 @@
       "id": "a24b898fa7aa"
     },
     {
+      "venue": "La Menuiserie",
+      "venue_slug": "la-menuiserie",
+      "title": "Venrissage \"Les entre-mondes\" - Exposition de François Labourdette",
+      "subtitle": null,
+      "category": "expo",
+      "date_start": "2026-07-09",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://agenda.villemorte.fr/event/venrissage-les-entre-mondes-exposition-de-francois-labourdette",
+      "image": null,
+      "id": "a1931a7143d1"
+    },
+    {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "rock-n-eat",
+      "title": "CONCERT GRUNGE-  DEBARULERS + SLALOM + LES CAS PERDUS - ROCK'N'EAT",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-09",
+      "date_end": "2026-07-10",
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/concert-grunge-debarulers-slalom-les-cas-perdus-rockneat",
+      "image": null,
+      "id": "dd61da6b9b69"
+    },
+    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "[Concert gratuit] Edredon Sensible au HEAT",
@@ -300,6 +313,19 @@
       "url": "https://lacommune.co/event/les-viewings-damour/",
       "image": "https://lacommune.co/wp-content/uploads/2026/07/1080x1350_juillet-programmation-768x960.jpg",
       "id": "4c0ffb015711"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Atelier créatif Lyon | découverte à La Commune",
+      "subtitle": null,
+      "category": "atelier",
+      "date_start": "2026-07-10",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/atelier-decouverte/",
+      "image": "https://lacommune.co/wp-content/uploads/2025/12/10-1-768x960.jpg",
+      "id": "0aa6dc5b5c3c"
     },
     {
       "venue": "Le Transbordeur",
@@ -421,7 +447,7 @@
     {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
-      "title": "Silence Collapse",
+      "title": "(Annulé) Silence Collapse",
       "subtitle": null,
       "category": null,
       "date_start": "2026-07-11",
@@ -429,7 +455,7 @@
       "time": "14:00",
       "url": "https://agenda.villemorte.fr/event/silence-collapse-soundsystem",
       "image": null,
-      "id": "bfecca13cc1d"
+      "id": "09382bcccead"
     },
     {
       "venue": "La Rayonne",
@@ -495,6 +521,19 @@
       "url": "https://larayonne.org/evenement/open-air-bubble-boom-party/",
       "image": null,
       "id": "d9dd523576f4"
+    },
+    {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "RED BOAT CLUB 13/07",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-07-13",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://sonic-lyon.fr/evenement/red-boat-club-13-07/",
+      "image": null,
+      "id": "d9d4774854ee"
     },
     {
       "venue": "La Rayonne",
@@ -1030,9 +1069,22 @@
       "id": "3f605945b5b5"
     },
     {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS TECHNO RAVE : BCKYRD / PEEKZT",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-07-31",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://yp.events/e7408470-6d59-4383-9642-c66ff03ef3d7/THIS-IS-TECHNO-Rave-BCKYRD-PEEKZT?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/07/ThisisTechnoRave_31072026_lepetitsalon-1024x576.jpg",
+      "id": "2e4cb7f3d731"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
-      "title": "club",
+      "title": "Live club",
       "subtitle": "Carmen Sea (live) · Lily Of The Valley · Sonia Calico",
       "category": "club",
       "date_start": "2026-08-01",
@@ -1040,7 +1092,7 @@
       "time": null,
       "url": "https://le-sucre.eu/events/club-57/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/@ninahasni_Carmen-Sea-1-400x600.jpg",
-      "id": "e7c55da73489"
+      "id": "754b364e6b80"
     },
     {
       "venue": "Le Sucre",
@@ -1054,6 +1106,19 @@
       "url": "https://le-sucre.eu/events/s-society-156/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/3V2-480x600.png",
       "id": "d9b4259e5ba0"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "OPEN MIX à Lyon",
+      "subtitle": null,
+      "category": "dj set",
+      "date_start": "2026-08-04",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/open-mix-dj-la-commune-4-aout/",
+      "image": "https://lacommune.co/wp-content/uploads/2026/07/4-2-768x960.jpg",
+      "id": "406c192a5bf3"
     },
     {
       "venue": "Grrrnd Zero",
@@ -1084,7 +1149,7 @@
     {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
-      "title": "club",
+      "title": "Live club",
       "subtitle": "Anaco · Phran · 666ATA (live) · DJ Illdabo",
       "category": "club",
       "date_start": "2026-08-08",
@@ -1092,7 +1157,7 @@
       "time": null,
       "url": "https://le-sucre.eu/events/club-59/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/2025_04_14_ANACO4368-400x600.jpg",
-      "id": "56c4551a2e26"
+      "id": "cdeafb3c580c"
     },
     {
       "venue": "Le Sucre",
@@ -1106,6 +1171,32 @@
       "url": "https://le-sucre.eu/events/s-society-157/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Function-1-404x600.jpg",
       "id": "8745a8cbd9d8"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Bingo Drag",
+      "subtitle": null,
+      "category": "drag",
+      "date_start": "2026-08-11",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/bingo-drag-lyon/",
+      "image": "https://lacommune.co/wp-content/uploads/2025/12/11-1-768x960.jpg",
+      "id": "cba82563734e"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Karaoké Live",
+      "subtitle": null,
+      "category": "karaoké et blind test",
+      "date_start": "2026-08-13",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/karaoke-live-cherry-chap-concert-karaoke-avec-musiciens/",
+      "image": "https://lacommune.co/wp-content/uploads/2026/04/13-1-768x960.jpg",
+      "id": "6e226d777d75"
     },
     {
       "venue": "Le Sucre",
@@ -1123,7 +1214,7 @@
     {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
-      "title": "club",
+      "title": "Live club",
       "subtitle": "deBasement(live) · Mastaï · TTristana",
       "category": "club",
       "date_start": "2026-08-15",
@@ -1131,7 +1222,7 @@
       "time": null,
       "url": "https://le-sucre.eu/events/club-51/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/05/credits-_-Shane-Clay-1-600x450.jpg",
-      "id": "302d900ac033"
+      "id": "90ffd15b3d87"
     },
     {
       "venue": "Grrrnd Zero",
@@ -1171,6 +1262,32 @@
       "url": "https://agenda.villemorte.fr/event/fossilization-phobocosm-tba",
       "image": null,
       "id": "89e72c824d3d"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Yoga Solidaire : cours femmes Fondation des Femmes",
+      "subtitle": null,
+      "category": "bien-être",
+      "date_start": "2026-08-17",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/yoga-solidaire-lyon/",
+      "image": "https://lacommune.co/wp-content/uploads/2026/02/17-1-1-768x960.jpg",
+      "id": "7fac64c77818"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Guitaroké- Karaoké participatif",
+      "subtitle": null,
+      "category": "karaoké et blind test",
+      "date_start": "2026-08-18",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/human-jukebox-karaoke-geant-live-la-commune-lyon/",
+      "image": "https://lacommune.co/wp-content/uploads/2026/04/18-3-768x960.jpg",
+      "id": "b5465884ef4e"
     },
     {
       "venue": "HEAT",
@@ -1214,7 +1331,7 @@
     {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
-      "title": "live club",
+      "title": "Live club",
       "subtitle": "Nana Benz Du Togo (live) · Flore Benguigui · Maka",
       "category": "club",
       "date_start": "2026-08-22",
@@ -1222,7 +1339,7 @@
       "time": null,
       "url": "https://le-sucre.eu/events/club-60/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/NBT-by-Arnold-Anani-600x600.jpg",
-      "id": "05a5daff861e"
+      "id": "a617f513c8a1"
     },
     {
       "venue": "Le Sucre",
@@ -1236,6 +1353,19 @@
       "url": "https://le-sucre.eu/events/s-society-159/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/23_08-450x600.png",
       "id": "97fe96ba5215"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "DJ set house à Lyon – Suntrax avec Guia Sound",
+      "subtitle": null,
+      "category": "dj set",
+      "date_start": "2026-08-25",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/suntrax-guia-sound-dj-set-house-afro-house-la-commune/",
+      "image": "https://lacommune.co/wp-content/uploads/2025/10/25-1-768x960.jpg",
+      "id": "a0b216b1236a"
     },
     {
       "venue": "HEAT",
@@ -1279,7 +1409,7 @@
     {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
-      "title": "club",
+      "title": "Live club",
       "subtitle": "Liya Tesfaye · Hysteria Temple Foundation (live) · Zero Crossing Point (live) · Kick21",
       "category": "club",
       "date_start": "2026-08-29",
@@ -1287,7 +1417,7 @@
       "time": null,
       "url": "https://le-sucre.eu/events/club-61/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Zero-Crossing-Point_Positive-Education-Festival-3-insta-romain.guede_-600x400.jpg",
-      "id": "8b51dd5c62dc"
+      "id": "5379f4a4611c"
     },
     {
       "venue": "Le Transbordeur",
@@ -1591,15 +1721,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Guihome",
+      "title": "Guihome Dans Guihome Vous Détend",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-09-19",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/guihome-379266.html",
+      "url": "https://www.bourse-du-travail.com/guihome-dans-guihome-vous-detend-379266.html",
       "image": null,
-      "id": "c7c1894e196a"
+      "id": "19877e4e093a"
     },
     {
       "venue": "TNG",
@@ -1799,15 +1929,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Arnaud Tsamere",
+      "title": "Arnaud Tsamère - Tous Contraints - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-09-25",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/arnaud-tsamere-253951.html",
+      "url": "https://www.bourse-du-travail.com/arnaud-tsamere-tous-contraints-tournee-253951.html",
       "image": null,
-      "id": "3bbcf747a565"
+      "id": "8eb59e7d2dcd"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -1851,15 +1981,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Mesdames En Vraies!",
+      "title": "Mesdames Dans En Vraies !",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-09-26",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/mesdames-en-vraies-366978.html",
+      "url": "https://www.bourse-du-travail.com/mesdames-dans-en-vraies-366978.html",
       "image": null,
-      "id": "590417c1cdd1"
+      "id": "de266ce1e4be"
     },
     {
       "venue": "Agend'arts",
@@ -1903,15 +2033,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Brel ! Le Spectacle",
+      "title": "Brel ! Le Spectacle - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-09-30",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/brel-le-spectacle-354648.html",
+      "url": "https://www.bourse-du-travail.com/brel-le-spectacle-tournee-354648.html",
       "image": null,
-      "id": "9a0f8fb96597"
+      "id": "29a42fe5af06"
     },
     {
       "venue": "Marché Gare",
@@ -1929,7 +2059,7 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Medine - Enfants Du Destin - Tournée Acoustique",
+      "title": "Médine - Enfants Du Destin - Tournée Acoustique",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-10-01",
@@ -1937,7 +2067,7 @@
       "time": null,
       "url": "https://www.bourse-du-travail.com/medine-enfants-du-destin-tournee-acoustique-378908.html",
       "image": null,
-      "id": "97c5da4a1dbe"
+      "id": "bb5966ddfb6d"
     },
     {
       "venue": "Le Transbordeur",
@@ -2150,15 +2280,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Marie Benoliel",
+      "title": "Marie Benoliel - Daisy En Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-10-06",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/marie-benoliel-411985.html",
+      "url": "https://www.bourse-du-travail.com/marie-benoliel-daisy-en-tournee-411985.html",
       "image": null,
-      "id": "be79af181262"
+      "id": "262d3aa6055c"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3021,15 +3151,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Linh",
+      "title": "Linh - La Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-10-28",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/linh-358175.html",
+      "url": "https://www.bourse-du-travail.com/linh-la-tournee-358175.html",
       "image": null,
-      "id": "2cbfbb75d156"
+      "id": "92a3d7497387"
     },
     {
       "venue": "Le Transbordeur",
@@ -3112,15 +3242,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Toute L'histoire De La Peinture En Moins De Deux Heures",
+      "title": "Toute L'histoire De La Peinture En Moins De Deux Heures, Par Hector Obalk - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-10-30",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/toute-l-histoire-de-la-peinture-en-moins-de-deux-heures-321077.html",
+      "url": "https://www.bourse-du-travail.com/toute-l-histoire-de-la-peinture-en-moins-de-deux-heures-par-hector-obalk-tournee-321077.html",
       "image": null,
-      "id": "5083d7dc97bf"
+      "id": "1e275a4e1410"
     },
     {
       "venue": "Le Transbordeur",
@@ -3359,15 +3489,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Naim",
+      "title": "Naïm - Chapitre 3 - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-11-07",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/naim-365669.html",
+      "url": "https://www.bourse-du-travail.com/naim-chapitre-3-tournee-365669.html",
       "image": null,
-      "id": "d9c8b2326c81"
+      "id": "5cbff391b689"
     },
     {
       "venue": "Le Transbordeur",
@@ -3541,15 +3671,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "David Castello-Lopes",
+      "title": "David Castello-Lopes Dans Délicieux",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-11-10",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/david-castello-lopes-373988.html",
+      "url": "https://www.bourse-du-travail.com/david-castello-lopes-dans-delicieux-373988.html",
       "image": null,
-      "id": "9474d1430821"
+      "id": "c06dacc1b474"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3645,15 +3775,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Thomas Wiesel",
+      "title": "Thomas Wiesel Dans Société Écrans",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-11-12",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/thomas-wiesel-338820.html",
+      "url": "https://www.bourse-du-travail.com/thomas-wiesel-dans-societe-ecrans-338820.html",
       "image": null,
-      "id": "ab49d37542bd"
+      "id": "4a556013735b"
     },
     {
       "venue": "Le Transbordeur",
@@ -3866,15 +3996,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Marine Leonardi",
+      "title": "Marine Leonardi - Mauvaise Graine - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-11-18",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/marine-leonardi-378481.html",
+      "url": "https://www.bourse-du-travail.com/marine-leonardi-mauvaise-graine-tournee-378481.html",
       "image": null,
-      "id": "ad0e67ce195d"
+      "id": "cf99f0c22c2e"
     },
     {
       "venue": "Le Transbordeur",
@@ -4243,15 +4373,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Fabrice Eboue",
+      "title": "Fabrice Eboué - Solitudes - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-11-27",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/fabrice-eboue-377206.html",
+      "url": "https://www.bourse-du-travail.com/fabrice-eboue-solitudes-tournee-377206.html",
       "image": null,
-      "id": "aeaa45bfcd8a"
+      "id": "74cd7c504943"
     },
     {
       "venue": "Le Sucre",
@@ -4308,15 +4438,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Fabrice Eboue",
+      "title": "Fabrice Eboué - Solitudes - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-11-28",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/fabrice-eboue-377207.html",
+      "url": "https://www.bourse-du-travail.com/fabrice-eboue-solitudes-tournee-377207.html",
       "image": null,
-      "id": "1e519b6ae236"
+      "id": "305a4dbb488e"
     },
     {
       "venue": "Le Transbordeur",
@@ -4360,15 +4490,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Gus Illusionniste",
+      "title": "Gus Illusionniste Dans Givré",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-11-29",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/gus-illusionniste-283870.html",
+      "url": "https://www.bourse-du-travail.com/gus-illusionniste-dans-givre-283870.html",
       "image": null,
-      "id": "76fb88442dac"
+      "id": "433b8be62737"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4412,15 +4542,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Marine Leonardi",
+      "title": "Marine Leonardi - Mauvaise Graine - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-12-01",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/marine-leonardi-359462.html",
+      "url": "https://www.bourse-du-travail.com/marine-leonardi-mauvaise-graine-tournee-359462.html",
       "image": null,
-      "id": "ee616746e6d6"
+      "id": "3353a8440cc9"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4438,15 +4568,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Marine Leonardi",
+      "title": "Marine Leonardi - Mauvaise Graine - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-12-02",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/marine-leonardi-338745.html",
+      "url": "https://www.bourse-du-travail.com/marine-leonardi-mauvaise-graine-tournee-338745.html",
       "image": null,
-      "id": "addf6a8c474c"
+      "id": "dfb9135634ea"
     },
     {
       "venue": "Le Transbordeur",
@@ -4477,15 +4607,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Marine Leonardi",
+      "title": "Marine Leonardi - Mauvaise Graine - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-12-03",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/marine-leonardi-280253.html",
+      "url": "https://www.bourse-du-travail.com/marine-leonardi-mauvaise-graine-tournee-280253.html",
       "image": null,
-      "id": "218d14d25cb0"
+      "id": "6b3e3ab60510"
     },
     {
       "venue": "Le Transbordeur",
@@ -4672,15 +4802,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Samuel Bambi",
+      "title": "Samuel Bambi - Machine ! - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-12-10",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/samuel-bambi-357727.html",
+      "url": "https://www.bourse-du-travail.com/samuel-bambi-machine-tournee-357727.html",
       "image": null,
-      "id": "e2d84f309c62"
+      "id": "dab5c131060d"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4711,15 +4841,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Gauvain Sers",
+      "title": "Gauvain Sers - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-12-11",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/gauvain-sers-370741.html",
+      "url": "https://www.bourse-du-travail.com/gauvain-sers-tournee-370741.html",
       "image": null,
-      "id": "6bde45ac942b"
+      "id": "4e0eef2aac58"
     },
     {
       "venue": "Le Transbordeur",
@@ -4763,15 +4893,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Le Noel Fantasmagique De William Arribart",
+      "title": "Le Noël Fantasmagique De William Arribart - Bourse Du Travail - Lyon",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-12-12",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/le-noel-fantasmagique-de-william-arribart-379750.html",
+      "url": "https://www.bourse-du-travail.com/le-noel-fantasmagique-de-william-arribart-bourse-du-travail-lyon-379750.html",
       "image": null,
-      "id": "2422f756607b"
+      "id": "b077b1af8b6c"
     },
     {
       "venue": "Le Transbordeur",
@@ -4904,6 +5034,19 @@
       "id": "5c4824386290"
     },
     {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Soweto Gospel Choir : Pou Zot !",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-12-16",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/soweto-gospel-choir-pou-zot-382529.html",
+      "image": null,
+      "id": "08c707649f4f"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "ORGUEIL & PRÉJUGÉS … OU PRESQUE",
@@ -4919,15 +5062,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Noces De Sang",
+      "title": "Noces De Sang - Un Ballet D'antonio Gades & Carlos Saura - Bourse Du Travail - Lyon",
       "subtitle": null,
-      "category": "humour",
+      "category": "danse",
       "date_start": "2026-12-17",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/noces-de-sang-370069.html",
+      "url": "https://www.bourse-du-travail.com/noces-de-sang-un-ballet-d-antonio-gades-carlos-saura-bourse-du-travail-lyon-370069.html",
       "image": null,
-      "id": "a95d93c4b0c3"
+      "id": "e14ce312ea63"
     },
     {
       "venue": "Le Transbordeur",
@@ -4958,15 +5101,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "D'jal",
+      "title": "D'jal Dans En Pleine Conscience",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-12-18",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/d-jal-278014.html",
+      "url": "https://www.bourse-du-travail.com/d-jal-dans-en-pleine-conscience-278014.html",
       "image": null,
-      "id": "01a6fd019302"
+      "id": "8653ed95ca54"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5010,15 +5153,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Bernard Werber",
+      "title": "Bernard Werber Dans Voyage Intérieur Expérimental",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-12-19",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/bernard-werber-374357.html",
+      "url": "https://www.bourse-du-travail.com/bernard-werber-dans-voyage-interieur-experimental-374357.html",
       "image": null,
-      "id": "f3238785c2e0"
+      "id": "82f0326f9090"
     },
     {
       "venue": "Le Sucre",
@@ -5153,15 +5296,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Sellig \"Episode 7\"",
+      "title": "Sellig - Episode 7 - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-01-06",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/sellig-episode-7-382823.html",
+      "url": "https://www.bourse-du-travail.com/sellig-episode-7-tournee-382823.html",
       "image": null,
-      "id": "53b513a7f19d"
+      "id": "971d199f2595"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5179,7 +5322,7 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Jonathan Dassin Chante Joe Dassin",
+      "title": "Jonathan Dassin - Chante Joe Dassin",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-01-07",
@@ -5187,7 +5330,7 @@
       "time": null,
       "url": "https://www.bourse-du-travail.com/jonathan-dassin-chante-joe-dassin-316708.html",
       "image": null,
-      "id": "00cabaf9a371"
+      "id": "81e1e425c0f4"
     },
     {
       "venue": "Le Transbordeur",
@@ -5322,15 +5465,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Thomas Angelvy",
+      "title": "Festival Drôlement Bien - Lyon",
       "subtitle": null,
-      "category": "humour",
+      "category": "festival",
       "date_start": "2027-01-14",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/thomas-angelvy-378950.html",
+      "url": "https://www.bourse-du-travail.com/festival-drolement-bien-lyon-378950.html",
       "image": null,
-      "id": "71ee594b1f4c"
+      "id": "31724020eb04"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5348,15 +5491,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Philippe Caveriviere",
+      "title": "Festival Drôlement Bien - Lyon",
       "subtitle": null,
-      "category": "humour",
+      "category": "festival",
       "date_start": "2027-01-15",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/philippe-caveriviere-363777.html",
+      "url": "https://www.bourse-du-travail.com/festival-drolement-bien-lyon-363777.html",
       "image": null,
-      "id": "3a5eed4a6205"
+      "id": "102fa003e173"
     },
     {
       "venue": "Le Transbordeur",
@@ -5387,15 +5530,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Yann Guillarme",
+      "title": "Yann Guillarme Dans Libre !",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-01-16",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/yann-guillarme-378763.html",
+      "url": "https://www.bourse-du-travail.com/yann-guillarme-dans-libre-378763.html",
       "image": null,
-      "id": "8f5410f00750"
+      "id": "612d359c7b3e"
     },
     {
       "venue": "Le Sucre",
@@ -5530,15 +5673,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Meryem Benoua",
+      "title": "Meryem Benoua Dans Reflet",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-01-21",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/meryem-benoua-343413.html",
+      "url": "https://www.bourse-du-travail.com/meryem-benoua-dans-reflet-343413.html",
       "image": null,
-      "id": "cf86898367c9"
+      "id": "48130ccf55b2"
     },
     {
       "venue": "Le Transbordeur",
@@ -5621,15 +5764,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Noelle Perna",
+      "title": "Noëlle Perna Dans Mado Fait Son Cabaret",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-01-24",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/noelle-perna-321138.html",
+      "url": "https://www.bourse-du-travail.com/noelle-perna-dans-mado-fait-son-cabaret-321138.html",
       "image": null,
-      "id": "6ac101ccfeb1"
+      "id": "b58de3be39e0"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5751,15 +5894,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Ilyes Djadel",
+      "title": "Ilyes Djadel Dans Déjà",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-01-31",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/ilyes-djadel-378818.html",
+      "url": "https://www.bourse-du-travail.com/ilyes-djadel-dans-deja-378818.html",
       "image": null,
-      "id": "69550a4c73b8"
+      "id": "b29f8f61a5ad"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6206,15 +6349,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Dany Boon",
+      "title": "Dany Boon Dans Clown N'est Pas Un Métier !",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-02-27",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/dany-boon-355761.html",
+      "url": "https://www.bourse-du-travail.com/dany-boon-dans-clown-n-est-pas-un-metier-355761.html",
       "image": null,
-      "id": "c41e55b04b46"
+      "id": "762a43b39047"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6245,15 +6388,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Sarah Schwab",
+      "title": "Sarah Schwab - Elles & Moi - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-03-02",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/sarah-schwab-411324.html",
+      "url": "https://www.bourse-du-travail.com/sarah-schwab-elles-moi-tournee-411324.html",
       "image": null,
-      "id": "8cfe2799aa6d"
+      "id": "ba82e40ca50f"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6271,15 +6414,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Manon Bril",
+      "title": "Manon Bril Dans 300 000 Ans",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-03-03",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/manon-bril-379268.html",
+      "url": "https://www.bourse-du-travail.com/manon-bril-dans-300-000-ans-379268.html",
       "image": null,
-      "id": "b87b3d63ea2c"
+      "id": "425119f738db"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6310,15 +6453,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Pierre Thevenoux",
+      "title": "Pierre Thevenoux Dans Life Coach",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-03-04",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/pierre-thevenoux-379019.html",
+      "url": "https://www.bourse-du-travail.com/pierre-thevenoux-dans-life-coach-379019.html",
       "image": null,
-      "id": "43ae9228b5d2"
+      "id": "cfebe1103649"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6388,15 +6531,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Charlie Haid",
+      "title": "Charlie Haid Dans Intensement Mentaliste",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-03-07",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/charlie-haid-410726.html",
+      "url": "https://www.bourse-du-travail.com/charlie-haid-dans-intensement-mentaliste-410726.html",
       "image": null,
-      "id": "2487b4b2569c"
+      "id": "5e5793827b7b"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6427,15 +6570,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Blandine Lehout",
+      "title": "Blandine Lehout Dans La Vie De Ta Mère",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-03-11",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/blandine-lehout-359464.html",
+      "url": "https://www.bourse-du-travail.com/blandine-lehout-dans-la-vie-de-ta-mere-359464.html",
       "image": null,
-      "id": "4696c2dd3f87"
+      "id": "3f896bb53506"
     },
     {
       "venue": "Le Transbordeur",
@@ -6505,15 +6648,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Booder",
+      "title": "Booder Dans Ah... L'école !",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-03-13",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/booder-378848.html",
+      "url": "https://www.bourse-du-travail.com/booder-dans-ah-l-ecole-378848.html",
       "image": null,
-      "id": "c791d873b35e"
+      "id": "3938d4521b1c"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6596,15 +6739,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Messmer - 13Hz",
+      "title": "Messmer Dans 13Hz",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-03-17",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/messmer-13hz-377698.html",
+      "url": "https://www.bourse-du-travail.com/messmer-dans-13hz-377698.html",
       "image": null,
-      "id": "265f9f791e3d"
+      "id": "fa778e4ed5b6"
     },
     {
       "venue": "Le Transbordeur",
@@ -6635,15 +6778,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Messmer - 13Hz",
+      "title": "Messmer - 13Hz - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-03-18",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/messmer-13hz-377699.html",
+      "url": "https://www.bourse-du-travail.com/messmer-13hz-tournee-377699.html",
       "image": null,
-      "id": "8d5b425fd676"
+      "id": "b2235d85aa53"
     },
     {
       "venue": "Le Transbordeur",
@@ -6739,15 +6882,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Edouard Deloignon",
+      "title": "Edouard Deloignon Grandira Plus Tard",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-03-24",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/edouard-deloignon-378811.html",
+      "url": "https://www.bourse-du-travail.com/edouard-deloignon-grandira-plus-tard-378811.html",
       "image": null,
-      "id": "9e318a26ac8e"
+      "id": "59f41a890747"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6973,15 +7116,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Rodrigue",
+      "title": "Rodrigue - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-04-11",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/rodrigue-353415.html",
+      "url": "https://www.bourse-du-travail.com/rodrigue-tournee-353415.html",
       "image": null,
-      "id": "edf06199435a"
+      "id": "1a749f3e6fae"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7155,15 +7298,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Le Lac Des Cygnes",
+      "title": "Le Lac Des Cygnes - International Festival Ballet - Paris & Tournée",
       "subtitle": null,
       "category": "danse",
       "date_start": "2027-04-30",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/le-lac-des-cygnes-382546.html",
+      "url": "https://www.bourse-du-travail.com/le-lac-des-cygnes-international-festival-ballet-paris-tournee-382546.html",
       "image": null,
-      "id": "2915d9f92eb2"
+      "id": "9a56a869a6ad"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7194,15 +7337,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Gilbert Montagne",
+      "title": "Gilbert Montagné - L'amour Dans Ses Mains",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-05-02",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/gilbert-montagne-382483.html",
+      "url": "https://www.bourse-du-travail.com/gilbert-montagne-l-amour-dans-ses-mains-382483.html",
       "image": null,
-      "id": "b75ecb500802"
+      "id": "62c500c4886a"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -7272,15 +7415,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Tom Baldetti",
+      "title": "Tom Baldetti - Tome 1 - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-05-15",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/tom-baldetti-370295.html",
+      "url": "https://www.bourse-du-travail.com/tom-baldetti-tome-1-tournee-370295.html",
       "image": null,
-      "id": "fd2dbd11a0c5"
+      "id": "3fff25797271"
     },
     {
       "venue": "Bourse du Travail",
@@ -7389,15 +7532,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Edgar-Yves Jr.",
+      "title": "Edgar-Yves Jr. - Vigilance - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-06-05",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/edgar-yves-jr-359465.html",
+      "url": "https://www.bourse-du-travail.com/edgar-yves-jr-vigilance-tournee-359465.html",
       "image": null,
-      "id": "7b844a4908b3"
+      "id": "c2473468b3e8"
     },
     {
       "venue": "TNG",
@@ -7467,15 +7610,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Jesse",
+      "title": "Jessé - Message Personnel - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-06-11",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/jesse-378575.html",
+      "url": "https://www.bourse-du-travail.com/jesse-message-personnel-tournee-378575.html",
       "image": null,
-      "id": "20f5a3ecd5f4"
+      "id": "376657919f44"
     },
     {
       "venue": "Bourse du Travail",
@@ -7506,15 +7649,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Frederic Francois",
+      "title": "Frédéric François - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-06-13",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/frederic-francois-382773.html",
+      "url": "https://www.bourse-du-travail.com/frederic-francois-tournee-382773.html",
       "image": null,
-      "id": "457449b0dc0d"
+      "id": "33f9814d08a8"
     },
     {
       "venue": "TNG",
@@ -7532,28 +7675,28 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Sofia Belabbes",
+      "title": "Sofia Belabbes - Ketchup Mayo Nouvelle Version - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-06-18",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/sofia-belabbes-376106.html",
+      "url": "https://www.bourse-du-travail.com/sofia-belabbes-ketchup-mayo-nouvelle-version-tournee-376106.html",
       "image": null,
-      "id": "e7ead1cc74bb"
+      "id": "9a11c35800f4"
     },
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Herve Vilard",
+      "title": "Hervé Vilard - Capri...c'est Fini...nous...reviens...",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-11-09",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/herve-vilard-382854.html",
+      "url": "https://www.bourse-du-travail.com/herve-vilard-capri-c-est-fini-nous-reviens-382854.html",
       "image": null,
-      "id": "02cba6173cd0"
+      "id": "b3e34bcd099a"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7584,15 +7727,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "David Castello-Lopes",
+      "title": "David Castello-Lopes Dans Délicieux",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-11-25",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/david-castello-lopes-410446.html",
+      "url": "https://www.bourse-du-travail.com/david-castello-lopes-dans-delicieux-410446.html",
       "image": null,
-      "id": "415818d54c69"
+      "id": "a9e787335eb2"
     },
     {
       "venue": "Bourse du Travail",
