@@ -1,30 +1,31 @@
 """Scraper for La Halle Tony Garnier (halle-tony-garnier.com).
 
-Page structure (verified):
-- Each event is wrapped in an <a href="/fr/programmation/<slug>">.
-- Inside: image, date "DD.MM.YY", time "HHhMM", title in uppercase.
-- Some events span multiple days: "28.02 au 01.03.26".
+Page structure (verified July 2026):
+- Each event is an <a href="/fr/programmation/<slug>">.
+- Inner text: "TITLE TITLE DD.MM HHhMM"  (title duplicated — once from img
+  alt, once from the visible span; date WITHOUT year; time "HHhMM").
+- Some events span multiple days: "DD.MM au DD.MM" (year also implicit).
 
-We scrape /fr/programmation (the full listing) and fall back to / (homepage)
-which shows the next 8-10 events.
+Change vs original scraper:
+- Dates are now DD.MM (no year) instead of DD.MM.YY. Year is inferred:
+  if the date is already past in the current year, use next year.
+- Titles appear twice in the link text; we strip date/time then
+  deduplicate adjacent repetitions.
 """
+from __future__ import annotations
 from typing import List, Optional
 from datetime import date as Date
 import re
 import sys
 import requests
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
 from .base import Event, iso
 
 VENUE = "La Halle Tony Garnier"
 SLUG = "halle-tony-garnier"
 HOST = "https://www.halle-tony-garnier.com"
-
-URLS = [
-    HOST + "/fr/programmation",
-    HOST + "/",
-]
+URLS = [HOST + "/fr/programmation", HOST + "/"]
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -32,23 +33,69 @@ HEADERS = {
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
-# Single date "14.03.26" or "DD.MM.YY"
-DATE_SINGLE = re.compile(r"\b(\d{2})\.(\d{2})\.(\d{2})\b")
-# Range "28.02 au 01.03.26" — captures start day, start month, end day, end month, year
-DATE_RANGE = re.compile(
-    r"\b(\d{2})\.(\d{2})(?:\.(\d{2}))?\s+au\s+(\d{2})\.(\d{2})\.(\d{2})\b"
+# DD.MM  or  DD.MM.YY  (year optional)
+_DATE_RE = re.compile(r"\b(\d{2})\.(\d{2})(?:\.(\d{2}))?\b")
+# DD.MM [.YY]  au  DD.MM [.YY]
+_RANGE_RE = re.compile(
+    r"\b(\d{2})\.(\d{2})(?:\.(\d{2}))?(?:\s+au\s+(\d{2})\.(\d{2})(?:\.(\d{2}))?)?",
+    re.IGNORECASE,
 )
-# Time "20h00" or "20h"
-TIME_RE = re.compile(r"\b(\d{1,2})h(\d{2})?\b")
+# HHhMM  or  HHh
+_TIME_RE = re.compile(r"\b(\d{1,2})h(\d{2})?\b")
 
 
-def _parse_date(yy: str, mm: str, dd: str) -> Optional[Date]:
+def _infer_year(month: int, day: int) -> int:
+    """Return the nearest future year for a DD.MM date."""
+    today = Date.today()
+    year = today.year
     try:
-        # Year is two digits, e.g. "26" -> 2026
-        year = 2000 + int(yy)
-        return Date(year, int(mm), int(dd))
+        d = Date(year, month, day)
+        return year if d >= today else year + 1
+    except ValueError:
+        return year + 1
+
+
+def _parse_date(dd: str, mm: str, yy: Optional[str]) -> Optional[Date]:
+    m, d = int(mm), int(dd)
+    year = (2000 + int(yy)) if yy else _infer_year(m, d)
+    try:
+        return Date(year, m, d)
     except ValueError:
         return None
+
+
+def _extract_title(raw: str) -> str:
+    """Strip date/time from link text and de-duplicate the title.
+
+    The page renders each link as "TITLE TITLE DD.MM HHhMM"; after removing
+    date and time tokens the title is left doubled ("TITLE TITLE"). We detect
+    and collapse that repetition.
+    """
+    cleaned = _DATE_RE.sub(" ", raw)
+    cleaned = _TIME_RE.sub(" ", cleaned)
+    # Remove stray 'au' left by range dates
+    cleaned = re.sub(r"\bau\b", " ", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+
+    # Collapse adjacent duplication: "FOO BAR FOO BAR" → "FOO BAR"
+    words = cleaned.split()
+    n = len(words)
+    for half in range(n // 2, 0, -1):
+        if words[:half] == words[half : half * 2]:
+            return " ".join(words[:half]).strip()
+
+    return cleaned
+
+
+def _title_case(s: str) -> str:
+    """Convert ALL-CAPS titles to Title Case for readability."""
+    if not s:
+        return s
+    # Only convert if entirely uppercase (ignore numbers / symbols)
+    letters = [c for c in s if c.isalpha()]
+    if letters and all(c.isupper() for c in letters):
+        return s.title()
+    return s
 
 
 def _scrape_url(url: str) -> List[Event]:
@@ -69,77 +116,56 @@ def _scrape_url(url: str) -> List[Event]:
         if href.startswith("/"):
             href = HOST + href
         # Skip the listing page itself
-        if href.rstrip("/") in (HOST + "/fr/programmation",):
+        if href.rstrip("/") == HOST + "/fr/programmation":
             continue
         if href in seen_urls:
             continue
 
-        text = a.get_text(" ", strip=True)
+        raw_text = a.get_text(" ", strip=True)
 
-        # Try date range first, then single date
+        # ── Parse date(s) ──────────────────────────────────────────────
         d_start: Optional[Date] = None
         d_end: Optional[Date] = None
 
-        m_range = DATE_RANGE.search(text)
+        # Try range first ("DD.MM au DD.MM" or "DD.MM.YY au DD.MM.YY")
+        m_range = re.search(
+            r"\b(\d{2})\.(\d{2})(?:\.(\d{2}))?\s+au\s+(\d{2})\.(\d{2})(?:\.(\d{2}))?",
+            raw_text, re.IGNORECASE,
+        )
         if m_range:
             d1, m1, y1, d2, m2, y2 = m_range.groups()
-            year1 = y1 if y1 else y2
-            d_start = _parse_date(year1, m1, d1)
-            d_end = _parse_date(y2, m2, d2)
+            d_start = _parse_date(d1, m1, y1 or y2)
+            d_end   = _parse_date(d2, m2, y2)
         else:
-            m_single = DATE_SINGLE.search(text)
+            m_single = _DATE_RE.search(raw_text)
             if m_single:
                 dd, mm, yy = m_single.groups()
-                d_start = _parse_date(yy, mm, dd)
+                d_start = _parse_date(dd, mm, yy)
 
         if not d_start:
             continue
-        if d_start < today:
-            # Allow ongoing ranges where end_date is in the future
-            if not d_end or d_end < today:
-                continue
-
-        # Title: usually all caps. Skip text that's just the date/time.
-        # Strategy: take the longest plausible title-like substring.
-        title = ""
-        # The link's structure is image, date, time, title. The title text
-        # typically comes last and is in uppercase.
-        # Walk over text nodes
-        text_nodes = [t.strip() for t in a.stripped_strings if t.strip()]
-        # Filter out date and time tokens
-        candidates = []
-        for tn in text_nodes:
-            if DATE_SINGLE.fullmatch(tn):
-                continue
-            if DATE_RANGE.fullmatch(tn):
-                continue
-            if TIME_RE.fullmatch(tn):
-                continue
-            # Skip "complet" sticker
-            if tn.lower() in ("complet", "complète"):
-                continue
-            # Skip very short / short tokens
-            if len(tn) < 2:
-                continue
-            candidates.append(tn)
-        # Pick the longest candidate as title (titles are typically the
-        # most informative piece of text)
-        if candidates:
-            title = max(candidates, key=len)
-
-        if not title or len(title) < 2 or len(title) > 200:
+        # Drop events fully in the past (allow ongoing ranges)
+        if d_start < today and (not d_end or d_end < today):
             continue
 
-        # Time
+        # ── Extract title ───────────────────────────────────────────────
+        title = _title_case(_extract_title(raw_text))
+        if not title or len(title) < 2 or len(title) > 200:
+            continue
+        # Skip tokens that look like a bare date that wasn't stripped
+        if _DATE_RE.fullmatch(title.strip()):
+            continue
+
+        # ── Extract time ────────────────────────────────────────────────
         time_str: Optional[str] = None
-        m_time = TIME_RE.search(text)
+        m_time = _TIME_RE.search(raw_text)
         if m_time:
             hh = int(m_time.group(1))
-            mm = m_time.group(2) or "00"
+            mm_s = m_time.group(2) or "00"
             if 0 <= hh <= 23:
-                time_str = f"{hh:02d}:{mm}"
+                time_str = f"{hh:02d}:{mm_s}"
 
-        # Image
+        # ── Extract image ───────────────────────────────────────────────
         image: Optional[str] = None
         img = a.find("img")
         if img:
@@ -170,9 +196,9 @@ def fetch() -> List[Event]:
         events = _scrape_url(url)
         all_events.extend(events)
         if events:
-            # First URL with results is the canonical one
-            break
+            break  # First URL with results wins
 
+    # Deduplicate
     seen, unique = set(), []
     for e in all_events:
         if e.id not in seen:
@@ -180,6 +206,7 @@ def fetch() -> List[Event]:
             unique.append(e)
 
     if not unique:
+        # Diagnostic output to help debug future breakage
         print("=" * 60, file=sys.stderr)
         print("DIAGNOSTIC: Halle Tony Garnier — 0 events", file=sys.stderr)
         for url in URLS:
@@ -193,11 +220,11 @@ def fetch() -> List[Event]:
                     print(f"    /fr/programmation/ links: {len(links)}",
                           file=sys.stderr)
                     for a in links[:5]:
-                        h = a.get('href', '')
-                        t = a.get_text(' ', strip=True)[:80]
-                        print(f"      - {h!r} | {t!r}", file=sys.stderr)
-            except requests.RequestException as e:
-                print(f"  {url} -> failed: {e}", file=sys.stderr)
+                        t = a.get_text(" ", strip=True)[:80]
+                        print(f"      - {a.get('href','')!r} | {t!r}",
+                              file=sys.stderr)
+            except requests.RequestException as exc:
+                print(f"  {url} -> failed: {exc}", file=sys.stderr)
         print("=" * 60, file=sys.stderr)
 
     unique.sort(key=lambda e: (e.date_start, e.time or "00:00"))
