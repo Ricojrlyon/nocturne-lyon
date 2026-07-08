@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-08T12:17:39.884706+00:00",
-  "count": 608,
+  "generated_at": "2026-07-08T12:40:11.298805+00:00",
+  "count": 659,
   "events": [
     {
       "venue": "La Commune",
@@ -133,6 +133,19 @@
       "id": "862f364752e8"
     },
     {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "France V/S Maroc: CDM 2026",
+      "subtitle": null,
+      "category": "diffusion de match",
+      "date_start": "2026-07-09",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/france-v-s-paraguay-cdm-2026/",
+      "image": "https://lacommune.co/wp-content/uploads/2026/06/9-2-768x960.jpg",
+      "id": "a24b898fa7aa"
+    },
+    {
       "venue": "La Menuiserie",
       "venue_slug": "la-menuiserie",
       "title": "Venrissage \"Les entre-mondes\" - Exposition de François Labourdette",
@@ -222,19 +235,6 @@
       "url": "https://www.petit-bulletin.fr/agenda-311823-senflix.html",
       "image": null,
       "id": "f943675ab0bc"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "France V/S Maroc: CDM 2026",
-      "subtitle": null,
-      "category": "diffusion de match",
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": "22:00",
-      "url": "https://lacommune.co/event/france-v-s-paraguay-cdm-2026/",
-      "image": "https://lacommune.co/wp-content/uploads/2026/06/9-2-768x960.jpg",
-      "id": "b32d34e31a6d"
     },
     {
       "venue": "La Commune",
@@ -380,19 +380,6 @@
       "id": "c2b7247cdac5"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "DYLAN DYLAN + P ERRINE + PEDRO BERTHO + PATXI",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-07-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/dylan-dylan-p-errine-pedro-bertho-patxi-11072026/",
-      "image": null,
-      "id": "ca06c5708dc8"
-    },
-    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "(Annulé) Silence Collapse",
@@ -430,6 +417,19 @@
       "url": "https://h-eat.eu/events/grand-tournoi-de-petanque-de-lete/",
       "image": "https://h-eat.eu/wp-content/uploads/2024/07/COUPEDUMONDE_HEAT@noemielact-18-480x720.jpg",
       "id": "1f895d77eb4b"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "DYLAN DYLAN + P ERRINE + PEDRO BERTHO + PATXI",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-07-11",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.transbordeur.fr/evenement/dylan-dylan-p-errine-pedro-bertho-patxi-11072026/",
+      "image": null,
+      "id": "1776435ff595"
     },
     {
       "venue": "Le Sonic",
@@ -666,19 +666,6 @@
       "id": "6c9c68b6d746"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "INDUS + SABOR A MI + FERVINHO",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-07-17",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/indus-sabor-a-mi-fervinho-17072026/",
-      "image": null,
-      "id": "52fd3939d0e8"
-    },
-    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Bingo by La Ménagerie",
@@ -690,6 +677,19 @@
       "url": "https://h-eat.eu/events/bingo-by-la-menagerie-5/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/04/BINGO_HEAT-NOEMIELACOTE-18-scaled-1-480x720.jpg",
       "id": "0689ccb8f131"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "INDUS + SABOR A MI + FERVINHO",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-07-17",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.transbordeur.fr/evenement/indus-sabor-a-mi-fervinho-17072026/",
+      "image": null,
+      "id": "dca3cedaa8f2"
     },
     {
       "venue": "Le Petit Salon",
@@ -718,19 +718,6 @@
       "id": "05780fce13ca"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "ANDI + KENDAL + LAVION + SPACER WOMAN",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-07-18",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/andi-kendal-lavion-spacer-woman-18072026/",
-      "image": null,
-      "id": "f5739bfb3c1c"
-    },
-    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Bos'tock festival",
@@ -742,6 +729,19 @@
       "url": "https://agenda.villemorte.fr/event/boskop-festival",
       "image": null,
       "id": "6da4801ac08a"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "ANDI + KENDAL + LAVION + SPACER WOMAN",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-07-18",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.transbordeur.fr/evenement/andi-kendal-lavion-spacer-woman-18072026/",
+      "image": null,
+      "id": "a301b87922a4"
     },
     {
       "venue": "HEAT",
@@ -998,10 +998,10 @@
       "category": "karaoké et blind test",
       "date_start": "2026-07-28",
       "date_end": null,
-      "time": "20:30",
+      "time": null,
       "url": "https://lacommune.co/event/piano-bar-lyon/",
       "image": "https://lacommune.co/wp-content/uploads/2025/11/1080x1350_juillet-programmation-768x960.jpg",
-      "id": "44ea8c01bf4e"
+      "id": "eb6fefb8f2eb"
     },
     {
       "venue": "La Commune",
@@ -1407,19 +1407,6 @@
       "id": "74a818590597"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "HABSTRAKT + ASDEK + MARA + EMILAKI",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-08-29",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/habstrakt-asdek-mara-emilaki-29082026/",
-      "image": null,
-      "id": "0f56586bab93"
-    },
-    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Club Labo : Arm Aber Sexy (Stakhan, Isa, résident AAS)",
@@ -1431,6 +1418,19 @@
       "url": "https://h-eat.eu/events/stakhan-isa/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/04/Heat-x-Silk_Celiope-178-1080x720.jpg",
       "id": "1161c81a4267"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "HABSTRAKT + ASDEK + MARA + EMILAKI",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-08-29",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.transbordeur.fr/evenement/habstrakt-asdek-mara-emilaki-29082026/",
+      "image": null,
+      "id": "39b3d4e38ff4"
     },
     {
       "venue": "Le Sucre",
@@ -1589,19 +1589,6 @@
       "id": "2d1a94e62157"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "MARIE SARAH",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-09-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/marie-sarah-11092026/",
-      "image": null,
-      "id": "eef3ce44c2bb"
-    },
-    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Scène ouverte slam – session de septembre",
@@ -1613,6 +1600,32 @@
       "url": "https://agenda.villemorte.fr/event/scene-ouverte-slam-session-de-septembre",
       "image": null,
       "id": "791e1d9b3213"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "MARIE SARAH",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-09-11",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/marie-sarah-11092026/",
+      "image": null,
+      "id": "3e707d941a59"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "M Pokora",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-09-11",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/m-pokora-3",
+      "image": null,
+      "id": "9be61b916918"
     },
     {
       "venue": "Agend'arts",
@@ -1680,19 +1693,6 @@
       "id": "d34d0ca493e2"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "LA COLONIE DE VACANCES",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-09-17",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/la-colonie-de-vacances-17092026/",
-      "image": null,
-      "id": "535bf99ebb30"
-    },
-    {
       "venue": "A Thou Bout d'Chant",
       "venue_slug": "a-thou-bout-d-chant",
       "title": "CONCERT | LÉONID",
@@ -1717,6 +1717,32 @@
       "url": "https://agenda.villemorte.fr/event/concert-de-merienne-and-dalias-blob",
       "image": null,
       "id": "f7f0aee1d1ab"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "LA COLONIE DE VACANCES",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-09-17",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/la-colonie-de-vacances-17092026/",
+      "image": null,
+      "id": "1e9975aba31a"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "The Ink Factory",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-09-18",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/the-ink-factory-7",
+      "image": null,
+      "id": "6b6ecac2d670"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -1771,6 +1797,19 @@
       "id": "8e3a5cdfbc6a"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "The Ink Factory",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-09-19",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/the-ink-factory-8",
+      "image": null,
+      "id": "827ab69f8b1b"
+    },
+    {
       "venue": "La Machinerie - Bizarre !",
       "venue_slug": "la-machinerie-bizarre",
       "title": "Fête de rentrée de La Machinerie",
@@ -1810,17 +1849,17 @@
       "id": "4e67d37bf08f"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "ASGEIR",
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "The Ink Factory",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-09-20",
       "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/asgeir-20092026/",
+      "time": "10:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/the-ink-factory-9",
       "image": null,
-      "id": "327cb3953a9b"
+      "id": "30d1bfca9c30"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -1834,6 +1873,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/quatuor-leonis/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/quatuor-leonis_radiant-bellevue-500x500.jpg",
       "id": "8c7701342410"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "ASGEIR",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-09-20",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/asgeir-20092026/",
+      "image": null,
+      "id": "ce7a57939a6b"
     },
     {
       "venue": "Marché Gare",
@@ -1856,10 +1908,10 @@
       "category": "concert",
       "date_start": "2026-09-22",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/only-the-poets-22092026/",
       "image": null,
-      "id": "fcfc8fdcd62c"
+      "id": "65c92223b2f1"
     },
     {
       "venue": "TNG",
@@ -2096,19 +2148,6 @@
       "id": "bb5966ddfb6d"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "MERYL",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-10-01",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/meryl-01102026/",
-      "image": null,
-      "id": "c3a0542fb07a"
-    },
-    {
       "venue": "A Thou Bout d'Chant",
       "venue_slug": "a-thou-bout-d-chant",
       "title": "CONCERT | JULIETTE MAGNEVASOA",
@@ -2120,6 +2159,32 @@
       "url": "https://agenda.villemorte.fr/event/concert-or-juliette-magnevasoa",
       "image": null,
       "id": "b7dcb0936224"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "MERYL",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-01",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/meryl-01102026/",
+      "image": null,
+      "id": "a5b94fd348ca"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "The World Of Queen",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-01",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/the-world-of-queen",
+      "image": null,
+      "id": "3611a8088b2f"
     },
     {
       "venue": "Marché Gare",
@@ -2161,19 +2226,6 @@
       "id": "2e5204723b6e"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "MIOSSEC",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-10-02",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/miossec-02102026/",
-      "image": null,
-      "id": "828fdce33cce"
-    },
-    {
       "venue": "A Thou Bout d'Chant",
       "venue_slug": "a-thou-bout-d-chant",
       "title": "CO-PLATEAU | NINE + LOUFOX",
@@ -2198,6 +2250,19 @@
       "url": "https://agenda.villemorte.fr/event/lamour-selon-anton-tchekhov",
       "image": null,
       "id": "f5e0cf988ff9"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "MIOSSEC",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-02",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/miossec-02102026/",
+      "image": null,
+      "id": "bf85dc0945dc"
     },
     {
       "venue": "Bourse du Travail",
@@ -2473,19 +2538,6 @@
       "id": "0eb59d4e1628"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "GUY2BEZBAR",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-10-09",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/guy2bezbar-09102026/",
-      "image": null,
-      "id": "242003a4006d"
-    },
-    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Concert",
@@ -2510,6 +2562,19 @@
       "url": "https://larayonne.org/evenement/swing/",
       "image": null,
       "id": "7ccc395c645d"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "GUY2BEZBAR",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-09",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/guy2bezbar-09102026/",
+      "image": null,
+      "id": "29ab8e777dff"
     },
     {
       "venue": "Marché Gare",
@@ -2551,19 +2616,6 @@
       "id": "202ee10a30cf"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "APPARAT",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-10-10",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/apparat-10102026/",
-      "image": null,
-      "id": "e30c5b1ec6ef"
-    },
-    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Concert d'Electric Louve & de Da Capo",
@@ -2588,6 +2640,19 @@
       "url": "https://agenda.villemorte.fr/event/gars-surs-municipaux-and-friends",
       "image": null,
       "id": "754cb6c1176a"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "APPARAT",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-10",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/apparat-10102026/",
+      "image": null,
+      "id": "10268a6724e5"
     },
     {
       "venue": "Marché Gare",
@@ -2623,10 +2688,10 @@
       "category": "concert",
       "date_start": "2026-10-11",
       "date_end": null,
-      "time": null,
+      "time": "17:00",
       "url": "https://www.transbordeur.fr/evenement/folamour-11102026/",
       "image": null,
-      "id": "6dfb49dcd207"
+      "id": "2ce1f67151eb"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -2642,19 +2707,6 @@
       "id": "0f83df41f48b"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "DJ KRUSH",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-10-13",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/dj-krush-13102026/",
-      "image": null,
-      "id": "2c41c6e28e07"
-    },
-    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Les Mardis du 4 – session d’octobre",
@@ -2668,6 +2720,19 @@
       "id": "570393a895c9"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "DJ KRUSH",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-13",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/dj-krush-13102026/",
+      "image": null,
+      "id": "ee100081fce5"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "JOE JACKSON",
@@ -2679,19 +2744,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/joe-jackson/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/joe-jackson_radiant-bellevue-500x500.jpg",
       "id": "dd9d3cdbfe4f"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "FREDZ",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-10-14",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/fredz-14102026/",
-      "image": null,
-      "id": "13d776f8ffb8"
     },
     {
       "venue": "TNG",
@@ -2718,6 +2770,19 @@
       "url": "https://larayonne.org/evenement/fakear/",
       "image": null,
       "id": "fc42470ceb78"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "FREDZ",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-14",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/fredz-14102026/",
+      "image": null,
+      "id": "22d29d8d72e2"
     },
     {
       "venue": "Le Sonic",
@@ -2837,19 +2902,6 @@
       "id": "00b45a1847b3"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "SETH GUEKO",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-10-17",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/seth-gueko-17102026/",
-      "image": null,
-      "id": "2c7575bf1d4c"
-    },
-    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Spectacle de Christine Brotons – “Chansons déshabillées”",
@@ -2876,6 +2928,19 @@
       "id": "bcdbeac7ffd9"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "SETH GUEKO",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-17",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/seth-gueko-17102026/",
+      "image": null,
+      "id": "e04c0b895c1d"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "JESSÉ",
@@ -2887,19 +2952,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/jesse/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/09/jesse_radiant-bellevue-500x500.jpg",
       "id": "f003f081fac3"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "TIF",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-10-18",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/tif-18102026/",
-      "image": null,
-      "id": "0744acb2790e"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -2917,15 +2969,15 @@
     {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
-      "title": "GHINZU",
+      "title": "TIF",
       "subtitle": null,
       "category": "concert",
-      "date_start": "2026-10-19",
+      "date_start": "2026-10-18",
       "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/ghinzu-19102026/",
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/tif-18102026/",
       "image": null,
-      "id": "f55087a1117a"
+      "id": "d9edc8231393"
     },
     {
       "venue": "Marché Gare",
@@ -2952,6 +3004,19 @@
       "url": "https://le-sucre.eu/events/concert-9/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/CARRE-Sofie-Royer-600x600.jpg",
       "id": "875b4b80a997"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "GHINZU",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-19",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.transbordeur.fr/evenement/ghinzu-19102026/",
+      "image": null,
+      "id": "a653498daf92"
     },
     {
       "venue": "La Rayonne",
@@ -2987,10 +3052,10 @@
       "category": "concert",
       "date_start": "2026-10-20",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/zed-yun-pavarotti-20102026/",
       "image": null,
-      "id": "c668347a30f2"
+      "id": "2219595ec2ee"
     },
     {
       "venue": "Le Sonic",
@@ -3004,19 +3069,6 @@
       "url": "https://sonic-lyon.fr/evenement/the-homesick-group-ensemble/",
       "image": null,
       "id": "e5cd71040a5a"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "THE CELTIC SOCIAL CLUB",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-10-21",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/the-celtic-social-club-21102026/",
-      "image": null,
-      "id": "e60c3c5c9a43"
     },
     {
       "venue": "La Rayonne",
@@ -3034,15 +3086,15 @@
     {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
-      "title": "A6EL",
+      "title": "THE CELTIC SOCIAL CLUB",
       "subtitle": null,
       "category": "concert",
-      "date_start": "2026-10-22",
+      "date_start": "2026-10-21",
       "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/a6el-22102026/",
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/the-celtic-social-club-21102026/",
       "image": null,
-      "id": "87ee77bcb054"
+      "id": "83f2c31dd25e"
     },
     {
       "venue": "La Rayonne",
@@ -3056,6 +3108,19 @@
       "url": "https://larayonne.org/evenement/forever-nu-tribute-to-system-of-a-down-slipknot-machine-head-papa-roach/",
       "image": null,
       "id": "aa46462cb270"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "A6EL",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-22",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/a6el-22102026/",
+      "image": null,
+      "id": "0671217ab9d0"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3078,10 +3143,10 @@
       "category": "concert",
       "date_start": "2026-10-23",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/nes-23102026/",
       "image": null,
-      "id": "06a5b77693bf"
+      "id": "35581083eafe"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3108,19 +3173,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/leman/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/leman-vignette_radiant-bellevue.jpg",
       "id": "2603677f6587"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "HILIGHT TRIBE + MANUDIGITAL + SPOINK + LUNERIS + FLUPKE + EX-ECHO + CRETE & MOUSTACHE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-10-24",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/hilight-tribe-manudigital-spoink-luneris-flupke-ex-echo-crete-moustache-24102026/",
-      "image": null,
-      "id": "a607144ce89a"
     },
     {
       "venue": "Agend'arts",
@@ -3160,6 +3212,32 @@
       "url": "https://radiant-bellevue.fr/spectacles/cat-power/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/cat-power-carre.jpg",
       "id": "85998a12f81a"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Nuit Encore X 23:59",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-24",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/nuit-encore-x-23-59",
+      "image": null,
+      "id": "2fff0957546e"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "HILIGHT TRIBE + MANUDIGITAL + SPOINK + LUNERIS + FLUPKE + EX-ECHO + CRETE & MOUSTACHE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-24",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://www.transbordeur.fr/evenement/hilight-tribe-manudigital-spoink-luneris-flupke-ex-echo-crete-moustache-24102026/",
+      "image": null,
+      "id": "7b4559db3b9f"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3214,19 +3292,6 @@
       "id": "92a3d7497387"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "WALLACE CLEAVER",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-10-28",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/wallace-cleaver-28102026/",
-      "image": null,
-      "id": "dc3b3147429d"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Myrath",
@@ -3240,6 +3305,19 @@
       "id": "e781da806ff0"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "WALLACE CLEAVER",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-28",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/wallace-cleaver-28102026/",
+      "image": null,
+      "id": "473f3dcad9b4"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "THE HU",
@@ -3251,6 +3329,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/the-hu-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/02/the-hu_radiant-bellevue-500x500.jpg",
       "id": "9baef91f94bf"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Salon Des Vignerons Independants",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-29",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-6",
+      "image": null,
+      "id": "210b883f9443"
     },
     {
       "venue": "L'Épicerie Moderne",
@@ -3305,32 +3396,6 @@
       "id": "1e275a4e1410"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "ZOUFRIS MARACAS",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-10-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/zoufris-maracas-30102026/",
-      "image": null,
-      "id": "02bd982e2dcd"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "DJ DIDA + DJ KAWEST + DJ DOULY",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-10-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/dj-dida-dj-kawest-dj-douly-30102026/",
-      "image": null,
-      "id": "90bef96bfc52"
-    },
-    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "Bienvenue aux répétitions !",
@@ -3342,6 +3407,32 @@
       "url": "https://www.tng-lyon.fr/evenement/bienvenue-aux-repetitions/",
       "image": null,
       "id": "11d953bdddde"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Salon Des Vignerons Independants",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-30",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-7",
+      "image": null,
+      "id": "ad12b2b22ce3"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "ZOUFRIS MARACAS",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-30",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/zoufris-maracas-30102026/",
+      "image": null,
+      "id": "ced6fd968199"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3357,6 +3448,19 @@
       "id": "4d0b73b0081d"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "DJ DIDA + DJ KAWEST + DJ DOULY",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-30",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://www.transbordeur.fr/evenement/dj-dida-dj-kawest-dj-douly-30102026/",
+      "image": null,
+      "id": "923de5c0fb75"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Julien Lieb - Naufragés Tour",
@@ -3370,6 +3474,19 @@
       "id": "4b36008daa39"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Salon Des Vignerons Independants",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-31",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-8",
+      "image": null,
+      "id": "d83e0a392b7b"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "FINK",
@@ -3377,10 +3494,10 @@
       "category": "concert",
       "date_start": "2026-10-31",
       "date_end": null,
-      "time": null,
+      "time": "18:30",
       "url": "https://www.transbordeur.fr/evenement/fink-31102026/",
       "image": null,
-      "id": "41101c8f8ca8"
+      "id": "d9890c776af9"
     },
     {
       "venue": "Agend'arts",
@@ -3407,6 +3524,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/stephan-eicher-2/",
       "image": null,
       "id": "5d8dd0b21a2f"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Salon Des Vignerons Independants",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-01",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-9",
+      "image": null,
+      "id": "8a18d20aa5e0"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -3474,6 +3604,19 @@
       "id": "2372ef404664"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Djadja & Dinaz",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/djadja-dinaz-2",
+      "image": null,
+      "id": "38be92eb323a"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "ALAN STIVELL",
@@ -3494,10 +3637,10 @@
       "category": "concert",
       "date_start": "2026-11-06",
       "date_end": null,
-      "time": null,
+      "time": "18:30",
       "url": "https://www.transbordeur.fr/evenement/la-ptite-fumee-06112026/",
       "image": null,
-      "id": "1c7f06eb103d"
+      "id": "989740773865"
     },
     {
       "venue": "La Rayonne",
@@ -3511,6 +3654,19 @@
       "url": "https://larayonne.org/evenement/zelie/",
       "image": null,
       "id": "dc1addf7b1c6"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Djadja & Dinaz",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-06",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/djadja-dinaz-3",
+      "image": null,
+      "id": "8b3f2fdf62ff"
     },
     {
       "venue": "Marché Gare",
@@ -3550,32 +3706,6 @@
       "url": "https://www.bourse-du-travail.com/naim-chapitre-3-tournee-365669.html",
       "image": null,
       "id": "5cbff391b689"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "KLOFAMA",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-07",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/klofama-07112026/",
-      "image": null,
-      "id": "b14a17285a4f"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "JWLES",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-07",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/jwles-07112026/",
-      "image": null,
-      "id": "f111c7aab61f"
     },
     {
       "venue": "TNG",
@@ -3643,6 +3773,32 @@
       "id": "d473928662e4"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "JWLES",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-07",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/jwles-07112026/",
+      "image": null,
+      "id": "733e9ea5ad7e"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Josman",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-07",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/josman-2",
+      "image": null,
+      "id": "1b4efb369f99"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Groove Jazz FERDI",
@@ -3669,6 +3825,19 @@
       "id": "08c9d67b2542"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "KLOFAMA",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-07",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://www.transbordeur.fr/evenement/klofama-07112026/",
+      "image": null,
+      "id": "5f28e5db1243"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "Elie Semoun",
@@ -3680,19 +3849,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/elie-semoun/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2024/12/ElieSemoun_Cactus_Tournee_Affiche_WEB-e1733325606257-500x500.jpg",
       "id": "7d0d0c1715d5"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "AMISTAT + ORANGE OAK",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-09",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/amistat-orange-oak-09112026/",
-      "image": null,
-      "id": "00f4af098047"
     },
     {
       "venue": "Marché Gare",
@@ -3719,6 +3875,19 @@
       "url": "https://larayonne.org/evenement/little-big/",
       "image": null,
       "id": "7825cc02173f"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "AMISTAT + ORANGE OAK",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-09",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/amistat-orange-oak-09112026/",
+      "image": null,
+      "id": "e0edd5629515"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3773,6 +3942,19 @@
       "id": "3a9f2f126e58"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "The World Of Hans Zimmer",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/the-world-of-hans-zimmer-2",
+      "image": null,
+      "id": "a256426cb8c7"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Metal Pop FUTURE PALACE + AS EVERYTHING UNFOLDS + LUNA KILLS",
@@ -3797,19 +3979,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/thomas-fersen-3/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/Thomas-Fresen_radiant-bellevue-1-500x500.jpg",
       "id": "2a582d82a3d6"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "SCHUR + JEANIE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/schur-jeanie-11112026/",
-      "image": null,
-      "id": "ba520385a76d"
     },
     {
       "venue": "Agend'arts",
@@ -3838,6 +4007,32 @@
       "id": "b53bc4467397"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "SCHUR + JEANIE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-11",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/schur-jeanie-11112026/",
+      "image": null,
+      "id": "8bb554460fe8"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Malik Bentalha",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-11",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/malik-bentalha-2",
+      "image": null,
+      "id": "dfa88e684fee"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Thomas Wiesel Dans Société Écrans",
@@ -3858,10 +4053,10 @@
       "category": "concert",
       "date_start": "2026-11-12",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/sniper-12112026/",
       "image": null,
-      "id": "3a7886f79df2"
+      "id": "445535cab77c"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3916,19 +4111,6 @@
       "id": "251deaec3bb3"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "BOY HARSHER",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-14",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/boy-harsher-14112026/",
-      "image": null,
-      "id": "e67e5c33e792"
-    },
-    {
       "venue": "L'Épicerie Moderne",
       "venue_slug": "l-epicerie-moderne",
       "title": "INFINITY SONG",
@@ -3953,6 +4135,19 @@
       "url": "https://le-sucre.eu/events/high-lo-presente-12/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/03/insta-480x600.jpg",
       "id": "5e117d5da632"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "BOY HARSHER",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-14",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.transbordeur.fr/evenement/boy-harsher-14112026/",
+      "image": null,
+      "id": "d84545a07db3"
     },
     {
       "venue": "La Rayonne",
@@ -3994,19 +4189,6 @@
       "id": "f3f9c49704c0"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "BEAST IN BLACK + FROZEN CROWN + SONATA ARCTICA",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-15",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/beast-in-black-frozen-crown-sonata-arctica-15112026/",
-      "image": null,
-      "id": "264e5916c4da"
-    },
-    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "Sans Regrets ?",
@@ -4035,15 +4217,15 @@
     {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
-      "title": "COLOURS IN THE STREET",
+      "title": "BEAST IN BLACK + FROZEN CROWN + SONATA ARCTICA",
       "subtitle": null,
       "category": "concert",
-      "date_start": "2026-11-17",
+      "date_start": "2026-11-15",
       "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/colours-in-the-street-17112026/",
+      "time": "18:00",
+      "url": "https://www.transbordeur.fr/evenement/beast-in-black-frozen-crown-sonata-arctica-15112026/",
       "image": null,
-      "id": "3d05a8ee4243"
+      "id": "ee8ca3789eab"
     },
     {
       "venue": "La Ruche industrielle",
@@ -4057,6 +4239,19 @@
       "url": "https://agenda.villemorte.fr/event/ma-republique-et-moi-compagnie-iwa-issam-rachyq-ahrad",
       "image": null,
       "id": "5daed642e39a"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "COLOURS IN THE STREET",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-17",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/colours-in-the-street-17112026/",
+      "image": null,
+      "id": "55ef8b43abc7"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4085,19 +4280,6 @@
       "id": "cf99f0c22c2e"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "MARCUS GAD",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-18",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/marcus-gad-18112026/",
-      "image": null,
-      "id": "e63d417467ef"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "THE LOCOS",
@@ -4109,6 +4291,19 @@
       "url": "https://larayonne.org/evenement/the-locos/",
       "image": null,
       "id": "e92938b0dc9f"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "MARCUS GAD",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-18",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.transbordeur.fr/evenement/marcus-gad-18112026/",
+      "image": null,
+      "id": "2fb363df6cd6"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4124,19 +4319,6 @@
       "id": "ba0b7e557cea"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "GOGO PENGUIN + DAUDI MATSIKO",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-19",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/gogo-penguin-daudi-matsiko-19112026/",
-      "image": null,
-      "id": "8c451e7a84f1"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "JAVA + WINSTON MCANUFF",
@@ -4148,6 +4330,19 @@
       "url": "https://larayonne.org/evenement/java-winston-mcanuff/",
       "image": null,
       "id": "3ecd9204e5ee"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "GOGO PENGUIN + DAUDI MATSIKO",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-19",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/gogo-penguin-daudi-matsiko-19112026/",
+      "image": null,
+      "id": "cbb78115b527"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4163,17 +4358,17 @@
       "id": "c38abf0afa72"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "IBEYI",
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "L'Heritage Goldman 2",
       "subtitle": null,
       "category": "concert",
-      "date_start": "2026-11-20",
+      "date_start": "2026-11-19",
       "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/ibeyi-20112026/",
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/l-heritage-goldman-2-2",
       "image": null,
-      "id": "55086a6301e2"
+      "id": "d019b4b5bf44"
     },
     {
       "venue": "TNG",
@@ -4226,6 +4421,19 @@
       "url": "https://larayonne.org/evenement/elmer-food-beat/",
       "image": null,
       "id": "fb3c149aa09b"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "IBEYI",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-20",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/ibeyi-20112026/",
+      "image": null,
+      "id": "0d07263bcd96"
     },
     {
       "venue": "Marché Gare",
@@ -4319,19 +4527,6 @@
       "id": "8c1045a4972a"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "LAURA FERRE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-24",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/laura-ferre-24112026/",
-      "image": null,
-      "id": "097ba257970c"
-    },
-    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Cercles Carmins – Quinzaine « Paroles de femmes »",
@@ -4358,6 +4553,19 @@
       "id": "ef2e4e5676ce"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "LAURA FERRE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-24",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/laura-ferre-24112026/",
+      "image": null,
+      "id": "603d4449abfd"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LOCURA",
@@ -4378,10 +4586,10 @@
       "category": "concert",
       "date_start": "2026-11-25",
       "date_end": null,
-      "time": null,
+      "time": "18:00",
       "url": "https://www.transbordeur.fr/evenement/accept-dynazty-tailgunner-25112026/",
       "image": null,
-      "id": "374f49efc8a0"
+      "id": "2ba510789187"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4395,19 +4603,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/locura/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/locura_radiant-bellevue-500x500.jpg",
       "id": "0a8c5ffdceaf"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "BEN PLG",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-26",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/ben-plg-26112026/",
-      "image": null,
-      "id": "e68f24c4a2e3"
     },
     {
       "venue": "Agend'arts",
@@ -4449,6 +4644,19 @@
       "id": "b4b3fd0a36c0"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "BEN PLG",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-26",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/ben-plg-26112026/",
+      "image": null,
+      "id": "0446d58205ab"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "RENAN LUCE",
@@ -4473,19 +4681,6 @@
       "url": "https://www.bourse-du-travail.com/fabrice-eboue-solitudes-tournee-377206.html",
       "image": null,
       "id": "74cd7c504943"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "KID FRANCESCOLI + WOODY",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/kid-francescoli-woody-27112026/",
-      "image": null,
-      "id": "be215957ab5b"
     },
     {
       "venue": "Le Sucre",
@@ -4514,6 +4709,19 @@
       "id": "f77b2a1db1a8"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "KID FRANCESCOLI + WOODY",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-27",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/kid-francescoli-woody-27112026/",
+      "image": null,
+      "id": "69e0e2b2e02f"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "Une Histoire de France",
@@ -4540,19 +4748,6 @@
       "id": "305a4dbb488e"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "LENAIG",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-28",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/lenaig-28112026/",
-      "image": null,
-      "id": "c8351b14dd33"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "GIRLS IN HAWAII",
@@ -4564,6 +4759,19 @@
       "url": "https://larayonne.org/evenement/girls-in-hawaii/",
       "image": null,
       "id": "4876aad118f4"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "LENAIG",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-28",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/lenaig-28112026/",
+      "image": null,
+      "id": "e96d19e547ba"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4625,10 +4833,10 @@
       "category": "concert",
       "date_start": "2026-11-30",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/the-stranglers-30112026/",
       "image": null,
-      "id": "977f1e1562a8"
+      "id": "e2f6bad836f0"
     },
     {
       "venue": "Bourse du Travail",
@@ -4677,10 +4885,10 @@
       "category": "concert",
       "date_start": "2026-12-02",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/slift-02122026/",
       "image": null,
-      "id": "e32a1df21c00"
+      "id": "356ee96e4b13"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4716,10 +4924,10 @@
       "category": "concert",
       "date_start": "2026-12-03",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/eluveitie-pain-wolfheart-03122026/",
       "image": null,
-      "id": "23b8cdf8b0f6"
+      "id": "aad28de4cec8"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4735,19 +4943,6 @@
       "id": "08203c940f44"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "LUTHER",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-12-04",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/luther-04122026/",
-      "image": null,
-      "id": "baf5e7dd1085"
-    },
-    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Concert d'Erwan Pinard",
@@ -4761,6 +4956,32 @@
       "id": "6e43c39de9c1"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "LUTHER",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-12-04",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/luther-04122026/",
+      "image": null,
+      "id": "0b1779aecea2"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "disiz",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-12-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/disiz",
+      "image": null,
+      "id": "8ccde2d1c8ab"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "Garou",
@@ -4772,19 +4993,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/garou/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/04/recadre-500x500.jpg",
       "id": "3c781bc45b68"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "ROUNHAA",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-12-05",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/rounhaa-05122026/",
-      "image": null,
-      "id": "ab4039dfccf2"
     },
     {
       "venue": "TNG",
@@ -4813,6 +5021,19 @@
       "id": "e32f8230b8d2"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "ROUNHAA",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-12-05",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/rounhaa-05122026/",
+      "image": null,
+      "id": "2d5ae72baddd"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "SEBASTIEN TELLIER",
@@ -4824,19 +5045,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/sebastien-tellier/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/sebastien-tellier-500x500.jpg",
       "id": "dfbac738ff82"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "LA RVFLEUZE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-12-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/la-rvfleuze-06122026/",
-      "image": null,
-      "id": "2b16a70e2448"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4854,15 +5062,28 @@
     {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
+      "title": "LA RVFLEUZE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-12-06",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/la-rvfleuze-06122026/",
+      "image": null,
+      "id": "f5d855ebf76d"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
       "title": "CORY WONG",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-12-07",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/cory-wong-07122026/",
       "image": null,
-      "id": "a8b706a683ea"
+      "id": "d728b172d4c2"
     },
     {
       "venue": "Le Transbordeur",
@@ -4872,10 +5093,10 @@
       "category": "concert",
       "date_start": "2026-12-09",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/minitel-09122026/",
       "image": null,
-      "id": "40b14be203c2"
+      "id": "0475186f4102"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4943,19 +5164,6 @@
       "id": "4e0eef2aac58"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "MARGUERITE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-12-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/marguerite-11122026/",
-      "image": null,
-      "id": "5389e8218cf6"
-    },
-    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Scène ouverte slam – session de décembre",
@@ -4967,6 +5175,19 @@
       "url": "https://agenda.villemorte.fr/event/scene-ouverte-slam-session-de-decembre",
       "image": null,
       "id": "2efe3bd87c4d"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "MARGUERITE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-12-11",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/marguerite-11122026/",
+      "image": null,
+      "id": "01b1f5d0b5d4"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4993,19 +5214,6 @@
       "url": "https://www.bourse-du-travail.com/le-noel-fantasmagique-de-william-arribart-bourse-du-travail-lyon-379750.html",
       "image": null,
       "id": "b077b1af8b6c"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "SAM SAUVAGE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-12-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/sam-sauvage-12122026/",
-      "image": null,
-      "id": "9e807bbef41c"
     },
     {
       "venue": "TNG",
@@ -5060,6 +5268,19 @@
       "id": "8d38c0574fcf"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "SAM SAUVAGE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-12-12",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/sam-sauvage-12122026/",
+      "image": null,
+      "id": "fbccab0e5fae"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "MURMURATION LEVEL 2",
@@ -5080,10 +5301,10 @@
       "category": "concert",
       "date_start": "2026-12-13",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/axel-bauer-13122026/",
       "image": null,
-      "id": "bfc190942072"
+      "id": "00fd982a5fdf"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5171,10 +5392,10 @@
       "category": "concert",
       "date_start": "2026-12-17",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/fff-17122026/",
       "image": null,
-      "id": "779194550c23"
+      "id": "7e047c7d6838"
     },
     {
       "venue": "Le Sonic",
@@ -5240,6 +5461,19 @@
       "url": "https://larayonne.org/evenement/pone-friends/",
       "image": null,
       "id": "e3087fb483d4"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Disney En Concert- Suivez Vos Reves",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-12-18",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-en-concert-suivez-vos-reves",
+      "image": null,
+      "id": "4c46d99b7e0b"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5444,10 +5678,10 @@
       "category": "concert",
       "date_start": "2027-01-07",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/acid-arab-07012027/",
       "image": null,
-      "id": "c8d1b1125c9d"
+      "id": "1fdc990aabb3"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5476,6 +5710,19 @@
       "id": "2bc9f50e335e"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Goldmen - Concert 100 % Goldman",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-08",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/goldmen-concert-100-goldman",
+      "image": null,
+      "id": "9cae03700f3c"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Thomas Marty",
@@ -5487,6 +5734,19 @@
       "url": "https://www.bourse-du-travail.com/thomas-marty-363200.html",
       "image": null,
       "id": "17769ffabe2d"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Harry Potter Et Le Prince De Sang-Mélé",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-09",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/harry-potter-et-le-prince-de-sang-mele",
+      "image": null,
+      "id": "80487e51b923"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5554,6 +5814,19 @@
       "id": "a484058bc470"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "One Night Of Queen",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-13",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/one-night-of-queen-2",
+      "image": null,
+      "id": "d36fa43e7d82"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LAURENT VOULZY",
@@ -5613,10 +5886,10 @@
       "category": "concert",
       "date_start": "2027-01-15",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/giedre-15012027/",
       "image": null,
-      "id": "90d324aba060"
+      "id": "5437cf18e7fb"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5645,19 +5918,6 @@
       "id": "612d359c7b3e"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "FILLS MONKEY",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/fills-monkey-16012027/",
-      "image": null,
-      "id": "b6bd07a10ee0"
-    },
-    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "Visite tactile – Liah et moi",
@@ -5669,6 +5929,45 @@
       "url": "https://www.tng-lyon.fr/evenement/visite-tactile-liah-et-moi/",
       "image": null,
       "id": "dc755c69212a"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Lion, Le Roi Est De Retour",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-16",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/lion-le-roi-est-de-retour",
+      "image": null,
+      "id": "91d9dd9e0953"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "FILLS MONKEY",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-16",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/fills-monkey-16012027/",
+      "image": null,
+      "id": "de7e73915937"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Olivier De Benoist",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-16",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/olivier-de-benoist",
+      "image": null,
+      "id": "da6add811841"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5723,6 +6022,19 @@
       "id": "23ea9c331362"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Clement Viktorovitch",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-19",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/clement-viktorovitch",
+      "image": null,
+      "id": "bba5ebee3dbe"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "COSMOS",
@@ -5736,19 +6048,6 @@
       "id": "2a2e3f374cfb"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "TÉTÉ",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/tete-20012027/",
-      "image": null,
-      "id": "d3078f1825de"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Orden Ogan",
@@ -5760,6 +6059,19 @@
       "url": "https://larayonne.org/evenement/orden-ogan/",
       "image": null,
       "id": "e9aa264e6db2"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "TÉTÉ",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-20",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/tete-20012027/",
+      "image": null,
+      "id": "715fcfd6e206"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5795,10 +6107,10 @@
       "category": "concert",
       "date_start": "2027-01-21",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/zaoui-21012027/",
       "image": null,
-      "id": "a61f63ef7b3d"
+      "id": "eda182261fed"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5814,19 +6126,6 @@
       "id": "df0921754fbc"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "RESOLVE + SILENT PLANET + SPLEEN",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-22",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/resolve-silent-planet-spleen-22012027/",
-      "image": null,
-      "id": "1fca73d1af36"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "VULVES ASSASSINES & POÉSIE ZÉRO + CITRON SUCRÉ",
@@ -5838,6 +6137,19 @@
       "url": "https://larayonne.org/evenement/vulves-assassines-poesie-zero-citron-sucre/",
       "image": null,
       "id": "aa28fc5264ba"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "RESOLVE + SILENT PLANET + SPLEEN",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-22",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/resolve-silent-planet-spleen-22012027/",
+      "image": null,
+      "id": "c6012651a9a7"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5892,6 +6204,19 @@
       "id": "d977989406b6"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Disney Sur Glace - Le Voyage Enchante",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-27",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante",
+      "image": null,
+      "id": "13871667903e"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LE JOURNAL D’EDOUARD BAER",
@@ -5925,10 +6250,10 @@
       "category": "concert",
       "date_start": "2027-01-28",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/nto-28012027/",
       "image": null,
-      "id": "7a159b4e956c"
+      "id": "47b30352ac4a"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5942,6 +6267,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/le-fantome-de-lopera/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-fantome-de-l-opera-500x500.jpg",
       "id": "fe2ecbdbcc06"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Disney Sur Glace - Le Voyage Enchante",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-29",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-3",
+      "image": null,
+      "id": "2ebfe953dfc1"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5983,6 +6321,19 @@
       "id": "ff722100678f"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Disney Sur Glace - Le Voyage Enchante",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-30",
+      "date_end": null,
+      "time": "10:15",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-4",
+      "image": null,
+      "id": "960700e6646d"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "SKIP THE USE",
@@ -6022,6 +6373,19 @@
       "id": "e0b9a5b957ba"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Disney Sur Glace - Le Voyage Enchante",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-01-31",
+      "date_end": null,
+      "time": "10:15",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-7",
+      "image": null,
+      "id": "9b8c4c1badaf"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LA SOEUR DE JÉSUS-CHRIST",
@@ -6042,10 +6406,23 @@
       "category": "concert",
       "date_start": "2027-02-02",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/jf-pauze-02022027/",
       "image": null,
-      "id": "a557f3c5e035"
+      "id": "543bf0414101"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Forever - Tribute Michael Jackson",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-02",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/forever-tribute-michael-jackson",
+      "image": null,
+      "id": "14148c08ae28"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6107,10 +6484,10 @@
       "category": "concert",
       "date_start": "2027-02-04",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/revnoir-ice-sealed-eyes-04022027/",
       "image": null,
-      "id": "7072edb1d0d2"
+      "id": "f04104c16645"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6178,6 +6555,19 @@
       "id": "d09cc41aed41"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Aldebert",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-06",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/aldebert-3",
+      "image": null,
+      "id": "21397db5a6f9"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LET’S TWIST AGAIN",
@@ -6204,6 +6594,19 @@
       "id": "b98966baa346"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Square Enix",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-07",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/square-enix",
+      "image": null,
+      "id": "272b1ca3aa4a"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "WHITECHAPEL + SYLOSIS + 200 STAB WOUNDS + TRIBAL GAZE",
@@ -6228,6 +6631,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/le-jeu-de-lamour-et-du-hasard/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-jeu-de-l-amour-et-du-hasard-500x500.jpg",
       "id": "a2ee3a16a322"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Nawell Madani",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/nawell-madani",
+      "image": null,
+      "id": "1e43f410343a"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6269,19 +6685,6 @@
       "id": "8a97c8e90f7c"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "UGLY KID JOE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-02-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/ugly-kid-joe-12022027/",
-      "image": null,
-      "id": "2844aff53a23"
-    },
-    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "Bazar Circus, l’orchestre fait son cirque !",
@@ -6319,6 +6722,19 @@
       "url": "https://larayonne.org/evenement/the-rasmus/",
       "image": null,
       "id": "cf7efd566f8e"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "UGLY KID JOE",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-12",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/ugly-kid-joe-12022027/",
+      "image": null,
+      "id": "3e137455d050"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6367,10 +6783,10 @@
       "category": "concert",
       "date_start": "2027-02-17",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/jeanjass-17022027/",
       "image": null,
-      "id": "13707b6a464f"
+      "id": "ec76c86c9fd3"
     },
     {
       "venue": "La Rayonne",
@@ -6399,6 +6815,19 @@
       "id": "9866e1fd333b"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Holiday On Ice - Cinema Of Dreams",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-19",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams",
+      "image": null,
+      "id": "2352ed756750"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "ERIC FRATICELLI",
@@ -6412,6 +6841,32 @@
       "id": "44ce17e74fd1"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Holiday On Ice - Cinema Of Dreams",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-20",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-2",
+      "image": null,
+      "id": "b2618ecfeaa6"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Holiday On Ice - Cinema Of Dreams",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-21",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-4",
+      "image": null,
+      "id": "f6ae54e9ebe7"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "EZRA COLLECTIVE + JOY (ANONYMOUS)",
@@ -6419,10 +6874,10 @@
       "category": "concert",
       "date_start": "2027-02-23",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/ezra-collective-joy-anonymous-23022027/",
       "image": null,
-      "id": "c2424b369be7"
+      "id": "aca7c19bdb1f"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6581,6 +7036,19 @@
       "id": "509ad983859b"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Marine",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-03-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/marine",
+      "image": null,
+      "id": "74b78cf742fb"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Arnaud Tsamere",
@@ -6618,6 +7086,19 @@
       "url": "https://www.tng-lyon.fr/evenement/atelier-de-pratique-theatrale-en-lsf/",
       "image": null,
       "id": "b6e4854fae15"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Les Annees 80",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-03-06",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/les-annees-80-2",
+      "image": null,
+      "id": "a094e7839744"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6685,19 +7166,6 @@
       "id": "3f896bb53506"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "KEMMLER",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-03-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/kemmler-11032027/",
-      "image": null,
-      "id": "c7d5f15ac247"
-    },
-    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "Évidences inconnues",
@@ -6709,6 +7177,19 @@
       "url": "https://www.tng-lyon.fr/evenement/evidences-inconnues/",
       "image": null,
       "id": "2f21af459863"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "KEMMLER",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-03-11",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/kemmler-11032027/",
+      "image": null,
+      "id": "192fea9a374c"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6789,19 +7270,6 @@
       "id": "c9d473bd8b6c"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "SINCLAIR",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-03-14",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.transbordeur.fr/evenement/sinclair-14032027/",
-      "image": null,
-      "id": "19a0b78bb2ab"
-    },
-    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LES ODYSSÉES DE JULES VERNE",
@@ -6813,6 +7281,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/les-odyssees-de-jules-verne/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/les-odysses-500x500.jpg",
       "id": "4abd2089c16e"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "SINCLAIR",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-03-14",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.transbordeur.fr/evenement/sinclair-14032027/",
+      "image": null,
+      "id": "cc21d20b9ac7"
     },
     {
       "venue": "Bourse du Travail",
@@ -6861,10 +7342,23 @@
       "category": "concert",
       "date_start": "2027-03-17",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/piche-17032027/",
       "image": null,
-      "id": "9050624f0be5"
+      "id": "e776ff99bc5f"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Bernard Lavilliers",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-03-17",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/bernard-lavilliers",
+      "image": null,
+      "id": "66b581d45da6"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6900,10 +7394,10 @@
       "category": "concert",
       "date_start": "2027-03-18",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/ayron-jones-18032027/",
       "image": null,
-      "id": "524608914992"
+      "id": "803bbfbff1f7"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6932,6 +7426,19 @@
       "id": "b8d0311560c8"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Michele Laroque & Kad Merad - L'Age Bete",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-03-19",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/michele-laroque-kad-merad-l-age-bete",
+      "image": null,
+      "id": "e108ea3962f2"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "EN THÉRAPIE",
@@ -6956,6 +7463,19 @@
       "url": "https://www.tng-lyon.fr/evenement/lenfant-ocean/",
       "image": null,
       "id": "9ef9a0a5db0c"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "500 Voix Pour Johnny",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-03-20",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/500-voix-pour-johnny",
+      "image": null,
+      "id": "f227e3726650"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7043,10 +7563,10 @@
       "category": "concert",
       "date_start": "2027-03-25",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/adele-castillon-25032027/",
       "image": null,
-      "id": "a845ddbc3f5b"
+      "id": "efe8a80e0b74"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7108,10 +7628,10 @@
       "category": "concert",
       "date_start": "2027-04-01",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/jahneration-01042027/",
       "image": null,
-      "id": "f8011a988a6c"
+      "id": "dcfe9eddb86e"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7140,6 +7660,19 @@
       "id": "52b34ecf4a5b"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Patrick Fiori",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-04-03",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/patrick-fiori-2",
+      "image": null,
+      "id": "93411b98f25b"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "ALEX LUTZ",
@@ -7164,6 +7697,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/les-aventuriers-de-minuit/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/les-aventuriers-500x500.jpg",
       "id": "e23282f98841"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Glorious",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-04-04",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/glorious",
+      "image": null,
+      "id": "ba9cb766b04c"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7238,10 +7784,23 @@
       "category": "concert",
       "date_start": "2027-04-10",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://www.transbordeur.fr/evenement/madame-arthur-10042027/",
       "image": null,
-      "id": "7383d2999331"
+      "id": "091011e60746"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Star Wars In Concert : Un Nouvel Espoir",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-04-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/star-wars-in-concert-un-nouvel-espoir",
+      "image": null,
+      "id": "7015d6516327"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7569,6 +8128,19 @@
       "id": "3fff25797271"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Suzane",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-05-18",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/suzane",
+      "image": null,
+      "id": "113efc2897c8"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Les Gros Patinent Bien",
@@ -7829,6 +8401,32 @@
       "id": "9a11c35800f4"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Generation Celine",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-09-29",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/generation-celine-2",
+      "image": null,
+      "id": "4f8eececf37d"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "La Rue Kétanou",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-10-01",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/la-rue-ketanou",
+      "image": null,
+      "id": "620a0d9b3588"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Hervé Vilard - Capri...c'est Fini...nous...reviens...",
@@ -7853,6 +8451,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/louis-bertignac/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/louis-bertignac_radiant-bellevue-500x500.jpg",
       "id": "6f0ed9f890aa"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "I Gotta Feeling – Saison 3",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-11-18",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/i-gotta-feeling-saison-3",
+      "image": null,
+      "id": "fb2d7ec96427"
     },
     {
       "venue": "Bourse du Travail",
@@ -7892,6 +8503,58 @@
       "url": "https://www.bourse-du-travail.com/julien-rossier-est-coluche-382853.html",
       "image": null,
       "id": "2cad813d1401"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Gael Faye",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-11-27",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/gael-faye",
+      "image": null,
+      "id": "6beb9713ac66"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Philippe Caveriviere",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-12-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/philippe-caveriviere",
+      "image": null,
+      "id": "95ab438b6959"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Festival Mondial De La Magie",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2028-01-14",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/festival-mondial-de-la-magie",
+      "image": null,
+      "id": "745d9cc9feff"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Era",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2028-03-01",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/era-2",
+      "image": null,
+      "id": "661d7f33aa0b"
     },
     {
       "venue": "Radiant-Bellevue",
