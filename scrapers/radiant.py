@@ -1,27 +1,22 @@
 """Scraper for Radiant-Bellevue (radiant-bellevue.fr).
 
-The home page lists the upcoming events. Each card contains:
-- an <a href="/spectacles/<slug>/"> wrapping an image
-- a category line ("Humour", "Musique", "Théâtre", "Musique - Chanson", …)
-- a <h2> with the title
-- a date string in long French form: "jeudi 30 avril 2026", "06 & 07 mai 2026",
-  "12 & 13 décembre 2026", "30 & 31 octobre 2026"…
-
-There is no time on the listing page (only on the detail page), so `time`
-is left None.
+Homepage lists upcoming events. Time is on each /spectacles/<slug>/ detail page.
+Strategy: collect stubs from homepage, dedupe by URL, then fetch each detail page
+once for time (in-request dedup avoids hitting the same URL twice for multi-date shows).
 """
 from typing import List, Optional
 from datetime import date as Date
 import re
+import time as _time
 import requests
 from bs4 import BeautifulSoup
 
 from .base import Event, parse_french_date, iso, FR_MONTHS
 
 VENUE = "Radiant-Bellevue"
-SLUG = "radiant-bellevue"
-URL = "https://radiant-bellevue.fr/"
-HOST = "https://radiant-bellevue.fr"
+SLUG  = "radiant-bellevue"
+URL   = "https://radiant-bellevue.fr/"
+HOST  = "https://radiant-bellevue.fr"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -29,17 +24,14 @@ HEADERS = {
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
-# Single date: "jeudi 30 avril 2026" or "30 avril 2026"
 DATE_SINGLE = re.compile(
     r"(?:\w+\s+)?(\d{1,2})\s+(\w+)\s+(\d{4})",
     re.IGNORECASE,
 )
-# Range "& consecutive": "06 & 07 mai 2026" or "30 & 31 octobre 2026"
 DATE_AMP = re.compile(
     r"(\d{1,2})\s*&\s*(\d{1,2})\s+(\w+)\s+(\d{4})",
     re.IGNORECASE,
 )
-# Three days "&": "26, 27 & 28 juin 2026"
 DATE_TRIPLE = re.compile(
     r"(\d{1,2}),\s*(\d{1,2})\s*&\s*(\d{1,2})\s+(\w+)\s+(\d{4})",
     re.IGNORECASE,
@@ -51,8 +43,11 @@ CATEGORIES = (
 )
 
 
+def _french_month_num(s: str) -> Optional[int]:
+    return FR_MONTHS.get(s.lower())
+
+
 def _find_card(link, max_levels: int = 6):
-    """Walk up to a parent that contains a date line in 4-digit-year form."""
     el = link
     year_re = re.compile(r"\b20\d{2}\b")
     for _ in range(max_levels):
@@ -65,8 +60,47 @@ def _find_card(link, max_levels: int = 6):
     return el
 
 
-def _french_month_num(s: str) -> Optional[int]:
-    return FR_MONTHS.get(s.lower())
+def _parse_time(text: str) -> Optional[str]:
+    """Extract show time. Radiant shows are typically 20h00 or 20h30.
+    Accept 14h-22h range (matinées included).
+    """
+    m = re.search(
+        r"(?:à|heure|horaire|début|debut|ouverture|représentation|spectacle)"
+        r"\s*[:\-]?\s*(\d{1,2})[h:](\d{0,2})",
+        text, re.IGNORECASE,
+    )
+    if m:
+        hh = int(m.group(1))
+        mm_s = m.group(2)
+        mm = int(mm_s) if mm_s else 0
+        if 14 <= hh <= 22:
+            return f"{hh:02d}:{mm:02d}"
+    for m2 in re.finditer(r"\b(\d{1,2})[h:](\d{2})\b", text):
+        hh, mm = int(m2.group(1)), int(m2.group(2))
+        if 14 <= hh <= 22:
+            return f"{hh:02d}:{mm:02d}"
+    return None
+
+
+def _fetch_detail_time(url: str) -> Optional[str]:
+    """Fetch /spectacles/<slug>/ and extract time."""
+    try:
+        r = requests.get(url, timeout=10, headers=HEADERS)
+        if r.status_code != 200:
+            return None
+        soup = BeautifulSoup(r.text, "html.parser")
+        for selector in (
+            "[class*='horaire']", "[class*='time']", "[class*='heure']",
+            "[class*='schedule']", "[class*='seance']", "[class*='date']", "time",
+        ):
+            for el in soup.select(selector)[:4]:
+                t = _parse_time(el.get_text(" ", strip=True))
+                if t:
+                    return t
+        visible = soup.get_text(" ", strip=True)
+        return _parse_time(visible[:800])
+    except requests.RequestException:
+        return None
 
 
 def fetch() -> List[Event]:
@@ -74,7 +108,8 @@ def fetch() -> List[Event]:
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
-    events: List[Event] = []
+    # Pass 1: collect stubs from listing
+    raw_stubs: List[dict] = []
     seen_urls: set = set()
 
     for a in soup.select('a[href*="/spectacles/"]'):
@@ -83,7 +118,6 @@ def fetch() -> List[Event]:
             href = HOST + href
         if not href.startswith("http"):
             continue
-        # Skip placeholder / billetterie / etc.
         if "/spectacles/" not in href or href.endswith("/spectacles/"):
             continue
         if href in seen_urls:
@@ -92,64 +126,55 @@ def fetch() -> List[Event]:
         card = _find_card(a)
         text = card.get_text(" ", strip=True)
 
-        # Date extraction with multi-day support
         date_starts: List[str] = []
-        date_end_iso: Optional[str] = None
-
         m_triple = DATE_TRIPLE.search(text)
-        m_amp = DATE_AMP.search(text)
+        m_amp    = DATE_AMP.search(text)
         m_single = DATE_SINGLE.search(text)
 
         if m_triple:
             d1, d2, d3, mo, yr = m_triple.groups()
             month = _french_month_num(mo)
-            year = int(yr)
+            year  = int(yr)
             if month:
-                for d_str in (d1, d2, d3):
+                for d_s in (d1, d2, d3):
                     try:
-                        date_starts.append(Date(year, month, int(d_str)).isoformat())
+                        date_starts.append(Date(year, month, int(d_s)).isoformat())
                     except ValueError:
                         pass
         elif m_amp:
             d1, d2, mo, yr = m_amp.groups()
             month = _french_month_num(mo)
-            year = int(yr)
+            year  = int(yr)
             if month:
-                for d_str in (d1, d2):
+                for d_s in (d1, d2):
                     try:
-                        date_starts.append(Date(year, month, int(d_str)).isoformat())
+                        date_starts.append(Date(year, month, int(d_s)).isoformat())
                     except ValueError:
                         pass
         elif m_single:
-            d_str, mo, yr = m_single.groups()
+            d_s, mo, yr = m_single.groups()
             month = _french_month_num(mo)
-            year = int(yr)
+            year  = int(yr)
             if month:
                 try:
-                    date_starts.append(Date(year, month, int(d_str)).isoformat())
+                    date_starts.append(Date(year, month, int(d_s)).isoformat())
                 except ValueError:
                     pass
 
         if not date_starts:
             continue
 
-        # Title: first <h2> in card
         title_el = card.find(["h2", "h3"])
-        if title_el:
-            title = title_el.get_text(strip=True)
-        else:
-            title = a.get_text(" ", strip=True)
+        title = title_el.get_text(strip=True) if title_el else a.get_text(" ", strip=True)
         if not title or len(title) < 2:
             continue
 
-        # Category: extract from text — Radiant uses "Humour", "Musique - Chanson", etc.
         category: Optional[str] = None
         for kw in CATEGORIES:
             if kw in text:
                 category = kw.lower()
                 break
 
-        # Image
         image: Optional[str] = None
         for img in card.find_all("img"):
             src = img.get("src") or ""
@@ -158,29 +183,44 @@ def fetch() -> List[Event]:
                 break
 
         seen_urls.add(href)
-        for ds in date_starts:
-            events.append(Event(
+        raw_stubs.append({
+            "date_starts": date_starts,
+            "title": title, "category": category,
+            "url": href, "image": image,
+        })
+
+    # Pass 2: fetch each unique URL once for time
+    url_to_time: dict = {}
+    for i, stub in enumerate(raw_stubs):
+        if i > 0:
+            _time.sleep(0.4)
+        url_to_time[stub["url"]] = _fetch_detail_time(stub["url"])
+
+    # Build events (one per date occurrence)
+    events: List[Event] = []
+    seen_ids: set = set()
+    for stub in raw_stubs:
+        time_str = url_to_time.get(stub["url"])
+        for ds in stub["date_starts"]:
+            ev = Event(
                 venue=VENUE,
                 venue_slug=SLUG,
-                title=title,
+                title=stub["title"],
                 subtitle=None,
-                category=category,
+                category=stub["category"],
                 date_start=ds,
                 date_end=None,
-                time=None,
-                url=href,
-                image=image,
-            ))
+                time=time_str,
+                url=stub["url"],
+                image=stub["image"],
+            )
+            if ev.id not in seen_ids:
+                seen_ids.add(ev.id)
+                events.append(ev)
 
-    # Dedupe
-    seen, unique = set(), []
-    for e in events:
-        if e.id not in seen:
-            seen.add(e.id)
-            unique.append(e)
-    return unique
+    return events
 
 
 if __name__ == "__main__":
     for e in fetch():
-        print(e.date_start, "·", e.title, "·", e.url)
+        print(e.date_start, e.time or "  -  ", "·", e.title, "·", e.url)
