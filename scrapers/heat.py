@@ -1,27 +1,23 @@
 """Scraper for HEAT (h-eat.eu/events/).
 
-Page structure (verified):
-- Each event is wrapped in an <a href="/events/<slug>/">.
-- Inside: image, date pill ("mer. 29 avr.") and <h2> title.
-- Date format: short day name + DD + short month name (3 letters, sometimes
-  with trailing dot, sometimes "juill" for July).
-
-The page lists events in two sections "Cette semaine" and "Soon", but we
-just enumerate all /events/ links on the page.
+Listing page gives date + title. Time is on each event's detail page.
+Strategy: collect all event URLs from listing, then fetch each detail
+page to extract the time (rate-limited to 0.4 s/request).
 """
 from typing import List, Optional
 from datetime import date as Date
 import re
 import sys
+import time as _time
 import requests
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
 from .base import Event, iso
 
 VENUE = "HEAT"
-SLUG = "heat"
-URL = "https://h-eat.eu/events/"
-HOST = "https://h-eat.eu"
+SLUG  = "heat"
+URL   = "https://h-eat.eu/events/"
+HOST  = "https://h-eat.eu"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -29,14 +25,12 @@ HEADERS = {
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
-# Short month name -> month number, including "juill" for juillet.
 SHORT_MONTHS = {
     "janv": 1, "fevr": 2, "févr": 2, "mars": 3, "avr": 4, "mai": 5,
     "juin": 6, "juil": 7, "juill": 7, "aout": 8, "août": 8, "sept": 9,
     "oct": 10, "nov": 11, "dec": 12, "déc": 12,
 }
 
-# "mer. 29 avr." or "jeu. 02 juill."
 DATE_RE = re.compile(
     r"\b\w+\.?\s+(\d{1,2})\s+(janv|f[eé]vr|mars|avr|mai|juin|juill?|"
     r"ao[uû]t|sept|oct|nov|d[eé]c)\.?",
@@ -60,10 +54,63 @@ def _smart_year(month: int, day: int) -> int:
 
 
 def _normalize_month(s: str) -> Optional[int]:
-    """Map short month name to int. Strips accents and trailing 'l'."""
     s = s.lower().rstrip(".")
-    s = s.replace("é", "e").replace("è", "e").replace("ê", "e").replace("ô", "o").replace("û", "u")
+    s = s.replace("é","e").replace("è","e").replace("ê","e").replace("ô","o").replace("û","u")
     return SHORT_MONTHS.get(s)
+
+
+def _parse_time(text: str) -> Optional[str]:
+    """Extract event time from arbitrary text.
+
+    HEAT shows times like "19:00 — 20:00" or "19h00" near the title.
+    Accepts evening/night hours only (16h-03h).
+    """
+    # "HH:MM" or "HHhMM" — prefer the first one in the plausible range
+    for m in re.finditer(r"\b(\d{1,2})[h:](\d{2})\b", text):
+        hh, mm = int(m.group(1)), int(m.group(2))
+        if (16 <= hh <= 23) or (hh <= 3):
+            return f"{hh:02d}:{mm:02d}"
+    # "HHh" alone
+    for m in re.finditer(r"\b(\d{1,2})h\b", text, re.IGNORECASE):
+        hh = int(m.group(1))
+        if (16 <= hh <= 23) or (hh <= 3):
+            return f"{hh:02d}:00"
+    return None
+
+
+def _fetch_detail_time(url: str) -> Optional[str]:
+    """Fetch an event detail page and extract the time."""
+    try:
+        r = requests.get(url, timeout=10, headers=HEADERS)
+        if r.status_code != 200:
+            return None
+        soup = BeautifulSoup(r.text, "html.parser")
+        # Try dedicated time elements first
+        for selector in (
+            "[class*='time']", "[class*='horaire']", "[class*='heure']",
+            "[class*='schedule']", "time", "[class*='date']",
+        ):
+            for el in soup.select(selector)[:3]:
+                t = _parse_time(el.get_text(" ", strip=True))
+                if t:
+                    return t
+        # Try the first 400 chars of visible text (header area)
+        visible = soup.get_text(" ", strip=True)
+        # Contextual search
+        m = re.search(
+            r"(?:ouverture|portes?|début|debut|horaire|heure|à partir|opening|start)"
+            r"\s*[:\-]?\s*(\d{1,2})[h:](\d{0,2})",
+            visible[:600], re.IGNORECASE,
+        )
+        if m:
+            hh = int(m.group(1))
+            mm_s = m.group(2)
+            mm = int(mm_s) if mm_s else 0
+            if (16 <= hh <= 23) or (hh <= 3):
+                return f"{hh:02d}:{mm:02d}"
+        return _parse_time(visible[:600])
+    except requests.RequestException:
+        return None
 
 
 def fetch() -> List[Event]:
@@ -71,7 +118,8 @@ def fetch() -> List[Event]:
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
-    events: List[Event] = []
+    # Collect event stubs from listing
+    stubs: List[dict] = []
     seen_urls: set = set()
 
     for a in soup.select('a[href*="/events/"]'):
@@ -80,7 +128,6 @@ def fetch() -> List[Event]:
             href = HOST + href
         if not href.startswith("http"):
             continue
-        # Skip the events listing root
         if href.rstrip("/") in (HOST + "/events", HOST + "/events-archives"):
             continue
         if href in seen_urls:
@@ -100,7 +147,6 @@ def fetch() -> List[Event]:
         except ValueError:
             continue
 
-        # Title from <h2>
         title_el = a.find("h2")
         if not title_el:
             continue
@@ -108,8 +154,6 @@ def fetch() -> List[Event]:
         if not title or len(title) < 2 or len(title) > 250:
             continue
 
-        # Category: try to detect from page text near the link (HEAT lists
-        # category tags in the navbar but not per card)
         category: Optional[str] = None
         text_lower = text.lower()
         for kw in CATEGORIES:
@@ -117,7 +161,6 @@ def fetch() -> List[Event]:
                 category = kw.replace(" ", "-")
                 break
 
-        # Image
         image: Optional[str] = None
         img = a.find("img")
         if img:
@@ -126,17 +169,26 @@ def fetch() -> List[Event]:
                 image = src
 
         seen_urls.add(href)
+        stubs.append({"date": d, "title": title, "url": href,
+                       "category": category, "image": image})
+
+    # Fetch detail pages for time (rate-limited)
+    events: List[Event] = []
+    for i, stub in enumerate(stubs):
+        if i > 0:
+            _time.sleep(0.4)
+        time_str = _fetch_detail_time(stub["url"])
         events.append(Event(
             venue=VENUE,
             venue_slug=SLUG,
-            title=title,
+            title=stub["title"],
             subtitle=None,
-            category=category,
-            date_start=iso(d),
+            category=stub["category"],
+            date_start=iso(stub["date"]),
             date_end=None,
-            time=None,
-            url=href,
-            image=image,
+            time=time_str,
+            url=stub["url"],
+            image=stub["image"],
         ))
 
     if not events:
@@ -145,7 +197,7 @@ def fetch() -> List[Event]:
         links = soup.select('a[href*="/events/"]')
         print(f"  /events/ links: {len(links)}", file=sys.stderr)
         for a in links[:5]:
-            t = a.get_text(' ', strip=True)[:100]
+            t = a.get_text(" ", strip=True)[:100]
             print(f"    - {a.get('href', '')!r} | text: {t!r}", file=sys.stderr)
         print("=" * 60, file=sys.stderr)
 
@@ -155,4 +207,4 @@ def fetch() -> List[Event]:
 
 if __name__ == "__main__":
     for e in fetch():
-        print(e.date_start, "·", e.title, "·", e.url)
+        print(e.date_start, e.time or "  -  ", "·", e.title, "·", e.url)
