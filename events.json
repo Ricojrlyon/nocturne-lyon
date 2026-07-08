@@ -1,33 +1,7 @@
 {
-  "generated_at": "2026-07-08T08:12:47.723343+00:00",
-  "count": 657,
+  "generated_at": "2026-07-08T12:17:39.884706+00:00",
+  "count": 608,
   "events": [
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Chess Bar x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-08",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/chess-bar-x-heat-9/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
-      "id": "806987289988"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Blindtest spécial Coupe du Monde",
-      "subtitle": null,
-      "category": "blindtest",
-      "date_start": "2026-07-08",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/blindtest-special-coupe-du-monde/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/06/blindtest_foot-576x720.jpg",
-      "id": "1e8e00348373"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -53,6 +27,32 @@
       "url": "https://agenda.villemorte.fr/event/concert-gratuit-tempus-fluens-au-zibou-lab",
       "image": null,
       "id": "b580f2d2d7ee"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Blindtest spécial Coupe du Monde",
+      "subtitle": null,
+      "category": "blindtest",
+      "date_start": "2026-07-08",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://h-eat.eu/events/blindtest-special-coupe-du-monde/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/06/blindtest_foot-576x720.jpg",
+      "id": "de42cd705238"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Chess Bar x HEAT",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-08",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://h-eat.eu/events/chess-bar-x-heat-9/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
+      "id": "83d1b4da71e0"
     },
     {
       "venue": "Péristyle Opéra",
@@ -133,45 +133,6 @@
       "id": "862f364752e8"
     },
     {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Diversions : Edredon Sensible (live)",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/diversions-edredon-sensible-live/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/06/DIVERSION-2026-RS-1-576x720.png",
-      "id": "d9f5eddaa288"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Coupe du Monde : France — Maroc",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/quart-de-final/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-264-576x720.png",
-      "id": "881db7a87f4b"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "France V/S Maroc: CDM 2026",
-      "subtitle": null,
-      "category": "diffusion de match",
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/france-v-s-paraguay-cdm-2026/",
-      "image": "https://lacommune.co/wp-content/uploads/2026/06/9-2-768x960.jpg",
-      "id": "a24b898fa7aa"
-    },
-    {
       "venue": "La Menuiserie",
       "venue_slug": "la-menuiserie",
       "title": "Venrissage \"Les entre-mondes\" - Exposition de François Labourdette",
@@ -211,6 +172,19 @@
       "id": "b9f8feeb53c0"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Coupe du Monde : France — Maroc",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-09",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://h-eat.eu/events/quart-de-final/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-264-576x720.png",
+      "id": "aa7e32bbeea6"
+    },
+    {
       "venue": "Péristyle Opéra",
       "venue_slug": "peristyle-opera",
       "title": "Karaoké piano",
@@ -222,6 +196,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-318759-karaok-piano.html",
       "image": null,
       "id": "6826e1d0117d"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Diversions : Edredon Sensible (live)",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-09",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://h-eat.eu/events/diversions-edredon-sensible-live/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/06/DIVERSION-2026-RS-1-576x720.png",
+      "id": "de364e5088c3"
     },
     {
       "venue": "Improvidence",
@@ -237,22 +224,22 @@
       "id": "f943675ab0bc"
     },
     {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Cabriole présente HEAT Machine",
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "France V/S Maroc: CDM 2026",
       "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-10",
+      "category": "diffusion de match",
+      "date_start": "2026-07-09",
       "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/cabriole-heat-machine/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/06/cabriole-heat-577x720.png",
-      "id": "ac5ef36889db"
+      "time": "22:00",
+      "url": "https://lacommune.co/event/france-v-s-paraguay-cdm-2026/",
+      "image": "https://lacommune.co/wp-content/uploads/2026/06/9-2-768x960.jpg",
+      "id": "b32d34e31a6d"
     },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
-      "title": "LES VIEWINGS D’AMOUR",
+      "title": "LES VIEWINGS D’AMOUR #1",
       "subtitle": null,
       "category": "drag",
       "date_start": "2026-07-10",
@@ -260,7 +247,7 @@
       "time": null,
       "url": "https://lacommune.co/event/les-viewings-damour/",
       "image": "https://lacommune.co/wp-content/uploads/2026/07/1080x1350_juillet-programmation-768x960.jpg",
-      "id": "4c0ffb015711"
+      "id": "631f96ccad88"
     },
     {
       "venue": "La Commune",
@@ -328,6 +315,19 @@
       "id": "b36ee759de41"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Cabriole présente HEAT Machine",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-10",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://h-eat.eu/events/cabriole-heat-machine/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/06/cabriole-heat-577x720.png",
+      "id": "1bd9d84e2177"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "DOPE SAINT JUDE + YANKA + SLMVX",
@@ -365,19 +365,6 @@
       "url": "https://yp.events/65bfc2b4-e481-4e1a-ad95-eccb3ccb0adc/THIS-IS-TECHNO-Rave-CRYMO-Gallop-more?from=siteweb",
       "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/ThisisTechnoRave_10072026_lepetitsalon-1024x576.jpg",
       "id": "ced1173236a8"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Grand tournoi de pétanque de l’été",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/grand-tournoi-de-petanque-de-lete/",
-      "image": "https://h-eat.eu/wp-content/uploads/2024/07/COUPEDUMONDE_HEAT@noemielact-18-480x720.jpg",
-      "id": "fb35a97bd140"
     },
     {
       "venue": "La Commune",
@@ -430,6 +417,19 @@
       "url": "https://larayonne.org/evenement/open-air-opa2-avec-physical-tool/",
       "image": null,
       "id": "6bf9704b9891"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Grand tournoi de pétanque de l’été",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-11",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://h-eat.eu/events/grand-tournoi-de-petanque-de-lete/",
+      "image": "https://h-eat.eu/wp-content/uploads/2024/07/COUPEDUMONDE_HEAT@noemielact-18-480x720.jpg",
+      "id": "1f895d77eb4b"
     },
     {
       "venue": "Le Sonic",
@@ -543,10 +543,10 @@
       "category": null,
       "date_start": "2026-07-14",
       "date_end": null,
-      "time": null,
+      "time": "17:30",
       "url": "https://h-eat.eu/events/coupe-du-monde-demi-finale/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/06/france-irak-576x720.png",
-      "id": "978ec19c2b5a"
+      "id": "e582d1ada3ab"
     },
     {
       "venue": "Les Subsistances",
@@ -560,32 +560,6 @@
       "url": "https://www.les-subs.com/evenement/nuits-de-fourviere-2026-le-bal-shangwe-wanjiru-kamuyu/",
       "image": null,
       "id": "586589ad8abd"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Chess Bar x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-15",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/chess-bar-x-heat-8/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
-      "id": "2fdc9009cea4"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Coupe du monde : Demi-finale",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-15",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/coupe-du-monde-demi-finale-2/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-265-576x720.png",
-      "id": "c75e0fe6a39b"
     },
     {
       "venue": "Jardin Envie Partagée quai Rambaud",
@@ -603,15 +577,28 @@
     {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "GHETTO HEAT Party by Sapristi",
+      "title": "Coupe du monde : Demi-finale",
       "subtitle": null,
       "category": null,
-      "date_start": "2026-07-16",
+      "date_start": "2026-07-15",
       "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/ghetto-heat-party-by-sapristi/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/07/sapristi-heat2-1095x720.jpeg",
-      "id": "d955d6cb41a0"
+      "time": "17:30",
+      "url": "https://h-eat.eu/events/coupe-du-monde-demi-finale-2/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-265-576x720.png",
+      "id": "05512055f277"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Chess Bar x HEAT",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-15",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://h-eat.eu/events/chess-bar-x-heat-8/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
+      "id": "decf6bda1c34"
     },
     {
       "venue": "La Commune",
@@ -655,15 +642,28 @@
     {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "Bingo by La Ménagerie",
+      "title": "GHETTO HEAT Party by Sapristi",
       "subtitle": null,
       "category": null,
+      "date_start": "2026-07-16",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://h-eat.eu/events/ghetto-heat-party-by-sapristi/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/07/sapristi-heat2-1095x720.jpeg",
+      "id": "cbaa41fea0df"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "LES VIEWINGS D’AMOUR #2",
+      "subtitle": null,
+      "category": "drag",
       "date_start": "2026-07-17",
       "date_end": null,
       "time": null,
-      "url": "https://h-eat.eu/events/bingo-by-la-menagerie-5/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/BINGO_HEAT-NOEMIELACOTE-18-scaled-1-480x720.jpg",
-      "id": "cf7a105f6c2a"
+      "url": "https://lacommune.co/event/les-viewings-damour-2/",
+      "image": "https://lacommune.co/wp-content/uploads/2026/07/17-1-768x960.png",
+      "id": "6c9c68b6d746"
     },
     {
       "venue": "Le Transbordeur",
@@ -679,6 +679,19 @@
       "id": "52fd3939d0e8"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Bingo by La Ménagerie",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-17",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://h-eat.eu/events/bingo-by-la-menagerie-5/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/04/BINGO_HEAT-NOEMIELACOTE-18-scaled-1-480x720.jpg",
+      "id": "0689ccb8f131"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "THIS IS HIT MACHINE 90-2000 : NO2T / DANY FROM ST BARTH & TERROR MIKE",
@@ -692,17 +705,17 @@
       "id": "413fd13ffadc"
     },
     {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Festigone : Hip Hop Summer Party",
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "DJ set estival à Lyon – Suntrax x Mango XO",
       "subtitle": null,
-      "category": null,
+      "category": "dj set",
       "date_start": "2026-07-18",
       "date_end": null,
       "time": null,
-      "url": "https://h-eat.eu/events/festigone-hip-hop-summer-party/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/07/OPEN-AIR-HIP-HOP-SUMMER-PARTY-🪖🪩On-vous-attend-nombreux-le-18-juillet-au-@heat_lyon-pour-un--576x720.jpg",
-      "id": "0f7554a39972"
+      "url": "https://lacommune.co/event/suntrax-mango-xo-dj-set-la-commune/",
+      "image": "https://lacommune.co/wp-content/uploads/2026/07/1080x1350_juillet-programmation-1-768x960.png",
+      "id": "05780fce13ca"
     },
     {
       "venue": "Le Transbordeur",
@@ -731,6 +744,19 @@
       "id": "6da4801ac08a"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Festigone : Hip Hop Summer Party",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-18",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://h-eat.eu/events/festigone-hip-hop-summer-party/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/07/OPEN-AIR-HIP-HOP-SUMMER-PARTY-🪖🪩On-vous-attend-nombreux-le-18-juillet-au-@heat_lyon-pour-un--576x720.jpg",
+      "id": "f532d434675a"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "VITESSE : INES ISLA / E.T.O / SAY IT LOUD & MORE",
@@ -744,19 +770,6 @@
       "id": "1e7f4765c906"
     },
     {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Finale de la Coupe du Monde",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-19",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/finale-cdm/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-266-576x720.png",
-      "id": "7bce76684956"
-    },
-    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "A la découverte du chocolat",
@@ -768,6 +781,19 @@
       "url": "https://lacommune.co/event/atelier-chocolat-enfants-lyon-kitchen-street/",
       "image": "https://lacommune.co/wp-content/uploads/2026/06/1080x1350_juillet-programmation-2-768x960.jpg",
       "id": "59c83370bd35"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Finale de la Coupe du Monde",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-19",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://h-eat.eu/events/finale-cdm/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-266-576x720.png",
+      "id": "cafadaf10698"
     },
     {
       "venue": "La Commune",
@@ -803,10 +829,10 @@
       "category": null,
       "date_start": "2026-07-22",
       "date_end": null,
-      "time": null,
+      "time": "18:00",
       "url": "https://h-eat.eu/events/chess-bar-x-heat-6/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
-      "id": "892728055192"
+      "id": "f43601db6096"
     },
     {
       "venue": "HEAT",
@@ -816,23 +842,10 @@
       "category": null,
       "date_start": "2026-07-22",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://h-eat.eu/events/quartier-libre-x-shall-we-swing/",
       "image": "https://h-eat.eu/wp-content/uploads/2023/06/shallweswing-heat-960x720.jpg",
-      "id": "4441bbbbbbea"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "House Yoga Club",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-23",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/house-yoga-club/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/06/10-1-576x720.jpg",
-      "id": "924ee3275c51"
+      "id": "7e589fe12e92"
     },
     {
       "venue": "La Commune",
@@ -846,6 +859,19 @@
       "url": "https://lacommune.co/event/dj-set-a-lyon-narvalo-disco-club/",
       "image": "https://lacommune.co/wp-content/uploads/2026/07/23-1-768x960.jpg",
       "id": "2ed790f66b6e"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "House Yoga Club",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-23",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://h-eat.eu/events/house-yoga-club/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/06/10-1-576x720.jpg",
+      "id": "dab533f029a1"
     },
     {
       "venue": "Le Sonic",
@@ -868,10 +894,10 @@
       "category": null,
       "date_start": "2026-07-24",
       "date_end": null,
-      "time": null,
+      "time": "18:00",
       "url": "https://h-eat.eu/events/house-of-briantz/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/07/HOB-HEAT-574x720.jpeg",
-      "id": "37ae2ea9afbe"
+      "id": "9349d0d3c2ed"
     },
     {
       "venue": "Le Petit Salon",
@@ -887,19 +913,6 @@
       "id": "0751ec40cb07"
     },
     {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Club Labo : Happiness Therapy x Klubvivison",
-      "subtitle": null,
-      "category": "club-labo",
-      "date_start": "2026-07-25",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/club-labo-happiness-therapy-x-klubvivison/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/07/post-insta-576x720.png",
-      "id": "fb1ade0ff8d4"
-    },
-    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Market La Tu Sap",
@@ -911,6 +924,19 @@
       "url": "https://lacommune.co/event/summer-second-hand-market/",
       "image": "https://lacommune.co/wp-content/uploads/2025/07/25-3-768x960.jpg",
       "id": "04bf67e83c51"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Club Labo : Happiness Therapy x Klubvivison",
+      "subtitle": null,
+      "category": "club-labo",
+      "date_start": "2026-07-25",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://h-eat.eu/events/club-labo-happiness-therapy-x-klubvivison/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/07/post-insta-576x720.png",
+      "id": "28542c3da751"
     },
     {
       "venue": "Le Petit Salon",
@@ -972,36 +998,10 @@
       "category": "karaoké et blind test",
       "date_start": "2026-07-28",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://lacommune.co/event/piano-bar-lyon/",
       "image": "https://lacommune.co/wp-content/uploads/2025/11/1080x1350_juillet-programmation-768x960.jpg",
-      "id": "eb6fefb8f2eb"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Chess Bar x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-29",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/chess-bar-x-heat/",
-      "image": "https://h-eat.eu/wp-content/uploads/2025/07/jeu-echecs-mains-reine-jeu-societe-strategie-competition-domicile-echiquier-checkmate-homme-homme-intelligent-jouant-dans-concours-sportif-defi-resolution-problemes-pour-esprit_590464-143092.jpg",
-      "id": "8822f9826b4f"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Open platine : le Labo est à vous !",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-29",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/open-platine-le-labo-est-a-vous/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/charli-bonsoirmathilda15-480x720.jpg",
-      "id": "85814fbd0947"
+      "id": "44ea8c01bf4e"
     },
     {
       "venue": "La Commune",
@@ -1015,6 +1015,32 @@
       "url": "https://lacommune.co/event/spectacle-dimprovisation-improfusion/",
       "image": "https://lacommune.co/wp-content/uploads/2025/11/29-2-768x960.jpg",
       "id": "bbd18d981aa4"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Chess Bar x HEAT",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-29",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://h-eat.eu/events/chess-bar-x-heat/",
+      "image": "https://h-eat.eu/wp-content/uploads/2025/07/jeu-echecs-mains-reine-jeu-societe-strategie-competition-domicile-echiquier-checkmate-homme-homme-intelligent-jouant-dans-concours-sportif-defi-resolution-problemes-pour-esprit_590464-143092.jpg",
+      "id": "3c9c99059eaa"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Open platine : le Labo est à vous !",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-29",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://h-eat.eu/events/open-platine-le-labo-est-a-vous/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/04/charli-bonsoirmathilda15-480x720.jpg",
+      "id": "73e8c9697e43"
     },
     {
       "venue": "La Commune",
@@ -1037,10 +1063,10 @@
       "category": null,
       "date_start": "2026-07-31",
       "date_end": null,
-      "time": null,
+      "time": "18:00",
       "url": "https://h-eat.eu/events/full-mix-el-arrebato/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/07/OPEN-AIR-FULL_@noemielact-81-1080x720.jpg",
-      "id": "16a94afd1e6f"
+      "id": "ecff584bb832"
     },
     {
       "venue": "Le Petit Salon",
@@ -1063,10 +1089,10 @@
       "category": "club",
       "date_start": "2026-08-01",
       "date_end": null,
-      "time": null,
+      "time": "23:00",
       "url": "https://le-sucre.eu/events/club-57/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/@ninahasni_Carmen-Sea-1-400x600.jpg",
-      "id": "754b364e6b80"
+      "id": "af305d9580f5"
     },
     {
       "venue": "Le Sucre",
@@ -1076,10 +1102,10 @@
       "category": "club",
       "date_start": "2026-08-02",
       "date_end": null,
-      "time": null,
+      "time": "18:00",
       "url": "https://le-sucre.eu/events/s-society-156/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/3V2-480x600.png",
-      "id": "d9b4259e5ba0"
+      "id": "6b3f8421f790"
     },
     {
       "venue": "La Commune",
@@ -1128,10 +1154,10 @@
       "category": "club",
       "date_start": "2026-08-07",
       "date_end": null,
-      "time": null,
+      "time": "23:00",
       "url": "https://le-sucre.eu/events/club-58/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/32-SET-EN-PIRATE-@louise_gholam-600x400.jpeg",
-      "id": "c4dd2eb2a813"
+      "id": "daea64c01b76"
     },
     {
       "venue": "Le Sucre",
@@ -1141,10 +1167,10 @@
       "category": "club",
       "date_start": "2026-08-08",
       "date_end": null,
-      "time": null,
+      "time": "23:00",
       "url": "https://le-sucre.eu/events/club-59/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/2025_04_14_ANACO4368-400x600.jpg",
-      "id": "cdeafb3c580c"
+      "id": "5be5245455ed"
     },
     {
       "venue": "Le Sucre",
@@ -1154,10 +1180,10 @@
       "category": "club",
       "date_start": "2026-08-09",
       "date_end": null,
-      "time": null,
+      "time": "18:00",
       "url": "https://le-sucre.eu/events/s-society-157/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Function-1-404x600.jpg",
-      "id": "8745a8cbd9d8"
+      "id": "aeb7b4489122"
     },
     {
       "venue": "La Commune",
@@ -1193,23 +1219,10 @@
       "category": "club",
       "date_start": "2026-08-14",
       "date_end": null,
-      "time": null,
+      "time": "23:00",
       "url": "https://le-sucre.eu/events/club-x-hidden-garden/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Le-Sucre_14.08-480x600.jpg",
-      "id": "cf0a82b8e8b9"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Live club",
-      "subtitle": "deBasement(live) · Mastaï · TTristana",
-      "category": "club",
-      "date_start": "2026-08-15",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/club-51/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/credits-_-Shane-Clay-1-600x450.jpg",
-      "id": "90ffd15b3d87"
+      "id": "12247a811b16"
     },
     {
       "venue": "Grrrnd Zero",
@@ -1227,15 +1240,15 @@
     {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
-      "title": "S.society",
-      "subtitle": "Maelita · Nicola Cruz",
+      "title": "Live club",
+      "subtitle": "deBasement(live) · Mastaï · TTristana",
       "category": "club",
-      "date_start": "2026-08-16",
+      "date_start": "2026-08-15",
       "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/s-society-158/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/DSCF0298-400x600.jpg",
-      "id": "0c77cebc1e85"
+      "time": "23:00",
+      "url": "https://le-sucre.eu/events/club-51/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/credits-_-Shane-Clay-1-600x450.jpg",
+      "id": "d1edc3b1c3e9"
     },
     {
       "venue": "Grrrnd Zero",
@@ -1249,6 +1262,19 @@
       "url": "https://agenda.villemorte.fr/event/fossilization-phobocosm-tba",
       "image": null,
       "id": "89e72c824d3d"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "S.society",
+      "subtitle": "Maelita · Nicola Cruz",
+      "category": "club",
+      "date_start": "2026-08-16",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://le-sucre.eu/events/s-society-158/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/DSCF0298-400x600.jpg",
+      "id": "6453177f5a50"
     },
     {
       "venue": "La Commune",
@@ -1284,10 +1310,10 @@
       "category": null,
       "date_start": "2026-08-19",
       "date_end": null,
-      "time": null,
+      "time": "18:00",
       "url": "https://h-eat.eu/events/open-platine-le-labo-est-a-vous-2/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/04/Heat-x-Silk_Celiope-127-480x720.jpg",
-      "id": "3f7a05c3e78f"
+      "id": "b76ac3cc8e4c"
     },
     {
       "venue": "HEAT",
@@ -1297,10 +1323,10 @@
       "category": null,
       "date_start": "2026-08-20",
       "date_end": null,
-      "time": null,
+      "time": "18:30",
       "url": "https://h-eat.eu/events/house-yoga-club-2/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/06/3-1-576x720.jpg",
-      "id": "b8f80b710c24"
+      "id": "1db0939d9480"
     },
     {
       "venue": "Le Sucre",
@@ -1310,10 +1336,10 @@
       "category": "club",
       "date_start": "2026-08-21",
       "date_end": null,
-      "time": null,
+      "time": "23:00",
       "url": "https://le-sucre.eu/events/club-x-physical-tool/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/05/MAGIC-MARDI-182-400x600.jpg",
-      "id": "e4af1f5ae4f0"
+      "id": "c5055eeb85ed"
     },
     {
       "venue": "Le Sucre",
@@ -1323,10 +1349,10 @@
       "category": "club",
       "date_start": "2026-08-22",
       "date_end": null,
-      "time": null,
+      "time": "23:00",
       "url": "https://le-sucre.eu/events/club-60/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/NBT-by-Arnold-Anani-600x600.jpg",
-      "id": "a617f513c8a1"
+      "id": "f51b5e945f0e"
     },
     {
       "venue": "Le Sucre",
@@ -1336,10 +1362,10 @@
       "category": "club",
       "date_start": "2026-08-23",
       "date_end": null,
-      "time": null,
+      "time": "18:00",
       "url": "https://le-sucre.eu/events/s-society-159/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/23_08-450x600.png",
-      "id": "97fe96ba5215"
+      "id": "563e402fe167"
     },
     {
       "venue": "La Commune",
@@ -1362,10 +1388,10 @@
       "category": null,
       "date_start": "2026-08-26",
       "date_end": null,
-      "time": null,
+      "time": "19:00",
       "url": "https://h-eat.eu/events/quartier-libre-x-shall-we-swing-2/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/06/shallweswing-heatlyon.jpg",
-      "id": "b30984d0429d"
+      "id": "337ff333848d"
     },
     {
       "venue": "Le Sucre",
@@ -1375,36 +1401,10 @@
       "category": "club",
       "date_start": "2026-08-28",
       "date_end": null,
-      "time": null,
+      "time": "23:00",
       "url": "https://le-sucre.eu/events/club-x-stand-with-lebanon/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Instagram-post-1080X1350-480x600.png",
-      "id": "45c8947d5964"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Club Labo : Arm Aber Sexy (Stakhan, Isa, résident AAS)",
-      "subtitle": null,
-      "category": "club-labo",
-      "date_start": "2026-08-29",
-      "date_end": null,
-      "time": null,
-      "url": "https://h-eat.eu/events/stakhan-isa/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/Heat-x-Silk_Celiope-178-1080x720.jpg",
-      "id": "067b5b90fa59"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Live club",
-      "subtitle": "Liya Tesfaye · Hysteria Temple Foundation (live) · Zero Crossing Point (live) · Kick21",
-      "category": "club",
-      "date_start": "2026-08-29",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/club-61/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Zero-Crossing-Point_Positive-Education-Festival-3-insta-romain.guede_-600x400.jpg",
-      "id": "5379f4a4611c"
+      "id": "74a818590597"
     },
     {
       "venue": "Le Transbordeur",
@@ -1420,6 +1420,32 @@
       "id": "0f56586bab93"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Club Labo : Arm Aber Sexy (Stakhan, Isa, résident AAS)",
+      "subtitle": null,
+      "category": "club-labo",
+      "date_start": "2026-08-29",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://h-eat.eu/events/stakhan-isa/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/04/Heat-x-Silk_Celiope-178-1080x720.jpg",
+      "id": "1161c81a4267"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Live club",
+      "subtitle": "Liya Tesfaye · Hysteria Temple Foundation (live) · Zero Crossing Point (live) · Kick21",
+      "category": "club",
+      "date_start": "2026-08-29",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://le-sucre.eu/events/club-61/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Zero-Crossing-Point_Positive-Education-Festival-3-insta-romain.guede_-600x400.jpg",
+      "id": "5056793551a1"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "MIA MENDI / KATZE / KONGA & MORE",
@@ -1433,19 +1459,6 @@
       "id": "5b4cd5b608c4"
     },
     {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "S.society",
-      "subtitle": "The Hacker · Zaatar زَعْتَر",
-      "category": "club",
-      "date_start": "2026-08-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/s-society-153/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/30_08-450x600.png",
-      "id": "e6dbe304b110"
-    },
-    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "PΞB + We use cookies",
@@ -1457,6 +1470,19 @@
       "url": "https://agenda.villemorte.fr/event/p3b-tba",
       "image": null,
       "id": "dc17ffa09e68"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "S.society",
+      "subtitle": "The Hacker · Zaatar زَعْتَر",
+      "category": "club",
+      "date_start": "2026-08-30",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://le-sucre.eu/events/s-society-153/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/30_08-450x600.png",
+      "id": "3f82119ac0a9"
     },
     {
       "venue": "Marché Gare",
@@ -1589,32 +1615,6 @@
       "id": "791e1d9b3213"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "M Pokora",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-09-11",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/m-pokora-3",
-      "image": null,
-      "id": "9be61b916918"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "YANNS",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-09-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/yanns/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/yanns_radiant-bellevue-500x500.jpg",
-      "id": "3a7e063ba883"
-    },
-    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Spectacle de Perrine Rouland – Blouse",
@@ -1639,6 +1639,19 @@
       "url": "https://larayonne.org/evenement/kingdoms-catch-mania/",
       "image": null,
       "id": "6b94428462b8"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "YANNS",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-12",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/yanns/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/yanns_radiant-bellevue-500x500.jpg",
+      "id": "f11f7dbe3eb3"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -1706,19 +1719,6 @@
       "id": "f7f0aee1d1ab"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "The Ink Factory",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-09-18",
-      "date_end": null,
-      "time": "13:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/the-ink-factory-7",
-      "image": null,
-      "id": "6b6ecac2d670"
-    },
-    {
       "venue": "A Thou Bout d'Chant",
       "venue_slug": "a-thou-bout-d-chant",
       "title": "CONCERT | CYRIL MOKAIESH",
@@ -1769,19 +1769,6 @@
       "url": "https://www.tng-lyon.fr/evenement/journees-europeennes-du-patrimoine/",
       "image": null,
       "id": "8e3a5cdfbc6a"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "The Ink Factory",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-09-19",
-      "date_end": null,
-      "time": "10:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/the-ink-factory-8",
-      "image": null,
-      "id": "827ab69f8b1b"
     },
     {
       "venue": "La Machinerie - Bizarre !",
@@ -1843,23 +1830,10 @@
       "category": "musique",
       "date_start": "2026-09-20",
       "date_end": null,
-      "time": null,
+      "time": "16:00",
       "url": "https://radiant-bellevue.fr/spectacles/quatuor-leonis/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/quatuor-leonis_radiant-bellevue-500x500.jpg",
-      "id": "c76695d08268"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "The Ink Factory",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-09-20",
-      "date_end": null,
-      "time": "10:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/the-ink-factory-9",
-      "image": null,
-      "id": "30d1bfca9c30"
+      "id": "8c7701342410"
     },
     {
       "venue": "Marché Gare",
@@ -1914,19 +1888,6 @@
       "id": "8f195e0a4520"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "MARION MEZADORIAN",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-09-24",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/marion-mezadorian/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/marion-mezadorian_radiant-bellevue-500x500.jpg",
-      "id": "5b381d87e428"
-    },
-    {
       "venue": "A Thou Bout d'Chant",
       "venue_slug": "a-thou-bout-d-chant",
       "title": "CONCERT | MARION ROCH",
@@ -1979,6 +1940,19 @@
       "id": "81ecfb5e0678"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "MARION MEZADORIAN",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-09-24",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/marion-mezadorian/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/marion-mezadorian_radiant-bellevue-500x500.jpg",
+      "id": "1a616960cfc3"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Arnaud Tsamère - Tous Contraints - Tournée",
@@ -1990,19 +1964,6 @@
       "url": "https://www.bourse-du-travail.com/arnaud-tsamere-tous-contraints-tournee-253951.html",
       "image": null,
       "id": "8eb59e7d2dcd"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "COMME ÇA VOUS CHANTE !",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-09-25",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/comme-ca-vous-chante-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/comme-ca-vous-chante_radiant-bellevue-500x500.jpg",
-      "id": "710696b10de8"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -2029,6 +1990,19 @@
       "url": "https://marchegare.fr/agenda/oscar-les-vacances-2026",
       "image": null,
       "id": "bec75eda91f7"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "COMME ÇA VOUS CHANTE !",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-25",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/comme-ca-vous-chante-2/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/comme-ca-vous-chante_radiant-bellevue-500x500.jpg",
+      "id": "e6b1ecc2708d"
     },
     {
       "venue": "Bourse du Travail",
@@ -2135,19 +2109,6 @@
       "id": "c3a0542fb07a"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "Podkatz Tour avec Juliette Katz",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-10-01",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/podkatz-tour-avec-juliette-katz/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/10/podkatz-tour-500x500.jpg",
-      "id": "d7122382c78b"
-    },
-    {
       "venue": "A Thou Bout d'Chant",
       "venue_slug": "a-thou-bout-d-chant",
       "title": "CONCERT | JULIETTE MAGNEVASOA",
@@ -2161,19 +2122,6 @@
       "id": "b7dcb0936224"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "The World Of Queen",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-10-01",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/the-world-of-queen",
-      "image": null,
-      "id": "3611a8088b2f"
-    },
-    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Chanson Pop DINAA",
@@ -2185,6 +2133,19 @@
       "url": "https://marchegare.fr/agenda/dinaa",
       "image": null,
       "id": "398ba0e958cb"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Podkatz Tour avec Juliette Katz",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-10-01",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/podkatz-tour-avec-juliette-katz/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/10/podkatz-tour-500x500.jpg",
+      "id": "0750c5d6b9cc"
     },
     {
       "venue": "Bourse du Travail",
@@ -2252,19 +2213,6 @@
       "id": "6bb27825f81b"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "Festival Karavel 20",
-      "subtitle": null,
-      "category": "danse",
-      "date_start": "2026-10-03",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/festival-karavel-20-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/karavel_radiant-bellevue-2-500x500.jpg",
-      "id": "ddb796e432ca"
-    },
-    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "La fabrique des souvenirs – Boule de Neige",
@@ -2317,6 +2265,19 @@
       "id": "b69cc134bb46"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Festival Karavel 20",
+      "subtitle": null,
+      "category": "danse",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/festival-karavel-20-2/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/karavel_radiant-bellevue-2-500x500.jpg",
+      "id": "310cfa65929e"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Amine Radi - La Suivette - Tournée",
@@ -2350,10 +2311,10 @@
       "category": "danse",
       "date_start": "2026-10-04",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/festival-karavel-20-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/karavel_radiant-bellevue-2-500x500.jpg",
-      "id": "748f856e16c9"
+      "id": "24eb1a39baa2"
     },
     {
       "venue": "Bourse du Travail",
@@ -2367,19 +2328,6 @@
       "url": "https://www.bourse-du-travail.com/marie-benoliel-daisy-en-tournee-411985.html",
       "image": null,
       "id": "262d3aa6055c"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "FAT FREDDY’S DROP",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-10-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/fat-freddys-drop/",
-      "image": null,
-      "id": "e9cf3072b054"
     },
     {
       "venue": "TNG",
@@ -2410,15 +2358,15 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
-      "title": "LOUIS CATTELAT",
+      "title": "FAT FREDDY’S DROP",
       "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-10-07",
+      "category": null,
+      "date_start": "2026-10-06",
       "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/louis-cattelat/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/09/louis-catelat_radiant-bellevue-500x500.jpg",
-      "id": "446e25bdcf06"
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/fat-freddys-drop/",
+      "image": null,
+      "id": "8319a399ef79"
     },
     {
       "venue": "La Machinerie - Bizarre !",
@@ -2436,15 +2384,15 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
-      "title": "SECRET(S) MEDICAL",
+      "title": "LOUIS CATTELAT",
       "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-10-08",
+      "category": "humour",
+      "date_start": "2026-10-07",
       "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/secrets-medical/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/secret-medical_radiant-bellevue-500x500.jpg",
-      "id": "c576942bdf19"
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/louis-cattelat/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/09/louis-catelat_radiant-bellevue-500x500.jpg",
+      "id": "92bda1f8d50a"
     },
     {
       "venue": "Agend'arts",
@@ -2499,6 +2447,19 @@
       "id": "d55fc9958128"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "SECRET(S) MEDICAL",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-10-08",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/secrets-medical/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/secret-medical_radiant-bellevue-500x500.jpg",
+      "id": "bd5c8e2aac4c"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Tanguy Pastureau Dans Un Monde Hostile",
@@ -2525,19 +2486,6 @@
       "id": "242003a4006d"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "Kyle Eastwood",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-09",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/kyle-eastwood/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/kyle-eastwood_radiant-bellevue-500x500.jpg",
-      "id": "d440b6955c02"
-    },
-    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Concert",
@@ -2545,10 +2493,10 @@
       "category": "concert",
       "date_start": "2026-10-09",
       "date_end": null,
-      "time": "18:00",
+      "time": "18:30",
       "url": "https://le-sucre.eu/events/concert-5/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/05/carre-600x600.png",
-      "id": "065b14a0b8bf"
+      "id": "e6fe7cb2af26"
     },
     {
       "venue": "La Rayonne",
@@ -2577,6 +2525,19 @@
       "id": "0d7a12111b4d"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Kyle Eastwood",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-09",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/kyle-eastwood/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/kyle-eastwood_radiant-bellevue-500x500.jpg",
+      "id": "bedc9c47826f"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Pierre-Emmanuel Barré - Come Back (Tournée)",
@@ -2601,19 +2562,6 @@
       "url": "https://www.transbordeur.fr/evenement/apparat-10102026/",
       "image": null,
       "id": "e30c5b1ec6ef"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "ALEX RAMIRES",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-10-10",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/alex-ramires/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/alex-ramires_radiant-bellevue-500x500.jpg",
-      "id": "463af06a0c3a"
     },
     {
       "venue": "Agend'arts",
@@ -2655,6 +2603,19 @@
       "id": "97773a76ce7f"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "ALEX RAMIRES",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-10-10",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/alex-ramires/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/alex-ramires_radiant-bellevue-500x500.jpg",
+      "id": "977f07e1160d"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "FOLAMOUR",
@@ -2675,10 +2636,10 @@
       "category": "musique",
       "date_start": "2026-10-11",
       "date_end": null,
-      "time": null,
+      "time": "17:00",
       "url": "https://radiant-bellevue.fr/spectacles/worlds-apart/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/12/worlds-apart_radiant-bellevue-500x500.jpg",
-      "id": "1d22d92e03d7"
+      "id": "0f83df41f48b"
     },
     {
       "venue": "Le Transbordeur",
@@ -2694,19 +2655,6 @@
       "id": "2c41c6e28e07"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "JOE JACKSON",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-13",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/joe-jackson/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/joe-jackson_radiant-bellevue-500x500.jpg",
-      "id": "97c248ef47fb"
-    },
-    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Les Mardis du 4 – session d’octobre",
@@ -2718,6 +2666,19 @@
       "url": "https://agenda.villemorte.fr/event/les-mardis-du-4-session-doctobre",
       "image": null,
       "id": "570393a895c9"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "JOE JACKSON",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-13",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/joe-jackson/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/joe-jackson_radiant-bellevue-500x500.jpg",
+      "id": "dd9d3cdbfe4f"
     },
     {
       "venue": "Le Transbordeur",
@@ -2772,19 +2733,6 @@
       "id": "72241909fb71"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "GEOFFREY SECCO",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-15",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/geoffrey-secco/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/geoffrey-secco_radiant-bellevue-500x500.jpg",
-      "id": "2800330f1738"
-    },
-    {
       "venue": "La Machinerie - Bizarre !",
       "venue_slug": "la-machinerie-bizarre",
       "title": "Danyl + Cyrious",
@@ -2811,6 +2759,19 @@
       "id": "5f72634edaa6"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "GEOFFREY SECCO",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-15",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/geoffrey-secco/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/geoffrey-secco_radiant-bellevue-500x500.jpg",
+      "id": "7f5b7a045dde"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Panayotis Pascot - Entre Les Deux - Tournée",
@@ -2822,19 +2783,6 @@
       "url": "https://www.bourse-du-travail.com/panayotis-pascot-entre-les-deux-tournee-373805.html",
       "image": null,
       "id": "f2b3c1524d19"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LES WRIGGLES",
-      "subtitle": null,
-      "category": "chanson",
-      "date_start": "2026-10-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/les-wriggles/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/02/les-wriggles-credit-Pauline-Desanneaux-500x500.png",
-      "id": "2029125c4f84"
     },
     {
       "venue": "Agend'arts",
@@ -2863,6 +2811,19 @@
       "id": "f47e0b3b8561"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "LES WRIGGLES",
+      "subtitle": null,
+      "category": "chanson",
+      "date_start": "2026-10-16",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/les-wriggles/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/02/les-wriggles-credit-Pauline-Desanneaux-500x500.png",
+      "id": "2c966d0fea36"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Panayotis Pascot - Entre Les Deux - Tournée",
@@ -2887,19 +2848,6 @@
       "url": "https://www.transbordeur.fr/evenement/seth-gueko-17102026/",
       "image": null,
       "id": "2c7575bf1d4c"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "JESSÉ",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-10-17",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/jesse/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/09/jesse_radiant-bellevue-500x500.jpg",
-      "id": "6ca6b54ad1af"
     },
     {
       "venue": "Agend'arts",
@@ -2928,6 +2876,19 @@
       "id": "bcdbeac7ffd9"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "JESSÉ",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-10-17",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/jesse/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/09/jesse_radiant-bellevue-500x500.jpg",
+      "id": "f003f081fac3"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "TIF",
@@ -2948,23 +2909,10 @@
       "category": "humour",
       "date_start": "2026-10-18",
       "date_end": null,
-      "time": null,
+      "time": "18:00",
       "url": "https://radiant-bellevue.fr/spectacles/philippe-lellouche-3/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/philippe-lellouche_radiant-bellevue-500x500.jpg",
-      "id": "f02cfd38bdc6"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Concert",
-      "subtitle": "Sofie Royer",
-      "category": "concert",
-      "date_start": "2026-10-19",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/concert-9/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/CARRE-Sofie-Royer-600x600.jpg",
-      "id": "301aa8a49825"
+      "id": "bdfa8e3d5f7b"
     },
     {
       "venue": "Le Transbordeur",
@@ -2991,6 +2939,19 @@
       "url": "https://marchegare.fr/agenda/formation-pro-elaboration-dun-projet-musical-octobre-26",
       "image": null,
       "id": "a023590ec39e"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Concert",
+      "subtitle": "Sofie Royer",
+      "category": "concert",
+      "date_start": "2026-10-19",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://le-sucre.eu/events/concert-9/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/CARRE-Sofie-Royer-600x600.jpg",
+      "id": "875b4b80a997"
     },
     {
       "venue": "La Rayonne",
@@ -3084,19 +3045,6 @@
       "id": "87ee77bcb054"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "Tina Arena",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-22",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/tina-arena/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/02/tina-arena_radiant-bellevue-Recupere-500x500.jpg",
-      "id": "2b2d2251d163"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "FOREVER NU! – Tribute to System of a Down, Slipknot, Machine Head & Papa Roach",
@@ -3108,6 +3056,19 @@
       "url": "https://larayonne.org/evenement/forever-nu-tribute-to-system-of-a-down-slipknot-machine-head-papa-roach/",
       "image": null,
       "id": "aa46462cb270"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Tina Arena",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-22",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/tina-arena/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/02/tina-arena_radiant-bellevue-Recupere-500x500.jpg",
+      "id": "437a693c0b36"
     },
     {
       "venue": "Le Transbordeur",
@@ -3130,10 +3091,10 @@
       "category": "humour",
       "date_start": "2026-10-23",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/celeste-barber/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/07/celeste-barber-500x500.jpg",
-      "id": "ae11d20c9819"
+      "id": "99fedf3bc9c7"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3143,10 +3104,10 @@
       "category": "musique",
       "date_start": "2026-10-23",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/leman/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/leman-vignette_radiant-bellevue.jpg",
-      "id": "b0c268691a35"
+      "id": "2603677f6587"
     },
     {
       "venue": "Le Transbordeur",
@@ -3160,19 +3121,6 @@
       "url": "https://www.transbordeur.fr/evenement/hilight-tribe-manudigital-spoink-luneris-flupke-ex-echo-crete-moustache-24102026/",
       "image": null,
       "id": "a607144ce89a"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "CAT POWER",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-24",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/cat-power/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/cat-power-carre.jpg",
-      "id": "3a17da648b15"
     },
     {
       "venue": "Agend'arts",
@@ -3201,17 +3149,17 @@
       "id": "09415190cd55"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Nuit Encore X 23:59",
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "CAT POWER",
       "subtitle": null,
-      "category": "concert",
+      "category": "musique",
       "date_start": "2026-10-24",
       "date_end": null,
-      "time": "22:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/nuit-encore-x-23-59",
-      "image": null,
-      "id": "2fff0957546e"
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/cat-power/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/cat-power-carre.jpg",
+      "id": "85998a12f81a"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3221,23 +3169,10 @@
       "category": "humour",
       "date_start": "2026-10-25",
       "date_end": null,
-      "time": null,
+      "time": "18:00",
       "url": "https://radiant-bellevue.fr/spectacles/edgar-yves-jr/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/edgar-yves_radiant-bellevue-500x500.jpg",
-      "id": "918c56b2c344"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "TRISTAN LOPIN",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-10-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/tristan-lopin/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/tristan-lopin_radiant-bellevue-500x500.jpg",
-      "id": "cfcb8a1f52a8"
+      "id": "0c31547c57cd"
     },
     {
       "venue": "Marché Gare",
@@ -3251,6 +3186,19 @@
       "url": "https://marchegare.fr/agenda/black-sea-dahu-26",
       "image": null,
       "id": "d2f337603b86"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "TRISTAN LOPIN",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-10-27",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/tristan-lopin/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/tristan-lopin_radiant-bellevue-500x500.jpg",
+      "id": "0173c4514e02"
     },
     {
       "venue": "Bourse du Travail",
@@ -3279,19 +3227,6 @@
       "id": "dc3b3147429d"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "THE HU",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-28",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/the-hu-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/02/the-hu_radiant-bellevue-500x500.jpg",
-      "id": "ea2979b1dd99"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Myrath",
@@ -3307,28 +3242,15 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
-      "title": "JEREMY HABABOU",
+      "title": "THE HU",
       "subtitle": null,
       "category": "musique",
-      "date_start": "2026-10-29",
+      "date_start": "2026-10-28",
       "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/jeremy-hababou/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/jeremy-hababou_radiant-bellevue-500x500.jpg",
-      "id": "8242e4f78810"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Salon Des Vignerons Independants",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-10-29",
-      "date_end": null,
-      "time": "15:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-6",
-      "image": null,
-      "id": "210b883f9443"
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/the-hu-2/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/02/the-hu_radiant-bellevue-500x500.jpg",
+      "id": "9baef91f94bf"
     },
     {
       "venue": "L'Épicerie Moderne",
@@ -3355,6 +3277,19 @@
       "url": "https://agenda.villemorte.fr/event/concert-de-thibaut-preciat-and-de-marco-carollo",
       "image": null,
       "id": "3f3ec855369b"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "JEREMY HABABOU",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-29",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/jeremy-hababou/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/jeremy-hababou_radiant-bellevue-500x500.jpg",
+      "id": "33fd84a006b2"
     },
     {
       "venue": "Bourse du Travail",
@@ -3396,19 +3331,6 @@
       "id": "90bef96bfc52"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "STEPHAN EICHER",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-10-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/stephan-eicher-2/",
-      "image": null,
-      "id": "7723a7394aeb"
-    },
-    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "Bienvenue aux répétitions !",
@@ -3422,17 +3344,17 @@
       "id": "11d953bdddde"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Salon Des Vignerons Independants",
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "STEPHAN EICHER",
       "subtitle": null,
-      "category": "concert",
+      "category": null,
       "date_start": "2026-10-30",
       "date_end": null,
-      "time": "10:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-7",
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/stephan-eicher-2/",
       "image": null,
-      "id": "ad12b2b22ce3"
+      "id": "4d0b73b0081d"
     },
     {
       "venue": "Bourse du Travail",
@@ -3461,32 +3383,6 @@
       "id": "41101c8f8ca8"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "STEPHAN EICHER",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-10-31",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/stephan-eicher-2/",
-      "image": null,
-      "id": "f1ba192f4256"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Salon Des Vignerons Independants",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-10-31",
-      "date_end": null,
-      "time": "10:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-8",
-      "image": null,
-      "id": "d83e0a392b7b"
-    },
-    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Concert de Matildy & de Nico Etoile",
@@ -3500,17 +3396,17 @@
       "id": "7a3e2e7a47a3"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Salon Des Vignerons Independants",
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "STEPHAN EICHER",
       "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-01",
+      "category": null,
+      "date_start": "2026-10-31",
       "date_end": null,
-      "time": "10:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-9",
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/stephan-eicher-2/",
       "image": null,
-      "id": "8a18d20aa5e0"
+      "id": "5d8dd0b21a2f"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -3524,19 +3420,6 @@
       "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/danse/le-sacre-du-printemps-house",
       "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/29b8e90d/principal_sacre.jpg",
       "id": "36a0ee1d140f"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "Emily Loizeau & Quatuor Debussy",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-11-03",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/emily-loizeau-quatuor-debussy/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/emily-loizeau_radiant-bellevue-500x500.jpg",
-      "id": "c7c64dd4e4ac"
     },
     {
       "venue": "Agend'arts",
@@ -3554,15 +3437,15 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
-      "title": "Made in France",
+      "title": "Emily Loizeau & Quatuor Debussy",
       "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-11-04",
+      "category": "musique",
+      "date_start": "2026-11-03",
       "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/made-in-france/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/made-in-France_radiant-bellevue-500x500.jpg",
-      "id": "648795faa352"
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/emily-loizeau-quatuor-debussy/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/emily-loizeau_radiant-bellevue-500x500.jpg",
+      "id": "c260c0672a21"
     },
     {
       "venue": "Marché Gare",
@@ -3580,28 +3463,28 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
+      "title": "Made in France",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-11-04",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/made-in-france/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/made-in-France_radiant-bellevue-500x500.jpg",
+      "id": "2372ef404664"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
       "title": "ALAN STIVELL",
       "subtitle": null,
       "category": "musique",
       "date_start": "2026-11-05",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/alan-stivell/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/02/alan-stivell_radiant-bellevue-500x500.jpg",
-      "id": "647044e6d7b7"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Djadja & Dinaz",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-05",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/djadja-dinaz-2",
-      "image": null,
-      "id": "38be92eb323a"
+      "id": "8fd9327a4d49"
     },
     {
       "venue": "Le Transbordeur",
@@ -3617,19 +3500,6 @@
       "id": "1c7f06eb103d"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LP",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-11-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/lp/",
-      "image": null,
-      "id": "f580202aac50"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "ZELIE",
@@ -3641,19 +3511,6 @@
       "url": "https://larayonne.org/evenement/zelie/",
       "image": null,
       "id": "dc1addf7b1c6"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Djadja & Dinaz",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-06",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/djadja-dinaz-3",
-      "image": null,
-      "id": "8b3f2fdf62ff"
     },
     {
       "venue": "Marché Gare",
@@ -3669,6 +3526,19 @@
       "id": "3bdb0297b0a8"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "LP",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-11-06",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/lp/",
+      "image": null,
+      "id": "4dae556f89d2"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Naïm - Chapitre 3 - Tournée",
@@ -3680,19 +3550,6 @@
       "url": "https://www.bourse-du-travail.com/naim-chapitre-3-tournee-365669.html",
       "image": null,
       "id": "5cbff391b689"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Plavace 5 ans :",
-      "subtitle": "63OG · Yjick",
-      "category": "concert",
-      "date_start": "2026-11-07",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/concert-12/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-06-at-14.53.25-480x600.jpeg",
-      "id": "1655adef2754"
     },
     {
       "venue": "Le Transbordeur",
@@ -3721,19 +3578,6 @@
       "id": "f111c7aab61f"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "Cochons d’Inde",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-11-07",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/cochons-dinde/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/cochons-d-inde_radiant-bellevue-500x500.jpg",
-      "id": "c0a9197e5ffe"
-    },
-    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "Parcours immersif et pédagogique",
@@ -3758,6 +3602,19 @@
       "url": "https://www.tng-lyon.fr/evenement/le-voyage-de-kristoffer/",
       "image": null,
       "id": "ba91f339a657"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Plavace 5 ans :",
+      "subtitle": "63OG · Yjick",
+      "category": "concert",
+      "date_start": "2026-11-07",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://le-sucre.eu/events/concert-12/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-06-at-14.53.25-480x600.jpeg",
+      "id": "1f9ea40d053a"
     },
     {
       "venue": "Agend'arts",
@@ -3786,19 +3643,6 @@
       "id": "d473928662e4"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Josman",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-07",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/josman-2",
-      "image": null,
-      "id": "1b4efb369f99"
-    },
-    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Groove Jazz FERDI",
@@ -3814,15 +3658,28 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
+      "title": "Cochons d’Inde",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-11-07",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/cochons-dinde/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/cochons-d-inde_radiant-bellevue-500x500.jpg",
+      "id": "08c9d67b2542"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
       "title": "Elie Semoun",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-11-08",
       "date_end": null,
-      "time": null,
+      "time": "18:00",
       "url": "https://radiant-bellevue.fr/spectacles/elie-semoun/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2024/12/ElieSemoun_Cactus_Tournee_Affiche_WEB-e1733325606257-500x500.jpg",
-      "id": "0b6d9aa2423e"
+      "id": "7d0d0c1715d5"
     },
     {
       "venue": "Le Transbordeur",
@@ -3836,19 +3693,6 @@
       "url": "https://www.transbordeur.fr/evenement/amistat-orange-oak-09112026/",
       "image": null,
       "id": "00f4af098047"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "UN SOIR AVEC PIERRE ARDITI",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-11-09",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/un-soir-avec-pierre-arditi/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/pierre-arditi_radiant-bellevue-500x500.jpg",
-      "id": "be8fff629ea8"
     },
     {
       "venue": "Marché Gare",
@@ -3877,6 +3721,19 @@
       "id": "7825cc02173f"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "UN SOIR AVEC PIERRE ARDITI",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-11-09",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/un-soir-avec-pierre-arditi/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/pierre-arditi_radiant-bellevue-500x500.jpg",
+      "id": "c4646f966517"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "David Castello-Lopes Dans Délicieux",
@@ -3888,19 +3745,6 @@
       "url": "https://www.bourse-du-travail.com/david-castello-lopes-dans-delicieux-373988.html",
       "image": null,
       "id": "c06dacc1b474"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "THOMAS FERSEN",
-      "subtitle": null,
-      "category": "chanson",
-      "date_start": "2026-11-10",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/thomas-fersen-3/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/Thomas-Fresen_radiant-bellevue-1-500x500.jpg",
-      "id": "23629b673919"
     },
     {
       "venue": "La Rayonne",
@@ -3929,19 +3773,6 @@
       "id": "3a9f2f126e58"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "The World Of Hans Zimmer",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-10",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/the-world-of-hans-zimmer-2",
-      "image": null,
-      "id": "a256426cb8c7"
-    },
-    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Metal Pop FUTURE PALACE + AS EVERYTHING UNFOLDS + LUNA KILLS",
@@ -3953,6 +3784,19 @@
       "url": "https://marchegare.fr/agenda/future-palace",
       "image": null,
       "id": "9d91d2ca61ce"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "THOMAS FERSEN",
+      "subtitle": null,
+      "category": "chanson",
+      "date_start": "2026-11-10",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/thomas-fersen-3/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/Thomas-Fresen_radiant-bellevue-1-500x500.jpg",
+      "id": "2a582d82a3d6"
     },
     {
       "venue": "Le Transbordeur",
@@ -3994,19 +3838,6 @@
       "id": "b53bc4467397"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Malik Bentalha",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-11-11",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/malik-bentalha-2",
-      "image": null,
-      "id": "dfa88e684fee"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Thomas Wiesel Dans Société Écrans",
@@ -4040,23 +3871,10 @@
       "category": "chanson",
       "date_start": "2026-11-12",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/pierre-de-maere/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/pierre-de-maere_radiant-bellevue-500x500.jpg",
-      "id": "fa4c06041b3e"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "BENABAR",
-      "subtitle": null,
-      "category": "chanson",
-      "date_start": "2026-11-13",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/benabar/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/12/benabar_radiant-bellevue-500x500.jpg",
-      "id": "04a85d2be8ed"
+      "id": "32d0c0de4c46"
     },
     {
       "venue": "Agend'arts",
@@ -4085,17 +3903,17 @@
       "id": "c4c1dab52283"
     },
     {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "High-Lo présente :",
-      "subtitle": "Bianca Costa",
-      "category": "concert",
-      "date_start": "2026-11-14",
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "BENABAR",
+      "subtitle": null,
+      "category": "chanson",
+      "date_start": "2026-11-13",
       "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/high-lo-presente-12/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/insta-480x600.jpg",
-      "id": "76488555ce3f"
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/benabar/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/12/benabar_radiant-bellevue-500x500.jpg",
+      "id": "251deaec3bb3"
     },
     {
       "venue": "Le Transbordeur",
@@ -4122,6 +3940,19 @@
       "url": "https://agenda.villemorte.fr/event/infinity-song",
       "image": null,
       "id": "a42c4d528118"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "High-Lo présente :",
+      "subtitle": "Bianca Costa",
+      "category": "concert",
+      "date_start": "2026-11-14",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://le-sucre.eu/events/high-lo-presente-12/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/03/insta-480x600.jpg",
+      "id": "5e117d5da632"
     },
     {
       "venue": "La Rayonne",
@@ -4183,10 +4014,10 @@
       "category": null,
       "date_start": "2026-11-15",
       "date_end": null,
-      "time": null,
+      "time": "16:00",
       "url": "https://radiant-bellevue.fr/spectacles/sans-regrets-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/sans-regrets_radiant-bellevue-500x500.jpg",
-      "id": "890e7302644d"
+      "id": "92f75d32899b"
     },
     {
       "venue": "Agend'arts",
@@ -4215,19 +4046,6 @@
       "id": "3d05a8ee4243"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "La Salida",
-      "subtitle": null,
-      "category": "danse",
-      "date_start": "2026-11-17",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/la-salida/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-salida-500x500.jpg",
-      "id": "cf0d097e7da2"
-    },
-    {
       "venue": "La Ruche industrielle",
       "venue_slug": "la-ruche-industrielle",
       "title": "Ma République et moi - Compagnie Iwa, Issam Rachyq-Ahrad",
@@ -4239,6 +4057,19 @@
       "url": "https://agenda.villemorte.fr/event/ma-republique-et-moi-compagnie-iwa-issam-rachyq-ahrad",
       "image": null,
       "id": "5daed642e39a"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "La Salida",
+      "subtitle": null,
+      "category": "danse",
+      "date_start": "2026-11-17",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/la-salida/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-salida-500x500.jpg",
+      "id": "d482a62649d8"
     },
     {
       "venue": "Bourse du Travail",
@@ -4267,19 +4098,6 @@
       "id": "e63d417467ef"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "THE WITCHER III",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-11-18",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/the-witcher-iii/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/the-witcher-carre.jpg",
-      "id": "65eef6d13415"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "THE LOCOS",
@@ -4291,6 +4109,19 @@
       "url": "https://larayonne.org/evenement/the-locos/",
       "image": null,
       "id": "e92938b0dc9f"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "THE WITCHER III",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-18",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/the-witcher-iii/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/the-witcher-carre.jpg",
+      "id": "ba0b7e557cea"
     },
     {
       "venue": "Le Transbordeur",
@@ -4306,19 +4137,6 @@
       "id": "8c451e7a84f1"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "POLYPHIA",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-11-19",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/polyphia/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/polyphia_radiant-bellevue-500x500.jpg",
-      "id": "4080c387f024"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "JAVA + WINSTON MCANUFF",
@@ -4332,30 +4150,17 @@
       "id": "3ecd9204e5ee"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "L'Heritage Goldman 2",
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "POLYPHIA",
       "subtitle": null,
-      "category": "concert",
+      "category": "musique",
       "date_start": "2026-11-19",
       "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/l-heritage-goldman-2-2",
-      "image": null,
-      "id": "d019b4b5bf44"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Concert",
-      "subtitle": "Spider Zed",
-      "category": "concert",
-      "date_start": "2026-11-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/concert-4/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/04/insta-2-480x600.jpg",
-      "id": "9b7820d0d4af"
+      "time": "19:00",
+      "url": "https://radiant-bellevue.fr/spectacles/polyphia/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/polyphia_radiant-bellevue-500x500.jpg",
+      "id": "c38abf0afa72"
     },
     {
       "venue": "Le Transbordeur",
@@ -4371,19 +4176,6 @@
       "id": "55086a6301e2"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "UNE HEURE À T’ATTENDRE",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-11-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/une-heure-a-tattendre/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/une-heure-a-t-attendre-500x500.jpg",
-      "id": "d720d5b223ce"
-    },
-    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "RDV Pop’Corn – L’Abolition des privilèges",
@@ -4395,6 +4187,19 @@
       "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-labolition-des-privileges/",
       "image": null,
       "id": "44e8fa130b6e"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Concert",
+      "subtitle": "Spider Zed",
+      "category": "concert",
+      "date_start": "2026-11-20",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://le-sucre.eu/events/concert-4/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/04/insta-2-480x600.jpg",
+      "id": "c54c77d30364"
     },
     {
       "venue": "La Machinerie - Bizarre !",
@@ -4438,15 +4243,15 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
-      "title": "LES PEINTRES AU CHARBON",
+      "title": "UNE HEURE À T’ATTENDRE",
       "subtitle": null,
       "category": "théâtre",
-      "date_start": "2026-11-21",
+      "date_start": "2026-11-20",
       "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/les-peintres-au-charbon/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/les-peinters-au-charbon-500x500.jpg",
-      "id": "5a9ef6250296"
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/une-heure-a-tattendre/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/une-heure-a-t-attendre-500x500.jpg",
+      "id": "7257d7706022"
     },
     {
       "venue": "La Rayonne",
@@ -4469,10 +4274,10 @@
       "category": "concert",
       "date_start": "2026-11-21",
       "date_end": null,
-      "time": "19:00",
+      "time": "18:30",
       "url": "https://le-sucre.eu/events/concert-7/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/carre-5-600x600.jpg",
-      "id": "648d604673c1"
+      "id": "b8675ebe88aa"
     },
     {
       "venue": "Marché Gare",
@@ -4490,15 +4295,28 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
+      "title": "LES PEINTRES AU CHARBON",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-11-21",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/les-peintres-au-charbon/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/les-peinters-au-charbon-500x500.jpg",
+      "id": "960f84c5f77e"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
       "title": "Les Tribulations d’un chef d’orchestre !",
       "subtitle": null,
       "category": "musique",
       "date_start": "2026-11-22",
       "date_end": null,
-      "time": null,
+      "time": "17:00",
       "url": "https://radiant-bellevue.fr/spectacles/les-tribulations-dun-chef-dorchestre/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/les-tribulations-500x500.jpg",
-      "id": "3f7dbd3b3fb1"
+      "id": "8c1045a4972a"
     },
     {
       "venue": "Le Transbordeur",
@@ -4512,19 +4330,6 @@
       "url": "https://www.transbordeur.fr/evenement/laura-ferre-24112026/",
       "image": null,
       "id": "097ba257970c"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LOCURA",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-11-24",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/locura/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/locura_radiant-bellevue-500x500.jpg",
-      "id": "b3ce02fc652e"
     },
     {
       "venue": "Agend'arts",
@@ -4553,6 +4358,19 @@
       "id": "ef2e4e5676ce"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "LOCURA",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-24",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/locura/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/locura_radiant-bellevue-500x500.jpg",
+      "id": "c8bf01017f4f"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "ACCEPT + DYNAZTY + TAILGUNNER",
@@ -4573,10 +4391,10 @@
       "category": "musique",
       "date_start": "2026-11-25",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/locura/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/locura_radiant-bellevue-500x500.jpg",
-      "id": "5d956b131823"
+      "id": "0a8c5ffdceaf"
     },
     {
       "venue": "Le Transbordeur",
@@ -4590,19 +4408,6 @@
       "url": "https://www.transbordeur.fr/evenement/ben-plg-26112026/",
       "image": null,
       "id": "e68f24c4a2e3"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "RENAN LUCE",
-      "subtitle": null,
-      "category": "chanson",
-      "date_start": "2026-11-26",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/renan-luce/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/renan-luce_radiant-bellevue-1-500x500.jpg",
-      "id": "15dcaf3789a3"
     },
     {
       "venue": "Agend'arts",
@@ -4644,6 +4449,19 @@
       "id": "b4b3fd0a36c0"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "RENAN LUCE",
+      "subtitle": null,
+      "category": "chanson",
+      "date_start": "2026-11-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/renan-luce/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/renan-luce_radiant-bellevue-1-500x500.jpg",
+      "id": "9e24ff3cfb89"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Fabrice Eboué - Solitudes - Tournée",
@@ -4655,19 +4473,6 @@
       "url": "https://www.bourse-du-travail.com/fabrice-eboue-solitudes-tournee-377206.html",
       "image": null,
       "id": "74cd7c504943"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Concert",
-      "subtitle": "Lisa Pariente",
-      "category": "concert",
-      "date_start": "2026-11-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/concert-10/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/CARRE-lisa-pariente-600x600.jpg",
-      "id": "34bea0e2106e"
     },
     {
       "venue": "Le Transbordeur",
@@ -4683,17 +4488,17 @@
       "id": "be215957ab5b"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "Une Histoire de France",
-      "subtitle": null,
-      "category": "théâtre",
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Concert",
+      "subtitle": "Lisa Pariente",
+      "category": "concert",
       "date_start": "2026-11-27",
       "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/une-histoire-de-france/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/une-histoire-de-france-500x500.jpg",
-      "id": "5bf66564699c"
+      "time": "18:30",
+      "url": "https://le-sucre.eu/events/concert-10/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/CARRE-lisa-pariente-600x600.jpg",
+      "id": "40429d8c95fc"
     },
     {
       "venue": "La Rayonne",
@@ -4707,6 +4512,19 @@
       "url": "https://larayonne.org/evenement/pierpoljak/",
       "image": null,
       "id": "f77b2a1db1a8"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Une Histoire de France",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-11-27",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/une-histoire-de-france/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/une-histoire-de-france-500x500.jpg",
+      "id": "35221f7731fc"
     },
     {
       "venue": "Bourse du Travail",
@@ -4735,19 +4553,6 @@
       "id": "c8351b14dd33"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "L’expérience Théâtrale",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-11-28",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/lexperience-theatrale/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/l-experience-theatrale-500x500.jpg",
-      "id": "72501cf12c56"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "GIRLS IN HAWAII",
@@ -4759,6 +4564,19 @@
       "url": "https://larayonne.org/evenement/girls-in-hawaii/",
       "image": null,
       "id": "4876aad118f4"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "L’expérience Théâtrale",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-11-28",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/lexperience-theatrale/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/l-experience-theatrale-500x500.jpg",
+      "id": "cab4b3d85772"
     },
     {
       "venue": "Bourse du Travail",
@@ -4774,19 +4592,6 @@
       "id": "433b8be62737"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "MARILLION",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-11-29",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/marillion/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/02/marillion_radiant-bellevue-500x500.jpg",
-      "id": "88f5a3785628"
-    },
-    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Une fille comme les autres – Quinzaine « Paroles de femmes »",
@@ -4798,6 +4603,19 @@
       "url": "https://agenda.villemorte.fr/event/une-fille-comme-les-autres-quinzaine-paroles-de-femmes",
       "image": null,
       "id": "b28f7927adbc"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "MARILLION",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-29",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://radiant-bellevue.fr/spectacles/marillion/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/02/marillion_radiant-bellevue-500x500.jpg",
+      "id": "6f5ef7c44c8c"
     },
     {
       "venue": "Le Transbordeur",
@@ -4833,10 +4651,10 @@
       "category": "danse",
       "date_start": "2026-12-01",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/imagine-que/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/imagine-que2-500x500.jpg",
-      "id": "9f839d086050"
+      "id": "bcb216a02f6b"
     },
     {
       "venue": "Bourse du Travail",
@@ -4872,10 +4690,10 @@
       "category": "chanson",
       "date_start": "2026-12-02",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/la-grande-sophie-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/la-grande-sophie_radiant-bellevue-500x500.jpg",
-      "id": "b5f482f818be"
+      "id": "842339f50021"
     },
     {
       "venue": "Bourse du Travail",
@@ -4911,10 +4729,10 @@
       "category": "musique",
       "date_start": "2026-12-03",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/imany/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/imany-500x500.jpg",
-      "id": "26125ef6af2a"
+      "id": "08203c940f44"
     },
     {
       "venue": "Le Transbordeur",
@@ -4930,19 +4748,6 @@
       "id": "baf5e7dd1085"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "Garou",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-12-04",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/garou/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/04/recadre-500x500.jpg",
-      "id": "74ea4cb0b025"
-    },
-    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Concert d'Erwan Pinard",
@@ -4956,17 +4761,17 @@
       "id": "6e43c39de9c1"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "disiz",
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Garou",
       "subtitle": null,
-      "category": "concert",
+      "category": "musique",
       "date_start": "2026-12-04",
       "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/disiz",
-      "image": null,
-      "id": "8ccde2d1c8ab"
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/garou/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/04/recadre-500x500.jpg",
+      "id": "3c781bc45b68"
     },
     {
       "venue": "Le Transbordeur",
@@ -4980,19 +4785,6 @@
       "url": "https://www.transbordeur.fr/evenement/rounhaa-05122026/",
       "image": null,
       "id": "ab4039dfccf2"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "SEBASTIEN TELLIER",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-12-05",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/sebastien-tellier/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/sebastien-tellier-500x500.jpg",
-      "id": "779ec2d36ef1"
     },
     {
       "venue": "TNG",
@@ -5021,6 +4813,19 @@
       "id": "e32f8230b8d2"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "SEBASTIEN TELLIER",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-12-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/sebastien-tellier/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/sebastien-tellier-500x500.jpg",
+      "id": "dfbac738ff82"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "LA RVFLEUZE",
@@ -5041,10 +4846,10 @@
       "category": "théâtre",
       "date_start": "2026-12-06",
       "date_end": null,
-      "time": null,
+      "time": "16:00",
       "url": "https://radiant-bellevue.fr/spectacles/la-miserable/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-miserable-500x500.jpg",
-      "id": "45dc4b25b8db"
+      "id": "04b013233b82"
     },
     {
       "venue": "Le Transbordeur",
@@ -5080,10 +4885,10 @@
       "category": "musique",
       "date_start": "2026-12-09",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/benjamin-biolay-3/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/benjamin-biolay-500x500.jpg",
-      "id": "3e4be8d417b1"
+      "id": "6ca9da066895"
     },
     {
       "venue": "Bourse du Travail",
@@ -5099,19 +4904,6 @@
       "id": "dab5c131060d"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "Le Bourgeois Gentilhomme",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-12-10",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/le-bourgeois-gentilhomme/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-bourgeois-gentilhomme-500x500.jpg",
-      "id": "15ea3c0ffff1"
-    },
-    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Concert d'Antoine Gasse & de K.LOHË",
@@ -5123,6 +4915,19 @@
       "url": "https://agenda.villemorte.fr/event/concert-dantoine-gasse-and-de-klohe",
       "image": null,
       "id": "f2a1aa5fa4f6"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Le Bourgeois Gentilhomme",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-12-10",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/le-bourgeois-gentilhomme/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-bourgeois-gentilhomme-500x500.jpg",
+      "id": "045092db6849"
     },
     {
       "venue": "Bourse du Travail",
@@ -5151,19 +4956,6 @@
       "id": "5389e8218cf6"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "Le Bourgeois Gentilhomme",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-12-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/le-bourgeois-gentilhomme/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-bourgeois-gentilhomme-500x500.jpg",
-      "id": "71ce445d41cc"
-    },
-    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Scène ouverte slam – session de décembre",
@@ -5175,6 +4967,19 @@
       "url": "https://agenda.villemorte.fr/event/scene-ouverte-slam-session-de-decembre",
       "image": null,
       "id": "2efe3bd87c4d"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Le Bourgeois Gentilhomme",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-12-11",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/le-bourgeois-gentilhomme/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-bourgeois-gentilhomme-500x500.jpg",
+      "id": "af6c546ae98c"
     },
     {
       "venue": "Bourse du Travail",
@@ -5201,19 +5006,6 @@
       "url": "https://www.transbordeur.fr/evenement/sam-sauvage-12122026/",
       "image": null,
       "id": "9e807bbef41c"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "MURMURATION LEVEL 2",
-      "subtitle": null,
-      "category": "danse",
-      "date_start": "2026-12-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/murmuration-level-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/murmuration-level_radiant-bellevue-500x500.jpg",
-      "id": "2e6b79fca480"
     },
     {
       "venue": "TNG",
@@ -5268,6 +5060,19 @@
       "id": "8d38c0574fcf"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "MURMURATION LEVEL 2",
+      "subtitle": null,
+      "category": "danse",
+      "date_start": "2026-12-12",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/murmuration-level-2/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/murmuration-level_radiant-bellevue-500x500.jpg",
+      "id": "722522ed70d4"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "AXEL BAUER",
@@ -5288,10 +5093,10 @@
       "category": "danse",
       "date_start": "2026-12-13",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/murmuration-level-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/murmuration-level_radiant-bellevue-500x500.jpg",
-      "id": "62f646f06f72"
+      "id": "1ea67b00e795"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5301,10 +5106,10 @@
       "category": "humour",
       "date_start": "2026-12-14",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/lalou-qui-na-pas-de-nom-de-spectacle/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/02/lalou_radiant-bellevue2-500x500.jpg",
-      "id": "bf411f10de43"
+      "id": "45accfa302c3"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5314,10 +5119,10 @@
       "category": "chanson",
       "date_start": "2026-12-15",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/oldelaf/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/oldelaf-500x500.jpg",
-      "id": "5c4824386290"
+      "id": "42323fd5cd88"
     },
     {
       "venue": "Bourse du Travail",
@@ -5340,10 +5145,10 @@
       "category": "théâtre",
       "date_start": "2026-12-16",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/orgueil-prejuges-ou-presque/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/orgueil-et-prejuge-500x500.jpg",
-      "id": "f5a018e656e6"
+      "id": "9012c365466b"
     },
     {
       "venue": "Bourse du Travail",
@@ -5372,19 +5177,6 @@
       "id": "779194550c23"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LEMAN",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-12-17",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/leman-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/leman-vignette_radiant-bellevue.jpg",
-      "id": "ea60971d2ecb"
-    },
-    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "Neptune",
@@ -5398,6 +5190,19 @@
       "id": "b5d174f39ae8"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "LEMAN",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-12-17",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/leman-2/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/leman-vignette_radiant-bellevue.jpg",
+      "id": "f305ad8022e5"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "D'jal Dans En Pleine Conscience",
@@ -5409,19 +5214,6 @@
       "url": "https://www.bourse-du-travail.com/d-jal-dans-en-pleine-conscience-278014.html",
       "image": null,
       "id": "8653ed95ca54"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "The Genesis",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-12-18",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/the-genesis/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/the-genesis-500x500.jpg",
-      "id": "7779dd22faba"
     },
     {
       "venue": "Agend'arts",
@@ -5450,17 +5242,17 @@
       "id": "e3087fb483d4"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Disney En Concert- Suivez Vos Reves",
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "The Genesis",
       "subtitle": null,
-      "category": "concert",
+      "category": null,
       "date_start": "2026-12-18",
       "date_end": null,
       "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-en-concert-suivez-vos-reves",
-      "image": null,
-      "id": "4c46d99b7e0b"
+      "url": "https://radiant-bellevue.fr/spectacles/the-genesis/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/the-genesis-500x500.jpg",
+      "id": "306591ee9545"
     },
     {
       "venue": "Bourse du Travail",
@@ -5476,19 +5268,6 @@
       "id": "82f0326f9090"
     },
     {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "club",
-      "subtitle": "Panteros666",
-      "category": "club",
-      "date_start": "2026-12-19",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/club-53/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/07/IMG_0146-450x600.jpeg",
-      "id": "bbc6fdb6acb4"
-    },
-    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "AMANDINE LOURDEL",
@@ -5496,10 +5275,23 @@
       "category": "humour",
       "date_start": "2026-12-19",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/amandine-lourdel/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/amandine-lourdel_radiant-bellevue-500x500.jpg",
-      "id": "f95e80039d55"
+      "id": "54a84e88c04f"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "club",
+      "subtitle": "Panteros666",
+      "category": "club",
+      "date_start": "2026-12-19",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://le-sucre.eu/events/club-53/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/07/IMG_0146-450x600.jpeg",
+      "id": "70c09d149709"
     },
     {
       "venue": "Bourse du Travail",
@@ -5522,10 +5314,10 @@
       "category": "humour",
       "date_start": "2026-12-20",
       "date_end": null,
-      "time": null,
+      "time": "18:00",
       "url": "https://radiant-bellevue.fr/spectacles/anthony-kavanagh-3/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/anthony-kavanagh_radiant-bellevue-500x500.jpg",
-      "id": "c355f0da31c2"
+      "id": "16bc876edd44"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5535,10 +5327,10 @@
       "category": null,
       "date_start": "2026-12-21",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/fabrice-luchini-3/",
       "image": null,
-      "id": "ead47ad1114e"
+      "id": "58910d345ccc"
     },
     {
       "venue": "Bourse du Travail",
@@ -5554,19 +5346,6 @@
       "id": "70b008093cff"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "Fabrice Luchini",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-12-22",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/fabrice-luchini-3/",
-      "image": null,
-      "id": "e28496420410"
-    },
-    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Chante avec agend’Arts – La KaraChorale – décembre",
@@ -5578,6 +5357,19 @@
       "url": "https://agenda.villemorte.fr/event/chante-avec-agendarts-la-karachorale-decembre",
       "image": null,
       "id": "bf3f9a356fd9"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Fabrice Luchini",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-12-22",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/fabrice-luchini-3/",
+      "image": null,
+      "id": "a2b62383b630"
     },
     {
       "venue": "Bourse du Travail",
@@ -5626,10 +5418,10 @@
       "category": "théâtre",
       "date_start": "2027-01-06",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/laffaire-de-la-rue-de-lourcine/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/l-affaire-de-la-rue-de-lourcine-500x500.jpg",
-      "id": "cc43a38c67ae"
+      "id": "314b869286d1"
     },
     {
       "venue": "Bourse du Travail",
@@ -5665,10 +5457,10 @@
       "category": "théâtre",
       "date_start": "2027-01-07",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/laffaire-de-la-rue-de-lourcine/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/l-affaire-de-la-rue-de-lourcine-500x500.jpg",
-      "id": "e57a7e88dad3"
+      "id": "6bab868e8a0b"
     },
     {
       "venue": "Bourse du Travail",
@@ -5682,19 +5474,6 @@
       "url": "https://www.bourse-du-travail.com/the-musical-story-of-elvis-378689.html",
       "image": null,
       "id": "2bc9f50e335e"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Goldmen - Concert 100 % Goldman",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-08",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/goldmen-concert-100-goldman",
-      "image": null,
-      "id": "9cae03700f3c"
     },
     {
       "venue": "Bourse du Travail",
@@ -5717,23 +5496,10 @@
       "category": "musique",
       "date_start": "2027-01-09",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/quatuor-debussy-4/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/quatuor-debussy-500x500.jpg",
-      "id": "bba321068f51"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Harry Potter Et Le Prince De Sang-Mélé",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-09",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/harry-potter-et-le-prince-de-sang-mele",
-      "image": null,
-      "id": "80487e51b923"
+      "id": "1970971e57d3"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5743,10 +5509,10 @@
       "category": "musique",
       "date_start": "2027-01-10",
       "date_end": null,
-      "time": null,
+      "time": "16:00",
       "url": "https://radiant-bellevue.fr/spectacles/la-magie-dharry-potter/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-magie-dharry-potter-500x500.jpg",
-      "id": "4896a69cf7de"
+      "id": "e068839b1869"
     },
     {
       "venue": "La Rayonne",
@@ -5769,10 +5535,10 @@
       "category": "théâtre",
       "date_start": "2027-01-12",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/punk-e-s/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/punkes-500x500.jpg",
-      "id": "058a6e560402"
+      "id": "e39b5acbebe4"
     },
     {
       "venue": "Bourse du Travail",
@@ -5795,23 +5561,10 @@
       "category": "chanson",
       "date_start": "2027-01-13",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/laurent-voulzy-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/laurent-voulzy-500x500.jpg",
-      "id": "4879a4df52e0"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "One Night Of Queen",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-13",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/one-night-of-queen-2",
-      "image": null,
-      "id": "d36fa43e7d82"
+      "id": "e17511c98686"
     },
     {
       "venue": "Bourse du Travail",
@@ -5834,10 +5587,10 @@
       "category": "théâtre",
       "date_start": "2027-01-14",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/potiche/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/potiche-500x500.jpg",
-      "id": "b3b3c818d693"
+      "id": "66b7aa14d2af"
     },
     {
       "venue": "Bourse du Travail",
@@ -5873,10 +5626,10 @@
       "category": "humour",
       "date_start": "2027-01-15",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/moguiz-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/04/mog-1-scaled.jpg",
-      "id": "0bfecb453501"
+      "id": "160eb7ff67f5"
     },
     {
       "venue": "Bourse du Travail",
@@ -5892,19 +5645,6 @@
       "id": "612d359c7b3e"
     },
     {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "club",
-      "subtitle": "Bellaire",
-      "category": "club",
-      "date_start": "2027-01-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://le-sucre.eu/events/club-62/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/07/BELLAIRE-BORN-FUNKY-PRESS-PICTURES-FUNKY-BREAKFAST-BANNER-2-600x400.jpg",
-      "id": "9a58b6857c8b"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "FILLS MONKEY",
@@ -5916,19 +5656,6 @@
       "url": "https://www.transbordeur.fr/evenement/fills-monkey-16012027/",
       "image": null,
       "id": "b6bd07a10ee0"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "CAMILLE CHAMOUX",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-01-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/camille-chamoux-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/03/Portrait-Camille-Chamoux-Benjamin-Guillonneau-scaled-e1741944598749-500x500.jpg",
-      "id": "13d54541c128"
     },
     {
       "venue": "TNG",
@@ -5944,30 +5671,30 @@
       "id": "dc755c69212a"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Lion, Le Roi Est De Retour",
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "CAMILLE CHAMOUX",
       "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-16",
-      "date_end": null,
-      "time": "15:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/lion-le-roi-est-de-retour",
-      "image": null,
-      "id": "91d9dd9e0953"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Olivier De Benoist",
-      "subtitle": null,
-      "category": "concert",
+      "category": "humour",
       "date_start": "2027-01-16",
       "date_end": null,
       "time": "20:30",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/olivier-de-benoist",
-      "image": null,
-      "id": "da6add811841"
+      "url": "https://radiant-bellevue.fr/spectacles/camille-chamoux-2/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/03/Portrait-Camille-Chamoux-Benjamin-Guillonneau-scaled-e1741944598749-500x500.jpg",
+      "id": "6c3de221073a"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "club",
+      "subtitle": "Bellaire",
+      "category": "club",
+      "date_start": "2027-01-16",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://le-sucre.eu/events/club-62/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/07/BELLAIRE-BORN-FUNKY-PRESS-PICTURES-FUNKY-BREAKFAST-BANNER-2-600x400.jpg",
+      "id": "e94ad8c79c20"
     },
     {
       "venue": "Bourse du Travail",
@@ -5990,10 +5717,10 @@
       "category": "humour",
       "date_start": "2027-01-17",
       "date_end": null,
-      "time": null,
+      "time": "18:00",
       "url": "https://radiant-bellevue.fr/spectacles/alexis-le-rossignol/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/alexis-le-rossignol_radiant-bellevue-500x500.jpg",
-      "id": "c4a6a08dacbd"
+      "id": "23ea9c331362"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6003,23 +5730,10 @@
       "category": "danse",
       "date_start": "2027-01-19",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/cosmos-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/cosmos-500x500.jpg",
-      "id": "21d54129f289"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Clement Viktorovitch",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-19",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/clement-viktorovitch",
-      "image": null,
-      "id": "bba5ebee3dbe"
+      "id": "2a2e3f374cfb"
     },
     {
       "venue": "Le Transbordeur",
@@ -6035,19 +5749,6 @@
       "id": "d3078f1825de"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LE PÈRE",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-01-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/le-pere/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-pere-500x500.jpg",
-      "id": "0d9386324ded"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Orden Ogan",
@@ -6059,6 +5760,19 @@
       "url": "https://larayonne.org/evenement/orden-ogan/",
       "image": null,
       "id": "e9aa264e6db2"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "LE PÈRE",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2027-01-20",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/le-pere/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-pere-500x500.jpg",
+      "id": "2b4042607eb7"
     },
     {
       "venue": "Bourse du Travail",
@@ -6094,10 +5808,10 @@
       "category": "théâtre",
       "date_start": "2027-01-21",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/le-pere/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-pere-500x500.jpg",
-      "id": "dafd7d885b97"
+      "id": "df0921754fbc"
     },
     {
       "venue": "Le Transbordeur",
@@ -6113,19 +5827,6 @@
       "id": "1fca73d1af36"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LEVI.SCT",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-01-22",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/levi-sct/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/levi-sct_radiant-bellevue-2-500x500.jpg",
-      "id": "141d5b0e1be5"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "VULVES ASSASSINES & POÉSIE ZÉRO + CITRON SUCRÉ",
@@ -6137,6 +5838,19 @@
       "url": "https://larayonne.org/evenement/vulves-assassines-poesie-zero-citron-sucre/",
       "image": null,
       "id": "aa28fc5264ba"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "LEVI.SCT",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2027-01-22",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/levi-sct/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/levi-sct_radiant-bellevue-2-500x500.jpg",
+      "id": "eda197dd06c0"
     },
     {
       "venue": "TNG",
@@ -6172,10 +5886,10 @@
       "category": "humour",
       "date_start": "2027-01-24",
       "date_end": null,
-      "time": null,
+      "time": "16:00",
       "url": "https://radiant-bellevue.fr/spectacles/immo/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/immo-500x500.jpg",
-      "id": "5580890f178b"
+      "id": "d977989406b6"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6185,23 +5899,10 @@
       "category": "théâtre",
       "date_start": "2027-01-27",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/le-journal-dedouard-baer/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-journal-d-edouard-baer-500x500.jpg",
-      "id": "79fbf3f25756"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Disney Sur Glace - Le Voyage Enchante",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-27",
-      "date_end": null,
-      "time": "14:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante",
-      "image": null,
-      "id": "13871667903e"
+      "id": "e89afaa30436"
     },
     {
       "venue": "Bourse du Travail",
@@ -6237,10 +5938,10 @@
       "category": "théâtre",
       "date_start": "2027-01-28",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/le-fantome-de-lopera/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-fantome-de-l-opera-500x500.jpg",
-      "id": "c5b49f58022a"
+      "id": "fe2ecbdbcc06"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6250,36 +5951,10 @@
       "category": "théâtre",
       "date_start": "2027-01-29",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/dans-le-couloir/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/dans-le-couloir-500x500.jpg",
-      "id": "6f3be52e7251"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Disney Sur Glace - Le Voyage Enchante",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-29",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-3",
-      "image": null,
-      "id": "2ebfe953dfc1"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "SKIP THE USE",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-01-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/skip-the-use-2/",
-      "image": null,
-      "id": "1a3851ab5122"
+      "id": "df95fbd84adc"
     },
     {
       "venue": "TNG",
@@ -6308,17 +5983,17 @@
       "id": "ff722100678f"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Disney Sur Glace - Le Voyage Enchante",
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "SKIP THE USE",
       "subtitle": null,
-      "category": "concert",
+      "category": null,
       "date_start": "2027-01-30",
       "date_end": null,
-      "time": "10:15",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-4",
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/skip-the-use-2/",
       "image": null,
-      "id": "960700e6646d"
+      "id": "e7fa4fd5c1ca"
     },
     {
       "venue": "Bourse du Travail",
@@ -6334,19 +6009,6 @@
       "id": "b29f8f61a5ad"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LA SOEUR DE JÉSUS-CHRIST",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-01-31",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/la-soeur-de-jesus-christ/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-soeur-de-jesus-christ-500x500.jpg",
-      "id": "7b16bafac9a6"
-    },
-    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "Le chat sur la photo",
@@ -6360,17 +6022,17 @@
       "id": "e0b9a5b957ba"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Disney Sur Glace - Le Voyage Enchante",
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "LA SOEUR DE JÉSUS-CHRIST",
       "subtitle": null,
-      "category": "concert",
+      "category": "théâtre",
       "date_start": "2027-01-31",
       "date_end": null,
-      "time": "10:15",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-7",
-      "image": null,
-      "id": "9b8c4c1badaf"
+      "time": "17:00",
+      "url": "https://radiant-bellevue.fr/spectacles/la-soeur-de-jesus-christ/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-soeur-de-jesus-christ-500x500.jpg",
+      "id": "cd4f20cb44d5"
     },
     {
       "venue": "Le Transbordeur",
@@ -6393,23 +6055,10 @@
       "category": "danse",
       "date_start": "2027-02-02",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/maldonne/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/maldonne-500x500.jpg",
-      "id": "915187f0515c"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Forever - Tribute Michael Jackson",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-02-02",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/forever-tribute-michael-jackson",
-      "image": null,
-      "id": "14148c08ae28"
+      "id": "804b48a261b0"
     },
     {
       "venue": "Bourse du Travail",
@@ -6432,10 +6081,10 @@
       "category": "chanson",
       "date_start": "2027-02-03",
       "date_end": null,
-      "time": null,
+      "time": "18:00",
       "url": "https://radiant-bellevue.fr/spectacles/valentina/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/valentina_radiant-bellevue-500x500.jpg",
-      "id": "7822f5ceb0d3"
+      "id": "b0008b201bcc"
     },
     {
       "venue": "Bourse du Travail",
@@ -6471,10 +6120,10 @@
       "category": "théâtre",
       "date_start": "2027-02-04",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/la-folle-journee-ou-le-mariage-de-figaro/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-folle-journee-ou-500x500.jpg",
-      "id": "88ae5bd98d78"
+      "id": "34ae1343636e"
     },
     {
       "venue": "Bourse du Travail",
@@ -6497,10 +6146,10 @@
       "category": "théâtre",
       "date_start": "2027-02-05",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/la-folle-journee-ou-le-mariage-de-figaro/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-folle-journee-ou-500x500.jpg",
-      "id": "270278abe696"
+      "id": "c2d2d26bef3f"
     },
     {
       "venue": "Bourse du Travail",
@@ -6516,19 +6165,6 @@
       "id": "501d81367d17"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LET’S TWIST AGAIN",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-02-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/lets-twist-again/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/lets-twist-again-500x500.jpg",
-      "id": "ee70147ac814"
-    },
-    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "Visite tactile – D’autres familles que la mienne",
@@ -6542,17 +6178,17 @@
       "id": "d09cc41aed41"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Aldebert",
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "LET’S TWIST AGAIN",
       "subtitle": null,
-      "category": "concert",
+      "category": null,
       "date_start": "2027-02-06",
       "date_end": null,
-      "time": "15:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/aldebert-3",
-      "image": null,
-      "id": "21397db5a6f9"
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/lets-twist-again/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/lets-twist-again-500x500.jpg",
+      "id": "912df24bf093"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6562,23 +6198,10 @@
       "category": "musique",
       "date_start": "2027-02-07",
       "date_end": null,
-      "time": null,
+      "time": "16:00",
       "url": "https://radiant-bellevue.fr/spectacles/bazar-circus/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/bazar-circus-500x500.jpg",
-      "id": "38960eba47a9"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Square Enix",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-02-07",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/square-enix",
-      "image": null,
-      "id": "272b1ca3aa4a"
+      "id": "b98966baa346"
     },
     {
       "venue": "La Rayonne",
@@ -6601,10 +6224,10 @@
       "category": "théâtre",
       "date_start": "2027-02-09",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/le-jeu-de-lamour-et-du-hasard/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-jeu-de-l-amour-et-du-hasard-500x500.jpg",
-      "id": "196e49b5dee9"
+      "id": "a2ee3a16a322"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6614,23 +6237,10 @@
       "category": "musique",
       "date_start": "2027-02-10",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/clash-rock-de-schubert-a-nirvana/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/Affiche_Rock_1920x1080-RVB-sans-texte-logo2-500x500.jpg",
-      "id": "d27f8f5373c9"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Nawell Madani",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-02-10",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/nawell-madani",
-      "image": null,
-      "id": "1e43f410343a"
+      "id": "62bc64dec03c"
     },
     {
       "venue": "Bourse du Travail",
@@ -6653,10 +6263,10 @@
       "category": "théâtre",
       "date_start": "2027-02-11",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/4211-km/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/4211km-V2-500x500.jpg",
-      "id": "99b410666a5e"
+      "id": "8a97c8e90f7c"
     },
     {
       "venue": "Le Transbordeur",
@@ -6670,19 +6280,6 @@
       "url": "https://www.transbordeur.fr/evenement/ugly-kid-joe-12022027/",
       "image": null,
       "id": "2844aff53a23"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "MATHIEU STEPSON",
-      "subtitle": null,
-      "category": "magie",
-      "date_start": "2027-02-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/mathieu-stepson/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/MATHIEU-STEPSON_radiant-bellevue-500x500.jpg",
-      "id": "b1e0d95c2a2c"
     },
     {
       "venue": "TNG",
@@ -6726,15 +6323,28 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
+      "title": "MATHIEU STEPSON",
+      "subtitle": null,
+      "category": "magie",
+      "date_start": "2027-02-12",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/mathieu-stepson/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/MATHIEU-STEPSON_radiant-bellevue-500x500.jpg",
+      "id": "ec290758151a"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
       "title": "JEAN-BENOÎT DIALLO",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-02-13",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/jean-benoit-diallo/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/jean-benoit-diallo-2.jpg",
-      "id": "8e9321fa4e64"
+      "id": "290cad05f06c"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6744,10 +6354,10 @@
       "category": "musique",
       "date_start": "2027-02-14",
       "date_end": null,
-      "time": null,
+      "time": "17:00",
       "url": "https://radiant-bellevue.fr/spectacles/pierre-et-le-loup/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/pierre-et-le-loup-500x500.jpg",
-      "id": "086a93a451b9"
+      "id": "961b44c07184"
     },
     {
       "venue": "Le Transbordeur",
@@ -6761,19 +6371,6 @@
       "url": "https://www.transbordeur.fr/evenement/jeanjass-17022027/",
       "image": null,
       "id": "13707b6a464f"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "ADEL FUGAZI",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-02-18",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/adel-fugazi/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/adel-fugazi-vignette_radiant-bellevue.jpg",
-      "id": "49902c650796"
     },
     {
       "venue": "La Rayonne",
@@ -6791,54 +6388,28 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
+      "title": "ADEL FUGAZI",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-02-18",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/adel-fugazi/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/adel-fugazi-vignette_radiant-bellevue.jpg",
+      "id": "9866e1fd333b"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
       "title": "ERIC FRATICELLI",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-02-19",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/eric-fraticelli/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/eric-fraticelli_radiant-bellevue-500x500.png",
-      "id": "301479fec107"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Holiday On Ice - Cinema Of Dreams",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-02-19",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams",
-      "image": null,
-      "id": "2352ed756750"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Holiday On Ice - Cinema Of Dreams",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-02-20",
-      "date_end": null,
-      "time": "14:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-2",
-      "image": null,
-      "id": "b2618ecfeaa6"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Holiday On Ice - Cinema Of Dreams",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-02-21",
-      "date_end": null,
-      "time": "13:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-4",
-      "image": null,
-      "id": "f6ae54e9ebe7"
+      "id": "44ce17e74fd1"
     },
     {
       "venue": "Le Transbordeur",
@@ -6861,10 +6432,10 @@
       "category": "chanson",
       "date_start": "2027-02-24",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/lio/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/lio-500x500.jpg",
-      "id": "32c85e95a17d"
+      "id": "42405607f221"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6874,10 +6445,10 @@
       "category": "humour",
       "date_start": "2027-02-26",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/alexis-tramoni/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/12/alex-tramoni_radiant-bellevue-500x500.jpg",
-      "id": "b67b50712f48"
+      "id": "63508978f554"
     },
     {
       "venue": "Bourse du Travail",
@@ -6900,10 +6471,10 @@
       "category": "musique",
       "date_start": "2027-02-27",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/hatik-3/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/02/Hatik_2024-25_refonte_elts-promoteur_draft1-e1739436888859-500x500.png",
-      "id": "864131e8ed78"
+      "id": "45fbceec0d0d"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6913,10 +6484,10 @@
       "category": "magie",
       "date_start": "2027-02-28",
       "date_end": null,
-      "time": null,
+      "time": "16:00",
       "url": "https://radiant-bellevue.fr/spectacles/leon/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/leon_radiant-bellevue-500x500.jpg",
-      "id": "e83832d06bdc"
+      "id": "9a7aae63523b"
     },
     {
       "venue": "Bourse du Travail",
@@ -6939,10 +6510,10 @@
       "category": "danse",
       "date_start": "2027-03-02",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/jukebox/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/jukebox-500x500.jpg",
-      "id": "8035b87633a7"
+      "id": "8e7f275bab2f"
     },
     {
       "venue": "Bourse du Travail",
@@ -6958,19 +6529,6 @@
       "id": "425119f738db"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LE CHANT DES LIONS",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-03-03",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/le-chant-des-lions/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-chant-des-lions-v2-500x500.jpg",
-      "id": "4cdf636b2029"
-    },
-    {
       "venue": "La Machinerie - Bizarre !",
       "venue_slug": "la-machinerie-bizarre",
       "title": "Boum Kids",
@@ -6982,6 +6540,19 @@
       "url": "https://agenda.villemorte.fr/event/boum-kids",
       "image": null,
       "id": "ddd55058c6d7"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "LE CHANT DES LIONS",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2027-03-03",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/le-chant-des-lions/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-chant-des-lions-v2-500x500.jpg",
+      "id": "ca88a0c2b3b0"
     },
     {
       "venue": "Bourse du Travail",
@@ -7004,23 +6575,10 @@
       "category": "musique",
       "date_start": "2027-03-04",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/les-coquettes-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/les-coquettes-500x500.jpg",
-      "id": "97db4614abbc"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Marine",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-03-05",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/marine",
-      "image": null,
-      "id": "74b78cf742fb"
+      "id": "509ad983859b"
     },
     {
       "venue": "Bourse du Travail",
@@ -7034,19 +6592,6 @@
       "url": "https://www.bourse-du-travail.com/arnaud-tsamere-362579.html",
       "image": null,
       "id": "01028a442132"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LA JALOUSIE",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-03-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/la-jalousie/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-jalousie-500x500.jpg",
-      "id": "ded7e3527b83"
     },
     {
       "venue": "TNG",
@@ -7075,17 +6620,17 @@
       "id": "b6e4854fae15"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Les Annees 80",
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "LA JALOUSIE",
       "subtitle": null,
-      "category": "concert",
+      "category": "théâtre",
       "date_start": "2027-03-06",
       "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/les-annees-80-2",
-      "image": null,
-      "id": "a094e7839744"
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/la-jalousie/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-jalousie-500x500.jpg",
+      "id": "e0104fd128c6"
     },
     {
       "venue": "Bourse du Travail",
@@ -7108,10 +6653,10 @@
       "category": "chanson",
       "date_start": "2027-03-09",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/bertrand-belin-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/bertrnad-belin-500x500.jpg",
-      "id": "97cf1d0e881d"
+      "id": "c1da2d0c2137"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7121,10 +6666,10 @@
       "category": "humour",
       "date_start": "2027-03-10",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/le-cas-pucine/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/lecaspucine-radiant_bellevue-500x500.jpg",
-      "id": "e79a51623332"
+      "id": "fdef5d952088"
     },
     {
       "venue": "Bourse du Travail",
@@ -7153,19 +6698,6 @@
       "id": "c7d5f15ac247"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "THÉA",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-03-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/thea/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/thea_radiant-bellevue-500x500.jpg",
-      "id": "d0a62cf618b4"
-    },
-    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "Évidences inconnues",
@@ -7181,15 +6713,15 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
-      "title": "MICHEL LEEB",
+      "title": "THÉA",
       "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-03-12",
+      "category": "musique",
+      "date_start": "2027-03-11",
       "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/michel-leeb/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/michel-leeb-500x500.jpg",
-      "id": "a9c361d29151"
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/thea/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/thea_radiant-bellevue-500x500.jpg",
+      "id": "0644f7598caf"
     },
     {
       "venue": "TNG",
@@ -7203,6 +6735,19 @@
       "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-evidences-inconnues/",
       "image": null,
       "id": "1c2b69be6a63"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "MICHEL LEEB",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-03-12",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/michel-leeb/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/michel-leeb-500x500.jpg",
+      "id": "55caf980ced5"
     },
     {
       "venue": "Bourse du Travail",
@@ -7225,10 +6770,10 @@
       "category": "humour",
       "date_start": "2027-03-13",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/nicolas-canteloup/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/nicolas-canteloup-500x500.jpg",
-      "id": "e629b40c21d6"
+      "id": "3930ecba8ea3"
     },
     {
       "venue": "Bourse du Travail",
@@ -7264,10 +6809,10 @@
       "category": "théâtre",
       "date_start": "2027-03-14",
       "date_end": null,
-      "time": null,
+      "time": "17:00",
       "url": "https://radiant-bellevue.fr/spectacles/les-odyssees-de-jules-verne/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/les-odysses-500x500.jpg",
-      "id": "cc38650791c8"
+      "id": "4abd2089c16e"
     },
     {
       "venue": "Bourse du Travail",
@@ -7290,10 +6835,10 @@
       "category": "théâtre",
       "date_start": "2027-03-16",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/le-proces-dune-vie/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-proces-d-une-vie-500x500.jpg",
-      "id": "35db2cf1d22e"
+      "id": "a71521b5d59e"
     },
     {
       "venue": "Bourse du Travail",
@@ -7329,23 +6874,10 @@
       "category": "humour",
       "date_start": "2027-03-17",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/moguiz-3/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/04/mog-1-scaled.jpg",
-      "id": "22556bba9285"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Bernard Lavilliers",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-03-17",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/bernard-lavilliers",
-      "image": null,
-      "id": "66b581d45da6"
+      "id": "35bac155f838"
     },
     {
       "venue": "Bourse du Travail",
@@ -7381,10 +6913,10 @@
       "category": "théâtre",
       "date_start": "2027-03-18",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/the-loop/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/the-loop-500x500.jpg",
-      "id": "099897bf04ea"
+      "id": "f4b1d8d802b1"
     },
     {
       "venue": "Bourse du Travail",
@@ -7407,36 +6939,10 @@
       "category": "théâtre",
       "date_start": "2027-03-19",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/en-therapie/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/en-therapie-500x500.jpg",
-      "id": "52956a3b56ca"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Michele Laroque & Kad Merad - L'Age Bete",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-03-19",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/michele-laroque-kad-merad-l-age-bete",
-      "image": null,
-      "id": "e108ea3962f2"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LA NOCE D’ALFONSE",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-03-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/la-noce-dalfonse/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-noce-d-alphonse-500x500.jpg",
-      "id": "443c43eaf43c"
+      "id": "ad336e37aa00"
     },
     {
       "venue": "TNG",
@@ -7452,17 +6958,17 @@
       "id": "9ef9a0a5db0c"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "500 Voix Pour Johnny",
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "LA NOCE D’ALFONSE",
       "subtitle": null,
-      "category": "concert",
+      "category": null,
       "date_start": "2027-03-20",
       "date_end": null,
       "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/500-voix-pour-johnny",
-      "image": null,
-      "id": "f227e3726650"
+      "url": "https://radiant-bellevue.fr/spectacles/la-noce-dalfonse/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-noce-d-alphonse-500x500.jpg",
+      "id": "df429dd42658"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7472,10 +6978,10 @@
       "category": null,
       "date_start": "2027-03-21",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/la-noce-dalfonse/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-noce-d-alphonse-500x500.jpg",
-      "id": "964946191ddd"
+      "id": "4a16be53287e"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7485,10 +6991,10 @@
       "category": "théâtre",
       "date_start": "2027-03-22",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/le-cercle-des-poetes-disparus-3/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-cercle-500x500.jpg",
-      "id": "275f53ede5cf"
+      "id": "82ecf18cc6a1"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7498,10 +7004,10 @@
       "category": "théâtre",
       "date_start": "2027-03-23",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/le-cercle-des-poetes-disparus-3/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-cercle-500x500.jpg",
-      "id": "65d3628fd265"
+      "id": "e0e650fd6c2d"
     },
     {
       "venue": "Bourse du Travail",
@@ -7524,10 +7030,10 @@
       "category": "humour",
       "date_start": "2027-03-24",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/pablo-mira-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/pablo-mira_radiant-bellevue-500x500.jpg",
-      "id": "9af0b15ffb42"
+      "id": "3b038d69b64d"
     },
     {
       "venue": "Le Transbordeur",
@@ -7550,10 +7056,10 @@
       "category": "humour",
       "date_start": "2027-03-26",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/laurent-baffie-3/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/laurent-baffie_radiant-bellevue-500x500.jpg",
-      "id": "c3521617ac6b"
+      "id": "9ab59781784d"
     },
     {
       "venue": "Bourse du Travail",
@@ -7576,10 +7082,10 @@
       "category": "musique",
       "date_start": "2027-03-30",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/mpl-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/mpl-500x500.jpg",
-      "id": "1b4d164c46ea"
+      "id": "c2f66bba1ddc"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7589,10 +7095,10 @@
       "category": "humour",
       "date_start": "2027-03-31",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/christelle-chollet/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/christelle-chollet-500x500.jpg",
-      "id": "35ae55287b15"
+      "id": "06aa7653d8ab"
     },
     {
       "venue": "Le Transbordeur",
@@ -7615,10 +7121,10 @@
       "category": "théâtre",
       "date_start": "2027-04-01",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/music-hall-colette/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/music-hall-colette-500x500.jpg",
-      "id": "e987587eb326"
+      "id": "035592a28998"
     },
     {
       "venue": "Bourse du Travail",
@@ -7641,23 +7147,10 @@
       "category": "humour",
       "date_start": "2027-04-03",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/alex-lutz-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/alex-lutz-500x500.jpg",
-      "id": "cdec24ceb9ac"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Patrick Fiori",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-04-03",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/patrick-fiori-2",
-      "image": null,
-      "id": "93411b98f25b"
+      "id": "890d924c8ac5"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7667,23 +7160,10 @@
       "category": "théâtre",
       "date_start": "2027-04-04",
       "date_end": null,
-      "time": null,
+      "time": "17:00",
       "url": "https://radiant-bellevue.fr/spectacles/les-aventuriers-de-minuit/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/les-aventuriers-500x500.jpg",
-      "id": "245f974bc579"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Glorious",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-04-04",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/glorious",
-      "image": null,
-      "id": "ba9cb766b04c"
+      "id": "e23282f98841"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7693,10 +7173,10 @@
       "category": "musique",
       "date_start": "2027-04-05",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/rodrigo-y-gabriela-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/rodrigo-y-gabriela-v2-500x500.jpg",
-      "id": "987d5616e153"
+      "id": "7d7ffe573a02"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7706,10 +7186,10 @@
       "category": "musique",
       "date_start": "2027-04-07",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/clash-world-le-bolero-a-bamako/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/Affiche_World_1920x1080-RVB-sans-texte-logo2-500x500.jpg",
-      "id": "2db438efb6ab"
+      "id": "f46aec96ef56"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7719,23 +7199,10 @@
       "category": "théâtre",
       "date_start": "2027-04-08",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/mur-mure/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/mur-mure-500x500.jpg",
-      "id": "5d1504e71933"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "FABIEN OLICARD",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-04-09",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/fabien-olicard-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/fabien-ollicard-500x500.jpg",
-      "id": "31797fab5101"
+      "id": "4daeb0855759"
     },
     {
       "venue": "TNG",
@@ -7749,6 +7216,19 @@
       "url": "https://www.tng-lyon.fr/evenement/le-theoreme-du-pissenlit/",
       "image": null,
       "id": "19bc6e04becf"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "FABIEN OLICARD",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2027-04-09",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/fabien-olicard-2/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/fabien-ollicard-500x500.jpg",
+      "id": "85a5922e52da"
     },
     {
       "venue": "Le Transbordeur",
@@ -7771,23 +7251,10 @@
       "category": "théâtre",
       "date_start": "2027-04-10",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/art-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/ART-V2-500x500.jpg",
-      "id": "7c96323a9540"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Star Wars In Concert : Un Nouvel Espoir",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-04-10",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/star-wars-in-concert-un-nouvel-espoir",
-      "image": null,
-      "id": "7015d6516327"
+      "id": "b30df779005e"
     },
     {
       "venue": "Bourse du Travail",
@@ -7810,10 +7277,10 @@
       "category": "théâtre",
       "date_start": "2027-04-11",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/art-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/ART-V2-500x500.jpg",
-      "id": "6a6f63568601"
+      "id": "baecd139d2d2"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7823,10 +7290,10 @@
       "category": "théâtre",
       "date_start": "2027-04-14",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/coupe-du-monde-dimpro-f-f-f-3/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/coupe-du-monde-500x500.jpg",
-      "id": "2e05f02cbf8f"
+      "id": "8e6a5464f9b2"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7836,23 +7303,10 @@
       "category": "théâtre",
       "date_start": "2027-04-15",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/coupe-du-monde-dimpro-f-f-f-3/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/coupe-du-monde-500x500.jpg",
-      "id": "49c2a44aec21"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "COUPE DU MONDE D’IMPRO F.F.F",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-04-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/coupe-du-monde-dimpro-f-f-f-3/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/coupe-du-monde-500x500.jpg",
-      "id": "0a635b32f58c"
+      "id": "01f54e1b3bc8"
     },
     {
       "venue": "TNG",
@@ -7870,15 +7324,28 @@
     {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
+      "title": "COUPE DU MONDE D’IMPRO F.F.F",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2027-04-16",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/coupe-du-monde-dimpro-f-f-f-3/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/coupe-du-monde-500x500.jpg",
+      "id": "16248d02be6f"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
       "title": "FATALS PICARDS",
       "subtitle": null,
       "category": "chanson",
       "date_start": "2027-04-17",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/fatals-picards/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/lesfatalspicards-chanson-lyon-site-carre.jpg",
-      "id": "39aa97548aac"
+      "id": "cd9565bcbf6c"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7888,10 +7355,10 @@
       "category": "humour",
       "date_start": "2027-04-18",
       "date_end": null,
-      "time": null,
+      "time": "17:00",
       "url": "https://radiant-bellevue.fr/spectacles/serge-papagalli/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/serge-papagelli_radiant-bellevue-500x500.jpg",
-      "id": "15ea6374c40a"
+      "id": "93f4788a1e52"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7901,10 +7368,10 @@
       "category": "humour",
       "date_start": "2027-04-23",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/guillaume-meurice/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/guillaume-meurice-500x500.jpg",
-      "id": "751417ea35e5"
+      "id": "86bd335ed7b1"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7914,10 +7381,10 @@
       "category": "humour",
       "date_start": "2027-04-24",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/guillaume-meurice/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/guillaume-meurice-500x500.jpg",
-      "id": "db5311e07d05"
+      "id": "8c7cabea7439"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7927,10 +7394,10 @@
       "category": "musique",
       "date_start": "2027-04-25",
       "date_end": null,
-      "time": null,
+      "time": "14:00",
       "url": "https://radiant-bellevue.fr/spectacles/le-loup-qui-voulait-faire-de-la-musique/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-loup-qui-voulait-faire-de-la-musique-500x500.jpg",
-      "id": "dcd4dc4a2827"
+      "id": "c3b012524fdb"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7940,10 +7407,10 @@
       "category": "théâtre",
       "date_start": "2027-04-27",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/menopause-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/MENOPAUSE-500x500.jpg",
-      "id": "cbb37e0f5b9c"
+      "id": "47f0f03aa086"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7953,10 +7420,10 @@
       "category": "théâtre",
       "date_start": "2027-04-28",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/toute-la-famille-que-jaime/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/toute-la-famille-500x500.jpg",
-      "id": "9b86b03a5b94"
+      "id": "5ab359c52526"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -7966,10 +7433,10 @@
       "category": "humour",
       "date_start": "2027-04-29",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/constance-5/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/constance-500x500.jpg",
-      "id": "fb596d192acc"
+      "id": "7211c0e41ffc"
     },
     {
       "venue": "Bourse du Travail",
@@ -7985,19 +7452,6 @@
       "id": "9a56a869a6ad"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "PHILIPPINE DELAIRE",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-04-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/philippine-delaire/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/philippine-delaire-vignette.jpg",
-      "id": "c2ca03b50046"
-    },
-    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "RDV Pop’Corn – Catharsis",
@@ -8009,6 +7463,19 @@
       "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-catharsis/",
       "image": null,
       "id": "c1220ba19b87"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "PHILIPPINE DELAIRE",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-04-30",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/philippine-delaire/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/philippine-delaire-vignette.jpg",
+      "id": "4ef9ddd60726"
     },
     {
       "venue": "Bourse du Travail",
@@ -8044,10 +7511,10 @@
       "category": "théâtre",
       "date_start": "2027-05-04",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/cest-si-simple-lamour/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/c-est-si-simple-500x500.jpg",
-      "id": "26bfa7c847c9"
+      "id": "39de8e8bfe05"
     },
     {
       "venue": "Bourse du Travail",
@@ -8083,10 +7550,10 @@
       "category": "humour",
       "date_start": "2027-05-13",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/leopold-lemarchand/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/affiche-leopold-marchand-scaled-e1768566182717-500x500.jpg",
-      "id": "fb360cb6cb3c"
+      "id": "4fd64d1ae883"
     },
     {
       "venue": "Bourse du Travail",
@@ -8100,19 +7567,6 @@
       "url": "https://www.bourse-du-travail.com/tom-baldetti-tome-1-tournee-370295.html",
       "image": null,
       "id": "3fff25797271"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Suzane",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-05-18",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/suzane",
-      "image": null,
-      "id": "113efc2897c8"
     },
     {
       "venue": "Bourse du Travail",
@@ -8135,10 +7589,10 @@
       "category": "humour",
       "date_start": "2027-05-19",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/stand-up-comedy-show-3/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/stand-up-comedy-show-500x500.jpg",
-      "id": "44f98f7930f1"
+      "id": "0e4560886b20"
     },
     {
       "venue": "Bourse du Travail",
@@ -8161,10 +7615,10 @@
       "category": "humour",
       "date_start": "2027-05-21",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/guillaume-guisset/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/guillaume-guisset-500x500.jpg",
-      "id": "52bbd6205471"
+      "id": "817b2f175c96"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -8174,10 +7628,10 @@
       "category": "humour",
       "date_start": "2027-05-25",
       "date_end": null,
-      "time": null,
+      "time": "20:30",
       "url": "https://radiant-bellevue.fr/spectacles/greg-duth/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/greg-duth_radiant-bellevue-4-500x500.jpg",
-      "id": "4f9bc7325739"
+      "id": "7321aec38930"
     },
     {
       "venue": "Bourse du Travail",
@@ -8213,10 +7667,10 @@
       "category": "musique",
       "date_start": "2027-05-30",
       "date_end": null,
-      "time": null,
+      "time": "17:00",
       "url": "https://radiant-bellevue.fr/spectacles/le-tour-du-monde-en-80-minutes/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-tour-du-monde-en-80-minutes-500x500.jpg",
-      "id": "6af1e7af68c3"
+      "id": "ed195a046702"
     },
     {
       "venue": "Bourse du Travail",
@@ -8258,19 +7712,6 @@
       "id": "97103e6f3037"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "ANA GODEFROY",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-06-08",
-      "date_end": null,
-      "time": null,
-      "url": "https://radiant-bellevue.fr/spectacles/ana-godefroy/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/ana-godefroy_radiant-bellevue-500x500.jpg",
-      "id": "f5212204025a"
-    },
-    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "GénérationS en scène",
@@ -8282,6 +7723,19 @@
       "url": "https://www.tng-lyon.fr/evenement/generations-en-scene-5/",
       "image": null,
       "id": "f6a222b56ad2"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "ANA GODEFROY",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-06-08",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/ana-godefroy/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/ana-godefroy_radiant-bellevue-500x500.jpg",
+      "id": "b09109515a7e"
     },
     {
       "venue": "Bourse du Travail",
@@ -8375,32 +7829,6 @@
       "id": "9a11c35800f4"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Generation Celine",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-09-29",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/generation-celine-2",
-      "image": null,
-      "id": "4f8eececf37d"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "La Rue Kétanou",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-10-01",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/la-rue-ketanou",
-      "image": null,
-      "id": "620a0d9b3588"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Hervé Vilard - Capri...c'est Fini...nous...reviens...",
@@ -8421,23 +7849,10 @@
       "category": "chanson",
       "date_start": "2027-11-16",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://radiant-bellevue.fr/spectacles/louis-bertignac/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/louis-bertignac_radiant-bellevue-500x500.jpg",
-      "id": "2b3f11578826"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "I Gotta Feeling – Saison 3",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-11-18",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/i-gotta-feeling-saison-3",
-      "image": null,
-      "id": "fb2d7ec96427"
+      "id": "6f0ed9f890aa"
     },
     {
       "venue": "Bourse du Travail",
@@ -8479,58 +7894,6 @@
       "id": "2cad813d1401"
     },
     {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Gael Faye",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-11-27",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/gael-faye",
-      "image": null,
-      "id": "6beb9713ac66"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Philippe Caveriviere",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-12-10",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/philippe-caveriviere",
-      "image": null,
-      "id": "95ab438b6959"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Festival Mondial De La Magie",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2028-01-14",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/festival-mondial-de-la-magie",
-      "image": null,
-      "id": "745d9cc9feff"
-    },
-    {
-      "venue": "La Halle Tony Garnier",
-      "venue_slug": "halle-tony-garnier",
-      "title": "Era",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2028-03-01",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.halle-tony-garnier.com/fr/programmation/era-2",
-      "image": null,
-      "id": "661d7f33aa0b"
-    },
-    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "CHIMENE BADI",
@@ -8538,10 +7901,10 @@
       "category": "chanson",
       "date_start": "2028-03-26",
       "date_end": null,
-      "time": null,
+      "time": "17:00",
       "url": "https://radiant-bellevue.fr/spectacles/chimene-badi-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/chimene-badi-500x500.jpg",
-      "id": "792d701c0acd"
+      "id": "d4e4ec69c2e0"
     }
   ]
 }
