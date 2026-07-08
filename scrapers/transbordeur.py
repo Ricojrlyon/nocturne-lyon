@@ -4,8 +4,8 @@ The agenda page is a JS-rendered SPA. Diagnostic confirmed the WordPress
 REST API exposes /wp/v2/evenement (singular, French). This scraper hits
 that endpoint directly and parses the JSON response.
 
-If /wp/v2/evenement returns no useful data, falls back to inspecting one
-post in detail and printing all its keys for further iteration.
+Time extraction: ACF fields OR content.rendered HTML (which usually
+contains "Ouverture des portes 19h30 / Début concert 20h30").
 """
 from typing import List, Optional, Any
 from datetime import datetime, date as Date
@@ -18,8 +18,8 @@ from bs4 import BeautifulSoup
 from .base import Event, iso
 
 VENUE = "Le Transbordeur"
-SLUG = "transbordeur"
-SITE = "https://www.transbordeur.fr"
+SLUG  = "transbordeur"
+SITE  = "https://www.transbordeur.fr"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -27,16 +27,22 @@ HEADERS = {
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
-# Keys to probe for an event date in ACF / meta / top-level fields.
+# Comprehensive ACF/meta field name candidates for date.
 DATE_KEY_CANDIDATES = (
     "date_event", "date_evenement", "date_concert", "event_date",
     "date_debut", "start_date", "date", "date_de_l_evenement",
-    "date_de_levenement", "jour", "concert_date",
+    "date_de_levenement", "jour", "concert_date", "date_spectacle",
 )
 
+# Comprehensive ACF/meta field name candidates for time.
+# Transbordeur WP theme often uses "ouverture_des_portes" or "horaires".
 TIME_KEY_CANDIDATES = (
-    "heure", "heure_evenement", "heure_debut", "horaire",
-    "start_time", "time",
+    "heure", "heure_evenement", "heure_debut", "horaire", "horaires",
+    "start_time", "time", "heure_ouverture", "ouverture", "heure_de_debut",
+    "horaire_ouverture_des_portes", "ouverture_des_portes", "opening_time",
+    "debut_du_concert", "debut_concert", "heure_concert", "heure_start",
+    "event_time", "concert_time", "creneau", "créneau", "heure_de_concert",
+    "heure_d_ouverture", "h_debut", "h_ouverture", "portes",
 )
 
 
@@ -50,13 +56,11 @@ def _normalize_date(val: Any) -> Optional[Date]:
     if not val or not isinstance(val, str):
         return None
     val = val.strip()
-    # ACF dates can be 'YYYYMMDD'
     if re.fullmatch(r"\d{8}", val):
         try:
             return Date(int(val[:4]), int(val[4:6]), int(val[6:8]))
         except ValueError:
             return None
-    # ISO date or datetime
     try:
         cleaned = val.replace("Z", "+00:00").replace(" ", "T")
         return datetime.fromisoformat(cleaned).date()
@@ -66,7 +70,6 @@ def _normalize_date(val: Any) -> Optional[Date]:
         return Date.fromisoformat(val[:10])
     except ValueError:
         pass
-    # 'DD/MM/YYYY' or 'DD-MM-YYYY'
     m = re.match(r"(\d{2})[/-](\d{2})[/-](\d{4})", val)
     if m:
         d, mo, y = m.groups()
@@ -77,21 +80,41 @@ def _normalize_date(val: Any) -> Optional[Date]:
     return None
 
 
+def _parse_time_from_text(text: str) -> Optional[str]:
+    """Extract event time from a raw text block.
+
+    Prioritises contextual markers (portes, début, concert, horaire).
+    Only returns plausible evening/night hours (16-03h).
+    """
+    # Contextual: "Ouverture des portes 19h30", "Début concert : 20h00"
+    m = re.search(
+        r"(?:ouverture|portes?|début|debut|concert|spectacle|heure|horaire|"
+        r"à partir|dès|opening|start)\s*[:\-]?\s*(\d{1,2})[h:](\d{0,2})",
+        text, re.IGNORECASE,
+    )
+    if m:
+        hh = int(m.group(1))
+        mm = m.group(2)
+        mm_int = int(mm) if mm else 0
+        if (16 <= hh <= 23) or (hh <= 3):
+            return f"{hh:02d}:{mm_int:02d}"
+    # Standalone HH:MM or HHhMM that looks like an event time
+    for m2 in re.finditer(r"\b(\d{1,2})[h:](\d{2})\b", text):
+        hh, mm_int = int(m2.group(1)), int(m2.group(2))
+        if (16 <= hh <= 23) or (hh <= 3):
+            return f"{hh:02d}:{mm_int:02d}"
+    # "à 20h" (h-only)
+    for m2 in re.finditer(r"(?:à|at|dès)\s*(\d{1,2})h\b", text, re.IGNORECASE):
+        hh = int(m2.group(1))
+        if (16 <= hh <= 23) or (hh <= 3):
+            return f"{hh:02d}:00"
+    return None
+
+
 def _normalize_time(val: Any) -> Optional[str]:
     if not val or not isinstance(val, str):
         return None
-    val = val.strip()
-    m = re.search(r"(\d{1,2})\s*[h:]\s*(\d{2})", val)
-    if m:
-        hh, mm = int(m.group(1)), m.group(2)
-        if 0 <= hh <= 23:
-            return f"{hh:02d}:{mm}"
-    m = re.fullmatch(r"(\d{1,2})h", val)
-    if m:
-        hh = int(m.group(1))
-        if 0 <= hh <= 23:
-            return f"{hh:02d}:00"
-    return None
+    return _parse_time_from_text(val.strip())
 
 
 def _extract_date(post: dict) -> Optional[Date]:
@@ -107,7 +130,6 @@ def _extract_date(post: dict) -> Optional[Date]:
             d = _normalize_date(meta.get(k))
             if d:
                 return d
-    # Top-level fields
     for k in DATE_KEY_CANDIDATES:
         d = _normalize_date(post.get(k))
         if d:
@@ -116,22 +138,34 @@ def _extract_date(post: dict) -> Optional[Date]:
 
 
 def _extract_time(post: dict) -> Optional[str]:
+    # 1. ACF fields
     acf = post.get("acf") or {}
     if isinstance(acf, dict):
         for k in TIME_KEY_CANDIDATES:
             t = _normalize_time(acf.get(k))
             if t:
                 return t
+    # 2. Meta fields
     meta = post.get("meta") or {}
     if isinstance(meta, dict):
         for k in TIME_KEY_CANDIDATES + tuple("_" + x for x in TIME_KEY_CANDIDATES):
             t = _normalize_time(meta.get(k))
             if t:
                 return t
+    # 3. Top-level fields
     for k in TIME_KEY_CANDIDATES:
         t = _normalize_time(post.get(k))
         if t:
             return t
+    # 4. Fallback: parse time from the rendered content HTML
+    #    Transbordeur pages typically say "Ouverture des portes 19h30 / Début concert 20h"
+    for field in ("content", "excerpt"):
+        rendered = (post.get(field) or {}).get("rendered", "")
+        if rendered:
+            plain = BeautifulSoup(rendered, "html.parser").get_text(" ", strip=True)
+            t = _parse_time_from_text(plain)
+            if t:
+                return t
     return None
 
 
@@ -153,7 +187,6 @@ def _extract_image(post: dict) -> Optional[str]:
 
 
 def _diagnose_first_post():
-    """Fetch one post from /wp/v2/evenement and print its full key tree."""
     print("=" * 60, file=sys.stderr)
     print("DIAGNOSTIC: Le Transbordeur — inspecting first post", file=sys.stderr)
     try:
@@ -166,28 +199,30 @@ def _diagnose_first_post():
         data = resp.json()
         if not isinstance(data, list) or not data:
             print(f"  Empty result. Type: {type(data).__name__}", file=sys.stderr)
-            print(f"  Sample: {str(data)[:400]}", file=sys.stderr)
             return
         post = data[0]
         print(f"  Top-level keys: {sorted(post.keys())}", file=sys.stderr)
         if "acf" in post and isinstance(post["acf"], dict):
             print(f"  acf keys: {sorted(post['acf'].keys())}", file=sys.stderr)
-            # Show first few acf values for inspection
-            for k, v in list(post["acf"].items())[:10]:
+            for k, v in list(post["acf"].items()):
                 v_repr = repr(v)
                 if len(v_repr) > 120:
                     v_repr = v_repr[:120] + "..."
                 print(f"    acf[{k!r}] = {v_repr}", file=sys.stderr)
         if "meta" in post and isinstance(post["meta"], dict):
-            print(f"  meta keys: {sorted(post['meta'].keys())[:20]}",
-                  file=sys.stderr)
-        # Title and link
+            meta_keys = [k for k in post["meta"].keys()
+                        if any(kw in k.lower() for kw in ("heure","time","horaire","ouverture","debut","concert"))]
+            print(f"  meta time-related keys: {meta_keys}", file=sys.stderr)
+        # Show content snippet
+        content_html = (post.get("content") or {}).get("rendered", "")
+        if content_html:
+            plain = BeautifulSoup(content_html, "html.parser").get_text(" ", strip=True)
+            print(f"  content[:300]: {plain[:300]!r}", file=sys.stderr)
         title = post.get("title")
         if isinstance(title, dict):
             title = title.get("rendered", "")
         print(f"  title: {_strip_html(str(title))[:80]!r}", file=sys.stderr)
         print(f"  link: {post.get('link', '')!r}", file=sys.stderr)
-        print(f"  date: {post.get('date', '')!r}", file=sys.stderr)
     except (requests.RequestException, ValueError, json.JSONDecodeError) as e:
         print(f"  Failed: {e}", file=sys.stderr)
     print("=" * 60, file=sys.stderr)
