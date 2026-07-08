@@ -219,6 +219,45 @@
   }
 
   /* chips */
+  /* Search input in filter bar */
+  .filter-search-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+  }
+  .filter-search {
+    width: 100%;
+    box-sizing: border-box;
+    background: transparent;
+    border: 1px solid var(--rule-strong);
+    color: var(--ink);
+    padding: 5px 28px 5px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    border-radius: 999px;
+    outline: none;
+    letter-spacing: 0.04em;
+    transition: border-color 0.16s ease;
+    -webkit-appearance: none;
+  }
+  .filter-search::placeholder { color: var(--ink-mute); }
+  .filter-search:focus { border-color: var(--ink); }
+  .filter-search-clear {
+    position: absolute;
+    right: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--ink-mute);
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 1;
+    padding: 0;
+    display: none;
+  }
+  .filter-search-clear:hover { color: var(--ink); }
+
   .chip {
     border: 1px solid var(--rule-strong);
     background: transparent;
@@ -791,6 +830,15 @@
   <div class="container">
 
     <div class="filter-row always-visible">
+      <span class="filter-label">recherche</span>
+      <div class="filter-search-wrap">
+        <input class="filter-search" id="filterSearch" type="search"
+          placeholder="lieu ou événement…" autocomplete="off" spellcheck="false">
+        <button class="filter-search-clear" id="filterSearchClear" aria-label="effacer">✕</button>
+      </div>
+    </div>
+
+    <div class="filter-row always-visible">
       <span class="filter-label">quand</span>
       <div class="filter-group" id="filterWhen">
         <button class="chip active" data-when="all">tout</button>
@@ -893,6 +941,7 @@ const VENUE_ARRONDISSEMENT = {
   'Salle Rameau': '1er',          // 29 rue de la Martinière
   'La BF15': '1er',               // quai de la Pêcherie
   'Le Bleu du Ciel': '1er',       // 12 rue des Fantasques
+  'Péristyle Opéra': '1er',       // place de la Comédie, devant l'Opéra
 
   // Lyon 2e (Presqu'île, Confluence)
   'Le Sucre': '2e',
@@ -913,6 +962,7 @@ const VENUE_ARRONDISSEMENT = {
   'Palais de la Mutualité Salle Edouard Herriot': '3e',   // variante sans tiret/accent
   'Salle Des Rancy': '3e',        // 249 rue Vendôme
   'Lieu Privé à Montchat 69003': '3e',
+  'Improvidence': '3e',           // 18 rue Villeroy
 
   // Lyon 4e (Croix-Rousse plateau)
   "Agend'arts": '4e',
@@ -1039,6 +1089,7 @@ const state = {
   venues: new Set(),
   arrondissements: new Set(),
   buckets: new Set(),
+  search: '',          // free text search: venue name or event title
   events: [],
 };
 
@@ -1564,6 +1615,10 @@ document.getElementById('clearFilters').addEventListener('click', () => {
   state.venues.clear();
   state.arrondissements.clear();
   state.buckets.clear();
+  state.search = '';
+  const searchEl = document.getElementById('filterSearch');
+  if (searchEl) searchEl.value = '';
+  document.getElementById('filterSearchClear').style.display = 'none';
   document.querySelectorAll('.chip.active, .chip.partial').forEach(c => {
     c.classList.remove('active', 'partial');
   });
@@ -1573,6 +1628,38 @@ document.getElementById('clearFilters').addEventListener('click', () => {
   closeDatepicker();
   render();
 });
+
+/* ---------- search input ---------- */
+(function () {
+  const searchEl = document.getElementById('filterSearch');
+  const clearBtn = document.getElementById('filterSearchClear');
+  let debounceTimer;
+
+  searchEl.addEventListener('input', () => {
+    state.search = searchEl.value.trim().toLowerCase();
+    clearBtn.style.display = state.search ? '' : 'none';
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(render, 180);
+  });
+
+  searchEl.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      state.search = '';
+      searchEl.value = '';
+      clearBtn.style.display = 'none';
+      render();
+      searchEl.blur();
+    }
+  });
+
+  clearBtn.addEventListener('click', () => {
+    state.search = '';
+    searchEl.value = '';
+    clearBtn.style.display = 'none';
+    render();
+    searchEl.focus();
+  });
+})();
 
 /* ---------- collapse on scroll ---------- */
 const filtersEl = document.getElementById('filters');
@@ -1667,6 +1754,12 @@ function filtered() {
     if (state.buckets.size) {
       const b = bucketOf(occ.category);
       if (!state.buckets.has(b)) return false;
+    }
+    if (state.search) {
+      const q = state.search;
+      const titleMatch = (occ.title || '').toLowerCase().includes(q);
+      const venueMatch = (occ.venue || '').toLowerCase().includes(q);
+      if (!titleMatch && !venueMatch) return false;
     }
     return true;
   });
