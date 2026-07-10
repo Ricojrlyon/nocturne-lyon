@@ -178,14 +178,20 @@ def main() -> int:
 
     out = Path(__file__).parent / "events.json"
 
-    # Safety net: if every implemented scraper failed, do NOT overwrite the
-    # existing events.json. A user pointing GitHub Actions to a freshly cloned
-    # repo with a populated seed file shouldn't lose everything because of a
+    # Safety net: if every scraper failed, do NOT overwrite the existing
+    # events.json. A user pointing GitHub Actions to a freshly cloned repo
+    # with a populated seed file shouldn't lose everything because of a
     # transient network blip or because every site changed format on the same
     # day (extremely unlikely but possible).
-    implemented = [(name, n, err) for name, n, err in report
-                   if err is not None or n > 0]
-    all_failed = implemented and all(err is not None for _, _, err in implemented)
+    #
+    # A scraper that returns 0 events WITHOUT raising counts as a failure
+    # here too: every registered source is a real implementation, so an
+    # empty result almost certainly means the site changed layout or the
+    # scraper swallowed a network error internally — several of them catch
+    # their own RequestException and return [] instead of raising.
+    all_failed = bool(report) and all(
+        err is not None or n == 0 for _, n, err in report
+    )
     if all_failed and out.exists():
         print("\n[!] All implemented scrapers failed — keeping previous events.json.",
               file=sys.stderr)
@@ -205,7 +211,8 @@ def main() -> int:
         if err:
             print(f"  ✗ {name:30s}  ERROR: {err}")
         elif n == 0:
-            print(f"  · {name:30s}  (stub)")
+            print(f"  ! {name:30s}  0 events — possible silent failure "
+                  f"(site changed? request swallowed?)")
         else:
             print(f"  ✓ {name:30s}  {n} events")
     return 0
