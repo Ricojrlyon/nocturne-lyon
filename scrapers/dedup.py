@@ -17,6 +17,7 @@ from __future__ import annotations
 import re
 import unicodedata
 from collections import defaultdict
+from datetime import date, timedelta
 from difflib import SequenceMatcher
 from typing import List, Tuple
 
@@ -199,16 +200,54 @@ def _pick_best(cluster: list[tuple[Event, int]]) -> tuple[Event, int]:
     return best
 
 
+def _days_covered(ev: Event, max_days: int = 30) -> List[str]:
+    """ISO days covered by the event (date_start..date_end inclusive).
+
+    Multi-day ranges are expanded so that a per-day duplicate from another
+    source (e.g. Petit Bulletin emits one event per day of a run) lands in
+    the same (venue, day) group as the ranged event, even though their
+    date_start differ. Capped at max_days to keep the index bounded for
+    long expos.
+    """
+    if not ev.date_end or ev.date_end <= ev.date_start:
+        return [ev.date_start]
+    try:
+        start = date.fromisoformat(ev.date_start)
+        end = date.fromisoformat(ev.date_end)
+    except ValueError:
+        return [ev.date_start]
+    days: List[str] = []
+    d = start
+    while d <= end and len(days) < max_days:
+        days.append(d.isoformat())
+        d += timedelta(days=1)
+    return days
+
+
 def _primary_dedup(tagged_events: List[Tuple[Event, int]]) -> List[Tuple[Event, int]]:
-    """Group by (canonical_venue, date) then fuzzy-cluster titles >= 0.7."""
+    """Group by (canonical_venue, day) then fuzzy-cluster titles >= 0.7.
+
+    Events are indexed on EVERY day of their range (see _days_covered):
+    a ranged event thus collides with per-day duplicates whose date_start
+    falls inside the range. Because a multi-day event can appear in several
+    groups, winners are emitted at most once (tracked by object identity).
+    """
     groups: dict[tuple[str, str], list[tuple[Event, int]]] = defaultdict(list)
     for ev, prio in tagged_events:
-        groups[(_venue_key(ev.venue), ev.date_start)].append((ev, prio))
+        for day_iso in _days_covered(ev):
+            groups[(_venue_key(ev.venue), day_iso)].append((ev, prio))
 
     result: List[Tuple[Event, int]] = []
+    emitted_ids: set[int] = set()
+
+    def _emit(item: Tuple[Event, int]) -> None:
+        if id(item[0]) not in emitted_ids:
+            emitted_ids.add(id(item[0]))
+            result.append(item)
+
     for key, group in groups.items():
         if len(group) == 1:
-            result.append(group[0])
+            _emit(group[0])
             continue
         clusters: list[list[tuple[Event, int]]] = []
         for ev, prio in group:
@@ -222,7 +261,7 @@ def _primary_dedup(tagged_events: List[Tuple[Event, int]]) -> List[Tuple[Event, 
             if not placed:
                 clusters.append([(ev, prio)])
         for cluster in clusters:
-            result.append(_pick_best(cluster))
+            _emit(_pick_best(cluster))
     return result
 
 
