@@ -1091,6 +1091,7 @@ const state = {
   buckets: new Set(),
   search: '',          // free text search: venue name or event title
   events: [],
+  occurrences: [],     // expandOccurrences(events), calculé une fois au load
 };
 
 function isoOf(d) {
@@ -1280,6 +1281,10 @@ async function load() {
   if (eventsRes.status === 'rejected') throw eventsRes.reason;
   const data = await eventsRes.value.json();
   state.events = data.events || [];
+  // Les occurrences ne dépendent que de state.events : calculées une seule
+  // fois ici au lieu d'être recalculées à chaque render() (chaque frappe,
+  // chaque clic de chip).
+  state.occurrences = expandOccurrences(state.events);
 
   // Merge geocoded arrondissements into VENUE_ARRONDISSEMENT.
   // Hardcoded entries win on conflict (they've been manually verified).
@@ -1754,13 +1759,9 @@ function expandOccurrences(events) {
 
 function filtered() {
   const now = new Date(); now.setHours(0,0,0,0);
-  const upcoming = state.events.filter(e => {
-    const start = parseIso(e.date_start);
-    const end = e.date_end ? parseIso(e.date_end) : start;
-    return end >= now;
-  });
-  const occurrences = expandOccurrences(upcoming);
-  return occurrences.filter(occ => {
+  // state.occurrences est pré-calculé au load ; les occurrences passées
+  // sont écartées par le check occDate < now ci-dessous.
+  return state.occurrences.filter(occ => {
     const occDate = parseIso(occ._date);
     if (occDate < now) return false;
     if (!withinWhen(occ._date)) return false;
