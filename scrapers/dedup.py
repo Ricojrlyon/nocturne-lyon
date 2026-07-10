@@ -143,6 +143,27 @@ def _title_similarity(a: str, b: str) -> float:
     return SequenceMatcher(None, na, nb).ratio()
 
 
+# Titles that legitimately recur at several venues on the same day —
+# the cross-venue (secondary) pass must NEVER merge them. Compared on
+# normalized form (lowercase, accents stripped — see _normalize_text).
+GENERIC_TITLES = frozenset({
+    "fete de la musique", "concert", "karaoke", "jam session", "atelier",
+    "soiree", "projection", "exposition", "vernissage",
+})
+
+# Below this length, a title is too generic to be safely merged across
+# venues ("Concert", "Karaoké", "Fête de la musique"…).
+_MIN_CROSS_VENUE_TITLE_LEN = 15
+
+
+def _is_unmergeable_across_venues(title: str) -> bool:
+    """True if the title is too short or too generic for cross-venue dedup."""
+    t = (title or "").strip()
+    if len(t) < _MIN_CROSS_VENUE_TITLE_LEN:
+        return True
+    return _normalize_text(t) in GENERIC_TITLES
+
+
 def _pick_best(cluster: list[tuple[Event, int]]) -> tuple[Event, int]:
     """Highest priority wins; tie-break on info completeness.
 
@@ -227,14 +248,15 @@ def _secondary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Ev
         clusters: list[list[tuple[Event, int]]] = []
         for ev, prio in group:
             placed = False
-            # Require min length to avoid merging short generic titles
-            # like "Concert" or "Jam".
-            if len((ev.title or "").strip()) < 5:
+            # Short or generic titles ("Concert", "Fête de la musique"…)
+            # legitimately recur at several venues the same day — isolate
+            # them in their own cluster, never merge across venues.
+            if _is_unmergeable_across_venues(ev.title):
                 clusters.append([(ev, prio)])
                 continue
             for cluster in clusters:
                 ref_ev = cluster[0][0]
-                if len((ref_ev.title or "").strip()) < 5:
+                if _is_unmergeable_across_venues(ref_ev.title):
                     continue
                 if _title_similarity(ev.title, ref_ev.title) >= 0.85:
                     cluster.append((ev, prio))
