@@ -1630,13 +1630,22 @@ document.getElementById('clearFilters').addEventListener('click', () => {
 });
 
 /* ---------- search input ---------- */
+/* Forme minuscule sans accents pour la recherche : « theatre » doit
+   trouver « Théâtre ». Même logique NFD que inferGroupForVenue. */
+function normSearch(s) {
+  return (s || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
 (function () {
   const searchEl = document.getElementById('filterSearch');
   const clearBtn = document.getElementById('filterSearchClear');
   let debounceTimer;
 
   searchEl.addEventListener('input', () => {
-    state.search = searchEl.value.trim().toLowerCase();
+    state.search = normSearch(searchEl.value.trim());
     clearBtn.style.display = state.search ? '' : 'none';
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(render, 180);
@@ -1763,9 +1772,11 @@ function filtered() {
     }
     if (state.search) {
       const q = state.search;
-      const titleMatch = (occ.title || '').toLowerCase().includes(q);
-      const venueMatch = (occ.venue || '').toLowerCase().includes(q);
-      if (!titleMatch && !venueMatch) return false;
+      const titleMatch = normSearch(occ.title).includes(q);
+      const venueMatch = normSearch(occ.venue).includes(q);
+      // subtitle porte les line-ups d'artistes (ex. Le Sucre) — cherchable
+      const subtitleMatch = normSearch(occ.subtitle).includes(q);
+      if (!titleMatch && !venueMatch && !subtitleMatch) return false;
     }
     return true;
   });
