@@ -103,7 +103,10 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str]]]:
     today_iso = date.today().isoformat()
 
     # Open-ended exhibitions: "Jusqu'au X" with no "Du" → skip
-    has_du_range = bool(re.search(r"\bdu\s+\d+\s+au\s+\d+\s", norm))
+    # "(?:er)?" everywhere below: the French ordinal "1er" has no word
+    # boundary between the digit and "er", so \d+ / (\d{1,2}) alone never
+    # match "du 1er au 3 mai" or "1er mai".
+    has_du_range = bool(re.search(r"\bdu\s+\d+(?:er)?\s+au\s+\d+(?:er)?\s", norm))
     has_jusqu = "jusqu" in norm
     if has_jusqu and not has_du_range:
         return []
@@ -120,7 +123,7 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str]]]:
 
     # Try range first: "Du X au Y mois YYYY"
     range_m = re.search(
-        r"\bdu\s+(\d{1,2})\s+au\s+(\d{1,2})\s+"
+        r"\bdu\s+(\d{1,2})(?:er)?\s+au\s+(\d{1,2})(?:er)?\s+"
         r"(janvier|fevrier|mars|avril|mai|juin|juillet|aout|"
         r"septembre|octobre|novembre|decembre)\s+(\d{4})",
         norm
@@ -151,7 +154,7 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str]]]:
 
     # Single date: take the FIRST occurrence of "DD mois YYYY"
     single_m = re.search(
-        r"\b(\d{1,2})\s+"
+        r"\b(\d{1,2})(?:er)?\s+"
         r"(janvier|fevrier|mars|avril|mai|juin|juillet|aout|"
         r"septembre|octobre|novembre|decembre)\s+(\d{4})",
         norm
@@ -166,7 +169,7 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str]]]:
         # If the resulting date is in the past, the .isoformat() < today_iso
         # check at the call site will drop it.
         fb_m = re.search(
-            r"\b(\d{1,2})\s+"
+            r"\b(\d{1,2})(?:er)?\s+"
             r"(janvier|fevrier|mars|avril|mai|juin|juillet|aout|"
             r"septembre|octobre|novembre|decembre)\b",
             norm

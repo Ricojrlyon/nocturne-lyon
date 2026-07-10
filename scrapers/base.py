@@ -57,8 +57,10 @@ def parse_french_date(text: str, default_year: Optional[int] = None) -> Optional
     if not text:
         return None
     txt = text.lower()
-    # Find day number
-    m_day = re.search(r"\b(\d{1,2})\b", txt)
+    # Find day number. "(?:er)?" handles the French ordinal "1er mai":
+    # \b(\d{1,2})\b alone cannot match it (no word boundary between "1"
+    # and "er"), so events on the 1st were silently dropped.
+    m_day = re.search(r"\b(\d{1,2})(?:er)?\b", txt)
     if not m_day:
         return None
     day = int(m_day.group(1))
