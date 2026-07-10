@@ -35,9 +35,10 @@ HEADERS = {
 
 # DD.MM  or  DD.MM.YY  (year optional)
 _DATE_RE = re.compile(r"\b(\d{2})\.(\d{2})(?:\.(\d{2}))?\b")
-# DD.MM [.YY]  au  DD.MM [.YY]
+# DD.MM [.YY]  au  DD.MM [.YY]  — la partie "au …" est obligatoire :
+# les dates simples sont gérées par _DATE_RE.
 _RANGE_RE = re.compile(
-    r"\b(\d{2})\.(\d{2})(?:\.(\d{2}))?(?:\s+au\s+(\d{2})\.(\d{2})(?:\.(\d{2}))?)?",
+    r"\b(\d{2})\.(\d{2})(?:\.(\d{2}))?\s+au\s+(\d{2})\.(\d{2})(?:\.(\d{2}))?",
     re.IGNORECASE,
 )
 # HHhMM  or  HHh
@@ -128,10 +129,7 @@ def _scrape_url(url: str) -> List[Event]:
         d_end: Optional[Date] = None
 
         # Try range first ("DD.MM au DD.MM" or "DD.MM.YY au DD.MM.YY")
-        m_range = re.search(
-            r"\b(\d{2})\.(\d{2})(?:\.(\d{2}))?\s+au\s+(\d{2})\.(\d{2})(?:\.(\d{2}))?",
-            raw_text, re.IGNORECASE,
-        )
+        m_range = _RANGE_RE.search(raw_text)
         if m_range:
             d1, m1, y1, d2, m2, y2 = m_range.groups()
             d_start = _parse_date(d1, m1, y1 or y2)
