@@ -145,7 +145,9 @@ def fetch() -> List[Event]:
             category="club",
             date_start=iso(d),
             date_end=None,
-            time="23:30",
+            # LPS ne publie pas d'heure sur la page listing — ne pas
+            # fabriquer une valeur qui serait affichée comme réelle.
+            time=None,
             url=href,
             image=image,
         ))
