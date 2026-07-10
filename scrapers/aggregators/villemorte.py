@@ -10,12 +10,18 @@ restos/cafés/dégustations.
 from __future__ import annotations
 from datetime import datetime, date
 from typing import List, Optional
+from zoneinfo import ZoneInfo
 import re
 import requests
 
 from ..base import Event
 
 API_URL = "https://agenda.villemorte.fr/api/events"
+
+# Gancio timestamps are absolute (Unix seconds); render them in the
+# venue's local time, NOT the runner's — GitHub Actions runs in UTC,
+# which shifted every displayed time by 1-2 hours.
+_TZ = ZoneInfo("Europe/Paris")
 
 # Tags (case-insensitive, normalized) we exclude entirely. If ANY tag of an
 # event matches, the event is dropped. Keep this conservative — bias toward
@@ -149,7 +155,7 @@ def fetch() -> List[Event]:
         if start_ts is None:
             continue
         try:
-            dt = datetime.fromtimestamp(int(start_ts))
+            dt = datetime.fromtimestamp(int(start_ts), tz=_TZ)
         except (ValueError, OSError, TypeError):
             continue
 
@@ -164,7 +170,7 @@ def fetch() -> List[Event]:
         end_ts = item.get("end_datetime")
         if end_ts:
             try:
-                end_dt = datetime.fromtimestamp(int(end_ts))
+                end_dt = datetime.fromtimestamp(int(end_ts), tz=_TZ)
                 if end_dt.date() > dt.date():
                     date_end = end_dt.date().isoformat()
             except (ValueError, OSError, TypeError):
