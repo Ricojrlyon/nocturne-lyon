@@ -1688,8 +1688,14 @@ function withinWhen(dateStr) {
   if (state.when === 'weekend') {
     const day = now.getDay();
     const sat = new Date(now);
-    const offsetToSat = (6 - day + 7) % 7;
-    sat.setDate(now.getDate() + offsetToSat);
+    if (day === 0) {
+      // Dimanche : le weekend courant a commencé hier — sans ce cas
+      // spécial, (6 - 0 + 7) % 7 = 6 pointait le weekend SUIVANT et
+      // excluait la soirée du dimanche en cours.
+      sat.setDate(now.getDate() - 1);
+    } else {
+      sat.setDate(now.getDate() + (6 - day));
+    }
     const sun = new Date(sat); sun.setDate(sat.getDate() + 1);
     return d.getTime() === sat.getTime() || d.getTime() === sun.getTime();
   }
