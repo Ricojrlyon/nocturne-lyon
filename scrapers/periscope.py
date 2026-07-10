@@ -18,7 +18,7 @@ import sys
 import requests
 from bs4 import BeautifulSoup, Tag
 
-from .base import Event, parse_french_date, iso, FR_MONTHS
+from .base import Event, iso, FR_MONTHS
 
 VENUE = "Le Périscope"
 SLUG = "periscope"

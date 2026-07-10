@@ -10,7 +10,7 @@ import re
 import sys
 import time as _time
 import requests
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
 from .base import Event, iso, FR_MONTHS
 
