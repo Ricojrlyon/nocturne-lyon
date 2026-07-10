@@ -1,111 +1,7 @@
 {
-  "generated_at": "2026-07-09T09:33:04.398237+00:00",
-  "count": 656,
+  "generated_at": "2026-07-10T09:30:08.584195+00:00",
+  "count": 657,
   "events": [
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "France V/S Maroc: CDM 2026",
-      "subtitle": null,
-      "category": "diffusion de match",
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/france-v-s-maroc-cdm-2026/",
-      "image": null,
-      "id": "a24b898fa7aa"
-    },
-    {
-      "venue": "La Menuiserie",
-      "venue_slug": "la-menuiserie",
-      "title": "Venrissage \"Les entre-mondes\" - Exposition de François Labourdette",
-      "subtitle": null,
-      "category": "expo",
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://agenda.villemorte.fr/event/venrissage-les-entre-mondes-exposition-de-francois-labourdette",
-      "image": null,
-      "id": "a1931a7143d1"
-    },
-    {
-      "venue": "Bar Rock'n Eat",
-      "venue_slug": "rock-n-eat",
-      "title": "CONCERT GRUNGE-  DEBARULERS + SLALOM + LES CAS PERDUS - ROCK'N'EAT",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-07-09",
-      "date_end": "2026-07-10",
-      "time": "17:00",
-      "url": "https://agenda.villemorte.fr/event/concert-grunge-debarulers-slalom-les-cas-perdus-rockneat",
-      "image": null,
-      "id": "dd61da6b9b69"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "[Concert gratuit] Edredon Sensible au HEAT",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://agenda.villemorte.fr/event/concert-gratuit-edredon-sensible-au-heat",
-      "image": null,
-      "id": "b9f8feeb53c0"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Coupe du Monde : France — Maroc",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://h-eat.eu/events/quart-de-final/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-264-576x720.png",
-      "id": "aa7e32bbeea6"
-    },
-    {
-      "venue": "Péristyle Opéra",
-      "venue_slug": "peristyle-opera",
-      "title": "Karaoké piano",
-      "subtitle": null,
-      "category": "Jeux",
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318759-karaok-piano.html",
-      "image": null,
-      "id": "6826e1d0117d"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Diversions : Edredon Sensible (live)",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://h-eat.eu/events/diversions-edredon-sensible-live/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/06/DIVERSION-2026-RS-1-576x720.png",
-      "id": "de364e5088c3"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Senflix",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": "21:00",
-      "url": "https://www.petit-bulletin.fr/agenda-311823-senflix.html",
-      "image": null,
-      "id": "f943675ab0bc"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -118,19 +14,6 @@
       "url": "https://lacommune.co/event/les-viewings-damour/",
       "image": null,
       "id": "631f96ccad88"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Atelier créatif Lyon | découverte à La Commune",
-      "subtitle": null,
-      "category": "atelier",
-      "date_start": "2026-07-10",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/atelier-decouverte/",
-      "image": null,
-      "id": "0aa6dc5b5c3c"
     },
     {
       "venue": "Place du 8 mai 1945, Lyon 8e",
@@ -209,6 +92,19 @@
       "url": "https://www.transbordeur.fr/evenement/dope-saint-jude-yanka-slmvx-10072026/",
       "image": null,
       "id": "e7e6c49f2ff6"
+    },
+    {
+      "venue": "Les Clameurs",
+      "venue_slug": "les-clameurs",
+      "title": "DRAG Show Les Dérailleurs - la Contre soirée",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-10",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/drag-show-les-derailleurs-la-contre-soiree",
+      "image": null,
+      "id": "e4bdd624677d"
     },
     {
       "venue": "Le Sonic",
@@ -404,6 +300,19 @@
       "url": "https://larayonne.org/evenement/suzanne-a-la-rayonne-lets-have-a-kiki/",
       "image": null,
       "id": "79c5ed10e087"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Demi-finale : CDM 2026",
+      "subtitle": null,
+      "category": "diffusion de match",
+      "date_start": "2026-07-14",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/france-v-s-maroc-cdm-2026/",
+      "image": null,
+      "id": "773ff12384a7"
     },
     {
       "venue": "HEAT",
@@ -952,6 +861,19 @@
       "id": "2e4cb7f3d731"
     },
     {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Résidence Physical Tool",
+      "subtitle": null,
+      "category": "dj set",
+      "date_start": "2026-08-01",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/residence-physical-tool-7/",
+      "image": null,
+      "id": "e7b38cda3a25"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Live club",
@@ -1017,6 +939,19 @@
       "id": "d8262072bccd"
     },
     {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Résidence Physical Tool",
+      "subtitle": null,
+      "category": "dj set",
+      "date_start": "2026-08-06",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/residence-physical-tool/",
+      "image": null,
+      "id": "f63f0c182e72"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Brigitte NRV + Sarah-Maï + Tony Geranno + point de suture",
@@ -1071,6 +1006,19 @@
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
+      "title": "Atelier créatif Lyon | découverte à La Commune",
+      "subtitle": null,
+      "category": "atelier",
+      "date_start": "2026-08-10",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/atelier-decouverte/",
+      "image": null,
+      "id": "3ff9ae85e835"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
       "title": "Bingo Drag",
       "subtitle": null,
       "category": "drag",
@@ -1119,6 +1067,19 @@
       "url": "https://le-sucre.eu/events/club-x-hidden-garden/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Le-Sucre_14.08-480x600.jpg",
       "id": "12247a811b16"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Résidence Physical Tool",
+      "subtitle": null,
+      "category": "dj set",
+      "date_start": "2026-08-15",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/residence-physical-tool-6/",
+      "image": null,
+      "id": "addf8d5faae1"
     },
     {
       "venue": "Grrrnd Zero",
@@ -1225,6 +1186,19 @@
       "id": "b76ac3cc8e4c"
     },
     {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Résidence Physical Tool",
+      "subtitle": null,
+      "category": "dj set",
+      "date_start": "2026-08-20",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/bingo-drag-lunch-7/",
+      "image": null,
+      "id": "35d8f52388fa"
+    },
+    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "House Yoga Club",
@@ -1327,6 +1301,19 @@
       "url": "https://le-sucre.eu/events/club-x-stand-with-lebanon/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Instagram-post-1080X1350-480x600.png",
       "id": "74a818590597"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Résidence Physical Tool",
+      "subtitle": null,
+      "category": "dj set",
+      "date_start": "2026-08-29",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/residence-physical-tool-8/",
+      "image": null,
+      "id": "b3cd3ec8e81a"
     },
     {
       "venue": "HEAT",
@@ -1435,7 +1422,7 @@
     {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
-      "title": "fantasy of a broken heart",
+      "title": "fantasy of a broken heart + suzi simonei",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-09-02",
@@ -1443,7 +1430,7 @@
       "time": "20:00",
       "url": "https://sonic-lyon.fr/evenement/fantasy-of-a-broken-heart/",
       "image": null,
-      "id": "391aab3b3d0e"
+      "id": "65ce007872b8"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -1875,6 +1862,19 @@
       "id": "8f195e0a4520"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Bientôt en vente Gratuit abonné Projection Ciné-Club : IF - Illustration Festival Courts-Métrages d'animation",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-09-23",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/cine-club-if-festival",
+      "image": null,
+      "id": "5d3100cb2ddc"
+    },
+    {
       "venue": "A Thou Bout d'Chant",
       "venue_slug": "a-thou-bout-d-chant",
       "title": "CONCERT | MARION ROCH",
@@ -1903,7 +1903,7 @@
     {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
-      "title": "Sofia",
+      "title": "Sofia + So Loli",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-09-24",
@@ -1911,7 +1911,7 @@
       "time": "20:00",
       "url": "https://sonic-lyon.fr/evenement/sofia/",
       "image": null,
-      "id": "dc02f0576746"
+      "id": "bf87b92984ef"
     },
     {
       "venue": "Marché Gare",
@@ -4421,19 +4421,6 @@
       "url": "https://le-sucre.eu/events/concert-7/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/carre-5-600x600.jpg",
       "id": "b8675ebe88aa"
-    },
-    {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Gratuit abonné Rock HOWLIN' JAWS",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-11-21",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://marchegare.fr/agenda/howlin-jaws",
-      "image": null,
-      "id": "b22165c32a6c"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -8360,6 +8347,32 @@
       "url": "https://h-eat.eu/events/chess-bar-x-heat-9/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
       "id": "c84d4e3dbfa7"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "COMPLET : Coupe du Monde : France — Maroc",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2027-07-09",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://h-eat.eu/events/quart-de-final/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-264-576x720.png",
+      "id": "f1c21dec2b53"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Diversions : Edredon Sensible (live)",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2027-07-09",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://h-eat.eu/events/diversions-edredon-sensible-live/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/06/DIVERSION-2026-RS-1-576x720.png",
+      "id": "b7d738036c09"
     },
     {
       "venue": "La Halle Tony Garnier",
