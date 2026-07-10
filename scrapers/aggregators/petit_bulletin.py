@@ -57,6 +57,14 @@ EXCLUDED_VENUE_PATTERNS = [
     "dans toute la ville",
 ]
 
+# Venues matching an excluded pattern but kept anyway. EXACT match on
+# normalized form. Les Théâtres romains de Fourvière accueillent des
+# concerts (Nuits de Fourvière), pas du théâtre — le pattern "theatre"
+# les bloquait à tort.
+ALLOWED_VENUES = {
+    "theatres romains de fourviere",
+}
+
 MONTHS_FR = {
     "janvier": 1, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
     "juin": 6, "juillet": 7, "aout": 8, "septembre": 9,
@@ -274,9 +282,10 @@ def _extract_events_from_soup(soup: BeautifulSoup) -> List[Event]:
         if _normalize(category) in EXCLUDED_CATEGORIES:
             continue
 
-        # Venue filter (substring match)
+        # Venue filter (substring match, sauf whitelist exacte)
         venue_norm = _normalize(venue)
-        if any(p in venue_norm for p in EXCLUDED_VENUE_PATTERNS):
+        if (venue_norm not in ALLOWED_VENUES
+                and any(p in venue_norm for p in EXCLUDED_VENUE_PATTERNS)):
             continue
 
         # Date filter & expansion
