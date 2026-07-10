@@ -31,8 +31,8 @@ EXCLUDED_TAGS = {
     "cafe", "brunch", "apero", "aperitif",
     "degustation", "vin", "biere",
     "bar a vin", "bar a vins", "bar a biere", "bar a bieres",
-    "repas", "buffet", "diner", "dîner",
-    "marché", "marche",
+    "repas", "buffet", "diner",
+    "marche",
 }
 
 # Venues we don't want from Ville Morte. Match is SUBSTRING on the
