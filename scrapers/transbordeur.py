@@ -13,7 +13,7 @@ On the detail page, the time appears in two reliable locations:
   2. li containing "ouverture des portes" → sibling .ts-h2 with "18h00"
 """
 from typing import List, Optional, Any
-from datetime import datetime, date as Date
+from datetime import datetime, date as Date, timedelta
 import re
 import sys
 import time as _time
@@ -255,6 +255,11 @@ def fetch() -> List[Event]:
     if not stubs:
         _diagnose_first_post()
         return []
+
+    # Cap horizon: drop events more than ~6 months out BEFORE the
+    # detail-page fetch phase — keeps the daily run fast and the JSON lean.
+    horizon = Date.today() + timedelta(days=180)
+    stubs = [s for s in stubs if s["d"] <= horizon]
 
     # Pass 2: fetch each detail page to extract time
     events: List[Event] = []

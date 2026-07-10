@@ -3,7 +3,7 @@
 Listing gives date + title. Time is on each /events/<slug>/ detail page.
 Le Sucre is a club — expect late-night times like "23:00" or "22:00".
 """
-from datetime import date
+from datetime import date, timedelta
 from typing import List, Optional
 import re
 import time as _time
@@ -117,6 +117,11 @@ def fetch() -> List[Event]:
 
         stubs.append({"date": d, "title": title, "subtitle": subtitle,
                        "category": category, "url": href, "image": image})
+
+    # Cap horizon: drop events more than ~6 months out BEFORE the
+    # detail-page fetch phase — keeps the daily run fast and the JSON lean.
+    horizon = date.today() + timedelta(days=180)
+    stubs = [s for s in stubs if s["date"] <= horizon]
 
     # Fetch detail pages for time
     events: List[Event] = []

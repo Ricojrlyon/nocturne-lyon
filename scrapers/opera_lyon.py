@@ -7,7 +7,7 @@ Strategy:
    performance time (Opera shows "20h00" or "15h00" for matinées).
 """
 from typing import List, Optional, Tuple
-from datetime import date as Date
+from datetime import date as Date, timedelta
 import re
 import sys
 import time as _time
@@ -226,6 +226,11 @@ def fetch() -> List[Event]:
             if stub["url"] not in seen_urls:
                 seen_urls.add(stub["url"])
                 all_stubs.append(stub)
+
+    # Cap horizon: drop events more than ~6 months out BEFORE the
+    # detail-page fetch phase — keeps the daily run fast and the JSON lean.
+    horizon = Date.today() + timedelta(days=180)
+    all_stubs = [s for s in all_stubs if s["d_start"] <= horizon]
 
     # Fetch detail pages for time
     events: List[Event] = []

@@ -5,7 +5,7 @@ Strategy: collect stubs from homepage, dedupe by URL, then fetch each detail pag
 once for time (in-request dedup avoids hitting the same URL twice for multi-date shows).
 """
 from typing import List, Optional
-from datetime import date as Date
+from datetime import date as Date, timedelta
 import re
 import time as _time
 import requests
@@ -188,6 +188,15 @@ def fetch() -> List[Event]:
             "title": title, "category": category,
             "url": href, "image": image,
         })
+
+    # Cap horizon: keep only dates within ~6 months and drop stubs with no
+    # remaining date BEFORE the detail-page fetch phase — the homepage lists
+    # the whole season (150+ events up to 2 years out), which made the daily
+    # run slow and the JSON bloated.
+    horizon_iso = (Date.today() + timedelta(days=180)).isoformat()
+    for stub in raw_stubs:
+        stub["date_starts"] = [ds for ds in stub["date_starts"] if ds <= horizon_iso]
+    raw_stubs = [s for s in raw_stubs if s["date_starts"]]
 
     # Pass 2: fetch each unique URL once for time
     url_to_time: dict = {}

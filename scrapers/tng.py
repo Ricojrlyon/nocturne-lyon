@@ -5,7 +5,7 @@ Time: on the detail page. TNG shows are typically 20h30 or 15h (matinée).
 Strategy: collect stubs from listing, then fetch each detail page for time.
 """
 from typing import List, Optional, Tuple
-from datetime import date as Date
+from datetime import date as Date, timedelta
 import re
 import sys
 import time as _time
@@ -205,6 +205,11 @@ def fetch() -> List[Event]:
             "title": title, "subtitle": subtitle, "d_start": d_start,
             "d_end": d_end, "url": href.split("?")[0], "image": image,
         })
+
+    # Cap horizon: drop events more than ~6 months out BEFORE the
+    # detail-page fetch phase — keeps the daily run fast and the JSON lean.
+    horizon = Date.today() + timedelta(days=180)
+    stubs = [s for s in stubs if s["d_start"] <= horizon]
 
     # Fetch detail pages for time
     events: List[Event] = []

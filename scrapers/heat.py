@@ -5,7 +5,7 @@ Strategy: collect all event URLs from listing, then fetch each detail
 page to extract the time (rate-limited to 0.4 s/request).
 """
 from typing import List, Optional
-from datetime import date as Date
+from datetime import date as Date, timedelta
 import re
 import sys
 import time as _time
@@ -174,6 +174,11 @@ def fetch() -> List[Event]:
         seen_urls.add(href)
         stubs.append({"date": d, "title": title, "url": href,
                        "category": category, "image": image})
+
+    # Cap horizon: drop events more than ~6 months out BEFORE the
+    # detail-page fetch phase — keeps the daily run fast and the JSON lean.
+    horizon = Date.today() + timedelta(days=180)
+    stubs = [s for s in stubs if s["date"] <= horizon]
 
     # Fetch detail pages for time (rate-limited)
     events: List[Event] = []
