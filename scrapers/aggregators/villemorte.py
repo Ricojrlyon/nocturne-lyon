@@ -8,7 +8,7 @@ cares about cultural events (concerts, théâtre, expos, etc.) and not
 restos/cafés/dégustations.
 """
 from __future__ import annotations
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 from typing import List, Optional
 from zoneinfo import ZoneInfo
 import re
@@ -165,13 +165,16 @@ def fetch() -> List[Event]:
 
         time_str = dt.strftime("%H:%M")
 
-        # Multi-day end
+        # Multi-day end. A party ending at 02:00 has its end_datetime on the
+        # next calendar day but is NOT a 2-day event — only treat the event
+        # as multi-day if it actually spans more than ~20 hours.
         date_end = None
         end_ts = item.get("end_datetime")
         if end_ts:
             try:
                 end_dt = datetime.fromtimestamp(int(end_ts), tz=_TZ)
-                if end_dt.date() > dt.date():
+                if (end_dt.date() > dt.date()
+                        and end_dt - dt > timedelta(hours=20)):
                     date_end = end_dt.date().isoformat()
             except (ValueError, OSError, TypeError):
                 pass
