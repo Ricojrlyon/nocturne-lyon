@@ -50,7 +50,10 @@ def _smart_year(month: int, day: int) -> int:
         candidate = Date(today.year, month, day)
     except ValueError:
         return today.year
-    return today.year + 1 if candidate < today else today.year
+    # Grâce de 15 jours (comme tng.py) : une date passée de quelques jours
+    # est un listing pas encore purgé de CETTE année, pas l'annonce de
+    # l'année prochaine — sans quoi elle devenait un événement fantôme à +1 an.
+    return today.year + 1 if (today - candidate).days > 15 else today.year
 
 
 def _normalize_month(s: str) -> Optional[int]:
