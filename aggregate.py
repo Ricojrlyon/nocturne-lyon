@@ -90,11 +90,14 @@ def main() -> int:
             report.append((name, 0, f"{type(e).__name__}: {e}"))
             print(f"[FAIL aggregator] {name}: {tb}", file=sys.stderr)
 
-    # 3) Drop past events (keep today and future).
-    today = date.today()
+    # 3) Drop past events. An event is upcoming as long as it hasn't ENDED:
+    # keep ongoing runs (date_start in the past but date_end today or later,
+    # e.g. multi-day shows) — several scrapers preserve those on purpose and
+    # the frontend knows how to render them.
+    today_iso = date.today().isoformat()
     upcoming_tagged = [
         (e, p) for e, p in all_tagged
-        if e.date_start and e.date_start >= today.isoformat()
+        if e.date_start and (e.date_end or e.date_start) >= today_iso
     ]
 
     # 4) Sanity-check URLs. Any event whose URL is not absolute (http/https)
