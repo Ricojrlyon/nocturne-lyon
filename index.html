@@ -1,0 +1,1910 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>*nocturne · lyon</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-16 -16 32 32'><g fill='%23d4a574'><rect x='-2' y='-13' width='4' height='26' rx='2'/><rect x='-2' y='-13' width='4' height='26' rx='2' transform='rotate(60)'/><rect x='-2' y='-13' width='4' height='26' rx='2' transform='rotate(120)'/></g></svg>">
+<meta name="description" content="Guide nocturne — concerts, théâtre, danse, clubs à Lyon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:           #161f25;
+    --bg-elev:      #1c272f;
+    --bg-elev-2:    #243038;
+    --ink:          #e7dfbe;        /* cream — main text */
+    --ink-soft:     #a59f86;        /* faded cream — secondary */
+    --ink-mute:     #5e6973;        /* muted blue-gray — tertiary */
+    --rule:         #2a363f;        /* very subtle line */
+    --rule-strong:  #3a4853;
+    --accent:       #e7dfbe;        /* cream accent (same as ink) */
+    --accent-glow:  rgba(231, 223, 190, 0.12);
+    --warm:         #d4a574;        /* warm tan for badges/highlights */
+    --hot:          #ff6b4a;        /* coral red for urgent / multi-day */
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter Tight', -apple-system, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    min-height: 100vh;
+    font-feature-settings: 'ss01' on, 'cv11' on;
+  }
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  @media (max-width: 720px) {
+    .container { padding: 0 20px; }
+  }
+
+  /* ---------- type primitives ---------- */
+  .display {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+  }
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-feature-settings: 'ss03' on;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead {
+    padding: 36px 0 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .masthead .container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: end;
+  }
+  .wordmark {
+    margin: 0;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+  }
+  .wordmark .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink-soft);
+    display: block;
+    margin-bottom: 14px;
+  }
+  .wordmark .label::before {
+    content: "(— ";
+    color: var(--ink-mute);
+  }
+  .wordmark .label::after {
+    content: " —)";
+    color: var(--ink-mute);
+  }
+  .wordmark-main {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(64px, 14vw, 180px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    display: block;
+  }
+  .wordmark-main .ast {
+    color: var(--warm);
+    font-style: normal;
+    display: inline-block;
+    transform: translateY(-0.18em);
+    margin-right: 0.04em;
+    font-size: 0.7em;
+    animation: ast-pulse 3.6s ease-in-out infinite;
+  }
+  @keyframes ast-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+  .wordmark-main em {
+    font-style: italic;
+    color: var(--warm);
+    margin-left: 0.04em;
+  }
+
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    text-align: right;
+    line-height: 1.7;
+  }
+  .meta .row {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    align-items: baseline;
+  }
+  .meta .key { color: var(--ink-mute); }
+  .meta .val { color: var(--ink); }
+  .meta .updated::before {
+    content: "● ";
+    color: var(--warm);
+  }
+
+  /* ---------- filters bar (sticky, collapsible) ---------- */
+  .filters {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(22, 31, 37, 0.86);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 0;
+    transition: padding 0.18s ease;
+  }
+  .filters.collapsed {
+    padding: 8px 0;
+  }
+  .filters.collapsed .filter-row.expanded-only {
+    display: none;
+  }
+  .filters.collapsed .filter-row + .filter-row {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .filter-row {
+    display: flex; flex-wrap: wrap; gap: 8px 14px;
+    align-items: center;
+    padding: 4px 0;
+  }
+  .filter-row + .filter-row {
+    border-top: 1px dashed var(--rule);
+    padding-top: 10px;
+    margin-top: 6px;
+  }
+  .filter-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: lowercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-mute);
+    flex: 0 0 auto;
+    align-self: center;
+    min-width: 64px;
+  }
+  .filter-label::before { content: "("; color: var(--ink-mute); }
+  .filter-label::after { content: ")"; color: var(--ink-mute); }
+
+  .filter-group { display: flex; flex-wrap: wrap; gap: 5px; flex: 1; min-width: 0; }
+
+  /* expand-on-collapse toggle */
+  .filters-toggle {
+    background: transparent;
+    border: 1px solid var(--rule-strong);
+    color: var(--ink-soft);
+    padding: 4px 11px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: lowercase;
+    letter-spacing: 0.08em;
+    border-radius: 999px;
+    cursor: pointer;
+    margin-left: auto;
+    display: none;
+    transition: all 0.14s ease;
+  }
+  .filters-toggle:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+  .filters.collapsed .filters-toggle {
+    display: inline-block;
+  }
+  .filters.collapsed .clear-link {
+    display: none;
+  }
+
+  /* chips */
+  /* Search input in filter bar */
+  .filter-search-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+  }
+  .filter-search {
+    width: 100%;
+    box-sizing: border-box;
+    background: transparent;
+    border: 1px solid var(--rule-strong);
+    color: var(--ink);
+    padding: 5px 28px 5px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    border-radius: 999px;
+    outline: none;
+    letter-spacing: 0.04em;
+    transition: border-color 0.16s ease;
+    -webkit-appearance: none;
+  }
+  .filter-search::placeholder { color: var(--ink-mute); }
+  .filter-search:focus { border-color: var(--ink); }
+  .filter-search-clear {
+    position: absolute;
+    right: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--ink-mute);
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 1;
+    padding: 0;
+    display: none;
+  }
+  .filter-search-clear:hover { color: var(--ink); }
+
+  .chip {
+    border: 1px solid var(--rule-strong);
+    background: transparent;
+    color: var(--ink-soft);
+    padding: 5px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.16s ease;
+    text-transform: lowercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    line-height: 1.5;
+  }
+  .chip:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+  .chip.active {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .chip.partial {
+    border-color: var(--warm);
+    color: var(--warm);
+    background: transparent;
+  }
+  .chip-group {
+    font-weight: 700;
+    text-transform: lowercase;
+  }
+  .chip-group::after {
+    content: "↘";
+    margin-left: 6px;
+    font-size: 10px;
+    display: inline-block;
+    transition: transform 0.18s ease;
+    opacity: 0.6;
+  }
+  .venue-group.expanded .chip-group::after {
+    transform: rotate(45deg);
+    opacity: 1;
+  }
+  .chip-sub { font-size: 10px; padding: 4px 10px; font-weight: 400; }
+
+  /* venue groups */
+  .venue-groups {
+    display: flex; flex-wrap: wrap; gap: 5px;
+    flex: 1;
+  }
+  .venue-group { display: contents; }
+  .venue-sublist {
+    display: none;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 9px 12px;
+    background: var(--bg-elev);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    width: 100%;
+    margin: 4px 0 2px;
+  }
+  .venue-group.expanded .venue-sublist { display: flex; }
+
+  /* date picker */
+  .datepicker-wrap { position: relative; display: inline-block; }
+  .datepicker {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: 30;
+    background: var(--bg-elev);
+    border: 1px solid var(--ink-mute);
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.5);
+    min-width: 280px;
+  }
+  .datepicker.open { display: block; }
+  .datepicker-head {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+  }
+  .datepicker-nav {
+    background: transparent;
+    border: 1px solid var(--rule-strong);
+    border-radius: 999px;
+    width: 26px; height: 26px;
+    cursor: pointer;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1;
+    transition: all 0.14s ease;
+  }
+  .datepicker-nav:hover {
+    border-color: var(--ink);
+    background: var(--bg-elev-2);
+  }
+  .datepicker-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+  }
+  .datepicker-dow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    text-align: center;
+    padding: 4px 0;
+    letter-spacing: 0.1em;
+  }
+  .datepicker-day {
+    background: transparent;
+    border: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink);
+    padding: 6px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.12s ease;
+  }
+  .datepicker-day:hover:not(.disabled) {
+    background: var(--bg-elev-2);
+  }
+  .datepicker-day.disabled { color: var(--ink-mute); cursor: not-allowed; opacity: 0.5; }
+  .datepicker-day.muted { color: var(--ink-mute); }
+  .datepicker-day.selected,
+  .datepicker-day.range-start,
+  .datepicker-day.range-end {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .datepicker-day.in-range {
+    background: var(--bg-elev-2);
+    color: var(--ink);
+    border-radius: 0;
+  }
+  .datepicker-day.range-start { border-radius: 6px 0 0 6px; }
+  .datepicker-day.range-end { border-radius: 0 6px 6px 0; }
+  .datepicker-day.range-start.range-end { border-radius: 6px; }
+  .datepicker-day.today {
+    box-shadow: inset 0 0 0 1px var(--warm);
+  }
+  .datepicker-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid var(--rule);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: lowercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    gap: 8px;
+  }
+  .datepicker-foot span { flex: 1; }
+  .datepicker-foot button {
+    background: transparent;
+    border: none;
+    color: var(--warm);
+    font-family: inherit;
+    font-size: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
+    cursor: pointer;
+    padding: 0;
+  }
+  .datepicker-foot button:hover { text-decoration: underline; }
+
+  .clear-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: lowercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-left: auto;
+    transition: color 0.14s ease;
+  }
+  .clear-link:hover { color: var(--ink); }
+  .clear-link::after {
+    content: " →";
+    color: var(--warm);
+  }
+
+  /* ---------- feed / day blocks ---------- */
+  main.feed { padding: 40px 0 80px; }
+
+  .day {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .day:last-child { border-bottom: none; }
+  @media (max-width: 960px) {
+    .day { grid-template-columns: 1fr; gap: 16px; }
+  }
+
+  .day-stamp {
+    position: sticky;
+    top: 110px;
+    align-self: start;
+  }
+  @media (max-width: 960px) {
+    .day-stamp { position: relative; top: auto; }
+  }
+  .day-num {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(56px, 7vw, 96px);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .day-num .slash {
+    color: var(--ink-mute);
+    font-style: normal;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 300;
+  }
+  .day-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink-soft);
+    margin-top: 12px;
+    line-height: 1.7;
+  }
+  .day-tag {
+    display: inline-block;
+    margin-top: 6px;
+    color: var(--warm);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+  .day-tag::before { content: "(— "; color: var(--ink-mute); }
+  .day-tag::after { content: " —)"; color: var(--ink-mute); }
+
+  /* ---------- event grid ---------- */
+  .events {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-auto-rows: 160px;
+    gap: 12px;
+  }
+  @media (min-width: 1100px) {
+    .events {
+      grid-template-columns: repeat(auto-fill, minmax(280px, calc(33.333% - 8px)));
+    }
+  }
+  @media (max-width: 560px) {
+    .events {
+      grid-template-columns: 1fr;
+      grid-auto-rows: auto;
+    }
+  }
+
+  /* Inner layout uses GRID with explicit row tracks. This is much more
+     predictable than flex + line-clamp inside a fixed-height container. */
+  .event {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 6px;
+    padding: 14px 18px 12px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 8px;
+    background: var(--bg-elev);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.18s ease;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .event::after {
+    content: "";
+    position: absolute;
+    left: 18px; right: 18px; bottom: 0;
+    height: 1px;
+    background: var(--ink);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.24s ease;
+  }
+  .event:hover {
+    border-color: var(--ink-soft);
+    background: var(--bg-elev-2);
+  }
+  .event:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Row 1: header (venue + time) — using inline-block layout instead of flex
+     to avoid baseline-alignment height bugs in grid cells */
+  .event-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;       /* center, not baseline — baseline causes height calc bugs */
+    gap: 12px;
+    min-width: 0;
+    line-height: 1.25;
+    /* Force a stable, predictable height regardless of flex quirks */
+    height: 18px;
+    flex: 0 0 auto;
+  }
+  .event-venue {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    line-height: 1.25;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .event-arr {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+    font-weight: 400;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .event-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--warm);
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+  }
+  .event-time.empty {
+    color: var(--ink-mute);
+    font-weight: 400;
+  }
+
+  /* Row 2: title fills available space, vertically centered */
+  .event-title {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    /* Display block ensures it always has dimensions in the grid cell */
+    display: block;
+    overflow: hidden;
+    /* Clamp to ~3 lines max via height (line-height 1.2 * 20px = 24px per line) */
+    max-height: calc(1.2em * 3);
+    /* Center vertically within the 1fr grid row */
+    align-self: center;
+  }
+  .event-title.placeholder {
+    color: var(--ink-mute);
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    font-style: normal;
+    letter-spacing: 0.06em;
+  }
+
+  /* Row 3: footer */
+  .event-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    align-self: end;
+  }
+  .event-cat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--ink-soft);
+    text-transform: lowercase;
+    letter-spacing: 0.1em;
+  }
+  .event-cat:empty { display: none; }
+  .event-cat::before {
+    content: "[ ";
+    color: var(--ink-mute);
+  }
+  .event-cat::after {
+    content: " ]";
+    color: var(--ink-mute);
+  }
+  .event-cat:empty::before, .event-cat:empty::after { display: none; }
+  .event-run {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--hot);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    border: 1px solid var(--hot);
+    border-radius: 999px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .event-foot-right {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .event-source {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    text-transform: lowercase;
+    letter-spacing: 0.08em;
+    padding: 2px 7px;
+    border-radius: 999px;
+    white-space: nowrap;
+    font-weight: 400;
+  }
+  .event-source.pb {
+    color: #5a7042;
+    background: rgba(90, 112, 66, 0.10);
+  }
+  .event-source.vm {
+    color: #8a5530;
+    background: rgba(138, 85, 48, 0.10);
+  }
+
+  /* Subtitle removed from main grid layout — too noisy in compact cards.
+     Keep style for if we re-enable later. */
+  .event-subtitle {
+    display: none;
+  }
+
+  /* ---------- empty state ---------- */
+  .empty-state {
+    text-align: center;
+    padding: 100px 24px;
+    color: var(--ink-soft);
+  }
+  .empty-state p {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 36px;
+    font-style: italic;
+    color: var(--ink);
+  }
+  .empty-state p::before { content: "( "; color: var(--ink-mute); }
+  .empty-state p::after { content: " )"; color: var(--ink-mute); }
+
+  /* ---------- footer ---------- */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 32px 0 48px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  footer .container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: end;
+  }
+  footer .col { line-height: 1.7; }
+  footer .col-right { text-align: right; }
+  footer a { color: var(--ink-soft); text-decoration: none; }
+  footer a:hover { color: var(--ink); }
+  footer .ind {
+    color: var(--warm);
+    margin-right: 4px;
+  }
+
+  /* ---------- mobile ---------- */
+  @media (max-width: 720px) {
+    .masthead .container { grid-template-columns: 1fr; gap: 18px; }
+    .meta { text-align: left; }
+    .meta .row { justify-content: flex-start; }
+    .filter-row { gap: 6px 10px; }
+    .filter-label { flex: 0 0 100%; margin-bottom: 4px; min-width: 0; }
+    .day-stamp { padding-bottom: 4px; }
+
+    /* Mobile cards: switch from fixed-height grid cells to content-sized flex stack.
+       Avoids overlap when title is long, and removes the "empty middle" feel. */
+    .events {
+      grid-auto-rows: auto;
+      gap: 10px;
+    }
+    .event {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      height: auto;
+      min-height: 0;
+      padding: 12px 16px 11px;
+    }
+    .event-head {
+      height: auto;
+    }
+    .event-venue {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+    }
+    .event-time {
+      font-size: 10px;
+    }
+    .event-title {
+      font-size: 17px;
+      line-height: 1.18;
+      max-height: none;
+      align-self: stretch;
+      margin-top: 2px;
+    }
+    .event-title.placeholder {
+      font-size: 10px;
+    }
+    .event-foot {
+      align-self: stretch;
+      margin-top: 2px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container">
+    <h1 class="wordmark">
+      <span class="label">guide de nuit · lyon · 2026</span>
+      <span class="wordmark-main"><span class="ast">*</span>nocturne</span>
+    </h1>
+    <div class="meta">
+      <div class="row"><span class="key">[index]</span> <span class="val" id="eventCount">—</span></div>
+      <div class="row"><span class="key">[lieux]</span> <span class="val" id="venueCount">—</span></div>
+      <div class="row updated"><span class="val" id="lastUpdated">—</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="filters" id="filters">
+  <div class="container">
+
+    <div class="filter-row always-visible">
+      <span class="filter-label">recherche</span>
+      <div class="filter-search-wrap">
+        <input class="filter-search" id="filterSearch" type="search"
+          placeholder="lieu ou événement…" autocomplete="off" spellcheck="false">
+        <button class="filter-search-clear" id="filterSearchClear" aria-label="effacer">✕</button>
+      </div>
+    </div>
+
+    <div class="filter-row always-visible">
+      <span class="filter-label">quand</span>
+      <div class="filter-group" id="filterWhen">
+        <button class="chip active" data-when="all">tout</button>
+        <button class="chip" data-when="today">ce soir</button>
+        <button class="chip" data-when="weekend">ce weekend</button>
+        <button class="chip" data-when="week">cette semaine</button>
+        <button class="chip" data-when="month">ce mois-ci</button>
+        <span class="datepicker-wrap">
+          <button class="chip" id="dateBtn" type="button">date custom →</button>
+          <div class="datepicker" id="datepicker"></div>
+        </span>
+      </div>
+      <button class="filters-toggle" id="filtersToggle">+ filtres</button>
+    </div>
+
+    <div class="filter-row expanded-only">
+      <span class="filter-label">où</span>
+      <div class="filter-group venue-groups" id="filterVenue"></div>
+    </div>
+
+    <div class="filter-row expanded-only">
+      <span class="filter-label">arr.</span>
+      <div class="filter-group" id="filterArr"></div>
+    </div>
+
+    <div class="filter-row expanded-only">
+      <span class="filter-label">type</span>
+      <div class="filter-group" id="filterCategory"></div>
+      <button class="clear-link" id="clearFilters">tout effacer</button>
+    </div>
+
+  </div>
+</nav>
+
+<main class="feed">
+  <div class="container" id="feed"></div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="col">
+      <div><span class="ind">§</span> données scrapées sur les sites des lieux</div>
+      <div><span class="ind">§</span> mise à jour quotidienne · 06h00 utc</div>
+    </div>
+    <div class="col col-right">
+      <div><a href="https://github.com/" target="_blank" rel="noopener">code source ↗</a></div>
+      <div>lyon · mmxxvi</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const FR_DAYS_FULL = ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+const FR_DAYS_SHORT = ['dim','lun','mar','mer','jeu','ven','sam'];
+const FR_MONTHS = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+
+/* ---------- venue groups ---------- */
+const VENUE_GROUPS = [
+  { name: 'spectacles & musiques', venues: ['La Halle Tony Garnier', 'Bourse du Travail', 'Radiant-Bellevue', "Agend'arts", 'Big White', 'LDLC Arena'] },
+  { name: 'soirée',                venues: ['Le Sucre', 'Le Petit Salon', 'Le Transbordeur', 'La Rayonne', 'La Marquise'] },
+  { name: 'concerts',              venues: ['Marché Gare', 'Le Sonic', 'Le Périscope', 'Toï Toï le Zinc', "L'Épicerie Moderne", "A Thou Bout d'Chant", "Bar Rock'n Eat"] },
+  { name: 'lieux hybrides',        venues: ['La Commune', 'HEAT', 'Les Subsistances', 'Grrrnd Zero', 'Boskop', "Maison de l'écologie"] },
+  { name: 'théâtre & danse',       venues: ['Opéra national de Lyon', 'TNG', 'Maison de la Danse', 'Comédie Odéon'] },
+  { name: 'classique',             venues: ['Auditorium de Lyon', 'Chapelle de la Trinité', 'Salle Molière'] },
+  /* 'musées & galeries' is dynamically populated by inferGroupForVenue
+     (anything containing musée / galerie / institut). */
+  { name: 'musées & galeries',     venues: [], dynamic: true },
+  /* 'autre' is dynamically populated at runtime with venues that appear
+     in events but aren't listed in any group above (e.g. from aggregators).
+     Note: many venues do have arrondissement mappings in VENUE_ARRONDISSEMENT
+     for the arr. filter and card label, but intentionally stay in 'autre'
+     for the venue group filter (e.g. La Salle de Bains, Café Nanoum,
+     Kraspek Myzik, Boulangerie du Prado, etc.). */
+  { name: 'autre',                 venues: [], dynamic: true },
+];
+
+/* Display order within a day:
+   soirée → concerts → spectacles & musiques → lieux hybrides
+   → théâtre & danse → classique → musées & galeries → autre.
+   Map each venue to its rank so we can sort cards by group. */
+const VENUE_DISPLAY_ORDER = ['soirée', 'concerts', 'spectacles & musiques', 'lieux hybrides', 'théâtre & danse', 'classique', 'musées & galeries', 'autre'];
+
+/* venue -> arrondissement mapping. Researched against Wikipedia, the
+   official Lyon city directory, Petit Bulletin, and venue websites.
+   Unmapped venues default to 'Autre' via eventArrondissement(). */
+const VENUE_ARRONDISSEMENT = {
+  // Lyon 1er (Terreaux, Pentes Croix-Rousse)
+  'Opéra national de Lyon': '1er',
+  'Les Subsistances': '1er',
+  'Musée des Beaux-Arts': '1er',
+  "A Thou Bout d'Chant": '1er',
+  "Maison de l'écologie": '1er',
+  'La Salle de Bains': '1er',     // 1 rue Louis Vitet
+  'La Salle de bains': '1er',     // case variant
+  "L'Alternatibar": '1er',        // case variant
+  'Alternatibar': '1er',          // 126 montée Grande-Côte
+  'Kraspek Myzik': '1er',         // 20 montée Saint-Sébastien
+  'Le Bec de Jazz': '1er',        // 19 rue Burdeau
+  'Hot Club': '1er',              // 26 rue Lanterne
+  'Salle Rameau': '1er',          // 29 rue de la Martinière
+  'La BF15': '1er',               // quai de la Pêcherie
+  'Le Bleu du Ciel': '1er',       // 12 rue des Fantasques
+  'Péristyle Opéra': '1er',       // place de la Comédie, devant l'Opéra
+
+  // Lyon 2e (Presqu'île, Confluence)
+  'Le Sucre': '2e',
+  'Marché Gare': '2e',
+  'Le Périscope': '2e',
+  'Chapelle de la Trinité': '2e',
+  'Musée des Confluences': '2e',
+  'Goethe-Institut': '2e',
+  'Galerie Henri Chartier': '2e',
+  'Comédie Odéon': '2e',          // 6 rue Grôlée
+  'Fnac Bellecour': '2e',
+
+  // Lyon 3e (Part-Dieu, Guillotière)
+  'Bourse du Travail': '3e',
+  'Auditorium de Lyon': '3e',
+  'La Marquise': '3e',            // péniche 20 quai Victor Augagneur
+  'Palais de la Mutualité - Salle Édouard Herriot': '3e', // 1 place Antonin Jutard
+  'Palais de la Mutualité Salle Edouard Herriot': '3e',   // variante sans tiret/accent
+  'Salle Des Rancy': '3e',        // 249 rue Vendôme
+  'Lieu Privé à Montchat 69003': '3e',
+  'Improvidence': '3e',           // 18 rue Villeroy
+
+  // Lyon 4e (Croix-Rousse plateau)
+  "Agend'arts": '4e',
+  'Aquarium ciné-café': '4e',     // 10 rue Dumont
+
+  // Lyon 5e (Vieux Lyon, Fourvière, Saint-Just)
+  'Musées Gadagne': '5e',
+  'Salle Molière': '5e',          // 18 quai de Bondy
+  'Le Sonic': '5e',               // péniche 4 quai des Étroits
+  'Big White': '5e',              // 22 rue Lainerie
+  'Espace Gerson': '5e',          // 1 place Gerson
+  'Maison des Passages': '5e',    // 44 rue Saint-Georges
+
+  // Lyon 6e (Brotteaux, Tête d'Or, Cité Internationale)
+  "Musée d'Art Contemporain": '6e',
+
+  // Lyon 7e (Gerland, Guillotière, Jean Macé)
+  'La Halle Tony Garnier': '7e',
+  'La Commune': '7e',             // 3 rue Pré-Gaudry
+  'Le Petit Salon': '7e',         // 3 rue de Cronstadt
+  'Boskop': '7e',                 // 60 rue Sébastien Gryphe
+  'Galerie Roger Tator': '7e',    // 36 rue d'Anvers
+  'La Boulangerie du Prado': '7e',// 69 rue Sébastien Gryphe
+  'Le Ninkasi': '7e',             // 267 rue Marcel Mérieux
+  'Le 6e Continent': '7e',        // 51 rue Saint-Michel
+  'Gamut': '7e',                  // 7 rue Prosper Chappet
+  'La Luttine': '7e',             // 91 rue Montesquieu
+  'Blue Monday': '7e',            // 32 rue Pasteur
+  'Parc Blandan': '7e',           // parc militaire réhabilité, av Berthelot
+  'Parc de Gerland': '7e',        // 24 allée Pierre de Coubertin
+
+  // Lyon 8e (Monplaisir, États-Unis, Bachut)
+  'Maison de la Danse': '8e',
+  'HEAT': '8e',
+  'Institut Lumière': '8e',       // 25 rue du Premier Film
+  'Place du 8 mai 1945, Lyon 8e': '8e',
+
+  // Lyon 9e (Vaise, La Duchère)
+  'TNG': '9e',                    // 23 rue de Bourgogne
+  "Bar Rock'n Eat": '9e',         // 32 quai d'Arloing
+
+  // Villeurbanne
+  'Le Transbordeur': 'Villeurbanne',
+  'La Rayonne': 'Villeurbanne',
+  'Toï Toï le Zinc': 'Villeurbanne',
+  'Café Nanoum': 'Villeurbanne',  // 16 rue Branly
+  'Le Rize': 'Villeurbanne',      // 23 cours de la République
+  'Villeurbanne': 'Villeurbanne', // venue générique VM
+  'Villeurbanne ENM': 'Villeurbanne',
+
+  // Autre (banlieue, Métropole)
+  'Radiant-Bellevue': 'Autre',    // Caluire-et-Cuire
+  'LDLC Arena': 'Autre',          // Décines
+  "L'Épicerie Moderne": 'Autre',  // Feyzin
+  'Grrrnd Zero': 'Autre',         // Vaulx-en-Velin
+  'La Machinerie - Bizarre !': 'Autre', // Vénissieux
+  'Domaine de Lacroix-Laval': 'Autre',  // Marcy-l'Étoile
+  "L'Aqueduc": 'Autre',           // Dardilly
+  'Jack Jack - MJC Aragon': 'Autre', // Bron
+  'Bois de Sermenaz à Rillieux-la-Pape': 'Autre',
+};
+
+const ARRONDISSEMENT_ORDER = ['1er', '2e', '3e', '4e', '5e', '6e', '7e', '8e', '9e', 'Villeurbanne', 'Autre'];
+
+function eventArrondissement(e) {
+  return VENUE_ARRONDISSEMENT[e.venue] || 'Autre';
+}
+const VENUE_GROUP_ORDER_INDEX = new Map();
+VENUE_DISPLAY_ORDER.forEach((groupName, idx) => {
+  const group = VENUE_GROUPS.find(g => g.name === groupName);
+  if (group) {
+    for (const venue of group.venues) {
+      VENUE_GROUP_ORDER_INDEX.set(venue, idx);
+    }
+  }
+});
+
+/* ---------- type buckets ---------- */
+const TYPE_BUCKETS = [
+  // Music sub-genres FIRST (order matters: first regex match wins).
+  // The previous single "musique" bucket was too broad; with aggregators
+  // bringing in 100+ events per scrape, having sub-genres is essential.
+  { key: 'club',        label: 'club',        match: /\belectro|techno|house|trance|drum.?n.?bass|\bdnb\b|\bdj\b|soir[ée]e|club\b|after/i },
+  { key: 'jazz',        label: 'jazz',        match: /\bjazz|\bblues|\bswing\b|\bimpro\b/i },
+  { key: 'rock',        label: 'rock & pop',  match: /\brock\b|\bpop\b|m[ée]tal|punk\b|indie|garage\b|hardcore/i },
+  // 'rap' BEFORE 'chanson' so "Hip Hop / Rap" doesn't get caught by chanson's
+  // \brap\b leftover (which has now been removed). Trap is rare but distinct.
+  { key: 'rap',         label: 'rap',         match: /\brap\b|hip[\s-]?hop|\btrap\b|\brnb\b|\br&b\b/i },
+  { key: 'chanson',     label: 'chanson',     match: /chanson|\bfolk\b|country|francophone|slam\b|po[ée]sie/i },
+  // 'reggae' BEFORE 'monde' since reggae sometimes gets bundled under 'world music'.
+  { key: 'reggae',      label: 'reggae',      match: /reggae|\bdub\b|\bska\b|dancehall|rocksteady/i },
+  { key: 'classique',   label: 'classique',   match: /classique|symphon|op[ée]ra|musique\s*sacr|musique\s*de\s*chambre|baroque/i },
+  { key: 'monde',       label: 'monde',       match: /sono\s*mondiale|fado|musique\s*du\s*monde|\bworld\b|tradition|flamenco|tango|fanfare/i },
+  // 'atelier' BEFORE the 'musique' catch-all so "Atelier de musique" goes to
+  // atelier rather than musique.
+  { key: 'atelier',     label: 'atelier',     match: /atelier|workshop|stage\s+de|masterclass|formation/i },
+  // Generic music catch-all (for events tagged just "concert" or "musique"
+  // without specifying a subgenre). Comes AFTER the specific genres.
+  { key: 'musique',     label: 'musique',     match: /musique|concert/i },
+  // Non-music. humour BEFORE theatre because "Humour & Café Théâtre" must
+  // go to humour (theatre regex would match the "Théâtre" substring).
+  // Note: 'théâtre' has circumflex â, so the regex uses [aâ]tre to match
+  // both "theatre" (no accent) and "théâtre" (with accent) variants.
+  { key: 'humour',      label: 'humour',      match: /humour|stand[\s-]?up|one[\s-]?man|comedy|caf[ée][\s-]*th[ée][aâ]tre/i },
+  { key: 'theatre',     label: 'théâtre',     match: /th[ée][aâ]tre|spectacle\s*musical|com[ée]die\s*musicale|cabaret/i },
+  { key: 'danse',       label: 'danse',       match: /danse|ballet|cho[ré]graph/i },
+  { key: 'expo',        label: 'expo',        match: /\bexpo|exposition|vernissage|installation/i },
+  { key: 'cine',        label: 'ciné',        match: /cin[ée]ma|projection|s[ée]ance|documentaire|court[\s-]?m[ée]trage/i },
+  { key: 'conference',  label: 'conférence',  match: /conf[ée]rence|rencontre|d[ée]bat|table\s*ronde|discussion|colloque|lecture/i },
+];
+function bucketOf(rawCategory) {
+  if (!rawCategory) return 'autre';
+  for (const b of TYPE_BUCKETS) {
+    if (b.match.test(rawCategory)) return b.key;
+  }
+  return 'autre';
+}
+const ALL_BUCKETS = [...TYPE_BUCKETS, { key: 'autre', label: 'autre' }];
+
+/* ---------- state ---------- */
+const state = {
+  when: 'all',
+  customRange: null,
+  venues: new Set(),
+  arrondissements: new Set(),
+  buckets: new Set(),
+  search: '',          // free text search: venue name or event title
+  events: [],
+};
+
+function isoOf(d) {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const dd = String(d.getDate()).padStart(2, '0');
+  return y + '-' + m + '-' + dd;
+}
+function parseIso(s) { return new Date(s + 'T00:00:00'); }
+
+/* ---------- date picker ---------- */
+let dpMonth = (() => { const d = new Date(); d.setDate(1); return d; })();
+let dpRangeAnchor = null;
+
+function renderDatepicker() {
+  const dp = document.getElementById('datepicker');
+  const ref = new Date(dpMonth);
+  const year = ref.getFullYear();
+  const month = ref.getMonth();
+  const today = new Date(); today.setHours(0,0,0,0);
+
+  const monthName = FR_MONTHS[month] + ' ' + year;
+  const firstWeekday = (new Date(year, month, 1).getDay() + 6) % 7;
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const daysInPrevMonth = new Date(year, month, 0).getDate();
+
+  const rangeStart = state.customRange ? parseIso(state.customRange.start) : null;
+  const rangeEnd   = state.customRange ? parseIso(state.customRange.end)   : null;
+
+  const cells = [];
+  for (let i = firstWeekday; i > 0; i--) {
+    const day = daysInPrevMonth - i + 1;
+    const d = new Date(year, month - 1, day);
+    cells.push({ d, muted: true, disabled: d < today });
+  }
+  for (let day = 1; day <= daysInMonth; day++) {
+    const d = new Date(year, month, day);
+    cells.push({ d, muted: false, disabled: d < today });
+  }
+  while (cells.length % 7 !== 0) {
+    const last = cells[cells.length - 1].d;
+    const d = new Date(last); d.setDate(last.getDate() + 1);
+    cells.push({ d, muted: true, disabled: false });
+  }
+
+  let html = '';
+  html += '<div class="datepicker-head">';
+  html += '  <button class="datepicker-nav" data-nav="prev" aria-label="mois précédent">‹</button>';
+  html += '  <span>' + monthName + '</span>';
+  html += '  <button class="datepicker-nav" data-nav="next" aria-label="mois suivant">›</button>';
+  html += '</div>';
+  html += '<div class="datepicker-grid">';
+  for (const dow of ['lu','ma','me','je','ve','sa','di']) {
+    html += '<div class="datepicker-dow">' + dow + '</div>';
+  }
+  for (const cell of cells) {
+    const cls = ['datepicker-day'];
+    if (cell.muted) cls.push('muted');
+    if (cell.disabled) cls.push('disabled');
+    if (cell.d.getTime() === today.getTime()) cls.push('today');
+    if (rangeStart && rangeEnd) {
+      const sameStart = cell.d.getTime() === rangeStart.getTime();
+      const sameEnd = cell.d.getTime() === rangeEnd.getTime();
+      if (sameStart) cls.push('range-start');
+      if (sameEnd) cls.push('range-end');
+      if (cell.d > rangeStart && cell.d < rangeEnd) cls.push('in-range');
+      if (sameStart && sameEnd) cls.push('selected');
+    } else if (dpRangeAnchor && cell.d.getTime() === dpRangeAnchor.getTime()) {
+      cls.push('range-start');
+    }
+    const iso = isoOf(cell.d);
+    const dis = cell.disabled ? 'disabled' : '';
+    html += '<button class="' + cls.join(' ') + '" data-day="' + iso + '" ' + dis + '>'
+          + cell.d.getDate() + '</button>';
+  }
+  html += '</div>';
+  html += '<div class="datepicker-foot">';
+  if (state.customRange) {
+    const s = parseIso(state.customRange.start);
+    const e = parseIso(state.customRange.end);
+    if (state.customRange.start === state.customRange.end) {
+      html += '<span>' + s.getDate() + ' ' + FR_MONTHS[s.getMonth()].slice(0,4) + '</span>';
+    } else {
+      html += '<span>' + s.getDate() + ' ' + FR_MONTHS[s.getMonth()].slice(0,4)
+            + ' → ' + e.getDate() + ' ' + FR_MONTHS[e.getMonth()].slice(0,4) + '</span>';
+    }
+    html += '<button data-action="clear">effacer</button>';
+  } else if (dpRangeAnchor) {
+    html += '<span>début : ' + dpRangeAnchor.getDate() + ' '
+          + FR_MONTHS[dpRangeAnchor.getMonth()].slice(0,4) + '</span>';
+    html += '<button data-action="cancel">annuler</button>';
+  } else {
+    html += '<span>1 jour ou 2 clics</span>';
+    html += '<button data-action="close">fermer</button>';
+  }
+  html += '</div>';
+
+  dp.innerHTML = html;
+}
+
+function openDatepicker() {
+  document.getElementById('datepicker').classList.add('open');
+  dpRangeAnchor = null;
+  renderDatepicker();
+}
+function closeDatepicker() {
+  document.getElementById('datepicker').classList.remove('open');
+  dpRangeAnchor = null;
+}
+function isDatepickerOpen() {
+  return document.getElementById('datepicker').classList.contains('open');
+}
+
+document.getElementById('dateBtn').addEventListener('click', e => {
+  e.stopPropagation();
+  if (isDatepickerOpen()) closeDatepicker();
+  else openDatepicker();
+});
+
+document.getElementById('datepicker').addEventListener('click', e => {
+  e.stopPropagation();
+  const navBtn = e.target.closest('[data-nav]');
+  if (navBtn) {
+    const dir = navBtn.dataset.nav === 'prev' ? -1 : 1;
+    dpMonth = new Date(dpMonth.getFullYear(), dpMonth.getMonth() + dir, 1);
+    renderDatepicker();
+    return;
+  }
+  const dayBtn = e.target.closest('[data-day]:not([disabled])');
+  if (dayBtn) {
+    const isoStr = dayBtn.dataset.day;
+    const d = parseIso(isoStr);
+    if (!dpRangeAnchor) {
+      dpRangeAnchor = d;
+      renderDatepicker();
+    } else {
+      let start = dpRangeAnchor, end = d;
+      if (end < start) { [start, end] = [end, start]; }
+      state.customRange = { start: isoOf(start), end: isoOf(end) };
+      state.when = 'custom';
+      document.querySelectorAll('#filterWhen .chip[data-when]').forEach(c => c.classList.remove('active'));
+      document.getElementById('dateBtn').classList.add('active');
+      dpRangeAnchor = null;
+      renderDatepicker();
+      setTimeout(closeDatepicker, 250);
+      render();
+    }
+    return;
+  }
+  const action = e.target.closest('[data-action]');
+  if (action) {
+    if (action.dataset.action === 'clear') {
+      state.customRange = null;
+      state.when = 'all';
+      document.querySelectorAll('#filterWhen .chip[data-when]').forEach(c => c.classList.remove('active'));
+      document.querySelector('#filterWhen .chip[data-when="all"]').classList.add('active');
+      document.getElementById('dateBtn').classList.remove('active');
+      renderDatepicker();
+      render();
+    } else if (action.dataset.action === 'cancel') {
+      dpRangeAnchor = null;
+      renderDatepicker();
+    } else if (action.dataset.action === 'close') {
+      closeDatepicker();
+    }
+  }
+});
+
+document.addEventListener('click', e => {
+  if (!isDatepickerOpen()) return;
+  if (e.target.closest('#dateBtn') || e.target.closest('#datepicker')) return;
+  closeDatepicker();
+});
+
+/* ---------- main load ---------- */
+async function load() {
+  // Fetch events and auto-geocoded arrondissements in parallel.
+  // venue_arrondissements.json is generated by aggregate.py (scrapers/geo.py).
+  // It only contains venues NOT already in the hardcoded VENUE_ARRONDISSEMENT
+  // map above. If the file is missing (first run, local dev), we silently
+  // ignore it — the hardcoded map is still fully functional.
+  const [eventsRes, geoRes] = await Promise.allSettled([
+    fetch('events.json', { cache: 'no-store' }),
+    fetch('venue_arrondissements.json', { cache: 'no-store' }),
+  ]);
+
+  if (eventsRes.status === 'rejected') throw eventsRes.reason;
+  const data = await eventsRes.value.json();
+  state.events = data.events || [];
+
+  // Merge geocoded arrondissements into VENUE_ARRONDISSEMENT.
+  // Hardcoded entries win on conflict (they've been manually verified).
+  if (geoRes.status === 'fulfilled' && geoRes.value.ok) {
+    try {
+      const geo = await geoRes.value.json();
+      for (const [venue, entry] of Object.entries(geo)) {
+        if (VENUE_ARRONDISSEMENT[venue]) continue;  // hardcoded wins
+        if (entry.arr) VENUE_ARRONDISSEMENT[venue] = entry.arr;
+      }
+    } catch (_) { /* malformed JSON — ignore */ }
+  }
+
+  buildVenueHomepages();
+
+  // Counts in the masthead
+  const totalCount = state.events.length;
+  const venueCount = new Set(state.events.map(e => e.venue)).size;
+  document.getElementById('eventCount').textContent = String(totalCount).padStart(3, '0') + ' évts';
+  document.getElementById('venueCount').textContent = String(venueCount).padStart(2, '0');
+  document.getElementById('lastUpdated').textContent =
+    'maj ' + formatUpdated(data.generated_at);
+
+  buildVenueFilters();
+  buildArrondissementFilters();
+  buildTypeFilters();
+  render();
+}
+
+function formatUpdated(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' })
+       + ' · ' + d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+}
+
+/* ---------- source detection (Petit Bulletin / Ville Morte / venue scraper) ---------- */
+function eventSource(e) {
+  const url = (e.url || '').toLowerCase();
+  if (url.includes('petit-bulletin.fr')) return 'pb';
+  if (url.includes('villemorte.fr')) return 'vm';
+  return 'venue';
+}
+
+function sourceSortIndex(e) {
+  const s = eventSource(e);
+  if (s === 'venue') return 0;
+  if (s === 'pb') return 1;
+  if (s === 'vm') return 2;
+  return 3;
+}
+
+function sourceBadgeHtml(e) {
+  // If this event happens at a venue we scrape directly, the card links to the
+  // venue's own site (see eventHref) and is shown as a venue card — so we don't
+  // tag it "petit bulletin" / "ville morte", even when the data originally came
+  // from an aggregator. Only events at venues we DON'T scrape keep their badge.
+  if (venueHomepage[e.venue]) return '';
+  const s = eventSource(e);
+  if (s === 'pb') return '<span class="event-source pb">petit bulletin</span>';
+  if (s === 'vm') return '<span class="event-source vm">ville morte</span>';
+  return '';
+}
+
+/* ---------- prefer the scraped venue's own site over aggregator links ----------
+   Built at load time: for each venue we scrape directly, record the homepage
+   (scheme://host) taken from any of its scraper events. Then, when an event is
+   sourced from an aggregator (Petit Bulletin / Ville Morte) but happens at a
+   venue we also scrape, the card links to the venue's own site instead of the
+   aggregator's event page. Venues we don't scrape keep their aggregator link
+   (it's the best/only URL we have for them). */
+const venueHomepage = {};
+function buildVenueHomepages() {
+  for (const e of state.events) {
+    if (eventSource(e) !== 'venue') continue;       // only real scraper events
+    if (venueHomepage[e.venue]) continue;           // first one wins
+    try {
+      const u = new URL(e.url);
+      venueHomepage[e.venue] = u.protocol + '//' + u.host + '/';
+    } catch (_) { /* ignore malformed URLs */ }
+  }
+}
+
+function eventHref(e) {
+  // Aggregator-sourced event at a venue we scrape -> link to the venue's site.
+  if (eventSource(e) !== 'venue' && venueHomepage[e.venue]) {
+    return venueHomepage[e.venue];
+  }
+  return e.url;
+}
+
+/* ---------- build venue groups ---------- */
+
+/* Auto-promotion: when a new venue from aggregators contains certain
+   keywords in its name (accents/case-insensitive), it goes to the matching
+   group instead of falling into 'autre'.
+   - musée / musee / galerie / institut → musées & galeries
+   (Theatre venues are blocked at the scraper level — see EXCLUDED_VENUE_PATTERNS
+   in villemorte.py and petit_bulletin.py — so they never reach this code.) */
+function inferGroupForVenue(venueName) {
+  const norm = (venueName || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+  if (norm.includes('musee') || norm.includes('galerie') || norm.includes('institut')) {
+    return 'musées & galeries';
+  }
+  return null;
+}
+
+/* Rebuilds VENUE_GROUP_ORDER_INDEX from VENUE_GROUPS — call this after any
+   dynamic mutation (auto-promotion or autre population) so card sorting
+   picks up the new venues. */
+function rebuildVenueGroupOrderIndex() {
+  VENUE_GROUP_ORDER_INDEX.clear();
+  VENUE_DISPLAY_ORDER.forEach((groupName, idx) => {
+    const group = VENUE_GROUPS.find(g => g.name === groupName);
+    if (group) {
+      for (const venue of group.venues) {
+        VENUE_GROUP_ORDER_INDEX.set(venue, idx);
+      }
+    }
+  });
+}
+
+function buildVenueFilters() {
+  const container = document.getElementById('filterVenue');
+  container.innerHTML = '';
+  const venuesWithEvents = new Set(state.events.map(e => e.venue));
+
+  // Step 1: collect all venues currently known (static groups, NOT including 'autre').
+  const knownVenues = new Set();
+  for (const g of VENUE_GROUPS) {
+    if (g.name === 'autre') continue;
+    for (const v of g.venues) knownVenues.add(v);
+  }
+
+  // Step 2: auto-promote unknown venues whose name implies a specific group
+  // (e.g. anything with "théâtre" -> théâtre & danse). This must happen
+  // BEFORE we compute 'autre', so promoted venues don't double-appear.
+  const unknownInEvents = new Set();
+  for (const e of state.events) {
+    if (e.venue && !knownVenues.has(e.venue)) unknownInEvents.add(e.venue);
+  }
+  for (const v of unknownInEvents) {
+    const targetGroupName = inferGroupForVenue(v);
+    if (!targetGroupName) continue;
+    const targetGroup = VENUE_GROUPS.find(g => g.name === targetGroupName);
+    if (targetGroup && !targetGroup.venues.includes(v)) {
+      targetGroup.venues.push(v);
+      knownVenues.add(v);
+    }
+  }
+
+  // Step 3: everything still unknown falls into 'autre'. Threshold: >= 1 event.
+  const autreVenueCounts = new Map();
+  for (const e of state.events) {
+    if (!e.venue || knownVenues.has(e.venue)) continue;
+    autreVenueCounts.set(e.venue, (autreVenueCounts.get(e.venue) || 0) + 1);
+  }
+  const autreGroup = VENUE_GROUPS.find(g => g.name === 'autre');
+  if (autreGroup) {
+    // Sorted by event count desc, then by name asc
+    autreGroup.venues = [...autreVenueCounts.entries()]
+      .filter(([, count]) => count >= 1)
+      .sort((a, b) => (b[1] - a[1]) || a[0].localeCompare(b[0]))
+      .map(([name]) => name);
+  }
+
+  // Step 4: refresh the venue-to-group sort index so dynamically added
+  // venues sort correctly in the day-by-day card listing.
+  rebuildVenueGroupOrderIndex();
+
+  for (const group of VENUE_GROUPS) {
+    // Skip 'autre' if no venues
+    if (group.name === 'autre' && (!group.venues || group.venues.length === 0)) continue;
+
+    const groupEl = document.createElement('div');
+    groupEl.className = 'venue-group';
+    groupEl.dataset.group = group.name;
+
+    const groupChip = document.createElement('button');
+    groupChip.className = 'chip chip-group';
+    // For 'autre', show a counter "(+N)"
+    if (group.name === 'autre') {
+      groupChip.textContent = `autre (+${group.venues.length})`;
+    } else {
+      groupChip.textContent = group.name;
+    }
+    groupChip.addEventListener('click', e => {
+      e.stopPropagation();
+      handleGroupClick(group, groupEl, groupChip);
+    });
+
+    const sublist = document.createElement('div');
+    sublist.className = 'venue-sublist';
+    for (const venueName of group.venues) {
+      const venueChip = document.createElement('button');
+      venueChip.className = 'chip chip-sub';
+      venueChip.textContent = venueName.toLowerCase();
+      venueChip.dataset.venue = venueName;
+      if (!venuesWithEvents.has(venueName)) {
+        venueChip.style.opacity = '0.4';
+        venueChip.title = 'aucun événement';
+      }
+      venueChip.addEventListener('click', e => {
+        e.stopPropagation();
+        toggleVenue(venueName, venueChip, group, groupEl, groupChip);
+      });
+      sublist.appendChild(venueChip);
+    }
+
+    groupEl.appendChild(groupChip);
+    groupEl.appendChild(sublist);
+    container.appendChild(groupEl);
+  }
+}
+
+function handleGroupClick(group, groupEl, groupChip) {
+  // First click: just expand/collapse
+  if (!groupEl.classList.contains('expanded')) {
+    groupEl.classList.add('expanded');
+    return;
+  }
+  // Already expanded: behave as bulk select / deselect
+  const wasFullySelected = group.venues.every(v => state.venues.has(v));
+  if (wasFullySelected) {
+    group.venues.forEach(v => state.venues.delete(v));
+    groupEl.querySelectorAll('.chip-sub').forEach(c => c.classList.remove('active'));
+    groupChip.classList.remove('active', 'partial');
+    groupEl.classList.remove('expanded');
+  } else {
+    group.venues.forEach(v => state.venues.add(v));
+    groupEl.querySelectorAll('.chip-sub').forEach(c => c.classList.add('active'));
+    groupChip.classList.add('active');
+    groupChip.classList.remove('partial');
+  }
+  render();
+}
+
+function toggleVenue(venueName, venueChip, group, groupEl, groupChip) {
+  groupEl.classList.add('expanded');
+  if (state.venues.has(venueName)) {
+    state.venues.delete(venueName);
+    venueChip.classList.remove('active');
+  } else {
+    state.venues.add(venueName);
+    venueChip.classList.add('active');
+  }
+  const selectedInGroup = group.venues.filter(v => state.venues.has(v)).length;
+  if (selectedInGroup === 0) {
+    groupChip.classList.remove('active', 'partial');
+  } else if (selectedInGroup === group.venues.length) {
+    groupChip.classList.add('active');
+    groupChip.classList.remove('partial');
+  } else {
+    groupChip.classList.remove('active');
+    groupChip.classList.add('partial');
+  }
+  render();
+}
+
+/* ---------- build arrondissement chips ---------- */
+function buildArrondissementFilters() {
+  const container = document.getElementById('filterArr');
+  container.innerHTML = '';
+  // Only show arrondissements that actually have events
+  const present = new Set();
+  for (const e of state.events) present.add(eventArrondissement(e));
+
+  for (const arr of ARRONDISSEMENT_ORDER) {
+    if (!present.has(arr)) continue;
+    const btn = document.createElement('button');
+    btn.className = 'chip';
+    btn.textContent = arr;
+    btn.dataset.arr = arr;
+    btn.addEventListener('click', () => {
+      if (state.arrondissements.has(arr)) {
+        state.arrondissements.delete(arr);
+        btn.classList.remove('active');
+      } else {
+        state.arrondissements.add(arr);
+        btn.classList.add('active');
+      }
+      render();
+    });
+    container.appendChild(btn);
+  }
+}
+
+/* ---------- build type buckets ---------- */
+function buildTypeFilters() {
+  const container = document.getElementById('filterCategory');
+  container.innerHTML = '';
+  const present = new Set();
+  for (const e of state.events) present.add(bucketOf(e.category));
+
+  for (const b of ALL_BUCKETS) {
+    if (!present.has(b.key)) continue;
+    const btn = document.createElement('button');
+    btn.className = 'chip';
+    btn.textContent = b.label;
+    btn.dataset.bucket = b.key;
+    btn.addEventListener('click', () => {
+      if (state.buckets.has(b.key)) {
+        state.buckets.delete(b.key);
+        btn.classList.remove('active');
+      } else {
+        state.buckets.add(b.key);
+        btn.classList.add('active');
+      }
+      render();
+    });
+    container.appendChild(btn);
+  }
+}
+
+/* ---------- when filter ---------- */
+document.getElementById('filterWhen').addEventListener('click', e => {
+  if (!e.target.matches('.chip[data-when]')) return;
+  document.querySelectorAll('#filterWhen .chip').forEach(c => c.classList.remove('active'));
+  document.getElementById('dateBtn').classList.remove('active');
+  e.target.classList.add('active');
+  state.when = e.target.dataset.when;
+  state.customRange = null;
+  closeDatepicker();
+  render();
+});
+
+document.getElementById('clearFilters').addEventListener('click', () => {
+  state.when = 'all';
+  state.customRange = null;
+  state.venues.clear();
+  state.arrondissements.clear();
+  state.buckets.clear();
+  state.search = '';
+  const searchEl = document.getElementById('filterSearch');
+  if (searchEl) searchEl.value = '';
+  document.getElementById('filterSearchClear').style.display = 'none';
+  document.querySelectorAll('.chip.active, .chip.partial').forEach(c => {
+    c.classList.remove('active', 'partial');
+  });
+  document.querySelectorAll('.venue-group.expanded').forEach(g => g.classList.remove('expanded'));
+  document.querySelector('#filterWhen .chip[data-when="all"]').classList.add('active');
+  document.getElementById('dateBtn').classList.remove('active');
+  closeDatepicker();
+  render();
+});
+
+/* ---------- search input ---------- */
+(function () {
+  const searchEl = document.getElementById('filterSearch');
+  const clearBtn = document.getElementById('filterSearchClear');
+  let debounceTimer;
+
+  searchEl.addEventListener('input', () => {
+    state.search = searchEl.value.trim().toLowerCase();
+    clearBtn.style.display = state.search ? '' : 'none';
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(render, 180);
+  });
+
+  searchEl.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      state.search = '';
+      searchEl.value = '';
+      clearBtn.style.display = 'none';
+      render();
+      searchEl.blur();
+    }
+  });
+
+  clearBtn.addEventListener('click', () => {
+    state.search = '';
+    searchEl.value = '';
+    clearBtn.style.display = 'none';
+    render();
+    searchEl.focus();
+  });
+})();
+
+/* ---------- collapse on scroll ---------- */
+const filtersEl = document.getElementById('filters');
+const toggleEl = document.getElementById('filtersToggle');
+let userExpandedWhileCollapsed = false;
+
+function updateFiltersCollapsed() {
+  const shouldCollapse = window.scrollY > 120 && !userExpandedWhileCollapsed;
+  filtersEl.classList.toggle('collapsed', shouldCollapse);
+}
+toggleEl.addEventListener('click', () => {
+  userExpandedWhileCollapsed = !userExpandedWhileCollapsed;
+  updateFiltersCollapsed();
+});
+window.addEventListener('scroll', () => {
+  if (window.scrollY < 60) userExpandedWhileCollapsed = false;
+  updateFiltersCollapsed();
+}, { passive: true });
+
+/* ---------- when matching ---------- */
+function withinWhen(dateStr) {
+  const d = parseIso(dateStr);
+  const now = new Date(); now.setHours(0,0,0,0);
+  if (state.when === 'all') return true;
+  if (state.when === 'today') return d.getTime() === now.getTime();
+  if (state.when === 'weekend') {
+    const day = now.getDay();
+    const sat = new Date(now);
+    const offsetToSat = (6 - day + 7) % 7;
+    sat.setDate(now.getDate() + offsetToSat);
+    const sun = new Date(sat); sun.setDate(sat.getDate() + 1);
+    return d.getTime() === sat.getTime() || d.getTime() === sun.getTime();
+  }
+  if (state.when === 'week') {
+    const inSevenDays = new Date(now);
+    inSevenDays.setDate(now.getDate() + 7);
+    return d >= now && d <= inSevenDays;
+  }
+  if (state.when === 'month') {
+    return d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth();
+  }
+  if (state.when === 'custom' && state.customRange) {
+    const start = parseIso(state.customRange.start);
+    const end = parseIso(state.customRange.end);
+    return d >= start && d <= end;
+  }
+  return true;
+}
+
+/* ---------- expand multi-day ---------- */
+const LONG_RUN_THRESHOLD = 30;
+function expandOccurrences(events) {
+  const out = [];
+  for (const e of events) {
+    const start = parseIso(e.date_start);
+    const end = e.date_end ? parseIso(e.date_end) : start;
+    const dayMs = 86400000;
+    const totalDays = Math.round((end - start) / dayMs) + 1;
+    if (totalDays > LONG_RUN_THRESHOLD) {
+      out.push({ ...e, _date: e.date_start, _dayIndex: 1, _totalDays: totalDays, _isLongRun: true });
+      continue;
+    }
+    for (let i = 0; i < totalDays; i++) {
+      const d = new Date(start);
+      d.setDate(start.getDate() + i);
+      out.push({
+        ...e,
+        _date: isoOf(d),
+        _dayIndex: i + 1,
+        _totalDays: totalDays,
+        _isLongRun: false,
+      });
+    }
+  }
+  return out;
+}
+
+function filtered() {
+  const now = new Date(); now.setHours(0,0,0,0);
+  const upcoming = state.events.filter(e => {
+    const start = parseIso(e.date_start);
+    const end = e.date_end ? parseIso(e.date_end) : start;
+    return end >= now;
+  });
+  const occurrences = expandOccurrences(upcoming);
+  return occurrences.filter(occ => {
+    const occDate = parseIso(occ._date);
+    if (occDate < now) return false;
+    if (!withinWhen(occ._date)) return false;
+    if (state.venues.size && !state.venues.has(occ.venue)) return false;
+    if (state.arrondissements.size && !state.arrondissements.has(eventArrondissement(occ))) return false;
+    if (state.buckets.size) {
+      const b = bucketOf(occ.category);
+      if (!state.buckets.has(b)) return false;
+    }
+    if (state.search) {
+      const q = state.search;
+      const titleMatch = (occ.title || '').toLowerCase().includes(q);
+      const venueMatch = (occ.venue || '').toLowerCase().includes(q);
+      if (!titleMatch && !venueMatch) return false;
+    }
+    return true;
+  });
+}
+
+/* ---------- render ---------- */
+function render() {
+  const feed = document.getElementById('feed');
+  const events = filtered();
+
+  if (events.length === 0) {
+    feed.innerHTML = '<div class="empty-state"><p>rien dans ce filtre</p></div>';
+    return;
+  }
+
+  const groups = new Map();
+  for (const e of events) {
+    if (!groups.has(e._date)) groups.set(e._date, []);
+    groups.get(e._date).push(e);
+  }
+  const sortedDates = Array.from(groups.keys()).sort();
+  const today = new Date(); today.setHours(0,0,0,0);
+  const html = [];
+
+  for (const iso of sortedDates) {
+    const list = groups.get(iso);
+    // Sort within a day:
+    //   1. by venue group (concerts → soirée → hybrides → spectacles & musiques → théâtre)
+    //   2. by source (venue scraper first, then Petit Bulletin, then Ville Morte)
+    //   3. then by time (events without a time go last, sorted alphabetically by venue)
+    list.sort((a, b) => {
+      const ga = VENUE_GROUP_ORDER_INDEX.get(a.venue);
+      const gb = VENUE_GROUP_ORDER_INDEX.get(b.venue);
+      // venues not found in any group fall to the end (large index)
+      const ia = ga === undefined ? 999 : ga;
+      const ib = gb === undefined ? 999 : gb;
+      if (ia !== ib) return ia - ib;
+      // same group: scraped venues first, then aggregators
+      const sa = sourceSortIndex(a);
+      const sb = sourceSortIndex(b);
+      if (sa !== sb) return sa - sb;
+      // same group + same source: compare time (missing time = 99:99 = last)
+      const ta = a.time || '99:99';
+      const tb = b.time || '99:99';
+      if (ta !== tb) return ta.localeCompare(tb);
+      // same time: alphabetical by venue then title for stable ordering
+      const va = (a.venue || '').localeCompare(b.venue || '');
+      if (va !== 0) return va;
+      return (a.title || '').localeCompare(b.title || '');
+    });
+    const d = parseIso(iso);
+    const isToday = d.getTime() === today.getTime();
+    const isTomorrow = d.getTime() === today.getTime() + 86400000;
+    let tag = '';
+    if (isToday) tag = "aujourd'hui";
+    else if (isTomorrow) tag = 'demain';
+    else if (d < new Date(today.getTime() + 7 * 86400000)) tag = 'cette semaine';
+
+    const dd = String(d.getDate()).padStart(2, '0');
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+
+    html.push('<section class="day">');
+    html.push('  <div class="day-stamp">');
+    html.push('    <h2 class="day-num">' + dd + '<span class="slash">/</span>' + mm + '</h2>');
+    html.push('    <div class="day-meta">');
+    html.push('      ' + FR_DAYS_FULL[d.getDay()] + ' · ' + FR_MONTHS[d.getMonth()]);
+    if (tag) html.push('      <br><span class="day-tag">' + tag + '</span>');
+    html.push('    </div>');
+    html.push('  </div>');
+    html.push('  <div class="events">');
+    for (const e of list) {
+      html.push(eventCard(e));
+    }
+    html.push('  </div>');
+    html.push('</section>');
+  }
+  feed.innerHTML = html.join('\n');
+}
+
+function escapeHtml(s) {
+  return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function eventCard(e) {
+  const time = e.time
+    ? '<span class="event-time">' + escapeHtml(e.time) + '</span>'
+    : '<span class="event-time empty">—</span>';
+
+  // Title fallback: drop discreet placeholder if missing.
+  const hasTitle = !!(e.title && e.title.trim());
+  const titleHtml = hasTitle
+    ? '<h3 class="event-title">' + escapeHtml(e.title.trim()) + '</h3>'
+    : '<h3 class="event-title placeholder">titre non précisé</h3>';
+
+  const cat = e.category
+    ? '<span class="event-cat">' + escapeHtml(e.category) + '</span>'
+    : '<span class="event-cat"></span>';
+
+  let runBadge = '';
+  if (e._isLongRun) {
+    runBadge = '<span class="event-run">en cours</span>';
+  } else if (e._totalDays && e._totalDays > 1) {
+    if (e._dayIndex === 1) runBadge = '<span class="event-run">' + e._totalDays + ' dates</span>';
+    else if (e._dayIndex === e._totalDays) runBadge = '<span class="event-run">dernière</span>';
+    else runBadge = '<span class="event-run">' + e._dayIndex + '/' + e._totalDays + '</span>';
+  }
+
+  const sourceBadge = sourceBadgeHtml(e);
+
+  const href = eventHref(e);
+  const isHttpUrl = typeof href === 'string'
+    && (href.startsWith('http://') || href.startsWith('https://'));
+  const tag = isHttpUrl ? 'a' : 'div';
+  const linkAttrs = isHttpUrl
+    ? ' href="' + escapeHtml(href) + '" target="_blank" rel="noopener"'
+    : '';
+
+  const arr = eventArrondissement(e);
+  const arrLabel = '<span class="event-arr">' + escapeHtml(arr) + '</span>';
+
+  // Layout = 3 grid rows: head / title / foot
+  return [
+    '<' + tag + ' class="event"' + linkAttrs + '>',
+    '  <div class="event-head">',
+    '    <span class="event-venue">' + escapeHtml(e.venue) + '</span>',
+    '    ' + arrLabel,
+    '    ' + time,
+    '  </div>',
+    '  ' + titleHtml,
+    '  <div class="event-foot">',
+    '    ' + cat,
+    '    <div class="event-foot-right">',
+    '      ' + sourceBadge,
+    '      ' + runBadge,
+    '    </div>',
+    '  </div>',
+    '</' + tag + '>'
+  ].join('\n');
+}
+
+load().catch(err => {
+  document.getElementById('feed').innerHTML =
+    '<div class="empty-state"><p>erreur de chargement</p><p style="font-family:monospace;font-size:12px;text-transform:none;color:#a59f86">' + err + '</p></div>';
+});
+</script>
+
+</body>
+</html>
