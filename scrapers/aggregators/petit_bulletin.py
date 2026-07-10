@@ -165,9 +165,7 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str]]]:
         year = int(single_m.group(3))
     else:
         # Fallback: "DD mois" without year (e.g. compound dates like
-        # "29 mai et 30 mai vendredi à 20h"). Use the current year.
-        # If the resulting date is in the past, the .isoformat() < today_iso
-        # check at the call site will drop it.
+        # "29 mai et 30 mai vendredi à 20h").
         fb_m = re.search(
             r"\b(\d{1,2})(?:er)?\s+"
             r"(janvier|fevrier|mars|avril|mai|juin|juillet|aout|"
@@ -178,7 +176,17 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str]]]:
             return []
         day = int(fb_m.group(1))
         month = MONTHS_FR[fb_m.group(2)]
-        year = date.today().year
+        # No year on the page: assume the NEXT occurrence of that date —
+        # same heuristic as base.parse_french_date. "15 janvier" scraped
+        # in July means next January; with the current year it would be
+        # in the past and silently dropped.
+        today = date.today()
+        year = today.year
+        try:
+            if date(year, month, day) < today:
+                year += 1
+        except ValueError:
+            pass
     try:
         iso = f"{year:04d}-{month:02d}-{day:02d}"
         date(year, month, day)  # validate
