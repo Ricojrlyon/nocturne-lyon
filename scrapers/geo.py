@@ -68,8 +68,14 @@ def _save_cache(cache: dict[str, dict]) -> None:
     )
 
 
-def _geocode_one(name: str) -> dict:
-    """Query Nominatim for a single venue. Returns a cache entry dict."""
+def _geocode_one(name: str) -> Optional[dict]:
+    """Query Nominatim for a single venue.
+
+    Returns a cache entry dict, or None on a transient network error —
+    in that case the caller must NOT cache the result, so the venue is
+    retried on the next run. ("failed" is reserved for a definitive
+    no-result answer from Nominatim.)
+    """
     # Skip venues too generic to geocode
     if name.lower().strip() in _SKIP_NAMES or len(name.strip()) <= 3:
         return {"arr": None, "confidence": "skip"}
@@ -91,7 +97,7 @@ def _geocode_one(name: str) -> dict:
         results = resp.json()
     except Exception as exc:
         print(f"  [geo] ERROR querying Nominatim for {name!r}: {exc}")
-        return {"arr": None, "confidence": "failed"}
+        return None  # transient network error — not cacheable
 
     for r in results:
         addr = r.get("address", {})
@@ -174,14 +180,18 @@ def resolve_new_venues(
             print(f"  [{i+1}/{len(to_resolve)}] {venue!r} … ", end="", flush=True)
 
         entry = _geocode_one(venue)
-        cache[venue] = entry
-
-        if verbose:
-            arr = entry.get("arr") or "?"
-            conf = entry.get("confidence", "?")
-            commune = entry.get("commune", "")
-            extra = f" ({commune})" if commune else ""
-            print(f"{arr}{extra}  [{conf}]")
+        if entry is None:
+            # Transient network error — do not cache, retry next run.
+            if verbose:
+                print("network error — not cached")
+        else:
+            cache[venue] = entry
+            if verbose:
+                arr = entry.get("arr") or "?"
+                conf = entry.get("confidence", "?")
+                commune = entry.get("commune", "")
+                extra = f" ({commune})" if commune else ""
+                print(f"{arr}{extra}  [{conf}]")
 
         # Nominatim rate limit: 1 req/sec
         if i < len(to_resolve) - 1:
