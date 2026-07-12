@@ -142,28 +142,10 @@
     color: var(--warm);
   }
 
-  /* ---------- filters bar (sticky, collapsible) ---------- */
+  /* ---------- filters bar ---------- */
   .filters {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: rgba(22, 31, 37, 0.86);
-    backdrop-filter: blur(14px) saturate(160%);
-    -webkit-backdrop-filter: blur(14px) saturate(160%);
     border-bottom: 1px solid var(--rule);
     padding: 14px 0;
-    transition: padding 0.18s ease;
-  }
-  .filters.collapsed {
-    padding: 8px 0;
-  }
-  .filters.collapsed .filter-row.expanded-only {
-    display: none;
-  }
-  .filters.collapsed .filter-row + .filter-row {
-    border-top: none;
-    margin-top: 0;
-    padding-top: 0;
   }
 
   .filter-row {
@@ -190,33 +172,6 @@
   .filter-label::after { content: ")"; color: var(--ink-mute); }
 
   .filter-group { display: flex; flex-wrap: wrap; gap: 5px; flex: 1; min-width: 0; }
-
-  /* expand-on-collapse toggle */
-  .filters-toggle {
-    background: transparent;
-    border: 1px solid var(--rule-strong);
-    color: var(--ink-soft);
-    padding: 4px 11px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    text-transform: lowercase;
-    letter-spacing: 0.08em;
-    border-radius: 999px;
-    cursor: pointer;
-    margin-left: auto;
-    display: none;
-    transition: all 0.14s ease;
-  }
-  .filters-toggle:hover {
-    border-color: var(--ink);
-    color: var(--ink);
-  }
-  .filters.collapsed .filters-toggle {
-    display: inline-block;
-  }
-  .filters.collapsed .clear-link {
-    display: none;
-  }
 
   /* chips */
   /* Search input in filter bar */
@@ -476,7 +431,7 @@
 
   .day-stamp {
     position: sticky;
-    top: 110px;
+    top: 24px;   /* la barre de filtres n'est plus sticky au-dessus */
     align-self: start;
   }
   @media (max-width: 960px) {
@@ -851,7 +806,6 @@
           <div class="datepicker" id="datepicker"></div>
         </span>
       </div>
-      <button class="filters-toggle" id="filtersToggle">+ filtres</button>
     </div>
 
     <div class="filter-row expanded-only">
@@ -1678,24 +1632,6 @@ function normSearch(s) {
     searchEl.focus();
   });
 })();
-
-/* ---------- collapse on scroll ---------- */
-const filtersEl = document.getElementById('filters');
-const toggleEl = document.getElementById('filtersToggle');
-let userExpandedWhileCollapsed = false;
-
-function updateFiltersCollapsed() {
-  const shouldCollapse = window.scrollY > 120 && !userExpandedWhileCollapsed;
-  filtersEl.classList.toggle('collapsed', shouldCollapse);
-}
-toggleEl.addEventListener('click', () => {
-  userExpandedWhileCollapsed = !userExpandedWhileCollapsed;
-  updateFiltersCollapsed();
-});
-window.addEventListener('scroll', () => {
-  if (window.scrollY < 60) userExpandedWhileCollapsed = false;
-  updateFiltersCollapsed();
-}, { passive: true });
 
 /* ---------- when matching ---------- */
 function withinWhen(dateStr) {
