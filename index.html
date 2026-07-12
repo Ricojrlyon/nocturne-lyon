@@ -1733,13 +1733,19 @@ function withinWhen(dateStr) {
 const LONG_RUN_THRESHOLD = 30;
 function expandOccurrences(events) {
   const out = [];
+  const todayIso = isoOf(new Date());
   for (const e of events) {
     const start = parseIso(e.date_start);
     const end = e.date_end ? parseIso(e.date_end) : start;
     const dayMs = 86400000;
     const totalDays = Math.round((end - start) / dayMs) + 1;
     if (totalDays > LONG_RUN_THRESHOLD) {
-      out.push({ ...e, _date: e.date_start, _dayIndex: 1, _totalDays: totalDays, _isLongRun: true });
+      // Long run déjà commencé (expo, festival) : dater l'occurrence
+      // d'aujourd'hui — avec _date = date_start passée, elle serait
+      // filtrée par occDate < now et l'événement « en cours » resterait
+      // invisible.
+      const occDate = e.date_start > todayIso ? e.date_start : todayIso;
+      out.push({ ...e, _date: occDate, _dayIndex: 1, _totalDays: totalDays, _isLongRun: true });
       continue;
     }
     for (let i = 0; i < totalDays; i++) {
