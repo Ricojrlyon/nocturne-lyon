@@ -68,23 +68,14 @@ def _save_cache(cache: dict[str, dict]) -> None:
     )
 
 
-def _geocode_one(name: str) -> Optional[dict]:
-    """Query Nominatim for a single venue.
-
-    Returns a cache entry dict, or None on a transient network error —
-    in that case the caller must NOT cache the result, so the venue is
-    retried on the next run. ("failed" is reserved for a definitive
-    no-result answer from Nominatim.)
-    """
-    # Skip venues too generic to geocode
-    if name.lower().strip() in _SKIP_NAMES or len(name.strip()) <= 3:
-        return {"arr": None, "confidence": "skip"}
-
+def _search(query: str) -> Optional[list]:
+    """One Nominatim request. Returns the JSON result list, or None on a
+    transient network error (not cacheable)."""
     try:
         resp = requests.get(
             _NOMINATIM,
             params={
-                "q": f"{name}, Lyon, France",
+                "q": query,
                 "format": "json",
                 "addressdetails": 1,
                 "limit": 5,
@@ -94,11 +85,14 @@ def _geocode_one(name: str) -> Optional[dict]:
             timeout=10,
         )
         resp.raise_for_status()
-        results = resp.json()
+        return resp.json()
     except Exception as exc:
-        print(f"  [geo] ERROR querying Nominatim for {name!r}: {exc}")
-        return None  # transient network error — not cacheable
+        print(f"  [geo] ERROR querying Nominatim for {query!r}: {exc}")
+        return None
 
+
+def _match_lyon(results: list) -> Optional[dict]:
+    """Scan results for a Lyon/Villeurbanne match → cache entry, else None."""
     for r in results:
         addr = r.get("address", {})
         postcode = addr.get("postcode", "").strip()
@@ -125,6 +119,38 @@ def _geocode_one(name: str) -> Optional[dict]:
         # City matched but postcode not a Lyon/Villeurbanne one — nearby suburb
         commune = addr.get("city") or addr.get("town") or "Autre"
         return {"arr": "Autre", "confidence": "low", "commune": commune}
+    return None
+
+
+def _geocode_one(name: str) -> Optional[dict]:
+    """Query Nominatim for a single venue.
+
+    Returns a cache entry dict, or None on a transient network error —
+    in that case the caller must NOT cache the result, so the venue is
+    retried on the next run. ("failed" is reserved for a definitive
+    no-result answer from Nominatim.)
+    """
+    # Skip venues too generic to geocode
+    if name.lower().strip() in _SKIP_NAMES or len(name.strip()) <= 3:
+        return {"arr": None, "confidence": "skip"}
+
+    results = _search(f"{name}, Lyon, France")
+    if results is None:
+        return None  # transient network error — not cacheable
+
+    entry = _match_lyon(results)
+    if entry:
+        return entry
+
+    # La requête « …, Lyon, France » biaise Nominatim contre les lieux de
+    # Villeurbanne : seconde tentative avant de conclure à l'échec.
+    # (Pause 1,1 s — politique Nominatim 1 req/s.)
+    time.sleep(1.1)
+    results_v = _search(f"{name}, Villeurbanne, France")
+    if results_v:
+        entry = _match_lyon(results_v)
+        if entry:
+            return entry
 
     # No Lyon/Villeurbanne result found — mark as failed so we don't retry
     # every run, but store commune if we got anything at all
