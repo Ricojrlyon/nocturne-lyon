@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-12T04:36:57.469063+00:00",
-  "count": 539,
+  "generated_at": "2026-07-12T04:46:27.057345+00:00",
+  "count": 549,
   "events": [
     {
       "venue": "La Commune",
@@ -58,13 +58,13 @@
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Acid Society",
-      "subtitle": null,
-      "category": "Musique Electronique",
+      "subtitle": "Acida Dominga (live) · Too Smooth Christ (live) · Ben Pest (live) · Ghetto Bird",
+      "category": "club",
       "date_start": "2026-07-12",
       "date_end": null,
       "time": "18:00",
-      "url": "https://www.petit-bulletin.fr/agenda-310041-acid-society.html",
-      "image": null,
+      "url": "https://le-sucre.eu/events/acid-society-8/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Acida-Dominga-584x600.jpeg",
       "id": "32361db93c55"
     },
     {
@@ -146,6 +146,19 @@
       "id": "e582d1ada3ab"
     },
     {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Magic Mardi",
+      "subtitle": "Loulou Ferrari · Patxi · Cecile Virago",
+      "category": "club",
+      "date_start": "2026-07-14",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://le-sucre.eu/events/magic-mardi-85/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Plan-de-travail-24_2-480x600.png",
+      "id": "67d9e2836de2"
+    },
+    {
       "venue": "Péristyle Opéra",
       "venue_slug": "peristyle-opera",
       "title": "Nuage 86",
@@ -212,16 +225,16 @@
     },
     {
       "venue": "Jardin Envie Partagée quai Rambaud",
-      "venue_slug": "jardin-envie-partagee-quai-rambaud",
-      "title": "[Concert gratuit] FAZAZ au jardin Envie Partagée quai Rambaud",
-      "subtitle": null,
+      "venue_slug": "periscope",
+      "title": "FAZAZ",
+      "subtitle": "Diversions · Escapade estivale",
       "category": "musique",
       "date_start": "2026-07-15",
       "date_end": null,
       "time": "19:00",
-      "url": "https://agenda.villemorte.fr/event/concert-gratuit-fazaz-au-jardin-envie-partagee-quai-rambaud",
-      "image": null,
-      "id": "29d79963d8e9"
+      "url": "https://www.periscope-lyon.com/concerts/fazaz/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/06/cropped-FAZAZ-et-Dounia-paysage-scaled-1-1024x613-1-650x389.jpg",
+      "id": "d54b8d73c572"
     },
     {
       "venue": "Bar Rock'n Eat",
@@ -264,16 +277,16 @@
     },
     {
       "venue": "Escale Solidaire du 2",
-      "venue_slug": "escale-solidaire-du-2",
-      "title": "[Concert gratuit] Watchdog à l'Escale Solidaire du 2",
-      "subtitle": null,
+      "venue_slug": "periscope",
+      "title": "Watchdog",
+      "subtitle": "Diversions · Escapade estivale",
       "category": "musique",
       "date_start": "2026-07-16",
       "date_end": null,
       "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/concert-gratuit-watchdog-a-lescale-solidaire-du-2",
-      "image": null,
-      "id": "4e0097dbea82"
+      "url": "https://www.periscope-lyon.com/concerts/watchdog-3/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/06/Pierre-HorckmansAnne-Q-uillier_DSC_7973-e1782395357447-650x416.jpg",
+      "id": "6949f491b165"
     },
     {
       "venue": "HEAT",
@@ -406,6 +419,19 @@
       "id": "045c5ee47376"
     },
     {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Type Beat x Nava",
+      "subtitle": "Brodinski · Gizmo · Hofmann · Lili Castiglioni · Meel B · Tana Montana · Vilhelm.",
+      "category": "club",
+      "date_start": "2026-07-17",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://le-sucre.eu/events/type-beat-x-nava/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-15-at-22.54.31-480x600.jpeg",
+      "id": "af2d73bad083"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "DJ set estival à Lyon – Suntrax x Mango XO",
@@ -471,6 +497,19 @@
       "id": "f532d434675a"
     },
     {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Live club",
+      "subtitle": "Sunju Hargun · OK EG (live) · Roxane",
+      "category": "club",
+      "date_start": "2026-07-18",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://le-sucre.eu/events/club-52/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/JPG-144-of-179-398x600.jpg",
+      "id": "01b1c199775c"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "A la découverte du chocolat",
@@ -482,6 +521,19 @@
       "url": "https://lacommune.co/event/atelier-chocolat-enfants-lyon-kitchen-street/",
       "image": null,
       "id": "59c83370bd35"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "S.society",
+      "subtitle": "Channel One · High Budub",
+      "category": "club",
+      "date_start": "2026-07-19",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://le-sucre.eu/events/s-society-155/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/19_07-450x600.png",
+      "id": "ebf7fff1adb9"
     },
     {
       "venue": "HEAT",
@@ -521,6 +573,19 @@
       "url": "https://lacommune.co/event/yoga-sonore-lyon-bain-sonore-yoga-nuits-sonores/",
       "image": null,
       "id": "733a8f0b3896"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Magic Mardi",
+      "subtitle": "David Asko",
+      "category": "club",
+      "date_start": "2026-07-21",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://le-sucre.eu/events/magic-mardi-86/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Plan-de-travail-24_3-480x600.png",
+      "id": "bfd2ca5f95fc"
     },
     {
       "venue": "HEAT",
@@ -614,6 +679,19 @@
       "id": "9349d0d3c2ed"
     },
     {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "club x Jamais le Mardi !",
+      "subtitle": "Dehna · Kaynixe · HollyG · DJ L’yle",
+      "category": "club",
+      "date_start": "2026-07-24",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://le-sucre.eu/events/clubxjamaislemardi/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/56f58f81-d152-4f7b-8ded-1f5c3cd92655-400x600.jpeg",
+      "id": "3c71c30d19ff"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Market La Tu Sap",
@@ -651,6 +729,32 @@
       "url": "https://h-eat.eu/events/club-labo-happiness-therapy-x-klubvivison/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/07/post-insta-576x720.png",
       "id": "28542c3da751"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Live club",
+      "subtitle": "Subsism · Cwtch (live) · Kay TV (live) · Safia Nihil",
+      "category": "club",
+      "date_start": "2026-07-25",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://le-sucre.eu/events/club-54/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/@matcha_studio4-450x600.jpg",
+      "id": "50fef33de4d7"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "S.society",
+      "subtitle": "P errine · Sam Alfred · STÜM",
+      "category": "club",
+      "date_start": "2026-07-26",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://le-sucre.eu/events/s-society-154/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/26_07-450x600.png",
+      "id": "b633135678e5"
     },
     {
       "venue": "Bar Rock'n Eat",
@@ -703,6 +807,19 @@
       "url": "https://lacommune.co/event/piano-bar-lyon/",
       "image": null,
       "id": "eb6fefb8f2eb"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Magic Mardi",
+      "subtitle": "Line-up soon !",
+      "category": "club",
+      "date_start": "2026-07-28",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://le-sucre.eu/events/magic-mardi-87/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/07/Plan-de-travail-24_4-480x600.png",
+      "id": "d9514c361d54"
     },
     {
       "venue": "La Commune",
@@ -781,6 +898,19 @@
       "url": "https://h-eat.eu/events/full-mix-el-arrebato/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/07/OPEN-AIR-FULL_@noemielact-81-1080x720.jpg",
       "id": "ecff584bb832"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "club x Headbutt",
+      "subtitle": "Kirara · Vanille · Aho Ssan (live) + performers",
+      "category": "club",
+      "date_start": "2026-07-31",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://le-sucre.eu/events/club-x-headbutt/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/05/HEADBUTT-TEAM-398x600.jpg",
+      "id": "902237a49b7a"
     },
     {
       "venue": "La Commune",
