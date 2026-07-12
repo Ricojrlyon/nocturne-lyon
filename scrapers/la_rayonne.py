@@ -172,19 +172,20 @@ def fetch() -> List[Event]:
             if d_end:
                 date_end_iso = iso(d_end)
 
-        # Extract time — but only from a separate time element, NOT from the
-        # title (formation titles embed their time in the title string, which
-        # would pollute the time field if we searched the whole card text).
+        # Extract time — but never from the title (formation titles embed
+        # their hours, e.g. "… 18h30 > 20h30", which would pollute the
+        # time field). Previous approach card_text.replace(title, "", 1)
+        # failed silently when whitespace normalization differed between
+        # the <a> text and the ancestor card text; instead, skip any time
+        # match whose text also appears in the title.
         time_str: Optional[str] = None
-        # Strip title from card text before searching for time, so we don't
-        # accidentally pick up a time embedded in a formation title that
-        # wasn't caught by the filter above.
-        text_without_title = card_text.replace(title, "", 1)
-        m_time = TIME_RE.search(text_without_title)
-        if m_time:
+        for m_time in TIME_RE.finditer(card_text):
+            if m_time.group(0) in title:
+                continue
             hh = int(m_time.group(1))
             mm = m_time.group(2) or "00"
             time_str = f"{hh:02d}:{mm}"
+            break
 
         category: Optional[str] = None
         for kw in CATEGORIES:
