@@ -40,7 +40,7 @@ FR_MONTHS = {
     "avr": 4, "avril": 4,
     "mai": 5,
     "juin": 6,
-    "juil": 7, "juillet": 7,
+    "juil": 7, "juill": 7, "juillet": 7,
     "aout": 8, "août": 8,
     "sept": 9, "septembre": 9,
     "oct": 10, "octobre": 10,
