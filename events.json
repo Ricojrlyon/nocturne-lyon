@@ -1,332 +1,7 @@
 {
-  "generated_at": "2026-07-09T09:33:04.398237+00:00",
-  "count": 656,
+  "generated_at": "2026-07-12T04:36:57.469063+00:00",
+  "count": 539,
   "events": [
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "France V/S Maroc: CDM 2026",
-      "subtitle": null,
-      "category": "diffusion de match",
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/france-v-s-maroc-cdm-2026/",
-      "image": null,
-      "id": "a24b898fa7aa"
-    },
-    {
-      "venue": "La Menuiserie",
-      "venue_slug": "la-menuiserie",
-      "title": "Venrissage \"Les entre-mondes\" - Exposition de François Labourdette",
-      "subtitle": null,
-      "category": "expo",
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://agenda.villemorte.fr/event/venrissage-les-entre-mondes-exposition-de-francois-labourdette",
-      "image": null,
-      "id": "a1931a7143d1"
-    },
-    {
-      "venue": "Bar Rock'n Eat",
-      "venue_slug": "rock-n-eat",
-      "title": "CONCERT GRUNGE-  DEBARULERS + SLALOM + LES CAS PERDUS - ROCK'N'EAT",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-07-09",
-      "date_end": "2026-07-10",
-      "time": "17:00",
-      "url": "https://agenda.villemorte.fr/event/concert-grunge-debarulers-slalom-les-cas-perdus-rockneat",
-      "image": null,
-      "id": "dd61da6b9b69"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "[Concert gratuit] Edredon Sensible au HEAT",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://agenda.villemorte.fr/event/concert-gratuit-edredon-sensible-au-heat",
-      "image": null,
-      "id": "b9f8feeb53c0"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Coupe du Monde : France — Maroc",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://h-eat.eu/events/quart-de-final/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-264-576x720.png",
-      "id": "aa7e32bbeea6"
-    },
-    {
-      "venue": "Péristyle Opéra",
-      "venue_slug": "peristyle-opera",
-      "title": "Karaoké piano",
-      "subtitle": null,
-      "category": "Jeux",
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318759-karaok-piano.html",
-      "image": null,
-      "id": "6826e1d0117d"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Diversions : Edredon Sensible (live)",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://h-eat.eu/events/diversions-edredon-sensible-live/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/06/DIVERSION-2026-RS-1-576x720.png",
-      "id": "de364e5088c3"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Senflix",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2026-07-09",
-      "date_end": null,
-      "time": "21:00",
-      "url": "https://www.petit-bulletin.fr/agenda-311823-senflix.html",
-      "image": null,
-      "id": "f943675ab0bc"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "LES VIEWINGS D’AMOUR #1",
-      "subtitle": null,
-      "category": "drag",
-      "date_start": "2026-07-10",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/les-viewings-damour/",
-      "image": null,
-      "id": "631f96ccad88"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Atelier créatif Lyon | découverte à La Commune",
-      "subtitle": null,
-      "category": "atelier",
-      "date_start": "2026-07-10",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/atelier-decouverte/",
-      "image": null,
-      "id": "0aa6dc5b5c3c"
-    },
-    {
-      "venue": "Place du 8 mai 1945, Lyon 8e",
-      "venue_slug": "place-du-8-mai-1945-lyon-8e",
-      "title": "Festival La Brise – un temps fort populaire, festif et intergénérationnel !",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-07-10",
-      "date_end": null,
-      "time": "15:30",
-      "url": "https://agenda.villemorte.fr/event/festival-la-brise-un-temps-fort-populaire-festif-et-intergenerationnel",
-      "image": null,
-      "id": "7e12d093f9b6"
-    },
-    {
-      "venue": "Maison de l'écologie",
-      "venue_slug": "maison-de-l-ecologie",
-      "title": "RÊVER SOUS LE FUTUR · GROUPE DE RÊVE COLLECTIF - Cycle de 7 séances",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-10",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://agenda.villemorte.fr/event/rever-sous-le-futur-groupe-de-reve-collectif-cycle-de-7-seances-2",
-      "image": null,
-      "id": "36d178b86cb4"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "[Concerts gratuits] Kenz Quintet + ilanga au Périscope",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-07-10",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://agenda.villemorte.fr/event/concerts-gratuits-kenz-quintet-ilanga-au-periscope",
-      "image": null,
-      "id": "e184044beea3"
-    },
-    {
-      "venue": "Boskop",
-      "venue_slug": "boskop",
-      "title": "Concert ÁGUA · Rebel Girl",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-07-10",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/concert-agua-rebel-girl",
-      "image": null,
-      "id": "b36ee759de41"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Cabriole présente HEAT Machine",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-10",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://h-eat.eu/events/cabriole-heat-machine/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/06/cabriole-heat-577x720.png",
-      "id": "1bd9d84e2177"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "DOPE SAINT JUDE + YANKA + SLMVX",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-07-10",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.transbordeur.fr/evenement/dope-saint-jude-yanka-slmvx-10072026/",
-      "image": null,
-      "id": "e7e6c49f2ff6"
-    },
-    {
-      "venue": "Le Sonic",
-      "venue_slug": "sonic",
-      "title": "DARK 80´S PARTY",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-07-10",
-      "date_end": null,
-      "time": "22:00",
-      "url": "https://sonic-lyon.fr/evenement/dark-80s-party-12/",
-      "image": null,
-      "id": "13362bc349c4"
-    },
-    {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "THIS IS TECHNO RAVE : CRYMØ / GALLOP",
-      "subtitle": null,
-      "category": "club",
-      "date_start": "2026-07-10",
-      "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/65bfc2b4-e481-4e1a-ad95-eccb3ccb0adc/THIS-IS-TECHNO-Rave-CRYMO-Gallop-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/ThisisTechnoRave_10072026_lepetitsalon-1024x576.jpg",
-      "id": "ced1173236a8"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "DJ set estival à Lyon – Suntrax",
-      "subtitle": null,
-      "category": "dj set",
-      "date_start": "2026-07-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/suntrax-id-yot-dj-set-house-disco-electro/",
-      "image": null,
-      "id": "c2b7247cdac5"
-    },
-    {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "(Annulé) Silence Collapse",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-11",
-      "date_end": null,
-      "time": "14:00",
-      "url": "https://agenda.villemorte.fr/event/silence-collapse-soundsystem",
-      "image": null,
-      "id": "09382bcccead"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "[Open Air] OPA#2 avec Physical Tool",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-07-11",
-      "date_end": null,
-      "time": "15:00",
-      "url": "https://larayonne.org/evenement/open-air-opa2-avec-physical-tool/",
-      "image": null,
-      "id": "6bf9704b9891"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Grand tournoi de pétanque de l’été",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-11",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://h-eat.eu/events/grand-tournoi-de-petanque-de-lete/",
-      "image": "https://h-eat.eu/wp-content/uploads/2024/07/COUPEDUMONDE_HEAT@noemielact-18-480x720.jpg",
-      "id": "1f895d77eb4b"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "DYLAN DYLAN + P ERRINE + PEDRO BERTHO + PATXI",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-07-11",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.transbordeur.fr/evenement/dylan-dylan-p-errine-pedro-bertho-patxi-11072026/",
-      "image": null,
-      "id": "1776435ff595"
-    },
-    {
-      "venue": "Le Sonic",
-      "venue_slug": "sonic",
-      "title": "BAL POPULAIRE // AFTER PRIDE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2026-07-11",
-      "date_end": null,
-      "time": "22:00",
-      "url": "https://sonic-lyon.fr/evenement/bal-populaire-after-pride/",
-      "image": null,
-      "id": "070c2c217909"
-    },
-    {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "THIS IS HOUSE : SHAMANISM",
-      "subtitle": null,
-      "category": "club",
-      "date_start": "2026-07-11",
-      "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/033aee85-4057-405d-86a2-894edbb7c85f/THIS-IS-HOUSE-Shamanism-Crew-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/Shamanism_11072026_lepetitsalon-1024x564.jpg",
-      "id": "26ab15ae1c45"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -343,28 +18,15 @@
     {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
-      "title": "Atelier Héroïc Fantasy Pédée",
+      "title": "Atelier Héroïc Fantasy Pédée - ! Reporté !",
       "subtitle": null,
       "category": null,
       "date_start": "2026-07-12",
       "date_end": null,
-      "time": "11:00",
+      "time": "13:00",
       "url": "https://agenda.villemorte.fr/event/atelier-heroic-fantasy-pedee",
       "image": null,
-      "id": "4c92738b2ec8"
-    },
-    {
-      "venue": "Friche Artistique Lamartine | La Robinetterie",
-      "venue_slug": "friche-artistique-lamartine-la-robinetterie",
-      "title": "Un été à la Friche dans le cadre de Tout le Monde Dehors 2026",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-07-12",
-      "date_end": null,
-      "time": "14:00",
-      "url": "https://agenda.villemorte.fr/event/un-ete-a-la-friche-dans-le-cadre-de-tout-le-monde-dehors-2026",
-      "image": null,
-      "id": "c506f2f0c184"
+      "id": "c6ac33f96175"
     },
     {
       "venue": "La Rayonne",
@@ -380,16 +42,68 @@
       "id": "1fb09feee51e"
     },
     {
+      "venue": "Friche Artistique Lamartine | La Robinetterie",
+      "venue_slug": "friche-artistique-lamartine-la-robinetterie",
+      "title": "Un été à la Friche dans le cadre de Tout le Monde Dehors 2026",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-12",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://agenda.villemorte.fr/event/un-ete-a-la-friche-dans-le-cadre-de-tout-le-monde-dehors-2026",
+      "image": null,
+      "id": "d566e8783574"
+    },
+    {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "Acid Society",
+      "subtitle": null,
+      "category": "Musique Electronique",
+      "date_start": "2026-07-12",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-310041-acid-society.html",
+      "image": null,
+      "id": "32361db93c55"
+    },
+    {
+      "venue": "Théâtre de l’Elysée",
+      "venue_slug": "theatre-de-l-elysee",
+      "title": "PILOTE, UNE SÉRIE THÉÂTRALE EN CINQ ÉPISODES",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-13",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://agenda.villemorte.fr/event/pilote-une-serie-theatrale-en-cinq-episodes-6",
+      "image": null,
+      "id": "0d078c884ebd"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Wet Leg + Lambrini Girls",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-13",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317635-wet-leg-lambrini-girls.html",
+      "image": null,
+      "id": "986126d83d26"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "RED BOAT CLUB 13/07",
       "subtitle": null,
-      "category": "concert",
+      "category": "club",
       "date_start": "2026-07-13",
       "date_end": null,
       "time": "21:00",
       "url": "https://sonic-lyon.fr/evenement/red-boat-club-13-07/",
-      "image": null,
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/07/IMG_0458-825x1024.jpeg",
       "id": "d9d4774854ee"
     },
     {
@@ -406,6 +120,19 @@
       "id": "79c5ed10e087"
     },
     {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Demi-finale : CDM 2026",
+      "subtitle": null,
+      "category": "diffusion de match",
+      "date_start": "2026-07-14",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/france-v-s-maroc-cdm-2026/",
+      "image": null,
+      "id": "773ff12384a7"
+    },
+    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Coupe du monde : Demi-finale",
@@ -419,11 +146,24 @@
       "id": "e582d1ada3ab"
     },
     {
+      "venue": "Péristyle Opéra",
+      "venue_slug": "peristyle-opera",
+      "title": "Nuage 86",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-07-14",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.petit-bulletin.fr/agenda-313548-nuage-86.html",
+      "image": null,
+      "id": "c48c6300c9f2"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Nuits De Fourviere 2026 Le Bal Shangwe Wanjiru Kamuyu",
       "subtitle": null,
-      "category": null,
+      "category": "Danse",
       "date_start": "2026-07-14",
       "date_end": null,
       "time": "20:30",
@@ -432,17 +172,17 @@
       "id": "586589ad8abd"
     },
     {
-      "venue": "Jardin Envie Partagée quai Rambaud",
-      "venue_slug": "jardin-envie-partagee-quai-rambaud",
-      "title": "[Concert gratuit] FAZAZ au jardin Envie Partagée quai Rambaud",
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "DJ set à Lyon – Narvalo Disco Club",
       "subtitle": null,
-      "category": "musique",
+      "category": "dj set",
       "date_start": "2026-07-15",
       "date_end": null,
-      "time": "17:00",
-      "url": "https://agenda.villemorte.fr/event/concert-gratuit-fazaz-au-jardin-envie-partagee-quai-rambaud",
+      "time": null,
+      "url": "https://lacommune.co/event/dj-set-a-lyon-narvalo-disco-club-3/",
       "image": null,
-      "id": "699b46b4742b"
+      "id": "dfa23aafcb19"
     },
     {
       "venue": "HEAT",
@@ -471,6 +211,45 @@
       "id": "decf6bda1c34"
     },
     {
+      "venue": "Jardin Envie Partagée quai Rambaud",
+      "venue_slug": "jardin-envie-partagee-quai-rambaud",
+      "title": "[Concert gratuit] FAZAZ au jardin Envie Partagée quai Rambaud",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-07-15",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/concert-gratuit-fazaz-au-jardin-envie-partagee-quai-rambaud",
+      "image": null,
+      "id": "29d79963d8e9"
+    },
+    {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Jungle Rot + Rats of Gomorrah + Liquid Flesh",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-15",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318860-jungle-rot-rats-of-gomorrah-liquid-flesh.html",
+      "image": null,
+      "id": "e3e61f2a3026"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Lorde",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-15",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317642-lorde.html",
+      "image": null,
+      "id": "767c5652e822"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Roda de samba",
@@ -491,23 +270,10 @@
       "category": "musique",
       "date_start": "2026-07-16",
       "date_end": null,
-      "time": "16:00",
+      "time": "18:00",
       "url": "https://agenda.villemorte.fr/event/concert-gratuit-watchdog-a-lescale-solidaire-du-2",
       "image": null,
-      "id": "d52f46796ea3"
-    },
-    {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "Violent Magic Orchestra + Eau Chaude Sanitaire + Nuage Rose + Badaboum",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-16",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/violent-magic-orchestra-eau-chaude-sanitaire-matti-nuage-rose",
-      "image": null,
-      "id": "19efa1040054"
+      "id": "4e0097dbea82"
     },
     {
       "venue": "HEAT",
@@ -523,6 +289,58 @@
       "id": "cbaa41fea0df"
     },
     {
+      "venue": "Péristyle Opéra",
+      "venue_slug": "peristyle-opera",
+      "title": "Karaoké piano",
+      "subtitle": null,
+      "category": "Jeux",
+      "date_start": "2026-07-16",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318759-karaok-piano.html",
+      "image": null,
+      "id": "4f38a11fcf56"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Violent Magic Orchestra + Eau Chaude Sanitaire + Nuage Rose + Badaboum",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-16",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://agenda.villemorte.fr/event/violent-magic-orchestra-eau-chaude-sanitaire-matti-nuage-rose",
+      "image": null,
+      "id": "25c802493bfe"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Toi + Moi = ?",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-07-16",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318695-toi-moi.html",
+      "image": null,
+      "id": "efe7c8fc88e3"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Asaf Avidan + Mina Tindle",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-16",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-302419-asaf-avidan-mina-tindle.html",
+      "image": null,
+      "id": "71581e5c4e4c"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "LES VIEWINGS D’AMOUR #2",
@@ -534,6 +352,19 @@
       "url": "https://lacommune.co/event/les-viewings-damour-2/",
       "image": null,
       "id": "6c9c68b6d746"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS HIT MACHINE 90-2000 : NO2T / DANY FROM ST BARTH & TERROR MIKE",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-07-17",
+      "date_end": null,
+      "time": null,
+      "url": "https://yp.events/54f7c577-3db3-4390-b393-48d419a6fec2/THIS-IS-HIT-MACHINE-90-2000-NO2-T-Dany-From-St-Barth-more?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/ThisisHitmachine_17072026_lepetitsalon-1024x576.jpg",
+      "id": "6ce51e88e86e"
     },
     {
       "venue": "HEAT",
@@ -562,17 +393,17 @@
       "id": "dca3cedaa8f2"
     },
     {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "THIS IS HIT MACHINE 90-2000 : NO2T / DANY FROM ST BARTH & TERROR MIKE",
+      "venue": "Maison de l'écologie",
+      "venue_slug": "maison-de-l-ecologie",
+      "title": "RÊVER SOUS LE FUTUR · GROUPE DE RÊVE COLLECTIF - Cycle de 7 séances",
       "subtitle": null,
-      "category": "club",
+      "category": null,
       "date_start": "2026-07-17",
       "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/54f7c577-3db3-4390-b393-48d419a6fec2/THIS-IS-HIT-MACHINE-90-2000-NO2-T-Dany-From-St-Barth-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/ThisisHitmachine_17072026_lepetitsalon-1024x576.jpg",
-      "id": "413fd13ffadc"
+      "time": "18:00",
+      "url": "https://agenda.villemorte.fr/event/rever-sous-le-futur-groupe-de-reve-collectif-cycle-de-7-seances-3",
+      "image": null,
+      "id": "045c5ee47376"
     },
     {
       "venue": "La Commune",
@@ -588,6 +419,19 @@
       "id": "05780fce13ca"
     },
     {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "VITESSE : INES ISLA / E.T.O / SAY IT LOUD & MORE",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-07-18",
+      "date_end": null,
+      "time": null,
+      "url": "https://yp.events/ec397767-1f83-4608-846f-50ce8f798b72/VITESSE-ines-isla-E-T-O-Say-it-LOUD-more?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/VITESSE_inesisla_18072026_lepetitsalon-1024x576.jpg",
+      "id": "6a60b73b11e7"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Bos'tock festival",
@@ -595,10 +439,10 @@
       "category": null,
       "date_start": "2026-07-18",
       "date_end": null,
-      "time": "12:00",
+      "time": "14:00",
       "url": "https://agenda.villemorte.fr/event/boskop-festival",
       "image": null,
-      "id": "6da4801ac08a"
+      "id": "acf0d7752ca6"
     },
     {
       "venue": "Le Transbordeur",
@@ -625,19 +469,6 @@
       "url": "https://h-eat.eu/events/festigone-hip-hop-summer-party/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/07/OPEN-AIR-HIP-HOP-SUMMER-PARTY-🪖🪩On-vous-attend-nombreux-le-18-juillet-au-@heat_lyon-pour-un--576x720.jpg",
       "id": "f532d434675a"
-    },
-    {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "VITESSE : INES ISLA / E.T.O / SAY IT LOUD & MORE",
-      "subtitle": null,
-      "category": "club",
-      "date_start": "2026-07-18",
-      "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/ec397767-1f83-4608-846f-50ce8f798b72/VITESSE-ines-isla-E-T-O-Say-it-LOUD-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/VITESSE_inesisla_18072026_lepetitsalon-1024x576.jpg",
-      "id": "1e7f4765c906"
     },
     {
       "venue": "La Commune",
@@ -753,8 +584,21 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://sonic-lyon.fr/evenement/ulrika-spacek-sharon-tate-modern/",
-      "image": null,
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/04/Capture-decran-2026-04-01-a-10.51.20-1024x679.png",
       "id": "5db429245cdf"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS TECHNO RAVE : PAPA SUCRE & VTEK",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-07-24",
+      "date_end": null,
+      "time": null,
+      "url": "https://yp.events/e0332daf-9490-4db2-967f-4038c4373ffd/THIS-IS-TECHNO-Rave-Papa-Sucre-V-T-E-K?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/07/ThisisTechnoRave_24072026_lepetitsalon-1024x576.jpg",
+      "id": "c20cc0173148"
     },
     {
       "venue": "HEAT",
@@ -770,19 +614,6 @@
       "id": "9349d0d3c2ed"
     },
     {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "THIS IS TECHNO RAVE : PAPA SUCRE & VTEK",
-      "subtitle": null,
-      "category": "club",
-      "date_start": "2026-07-24",
-      "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/e0332daf-9490-4db2-967f-4038c4373ffd/THIS-IS-TECHNO-Rave-Papa-Sucre-V-T-E-K?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/07/ThisisTechnoRave_24072026_lepetitsalon-1024x576.jpg",
-      "id": "0751ec40cb07"
-    },
-    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Market La Tu Sap",
@@ -794,6 +625,19 @@
       "url": "https://lacommune.co/event/summer-second-hand-market/",
       "image": null,
       "id": "04bf67e83c51"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "KLOUD / BAB' / CHAST / KITTS",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-07-25",
+      "date_end": null,
+      "time": null,
+      "url": "https://yp.events/5046d719-bb7d-4586-8372-ec9b7d736de4/KLOUD-Bab-CHAST-Ki-TTS-more?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/Kloud_25072026_lepetitsalon-1024x536.jpg",
+      "id": "05e1c81763d6"
     },
     {
       "venue": "HEAT",
@@ -809,19 +653,6 @@
       "id": "28542c3da751"
     },
     {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "KLOUD / BAB' / CHAST / KITTS",
-      "subtitle": null,
-      "category": "club",
-      "date_start": "2026-07-25",
-      "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/5046d719-bb7d-4586-8372-ec9b7d736de4/KLOUD-Bab-CHAST-Ki-TTS-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/Kloud_25072026_lepetitsalon-1024x536.jpg",
-      "id": "b08e33558a8c"
-    },
-    {
       "venue": "Bar Rock'n Eat",
       "venue_slug": "rock-n-eat",
       "title": "SHUTDOWN (New York hardcore) + IVY + Nø.V.D",
@@ -829,10 +660,10 @@
       "category": "musique",
       "date_start": "2026-07-26",
       "date_end": null,
-      "time": "17:30",
+      "time": "19:30",
       "url": "https://agenda.villemorte.fr/event/shutdown-new-york-hardcore-ivy-guest",
       "image": null,
-      "id": "fa3797d51f83"
+      "id": "83eaf711a46a"
     },
     {
       "venue": "La Commune",
@@ -902,7 +733,7 @@
     {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "Open platine : le Labo est à vous !",
+      "title": "Open platine : holyclem, clara, adeleadele, blue lilou",
       "subtitle": null,
       "category": null,
       "date_start": "2026-07-29",
@@ -910,7 +741,7 @@
       "time": "18:00",
       "url": "https://h-eat.eu/events/open-platine-le-labo-est-a-vous/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/04/charli-bonsoirmathilda15-480x720.jpg",
-      "id": "73e8c9697e43"
+      "id": "320fbddf630b"
     },
     {
       "venue": "La Commune",
@@ -926,6 +757,19 @@
       "id": "3f605945b5b5"
     },
     {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS TECHNO RAVE : BCKYRD / PEEKZT",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-07-31",
+      "date_end": null,
+      "time": null,
+      "url": "https://yp.events/e7408470-6d59-4383-9642-c66ff03ef3d7/THIS-IS-TECHNO-Rave-BCKYRD-PEEKZT?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/07/ThisisTechnoRave_31072026_lepetitsalon-1024x576.jpg",
+      "id": "a41aa74b131d"
+    },
+    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Full Mix : El arrebato",
@@ -939,17 +783,30 @@
       "id": "ecff584bb832"
     },
     {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Résidence Physical Tool",
+      "subtitle": null,
+      "category": "dj set",
+      "date_start": "2026-08-01",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/residence-physical-tool-7/",
+      "image": null,
+      "id": "e7b38cda3a25"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
-      "title": "THIS IS TECHNO RAVE : BCKYRD / PEEKZT",
+      "title": "THIS IS TECHNO MELODIC : TRY / KONGA",
       "subtitle": null,
       "category": "club",
-      "date_start": "2026-07-31",
+      "date_start": "2026-08-01",
       "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/e7408470-6d59-4383-9642-c66ff03ef3d7/THIS-IS-TECHNO-Rave-BCKYRD-PEEKZT?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/07/ThisisTechnoRave_31072026_lepetitsalon-1024x576.jpg",
-      "id": "2e4cb7f3d731"
+      "time": null,
+      "url": "https://yp.events/ac1027d1-fee4-4d97-92fa-533a1e1bd5e0/THIS-IS-TECHNO-Melodic-Try-Konga?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/07/ThisisTechnoMelo_01082026_lepetitsalon-1024x576.jpg",
+      "id": "30674b083c1e"
     },
     {
       "venue": "Le Sucre",
@@ -1011,10 +868,23 @@
       "category": null,
       "date_start": "2026-08-04",
       "date_end": null,
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/stand-up-politique-11",
       "image": null,
-      "id": "d8262072bccd"
+      "id": "5d678cbce733"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Résidence Physical Tool",
+      "subtitle": null,
+      "category": "dj set",
+      "date_start": "2026-08-06",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/residence-physical-tool/",
+      "image": null,
+      "id": "f63f0c182e72"
     },
     {
       "venue": "Grrrnd Zero",
@@ -1024,10 +894,10 @@
       "category": null,
       "date_start": "2026-08-06",
       "date_end": null,
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/brigitte-nrv-sarah-mai-tony-geranno",
       "image": null,
-      "id": "71380f391172"
+      "id": "cf836fbb10f7"
     },
     {
       "venue": "Le Sucre",
@@ -1041,6 +911,19 @@
       "url": "https://le-sucre.eu/events/club-58/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/32-SET-EN-PIRATE-@louise_gholam-600x400.jpeg",
       "id": "daea64c01b76"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS TECHNO RAVE : MAUVE / LETHYX NEKUIA",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-08-08",
+      "date_end": null,
+      "time": null,
+      "url": "https://yp.events/153ec53b-8c43-4b2f-a4fd-dcecd40340d2/THIS-IS-TECHNO-Rave-LETHYX-NEKUIA-MAUVE?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/07/ThisisTechnoRave_08082026_lepetitsalon-1024x576.jpg",
+      "id": "ca4e24298225"
     },
     {
       "venue": "Le Sucre",
@@ -1067,6 +950,19 @@
       "url": "https://le-sucre.eu/events/s-society-157/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Function-1-404x600.jpg",
       "id": "aeb7b4489122"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Atelier créatif Lyon | découverte à La Commune",
+      "subtitle": null,
+      "category": "atelier",
+      "date_start": "2026-08-10",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/atelier-decouverte/",
+      "image": null,
+      "id": "3ff9ae85e835"
     },
     {
       "venue": "La Commune",
@@ -1108,6 +1004,19 @@
       "id": "6e226d777d75"
     },
     {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS TECHNO RAVE : CHAST / LÖRR B2B DSPRNC",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-08-14",
+      "date_end": null,
+      "time": null,
+      "url": "https://yp.events/5e7adf26-8c64-4a44-bf14-6a02cda1d5ac/THIS-IS-TECHNO-Rave-CHAST-Loerr-B2-B-Dsprnc?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/07/ThisisTechnoRave_14082026_lepetitsalon-1024x576.jpg",
+      "id": "1d26570c6a79"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "club x Hidden Garden",
@@ -1121,6 +1030,32 @@
       "id": "12247a811b16"
     },
     {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Résidence Physical Tool",
+      "subtitle": null,
+      "category": "dj set",
+      "date_start": "2026-08-15",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/residence-physical-tool-6/",
+      "image": null,
+      "id": "addf8d5faae1"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS HOUSE : DJ ATLANCE / OWENRUGA",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-08-15",
+      "date_end": null,
+      "time": null,
+      "url": "https://yp.events/6f179598-9c55-4365-b433-84e3a519bb24/THIS-IS-HOUSE-DJ-Atlance-owenruga?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/07/ThisisHouse_15082026_lepetitsalon-1024x576.jpg",
+      "id": "3b361021efb6"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Ragana + Margarita + basseville + Maléore",
@@ -1128,10 +1063,10 @@
       "category": null,
       "date_start": "2026-08-15",
       "date_end": null,
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/ragana-tba",
       "image": null,
-      "id": "ef9e4b067c91"
+      "id": "64c5d357d7de"
     },
     {
       "venue": "Le Sucre",
@@ -1147,19 +1082,6 @@
       "id": "d1edc3b1c3e9"
     },
     {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "Fossilization + Phobocosm + tba",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-08-16",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/fossilization-phobocosm-tba",
-      "image": null,
-      "id": "89e72c824d3d"
-    },
-    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "S.society",
@@ -1171,6 +1093,19 @@
       "url": "https://le-sucre.eu/events/s-society-158/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/DSCF0298-400x600.jpg",
       "id": "6453177f5a50"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Fossilization + Phobocosm + tba",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-08-16",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/fossilization-phobocosm-tba",
+      "image": null,
+      "id": "f15c616de71a"
     },
     {
       "venue": "La Commune",
@@ -1223,6 +1158,19 @@
       "url": "https://h-eat.eu/events/open-platine-le-labo-est-a-vous-2/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/04/Heat-x-Silk_Celiope-127-480x720.jpg",
       "id": "b76ac3cc8e4c"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Résidence Physical Tool",
+      "subtitle": null,
+      "category": "dj set",
+      "date_start": "2026-08-20",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/bingo-drag-lunch-7/",
+      "image": null,
+      "id": "35d8f52388fa"
     },
     {
       "venue": "HEAT",
@@ -1329,6 +1277,32 @@
       "id": "74a818590597"
     },
     {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Résidence Physical Tool",
+      "subtitle": null,
+      "category": "dj set",
+      "date_start": "2026-08-29",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/residence-physical-tool-8/",
+      "image": null,
+      "id": "b3cd3ec8e81a"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "MIA MENDI / KATZE / KONGA & MORE",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-08-29",
+      "date_end": null,
+      "time": null,
+      "url": "https://yp.events/2cad21e4-99a8-48eb-94b3-a3e8d212f0ad/Mia-Mendi-Katze-Konga-more?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/MIA-MENDI_29082026_lepetitsalon-1024x576.jpg",
+      "id": "8c392b47fbbc"
+    },
+    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Club Labo : Arm Aber Sexy (Stakhan, Isa, résident AAS)",
@@ -1368,32 +1342,6 @@
       "id": "5056793551a1"
     },
     {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "MIA MENDI / KATZE / KONGA & MORE",
-      "subtitle": null,
-      "category": "club",
-      "date_start": "2026-08-29",
-      "date_end": null,
-      "time": "23:30",
-      "url": "https://yp.events/2cad21e4-99a8-48eb-94b3-a3e8d212f0ad/Mia-Mendi-Katze-Konga-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/MIA-MENDI_29082026_lepetitsalon-1024x576.jpg",
-      "id": "5b4cd5b608c4"
-    },
-    {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "PΞB + We use cookies",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-08-30",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/p3b-tba",
-      "image": null,
-      "id": "dc17ffa09e68"
-    },
-    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "S.society",
@@ -1405,6 +1353,19 @@
       "url": "https://le-sucre.eu/events/s-society-153/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/05/30_08-450x600.png",
       "id": "3f82119ac0a9"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "PΞB + We use cookies",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-08-30",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/p3b-tba",
+      "image": null,
+      "id": "ca03e16c15ef"
     },
     {
       "venue": "Marché Gare",
@@ -1427,23 +1388,23 @@
       "category": "musique",
       "date_start": "2026-09-01",
       "date_end": "2026-09-02",
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-basem-al-ashkar-et-emmanuelle-miton",
       "image": null,
-      "id": "10e037bc4c71"
+      "id": "c2dadae93144"
     },
     {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
-      "title": "fantasy of a broken heart",
+      "title": "fantasy of a broken heart + suzi simonei",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-09-02",
       "date_end": null,
       "time": "20:00",
       "url": "https://sonic-lyon.fr/evenement/fantasy-of-a-broken-heart/",
-      "image": null,
-      "id": "391aab3b3d0e"
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/06/fantasyofabrokenheartinterviewpicture.jpg-1024x682.webp",
+      "id": "65ce007872b8"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -1466,10 +1427,10 @@
       "category": "musique",
       "date_start": "2026-09-05",
       "date_end": "2026-09-06",
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-lucas-rocher-lehache-all-stars-en-premiere-partie",
       "image": null,
-      "id": "0184923c5e6b"
+      "id": "b8fb660ef78e"
     },
     {
       "venue": "Le Sonic",
@@ -1481,7 +1442,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://sonic-lyon.fr/evenement/tvod/",
-      "image": null,
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/05/TVOD_Band-Pic-683x1024.jpg",
       "id": "370c09e168d2"
     },
     {
@@ -1492,10 +1453,10 @@
       "category": "musique",
       "date_start": "2026-09-09",
       "date_end": "2026-09-10",
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-dagnes-bihl",
       "image": null,
-      "id": "5d96bfa558f2"
+      "id": "6c3c2664a6e1"
     },
     {
       "venue": "Bourse du Travail",
@@ -1518,23 +1479,10 @@
       "category": null,
       "date_start": "2026-09-11",
       "date_end": null,
-      "time": "17:00",
+      "time": "19:00",
       "url": "https://agenda.villemorte.fr/event/le-z-a-gz",
       "image": null,
-      "id": "2707283b159c"
-    },
-    {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Scène ouverte slam – session de septembre",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-09-11",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/scene-ouverte-slam-session-de-septembre",
-      "image": null,
-      "id": "791e1d9b3213"
+      "id": "f72ad7d73259"
     },
     {
       "venue": "Le Transbordeur",
@@ -1550,6 +1498,19 @@
       "id": "3e707d941a59"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Scène ouverte slam – session de septembre",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-11",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/scene-ouverte-slam-session-de-septembre",
+      "image": null,
+      "id": "bd5700697ed0"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "M Pokora",
@@ -1563,19 +1524,6 @@
       "id": "9be61b916918"
     },
     {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Spectacle de Perrine Rouland – Blouse",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-09-12",
-      "date_end": "2026-09-13",
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/spectacle-de-perrine-rouland-blouse",
-      "image": null,
-      "id": "ab166977ca79"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "KINGDOMS CATCH MANIA",
@@ -1587,6 +1535,19 @@
       "url": "https://larayonne.org/evenement/kingdoms-catch-mania/",
       "image": null,
       "id": "6b94428462b8"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Spectacle de Perrine Rouland – Blouse",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-09-12",
+      "date_end": "2026-09-13",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/spectacle-de-perrine-rouland-blouse",
+      "image": null,
+      "id": "d5d161b31c8f"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -1622,36 +1583,10 @@
       "category": null,
       "date_start": "2026-09-15",
       "date_end": null,
-      "time": "17:30",
+      "time": "19:30",
       "url": "https://agenda.villemorte.fr/event/les-mardis-du-4-session-de-septembre",
       "image": null,
-      "id": "d34d0ca493e2"
-    },
-    {
-      "venue": "A Thou Bout d'Chant",
-      "venue_slug": "a-thou-bout-d-chant",
-      "title": "CONCERT | LÉONID",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-09-17",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/concert-or-leonid",
-      "image": null,
-      "id": "f28f13e4d4a9"
-    },
-    {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Concert de Merienne & d'Alias Blob",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-09-17",
-      "date_end": "2026-09-18",
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/concert-de-merienne-and-dalias-blob",
-      "image": null,
-      "id": "f7f0aee1d1ab"
+      "id": "6619966f2ed4"
     },
     {
       "venue": "Le Transbordeur",
@@ -1665,6 +1600,32 @@
       "url": "https://www.transbordeur.fr/evenement/la-colonie-de-vacances-17092026/",
       "image": null,
       "id": "1e9975aba31a"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CONCERT | LÉONID",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-17",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/concert-or-leonid",
+      "image": null,
+      "id": "428d8edf7221"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Merienne & d'Alias Blob",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-17",
+      "date_end": "2026-09-18",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-merienne-and-dalias-blob",
+      "image": null,
+      "id": "d81cc78d537b"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -1687,10 +1648,10 @@
       "category": "musique",
       "date_start": "2026-09-18",
       "date_end": null,
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-or-cyril-mokaiesh",
       "image": null,
-      "id": "4472de7086a7"
+      "id": "9e6ea002bbf1"
     },
     {
       "venue": "Marché Gare",
@@ -1752,10 +1713,10 @@
       "category": "musique",
       "date_start": "2026-09-19",
       "date_end": null,
-      "time": "13:00",
+      "time": "15:00",
       "url": "https://agenda.villemorte.fr/event/fete-de-rentree-de-la-machinerie",
       "image": null,
-      "id": "dc098320baa3"
+      "id": "a93649020254"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -1765,10 +1726,10 @@
       "category": "musique",
       "date_start": "2026-09-19",
       "date_end": null,
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-or-cecile-hercule-johanna-baget",
       "image": null,
-      "id": "193952daa00e"
+      "id": "12ec244d91fb"
     },
     {
       "venue": "Agend'arts",
@@ -1778,10 +1739,10 @@
       "category": "musique",
       "date_start": "2026-09-19",
       "date_end": "2026-09-20",
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/les-3-becs-la-centieme-nuit-chansons-danne-sylvestre",
       "image": null,
-      "id": "4e67d37bf08f"
+      "id": "e052181c88e8"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -1871,8 +1832,21 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://sonic-lyon.fr/evenement/holy-wave/",
-      "image": null,
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/06/Capture-decran-2026-06-08-a-15.15.15-1024x1017.png",
       "id": "8f195e0a4520"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Bientôt en vente Gratuit abonné Projection Ciné-Club : IF - Illustration Festival Courts-Métrages d'animation",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-09-23",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/cine-club-if-festival",
+      "image": null,
+      "id": "5d3100cb2ddc"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -1882,10 +1856,10 @@
       "category": "musique",
       "date_start": "2026-09-24",
       "date_end": null,
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-or-marion-roch",
       "image": null,
-      "id": "cf524b7ebf59"
+      "id": "88fc2bd5ed8f"
     },
     {
       "venue": "Agend'arts",
@@ -1895,23 +1869,23 @@
       "category": "musique",
       "date_start": "2026-09-24",
       "date_end": "2026-09-25",
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/simon-pichetti-je-suis-la",
       "image": null,
-      "id": "774ee76baaf2"
+      "id": "8e1ca132a72e"
     },
     {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
-      "title": "Sofia",
+      "title": "Sofia + So Loli",
       "subtitle": null,
       "category": "concert",
       "date_start": "2026-09-24",
       "date_end": null,
       "time": "20:00",
       "url": "https://sonic-lyon.fr/evenement/sofia/",
-      "image": null,
-      "id": "dc02f0576746"
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/06/a3068401126_10-1024x1024.jpg",
+      "id": "bf87b92984ef"
     },
     {
       "venue": "Marché Gare",
@@ -1960,10 +1934,10 @@
       "category": "musique",
       "date_start": "2026-09-25",
       "date_end": null,
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-or-fredo-des-ogres-de-barback",
       "image": null,
-      "id": "fbcad02fed78"
+      "id": "d17d7dc2e016"
     },
     {
       "venue": "Marché Gare",
@@ -2012,10 +1986,10 @@
       "category": "musique",
       "date_start": "2026-09-26",
       "date_end": "2026-09-27",
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-teklash",
       "image": null,
-      "id": "07402a24c09d"
+      "id": "157717fdfc09"
     },
     {
       "venue": "Marché Gare",
@@ -2038,10 +2012,10 @@
       "category": "musique",
       "date_start": "2026-09-29",
       "date_end": "2026-09-30",
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/bouches-de-coton",
       "image": null,
-      "id": "29409d262485"
+      "id": "64afe468ed2b"
     },
     {
       "venue": "Bourse du Travail",
@@ -2083,19 +2057,6 @@
       "id": "bb5966ddfb6d"
     },
     {
-      "venue": "A Thou Bout d'Chant",
-      "venue_slug": "a-thou-bout-d-chant",
-      "title": "CONCERT | JULIETTE MAGNEVASOA",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-01",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/concert-or-juliette-magnevasoa",
-      "image": null,
-      "id": "b7dcb0936224"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "MERYL",
@@ -2107,6 +2068,19 @@
       "url": "https://www.transbordeur.fr/evenement/meryl-01102026/",
       "image": null,
       "id": "a5b94fd348ca"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CONCERT | JULIETTE MAGNEVASOA",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-01",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/concert-or-juliette-magnevasoa",
+      "image": null,
+      "id": "b49e46217cea"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -2161,32 +2135,6 @@
       "id": "2e5204723b6e"
     },
     {
-      "venue": "A Thou Bout d'Chant",
-      "venue_slug": "a-thou-bout-d-chant",
-      "title": "CO-PLATEAU | NINE + LOUFOX",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-02",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/co-plateau-or-nine-loufox",
-      "image": null,
-      "id": "bae08332bc6f"
-    },
-    {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "L’amour selon Anton Tchekhov",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-10-02",
-      "date_end": "2026-10-04",
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/lamour-selon-anton-tchekhov",
-      "image": null,
-      "id": "f5e0cf988ff9"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "MIOSSEC",
@@ -2198,6 +2146,32 @@
       "url": "https://www.transbordeur.fr/evenement/miossec-02102026/",
       "image": null,
       "id": "bf85dc0945dc"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CO-PLATEAU | NINE + LOUFOX",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-02",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/co-plateau-or-nine-loufox",
+      "image": null,
+      "id": "8f8ac03b25b5"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "L’amour selon Anton Tchekhov",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-10-02",
+      "date_end": "2026-10-04",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/lamour-selon-anton-tchekhov",
+      "image": null,
+      "id": "379d4a84cc08"
     },
     {
       "venue": "Bourse du Travail",
@@ -2226,32 +2200,6 @@
       "id": "fa65056ac236"
     },
     {
-      "venue": "A Thou Bout d'Chant",
-      "venue_slug": "a-thou-bout-d-chant",
-      "title": "CONCERT | CLAUDE LEMESLES",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-03",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/concert-or-claude-lemesles",
-      "image": null,
-      "id": "f3b9a2493ce0"
-    },
-    {
-      "venue": "La Machinerie - Bizarre !",
-      "venue_slug": "la-machinerie-bizarre",
-      "title": "34MURPHY + ARTEL + NOBODYLIKESBIRDIE",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-03",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/34murphy-artel-nobodylikesbirdie",
-      "image": null,
-      "id": "fcb6fb0af22b"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Mentissa",
@@ -2263,6 +2211,32 @@
       "url": "https://larayonne.org/evenement/mentissa/",
       "image": null,
       "id": "b69cc134bb46"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "CONCERT | CLAUDE LEMESLES",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/concert-or-claude-lemesles",
+      "image": null,
+      "id": "0745f1cf0707"
+    },
+    {
+      "venue": "La Machinerie - Bizarre !",
+      "venue_slug": "la-machinerie-bizarre",
+      "title": "34MURPHY + ARTEL + NOBODYLIKESBIRDIE",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/34murphy-artel-nobodylikesbirdie",
+      "image": null,
+      "id": "a5420ebfdaf7"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -2376,10 +2350,10 @@
       "category": "musique",
       "date_start": "2026-10-07",
       "date_end": "2026-10-09",
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/hold-fast-cie-ma-marion-alzieu",
       "image": null,
-      "id": "5996037b5355"
+      "id": "a8b03c7f3a16"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -2395,19 +2369,6 @@
       "id": "92bda1f8d50a"
     },
     {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Concert de Federica e Marco – È una canzone d’amore",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-08",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/concert-de-federica-e-marco-e-una-canzone-damore",
-      "image": null,
-      "id": "03f7daf73846"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Didier Super Metal",
@@ -2421,6 +2382,19 @@
       "id": "dd9cb6652884"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Federica e Marco – È una canzone d’amore",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-08",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-federica-e-marco-e-una-canzone-damore",
+      "image": null,
+      "id": "f90ae79ad24b"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "Pisse + Güner Künier",
@@ -2430,7 +2404,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://sonic-lyon.fr/evenement/pisse-guner-kunier/",
-      "image": null,
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/05/Pisse-2025-Problem-768x1024.jpg",
       "id": "c5b56ac2f4b8"
     },
     {
@@ -2512,6 +2486,19 @@
       "id": "29ab8e777dff"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Faustine Lewandowski & de Hortense",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-09",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-faustine-lewandowski-and-de-hortense",
+      "image": null,
+      "id": "5b5e7a5c49e1"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Rap ANTON SERRA · LUCIO BUKOWSKI · OSTER LAPWASS Les 10+1 ans de l'album \"La Plume et le Brise-Glace\"",
@@ -2551,32 +2538,6 @@
       "id": "202ee10a30cf"
     },
     {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Concert d'Electric Louve & de Da Capo",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-10",
-      "date_end": "2026-10-11",
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/concert-delectric-louve-and-de-da-capo",
-      "image": null,
-      "id": "55707a9b5096"
-    },
-    {
-      "venue": "La Machinerie - Bizarre !",
-      "venue_slug": "la-machinerie-bizarre",
-      "title": "GARS SÛRS MUNICIPAUX & FRIENDS",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-10",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/gars-surs-municipaux-and-friends",
-      "image": null,
-      "id": "754cb6c1176a"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "APPARAT",
@@ -2588,6 +2549,32 @@
       "url": "https://www.transbordeur.fr/evenement/apparat-10102026/",
       "image": null,
       "id": "10268a6724e5"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert d'Electric Louve & de Da Capo",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-10",
+      "date_end": "2026-10-11",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/concert-delectric-louve-and-de-da-capo",
+      "image": null,
+      "id": "f7004d280b5f"
+    },
+    {
+      "venue": "La Machinerie - Bizarre !",
+      "venue_slug": "la-machinerie-bizarre",
+      "title": "GARS SÛRS MUNICIPAUX & FRIENDS",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/gars-surs-municipaux-and-friends",
+      "image": null,
+      "id": "e596b4423ba6"
     },
     {
       "venue": "Marché Gare",
@@ -2642,19 +2629,6 @@
       "id": "0f83df41f48b"
     },
     {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Les Mardis du 4 – session d’octobre",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-10-13",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://agenda.villemorte.fr/event/les-mardis-du-4-session-doctobre",
-      "image": null,
-      "id": "570393a895c9"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "DJ KRUSH",
@@ -2666,6 +2640,19 @@
       "url": "https://www.transbordeur.fr/evenement/dj-krush-13102026/",
       "image": null,
       "id": "ee100081fce5"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Les Mardis du 4 – session d’octobre",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-10-13",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://agenda.villemorte.fr/event/les-mardis-du-4-session-doctobre",
+      "image": null,
+      "id": "77e29afe5461"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -2729,7 +2716,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://sonic-lyon.fr/evenement/leya/",
-      "image": null,
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/05/2026-EU-Tour-Press-Photo-1-1024x768.jpeg",
       "id": "72241909fb71"
     },
     {
@@ -2740,10 +2727,10 @@
       "category": "musique",
       "date_start": "2026-10-15",
       "date_end": null,
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/danyl-cyrious",
       "image": null,
-      "id": "66ecf151e4b7"
+      "id": "5e64042a732f"
     },
     {
       "venue": "Marché Gare",
@@ -2785,19 +2772,6 @@
       "id": "f2b3c1524d19"
     },
     {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Scène ouverte slam – session d’octobre",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-16",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/scene-ouverte-slam-session-doctobre",
-      "image": null,
-      "id": "fa7f709d8ac7"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Chinese Man Records Party : BOLD feat YOUTHSTAR + RUMBLE + THA TRICKAZ",
@@ -2809,6 +2783,32 @@
       "url": "https://larayonne.org/evenement/chinese-man-records-party-bold-feat-youthstar-rumble-tha-trickaz/",
       "image": null,
       "id": "f47e0b3b8561"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Scène ouverte slam – session d’octobre",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-16",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/scene-ouverte-slam-session-doctobre",
+      "image": null,
+      "id": "a2aa639308fa"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Bientôt en vente Electro Sono Mondiale LES MAMANS DU CONGO & RROBIN + SHAROUH Jarring Fest 2026",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-10-16",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/jarring-fest-2026",
+      "image": null,
+      "id": "38ab889636f0"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -2837,19 +2837,6 @@
       "id": "00b45a1847b3"
     },
     {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Spectacle de Christine Brotons – “Chansons déshabillées”",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-17",
-      "date_end": "2026-10-18",
-      "time": "18:00",
-      "url": "https://agenda.villemorte.fr/event/spectacle-de-christine-brotons-chansons-deshabillees",
-      "image": null,
-      "id": "d65468858a5c"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "REPORTÉ // VEN1",
@@ -2874,6 +2861,19 @@
       "url": "https://www.transbordeur.fr/evenement/seth-gueko-17102026/",
       "image": null,
       "id": "e04c0b895c1d"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Spectacle de Christine Brotons – “Chansons déshabillées”",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-17",
+      "date_end": "2026-10-18",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/spectacle-de-christine-brotons-chansons-deshabillees",
+      "image": null,
+      "id": "3fe8e35a45e1"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3002,7 +3002,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://sonic-lyon.fr/evenement/the-homesick-group-ensemble/",
-      "image": null,
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/06/THE_HOMESICK_presspic3_2026CDanny_Griffioen-1.jpg",
       "id": "e5cd71040a5a"
     },
     {
@@ -3117,10 +3117,10 @@
       "category": "musique",
       "date_start": "2026-10-24",
       "date_end": "2026-10-25",
-      "time": "18:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/spectacle-de-ddi-et-chrlie",
       "image": null,
-      "id": "eaeab3090758"
+      "id": "f000b4edb2dd"
     },
     {
       "venue": "Marché Gare",
@@ -3286,10 +3286,10 @@
       "category": "musique",
       "date_start": "2026-10-29",
       "date_end": null,
-      "time": "18:30",
+      "time": "19:30",
       "url": "https://agenda.villemorte.fr/event/the-notwist",
       "image": null,
-      "id": "1a05b312c57d"
+      "id": "9a0441fdf815"
     },
     {
       "venue": "Agend'arts",
@@ -3299,10 +3299,10 @@
       "category": "musique",
       "date_start": "2026-10-29",
       "date_end": "2026-10-30",
-      "time": "19:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-thibaut-preciat-and-de-marco-carollo",
       "image": null,
-      "id": "3f3ec855369b"
+      "id": "2ee108cd1616"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3442,10 +3442,10 @@
       "category": "musique",
       "date_start": "2026-10-31",
       "date_end": "2026-11-01",
-      "time": "19:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-matildy-and-de-nico-etoile",
       "image": null,
-      "id": "7a3e2e7a47a3"
+      "id": "12574306695a"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3494,10 +3494,10 @@
       "category": null,
       "date_start": "2026-11-03",
       "date_end": "2026-11-04",
-      "time": "19:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/37-minutes-et-des-poussieres",
       "image": null,
-      "id": "fe8bd2c11802"
+      "id": "f8d2a206602f"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3550,6 +3550,19 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/djadja-dinaz-2",
       "image": null,
       "id": "38be92eb323a"
+    },
+    {
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "Musiques en héritage - Compagnie LIBOMNA, Ludmila Dabo",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-05",
+      "date_end": "2026-11-06",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/musiques-en-heritage-compagnie-libomna-ludmila-dabo",
+      "image": null,
+      "id": "d86311b005c7"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -3630,6 +3643,19 @@
       "id": "4dae556f89d2"
     },
     {
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "Karaoké - Musiques en héritage",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-06",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://agenda.villemorte.fr/event/karaoke-musiques-en-heritage",
+      "image": null,
+      "id": "e7f8e842b8df"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Naïm - Chapitre 3 - Tournée",
@@ -3682,19 +3708,6 @@
       "id": "1f9ea40d053a"
     },
     {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Concert de Nicolas Jules",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-11-07",
-      "date_end": "2026-11-08",
-      "time": "19:00",
-      "url": "https://agenda.villemorte.fr/event/concert-de-nicolas-jules",
-      "image": null,
-      "id": "554b78b96797"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Kamelot + Exit Eden + Temperance",
@@ -3719,6 +3732,19 @@
       "url": "https://www.transbordeur.fr/evenement/jwles-07112026/",
       "image": null,
       "id": "733e9ea5ad7e"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Nicolas Jules",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-07",
+      "date_end": "2026-11-08",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-nicolas-jules",
+      "image": null,
+      "id": "7d223f00e67a"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -3871,10 +3897,10 @@
       "category": null,
       "date_start": "2026-11-10",
       "date_end": null,
-      "time": "18:30",
+      "time": "19:30",
       "url": "https://agenda.villemorte.fr/event/les-mardis-du-4-session-de-novembre",
       "image": null,
-      "id": "3a9f2f126e58"
+      "id": "1d6cf37b08e8"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -3916,19 +3942,6 @@
       "id": "2a582d82a3d6"
     },
     {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Chante avec agend’Arts – La KaraChorale – novembre",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-11-11",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://agenda.villemorte.fr/event/chante-avec-agendarts-la-karachorale-novembre",
-      "image": null,
-      "id": "9a02a722ec61"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "LUIZA",
@@ -3953,6 +3966,19 @@
       "url": "https://www.transbordeur.fr/evenement/schur-jeanie-11112026/",
       "image": null,
       "id": "8bb554460fe8"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Chante avec agend’Arts – La KaraChorale – novembre",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-11",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/chante-avec-agendarts-la-karachorale-novembre",
+      "image": null,
+      "id": "5f60cadaaec2"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -4007,19 +4033,6 @@
       "id": "32d0c0de4c46"
     },
     {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Concert de Laurent Berger & de Christopher Murray",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-11-13",
-      "date_end": "2026-11-14",
-      "time": "19:00",
-      "url": "https://agenda.villemorte.fr/event/concert-de-laurent-berger-and-de-christopher-murray",
-      "image": null,
-      "id": "fe0f07d31848"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Emma",
@@ -4033,6 +4046,32 @@
       "id": "c4c1dab52283"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Laurent Berger & de Christopher Murray",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-13",
+      "date_end": "2026-11-14",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-laurent-berger-and-de-christopher-murray",
+      "image": null,
+      "id": "2fad2c3834e0"
+    },
+    {
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "Fidélité(s) - Collectif Les Trois Mulets, Ali Esmili",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-11-13",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/fidelites-collectif-les-trois-mulets-ali-esmili",
+      "image": null,
+      "id": "11dec576b7ce"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "BENABAR",
@@ -4044,19 +4083,6 @@
       "url": "https://radiant-bellevue.fr/spectacles/benabar/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/12/benabar_radiant-bellevue-500x500.jpg",
       "id": "251deaec3bb3"
-    },
-    {
-      "venue": "L'Épicerie Moderne",
-      "venue_slug": "l-epicerie-moderne",
-      "title": "INFINITY SONG",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-11-14",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://agenda.villemorte.fr/event/infinity-song",
-      "image": null,
-      "id": "a42c4d528118"
     },
     {
       "venue": "Le Sucre",
@@ -4096,6 +4122,19 @@
       "url": "https://larayonne.org/evenement/nono-la-grinta/",
       "image": null,
       "id": "1af25c9e8b88"
+    },
+    {
+      "venue": "L'Épicerie Moderne",
+      "venue_slug": "l-epicerie-moderne",
+      "title": "INFINITY SONG",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-14",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://agenda.villemorte.fr/event/infinity-song",
+      "image": null,
+      "id": "e4d1985e7f4d"
     },
     {
       "venue": "Marché Gare",
@@ -4144,10 +4183,10 @@
       "category": "musique",
       "date_start": "2026-11-15",
       "date_end": null,
-      "time": "17:00",
+      "time": "18:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-lehache-all-stars",
       "image": null,
-      "id": "3c16446dd720"
+      "id": "e860d076a1fe"
     },
     {
       "venue": "Le Transbordeur",
@@ -4163,19 +4202,6 @@
       "id": "ee8ca3789eab"
     },
     {
-      "venue": "La Ruche industrielle",
-      "venue_slug": "la-ruche-industrielle",
-      "title": "Ma République et moi - Compagnie Iwa, Issam Rachyq-Ahrad",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-11-17",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://agenda.villemorte.fr/event/ma-republique-et-moi-compagnie-iwa-issam-rachyq-ahrad",
-      "image": null,
-      "id": "5daed642e39a"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "COLOURS IN THE STREET",
@@ -4187,6 +4213,19 @@
       "url": "https://www.transbordeur.fr/evenement/colours-in-the-street-17112026/",
       "image": null,
       "id": "55ef8b43abc7"
+    },
+    {
+      "venue": "La Ruche industrielle",
+      "venue_slug": "la-ruche-industrielle",
+      "title": "Ma République et moi - Compagnie Iwa, Issam Rachyq-Ahrad",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-11-17",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/ma-republique-et-moi-compagnie-iwa-issam-rachyq-ahrad",
+      "image": null,
+      "id": "23cbda40ac87"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4332,19 +4371,6 @@
       "id": "c54c77d30364"
     },
     {
-      "venue": "La Machinerie - Bizarre !",
-      "venue_slug": "la-machinerie-bizarre",
-      "title": "Zinée + T2LS",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-11-20",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://agenda.villemorte.fr/event/zinee-t2ls",
-      "image": null,
-      "id": "27beb97dbd95"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Elmer Food Beat",
@@ -4371,17 +4397,17 @@
       "id": "0d07263bcd96"
     },
     {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Hors les murs Rap Urban Pop ZINÉE > à Bizarre! Vénissieux",
+      "venue": "La Machinerie - Bizarre !",
+      "venue_slug": "la-machinerie-bizarre",
+      "title": "Zinée + T2LS",
       "subtitle": null,
-      "category": null,
+      "category": "musique",
       "date_start": "2026-11-20",
       "date_end": null,
       "time": "20:00",
-      "url": "https://marchegare.fr/agenda/zinee",
+      "url": "https://agenda.villemorte.fr/event/zinee-t2ls",
       "image": null,
-      "id": "db8557647313"
+      "id": "7702bdbd813c"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4423,17 +4449,17 @@
       "id": "b8675ebe88aa"
     },
     {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Gratuit abonné Rock HOWLIN' JAWS",
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Bonnie Bécasse – Quinzaine « Paroles de femmes »",
       "subtitle": null,
-      "category": null,
+      "category": "musique",
       "date_start": "2026-11-21",
-      "date_end": null,
+      "date_end": "2026-11-22",
       "time": "20:00",
-      "url": "https://marchegare.fr/agenda/howlin-jaws",
+      "url": "https://agenda.villemorte.fr/event/concert-de-bonnie-becasse-quinzaine-paroles-de-femmes",
       "image": null,
-      "id": "b22165c32a6c"
+      "id": "7d3ecde733d3"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4462,19 +4488,6 @@
       "id": "8c1045a4972a"
     },
     {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Cercles Carmins – Quinzaine « Paroles de femmes »",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-11-24",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://agenda.villemorte.fr/event/cercles-carmins-quinzaine-paroles-de-femmes",
-      "image": null,
-      "id": "8402f2791016"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Robert Finley",
@@ -4501,6 +4514,19 @@
       "id": "603d4449abfd"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Cercles Carmins – Quinzaine « Paroles de femmes »",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-11-24",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/cercles-carmins-quinzaine-paroles-de-femmes",
+      "image": null,
+      "id": "8acd428b54b3"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LOCURA",
@@ -4512,6 +4538,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/locura/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/locura_radiant-bellevue-500x500.jpg",
       "id": "c8bf01017f4f"
+    },
+    {
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "Dans la grotte - Cie La Volière, Myriam Boudenia",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-11-25",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://agenda.villemorte.fr/event/dans-la-grotte-cie-la-voliere-myriam-boudenia",
+      "image": null,
+      "id": "d7ef1cd3d95a"
     },
     {
       "venue": "Le Transbordeur",
@@ -4540,32 +4579,6 @@
       "id": "0a8c5ffdceaf"
     },
     {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Puissantes – Quinzaine « Paroles de femmes »",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-11-26",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://agenda.villemorte.fr/event/puissantes-quinzaine-paroles-de-femmes",
-      "image": null,
-      "id": "925db7bf3e81"
-    },
-    {
-      "venue": "La Machinerie - Bizarre !",
-      "venue_slug": "la-machinerie-bizarre",
-      "title": "Sheldon + Lupi'o + Asna",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-11-26",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://agenda.villemorte.fr/event/sheldon-lupio-asna",
-      "image": null,
-      "id": "7f509ca8150c"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "LADANIVA",
@@ -4590,6 +4603,32 @@
       "url": "https://www.transbordeur.fr/evenement/ben-plg-26112026/",
       "image": null,
       "id": "0446d58205ab"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Puissantes – Quinzaine « Paroles de femmes »",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-11-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/puissantes-quinzaine-paroles-de-femmes",
+      "image": null,
+      "id": "3f9b0a6272e4"
+    },
+    {
+      "venue": "La Machinerie - Bizarre !",
+      "venue_slug": "la-machinerie-bizarre",
+      "title": "Sheldon + Lupi'o + Asna",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/sheldon-lupio-asna",
+      "image": null,
+      "id": "92c8f07d76c0"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4742,10 +4781,10 @@
       "category": "théâtre",
       "date_start": "2026-11-29",
       "date_end": null,
-      "time": "17:00",
+      "time": "18:00",
       "url": "https://agenda.villemorte.fr/event/une-fille-comme-les-autres-quinzaine-paroles-de-femmes",
       "image": null,
-      "id": "b28f7927adbc"
+      "id": "a5c5808373ab"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4878,19 +4917,6 @@
       "id": "08203c940f44"
     },
     {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Concert d'Erwan Pinard",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-12-04",
-      "date_end": "2026-12-06",
-      "time": "19:00",
-      "url": "https://agenda.villemorte.fr/event/concert-derwan-pinard",
-      "image": null,
-      "id": "6e43c39de9c1"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "LUTHER",
@@ -4902,6 +4928,19 @@
       "url": "https://www.transbordeur.fr/evenement/luther-04122026/",
       "image": null,
       "id": "0b1779aecea2"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert d'Erwan Pinard",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-12-04",
+      "date_end": "2026-12-06",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/concert-derwan-pinard",
+      "image": null,
+      "id": "6ff4ee74b0cf"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -5067,10 +5106,10 @@
       "category": "musique",
       "date_start": "2026-12-10",
       "date_end": null,
-      "time": "19:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-dantoine-gasse-and-de-klohe",
       "image": null,
-      "id": "f2a1aa5fa4f6"
+      "id": "399e5c115ea1"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5099,19 +5138,6 @@
       "id": "4e0eef2aac58"
     },
     {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Scène ouverte slam – session de décembre",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-12-11",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://agenda.villemorte.fr/event/scene-ouverte-slam-session-de-decembre",
-      "image": null,
-      "id": "2efe3bd87c4d"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "MARGUERITE",
@@ -5123,6 +5149,19 @@
       "url": "https://www.transbordeur.fr/evenement/marguerite-11122026/",
       "image": null,
       "id": "01b1f5d0b5d4"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Scène ouverte slam – session de décembre",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-12-11",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/scene-ouverte-slam-session-de-decembre",
+      "image": null,
+      "id": "0aebbfb71f5e"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5171,23 +5210,10 @@
       "category": "théâtre",
       "date_start": "2026-12-12",
       "date_end": null,
-      "time": "16:00",
+      "time": "17:00",
       "url": "https://agenda.villemorte.fr/event/track-cie-la-boite-a-sel-celine-garnavault",
       "image": null,
-      "id": "e5577bcfe410"
-    },
-    {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Concert de Fleur de Tempête",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-12-12",
-      "date_end": "2026-12-13",
-      "time": "19:00",
-      "url": "https://agenda.villemorte.fr/event/concert-de-fleur-de-tempete",
-      "image": null,
-      "id": "bcdca3d44ccb"
+      "id": "b09473dd90e2"
     },
     {
       "venue": "La Rayonne",
@@ -5214,6 +5240,19 @@
       "url": "https://www.transbordeur.fr/evenement/sam-sauvage-12122026/",
       "image": null,
       "id": "fbccab0e5fae"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Concert de Fleur de Tempête",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-12-12",
+      "date_end": "2026-12-13",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/concert-de-fleur-de-tempete",
+      "image": null,
+      "id": "89ee1db07c5b"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5342,7 +5381,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://sonic-lyon.fr/evenement/neptune/",
-      "image": null,
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/07/Neptune_promo2_2025wb20jpg.jpeg",
       "id": "b5d174f39ae8"
     },
     {
@@ -5372,19 +5411,6 @@
       "id": "8653ed95ca54"
     },
     {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Sapperlot ! Ou l’origine de mes névroses – Anne Fromm",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-12-18",
-      "date_end": "2026-12-20",
-      "time": "19:00",
-      "url": "https://agenda.villemorte.fr/event/sapperlot-ou-lorigine-de-mes-nevroses-anne-fromm",
-      "image": null,
-      "id": "56dc953ffee9"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "DJ PONE & friends",
@@ -5396,6 +5422,19 @@
       "url": "https://larayonne.org/evenement/pone-friends/",
       "image": null,
       "id": "e3087fb483d4"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Sapperlot ! Ou l’origine de mes névroses – Anne Fromm",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-12-18",
+      "date_end": "2026-12-20",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/sapperlot-ou-lorigine-de-mes-nevroses-anne-fromm",
+      "image": null,
+      "id": "ad830e5934e8"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -5522,10 +5561,10 @@
       "category": "musique",
       "date_start": "2026-12-22",
       "date_end": null,
-      "time": "19:00",
+      "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/chante-avec-agendarts-la-karachorale-decembre",
       "image": null,
-      "id": "bf3f9a356fd9"
+      "id": "5371f82cb33d"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5578,6 +5617,19 @@
       "url": "https://www.bourse-du-travail.com/sellig-episode-7-tournee-382823.html",
       "image": null,
       "id": "971d199f2595"
+    },
+    {
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "WoooOOOoool - Cie bob Théâtre, Denis Athimon",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2027-01-06",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://agenda.villemorte.fr/event/woooooooool-cie-bob-theatre-denis-athimon",
+      "image": null,
+      "id": "5cbbf5f36eb6"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5671,6 +5723,19 @@
       "id": "17769ffabe2d"
     },
     {
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "WoooOOOoool - Cie bob Théâtre, Denis Athimon",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2027-01-09",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://agenda.villemorte.fr/event/woooooooool-cie-bob-theatre-denis-athimon-1",
+      "image": null,
+      "id": "6b579c21bbd0"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Harry Potter Et Le Prince De Sang-Mélé",
@@ -5684,32 +5749,6 @@
       "id": "80487e51b923"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "QUATUOR DEBUSSY",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-01-09",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/quatuor-debussy-4/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/quatuor-debussy-500x500.jpg",
-      "id": "1970971e57d3"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LA MAGIE D’HARRY POTTER !",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-01-10",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://radiant-bellevue.fr/spectacles/la-magie-dharry-potter/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-magie-dharry-potter-500x500.jpg",
-      "id": "e068839b1869"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Once Upon a time – David Bowie",
@@ -5721,19 +5760,6 @@
       "url": "https://larayonne.org/evenement/12833-2/",
       "image": null,
       "id": "a3cb245814d8"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "PUNK.E.S",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-01-12",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/punk-e-s/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/punkes-500x500.jpg",
-      "id": "e39b5acbebe4"
     },
     {
       "venue": "Bourse du Travail",
@@ -5762,19 +5788,6 @@
       "id": "d36fa43e7d82"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LAURENT VOULZY",
-      "subtitle": null,
-      "category": "chanson",
-      "date_start": "2027-01-13",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/laurent-voulzy-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/laurent-voulzy-500x500.jpg",
-      "id": "e17511c98686"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Festival Drôlement Bien - Lyon",
@@ -5788,17 +5801,17 @@
       "id": "31724020eb04"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "POTICHE",
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Les Chevaliers Du Fiel",
       "subtitle": null,
-      "category": "théâtre",
+      "category": "concert",
       "date_start": "2027-01-14",
       "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/potiche/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/potiche-500x500.jpg",
-      "id": "66b7aa14d2af"
+      "time": "20:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/les-chevaliers-du-fiel-2",
+      "image": null,
+      "id": "5265d5dc149c"
     },
     {
       "venue": "Bourse du Travail",
@@ -5814,30 +5827,17 @@
       "id": "102fa003e173"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "GIEDRE",
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "Gildaa",
       "subtitle": null,
-      "category": "concert",
+      "category": "musique",
       "date_start": "2027-01-15",
       "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/giedre-15012027/",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/gildaa",
       "image": null,
-      "id": "5437cf18e7fb"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "MOGUIZ",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-01-15",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/moguiz-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/04/mog-1-scaled.jpg",
-      "id": "160eb7ff67f5"
+      "id": "a528f8f80915"
     },
     {
       "venue": "Bourse du Travail",
@@ -5853,19 +5853,6 @@
       "id": "612d359c7b3e"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Visite tactile – Liah et moi",
-      "subtitle": "Liah et moi\nsam. 16 jan. 17h\nVersion chuchotée aux casques et visite tactile du décor et des costumes avant la représ…",
-      "category": "théâtre",
-      "date_start": "2027-01-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/visite-tactile-liah-et-moi/",
-      "image": null,
-      "id": "dc755c69212a"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Lion, Le Roi Est De Retour",
@@ -5877,19 +5864,6 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/lion-le-roi-est-de-retour",
       "image": null,
       "id": "91d9dd9e0953"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "FILLS MONKEY",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-16",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/fills-monkey-16012027/",
-      "image": null,
-      "id": "de7e73915937"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -5905,32 +5879,6 @@
       "id": "da6add811841"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "CAMILLE CHAMOUX",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-01-16",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/camille-chamoux-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/03/Portrait-Camille-Chamoux-Benjamin-Guillonneau-scaled-e1741944598749-500x500.jpg",
-      "id": "6c3de221073a"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "club",
-      "subtitle": "Bellaire",
-      "category": "club",
-      "date_start": "2027-01-16",
-      "date_end": null,
-      "time": "23:00",
-      "url": "https://le-sucre.eu/events/club-62/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/07/BELLAIRE-BORN-FUNKY-PRESS-PICTURES-FUNKY-BREAKFAST-BANNER-2-600x400.jpg",
-      "id": "e94ad8c79c20"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Paul De Saint Sernin",
@@ -5942,19 +5890,6 @@
       "url": "https://www.bourse-du-travail.com/paul-de-saint-sernin-363750.html",
       "image": null,
       "id": "2372645570e5"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "ALEXIS LE ROSSIGNOL",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-01-17",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://radiant-bellevue.fr/spectacles/alexis-le-rossignol/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/alexis-le-rossignol_radiant-bellevue-500x500.jpg",
-      "id": "23ea9c331362"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -5970,19 +5905,6 @@
       "id": "bba5ebee3dbe"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "COSMOS",
-      "subtitle": null,
-      "category": "danse",
-      "date_start": "2027-01-19",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/cosmos-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/cosmos-500x500.jpg",
-      "id": "2a2e3f374cfb"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Orden Ogan",
@@ -5994,32 +5916,6 @@
       "url": "https://larayonne.org/evenement/orden-ogan/",
       "image": null,
       "id": "e9aa264e6db2"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "TÉTÉ",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-20",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/tete-20012027/",
-      "image": null,
-      "id": "715fcfd6e206"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LE PÈRE",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-01-20",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/le-pere/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-pere-500x500.jpg",
-      "id": "2b4042607eb7"
     },
     {
       "venue": "Bourse du Travail",
@@ -6035,32 +5931,6 @@
       "id": "48130ccf55b2"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "ZAOUI",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-21",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/zaoui-21012027/",
-      "image": null,
-      "id": "eda182261fed"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LE PÈRE",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-01-21",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/le-pere/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-pere-500x500.jpg",
-      "id": "df0921754fbc"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "VULVES ASSASSINES & POÉSIE ZÉRO + CITRON SUCRÉ",
@@ -6072,45 +5942,6 @@
       "url": "https://larayonne.org/evenement/vulves-assassines-poesie-zero-citron-sucre/",
       "image": null,
       "id": "aa28fc5264ba"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "RESOLVE + SILENT PLANET + SPLEEN",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-22",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/resolve-silent-planet-spleen-22012027/",
-      "image": null,
-      "id": "c6012651a9a7"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LEVI.SCT",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-01-22",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/levi-sct/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/levi-sct_radiant-bellevue-2-500x500.jpg",
-      "id": "eda197dd06c0"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Spunk!",
-      "subtitle": "Lucie Rébéré, Cie la maison",
-      "category": "théâtre",
-      "date_start": "2027-01-23",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/spunk/",
-      "image": null,
-      "id": "f3fdbf1881fe"
     },
     {
       "venue": "Bourse du Travail",
@@ -6126,19 +5957,6 @@
       "id": "b58de3be39e0"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "IMMO",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-01-24",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://radiant-bellevue.fr/spectacles/immo/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/immo-500x500.jpg",
-      "id": "d977989406b6"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Disney Sur Glace - Le Voyage Enchante",
@@ -6150,19 +5968,6 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante",
       "image": null,
       "id": "13871667903e"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LE JOURNAL D’EDOUARD BAER",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-01-27",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/le-journal-dedouard-baer/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-journal-d-edouard-baer-500x500.jpg",
-      "id": "e89afaa30436"
     },
     {
       "venue": "Bourse du Travail",
@@ -6178,30 +5983,17 @@
       "id": "063fa8d43d43"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "NTO",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-01-28",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/nto-28012027/",
-      "image": null,
-      "id": "47b30352ac4a"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LE FANTÔME DE L’OPÉRA",
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "Je suis venu·e pour rien - Cie Spell Mistake(s), Maïanne Barthes",
       "subtitle": null,
       "category": "théâtre",
       "date_start": "2027-01-28",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/le-fantome-de-lopera/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-fantome-de-l-opera-500x500.jpg",
-      "id": "fe2ecbdbcc06"
+      "date_end": "2027-01-29",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/je-suis-venue-pour-rien-cie-spell-mistakes-maianne-barthes",
+      "image": null,
+      "id": "bb3771bb341b"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -6217,45 +6009,6 @@
       "id": "2ebfe953dfc1"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "DANS LE COULOIR",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-01-29",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/dans-le-couloir/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/dans-le-couloir-500x500.jpg",
-      "id": "df95fbd84adc"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "RDV Pop’Corn – Le chat sur la photo",
-      "subtitle": "Un jour par mois le TNG vous donne rendez-vous et c’est gratuit !\nDécouverte des spectacles, ateliers créatifs, Pop�…",
-      "category": "théâtre",
-      "date_start": "2027-01-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-le-chat-sur-la-photo/",
-      "image": null,
-      "id": "9f5b01e2eac6"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "La fabrique des souvenirs – Le chat sur la photo",
-      "subtitle": "Ateliers intergénérationnels",
-      "category": "théâtre",
-      "date_start": "2027-01-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-le-chat-sur-la-photo/",
-      "image": null,
-      "id": "ff722100678f"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Disney Sur Glace - Le Voyage Enchante",
@@ -6267,19 +6020,6 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-4",
       "image": null,
       "id": "960700e6646d"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "SKIP THE USE",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-01-30",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/skip-the-use-2/",
-      "image": null,
-      "id": "e7fa4fd5c1ca"
     },
     {
       "venue": "Bourse du Travail",
@@ -6295,19 +6035,6 @@
       "id": "b29f8f61a5ad"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Le chat sur la photo",
-      "subtitle": "Odile Grosset-Grange, TNG-CDN de Lyon",
-      "category": "théâtre",
-      "date_start": "2027-01-31",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/le-chat-sur-la-photo/",
-      "image": null,
-      "id": "e0b9a5b957ba"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Disney Sur Glace - Le Voyage Enchante",
@@ -6319,32 +6046,6 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-7",
       "image": null,
       "id": "9b8c4c1badaf"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LA SOEUR DE JÉSUS-CHRIST",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-01-31",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://radiant-bellevue.fr/spectacles/la-soeur-de-jesus-christ/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-soeur-de-jesus-christ-500x500.jpg",
-      "id": "cd4f20cb44d5"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "JF PAUZE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-02-02",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/jf-pauze-02022027/",
-      "image": null,
-      "id": "543bf0414101"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -6360,19 +6061,6 @@
       "id": "14148c08ae28"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "MALDONNE",
-      "subtitle": null,
-      "category": "danse",
-      "date_start": "2027-02-02",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/maldonne/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/maldonne-500x500.jpg",
-      "id": "804b48a261b0"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Pierre-Emmanuel Barré & Aymeric Lompret \" Une Heure Trente \" - Tournée",
@@ -6384,19 +6072,6 @@
       "url": "https://www.bourse-du-travail.com/pierre-emmanuel-barre-aymeric-lompret-une-heure-trente-tournee-382074.html",
       "image": null,
       "id": "1fb09ea46654"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "VALENTINA",
-      "subtitle": null,
-      "category": "chanson",
-      "date_start": "2027-02-03",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://radiant-bellevue.fr/spectacles/valentina/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/valentina_radiant-bellevue-500x500.jpg",
-      "id": "b0008b201bcc"
     },
     {
       "venue": "Bourse du Travail",
@@ -6412,30 +6087,17 @@
       "id": "8f1448869528"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "REVNOIR + ICE SEALED EYES",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-02-04",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/revnoir-ice-sealed-eyes-04022027/",
-      "image": null,
-      "id": "f04104c16645"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LA FOLLE JOURNÉE OU LE MARIAGE DE FIGARO",
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "Nelvar, Le Royaume sans peuple - Logan de Carvalho et Margaux Desailly",
       "subtitle": null,
       "category": "théâtre",
       "date_start": "2027-02-04",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/la-folle-journee-ou-le-mariage-de-figaro/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-folle-journee-ou-500x500.jpg",
-      "id": "34ae1343636e"
+      "date_end": "2027-02-05",
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/nelvar-le-royaume-sans-peuple-logan-de-carvalho-et-margaux-desailly",
+      "image": null,
+      "id": "72e8ec4b231d"
     },
     {
       "venue": "Bourse du Travail",
@@ -6451,19 +6113,6 @@
       "id": "01930ae3c83b"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LA FOLLE JOURNÉE OU LE MARIAGE DE FIGARO",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-02-05",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/la-folle-journee-ou-le-mariage-de-figaro/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-folle-journee-ou-500x500.jpg",
-      "id": "c2d2d26bef3f"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Jérémy Charbonnel - Seul Tout - Tournée",
@@ -6477,19 +6126,6 @@
       "id": "501d81367d17"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Visite tactile – D’autres familles que la mienne",
-      "subtitle": "Représentation audiodécrite précédée d’une visite tactile.\nRenseignements et inscriptions\nvanina.chaize@tng-lyon.…",
-      "category": "théâtre",
-      "date_start": "2027-02-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/visite-tactile-dautres-familles-que-la-mienne/",
-      "image": null,
-      "id": "d09cc41aed41"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Aldebert",
@@ -6501,32 +6137,6 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/aldebert-3",
       "image": null,
       "id": "21397db5a6f9"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LET’S TWIST AGAIN",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-02-06",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/lets-twist-again/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/lets-twist-again-500x500.jpg",
-      "id": "912df24bf093"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "BAZAR CIRCUS",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-02-07",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://radiant-bellevue.fr/spectacles/bazar-circus/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/bazar-circus-500x500.jpg",
-      "id": "b98966baa346"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -6555,19 +6165,6 @@
       "id": "52ac2bdd1a8d"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LE JEU DE L’AMOUR ET DU HASARD",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-02-09",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/le-jeu-de-lamour-et-du-hasard/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-jeu-de-l-amour-et-du-hasard-500x500.jpg",
-      "id": "a2ee3a16a322"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Nawell Madani",
@@ -6579,19 +6176,6 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/nawell-madani",
       "image": null,
       "id": "1e43f410343a"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "CLASH ROCK – DE SCHUBERT A NIRVANA",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-02-10",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/clash-rock-de-schubert-a-nirvana/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/Affiche_Rock_1920x1080-RVB-sans-texte-logo2-500x500.jpg",
-      "id": "62bc64dec03c"
     },
     {
       "venue": "Bourse du Travail",
@@ -6607,43 +6191,17 @@
       "id": "7317e34e2578"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "4211 KM",
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "Les Clairvoyantes - Camille Joviado et Claire Chastel",
       "subtitle": null,
       "category": "théâtre",
       "date_start": "2027-02-11",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/4211-km/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/4211km-V2-500x500.jpg",
-      "id": "8a97c8e90f7c"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Bazar Circus, l’orchestre fait son cirque !",
-      "subtitle": "Un conte de Carl Norac – Dessin en direct, Juliette Barbanègre Récitant, Dominique Pinon – Conception musicale, David Pastor Orchestre de l’Opéra de Lyon",
-      "category": "théâtre",
-      "date_start": "2027-02-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/bazar-circus/",
+      "date_end": "2027-02-12",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/les-clairvoyantes-camille-joviado-et-claire-chastel",
       "image": null,
-      "id": "d486efe1de45"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "RDV Pop’Corn – Bazar Circus",
-      "subtitle": "Un jour par mois le TNG vous donne rendez-vous et c’est gratuit !\nDécouverte des spectacles, ateliers créatifs, Pop�…",
-      "category": "théâtre",
-      "date_start": "2027-02-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-bazar-circus/",
-      "image": null,
-      "id": "b53a1cdd79d5"
+      "id": "b766c8b291dc"
     },
     {
       "venue": "La Rayonne",
@@ -6659,71 +6217,6 @@
       "id": "cf7efd566f8e"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "UGLY KID JOE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-02-12",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/ugly-kid-joe-12022027/",
-      "image": null,
-      "id": "3e137455d050"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "MATHIEU STEPSON",
-      "subtitle": null,
-      "category": "magie",
-      "date_start": "2027-02-12",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/mathieu-stepson/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/MATHIEU-STEPSON_radiant-bellevue-500x500.jpg",
-      "id": "ec290758151a"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "JEAN-BENOÎT DIALLO",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-02-13",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/jean-benoit-diallo/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/jean-benoit-diallo-2.jpg",
-      "id": "290cad05f06c"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "PIERRE ET LE LOUP",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-02-14",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://radiant-bellevue.fr/spectacles/pierre-et-le-loup/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/pierre-et-le-loup-500x500.jpg",
-      "id": "961b44c07184"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "JEANJASS",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-02-17",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/jeanjass-17022027/",
-      "image": null,
-      "id": "ec76c86c9fd3"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "SLEEPING WITH SIRENS",
@@ -6737,19 +6230,6 @@
       "id": "1f8b8f3e14d0"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "ADEL FUGAZI",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-02-18",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/adel-fugazi/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/adel-fugazi-vignette_radiant-bellevue.jpg",
-      "id": "9866e1fd333b"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Holiday On Ice - Cinema Of Dreams",
@@ -6761,19 +6241,6 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams",
       "image": null,
       "id": "2352ed756750"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "ERIC FRATICELLI",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-02-19",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/eric-fraticelli/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/eric-fraticelli_radiant-bellevue-500x500.png",
-      "id": "44ce17e74fd1"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -6802,45 +6269,6 @@
       "id": "f6ae54e9ebe7"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "EZRA COLLECTIVE + JOY (ANONYMOUS)",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-02-23",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/ezra-collective-joy-anonymous-23022027/",
-      "image": null,
-      "id": "aca7c19bdb1f"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LIO",
-      "subtitle": null,
-      "category": "chanson",
-      "date_start": "2027-02-24",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/lio/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/lio-500x500.jpg",
-      "id": "42405607f221"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "ALEXIS TRAMONI",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-02-26",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/alexis-tramoni/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/12/alex-tramoni_radiant-bellevue-500x500.jpg",
-      "id": "63508978f554"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Dany Boon Dans Clown N'est Pas Un Métier !",
@@ -6854,32 +6282,6 @@
       "id": "762a43b39047"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "HATIK",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-02-27",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/hatik-3/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/02/Hatik_2024-25_refonte_elts-promoteur_draft1-e1739436888859-500x500.png",
-      "id": "45fbceec0d0d"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LEON",
-      "subtitle": null,
-      "category": "magie",
-      "date_start": "2027-02-28",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://radiant-bellevue.fr/spectacles/leon/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/leon_radiant-bellevue-500x500.jpg",
-      "id": "9a7aae63523b"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Sarah Schwab - Elles & Moi - Tournée",
@@ -6891,19 +6293,6 @@
       "url": "https://www.bourse-du-travail.com/sarah-schwab-elles-moi-tournee-411324.html",
       "image": null,
       "id": "ba82e40ca50f"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "JUKEBOX",
-      "subtitle": null,
-      "category": "danse",
-      "date_start": "2027-03-02",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/jukebox/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/jukebox-500x500.jpg",
-      "id": "8e7f275bab2f"
     },
     {
       "venue": "Bourse du Travail",
@@ -6926,23 +6315,10 @@
       "category": "musique",
       "date_start": "2027-03-03",
       "date_end": null,
-      "time": "13:30",
+      "time": "14:30",
       "url": "https://agenda.villemorte.fr/event/boum-kids",
       "image": null,
-      "id": "ddd55058c6d7"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LE CHANT DES LIONS",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-03-03",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/le-chant-des-lions/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-chant-des-lions-v2-500x500.jpg",
-      "id": "ca88a0c2b3b0"
+      "id": "b8dbac2fb8f3"
     },
     {
       "venue": "Bourse du Travail",
@@ -6956,19 +6332,6 @@
       "url": "https://www.bourse-du-travail.com/pierre-thevenoux-dans-life-coach-379019.html",
       "image": null,
       "id": "cfebe1103649"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LES COQUETTES",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-03-04",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/les-coquettes-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/les-coquettes-500x500.jpg",
-      "id": "509ad983859b"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -6997,32 +6360,6 @@
       "id": "01028a442132"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Traversée",
-      "subtitle": "Marie-Eve Huot, Le Carrousel",
-      "category": "théâtre",
-      "date_start": "2027-03-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/traversee/",
-      "image": null,
-      "id": "a0510dff8edb"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Atelier de pratique théâtrale en LSF",
-      "subtitle": "Autour du spectacle Traversée",
-      "category": "théâtre",
-      "date_start": "2027-03-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/atelier-de-pratique-theatrale-en-lsf/",
-      "image": null,
-      "id": "b6e4854fae15"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Les Annees 80",
@@ -7034,19 +6371,6 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/les-annees-80-2",
       "image": null,
       "id": "a094e7839744"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LA JALOUSIE",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-03-06",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/la-jalousie/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-jalousie-500x500.jpg",
-      "id": "e0104fd128c6"
     },
     {
       "venue": "Bourse du Travail",
@@ -7062,30 +6386,17 @@
       "id": "5e5793827b7b"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "Bertrand Belin",
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "L'endormi - Compagnie Hippolyte a mal au cœur - Estelle Stavasta",
       "subtitle": null,
-      "category": "chanson",
-      "date_start": "2027-03-09",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/bertrand-belin-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/bertrnad-belin-500x500.jpg",
-      "id": "c1da2d0c2137"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LE CAS PUCINE",
-      "subtitle": null,
-      "category": "humour",
+      "category": "théâtre",
       "date_start": "2027-03-10",
       "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/le-cas-pucine/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/lecaspucine-radiant_bellevue-500x500.jpg",
-      "id": "fdef5d952088"
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/lendormi-compagnie-hippolyte-a-mal-au-coeur-estelle-stavasta",
+      "image": null,
+      "id": "d523699b9ca9"
     },
     {
       "venue": "Bourse du Travail",
@@ -7101,71 +6412,6 @@
       "id": "3f896bb53506"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Évidences inconnues",
-      "subtitle": "Kurt Demey et Joris Vanvinckenroye, Cie Rode Boom",
-      "category": "théâtre",
-      "date_start": "2027-03-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/evidences-inconnues/",
-      "image": null,
-      "id": "2f21af459863"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "KEMMLER",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-03-11",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/kemmler-11032027/",
-      "image": null,
-      "id": "192fea9a374c"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "THÉA",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-03-11",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/thea/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/thea_radiant-bellevue-500x500.jpg",
-      "id": "0644f7598caf"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "RDV Pop’Corn – Evidences inconnues",
-      "subtitle": "Un jour par mois le TNG vous donne rendez-vous et c’est gratuit !\nDécouverte des spectacles, ateliers créatifs, Pop�…",
-      "category": "théâtre",
-      "date_start": "2027-03-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-evidences-inconnues/",
-      "image": null,
-      "id": "1c2b69be6a63"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "MICHEL LEEB",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-03-12",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/michel-leeb/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/michel-leeb-500x500.jpg",
-      "id": "55caf980ced5"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Booder Dans Ah... L'école !",
@@ -7177,19 +6423,6 @@
       "url": "https://www.bourse-du-travail.com/booder-dans-ah-l-ecole-378848.html",
       "image": null,
       "id": "3938d4521b1c"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "NICOLAS CANTELOUP",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-03-13",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/nicolas-canteloup/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/nicolas-canteloup-500x500.jpg",
-      "id": "3930ecba8ea3"
     },
     {
       "venue": "Bourse du Travail",
@@ -7205,32 +6438,6 @@
       "id": "c9d473bd8b6c"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LES ODYSSÉES DE JULES VERNE",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-03-14",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://radiant-bellevue.fr/spectacles/les-odyssees-de-jules-verne/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/les-odysses-500x500.jpg",
-      "id": "4abd2089c16e"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "SINCLAIR",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-03-14",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.transbordeur.fr/evenement/sinclair-14032027/",
-      "image": null,
-      "id": "cc21d20b9ac7"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Barbara Par Pietragalla - Tournée",
@@ -7244,17 +6451,17 @@
       "id": "c749a53cf099"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LE PROCÈS D’UNE VIE",
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "Bâtir - Salim Djaferi",
       "subtitle": null,
       "category": "théâtre",
       "date_start": "2027-03-16",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/le-proces-dune-vie/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-proces-d-une-vie-500x500.jpg",
-      "id": "a71521b5d59e"
+      "date_end": "2027-03-17",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/batir-salim-djaferi",
+      "image": null,
+      "id": "50e18068245a"
     },
     {
       "venue": "Bourse du Travail",
@@ -7270,19 +6477,6 @@
       "id": "fa778e4ed5b6"
     },
     {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "PICHE",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-03-17",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/piche-17032027/",
-      "image": null,
-      "id": "e776ff99bc5f"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Bernard Lavilliers",
@@ -7296,19 +6490,6 @@
       "id": "66b581d45da6"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "MOGUIZ",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-03-17",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/moguiz-3/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/04/mog-1-scaled.jpg",
-      "id": "35bac155f838"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Messmer - 13Hz - Tournée",
@@ -7320,32 +6501,6 @@
       "url": "https://www.bourse-du-travail.com/messmer-13hz-tournee-377699.html",
       "image": null,
       "id": "b2235d85aa53"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "AYRON JONES",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-03-18",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/ayron-jones-18032027/",
-      "image": null,
-      "id": "803bbfbff1f7"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "THE LOOP",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-03-18",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/the-loop/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/the-loop-500x500.jpg",
-      "id": "f4b1d8d802b1"
     },
     {
       "venue": "Bourse du Travail",
@@ -7374,32 +6529,6 @@
       "id": "e108ea3962f2"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "EN THÉRAPIE",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-03-19",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/en-therapie/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/en-therapie-500x500.jpg",
-      "id": "ad336e37aa00"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "L’enfant océan",
-      "subtitle": "Frédéric Sonntag, Cie AsaNIsiMAsa",
-      "category": "théâtre",
-      "date_start": "2027-03-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/lenfant-ocean/",
-      "image": null,
-      "id": "9ef9a0a5db0c"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "500 Voix Pour Johnny",
@@ -7411,58 +6540,6 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/500-voix-pour-johnny",
       "image": null,
       "id": "f227e3726650"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LA NOCE D’ALFONSE",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-03-20",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/la-noce-dalfonse/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-noce-d-alphonse-500x500.jpg",
-      "id": "df429dd42658"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LA NOCE D’ALFONSE",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-03-21",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/la-noce-dalfonse/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-noce-d-alphonse-500x500.jpg",
-      "id": "4a16be53287e"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LE CERCLE DES POETES DISPARUS",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-03-22",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/le-cercle-des-poetes-disparus-3/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-cercle-500x500.jpg",
-      "id": "82ecf18cc6a1"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LE CERCLE DES POETES DISPARUS",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-03-23",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/le-cercle-des-poetes-disparus-3/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-cercle-500x500.jpg",
-      "id": "e0e650fd6c2d"
     },
     {
       "venue": "Bourse du Travail",
@@ -7478,43 +6555,17 @@
       "id": "59f41a890747"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "PABLO MIRA",
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "Les Voix de Carmen - Daniel San Pedro",
       "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-03-24",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/pablo-mira-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/pablo-mira_radiant-bellevue-500x500.jpg",
-      "id": "3b038d69b64d"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "ADELE CASTILLON",
-      "subtitle": null,
-      "category": "concert",
+      "category": "musique",
       "date_start": "2027-03-25",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/adele-castillon-25032027/",
+      "date_end": "2027-03-26",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/les-voix-de-carmen-daniel-san-pedro",
       "image": null,
-      "id": "efe8a80e0b74"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LAURENT BAFFIE",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-03-26",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/laurent-baffie-3/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/laurent-baffie_radiant-bellevue-500x500.jpg",
-      "id": "9ab59781784d"
+      "id": "9e31f3647713"
     },
     {
       "venue": "Bourse du Travail",
@@ -7530,56 +6581,17 @@
       "id": "f52842f16b6e"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "MPL",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-03-30",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/mpl-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/mpl-500x500.jpg",
-      "id": "c2f66bba1ddc"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "CHRISTELLE CHOLLET",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-03-31",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/christelle-chollet/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/christelle-chollet-500x500.jpg",
-      "id": "06aa7653d8ab"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "JAHNERATION",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-04-01",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/jahneration-01042027/",
-      "image": null,
-      "id": "dcfe9eddb86e"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "MUSIC-HALL COLETTE",
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "Papy Quichotte - Elsa Granat",
       "subtitle": null,
       "category": "théâtre",
-      "date_start": "2027-04-01",
+      "date_start": "2027-03-31",
       "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/music-hall-colette/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/music-hall-colette-500x500.jpg",
-      "id": "035592a28998"
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/papy-quichotte-elsa-granat",
+      "image": null,
+      "id": "be5e10a6cf93"
     },
     {
       "venue": "Bourse du Travail",
@@ -7608,32 +6620,6 @@
       "id": "93411b98f25b"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "ALEX LUTZ",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-04-03",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/alex-lutz-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/alex-lutz-500x500.jpg",
-      "id": "890d924c8ac5"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LES AVENTURIERS DE MINUIT",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-04-04",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://radiant-bellevue.fr/spectacles/les-aventuriers-de-minuit/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/les-aventuriers-500x500.jpg",
-      "id": "e23282f98841"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Glorious",
@@ -7647,82 +6633,17 @@
       "id": "ba9cb766b04c"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "RODRIGO Y GABRIELA",
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "Festival RAFFUT",
       "subtitle": null,
       "category": "musique",
-      "date_start": "2027-04-05",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/rodrigo-y-gabriela-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/rodrigo-y-gabriela-v2-500x500.jpg",
-      "id": "7d7ffe573a02"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "CLASH WORLD – LE BOLERO A BAMAKO",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-04-07",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/clash-world-le-bolero-a-bamako/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/Affiche_World_1920x1080-RVB-sans-texte-logo2-500x500.jpg",
-      "id": "f46aec96ef56"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "MUR MURE",
-      "subtitle": null,
-      "category": "théâtre",
       "date_start": "2027-04-08",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/mur-mure/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/mur-mure-500x500.jpg",
-      "id": "4daeb0855759"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Le théorème du pissenlit",
-      "subtitle": "Olivier Letellier, Tréteaux de France CDN",
-      "category": "théâtre",
-      "date_start": "2027-04-09",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/le-theoreme-du-pissenlit/",
-      "image": null,
-      "id": "19bc6e04becf"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "FABIEN OLICARD",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-04-09",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/fabien-olicard-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/fabien-ollicard-500x500.jpg",
-      "id": "85a5922e52da"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "MADAME ARTHUR",
-      "subtitle": null,
-      "category": "concert",
-      "date_start": "2027-04-10",
-      "date_end": null,
+      "date_end": "2027-04-10",
       "time": "19:00",
-      "url": "https://www.transbordeur.fr/evenement/madame-arthur-10042027/",
+      "url": "https://agenda.villemorte.fr/event/festival-raffut",
       "image": null,
-      "id": "091011e60746"
+      "id": "d1532af313a6"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -7738,19 +6659,6 @@
       "id": "7015d6516327"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "ART",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-04-10",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/art-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/ART-V2-500x500.jpg",
-      "id": "b30df779005e"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Rodrigue - Tournée",
@@ -7762,175 +6670,6 @@
       "url": "https://www.bourse-du-travail.com/rodrigue-tournee-353415.html",
       "image": null,
       "id": "1a749f3e6fae"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "ART",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-04-11",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/art-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/ART-V2-500x500.jpg",
-      "id": "baecd139d2d2"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "COUPE DU MONDE D’IMPRO F.F.F",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-04-14",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/coupe-du-monde-dimpro-f-f-f-3/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/coupe-du-monde-500x500.jpg",
-      "id": "8e6a5464f9b2"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "COUPE DU MONDE D’IMPRO F.F.F",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-04-15",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/coupe-du-monde-dimpro-f-f-f-3/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/coupe-du-monde-500x500.jpg",
-      "id": "01f54e1b3bc8"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Stage « magie et numérique » Il faut le croire pour le voir",
-      "subtitle": "Stage « magie et numérique »",
-      "category": "théâtre",
-      "date_start": "2027-04-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/stage-magie-et-numerique-il-faut-le-croire-pour-le-voir/",
-      "image": null,
-      "id": "6ec07e6a2b20"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "COUPE DU MONDE D’IMPRO F.F.F",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-04-16",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/coupe-du-monde-dimpro-f-f-f-3/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/coupe-du-monde-500x500.jpg",
-      "id": "16248d02be6f"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "FATALS PICARDS",
-      "subtitle": null,
-      "category": "chanson",
-      "date_start": "2027-04-17",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/fatals-picards/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/lesfatalspicards-chanson-lyon-site-carre.jpg",
-      "id": "cd9565bcbf6c"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "SERGE PAPAGALLI",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-04-18",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://radiant-bellevue.fr/spectacles/serge-papagalli/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/serge-papagelli_radiant-bellevue-500x500.jpg",
-      "id": "93f4788a1e52"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "GUILLAUME MEURICE",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-04-23",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/guillaume-meurice/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/guillaume-meurice-500x500.jpg",
-      "id": "86bd335ed7b1"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "GUILLAUME MEURICE",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-04-24",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/guillaume-meurice/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/guillaume-meurice-500x500.jpg",
-      "id": "8c7cabea7439"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LE LOUP QUI VOULAIT FAIRE DE LA MUSIQUE",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-04-25",
-      "date_end": null,
-      "time": "14:00",
-      "url": "https://radiant-bellevue.fr/spectacles/le-loup-qui-voulait-faire-de-la-musique/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-loup-qui-voulait-faire-de-la-musique-500x500.jpg",
-      "id": "c3b012524fdb"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "MENOPAUSE",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-04-27",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/menopause-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/MENOPAUSE-500x500.jpg",
-      "id": "47f0f03aa086"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "TOUTE LA FAMILLE QUE J’AIME",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-04-28",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/toute-la-famille-que-jaime/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/toute-la-famille-500x500.jpg",
-      "id": "5ab359c52526"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "CONSTANCE",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-04-29",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/constance-5/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/constance-500x500.jpg",
-      "id": "7211c0e41ffc"
     },
     {
       "venue": "Bourse du Travail",
@@ -7946,32 +6685,6 @@
       "id": "9a56a869a6ad"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "RDV Pop’Corn – Catharsis",
-      "subtitle": "Un jour par mois le TNG vous donne rendez-vous et c’est gratuit !\nDécouverte des spectacles, ateliers créatifs, Pop�…",
-      "category": "théâtre",
-      "date_start": "2027-04-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-catharsis/",
-      "image": null,
-      "id": "c1220ba19b87"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "PHILIPPINE DELAIRE",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-04-30",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/philippine-delaire/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/philippine-delaire-vignette.jpg",
-      "id": "4ef9ddd60726"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Gilbert Montagné - L'amour Dans Ses Mains",
@@ -7983,32 +6696,6 @@
       "url": "https://www.bourse-du-travail.com/gilbert-montagne-l-amour-dans-ses-mains-382483.html",
       "image": null,
       "id": "62c500c4886a"
-    },
-    {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-lyon",
-      "title": "Nuit de mai",
-      "subtitle": "Nikolaï Rimski-Korsakov",
-      "category": "opéra",
-      "date_start": "2027-05-03",
-      "date_end": "2027-05-16",
-      "time": null,
-      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/nuit-de-mai",
-      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/256ae14b/nui_de_mai_visuel_principal.jpg",
-      "id": "499d99937e63"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "C’EST SI SIMPLE L’AMOUR",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2027-05-04",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/cest-si-simple-lamour/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/c-est-si-simple-500x500.jpg",
-      "id": "39de8e8bfe05"
     },
     {
       "venue": "Bourse du Travail",
@@ -8035,19 +6722,6 @@
       "url": "https://www.bourse-du-travail.com/mam-issabre-au-festival-les-lions-du-rire-379267.html",
       "image": null,
       "id": "009fd03a963e"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LEOPOLD LEMARCHAND",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-05-13",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/leopold-lemarchand/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/affiche-leopold-marchand-scaled-e1768566182717-500x500.jpg",
-      "id": "4fd64d1ae883"
     },
     {
       "venue": "Bourse du Travail",
@@ -8089,19 +6763,6 @@
       "id": "caa9e95bd727"
     },
     {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "STAND-UP COMEDY SHOW",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-05-19",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/stand-up-comedy-show-3/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/stand-up-comedy-show-500x500.jpg",
-      "id": "0e4560886b20"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Florence Mendez - Délicate - Tournée",
@@ -8113,32 +6774,6 @@
       "url": "https://www.bourse-du-travail.com/florence-mendez-delicate-tournee-381205.html",
       "image": null,
       "id": "b8dcbcc0d50e"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "GUILLAUME GUISSET",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-05-21",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/guillaume-guisset/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/guillaume-guisset-500x500.jpg",
-      "id": "817b2f175c96"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "GREG DUTH",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-05-25",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/greg-duth/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/greg-duth_radiant-bellevue-4-500x500.jpg",
-      "id": "7321aec38930"
     },
     {
       "venue": "Bourse du Travail",
@@ -8154,32 +6789,6 @@
       "id": "fcc461bfcf08"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Olympe la rebelle",
-      "subtitle": "Musique Isabelle Aboulker Mise en espace Odile Grosset-Grange",
-      "category": "théâtre",
-      "date_start": "2027-05-28",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/olympe-la-rebelle/",
-      "image": null,
-      "id": "84dbbd13af8f"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LE TOUR DU MONDE EN 80 MINUTES",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-05-30",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://radiant-bellevue.fr/spectacles/le-tour-du-monde-en-80-minutes/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-tour-du-monde-en-80-minutes-500x500.jpg",
-      "id": "ed195a046702"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Edgar-Yves Jr. - Vigilance - Tournée",
@@ -8191,58 +6800,6 @@
       "url": "https://www.bourse-du-travail.com/edgar-yves-jr-vigilance-tournee-359465.html",
       "image": null,
       "id": "c2473468b3e8"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Brassards et nénuphars",
-      "subtitle": "Claire Petit et Sylvain Desplagnes, artistes associé·es Cie Entre Eux Deux Rives",
-      "category": "théâtre",
-      "date_start": "2027-06-05",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/brassards-et-nenuphars/",
-      "image": null,
-      "id": "c6b6cbacd89c"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "ALLEZ, OLLIE… À L’EAU !",
-      "subtitle": "Odile Grosset-Grange",
-      "category": "théâtre",
-      "date_start": "2027-06-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/allez-ollie-a-leau/",
-      "image": null,
-      "id": "97103e6f3037"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "GénérationS en scène",
-      "subtitle": "Restitutions des pratiques amateurs",
-      "category": "théâtre",
-      "date_start": "2027-06-08",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/generations-en-scene-5/",
-      "image": null,
-      "id": "f6a222b56ad2"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "ANA GODEFROY",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-06-08",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://radiant-bellevue.fr/spectacles/ana-godefroy/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/ana-godefroy_radiant-bellevue-500x500.jpg",
-      "id": "b09109515a7e"
     },
     {
       "venue": "Bourse du Travail",
@@ -8284,19 +6841,6 @@
       "id": "e808eda4bc91"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Cou erture",
-      "subtitle": "Pauline Valentin, MA Compagnie",
-      "category": "théâtre",
-      "date_start": "2027-06-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/cou-erture/",
-      "image": null,
-      "id": "4ea14dd4b3a0"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Frédéric François - Tournée",
@@ -8310,19 +6854,6 @@
       "id": "33f9814d08a8"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Studiolo de l’Exil",
-      "subtitle": "Stephan Zimmerli",
-      "category": "théâtre",
-      "date_start": "2027-06-13",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/studiolo-de-lexil/",
-      "image": null,
-      "id": "720f60f72ce9"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Sofia Belabbes - Ketchup Mayo Nouvelle Version - Tournée",
@@ -8334,32 +6865,6 @@
       "url": "https://www.bourse-du-travail.com/sofia-belabbes-ketchup-mayo-nouvelle-version-tournee-376106.html",
       "image": null,
       "id": "9a11c35800f4"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Blindtest spécial Coupe du Monde",
-      "subtitle": null,
-      "category": "blindtest",
-      "date_start": "2027-07-08",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://h-eat.eu/events/blindtest-special-coupe-du-monde/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/06/blindtest_foot-576x720.jpg",
-      "id": "31eba78ca48e"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Chess Bar x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2027-07-08",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://h-eat.eu/events/chess-bar-x-heat-9/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
-      "id": "c84d4e3dbfa7"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -8399,19 +6904,6 @@
       "url": "https://www.bourse-du-travail.com/herve-vilard-capri-c-est-fini-nous-reviens-382854.html",
       "image": null,
       "id": "b3e34bcd099a"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "LOUIS BERTIGNAC",
-      "subtitle": null,
-      "category": "chanson",
-      "date_start": "2027-11-16",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://radiant-bellevue.fr/spectacles/louis-bertignac/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/louis-bertignac_radiant-bellevue-500x500.jpg",
-      "id": "6f0ed9f890aa"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -8516,19 +7008,6 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/era-2",
       "image": null,
       "id": "661d7f33aa0b"
-    },
-    {
-      "venue": "Radiant-Bellevue",
-      "venue_slug": "radiant-bellevue",
-      "title": "CHIMENE BADI",
-      "subtitle": null,
-      "category": "chanson",
-      "date_start": "2028-03-26",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://radiant-bellevue.fr/spectacles/chimene-badi-2/",
-      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/chimene-badi-500x500.jpg",
-      "id": "d4e4ec69c2e0"
     }
   ]
 }

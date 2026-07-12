@@ -1,1 +1,36 @@
-{}
+{
+  "Escale Solidaire du 2": {
+    "arr": null,
+    "confidence": "failed"
+  },
+  "Friche Artistique Lamartine | La Robinetterie": {
+    "arr": null,
+    "confidence": "failed"
+  },
+  "Jardin Envie Partagée quai Rambaud": {
+    "arr": null,
+    "confidence": "failed"
+  },
+  "La Machinerie - Théâtre de Vénissieux": {
+    "arr": "Autre",
+    "commune": "Vénissieux",
+    "confidence": "low"
+  },
+  "La Ruche industrielle": {
+    "arr": "Autre",
+    "commune": "Vénissieux",
+    "confidence": "low"
+  },
+  "Les Clameurs": {
+    "arr": "7e",
+    "confidence": "high"
+  },
+  "Théâtre de l’Elysée": {
+    "arr": "7e",
+    "confidence": "high"
+  },
+  "Théâtres romains de Fourvière": {
+    "arr": "5e",
+    "confidence": "high"
+  }
+}
