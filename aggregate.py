@@ -189,10 +189,9 @@ def main() -> int:
     out = Path(__file__).parent / "events.json"
 
     # Safety net: if every scraper failed, do NOT overwrite the existing
-    # events.json. A user pointing GitHub Actions to a freshly cloned repo
-    # with a populated seed file shouldn't lose everything because of a
-    # transient network blip or because every site changed format on the same
-    # day (extremely unlikely but possible).
+    # events.json. The committed events.json shouldn't be wiped because of
+    # a transient network blip or because every site changed format on the
+    # same day (extremely unlikely but possible).
     #
     # A scraper that returns 0 events WITHOUT raising counts as a failure
     # here too: every registered source is a real implementation, so an
