@@ -21,6 +21,7 @@ Theatre policy (juillet 2026):
 """
 from __future__ import annotations
 import json
+import re
 import sys
 import traceback
 from datetime import date, datetime, timezone
@@ -67,6 +68,56 @@ AGGREGATORS: list[tuple[str, Callable[[], List[Event]], int]] = [
     ("Petit Bulletin",          petit_bulletin.fetch, 60),
     ("Ville Morte",             villemorte.fetch,     50),
 ]
+
+# --- Frontend venue map -----------------------------------------------------
+# index.html est la source de vérité de la carte lieu → arrondissement
+# (VENUE_ARRONDISSEMENT, entrées vérifiées à la main avec adresses en
+# commentaire). On la parse à chaque run au lieu d'en maintenir une copie
+# Python : l'ancienne copie (FRONTEND_HARDCODED) avait dérivé de ~24 lieux,
+# re-géocodés chaque nuit pour rien.
+
+_VENUE_MAP_BLOCK_RE = re.compile(
+    r"const\s+VENUE_ARRONDISSEMENT\s*=\s*\{(.*?)\n\s*\}\s*;",
+    re.DOTALL,
+)
+# Une entrée par ligne : 'Nom du lieu': '1er',  // commentaire optionnel
+# Les clés utilisent ' ou " (backreference \1) — les apostrophes dans les
+# noms ("Bar Rock'n Eat") sont entre guillemets doubles dans index.html.
+_VENUE_MAP_ENTRY_RE = re.compile(
+    r"""^\s*(['"])(?P<venue>.+?)\1\s*:\s*(['"])(?P<arr>.+?)\3\s*,""",
+    re.MULTILINE,
+)
+
+
+def frontend_hardcoded_venues() -> set:
+    """Noms de lieux hardcodés dans VENUE_ARRONDISSEMENT (index.html).
+
+    En cas d'échec de lecture ou de parsing (refonte d'index.html),
+    retourne un set vide : ces lieux seront géocodés inutilement —
+    dégradation sans danger, le frontend ignore le cache pour ses
+    entrées en dur.
+    """
+    html_path = Path(__file__).parent / "index.html"
+    try:
+        html = html_path.read_text(encoding="utf-8")
+    except OSError as exc:
+        print(f"[geo] index.html unreadable ({exc}) — no hardcoded venues",
+              file=sys.stderr)
+        return set()
+    m = _VENUE_MAP_BLOCK_RE.search(html)
+    if not m:
+        print("[geo] VENUE_ARRONDISSEMENT not found in index.html — "
+              "no hardcoded venues", file=sys.stderr)
+        return set()
+    venues = {e.group("venue")
+              for e in _VENUE_MAP_ENTRY_RE.finditer(m.group(1))}
+    if len(venues) < 20:
+        # La map réelle compte ~77 entrées : un si petit nombre signale
+        # un parser cassé par une refonte d'index.html.
+        print(f"[geo] only {len(venues)} venue(s) parsed from index.html — "
+              "parser probably broken, check _VENUE_MAP_*_RE",
+              file=sys.stderr)
+    return venues
 
 
 def main() -> int:
@@ -160,31 +211,16 @@ def main() -> int:
 
 
     # 8) Geocode any new venues not already in the frontend's hardcoded
-    #    VENUE_ARRONDISSEMENT map. Results are cached in
-    #    venue_arrondissements.json. Only truly new venues trigger HTTP
-    #    requests (1 req/sec). The frontend merges this file with its
-    #    hardcoded map at load time (hardcoded entries win on conflict).
+    #    VENUE_ARRONDISSEMENT map (parsée en direct depuis index.html —
+    #    source de vérité unique, voir frontend_hardcoded_venues).
+    #    Results are cached in venue_arrondissements.json. Only truly new
+    #    venues trigger HTTP requests (1 req/sec). The frontend merges this
+    #    file with its hardcoded map at load time (hardcoded entries win
+    #    on conflict).
     all_venues = list({e.venue for e in unique})
-    # Venues already hardcoded in index.html — no need to geocode.
-    FRONTEND_HARDCODED = {
-        "Opéra national de Lyon", "Les Subsistances", "Musée des Beaux-Arts",
-        "A Thou Bout d'Chant", "Maison de l'écologie", "La Salle de Bains",
-        "Alternatibar", "Kraspek Myzik", "Le Bec de Jazz", "Hot Club",
-        "Salle Rameau", "Le Sucre", "Marché Gare", "Le Périscope",
-        "Chapelle de la Trinité", "Musée des Confluences", "Goethe-Institut",
-        "Galerie Henri Chartier", "Comédie Odéon", "Fnac Bellecour",
-        "Bourse du Travail", "Auditorium de Lyon", "La Marquise",
-        "Agend'arts", "Musées Gadagne", "Salle Molière", "Le Sonic",
-        "Big White", "Musée d'Art Contemporain", "La Halle Tony Garnier",
-        "La Commune", "Le Petit Salon", "Boskop", "Galerie Roger Tator",
-        "La Boulangerie du Prado", "Le Ninkasi", "Le 6e Continent",
-        "Maison de la Danse", "HEAT", "Institut Lumière", "TNG",
-        "Bar Rock'n Eat", "Le Transbordeur", "La Rayonne",
-        "Toï Toï le Zinc", "Café Nanoum", "Radiant-Bellevue", "LDLC Arena",
-        "L'Épicerie Moderne", "Grrrnd Zero", "La Machinerie - Bizarre !",
-        "Domaine de Lacroix-Laval", "Espace Gerson",
-    }
-    resolve_new_venues(all_venues, known_venues=FRONTEND_HARDCODED, verbose=True)
+    resolve_new_venues(all_venues,
+                       known_venues=frontend_hardcoded_venues(),
+                       verbose=True)
 
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
