@@ -118,7 +118,7 @@ def fetch() -> List[Event]:
       - description (str, HTML)
     """
     headers = {
-        "User-Agent": "lyon-events-aggregator/1.0 (+https://github.com/Ricojrlyon/lyon-events)",
+        "User-Agent": "lyon-events-aggregator/1.0 (+https://github.com/Ricojrlyon/nocturne-lyon)",
         "Accept": "application/json",
     }
     resp = requests.get(API_URL, headers=headers, timeout=20)

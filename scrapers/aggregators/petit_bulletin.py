@@ -32,7 +32,7 @@ BASE = "https://www.petit-bulletin.fr"
 
 USER_AGENT = (
     "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-    "+https://github.com/Ricojrlyon/lyon-events)"
+    "+https://github.com/Ricojrlyon/nocturne-lyon)"
 )
 
 # Categories to exclude. EXACT match on normalized form (lowercase, accents

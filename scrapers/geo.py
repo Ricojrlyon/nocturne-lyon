@@ -29,7 +29,7 @@ import requests
 _NOMINATIM = "https://nominatim.openstreetmap.org/search"
 _UA = (
     "nocturne-lyon-events/1.0 geocoder "
-    "(+https://github.com/Ricojrlyon/lyon-events)"
+    "(+https://github.com/Ricojrlyon/nocturne-lyon)"
 )
 
 # Lyon arrondissements by postcode
