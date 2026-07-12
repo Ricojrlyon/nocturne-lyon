@@ -61,9 +61,12 @@ EXCLUDED_VENUE_PATTERNS = [
 # Venues matching an excluded pattern but kept anyway. EXACT match on
 # normalized form. Les Théâtres romains de Fourvière accueillent des
 # concerts (Nuits de Fourvière), pas du théâtre — le pattern "theatre"
-# les bloquait à tort.
+# les bloquait à tort. Variantes de nommage vues ou plausibles sur PB.
 ALLOWED_VENUES = {
     "theatres romains de fourviere",
+    "theatre antique de fourviere",
+    "theatre de fourviere",
+    "theatre gallo romain de fourviere",
 }
 
 MONTHS_FR = {
