@@ -142,6 +142,11 @@ def _scrape_page(soup: BeautifulSoup, seen_urls: set) -> List[Event]:
             if place and not any(k in _norm(place)
                                  for k in _PERISCOPE_MARKERS):
                 venue = place
+                # Garder l'événement retrouvable en cherchant « périscope »
+                # (le subtitle est indexé par la recherche du frontend)
+                # alors que la carte affiche le lieu réel.
+                subtitle = (f"Le Périscope hors les murs · {subtitle}"
+                            if subtitle else "Le Périscope hors les murs")
 
         # Image
         image: Optional[str] = None
