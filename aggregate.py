@@ -11,6 +11,13 @@ v34 changes:
   - Cross-source deduplication: when the same event is reported by both a
     venue scraper and an aggregator, the venue scraper wins (it's
     authoritative). See scrapers/dedup.py.
+
+Theatre policy (juillet 2026):
+  - TNG est le seul théâtre scrappé en direct.
+  - Petit Bulletin : catégories Théâtre et lieux « théâtre » bloqués,
+    SAUF le lieu « Théâtres romains de Fourvière » (concerts, pas de
+    pièces) — voir ALLOWED_VENUES dans petit_bulletin.py.
+  - Ville Morte : aucun blocage lié au théâtre.
 """
 from __future__ import annotations
 import json
