@@ -22,7 +22,13 @@ class Event:
 
     @property
     def id(self) -> str:
-        """Stable id for deduplication."""
+        """Id for intra-scraper deduplication.
+
+        NOT stable across runs: it hashes `time`, which the dedup passes
+        can enrich from another source (a run where the aggregator was
+        down yields a different id for the same event). Don't use it as
+        a durable external identifier.
+        """
         key = f"{self.venue_slug}|{self.title}|{self.date_start}|{self.time or ''}"
         return hashlib.md5(key.encode("utf-8")).hexdigest()[:12]
 
