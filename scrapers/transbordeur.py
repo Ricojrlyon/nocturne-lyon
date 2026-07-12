@@ -16,11 +16,11 @@ from typing import List, Optional, Any
 from datetime import datetime, date as Date, timedelta
 import re
 import sys
-import time as _time
 import json
 import requests
 from bs4 import BeautifulSoup
 
+from . import detail_cache
 from .base import Event, iso
 
 VENUE = "Le Transbordeur"
@@ -281,13 +281,12 @@ def fetch() -> List[Event]:
     horizon = Date.today() + timedelta(days=180)
     stubs = [s for s in stubs if s["d"] <= horizon]
 
-    # Pass 2: fetch each detail page to extract time
+    # Pass 2: fetch each detail page to extract time (cached across runs,
+    # throttled — see scrapers/detail_cache.py)
     events: List[Event] = []
     seen: set = set()
-    for i, stub in enumerate(stubs):
-        if i > 0:
-            _time.sleep(0.4)
-        time_str = _fetch_detail_time(stub["url"])
+    for stub in stubs:
+        time_str = detail_cache.get_time(stub["url"], _fetch_detail_time)
         ev = Event(
             venue=VENUE,
             venue_slug=SLUG,

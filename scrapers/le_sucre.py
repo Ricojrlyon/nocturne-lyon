@@ -6,10 +6,10 @@ Le Sucre is a club — expect late-night times like "23:00" or "22:00".
 from datetime import date, timedelta
 from typing import List, Optional
 import re
-import time as _time
 import requests
 from bs4 import BeautifulSoup
 
+from . import detail_cache
 from .base import Event, parse_french_date, iso
 
 VENUE = "Le Sucre"
@@ -123,12 +123,11 @@ def fetch() -> List[Event]:
     horizon = date.today() + timedelta(days=180)
     stubs = [s for s in stubs if s["date"] <= horizon]
 
-    # Fetch detail pages for time
+    # Fetch detail pages for time (cached across runs, throttled — see
+    # scrapers/detail_cache.py)
     events: List[Event] = []
-    for i, stub in enumerate(stubs):
-        if i > 0:
-            _time.sleep(0.4)
-        time_str = _fetch_detail_time(stub["url"])
+    for stub in stubs:
+        time_str = detail_cache.get_time(stub["url"], _fetch_detail_time)
         events.append(Event(
             venue=VENUE,
             venue_slug=SLUG,

@@ -37,6 +37,7 @@ from scrapers import (
 )
 from scrapers.aggregators import villemorte, petit_bulletin
 from scrapers.dedup import deduplicate
+from scrapers.detail_cache import save_if_dirty as save_detail_cache
 from scrapers.geo import resolve_new_venues
 
 # Venue-specific scrapers — priority 100 (authoritative for their venue).
@@ -96,6 +97,11 @@ def main() -> int:
             tb = traceback.format_exc(limit=2)
             report.append((name, 0, f"{type(e).__name__}: {e}"))
             print(f"[FAIL aggregator] {name}: {tb}", file=sys.stderr)
+
+    # 2.5) Persist the detail-page time cache (url → time), committed by
+    # the workflow like venue_arrondissements.json. Without this save,
+    # every run would re-fetch the same detail pages from scratch.
+    save_detail_cache()
 
     # 3) Drop past events. An event is upcoming as long as it hasn't ENDED:
     # keep ongoing runs (date_start in the past but date_end today or later,

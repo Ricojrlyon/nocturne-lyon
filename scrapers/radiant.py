@@ -7,10 +7,10 @@ once for time (in-request dedup avoids hitting the same URL twice for multi-date
 from typing import List, Optional
 from datetime import date as Date, timedelta
 import re
-import time as _time
 import requests
 from bs4 import BeautifulSoup
 
+from . import detail_cache
 from .base import Event, parse_french_date, iso, FR_MONTHS
 
 VENUE = "Radiant-Bellevue"
@@ -198,12 +198,12 @@ def fetch() -> List[Event]:
         stub["date_starts"] = [ds for ds in stub["date_starts"] if ds <= horizon_iso]
     raw_stubs = [s for s in raw_stubs if s["date_starts"]]
 
-    # Pass 2: fetch each unique URL once for time
+    # Pass 2: fetch each unique URL once for time (cached across runs,
+    # throttled — see scrapers/detail_cache.py)
     url_to_time: dict = {}
-    for i, stub in enumerate(raw_stubs):
-        if i > 0:
-            _time.sleep(0.4)
-        url_to_time[stub["url"]] = _fetch_detail_time(stub["url"])
+    for stub in raw_stubs:
+        url_to_time[stub["url"]] = detail_cache.get_time(
+            stub["url"], _fetch_detail_time)
 
     # Build events (one per date occurrence)
     events: List[Event] = []
