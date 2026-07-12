@@ -35,5 +35,8 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update events ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            # Un commit poussé entre le checkout et le push (run manuel
+            # croisant le cron, édition directe) ferait échouer le push.
+            git pull --rebase
             git push
           fi
