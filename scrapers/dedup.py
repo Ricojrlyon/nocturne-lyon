@@ -325,8 +325,9 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
           - Each scraper wins identity (title, url, venue).
           - Scraper inherits missing fields (time, category, subtitle, image).
           - Aggregator is dropped.
-        Time-safety: if N == 1 AND both have time AND they differ by more
-        than 4 hours, treat as distinct events (don't pair).
+        Time-safety: if ANY aligned pair has two known times more than
+        4 hours apart, the pairing is unreliable (e.g. afternoon kids
+        show vs evening rock concert) — leave the whole group alone.
       * If counts differ: ambiguous, leave alone.
 
     Real-world examples this catches in production:
@@ -362,20 +363,24 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
             result.extend(group)
             continue
 
-        # Time-safety check for the 1:1 case: if both have time and diverge
-        # by more than 4 hours, they're probably distinct events at the same
-        # venue (e.g. afternoon kids show vs evening rock concert).
-        if len(scrapers) == 1:
-            s_ev = scrapers[0][0]
-            a_ev = aggs[0][0]
-            if s_ev.time and a_ev.time and _time_diff_minutes(s_ev.time, a_ev.time) > 240:
-                result.extend(group)
-                continue
-
         # Pair by sort order: untimed events go last, then alphabetical.
         sort_key = lambda x: (x[0].time or "zz:zz", (x[0].title or "").lower())
         scrapers_sorted = sorted(scrapers, key=sort_key)
         aggs_sorted = sorted(aggs, key=sort_key)
+
+        # Time-safety check on EVERY aligned pair (previously only N == 1):
+        # if any pair has two known times more than 4 hours apart, they're
+        # probably distinct events (e.g. afternoon kids show vs evening
+        # rock concert) and the whole alignment is suspect — leave the
+        # group alone rather than merge blindly.
+        time_mismatch = any(
+            s_ev.time and a_ev.time
+            and _time_diff_minutes(s_ev.time, a_ev.time) > 240
+            for (s_ev, _), (a_ev, _) in zip(scrapers_sorted, aggs_sorted)
+        )
+        if time_mismatch:
+            result.extend(group)
+            continue
 
         for (s_ev, s_prio), (a_ev, _) in zip(scrapers_sorted, aggs_sorted):
             # Enrich scraper with missing fields from aggregator
