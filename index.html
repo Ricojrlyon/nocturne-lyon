@@ -1382,8 +1382,9 @@ function eventHref(e) {
    keywords in its name (accents/case-insensitive), it goes to the matching
    group instead of falling into 'autre'.
    - musée / musee / galerie / institut → musées & galeries
-   (Theatre venues are blocked at the scraper level — see EXCLUDED_VENUE_PATTERNS
-   in villemorte.py and petit_bulletin.py — so they never reach this code.) */
+   Seuls ces mots-clés sont routés ; tout autre lieu inconnu (y compris
+   les théâtres venant de Ville Morte, qui ne les bloque plus) tombe
+   dans 'autre'. */
 function inferGroupForVenue(venueName) {
   const norm = (venueName || '')
     .toLowerCase()
@@ -1423,7 +1424,7 @@ function buildVenueFilters() {
   }
 
   // Step 2: auto-promote unknown venues whose name implies a specific group
-  // (e.g. anything with "théâtre" -> théâtre & danse). This must happen
+  // (e.g. anything with "musée" -> musées & galeries). This must happen
   // BEFORE we compute 'autre', so promoted venues don't double-appear.
   const unknownInEvents = new Set();
   for (const e of state.events) {
