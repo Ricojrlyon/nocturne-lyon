@@ -207,27 +207,47 @@ def _diagnose_first_post():
 
 
 def fetch() -> List[Event]:
-    url = SITE + "/wp-json/wp/v2/evenement?per_page=100&_embed=1"
-    try:
-        resp = requests.get(url, timeout=30, headers=HEADERS)
-    except requests.RequestException as e:
-        print(f"[Transbordeur] request failed: {e}", file=sys.stderr)
-        return []
+    # The WP REST API caps per_page at 100: follow the next pages up to
+    # X-WP-TotalPages (safety cap at 5 pages / 500 events) so nothing is
+    # silently dropped once the venue publishes more than 100 events.
+    base_url = SITE + "/wp-json/wp/v2/evenement?per_page=100&_embed=1"
+    data: list = []
+    total_pages = 1
+    page = 1
+    while page <= min(total_pages, 5):
+        try:
+            resp = requests.get(f"{base_url}&page={page}",
+                                timeout=30, headers=HEADERS)
+        except requests.RequestException as e:
+            print(f"[Transbordeur] request failed (page {page}): {e}",
+                  file=sys.stderr)
+            break
 
-    if resp.status_code != 200:
-        print(f"[Transbordeur] /wp/v2/evenement returned {resp.status_code}",
-              file=sys.stderr)
-        return []
+        if resp.status_code != 200:
+            print(f"[Transbordeur] /wp/v2/evenement page {page} returned "
+                  f"{resp.status_code}", file=sys.stderr)
+            break
 
-    try:
-        data = resp.json()
-    except ValueError:
-        print("[Transbordeur] non-JSON response", file=sys.stderr)
-        return []
+        try:
+            chunk = resp.json()
+        except ValueError:
+            print(f"[Transbordeur] non-JSON response (page {page})",
+                  file=sys.stderr)
+            break
 
-    if not isinstance(data, list):
-        print(f"[Transbordeur] unexpected JSON type: {type(data).__name__}",
-              file=sys.stderr)
+        if not isinstance(chunk, list):
+            print(f"[Transbordeur] unexpected JSON type: "
+                  f"{type(chunk).__name__} (page {page})", file=sys.stderr)
+            break
+
+        data.extend(chunk)
+        try:
+            total_pages = int(resp.headers.get("X-WP-TotalPages", "1"))
+        except ValueError:
+            total_pages = 1
+        page += 1
+
+    if not data:
         return []
 
     # Pass 1: collect stubs from API (no time yet)
