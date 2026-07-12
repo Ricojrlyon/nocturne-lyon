@@ -11,9 +11,10 @@ Filters applied:
     "Humour & Café Théâtre" which is a different category (comedy).
   * Venue substring blocklist: librairie (bookstores).
 
-Multi-day events ("Du X au Y MOIS YYYY") emit one Event per day in range,
-capped at 7 days. Open-ended exhibitions ("Jusqu'au X" without "Du") are
-skipped — they don't fit the daily-events model.
+Multi-day events ("Du X au Y MOIS YYYY") emit one Event per day in range;
+ranges longer than 7 days are skipped ENTIRELY (not truncated) — like the
+open-ended exhibitions ("Jusqu'au X" without "Du"), they don't fit the
+daily-events model.
 """
 from __future__ import annotations
 import re
@@ -148,7 +149,8 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str]]]:
             return []
         if end < start:
             return []
-        # Cap multi-day events at 7 days to keep it reasonable
+        # Ranges longer than 7 days are exhibition-like: skip the event
+        # entirely (no truncation).
         if (end - start).days > 7:
             return []
         results: List[Tuple[str, Optional[str]]] = []
