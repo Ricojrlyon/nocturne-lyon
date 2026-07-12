@@ -118,7 +118,9 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str]]]:
     # "(?:er)?" everywhere below: the French ordinal "1er" has no word
     # boundary between the digit and "er", so \d+ / (\d{1,2}) alone never
     # match "du 1er au 3 mai" or "1er mai".
-    has_du_range = bool(re.search(r"\bdu\s+\d+(?:er)?\s+au\s+\d+(?:er)?\s", norm))
+    # "(?:\w+\s+)?" : accepte aussi la forme cross-mois "du 28 mai au 3 juin"
+    has_du_range = bool(re.search(
+        r"\bdu\s+\d+(?:er)?\s+(?:\w+\s+)?au\s+\d+(?:er)?\s", norm))
     has_jusqu = "jusqu" in norm
     if has_jusqu and not has_du_range:
         return []
@@ -157,6 +159,45 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str]]]:
         if (end - start).days > 7:
             return []
         results: List[Tuple[str, Optional[str]]] = []
+        d = start
+        while d <= end:
+            d_iso = d.isoformat()
+            if d_iso >= today_iso:
+                results.append((d_iso, time_str))
+            d += timedelta(days=1)
+        return results
+
+    # Range across two months: "Du 28 mai au 3 juin 2026". Sans ce cas,
+    # seule la date de fin était captée par le fallback date simple et
+    # l'événement n'apparaissait qu'au dernier jour.
+    range_xm = re.search(
+        r"\bdu\s+(\d{1,2})(?:er)?\s+"
+        r"(janvier|fevrier|mars|avril|mai|juin|juillet|aout|"
+        r"septembre|octobre|novembre|decembre)\s+"
+        r"au\s+(\d{1,2})(?:er)?\s+"
+        r"(janvier|fevrier|mars|avril|mai|juin|juillet|aout|"
+        r"septembre|octobre|novembre|decembre)\s+(\d{4})",
+        norm
+    )
+    if range_xm:
+        start_day = int(range_xm.group(1))
+        start_month = MONTHS_FR[range_xm.group(2)]
+        end_day = int(range_xm.group(3))
+        end_month = MONTHS_FR[range_xm.group(4)]
+        year = int(range_xm.group(5))
+        # "du 30 decembre au 2 janvier 2027" : l'année écrite est celle
+        # de la fin de plage.
+        start_year = year - 1 if start_month > end_month else year
+        try:
+            start = date(start_year, start_month, start_day)
+            end = date(year, end_month, end_day)
+        except ValueError:
+            return []
+        if end < start:
+            return []
+        if (end - start).days > 7:
+            return []
+        results = []
         d = start
         while d <= end:
             d_iso = d.isoformat()
