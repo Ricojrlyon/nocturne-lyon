@@ -1,72 +1,7 @@
 {
-  "generated_at": "2026-07-12T09:03:43.528485+00:00",
-  "count": 549,
+  "generated_at": "2026-07-13T08:53:50.130693+00:00",
+  "count": 547,
   "events": [
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Spritz électronique",
-      "subtitle": null,
-      "category": "immersif",
-      "date_start": "2026-07-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/spritz-electronique-soiree-ete-la-commune/",
-      "image": null,
-      "id": "21d1944dfdcd"
-    },
-    {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "Atelier Héroïc Fantasy Pédée - ! Reporté !",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-12",
-      "date_end": null,
-      "time": "13:00",
-      "url": "https://agenda.villemorte.fr/event/atelier-heroic-fantasy-pedee",
-      "image": null,
-      "id": "c6ac33f96175"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "ANNULE // [Open Air] Bubble Boom Party avec Reperkusound",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-07-12",
-      "date_end": null,
-      "time": "15:00",
-      "url": "https://larayonne.org/evenement/open-air-bubble-boom-party/",
-      "image": null,
-      "id": "1fb09feee51e"
-    },
-    {
-      "venue": "Friche Artistique Lamartine | La Robinetterie",
-      "venue_slug": "friche-artistique-lamartine-la-robinetterie",
-      "title": "Un été à la Friche dans le cadre de Tout le Monde Dehors 2026",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-07-12",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://agenda.villemorte.fr/event/un-ete-a-la-friche-dans-le-cadre-de-tout-le-monde-dehors-2026",
-      "image": null,
-      "id": "d566e8783574"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Acid Society",
-      "subtitle": "Acida Dominga (live) · Too Smooth Christ (live) · Ben Pest (live) · Ghetto Bird",
-      "category": "club",
-      "date_start": "2026-07-12",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://le-sucre.eu/events/acid-society-8/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Acida-Dominga-584x600.jpeg",
-      "id": "32361db93c55"
-    },
     {
       "venue": "Théâtre de l’Elysée",
       "venue_slug": "theatre-de-l-elysee",
@@ -317,15 +252,15 @@
     {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
-      "title": "Violent Magic Orchestra + Eau Chaude Sanitaire + Nuage Rose + Badaboum",
+      "title": "Violent magic orchestra + Eau chaude sanitaire + Nuage rose + Badaboum",
       "subtitle": null,
-      "category": null,
+      "category": "Rock & Pop",
       "date_start": "2026-07-16",
       "date_end": null,
       "time": "19:30",
-      "url": "https://agenda.villemorte.fr/event/violent-magic-orchestra-eau-chaude-sanitaire-matti-nuage-rose",
+      "url": "https://www.petit-bulletin.fr/agenda-318796-violent-magic-orchestra-eau-chaude-sanitaire-nuage-rose-badaboum.html",
       "image": null,
-      "id": "25c802493bfe"
+      "id": "0e421d3b4b7e"
     },
     {
       "venue": "Improvidence",
@@ -339,6 +274,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-318695-toi-moi.html",
       "image": null,
       "id": "efe7c8fc88e3"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Friendzone",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-07-16",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318792-friendzone.html",
+      "image": null,
+      "id": "a543701677e3"
     },
     {
       "venue": "Théâtres romains de Fourvière",
@@ -417,6 +365,19 @@
       "url": "https://agenda.villemorte.fr/event/rever-sous-le-futur-groupe-de-reve-collectif-cycle-de-7-seances-3",
       "image": null,
       "id": "045c5ee47376"
+    },
+    {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Charlotte Cardin",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-07-17",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.petit-bulletin.fr/agenda-251115-charlotte-cardin.html",
+      "image": null,
+      "id": "53d5fa367b06"
     },
     {
       "venue": "Le Sucre",
@@ -5877,6 +5838,19 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/harry-potter-et-le-prince-de-sang-mele",
       "image": null,
       "id": "80487e51b923"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "QUATUOR DEBUSSY",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2027-01-09",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/quatuor-debussy-4/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/quatuor-debussy-500x500.jpg",
+      "id": "1970971e57d3"
     },
     {
       "venue": "La Rayonne",
