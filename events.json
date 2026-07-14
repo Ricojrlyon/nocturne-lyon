@@ -1,59 +1,7 @@
 {
-  "generated_at": "2026-07-13T08:53:50.130693+00:00",
-  "count": 547,
+  "generated_at": "2026-07-14T07:49:56.745092+00:00",
+  "count": 556,
   "events": [
-    {
-      "venue": "Théâtre de l’Elysée",
-      "venue_slug": "theatre-de-l-elysee",
-      "title": "PILOTE, UNE SÉRIE THÉÂTRALE EN CINQ ÉPISODES",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-13",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://agenda.villemorte.fr/event/pilote-une-serie-theatrale-en-cinq-episodes-6",
-      "image": null,
-      "id": "0d078c884ebd"
-    },
-    {
-      "venue": "Théâtres romains de Fourvière",
-      "venue_slug": "theatres-romains-de-fourviere",
-      "title": "Wet Leg + Lambrini Girls",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-07-13",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-317635-wet-leg-lambrini-girls.html",
-      "image": null,
-      "id": "986126d83d26"
-    },
-    {
-      "venue": "Le Sonic",
-      "venue_slug": "sonic",
-      "title": "RED BOAT CLUB 13/07",
-      "subtitle": null,
-      "category": "club",
-      "date_start": "2026-07-13",
-      "date_end": null,
-      "time": "21:00",
-      "url": "https://sonic-lyon.fr/evenement/red-boat-club-13-07/",
-      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/07/IMG_0458-825x1024.jpeg",
-      "id": "d9d4774854ee"
-    },
-    {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "SUZANNE À LA RAYONNE : Let’s have a kiki",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-07-13",
-      "date_end": "2026-07-14",
-      "time": "23:00",
-      "url": "https://larayonne.org/evenement/suzanne-a-la-rayonne-lets-have-a-kiki/",
-      "image": null,
-      "id": "79c5ed10e087"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -70,7 +18,7 @@
     {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "Coupe du monde : Demi-finale",
+      "title": "Coupe du monde : France — Espagne",
       "subtitle": null,
       "category": null,
       "date_start": "2026-07-14",
@@ -78,7 +26,7 @@
       "time": "17:30",
       "url": "https://h-eat.eu/events/coupe-du-monde-demi-finale/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/06/france-irak-576x720.png",
-      "id": "e582d1ada3ab"
+      "id": "2085eb4ab115"
     },
     {
       "venue": "Le Sucre",
@@ -458,6 +406,19 @@
       "id": "f532d434675a"
     },
     {
+      "venue": "Théâtres romains de Fourvière",
+      "venue_slug": "theatres-romains-de-fourviere",
+      "title": "Club Disco",
+      "subtitle": null,
+      "category": "Soul & Funk",
+      "date_start": "2026-07-18",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317644-club-disco.html",
+      "image": null,
+      "id": "a72b4a65fff8"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Live club",
@@ -534,6 +495,19 @@
       "url": "https://lacommune.co/event/yoga-sonore-lyon-bain-sonore-yoga-nuits-sonores/",
       "image": null,
       "id": "733a8f0b3896"
+    },
+    {
+      "venue": "Théâtre de l’Elysée",
+      "venue_slug": "theatre-de-l-elysee",
+      "title": "PILOTE, UNE SÉRIE THÉÂTRALE EN CINQ ÉPISODES",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-20",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://agenda.villemorte.fr/event/pilote-une-serie-theatrale-en-cinq-episodes-7",
+      "image": null,
+      "id": "93a94759713b"
     },
     {
       "venue": "Le Sucre",
@@ -1288,6 +1262,19 @@
       "url": "https://le-sucre.eu/events/club-x-physical-tool/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/05/MAGIC-MARDI-182-400x600.jpg",
       "id": "c5055eeb85ed"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS DISCO : VYKTOR NOVA",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-08-22",
+      "date_end": null,
+      "time": null,
+      "url": "https://yp.events/1e5b654c-fd80-4bdb-8874-b4dbdcfe37fd/THIS-IS-DISCO-Vyktor-Nova?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/07/ThisisDisco_22082026_lepetitsalon-1024x576.jpg",
+      "id": "30a93e2c0756"
     },
     {
       "venue": "Le Sucre",
@@ -2083,6 +2070,19 @@
       "id": "157717fdfc09"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "MUSTANG",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-28",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://radiant-bellevue.fr/spectacles/mustang/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/07/mustang_radiant-bellevue-500x500.jpg",
+      "id": "8695ae73fb4c"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Gratuit Déjeuner-Concert TULIPE TULIPE Dispositif Avant-Scène",
@@ -2094,6 +2094,19 @@
       "url": "https://marchegare.fr/agenda/tulipe-tulipe",
       "image": null,
       "id": "372a63054c79"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "MUSTANG",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-29",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://radiant-bellevue.fr/spectacles/mustang/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/07/mustang_radiant-bellevue-500x500.jpg",
+      "id": "301f0fadd2c0"
     },
     {
       "venue": "Agend'arts",
@@ -2380,6 +2393,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/festival-karavel-20-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/05/karavel_radiant-bellevue-2-500x500.jpg",
       "id": "24eb1a39baa2"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Marathon de la danse",
+      "subtitle": null,
+      "category": "danse",
+      "date_start": "2026-10-05",
+      "date_end": null,
+      "time": null,
+      "url": "https://radiant-bellevue.fr/spectacles/marathon-de-la-danse-3/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/07/MARATHON-DE-LA-DANSE-500x500.jpg",
+      "id": "145e4b6a2a74"
     },
     {
       "venue": "Bourse du Travail",
@@ -3565,6 +3591,19 @@
       "id": "8a18d20aa5e0"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "CHEMINOTES",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-02",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://radiant-bellevue.fr/spectacles/cheminotes/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/07/cheminotes_radiant-bellevue-500x500.jpg",
+      "id": "15ad71529315"
+    },
+    {
       "venue": "Opéra national de Lyon",
       "venue_slug": "opera-lyon",
       "title": "Le Sacre du printemps - House",
@@ -3576,6 +3615,19 @@
       "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/danse/le-sacre-du-printemps-house",
       "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/29b8e90d/principal_sacre.jpg",
       "id": "36a0ee1d140f"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "CHEMINOTES",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-03",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://radiant-bellevue.fr/spectacles/cheminotes/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/07/cheminotes_radiant-bellevue-500x500.jpg",
+      "id": "1d0e9714ba7f"
     },
     {
       "venue": "Agend'arts",
@@ -3957,15 +4009,15 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "David Castello-Lopes Dans Délicieux",
+      "title": "David Castello-Lopes - Délicieux (Tournée)",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-11-10",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/david-castello-lopes-dans-delicieux-373988.html",
+      "url": "https://www.bourse-du-travail.com/david-castello-lopes-delicieux-tournee-373988.html",
       "image": null,
-      "id": "c06dacc1b474"
+      "id": "0abd11423454"
     },
     {
       "venue": "La Rayonne",
@@ -3979,6 +4031,19 @@
       "url": "https://larayonne.org/evenement/impericon-festival-2026-death-dominion-avec-carnifex-despised-icon-suffocation-gates-to-hell/",
       "image": null,
       "id": "9225684a9a11"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "8RUKI + TH + ZED",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-10",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.transbordeur.fr/evenement/8ruki-th-zed-10112026/",
+      "image": null,
+      "id": "af63d4317fb2"
     },
     {
       "venue": "Agend'arts",
@@ -5138,6 +5203,19 @@
       "id": "f5d855ebf76d"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "CAMILLE, TU DORS ?",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-12-07",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://radiant-bellevue.fr/spectacles/camille-tu-dors/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/07/camille-tu-dors-500x500.jpg",
+      "id": "3113ec171a00"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "CORY WONG",
@@ -5149,6 +5227,19 @@
       "url": "https://www.transbordeur.fr/evenement/cory-wong-07122026/",
       "image": null,
       "id": "d728b172d4c2"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "CAMILLE, TU DORS ?",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-12-08",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://radiant-bellevue.fr/spectacles/camille-tu-dors/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/07/camille-tu-dors-500x500.jpg",
+      "id": "f26a89d8a1d2"
     },
     {
       "venue": "Le Transbordeur",
@@ -5851,6 +5942,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/quatuor-debussy-4/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/quatuor-debussy-500x500.jpg",
       "id": "1970971e57d3"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "LA MAGIE D’HARRY POTTER !",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2027-01-10",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://radiant-bellevue.fr/spectacles/la-magie-dharry-potter/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-magie-dharry-potter-500x500.jpg",
+      "id": "e068839b1869"
     },
     {
       "venue": "La Rayonne",
@@ -6969,6 +7073,19 @@
       "url": "https://www.bourse-du-travail.com/sofia-belabbes-ketchup-mayo-nouvelle-version-tournee-376106.html",
       "image": null,
       "id": "9a11c35800f4"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "SUZANNE À LA RAYONNE : Let’s have a kiki",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2027-07-13",
+      "date_end": "2026-07-14",
+      "time": "23:00",
+      "url": "https://larayonne.org/evenement/suzanne-a-la-rayonne-lets-have-a-kiki/",
+      "image": null,
+      "id": "29401125bd81"
     },
     {
       "venue": "La Halle Tony Garnier",
