@@ -1,72 +1,7 @@
 {
-  "generated_at": "2026-07-14T07:49:56.745092+00:00",
-  "count": 556,
+  "generated_at": "2026-07-15T07:53:47.050346+00:00",
+  "count": 551,
   "events": [
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Demi-finale : CDM 2026",
-      "subtitle": null,
-      "category": "diffusion de match",
-      "date_start": "2026-07-14",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/france-v-s-maroc-cdm-2026/",
-      "image": null,
-      "id": "773ff12384a7"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Coupe du monde : France — Espagne",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-14",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://h-eat.eu/events/coupe-du-monde-demi-finale/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/06/france-irak-576x720.png",
-      "id": "2085eb4ab115"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Magic Mardi",
-      "subtitle": "Loulou Ferrari · Patxi · Cecile Virago",
-      "category": "club",
-      "date_start": "2026-07-14",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://le-sucre.eu/events/magic-mardi-85/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Plan-de-travail-24_2-480x600.png",
-      "id": "67d9e2836de2"
-    },
-    {
-      "venue": "Péristyle Opéra",
-      "venue_slug": "peristyle-opera",
-      "title": "Nuage 86",
-      "subtitle": null,
-      "category": "Jazz",
-      "date_start": "2026-07-14",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.petit-bulletin.fr/agenda-313548-nuage-86.html",
-      "image": null,
-      "id": "c48c6300c9f2"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Nuits De Fourviere 2026 Le Bal Shangwe Wanjiru Kamuyu",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2026-07-14",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.les-subs.com/evenement/nuits-de-fourviere-2026-le-bal-shangwe-wanjiru-kamuyu/",
-      "image": null,
-      "id": "586589ad8abd"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -83,7 +18,7 @@
     {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "Coupe du monde : Demi-finale",
+      "title": "Demi-finale : Angleterre — Argentine",
       "subtitle": null,
       "category": null,
       "date_start": "2026-07-15",
@@ -91,7 +26,7 @@
       "time": "17:30",
       "url": "https://h-eat.eu/events/coupe-du-monde-demi-finale-2/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-265-576x720.png",
-      "id": "05512055f277"
+      "id": "061f3b5cf7a8"
     },
     {
       "venue": "HEAT",
@@ -7075,17 +7010,17 @@
       "id": "9a11c35800f4"
     },
     {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "SUZANNE À LA RAYONNE : Let’s have a kiki",
+      "venue": "Péristyle Opéra",
+      "venue_slug": "peristyle-opera",
+      "title": "Nuage 86",
       "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-07-13",
-      "date_end": "2026-07-14",
-      "time": "23:00",
-      "url": "https://larayonne.org/evenement/suzanne-a-la-rayonne-lets-have-a-kiki/",
+      "category": "Jazz",
+      "date_start": "2027-07-14",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.petit-bulletin.fr/agenda-313548-nuage-86.html",
       "image": null,
-      "id": "29401125bd81"
+      "id": "79ca94fade6f"
     },
     {
       "venue": "La Halle Tony Garnier",
