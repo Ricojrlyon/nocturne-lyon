@@ -190,6 +190,17 @@ def fetch() -> List[Event]:
         if not title:
             continue
 
+        # ----- Image -----
+        # L'API Gancio expose media: [{url: "<fichier>", ...}] ; le fichier
+        # est servi sur /media/<fichier> et une miniature (~60 Ko, adaptée
+        # à la grille) sur /media/thumb/<fichier>.
+        image = None
+        media = item.get("media") or []
+        if media and isinstance(media[0], dict):
+            fname = (media[0].get("url") or "").strip()
+            if fname and "/" not in fname:
+                image = f"https://agenda.villemorte.fr/media/thumb/{fname}"
+
         events.append(Event(
             venue=venue_name,
             venue_slug=venue_slug,
@@ -200,7 +211,7 @@ def fetch() -> List[Event]:
             date_end=date_end,
             time=time_str,
             url=url,
-            image=None,
+            image=image,
         ))
 
     return events
