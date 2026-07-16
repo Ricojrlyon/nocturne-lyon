@@ -1,85 +1,7 @@
 {
-  "generated_at": "2026-07-15T07:53:47.050346+00:00",
-  "count": 551,
+  "generated_at": "2026-07-16T07:59:16.388855+00:00",
+  "count": 558,
   "events": [
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "DJ set à Lyon – Narvalo Disco Club",
-      "subtitle": null,
-      "category": "dj set",
-      "date_start": "2026-07-15",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/dj-set-a-lyon-narvalo-disco-club-3/",
-      "image": null,
-      "id": "dfa23aafcb19"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Demi-finale : Angleterre — Argentine",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-15",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://h-eat.eu/events/coupe-du-monde-demi-finale-2/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-265-576x720.png",
-      "id": "061f3b5cf7a8"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Chess Bar x HEAT",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-15",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://h-eat.eu/events/chess-bar-x-heat-8/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
-      "id": "decf6bda1c34"
-    },
-    {
-      "venue": "Jardin Envie Partagée quai Rambaud",
-      "venue_slug": "periscope",
-      "title": "FAZAZ",
-      "subtitle": "Le Périscope hors les murs · Diversions · Escapade estivale",
-      "category": "musique",
-      "date_start": "2026-07-15",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.periscope-lyon.com/concerts/fazaz/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/06/cropped-FAZAZ-et-Dounia-paysage-scaled-1-1024x613-1-650x389.jpg",
-      "id": "d54b8d73c572"
-    },
-    {
-      "venue": "Bar Rock'n Eat",
-      "venue_slug": "bar-rock-n-eat",
-      "title": "Jungle Rot + Rats of Gomorrah + Liquid Flesh",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-07-15",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318860-jungle-rot-rats-of-gomorrah-liquid-flesh.html",
-      "image": null,
-      "id": "e3e61f2a3026"
-    },
-    {
-      "venue": "Théâtres romains de Fourvière",
-      "venue_slug": "theatres-romains-de-fourviere",
-      "title": "Lorde",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-07-15",
-      "date_end": null,
-      "time": "21:30",
-      "url": "https://www.petit-bulletin.fr/agenda-317642-lorde.html",
-      "image": null,
-      "id": "767c5652e822"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -250,6 +172,19 @@
       "id": "045c5ee47376"
     },
     {
+      "venue": "Péristyle Opéra",
+      "venue_slug": "peristyle-opera",
+      "title": "Yunt?b?",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-07-17",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318812-yunt-b.html",
+      "image": null,
+      "id": "77fc7516f1bd"
+    },
+    {
       "venue": "Théâtres romains de Fourvière",
       "venue_slug": "theatres-romains-de-fourviere",
       "title": "Charlotte Cardin",
@@ -261,6 +196,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-251115-charlotte-cardin.html",
       "image": null,
       "id": "53d5fa367b06"
+    },
+    {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "ITALO & WEIRD DISCO",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-07-17",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://sonic-lyon.fr/evenement/italo-weird-disco/",
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/07/IMG_0528.jpeg",
+      "id": "08421c13846a"
     },
     {
       "venue": "Le Sucre",
@@ -352,6 +300,32 @@
       "url": "https://www.petit-bulletin.fr/agenda-317644-club-disco.html",
       "image": null,
       "id": "a72b4a65fff8"
+    },
+    {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "SONIC TECH",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-07-18",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://sonic-lyon.fr/evenement/sonic-tech/",
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/07/IMG_0529-1024x428.jpeg",
+      "id": "3a6858061d3d"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Petite finale de la Coupe du Monde",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-18",
+      "date_end": null,
+      "time": "23:00",
+      "url": "https://h-eat.eu/events/petite-finale-de-la-coupe-du-monde/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/05/cdm-heat-263-576x720.png",
+      "id": "da0d6cf7659f"
     },
     {
       "venue": "Le Sucre",
@@ -448,7 +422,7 @@
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Magic Mardi",
-      "subtitle": "David Asko",
+      "subtitle": "David Asko · Jeudi Minuit · Marie.",
       "category": "club",
       "date_start": "2026-07-21",
       "date_end": null,
@@ -456,6 +430,19 @@
       "url": "https://le-sucre.eu/events/magic-mardi-86/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Plan-de-travail-24_3-480x600.png",
       "id": "bfd2ca5f95fc"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Soirée Salsa et Bachata",
+      "subtitle": null,
+      "category": "danse",
+      "date_start": "2026-07-22",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/salsa-bachata/",
+      "image": null,
+      "id": "1a4f2c7d7727"
     },
     {
       "venue": "HEAT",
@@ -521,6 +508,19 @@
       "url": "https://sonic-lyon.fr/evenement/ulrika-spacek-sharon-tate-modern/",
       "image": "https://sonic-lyon.fr/wp-content/uploads/2026/04/Capture-decran-2026-04-01-a-10.51.20-1024x679.png",
       "id": "5db429245cdf"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "LES VIEWINGS D’AMOUR #3",
+      "subtitle": null,
+      "category": "drag",
+      "date_start": "2026-07-24",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/les-viewings-damour/",
+      "image": null,
+      "id": "e46a300ecf2a"
     },
     {
       "venue": "Le Petit Salon",
@@ -744,6 +744,19 @@
       "id": "3f605945b5b5"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Dans les bacs : Cymka & Aladdin",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-07-30",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://h-eat.eu/events/dans-les-bacs-cymka-aladdin/",
+      "image": "https://h-eat.eu/wp-content/uploads/2025/08/dans-les-bacs-576x720.png",
+      "id": "24f0e750b8a1"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "THIS IS TECHNO RAVE : BCKYRD / PEEKZT",
@@ -837,6 +850,19 @@
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
+      "title": "Pimp My Vinyl Lyon",
+      "subtitle": null,
+      "category": "atelier",
+      "date_start": "2026-08-03",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/pimp-my-vinyl-lyon/",
+      "image": null,
+      "id": "8172db82af0a"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
       "title": "OPEN MIX à Lyon",
       "subtitle": null,
       "category": "dj set",
@@ -861,19 +887,6 @@
       "id": "026b956a8547"
     },
     {
-      "venue": "Les Clameurs",
-      "venue_slug": "les-clameurs",
-      "title": "Stand Up Politique",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-08-04",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/stand-up-politique-11",
-      "image": null,
-      "id": "5d678cbce733"
-    },
-    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Résidence Physical Tool",
@@ -885,6 +898,19 @@
       "url": "https://lacommune.co/event/residence-physical-tool/",
       "image": null,
       "id": "f63f0c182e72"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Dans les bacs : Salma Rosa Venus & Simon de Sion",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-08-06",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://h-eat.eu/events/dans-les-bacs/",
+      "image": "https://h-eat.eu/wp-content/uploads/2025/08/dans-les-bacs-576x720.png",
+      "id": "e198cd5664c9"
     },
     {
       "venue": "Grrrnd Zero",
@@ -1054,6 +1080,19 @@
       "url": "https://yp.events/6f179598-9c55-4365-b433-84e3a519bb24/THIS-IS-HOUSE-DJ-Atlance-owenruga?from=siteweb",
       "image": "https://www.lpslyon.fr/wp-content/uploads/2026/07/ThisisHouse_15082026_lepetitsalon-1024x576.jpg",
       "id": "3b361021efb6"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Euronight Club — Summer Edition",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-08-15",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://h-eat.eu/events/euronight-club-summer-edition/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/07/INSTA1508-COUVEVENT-1280x720.png",
+      "id": "f206735f5080"
     },
     {
       "venue": "Grrrnd Zero",
@@ -1240,6 +1279,19 @@
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
+      "title": "Atelier Phonograffiti Lyon | Custom vinyles & street art",
+      "subtitle": null,
+      "category": "atelier",
+      "date_start": "2026-08-24",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/pimp-my-vinyl-a-la-commune/",
+      "image": null,
+      "id": "cb4a0f61dcf3"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
       "title": "DJ set house à Lyon – Suntrax avec Guia Sound",
       "subtitle": null,
       "category": "dj set",
@@ -1405,6 +1457,19 @@
       "url": "https://agenda.villemorte.fr/event/concert-de-basem-al-ashkar-et-emmanuelle-miton",
       "image": null,
       "id": "c2dadae93144"
+    },
+    {
+      "venue": "Les Clameurs",
+      "venue_slug": "les-clameurs",
+      "title": "Stand Up Politique",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-09-01",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/stand-up-politique-11",
+      "image": null,
+      "id": "d787164b3a6c"
     },
     {
       "venue": "Le Sonic",
@@ -1851,7 +1916,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Bientôt en vente Gratuit abonné Projection Ciné-Club : IF - Illustration Festival Courts-Métrages d'animation",
+      "title": "Gratuit abonné Projection Ciné-Club : IF - Illustration Festival Courts-Métrages d'animation",
       "subtitle": null,
       "category": null,
       "date_start": "2026-09-23",
@@ -1859,7 +1924,7 @@
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/cine-club-if-festival",
       "image": null,
-      "id": "5d3100cb2ddc"
+      "id": "68e4786900f0"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -2590,6 +2655,19 @@
       "id": "202ee10a30cf"
     },
     {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Soiree D'Ouverture Festival Lumiere",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-10",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/soiree-d-ouverture-festival-lumiere",
+      "image": null,
+      "id": "c1ef497316fc"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "APPARAT",
@@ -2852,7 +2930,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Bientôt en vente Electro Sono Mondiale LES MAMANS DU CONGO & RROBIN + SHAROUH Jarring Fest 2026",
+      "title": "Electro Sono Mondiale LES MAMANS DU CONGO & RROBIN + SHAROUH Jarring Fest 2026",
       "subtitle": null,
       "category": null,
       "date_start": "2026-10-16",
@@ -2860,7 +2938,7 @@
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/jarring-fest-2026",
       "image": null,
-      "id": "38ab889636f0"
+      "id": "06ed79fab026"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5905,6 +5983,19 @@
       "id": "a3cb245814d8"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "PUNK.E.S",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2027-01-12",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/punk-e-s/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/punkes-500x500.jpg",
+      "id": "e39b5acbebe4"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Dirty Dancing - Le Tribute",
@@ -6789,6 +6880,19 @@
       "id": "d1532af313a6"
     },
     {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "JORDAN RAKEI",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2027-04-09",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://larayonne.org/evenement/jordan-rakei/",
+      "image": null,
+      "id": "c0091d36bfa3"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Star Wars In Concert : Un Nouvel Espoir",
@@ -7008,19 +7112,6 @@
       "url": "https://www.bourse-du-travail.com/sofia-belabbes-ketchup-mayo-nouvelle-version-tournee-376106.html",
       "image": null,
       "id": "9a11c35800f4"
-    },
-    {
-      "venue": "Péristyle Opéra",
-      "venue_slug": "peristyle-opera",
-      "title": "Nuage 86",
-      "subtitle": null,
-      "category": "Jazz",
-      "date_start": "2027-07-14",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.petit-bulletin.fr/agenda-313548-nuage-86.html",
-      "image": null,
-      "id": "79ca94fade6f"
     },
     {
       "venue": "La Halle Tony Garnier",
