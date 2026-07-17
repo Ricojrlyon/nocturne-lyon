@@ -1,111 +1,7 @@
 {
-  "generated_at": "2026-07-16T07:59:16.388855+00:00",
-  "count": 558,
+  "generated_at": "2026-07-17T07:11:24.140966+00:00",
+  "count": 555,
   "events": [
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Roda de samba",
-      "subtitle": null,
-      "category": "danse",
-      "date_start": "2026-07-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/roda-de-samba-2/",
-      "image": null,
-      "id": "f570dae40543"
-    },
-    {
-      "venue": "Escale Solidaire du 2",
-      "venue_slug": "periscope",
-      "title": "Watchdog",
-      "subtitle": "Le Périscope hors les murs · Diversions · Escapade estivale",
-      "category": "musique",
-      "date_start": "2026-07-16",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.periscope-lyon.com/concerts/watchdog-3/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/06/Pierre-HorckmansAnne-Q-uillier_DSC_7973-e1782395357447-650x416.jpg",
-      "id": "6949f491b165"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "GHETTO HEAT Party by Sapristi",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-07-16",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://h-eat.eu/events/ghetto-heat-party-by-sapristi/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/07/sapristi-heat2-1095x720.jpeg",
-      "id": "cbaa41fea0df"
-    },
-    {
-      "venue": "Péristyle Opéra",
-      "venue_slug": "peristyle-opera",
-      "title": "Karaoké piano",
-      "subtitle": null,
-      "category": "Jeux",
-      "date_start": "2026-07-16",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318759-karaok-piano.html",
-      "image": null,
-      "id": "4f38a11fcf56"
-    },
-    {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "Violent magic orchestra + Eau chaude sanitaire + Nuage rose + Badaboum",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-07-16",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318796-violent-magic-orchestra-eau-chaude-sanitaire-nuage-rose-badaboum.html",
-      "image": null,
-      "id": "0e421d3b4b7e"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Toi + Moi = ?",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2026-07-16",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318695-toi-moi.html",
-      "image": null,
-      "id": "efe7c8fc88e3"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Friendzone",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2026-07-16",
-      "date_end": null,
-      "time": "21:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318792-friendzone.html",
-      "image": null,
-      "id": "a543701677e3"
-    },
-    {
-      "venue": "Théâtres romains de Fourvière",
-      "venue_slug": "theatres-romains-de-fourviere",
-      "title": "Asaf Avidan + Mina Tindle",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-07-16",
-      "date_end": null,
-      "time": "21:30",
-      "url": "https://www.petit-bulletin.fr/agenda-302419-asaf-avidan-mina-tindle.html",
-      "image": null,
-      "id": "71581e5c4e4c"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -116,7 +12,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/les-viewings-damour-2/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/07/17-1-768x960.png",
       "id": "6c9c68b6d746"
     },
     {
@@ -168,7 +64,7 @@
       "date_end": null,
       "time": "18:00",
       "url": "https://agenda.villemorte.fr/event/rever-sous-le-futur-groupe-de-reve-collectif-cycle-de-7-seances-3",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/9da57b0365ce4a99d412856f6e1c57cc.jpg",
       "id": "045c5ee47376"
     },
     {
@@ -183,6 +79,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-318812-yunt-b.html",
       "image": null,
       "id": "77fc7516f1bd"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Toi + Moi = ?",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-07-17",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318695-toi-moi.html",
+      "image": null,
+      "id": "55ffe888a4ce"
     },
     {
       "venue": "Théâtres romains de Fourvière",
@@ -233,7 +142,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/suntrax-mango-xo-dj-set-la-commune/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/07/1080x1350_juillet-programmation-1-768x960.png",
       "id": "05780fce13ca"
     },
     {
@@ -259,7 +168,7 @@
       "date_end": null,
       "time": "14:00",
       "url": "https://agenda.villemorte.fr/event/boskop-festival",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/b43d5feb5f83ab798135fc04a62ccbb4.jpg",
       "id": "acf0d7752ca6"
     },
     {
@@ -300,6 +209,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-317644-club-disco.html",
       "image": null,
       "id": "a72b4a65fff8"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Jackpot",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-07-18",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318931-jackpot.html",
+      "image": null,
+      "id": "e98ef89c3b3e"
     },
     {
       "venue": "Le Sonic",
@@ -350,7 +272,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/atelier-chocolat-enfants-lyon-kitchen-street/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/06/1080x1350_juillet-programmation-2-768x960.jpg",
       "id": "59c83370bd35"
     },
     {
@@ -389,7 +311,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/soiree-speciale-gin-2934/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/05/20-4-768x960.jpg",
       "id": "8cac796e5d9d"
     },
     {
@@ -402,7 +324,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/yoga-sonore-lyon-bain-sonore-yoga-nuits-sonores/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/02/20-2-768x960.jpg",
       "id": "733a8f0b3896"
     },
     {
@@ -415,7 +337,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://agenda.villemorte.fr/event/pilote-une-serie-theatrale-en-cinq-episodes-7",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/6d4af944bc8a580fca00a75f9a02d6a8.jpg",
       "id": "93a94759713b"
     },
     {
@@ -441,7 +363,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/salsa-bachata/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2025/10/1080x1350_juillet-programmation-768x960.jpg",
       "id": "1a4f2c7d7727"
     },
     {
@@ -480,7 +402,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/dj-set-a-lyon-narvalo-disco-club/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/07/23-1-768x960.jpg",
       "id": "2ed790f66b6e"
     },
     {
@@ -519,7 +441,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/les-viewings-damour/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/07/1080x1350_juillet-programmation-2-768x960.png",
       "id": "e46a300ecf2a"
     },
     {
@@ -571,7 +493,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/summer-second-hand-market/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2025/07/25-3-768x960.jpg",
       "id": "04bf67e83c51"
     },
     {
@@ -636,7 +558,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://agenda.villemorte.fr/event/shutdown-new-york-hardcore-ivy-guest",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/69ef7ae829fa20b586af00725faa642d.jpg",
       "id": "83eaf711a46a"
     },
     {
@@ -649,7 +571,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/pimp-my-vinyl/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2025/11/27-1-1-768x960.jpg",
       "id": "f8779a528788"
     },
     {
@@ -662,7 +584,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/happy-hour-la-commune/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2025/08/1080x1350_juillet-programmation-768x960.jpg",
       "id": "afc4cb82c13d"
     },
     {
@@ -675,7 +597,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/piano-bar-lyon/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2025/11/1080x1350_juillet-programmation-768x960.jpg",
       "id": "eb6fefb8f2eb"
     },
     {
@@ -701,7 +623,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/spectacle-dimprovisation-improfusion/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2025/11/29-2-768x960.jpg",
       "id": "bbd18d981aa4"
     },
     {
@@ -740,7 +662,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/dj-set-a-lyon-narvalo-disco-club-2/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/07/30-2-768x960.jpg",
       "id": "3f605945b5b5"
     },
     {
@@ -805,7 +727,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/residence-physical-tool-7/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2025/03/1-3-768x960.jpg",
       "id": "e7b38cda3a25"
     },
     {
@@ -857,7 +779,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/pimp-my-vinyl-lyon/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/07/3-2-768x960.jpg",
       "id": "8172db82af0a"
     },
     {
@@ -870,7 +792,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/open-mix-dj-la-commune-4-aout/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/07/4-2-768x960.jpg",
       "id": "406c192a5bf3"
     },
     {
@@ -896,7 +818,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/residence-physical-tool/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/07/6-1-768x960.jpg",
       "id": "f63f0c182e72"
     },
     {
@@ -987,7 +909,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/atelier-decouverte/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2025/12/10-1-768x960.jpg",
       "id": "3ff9ae85e835"
     },
     {
@@ -1000,7 +922,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/bingo-drag-lyon/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2025/12/11-1-768x960.jpg",
       "id": "cba82563734e"
     },
     {
@@ -1026,7 +948,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/karaoke-live-cherry-chap-concert-karaoke-avec-musiciens/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/04/13-1-768x960.jpg",
       "id": "6e226d777d75"
     },
     {
@@ -1065,7 +987,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/residence-physical-tool-6/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/07/15-1-768x960.jpg",
       "id": "addf8d5faae1"
     },
     {
@@ -1104,7 +1026,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/ragana-tba",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/d784ee4e0c23e078933ba85c120d4f86.jpg",
       "id": "64c5d357d7de"
     },
     {
@@ -1136,15 +1058,15 @@
     {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
-      "title": "Fossilization + Phobocosm + tba",
+      "title": "Fossilization + Phobocosm + Grotesquerie",
       "subtitle": null,
       "category": null,
       "date_start": "2026-08-16",
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/fossilization-phobocosm-tba",
-      "image": null,
-      "id": "f15c616de71a"
+      "image": "https://agenda.villemorte.fr/media/thumb/0f1855456bff8825401e1648f6f14a70.jpg",
+      "id": "6670494e228c"
     },
     {
       "venue": "La Commune",
@@ -1156,7 +1078,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/yoga-solidaire-lyon/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/02/17-1-1-768x960.jpg",
       "id": "7fac64c77818"
     },
     {
@@ -1169,7 +1091,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/human-jukebox-karaoke-geant-live-la-commune-lyon/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/04/18-3-768x960.jpg",
       "id": "b5465884ef4e"
     },
     {
@@ -1208,7 +1130,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/bingo-drag-lunch-7/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/07/20-1-768x960.jpg",
       "id": "35d8f52388fa"
     },
     {
@@ -1286,7 +1208,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/pimp-my-vinyl-a-la-commune/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2025/11/24-1-1-768x960.jpg",
       "id": "cb4a0f61dcf3"
     },
     {
@@ -1299,7 +1221,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/suntrax-guia-sound-dj-set-house-afro-house-la-commune/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2025/10/25-1-768x960.jpg",
       "id": "a0b216b1236a"
     },
     {
@@ -1351,7 +1273,7 @@
       "date_end": null,
       "time": null,
       "url": "https://lacommune.co/event/residence-physical-tool-8/",
-      "image": null,
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-818e9d2/lacommune.co/wp-content/uploads/2026/07/29-1-768x960.jpg",
       "id": "b3cd3ec8e81a"
     },
     {
@@ -1442,7 +1364,7 @@
       "date_end": null,
       "time": "09:00",
       "url": "https://marchegare.fr/agenda/formation-pro-mixage-mastering-septembre-26",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-06/mixage_mastering_31_08_3.png",
       "id": "9dbeac2abfde"
     },
     {
@@ -1455,7 +1377,7 @@
       "date_end": "2026-09-02",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-basem-al-ashkar-et-emmanuelle-miton",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/d3b84f441e7acd23712d36099e0d5da8.jpg",
       "id": "c2dadae93144"
     },
     {
@@ -1507,7 +1429,7 @@
       "date_end": "2026-09-06",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-lucas-rocher-lehache-all-stars-en-premiere-partie",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/45c6a3492f375e6d107ab8e222bf34e3.jpg",
       "id": "b8fb660ef78e"
     },
     {
@@ -1533,7 +1455,7 @@
       "date_end": "2026-09-10",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-dagnes-bihl",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/aa1f3d467abcfb98c013dfd69fe60d5c.jpg",
       "id": "6c3c2664a6e1"
     },
     {
@@ -1559,7 +1481,7 @@
       "date_end": null,
       "time": "19:00",
       "url": "https://agenda.villemorte.fr/event/le-z-a-gz",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/73589a66b4c9c2ce4867ba629260c6a2.jpg",
       "id": "f72ad7d73259"
     },
     {
@@ -1585,7 +1507,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/scene-ouverte-slam-session-de-septembre",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/2a4574f500ca6c503bdc1fd52f350d46.jpg",
       "id": "bd5700697ed0"
     },
     {
@@ -1598,7 +1520,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/m-pokora-3",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140442/conversions/2026-09-11-M-POKORA-mpokora-carre-lyon-20251201-141703-square.jpg",
       "id": "9be61b916918"
     },
     {
@@ -1624,7 +1546,7 @@
       "date_end": "2026-09-13",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/spectacle-de-perrine-rouland-blouse",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/034639873dca62a82368e2555deb4b00.jpg",
       "id": "d5d161b31c8f"
     },
     {
@@ -1663,7 +1585,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://agenda.villemorte.fr/event/les-mardis-du-4-session-de-septembre",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/a540767d2f0f4b583385d8e751e81cb0.jpg",
       "id": "6619966f2ed4"
     },
     {
@@ -1689,7 +1611,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-or-leonid",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/7dd8f4c35c00628fc86cbcb051df0b4a.jpg",
       "id": "428d8edf7221"
     },
     {
@@ -1702,7 +1624,7 @@
       "date_end": "2026-09-18",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-merienne-and-dalias-blob",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/33e442b12b785baaac3a2b459f25e597.jpg",
       "id": "d81cc78d537b"
     },
     {
@@ -1715,7 +1637,7 @@
       "date_end": null,
       "time": "13:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/the-ink-factory-7",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140443/conversions/2026-09-18-THE-INK-FACTORY-ink-factory-carre-htg-20260604-085332-square.jpg",
       "id": "6b6ecac2d670"
     },
     {
@@ -1728,7 +1650,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-or-cyril-mokaiesh",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/1a58e5e8a38c8d01dd08c78e21bf9530.jpg",
       "id": "9e6ea002bbf1"
     },
     {
@@ -1741,7 +1663,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/go2627",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-06/siteweb-go2627.jpg",
       "id": "d5f50c008d33"
     },
     {
@@ -1767,7 +1689,7 @@
       "date_end": null,
       "time": null,
       "url": "https://www.tng-lyon.fr/evenement/journees-europeennes-du-patrimoine/",
-      "image": null,
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/JEP_460x460.png",
       "id": "8e3a5cdfbc6a"
     },
     {
@@ -1780,7 +1702,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/the-ink-factory-8",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140444/conversions/2026-09-19-THE-INK-FACTORY-ink-factory-carre-htg-20260604-090312-square.jpg",
       "id": "827ab69f8b1b"
     },
     {
@@ -1793,7 +1715,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://agenda.villemorte.fr/event/fete-de-rentree-de-la-machinerie",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/a61eaf73ee3564bd45782632a2d7a815.jpg",
       "id": "a93649020254"
     },
     {
@@ -1806,7 +1728,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-or-cecile-hercule-johanna-baget",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/d89ee469c4637f66b4a4267acf9f9a88.jpg",
       "id": "12ec244d91fb"
     },
     {
@@ -1819,7 +1741,7 @@
       "date_end": "2026-09-20",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/les-3-becs-la-centieme-nuit-chansons-danne-sylvestre",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/8a1d8ba02444e2da3d2594d53049dd86.jpg",
       "id": "e052181c88e8"
     },
     {
@@ -1832,7 +1754,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/the-ink-factory-9",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140445/conversions/2026-09-20-THE-INK-FACTORY-ink-factory-carre-htg-20260604-091002-square.jpg",
       "id": "30d1bfca9c30"
     },
     {
@@ -1871,7 +1793,7 @@
       "date_end": null,
       "time": "09:00",
       "url": "https://marchegare.fr/agenda/formation-pro-mao-production-musicale-septembre-26",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-06/mao_21_09_3.png",
       "id": "d62aa00fa0c5"
     },
     {
@@ -1897,7 +1819,7 @@
       "date_end": null,
       "time": null,
       "url": "https://www.tng-lyon.fr/evenement/decouverte-du-tng-en-lsf-2/",
-      "image": null,
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Ateliers-LSF-Boule-de-neige_460x460-1.png",
       "id": "0df458e02662"
     },
     {
@@ -1923,7 +1845,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/cine-club-if-festival",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-07/visu-if-fb.jpg",
       "id": "68e4786900f0"
     },
     {
@@ -1936,7 +1858,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-or-marion-roch",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/db2315f859d305020dbbdb7ac516197c.jpg",
       "id": "88fc2bd5ed8f"
     },
     {
@@ -1949,7 +1871,7 @@
       "date_end": "2026-09-25",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/simon-pichetti-je-suis-la",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/7b35f1863a834f911b6f39db7cd2ec9b.jpg",
       "id": "8e1ca132a72e"
     },
     {
@@ -1975,7 +1897,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/bcuc",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-04/bcuc_offstage-010_by_tim_bugbee_tinnitus_photography.jpg",
       "id": "81ecfb5e0678"
     },
     {
@@ -2014,7 +1936,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-or-fredo-des-ogres-de-barback",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/e475b0e15c238f9625f5cf6a9201c851.jpg",
       "id": "d17d7dc2e016"
     },
     {
@@ -2027,7 +1949,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/oscar-les-vacances-2026",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-05/aSUBKiRw.jpeg",
       "id": "bec75eda91f7"
     },
     {
@@ -2066,7 +1988,7 @@
       "date_end": "2026-09-27",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-teklash",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/d0c73151bcac512b425bcbe4c66b7548.jpg",
       "id": "157717fdfc09"
     },
     {
@@ -2092,7 +2014,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://marchegare.fr/agenda/tulipe-tulipe",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-07/paysage_couleur.jpg",
       "id": "372a63054c79"
     },
     {
@@ -2118,7 +2040,7 @@
       "date_end": "2026-09-30",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/bouches-de-coton",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/c727078154cece32a7e858db21a063b2.jpg",
       "id": "64afe468ed2b"
     },
     {
@@ -2144,7 +2066,7 @@
       "date_end": null,
       "time": null,
       "url": "https://marchegare.fr/agenda/lecho-du-large",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-06/photo_5_-_credit_photo_gerard_gachignard.jpg",
       "id": "a204f52d0fcd"
     },
     {
@@ -2183,7 +2105,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-or-juliette-magnevasoa",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/5e5a1db94fcca42bb47b41f41655d76f.jpg",
       "id": "b49e46217cea"
     },
     {
@@ -2196,7 +2118,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/the-world-of-queen",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140446/conversions/2026-10-01-THE-WORLD-OF-QUEEN-3-visuel-twoq-carre-1080x1080-copi-20241011-163641-square.jpg",
       "id": "3611a8088b2f"
     },
     {
@@ -2209,7 +2131,7 @@
       "date_end": null,
       "time": "20:30",
       "url": "https://marchegare.fr/agenda/dinaa",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-02/dinaa-web.jpg",
       "id": "398ba0e958cb"
     },
     {
@@ -2261,7 +2183,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/co-plateau-or-nine-loufox",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/fc22db863c49d1679960a2e26f4000ee.jpg",
       "id": "8f8ac03b25b5"
     },
     {
@@ -2274,7 +2196,7 @@
       "date_end": "2026-10-04",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/lamour-selon-anton-tchekhov",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/e36cae2253076242e284daa61fe1e0b3.jpg",
       "id": "379d4a84cc08"
     },
     {
@@ -2300,7 +2222,7 @@
       "date_end": null,
       "time": null,
       "url": "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-boule-de-neige/",
-      "image": null,
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/La-fabrique-des-souvenirs-Boule-de-neige_460x460.png",
       "id": "fa65056ac236"
     },
     {
@@ -2326,7 +2248,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-or-claude-lemesles",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/5b95ec7e4721782bbae26f603ff739f4.jpg",
       "id": "0745f1cf0707"
     },
     {
@@ -2339,7 +2261,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/34murphy-artel-nobodylikesbirdie",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/da3ae34ccb1d2859eb76359764e26ec6.jpg",
       "id": "a5420ebfdaf7"
     },
     {
@@ -2430,7 +2352,7 @@
       "date_end": null,
       "time": null,
       "url": "https://www.tng-lyon.fr/evenement/boule-de-neige/",
-      "image": null,
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_BDN.png",
       "id": "b73d6abebbc6"
     },
     {
@@ -2443,7 +2365,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://marchegare.fr/agenda/dejeuner-concert-0",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-06/dejconcert-defaut.png",
       "id": "723fb5cef99c"
     },
     {
@@ -2469,7 +2391,7 @@
       "date_end": "2026-10-09",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/hold-fast-cie-ma-marion-alzieu",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/4b0d1224986068c8f00fcccf6e7f2ca5.jpg",
       "id": "a8b03c7f3a16"
     },
     {
@@ -2508,7 +2430,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-federica-e-marco-e-una-canzone-damore",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/7dcd209cb0ccd4d85fe7c9be691f370b.jpg",
       "id": "f90ae79ad24b"
     },
     {
@@ -2534,7 +2456,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/lucio-bukowski-anton-serra-oster-lapwass-nouvelle-date",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/import_billetterie/386-field_illustration_id-1779110997.jpg",
       "id": "d55fc9958128"
     },
     {
@@ -2612,7 +2534,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-faustine-lewandowski-and-de-hortense",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/e6a111736724f4821687eaae03b0cdf7.jpg",
       "id": "5b5e7a5c49e1"
     },
     {
@@ -2625,7 +2547,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/lucio-bukowski-anton-serra-oster-lapwass",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-05/briseglace-paysage.jpg",
       "id": "0d7a12111b4d"
     },
     {
@@ -2664,7 +2586,7 @@
       "date_end": null,
       "time": "18:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/soiree-d-ouverture-festival-lumiere",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140447/conversions/2026-10-10-SOIREE-D-OUVERTURE-FESTIVAL-LUMIERE-fl2026-aff-rs-1080x1080-v2-20260630-111123-square.jpg",
       "id": "c1ef497316fc"
     },
     {
@@ -2690,7 +2612,7 @@
       "date_end": "2026-10-11",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-delectric-louve-and-de-da-capo",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/28753065da84d36247980ac27c243642.jpg",
       "id": "f7004d280b5f"
     },
     {
@@ -2703,7 +2625,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/gars-surs-municipaux-and-friends",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/02bde95995fd8b92ab74c7fdac11b61b.jpg",
       "id": "e596b4423ba6"
     },
     {
@@ -2716,7 +2638,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/hypno5e-hippotraktor",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-04/1532-15_web.jpg",
       "id": "97773a76ce7f"
     },
     {
@@ -2781,7 +2703,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://agenda.villemorte.fr/event/les-mardis-du-4-session-doctobre",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/0de0465981160c7c6fb5f95726419631.jpg",
       "id": "77e29afe5461"
     },
     {
@@ -2807,7 +2729,7 @@
       "date_end": null,
       "time": null,
       "url": "https://www.tng-lyon.fr/evenement/atelier-decriture-pour-les-adolescent%c2%b7es-de-15-ans/",
-      "image": null,
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/DAUTRESFAMILLES_Atelier-ecriture_460x460.png",
       "id": "e78536432fe3"
     },
     {
@@ -2859,7 +2781,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/danyl-cyrious",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/7b49dcb1a722757ea958b26dbc17b494.jpg",
       "id": "5e64042a732f"
     },
     {
@@ -2872,7 +2794,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/buttshakers",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-03/buttshakers_2_jpgimenez.jpg",
       "id": "5f72634edaa6"
     },
     {
@@ -2924,7 +2846,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/scene-ouverte-slam-session-doctobre",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/ee047659d42cd7ca074d96b79539317f.jpg",
       "id": "a2aa639308fa"
     },
     {
@@ -2937,7 +2859,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/jarring-fest-2026",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-07/jarring_fest_2026_banniere.jpg",
       "id": "06ed79fab026"
     },
     {
@@ -2969,7 +2891,7 @@
     {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
-      "title": "REPORTÉ // VEN1",
+      "title": "VEN1",
       "subtitle": null,
       "category": "musique",
       "date_start": "2026-10-17",
@@ -2977,7 +2899,7 @@
       "time": "19:00",
       "url": "https://larayonne.org/evenement/ven1/",
       "image": null,
-      "id": "bcdbeac7ffd9"
+      "id": "b05958fdeab4"
     },
     {
       "venue": "Le Transbordeur",
@@ -3002,7 +2924,7 @@
       "date_end": "2026-10-18",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/spectacle-de-christine-brotons-chansons-deshabillees",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/478cbd9cb40308bd8187e7b62cf012e2.jpg",
       "id": "3fe8e35a45e1"
     },
     {
@@ -3054,7 +2976,7 @@
       "date_end": null,
       "time": "09:00",
       "url": "https://marchegare.fr/agenda/formation-pro-elaboration-dun-projet-musical-octobre-26",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-06/music_business_19_10_2.png",
       "id": "a023590ec39e"
     },
     {
@@ -3106,7 +3028,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/teenage-fanclub",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-03/photo_tfc.jpg",
       "id": "c2d1859afd5f"
     },
     {
@@ -3249,7 +3171,7 @@
       "date_end": "2026-10-25",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/spectacle-de-ddi-et-chrlie",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/e24cefb69764fbebf7fabf4076b89334.jpg",
       "id": "f000b4edb2dd"
     },
     {
@@ -3262,7 +3184,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/noor",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-05/noor_web.jpg",
       "id": "09415190cd55"
     },
     {
@@ -3288,7 +3210,7 @@
       "date_end": null,
       "time": "22:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/nuit-encore-x-23-59",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140448/conversions/2026-10-24-NUIT-ENCORE-X-23-59-carre-4-20260703-170839-square.jpg",
       "id": "2fff0957546e"
     },
     {
@@ -3327,7 +3249,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/black-sea-dahu-26",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-03/blackseadahu.jpg",
       "id": "d2f337603b86"
     },
     {
@@ -3405,7 +3327,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-6",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140449/conversions/2026-10-29-SALON-DES-VIGNERONS-INDEPENDANTS-vignerons-temporaire-2026-20260615-155003-square.jpg",
       "id": "210b883f9443"
     },
     {
@@ -3418,7 +3340,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://agenda.villemorte.fr/event/the-notwist",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/3ee9ccdc662a0f8835c75ed5e9248e1a.jpg",
       "id": "9a0441fdf815"
     },
     {
@@ -3431,7 +3353,7 @@
       "date_end": "2026-10-30",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-thibaut-preciat-and-de-marco-carollo",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/1c590205e243cfdbeeefb85d13942943.jpg",
       "id": "2ee108cd1616"
     },
     {
@@ -3470,7 +3392,7 @@
       "date_end": null,
       "time": null,
       "url": "https://www.tng-lyon.fr/evenement/bienvenue-aux-repetitions/",
-      "image": null,
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Repetition-publique-Kristoffer_460x460.png",
       "id": "11d953bdddde"
     },
     {
@@ -3483,7 +3405,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-7",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140450/conversions/2026-10-30-SALON-DES-VIGNERONS-INDEPENDANTS-vignerons-temporaire-2026-20260615-155114-square.jpg",
       "id": "ad12b2b22ce3"
     },
     {
@@ -3548,7 +3470,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-8",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140451/conversions/2026-10-31-SALON-DES-VIGNERONS-INDEPENDANTS-vignerons-temporaire-2026-20260615-155234-square.jpg",
       "id": "d83e0a392b7b"
     },
     {
@@ -3574,7 +3496,7 @@
       "date_end": "2026-11-01",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-matildy-and-de-nico-etoile",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/461da0510d8c09f503dc9c62c70e938b.jpg",
       "id": "12574306695a"
     },
     {
@@ -3600,7 +3522,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-9",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140452/conversions/2026-11-01-SALON-DES-VIGNERONS-INDEPENDANTS-vignerons-temporaire-2026-20260615-160550-square.jpg",
       "id": "8a18d20aa5e0"
     },
     {
@@ -3652,7 +3574,7 @@
       "date_end": "2026-11-04",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/37-minutes-et-des-poussieres",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/618492d3f465bca5405afbd61ded798a.jpg",
       "id": "f8d2a206602f"
     },
     {
@@ -3678,7 +3600,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/long-distance-calling",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-05/long_distance_calling_the_phantom_void_credit_andre_stephan_rights_earmusic_29.jpg",
       "id": "7a76600e302f"
     },
     {
@@ -3704,7 +3626,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/djadja-dinaz-2",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140453/conversions/2026-11-05-DJADJA-DINAZ-carre-5-20250709-085039-square.jpg",
       "id": "38be92eb323a"
     },
     {
@@ -3717,7 +3639,7 @@
       "date_end": "2026-11-06",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/musiques-en-heritage-compagnie-libomna-ludmila-dabo",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/cf1e9b0f9975fce408c0a84b9d982a63.jpg",
       "id": "d86311b005c7"
     },
     {
@@ -3769,7 +3691,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/djadja-dinaz-3",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140454/conversions/2026-11-06-DJADJA-DINAZ-carre-djadja2-20260126-105855-square.jpg",
       "id": "8b3f2fdf62ff"
     },
     {
@@ -3782,7 +3704,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/plavace-5ans",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-06/plavace-ban.jpg",
       "id": "3bdb0297b0a8"
     },
     {
@@ -3808,7 +3730,7 @@
       "date_end": null,
       "time": "21:30",
       "url": "https://agenda.villemorte.fr/event/karaoke-musiques-en-heritage",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/abb4b3ad9a06fb0e99e91cb57c30d2b4.jpg",
       "id": "e7f8e842b8df"
     },
     {
@@ -3834,7 +3756,7 @@
       "date_end": null,
       "time": null,
       "url": "https://www.tng-lyon.fr/evenement/parcours-immersif-et-pedagogique/",
-      "image": null,
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Le-voyage-de-Krstiffer_Parcours_460x460.png",
       "id": "a106404542b9"
     },
     {
@@ -3847,7 +3769,7 @@
       "date_end": null,
       "time": null,
       "url": "https://www.tng-lyon.fr/evenement/le-voyage-de-kristoffer/",
-      "image": null,
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_VOYAGE.png",
       "id": "ba91f339a657"
     },
     {
@@ -3899,7 +3821,7 @@
       "date_end": "2026-11-08",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-nicolas-jules",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/7ab2335b0e3d66d5a8a5aa647c9a74b7.jpg",
       "id": "7d223f00e67a"
     },
     {
@@ -3912,7 +3834,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/josman-2",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140455/conversions/2026-11-07-JOSMAN-carre-josma-20260210-152457-square.jpg",
       "id": "1b4efb369f99"
     },
     {
@@ -3925,7 +3847,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/ferdi",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-02/image00004.jpeg",
       "id": "f049e79a68db"
     },
     {
@@ -3977,7 +3899,7 @@
       "date_end": null,
       "time": "09:00",
       "url": "https://marchegare.fr/agenda/formation-pro-mao-production-musicale-novembre-26",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-06/mao_09_11_3.png",
       "id": "1652fbe7f503"
     },
     {
@@ -4068,7 +3990,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://agenda.villemorte.fr/event/les-mardis-du-4-session-de-novembre",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/278cd0a849872b20daa385c158dac3d6.jpg",
       "id": "1d6cf37b08e8"
     },
     {
@@ -4081,7 +4003,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/the-world-of-hans-zimmer-2",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140456/conversions/2026-11-10-THE-WORLD-OF-HANS-ZIMMER-wohz-2026-generique-visuelweb-newsletter-2400x200-20250317-112306-square.jpg",
       "id": "a256426cb8c7"
     },
     {
@@ -4094,7 +4016,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/future-palace",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2025-12/fp-web.jpg",
       "id": "9d91d2ca61ce"
     },
     {
@@ -4146,7 +4068,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/chante-avec-agendarts-la-karachorale-novembre",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/1961bb4d196861dbf48804ca9e954b2b.jpg",
       "id": "5f60cadaaec2"
     },
     {
@@ -4159,7 +4081,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/malik-bentalha-2",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140457/conversions/2026-11-11-MALIK-BENTALHA-malikbentalha-nouveaumonde-officiel-digitick-1080x108-20250829-144651-square.jpg",
       "id": "dfa88e684fee"
     },
     {
@@ -4224,7 +4146,7 @@
       "date_end": "2026-11-14",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-laurent-berger-and-de-christopher-murray",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/0ea7e12a8e8eb631455b4e33c7bba946.jpg",
       "id": "2fad2c3834e0"
     },
     {
@@ -4237,7 +4159,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/fidelites-collectif-les-trois-mulets-ali-esmili",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/0418c8d68eaf116d036e6b5c92e6f9e8.jpg",
       "id": "11dec576b7ce"
     },
     {
@@ -4302,7 +4224,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://agenda.villemorte.fr/event/infinity-song",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/8e49a9e25327ab7edf9e668d0787d01c.jpg",
       "id": "e4d1985e7f4d"
     },
     {
@@ -4315,7 +4237,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/lyon-burlesque-festival-2026",
-      "image": null,
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-06/lbf2026_banner.png",
       "id": "e0c2747a3177"
     },
     {
@@ -4354,7 +4276,7 @@
       "date_end": null,
       "time": "18:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-lehache-all-stars",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/42a3f646f79fb37ca481e9f30dbc65b7.jpg",
       "id": "e860d076a1fe"
     },
     {
@@ -4369,6 +4291,19 @@
       "url": "https://www.transbordeur.fr/evenement/beast-in-black-frozen-crown-sonata-arctica-15112026/",
       "image": null,
       "id": "ee8ca3789eab"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "MARIE JAY + ARCA M",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-16",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/marie-jay-arca-m/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/07/marie-jay_radiant-bellevue-500x500.jpg",
+      "id": "18ca2590602b"
     },
     {
       "venue": "Le Transbordeur",
@@ -4393,7 +4328,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/ma-republique-et-moi-compagnie-iwa-issam-rachyq-ahrad",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/32b14c49b334219532c5dc0fc169a6f0.jpg",
       "id": "23cbda40ac87"
     },
     {
@@ -4510,7 +4445,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/l-heritage-goldman-2-2",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140458/conversions/2026-11-19-L-HERITAGE-GOLDMAN-2-heritagegoldman-1080-lyo-20251002-100344-square.jpg",
       "id": "d019b4b5bf44"
     },
     {
@@ -4523,7 +4458,7 @@
       "date_end": null,
       "time": null,
       "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-labolition-des-privileges/",
-      "image": null,
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/AbolitionPrivilege_PopCorn_460x460.png",
       "id": "44e8fa130b6e"
     },
     {
@@ -4575,7 +4510,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/zinee-t2ls",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/c1ab40b35efaa22dc96088aca2aba090.jpg",
       "id": "7702bdbd813c"
     },
     {
@@ -4627,7 +4562,7 @@
       "date_end": "2026-11-22",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-bonnie-becasse-quinzaine-paroles-de-femmes",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/58c0ee01488beea541b67b3462dc423c.jpg",
       "id": "7d3ecde733d3"
     },
     {
@@ -4692,7 +4627,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/cercles-carmins-quinzaine-paroles-de-femmes",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/f19eb59c0c1ff4b830510e6a23ab4f3a.jpg",
       "id": "8acd428b54b3"
     },
     {
@@ -4718,7 +4653,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://agenda.villemorte.fr/event/dans-la-grotte-cie-la-voliere-myriam-boudenia",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/b24e749ccc0e22dcfa5bd17d23ea0478.jpg",
       "id": "d7ef1cd3d95a"
     },
     {
@@ -4783,7 +4718,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/puissantes-quinzaine-paroles-de-femmes",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/4d2687c44a1be273119f63ddaccf8fe2.jpg",
       "id": "3f9b0a6272e4"
     },
     {
@@ -4796,7 +4731,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/sheldon-lupio-asna",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/bc5215b627ea8bcf4a3fecbe7257143f.jpg",
       "id": "92c8f07d76c0"
     },
     {
@@ -4952,7 +4887,7 @@
       "date_end": null,
       "time": "18:00",
       "url": "https://agenda.villemorte.fr/event/une-fille-comme-les-autres-quinzaine-paroles-de-femmes",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/f1eaeda2577aa81cd47b1319ceb5495c.jpg",
       "id": "a5c5808373ab"
     },
     {
@@ -5108,7 +5043,7 @@
       "date_end": "2026-12-06",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-derwan-pinard",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/29c3e5d4671cd5ad2ae6312cecd0b81a.jpg",
       "id": "6ff4ee74b0cf"
     },
     {
@@ -5121,7 +5056,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disiz",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140459/conversions/2026-12-04-disiz-disiz500x500-20251204-130657-square.jpg",
       "id": "8ccde2d1c8ab"
     },
     {
@@ -5147,7 +5082,7 @@
       "date_end": null,
       "time": null,
       "url": "https://www.tng-lyon.fr/evenement/grandeur-nature/",
-      "image": null,
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_GRANDEUR-NATURE-1.png",
       "id": "3177a07f7775"
     },
     {
@@ -5303,7 +5238,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-dantoine-gasse-and-de-klohe",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/564402649fdf72f5cd33cc9a58920957.jpg",
       "id": "399e5c115ea1"
     },
     {
@@ -5355,7 +5290,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/scene-ouverte-slam-session-de-decembre",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/7b884d79a0461f85e5be6897b979887c.jpg",
       "id": "0aebbfb71f5e"
     },
     {
@@ -5394,7 +5329,7 @@
       "date_end": null,
       "time": null,
       "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-superstrat/",
-      "image": null,
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Superstrat_PopCorn_460x460.png",
       "id": "0de6cb52de6b"
     },
     {
@@ -5407,7 +5342,7 @@
       "date_end": null,
       "time": "17:00",
       "url": "https://agenda.villemorte.fr/event/track-cie-la-boite-a-sel-celine-garnavault",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/ff7a982529b3a7915d3d21fdf3423bf1.jpg",
       "id": "b09473dd90e2"
     },
     {
@@ -5446,7 +5381,7 @@
       "date_end": "2026-12-13",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/concert-de-fleur-de-tempete",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/00e958d3a1fa429afc8fb4103acfe4fc.jpg",
       "id": "89ee1db07c5b"
     },
     {
@@ -5628,7 +5563,7 @@
       "date_end": "2026-12-20",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/sapperlot-ou-lorigine-de-mes-nevroses-anne-fromm",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/5437cdfd5aa57cfadd36ecd39ef8a016.jpg",
       "id": "ad830e5934e8"
     },
     {
@@ -5641,7 +5576,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-en-concert-suivez-vos-reves",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140460/conversions/2026-12-18-DISNEY-EN-CONCERT-SUIVEZ-VOS-REVES-disney-carre-lyo-20251104-163638-square.jpg",
       "id": "4c46d99b7e0b"
     },
     {
@@ -5758,7 +5693,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/chante-avec-agendarts-la-karachorale-decembre",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/5051e08400db99c66fc7a23f3cc71b2e.jpg",
       "id": "5371f82cb33d"
     },
     {
@@ -5823,7 +5758,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://agenda.villemorte.fr/event/woooooooool-cie-bob-theatre-denis-athimon",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/46cc3b5b862c6f7dcd406192621429ef.jpg",
       "id": "5cbbf5f36eb6"
     },
     {
@@ -5901,7 +5836,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/goldmen-concert-100-goldman",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140461/conversions/2027-01-08-GOLDMEN-CONCERT-100-GOLDMAN-goldmen-carre-copi-20250411-144142-square.jpg",
       "id": "9cae03700f3c"
     },
     {
@@ -5927,7 +5862,7 @@
       "date_end": null,
       "time": "17:00",
       "url": "https://agenda.villemorte.fr/event/woooooooool-cie-bob-theatre-denis-athimon-1",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/84bf9a3ed868c2b262eda861ebea962b.jpg",
       "id": "6b579c21bbd0"
     },
     {
@@ -5940,7 +5875,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/harry-potter-et-le-prince-de-sang-mele",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140462/conversions/2027-01-09-HARRY-POTTER-ET-LE-PRINCE-DE-SANG-MELE-hp6-artwor-20260105-143104-square.jpg",
       "id": "80487e51b923"
     },
     {
@@ -6018,8 +5953,21 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/one-night-of-queen-2",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140463/conversions/2027-01-13-ONE-NIGHT-OF-QUEEN-onoq-1080-lyo-20250507-141114-square.jpg",
       "id": "d36fa43e7d82"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "LAURENT VOULZY",
+      "subtitle": null,
+      "category": "chanson",
+      "date_start": "2027-01-13",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://radiant-bellevue.fr/spectacles/laurent-voulzy-2/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/laurent-voulzy-500x500.jpg",
+      "id": "e17511c98686"
     },
     {
       "venue": "Bourse du Travail",
@@ -6044,7 +5992,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/les-chevaliers-du-fiel-2",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140464/conversions/2027-01-14-LES-CHEVALIERS-DU-FIEL-header-event-carre-20260710-150605-square.jpg",
       "id": "5265d5dc149c"
     },
     {
@@ -6070,7 +6018,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/gildaa",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/919159e22d1ae1b7dd82816b12eeb716.jpg",
       "id": "a528f8f80915"
     },
     {
@@ -6096,7 +6044,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/lion-le-roi-est-de-retour",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140465/conversions/2027-01-16-LION-LE-ROI-EST-DE-RETOUR-lion-1080x1080-copie-20260409-104932-square.jpg",
       "id": "91d9dd9e0953"
     },
     {
@@ -6109,7 +6057,7 @@
       "date_end": null,
       "time": "20:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/olivier-de-benoist",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140466/conversions/2027-01-16-OLIVIER-DE-BENOIST-odb-ledroitaubonheur-tournee-carre-copi-20260423-100914-square.jpg",
       "id": "da6add811841"
     },
     {
@@ -6135,7 +6083,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/clement-viktorovitch",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140467/conversions/2027-01-19-CLEMENT-VIKTOROVITCH-cviktor-carre-lyo-20260417-103157-square.jpg",
       "id": "bba5ebee3dbe"
     },
     {
@@ -6200,7 +6148,7 @@
       "date_end": null,
       "time": "14:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/136943/conversions/2027-01-27-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-154043-square.jpg",
       "id": "13871667903e"
     },
     {
@@ -6226,7 +6174,7 @@
       "date_end": "2027-01-29",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/je-suis-venue-pour-rien-cie-spell-mistakes-maianne-barthes",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/d3fe61904ef4753726a26f2e6897ee50.jpg",
       "id": "bb3771bb341b"
     },
     {
@@ -6239,7 +6187,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-3",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140469/conversions/2027-01-29-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-160502-square.jpg",
       "id": "2ebfe953dfc1"
     },
     {
@@ -6252,7 +6200,7 @@
       "date_end": null,
       "time": "10:15",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-4",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140470/conversions/2027-01-30-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-160802-square.jpg",
       "id": "960700e6646d"
     },
     {
@@ -6278,7 +6226,7 @@
       "date_end": null,
       "time": "10:15",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-7",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140473/conversions/2027-01-31-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-161311-square.jpg",
       "id": "9b8c4c1badaf"
     },
     {
@@ -6291,7 +6239,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/forever-tribute-michael-jackson",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140475/conversions/2027-02-02-FOREVER-TRIBUTE-MICHAEL-JACKSON-forever-carre-lyo-20250828-084343-square.jpg",
       "id": "14148c08ae28"
     },
     {
@@ -6330,7 +6278,7 @@
       "date_end": "2027-02-05",
       "time": "19:00",
       "url": "https://agenda.villemorte.fr/event/nelvar-le-royaume-sans-peuple-logan-de-carvalho-et-margaux-desailly",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/094c2fa7770aa65fc4659263c0b5d1a9.jpg",
       "id": "72e8ec4b231d"
     },
     {
@@ -6369,7 +6317,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/aldebert-3",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140476/conversions/2027-02-06-1.-ALDEBERT-LDC-carre-lyon-copie-20260121-150153-square.jpg",
       "id": "21397db5a6f9"
     },
     {
@@ -6382,7 +6330,7 @@
       "date_end": null,
       "time": "18:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/square-enix",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140477/conversions/2027-02-07-SQUARE-ENIX-kv-3000x3000-lyo-20251205-091514-square.jpg",
       "id": "272b1ca3aa4a"
     },
     {
@@ -6408,7 +6356,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/nawell-madani",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140478/conversions/2027-02-10-NAWELL-MADANI-carre-9568-u-20260127-113850-square.jpg",
       "id": "1e43f410343a"
     },
     {
@@ -6434,7 +6382,7 @@
       "date_end": "2027-02-12",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/les-clairvoyantes-camille-joviado-et-claire-chastel",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/ef57158f178f9a4d1abd2afcf414e47e.jpg",
       "id": "b766c8b291dc"
     },
     {
@@ -6473,7 +6421,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140479/conversions/2027-02-19-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-145844-square.jpg",
       "id": "2352ed756750"
     },
     {
@@ -6486,7 +6434,7 @@
       "date_end": null,
       "time": "14:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-2",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140480/conversions/2027-02-20-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-150100-square.jpg",
       "id": "b2618ecfeaa6"
     },
     {
@@ -6499,7 +6447,7 @@
       "date_end": null,
       "time": "13:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-4",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140482/conversions/2027-02-21-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-150331-square.jpg",
       "id": "f6ae54e9ebe7"
     },
     {
@@ -6551,7 +6499,7 @@
       "date_end": null,
       "time": "14:30",
       "url": "https://agenda.villemorte.fr/event/boum-kids",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/dca9b66215f26e43b636f9cfcf0d73ee.jpg",
       "id": "b8dbac2fb8f3"
     },
     {
@@ -6577,7 +6525,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/marine",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140484/conversions/2027-03-05-MARINE-marine-tournee-2026-carr-20251218-093105-square.jpg",
       "id": "74b78cf742fb"
     },
     {
@@ -6603,7 +6551,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/les-annees-80-2",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140485/conversions/2027-03-06-LES-ANNEES-80-la80-carre-lyo-20251212-115951-square.jpg",
       "id": "a094e7839744"
     },
     {
@@ -6629,7 +6577,7 @@
       "date_end": null,
       "time": "19:00",
       "url": "https://agenda.villemorte.fr/event/lendormi-compagnie-hippolyte-a-mal-au-coeur-estelle-stavasta",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/74796e5b4f786154cf917c23a25e978c.jpg",
       "id": "d523699b9ca9"
     },
     {
@@ -6694,7 +6642,7 @@
       "date_end": "2027-03-17",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/batir-salim-djaferi",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/035711c5c5183fa89bf559991fc7e78c.jpg",
       "id": "50e18068245a"
     },
     {
@@ -6720,7 +6668,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/bernard-lavilliers",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140486/conversions/2027-03-17-BERNARD-LAVILLIERS-bernard-lavilliers-2026-digital-post-1080x1080-copi-20260220-095930-square.jpg",
       "id": "66b581d45da6"
     },
     {
@@ -6759,7 +6707,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/michele-laroque-kad-merad-l-age-bete",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140487/conversions/2027-03-19-MICHELE-LAROQUE-KAD-MERAD-L-AGE-BETE-lagebete-ecommerce-1080x108-20251017-104323-square.jpg",
       "id": "e108ea3962f2"
     },
     {
@@ -6772,7 +6720,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/500-voix-pour-johnny",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140488/conversions/2027-03-20-500-VOIX-POUR-JOHNNY-affiche-johnny-officielle-2-20260707-171745-square.jpg",
       "id": "f227e3726650"
     },
     {
@@ -6798,7 +6746,7 @@
       "date_end": "2027-03-26",
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/les-voix-de-carmen-daniel-san-pedro",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/8842a6852901e9cf6edaa5ea7d4117ed.jpg",
       "id": "9e31f3647713"
     },
     {
@@ -6824,7 +6772,7 @@
       "date_end": null,
       "time": "19:00",
       "url": "https://agenda.villemorte.fr/event/papy-quichotte-elsa-granat",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/cf272b47d8cff65fd750936ca7d1f842.jpg",
       "id": "be5e10a6cf93"
     },
     {
@@ -6850,7 +6798,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/patrick-fiori-2",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140489/conversions/2027-04-03-PATRICK-FIORI-patrick-fiori-carre-270403-lyo-20251128-085438-square.jpg",
       "id": "93411b98f25b"
     },
     {
@@ -6863,7 +6811,7 @@
       "date_end": null,
       "time": "18:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/glorious",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140490/conversions/2027-04-04-GLORIOUS-500x500-lyon-glorious-20260415-121947-square.jpg",
       "id": "ba9cb766b04c"
     },
     {
@@ -6876,7 +6824,7 @@
       "date_end": "2027-04-10",
       "time": "19:00",
       "url": "https://agenda.villemorte.fr/event/festival-raffut",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/3dc1981468dfff33bdd61da46ccfe8c0.jpg",
       "id": "d1532af313a6"
     },
     {
@@ -6902,7 +6850,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/star-wars-in-concert-un-nouvel-espoir",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140491/conversions/2027-04-10-STAR-WARS-star-wars-carre-lyo-20260428-160425-square.jpg",
       "id": "7015d6516327"
     },
     {
@@ -6993,7 +6941,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/suzane",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140492/conversions/2027-05-18-SUZANE-2000x2000-suzane-zenithstour-lyo-20260331-151852-square.jpg",
       "id": "113efc2897c8"
     },
     {
@@ -7123,7 +7071,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/generation-celine-2",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140493/conversions/2027-09-29-GENERATION-CELINE-generationceline-carre-lyon-202-20260105-154614-square.jpg",
       "id": "4f8eececf37d"
     },
     {
@@ -7136,7 +7084,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/la-rue-ketanou",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140494/conversions/2027-10-01-LA-RUE-KETANOU-larueketanou-chanson-lyon-site-carre-1-20260624-105135-square.jpg",
       "id": "620a0d9b3588"
     },
     {
@@ -7155,6 +7103,19 @@
     {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
+      "title": "Salut Les Copains - La Tournee",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-11-18",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/salut-les-copains-la-tournee",
+      "image": "https://www.halle-tony-garnier.com/storage/140495/conversions/2027-11-18-SALUT-LES-COPAINS-LA-TOURNEE-postsalut-les-copains-lyo-20260715-134159-square.jpg",
+      "id": "25538db13fb8"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
       "title": "I Gotta Feeling – Saison 3",
       "subtitle": null,
       "category": "concert",
@@ -7162,7 +7123,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/i-gotta-feeling-saison-3",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140496/conversions/2027-11-18-I-GOTTA-FEELING-SAISON-3-igf-2027-carre-769-lyo-20260204-141943-square.jpg",
       "id": "fb2d7ec96427"
     },
     {
@@ -7214,7 +7175,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/gael-faye",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140497/conversions/2027-11-27-GAEL-FAYE-gae-9568-el-faye-tourne-9568-ue-ze-9568-unith-1080-1350-copi-20260603-163108-square.jpg",
       "id": "6beb9713ac66"
     },
     {
@@ -7227,7 +7188,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/philippe-caveriviere",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140498/conversions/2027-12-10-PHILIPPE-CAVERIVIERE-philippecaveriviere-tournee-fnac-1080x1080-copie-1-20260414-114358-square.jpg",
       "id": "95ab438b6959"
     },
     {
@@ -7240,7 +7201,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/festival-mondial-de-la-magie",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140499/conversions/2028-01-14-FESTIVAL-MONDIAL-DE-LA-MAGIE-vignette-billetterie-saison-4-copi-20251121-110434-square.jpg",
       "id": "745d9cc9feff"
     },
     {
@@ -7253,7 +7214,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/era-2",
-      "image": null,
+      "image": "https://www.halle-tony-garnier.com/storage/140500/conversions/2028-03-01-ERA-era1-bi-20260330-165423-square.jpg",
       "id": "661d7f33aa0b"
     }
   ]
