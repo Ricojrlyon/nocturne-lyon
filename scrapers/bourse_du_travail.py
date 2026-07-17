@@ -99,7 +99,15 @@ def fetch() -> List[Event]:
         if d < today:
             continue
 
-        image = img_src(card.find("img"), host=HOST)
+        # L'image vit dans un sous-arbre FRÈRE du bloc date/titre :
+        # <article class="event-card">
+        #   <div class="event-card__image"> <img ...> </div>
+        #   <div class="event-card__body">  <time> + <h3> </div>
+        # _find_card(h3) s'arrête à event-card__body (premier ancêtre
+        # contenant la date), qui ne contient pas l'<img> — d'où 0 image.
+        # On cherche sur l'<article> englobant quand il existe.
+        img_scope = h3.find_parent("article") or card
+        image = img_src(img_scope.find("img"), host=HOST)
 
         title_lower = title.lower()
         category: Optional[str] = None
