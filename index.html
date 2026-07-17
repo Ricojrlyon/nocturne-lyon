@@ -529,6 +529,48 @@
     transform: scaleX(1);
   }
 
+  /* ---------- couche visuelle en fond de carte ----------
+     Affiche réelle si disponible, motif de catégorie sinon — dans les
+     deux cas la couche s'éteint en fondu vers ~55 % de la hauteur pour
+     laisser le texte respirer. Le motif est TOUJOURS rendu en
+     sous-couche : si l'affiche ne charge pas (hotlink bloqué, 404),
+     onerror masque la photo et le motif réapparaît. */
+  .visual-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(to bottom,
+        rgba(0,0,0,.95) 0%, rgba(0,0,0,.55) 32%, transparent 56%);
+    mask-image: linear-gradient(to bottom,
+        rgba(0,0,0,.95) 0%, rgba(0,0,0,.55) 32%, transparent 56%);
+  }
+  .visual-bg svg {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    opacity: 0.55;                 /* intensité validée sur maquette */
+  }
+  .visual-bg .photo-wrap { position: absolute; inset: 0; }
+  .visual-bg img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 22%;
+    filter: saturate(0.95);
+  }
+  /* voile sombre dégressif : la ligne lieu·arr·heure doit gagner sur
+     les affiches claires */
+  .visual-bg .scrim {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom,
+        rgba(22,31,37,.62) 0%, rgba(22,31,37,.28) 38%, rgba(22,31,37,.05) 60%);
+  }
+  /* le contenu passe au-dessus de la couche visuelle */
+  .event-head, .event-title, .event-foot { position: relative; }
+  .event-venue, .event-arr, .event-time {
+    text-shadow: 0 1px 6px rgba(22,31,37,.95);
+  }
+  .event-title { text-shadow: 0 1px 8px rgba(22,31,37,.8); }
+
   /* Row 1: header (venue + time) — using inline-block layout instead of flex
      to avoid baseline-alignment height bugs in grid cells */
   .event-head {
@@ -1038,6 +1080,86 @@ function bucketOf(rawCategory) {
   return 'autre';
 }
 const ALL_BUCKETS = [...TYPE_BUCKETS, { key: 'autre', label: 'autre' }];
+
+/* ---------- visuel de carte : motifs de catégorie ----------
+   Teintes et géométries validées sur maquette (v4) :
+   - familles musique → barres verticales fines (ambre sombre, sauf jazz)
+   - club → vinyle depuis le coin haut-droit, balaie toute la largeur
+   - humour → diagonales · théâtre/danse → arcs · reste → grille de points */
+const VISUAL_BUCKET = {
+  club:       { motif: 'vinyl', hue: '#ff6b4a' },
+  jazz:       { motif: 'bars',  hue: '#8fae9e' },
+  musique:    { motif: 'bars',  hue: '#b0793f' },
+  rock:       { motif: 'bars',  hue: '#b0793f' },
+  rap:        { motif: 'bars',  hue: '#b0793f' },
+  chanson:    { motif: 'bars',  hue: '#b0793f' },
+  reggae:     { motif: 'bars',  hue: '#b0793f' },
+  classique:  { motif: 'bars',  hue: '#b0793f' },
+  monde:      { motif: 'bars',  hue: '#b0793f' },
+  humour:     { motif: 'diag',  hue: '#c9b458' },
+  theatre:    { motif: 'arcs',  hue: '#a99ac6' },
+  danse:      { motif: 'arcs',  hue: '#a99ac6' },
+  expo:       { motif: 'dots',  hue: '#7d8894' },
+  cine:       { motif: 'dots',  hue: '#7d8894' },
+  conference: { motif: 'dots',  hue: '#7d8894' },
+  atelier:    { motif: 'dots',  hue: '#7d8894' },
+  autre:      { motif: 'dots',  hue: '#7d8894' },
+};
+
+function patternSVG(bucket) {
+  const v = VISUAL_BUCKET[bucket] || VISUAL_BUCKET.autre;
+  const hue = v.hue;
+  let inner = '';
+  if (v.motif === 'bars') {
+    // barres fines (3px), ancrées en haut — séquence fixe
+    const bars = [34, 78, 50, 112, 64, 128, 56, 94, 42, 82, 118, 52, 88, 38, 70, 100];
+    bars.forEach((bh, i) => {
+      inner += '<rect x="' + (12 + i * 20) + '" y="-8" width="3" height="' + bh
+             + '" rx="1.5" fill="' + hue + '" opacity="0.75"/>';
+    });
+  } else if (v.motif === 'vinyl') {
+    // vinyle étendu sur toute la largeur depuis le coin haut-droit
+    [24, 64, 104, 144, 184, 224, 264, 304].forEach((r, i) => {
+      inner += '<circle cx="288" cy="4" r="' + r + '" fill="none" stroke="' + hue
+             + '" stroke-width="3" opacity="' + (0.8 - i * 0.08).toFixed(2) + '"/>';
+    });
+    inner += '<circle cx="288" cy="4" r="7" fill="' + hue + '" opacity="0.8"/>';
+  } else if (v.motif === 'diag') {
+    for (let i = -3; i < 14; i++) {
+      inner += '<line x1="' + (i * 30) + '" y1="180" x2="' + (i * 30 + 110)
+             + '" y2="-20" stroke="' + hue + '" stroke-width="4.5" opacity="0.6"/>';
+    }
+  } else if (v.motif === 'arcs') {
+    [36, 70, 104, 138, 172, 206].forEach((r, i) => {
+      inner += '<circle cx="0" cy="0" r="' + r + '" fill="none" stroke="' + hue
+             + '" stroke-width="3" opacity="' + (0.8 - i * 0.09).toFixed(2) + '"/>';
+    });
+  } else {
+    for (let y = 10; y < 160; y += 22) {
+      for (let x = 14; x < 320; x += 22) {
+        inner += '<circle cx="' + x + '" cy="' + y + '" r="2.6" fill="' + hue + '" opacity="0.55"/>';
+      }
+    }
+  }
+  return '<svg viewBox="0 0 320 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true">'
+       + inner + '</svg>';
+}
+
+/* Couche visuelle d'une carte : motif toujours en sous-couche, affiche
+   par-dessus si disponible (lazy). onerror masque la photo → le motif
+   réapparaît si l'image est morte ou le hotlink bloqué. */
+function visualLayerHtml(e, bucket) {
+  let html = '<div class="visual-bg">' + patternSVG(bucket);
+  if (e.image && /^https?:\/\//.test(e.image)) {
+    html += '<div class="photo-wrap">'
+          + '<img src="' + escapeHtml(e.image) + '" alt="" loading="lazy" '
+          + 'decoding="async" referrerpolicy="no-referrer" '
+          + 'onerror="this.parentElement.style.display=\'none\'">'
+          + '<div class="scrim"></div></div>';
+  }
+  html += '</div>';
+  return html;
+}
 
 /* ---------- state ---------- */
 const state = {
@@ -1844,9 +1966,13 @@ function eventCard(e) {
   const arr = eventArrondissement(e);
   const arrLabel = '<span class="event-arr">' + escapeHtml(arr) + '</span>';
 
-  // Layout = 3 grid rows: head / title / foot
+  // Layout = 3 grid rows: head / title / foot — précédés de la couche
+  // visuelle en fond (affiche réelle ou motif de catégorie, en fondu)
+  const visual = visualLayerHtml(e, bucketOf(e.category));
+
   return [
     '<' + tag + ' class="event"' + linkAttrs + '>',
+    '  ' + visual,
     '  <div class="event-head">',
     '    <span class="event-venue">' + escapeHtml(e.venue) + '</span>',
     '    ' + arrLabel,
