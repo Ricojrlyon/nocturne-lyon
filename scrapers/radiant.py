@@ -11,7 +11,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, parse_french_date, iso, FR_MONTHS
+from .base import Event, img_src, parse_french_date, iso, FR_MONTHS
 
 VENUE = "Radiant-Bellevue"
 SLUG  = "radiant-bellevue"
@@ -177,9 +177,8 @@ def fetch() -> List[Event]:
 
         image: Optional[str] = None
         for img in card.find_all("img"):
-            src = img.get("src") or ""
-            if src.startswith("http") and not src.endswith(".svg"):
-                image = src
+            image = img_src(img, host=HOST)
+            if image:
                 break
 
         seen_urls.add(href)

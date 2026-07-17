@@ -15,7 +15,7 @@ import sys
 import requests
 from bs4 import BeautifulSoup, Tag
 
-from .base import Event, iso, absolutize_url
+from .base import Event, img_src, iso, absolutize_url
 
 VENUE = "Bourse du Travail"
 SLUG  = "bourse-du-travail"
@@ -99,14 +99,7 @@ def fetch() -> List[Event]:
         if d < today:
             continue
 
-        image: Optional[str] = None
-        img = card.find("img")
-        if img:
-            src = img.get("src", "") or ""
-            if src.startswith("http"):
-                image = src
-            elif src.startswith("/"):
-                image = HOST + src
+        image = img_src(card.find("img"), host=HOST)
 
         title_lower = title.lower()
         category: Optional[str] = None

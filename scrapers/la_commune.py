@@ -17,7 +17,7 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, iso, FR_MONTHS
+from .base import Event, img_src, iso, FR_MONTHS
 
 VENUE = "La Commune"
 SLUG  = "la-commune"
@@ -95,10 +95,7 @@ def _scrape_page(url: str) -> List[Event]:
             if tail and len(tail) < 60:
                 category = tail.lower()
 
-        image: Optional[str] = None
-        img = a.find("img")
-        if img and img.get("src", "").startswith("http"):
-            image = img["src"]
+        image = img_src(a.find("img"), host=HOST)
 
         seen_urls.add(href)
         events.append(Event(

@@ -20,7 +20,7 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, iso
+from .base import Event, img_src, iso
 
 VENUE = "La Halle Tony Garnier"
 SLUG = "halle-tony-garnier"
@@ -163,13 +163,8 @@ def _scrape_url(url: str) -> List[Event]:
             if 0 <= hh <= 23:
                 time_str = f"{hh:02d}:{mm_s}"
 
-        # ── Extract image ───────────────────────────────────────────────
-        image: Optional[str] = None
-        img = a.find("img")
-        if img:
-            src = img.get("src", "") or ""
-            if src.startswith("http"):
-                image = src
+        # ── Extract image (lazy-load aware) ────────────────────────────
+        image = img_src(a.find("img"), host=HOST)
 
         seen_urls.add(href)
         events.append(Event(

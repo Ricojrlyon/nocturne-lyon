@@ -102,6 +102,43 @@ def iso(d: Optional[date]) -> Optional[str]:
     return d.isoformat() if d else None
 
 
+def img_src(img_tag, host: Optional[str] = None) -> Optional[str]:
+    """Best usable URL of an <img> tag, lazy-load aware.
+
+    Lazy-loading themes put a placeholder (base64 / svg spacer) in `src`
+    and the real file in data-src / data-lazy-src / data-original /
+    (data-)srcset — which is why several scrapers extracted 0 images.
+    Returns an absolute http(s) URL (relative paths resolved against
+    `host` when given), or None.
+    """
+    if img_tag is None:
+        return None
+
+    def _clean(val: str) -> Optional[str]:
+        val = (val or "").strip()
+        if not val or val.startswith("data:") or val.endswith(".svg"):
+            return None
+        if val.startswith("http"):
+            return val
+        if host and val.startswith("/") and not val.startswith("//"):
+            return host.rstrip("/") + val
+        return None
+
+    # "nitro-lazy-src" : NitroCDN (utilisé par La Commune) met un pixel
+    # base64 dans src et la vraie URL dans cet attribut propriétaire.
+    for attr in ("data-src", "data-lazy-src", "nitro-lazy-src",
+                 "data-original", "src"):
+        url = _clean(img_tag.get(attr) or "")
+        if url:
+            return url
+    srcset = (img_tag.get("data-srcset") or img_tag.get("nitro-lazy-srcset")
+              or img_tag.get("srcset") or "").strip()
+    if srcset:
+        first = srcset.split(",")[0].strip().split(" ")[0]
+        return _clean(first)
+    return None
+
+
 def absolutize_url(url: str, host: str) -> str:
     """Make sure a URL is absolute. Handles common forms:
     - "https://..." → returned as-is

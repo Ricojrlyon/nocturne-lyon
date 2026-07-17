@@ -8,7 +8,7 @@ import re
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, parse_french_date, iso
+from .base import Event, img_src, parse_french_date, iso
 
 VENUE = "Marché Gare"
 SLUG = "marche-gare"
@@ -70,14 +70,8 @@ def fetch() -> List[Event]:
         if not title:
             continue
 
-        # Image
-        img_tag = a.find("img")
-        image = None
-        if img_tag:
-            src = img_tag.get("src") or ""
-            # Skip embedded base64 spacers
-            if src.startswith("http"):
-                image = src
+        # Image (lazy-load aware; skips base64 spacers)
+        image = img_src(a.find("img"), host="https://marchegare.fr")
 
         events.append(Event(
             venue=VENUE,

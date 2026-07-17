@@ -12,7 +12,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, iso, FR_MONTHS
+from .base import Event, img_src, iso, FR_MONTHS
 
 VENUE = "TNG"
 SLUG  = "tng"
@@ -193,12 +193,7 @@ def fetch() -> List[Event]:
             subtitle = tn
             break
 
-        image: Optional[str] = None
-        img = a.find("img")
-        if img:
-            src = img.get("src", "") or ""
-            if src.startswith("http"):
-                image = src
+        image = img_src(a.find("img"), host=HOST)
 
         seen_slugs.add(slug)
         stubs.append({
