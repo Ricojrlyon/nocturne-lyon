@@ -21,7 +21,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, iso
+from .base import Event, iso, img_src
 
 VENUE = "Le Transbordeur"
 SLUG  = "transbordeur"
@@ -111,8 +111,8 @@ def _parse_hhmm(text: str) -> Optional[str]:
     return None
 
 
-def _fetch_detail_time(url: str) -> Optional[str]:
-    """Fetch a /evenement/<slug>/ page and extract the show time.
+def _time_from_soup(soup: BeautifulSoup) -> Optional[str]:
+    """Extract the show time from a parsed /evenement/<slug>/ page.
 
     Priority:
       1. .Single__hero-cover__contain: contains [date_label, dot, time_label]
@@ -120,40 +120,64 @@ def _fetch_detail_time(url: str) -> Optional[str]:
       2. <li> containing "ouverture" / "portes" → sibling element with time
       3. General search in page visible text
     """
+    # Method 1: hero section "date · time" pill
+    hero = soup.select_one(".Single__hero-cover__contain")
+    if hero:
+        labels = hero.select(".ts-label")
+        if len(labels) >= 2:
+            t = _parse_hhmm(labels[1].get_text(" ", strip=True))
+            if t:
+                return t
+
+    # Method 2: "ouverture des portes" list item
+    for li in soup.find_all("li"):
+        li_text = li.get_text(" ", strip=True).lower()
+        if "ouverture" in li_text or "portes" in li_text:
+            t = _parse_hhmm(li.get_text(" ", strip=True))
+            if t:
+                return t
+
+    # Method 3: any ts-h2 that looks like a time ("18h00") in the bg-primary block
+    for section in soup.select(".bg-primary"):
+        for h2 in section.select(".ts-h2"):
+            t = _parse_hhmm(h2.get_text(" ", strip=True))
+            if t:
+                return t
+
+    # Method 4: general time search in first 800 chars of visible text
+    visible = soup.get_text(" ", strip=True)
+    return _parse_hhmm(visible[:800])
+
+
+def _image_from_soup(soup: BeautifulSoup) -> Optional[str]:
+    """Affiche de l'événement depuis la page détail.
+
+    L'API WP n'expose pas de featured_media (toujours 0) : l'image vit
+    dans la section hero (.Single__hero-cover__image), sinon premier
+    visuel wp-content de la page (les suivants sont les artistes du
+    line-up).
+    """
+    hero_img = soup.select_one(".Single__hero-cover__image img")
+    if hero_img is not None:
+        url = img_src(hero_img, host=SITE)
+        if url:
+            return url
+    for img in soup.find_all("img"):
+        url = img_src(img, host=SITE)
+        if url and "/wp-content/uploads/" in url:
+            return url
+    return None
+
+
+def _fetch_detail(url: str) -> Optional[dict]:
+    """One GET on the detail page → {"time": …, "image": …} (or None on
+    network error, so detail_cache keeps the previous values)."""
     try:
         r = requests.get(url, timeout=12, headers=HEADERS)
         if r.status_code != 200:
             return None
         soup = BeautifulSoup(r.text, "html.parser")
-
-        # Method 1: hero section "date · time" pill
-        hero = soup.select_one(".Single__hero-cover__contain")
-        if hero:
-            labels = hero.select(".ts-label")
-            if len(labels) >= 2:
-                t = _parse_hhmm(labels[1].get_text(" ", strip=True))
-                if t:
-                    return t
-
-        # Method 2: "ouverture des portes" list item
-        for li in soup.find_all("li"):
-            li_text = li.get_text(" ", strip=True).lower()
-            if "ouverture" in li_text or "portes" in li_text:
-                t = _parse_hhmm(li.get_text(" ", strip=True))
-                if t:
-                    return t
-
-        # Method 3: any ts-h2 that looks like a time ("18h00") in the bg-primary block
-        for section in soup.select(".bg-primary"):
-            for h2 in section.select(".ts-h2"):
-                t = _parse_hhmm(h2.get_text(" ", strip=True))
-                if t:
-                    return t
-
-        # Method 4: general time search in first 800 chars of visible text
-        visible = soup.get_text(" ", strip=True)
-        return _parse_hhmm(visible[:800])
-
+        return {"time": _time_from_soup(soup), "image": _image_from_soup(soup)}
     except requests.RequestException:
         return None
 
@@ -286,7 +310,8 @@ def fetch() -> List[Event]:
     events: List[Event] = []
     seen: set = set()
     for stub in stubs:
-        time_str = detail_cache.get_time(stub["url"], _fetch_detail_time)
+        details = detail_cache.get_details(stub["url"], _fetch_detail)
+        time_str = details.get("time")
         ev = Event(
             venue=VENUE,
             venue_slug=SLUG,
@@ -297,7 +322,7 @@ def fetch() -> List[Event]:
             date_end=None,
             time=time_str,
             url=stub["url"],
-            image=stub["image"],
+            image=stub["image"] or details.get("image"),
         )
         if ev.id not in seen:
             seen.add(ev.id)

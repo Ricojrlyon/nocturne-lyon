@@ -86,7 +86,7 @@ def get_time(url: str, fetcher: Callable[[str], Optional[str]]) -> Optional[str]
         return entry.get("time")
     _throttle()
     t = fetcher(url)
-    # Don't overwrite a known time with a one-off miss: _fetch_detail_time
+    # Don't overwrite a known time with a one-off miss: the fetcher
     # returns None both on "no time on the page" and on transient network
     # errors — keep the old value and just refresh its date.
     if t is None and isinstance(entry, dict) and entry.get("time"):
@@ -94,6 +94,36 @@ def get_time(url: str, fetcher: Callable[[str], Optional[str]]) -> Optional[str]
     cache[url] = {"time": t, "fetched_at": date.today().isoformat()}
     _dirty = True
     return t
+
+
+def get_details(url: str, fetcher: Callable[[str], Optional[dict]],
+                fields: tuple = ("time", "image")) -> dict:
+    """Multi-field variant of get_time (e.g. {"time": …, "image": …}).
+
+    The fetcher returns a dict of fields (or None on network error).
+    An entry is only considered complete when every requested field KEY
+    exists (a null value means "checked, not found" and is not re-fetched
+    before its TTL) — so entries written by get_time are transparently
+    upgraded on the next run. Known values are never overwritten by a
+    one-off miss.
+    """
+    global _dirty
+    cache = _load()
+    entry = cache.get(url)
+    if (isinstance(entry, dict) and _is_fresh(entry)
+            and all(f in entry for f in fields)):
+        return entry
+    _throttle()
+    found = fetcher(url) or {}
+    new_entry = {"fetched_at": date.today().isoformat()}
+    for f in fields:
+        v = found.get(f)
+        if v is None and isinstance(entry, dict):
+            v = entry.get(f)
+        new_entry[f] = v
+    cache[url] = new_entry
+    _dirty = True
+    return new_entry
 
 
 def save_if_dirty(verbose: bool = True) -> None:
