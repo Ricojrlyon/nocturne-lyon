@@ -47,6 +47,9 @@ HEADERS = {
 DATE_RE = re.compile(r"\b(\w+)\.\s+(\d{1,2})\s+(\w+)", re.IGNORECASE)
 RANGE_END_RE = re.compile(r"au\s+(\w+)\.\s+(\d{1,2})\s+(\w+)", re.IGNORECASE)
 TIME_RE = re.compile(r"(\d{1,2})h(\d{2})?")
+# Vignette du listing : le visuel est en background-image CSS
+# (div.cco-card-thumbnail style="background-image:url(...)"), pas en <img>.
+BG_URL_RE = re.compile(r"background-image\s*:\s*url\(\s*['\"]?([^'\")]+)")
 
 CATEGORIES = (
     "Musique", "Théâtre", "Danse", "Humour", "Spectacle", "Rencontre",
@@ -193,11 +196,24 @@ def fetch() -> List[Event]:
                 category = kw.lower()
                 break
 
+        # Visuel : d'abord le background-image CSS de la vignette,
+        # sinon un éventuel <img> classique.
         image: Optional[str] = None
-        for img in card.find_all("img"):
-            image = img_src(img, host=HOST)
-            if image:
-                break
+        for el in [card] + card.find_all(style=True):
+            m_bg = BG_URL_RE.search(el.get("style") or "")
+            if m_bg:
+                cand = m_bg.group(1).strip()
+                if cand.startswith("/"):
+                    cand = HOST + cand
+                if (cand.startswith("http")
+                        and not cand.split("?")[0].endswith(".svg")):
+                    image = cand
+                    break
+        if not image:
+            for img in card.find_all("img"):
+                image = img_src(img, host=HOST)
+                if image:
+                    break
 
         seen_urls.add(href)
         events.append(Event(
