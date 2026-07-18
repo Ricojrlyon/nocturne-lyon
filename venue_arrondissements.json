@@ -1,4 +1,12 @@
 {
+  "Alliance Française de Lyon (Lyon 3e) ·  Salle des Rancy (Lyon 3e) ·  Le Marché Gare (Lyon 2e)": {
+    "arr": null,
+    "confidence": "failed"
+  },
+  "Groom": {
+    "arr": "1er",
+    "confidence": "high"
+  },
   "La Machinerie - Théâtre de Vénissieux": {
     "arr": "Autre",
     "commune": "Vénissieux",
@@ -12,6 +20,10 @@
   "Les Clameurs": {
     "arr": "7e",
     "confidence": "high"
+  },
+  "Lyon": {
+    "arr": null,
+    "confidence": "skip"
   },
   "Théâtre de l’Elysée": {
     "arr": "7e",
