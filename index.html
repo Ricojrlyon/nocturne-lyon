@@ -897,7 +897,11 @@ const VENUE_GROUPS = [
   { name: 'soirée',                venues: ['Le Sucre', 'Le Petit Salon', 'Le Transbordeur', 'La Rayonne', 'La Marquise'] },
   { name: 'concerts',              venues: ['Marché Gare', 'Le Sonic', 'Le Périscope', 'Toï Toï le Zinc', "L'Épicerie Moderne", "A Thou Bout d'Chant", "Bar Rock'n Eat"] },
   { name: 'lieux hybrides',        venues: ['La Commune', 'HEAT', 'Les Subsistances', 'Grrrnd Zero', 'Boskop', "Maison de l'écologie"] },
-  { name: 'théâtre & danse',       venues: ['Opéra national de Lyon', 'TNG', 'Maison de la Danse', 'Comédie Odéon'] },
+  /* Comédie Odéon retirée : la politique théâtres (voir aggregate.py)
+     exclut ce lieu, son chip restait grisé en permanence. Son entrée
+     dans VENUE_ARRONDISSEMENT est conservée — inoffensive, et utile si
+     un événement y remonte un jour via un agrégateur. */
+  { name: 'théâtre & danse',       venues: ['Opéra national de Lyon', 'TNG', 'Maison de la Danse'] },
   { name: 'classique',             venues: ['Auditorium de Lyon', 'Chapelle de la Trinité', 'Salle Molière'] },
   /* 'musées & galeries' is dynamically populated by inferGroupForVenue
      (anything containing musée / galerie / institut). */
