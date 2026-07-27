@@ -1086,39 +1086,29 @@ function bucketOf(rawCategory) {
 const ALL_BUCKETS = [...TYPE_BUCKETS, { key: 'autre', label: 'autre' }];
 
 /* ---------- visuel de carte : motifs de secours ----------
-   Géométries validées sur maquette (v4). La FORME est tirée au hasard
-   par événement (plus de « une forme = un type ») : deux soirées club
-   voisines ne se ressemblent plus. Le tirage est déterministe — dérivé
-   d'un hash de (lieu + titre) — donc la forme d'un événement reste la
-   même d'un rendu à l'autre (frappe dans la recherche, clic de chip) et
-   d'un jour à l'autre ; seul le hasard entre événements est recherché.
-   La TEINTE reste liée à la catégorie : c'est elle qui porte encore
-   l'information (ambre = musique, corail = club, lilas = danse…). */
+   Géométries et teintes validées sur maquette (v4). FORME et COULEUR
+   sont toutes deux tirées au hasard par événement — plus de « une forme
+   ou une couleur = un type » : deux soirées club voisines ne se
+   ressemblent plus du tout. Les deux tirages sont déterministes (hash de
+   lieu+titre, graines distinctes) : une carte garde son apparence d'un
+   rendu à l'autre — sinon les motifs changeraient à chaque frappe dans
+   la recherche ou clic de chip — et d'un jour à l'autre. Seul le hasard
+   ENTRE événements est recherché.
+   L'information de catégorie reste portée par le libellé [ … ] en pied
+   de carte et par les filtres « type ». */
 const MOTIFS = ['bars', 'vinyl', 'diag', 'arcs', 'dots'];
-
-const BUCKET_HUE = {
-  club:       '#ff6b4a',
-  jazz:       '#8fae9e',
-  musique:    '#b0793f',
-  rock:       '#b0793f',
-  rap:        '#b0793f',
-  chanson:    '#b0793f',
-  reggae:     '#b0793f',
-  classique:  '#b0793f',
-  monde:      '#b0793f',
-  humour:     '#c9b458',
-  theatre:    '#a99ac6',
-  danse:      '#a99ac6',
-  expo:       '#7d8894',
-  cine:       '#7d8894',
-  conference: '#7d8894',
-  atelier:    '#7d8894',
-  autre:      '#7d8894',
-};
+const HUES = [
+  '#ff6b4a',   // corail
+  '#8fae9e',   // vert fumé
+  '#b0793f',   // ambre sombre
+  '#c9b458',   // moutarde
+  '#a99ac6',   // lilas
+  '#7d8894',   // gris bleuté
+];
 
 /* Hash stable (djb2-ish) : même chaîne → même entier, à chaque rendu et
-   à chaque chargement. Sert à tirer la forme sans Math.random(), qui
-   ferait changer les motifs à chaque re-render. */
+   à chaque chargement. Sert aux tirages sans Math.random(), qui ferait
+   changer les motifs à chaque re-render. */
 function stableHash(s) {
   let h = 5381;
   for (let i = 0; i < (s || '').length; i++) {
@@ -1127,9 +1117,12 @@ function stableHash(s) {
   return h;
 }
 
-function patternSVG(bucket, seed) {
-  const hue = BUCKET_HUE[bucket] || BUCKET_HUE.autre;
+function patternSVG(seed) {
+  // Graines distinctes pour la forme et la couleur : sans ça, les deux
+  // tirages seraient corrélés dès que MOTIFS et HUES partagent un
+  // diviseur (5 formes / 6 teintes s'en sortent, 6 et 6 non).
   const motif = MOTIFS[stableHash(seed) % MOTIFS.length];
+  const hue = HUES[stableHash(seed + '·hue') % HUES.length];
   let inner = '';
   if (motif === 'bars') {
     // barres fines (3px), ancrées en haut — séquence fixe
@@ -1169,13 +1162,13 @@ function patternSVG(bucket, seed) {
 /* Couche visuelle d'une carte : motif toujours en sous-couche, affiche
    par-dessus si disponible (lazy). onerror masque la photo → le motif
    réapparaît si l'image est morte ou le hotlink bloqué. */
-function visualLayerHtml(e, bucket) {
-  // Graine du tirage de forme : (lieu + titre) est stable d'un run à
-  // l'autre — contrairement à e.id, qui dépend de l'heure et change si
-  // la dédup l'enrichit depuis une autre source. Les occurrences d'un
-  // même événement multi-jours partagent donc la même forme.
+function visualLayerHtml(e) {
+  // Graine des tirages : (lieu + titre) est stable d'un run à l'autre —
+  // contrairement à e.id, qui dépend de l'heure et change si la dédup
+  // l'enrichit depuis une autre source. Les occurrences d'un même
+  // événement multi-jours partagent donc forme et couleur.
   const seed = (e.venue || '') + '|' + (e.title || '');
-  let html = '<div class="visual-bg">' + patternSVG(bucket, seed);
+  let html = '<div class="visual-bg">' + patternSVG(seed);
   if (e.image && /^https?:\/\//.test(e.image)) {
     html += '<div class="photo-wrap">'
           + '<img src="' + escapeHtml(e.image) + '" alt="" loading="lazy" '
@@ -1994,7 +1987,7 @@ function eventCard(e) {
 
   // Layout = 3 grid rows: head / title / foot — précédés de la couche
   // visuelle en fond (affiche réelle ou motif de catégorie, en fondu)
-  const visual = visualLayerHtml(e, bucketOf(e.category));
+  const visual = visualLayerHtml(e);
 
   return [
     '<' + tag + ' class="event"' + linkAttrs + '>',
