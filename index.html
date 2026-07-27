@@ -1085,55 +1085,72 @@ function bucketOf(rawCategory) {
 }
 const ALL_BUCKETS = [...TYPE_BUCKETS, { key: 'autre', label: 'autre' }];
 
-/* ---------- visuel de carte : motifs de catégorie ----------
-   Teintes et géométries validées sur maquette (v4) :
-   - familles musique → barres verticales fines (ambre sombre, sauf jazz)
-   - club → vinyle depuis le coin haut-droit, balaie toute la largeur
-   - humour → diagonales · théâtre/danse → arcs · reste → grille de points */
-const VISUAL_BUCKET = {
-  club:       { motif: 'vinyl', hue: '#ff6b4a' },
-  jazz:       { motif: 'bars',  hue: '#8fae9e' },
-  musique:    { motif: 'bars',  hue: '#b0793f' },
-  rock:       { motif: 'bars',  hue: '#b0793f' },
-  rap:        { motif: 'bars',  hue: '#b0793f' },
-  chanson:    { motif: 'bars',  hue: '#b0793f' },
-  reggae:     { motif: 'bars',  hue: '#b0793f' },
-  classique:  { motif: 'bars',  hue: '#b0793f' },
-  monde:      { motif: 'bars',  hue: '#b0793f' },
-  humour:     { motif: 'diag',  hue: '#c9b458' },
-  theatre:    { motif: 'arcs',  hue: '#a99ac6' },
-  danse:      { motif: 'arcs',  hue: '#a99ac6' },
-  expo:       { motif: 'dots',  hue: '#7d8894' },
-  cine:       { motif: 'dots',  hue: '#7d8894' },
-  conference: { motif: 'dots',  hue: '#7d8894' },
-  atelier:    { motif: 'dots',  hue: '#7d8894' },
-  autre:      { motif: 'dots',  hue: '#7d8894' },
+/* ---------- visuel de carte : motifs de secours ----------
+   Géométries validées sur maquette (v4). La FORME est tirée au hasard
+   par événement (plus de « une forme = un type ») : deux soirées club
+   voisines ne se ressemblent plus. Le tirage est déterministe — dérivé
+   d'un hash de (lieu + titre) — donc la forme d'un événement reste la
+   même d'un rendu à l'autre (frappe dans la recherche, clic de chip) et
+   d'un jour à l'autre ; seul le hasard entre événements est recherché.
+   La TEINTE reste liée à la catégorie : c'est elle qui porte encore
+   l'information (ambre = musique, corail = club, lilas = danse…). */
+const MOTIFS = ['bars', 'vinyl', 'diag', 'arcs', 'dots'];
+
+const BUCKET_HUE = {
+  club:       '#ff6b4a',
+  jazz:       '#8fae9e',
+  musique:    '#b0793f',
+  rock:       '#b0793f',
+  rap:        '#b0793f',
+  chanson:    '#b0793f',
+  reggae:     '#b0793f',
+  classique:  '#b0793f',
+  monde:      '#b0793f',
+  humour:     '#c9b458',
+  theatre:    '#a99ac6',
+  danse:      '#a99ac6',
+  expo:       '#7d8894',
+  cine:       '#7d8894',
+  conference: '#7d8894',
+  atelier:    '#7d8894',
+  autre:      '#7d8894',
 };
 
-function patternSVG(bucket) {
-  const v = VISUAL_BUCKET[bucket] || VISUAL_BUCKET.autre;
-  const hue = v.hue;
+/* Hash stable (djb2-ish) : même chaîne → même entier, à chaque rendu et
+   à chaque chargement. Sert à tirer la forme sans Math.random(), qui
+   ferait changer les motifs à chaque re-render. */
+function stableHash(s) {
+  let h = 5381;
+  for (let i = 0; i < (s || '').length; i++) {
+    h = ((h << 5) + h + s.charCodeAt(i)) >>> 0;
+  }
+  return h;
+}
+
+function patternSVG(bucket, seed) {
+  const hue = BUCKET_HUE[bucket] || BUCKET_HUE.autre;
+  const motif = MOTIFS[stableHash(seed) % MOTIFS.length];
   let inner = '';
-  if (v.motif === 'bars') {
+  if (motif === 'bars') {
     // barres fines (3px), ancrées en haut — séquence fixe
     const bars = [34, 78, 50, 112, 64, 128, 56, 94, 42, 82, 118, 52, 88, 38, 70, 100];
     bars.forEach((bh, i) => {
       inner += '<rect x="' + (12 + i * 20) + '" y="-8" width="3" height="' + bh
              + '" rx="1.5" fill="' + hue + '" opacity="0.75"/>';
     });
-  } else if (v.motif === 'vinyl') {
+  } else if (motif === 'vinyl') {
     // vinyle étendu sur toute la largeur depuis le coin haut-droit
     [24, 64, 104, 144, 184, 224, 264, 304].forEach((r, i) => {
       inner += '<circle cx="288" cy="4" r="' + r + '" fill="none" stroke="' + hue
              + '" stroke-width="3" opacity="' + (0.8 - i * 0.08).toFixed(2) + '"/>';
     });
     inner += '<circle cx="288" cy="4" r="7" fill="' + hue + '" opacity="0.8"/>';
-  } else if (v.motif === 'diag') {
+  } else if (motif === 'diag') {
     for (let i = -3; i < 14; i++) {
       inner += '<line x1="' + (i * 30) + '" y1="180" x2="' + (i * 30 + 110)
              + '" y2="-20" stroke="' + hue + '" stroke-width="4.5" opacity="0.6"/>';
     }
-  } else if (v.motif === 'arcs') {
+  } else if (motif === 'arcs') {
     [36, 70, 104, 138, 172, 206].forEach((r, i) => {
       inner += '<circle cx="0" cy="0" r="' + r + '" fill="none" stroke="' + hue
              + '" stroke-width="3" opacity="' + (0.8 - i * 0.09).toFixed(2) + '"/>';
@@ -1153,7 +1170,12 @@ function patternSVG(bucket) {
    par-dessus si disponible (lazy). onerror masque la photo → le motif
    réapparaît si l'image est morte ou le hotlink bloqué. */
 function visualLayerHtml(e, bucket) {
-  let html = '<div class="visual-bg">' + patternSVG(bucket);
+  // Graine du tirage de forme : (lieu + titre) est stable d'un run à
+  // l'autre — contrairement à e.id, qui dépend de l'heure et change si
+  // la dédup l'enrichit depuis une autre source. Les occurrences d'un
+  // même événement multi-jours partagent donc la même forme.
+  const seed = (e.venue || '') + '|' + (e.title || '');
+  let html = '<div class="visual-bg">' + patternSVG(bucket, seed);
   if (e.image && /^https?:\/\//.test(e.image)) {
     html += '<div class="photo-wrap">'
           + '<img src="' + escapeHtml(e.image) + '" alt="" loading="lazy" '
