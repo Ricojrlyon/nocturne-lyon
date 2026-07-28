@@ -1,7 +1,9 @@
 {
   "Alliance Française de Lyon (Lyon 3e) ·  Salle des Rancy (Lyon 3e) ·  Le Marché Gare (Lyon 2e)": {
     "arr": null,
-    "confidence": "failed"
+    "checked_at": "2026-07-28",
+    "confidence": "failed",
+    "seen_at": "2026-07-28"
   },
   "Bulle de son": {
     "arr": "9e",
@@ -9,7 +11,8 @@
   },
   "Groom": {
     "arr": "1er",
-    "confidence": "high"
+    "confidence": "high",
+    "seen_at": "2026-07-28"
   },
   "Groupama Stadium": {
     "arr": "Autre",
@@ -19,24 +22,30 @@
   "La Machinerie - Théâtre de Vénissieux": {
     "arr": "Autre",
     "commune": "Vénissieux",
-    "confidence": "low"
+    "confidence": "low",
+    "seen_at": "2026-07-28"
   },
   "La Ruche industrielle": {
     "arr": "Autre",
     "commune": "Vénissieux",
-    "confidence": "low"
+    "confidence": "low",
+    "seen_at": "2026-07-28"
   },
   "Les Clameurs": {
     "arr": "7e",
-    "confidence": "high"
+    "confidence": "high",
+    "seen_at": "2026-07-28"
   },
   "Lieu Privé": {
     "arr": null,
-    "confidence": "failed"
+    "checked_at": "2026-07-28",
+    "confidence": "failed",
+    "seen_at": "2026-07-28"
   },
   "Lyon": {
     "arr": null,
-    "confidence": "skip"
+    "confidence": "skip",
+    "seen_at": "2026-07-28"
   },
   "Théâtre de l’Elysée": {
     "arr": "7e",

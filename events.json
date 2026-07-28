@@ -1,33 +1,7 @@
 {
-  "generated_at": "2026-07-27T09:35:48.698389+00:00",
-  "count": 658,
+  "generated_at": "2026-07-28T08:20:22.649781+00:00",
+  "count": 660,
   "events": [
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Pimp My Vinyl Lyon",
-      "subtitle": null,
-      "category": "atelier",
-      "date_start": "2026-07-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/pimp-my-vinyl/",
-      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-f7b0a17/lacommune.co/wp-content/uploads/2025/11/27-1-1-768x960.jpg",
-      "id": "f8779a528788"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Happy Hour de l’écologie politique",
-      "subtitle": null,
-      "category": "conférences et tables rondes",
-      "date_start": "2026-07-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/happy-hour-la-commune/",
-      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-f7b0a17/lacommune.co/wp-content/uploads/2025/08/1080x1350_juillet-programmation-768x960.jpg",
-      "id": "afc4cb82c13d"
-    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -185,6 +159,19 @@
       "id": "ecff584bb832"
     },
     {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "DARK 80s PARTY",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-07-31",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://sonic-lyon.fr/evenement/dark-80s-party-10/",
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2025/11/574582130_1291717882988746_4882948231006999707_n.jpg",
+      "id": "2211fc1fabb5"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "club x Headbutt",
@@ -274,6 +261,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-311823-senflix.html",
       "image": null,
       "id": "d9d42199e136"
+    },
+    {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "THÉRAPIE PARTY // CASSY’S BIRTHDAY",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-08-01",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://sonic-lyon.fr/evenement/therapie-party-cassys-birthday/",
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/07/IMG_0627-768x1024.webp",
+      "id": "bcd0defe3312"
     },
     {
       "venue": "Le Sucre",
@@ -586,19 +586,6 @@
       "url": "https://le-sucre.eu/events/club-x-hidden-garden/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/Le-Sucre_14.08-480x600.jpg",
       "id": "12247a811b16"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Résidence Physical Tool",
-      "subtitle": null,
-      "category": "dj set",
-      "date_start": "2026-08-15",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/residence-physical-tool-6/",
-      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-f7b0a17/lacommune.co/wp-content/uploads/2026/07/15-1-768x960.jpg",
-      "id": "addf8d5faae1"
     },
     {
       "venue": "Le Petit Salon",
@@ -1134,6 +1121,19 @@
       "id": "58ad7a251764"
     },
     {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "DANNY WABBIT + ROULITA + KAUZIE + COCOX",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-09-05",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.transbordeur.fr/evenement/danny-wabbit-roulita-kauzie-cocox-05092026/",
+      "image": "https://www.transbordeur.fr/wp-content/uploads/2026/07/a-dannywabbit2.jpg",
+      "id": "284c800ddf37"
+    },
+    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Concert de Lucas Rocher + LeHache all stars en première partie",
@@ -1312,7 +1312,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/m-pokora-3",
-      "image": "https://www.halle-tony-garnier.com/storage/141044/conversions/2026-09-11-M-POKORA-mpokora-carre-lyon-20251201-141703-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141104/conversions/2026-09-11-M-POKORA-mpokora-carre-lyon-20251201-141703-square.jpg",
       "id": "9be61b916918"
     },
     {
@@ -1589,6 +1589,19 @@
       "id": "2baa704a5403"
     },
     {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "Tracy De Sá + Maldonne et Klar Obscur + 3 Kitties + La Tendresse",
+      "subtitle": "Dyke A'Live #3",
+      "category": "musique",
+      "date_start": "2026-09-18",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.periscope-lyon.com/concerts/tracy-de-sa-maldonne-et-klar-obscur-3-kitties-la-tendresse/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/07/1920x1080_paysagecHabby-Habbani-650x366.png",
+      "id": "a19b6f84656b"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "The Ink Factory",
@@ -1598,7 +1611,7 @@
       "date_end": null,
       "time": "13:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/the-ink-factory-7",
-      "image": "https://www.halle-tony-garnier.com/storage/141045/conversions/2026-09-18-THE-INK-FACTORY-ink-factory-carre-htg-20260604-085332-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141105/conversions/2026-09-18-THE-INK-FACTORY-ink-factory-carre-htg-20260604-085332-square.jpg",
       "id": "6b6ecac2d670"
     },
     {
@@ -1676,7 +1689,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/the-ink-factory-8",
-      "image": "https://www.halle-tony-garnier.com/storage/141046/conversions/2026-09-19-THE-INK-FACTORY-ink-factory-carre-htg-20260604-090312-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141106/conversions/2026-09-19-THE-INK-FACTORY-ink-factory-carre-htg-20260604-090312-square.jpg",
       "id": "827ab69f8b1b"
     },
     {
@@ -1754,7 +1767,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/the-ink-factory-9",
-      "image": "https://www.halle-tony-garnier.com/storage/141047/conversions/2026-09-20-THE-INK-FACTORY-ink-factory-carre-htg-20260604-091002-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141107/conversions/2026-09-20-THE-INK-FACTORY-ink-factory-carre-htg-20260604-091002-square.jpg",
       "id": "30d1bfca9c30"
     },
     {
@@ -2339,7 +2352,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/the-world-of-queen",
-      "image": "https://www.halle-tony-garnier.com/storage/141048/conversions/2026-10-01-THE-WORLD-OF-QUEEN-3-visuel-twoq-carre-1080x1080-copi-20241011-163641-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141108/conversions/2026-10-01-THE-WORLD-OF-QUEEN-3-visuel-twoq-carre-1080x1080-copi-20241011-163641-square.jpg",
       "id": "3611a8088b2f"
     },
     {
@@ -2761,7 +2774,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Rap ANTON SERRA · LUCIO BUKOWSKI · OSTER LAPWASS Nouvelle date !",
+      "title": "Bientôt complet ! Rap ANTON SERRA · LUCIO BUKOWSKI · OSTER LAPWASS Nouvelle date !",
       "subtitle": null,
       "category": null,
       "date_start": "2026-10-08",
@@ -2769,7 +2782,7 @@
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/lucio-bukowski-anton-serra-oster-lapwass-nouvelle-date",
       "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/import_billetterie/386-field_illustration_id-1779110997.jpg",
-      "id": "d55fc9958128"
+      "id": "4b02ee059a29"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -2911,7 +2924,7 @@
       "date_end": null,
       "time": "18:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/soiree-d-ouverture-festival-lumiere",
-      "image": "https://www.halle-tony-garnier.com/storage/141049/conversions/2026-10-10-SOIREE-D-OUVERTURE-FESTIVAL-LUMIERE-fl2026-aff-rs-1080x1080-v2-20260630-111123-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141109/conversions/2026-10-10-SOIREE-D-OUVERTURE-FESTIVAL-LUMIERE-fl2026-aff-rs-1080x1080-v2-20260630-111123-square.jpg",
       "id": "c1ef497316fc"
     },
     {
@@ -3717,7 +3730,7 @@
       "date_end": null,
       "time": "22:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/nuit-encore-x-23-59",
-      "image": "https://www.halle-tony-garnier.com/storage/141050/conversions/2026-10-24-NUIT-ENCORE-X-23-59-carre-4-20260703-170839-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141110/conversions/2026-10-24-NUIT-ENCORE-X-23-59-carre-4-20260703-170839-square.jpg",
       "id": "2fff0957546e"
     },
     {
@@ -3847,7 +3860,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-6",
-      "image": "https://www.halle-tony-garnier.com/storage/141051/conversions/2026-10-29-SALON-DES-VIGNERONS-INDEPENDANTS-vignerons-temporaire-2026-20260615-155003-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141111/conversions/2026-10-29-SALON-DES-VIGNERONS-INDEPENDANTS-vignerons-temporaire-2026-20260615-155003-square.jpg",
       "id": "210b883f9443"
     },
     {
@@ -3925,7 +3938,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-7",
-      "image": "https://www.halle-tony-garnier.com/storage/141052/conversions/2026-10-30-SALON-DES-VIGNERONS-INDEPENDANTS-vignerons-temporaire-2026-20260615-155114-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141112/conversions/2026-10-30-SALON-DES-VIGNERONS-INDEPENDANTS-vignerons-temporaire-2026-20260615-155114-square.jpg",
       "id": "ad12b2b22ce3"
     },
     {
@@ -3990,7 +4003,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-8",
-      "image": "https://www.halle-tony-garnier.com/storage/141053/conversions/2026-10-31-SALON-DES-VIGNERONS-INDEPENDANTS-vignerons-temporaire-2026-20260615-155234-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141113/conversions/2026-10-31-SALON-DES-VIGNERONS-INDEPENDANTS-vignerons-temporaire-2026-20260615-155234-square.jpg",
       "id": "d83e0a392b7b"
     },
     {
@@ -4042,7 +4055,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-9",
-      "image": "https://www.halle-tony-garnier.com/storage/141054/conversions/2026-11-01-SALON-DES-VIGNERONS-INDEPENDANTS-vignerons-temporaire-2026-20260615-160550-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141114/conversions/2026-11-01-SALON-DES-VIGNERONS-INDEPENDANTS-vignerons-temporaire-2026-20260615-160550-square.jpg",
       "id": "8a18d20aa5e0"
     },
     {
@@ -4159,7 +4172,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/djadja-dinaz-2",
-      "image": "https://www.halle-tony-garnier.com/storage/141055/conversions/2026-11-05-DJADJA-DINAZ-carre-5-20250709-085039-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141115/conversions/2026-11-05-DJADJA-DINAZ-carre-5-20250709-085039-square.jpg",
       "id": "38be92eb323a"
     },
     {
@@ -4224,7 +4237,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/djadja-dinaz-3",
-      "image": "https://www.halle-tony-garnier.com/storage/141056/conversions/2026-11-06-DJADJA-DINAZ-carre-djadja2-20260126-105855-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141116/conversions/2026-11-06-DJADJA-DINAZ-carre-djadja2-20260126-105855-square.jpg",
       "id": "8b3f2fdf62ff"
     },
     {
@@ -4367,7 +4380,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/josman-2",
-      "image": "https://www.halle-tony-garnier.com/storage/141057/conversions/2026-11-07-JOSMAN-carre-josma-20260210-152457-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141117/conversions/2026-11-07-JOSMAN-carre-josma-20260210-152457-square.jpg",
       "id": "1b4efb369f99"
     },
     {
@@ -4536,7 +4549,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/the-world-of-hans-zimmer-2",
-      "image": "https://www.halle-tony-garnier.com/storage/141058/conversions/2026-11-10-THE-WORLD-OF-HANS-ZIMMER-wohz-2026-generique-visuelweb-newsletter-2400x200-20250317-112306-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141118/conversions/2026-11-10-THE-WORLD-OF-HANS-ZIMMER-wohz-2026-generique-visuelweb-newsletter-2400x200-20250317-112306-square.jpg",
       "id": "a256426cb8c7"
     },
     {
@@ -4614,7 +4627,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/malik-bentalha-2",
-      "image": "https://www.halle-tony-garnier.com/storage/141059/conversions/2026-11-11-MALIK-BENTALHA-malikbentalha-nouveaumonde-officiel-digitick-1080x108-20250829-144651-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141119/conversions/2026-11-11-MALIK-BENTALHA-malikbentalha-nouveaumonde-officiel-digitick-1080x108-20250829-144651-square.jpg",
       "id": "dfa88e684fee"
     },
     {
@@ -4991,7 +5004,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/l-heritage-goldman-2-2",
-      "image": "https://www.halle-tony-garnier.com/storage/141060/conversions/2026-11-19-L-HERITAGE-GOLDMAN-2-heritagegoldman-1080-lyo-20251002-100344-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141120/conversions/2026-11-19-L-HERITAGE-GOLDMAN-2-heritagegoldman-1080-lyo-20251002-100344-square.jpg",
       "id": "d019b4b5bf44"
     },
     {
@@ -5680,7 +5693,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disiz",
-      "image": "https://www.halle-tony-garnier.com/storage/141061/conversions/2026-12-04-disiz-disiz500x500-20251204-130657-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141121/conversions/2026-12-04-disiz-disiz500x500-20251204-130657-square.jpg",
       "id": "8ccde2d1c8ab"
     },
     {
@@ -5992,7 +6005,7 @@
       "date_end": null,
       "time": "22:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/face2face-all-night-long",
-      "image": "https://www.halle-tony-garnier.com/storage/141062/conversions/2026-12-11-FACE2FACE-ALL-NIGHT-LONG-4to-20260721-115213-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141122/conversions/2026-12-11-FACE2FACE-ALL-NIGHT-LONG-4to-20260721-115213-square.jpg",
       "id": "802825377969"
     },
     {
@@ -6317,7 +6330,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-en-concert-suivez-vos-reves",
-      "image": "https://www.halle-tony-garnier.com/storage/141063/conversions/2026-12-18-DISNEY-EN-CONCERT-SUIVEZ-VOS-REVES-disney-carre-lyo-20251104-163638-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141123/conversions/2026-12-18-DISNEY-EN-CONCERT-SUIVEZ-VOS-REVES-disney-carre-lyo-20251104-163638-square.jpg",
       "id": "4c46d99b7e0b"
     },
     {
@@ -6577,7 +6590,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/goldmen-concert-100-goldman",
-      "image": "https://www.halle-tony-garnier.com/storage/141064/conversions/2027-01-08-GOLDMEN-CONCERT-100-GOLDMAN-goldmen-carre-copi-20250411-144142-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141124/conversions/2027-01-08-GOLDMEN-CONCERT-100-GOLDMAN-goldmen-carre-copi-20250411-144142-square.jpg",
       "id": "9cae03700f3c"
     },
     {
@@ -6616,7 +6629,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/harry-potter-et-le-prince-de-sang-mele",
-      "image": "https://www.halle-tony-garnier.com/storage/141065/conversions/2027-01-09-HARRY-POTTER-ET-LE-PRINCE-DE-SANG-MELE-hp6-artwor-20260105-143104-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141125/conversions/2027-01-09-HARRY-POTTER-ET-LE-PRINCE-DE-SANG-MELE-hp6-artwor-20260105-143104-square.jpg",
       "id": "80487e51b923"
     },
     {
@@ -6694,7 +6707,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/one-night-of-queen-2",
-      "image": "https://www.halle-tony-garnier.com/storage/141066/conversions/2027-01-13-ONE-NIGHT-OF-QUEEN-onoq-1080-lyo-20250507-141114-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141126/conversions/2027-01-13-ONE-NIGHT-OF-QUEEN-onoq-1080-lyo-20250507-141114-square.jpg",
       "id": "d36fa43e7d82"
     },
     {
@@ -6746,7 +6759,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/les-chevaliers-du-fiel-2",
-      "image": "https://www.halle-tony-garnier.com/storage/141067/conversions/2027-01-14-LES-CHEVALIERS-DU-FIEL-header-event-carre-20260710-150605-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141127/conversions/2027-01-14-LES-CHEVALIERS-DU-FIEL-header-event-carre-20260710-150605-square.jpg",
       "id": "5265d5dc149c"
     },
     {
@@ -6863,7 +6876,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/lion-le-roi-est-de-retour",
-      "image": "https://www.halle-tony-garnier.com/storage/141068/conversions/2027-01-16-LION-LE-ROI-EST-DE-RETOUR-lion-1080x1080-copie-20260409-104932-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141128/conversions/2027-01-16-LION-LE-ROI-EST-DE-RETOUR-lion-1080x1080-copie-20260409-104932-square.jpg",
       "id": "91d9dd9e0953"
     },
     {
@@ -6889,7 +6902,7 @@
       "date_end": null,
       "time": "20:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/olivier-de-benoist",
-      "image": "https://www.halle-tony-garnier.com/storage/141069/conversions/2027-01-16-OLIVIER-DE-BENOIST-odb-ledroitaubonheur-tournee-carre-copi-20260423-100914-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141129/conversions/2027-01-16-OLIVIER-DE-BENOIST-odb-ledroitaubonheur-tournee-carre-copi-20260423-100914-square.jpg",
       "id": "da6add811841"
     },
     {
@@ -6954,7 +6967,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/clement-viktorovitch",
-      "image": "https://www.halle-tony-garnier.com/storage/141070/conversions/2027-01-19-CLEMENT-VIKTOROVITCH-cviktor-carre-lyo-20260417-103157-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141130/conversions/2027-01-19-CLEMENT-VIKTOROVITCH-cviktor-carre-lyo-20260417-103157-square.jpg",
       "id": "bba5ebee3dbe"
     },
     {
@@ -7114,6 +7127,19 @@
       "id": "b58de3be39e0"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "IMMO",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-01-24",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://radiant-bellevue.fr/spectacles/immo/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/immo-500x500.jpg",
+      "id": "d977989406b6"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Disney Sur Glace - Le Voyage Enchante",
@@ -7188,7 +7214,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-3",
-      "image": "https://www.halle-tony-garnier.com/storage/141072/conversions/2027-01-29-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-160502-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141132/conversions/2027-01-29-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-160502-square.jpg",
       "id": "2ebfe953dfc1"
     },
     {
@@ -7201,7 +7227,7 @@
       "date_end": null,
       "time": "10:15",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-4",
-      "image": "https://www.halle-tony-garnier.com/storage/141073/conversions/2027-01-30-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-160802-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141133/conversions/2027-01-30-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-160802-square.jpg",
       "id": "960700e6646d"
     },
     {
@@ -7227,7 +7253,7 @@
       "date_end": null,
       "time": "10:15",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-7",
-      "image": "https://www.halle-tony-garnier.com/storage/141076/conversions/2027-01-31-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-161311-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141136/conversions/2027-01-31-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-161311-square.jpg",
       "id": "9b8c4c1badaf"
     },
     {
@@ -7240,7 +7266,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/forever-tribute-michael-jackson",
-      "image": "https://www.halle-tony-garnier.com/storage/141078/conversions/2027-02-02-FOREVER-TRIBUTE-MICHAEL-JACKSON-forever-carre-lyo-20250828-084343-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141138/conversions/2027-02-02-FOREVER-TRIBUTE-MICHAEL-JACKSON-forever-carre-lyo-20250828-084343-square.jpg",
       "id": "14148c08ae28"
     },
     {
@@ -7318,7 +7344,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/aldebert-3",
-      "image": "https://www.halle-tony-garnier.com/storage/141079/conversions/2027-02-06-1.-ALDEBERT-LDC-carre-lyon-copie-20260121-150153-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141139/conversions/2027-02-06-1.-ALDEBERT-LDC-carre-lyon-copie-20260121-150153-square.jpg",
       "id": "21397db5a6f9"
     },
     {
@@ -7331,7 +7357,7 @@
       "date_end": null,
       "time": "18:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/square-enix",
-      "image": "https://www.halle-tony-garnier.com/storage/141080/conversions/2027-02-07-SQUARE-ENIX-kv-3000x3000-lyo-20251205-091514-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141140/conversions/2027-02-07-SQUARE-ENIX-kv-3000x3000-lyo-20251205-091514-square.jpg",
       "id": "272b1ca3aa4a"
     },
     {
@@ -7383,7 +7409,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/nawell-madani",
-      "image": "https://www.halle-tony-garnier.com/storage/141081/conversions/2027-02-10-NAWELL-MADANI-carre-9568-u-20260127-113850-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141141/conversions/2027-02-10-NAWELL-MADANI-carre-9568-u-20260127-113850-square.jpg",
       "id": "1e43f410343a"
     },
     {
@@ -7474,7 +7500,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams",
-      "image": "https://www.halle-tony-garnier.com/storage/141082/conversions/2027-02-19-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-145844-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141142/conversions/2027-02-19-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-145844-square.jpg",
       "id": "2352ed756750"
     },
     {
@@ -7487,7 +7513,7 @@
       "date_end": null,
       "time": "14:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-2",
-      "image": "https://www.halle-tony-garnier.com/storage/141083/conversions/2027-02-20-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-150100-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141143/conversions/2027-02-20-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-150100-square.jpg",
       "id": "b2618ecfeaa6"
     },
     {
@@ -7500,7 +7526,7 @@
       "date_end": null,
       "time": "13:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-4",
-      "image": "https://www.halle-tony-garnier.com/storage/141085/conversions/2027-02-21-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-150331-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141145/conversions/2027-02-21-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-150331-square.jpg",
       "id": "f6ae54e9ebe7"
     },
     {
@@ -7591,7 +7617,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/marine",
-      "image": "https://www.halle-tony-garnier.com/storage/141087/conversions/2027-03-05-MARINE-marine-tournee-2026-carr-20251218-093105-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141147/conversions/2027-03-05-MARINE-marine-tournee-2026-carr-20251218-093105-square.jpg",
       "id": "74b78cf742fb"
     },
     {
@@ -7617,7 +7643,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/les-annees-80-2",
-      "image": "https://www.halle-tony-garnier.com/storage/141088/conversions/2027-03-06-LES-ANNEES-80-la80-carre-lyo-20251212-115951-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141148/conversions/2027-03-06-LES-ANNEES-80-la80-carre-lyo-20251212-115951-square.jpg",
       "id": "a094e7839744"
     },
     {
@@ -7747,7 +7773,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/bernard-lavilliers",
-      "image": "https://www.halle-tony-garnier.com/storage/141089/conversions/2027-03-17-BERNARD-LAVILLIERS-bernard-lavilliers-2026-digital-post-1080x1080-copi-20260220-095930-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141149/conversions/2027-03-17-BERNARD-LAVILLIERS-bernard-lavilliers-2026-digital-post-1080x1080-copi-20260220-095930-square.jpg",
       "id": "66b581d45da6"
     },
     {
@@ -7799,7 +7825,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/michele-laroque-kad-merad-l-age-bete",
-      "image": "https://www.halle-tony-garnier.com/storage/141090/conversions/2027-03-19-MICHELE-LAROQUE-KAD-MERAD-L-AGE-BETE-lagebete-ecommerce-1080x108-20251017-104323-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141150/conversions/2027-03-19-MICHELE-LAROQUE-KAD-MERAD-L-AGE-BETE-lagebete-ecommerce-1080x108-20251017-104323-square.jpg",
       "id": "e108ea3962f2"
     },
     {
@@ -7825,7 +7851,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/500-voix-pour-johnny",
-      "image": "https://www.halle-tony-garnier.com/storage/141091/conversions/2027-03-20-500-VOIX-POUR-JOHNNY-affiche-johnny-officielle-2-20260707-171745-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141151/conversions/2027-03-20-500-VOIX-POUR-JOHNNY-affiche-johnny-officielle-2-20260707-171745-square.jpg",
       "id": "f227e3726650"
     },
     {
@@ -8072,7 +8098,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/patrick-fiori-2",
-      "image": "https://www.halle-tony-garnier.com/storage/141092/conversions/2027-04-03-PATRICK-FIORI-patrick-fiori-carre-270403-lyo-20251128-085438-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141152/conversions/2027-04-03-PATRICK-FIORI-patrick-fiori-carre-270403-lyo-20251128-085438-square.jpg",
       "id": "93411b98f25b"
     },
     {
@@ -8085,7 +8111,7 @@
       "date_end": null,
       "time": "18:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/glorious",
-      "image": "https://www.halle-tony-garnier.com/storage/141093/conversions/2027-04-04-GLORIOUS-500x500-lyon-glorious-20260415-121947-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141153/conversions/2027-04-04-GLORIOUS-500x500-lyon-glorious-20260415-121947-square.jpg",
       "id": "ba9cb766b04c"
     },
     {
@@ -8176,7 +8202,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/star-wars-in-concert-un-nouvel-espoir",
-      "image": "https://www.halle-tony-garnier.com/storage/141094/conversions/2027-04-10-STAR-WARS-star-wars-carre-lyo-20260428-160425-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141154/conversions/2027-04-10-STAR-WARS-star-wars-carre-lyo-20260428-160425-square.jpg",
       "id": "7015d6516327"
     },
     {
@@ -8267,7 +8293,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/suzane",
-      "image": "https://www.halle-tony-garnier.com/storage/141095/conversions/2027-05-18-SUZANE-2000x2000-suzane-zenithstour-lyo-20260331-151852-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141155/conversions/2027-05-18-SUZANE-2000x2000-suzane-zenithstour-lyo-20260331-151852-square.jpg",
       "id": "113efc2897c8"
     },
     {
@@ -8410,7 +8436,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/generation-celine-2",
-      "image": "https://www.halle-tony-garnier.com/storage/141096/conversions/2027-09-29-GENERATION-CELINE-generationceline-carre-lyon-202-20260105-154614-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141156/conversions/2027-09-29-GENERATION-CELINE-generationceline-carre-lyon-202-20260105-154614-square.jpg",
       "id": "4f8eececf37d"
     },
     {
@@ -8423,7 +8449,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/la-rue-ketanou",
-      "image": "https://www.halle-tony-garnier.com/storage/141097/conversions/2027-10-01-LA-RUE-KETANOU-larueketanou-chanson-lyon-site-carre-1-20260624-105135-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141157/conversions/2027-10-01-LA-RUE-KETANOU-larueketanou-chanson-lyon-site-carre-1-20260624-105135-square.jpg",
       "id": "620a0d9b3588"
     },
     {
@@ -8449,7 +8475,7 @@
       "date_end": null,
       "time": "14:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salut-les-copains-la-tournee",
-      "image": "https://www.halle-tony-garnier.com/storage/141098/conversions/2027-11-18-SALUT-LES-COPAINS-LA-TOURNEE-postsalut-les-copains-lyo-20260715-134159-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141158/conversions/2027-11-18-SALUT-LES-COPAINS-LA-TOURNEE-postsalut-les-copains-lyo-20260715-134159-square.jpg",
       "id": "25538db13fb8"
     },
     {
@@ -8462,7 +8488,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/i-gotta-feeling-saison-3",
-      "image": "https://www.halle-tony-garnier.com/storage/141099/conversions/2027-11-18-I-GOTTA-FEELING-SAISON-3-igf-2027-carre-769-lyo-20260204-141943-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141159/conversions/2027-11-18-I-GOTTA-FEELING-SAISON-3-igf-2027-carre-769-lyo-20260204-141943-square.jpg",
       "id": "fb2d7ec96427"
     },
     {
@@ -8514,7 +8540,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/gael-faye",
-      "image": "https://www.halle-tony-garnier.com/storage/141100/conversions/2027-11-27-GAEL-FAYE-gae-9568-el-faye-tourne-9568-ue-ze-9568-unith-1080-1350-copi-20260603-163108-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141160/conversions/2027-11-27-GAEL-FAYE-gae-9568-el-faye-tourne-9568-ue-ze-9568-unith-1080-1350-copi-20260603-163108-square.jpg",
       "id": "6beb9713ac66"
     },
     {
@@ -8527,7 +8553,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/philippe-caveriviere",
-      "image": "https://www.halle-tony-garnier.com/storage/141101/conversions/2027-12-10-PHILIPPE-CAVERIVIERE-philippecaveriviere-tournee-fnac-1080x1080-copie-1-20260414-114358-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141161/conversions/2027-12-10-PHILIPPE-CAVERIVIERE-philippecaveriviere-tournee-fnac-1080x1080-copie-1-20260414-114358-square.jpg",
       "id": "95ab438b6959"
     },
     {
@@ -8540,7 +8566,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/festival-mondial-de-la-magie",
-      "image": "https://www.halle-tony-garnier.com/storage/141102/conversions/2028-01-14-FESTIVAL-MONDIAL-DE-LA-MAGIE-vignette-billetterie-saison-4-copi-20251121-110434-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141162/conversions/2028-01-14-FESTIVAL-MONDIAL-DE-LA-MAGIE-vignette-billetterie-saison-4-copi-20251121-110434-square.jpg",
       "id": "745d9cc9feff"
     },
     {
@@ -8553,7 +8579,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/era-2",
-      "image": "https://www.halle-tony-garnier.com/storage/141103/conversions/2028-03-01-ERA-era1-bi-20260330-165423-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/141163/conversions/2028-03-01-ERA-era1-bi-20260330-165423-square.jpg",
       "id": "661d7f33aa0b"
     }
   ]
