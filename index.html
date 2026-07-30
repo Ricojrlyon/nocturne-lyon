@@ -146,10 +146,26 @@
     align-items: center;
     padding: 4px 0;
   }
-  .filter-row + .filter-row {
+  /* Le tiroir des filtres secondaires : replié par défaut, il libère
+     ~120 px avant le premier événement. */
+  .filter-drawer {
+    border-top: 1px dashed var(--rule);
+    margin-top: 8px;
+    padding-top: 6px;
+  }
+  .filter-drawer[hidden] { display: none; }
+  .filter-drawer .filter-row + .filter-row {
     border-top: 1px dashed var(--rule);
     padding-top: 10px;
     margin-top: 6px;
+  }
+  .filter-row.primary { gap: 8px 12px; }
+  .filter-row.primary .filter-group { flex: 0 1 auto; }
+  .drawer-toggle { margin-left: auto; border-style: dashed; }
+  .drawer-toggle[aria-expanded="true"] {
+    border-style: solid;
+    border-color: var(--warm);
+    color: var(--warm);
   }
   .filter-label {
     font-family: 'JetBrains Mono', monospace;
@@ -407,7 +423,59 @@
   }
 
   /* ---------- feed / day blocks ---------- */
-  main.feed { padding: 40px 0 80px; }
+  /* ---------- bandeau de jours ---------- */
+  .daystrip-wrap {
+    border-bottom: 1px solid var(--rule);
+  }
+  .daystrip {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 10px 0 12px;
+    scrollbar-width: thin;
+    scroll-snap-type: x proximity;
+  }
+  .day-pill {
+    flex: 0 0 auto;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 6px 9px 5px;
+    font-family: 'JetBrains Mono', monospace;
+    scroll-snap-align: start;
+    transition: border-color 0.14s ease, background 0.14s ease;
+  }
+  .day-pill:hover { border-color: var(--ink-soft); }
+  .day-pill:focus-visible { outline: 2px solid var(--warm); outline-offset: 2px; }
+  .day-pill .dp-dow {
+    display: block;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-mute);
+  }
+  .day-pill .dp-num {
+    display: block;
+    font-size: 15px;
+    line-height: 1.2;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .day-pill .dp-count {
+    font-size: 9px;
+    color: var(--warm);
+    font-variant-numeric: tabular-nums;
+  }
+  .day-pill.empty { opacity: 0.38; cursor: default; }
+  .day-pill.today {
+    border-color: var(--warm);
+    background: rgba(212, 165, 116, 0.09);
+  }
+
+  main.feed { padding: 34px 0 80px; }
 
   .day {
     padding: 32px 0;
@@ -818,17 +886,16 @@
 <nav class="filters" id="filters">
   <div class="container">
 
-    <div class="filter-row always-visible">
-      <span class="filter-label">recherche</span>
+    <!-- Rangée toujours visible : recherche + temps + bouton du tiroir.
+         Les filtres secondaires (où / arr. / type) sont repliés par
+         défaut — ils occupaient trois rangées avant même le premier
+         événement. -->
+    <div class="filter-row primary">
       <div class="filter-search-wrap">
         <input class="filter-search" id="filterSearch" type="search"
-          placeholder="lieu ou événement…" autocomplete="off" spellcheck="false">
+          placeholder="lieu, artiste ou événement" autocomplete="off" spellcheck="false">
         <button class="filter-search-clear" id="filterSearchClear" aria-label="effacer">✕</button>
       </div>
-    </div>
-
-    <div class="filter-row always-visible">
-      <span class="filter-label">quand</span>
       <div class="filter-group" id="filterWhen">
         <button class="chip active" data-when="all">tout</button>
         <button class="chip" data-when="today">ce soir</button>
@@ -836,28 +903,39 @@
         <button class="chip" data-when="week">cette semaine</button>
         <button class="chip" data-when="month">ce mois-ci</button>
         <span class="datepicker-wrap">
-          <button class="chip" id="dateBtn" type="button">date custom →</button>
+          <button class="chip" id="dateBtn" type="button">date →</button>
           <div class="datepicker" id="datepicker"></div>
         </span>
       </div>
+      <button class="chip drawer-toggle" id="drawerToggle" type="button"
+              aria-expanded="false" aria-controls="filterDrawer">+ filtres</button>
     </div>
 
-    <div class="filter-row expanded-only">
-      <span class="filter-label">où</span>
-      <div class="filter-group venue-groups" id="filterVenue"></div>
+    <div class="filter-drawer" id="filterDrawer" hidden>
+      <div class="filter-row">
+        <span class="filter-label">où</span>
+        <div class="filter-group venue-groups" id="filterVenue"></div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">arr.</span>
+        <div class="filter-group" id="filterArr"></div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">type</span>
+        <div class="filter-group" id="filterCategory"></div>
+        <button class="clear-link" id="clearFilters">tout effacer</button>
+      </div>
     </div>
 
-    <div class="filter-row expanded-only">
-      <span class="filter-label">arr.</span>
-      <div class="filter-group" id="filterArr"></div>
-    </div>
+  </div>
+</nav>
 
-    <div class="filter-row expanded-only">
-      <span class="filter-label">type</span>
-      <div class="filter-group" id="filterCategory"></div>
-      <button class="clear-link" id="clearFilters">tout effacer</button>
-    </div>
-
+<!-- Bandeau de jours : les 14 prochaines dates avec leur nombre
+     d'événements, cliquables pour y sauter. « Qu'est-ce qu'il y a ce
+     soir » est la question centrale du site. -->
+<nav class="daystrip-wrap">
+  <div class="container">
+    <div class="daystrip" id="daystrip"></div>
   </div>
 </nav>
 
@@ -1400,8 +1478,58 @@ async function load() {
   buildVenueFilters();
   buildArrondissementFilters();
   buildTypeFilters();
+  buildDaystrip();
   render();
 }
+
+/* ---------- bandeau de jours ----------
+   Les 14 prochains jours ; ceux qui ont des événements affichent leur
+   compte et défilent jusqu'à leur section, les autres restent grisés. */
+function buildDaystrip() {
+  const strip = document.getElementById('daystrip');
+  if (!strip) return;
+  strip.innerHTML = '';
+  const counts = new Map();
+  for (const occ of state.occurrences) {
+    counts.set(occ._date, (counts.get(occ._date) || 0) + 1);
+  }
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  for (let i = 0; i < 14; i++) {
+    const d = new Date(today);
+    d.setDate(today.getDate() + i);
+    const iso = isoOf(d);
+    const n = counts.get(iso) || 0;
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'day-pill' + (n === 0 ? ' empty' : '') + (i === 0 ? ' today' : '');
+    btn.innerHTML = '<span class="dp-dow">' + FR_DAYS_SHORT[d.getDay()] + '</span>'
+                  + '<span class="dp-num">' + d.getDate() + '</span>'
+                  + '<span class="dp-count">' + (n ? n : '·') + '</span>';
+    if (n) {
+      btn.title = n + (n > 1 ? ' événements' : ' événement');
+      btn.addEventListener('click', () => {
+        const target = document.getElementById('day-' + iso);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    } else {
+      btn.disabled = true;
+    }
+    strip.appendChild(btn);
+  }
+}
+
+/* ---------- tiroir des filtres secondaires ---------- */
+(function () {
+  const toggle = document.getElementById('drawerToggle');
+  const drawer = document.getElementById('filterDrawer');
+  if (!toggle || !drawer) return;
+  toggle.addEventListener('click', () => {
+    const open = drawer.hidden;
+    drawer.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.textContent = open ? '− filtres' : '+ filtres';
+  });
+})();
 
 function formatUpdated(iso) {
   if (!iso) return '—';
@@ -1934,7 +2062,7 @@ function render() {
     const dd = String(d.getDate()).padStart(2, '0');
     const mm = String(d.getMonth() + 1).padStart(2, '0');
 
-    html.push('<section class="day">');
+    html.push('<section class="day" id="day-' + iso + '">');
     html.push('  <div class="day-stamp">');
     html.push('    <h2 class="day-num">' + dd + '<span class="slash">/</span>' + mm + '</h2>');
     html.push('    <div class="day-meta">');
