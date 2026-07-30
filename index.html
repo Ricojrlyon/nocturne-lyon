@@ -59,18 +59,17 @@
     font-feature-settings: 'ss03' on;
   }
 
-  /* ---------- masthead : bloc plein + readout de données ----------
-     Le wordmark vit dans un bloc crème pleine hauteur, texte en négatif
-     (device emprunté à Aspen Search / State of AI). À droite, un relevé
-     technique des chiffres du site et une horloge live — pour un guide
-     de nuit, l'heure fait partie de l'information. */
+  /* ---------- masthead : bloc plein ----------
+     Le wordmark vit dans un bloc crème, texte en négatif (device
+     emprunté à Aspen Search / State of AI). Rien à côté : le relevé de
+     données a été retiré, il n'apportait pas d'information utile et
+     s'empilait mal sur téléphone. */
   header.masthead {
     border-bottom: 1px solid var(--rule-strong);
   }
   .masthead .container {
     display: flex;
     align-items: stretch;
-    flex-wrap: wrap;
     padding: 0;
     max-width: 1280px;
   }
@@ -97,35 +96,8 @@
     50% { opacity: 0.55; }
   }
 
-  .readout {
-    flex: 1;
-    min-width: 220px;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    flex-wrap: wrap;
-    padding: 8px 32px 8px 20px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-  .readout b {
-    color: var(--ink-soft);
-    font-weight: 400;
-    font-variant-numeric: tabular-nums;
-  }
-  .readout .clock {
-    margin-left: auto;
-    color: var(--warm);
-    font-variant-numeric: tabular-nums;
-    letter-spacing: 0.1em;
-  }
   @media (max-width: 720px) {
     .wordmark { padding-left: 20px; font-size: 17px; }
-    .readout { padding: 6px 20px 8px; gap: 12px; }
-    .readout .clock { margin-left: 0; }
   }
 
   /* ---------- filters bar ---------- */
@@ -152,9 +124,21 @@
     padding-top: 10px;
     margin-top: 6px;
   }
-  .filter-row.primary { gap: 8px 12px; }
-  .filter-row.primary .filter-group { flex: 0 1 auto; }
-  .drawer-toggle { margin-left: auto; border-style: dashed; }
+  /* Rangée principale. Ordre du DOM : recherche, bouton du tiroir, chips
+     de temps — ainsi l'ordre de tabulation suit l'ordre visuel. Sur
+     téléphone la recherche et le bouton partagent la première ligne et
+     les chips occupent la seconde ; le bouton ne se retrouve plus seul
+     sur sa propre ligne, décalé du reste. */
+  .filter-row.primary {
+    gap: 8px 6px;
+    align-items: center;
+  }
+  .filter-row.primary .filter-search-wrap { flex: 1 1 220px; }
+  .filter-row.primary .filter-group { flex: 1 1 auto; }
+  @media (max-width: 720px) {
+    .filter-row.primary .filter-group { flex: 1 0 100%; }
+  }
+  .drawer-toggle { border-style: dashed; flex: 0 0 auto; }
   .drawer-toggle[aria-expanded="true"] {
     border-style: solid;
     border-color: var(--warm);
@@ -188,10 +172,10 @@
     background: transparent;
     border: 1px solid var(--rule-strong);
     color: var(--ink);
-    padding: 5px 28px 5px 10px;
+    padding: 6px 28px 6px 11px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    border-radius: 999px;
+    border-radius: var(--radius);
     outline: none;
     letter-spacing: 0.04em;
     transition: border-color 0.16s ease;
@@ -219,10 +203,10 @@
     border: 1px solid var(--rule-strong);
     background: transparent;
     color: var(--ink-soft);
-    padding: 5px 12px;
+    padding: 5px 11px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    border-radius: 999px;
+    border-radius: var(--radius);
     cursor: pointer;
     transition: all 0.16s ease;
     text-transform: lowercase;
@@ -275,7 +259,7 @@
     padding: 9px 12px;
     background: var(--bg-elev);
     border: 1px solid var(--rule);
-    border-radius: 8px;
+    border-radius: var(--radius);
     width: 100%;
     margin: 4px 0 2px;
   }
@@ -291,7 +275,7 @@
     z-index: 30;
     background: var(--bg-elev);
     border: 1px solid var(--ink-mute);
-    border-radius: 12px;
+    border-radius: var(--radius);
     padding: 14px;
     box-shadow: 0 6px 32px rgba(0,0,0,0.5);
     min-width: 280px;
@@ -309,7 +293,7 @@
   .datepicker-nav {
     background: transparent;
     border: 1px solid var(--rule-strong);
-    border-radius: 999px;
+    border-radius: var(--radius);
     width: 26px; height: 26px;
     cursor: pointer;
     color: var(--ink);
@@ -342,7 +326,7 @@
     font-size: 11px;
     color: var(--ink);
     padding: 6px 0;
-    border-radius: 6px;
+    border-radius: var(--radius);
     cursor: pointer;
     transition: all 0.12s ease;
   }
@@ -362,9 +346,9 @@
     color: var(--ink);
     border-radius: 0;
   }
-  .datepicker-day.range-start { border-radius: 6px 0 0 6px; }
-  .datepicker-day.range-end { border-radius: 0 6px 6px 0; }
-  .datepicker-day.range-start.range-end { border-radius: 6px; }
+  .datepicker-day.range-start { border-radius: var(--radius) 0 0 var(--radius); }
+  .datepicker-day.range-end { border-radius: 0 var(--radius) var(--radius) 0; }
+  .datepicker-day.range-start.range-end { border-radius: var(--radius); }
   .datepicker-day.today {
     box-shadow: inset 0 0 0 1px var(--warm);
   }
@@ -430,7 +414,7 @@
   }
   .day-pill {
     flex: 0 0 auto;
-    min-width: 54px;
+    min-width: 62px;
     text-align: center;
     cursor: pointer;
     background: transparent;
@@ -456,6 +440,13 @@
     line-height: 1.2;
     color: var(--ink);
     font-variant-numeric: tabular-nums;
+  }
+  .day-pill .dp-mon {
+    font-style: normal;
+    font-size: 8.5px;
+    letter-spacing: 0.04em;
+    color: var(--ink-mute);
+    margin-left: 2px;
   }
   .day-pill .dp-count {
     font-size: 9px;
@@ -577,9 +568,12 @@
     grid-template-rows: auto 1fr auto;
     row-gap: 6px;
     padding: 14px 18px 12px;
-    border: 1px solid rgba(231, 223, 190, 0.17);
+    border: 1px solid rgba(231, 223, 190, 0.20);
     border-radius: var(--radius);
-    background: transparent;
+    /* Fond légèrement surélevé par rapport à la page : sans lui, le bas
+       de la carte — là où le visuel s'est éteint en fondu — se confondait
+       exactement avec le fond. */
+    background: var(--bg-elev);
     text-decoration: none;
     color: inherit;
     transition: border-color 0.18s ease, background 0.18s ease;
@@ -590,7 +584,7 @@
   }
   .event:hover {
     border-color: var(--warm);
-    background: rgba(231, 223, 190, 0.03);
+    background: var(--bg-elev-2);
   }
 
   /* ---------- couche visuelle en fond de carte ----------
@@ -765,7 +759,7 @@
     letter-spacing: 0.1em;
     padding: 2px 8px;
     border: 1px solid var(--hot);
-    border-radius: 999px;
+    border-radius: var(--radius);
     font-weight: 500;
     white-space: nowrap;
   }
@@ -781,7 +775,7 @@
     text-transform: lowercase;
     letter-spacing: 0.08em;
     padding: 2px 7px;
-    border-radius: 999px;
+    border-radius: var(--radius);
     white-space: nowrap;
     font-weight: 400;
   }
@@ -904,13 +898,6 @@
 <header class="masthead">
   <div class="container">
     <h1 class="wordmark"><span class="ast">*</span>nocturne</h1>
-    <div class="readout">
-      <span>index <b id="eventCount">—</b></span>
-      <span>lieux <b id="venueCount">—</b></span>
-      <span>sources <b>17</b></span>
-      <span>maj <b id="lastUpdated">—</b></span>
-      <span class="clock" id="clock">--:--:--</span>
-    </div>
   </div>
 </header>
 
@@ -927,19 +914,17 @@
           placeholder="lieu, artiste ou événement" autocomplete="off" spellcheck="false">
         <button class="filter-search-clear" id="filterSearchClear" aria-label="effacer">✕</button>
       </div>
+      <button class="chip drawer-toggle" id="drawerToggle" type="button"
+              aria-expanded="false" aria-controls="filterDrawer">+ filtres</button>
       <div class="filter-group" id="filterWhen">
         <button class="chip active" data-when="all">tout</button>
-        <button class="chip" data-when="today">ce soir</button>
         <button class="chip" data-when="weekend">ce weekend</button>
-        <button class="chip" data-when="week">cette semaine</button>
-        <button class="chip" data-when="month">ce mois-ci</button>
+        <button class="chip" data-when="nextweek">semaine pro</button>
         <span class="datepicker-wrap">
           <button class="chip" id="dateBtn" type="button">date →</button>
           <div class="datepicker" id="datepicker"></div>
         </span>
       </div>
-      <button class="chip drawer-toggle" id="drawerToggle" type="button"
-              aria-expanded="false" aria-controls="filterDrawer">+ filtres</button>
     </div>
 
     <div class="filter-drawer" id="filterDrawer" hidden>
@@ -978,7 +963,9 @@
   <div class="container">
     <div class="col">
       <div><span class="ind">§</span> données scrapées sur les sites des lieux</div>
-      <div><span class="ind">§</span> mise à jour quotidienne · 06h00 utc</div>
+      <div><span class="ind">§</span> <span id="footerIndex">—</span> événements ·
+           <span id="footerVenues">—</span> lieux · 17 sources</div>
+      <div><span class="ind">§</span> dernière mise à jour <span id="lastUpdated">—</span></div>
     </div>
     <div class="col col-right">
       <div><a href="https://github.com/Ricojrlyon/nocturne-lyon" target="_blank" rel="noopener">code source ↗</a></div>
@@ -1489,11 +1476,11 @@ async function load() {
 
   buildVenueHomepages();
 
-  // Readout du masthead
-  const totalCount = state.events.length;
-  const venueCount = new Set(state.events.map(e => e.venue)).size;
-  document.getElementById('eventCount').textContent = String(totalCount).padStart(3, '0');
-  document.getElementById('venueCount').textContent = String(venueCount).padStart(2, '0');
+  // Chiffres et date de mise à jour : en pied de page, pas dans le
+  // masthead — l'information est utile mais n'a pas à occuper le haut.
+  document.getElementById('footerIndex').textContent = state.events.length;
+  document.getElementById('footerVenues').textContent =
+    new Set(state.events.map(e => e.venue)).size;
   document.getElementById('lastUpdated').textContent = formatUpdated(data.generated_at);
 
   buildVenueFilters();
@@ -1523,8 +1510,11 @@ function buildDaystrip() {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'day-pill' + (n === 0 ? ' empty' : '') + (i === 0 ? ' today' : '');
+    // Mois en discret, à côté du numéro — utile dès qu'on approche d'un
+    // changement de mois dans la bande.
     btn.innerHTML = '<span class="dp-dow">' + FR_DAYS_SHORT[d.getDay()] + '</span>'
-                  + '<span class="dp-num">' + d.getDate() + '</span>'
+                  + '<span class="dp-num">' + d.getDate()
+                  + '<i class="dp-mon">' + FR_MONTHS[d.getMonth()].slice(0, 4) + '</i></span>'
                   + '<span class="dp-count">' + (n ? n : '·') + '</span>';
     if (n) {
       btn.title = n + (n > 1 ? ' événements' : ' événement');
@@ -1560,23 +1550,6 @@ function formatUpdated(iso) {
   return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' })
        + ' · ' + d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
 }
-
-/* ---------- horloge live du readout ----------
-   Heure locale du visiteur, libellée LYON : le site s'adresse à des gens
-   qui sortent le soir même. Rafraîchie chaque seconde ; setInterval
-   suffit, il n'y a pas de mise en page à recalculer. */
-function startClock() {
-  const el = document.getElementById('clock');
-  if (!el) return;
-  const tick = () => {
-    const d = new Date();
-    el.textContent = [d.getHours(), d.getMinutes(), d.getSeconds()]
-      .map(v => String(v).padStart(2, '0')).join(':') + ' · lyon';
-  };
-  tick();
-  setInterval(tick, 1000);
-}
-startClock();
 
 /* ---------- source detection (Petit Bulletin / Ville Morte / venue scraper) ---------- */
 function eventSource(e) {
@@ -1938,29 +1911,30 @@ function withinWhen(dateStr) {
   const d = parseIso(dateStr);
   const now = new Date(); now.setHours(0,0,0,0);
   if (state.when === 'all') return true;
-  if (state.when === 'today') return d.getTime() === now.getTime();
+
   if (state.when === 'weekend') {
+    // Le weekend court du VENDREDI au dimanche. Le vendredi de ce
+    // weekend-ci : si on est samedi ou dimanche, il est derrière nous
+    // (les jours passés sont de toute façon écartés en amont) ; sinon
+    // c'est le vendredi à venir.
+    const day = now.getDay();                 // 0 = dimanche
+    const fri = new Date(now);
+    if (day === 0)      fri.setDate(now.getDate() - 2);
+    else if (day === 6) fri.setDate(now.getDate() - 1);
+    else                fri.setDate(now.getDate() + (5 - day));
+    const sun = new Date(fri); sun.setDate(fri.getDate() + 2);
+    return d >= fri && d <= sun;
+  }
+
+  if (state.when === 'nextweek') {
+    // Semaine prochaine : du lundi au dimanche suivants.
     const day = now.getDay();
-    const sat = new Date(now);
-    if (day === 0) {
-      // Dimanche : le weekend courant a commencé hier — sans ce cas
-      // spécial, (6 - 0 + 7) % 7 = 6 pointait le weekend SUIVANT et
-      // excluait la soirée du dimanche en cours.
-      sat.setDate(now.getDate() - 1);
-    } else {
-      sat.setDate(now.getDate() + (6 - day));
-    }
-    const sun = new Date(sat); sun.setDate(sat.getDate() + 1);
-    return d.getTime() === sat.getTime() || d.getTime() === sun.getTime();
+    const offset = (8 - day) % 7 || 7;        // lundi → +7, dimanche → +1
+    const mon = new Date(now); mon.setDate(now.getDate() + offset);
+    const sun = new Date(mon); sun.setDate(mon.getDate() + 6);
+    return d >= mon && d <= sun;
   }
-  if (state.when === 'week') {
-    const inSevenDays = new Date(now);
-    inSevenDays.setDate(now.getDate() + 7);
-    return d >= now && d <= inSevenDays;
-  }
-  if (state.when === 'month') {
-    return d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth();
-  }
+
   if (state.when === 'custom' && state.customRange) {
     const start = parseIso(state.customRange.start);
     const end = parseIso(state.customRange.end);
