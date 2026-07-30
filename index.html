@@ -67,11 +67,12 @@
   header.masthead {
     border-bottom: 1px solid var(--rule-strong);
   }
+  /* Le conteneur garde le padding standard (32 px, 20 px sur mobile) :
+     le bord gauche du bloc crème s'aligne ainsi exactement sur le reste
+     du contenu — filtres, bandeau de jours, cartes. */
   .masthead .container {
     display: flex;
     align-items: stretch;
-    padding: 0;
-    max-width: 1280px;
   }
   .wordmark {
     margin: 0;
@@ -82,7 +83,7 @@
     font-weight: 400;
     line-height: 1;
     letter-spacing: 0.01em;
-    padding: 13px 22px 12px 32px;
+    padding: 13px 22px 12px;
     display: flex;
     align-items: center;
     white-space: nowrap;
@@ -97,7 +98,7 @@
   }
 
   @media (max-width: 720px) {
-    .wordmark { padding-left: 20px; font-size: 17px; }
+    .wordmark { font-size: 17px; padding: 11px 18px 10px; }
   }
 
   /* ---------- filters bar ---------- */
@@ -446,7 +447,7 @@
     font-size: 8.5px;
     letter-spacing: 0.04em;
     color: var(--ink-mute);
-    margin-left: 2px;
+    font-variant-numeric: tabular-nums;
   }
   .day-pill .dp-count {
     font-size: 9px;
@@ -519,16 +520,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-  .day-bar .db-tag {
-    font-size: 9px;
-    color: var(--warm);
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    border: 1px solid rgba(212, 165, 116, 0.45);
-    padding: 2px 7px;
-    border-radius: var(--radius);
-    white-space: nowrap;
   }
   .day-bar .db-count {
     font-size: 9.5px;
@@ -1510,11 +1501,12 @@ function buildDaystrip() {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'day-pill' + (n === 0 ? ' empty' : '') + (i === 0 ? ' today' : '');
-    // Mois en discret, à côté du numéro — utile dès qu'on approche d'un
-    // changement de mois dans la bande.
+    // Mois en chiffres et en discret, à côté du numéro — utile dès qu'on
+    // approche d'un changement de mois dans la bande.
     btn.innerHTML = '<span class="dp-dow">' + FR_DAYS_SHORT[d.getDay()] + '</span>'
                   + '<span class="dp-num">' + d.getDate()
-                  + '<i class="dp-mon">' + FR_MONTHS[d.getMonth()].slice(0, 4) + '</i></span>'
+                  + '<i class="dp-mon">/' + String(d.getMonth() + 1).padStart(2, '0')
+                  + '</i></span>'
                   + '<span class="dp-count">' + (n ? n : '·') + '</span>';
     if (n) {
       btn.title = n + (n > 1 ? ' événements' : ' événement');
@@ -2075,13 +2067,6 @@ function renderFeed() {
       return (a.title || '').localeCompare(b.title || '');
     });
     const d = parseIso(iso);
-    const isToday = d.getTime() === today.getTime();
-    const isTomorrow = d.getTime() === today.getTime() + 86400000;
-    let tag = '';
-    if (isToday) tag = "aujourd'hui";
-    else if (isTomorrow) tag = 'demain';
-    else if (d < new Date(today.getTime() + 7 * 86400000)) tag = 'cette semaine';
-
     const dd = String(d.getDate()).padStart(2, '0');
     const mm = String(d.getMonth() + 1).padStart(2, '0');
     const n = list.length;
@@ -2091,7 +2076,6 @@ function renderFeed() {
     html.push('    <span class="db-date">' + dd + '/' + mm + '</span>');
     html.push('    <span class="db-label">' + FR_DAYS_FULL[d.getDay()] + ' '
                  + d.getDate() + ' ' + FR_MONTHS[d.getMonth()] + '</span>');
-    if (tag) html.push('    <span class="db-tag">' + tag + '</span>');
     html.push('    <span class="db-count">' + String(n).padStart(2, '0')
                  + ' évt' + (n > 1 ? 's' : '') + '</span>');
     html.push('  </div>');
