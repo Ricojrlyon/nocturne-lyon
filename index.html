@@ -8,7 +8,7 @@
 <meta name="description" content="Guide nocturne — concerts, théâtre, danse, clubs à Lyon.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg:           #161f25;
@@ -54,13 +54,6 @@
   }
 
   /* ---------- type primitives ---------- */
-  .display {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-weight: 400;
-    font-style: italic;
-    letter-spacing: -0.02em;
-    line-height: 0.95;
-  }
   .mono {
     font-family: 'JetBrains Mono', monospace;
     font-feature-settings: 'ss03' on;
@@ -486,6 +479,12 @@
   .day {
     padding: 0 0 26px;
     scroll-margin-top: 8px;
+    /* Le navigateur ne calcule la mise en page que des journées visibles.
+       Sur ~700 cartes le gain est net, pour zéro changement visuel.
+       contain-intrinsic-size donne une hauteur estimée afin que la barre
+       de défilement reste juste avant le rendu réel. */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 420px;
   }
   .day + .day { margin-top: 34px; }
   .day::before {
@@ -808,9 +807,9 @@
     color: var(--ink-soft);
   }
   .empty-state p {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-size: 36px;
-    font-style: italic;
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    font-variation-settings: 'opsz' 32, 'wght' 300;
+    font-size: 30px;
     color: var(--ink);
   }
   .empty-state p::before { content: "( "; color: var(--ink-mute); }
@@ -842,6 +841,19 @@
   }
 
   /* ---------- mobile ---------- */
+  /* Durée du fondu au changement de filtre ; neutralisé plus bas si
+     l'utilisateur demande moins d'animations. */
+  ::view-transition-old(root), ::view-transition-new(root) {
+    animation-duration: 0.26s;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
   @media (max-width: 720px) {
     .filter-row { gap: 6px 10px; }
     .filter-label { flex: 0 0 100%; margin-bottom: 4px; min-width: 0; }
@@ -2017,8 +2029,34 @@ function filtered() {
   });
 }
 
-/* ---------- render ---------- */
+/* ---------- render ----------
+   render() enrobe renderFeed() dans une View Transition : au changement
+   de filtre, l'ancienne et la nouvelle liste se fondent l'une dans
+   l'autre au lieu d'être remplacées d'un coup. Dégradation propre là où
+   l'API n'existe pas, et désactivé si l'utilisateur demande moins
+   d'animations.
+   Choix délibéré : pas de view-transition-name par carte. Nommer 700
+   éléments ferait autant d'instantanés à calculer ; le fondu global
+   suffit et reste fluide. */
+let firstRenderDone = false;
 function render() {
+  const animate = firstRenderDone
+    && typeof document.startViewTransition === 'function'
+    // Indispensable : dans un onglet masqué, startViewTransition attend une
+    // occasion de rendu qui n'arrive jamais et son callback n'est jamais
+    // appelé — le feed se figerait silencieusement sur l'état précédent.
+    && document.visibilityState === 'visible'
+    && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  firstRenderDone = true;
+  if (!animate) { renderFeed(); return; }
+  try {
+    document.startViewTransition(() => renderFeed());
+  } catch (_) {
+    renderFeed();   // jamais de mise à jour perdue à cause de l'animation
+  }
+}
+
+function renderFeed() {
   const feed = document.getElementById('feed');
   const events = filtered();
 
