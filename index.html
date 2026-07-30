@@ -66,88 +66,73 @@
     font-feature-settings: 'ss03' on;
   }
 
-  /* ---------- masthead ---------- */
+  /* ---------- masthead : bloc plein + readout de données ----------
+     Le wordmark vit dans un bloc crème pleine hauteur, texte en négatif
+     (device emprunté à Aspen Search / State of AI). À droite, un relevé
+     technique des chiffres du site et une horloge live — pour un guide
+     de nuit, l'heure fait partie de l'information. */
   header.masthead {
-    padding: 36px 0 28px;
-    border-bottom: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule-strong);
   }
   .masthead .container {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 32px;
-    align-items: end;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 0;
+    max-width: 1280px;
   }
   .wordmark {
     margin: 0;
-    line-height: 0.85;
-    letter-spacing: -0.04em;
-  }
-  .wordmark .label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    color: var(--ink-soft);
-    display: block;
-    margin-bottom: 14px;
-  }
-  .wordmark .label::before {
-    content: "(— ";
-    color: var(--ink-mute);
-  }
-  .wordmark .label::after {
-    content: " —)";
-    color: var(--ink-mute);
-  }
-  .wordmark-main {
-    font-family: 'Instrument Serif', Georgia, serif;
+    background: var(--ink);
+    color: var(--bg);
+    font-family: 'Bungee', system-ui, sans-serif;
+    font-size: 20px;
     font-weight: 400;
-    font-style: italic;
-    font-size: clamp(64px, 14vw, 180px);
-    line-height: 0.85;
-    letter-spacing: -0.04em;
-    color: var(--ink);
-    display: block;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    padding: 13px 22px 12px 32px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
   }
-  .wordmark-main .ast {
+  .wordmark .ast {
     color: var(--warm);
-    font-style: normal;
-    display: inline-block;
-    transform: translateY(-0.18em);
-    margin-right: 0.04em;
-    font-size: 0.7em;
     animation: ast-pulse 3.6s ease-in-out infinite;
   }
   @keyframes ast-pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.55; }
   }
-  .wordmark-main em {
-    font-style: italic;
-    color: var(--warm);
-    margin-left: 0.04em;
-  }
 
-  .meta {
+  .readout {
+    flex: 1;
+    min-width: 220px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding: 8px 32px 8px 20px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    color: var(--ink-mute);
+    letter-spacing: 0.13em;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
-    text-align: right;
-    line-height: 1.7;
+    color: var(--ink-mute);
   }
-  .meta .row {
-    display: flex;
-    gap: 8px;
-    justify-content: flex-end;
-    align-items: baseline;
+  .readout b {
+    color: var(--ink-soft);
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
   }
-  .meta .key { color: var(--ink-mute); }
-  .meta .val { color: var(--ink); }
-  .meta .updated::before {
-    content: "● ";
+  .readout .clock {
+    margin-left: auto;
     color: var(--warm);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.1em;
+  }
+  @media (max-width: 720px) {
+    .wordmark { padding-left: 20px; font-size: 17px; }
+    .readout { padding: 6px 20px 8px; gap: 12px; }
+    .readout .clock { margin-left: 0; }
   }
 
   /* ---------- filters bar ---------- */
@@ -819,14 +804,13 @@
 
 <header class="masthead">
   <div class="container">
-    <h1 class="wordmark">
-      <span class="label">guide de nuit · lyon · 2026</span>
-      <span class="wordmark-main"><span class="ast">*</span>nocturne</span>
-    </h1>
-    <div class="meta">
-      <div class="row"><span class="key">[index]</span> <span class="val" id="eventCount">—</span></div>
-      <div class="row"><span class="key">[lieux]</span> <span class="val" id="venueCount">—</span></div>
-      <div class="row updated"><span class="val" id="lastUpdated">—</span></div>
+    <h1 class="wordmark"><span class="ast">*</span>nocturne</h1>
+    <div class="readout">
+      <span>index <b id="eventCount">—</b></span>
+      <span>lieux <b id="venueCount">—</b></span>
+      <span>sources <b>17</b></span>
+      <span>maj <b id="lastUpdated">—</b></span>
+      <span class="clock" id="clock">--:--:--</span>
     </div>
   </div>
 </header>
@@ -1406,13 +1390,12 @@ async function load() {
 
   buildVenueHomepages();
 
-  // Counts in the masthead
+  // Readout du masthead
   const totalCount = state.events.length;
   const venueCount = new Set(state.events.map(e => e.venue)).size;
-  document.getElementById('eventCount').textContent = String(totalCount).padStart(3, '0') + ' évts';
+  document.getElementById('eventCount').textContent = String(totalCount).padStart(3, '0');
   document.getElementById('venueCount').textContent = String(venueCount).padStart(2, '0');
-  document.getElementById('lastUpdated').textContent =
-    'maj ' + formatUpdated(data.generated_at);
+  document.getElementById('lastUpdated').textContent = formatUpdated(data.generated_at);
 
   buildVenueFilters();
   buildArrondissementFilters();
@@ -1426,6 +1409,23 @@ function formatUpdated(iso) {
   return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' })
        + ' · ' + d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
 }
+
+/* ---------- horloge live du readout ----------
+   Heure locale du visiteur, libellée LYON : le site s'adresse à des gens
+   qui sortent le soir même. Rafraîchie chaque seconde ; setInterval
+   suffit, il n'y a pas de mise en page à recalculer. */
+function startClock() {
+  const el = document.getElementById('clock');
+  if (!el) return;
+  const tick = () => {
+    const d = new Date();
+    el.textContent = [d.getHours(), d.getMinutes(), d.getSeconds()]
+      .map(v => String(v).padStart(2, '0')).join(':') + ' · lyon';
+  };
+  tick();
+  setInterval(tick, 1000);
+}
+startClock();
 
 /* ---------- source detection (Petit Bulletin / Ville Morte / venue scraper) ---------- */
 function eventSource(e) {
