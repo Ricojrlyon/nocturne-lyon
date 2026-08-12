@@ -30,12 +30,13 @@
     --hot-line:     rgba(224, 141, 112, 0.42);
     /* Angles très légèrement adoucis — validé sur maquette (3 px). */
     --radius:       3px;
-    /* Teintes des motifs de secours : vert, rose, orange. Même luminosité
-       et même chroma en oklch, donc aucune ne domine visuellement et le
-       tirage aléatoire reste équilibré. */
+    /* Teintes des motifs de secours, une par motif. Le vert et le rose
+       partagent luminosité et chroma ; l'orange est volontairement plus
+       foncé (0.62 au lieu de 0.72), avec une chroma remontée d'un cran
+       car un orange assombri à chroma constante vire au brun terne. */
     --motif-vert:   oklch(0.72 0.12 150);
     --motif-rose:   oklch(0.72 0.12 350);
-    --motif-orange: oklch(0.72 0.12 55);
+    --motif-orange: oklch(0.62 0.13 52);
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
@@ -1207,31 +1208,61 @@ function bucketOf(rawCategory) {
 const ALL_BUCKETS = [...TYPE_BUCKETS, { key: 'autre', label: 'autre' }];
 
 /* ---------- visuel de carte : motifs de secours ----------
-   Trois variations d'une même matrice de points (validées sur maquette),
-   tirées au hasard par événement, dans trois teintes. Plus de « un motif
-   ou une couleur = un type d'événement » : deux soirées club voisines ne
-   se ressemblent pas. Les tirages sont déterministes (hash de lieu+titre,
-   graines distinctes) : une carte garde son apparence d'un rendu à
-   l'autre — sinon les motifs changeraient à chaque frappe dans la
-   recherche — et d'un jour à l'autre. Seul le hasard ENTRE événements est
-   recherché.
-   Ce qui distingue les trois variations : la loi de rayon des points, la
-   densité de la grille et le nombre d'anneaux évidés. */
-const MOTIFS = ['aleatoire', 'anneaux', 'serree'];
-const HUES = ['var(--motif-vert)', 'var(--motif-rose)', 'var(--motif-orange)'];
+   Motif tiré par événement, quand aucune affiche n'est disponible. Plus de
+   « un motif ou une couleur = un type d'événement » : deux soirées club
+   voisines ne se ressemblent pas. Le tirage est déterministe (hash de
+   lieu + titre) : une carte garde son apparence d'un rendu à l'autre —
+   sinon les motifs changeraient à chaque frappe dans la recherche — et
+   d'un jour à l'autre. Seul le hasard ENTRE événements est recherché. */
 
-/* Anneaux évidés par variation : cx, cy, rayon, épaisseur de trait. */
-const MOTIF_RINGS = {
-  aleatoire: [[46,22,20,1.2],[74,44,36,1.1],[150,18,14,1.4],[196,58,28,1.2],
-              [222,40,52,1],[286,24,22,1.3],[304,88,38,1.1],[112,112,26,1.2]],
-  anneaux:   [[58,28,18,1.4],[58,28,34,1.2],[58,28,52,1],
+/* Trois motifs, chacun un bloc FIGÉ : une trame de points, une loi de
+   rayon, un jeu d'anneaux, une teinte. Rien n'est partagé entre eux et
+   rien n'est tiré séparément — c'est le bloc entier qui est choisi par
+   hash, sinon deux cartes de même trame n'avaient ni les mêmes anneaux
+   ni la même couleur.
+
+   Les pas sont en PIXELS et non en unités de viewBox : voir patternSVG,
+   la couche de points est rendue sans viewBox pour que le pas déclaré
+   soit le pas obtenu quelle que soit la largeur de carte. */
+const MOTIFS = [
+  {
+    id: 'alignes',
+    // Tuile 120 px = 32 pas de 3,75. Plus la tuile est grande, plus les
+    // raccords sont espacés — la trame se répète, forcément.
+    trame: { w: 120, h: 120, dx: 3.75, dy: 3.75, stagger: 'none' },
+    // u est uniforme sur [0,1[. Exposant > 1 = beaucoup de points fins,
+    // quelques gros seulement.
+    rayon: u => 0.76 + Math.pow(u, 1.7) * 0.77,
+    hue: 'var(--motif-vert)',
+    anneaux: [[46,22,20,1.2],[150,18,14,1.4],[222,40,52,1],[286,24,22,1.3],
+              [304,88,38,1.1],[112,112,26,1.2],[18,64,24,1.15],[254,84,30,1.05],
+              [132,66,18,1.3],[74,44,36,1.1],[196,58,28,1.2]],
+  },
+  {
+    id: 'lignes',
+    // 3,6 px entre points d'une ligne, 4,5 px entre deux lignes. La
+    // hauteur 90 vaut 20 × 4,5, multiple PAIR : les rangées étant
+    // décalées d'un demi-pas, une tuile impaire laisserait une ligne de
+    // rupture visible au raccord.
+    trame: { w: 108, h: 90, dx: 3.6, dy: 4.5, stagger: 'row' },
+    rayon: u => 0.74 + Math.pow(u, 1.5) * 0.61,
+    hue: 'var(--motif-rose)',
+    anneaux: [[58,28,18,1.4],[58,28,34,1.2],[58,28,52,1],
               [190,52,15,1.5],[190,52,30,1.2],[190,52,46,1],[190,52,64,.9],
               [292,20,16,1.4],[292,20,32,1.1],[292,20,50,.9],
-              [124,116,22,1.3],[124,116,40,1],[24,96,28,1.2]],
-  serree:    [[40,30,16,1.3],[40,30,30,1],[104,44,34,1.2],[128,20,15,1.4],
-              [206,60,26,1.1],[232,28,44,1],[286,18,20,1.3],[300,70,34,1],
-              [160,118,24,1.2],[70,110,18,1.3]],
-};
+              [124,116,22,1.3],[124,116,40,1]],
+  },
+  {
+    id: 'colonnes',
+    // Largeur 90 = 20 × 4,5, PAIR pour la même raison, colonnes décalées.
+    trame: { w: 90, h: 108, dx: 4.5, dy: 3.6, stagger: 'col' },
+    rayon: u => 0.71 + Math.pow(u, 1.9) * 0.76,
+    hue: 'var(--motif-orange)',
+    anneaux: [[40,30,30,1],[104,44,34,1.2],[206,60,26,1.1],[232,28,60,1],
+              [286,18,20,1.3],[300,70,44,1],[160,118,38,1.1],[70,110,26,1.2],
+              [178,32,20,1.15],[262,96,28,1.05],[16,74,34,1.05],[128,16,22,1.25]],
+  },
+];
 
 /* Hash stable (djb2-ish) : même chaîne → même entier, à chaque rendu et
    à chaque chargement. Sert aux tirages sans Math.random(), qui ferait
@@ -1244,30 +1275,83 @@ function stableHash(s) {
   return h;
 }
 
-function patternSVG(seed) {
-  // Graines distinctes pour la variation et la couleur : sans ça, les deux
-  // tirages seraient corrélés (3 motifs et 3 teintes partagent un diviseur).
-  const motif = MOTIFS[stableHash(seed) % MOTIFS.length];
-  const hue = HUES[stableHash(seed + '·hue') % HUES.length];
-  const step = motif === 'serree' ? 9 : 11;
-  let inner = '';
-  for (let y = 6; y < 160; y += step) {
-    for (let x = 6; x < 322; x += step) {
-      let r;
-      if (motif === 'anneaux')      r = 1.5 + (stableHash(x + '#' + y) % 5) / 4;
-      else if (motif === 'serree')  r = 0.8 + (stableHash(x + '/' + y) % 7) / 3.2;
-      else                          r = 1 + (stableHash(x + '·' + y) % 7) / 3;
-      inner += '<circle cx="' + x + '" cy="' + y + '" r="' + r.toFixed(2)
-             + '" fill="' + hue + '" opacity="0.5"/>';
+/* Mélange final 32 bits. stableHash seul ne suffit pas pour tirer les
+   rayons : sur des coordonnées qui se suivent, ses bits bas restent
+   corrélés et un simple modulo dessinait des séries de gros points en
+   diagonale (autocorrélation mesurée entre voisins : 0,13 avant, 0,02
+   après). alea01 rend une valeur continue plutôt que N paliers. */
+function mix32(h) {
+  h = (h ^ (h >>> 16)) >>> 0;
+  h = Math.imul(h, 0x7feb352d) >>> 0;
+  h = (h ^ (h >>> 15)) >>> 0;
+  h = Math.imul(h, 0x846ca68b) >>> 0;
+  h = (h ^ (h >>> 16)) >>> 0;
+  return h;
+}
+function alea01(s) { return mix32(stableHash(s)) / 4294967296; }
+
+/* Les trames sont définies UNE fois pour tout le document et référencées
+   par chaque carte : une carte coûte alors un <rect> au lieu des ~3 000
+   cercles qu'exigerait ce pas. Sur 850 événements l'écart est de l'ordre
+   du million de nœuds. */
+let motifDefsReady = false;
+function ensureMotifDefs() {
+  if (motifDefsReady) return;
+  const host = document.body || document.documentElement;
+  if (!host) return;                     // appelé trop tôt : on réessaiera
+  let defs = '';
+  for (const m of MOTIFS) {
+    const t = m.trame;
+    let dots = '';
+    for (let iy = 0; iy * t.dy < t.h - 0.001; iy++) {
+      for (let ix = 0; ix * t.dx < t.w - 0.001; ix++) {
+        let cx = ix * t.dx, cy = iy * t.dy;
+        if (t.stagger === 'row' && iy % 2) cx += t.dx / 2;
+        if (t.stagger === 'col' && ix % 2) cy += t.dy / 2;
+        if (cx >= t.w - 0.001 || cy >= t.h - 0.001) continue;
+        const r = m.rayon(alea01(m.id + ':' + ix + '/' + iy));
+        dots += '<circle cx="' + cx.toFixed(2) + '" cy="' + cy.toFixed(2)
+              + '" r="' + r.toFixed(2) + '" fill="' + m.hue + '"/>';
+      }
     }
+    defs += '<pattern id="motif-' + m.id + '" x="0" y="0" width="' + t.w
+          + '" height="' + t.h + '" patternUnits="userSpaceOnUse">'
+          + dots + '</pattern>';
   }
-  MOTIF_RINGS[motif].forEach(([cx, cy, r, w], i) => {
-    inner += '<circle cx="' + cx + '" cy="' + cy + '" r="' + r
-           + '" fill="none" stroke="' + hue + '" stroke-width="' + w
-           + '" opacity="' + (0.78 - i * 0.035).toFixed(2) + '"/>';
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('width', '0');
+  svg.setAttribute('height', '0');
+  svg.setAttribute('aria-hidden', 'true');
+  svg.style.position = 'absolute';
+  svg.innerHTML = '<defs>' + defs + '</defs>';
+  host.appendChild(svg);
+  motifDefsReady = true;
+}
+
+/* Deux couches superposées, et c'est délibéré.
+   La trame de points est rendue SANS viewBox : ses unités valent alors
+   des pixels CSS, donc le pas à l'écran est exactement celui déclaré.
+   Avec un viewBox 320×160 mis à l'échelle sur la carte, tout était
+   multiplié par la largeur — mesuré de 0,99 à 2,43 selon le format, si
+   bien que la trame était deux fois et demie plus lâche sur une carte
+   pleine largeur en mobile que sur une carte de grille.
+   Les anneaux gardent le viewBox : eux DOIVENT suivre la carte, sinon
+   leur composition se décale selon la largeur. */
+function patternSVG(seed) {
+  ensureMotifDefs();
+  const m = MOTIFS[stableHash(seed) % MOTIFS.length];
+  let rings = '';
+  m.anneaux.forEach(([cx, cy, r, w], i) => {
+    rings += '<circle cx="' + cx + '" cy="' + cy + '" r="' + r
+           + '" fill="none" stroke="' + m.hue + '" stroke-width="' + w
+           + '" opacity="' + (0.78 - i * 0.032).toFixed(2) + '"/>';
   });
-  return '<svg viewBox="0 0 320 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true">'
-       + inner + '</svg>';
+  return '<svg class="dots" aria-hidden="true">'
+       + '<rect x="0" y="0" width="100%" height="100%" fill="url(#motif-'
+       + m.id + ')" opacity="0.5"/></svg>'
+       + '<svg class="rings" viewBox="0 0 320 160" '
+       + 'preserveAspectRatio="xMidYMid slice" aria-hidden="true">'
+       + rings + '</svg>';
 }
 
 /* Couche visuelle d'une carte : motif toujours en sous-couche, affiche
