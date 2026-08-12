@@ -12,12 +12,17 @@ v34 changes:
     venue scraper and an aggregator, the venue scraper wins (it's
     authoritative). See scrapers/dedup.py.
 
-Theatre policy (juillet 2026):
-  - TNG est le seul théâtre scrappé en direct.
-  - Petit Bulletin : catégories Théâtre et lieux « théâtre » bloqués,
-    SAUF le lieu « Théâtres romains de Fourvière » (concerts, pas de
-    pièces) — voir ALLOWED_VENUES dans petit_bulletin.py.
-  - Ville Morte : aucun blocage lié au théâtre.
+Politique éditoriale (août 2026) : les agrégateurs ne filtrent PLUS rien.
+  - Petit Bulletin et Ville Morte remontent l'intégralité de leur agenda :
+    plus de blocage par catégorie, par lieu ni par tag, et la catégorie
+    n'est plus obligatoire côté Petit Bulletin.
+  - Les événements longs (expos, festivals au long cours) ne sont plus
+    jetés : ils deviennent des événements à plage date_start..date_end.
+  - C'est la déduplication en trois passes (scrapers/dedup.py) qui écarte
+    les doublons quand un événement est publié à la fois par un
+    agrégateur et par la salle elle-même. Les scrapers de salle gardent
+    la priorité (100 contre 60 et 50).
+  - TNG reste le seul théâtre scrappé en direct.
 """
 from __future__ import annotations
 import json

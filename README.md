@@ -74,13 +74,18 @@ Runs suivants : ~30 secondes.
 
 ## Politique éditoriale
 
-- **Théâtres** : TNG est le seul théâtre scrappé en direct. Petit Bulletin
-  bloque catégories et lieux « théâtre », sauf les Théâtres romains de
-  Fourvière (concerts, pas de pièces). Ville Morte n'est pas filtrée.
+- **Agrégateurs : aucun filtre.** Petit Bulletin et Ville Morte remontent
+  l'intégralité de leur agenda — plus de blocage par catégorie, par lieu ni
+  par tag. C'est la déduplication qui écarte les doublons quand un événement
+  est aussi publié par la salle elle-même.
+- **Événements longs** (expos, festivals au long cours) : conservés sous
+  forme de plage `date_start`..`date_end` au lieu d'être jetés. Le frontend
+  les affiche avec un badge « en cours » au-delà de 30 jours.
 - **Horizon** : les événements à plus de 180 jours sont écartés avant la
-  phase de fetch des pages détail.
-- **Exclusions** : événements bouffe (tags Ville Morte), formations et
-  ateliers pro (La Rayonne), librairies.
+  phase de fetch des pages détail (scrapers de salle uniquement).
+- **Exclusions restantes** : formations et ateliers professionnels de
+  La Rayonne, seul filtre encore en place — il vise une programmation
+  parallèle, pas un choix éditorial.
 
 ## Données générées (committées par le bot)
 

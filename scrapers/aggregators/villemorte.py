@@ -3,9 +3,11 @@
 Ville Morte runs on Gancio, an open-source decentralized event calendar.
 The Gancio API exposes /api/events which returns upcoming events as JSON.
 
-We filter out food-focused events via a tag blocklist, since the user only
-cares about cultural events (concerts, théâtre, expos, etc.) and not
-restos/cafés/dégustations.
+AUCUN filtre éditorial : tout ce que publie l'agenda remonte. Les anciennes
+listes de blocage (tags « bouffe » et assimilés, et une douzaine de lieux
+écartés à la main) ont été retirées. C'est la déduplication en trois passes
+(scrapers/dedup.py) qui écarte les doublons quand un événement est aussi
+publié par la salle elle-même.
 """
 from __future__ import annotations
 from datetime import datetime, date, timedelta
@@ -22,39 +24,6 @@ API_URL = "https://agenda.villemorte.fr/api/events"
 # venue's local time, NOT the runner's — GitHub Actions runs in UTC,
 # which shifted every displayed time by 1-2 hours.
 _TZ = ZoneInfo("Europe/Paris")
-
-# Tags (case-insensitive, normalized) we exclude entirely. If ANY tag of an
-# event matches, the event is dropped. Keep this conservative — bias toward
-# letting things through, then tune.
-EXCLUDED_TAGS = {
-    "bouffe", "restauration", "food", "nourriture",
-    "cafe", "brunch", "apero", "aperitif",
-    "degustation", "vin", "biere",
-    "bar a vin", "bar a vins", "bar a biere", "bar a bieres",
-    "repas", "buffet", "diner",
-    "marche",
-}
-
-# Venues we don't want from Ville Morte. Match is SUBSTRING on the
-# normalized venue name (lowercase, no accents, punctuation → space).
-# Each pattern is already normalized — add new entries in normalized form.
-EXCLUDED_VENUE_PATTERNS = [
-    "radio canut",
-    "amicale du futur",
-    "comete",              # matches "La Comète", "Comète Bar", etc.
-    "ens site descartes",
-    "ens descartes",
-    "librairie",           # all bookstores
-    # Added in v34.2
-    "rita plage",          # also matches "Rita-Plage"
-    "bulle de son",
-    "trokson",
-    "grandes voisines",    # matches "Les Grandes Voisines"
-    "warmaudio",
-    "la multi",
-    "rontalon",
-]
-
 
 def _norm_tag(t: str) -> str:
     """Normalize a tag or venue name for blocklist comparison.
@@ -129,7 +98,8 @@ def fetch() -> List[Event]:
     today_iso = date.today().isoformat()
 
     for item in items:
-        # ----- Filtering: food tags -----
+        # Les tags ne servent plus qu'à déduire une catégorie : plus aucun
+        # événement n'est écarté sur ce critère.
         tags = item.get("tags") or []
         # Tags can be either list of strings or list of dicts {tag: "..."}
         tag_names = []
@@ -138,15 +108,9 @@ def fetch() -> List[Event]:
                 tag_names.append(t)
             elif isinstance(t, dict) and "tag" in t:
                 tag_names.append(t["tag"])
-        if any(_norm_tag(t) in EXCLUDED_TAGS for t in tag_names):
-            continue
 
-        # ----- Filtering: excluded venues -----
         place = item.get("place") or {}
         venue_name_raw = (place.get("name") or "").strip()
-        venue_norm = _norm_tag(venue_name_raw)  # reuse norm helper
-        if any(p in venue_norm for p in EXCLUDED_VENUE_PATTERNS):
-            continue
 
         # ----- Date/time parsing -----
         start_ts = item.get("start_datetime")

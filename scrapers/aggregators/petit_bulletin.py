@@ -5,19 +5,29 @@ list of upcoming events. The page structure is regular: each event has a
 title in an h-tag with a stable URL (/agenda-NNNNNN-slug.html), a category
 in parens on the next sibling line, then a list with venue and date.
 
-Filters applied:
-  * Category blocklist (exact match on normalized form): Conférences,
-    Théâtre, Rencontres et Dédicaces. Exact match to avoid blocking
-    "Humour & Café Théâtre" which is a different category (comedy).
-  * Venue substring blocklist: librairie (bookstores).
+AUCUN filtre éditorial : tout ce que publie l'agenda remonte. Les
+anciennes listes de blocage (catégories Théâtre / Conférences / Rencontres,
+lieux « librairie » / « theatre » / « dans toute la ville », et la
+whitelist Fourvière qui compensait la précédente) ont été retirées, ainsi
+que l'obligation d'avoir une catégorie. C'est la déduplication en trois
+passes (scrapers/dedup.py) qui se charge d'écarter les doublons quand un
+événement est aussi publié par la salle elle-même.
 
-Multi-day events ("Du X au Y MOIS YYYY") emit one Event per day in range;
-ranges longer than 7 days are skipped ENTIRELY (not truncated) — like the
-open-ended exhibitions ("Jusqu'au X" without "Du"), they don't fit the
-daily-events model.
+Les 164 événements de l'agenda sont répartis sur 9 pages (`?p=N`) :
+fetch() les suit toutes.
+
+Dates :
+  * jour unique          → un Event
+  * plage ≤ 7 jours      → un Event par jour (petits festivals)
+  * plage > 7 jours      → UN Event à plage (date_start..date_end)
+  * « Jusqu'au X »       → UN Event à plage, du jour courant à X
+Rien n'est jeté : le frontend sait afficher les plages, avec un badge
+« en cours » au-delà de 30 jours.
 """
 from __future__ import annotations
 import re
+import sys
+import time
 import unicodedata
 from datetime import date, timedelta
 from typing import List, Optional, Tuple
@@ -35,39 +45,14 @@ USER_AGENT = (
     "+https://github.com/Ricojrlyon/nocturne-lyon)"
 )
 
-# Categories to exclude. EXACT match on normalized form (lowercase, accents
-# stripped, punctuation → space). This is critical: "Humour & Café Théâtre"
-# normalizes to "humour cafe theatre" which is NOT equal to "theatre", so
-# comedy stays.
-EXCLUDED_CATEGORIES = {
-    "conferences",
-    "conference",
-    "theatre",
-    "theatres",
-    "rencontres et dedicaces",
-}
+# Pages de l'agenda à parcourir au maximum (il y en a 9 aujourd'hui pour
+# 164 événements ; la boucle s'arrête d'elle-même quand une page n'apporte
+# plus rien de nouveau).
+MAX_PAGES = 15
 
-# Venue patterns to exclude. SUBSTRING match on normalized form. Note
-# "bibliothèque" (public library) is intentionally not here — those are
-# civic spaces, not bookstores.
-EXCLUDED_VENUE_PATTERNS = [
-    "librairie",
-    "theatre",
-    # Umbrella festival listings without a specific venue. These create
-    # visual duplicates with the per-concert listings at real venues.
-    "dans toute la ville",
-]
-
-# Venues matching an excluded pattern but kept anyway. EXACT match on
-# normalized form. Les Théâtres romains de Fourvière accueillent des
-# concerts (Nuits de Fourvière), pas du théâtre — le pattern "theatre"
-# les bloquait à tort. Variantes de nommage vues ou plausibles sur PB.
-ALLOWED_VENUES = {
-    "theatres romains de fourviere",
-    "theatre antique de fourviere",
-    "theatre de fourviere",
-    "theatre gallo romain de fourviere",
-}
+# Au-delà de ce nombre de jours, une plage devient UN événement à plage
+# plutôt qu'un événement par jour.
+LONG_RUN_DAYS = 7
 
 MONTHS_FR = {
     "janvier": 1, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
@@ -94,161 +79,122 @@ def _slugify(s: str) -> str:
     return s
 
 
-def _parse_date_str(s: str) -> List[Tuple[str, Optional[str]]]:
-    """Parse a Petit Bulletin date string into (date_iso, time_hhmm) tuples.
+def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
+    """Parse une chaîne de date du Petit Bulletin.
 
-    Returns a LIST because multi-day events ("Du X au Y") produce one tuple
-    per day in the range. Single-day events return a list of one. Returns
-    an empty list if no date can be extracted or the event has already
-    happened.
+    Renvoie une LISTE de triplets (date_start, heure, date_end) :
+      "Mardi 26 mai 2026 à 20h"        -> [("2026-05-26", "20:00", None)]
+      "Du 26 au 28 mai 2026, à 19h"    -> 3 entrées, date_end None
+      "Du 1 au 30 juin 2026"           -> [("2026-06-01", None, "2026-06-30")]
+      "Jusqu'au 16 août 2026, ..."     -> [(aujourd'hui, None, "2026-08-16")]
+      "30 mai et 31 mai à 20h"         -> [("2026-05-30", "20:00", None)]
 
-    Examples:
-      "Mardi 26 mai 2026 à 20h"             -> [("2026-05-26", "20:00")]
-      "Mardi 26 mai 2026 à 18h30"           -> [("2026-05-26", "18:30")]
-      "Mardi 26 mai 2026 de 18h à 1h"       -> [("2026-05-26", "18:00")]
-      "Du 26 au 28 mai 2026, à 19h"         -> 3 entries, all at 19:00
-      "Du 27 au 30 mai 2026, à 20h sauf X"  -> 4 entries (sauf clause ignored)
-      "Jusqu'au 30 mai 2026, ..."           -> [] (skipped — open-ended)
-      "30 mai et 31 mai vendredi à 20h"     -> [("2026-05-30", "20:00")]
+    Liste vide seulement si aucune date n'est lisible ou si l'événement est
+    entièrement passé.
     """
     norm = _normalize(s)
-    today_iso = date.today().isoformat()
+    today = date.today()
+    today_iso = today.isoformat()
 
-    # Open-ended exhibitions: "Jusqu'au X" with no "Du" → skip
-    # "(?:er)?" everywhere below: the French ordinal "1er" has no word
-    # boundary between the digit and "er", so \d+ / (\d{1,2}) alone never
-    # match "du 1er au 3 mai" or "1er mai".
-    # "(?:\w+\s+)?" : accepte aussi la forme cross-mois "du 28 mai au 3 juin"
-    has_du_range = bool(re.search(
-        r"\bdu\s+\d+(?:er)?\s+(?:\w+\s+)?au\s+\d+(?:er)?\s", norm))
-    has_jusqu = "jusqu" in norm
-    if has_jusqu and not has_du_range:
-        return []
+    MOIS = (r"(janvier|fevrier|mars|avril|mai|juin|juillet|aout|"
+            r"septembre|octobre|novembre|decembre)")
 
-    # Extract time first: "à HHh", "à HHhMM", "de HHh à HHh"
-    time_m = re.search(r"\b(\d{1,2})h(\d{0,2})\b", norm)
+    # Heure : "à HHh", "à HHhMM", "de HHh à HHh"
     time_str: Optional[str] = None
+    time_m = re.search(r"\b(\d{1,2})h(\d{0,2})\b", norm)
     if time_m:
         hh = int(time_m.group(1))
-        mm_s = time_m.group(2)
-        mm = int(mm_s) if mm_s else 0
+        mm = int(time_m.group(2)) if time_m.group(2) else 0
         if 0 <= hh < 24 and 0 <= mm < 60:
             time_str = f"{hh:02d}:{mm:02d}"
 
-    # Try range first: "Du X au Y mois YYYY"
-    range_m = re.search(
-        r"\bdu\s+(\d{1,2})(?:er)?\s+au\s+(\d{1,2})(?:er)?\s+"
-        r"(janvier|fevrier|mars|avril|mai|juin|juillet|aout|"
-        r"septembre|octobre|novembre|decembre)\s+(\d{4})",
-        norm
-    )
-    if range_m:
-        start_day = int(range_m.group(1))
-        end_day = int(range_m.group(2))
-        month = MONTHS_FR[range_m.group(3)]
-        year = int(range_m.group(4))
+    def _year_for(month: int, day: int, explicit: Optional[str]) -> int:
+        """Année explicite si présente, sinon la prochaine occurrence."""
+        if explicit:
+            return int(explicit)
+        y = today.year
         try:
-            start = date(year, month, start_day)
-            end = date(year, month, end_day)
-        except ValueError:
-            return []
-        if end < start:
-            return []
-        # Ranges longer than 7 days are exhibition-like: skip the event
-        # entirely (no truncation).
-        if (end - start).days > 7:
-            return []
-        results: List[Tuple[str, Optional[str]]] = []
-        d = start
-        while d <= end:
-            d_iso = d.isoformat()
-            if d_iso >= today_iso:
-                results.append((d_iso, time_str))
-            d += timedelta(days=1)
-        return results
-
-    # Range across two months: "Du 28 mai au 3 juin 2026". Sans ce cas,
-    # seule la date de fin était captée par le fallback date simple et
-    # l'événement n'apparaissait qu'au dernier jour.
-    range_xm = re.search(
-        r"\bdu\s+(\d{1,2})(?:er)?\s+"
-        r"(janvier|fevrier|mars|avril|mai|juin|juillet|aout|"
-        r"septembre|octobre|novembre|decembre)\s+"
-        r"au\s+(\d{1,2})(?:er)?\s+"
-        r"(janvier|fevrier|mars|avril|mai|juin|juillet|aout|"
-        r"septembre|octobre|novembre|decembre)\s+(\d{4})",
-        norm
-    )
-    if range_xm:
-        start_day = int(range_xm.group(1))
-        start_month = MONTHS_FR[range_xm.group(2)]
-        end_day = int(range_xm.group(3))
-        end_month = MONTHS_FR[range_xm.group(4)]
-        year = int(range_xm.group(5))
-        # "du 30 decembre au 2 janvier 2027" : l'année écrite est celle
-        # de la fin de plage.
-        start_year = year - 1 if start_month > end_month else year
-        try:
-            start = date(start_year, start_month, start_day)
-            end = date(year, end_month, end_day)
-        except ValueError:
-            return []
-        if end < start:
-            return []
-        if (end - start).days > 7:
-            return []
-        results = []
-        d = start
-        while d <= end:
-            d_iso = d.isoformat()
-            if d_iso >= today_iso:
-                results.append((d_iso, time_str))
-            d += timedelta(days=1)
-        return results
-
-    # Single date: take the FIRST occurrence of "DD mois YYYY"
-    single_m = re.search(
-        r"\b(\d{1,2})(?:er)?\s+"
-        r"(janvier|fevrier|mars|avril|mai|juin|juillet|aout|"
-        r"septembre|octobre|novembre|decembre)\s+(\d{4})",
-        norm
-    )
-    if single_m:
-        day = int(single_m.group(1))
-        month = MONTHS_FR[single_m.group(2)]
-        year = int(single_m.group(3))
-    else:
-        # Fallback: "DD mois" without year (e.g. compound dates like
-        # "29 mai et 30 mai vendredi à 20h").
-        fb_m = re.search(
-            r"\b(\d{1,2})(?:er)?\s+"
-            r"(janvier|fevrier|mars|avril|mai|juin|juillet|aout|"
-            r"septembre|octobre|novembre|decembre)\b",
-            norm
-        )
-        if not fb_m:
-            return []
-        day = int(fb_m.group(1))
-        month = MONTHS_FR[fb_m.group(2)]
-        # No year on the page: assume the NEXT occurrence of that date —
-        # same heuristic as base.parse_french_date. "15 janvier" scraped
-        # in July means next January; with the current year it would be
-        # in the past and silently dropped.
-        today = date.today()
-        year = today.year
-        try:
-            if date(year, month, day) < today:
-                year += 1
+            if date(y, month, day) < today:
+                y += 1
         except ValueError:
             pass
+        return y
+
+    def _expand(start: date, end: date) -> List[Tuple[str, Optional[str], Optional[str]]]:
+        """Plage courte -> un événement par jour ; longue -> un seul à plage."""
+        if end < start:
+            return []
+        if (end - start).days > LONG_RUN_DAYS:
+            # Événement long (expo, festival au long cours) : un seul Event
+            # à plage. Il n'est plus jeté comme avant, et le frontend sait
+            # l'afficher — avec un badge « en cours » au-delà de 30 jours.
+            eff = max(start, today)
+            return [(eff.isoformat(), time_str, end.isoformat())]
+        out = []
+        d = start
+        while d <= end:
+            if d.isoformat() >= today_iso:
+                out.append((d.isoformat(), time_str, None))
+            d += timedelta(days=1)
+        return out
+
+    has_du_range = bool(re.search(
+        r"\bdu\s+\d+(?:er)?\s+(?:\w+\s+)?au\s+\d+(?:er)?\s", norm))
+
+    # 1) "Jusqu'au X" sans "Du" : événement en cours, sans début connu.
+    if "jusqu" in norm and not has_du_range:
+        m = re.search(r"jusqu.{0,4}au\s+(\d{1,2})(?:er)?\s+" + MOIS
+                      + r"(?:\s+(\d{4}))?\b", norm)
+        if not m:
+            return []
+        day, month = int(m.group(1)), MONTHS_FR[m.group(2)]
+        try:
+            end = date(_year_for(month, day, m.group(3)), month, day)
+        except ValueError:
+            return []
+        if end < today:
+            return []
+        return [(today_iso, time_str, end.isoformat())]
+
+    # 2) Plage dans le même mois : "Du X au Y mois YYYY"
+    m = re.search(r"\bdu\s+(\d{1,2})(?:er)?\s+au\s+(\d{1,2})(?:er)?\s+"
+                  + MOIS + r"(?:\s+(\d{4}))?", norm)
+    if m:
+        d1, d2, month = int(m.group(1)), int(m.group(2)), MONTHS_FR[m.group(3)]
+        year = _year_for(month, d1, m.group(4))
+        try:
+            return _expand(date(year, month, d1), date(year, month, d2))
+        except ValueError:
+            return []
+
+    # 3) Plage à cheval sur deux mois : "Du 28 mai au 3 juin 2026"
+    m = re.search(r"\bdu\s+(\d{1,2})(?:er)?\s+" + MOIS
+                  + r"\s+au\s+(\d{1,2})(?:er)?\s+" + MOIS
+                  + r"(?:\s+(\d{4}))?", norm)
+    if m:
+        d1, m1 = int(m.group(1)), MONTHS_FR[m.group(2)]
+        d2, m2 = int(m.group(3)), MONTHS_FR[m.group(4)]
+        year_end = _year_for(m2, d2, m.group(5))
+        # "du 30 decembre au 2 janvier 2027" : l'année écrite est celle de la fin.
+        year_start = year_end - 1 if m1 > m2 else year_end
+        try:
+            return _expand(date(year_start, m1, d1), date(year_end, m2, d2))
+        except ValueError:
+            return []
+
+    # 4) Date unique : premier "DD mois [YYYY]" rencontré
+    m = re.search(r"\b(\d{1,2})(?:er)?\s+" + MOIS + r"(?:\s+(\d{4}))?", norm)
+    if not m:
+        return []
+    day, month = int(m.group(1)), MONTHS_FR[m.group(2)]
+    year = _year_for(month, day, m.group(3))
     try:
-        iso = f"{year:04d}-{month:02d}-{day:02d}"
-        date(year, month, day)  # validate
+        d = date(year, month, day)
     except ValueError:
         return []
-    if iso < today_iso:
+    if d.isoformat() < today_iso:
         return []
-    return [(iso, time_str)]
+    return [(d.isoformat(), time_str, None)]
 
 
 def _extract_events_from_soup(soup: BeautifulSoup) -> List[Event]:
@@ -321,28 +267,23 @@ def _extract_events_from_soup(soup: BeautifulSoup) -> List[Event]:
                 # typically nothing else relevant follows the ul
                 break
 
-        if not category or not venue or not date_str:
+        # La catégorie est OPTIONNELLE : certains blocs ont un paragraphe de
+        # description là où se trouve d'habitude la ligne « (Catégorie) ».
+        # Seuls le lieu et la date sont exigés — ils suffisent à identifier un
+        # vrai bloc d'événement. Sans cet assouplissement, une quinzaine
+        # d'événements par passage restaient invisibles.
+        if not venue or not date_str:
             continue
 
-        # Category filter (EXACT match on normalized form)
-        if _normalize(category) in EXCLUDED_CATEGORIES:
-            continue
-
-        # Venue filter (substring match, sauf whitelist exacte)
-        venue_norm = _normalize(venue)
-        if (venue_norm not in ALLOWED_VENUES
-                and any(p in venue_norm for p in EXCLUDED_VENUE_PATTERNS)):
-            continue
-
-        # Date filter & expansion
         date_times = _parse_date_str(date_str)
         if not date_times:
             continue
 
         url = href if href.startswith("http") else BASE + href
 
-        for date_iso, time_str in date_times:
-            if date_iso < today_iso:
+        for date_iso, time_str, date_end in date_times:
+            # Un événement à plage est conservé tant qu'il n'est pas terminé.
+            if (date_end or date_iso) < today_iso:
                 continue
             events.append(Event(
                 venue=venue,
@@ -351,7 +292,7 @@ def _extract_events_from_soup(soup: BeautifulSoup) -> List[Event]:
                 subtitle=None,
                 category=category,
                 date_start=date_iso,
-                date_end=None,
+                date_end=date_end,
                 time=time_str,
                 url=url,
                 image=None,
@@ -361,9 +302,41 @@ def _extract_events_from_soup(soup: BeautifulSoup) -> List[Event]:
 
 
 def fetch() -> List[Event]:
-    """Fetch and parse the Petit Bulletin agenda."""
+    """Parcourt toutes les pages de l'agenda Petit Bulletin.
+
+    L'agenda est paginé (`?p=N`, 164 événements sur 9 pages aujourd'hui) et
+    seule la première page était lue : les 8 autres — soit ~85 % du contenu —
+    n'arrivaient jamais dans nocturne. La boucle s'arrête dès qu'une page
+    n'apporte plus aucune URL nouvelle, ou au cap de MAX_PAGES.
+    """
     headers = {"User-Agent": USER_AGENT}
-    r = requests.get(URL, headers=headers, timeout=30)
-    r.raise_for_status()
-    soup = BeautifulSoup(r.text, "html.parser")
-    return _extract_events_from_soup(soup)
+    events: List[Event] = []
+    seen_urls: set[str] = set()
+
+    for page in range(1, MAX_PAGES + 1):
+        url = URL if page == 1 else f"{URL}?p={page}"
+        try:
+            r = requests.get(url, headers=headers, timeout=30)
+        except requests.RequestException as exc:
+            if page == 1:
+                raise
+            print(f"[Petit Bulletin] page {page} injoignable ({exc}) — arrêt",
+                  file=sys.stderr)
+            break
+        if r.status_code != 200:
+            if page == 1:
+                r.raise_for_status()
+            break
+
+        page_events = _extract_events_from_soup(BeautifulSoup(r.text, "html.parser"))
+        fresh = [e for e in page_events if e.url not in seen_urls]
+        if not fresh:
+            break                      # page vide ou déjà vue : fin de l'agenda
+        for e in fresh:
+            seen_urls.add(e.url)
+        events.extend(page_events)
+
+        if page < MAX_PAGES:
+            time.sleep(0.4)            # on ne martèle pas le serveur
+
+    return events
