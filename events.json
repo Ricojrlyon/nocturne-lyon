@@ -1,7 +1,20 @@
 {
-  "generated_at": "2026-08-12T07:13:31.784554+00:00",
-  "count": 711,
+  "generated_at": "2026-08-12T08:34:11.386622+00:00",
+  "count": 850,
   "events": [
+    {
+      "venue": "Comoedia",
+      "venue_slug": "comoedia",
+      "title": "Plein soleil sur les classiques",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-08-12",
+      "date_end": "2026-09-01",
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-318804-plein-soleil-sur-les-classiques.html",
+      "image": null,
+      "id": "abf504215bdf"
+    },
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
@@ -16,6 +29,214 @@
       "id": "9fe515a16aca"
     },
     {
+      "venue": "Musée Urbain Tony Garnier",
+      "venue_slug": "musee-urbain-tony-garnier",
+      "title": "Voyages en cité, 1973-1990 : vivre dans les quartiers populaires",
+      "subtitle": null,
+      "category": "Sciences et Histoire",
+      "date_start": "2026-08-12",
+      "date_end": "2027-12-18",
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-316752-voyages-en-cit-1973-1990-vivre-dans-les-quartiers-populaires.html",
+      "image": null,
+      "id": "0051247f0d77"
+    },
+    {
+      "venue": "Place Ambroise Courtois",
+      "venue_slug": "place-ambroise-courtois",
+      "title": "L'Été en cinémascope",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-08-12",
+      "date_end": "2026-08-25",
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-310720-le-t-en-cin-mascope.html",
+      "image": null,
+      "id": "5c680d5097d6"
+    },
+    {
+      "venue": "Galerie Kashagan",
+      "venue_slug": "galerie-kashagan",
+      "title": "Lucas Zambon",
+      "subtitle": null,
+      "category": "Peinture & Dessin",
+      "date_start": "2026-08-12",
+      "date_end": "2026-09-11",
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318683-lucas-zambon.html",
+      "image": null,
+      "id": "33d2824c41fe"
+    },
+    {
+      "venue": "Galerie Michel Estades",
+      "venue_slug": "galerie-michel-estades",
+      "title": "Un air d'été",
+      "subtitle": null,
+      "category": "Peinture & Dessin",
+      "date_start": "2026-08-12",
+      "date_end": "2026-09-12",
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318780-un-air-de-t.html",
+      "image": null,
+      "id": "2ec38649d11d"
+    },
+    {
+      "venue": "MAM - Musée des Arts et de la Marionnette",
+      "venue_slug": "mam-musee-des-arts-et-de-la-marionnette",
+      "title": "Carte blanche à La Compagnie à - Le rire, l'intime, le politique",
+      "subtitle": null,
+      "category": "Art graphique",
+      "date_start": "2026-08-12",
+      "date_end": "2027-03-31",
+      "time": "10:30",
+      "url": "https://www.petit-bulletin.fr/agenda-314275-carte-blanche-la-compagnie-le-rire-l-intime-le-politique.html",
+      "image": null,
+      "id": "626961a23c27"
+    },
+    {
+      "venue": "Musée des Confluences",
+      "venue_slug": "musee-des-confluences",
+      "title": "Zombis, aux origines",
+      "subtitle": null,
+      "category": "Sciences et Histoire",
+      "date_start": "2026-08-12",
+      "date_end": "2026-08-16",
+      "time": "10:30",
+      "url": "https://www.petit-bulletin.fr/agenda-315316-zombis-aux-origines.html",
+      "image": null,
+      "id": "764ada85cd22"
+    },
+    {
+      "venue": "Musée des Confluences",
+      "venue_slug": "musee-des-confluences",
+      "title": "Au Mali, quand les animaux dansent",
+      "subtitle": null,
+      "category": "Sciences et Histoire",
+      "date_start": "2026-08-12",
+      "date_end": "2027-02-01",
+      "time": "10:30",
+      "url": "https://www.petit-bulletin.fr/agenda-316780-au-mali-quand-les-animaux-dansent.html",
+      "image": null,
+      "id": "2c9f7a7dcffc"
+    },
+    {
+      "venue": "Musée des Confluences",
+      "venue_slug": "musee-des-confluences",
+      "title": "Stéphan Gladieu",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-08-12",
+      "date_end": "2028-01-02",
+      "time": "10:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318496-st-phan-gladieu.html",
+      "image": null,
+      "id": "244592a65b00"
+    },
+    {
+      "venue": "Galerie Masurel",
+      "venue_slug": "galerie-masurel",
+      "title": "Dream Paper 5",
+      "subtitle": null,
+      "category": "Art contemporain et numérique",
+      "date_start": "2026-08-12",
+      "date_end": "2026-09-12",
+      "time": "11:00",
+      "url": "https://www.petit-bulletin.fr/agenda-314879-dream-paper-5.html",
+      "image": null,
+      "id": "62c045c6f3d6"
+    },
+    {
+      "venue": "Musée Jean Couty",
+      "venue_slug": "musee-jean-couty",
+      "title": "Jean Couty",
+      "subtitle": null,
+      "category": "Peinture & Dessin",
+      "date_start": "2026-08-12",
+      "date_end": "2026-12-20",
+      "time": "11:00",
+      "url": "https://www.petit-bulletin.fr/agenda-316155-jean-couty.html",
+      "image": null,
+      "id": "aaac313119ac"
+    },
+    {
+      "venue": "CAUE du Rhône",
+      "venue_slug": "caue-du-rhone",
+      "title": "Materia Architectures",
+      "subtitle": null,
+      "category": "Design & Architecture",
+      "date_start": "2026-08-12",
+      "date_end": "2026-11-06",
+      "time": "13:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318618-materia-architectures.html",
+      "image": null,
+      "id": "a1f441702016"
+    },
+    {
+      "venue": "Musée Paul-Dini",
+      "venue_slug": "musee-paul-dini",
+      "title": "Muséocoulisses : Un musée, des métiers",
+      "subtitle": null,
+      "category": "Sciences et Histoire",
+      "date_start": "2026-08-12",
+      "date_end": "2026-09-20",
+      "time": "13:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317832-mus-ocoulisses-un-mus-e-des-m-tiers.html",
+      "image": null,
+      "id": "ca58b7f83340"
+    },
+    {
+      "venue": "Maison Ravier",
+      "venue_slug": "maison-ravier",
+      "title": "Héroïnes d'opéra, costumes de scène",
+      "subtitle": null,
+      "category": "Design & Architecture",
+      "date_start": "2026-08-12",
+      "date_end": "2026-10-31",
+      "time": "14:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318785-h-ro-nes-deop-ra-costumes-de-sc-ne.html",
+      "image": null,
+      "id": "e6c03b265206"
+    },
+    {
+      "venue": "Galerie Françoise Besson",
+      "venue_slug": "galerie-francoise-besson",
+      "title": "Gilbert Brun",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-08-12",
+      "date_end": "2026-08-15",
+      "time": "14:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318928-gilbert-brun.html",
+      "image": null,
+      "id": "2c6f720b82f3"
+    },
+    {
+      "venue": "Le Bleu du Ciel",
+      "venue_slug": "le-bleu-du-ciel",
+      "title": "Voyage au Kurdistan",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-08-12",
+      "date_end": "2026-09-19",
+      "time": "14:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318498-voyage-au-kurdistan.html",
+      "image": null,
+      "id": "1ceee926d178"
+    },
+    {
+      "venue": "La Salle de bains",
+      "venue_slug": "la-salle-de-bains",
+      "title": "Francesc Ruiz",
+      "subtitle": null,
+      "category": "Art contemporain et numérique",
+      "date_start": "2026-08-12",
+      "date_end": "2026-10-03",
+      "time": "15:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318500-francesc-ruiz.html",
+      "image": null,
+      "id": "59e7cd6df9f8"
+    },
+    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Chess Bar x HEAT",
@@ -27,6 +248,45 @@
       "url": "https://h-eat.eu/events/chess-bar-x-heat-11/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/03/L1300825-480x720.jpg",
       "id": "5d95bfc1fa3d"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "30 Impros Chrono",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-08-12",
+      "date_end": "2026-08-28",
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318932-30-impros-chrono.html",
+      "image": null,
+      "id": "89c99c9a4876"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe-cafe-theatre",
+      "title": "Complexe comedy club",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-08-12",
+      "date_end": "2026-10-03",
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-307482-complexe-comedy-club.html",
+      "image": null,
+      "id": "0b4b5e2eb150"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Jackpot",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-08-12",
+      "date_end": "2026-08-28",
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318931-jackpot.html",
+      "image": null,
+      "id": "39cc6772566f"
     },
     {
       "venue": "La Commune",
@@ -263,6 +523,19 @@
       "id": "b76ac3cc8e4c"
     },
     {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Anthony Bechtatou",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-08-19",
+      "date_end": "2026-08-29",
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-316303-anthony-bechtatou.html",
+      "image": null,
+      "id": "80ef1c4fdb03"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Résidence Physical Tool",
@@ -419,19 +692,6 @@
       "id": "f51b5e945f0e"
     },
     {
-      "venue": "Musée de Fourvière",
-      "venue_slug": "musee-de-fourviere",
-      "title": "Sacrées Boîtes",
-      "subtitle": null,
-      "category": "Sciences et Histoire",
-      "date_start": "2026-08-23",
-      "date_end": null,
-      "time": "12:30",
-      "url": "https://www.petit-bulletin.fr/agenda-317990-sacr-es-bo-tes.html",
-      "image": null,
-      "id": "2ce198805275"
-    },
-    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "S.society",
@@ -549,17 +809,43 @@
       "id": "b3cd3ec8e81a"
     },
     {
-      "venue": "Le Petit Salon",
-      "venue_slug": "petit-salon",
-      "title": "MIA MENDI / KATZE / KONGA & MORE",
+      "venue": "Colline de Fourvière",
+      "venue_slug": "colline-de-fourviere",
+      "title": "Randonnée “Le Cycle de l'eau : du Rhône au robinet”",
       "subtitle": null,
-      "category": "club",
+      "category": "rencontre",
       "date_start": "2026-08-29",
       "date_end": null,
-      "time": null,
-      "url": "https://yp.events/2cad21e4-99a8-48eb-94b3-a3e8d212f0ad/Mia-Mendi-Katze-Konga-more?from=siteweb",
-      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/MIA-MENDI_29082026_lepetitsalon-1024x576.jpg",
-      "id": "8c392b47fbbc"
+      "time": "08:30",
+      "url": "https://agenda.villemorte.fr/event/randonnee-le-cycle-de-leau-du-rhone-au-robinet",
+      "image": "https://agenda.villemorte.fr/media/thumb/4cd0e6a12577a8be6a86ec568253e89c.jpg",
+      "id": "631f64a14297"
+    },
+    {
+      "venue": "Esplanade du Gros caillou",
+      "venue_slug": "esplanade-du-gros-caillou",
+      "title": "Festival Nos puissantes amitiés",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-08-29",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.petit-bulletin.fr/agenda-314990-festival-nos-puissantes-amiti-s.html",
+      "image": null,
+      "id": "eb53096223ca"
+    },
+    {
+      "venue": "Gros Caillou",
+      "venue_slug": "gros-caillou",
+      "title": "Nos Puissantes Amitiés - Utopies",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-08-29",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://agenda.villemorte.fr/event/nos-puissantes-amities-utopies",
+      "image": "https://agenda.villemorte.fr/media/thumb/3434b055f24144aee46969192c70fa68.jpg",
+      "id": "b29033be50d4"
     },
     {
       "venue": "HEAT",
@@ -601,6 +887,19 @@
       "id": "5056793551a1"
     },
     {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "MIA MENDI / KATZE / KONGA & MORE",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-08-29",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://yp.events/2cad21e4-99a8-48eb-94b3-a3e8d212f0ad/Mia-Mendi-Katze-Konga-more?from=siteweb",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/06/MIA-MENDI_29082026_lepetitsalon-1024x576.jpg",
+      "id": "5b4cd5b608c4"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "S.society",
@@ -616,15 +915,15 @@
     {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
-      "title": "PΞB + We use cookies",
+      "title": "P?B + We use cookies",
       "subtitle": null,
-      "category": null,
+      "category": "Rock & Pop",
       "date_start": "2026-08-30",
       "date_end": null,
       "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/p3b-tba",
+      "url": "https://www.petit-bulletin.fr/agenda-319018-p-b-we-use-cookies.html",
       "image": null,
-      "id": "ca03e16c15ef"
+      "id": "bac8554ad545"
     },
     {
       "venue": "La Commune",
@@ -681,15 +980,15 @@
     {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
-      "title": "Concert de Basem Al-Ashkar et Emmanuelle Miton",
+      "title": "Basem Al-Ashkar et Emmanuelle Miton",
       "subtitle": null,
-      "category": "musique",
+      "category": "Classique et Lyrique",
       "date_start": "2026-09-01",
       "date_end": null,
       "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/concert-de-basem-al-ashkar-et-emmanuelle-miton",
+      "url": "https://www.petit-bulletin.fr/agenda-319019-basem-al-ashkar-et-emmanuelle-miton.html",
       "image": "https://agenda.villemorte.fr/media/thumb/d3b84f441e7acd23712d36099e0d5da8.jpg",
-      "id": "c2dadae93144"
+      "id": "6aae554e43bb"
     },
     {
       "venue": "Les Clameurs",
@@ -703,6 +1002,19 @@
       "url": "https://agenda.villemorte.fr/event/stand-up-politique-11",
       "image": null,
       "id": "d787164b3a6c"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "Toï Toï le quiz",
+      "subtitle": null,
+      "category": "Jeux",
+      "date_start": "2026-09-01",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318103-to-to-le-quiz.html",
+      "image": null,
+      "id": "26bc716064f8"
     },
     {
       "venue": "La Commune",
@@ -744,6 +1056,19 @@
       "id": "2487d340b98d"
     },
     {
+      "venue": "Comédie Odéon",
+      "venue_slug": "comedie-odeon",
+      "title": "La Machine de Turing",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-02",
+      "date_end": "2026-10-30",
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-315208-la-machine-de-turing.html",
+      "image": null,
+      "id": "87ce7f1e2580"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "fantasy of a broken heart + suzi simonei",
@@ -757,6 +1082,19 @@
       "id": "65ce007872b8"
     },
     {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Le Grand Sacripant",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-02",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317834-le-grand-sacripant.html",
+      "image": null,
+      "id": "cbd19db1069d"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "DJ set estival à Lyon – Suntrax",
@@ -768,6 +1106,32 @@
       "url": "https://lacommune.co/event/suntrax-dj-set-house/",
       "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-52e72c8/lacommune.co/wp-content/uploads/2026/05/3-1-768x960.jpg",
       "id": "de869d5d3cf7"
+    },
+    {
+      "venue": "Bulle de son",
+      "venue_slug": "bulle-de-son",
+      "title": "Jango Janice + Margot Viotti",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-09-03",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319020-jango-janice-margot-viotti.html",
+      "image": "https://agenda.villemorte.fr/media/thumb/71435ac174d0525fed0c0e57df97ec25.jpg",
+      "id": "f809ab2cfd8d"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Tristan Lopin",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-03",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-293382-tristan-lopin.html",
+      "image": null,
+      "id": "a2945647eee0"
     },
     {
       "venue": "La Commune",
@@ -796,6 +1160,19 @@
       "id": "a5fd0a870271"
     },
     {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Chante avec agend’Arts – La KaraChorale – septembre",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/chante-avec-agendarts-la-karachorale-septembre",
+      "image": "https://agenda.villemorte.fr/media/thumb/a40eb3c920fc6357828a1063408a106f.jpg",
+      "id": "c3f52d049c57"
+    },
+    {
       "venue": "Toï Toï le Zinc",
       "venue_slug": "toi-toi-le-zinc",
       "title": "WAVEMAKERS",
@@ -807,6 +1184,19 @@
       "url": "https://agenda.villemorte.fr/event/wavemakers",
       "image": "https://agenda.villemorte.fr/media/thumb/94deae001a6829d2609cf5950b03be6e.jpg",
       "id": "0a4f83b6a4e9"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Tristan Lopin",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-04",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-293382-tristan-lopin.html",
+      "image": null,
+      "id": "9061236ea19f"
     },
     {
       "venue": "Le Sucre",
@@ -835,19 +1225,6 @@
       "id": "098b03f9af09"
     },
     {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-lyon",
-      "title": "Icônes",
-      "subtitle": "Lucinda Childs - Alessandro Sciarroni",
-      "category": "danse",
-      "date_start": "2026-09-05",
-      "date_end": "2026-09-10",
-      "time": null,
-      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/danse/icones",
-      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/76032385/icones_2880x1926.jpg",
-      "id": "58ad7a251764"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "DANNY WABBIT + ROULITA + KAUZIE + COCOX",
@@ -861,6 +1238,19 @@
       "id": "284c800ddf37"
     },
     {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Le Voisin #3",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-05",
+      "date_end": "2026-10-31",
+      "time": "18:45",
+      "url": "https://www.petit-bulletin.fr/agenda-317995-le-voisin-3.html",
+      "image": null,
+      "id": "c177ccc75b26"
+    },
+    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Concert de Lucas Rocher + LeHache all stars en première partie",
@@ -872,6 +1262,45 @@
       "url": "https://agenda.villemorte.fr/event/concert-de-lucas-rocher-lehache-all-stars-en-premiere-partie-1",
       "image": "https://agenda.villemorte.fr/media/thumb/2b9c850f384d52bfefd08629248a4570.jpg",
       "id": "b8fb660ef78e"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Icônes",
+      "subtitle": "Lucinda Childs - Alessandro Sciarroni",
+      "category": "danse",
+      "date_start": "2026-09-05",
+      "date_end": "2026-09-10",
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/danse/icones",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/76032385/icones_2880x1926.jpg",
+      "id": "6f2725595158"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "100 % rap lyonnais - volume 5",
+      "subtitle": null,
+      "category": "Rap",
+      "date_start": "2026-09-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318973-100-rap-lyonnais-volume-5.html",
+      "image": null,
+      "id": "2cbaddfb117f"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Tristan Lopin",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-05",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-293382-tristan-lopin.html",
+      "image": null,
+      "id": "ca7815344b78"
     },
     {
       "venue": "Le Sucre",
@@ -900,6 +1329,19 @@
       "id": "a210ed9e064f"
     },
     {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Christophe Ménart",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-09-06",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318980-christophe-m-nart.html",
+      "image": null,
+      "id": "cceb2e29c9fd"
+    },
+    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Concert de Lucas Rocher + LeHache all stars en première partie",
@@ -926,6 +1368,19 @@
       "id": "eb4c68fcecbe"
     },
     {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Christophe Ménart",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-09-07",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318980-christophe-m-nart.html",
+      "image": null,
+      "id": "aaaea4a026ef"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Atelier créatif Lyon | découverte à La Commune",
@@ -937,6 +1392,19 @@
       "url": "https://lacommune.co/event/atelier-decouverte-cyanotype/",
       "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-52e72c8/lacommune.co/wp-content/uploads/2026/03/8-1-768x960.jpg",
       "id": "e0edd47a52aa"
+    },
+    {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Christophe Ménart",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-09-08",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318980-christophe-m-nart.html",
+      "image": null,
+      "id": "188510b9eab8"
     },
     {
       "venue": "Le Sucre",
@@ -978,6 +1446,32 @@
       "id": "ce41efb86d8a"
     },
     {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Les Divines",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-08",
+      "date_end": "2026-10-20",
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-316944-les-divines.html",
+      "image": null,
+      "id": "a5815d402cf7"
+    },
+    {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Christophe Ménart",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-09-09",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318980-christophe-m-nart.html",
+      "image": null,
+      "id": "d6ff9d3d4e3d"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Onda (avec Yann Gourdon)",
@@ -993,15 +1487,15 @@
     {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
-      "title": "Concert d'Agnès Bihl",
+      "title": "Agnès Bihl",
       "subtitle": null,
-      "category": "musique",
+      "category": "Chanson",
       "date_start": "2026-09-09",
       "date_end": null,
       "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/concert-dagnes-bihl",
+      "url": "https://www.petit-bulletin.fr/agenda-319022-agn-s-bihl.html",
       "image": "https://agenda.villemorte.fr/media/thumb/aa1f3d467abcfb98c013dfd69fe60d5c.jpg",
-      "id": "6c3c2664a6e1"
+      "id": "4832487eb8df"
     },
     {
       "venue": "Les Subsistances",
@@ -1015,6 +1509,32 @@
       "url": "https://www.les-subs.com/evenement/optimisme-ambient-2026-almond-butyl/",
       "image": "https://www.les-subs.com/wp-content/uploads/2026/04/raphaellegiaretto-bienvenue-num-hd-79-1-200x200.jpg",
       "id": "c0295a575fb9"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Gabrielle Giraud",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-09",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318996-gabrielle-giraud.html",
+      "image": null,
+      "id": "c9c83943e187"
+    },
+    {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Christophe Ménart",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-09-10",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318980-christophe-m-nart.html",
+      "image": null,
+      "id": "b7e6a6dccfcf"
     },
     {
       "venue": "Les Subsistances",
@@ -1050,10 +1570,49 @@
       "category": "musique",
       "date_start": "2026-09-10",
       "date_end": null,
-      "time": "21:00",
+      "time": "20:00",
       "url": "https://www.periscope-lyon.com/concerts/black-zone-myth-chant-aracoeli-hajj/",
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/07/3-650x650.jpg",
-      "id": "6434664c9065"
+      "id": "cb75086f6955"
+    },
+    {
+      "venue": "TNP - Théâtre National Populaire",
+      "venue_slug": "tnp-theatre-national-populaire",
+      "title": "Mémoire de fille",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-10",
+      "date_end": "2026-09-20",
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319002-m-moire-de-fille.html",
+      "image": null,
+      "id": "c2a7e6bed1e3"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Gabrielle Giraud",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-10",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318996-gabrielle-giraud.html",
+      "image": null,
+      "id": "a2dcf37f55b9"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "Noémie Brigant + Aquaplaning + Les fourmis dans les mains",
+      "subtitle": null,
+      "category": "Chanson",
+      "date_start": "2026-09-10",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318972-no-mie-brigant-aquaplaning-les-fourmis-dans-les-mains.html",
+      "image": null,
+      "id": "f2cb9be19903"
     },
     {
       "venue": "Les Subsistances",
@@ -1069,17 +1628,30 @@
       "id": "8a6ef04ec630"
     },
     {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Covertramp - Hommage À Supertramp",
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Christophe Ménart",
       "subtitle": null,
-      "category": "concert",
+      "category": "Photographie",
       "date_start": "2026-09-11",
       "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/covertramp-hommage-a-supertramp-274720.html",
-      "image": "https://www.bourse-du-travail.com/img/evenement/covertramp--hommage-a-supertramp-5.jpg",
-      "id": "2d1a94e62157"
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318980-christophe-m-nart.html",
+      "image": null,
+      "id": "0b79415daefd"
+    },
+    {
+      "venue": "Musée des Beaux-Arts",
+      "venue_slug": "musee-des-beaux-arts",
+      "title": "Musée sentimental",
+      "subtitle": null,
+      "category": "Sciences et Histoire",
+      "date_start": "2026-09-11",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318929-mus-e-sentimental.html",
+      "image": null,
+      "id": "cb3f9b4150c7"
     },
     {
       "venue": "Grrrnd Zero",
@@ -1121,6 +1693,19 @@
       "id": "e07d6ccd2aef"
     },
     {
+      "venue": "Rontalon",
+      "venue_slug": "rontalon",
+      "title": "LA CABRIOLE FEST4 #2",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-11",
+      "date_end": "2026-09-13",
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/la-cabriole-fest4-2",
+      "image": "https://agenda.villemorte.fr/media/thumb/59d850aba3e1e16def33239f7ed3f636.jpg",
+      "id": "52a0359160f4"
+    },
+    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Scène ouverte slam – session de septembre",
@@ -1134,6 +1719,19 @@
       "id": "bd5700697ed0"
     },
     {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Covertramp - Hommage À Supertramp",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-09-11",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.bourse-du-travail.com/covertramp-hommage-a-supertramp-274720.html",
+      "image": "https://www.bourse-du-travail.com/img/evenement/covertramp--hommage-a-supertramp-5.jpg",
+      "id": "c9d747f00b8f"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "M Pokora",
@@ -1145,6 +1743,32 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/m-pokora-3",
       "image": "https://www.halle-tony-garnier.com/storage/141976/conversions/2026-09-11-M-POKORA-mpokora-carre-lyon-20251201-141703-square.jpg",
       "id": "9be61b916918"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Gabrielle Giraud",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-11",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318996-gabrielle-giraud.html",
+      "image": null,
+      "id": "4cf2cfa1d851"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "Tonada + Colectivo Cimarrones",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-09-11",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318971-tonada-colectivo-cimarrones.html",
+      "image": null,
+      "id": "ccd7363bea2b"
     },
     {
       "venue": "Le Périscope",
@@ -1199,6 +1823,45 @@
       "id": "ace1d85a7b57"
     },
     {
+      "venue": "Le Rize",
+      "venue_slug": "le-rize",
+      "title": "Remonter la Rize jusqu'à sa source",
+      "subtitle": null,
+      "category": "rencontre",
+      "date_start": "2026-09-12",
+      "date_end": null,
+      "time": "08:30",
+      "url": "https://agenda.villemorte.fr/event/remonter-la-rize-jusqua-sa-source",
+      "image": "https://agenda.villemorte.fr/media/thumb/30dccbf7d71c95f677e223fc237437be.jpg",
+      "id": "c396b70d7f0f"
+    },
+    {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Christophe Ménart",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-09-12",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318980-christophe-m-nart.html",
+      "image": null,
+      "id": "6b2f799e64d7"
+    },
+    {
+      "venue": "Théâtre de la Croix-Rousse",
+      "venue_slug": "theatre-de-la-croix-rousse",
+      "title": "Fête de rentrée du Théâtre de la Croix-Rousse",
+      "subtitle": null,
+      "category": "Conférences",
+      "date_start": "2026-09-12",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-311097-f-te-de-rentr-e-du-th-tre-de-la-croix-rousse.html",
+      "image": null,
+      "id": "05acfb4faecb"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Workshop danse",
@@ -1210,6 +1873,19 @@
       "url": "https://www.les-subs.com/evenement/workshop-danse/",
       "image": "https://www.les-subs.com/wp-content/uploads/2026/04/youness-aboulakoul-b-0-200x200.jpg",
       "id": "3884201e5f6d"
+    },
+    {
+      "venue": "Théâtre du Point du Jour",
+      "venue_slug": "theatre-du-point-du-jour",
+      "title": "On Off Festival",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-09-12",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://www.petit-bulletin.fr/agenda-315449-on-off-festival.html",
+      "image": null,
+      "id": "414b48034be9"
     },
     {
       "venue": "Le Transbordeur",
@@ -1266,15 +1942,15 @@
     {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
-      "title": "Spectacle de Perrine Rouland – Blouse",
+      "title": "La blouse",
       "subtitle": null,
-      "category": "théâtre",
+      "category": "Humour & Café Théâtre",
       "date_start": "2026-09-12",
       "date_end": null,
       "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/spectacle-de-perrine-rouland-blouse",
+      "url": "https://www.petit-bulletin.fr/agenda-311004-la-blouse.html",
       "image": "https://agenda.villemorte.fr/media/thumb/034639873dca62a82368e2555deb4b00.jpg",
-      "id": "d5d161b31c8f"
+      "id": "d2ddff4b66b2"
     },
     {
       "venue": "Bieristan",
@@ -1316,6 +1992,19 @@
       "id": "f11f7dbe3eb3"
     },
     {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Gabrielle Giraud",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-12",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318996-gabrielle-giraud.html",
+      "image": null,
+      "id": "07d1565717f8"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "club X 20CONTR1",
@@ -1342,17 +2031,17 @@
       "id": "be0ce0609f10"
     },
     {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-lyon",
-      "title": "Wagner / Bruckner",
-      "subtitle": "Daniele Rustioni",
-      "category": "concert",
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Uraraka Matsuzawa",
+      "subtitle": null,
+      "category": "Peinture & Dessin",
       "date_start": "2026-09-13",
       "date_end": null,
-      "time": null,
-      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/wagner-bruckner",
-      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/9d3eb0fb/wagner_bruckner_2880x192_v2.jpg",
-      "id": "afed3ffa90b5"
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-313707-uraraka-matsuzawa.html",
+      "image": null,
+      "id": "3d7c43321650"
     },
     {
       "venue": "Les Subsistances",
@@ -1379,6 +2068,71 @@
       "url": "https://agenda.villemorte.fr/event/spectacle-de-perrine-rouland-blouse-1",
       "image": "https://agenda.villemorte.fr/media/thumb/6e04524c04b465757ea4a92a28b5c913.jpg",
       "id": "00963753dc00"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Wagner / Bruckner",
+      "subtitle": "Daniele Rustioni",
+      "category": "concert",
+      "date_start": "2026-09-13",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/wagner-bruckner",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/9d3eb0fb/wagner_bruckner_2880x192_v2.jpg",
+      "id": "5a47a0334028"
+    },
+    {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Uraraka Matsuzawa",
+      "subtitle": null,
+      "category": "Peinture & Dessin",
+      "date_start": "2026-09-14",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-313707-uraraka-matsuzawa.html",
+      "image": null,
+      "id": "fcae6c31618c"
+    },
+    {
+      "venue": "Théâtre du Point du Jour",
+      "venue_slug": "theatre-du-point-du-jour",
+      "title": "Apéro de saison",
+      "subtitle": null,
+      "category": "Conférences",
+      "date_start": "2026-09-14",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-311096-ap-ro-de-saison.html",
+      "image": null,
+      "id": "0a930152ae18"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Axel Ramponi",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-14",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318997-axel-ramponi.html",
+      "image": null,
+      "id": "84d0d0e43d03"
+    },
+    {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Uraraka Matsuzawa",
+      "subtitle": null,
+      "category": "Peinture & Dessin",
+      "date_start": "2026-09-15",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-313707-uraraka-matsuzawa.html",
+      "image": null,
+      "id": "a3e9d7b9d05f"
     },
     {
       "venue": "Le Sucre",
@@ -1420,6 +2174,32 @@
       "id": "f0d287a356d1"
     },
     {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Uraraka Matsuzawa",
+      "subtitle": null,
+      "category": "Peinture & Dessin",
+      "date_start": "2026-09-16",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-313707-uraraka-matsuzawa.html",
+      "image": null,
+      "id": "b5d452f410d8"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Anthony Kavanagh",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-16",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-290042-anthony-kavanagh.html",
+      "image": null,
+      "id": "9861464e3618"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "DJ set estival à Lyon – Suntrax",
@@ -1431,6 +2211,19 @@
       "url": "https://lacommune.co/event/dj-set-estival-a-lyon-suntrax/",
       "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-52e72c8/lacommune.co/wp-content/uploads/2026/07/17-1-768x960.jpg",
       "id": "fff51d98da4f"
+    },
+    {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Uraraka Matsuzawa",
+      "subtitle": null,
+      "category": "Peinture & Dessin",
+      "date_start": "2026-09-17",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-313707-uraraka-matsuzawa.html",
+      "image": null,
+      "id": "175b9bec7aa5"
     },
     {
       "venue": "Grrrnd Zero",
@@ -1461,28 +2254,54 @@
     {
       "venue": "A Thou Bout d'Chant",
       "venue_slug": "a-thou-bout-d-chant",
-      "title": "CONCERT | LÉONID",
+      "title": "Léonid",
       "subtitle": null,
-      "category": "musique",
+      "category": "Chanson",
       "date_start": "2026-09-17",
       "date_end": null,
       "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/concert-or-leonid",
+      "url": "https://www.petit-bulletin.fr/agenda-311013-l-onid.html",
       "image": "https://agenda.villemorte.fr/media/thumb/7dd8f4c35c00628fc86cbcb051df0b4a.jpg",
-      "id": "428d8edf7221"
+      "id": "58e520ff5992"
     },
     {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
-      "title": "Concert de Merienne & d'Alias Blob",
+      "title": "Merienne + Alias Blob",
       "subtitle": null,
-      "category": "musique",
+      "category": "Chanson",
       "date_start": "2026-09-17",
       "date_end": null,
       "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/concert-de-merienne-and-dalias-blob",
+      "url": "https://www.petit-bulletin.fr/agenda-319024-merienne-alias-blob.html",
       "image": "https://agenda.villemorte.fr/media/thumb/33e442b12b785baaac3a2b459f25e597.jpg",
-      "id": "d81cc78d537b"
+      "id": "6e0582816569"
+    },
+    {
+      "venue": "Auditorium de Lyon",
+      "venue_slug": "auditorium-de-lyon",
+      "title": "Concert d'ouverture",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-09-17",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-306522-concert-d-ouverture.html",
+      "image": null,
+      "id": "056e6e3cd9f3"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Le parfum et la tempête",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-09-17",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318978-le-parfum-et-la-temp-te.html",
+      "image": null,
+      "id": "0c09133a6f63"
     },
     {
       "venue": "Le Sonic",
@@ -1511,6 +2330,32 @@
       "id": "0e721d0278fc"
     },
     {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "Jam Sauvage",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-09-17",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-317984-jam-sauvage.html",
+      "image": null,
+      "id": "e8506b44f174"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Anthony Kavanagh",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-17",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-290042-anthony-kavanagh.html",
+      "image": null,
+      "id": "8863b2a29f1e"
+    },
+    {
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "NāRI",
@@ -1535,6 +2380,19 @@
       "url": "https://www.periscope-lyon.com/concerts/tracy-de-sa-maldonne-et-klar-obscur-3-kitties-la-tendresse/",
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/07/1920x1080_paysagecHabby-Habbani-650x366.png",
       "id": "a19b6f84656b"
+    },
+    {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Uraraka Matsuzawa",
+      "subtitle": null,
+      "category": "Peinture & Dessin",
+      "date_start": "2026-09-18",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-313707-uraraka-matsuzawa.html",
+      "image": null,
+      "id": "2a14b7d15ff7"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -1563,6 +2421,19 @@
       "id": "f7455ae4a9ab"
     },
     {
+      "venue": "Baràgones",
+      "venue_slug": "baragones",
+      "title": "Portraits Hôtel - Nuits troubles",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-18",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319001-portraits-h-tel-nuits-troubles.html",
+      "image": null,
+      "id": "77502427e738"
+    },
+    {
       "venue": "Bieristan",
       "venue_slug": "bieristan",
       "title": "Bulle bizarre party : soirée techno",
@@ -1589,17 +2460,43 @@
       "id": "2dd3139a6c6c"
     },
     {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Qui êtes-vous M. Gurdjieff ?",
+      "subtitle": null,
+      "category": "Conférences",
+      "date_start": "2026-09-18",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318985-qui-tes-vous-m-gurdjieff.html",
+      "image": null,
+      "id": "e775f7a05f8c"
+    },
+    {
+      "venue": "Célestins, théâtre de Lyon",
+      "venue_slug": "celestins-theatre-de-lyon",
+      "title": "Molière et ses masques",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-18",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318993-moli-re-et-ses-masques.html",
+      "image": null,
+      "id": "f5458057e925"
+    },
+    {
       "venue": "A Thou Bout d'Chant",
       "venue_slug": "a-thou-bout-d-chant",
-      "title": "CONCERT | CYRIL MOKAIESH",
+      "title": "Cyril Mokaiesh",
       "subtitle": null,
-      "category": "musique",
+      "category": "Chanson",
       "date_start": "2026-09-18",
       "date_end": null,
       "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/concert-or-cyril-mokaiesh",
+      "url": "https://www.petit-bulletin.fr/agenda-319025-cyril-mokaiesh.html",
       "image": "https://agenda.villemorte.fr/media/thumb/1a58e5e8a38c8d01dd08c78e21bf9530.jpg",
-      "id": "9e6ea002bbf1"
+      "id": "6041730eef0f"
     },
     {
       "venue": "Agend'arts",
@@ -1645,13 +2542,39 @@
       "venue_slug": "marche-gare",
       "title": "Lancement de saison #GO2627 M.A.O CORMONTREUIL + SOCIAL DANCE + LES ONDES CREUSES dj set",
       "subtitle": null,
-      "category": null,
+      "category": "Rock & Pop",
       "date_start": "2026-09-18",
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/go2627",
       "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-06/siteweb-go2627.jpg",
       "id": "d5f50c008d33"
+    },
+    {
+      "venue": "Salle Molière",
+      "venue_slug": "salle-moliere",
+      "title": "L'opéra par l'Orchestre",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-09-18",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318967-leop-ra-par-leorchestre.html",
+      "image": null,
+      "id": "127589766054"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Anthony Kavanagh",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-18",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-290042-anthony-kavanagh.html",
+      "image": null,
+      "id": "2b281ffc5153"
     },
     {
       "venue": "Le Sucre",
@@ -1667,17 +2590,17 @@
       "id": "9a5fded338d9"
     },
     {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Guihome Dans Guihome Vous Détend",
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Uraraka Matsuzawa",
       "subtitle": null,
-      "category": "humour",
+      "category": "Peinture & Dessin",
       "date_start": "2026-09-19",
       "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/guihome-dans-guihome-vous-detend-379266.html",
-      "image": "https://www.bourse-du-travail.com/img/evenement/guihome-dans-guihome-vous-detend-5.jpg",
-      "id": "19877e4e093a"
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-313707-uraraka-matsuzawa.html",
+      "image": null,
+      "id": "6bbf4368f5f8"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -1706,17 +2629,43 @@
       "id": "7011f763dee8"
     },
     {
-      "venue": "La Machinerie - Bizarre !",
-      "venue_slug": "la-machinerie-bizarre",
-      "title": "Fête de rentrée de La Machinerie",
+      "venue": "Les Subsistances",
+      "venue_slug": "les-subs",
+      "title": "Visite des journées du patrimoine",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-09-19",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318989-visite-des-journ-es-du-patrimoine.html",
+      "image": null,
+      "id": "f7e27ec4e52d"
+    },
+    {
+      "venue": "URDLA",
+      "venue_slug": "urdla",
+      "title": "Delphine Reist",
+      "subtitle": null,
+      "category": "Art contemporain et numérique",
+      "date_start": "2026-09-19",
+      "date_end": "2026-12-19",
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318982-delphine-reist.html",
+      "image": null,
+      "id": "fafc5f0e4c02"
+    },
+    {
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "Fête de rentrée",
       "subtitle": null,
       "category": "musique",
       "date_start": "2026-09-19",
       "date_end": null,
       "time": "15:00",
-      "url": "https://agenda.villemorte.fr/event/fete-de-rentree-de-la-machinerie",
+      "url": "https://www.petit-bulletin.fr/agenda-318987-f-te-de-rentr-e.html",
       "image": "https://agenda.villemorte.fr/media/thumb/a61eaf73ee3564bd45782632a2d7a815.jpg",
-      "id": "a93649020254"
+      "id": "7033d8e12614"
     },
     {
       "venue": "Les Subsistances",
@@ -1730,6 +2679,19 @@
       "url": "https://www.les-subs.com/evenement/dans-ma-piscine-cie-ea-eo/",
       "image": "https://www.les-subs.com/wp-content/uploads/2026/03/paul-jacobs-aj6162-a1-200x200.jpg",
       "id": "fee55d4712f1"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "En deux-deux",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-09-19",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318790-en-deux-deux.html",
+      "image": null,
+      "id": "49520c5cd61f"
     },
     {
       "venue": "Le Transbordeur",
@@ -1758,30 +2720,95 @@
       "id": "07a82f4a8702"
     },
     {
+      "venue": "Célestins, théâtre de Lyon",
+      "venue_slug": "celestins-theatre-de-lyon",
+      "title": "Molière et ses masques",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-19",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318993-moli-re-et-ses-masques.html",
+      "image": null,
+      "id": "fe0e715a633c"
+    },
+    {
       "venue": "A Thou Bout d'Chant",
       "venue_slug": "a-thou-bout-d-chant",
-      "title": "CO-PLATEAU | CÉCILE HERCULE + JOHANNA BAGET",
+      "title": "Cécile Hercule + Johanna Baget",
       "subtitle": null,
-      "category": "musique",
+      "category": "Chanson",
       "date_start": "2026-09-19",
       "date_end": null,
       "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/concert-or-cecile-hercule-johanna-baget",
+      "url": "https://www.petit-bulletin.fr/agenda-319027-c-cile-hercule-johanna-baget.html",
       "image": "https://agenda.villemorte.fr/media/thumb/d89ee469c4637f66b4a4267acf9f9a88.jpg",
-      "id": "12ec244d91fb"
+      "id": "f8fe04ddd592"
     },
     {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
-      "title": "Spectacle Des 3 becs – “La centième nuit, chansons d’Anne Sylvestre”",
+      "title": "La centième nuit, chansons d'Anne Sylvestre",
       "subtitle": null,
-      "category": "musique",
+      "category": "Théâtre",
       "date_start": "2026-09-19",
-      "date_end": "2026-09-20",
+      "date_end": null,
       "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/les-3-becs-la-centieme-nuit-chansons-danne-sylvestre",
+      "url": "https://www.petit-bulletin.fr/agenda-319026-la-centi-me-nuit-chansons-deanne-sylvestre.html",
       "image": "https://agenda.villemorte.fr/media/thumb/8a1d8ba02444e2da3d2594d53049dd86.jpg",
-      "id": "e052181c88e8"
+      "id": "7a069e747f7d"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Guihome Dans Guihome Vous Détend",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-09-19",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.bourse-du-travail.com/guihome-dans-guihome-vous-detend-379266.html",
+      "image": "https://www.bourse-du-travail.com/img/evenement/guihome-dans-guihome-vous-detend-5.jpg",
+      "id": "02f08f0b8b4f"
+    },
+    {
+      "venue": "Théâtre Théo Argence",
+      "venue_slug": "theatre-theo-argence",
+      "title": "Bigre",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-19",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319009-bigre.html",
+      "image": null,
+      "id": "fda44bc7b8bb"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "Anthony Kavanagh",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-19",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-290042-anthony-kavanagh.html",
+      "image": null,
+      "id": "2cb5950fc8cc"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "Zermatt + Marguterie + Don't kill the cow",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-09-19",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318970-zermatt-marguterie-donet-kill-the-cow.html",
+      "image": null,
+      "id": "23e827879468"
     },
     {
       "venue": "Le Sucre",
@@ -1836,6 +2863,45 @@
       "id": "2b58a9f1005c"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-de-lyon",
+      "title": "Visite des journées du patrimoine",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-09-20",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318992-visite-des-journ-es-du-patrimoine.html",
+      "image": null,
+      "id": "54a98c6b2745"
+    },
+    {
+      "venue": "Les Grandes Voisines",
+      "venue_slug": "les-grandes-voisines",
+      "title": "Mémoires Croisées : Les Grandes Voisines x Hôpital Antoine Charrial",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-20",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://agenda.villemorte.fr/event/memoires-croisees-les-grandes-voisines-x-hopital-antoine-charrial",
+      "image": "https://agenda.villemorte.fr/media/thumb/3a7b387d35bd2236d85163cf8688dde4.jpg",
+      "id": "3850f314fed4"
+    },
+    {
+      "venue": "Théâtre La Mouche",
+      "venue_slug": "theatre-la-mouche",
+      "title": "Ouverture de saison",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-09-20",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318988-ouverture-de-saison.html",
+      "image": null,
+      "id": "5e98d625026f"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "Quatuor Leonis",
@@ -1862,6 +2928,19 @@
       "id": "754ac5c4fcdc"
     },
     {
+      "venue": "Baràgones",
+      "venue_slug": "baragones",
+      "title": "Portraits Hôtel - Nuits troubles",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-20",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319001-portraits-h-tel-nuits-troubles.html",
+      "image": null,
+      "id": "856f0db46fd2"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "S.society",
@@ -1873,6 +2952,19 @@
       "url": "https://le-sucre.eu/events/s-society-160/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/07/Dave-Clarke_20250731_©-Bastiaan-Woudt_Low-Res_0005_-450x600.jpeg",
       "id": "352dc87123ef"
+    },
+    {
+      "venue": "Célestins, théâtre de Lyon",
+      "venue_slug": "celestins-theatre-de-lyon",
+      "title": "Molière et ses masques",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-20",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318993-moli-re-et-ses-masques.html",
+      "image": null,
+      "id": "4ca6069e5ba2"
     },
     {
       "venue": "Le Transbordeur",
@@ -1927,6 +3019,19 @@
       "id": "08da6985a5bd"
     },
     {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Yoanna Sallese",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-21",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-309159-yoanna-sallese.html",
+      "image": null,
+      "id": "8bc995ef201d"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Piano-bar karaoké",
@@ -1979,6 +3084,19 @@
       "id": "65c92223b2f1"
     },
     {
+      "venue": "Célestins, théâtre de Lyon",
+      "venue_slug": "celestins-theatre-de-lyon",
+      "title": "True West",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-22",
+      "date_end": "2026-10-03",
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318994-true-west.html",
+      "image": null,
+      "id": "41f862c1545f"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "Mannveira + Gleichmacher + Tower of Silence",
@@ -1992,6 +3110,32 @@
       "id": "75638e849db7"
     },
     {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Exposition collective",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-09-23",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318981-exposition-collective.html",
+      "image": null,
+      "id": "aabc2f340d06"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-de-lyon",
+      "title": "Visites découverte commentées",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-09-23",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
+      "image": null,
+      "id": "e43b6a08960d"
+    },
+    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "Découverte du TNG en LSF",
@@ -1999,10 +3143,62 @@
       "category": "théâtre",
       "date_start": "2026-09-23",
       "date_end": null,
-      "time": null,
+      "time": "14:30",
       "url": "https://www.tng-lyon.fr/evenement/decouverte-du-tng-en-lsf-2/",
       "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Ateliers-LSF-Boule-de-neige_460x460-1.png",
-      "id": "0df458e02662"
+      "id": "2d7a33704396"
+    },
+    {
+      "venue": "L'Épicerie Moderne",
+      "venue_slug": "l-epicerie-moderne",
+      "title": "Jesca Hoop",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-09-23",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318948-jesca-hoop.html",
+      "image": null,
+      "id": "e1951fb3c1c5"
+    },
+    {
+      "venue": "Célestins, théâtre de Lyon",
+      "venue_slug": "celestins-theatre-de-lyon",
+      "title": "Dans le ventre des cerveaux",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-23",
+      "date_end": "2026-10-03",
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318995-dans-le-ventre-des-cerveaux.html",
+      "image": null,
+      "id": "5930df6dfb9c"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Ça handi long",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-09-23",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
+      "image": null,
+      "id": "d14e9b62cc02"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Pablo Mira",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-23",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-288842-pablo-mira.html",
+      "image": null,
+      "id": "988eac06face"
     },
     {
       "venue": "Le Sonic",
@@ -2031,6 +3227,32 @@
       "id": "68e4786900f0"
     },
     {
+      "venue": "Au Rikiki",
+      "venue_slug": "au-rikiki",
+      "title": "Qui veut la peau de Sherlock Holmes ?",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-23",
+      "date_end": "2026-10-03",
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-292857-qui-veut-la-peau-de-sherlock-holmes.html",
+      "image": null,
+      "id": "1146e4113c76"
+    },
+    {
+      "venue": "Maison de la Danse",
+      "venue_slug": "maison-de-la-danse",
+      "title": "My fierce ignorant step",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-09-23",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319005-my-fierce-ignorant-step.html",
+      "image": null,
+      "id": "e3ecf776dc8e"
+    },
+    {
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "Ecko Bazz feat. Talpah + LI$ON + Mona San",
@@ -2042,6 +3264,32 @@
       "url": "https://www.periscope-lyon.com/concerts/ecko-bazz-feat-talpah-lion-mona-san/",
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/07/©-Nuno-Bernardo--650x433.jpg",
       "id": "f3732c988512"
+    },
+    {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Exposition collective",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-09-24",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318981-exposition-collective.html",
+      "image": null,
+      "id": "7c9e2e28605c"
+    },
+    {
+      "venue": "Théâtre de la Croix-Rousse",
+      "venue_slug": "theatre-de-la-croix-rousse",
+      "title": "Blanche-Neige ou la chute du mur de Berlin",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-24",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319007-blanche-neige-ou-la-chute-du-mur-de-berlin.html",
+      "image": null,
+      "id": "98e3848fd216"
     },
     {
       "venue": "Le Transbordeur",
@@ -2059,15 +3307,28 @@
     {
       "venue": "A Thou Bout d'Chant",
       "venue_slug": "a-thou-bout-d-chant",
-      "title": "CONCERT | MARION ROCH",
+      "title": "Marion Roch",
       "subtitle": null,
-      "category": "musique",
+      "category": "Chanson",
       "date_start": "2026-09-24",
       "date_end": null,
       "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/concert-or-marion-roch",
+      "url": "https://www.petit-bulletin.fr/agenda-319029-marion-roch.html",
       "image": "https://agenda.villemorte.fr/media/thumb/db2315f859d305020dbbdb7ac516197c.jpg",
-      "id": "88fc2bd5ed8f"
+      "id": "cbcc3737914e"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Je suis là",
+      "subtitle": null,
+      "category": "Spectacles Divers",
+      "date_start": "2026-09-24",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319028-je-suis-l.html",
+      "image": "https://agenda.villemorte.fr/media/thumb/7b35f1863a834f911b6f39db7cd2ec9b.jpg",
+      "id": "b30fe75a3c13"
     },
     {
       "venue": "Agend'arts",
@@ -2081,6 +3342,32 @@
       "url": "https://agenda.villemorte.fr/event/simon-pichetti-je-suis-la",
       "image": "https://agenda.villemorte.fr/media/thumb/7b35f1863a834f911b6f39db7cd2ec9b.jpg",
       "id": "8e1ca132a72e"
+    },
+    {
+      "venue": "Auditorium de Lyon",
+      "venue_slug": "auditorium-de-lyon",
+      "title": "Concert pour les étudiants",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-09-24",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-306534-concert-pour-les-tudiants.html",
+      "image": null,
+      "id": "e253d718d430"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Pablo Mira",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-24",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-288842-pablo-mira.html",
+      "image": null,
+      "id": "23d4d9bdbace"
     },
     {
       "venue": "Le Sonic",
@@ -2100,13 +3387,26 @@
       "venue_slug": "marche-gare",
       "title": "Sono Mondiale BCUC + L'ÉTRANGLEUSE",
       "subtitle": null,
-      "category": null,
+      "category": "Sono Mondiale",
       "date_start": "2026-09-24",
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/bcuc",
       "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-04/bcuc_offstage-010_by_tim_bugbee_tinnitus_photography.jpg",
       "id": "81ecfb5e0678"
+    },
+    {
+      "venue": "Maison de la Danse",
+      "venue_slug": "maison-de-la-danse",
+      "title": "My fierce ignorant step",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-09-24",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319005-my-fierce-ignorant-step.html",
+      "image": null,
+      "id": "454f1cd8da51"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -2122,6 +3422,19 @@
       "id": "1a616960cfc3"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Friendzone",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-09-24",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318792-friendzone.html",
+      "image": null,
+      "id": "18e20c93139c"
+    },
+    {
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "Tatanka Quartet",
@@ -2135,6 +3448,71 @@
       "id": "8ba1e6a83cbc"
     },
     {
+      "venue": "Centre social des Buers",
+      "venue_slug": "centre-social-des-buers",
+      "title": "Allô Stella",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-25",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-316314-all-stella.html",
+      "image": null,
+      "id": "42fec21f0adb"
+    },
+    {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Exposition collective",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-09-25",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318981-exposition-collective.html",
+      "image": null,
+      "id": "b840e3a70375"
+    },
+    {
+      "venue": "Théâtre de la Croix-Rousse",
+      "venue_slug": "theatre-de-la-croix-rousse",
+      "title": "Blanche-Neige ou la chute du mur de Berlin",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-25",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319007-blanche-neige-ou-la-chute-du-mur-de-berlin.html",
+      "image": null,
+      "id": "1a5d890747e0"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "Fredo des Ogres de Barback",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-09-25",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319030-fredo-des-ogres-de-barback.html",
+      "image": "https://agenda.villemorte.fr/media/thumb/e475b0e15c238f9625f5cf6a9201c851.jpg",
+      "id": "23d6ad363ce9"
+    },
+    {
+      "venue": "Auditorium de Lyon",
+      "venue_slug": "auditorium-de-lyon",
+      "title": "Mahler, Symphonie n° 5",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-09-25",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-311430-mahler-symphonie-n-5.html",
+      "image": null,
+      "id": "96ea9285c502"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Arnaud Tsamère - Tous Contraints - Tournée",
@@ -2142,23 +3520,23 @@
       "category": "humour",
       "date_start": "2026-09-25",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://www.bourse-du-travail.com/arnaud-tsamere-tous-contraints-tournee-253951.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/arnaud-tsamere-98.jpg",
-      "id": "8eb59e7d2dcd"
+      "id": "32855f1fd5e2"
     },
     {
-      "venue": "A Thou Bout d'Chant",
-      "venue_slug": "a-thou-bout-d-chant",
-      "title": "CONCERT | FREDO DES OGRES DE BARBACK",
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Pablo Mira",
       "subtitle": null,
-      "category": "musique",
+      "category": "Humour & Café Théâtre",
       "date_start": "2026-09-25",
       "date_end": null,
       "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/concert-or-fredo-des-ogres-de-barback",
-      "image": "https://agenda.villemorte.fr/media/thumb/e475b0e15c238f9625f5cf6a9201c851.jpg",
-      "id": "d17d7dc2e016"
+      "url": "https://www.petit-bulletin.fr/agenda-288842-pablo-mira.html",
+      "image": null,
+      "id": "b6b13347c337"
     },
     {
       "venue": "Grrrnd Zero",
@@ -2178,13 +3556,26 @@
       "venue_slug": "marche-gare",
       "title": "Release Party Chanson Indie Pop OSCAR LES VACANCES + KÉZIAH MA",
       "subtitle": null,
-      "category": null,
+      "category": "Chanson",
       "date_start": "2026-09-25",
       "date_end": null,
       "time": "20:00",
       "url": "https://marchegare.fr/agenda/oscar-les-vacances-2026",
       "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-05/aSUBKiRw.jpeg",
       "id": "bec75eda91f7"
+    },
+    {
+      "venue": "Maison de la Danse",
+      "venue_slug": "maison-de-la-danse",
+      "title": "My fierce ignorant step",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-09-25",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319005-my-fierce-ignorant-step.html",
+      "image": null,
+      "id": "6190edf1fc64"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -2198,6 +3589,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/comme-ca-vous-chante-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/comme-ca-vous-chante_radiant-bellevue-500x500.jpg",
       "id": "e6b1ecc2708d"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "Picasol + Ovoïde + Aequo",
+      "subtitle": null,
+      "category": "Jazz",
+      "date_start": "2026-09-25",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318969-picasol-ovo-de-aequo.html",
+      "image": null,
+      "id": "4084e96a608b"
     },
     {
       "venue": "Bieristan",
@@ -2239,17 +3643,30 @@
       "id": "085ae50e2231"
     },
     {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Mesdames Dans En Vraies !",
+      "venue": "Le Petit Salon",
+      "venue_slug": "le-petit-salon",
+      "title": "Encore",
       "subtitle": null,
-      "category": "humour",
+      "category": "Musique Electronique",
+      "date_start": "2026-09-25",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317905-encore.html",
+      "image": null,
+      "id": "f4435f8ea7da"
+    },
+    {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Exposition collective",
+      "subtitle": null,
+      "category": "Photographie",
       "date_start": "2026-09-26",
       "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/mesdames-dans-en-vraies-366978.html",
-      "image": "https://www.bourse-du-travail.com/img/evenement/mesdames-dans-en-vraies--4.jpg",
-      "id": "de266ce1e4be"
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318981-exposition-collective.html",
+      "image": null,
+      "id": "482de6b337fc"
     },
     {
       "venue": "Les Subsistances",
@@ -2263,6 +3680,71 @@
       "url": "https://www.les-subs.com/evenement/if-festival-2026-kiblind/",
       "image": "https://www.les-subs.com/wp-content/uploads/2024/04/231008-if-kiblind-lessubsogregoryrubinstein-collectifdesflousfurieux-8-200x200.jpg",
       "id": "ec7ce09bb3a9"
+    },
+    {
+      "venue": "Le Toboggan",
+      "venue_slug": "le-toboggan",
+      "title": "Biclou",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-26",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://www.petit-bulletin.fr/agenda-315466-biclou.html",
+      "image": null,
+      "id": "9694e630ef71"
+    },
+    {
+      "venue": "Théâtre Théo Argence",
+      "venue_slug": "theatre-theo-argence",
+      "title": "Secrets de beatmaker",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-26",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319010-secrets-de-beatmaker.html",
+      "image": null,
+      "id": "1f0fb5c55031"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-de-lyon",
+      "title": "Visites découverte commentées",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-09-26",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
+      "image": null,
+      "id": "20b2a2fa79b8"
+    },
+    {
+      "venue": "Théâtre de la Croix-Rousse",
+      "venue_slug": "theatre-de-la-croix-rousse",
+      "title": "Blanche-Neige ou la chute du mur de Berlin",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-26",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319007-blanche-neige-ou-la-chute-du-mur-de-berlin.html",
+      "image": null,
+      "id": "20958c24bbf8"
+    },
+    {
+      "venue": "Parc Maurice Sautier",
+      "venue_slug": "parc-maurice-sautier",
+      "title": "La demande en mariage",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-26",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319008-la-demande-en-mariage.html",
+      "image": null,
+      "id": "afe8d43ed1da"
     },
     {
       "venue": "Bieristan",
@@ -2293,6 +3775,19 @@
     {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
+      "title": "Téklash",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-09-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-308428-t-klash.html",
+      "image": "https://agenda.villemorte.fr/media/thumb/d0c73151bcac512b425bcbe4c66b7548.jpg",
+      "id": "c243fde21915"
+    },
+    {
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
       "title": "Concert de TÉKLASH",
       "subtitle": null,
       "category": "musique",
@@ -2302,6 +3797,32 @@
       "url": "https://agenda.villemorte.fr/event/concert-de-teklash",
       "image": "https://agenda.villemorte.fr/media/thumb/d0c73151bcac512b425bcbe4c66b7548.jpg",
       "id": "157717fdfc09"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Mesdames Dans En Vraies !",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-09-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.bourse-du-travail.com/mesdames-dans-en-vraies-366978.html",
+      "image": "https://www.bourse-du-travail.com/img/evenement/mesdames-dans-en-vraies--4.jpg",
+      "id": "d909656e64ad"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Pablo Mira",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-288842-pablo-mira.html",
+      "image": null,
+      "id": "c1231ad5b446"
     },
     {
       "venue": "Grrrnd Zero",
@@ -2315,6 +3836,19 @@
       "url": "https://agenda.villemorte.fr/event/dub-sur-la-distomobile",
       "image": null,
       "id": "2ff908253f6d"
+    },
+    {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "Une Bonne Soirée + Noa Li",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-09-26",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318968-une-bonne-soir-e-noa-li.html",
+      "image": null,
+      "id": "0c91607d352b"
     },
     {
       "venue": "Le Périscope",
@@ -2356,6 +3890,19 @@
       "id": "b582a5abf3aa"
     },
     {
+      "venue": "Galerie Imag'In",
+      "venue_slug": "galerie-imag-in",
+      "title": "Exposition collective",
+      "subtitle": null,
+      "category": "Photographie",
+      "date_start": "2026-09-27",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318981-exposition-collective.html",
+      "image": null,
+      "id": "6c2ed5a01e34"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "IF Festival",
@@ -2367,6 +3914,19 @@
       "url": "https://www.les-subs.com/evenement/if-festival-2026-kiblind/",
       "image": "https://www.les-subs.com/wp-content/uploads/2024/04/231008-if-kiblind-lessubsogregoryrubinstein-collectifdesflousfurieux-8-200x200.jpg",
       "id": "c2a58f5a79c8"
+    },
+    {
+      "venue": "Le Toboggan",
+      "venue_slug": "le-toboggan",
+      "title": "Les Fo'Plafonds",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-09-27",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318571-les-fo-plafonds.html",
+      "image": null,
+      "id": "1d76e4bc16d7"
     },
     {
       "venue": "Le Sucre",
@@ -2399,7 +3959,7 @@
       "venue_slug": "marche-gare",
       "title": "Gratuit Déjeuner-Concert TULIPE TULIPE Dispositif Avant-Scène",
       "subtitle": null,
-      "category": null,
+      "category": "Rock & Pop",
       "date_start": "2026-09-29",
       "date_end": null,
       "time": "12:30",
@@ -2421,43 +3981,82 @@
       "id": "301f0fadd2c0"
     },
     {
-      "venue": "Agend'arts",
-      "venue_slug": "agend-arts",
-      "title": "Concert de Bouches de coton",
+      "venue": "TNP - Théâtre National Populaire",
+      "venue_slug": "tnp-theatre-national-populaire",
+      "title": "Seul dans Berlin - Une petite affaire",
       "subtitle": null,
-      "category": "musique",
+      "category": "Théâtre",
       "date_start": "2026-09-29",
-      "date_end": "2026-09-30",
-      "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/bouches-de-coton",
-      "image": "https://agenda.villemorte.fr/media/thumb/c727078154cece32a7e858db21a063b2.jpg",
-      "id": "64afe468ed2b"
+      "date_end": "2026-10-17",
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319003-seul-dans-berlin-une-petite-affaire.html",
+      "image": null,
+      "id": "ec16f160d071"
     },
     {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Brel ! Le Spectacle - Tournée",
+      "venue": "Agend'arts",
+      "venue_slug": "agend-arts",
+      "title": "Bouches de coton",
       "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-09-30",
+      "category": "Sono Mondiale",
+      "date_start": "2026-09-29",
       "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/brel-le-spectacle-tournee-354648.html",
-      "image": "https://www.bourse-du-travail.com/img/evenement/brel--le-spectacle-6.jpg",
-      "id": "29a42fe5af06"
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319031-bouches-de-coton.html",
+      "image": "https://agenda.villemorte.fr/media/thumb/c727078154cece32a7e858db21a063b2.jpg",
+      "id": "39cba133fc06"
+    },
+    {
+      "venue": "Salle Molière",
+      "venue_slug": "salle-moliere",
+      "title": "Beethoven, l'archiduc",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-09-29",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318979-beethoven-learchiduc.html",
+      "image": null,
+      "id": "86800fff900f"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Waly Dia",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-29",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-308679-waly-dia.html",
+      "image": null,
+      "id": "f221f48de320"
     },
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "mercredi Mer. 30. septembre 09 Jeune Public Jeune Public L'écho du large Voyage musical dès 6 mois",
       "subtitle": null,
-      "category": null,
+      "category": "Théâtre",
       "date_start": "2026-09-30",
       "date_end": null,
-      "time": null,
+      "time": "09:15",
       "url": "https://marchegare.fr/agenda/lecho-du-large",
       "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-06/photo_5_-_credit_photo_gerard_gachignard.jpg",
-      "id": "a204f52d0fcd"
+      "id": "e33974f61dd4"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-de-lyon",
+      "title": "Visites découverte commentées",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-09-30",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
+      "image": null,
+      "id": "24233f72303e"
     },
     {
       "venue": "Le Périscope",
@@ -2473,6 +4072,32 @@
       "id": "2f379a4e4864"
     },
     {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Brel ! Le Spectacle - Tournée",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-09-30",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.bourse-du-travail.com/brel-le-spectacle-tournee-354648.html",
+      "image": "https://www.bourse-du-travail.com/img/evenement/brel--le-spectacle-6.jpg",
+      "id": "96f5f6107175"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Prima Donna",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-09-30",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318976-prima-donna.html",
+      "image": null,
+      "id": "b808291f4f6d"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Ahmed Eid",
@@ -2484,6 +4109,32 @@
       "url": "https://www.les-subs.com/evenement/ahmed-eid/",
       "image": "https://www.les-subs.com/wp-content/uploads/2026/03/credit-danny-katter-dsc8378-e1774456179137-200x200.jpg",
       "id": "c657360ef6f2"
+    },
+    {
+      "venue": "Théâtre de la Croix-Rousse",
+      "venue_slug": "theatre-de-la-croix-rousse",
+      "title": "Maldonne",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-09-30",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-315266-maldonne.html",
+      "image": null,
+      "id": "335290bc475d"
+    },
+    {
+      "venue": "Maison de la Danse",
+      "venue_slug": "maison-de-la-danse",
+      "title": "Requiem(s)",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-09-30",
+      "date_end": "2026-10-08",
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319006-requiem-s.html",
+      "image": null,
+      "id": "1478f4a1a739"
     },
     {
       "venue": "Bourse du Travail",
@@ -3045,19 +4696,6 @@
       "id": "bd5c8e2aac4c"
     },
     {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Tanguy Pastureau Dans Un Monde Hostile",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-10-09",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/tanguy-pastureau-dans-un-monde-hostile-255969.html",
-      "image": "https://www.bourse-du-travail.com/img/evenement/tanguy-pastureau-dans-un-monde-hostile-2.jpg",
-      "id": "0eb59d4e1628"
-    },
-    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Concert",
@@ -3108,6 +4746,19 @@
       "url": "https://agenda.villemorte.fr/event/concert-de-faustine-lewandowski-and-de-hortense",
       "image": "https://agenda.villemorte.fr/media/thumb/e6a111736724f4821687eaae03b0cdf7.jpg",
       "id": "5b5e7a5c49e1"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Tanguy Pastureau Dans Un Monde Hostile",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-10-09",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.bourse-du-travail.com/tanguy-pastureau-dans-un-monde-hostile-255969.html",
+      "image": "https://www.bourse-du-travail.com/img/evenement/tanguy-pastureau-dans-un-monde-hostile-2.jpg",
+      "id": "62e81b56482c"
     },
     {
       "venue": "Marché Gare",
@@ -3277,6 +4928,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/worlds-apart/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/12/worlds-apart_radiant-bellevue-500x500.jpg",
       "id": "0f83df41f48b"
+    },
+    {
+      "venue": "Librairie Terre des livres",
+      "venue_slug": "librairie-terre-des-livres",
+      "title": "Olivier Neveux",
+      "subtitle": null,
+      "category": "Rencontres et Dédicaces",
+      "date_start": "2026-10-12",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318764-olivier-neveux.html",
+      "image": null,
+      "id": "c247ade92d40"
     },
     {
       "venue": "Le Périscope",
@@ -3513,19 +5177,6 @@
       "id": "7f5b7a045dde"
     },
     {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Panayotis Pascot - Entre Les Deux - Tournée",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-10-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/panayotis-pascot-entre-les-deux-tournee-373805.html",
-      "image": "https://www.bourse-du-travail.com/img/evenement/panayotis-pascot--entre-les-deux--tournee-68.jpg",
-      "id": "f2b3c1524d19"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Chinese Man Records Party : BOLD feat YOUTHSTAR + RUMBLE + THA TRICKAZ",
@@ -3539,6 +5190,19 @@
       "id": "f47e0b3b8561"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "La fin justifie les moyens",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-10-16",
+      "date_end": "2026-10-31",
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-311822-la-fin-justifie-les-moyens.html",
+      "image": null,
+      "id": "0d991f524afd"
+    },
+    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Scène ouverte slam – session d’octobre",
@@ -3550,6 +5214,19 @@
       "url": "https://agenda.villemorte.fr/event/scene-ouverte-slam-session-doctobre",
       "image": "https://agenda.villemorte.fr/media/thumb/ee047659d42cd7ca074d96b79539317f.jpg",
       "id": "a2aa639308fa"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Panayotis Pascot - Entre Les Deux - Tournée",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-10-16",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.bourse-du-travail.com/panayotis-pascot-entre-les-deux-tournee-373805.html",
+      "image": "https://www.bourse-du-travail.com/img/evenement/panayotis-pascot--entre-les-deux--tournee-68.jpg",
+      "id": "609ccb022ef8"
     },
     {
       "venue": "Les Subsistances",
@@ -3916,6 +5593,19 @@
       "id": "437a693c0b36"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Ça handi long",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-10-22",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
+      "image": null,
+      "id": "b23529359305"
+    },
+    {
       "venue": "La Salle de Bains",
       "venue_slug": "la-salle-de-bains",
       "title": "NORTH CIRCULAR - Vernissage (exposition du 23.10.2026 au 16.01.2027)",
@@ -4163,6 +5853,19 @@
       "id": "9baef91f94bf"
     },
     {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Le Grand Sacripant",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-10-28",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317834-le-grand-sacripant.html",
+      "image": null,
+      "id": "d514fbf05310"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Salon Des Vignerons Independants",
@@ -4317,6 +6020,19 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-8",
       "image": "https://www.halle-tony-garnier.com/storage/141985/conversions/2026-10-31-SALON-DES-VIGNERONS-INDEPENDANTS-vignerons-temporaire-2026-20260615-155234-square.jpg",
       "id": "d83e0a392b7b"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "En deux-deux",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-10-31",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318790-en-deux-deux.html",
+      "image": null,
+      "id": "1e1856cb38ee"
     },
     {
       "venue": "Le Transbordeur",
@@ -4512,6 +6228,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/alan-stivell/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/02/alan-stivell_radiant-bellevue-500x500.jpg",
       "id": "8fd9327a4d49"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Friendzone",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2026-11-05",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318792-friendzone.html",
+      "image": null,
+      "id": "5a4015352896"
     },
     {
       "venue": "Le Transbordeur",
@@ -5827,6 +7556,19 @@
       "id": "c7e5650deedd"
     },
     {
+      "venue": "Théâtre Théo Argence",
+      "venue_slug": "theatre-theo-argence",
+      "title": "L'opéra par l'Orchestre",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-11-28",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318967-leop-ra-par-leorchestre.html",
+      "image": null,
+      "id": "578d5a349ed9"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "L’expérience Théâtrale",
@@ -6449,6 +8191,19 @@
       "url": "https://agenda.villemorte.fr/event/track-cie-la-boite-a-sel-celine-garnavault",
       "image": "https://agenda.villemorte.fr/media/thumb/ff7a982529b3a7915d3d21fdf3423bf1.jpg",
       "id": "b09473dd90e2"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Le Grand Sacripant",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-12-12",
+      "date_end": "2026-12-26",
+      "time": "18:45",
+      "url": "https://www.petit-bulletin.fr/agenda-317834-le-grand-sacripant.html",
+      "image": null,
+      "id": "61a77ac78690"
     },
     {
       "venue": "La Rayonne",
@@ -7452,6 +9207,19 @@
       "id": "eda182261fed"
     },
     {
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "La Pastasciutta antifascista de Casa Cervi - Floriane Facchini & Cie",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2027-01-21",
+      "date_end": "2027-01-22",
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/la-pastasciutta-antifascista-de-casa-cervi-floriane-facchini-and-cie",
+      "image": "https://agenda.villemorte.fr/media/thumb/41515d5cd2f79a29f2988b38d3e502ba.jpg",
+      "id": "af9f37e48772"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LE PÈRE",
@@ -7463,6 +9231,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/le-pere/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-pere-500x500.jpg",
       "id": "df0921754fbc"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Ça handi long",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2027-01-21",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
+      "image": null,
+      "id": "22ccb91e34ec"
     },
     {
       "venue": "La Rayonne",
@@ -8291,10 +10072,10 @@
       "category": "humour",
       "date_start": "2027-03-06",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://www.bourse-du-travail.com/arnaud-tsamere-362579.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/arnaud-tsamere-97.jpg",
-      "id": "01028a442132"
+      "id": "efdc4437e370"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -8336,19 +10117,6 @@
       "id": "d523699b9ca9"
     },
     {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Blandine Lehout Dans La Vie De Ta Mère",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2027-03-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/blandine-lehout-dans-la-vie-de-ta-mere-359464.html",
-      "image": "https://www.bourse-du-travail.com/img/evenement/blandine-lehout-dans-la-vie-de-ta-mere-4.jpg",
-      "id": "3f896bb53506"
-    },
-    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "ATTABLEMENTS (PROPOSITION POUR UNE TRILOGIE)",
@@ -8360,6 +10128,19 @@
       "url": "https://www.les-subs.com/evenement/attablements-proposition-pour-une-trilogie-felixe-kazi-tani/",
       "image": "https://www.les-subs.com/wp-content/uploads/2026/07/img-8247-2x.jpg",
       "id": "5e2941af473e"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Blandine Lehout Dans La Vie De Ta Mère",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-03-11",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.bourse-du-travail.com/blandine-lehout-dans-la-vie-de-ta-mere-359464.html",
+      "image": "https://www.bourse-du-travail.com/img/evenement/blandine-lehout-dans-la-vie-de-ta-mere-4.jpg",
+      "id": "78def9c1c87c"
     },
     {
       "venue": "Bourse du Travail",
@@ -8581,6 +10362,19 @@
       "url": "https://www.les-subs.com/evenement/au-grand-passage-les-mortes-se-logent-partout-aurelia-luscher/",
       "image": "https://www.les-subs.com/wp-content/uploads/2026/07/formatjpgromy-alizee-v1-200x200.jpg",
       "id": "bf13dbcab7d9"
+    },
+    {
+      "venue": "Musée de Fourvière",
+      "venue_slug": "musee-de-fourviere",
+      "title": "Sacrées Boîtes",
+      "subtitle": null,
+      "category": "Sciences et Histoire",
+      "date_start": "2027-03-26",
+      "date_end": "2027-06-30",
+      "time": "12:30",
+      "url": "https://www.petit-bulletin.fr/agenda-317990-sacr-es-bo-tes.html",
+      "image": null,
+      "id": "653bb9b7d446"
     },
     {
       "venue": "Les Subsistances",
@@ -9088,6 +10882,19 @@
       "url": "https://www.bourse-du-travail.com/sofia-belabbes-ketchup-mayo-nouvelle-version-tournee-376106.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/sofia-belabbes-5.jpg",
       "id": "9a11c35800f4"
+    },
+    {
+      "venue": "Comédie Odéon",
+      "venue_slug": "comedie-odeon",
+      "title": "La prière du hamster",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2027-08-02",
+      "date_end": "2027-08-18",
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-315033-la-pri-re-du-hamster.html",
+      "image": null,
+      "id": "db947516bfd2"
     },
     {
       "venue": "La Halle Tony Garnier",
