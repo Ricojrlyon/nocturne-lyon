@@ -733,6 +733,13 @@
     justify-content: flex-end;
     align-items: center;
     gap: 8px;
+    /* Indispensable pour que l'ellipse de .event-cat se déclenche : en tant
+       qu'élément de grille, ce pied a un min-width:auto qui l'empêche de
+       descendre sous sa largeur min-content. Comme la catégorie est en
+       nowrap, cette min-content vaut son texte entier — le pied débordait
+       donc de la carte au lieu de tronquer (« Art contemporain et
+       numérique » à La Salle de bains, 385 px dans une piste de 354). */
+    min-width: 0;
     /* L'ancrage en bas de carte vient d'ici : la rangée est le 3e track du
        grid .event (auto 1fr auto), align-self end la colle au padding bas. */
     align-self: end;
