@@ -629,13 +629,20 @@
   }
   /* Trame sérigraphie : une grille de points sombres par-dessus l'affiche.
      C'est elle qui unifie des visuels très hétérogènes (portraits, photos
-     de salle, visuels graphiques) sans en écraser les couleurs. */
+     de salle, visuels graphiques) sans en écraser les couleurs.
+     Densifiée en second recours de lisibilité, après l'assombrissement de
+     l'image : points portés de 42 à 50 % du rayon et de 60 à 88 %
+     d'opacité, pas resserré de 3,4 à 3,1 px, plus un voile résiduel de
+     10 % entre les points. Elle assombrit donc l'affiche dans le langage
+     du site plutôt qu'avec un calque neutre — l'image garde ses couleurs
+     et gagne du grain. Contrepartie : les visuels fins et les visages y
+     perdent du détail. */
   .visual-bg .photo-wrap::after {
     content: '';
     position: absolute; inset: 0;
     background-image: radial-gradient(circle,
-        rgba(22,31,37,.6) 42%, rgba(22,31,37,0) 47%);
-    background-size: 3.4px 3.4px;
+        rgba(22,31,37,.88) 50%, rgba(22,31,37,.10) 56%);
+    background-size: 3.1px 3.1px;
   }
   /* voile sombre dégressif : la ligne lieu·arr·heure doit gagner sur
      les affiches claires */
