@@ -765,18 +765,32 @@
     color: var(--ink-mute);
   }
   .event-cat:empty::before, .event-cat:empty::after { display: none; }
-  .event-run {
-    display: inline-block;
+  /* Boîte commune aux deux étiquettes du pied. Sans elle, leurs réglages
+     divergents donnaient deux cadres de hauteurs différentes : la durée en
+     9 px avec une bordure faisait 19,5 px, la source en 8 px sans bordure
+     13,5. Hauteur fixe et centrage en flex rendent le cadre indépendant du
+     corps de texte ; le filet transparent hérité par la source compense la
+     bordure de la durée, pour que les deux boîtes extérieures coïncident.
+     Cette règle doit précéder les deux suivantes, qui la surchargent. */
+  .event-run,
+  .event-source {
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 18px;
+    padding: 0 8px;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
     font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap;
+  }
+  .event-run {
     font-size: 9px;
     color: var(--hot);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    padding: 2px 8px;
-    border: 1px solid var(--hot-line);
-    border-radius: var(--radius);
+    border-color: var(--hot-line);
     font-weight: 500;
-    white-space: nowrap;
   }
   .event-foot-right {
     display: inline-flex;
@@ -786,14 +800,9 @@
     flex-shrink: 0;
   }
   .event-source {
-    display: inline-block;
-    font-family: 'JetBrains Mono', monospace;
     font-size: 8px;
     text-transform: lowercase;
     letter-spacing: 0.08em;
-    padding: 2px 7px;
-    border-radius: var(--radius);
-    white-space: nowrap;
     font-weight: 400;
   }
   .event-source.pb {
