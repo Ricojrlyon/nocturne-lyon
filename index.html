@@ -721,12 +721,20 @@
     letter-spacing: 0.06em;
   }
 
-  /* Row 3: footer */
+  /* Row 3: footer.
+     flex-end plutôt que space-between : la catégorie est masquée quand elle
+     est vide (:empty ci-dessous), et space-between recollait alors le groupe
+     source + durée à GAUCHE — d'où des cartes dont le bas ne s'alignait pas
+     sur les autres. Avec flex-end le groupe de droite est ancré à droite en
+     toutes circonstances, et la catégorie, quand elle existe, est repoussée
+     à gauche par son margin-right auto. */
   .event-foot {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     gap: 8px;
+    /* L'ancrage en bas de carte vient d'ici : la rangée est le 3e track du
+       grid .event (auto 1fr auto), align-self end la colle au padding bas. */
     align-self: end;
   }
   .event-cat {
@@ -735,6 +743,17 @@
     color: var(--ink-soft);
     text-transform: lowercase;
     letter-spacing: 0.1em;
+    /* Repousse le groupe source + durée contre le bord droit. */
+    margin-right: auto;
+    /* Le pied doit tenir sur UNE ligne : certains libellés du Petit
+       Bulletin sont très longs (« atelier · musique · cinéma · exposition
+       · rencontre · arts visuels ») et passaient sur deux lignes, ce qui
+       doublait la hauteur de la rangée et laissait les badges flotter au
+       milieu au lieu d'être collés en bas. Tronqué plutôt que replié. */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
   }
   .event-cat:empty { display: none; }
   .event-cat::before {
@@ -763,6 +782,8 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    /* Jamais comprimé par une catégorie longue : c'est elle qui se tronque. */
+    flex-shrink: 0;
   }
   .event-source {
     display: inline-block;
