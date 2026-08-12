@@ -5,12 +5,13 @@ list of upcoming events. The page structure is regular: each event has a
 title in an h-tag with a stable URL (/agenda-NNNNNN-slug.html), a category
 in parens on the next sibling line, then a list with venue and date.
 
-AUCUN filtre éditorial : tout ce que publie l'agenda remonte. Les
-anciennes listes de blocage (catégories Théâtre / Conférences / Rencontres,
-lieux « librairie » / « theatre » / « dans toute la ville », et la
-whitelist Fourvière qui compensait la précédente) ont été retirées, ainsi
-que l'obligation d'avoir une catégorie. C'est la déduplication en trois
-passes (scrapers/dedup.py) qui se charge d'écarter les doublons quand un
+Un seul filtre éditorial : les musées (EXCLUDED_VENUE_PATTERNS), dont les
+expositions courent sur des mois et saturaient le feed. Les anciennes
+listes de blocage (catégories Théâtre / Conférences / Rencontres, lieux
+« librairie » / « theatre » / « dans toute la ville », et la whitelist
+Fourvière qui compensait la précédente) ont été retirées, ainsi que
+l'obligation d'avoir une catégorie. C'est la déduplication en trois passes
+(scrapers/dedup.py) qui se charge d'écarter les doublons quand un
 événement est aussi publié par la salle elle-même.
 
 Les 164 événements de l'agenda sont répartis sur 9 pages (`?p=N`) :
@@ -53,6 +54,14 @@ MAX_PAGES = 15
 # Au-delà de ce nombre de jours, une plage devient UN événement à plage
 # plutôt qu'un événement par jour.
 LONG_RUN_DAYS = 7
+
+# Seul filtre éditorial restant : les musées. Leurs expositions courent sur
+# des mois — jusqu'à 509 jours pour le Musée Urbain Tony Garnier — et
+# occupent donc une carte dans le feed chaque jour de leur durée, ce qui
+# noyait la programmation du soir. Comparé sur le nom de lieu normalisé
+# (voir _normalize), donc « MAM - Musée des Arts et de la Marionnette »
+# comme « Musée des Confluences » sont couverts.
+EXCLUDED_VENUE_PATTERNS = ("musee", "museum")
 
 MONTHS_FR = {
     "janvier": 1, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
@@ -273,6 +282,10 @@ def _extract_events_from_soup(soup: BeautifulSoup) -> List[Event]:
         # vrai bloc d'événement. Sans cet assouplissement, une quinzaine
         # d'événements par passage restaient invisibles.
         if not venue or not date_str:
+            continue
+
+        venue_norm = _normalize(venue)
+        if any(p in venue_norm for p in EXCLUDED_VENUE_PATTERNS):
             continue
 
         date_times = _parse_date_str(date_str)
