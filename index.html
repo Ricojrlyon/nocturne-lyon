@@ -708,9 +708,15 @@
      produisait max-height. */
   .event-title {
     font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-    font-variation-settings: 'opsz' 16, 'wght' 300;
-    font-weight: 300;
-    font-size: 16.5px;
+    /* La graisse doit être portée par les DEUX propriétés : sur une police
+       variable, font-variation-settings l'emporte sur font-weight, et ne
+       changer que la seconde n'aurait aucun effet visible.
+       opsz suit le corps rendu, c'est le rôle de cet axe — le laisser à 16
+       pour un texte composé à 21 px appliquerait la compensation optique
+       d'un corps plus petit, donc des pleins trop appuyés. */
+    font-variation-settings: 'opsz' 20, 'wght' 400;
+    font-weight: 400;
+    font-size: 21px;
     line-height: 1.19;
     margin: 0;
     letter-spacing: -0.006em;
@@ -1030,7 +1036,11 @@
       padding: 10px;
     }
     .event-title {
-      font-size: 17px;
+      /* Aligné sur le corps de bureau. Laissé à 17 px, le titre serait
+         devenu plus PETIT sur mobile que sur grand écran — l'inverse du
+         rapport d'origine, où le mobile était d'un demi-point au-dessus.
+         Ici la carte est en hauteur libre, le corps ne contraint rien. */
+      font-size: 21px;
       line-height: 1.18;
       max-height: none;
       align-self: stretch;
