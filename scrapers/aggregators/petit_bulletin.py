@@ -55,13 +55,20 @@ MAX_PAGES = 15
 # plutôt qu'un événement par jour.
 LONG_RUN_DAYS = 7
 
-# Seul filtre éditorial restant : les musées. Leurs expositions courent sur
-# des mois — jusqu'à 509 jours pour le Musée Urbain Tony Garnier — et
-# occupent donc une carte dans le feed chaque jour de leur durée, ce qui
-# noyait la programmation du soir. Comparé sur le nom de lieu normalisé
-# (voir _normalize), donc « MAM - Musée des Arts et de la Marionnette »
-# comme « Musée des Confluences » sont couverts.
-EXCLUDED_VENUE_PATTERNS = ("musee", "museum")
+# Seul filtre éditorial restant : les lieux d'exposition permanente, musées
+# et galeries. Leurs accrochages courent sur des semaines ou des mois —
+# jusqu'à 509 jours pour le Musée Urbain Tony Garnier — et occupent donc une
+# carte dans le feed chaque jour de leur durée, ce qui noyait la
+# programmation du soir. Comparé sur le nom de lieu normalisé (voir
+# _normalize), donc « MAM - Musée des Arts et de la Marionnette » comme
+# « Galerie Imag'In » sont couverts.
+#
+# Volontairement restreint à ces deux mots : « Espace Gerson » est un
+# café-théâtre et « Maison de la Danse » une grande salle, tout élargissement
+# du motif les emporterait. Quelques lieux d'art y échappent donc faute de
+# porter le mot dans leur nom (URDLA, Maison Ravier, CAUE du Rhône) — un
+# événement chacun, à ajouter nommément si besoin.
+EXCLUDED_VENUE_PATTERNS = ("musee", "museum", "galerie")
 
 MONTHS_FR = {
     "janvier": 1, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
