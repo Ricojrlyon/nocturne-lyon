@@ -828,6 +828,105 @@
     background: rgba(138, 85, 48, 0.10);
   }
 
+  /* ---------- carte groupée : plusieurs événements, même lieu, même jour ----------
+     Elle occupe exactement la même case que les autres (160 px, cf.
+     .events grid-auto-rows) et se déplie au clic en une carte par
+     événement. Le regroupement se fait au RENDU et après filtrage : une
+     grappe peut mêler des catégories, grouper avant filtrerait de travers. */
+  button.event {
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+    /* Le bouton natif impose ses propres marges et fond, que la règle
+       .event ne couvre pas toutes. */
+    margin: 0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  button.event:focus-visible {
+    outline: 2px solid var(--ink-soft);
+    outline-offset: 2px;
+  }
+  /* Compteur d'événements : occupe la place de l'heure d'une carte simple,
+     donc rien de nouveau à apprendre pour l'œil, mais en crème plutôt
+     qu'en tan pour ne pas se faire passer pour un horaire. */
+  .event-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink);
+    font-weight: 500;
+    white-space: nowrap;
+    letter-spacing: 0.08em;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+  }
+  .event-list {
+    display: grid;
+    row-gap: 3px;
+    align-self: center;
+    min-height: 0;
+  }
+  .event-line {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: center;
+    /* Rangée verrouillée à 18 px. Deux pièges sinon : sans line-height
+       explicite chaque corps de texte impose le sien, et avec un
+       align-items:baseline le décalage de ligne de base entre le titre en
+       14 px et l'horaire en 10,5 px ajoutait 2 px par rangée — quatre
+       lignes réclamaient alors 89 px pour une piste de 83,6, ce qui
+       poussait le pied hors de la carte. */
+    line-height: 18px;
+  }
+  .event-line .t {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: inherit;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+  }
+  .event-line .t.more { color: var(--ink-mute); }
+  .event-line .h {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--hot);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+    line-height: inherit;
+  }
+  /* Bouton de repli : une case fantôme dans la grille. Il en consomme une,
+     mais il conserve le rythme de la grille — un contrôle plus petit
+     laisserait un trou de 160 px puisque les rangées sont fixes. */
+  .collapse-card {
+    grid-row: span 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: none;
+    border: 1px dashed rgba(231, 223, 190, 0.22);
+    border-radius: var(--radius);
+    color: var(--ink-soft);
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: border-color 0.18s ease, color 0.18s ease;
+  }
+  .collapse-card:hover {
+    color: var(--ink);
+    border-color: var(--ink-soft);
+  }
+  .collapse-card:focus-visible {
+    outline: 2px solid var(--ink-soft);
+    outline-offset: 2px;
+  }
+
   /* Subtitle removed from main grid layout — too noisy in compact cards.
      Keep style for if we re-enable later. */
   .event-subtitle {
@@ -915,6 +1014,18 @@
     }
     .event-time {
       font-size: 10px;
+    }
+    /* En mobile la carte est une pile flex verticale, où align-self joue sur
+       l'axe HORIZONTAL : le centrage prévu pour la grille y rétrécirait la
+       liste à la largeur de son texte. */
+    .event-list {
+      align-self: stretch;
+    }
+    /* Le bouton de repli n'a plus de rangée fixe à respecter : il redevient
+       un simple bandeau, au lieu d'une case fantôme de 160 px. */
+    .collapse-card {
+      min-height: 44px;
+      padding: 10px;
     }
     .event-title {
       font-size: 17px;
@@ -1391,6 +1502,11 @@ const state = {
   search: '',          // free text search: venue name or event title
   events: [],
   occurrences: [],     // expandOccurrences(events), calculé une fois au load
+  // Grappes (lieu, jour) dépliées, clés « AAAA-MM-JJ|Lieu ». Gardé en état
+  // plutôt qu'en DOM : le feed est reconstruit à chaque filtre ou frappe,
+  // une manipulation directe du DOM serait effacée. Les clés qui ne
+  // correspondent plus à rien après un changement de filtre sont ignorées.
+  expanded: new Set(),
 };
 
 function isoOf(d) {
@@ -2212,8 +2328,20 @@ function renderFeed() {
                  + ' évt' + (n > 1 ? 's' : '') + '</span>');
     html.push('  </div>');
     html.push('  <div class="events">');
-    for (const e of list) {
-      html.push(eventCard(e));
+    // Regroupement (lieu, jour). La grappe prend la position de son PREMIER
+    // membre dans la liste déjà triée, sinon regrouper réordonnerait le
+    // jour. Une grappe dépliée rend ses cartes normales, suivies du bouton
+    // de repli.
+    for (const [venue, evs] of groupByVenue(list)) {
+      if (evs.length < 2) { html.push(eventCard(evs[0])); continue; }
+      const key = iso + '|' + venue;
+      if (state.expanded.has(key)) {
+        for (const e of evs) html.push(eventCard(e));
+        html.push('<button type="button" class="collapse-card" data-collapse="'
+                + escapeHtml(key) + '">replier</button>');
+      } else {
+        html.push(groupCard(venue, evs, key));
+      }
     }
     html.push('  </div>');
     html.push('</section>');
@@ -2223,6 +2351,84 @@ function renderFeed() {
 
 function escapeHtml(s) {
   return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+/* Groupe les événements d'un jour par lieu, en conservant l'ordre de
+   première apparition — la liste reçue est déjà triée (groupe de lieux,
+   source, heure) et regrouper ne doit pas la réordonner. */
+function groupByVenue(list) {
+  const map = new Map();
+  for (const e of list) {
+    const v = e.venue || '';
+    if (!map.has(v)) map.set(v, []);
+    map.get(v).push(e);
+  }
+  return map;
+}
+
+/* Catégorie majoritaire d'une grappe. À égalité, ordre alphabétique :
+   déterministe, donc stable d'un rendu à l'autre. */
+function majorityCategory(evs) {
+  const n = new Map();
+  for (const e of evs) {
+    if (!e.category) continue;
+    n.set(e.category, (n.get(e.category) || 0) + 1);
+  }
+  if (!n.size) return '';
+  return [...n.keys()].sort((a, b) => (n.get(b) - n.get(a)) || a.localeCompare(b))[0];
+}
+
+/* Nombre de lignes tenant dans une carte de 160 px : la piste centrale
+   fait 83,6 px une fois l'en-tête (18), le pied (18) et les gouttières
+   (12) retranchés des 132 px de contenu ; quatre rangées de 18 px plus
+   trois gouttières de 3 en occupent 81. Au-delà, on montre les trois
+   premières et une ligne de report. */
+const GROUP_MAX_LINES = 4;
+
+function groupCard(venue, evs, key) {
+  const shown = evs.length > GROUP_MAX_LINES ? evs.slice(0, GROUP_MAX_LINES - 1) : evs;
+  const rest = evs.length - shown.length;
+
+  let lines = '';
+  for (const e of shown) {
+    const t = (e.title && e.title.trim()) ? e.title.trim() : 'titre non précisé';
+    lines += '<span class="event-line"><span class="t">' + escapeHtml(t)
+           + '</span><span class="h">' + escapeHtml(e.time || '—') + '</span></span>';
+  }
+  if (rest > 0) {
+    lines += '<span class="event-line"><span class="t more">+' + rest
+           + ' autres</span><span class="h"></span></span>';
+  }
+
+  const cat = majorityCategory(evs);
+  // Badge de source seulement si toute la grappe vient de la même : sinon
+  // il attribuerait à l'ensemble l'origine d'une partie.
+  const badges = new Set(evs.map(e => sourceBadgeHtml(e)));
+  const sourceBadge = badges.size === 1 ? [...badges][0] : '';
+
+  const arr = eventArrondissement(evs[0]);
+  // Graine du motif : le lieu seul, pour que la grappe garde la même
+  // apparence d'un jour à l'autre. Le suffixe évite de tomber sur la
+  // graine d'un vrai événement.
+  const visual = '<div class="visual-bg">' + patternSVG(venue + '|·groupe') + '</div>';
+
+  return [
+    '<button type="button" class="event" data-venue-day="' + escapeHtml(key) + '"',
+    '        aria-expanded="false" aria-label="' + escapeHtml(venue + ', '
+      + evs.length + ' événements — déplier') + '">',
+    '  ' + visual,
+    '  <div class="event-head">',
+    '    <span class="event-venue">' + escapeHtml(venue) + '</span>',
+    '    <span class="event-arr">' + escapeHtml(arr) + '</span>',
+    '    <span class="event-count">' + evs.length + ' events</span>',
+    '  </div>',
+    '  <div class="event-list">' + lines + '</div>',
+    '  <div class="event-foot">',
+    '    <span class="event-cat">' + escapeHtml(cat) + '</span>',
+    '    <div class="event-foot-right">' + sourceBadge + '</div>',
+    '  </div>',
+    '</button>'
+  ].join('\n');
 }
 
 function eventCard(e) {
@@ -2285,6 +2491,23 @@ function eventCard(e) {
     '</' + tag + '>'
   ].join('\n');
 }
+
+/* Dépliage des grappes. Délégué sur le feed, qui est reconstruit à chaque
+   rendu : un écouteur posé sur les cartes serait perdu. On passe par
+   render() et non renderFeed() pour bénéficier de la transition de vue. */
+document.getElementById('feed').addEventListener('click', ev => {
+  const open = ev.target.closest('[data-venue-day]');
+  if (open) {
+    state.expanded.add(open.getAttribute('data-venue-day'));
+    render();
+    return;
+  }
+  const close = ev.target.closest('[data-collapse]');
+  if (close) {
+    state.expanded.delete(close.getAttribute('data-collapse'));
+    render();
+  }
+});
 
 load().catch(err => {
   document.getElementById('feed').innerHTML =
