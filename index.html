@@ -590,14 +590,20 @@
      laisser le texte respirer. Le motif est TOUJOURS rendu en
      sous-couche : si l'affiche ne charge pas (hotlink bloqué, 404),
      onerror masque la photo et le motif réapparaît. */
+  /* Le visuel s'éteint à 60 % de la hauteur de carte. Le point d'inflexion
+     suit dans la même proportion (34 %) : en ne déplaçant que l'extrémité,
+     la courbe s'aplatissait sur sa seconde moitié et le fondu paraissait
+     traîner. À hauteur du titre, à 51 % de la carte, le masque laisse
+     passer 20 % — soit 11 % d'opacité effective une fois appliquée celle
+     du calque, le texte reste donc largement devant. */
   .visual-bg {
     position: absolute;
     inset: 0;
     pointer-events: none;
     -webkit-mask-image: linear-gradient(to bottom,
-        rgba(0,0,0,.95) 0%, rgba(0,0,0,.55) 32%, transparent 56%);
+        rgba(0,0,0,.95) 0%, rgba(0,0,0,.55) 34%, transparent 60%);
     mask-image: linear-gradient(to bottom,
-        rgba(0,0,0,.95) 0%, rgba(0,0,0,.55) 32%, transparent 56%);
+        rgba(0,0,0,.95) 0%, rgba(0,0,0,.55) 34%, transparent 60%);
   }
   .visual-bg svg {
     position: absolute; inset: 0;
