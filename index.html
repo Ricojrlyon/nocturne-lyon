@@ -618,7 +618,14 @@
     width: 100%; height: 100%;
     object-fit: cover;
     object-position: center 22%;
-    /* couleurs d'origine — aucun filtre */
+    /* Assombrissement de l'affiche. Depuis que le visuel remplit la carte,
+       le titre passe devant l'image au lieu de la zone nue d'avant, et les
+       affiches claires le rendaient illisible. Le filtre porte sur la
+       balise image seule : les motifs de secours, dessinés dans trois
+       teintes connues à 58 % d'opacité, sont déjà sourds et n'en ont pas
+       besoin. Le léger gain de contraste compense l'affadissement que
+       produit toujours une baisse de luminosité. */
+    filter: brightness(0.60) contrast(1.06);
   }
   /* Trame sérigraphie : une grille de points sombres par-dessus l'affiche.
      C'est elle qui unifie des visuels très hétérogènes (portraits, photos
