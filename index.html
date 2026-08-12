@@ -22,7 +22,12 @@
     --accent:       #e7dfbe;        /* cream accent (same as ink) */
     --accent-glow:  rgba(231, 223, 190, 0.12);
     --warm:         #d4a574;        /* warm tan for badges/highlights */
-    --hot:          #ff6b4a;        /* coral red for urgent / multi-day */
+    /* Corail adouci pour le badge de durée : l'ancien #ff6b4a, très saturé,
+       criait plus fort que le titre de l'événement qu'il annote. Chroma
+       divisée par deux, teinte conservée. --hot-line sert au filet, encore
+       un cran en retrait pour que le contour n'appuie pas le texte. */
+    --hot:          #e08d70;        /* coral adouci — durée / multi-jours */
+    --hot-line:     rgba(224, 141, 112, 0.42);
     /* Angles très légèrement adoucis — validé sur maquette (3 px). */
     --radius:       3px;
     /* Teintes des motifs de secours : vert, rose, orange. Même luminosité
@@ -749,7 +754,7 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding: 2px 8px;
-    border: 1px solid var(--hot);
+    border: 1px solid var(--hot-line);
     border-radius: var(--radius);
     font-weight: 500;
     white-space: nowrap;
