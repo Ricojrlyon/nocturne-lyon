@@ -540,19 +540,24 @@
   }
 
   /* ---------- event grid ---------- */
-  .events {
+  /* .group-block partage les pistes de .events dans TOUTES les règles qui
+     suivent, et jamais par recopie : le bloc d'un groupe déplié occupe
+     toute la largeur et doit produire exactement les mêmes colonnes que
+     la grille qui l'entoure. Dupliquer ces valeurs les aurait laissées
+     diverger au premier réglage. */
+  .events, .group-block {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     grid-auto-rows: 160px;
     gap: 12px;
   }
   @media (min-width: 1100px) {
-    .events {
+    .events, .group-block {
       grid-template-columns: repeat(auto-fill, minmax(280px, calc(33.333% - 8px)));
     }
   }
   @media (max-width: 560px) {
-    .events {
+    .events, .group-block {
       grid-template-columns: 1fr;
       grid-auto-rows: auto;
     }
@@ -920,6 +925,42 @@
     letter-spacing: 0.02em;
     line-height: inherit;
   }
+  /* Bloc d'un groupe déplié : les cartes ouvertes et leur bouton de repli,
+     cerclés d'un filet corail.
+     Il occupe des RANGÉES ENTIÈRES (grid-column 1/-1), sans quoi le cadre
+     serait impossible : on ne peut pas encadrer un sous-ensemble
+     d'éléments de grille susceptible de déborder sur deux rangées.
+     Conséquence assumée : le groupe démarre sur une nouvelle ligne et
+     laisse un vide derrière lui si la rangée précédente n'était pas
+     pleine — ce vide marque d'ailleurs qu'un dépliage a eu lieu.
+     Le filet est un OUTLINE et non une bordure : il ne prend aucune place
+     dans la mise en page et se dessine dans la gouttière, si bien que les
+     colonnes du bloc restent alignées au pixel près sur celles de la
+     grille autour. Une bordure, avec son remplissage, aurait rétréci les
+     cartes contenues par rapport aux autres.
+     Le corail plutôt qu'une teinte de motif : il sert déjà aux heures et
+     aux badges, donc il se lit comme un signal d'interface — et il reste
+     constant, là où une teinte de motif se confondrait avec le fond d'un
+     groupe dont le motif est justement orange. */
+  /* Le corps d'une journée empile des conteneurs : .events pour les cartes
+     ordinaires, .group-block pour un groupe déplié. Le bloc est un FRÈRE
+     de .events et non un élément à l'intérieur — placé dans la grille, il
+     aurait été enfermé dans une rangée de 160 px (grid-auto-rows) et son
+     contenu, qui occupe deux rangées dès quatre cartes, aurait débordé.
+     Un grid-row:span aurait dépendu du nombre de colonnes, donc du
+     viewport ; en sortir le bloc règle le cas par construction. */
+  .day-body {
+    display: grid;
+    gap: 12px;
+  }
+  .group-block {
+    outline: 1px solid var(--hot);
+    outline-offset: 7px;
+    border-radius: var(--radius);
+    /* De quoi loger le filet, qui déborde de 8 px sans occuper de place. */
+    margin: 6px 0;
+  }
+
   /* Bouton de repli : une case fantôme dans la grille. Il en consomme une,
      mais il conserve le rythme de la grille — un contrôle plus petit
      laisserait un trou de 160 px puisque les rangées sont fixes. */
@@ -1015,7 +1056,7 @@
 
     /* Mobile cards: switch from fixed-height grid cells to content-sized flex stack.
        Avoids overlap when title is long, and removes the "empty middle" feel. */
-    .events {
+    .events, .group-block, .day-body {
       grid-auto-rows: auto;
       gap: 10px;
     }
@@ -1594,12 +1635,17 @@ function patternSVG(seed) {
 /* Couche visuelle d'une carte : motif toujours en sous-couche, affiche
    par-dessus si disponible (lazy). onerror masque la photo → le motif
    réapparaît si l'image est morte ou le hotlink bloqué. */
-function visualLayerHtml(e) {
+function visualLayerHtml(e, seedOverride) {
   // Graine des tirages : (lieu + titre) est stable d'un run à l'autre —
   // contrairement à e.id, qui dépend de l'heure et change si la dédup
   // l'enrichit depuis une autre source. Les occurrences d'un même
   // événement multi-jours partagent donc forme et couleur.
-  const seed = (e.venue || '') + '|' + (e.title || '');
+  // seedOverride sert aux cartes d'un groupe déplié : elles reçoivent la
+  // graine de la CARTE GROUPÉE, donc le motif du lieu. Sans ça le
+  // dépliage défaisait visuellement le groupe qu'il venait d'ouvrir —
+  // quatre cartes d'un même lieu affichaient trois trames et trois
+  // teintes différentes.
+  const seed = seedOverride || ((e.venue || '') + '|' + (e.title || ''));
   let html = '<div class="visual-bg">' + patternSVG(seed);
   if (e.image && /^https?:\/\//.test(e.image)) {
     html += '<div class="photo-wrap">'
@@ -1628,6 +1674,11 @@ const state = {
   // correspondent plus à rien après un changement de filtre sont ignorées.
   expanded: new Set(),
 };
+
+/* Listes d'événements par journée, telles que triées au dernier rendu.
+   Le dépliage ne reconstruit qu'une journée : il n'a donc ni à refiltrer
+   ni à retrier, il lui suffit de relire la liste d'ici. */
+const lastRenderDays = new Map();
 
 function isoOf(d) {
   const y = d.getFullYear();
@@ -2407,6 +2458,7 @@ function renderFeed() {
   const sortedDates = Array.from(groups.keys()).sort();
   const today = new Date(); today.setHours(0,0,0,0);
   const html = [];
+  lastRenderDays.clear();
 
   for (const iso of sortedDates) {
     const list = groups.get(iso);
@@ -2447,26 +2499,47 @@ function renderFeed() {
     html.push('    <span class="db-count">' + String(n).padStart(2, '0')
                  + ' évt' + (n > 1 ? 's' : '') + '</span>');
     html.push('  </div>');
-    html.push('  <div class="events">');
-    // Regroupement (lieu, jour). La grappe prend la position de son PREMIER
-    // membre dans la liste déjà triée, sinon regrouper réordonnerait le
-    // jour. Une grappe dépliée rend ses cartes normales, suivies du bouton
-    // de repli.
-    for (const [venue, evs] of groupByVenue(list)) {
-      if (evs.length < 2) { html.push(eventCard(evs[0])); continue; }
-      const key = iso + '|' + venue;
-      if (state.expanded.has(key)) {
-        for (const e of evs) html.push(eventCard(e));
-        html.push('<button type="button" class="collapse-card" data-collapse="'
-                + escapeHtml(key) + '">replier</button>');
-      } else {
-        html.push(groupCard(venue, evs, key));
-      }
-    }
+    html.push('  <div class="day-body">');
+    html.push(dayCardsHtml(iso, list));
     html.push('  </div>');
     html.push('</section>');
+    // Mémorisé pour le dépliage : il ne reconstruit qu'une journée et n'a
+    // donc pas à refaire le filtrage ni le tri (voir toggleGroup).
+    lastRenderDays.set(iso, list);
   }
   feed.innerHTML = html.join('\n');
+}
+
+/* Cartes d'une journée. Regroupement (lieu, jour) : la grappe prend la
+   position de son PREMIER membre dans la liste déjà triée, sinon
+   regrouper réordonnerait le jour. Une grappe dépliée rend ses cartes
+   normales dans un bloc encadré, suivies du bouton de repli. */
+function dayCardsHtml(iso, list) {
+  // On empile des conteneurs : une grille .events tant que les cartes se
+  // suivent normalement, refermée dès qu'un groupe déplié s'intercale.
+  const out = [];
+  let grille = [];
+  const fermer = () => {
+    if (!grille.length) return;
+    out.push('<div class="events">' + grille.join('\n') + '</div>');
+    grille = [];
+  };
+
+  for (const [venue, evs] of groupByVenue(list)) {
+    if (evs.length < 2) { grille.push(eventCard(evs[0])); continue; }
+    const key = iso + '|' + venue;
+    if (!state.expanded.has(key)) { grille.push(groupCard(venue, evs, key)); continue; }
+    fermer();
+    out.push('<div class="group-block">');
+    // Même graine que la carte groupée : les cartes ouvertes héritent du
+    // motif du lieu et se lisent donc comme un ensemble.
+    for (const e of evs) out.push(eventCard(e, venue + '|·groupe'));
+    out.push('<button type="button" class="collapse-card" data-collapse="'
+           + escapeHtml(key) + '">replier</button>');
+    out.push('</div>');
+  }
+  fermer();
+  return out.join('\n');
 }
 
 function escapeHtml(s) {
@@ -2551,7 +2624,9 @@ function groupCard(venue, evs, key) {
   ].join('\n');
 }
 
-function eventCard(e) {
+/* seedOverride : passé uniquement pour les cartes d'un groupe déplié, qui
+   héritent alors du motif du lieu au lieu de tirer le leur. */
+function eventCard(e, seedOverride) {
   const time = e.time
     ? '<span class="event-time">' + escapeHtml(e.time) + '</span>'
     : '<span class="event-time empty">—</span>';
@@ -2590,7 +2665,7 @@ function eventCard(e) {
 
   // Layout = 3 grid rows: head / title / foot — précédés de la couche
   // visuelle en fond (affiche réelle ou motif de catégorie, en fondu)
-  const visual = visualLayerHtml(e);
+  const visual = visualLayerHtml(e, seedOverride);
 
   return [
     '<' + tag + ' class="event"' + linkAttrs + '>',
@@ -2612,21 +2687,53 @@ function eventCard(e) {
   ].join('\n');
 }
 
-/* Dépliage des grappes. Délégué sur le feed, qui est reconstruit à chaque
-   rendu : un écouteur posé sur les cartes serait perdu. On passe par
-   render() et non renderFeed() pour bénéficier de la transition de vue. */
+/* Dépliage des grappes.
+   NE PAS repasser par render(), qui remplace le feed entier : les
+   journées portent content-visibility:auto avec contain-intrinsic-size en
+   mode « auto », si bien que le navigateur MÉMORISE la hauteur réelle de
+   chacune une fois rendue. Reconstruire tout le feed détruit ces nœuds,
+   donc toutes les hauteurs mémorisées, et le document se ré-estime à
+   420 px par journée : la hauteur totale change brutalement et le
+   défilement saute. On ne reconstruit donc que la journée concernée — les
+   autres gardent leur nœud, donc leur mesure.
+   L'ancrage sur l'élément cliqué est la ceinture par-dessus les
+   bretelles : même si une hauteur bouge malgré tout, la carte reste
+   immobile sous le curseur. Utile aussi au repli, où le contenu se
+   contracte au-dessus du point de clic. */
+function toggleGroup(key, deplier) {
+  const iso = key.slice(0, key.indexOf('|'));
+  const section = document.getElementById('day-' + iso);
+  const list = lastRenderDays.get(iso);
+  const corps = section && section.querySelector('.day-body');
+  if (!corps || !list) { render(); return; }    // état inattendu : repli sûr
+
+  // Position, dans la fenêtre, de ce sur quoi on veut rester ancré.
+  const avantEl = deplier
+    ? section.querySelector('[data-venue-day="' + CSS.escape(key) + '"]')
+    : section.querySelector('[data-collapse="' + CSS.escape(key) + '"]');
+  const avantY = avantEl ? avantEl.getBoundingClientRect().top : null;
+
+  if (deplier) state.expanded.add(key); else state.expanded.delete(key);
+  corps.innerHTML = dayCardsHtml(iso, list);
+
+  // Après dépliage on s'ancre sur la première carte ouverte, après repli
+  // sur la carte groupée reformée : dans les deux cas, l'élément qui
+  // occupe la place de celui qu'on vient de quitter.
+  const apresEl = deplier
+    ? corps.querySelector('.group-block .event')
+    : corps.querySelector('[data-venue-day="' + CSS.escape(key) + '"]');
+  if (avantY !== null && apresEl) {
+    const delta = apresEl.getBoundingClientRect().top - avantY;
+    if (delta) window.scrollBy(0, delta);
+  }
+  if (apresEl) apresEl.focus({ preventScroll: true });
+}
+
 document.getElementById('feed').addEventListener('click', ev => {
   const open = ev.target.closest('[data-venue-day]');
-  if (open) {
-    state.expanded.add(open.getAttribute('data-venue-day'));
-    render();
-    return;
-  }
+  if (open) { toggleGroup(open.getAttribute('data-venue-day'), true); return; }
   const close = ev.target.closest('[data-collapse]');
-  if (close) {
-    state.expanded.delete(close.getAttribute('data-collapse'));
-    render();
-  }
+  if (close) toggleGroup(close.getAttribute('data-collapse'), false);
 });
 
 load().catch(err => {
