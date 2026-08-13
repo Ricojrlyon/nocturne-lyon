@@ -1377,9 +1377,7 @@ const MOTIFS = [
     // quelques gros seulement.
     rayon: u => 0.76 + Math.pow(u, 1.7) * 0.77,
     hue: 'var(--motif-vert)',
-    anneaux: [[46,22,20,1.2],[150,18,14,1.4],[222,40,52,1],[286,24,22,1.3],
-              [304,88,38,1.1],[112,112,26,1.2],[18,64,24,1.15],[254,84,30,1.05],
-              [132,66,18,1.3],[74,44,36,1.1],[196,58,28,1.2]],
+    formes: rubans,
   },
   {
     id: 'lignes',
@@ -1390,10 +1388,7 @@ const MOTIFS = [
     trame: { w: 108, h: 90, dx: 3.6, dy: 4.5, stagger: 'row' },
     rayon: u => 0.74 + Math.pow(u, 1.5) * 0.61,
     hue: 'var(--motif-rose)',
-    anneaux: [[58,28,18,1.4],[58,28,34,1.2],[58,28,52,1],
-              [190,52,15,1.5],[190,52,30,1.2],[190,52,46,1],[190,52,64,.9],
-              [292,20,16,1.4],[292,20,32,1.1],[292,20,50,.9],
-              [124,116,22,1.3],[124,116,40,1]],
+    formes: gouttes,
   },
   {
     id: 'colonnes',
@@ -1401,11 +1396,105 @@ const MOTIFS = [
     trame: { w: 90, h: 108, dx: 4.5, dy: 3.6, stagger: 'col' },
     rayon: u => 0.71 + Math.pow(u, 1.9) * 0.76,
     hue: 'var(--motif-orange)',
-    anneaux: [[40,30,30,1],[104,44,34,1.2],[206,60,26,1.1],[232,28,60,1],
-              [286,18,20,1.3],[300,70,44,1],[160,118,38,1.1],[70,110,26,1.2],
-              [178,32,20,1.15],[262,96,28,1.05],[16,74,34,1.05],[128,16,22,1.25]],
+    formes: eventail,
   },
 ];
+
+/* ---------- formes du motif ----------
+   Chaque motif superpose à sa trame de points un dessin qui lui est
+   propre. Ces dessins sont IDENTIQUES pour toutes les cartes d'un même
+   motif : ils vivent donc dans les defs partagés et chaque carte n'en
+   porte qu'un <use> (voir ensureMotifDefs et patternSVG). C'est ce qui
+   permet des tracés de plusieurs milliers de points sans que le coût
+   dépende du nombre de cartes. */
+
+/* Rose — ondes concentriques d'une goutte tombée dans l'eau. Six points
+   d'impact ; ce qui fait lire la goutte plutôt qu'un cercle décoratif,
+   c'est la RÉGULARITÉ de l'écart entre anneaux, et leur amincissement
+   régulier vers l'extérieur. cx, cy, premier rayon, écart, nombre. */
+const IMPACTS = [
+  [58, 26, 5, 7.5, 10], [196, 54, 5, 8, 11], [292, 18, 6, 9, 9],
+  [124, 118, 5, 7.5, 9], [16, 96, 7, 9.5, 8],
+  // Sixième impact en bas à droite : il tombe sous le fondu du masque,
+  // il est donc volontairement discret.
+  [286, 130, 5, 8, 10],
+];
+
+function gouttes(hue) {
+  let s = '';
+  for (const [cx, cy, r0, pas, n] of IMPACTS) {
+    for (let k = 0; k < n; k++) {
+      const o = 0.80 - k * 0.075;
+      if (o < 0.10) continue;
+      const w = Math.max(0.5, 1.5 - k * 0.11);
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="' + (r0 + k * pas).toFixed(1)
+         + '" fill="none" stroke="' + hue + '" stroke-width="' + w.toFixed(2)
+         + '" opacity="' + o.toFixed(2) + '"/>';
+    }
+  }
+  return s;
+}
+
+/* Vert — ruban vrillé, façon forme d'onde en volume.
+     y(x, v) = base + A(x)·sin(φ) + v·h·cos(φ)
+   Le premier terme donne la vague, le second fait tourner la SECTION du
+   ruban le long de la courbe : les brins se resserrent là où la surface
+   se présente de profil (cos ≈ 0) et s'écartent quand elle nous fait
+   face. C'est ce contraste de densité qui donne le relief, il n'y a
+   aucune ombre. v parcourt -1 à 1 d'un bord à l'autre du ruban. */
+function ruban(hue, o) {
+  let s = '';
+  for (let i = 0; i < o.n; i++) {
+    const v = (i / (o.n - 1)) * 2 - 1;
+    let d = '';
+    for (let x = -12; x <= 334; x += 4) {
+      const ph = x / o.lam * Math.PI * 2 + o.phase;
+      const amp = o.A * (0.55 + 0.45 * Math.sin(x / o.env * Math.PI * 2 + 0.6));
+      const y = o.base + amp * Math.sin(ph) + v * o.h * Math.cos(ph);
+      d += (x < -11 ? 'M' : 'L') + x.toFixed(1) + ' ' + y.toFixed(2);
+    }
+    // Les brins de bord sont plus pâles : le cœur du ruban reste le plus dense.
+    s += '<path d="' + d + '" fill="none" stroke="' + hue + '" stroke-width="'
+       + o.w + '" opacity="' + (o.o0 - Math.abs(v) * o.oFall).toFixed(3) + '"/>';
+  }
+  return s;
+}
+
+function rubans(hue) {
+  return ruban(hue, { n: 18, A: 20, h: 12, lam: 150, env: 300, phase: 2.1,
+                      base: 50,  w: 0.55, o0: 0.42, oFall: 0.20 })
+       + ruban(hue, { n: 30, A: 28, h: 19, lam: 225, env: 360, phase: 0.3,
+                      base: 86,  w: 0.5,  o0: 0.66, oFall: 0.30 })
+       // Troisième ruban en opposition de phase : il croise les deux autres
+       // au lieu de les accompagner. Posé bas, donc largement estompé par
+       // le masque — il apporte de la profondeur, pas du dessin.
+       + ruban(hue, { n: 22, A: 16, h: 13, lam: 185, env: 280, phase: 4.0,
+                      base: 128, w: 0.5,  o0: 0.50, oFall: 0.24 });
+}
+
+/* Orange — éventail de hachures : l'angle pivote de 14° à gauche à 60° à
+   droite. 145 traits, dont une douzaine seulement sont épais : l'exposant
+   6,2 écrase la loi vers le bas, si bien que densifier n'ajoute que des
+   traits fins. Sans ça, multiplier les traits aurait aussi multiplié les
+   épais et empâté le motif. */
+function eventail(hue) {
+  const N = 145;
+  let s = '';
+  for (let i = 0; i < N; i++) {
+    const x = (i / N) * 330 - 6;
+    const y = 4 + alea01('ey' + i) * 118;
+    const len = (70 + alea01('el' + i) * 90) * 0.85;
+    const a = (14 + (x / 320) * 46) * Math.PI / 180;
+    const w = 0.45 + Math.pow(alea01('ew' + i), 6.2) * 1.75;
+    s += '<line x1="' + x.toFixed(1) + '" y1="' + y.toFixed(1)
+       + '" x2="' + (x + len * Math.cos(a)).toFixed(1)
+       + '" y2="' + (y + len * Math.sin(a)).toFixed(1)
+       + '" stroke="' + hue + '" stroke-width="' + w.toFixed(2)
+       + '" opacity="' + (0.74 - (i % 12) * 0.028).toFixed(2)
+       + '" stroke-linecap="round"/>';
+  }
+  return s;
+}
 
 /* Hash stable (djb2-ish) : même chaîne → même entier, à chaque rendu et
    à chaque chargement. Sert aux tirages sans Math.random(), qui ferait
@@ -1433,10 +1522,12 @@ function mix32(h) {
 }
 function alea01(s) { return mix32(stableHash(s)) / 4294967296; }
 
-/* Les trames sont définies UNE fois pour tout le document et référencées
-   par chaque carte : une carte coûte alors un <rect> au lieu des ~3 000
-   cercles qu'exigerait ce pas. Sur 850 événements l'écart est de l'ordre
-   du million de nœuds. */
+/* Trames ET formes sont définies UNE fois pour tout le document, puis
+   référencées par chaque carte : celle-ci coûte alors un <rect> plus un
+   <use>, soit deux nœuds, au lieu des ~3 000 cercles qu'exigerait ce pas
+   de trame et des ~2 500 points que réclament les rubans. Sans ce
+   partage, ni la densité de la trame ni la complexité des formes ne
+   seraient tenables sur un millier de cartes. */
 let motifDefsReady = false;
 function ensureMotifDefs() {
   if (motifDefsReady) return;
@@ -1459,7 +1550,8 @@ function ensureMotifDefs() {
     }
     defs += '<pattern id="motif-' + m.id + '" x="0" y="0" width="' + t.w
           + '" height="' + t.h + '" patternUnits="userSpaceOnUse">'
-          + dots + '</pattern>';
+          + dots + '</pattern>'
+          + '<g id="formes-' + m.id + '">' + m.formes(m.hue) + '</g>';
   }
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svg.setAttribute('width', '0');
@@ -1478,7 +1570,7 @@ function ensureMotifDefs() {
    multiplié par la largeur — mesuré de 0,99 à 2,43 selon le format, si
    bien que la trame était deux fois et demie plus lâche sur une carte
    pleine largeur en mobile que sur une carte de grille.
-   Les anneaux gardent le viewBox : eux DOIVENT suivre la carte, sinon
+   Les formes gardent le viewBox : elles DOIVENT suivre la carte, sinon
    leur composition se décale selon la largeur. */
 function patternSVG(seed) {
   ensureMotifDefs();
@@ -1491,18 +1583,12 @@ function patternSVG(seed) {
   // motifs se succédaient en cycle régulier de période 3, exactement ce
   // que le tirage devait éviter.
   const m = MOTIFS[mix32(stableHash(seed)) % MOTIFS.length];
-  let rings = '';
-  m.anneaux.forEach(([cx, cy, r, w], i) => {
-    rings += '<circle cx="' + cx + '" cy="' + cy + '" r="' + r
-           + '" fill="none" stroke="' + m.hue + '" stroke-width="' + w
-           + '" opacity="' + (0.78 - i * 0.032).toFixed(2) + '"/>';
-  });
   return '<svg class="dots" aria-hidden="true">'
        + '<rect x="0" y="0" width="100%" height="100%" fill="url(#motif-'
        + m.id + ')" opacity="0.5"/></svg>'
        + '<svg class="rings" viewBox="0 0 320 160" '
        + 'preserveAspectRatio="xMidYMid slice" aria-hidden="true">'
-       + rings + '</svg>';
+       + '<use href="#formes-' + m.id + '"/></svg>';
 }
 
 /* Couche visuelle d'une carte : motif toujours en sous-couche, affiche
