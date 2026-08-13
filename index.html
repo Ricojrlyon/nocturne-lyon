@@ -540,24 +540,24 @@
   }
 
   /* ---------- event grid ---------- */
-  /* .group-block partage les pistes de .events dans TOUTES les règles qui
-     suivent, et jamais par recopie : le bloc d'un groupe déplié occupe
-     toute la largeur et doit produire exactement les mêmes colonnes que
-     la grille qui l'entoure. Dupliquer ces valeurs les aurait laissées
-     diverger au premier réglage. */
-  .events, .group-block {
+  /* .group-cards — la grille interne d'un groupe déplié — partage les
+     pistes de .events dans TOUTES les règles qui suivent, et jamais par
+     recopie : elle doit produire les mêmes colonnes que la grille qui
+     l'entoure. Dupliquer ces valeurs les aurait laissées diverger au
+     premier réglage. */
+  .events, .group-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     grid-auto-rows: 160px;
     gap: 12px;
   }
   @media (min-width: 1100px) {
-    .events, .group-block {
+    .events, .group-cards {
       grid-template-columns: repeat(auto-fill, minmax(280px, calc(33.333% - 8px)));
     }
   }
   @media (max-width: 560px) {
-    .events, .group-block {
+    .events, .group-cards {
       grid-template-columns: 1fr;
       grid-auto-rows: auto;
     }
@@ -953,25 +953,43 @@
     display: grid;
     gap: 12px;
   }
+  /* Le bloc est une pile verticale : la grille des cartes ouvertes, puis
+     la barre de repli. Le filet est une BORDURE et non un outline décalé.
+     L'outline avait l'avantage de ne prendre aucune place, donc de garder
+     les colonnes du bloc rigoureusement alignées sur celles d'à côté —
+     mais il se dessinait à 7 px À L'EXTÉRIEUR du bloc, lequel occupe
+     toute la largeur de la journée. Or .day porte content-visibility:auto,
+     qui implique une containment de peinture : tout ce qui déborde de la
+     boîte de la journée est rogné. Les montants gauche et droit étaient
+     donc invisibles, seuls le haut et le bas passaient.
+     La bordure reste à l'intérieur et se ferme sur les quatre côtés. Elle
+     coûte 18 px de largeur utile, soit environ 6 px par colonne sur trois
+     colonnes : les cartes encadrées sont très légèrement plus étroites
+     que les autres, ce qui se lit comme un encart plutôt que comme un
+     défaut d'alignement. */
   .group-block {
-    outline: 1px solid var(--hot);
-    outline-offset: 7px;
+    display: grid;
+    gap: 10px;
+    border: 1px solid var(--hot);
     border-radius: var(--radius);
-    /* De quoi loger le filet, qui déborde de 8 px sans occuper de place. */
+    padding: 8px;
     margin: 6px 0;
   }
 
-  /* Bouton de repli : une case fantôme dans la grille. Il en consomme une,
-     mais il conserve le rythme de la grille — un contrôle plus petit
-     laisserait un trou de 160 px puisque les rangées sont fixes. */
+  /* Bouton de repli : une barre pleine largeur au pied du bloc. Il était
+     auparavant une case de la grille des cartes, donc haut de 160 px —
+     un grand rectangle vide dès que le nombre de cartes ne remplissait
+     pas sa dernière rangée. Sorti de cette grille, il reprend la hauteur
+     d'un vrai contrôle. Teinté de corail comme le filet du bloc, pour
+     qu'on lise les deux comme un même objet. */
   .collapse-card {
-    grid-row: span 1;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background: none;
-    border: 1px dashed rgba(231, 223, 190, 0.22);
+    min-height: 40px;
+    background: rgba(224, 141, 112, 0.07);
+    border: 0;
     border-radius: var(--radius);
     color: var(--ink-soft);
     cursor: pointer;
@@ -979,11 +997,11 @@
     font-size: 10px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    transition: border-color 0.18s ease, color 0.18s ease;
+    transition: background 0.18s ease, color 0.18s ease;
   }
   .collapse-card:hover {
     color: var(--ink);
-    border-color: var(--ink-soft);
+    background: rgba(224, 141, 112, 0.14);
   }
   .collapse-card:focus-visible {
     outline: 2px solid var(--ink-soft);
@@ -1056,7 +1074,7 @@
 
     /* Mobile cards: switch from fixed-height grid cells to content-sized flex stack.
        Avoids overlap when title is long, and removes the "empty middle" feel. */
-    .events, .group-block, .day-body {
+    .events, .group-cards, .day-body {
       grid-auto-rows: auto;
       gap: 10px;
     }
@@ -2531,9 +2549,11 @@ function dayCardsHtml(iso, list) {
     if (!state.expanded.has(key)) { grille.push(groupCard(venue, evs, key)); continue; }
     fermer();
     out.push('<div class="group-block">');
+    out.push('<div class="group-cards">');
     // Même graine que la carte groupée : les cartes ouvertes héritent du
     // motif du lieu et se lisent donc comme un ensemble.
     for (const e of evs) out.push(eventCard(e, venue + '|·groupe'));
+    out.push('</div>');
     out.push('<button type="button" class="collapse-card" data-collapse="'
            + escapeHtml(key) + '">replier</button>');
     out.push('</div>');
