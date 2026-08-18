@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-18T06:29:34.585111+00:00",
-  "count": 827,
+  "generated_at": "2026-08-18T07:19:54.589408+00:00",
+  "count": 960,
   "events": [
     {
       "venue": "Comoedia",
@@ -107,19 +107,6 @@
       "id": "30f879c030fc"
     },
     {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "30 Impros Chrono",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
-      "date_start": "2026-08-18",
-      "date_end": "2026-08-28",
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318932-30-impros-chrono.html",
-      "image": null,
-      "id": "7838f06e8570"
-    },
-    {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe-cafe-theatre",
       "title": "Complexe comedy club",
@@ -131,19 +118,6 @@
       "url": "https://www.petit-bulletin.fr/agenda-307482-complexe-comedy-club.html",
       "image": null,
       "id": "3110e8dff5ec"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Jackpot",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2026-08-18",
-      "date_end": "2026-08-28",
-      "time": "21:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318931-jackpot.html",
-      "image": null,
-      "id": "dc2a848c20ff"
     },
     {
       "venue": "La Commune",
@@ -185,6 +159,19 @@
       "id": "b76ac3cc8e4c"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "30 Impros Chrono",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-08-19",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/189814-30-impros-chrono",
+      "image": "https://img.mapado.net/2023/3/24/641dcdaeee02f-affiche-30-impros-chrono.jpeg_thumbs/600-600.jpeg",
+      "id": "5e1552f1801f"
+    },
+    {
       "venue": "Espace Gerson",
       "venue_slug": "espace-gerson",
       "title": "Anthony Bechtatou",
@@ -196,6 +183,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-316303-anthony-bechtatou.html",
       "image": null,
       "id": "80ef1c4fdb03"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Jackpot",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-08-19",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/733422-jackpot",
+      "image": "https://img.mapado.net/2026/4/23/69ea07cb3f942-jackpot.jpeg_thumbs/600-600.jpeg",
+      "id": "a72cfb8cc7f0"
     },
     {
       "venue": "La Commune",
@@ -226,14 +226,27 @@
     {
       "venue": "Improvidence",
       "venue_slug": "improvidence",
+      "title": "Jackpot",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-08-20",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/733422-jackpot",
+      "image": "https://img.mapado.net/2026/4/23/69ea07cb3f942-jackpot.jpeg_thumbs/600-600.jpeg",
+      "id": "270453577e8f"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
       "title": "Friendzone",
       "subtitle": null,
-      "category": "Impro",
+      "category": "café-théâtre",
       "date_start": "2026-08-20",
       "date_end": null,
       "time": "21:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318792-friendzone.html",
-      "image": null,
+      "url": "https://improvidence.mapado.com/event/561436-friendzone",
+      "image": "https://img.mapado.net/2026/8/10/6a79cc10466e0-friendzone-affichebleu.png_thumbs/600-600.png",
       "id": "c5e4e6696d8f"
     },
     {
@@ -274,6 +287,32 @@
       "url": "https://h-eat.eu/events/club-labo-mad-gone-2/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/08/madgone-576x720.jpg",
       "id": "f5ed243de40d"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Jackpot",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-08-21",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/733422-jackpot",
+      "image": "https://img.mapado.net/2026/4/23/69ea07cb3f942-jackpot.jpeg_thumbs/600-600.jpeg",
+      "id": "421198c3a98f"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "30 Impros Chrono",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-08-21",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/189814-30-impros-chrono",
+      "image": "https://img.mapado.net/2023/3/24/641dcdaeee02f-affiche-30-impros-chrono.jpeg_thumbs/600-600.jpeg",
+      "id": "eaece70b009a"
     },
     {
       "venue": "Le Sucre",
@@ -319,25 +358,38 @@
       "venue_slug": "improvidence",
       "title": "En deux-deux",
       "subtitle": null,
-      "category": "Impro",
+      "category": "café-théâtre",
       "date_start": "2026-08-22",
       "date_end": null,
       "time": "18:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318790-en-deux-deux.html",
-      "image": null,
+      "url": "https://improvidence.mapado.com/event/606705-en-deux-deux",
+      "image": "https://img.mapado.net/2025/8/4/6890c69867523-en-deux-deux-duo-affiche-spectacle-v1-3.png_thumbs/600-600.png",
       "id": "c0c2928a7314"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Jackpot",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-08-22",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/733422-jackpot",
+      "image": "https://img.mapado.net/2026/4/23/69ea07cb3f942-jackpot.jpeg_thumbs/600-600.jpeg",
+      "id": "aabde1680b94"
     },
     {
       "venue": "Improvidence",
       "venue_slug": "improvidence",
       "title": "Senflix",
       "subtitle": null,
-      "category": "Impro",
+      "category": "café-théâtre",
       "date_start": "2026-08-22",
       "date_end": null,
       "time": "21:00",
-      "url": "https://www.petit-bulletin.fr/agenda-311823-senflix.html",
-      "image": null,
+      "url": "https://improvidence.mapado.com/event/351368-senflix",
+      "image": "https://img.mapado.net/2025/1/29/6799fb363c759-senflix-affiche-web.jpeg_thumbs/600-600.jpeg",
       "id": "200652a43edd"
     },
     {
@@ -421,14 +473,53 @@
     {
       "venue": "Improvidence",
       "venue_slug": "improvidence",
+      "title": "30 Impros Chrono",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-08-26",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/189814-30-impros-chrono",
+      "image": "https://img.mapado.net/2023/3/24/641dcdaeee02f-affiche-30-impros-chrono.jpeg_thumbs/600-600.jpeg",
+      "id": "aebbe0908e4b"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Jackpot",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-08-26",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/733422-jackpot",
+      "image": "https://img.mapado.net/2026/4/23/69ea07cb3f942-jackpot.jpeg_thumbs/600-600.jpeg",
+      "id": "f2f85909a90f"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Jackpot",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-08-27",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/733422-jackpot",
+      "image": "https://img.mapado.net/2026/4/23/69ea07cb3f942-jackpot.jpeg_thumbs/600-600.jpeg",
+      "id": "3e0baa2f055e"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
       "title": "Frichti",
       "subtitle": null,
-      "category": "Impro",
+      "category": "café-théâtre",
       "date_start": "2026-08-27",
       "date_end": null,
       "time": "21:00",
-      "url": "https://www.petit-bulletin.fr/agenda-280155-frichti.html",
-      "image": null,
+      "url": "https://improvidence.mapado.com/event/43359-frichti",
+      "image": "https://img.mapado.net/2022/4/1/6246c5470a2b7-affiche-frichti-m-improvidence.jpeg_thumbs/600-600.jpeg",
       "id": "7f97997d6a6d"
     },
     {
@@ -456,6 +547,32 @@
       "url": "https://yp.events/3c9c0154-6798-4a23-9818-8328b945523d/THIS-IS-TECHNO-Rave-Zelva-666-OTBPM-more?from=siteweb",
       "image": "https://www.lpslyon.fr/wp-content/uploads/2026/07/ThisisTechnoRave_28082026_lepetitsalon-1024x576.jpg",
       "id": "a3a9c65c4519"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Jackpot",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-08-28",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/733422-jackpot",
+      "image": "https://img.mapado.net/2026/4/23/69ea07cb3f942-jackpot.jpeg_thumbs/600-600.jpeg",
+      "id": "847f745c89bf"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "30 Impros Chrono",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-08-28",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/189814-30-impros-chrono",
+      "image": "https://img.mapado.net/2023/3/24/641dcdaeee02f-affiche-30-impros-chrono.jpeg_thumbs/600-600.jpeg",
+      "id": "f235ec26937c"
     },
     {
       "venue": "Le Sucre",
@@ -547,6 +664,19 @@
       "url": "https://www.transbordeur.fr/evenement/habstrakt-asdek-mara-emilaki-29082026/",
       "image": "https://www.transbordeur.fr/wp-content/uploads/2026/06/a-habstrakt.jpg",
       "id": "39b3d4e38ff4"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Senflix",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-08-29",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/351368-senflix",
+      "image": "https://img.mapado.net/2025/1/29/6799fb363c759-senflix-affiche-web.jpeg_thumbs/600-600.jpeg",
+      "id": "7bc1567d90be"
     },
     {
       "venue": "Le Sucre",
@@ -952,6 +1082,19 @@
       "id": "c177ccc75b26"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Toi + Moi = ?",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-05",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/268472-toi-moi",
+      "image": "https://img.mapado.net/2026/1/26/69772dc1cb2f5-toi-moi-affiche-facon-film-1.png_thumbs/600-600.png",
+      "id": "5bc27e94c9fb"
+    },
+    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Concert de Lucas Rocher + LeHache all stars en première partie",
@@ -1054,6 +1197,19 @@
       "url": "https://le-sucre.eu/events/s-society-caravel-peaksou-carla-schmitt/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/07/IMG_8515-480x600.jpg",
       "id": "eb4c68fcecbe"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "CATCH IMPRO - Tournoi Régional",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-06",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/3736-catch-impro-tournoi-regional",
+      "image": "https://img.mapado.net/2024/9/17/66e94c9a6d29f-vignette-catch.jpeg_thumbs/600-600.jpeg",
+      "id": "23ecaff654fb"
     },
     {
       "venue": "La Commune",
@@ -1277,6 +1433,19 @@
       "id": "f2cb9be19903"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "On n'a pas le même titre !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-10",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/452926-on-na-pas-le-meme-titre",
+      "image": "https://img.mapado.net/2024/10/21/671646ca23519-vignette-oaplmt.jpeg_thumbs/600-600.jpeg",
+      "id": "1be4dd70f8c8"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Os",
@@ -1407,6 +1576,19 @@
       "id": "ccd7363bea2b"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "On n'a pas le même titre !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-11",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/452926-on-na-pas-le-meme-titre",
+      "image": "https://img.mapado.net/2024/10/21/671646ca23519-vignette-oaplmt.jpeg_thumbs/600-600.jpeg",
+      "id": "76afc49ab005"
+    },
+    {
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "Barrut + Le Diable Dégoûtant",
@@ -1511,6 +1693,19 @@
       "id": "414b48034be9"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "On n'a pas le même titre !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-12",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://improvidence.mapado.com/event/452926-on-na-pas-le-meme-titre",
+      "image": "https://img.mapado.net/2024/10/21/671646ca23519-vignette-oaplmt.jpeg_thumbs/600-600.jpeg",
+      "id": "bf7afd650486"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "SATINE + DJ POMPOMPOM + BADDEST + N’ZOLA + LA FEE SEE + DJ L’YLE + DJ FANTASTIK",
@@ -1548,6 +1743,19 @@
       "url": "https://larayonne.org/evenement/kingdoms-catch-mania/",
       "image": "https://larayonne.org/wp-content/uploads/2026/07/CATCHMANAIA-RAYONNE-1030x580-1-500x282.jpg",
       "id": "6b94428462b8"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "DEUX",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-12",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/3851-deux",
+      "image": "https://img.mapado.net/2017/7/22/59736156dbe7c-2-impro.jpeg_thumbs/600-600.jpeg",
+      "id": "db679917da49"
     },
     {
       "venue": "Les Subsistances",
@@ -1771,6 +1979,19 @@
       "id": "8a04e4d724a9"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "ON RESTE EN CONTACT",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-16",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/9973-on-reste-en-contact",
+      "image": "https://img.mapado.net/2018/12/2/5c043197ed152-on-reste-en-contact.jpeg_thumbs/600-600.jpeg",
+      "id": "f85ef2d0032b"
+    },
+    {
       "venue": "Espace Gerson",
       "venue_slug": "espace-gerson",
       "title": "Anthony Kavanagh",
@@ -1925,6 +2146,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-290042-anthony-kavanagh.html",
       "image": null,
       "id": "b3e2fbad9bc7"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "FLEMME",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-17",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/489025-flemme",
+      "image": "https://img.mapado.net/2025/10/22/68f8d4dc2597f-affiche-flemme-superette.jpeg_thumbs/600-600.jpeg",
+      "id": "d78c44df79b6"
     },
     {
       "venue": "Le Périscope",
@@ -2174,6 +2408,19 @@
       "id": "f9ac0957afcd"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "FLEMME",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-18",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/489025-flemme",
+      "image": "https://img.mapado.net/2025/10/22/68f8d4dc2597f-affiche-flemme-superette.jpeg_thumbs/600-600.jpeg",
+      "id": "f298d2db6ceb"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "club",
@@ -2269,12 +2516,12 @@
       "venue_slug": "improvidence",
       "title": "En deux-deux",
       "subtitle": null,
-      "category": "Impro",
+      "category": "café-théâtre",
       "date_start": "2026-09-19",
       "date_end": null,
       "time": "18:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318790-en-deux-deux.html",
-      "image": null,
+      "url": "https://improvidence.mapado.com/event/606705-en-deux-deux",
+      "image": "https://img.mapado.net/2025/8/4/6890c69867523-en-deux-deux-duo-affiche-spectacle-v1-3.png_thumbs/600-600.png",
       "id": "49520c5cd61f"
     },
     {
@@ -2393,6 +2640,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-318970-zermatt-marguterie-donet-kill-the-cow.html",
       "image": null,
       "id": "23e827879468"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "FLEMME",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-19",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/489025-flemme",
+      "image": "https://img.mapado.net/2025/10/22/68f8d4dc2597f-affiche-flemme-superette.jpeg_thumbs/600-600.jpeg",
+      "id": "116bbafeefa3"
     },
     {
       "venue": "Le Sucre",
@@ -2575,6 +2835,19 @@
       "url": "https://www.transbordeur.fr/evenement/asgeir-20092026/",
       "image": "https://www.transbordeur.fr/wp-content/uploads/2026/02/a-asgeir.jpeg",
       "id": "ce7a57939a6b"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "CATCH IMPRO - Tournoi Régional",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-20",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/3736-catch-impro-tournoi-regional",
+      "image": "https://img.mapado.net/2024/9/17/66e94c9a6d29f-vignette-catch.jpeg_thumbs/600-600.jpeg",
+      "id": "272711ef3077"
     },
     {
       "venue": "La Commune",
@@ -2774,15 +3047,15 @@
     {
       "venue": "Improvidence",
       "venue_slug": "improvidence",
-      "title": "Ça handi long",
+      "title": "Ca handi long",
       "subtitle": null,
-      "category": "Impro",
+      "category": "café-théâtre",
       "date_start": "2026-09-23",
       "date_end": null,
       "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
-      "image": null,
-      "id": "d14e9b62cc02"
+      "url": "https://improvidence.mapado.com/event/336906-ca-handi-long",
+      "image": "https://img.mapado.net/2024/4/17/661f9a994c96d-affiche-vignette-cahandilong.jpeg_thumbs/600-600.jpeg",
+      "id": "5b8084eea627"
     },
     {
       "venue": "Espace Gerson",
@@ -2887,6 +3160,19 @@
       "url": "https://www.transbordeur.fr/evenement/afar-canine-cracks-2016-24092026/",
       "image": "https://www.transbordeur.fr/wp-content/uploads/2026/07/a-afar.jpeg",
       "id": "7fff1e06e0e2"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Playlist",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-24",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/28130-playlist",
+      "image": "https://img.mapado.net/2020/9/16/5f61dd72f1bd4-affiche-playlist-web.jpeg_thumbs/600-600.jpeg",
+      "id": "01490655b390"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -2997,12 +3283,12 @@
       "venue_slug": "improvidence",
       "title": "Friendzone",
       "subtitle": null,
-      "category": "Impro",
+      "category": "café-théâtre",
       "date_start": "2026-09-24",
       "date_end": null,
       "time": "21:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318792-friendzone.html",
-      "image": null,
+      "url": "https://improvidence.mapado.com/event/561436-friendzone",
+      "image": "https://img.mapado.net/2026/8/10/6a79cc10466e0-friendzone-affichebleu.png_thumbs/600-600.png",
       "id": "18e20c93139c"
     },
     {
@@ -3331,6 +3617,19 @@
       "id": "33284ab7a619"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Détours",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-26",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://improvidence.mapado.com/event/496781-detours",
+      "image": "https://img.mapado.net/2025/3/13/67d2f63cab215-affiche-detours2.png_thumbs/600-600.png",
+      "id": "0c1e0bc1cc25"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "ANIMAL NOCTURNE + ENIRAM + SIBEL S. + SOFIASCA",
@@ -3342,6 +3641,19 @@
       "url": "https://www.transbordeur.fr/evenement/animal-nocturne-eniram-sibel-s-sofiasca-26092026/",
       "image": "https://www.transbordeur.fr/wp-content/uploads/2026/07/a-animalnocturne2.jpg",
       "id": "3db579b77de6"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Celles qui restent",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-26",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/499637-celles-qui-restent",
+      "image": "https://img.mapado.net/2025/3/20/67dc2098ca8dc-affiche-cellesquirestent.png_thumbs/600-600.png",
+      "id": "29a7103cecc9"
     },
     {
       "venue": "Agend'arts",
@@ -3407,6 +3719,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-318968-une-bonne-soir-e-noa-li.html",
       "image": null,
       "id": "0c91607d352b"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Une grande table avec du monde autour",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-26",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/331369-une-grande-table-avec-du-monde-autour",
+      "image": "https://img.mapado.net/2024/4/2/660bcb45e8482-vignette-une-grande-table.jpeg_thumbs/600-600.jpeg",
+      "id": "9d7f75a55e13"
     },
     {
       "venue": "Le Périscope",
@@ -3485,6 +3810,19 @@
       "url": "https://agenda.villemorte.fr/event/concert-de-teklash-1",
       "image": "https://agenda.villemorte.fr/media/thumb/21e7df1127a4d0f9088b5ccf08a185f5.jpg",
       "id": "43af4ba3a538"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "CATCH IMPRO - Tournoi Régional",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-27",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/3736-catch-impro-tournoi-regional",
+      "image": "https://img.mapado.net/2024/9/17/66e94c9a6d29f-vignette-catch.jpeg_thumbs/600-600.jpeg",
+      "id": "4bc747a558a5"
     },
     {
       "venue": "Le Sucre",
@@ -3721,6 +4059,19 @@
       "id": "1478f4a1a739"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Seconds couteaux",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-30",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/602043-seconds-couteaux",
+      "image": "https://img.mapado.net/2026/8/4/6a71afd65a4c9-visuel-seconds-couteaux-2026-07-1.png_thumbs/600-600.png",
+      "id": "526dc0cfe79d"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Medine - Enfants Du Destin - Tournée Acoustique",
@@ -3771,6 +4122,19 @@
       "url": "https://www.les-subs.com/evenement/festiva-sens-interdits-khalil-khalil-khalil-albatran-bilal-alkhatib/",
       "image": "https://www.les-subs.com/wp-content/uploads/2026/03/3-by-bilal-alkhatib-1-200x200.jpg",
       "id": "4aa436a9ba83"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Pétrichor",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-01",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/594336-petrichor",
+      "image": "https://img.mapado.net/2025/7/16/6877703f33057-vignette-petrichor.jpeg_thumbs/600-600.jpeg",
+      "id": "2723a755f9ee"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -3849,6 +4213,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/podkatz-tour-avec-juliette-katz/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/10/podkatz-tour-500x500.jpg",
       "id": "0750c5d6b9cc"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Losing it",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-01",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/692810-losing-it",
+      "image": "https://img.mapado.net/2026/3/31/69cb9f631ed13-losing-it-affiche-1.jpeg_thumbs/600-600.jpeg",
+      "id": "9eefbf9e4062"
     },
     {
       "venue": "Bourse du Travail",
@@ -3942,6 +4319,19 @@
       "id": "e5e365e650bb"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "SITCOM",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-02",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/619242-sitcom",
+      "image": "https://img.mapado.net/2025/9/4/68b957ca950ae-sitcom-1.jpeg_thumbs/600-600.jpeg",
+      "id": "25f3eef5c00e"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Les Femmes Ont Toujours Raison, Les Hommes N'ont Jamais Tort",
@@ -3968,6 +4358,19 @@
       "id": "fa65056ac236"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "On n'a pas le même titre !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://improvidence.mapado.com/event/452926-on-na-pas-le-meme-titre",
+      "image": "https://img.mapado.net/2024/10/21/671646ca23519-vignette-oaplmt.jpeg_thumbs/600-600.jpeg",
+      "id": "ade24303c3dd"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Mentissa",
@@ -3979,6 +4382,19 @@
       "url": "https://larayonne.org/evenement/mentissa/",
       "image": "https://larayonne.org/wp-content/uploads/2025/12/MENTISSA-VISUEL-FB_SITE_BILLET-500x285.jpg",
       "id": "b69cc134bb46"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "DEUX",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/3851-deux",
+      "image": "https://img.mapado.net/2017/7/22/59736156dbe7c-2-impro.jpeg_thumbs/600-600.jpeg",
+      "id": "a31895d020f7"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -4033,6 +4449,19 @@
       "id": "310cfa65929e"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Senflix",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/351368-senflix",
+      "image": "https://img.mapado.net/2025/1/29/6799fb363c759-senflix-affiche-web.jpeg_thumbs/600-600.jpeg",
+      "id": "b0fffd88307d"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "JAH TUBBY’S + DIXIE PEACH + WANDEM SOUND SYSTEM & THE HORNSMEN SECTION + JÇÃO + DAVOJAH + JAEL",
@@ -4070,6 +4499,19 @@
       "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/lamour-des-trois-oranges",
       "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/11f32de7/anour_trois_oranges_principal.jpg",
       "id": "8eae488edf1a"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "CATCH IMPRO - Tournoi Régional",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-04",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/3736-catch-impro-tournoi-regional",
+      "image": "https://img.mapado.net/2024/9/17/66e94c9a6d29f-vignette-catch.jpeg_thumbs/600-600.jpeg",
+      "id": "21d1146bfea7"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -4176,6 +4618,19 @@
       "id": "f34892914f8b"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Nos futurs",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-07",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/667220-nos-futurs",
+      "image": "https://img.mapado.net/2026/1/22/69722f82c40c8-nos-futurs-dernier-lundi-de-chaque-mois.png_thumbs/600-600.png",
+      "id": "ec8446a79d8d"
+    },
+    {
       "venue": "La Machinerie - Bizarre !",
       "venue_slug": "la-machinerie-bizarre",
       "title": "Hold Fast - Cie Ma’, Marion Alzieu",
@@ -4200,6 +4655,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/louis-cattelat/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/09/louis-catelat_radiant-bellevue-500x500.jpg",
       "id": "92bda1f8d50a"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "4L Trop Filles",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-07",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/336934-4l-trop-filles",
+      "image": "https://img.mapado.net/2024/4/17/661fa2841b26c-vignette-4l-trop-filles.jpeg_thumbs/600-600.jpeg",
+      "id": "31b9df89108a"
     },
     {
       "venue": "Le Périscope",
@@ -4280,6 +4748,19 @@
       "id": "bd5c8e2aac4c"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Mon pote",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-08",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/14113-mon-pote",
+      "image": "https://img.mapado.net/2023/10/3/651c16e6edef5-affiche-mon-pote-web.jpeg_thumbs/600-600.jpeg",
+      "id": "d5ad37a58161"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Concert",
@@ -4317,6 +4798,19 @@
       "url": "https://www.transbordeur.fr/evenement/guy2bezbar-09102026/",
       "image": "https://www.transbordeur.fr/wp-content/uploads/2026/02/a-guy2bezbar.png",
       "id": "29ab8e777dff"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "FLEMME",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-09",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/489025-flemme",
+      "image": "https://img.mapado.net/2025/10/22/68f8d4dc2597f-affiche-flemme-superette.jpeg_thumbs/600-600.jpeg",
+      "id": "c8ae8e27f927"
     },
     {
       "venue": "Agend'arts",
@@ -4371,6 +4865,19 @@
       "id": "bedc9c47826f"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Mon pote",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-09",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/14113-mon-pote",
+      "image": "https://img.mapado.net/2023/10/3/651c16e6edef5-affiche-mon-pote-web.jpeg_thumbs/600-600.jpeg",
+      "id": "870090e36517"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Pierre-Emmanuel Barré - Come Back (Tournée)",
@@ -4423,6 +4930,19 @@
       "id": "81bc521469af"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Toi + Moi = ?",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-10",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://improvidence.mapado.com/event/268472-toi-moi",
+      "image": "https://img.mapado.net/2026/1/26/69772dc1cb2f5-toi-moi-affiche-facon-film-1.png_thumbs/600-600.png",
+      "id": "b3e6c28386b8"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Soiree D'Ouverture Festival Lumiere",
@@ -4447,6 +4967,19 @@
       "url": "https://www.transbordeur.fr/evenement/apparat-10102026/",
       "image": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-apparat-1.jpeg",
       "id": "10268a6724e5"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Senflix",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-10",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/351368-senflix",
+      "image": "https://img.mapado.net/2025/1/29/6799fb363c759-senflix-affiche-web.jpeg_thumbs/600-600.jpeg",
+      "id": "4ea9648615b7"
     },
     {
       "venue": "Agend'arts",
@@ -4501,6 +5034,19 @@
       "id": "977f07e1160d"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Mon pote",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-10",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/14113-mon-pote",
+      "image": "https://img.mapado.net/2023/10/3/651c16e6edef5-affiche-mon-pote-web.jpeg_thumbs/600-600.jpeg",
+      "id": "55621f759b00"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "FOLAMOUR",
@@ -4525,6 +5071,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/worlds-apart/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/12/worlds-apart_radiant-bellevue-500x500.jpg",
       "id": "0f83df41f48b"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "CATCH IMPRO - Tournoi Régional",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-11",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/3736-catch-impro-tournoi-regional",
+      "image": "https://img.mapado.net/2024/9/17/66e94c9a6d29f-vignette-catch.jpeg_thumbs/600-600.jpeg",
+      "id": "8d9a16e488d5"
     },
     {
       "venue": "Librairie Terre des livres",
@@ -4590,6 +5149,19 @@
       "url": "https://agenda.villemorte.fr/event/les-mardis-du-4-session-doctobre",
       "image": "https://agenda.villemorte.fr/media/thumb/0de0465981160c7c6fb5f95726419631.jpg",
       "id": "77e29afe5461"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "La Relève",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-13",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/154968-la-releve",
+      "image": "https://img.mapado.net/2022/10/24/635646c2a2c98-1.jpeg_thumbs/600-600.jpeg",
+      "id": "fc4980c22128"
     },
     {
       "venue": "MJC Louis Aragon / Jack Jack",
@@ -4683,6 +5255,19 @@
       "id": "22d29d8d72e2"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "ELLE",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-14",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/17447-elle",
+      "image": "https://img.mapado.net/2024/10/11/6708ec4423da3-vignette-elle.jpeg_thumbs/600-600.jpeg",
+      "id": "87b497a43676"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "LEYA",
@@ -4694,6 +5279,19 @@
       "url": "https://sonic-lyon.fr/evenement/leya/",
       "image": "https://sonic-lyon.fr/wp-content/uploads/2026/05/2026-EU-Tour-Press-Photo-1-1024x768.jpeg",
       "id": "72241909fb71"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "LE CANAPE",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-14",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/3921-le-canape",
+      "image": "https://img.mapado.net/2024/9/2/66d5820012170-canape-site-improvidence-2024.jpeg_thumbs/600-600.jpeg",
+      "id": "9f8db64e232c"
     },
     {
       "venue": "Les Subsistances",
@@ -4774,6 +5372,19 @@
       "id": "7f5b7a045dde"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Mon pote",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-15",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/14113-mon-pote",
+      "image": "https://img.mapado.net/2023/10/3/651c16e6edef5-affiche-mon-pote-web.jpeg_thumbs/600-600.jpeg",
+      "id": "794b44057d31"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Chinese Man Records Party : BOLD feat YOUTHSTAR + RUMBLE + THA TRICKAZ",
@@ -4791,12 +5402,12 @@
       "venue_slug": "improvidence",
       "title": "La fin justifie les moyens",
       "subtitle": null,
-      "category": "Impro",
+      "category": "café-théâtre",
       "date_start": "2026-10-16",
-      "date_end": "2026-10-31",
+      "date_end": null,
       "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-311822-la-fin-justifie-les-moyens.html",
-      "image": null,
+      "url": "https://improvidence.mapado.com/event/282963-la-fin-justifie-les-moyens",
+      "image": "https://img.mapado.net/2025/10/20/68f5fd197257f-vignette-mapado-la-fin-2025.jpeg_thumbs/600-600.jpeg",
       "id": "0d991f524afd"
     },
     {
@@ -4865,6 +5476,19 @@
       "id": "2c966d0fea36"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Mon pote",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-16",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/14113-mon-pote",
+      "image": "https://img.mapado.net/2023/10/3/651c16e6edef5-affiche-mon-pote-web.jpeg_thumbs/600-600.jpeg",
+      "id": "e4f430e11666"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Panayotis Pascot - Entre Les Deux - Tournée",
@@ -4889,6 +5513,19 @@
       "url": "https://www.les-subs.com/evenement/minipousses-cirque/",
       "image": "https://www.les-subs.com/wp-content/uploads/2024/04/re1604-1091-200x200.jpg",
       "id": "9b15f19ba5a2"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "La fin justifie les moyens",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-17",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://improvidence.mapado.com/event/282963-la-fin-justifie-les-moyens",
+      "image": "https://img.mapado.net/2025/10/20/68f5fd197257f-vignette-mapado-la-fin-2025.jpeg_thumbs/600-600.jpeg",
+      "id": "b8a3297f352a"
     },
     {
       "venue": "La Rayonne",
@@ -4943,6 +5580,32 @@
       "id": "f003f081fac3"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Mon pote",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-17",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/14113-mon-pote",
+      "image": "https://img.mapado.net/2023/10/3/651c16e6edef5-affiche-mon-pote-web.jpeg_thumbs/600-600.jpeg",
+      "id": "bcd836608668"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "La Relève",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-18",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://improvidence.mapado.com/event/154968-la-releve",
+      "image": "https://img.mapado.net/2022/10/24/635646c2a2c98-1.jpeg_thumbs/600-600.jpeg",
+      "id": "b85fd073e520"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "PHILIPPE LELLOUCHE",
@@ -4967,6 +5630,19 @@
       "url": "https://www.transbordeur.fr/evenement/tif-18102026/",
       "image": "https://www.transbordeur.fr/wp-content/uploads/2026/06/PHOTO-DE-PRESSE-_-credit-_-Loubet_.jpg",
       "id": "d9edc8231393"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "CATCH IMPRO - Tournoi Régional",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-18",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/3736-catch-impro-tournoi-regional",
+      "image": "https://img.mapado.net/2024/9/17/66e94c9a6d29f-vignette-catch.jpeg_thumbs/600-600.jpeg",
+      "id": "35cfd9863a3d"
     },
     {
       "venue": "Marché Gare",
@@ -5019,6 +5695,19 @@
       "url": "https://larayonne.org/evenement/youngblood-brass-band/",
       "image": "https://larayonne.org/wp-content/uploads/2026/05/00YoungbloodBrassBandbyBethSkogen3-500x333.jpg",
       "id": "cc407d2f6fa2"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Tentative d'épuisement d'un texte insignifiant",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-19",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/55440-tentative-d-epuisement-d-un-texte-insignifiant",
+      "image": "https://img.mapado.net/2021/7/22/60f925201b44a-visuel-tentative.jpeg_thumbs/600-600.jpeg",
+      "id": "2c938c12f249"
     },
     {
       "venue": "Marché Gare",
@@ -5112,6 +5801,32 @@
       "id": "83f2c31dd25e"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "La fin justifie les moyens",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-21",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/282963-la-fin-justifie-les-moyens",
+      "image": "https://img.mapado.net/2025/10/20/68f5fd197257f-vignette-mapado-la-fin-2025.jpeg_thumbs/600-600.jpeg",
+      "id": "f792815bca87"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Avant-première",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-21",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/268661-avant-premiere",
+      "image": "https://img.mapado.net/2023/8/16/64dcc31637e36-avant-premiere-1.jpeg_thumbs/600-600.jpeg",
+      "id": "b936c170ed00"
+    },
+    {
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "Jokari + Invité·es",
@@ -5149,6 +5864,19 @@
       "url": "https://www.transbordeur.fr/evenement/a6el-22102026/",
       "image": "https://www.transbordeur.fr/wp-content/uploads/2026/06/@tamslay1.png",
       "id": "0671217ab9d0"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "La fin justifie les moyens",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-22",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/282963-la-fin-justifie-les-moyens",
+      "image": "https://img.mapado.net/2025/10/20/68f5fd197257f-vignette-mapado-la-fin-2025.jpeg_thumbs/600-600.jpeg",
+      "id": "13b0ba6dde66"
     },
     {
       "venue": "Groom",
@@ -5192,15 +5920,15 @@
     {
       "venue": "Improvidence",
       "venue_slug": "improvidence",
-      "title": "Ça handi long",
+      "title": "Ca handi long",
       "subtitle": null,
-      "category": "Impro",
+      "category": "café-théâtre",
       "date_start": "2026-10-22",
       "date_end": null,
       "time": "21:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
-      "image": null,
-      "id": "b23529359305"
+      "url": "https://improvidence.mapado.com/event/336906-ca-handi-long",
+      "image": "https://img.mapado.net/2024/4/17/661f9a994c96d-affiche-vignette-cahandilong.jpeg_thumbs/600-600.jpeg",
+      "id": "d4e6d8789f16"
     },
     {
       "venue": "La Salle de Bains",
@@ -5242,6 +5970,19 @@
       "id": "35581083eafe"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "La fin justifie les moyens",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-23",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/282963-la-fin-justifie-les-moyens",
+      "image": "https://img.mapado.net/2025/10/20/68f5fd197257f-vignette-mapado-la-fin-2025.jpeg_thumbs/600-600.jpeg",
+      "id": "bca00698fad0"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "CELESTE BARBER",
@@ -5268,6 +6009,32 @@
       "id": "2603677f6587"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Antoine Rabault improvise avec lui-même",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-23",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/15189-antoine-rabault-improvise-avec-lui-meme",
+      "image": "https://img.mapado.net/2025/1/17/678a70d655221-affiche-antoine-rabault-2025-web.jpeg_thumbs/600-600.jpeg",
+      "id": "ab2aa060bcb3"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "La fin justifie les moyens",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-24",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://improvidence.mapado.com/event/282963-la-fin-justifie-les-moyens",
+      "image": "https://img.mapado.net/2025/10/20/68f5fd197257f-vignette-mapado-la-fin-2025.jpeg_thumbs/600-600.jpeg",
+      "id": "3c8fc3c58e7d"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Concert",
@@ -5279,6 +6046,19 @@
       "url": "https://le-sucre.eu/events/concert-13/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/07/EVEULYSSE-pop-lyon-site-carre.jpg",
       "id": "0dc2a9b1041e"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Antoine Rabault improvise avec lui-même",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-24",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/15189-antoine-rabault-improvise-avec-lui-meme",
+      "image": "https://img.mapado.net/2025/1/17/678a70d655221-affiche-antoine-rabault-2025-web.jpeg_thumbs/600-600.jpeg",
+      "id": "50b91f9ab40d"
     },
     {
       "venue": "Agend'arts",
@@ -5320,6 +6100,19 @@
       "id": "85998a12f81a"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Senflix",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-24",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/351368-senflix",
+      "image": "https://img.mapado.net/2025/1/29/6799fb363c759-senflix-affiche-web.jpeg_thumbs/600-600.jpeg",
+      "id": "049122c3279c"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Nuit Encore X 23:59",
@@ -5346,6 +6139,32 @@
       "id": "7b4559db3b9f"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Portrait de famille",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-25",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://improvidence.mapado.com/event/825678-portrait-de-famille",
+      "image": "https://img.mapado.net/2026/8/7/6a75a20aa7e6b-img-20260707-wa0002-1.jpeg_thumbs/600-600.jpeg",
+      "id": "e491f21b3264"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "La fin justifie les moyens",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-25",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://improvidence.mapado.com/event/282963-la-fin-justifie-les-moyens",
+      "image": "https://img.mapado.net/2025/10/20/68f5fd197257f-vignette-mapado-la-fin-2025.jpeg_thumbs/600-600.jpeg",
+      "id": "c0e889dc479a"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "EDGAR-YVES Jr.",
@@ -5357,6 +6176,32 @@
       "url": "https://radiant-bellevue.fr/spectacles/edgar-yves-jr/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/edgar-yves_radiant-bellevue-500x500.jpg",
       "id": "0c31547c57cd"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "CATCH IMPRO - Tournoi Régional",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-25",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/3736-catch-impro-tournoi-regional",
+      "image": "https://img.mapado.net/2024/9/17/66e94c9a6d29f-vignette-catch.jpeg_thumbs/600-600.jpeg",
+      "id": "03f43ef9827d"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Seconds couteaux",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-27",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/602043-seconds-couteaux",
+      "image": "https://img.mapado.net/2026/8/4/6a71afd65a4c9-visuel-seconds-couteaux-2026-07-1.png_thumbs/600-600.png",
+      "id": "c1f7e6d23d24"
     },
     {
       "venue": "Marché Gare",
@@ -5461,6 +6306,19 @@
       "url": "https://www.petit-bulletin.fr/agenda-317834-le-grand-sacripant.html",
       "image": null,
       "id": "d514fbf05310"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "On n'a pas le même titre !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-28",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/452926-on-na-pas-le-meme-titre",
+      "image": "https://img.mapado.net/2024/10/21/671646ca23519-vignette-oaplmt.jpeg_thumbs/600-600.jpeg",
+      "id": "f07d05501388"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -5580,6 +6438,19 @@
       "id": "4d0b73b0081d"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Les Éphémères - Duos fugaces de la Lily",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-30",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/824348-les-ephemeres-duos-fugaces-de-la-lily",
+      "image": "https://img.mapado.net/2026/8/4/6a71b8bd1b0e3-affiche-br.jpeg_thumbs/600-600.jpeg",
+      "id": "d374a3c20a31"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "DJ DIDA + DJ KAWEST + DJ DOULY",
@@ -5623,13 +6494,13 @@
       "venue_slug": "improvidence",
       "title": "En deux-deux",
       "subtitle": null,
-      "category": "Impro",
+      "category": "café-théâtre",
       "date_start": "2026-10-31",
       "date_end": null,
-      "time": "18:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318790-en-deux-deux.html",
-      "image": null,
-      "id": "1e1856cb38ee"
+      "time": "16:30",
+      "url": "https://improvidence.mapado.com/event/606705-en-deux-deux",
+      "image": "https://img.mapado.net/2025/8/4/6890c69867523-en-deux-deux-duo-affiche-spectacle-v1-3.png_thumbs/600-600.png",
+      "id": "5a3ee999b3c8"
     },
     {
       "venue": "Le Transbordeur",
@@ -5671,6 +6542,19 @@
       "id": "5d8dd0b21a2f"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Senflix",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-31",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/351368-senflix",
+      "image": "https://img.mapado.net/2025/1/29/6799fb363c759-senflix-affiche-web.jpeg_thumbs/600-600.jpeg",
+      "id": "12c1ce696f2a"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Salon Des Vignerons Independants",
@@ -5682,6 +6566,19 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-9",
       "image": "https://www.halle-tony-garnier.com/storage/142346/conversions/2026-11-01-SALON-DES-VIGNERONS-INDEPENDANTS-vignerons-temporaire-2026-20260615-160550-square.jpg",
       "id": "8a18d20aa5e0"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Le téléfilm improvisé - Halloween",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-01",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://improvidence.mapado.com/event/588456-le-telefilm-improvise-halloween",
+      "image": "https://img.mapado.net/2025/7/9/686e3a72062da-telefilm-halloween-1.png_thumbs/600-600.png",
+      "id": "bcf8cb63bc9d"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -5762,6 +6659,19 @@
       "id": "6d60d6346aff"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Nos futurs",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-04",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/667220-nos-futurs",
+      "image": "https://img.mapado.net/2026/1/22/69722f82c40c8-nos-futurs-dernier-lundi-de-chaque-mois.png_thumbs/600-600.png",
+      "id": "17efbd020ee4"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Metal Post-Rock LONG DISTANCE CALLING",
@@ -5786,6 +6696,32 @@
       "url": "https://radiant-bellevue.fr/spectacles/made-in-france/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/made-in-France_radiant-bellevue-500x500.jpg",
       "id": "2372ef404664"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "ON RESTE EN CONTACT",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-04",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/9973-on-reste-en-contact",
+      "image": "https://img.mapado.net/2018/12/2/5c043197ed152-on-reste-en-contact.jpeg_thumbs/600-600.jpeg",
+      "id": "c5abb42ef646"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Duos des Eux",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-05",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/9864-duos-des-eux",
+      "image": "https://img.mapado.net/2025/7/16/6877a93c803cf-duos-des-eux-vignette.jpeg_thumbs/600-600.jpeg",
+      "id": "09ef3db83a93"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -5831,12 +6767,12 @@
       "venue_slug": "improvidence",
       "title": "Friendzone",
       "subtitle": null,
-      "category": "Impro",
+      "category": "café-théâtre",
       "date_start": "2026-11-05",
       "date_end": null,
       "time": "21:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318792-friendzone.html",
-      "image": null,
+      "url": "https://improvidence.mapado.com/event/561436-friendzone",
+      "image": "https://img.mapado.net/2026/8/10/6a79cc10466e0-friendzone-affichebleu.png_thumbs/600-600.png",
       "id": "5a4015352896"
     },
     {
@@ -5864,6 +6800,19 @@
       "url": "https://larayonne.org/evenement/zelie/",
       "image": "https://larayonne.org/wp-content/uploads/2026/02/FACEBO1-500x281.jpg",
       "id": "dc1addf7b1c6"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Duos des Eux",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-06",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/9864-duos-des-eux",
+      "image": "https://img.mapado.net/2025/7/16/6877a93c803cf-duos-des-eux-vignette.jpeg_thumbs/600-600.jpeg",
+      "id": "321341c0f987"
     },
     {
       "venue": "MJC Louis Aragon / Jack Jack",
@@ -5918,6 +6867,19 @@
       "id": "4dae556f89d2"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "FLEMME",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-06",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/489025-flemme",
+      "image": "https://img.mapado.net/2025/10/22/68f8d4dc2597f-affiche-flemme-superette.jpeg_thumbs/600-600.jpeg",
+      "id": "7689b02c112a"
+    },
+    {
       "venue": "La Machinerie - Théâtre de Vénissieux",
       "venue_slug": "la-machinerie-theatre-de-venissieux",
       "title": "Karaoké - Musiques en héritage",
@@ -5968,6 +6930,32 @@
       "url": "https://www.tng-lyon.fr/evenement/le-voyage-de-kristoffer/",
       "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_VOYAGE.png",
       "id": "ba91f339a657"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Victime",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-07",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://improvidence.mapado.com/event/55206-victime",
+      "image": "https://img.mapado.net/2025/8/4/6890c21fd8357-affiche-victime-off-duty-1.jpeg_thumbs/600-600.jpeg",
+      "id": "26aa1c7de76e"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Toi + Moi = ?",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-07",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://improvidence.mapado.com/event/268472-toi-moi",
+      "image": "https://img.mapado.net/2026/1/26/69772dc1cb2f5-toi-moi-affiche-facon-film-1.png_thumbs/600-600.png",
+      "id": "b9bb381b8134"
     },
     {
       "venue": "Le Sucre",
@@ -6059,6 +7047,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/cochons-dinde/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/cochons-d-inde_radiant-bellevue-500x500.jpg",
       "id": "08c9d67b2542"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Duos des Eux",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-07",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/9864-duos-des-eux",
+      "image": "https://img.mapado.net/2025/7/16/6877a93c803cf-duos-des-eux-vignette.jpeg_thumbs/600-600.jpeg",
+      "id": "a589242a184d"
     },
     {
       "venue": "Le Transbordeur",
@@ -6308,6 +7309,19 @@
       "id": "445535cab77c"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Duos des Eux",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-12",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/9864-duos-des-eux",
+      "image": "https://img.mapado.net/2025/7/16/6877a93c803cf-duos-des-eux-vignette.jpeg_thumbs/600-600.jpeg",
+      "id": "4c8a1b709e23"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "Tomoyuki Aoki & Harutaka Mochizuki",
@@ -6334,6 +7348,19 @@
       "id": "32d0c0de4c46"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Playlist",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-12",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/28130-playlist",
+      "image": "https://img.mapado.net/2020/9/16/5f61dd72f1bd4-affiche-playlist-web.jpeg_thumbs/600-600.jpeg",
+      "id": "7fa0bf05e583"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Emma",
@@ -6345,6 +7372,19 @@
       "url": "https://larayonne.org/evenement/emma/",
       "image": "https://larayonne.org/wp-content/uploads/2026/04/EMMA_1030x580-500x282.jpg",
       "id": "c4c1dab52283"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Duos des Eux",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-13",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/9864-duos-des-eux",
+      "image": "https://img.mapado.net/2025/7/16/6877a93c803cf-duos-des-eux-vignette.jpeg_thumbs/600-600.jpeg",
+      "id": "a564657d1b8b"
     },
     {
       "venue": "MJC Louis Aragon / Jack Jack",
@@ -6410,6 +7450,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/benabar/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/12/benabar_radiant-bellevue-500x500.jpg",
       "id": "251deaec3bb3"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Les p'tits riens",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-13",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/500582-les-ptits-riens",
+      "image": "https://img.mapado.net/2025/3/25/67e2902b54cce-affiche-lpr-20250319-123016-0000-1.png_thumbs/600-600.png",
+      "id": "dc207e06c8c3"
     },
     {
       "venue": "Les Subsistances",
@@ -6488,6 +7541,19 @@
       "url": "https://agenda.villemorte.fr/event/infinity-song",
       "image": "https://agenda.villemorte.fr/media/thumb/8e49a9e25327ab7edf9e668d0787d01c.jpg",
       "id": "e4d1985e7f4d"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Duos des Eux",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-14",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/9864-duos-des-eux",
+      "image": "https://img.mapado.net/2025/7/16/6877a93c803cf-duos-des-eux-vignette.jpeg_thumbs/600-600.jpeg",
+      "id": "b3bfb664ded0"
     },
     {
       "venue": "Bourse du Travail",
@@ -6659,6 +7725,19 @@
       "id": "ba0b7e557cea"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "LE CANAPE",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-18",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/3921-le-canape",
+      "image": "https://img.mapado.net/2024/9/2/66d5820012170-canape-site-improvidence-2024.jpeg_thumbs/600-600.jpeg",
+      "id": "ac4cdbf86ca7"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "JAVA + WINSTON MCANUFF",
@@ -6709,6 +7788,19 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/l-heritage-goldman-2-2",
       "image": "https://www.halle-tony-garnier.com/storage/142352/conversions/2026-11-19-L-HERITAGE-GOLDMAN-2-heritagegoldman-1080-lyo-20251002-100344-square.jpg",
       "id": "d019b4b5bf44"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "On n'a pas le même titre !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-19",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/452926-on-na-pas-le-meme-titre",
+      "image": "https://img.mapado.net/2024/10/21/671646ca23519-vignette-oaplmt.jpeg_thumbs/600-600.jpeg",
+      "id": "6ba59944f2cf"
     },
     {
       "venue": "TNG",
@@ -6763,6 +7855,19 @@
       "id": "0d07263bcd96"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Scènes de crime",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-20",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/14527-scenes-de-crime",
+      "image": "https://img.mapado.net/2023/11/16/6556217687939-affiche-scene-s-de-crime-rvb.jpeg_thumbs/600-600.jpeg",
+      "id": "ae32bcb63ab6"
+    },
+    {
       "venue": "La Machinerie - Bizarre !",
       "venue_slug": "la-machinerie-bizarre",
       "title": "Zinée + T2LS",
@@ -6787,6 +7892,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/une-heure-a-tattendre/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/une-heure-a-t-attendre-500x500.jpg",
       "id": "7257d7706022"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Les Éphémères - Duos fugaces de la Lily",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-20",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/824348-les-ephemeres-duos-fugaces-de-la-lily",
+      "image": "https://img.mapado.net/2026/8/4/6a71b8bd1b0e3-affiche-br.jpeg_thumbs/600-600.jpeg",
+      "id": "799a545590aa"
     },
     {
       "venue": "La Rayonne",
@@ -6815,6 +7933,19 @@
       "id": "b8675ebe88aa"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Scènes de crime",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-21",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/14527-scenes-de-crime",
+      "image": "https://img.mapado.net/2023/11/16/6556217687939-affiche-scene-s-de-crime-rvb.jpeg_thumbs/600-600.jpeg",
+      "id": "a07ca6a07fc8"
+    },
+    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Concert de Bonnie Bécasse – Quinzaine « Paroles de femmes »",
@@ -6839,6 +7970,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/les-peintres-au-charbon/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/les-peinters-au-charbon-500x500.jpg",
       "id": "960f84c5f77e"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Une grande table avec du monde autour",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-21",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/331369-une-grande-table-avec-du-monde-autour",
+      "image": "https://img.mapado.net/2024/4/2/660bcb45e8482-vignette-une-grande-table.jpeg_thumbs/600-600.jpeg",
+      "id": "847cbdaf1977"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6934,15 +8078,15 @@
     {
       "venue": "Improvidence",
       "venue_slug": "improvidence",
-      "title": "Ça handi long",
+      "title": "Ca handi long",
       "subtitle": null,
-      "category": "Impro",
+      "category": "café-théâtre",
       "date_start": "2026-11-25",
       "date_end": null,
       "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
-      "image": null,
-      "id": "1e720a148019"
+      "url": "https://improvidence.mapado.com/event/336906-ca-handi-long",
+      "image": "https://img.mapado.net/2024/4/17/661f9a994c96d-affiche-vignette-cahandilong.jpeg_thumbs/600-600.jpeg",
+      "id": "a1978a4c786f"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -6956,6 +8100,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/locura/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/locura_radiant-bellevue-500x500.jpg",
       "id": "0a8c5ffdceaf"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Seconds couteaux",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-25",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/602043-seconds-couteaux",
+      "image": "https://img.mapado.net/2026/8/4/6a71afd65a4c9-visuel-seconds-couteaux-2026-07-1.png_thumbs/600-600.png",
+      "id": "ffe8c4845d5d"
     },
     {
       "venue": "La Rayonne",
@@ -6982,6 +8139,19 @@
       "url": "https://www.transbordeur.fr/evenement/ben-plg-26112026/",
       "image": "https://www.transbordeur.fr/wp-content/uploads/2026/05/a-benplg.jpg",
       "id": "0446d58205ab"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Scènes de crime",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-26",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/14527-scenes-de-crime",
+      "image": "https://img.mapado.net/2023/11/16/6556217687939-affiche-scene-s-de-crime-rvb.jpeg_thumbs/600-600.jpeg",
+      "id": "eb2a9aa01f99"
     },
     {
       "venue": "Agend'arts",
@@ -7088,6 +8258,19 @@
       "id": "69e0e2b2e02f"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Scènes de crime",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-27",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/14527-scenes-de-crime",
+      "image": "https://img.mapado.net/2023/11/16/6556217687939-affiche-scene-s-de-crime-rvb.jpeg_thumbs/600-600.jpeg",
+      "id": "a0fd8f918d6a"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "Une Histoire de France",
@@ -7138,6 +8321,32 @@
       "url": "https://www.les-subs.com/evenement/minipousses-cirque/",
       "image": "https://www.les-subs.com/wp-content/uploads/2024/04/re1604-1091-200x200.jpg",
       "id": "b65316965872"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "SITCOM",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-28",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://improvidence.mapado.com/event/619242-sitcom",
+      "image": "https://img.mapado.net/2025/9/4/68b957ca950ae-sitcom-1.jpeg_thumbs/600-600.jpeg",
+      "id": "cf42c992feed"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Scènes de crime",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-28",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://improvidence.mapado.com/event/14527-scenes-de-crime",
+      "image": "https://img.mapado.net/2023/11/16/6556217687939-affiche-scene-s-de-crime-rvb.jpeg_thumbs/600-600.jpeg",
+      "id": "008606d55263"
     },
     {
       "venue": "La Rayonne",
@@ -7203,6 +8412,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/lexperience-theatrale/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/l-experience-theatrale-500x500.jpg",
       "id": "cab4b3d85772"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Senflix",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-28",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/351368-senflix",
+      "image": "https://img.mapado.net/2025/1/29/6799fb363c759-senflix-affiche-web.jpeg_thumbs/600-600.jpeg",
+      "id": "733acb268892"
     },
     {
       "venue": "Bourse du Travail",
@@ -7309,6 +8531,19 @@
       "id": "356ee96e4b13"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "ELLE",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-02",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/17447-elle",
+      "image": "https://img.mapado.net/2024/10/11/6708ec4423da3-vignette-elle.jpeg_thumbs/600-600.jpeg",
+      "id": "c39128ee0c46"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LA GRANDE SOPHIE",
@@ -7320,6 +8555,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/la-grande-sophie-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/11/la-grande-sophie_radiant-bellevue-500x500.jpg",
       "id": "842339f50021"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "ON RESTE EN CONTACT",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-02",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/9973-on-reste-en-contact",
+      "image": "https://img.mapado.net/2018/12/2/5c043197ed152-on-reste-en-contact.jpeg_thumbs/600-600.jpeg",
+      "id": "8523eb0256a3"
     },
     {
       "venue": "Bourse du Travail",
@@ -7359,6 +8607,19 @@
       "url": "https://www.les-subs.com/evenement/soiree-pepites-le-fashow-lena-aboukrat/",
       "image": "https://www.les-subs.com/wp-content/uploads/2026/07/lena-aboukratdr-200x200.jpg",
       "id": "668a52468a5b"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Pétrichor",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-03",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/594336-petrichor",
+      "image": "https://img.mapado.net/2025/7/16/6877703f33057-vignette-petrichor.jpeg_thumbs/600-600.jpeg",
+      "id": "a70a341762f5"
     },
     {
       "venue": "Les Subsistances",
@@ -7413,6 +8674,19 @@
       "id": "d2d013558422"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Friendzone",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-03",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/561436-friendzone",
+      "image": "https://img.mapado.net/2026/8/10/6a79cc10466e0-friendzone-affichebleu.png_thumbs/600-600.png",
+      "id": "04a8868fcfe9"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "LUTHER",
@@ -7424,6 +8698,19 @@
       "url": "https://www.transbordeur.fr/evenement/luther-04122026/",
       "image": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-luther.png",
       "id": "0b1779aecea2"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Toi + Moi = ?",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-04",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/268472-toi-moi",
+      "image": "https://img.mapado.net/2026/1/26/69772dc1cb2f5-toi-moi-affiche-facon-film-1.png_thumbs/600-600.png",
+      "id": "33cef7482772"
     },
     {
       "venue": "Agend'arts",
@@ -7465,6 +8752,19 @@
       "id": "3c781bc45b68"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "FLEMME",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-04",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/489025-flemme",
+      "image": "https://img.mapado.net/2025/10/22/68f8d4dc2597f-affiche-flemme-superette.jpeg_thumbs/600-600.jpeg",
+      "id": "916c2d39b9d1"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "SUBLIME CLUB",
@@ -7502,6 +8802,19 @@
       "url": "https://www.les-subs.com/evenement/minipousses-danse/",
       "image": "https://www.les-subs.com/wp-content/uploads/2023/03/lessubs-minipousses-cirqueogregoryrubinstein-collectifdesflousfurieux-3-200x200.jpg",
       "id": "52b6b60c5345"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Le Putsch",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-05",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://improvidence.mapado.com/event/66776-le-putsch",
+      "image": "https://img.mapado.net/2023/6/19/64901c6f31b4c-affiche-le-putsch-sans-dates.jpeg_thumbs/600-600.jpeg",
+      "id": "49a93158984c"
     },
     {
       "venue": "La Rayonne",
@@ -7554,6 +8867,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/la-miserable/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-miserable-500x500.jpg",
       "id": "04b013233b82"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "En deux-deux",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-06",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://improvidence.mapado.com/event/606705-en-deux-deux",
+      "image": "https://img.mapado.net/2025/8/4/6890c69867523-en-deux-deux-duo-affiche-spectacle-v1-3.png_thumbs/600-600.png",
+      "id": "5245bf3f994b"
     },
     {
       "venue": "Le Transbordeur",
@@ -7621,6 +8947,19 @@
       "id": "0475186f4102"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Nos futurs",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-09",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/667220-nos-futurs",
+      "image": "https://img.mapado.net/2026/1/22/69722f82c40c8-nos-futurs-dernier-lundi-de-chaque-mois.png_thumbs/600-600.png",
+      "id": "c6ec1c3a266c"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "Benjamin Biolay",
@@ -7634,6 +8973,19 @@
       "id": "6ca9da066895"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "4L Trop Filles",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-09",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/336934-4l-trop-filles",
+      "image": "https://img.mapado.net/2024/4/17/661fa2841b26c-vignette-4l-trop-filles.jpeg_thumbs/600-600.jpeg",
+      "id": "94aa5b2a7098"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Samuel Bambi",
@@ -7645,6 +8997,19 @@
       "url": "https://www.bourse-du-travail.com/samuel-bambi-357727.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/samuel-bambi-10.jpg",
       "id": "e2d84f309c62"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Mon pote",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-10",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/14113-mon-pote",
+      "image": "https://img.mapado.net/2023/10/3/651c16e6edef5-affiche-mon-pote-web.jpeg_thumbs/600-600.jpeg",
+      "id": "ff1f136d050e"
     },
     {
       "venue": "Agend'arts",
@@ -7684,6 +9049,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/le-bourgeois-gentilhomme/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-bourgeois-gentilhomme-500x500.jpg",
       "id": "045092db6849"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Victime",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-10",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/55206-victime",
+      "image": "https://img.mapado.net/2025/8/4/6890c21fd8357-affiche-victime-off-duty-1.jpeg_thumbs/600-600.jpeg",
+      "id": "1c539d5459c0"
     },
     {
       "venue": "Bourse du Travail",
@@ -7749,6 +9127,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/le-bourgeois-gentilhomme/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-bourgeois-gentilhomme-500x500.jpg",
       "id": "af6c546ae98c"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Tentative d'épuisement d'un texte insignifiant",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-11",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/55440-tentative-d-epuisement-d-un-texte-insignifiant",
+      "image": "https://img.mapado.net/2021/7/22/60f925201b44a-visuel-tentative.jpeg_thumbs/600-600.jpeg",
+      "id": "3ee9e91ba04e"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -7881,6 +9272,32 @@
       "id": "722522ed70d4"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Une grande table avec du monde autour",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-12",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/331369-une-grande-table-avec-du-monde-autour",
+      "image": "https://img.mapado.net/2024/4/2/660bcb45e8482-vignette-une-grande-table.jpeg_thumbs/600-600.jpeg",
+      "id": "975f35b7d488"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Le téléfilm de Noël improvisé",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-13",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://improvidence.mapado.com/event/161318-le-telefilm-de-noel-improvise",
+      "image": "https://img.mapado.net/2023/11/13/6551fe08673f2-100-noel.png_thumbs/600-600.png",
+      "id": "dc4495d15e64"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "AXEL BAUER",
@@ -7920,6 +9337,19 @@
       "id": "45accfa302c3"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "La Relève",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-15",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/154968-la-releve",
+      "image": "https://img.mapado.net/2022/10/24/635646c2a2c98-1.jpeg_thumbs/600-600.jpeg",
+      "id": "e323ae1d8e59"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "OLDELAF",
@@ -7931,6 +9361,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/oldelaf/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/oldelaf-500x500.jpg",
       "id": "42323fd5cd88"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Ca handi long",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-16",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/336906-ca-handi-long",
+      "image": "https://img.mapado.net/2024/4/17/661f9a994c96d-affiche-vignette-cahandilong.jpeg_thumbs/600-600.jpeg",
+      "id": "51b1fe432bd8"
     },
     {
       "venue": "Les Subsistances",
@@ -7957,6 +9400,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/orgueil-prejuges-ou-presque/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/orgueil-et-prejuge-500x500.jpg",
       "id": "9012c365466b"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Le téléfilm de Noël improvisé",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-16",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/161318-le-telefilm-de-noel-improvise",
+      "image": "https://img.mapado.net/2023/11/13/6551fe08673f2-100-noel.png_thumbs/600-600.png",
+      "id": "5443c7806fd6"
     },
     {
       "venue": "Bourse du Travail",
@@ -8022,6 +9478,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/leman-2/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/leman-vignette_radiant-bellevue.jpg",
       "id": "f305ad8022e5"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "On n'a pas le même titre !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-17",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/452926-on-na-pas-le-meme-titre",
+      "image": "https://img.mapado.net/2024/10/21/671646ca23519-vignette-oaplmt.jpeg_thumbs/600-600.jpeg",
+      "id": "0e6675f58656"
     },
     {
       "venue": "Les Subsistances",
@@ -8100,6 +9569,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/the-genesis/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/the-genesis-500x500.jpg",
       "id": "306591ee9545"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Les Éphémères - Duos fugaces de la Lily",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-18",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/824348-les-ephemeres-duos-fugaces-de-la-lily",
+      "image": "https://img.mapado.net/2026/8/4/6a71b8bd1b0e3-affiche-br.jpeg_thumbs/600-600.jpeg",
+      "id": "1ba3c945abd9"
     },
     {
       "venue": "Bourse du Travail",
@@ -8232,6 +9714,19 @@
       "id": "d596bb6dc953"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "30 Impros Chrono",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-26",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://improvidence.mapado.com/event/189814-30-impros-chrono",
+      "image": "https://img.mapado.net/2023/3/24/641dcdaeee02f-affiche-30-impros-chrono.jpeg_thumbs/600-600.jpeg",
+      "id": "c926700b339b"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "K-Pop Shadow Slayers - Tournée",
@@ -8282,6 +9777,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/laffaire-de-la-rue-de-lourcine/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/l-affaire-de-la-rue-de-lourcine-500x500.jpg",
       "id": "314b869286d1"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "4L Trop Filles",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-01-06",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/336934-4l-trop-filles",
+      "image": "https://img.mapado.net/2024/4/17/661fa2841b26c-vignette-4l-trop-filles.jpeg_thumbs/600-600.jpeg",
+      "id": "db90ba5fc5d5"
     },
     {
       "venue": "Bourse du Travail",
@@ -8347,6 +9855,19 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/goldmen-concert-100-goldman",
       "image": "https://www.halle-tony-garnier.com/storage/142356/conversions/2027-01-08-GOLDMEN-CONCERT-100-GOLDMAN-goldmen-carre-copi-20250411-144142-square.jpg",
       "id": "9cae03700f3c"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "FLEMME",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-01-08",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/489025-flemme",
+      "image": "https://img.mapado.net/2025/10/22/68f8d4dc2597f-affiche-flemme-superette.jpeg_thumbs/600-600.jpeg",
+      "id": "0d8afc9abcb1"
     },
     {
       "venue": "Bourse du Travail",
@@ -8479,6 +10000,19 @@
       "id": "e17511c98686"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "LE CANAPE",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-01-13",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/3921-le-canape",
+      "image": "https://img.mapado.net/2024/9/2/66d5820012170-canape-site-improvidence-2024.jpeg_thumbs/600-600.jpeg",
+      "id": "f242829121db"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Thomas Angelvy",
@@ -8503,6 +10037,19 @@
       "url": "https://www.les-subs.com/evenement/la-creation-a-toutes-les-etapes-debout-public-assis-metrique/",
       "image": "https://www.les-subs.com/wp-content/uploads/2026/07/visuel-debout-public-2.jpg",
       "id": "4fb5e61f677a"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Toi + Moi = ?",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-01-14",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/268472-toi-moi",
+      "image": "https://img.mapado.net/2026/1/26/69772dc1cb2f5-toi-moi-affiche-facon-film-1.png_thumbs/600-600.png",
+      "id": "4351b553e5c2"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -8778,6 +10325,19 @@
       "id": "2b4042607eb7"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "ON RESTE EN CONTACT",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-01-20",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/9973-on-reste-en-contact",
+      "image": "https://img.mapado.net/2018/12/2/5c043197ed152-on-reste-en-contact.jpeg_thumbs/600-600.jpeg",
+      "id": "a76325603606"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Meryem Benoua",
@@ -8828,6 +10388,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/le-pere/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-pere-500x500.jpg",
       "id": "df0921754fbc"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Ca handi long",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-01-21",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/336906-ca-handi-long",
+      "image": "https://img.mapado.net/2024/4/17/661f9a994c96d-affiche-vignette-cahandilong.jpeg_thumbs/600-600.jpeg",
+      "id": "c88bad7cefdc"
     },
     {
       "venue": "La Rayonne",
@@ -8934,6 +10507,19 @@
       "id": "13871667903e"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Album de famille",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-01-27",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/824299-album-de-famille",
+      "image": "https://img.mapado.net/2026/8/4/6a71b13d2f050-album-de-famille-visuel-1.png_thumbs/600-600.png",
+      "id": "c2a5b07ea30d"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LE JOURNAL D’EDOUARD BAER",
@@ -9025,6 +10611,19 @@
       "id": "fe2ecbdbcc06"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Friendzone",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-01-28",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/561436-friendzone",
+      "image": "https://img.mapado.net/2026/8/10/6a79cc10466e0-friendzone-affichebleu.png_thumbs/600-600.png",
+      "id": "8977d4ed6a45"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Disney Sur Glace - Le Voyage Enchante",
@@ -9049,6 +10648,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/dans-le-couloir/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/dans-le-couloir-500x500.jpg",
       "id": "df95fbd84adc"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Les Éphémères - Duos fugaces de la Lily",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-01-29",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/824348-les-ephemeres-duos-fugaces-de-la-lily",
+      "image": "https://img.mapado.net/2026/8/4/6a71b8bd1b0e3-affiche-br.jpeg_thumbs/600-600.jpeg",
+      "id": "7c70dd367bf1"
     },
     {
       "venue": "TNG",
@@ -9088,6 +10700,19 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-4",
       "image": "https://www.halle-tony-garnier.com/storage/142365/conversions/2027-01-30-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-160802-square.jpg",
       "id": "960700e6646d"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "DEUX",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-01-30",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://improvidence.mapado.com/event/3851-deux",
+      "image": "https://img.mapado.net/2017/7/22/59736156dbe7c-2-impro.jpeg_thumbs/600-600.jpeg",
+      "id": "c840c79a26ad"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -9272,6 +10897,19 @@
       "id": "34ae1343636e"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Pétrichor",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-02-04",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/594336-petrichor",
+      "image": "https://img.mapado.net/2025/7/16/6877703f33057-vignette-petrichor.jpeg_thumbs/600-600.jpeg",
+      "id": "bbe9871815c4"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Pierre-Emmanuel Barré & Aymeric Lompret \" Une Heure Trente \" - Tournée",
@@ -9337,6 +10975,19 @@
       "id": "21397db5a6f9"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Victime",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-02-06",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://improvidence.mapado.com/event/55206-victime",
+      "image": "https://img.mapado.net/2025/8/4/6890c21fd8357-affiche-victime-off-duty-1.jpeg_thumbs/600-600.jpeg",
+      "id": "21c9c46635a7"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LET’S TWIST AGAIN",
@@ -9348,6 +10999,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/lets-twist-again/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/lets-twist-again-500x500.jpg",
       "id": "912df24bf093"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Une grande table avec du monde autour",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-02-06",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/331369-une-grande-table-avec-du-monde-autour",
+      "image": "https://img.mapado.net/2024/4/2/660bcb45e8482-vignette-une-grande-table.jpeg_thumbs/600-600.jpeg",
+      "id": "8bd147505664"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -9400,6 +11064,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/laura-cahen-caiman/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/07/laura-cahen-500x500.jpg",
       "id": "e0381b9d02e2"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "La Relève",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-02-09",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/154968-la-releve",
+      "image": "https://img.mapado.net/2022/10/24/635646c2a2c98-1.jpeg_thumbs/600-600.jpeg",
+      "id": "aea481f1dbf1"
     },
     {
       "venue": "Les Subsistances",
@@ -9467,6 +11144,19 @@
       "id": "62bc64dec03c"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "LE CANAPE",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-02-10",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/3921-le-canape",
+      "image": "https://img.mapado.net/2024/9/2/66d5820012170-canape-site-improvidence-2024.jpeg_thumbs/600-600.jpeg",
+      "id": "e3315cfbc30c"
+    },
+    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Akim Omiri - Contexte - Tournée",
@@ -9517,6 +11207,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/4211-km/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/4211km-V2-500x500.jpg",
       "id": "8a97c8e90f7c"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Je suis une tique",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-02-11",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/336591-je-suis-une-tique",
+      "image": "https://img.mapado.net/2024/4/16/661e7ef39d9c6-vignette-je-suis-une-tique.jpeg_thumbs/600-600.jpeg",
+      "id": "34eb87791766"
     },
     {
       "venue": "Les Subsistances",
@@ -9597,6 +11300,19 @@
       "id": "ec290758151a"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Playlist",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-02-12",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/28130-playlist",
+      "image": "https://img.mapado.net/2020/9/16/5f61dd72f1bd4-affiche-playlist-web.jpeg_thumbs/600-600.jpeg",
+      "id": "091adb7c20cb"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "JEAN-BENOÎT DIALLO",
@@ -9621,6 +11337,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/pierre-et-le-loup/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/pierre-et-le-loup-500x500.jpg",
       "id": "961b44c07184"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Le téléfilm de la St Valentin improvisé",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-02-14",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://improvidence.mapado.com/event/294458-le-telefilm-de-la-st-valentin-improvise",
+      "image": "https://img.mapado.net/2023/11/13/655200d6aa279-100-valentin.png_thumbs/600-600.png",
+      "id": "2371240e67a8"
     },
     {
       "venue": "Improvidence",
