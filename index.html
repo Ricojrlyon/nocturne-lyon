@@ -1217,7 +1217,7 @@ const FR_MONTHS = ['janvier','février','mars','avril','mai','juin','juillet','a
 
 /* ---------- venue groups ---------- */
 const VENUE_GROUPS = [
-  { name: 'spectacles & musiques', venues: ['La Halle Tony Garnier', 'Bourse du Travail', 'Radiant-Bellevue', "Agend'arts", 'Improvidence', 'Big White', 'LDLC Arena'] },
+  { name: 'spectacles & musiques', venues: ['La Halle Tony Garnier', 'Bourse du Travail', 'Radiant-Bellevue', "Agend'arts", 'Big White', 'LDLC Arena'] },
   { name: 'soirée',                venues: ['Le Sucre', 'Le Petit Salon', 'Le Transbordeur', 'La Rayonne', 'La Marquise'] },
   { name: 'concerts',              venues: ['Marché Gare', 'Le Sonic', 'Le Périscope', 'Toï Toï le Zinc', "L'Épicerie Moderne", "A Thou Bout d'Chant", "Bar Rock'n Eat"] },
   { name: 'lieux hybrides',        venues: ['La Commune', 'HEAT', 'Les Subsistances', 'Grrrnd Zero', 'Boskop', "Maison de l'écologie"] },
@@ -1225,7 +1225,7 @@ const VENUE_GROUPS = [
      exclut ce lieu, son chip restait grisé en permanence. Son entrée
      dans VENUE_ARRONDISSEMENT est conservée — inoffensive, et utile si
      un événement y remonte un jour via un agrégateur. */
-  { name: 'théâtre & danse',       venues: ['Opéra national de Lyon', 'TNG', 'Maison de la Danse'] },
+  { name: 'théâtre & danse',       venues: ['Opéra national de Lyon', 'TNG', 'Maison de la Danse', 'Improvidence'] },
   { name: 'classique',             venues: ['Auditorium de Lyon', 'Chapelle de la Trinité', 'Salle Molière'] },
   /* 'musées & galeries' is dynamically populated by inferGroupForVenue
      (anything containing musée / galerie / institut). */
@@ -1243,6 +1243,16 @@ const VENUE_GROUPS = [
    soirée → concerts → spectacles & musiques → lieux hybrides
    → théâtre & danse → classique → musées & galeries → autre.
    Map each venue to its rank so we can sort cards by group. */
+/* Lieux épinglés en fin de journée, quel que soit leur groupe.
+   Le groupe pilote à la fois le filtre ET l'ordre d'affichage ; ce rang
+   les découple. Improvidence joue tous les soirs, jusqu'à trois
+   spectacles, et sortirait sinon à la place de « théâtre & danse » —
+   soit avant la plupart des salles, en tête de presque chaque journée.
+   La valeur dépasse 999, rang des lieux sans groupe, pour passer aussi
+   après les cartes du Petit Bulletin et de Ville Morte. */
+const VENUES_PINNED_LAST = new Set(['Improvidence']);
+const RANK_PINNED_LAST = 10000;
+
 const VENUE_DISPLAY_ORDER = ['soirée', 'concerts', 'spectacles & musiques', 'lieux hybrides', 'théâtre & danse', 'classique', 'musées & galeries', 'autre'];
 
 /* venue -> arrondissement mapping. Researched against Wikipedia, the
@@ -2488,8 +2498,10 @@ function renderFeed() {
       const ga = VENUE_GROUP_ORDER_INDEX.get(a.venue);
       const gb = VENUE_GROUP_ORDER_INDEX.get(b.venue);
       // venues not found in any group fall to the end (large index)
-      const ia = ga === undefined ? 999 : ga;
-      const ib = gb === undefined ? 999 : gb;
+      const ia = VENUES_PINNED_LAST.has(a.venue) ? RANK_PINNED_LAST
+               : (ga === undefined ? 999 : ga);
+      const ib = VENUES_PINNED_LAST.has(b.venue) ? RANK_PINNED_LAST
+               : (gb === undefined ? 999 : gb);
       if (ia !== ib) return ia - ib;
       // same group: scraped venues first, then aggregators
       const sa = sourceSortIndex(a);
