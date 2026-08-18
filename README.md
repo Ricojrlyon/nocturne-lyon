@@ -8,7 +8,7 @@ et affichés sur une page statique hébergée par GitHub Pages :
 ## Fonctionnement
 
 ```
-15 scrapers venue ──┐
+16 scrapers venue ──┐
                     ├─→ dédup 3 passes ─→ events.json ─→ index.html (GitHub Pages)
 2 agrégateurs ──────┘         │
 (Petit Bulletin,              ├─→ venue_arrondissements.json (géocodage Nominatim)
@@ -22,6 +22,10 @@ les trois fichiers de données.
 - **`scrapers/*.py`** — un module par salle (`requests` + BeautifulSoup).
   Chaque module expose `fetch() -> List[Event]`. Les échecs d'une salle ne
   font pas tomber le run : la salle est signalée en erreur, les autres passent.
+  Exception notable : `improvidence.py` ne parse pas de HTML. Le site de la
+  salle est rendu côté client, on lit donc sa billetterie Mapado, dont
+  chaque page embarque son état d'hydratation Next.js en JSON — bien plus
+  stable que des classes CSS générées.
 - **`scrapers/aggregators/`** — sources multi-lieux : Petit Bulletin et
   Ville Morte (API Gancio). Priorité inférieure aux scrapers venue : en cas
   de doublon, le scraper de la salle gagne l'identité et hérite des champs
@@ -70,7 +74,9 @@ Runs suivants : ~30 secondes.
    (index.html) — la liste des lieux connus du géocodage en découle
    automatiquement.
 4. Si les agrégateurs orthographient le lieu autrement, ajouter les
-   variantes dans `VENUE_CANONICAL` (scrapers/dedup.py).
+   variantes dans `VENUE_CANONICAL` (scrapers/dedup.py). C'est ce qui
+   permet à la dédup de regrouper les deux sources : sans l'entrée, elles
+   tombent dans deux groupes distincts et ne se croisent jamais.
 
 ## Politique éditoriale
 
@@ -83,6 +89,13 @@ Runs suivants : ~30 secondes.
   les affiche avec un badge « en cours » au-delà de 30 jours.
 - **Horizon** : les événements à plus de 180 jours sont écartés avant la
   phase de fetch des pages détail (scrapers de salle uniquement).
+- **Plages d'agrégateur sur un lieu scrappé** : écartées. Un agrégateur
+  qui voit un spectacle joué plusieurs soirs le publie souvent comme une
+  seule plage « du 18 au 28 août ». Le frontend déployant une plage sur
+  chacun de ses jours, elle doublerait les séances que le scraper de la
+  salle rapporte précisément, et en inventerait les soirs sans
+  représentation. La dédup ne peut pas rattraper ce cas : il suffit que la
+  plage gagne un seul jour pour être émise, puis repeindre toute sa durée.
 - **Exclusions restantes** : formations et ateliers professionnels de
   La Rayonne, seul filtre encore en place — il vise une programmation
   parallèle, pas un choix éditorial.

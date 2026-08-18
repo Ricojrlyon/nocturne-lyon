@@ -39,10 +39,10 @@ from scrapers import (
     petit_salon, sonic, periscope, la_commune,
     heat, halle_tony_garnier,
     opera_lyon, tng,
-    bourse_du_travail,
+    bourse_du_travail, improvidence,
 )
 from scrapers.aggregators import villemorte, petit_bulletin
-from scrapers.dedup import deduplicate
+from scrapers.dedup import deduplicate, canonical_venue_name
 from scrapers.detail_cache import save_if_dirty as save_detail_cache
 from scrapers.geo import resolve_new_venues
 
@@ -64,6 +64,7 @@ SCRAPERS: list[tuple[str, Callable[[], List[Event]]]] = [
     ("Opéra de Lyon",           opera_lyon.fetch),
     ("TNG",                     tng.fetch),
     ("Bourse du Travail",       bourse_du_travail.fetch),
+    ("Improvidence",            improvidence.fetch),
 ]
 
 # Aggregators — priority lower than venue scrapers (lose against them on
@@ -153,6 +154,35 @@ def main() -> int:
             tb = traceback.format_exc(limit=2)
             report.append((name, 0, f"{type(e).__name__}: {e}"))
             print(f"[FAIL aggregator] {name}: {tb}", file=sys.stderr)
+
+    # 2.4) Écarter les PLAGES d'agrégateur sur un lieu qu'on scrappe.
+    #
+    # Un agrégateur qui voit un spectacle joué plusieurs soirs le publie
+    # souvent comme UNE plage « du 18 au 28 août ». Le frontend déploie
+    # une plage sur chacun de ses jours : elle double alors les séances
+    # que le scraper de la salle rapporte précisément, et en invente les
+    # soirs où le spectacle ne joue pas.
+    #
+    # La dédup ne peut pas rattraper ça : elle indexe bien la plage sur
+    # tous ses jours, mais il suffit qu'elle gagne UN seul jour — typique-
+    # ment aujourd'hui, quand la billetterie a déjà retiré la séance en
+    # cours — pour être émise, et elle repeint ensuite toute sa durée.
+    #
+    # Mesuré à l'introduction de la règle : 2 plages, toutes deux à
+    # Improvidence, 22 jours affichés dont 14 en collision directe.
+    scraped_venues = {
+        canonical_venue_name(e.venue) for e, p in all_tagged if p >= 100
+    }
+    before_ranges = len(all_tagged)
+    all_tagged = [
+        (e, p) for e, p in all_tagged
+        if not (p < 100 and e.date_end and e.date_end != e.date_start
+                and canonical_venue_name(e.venue) in scraped_venues)
+    ]
+    dropped_ranges = before_ranges - len(all_tagged)
+    if dropped_ranges:
+        print(f"[plages] {dropped_ranges} plage(s) d'agrégateur écartée(s) "
+              f"sur un lieu scrappé en direct")
 
     # 2.5) Persist the detail-page time cache (url → time), committed by
     # the workflow like venue_arrondissements.json. Without this save,

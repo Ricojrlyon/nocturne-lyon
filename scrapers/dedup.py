@@ -57,6 +57,14 @@ VENUE_CANONICAL: dict[str, list[str]] = {
     "HEAT":                   ["heat"],
     "La Halle Tony Garnier":  ["halle tony garnier", "halle tony-garnier"],
     "Bourse du Travail":      ["bourse du travail"],
+    # Mapado nomme la salle "Improvidence Cafe-Theatre", le Petit
+    # Bulletin "Improvidence" : sans cette entree les deux sources
+    # tomberaient dans deux groupes distincts et la dedup ne les
+    # verrait jamais se croiser.
+    "Improvidence":           ["improvidence",
+                               "improvidence cafe theatre",
+                               "l improvidence",
+                               "improvidence lyon"],
     # === New venues from aggregators (canonical names) ===
     "Toï Toï le Zinc":        ["toi toi le zinc", "toi toi", "toitoi"],
     "Grrrnd Zero":            ["grrrnd zero", "grrnd zero", "grrrnd-zero",
