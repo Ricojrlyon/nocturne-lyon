@@ -455,6 +455,11 @@
     color: var(--ink-mute);
     font-variant-numeric: tabular-nums;
   }
+  /* Le mois n'est affiché qu'aux changements de mois, mais sa place reste
+     RÉSERVÉE partout : le contenu de la pastille est centré, donc le
+     supprimer décalerait le numéro d'environ 5 px sur les pastilles sans
+     mois. visibility:hidden garde tous les chiffres alignés. */
+  .day-pill .dp-mon.muet { visibility: hidden; }
   .day-pill .dp-count {
     font-size: 9px;
     color: var(--warm);
@@ -1948,11 +1953,14 @@ function buildDaystrip() {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'day-pill' + (n === 0 ? ' empty' : '') + (i === 0 ? ' today' : '');
-    // Mois en chiffres et en discret, à côté du numéro — utile dès qu'on
-    // approche d'un changement de mois dans la bande.
+    // Mois affiché uniquement au premier jour de chaque mois, et sur la
+    // première pastille de la bande — sans elle, une fenêtre entièrement
+    // contenue dans un mois n'indiquerait aucun mois du tout.
+    const moisVisible = (i === 0 || d.getDate() === 1);
     btn.innerHTML = '<span class="dp-dow">' + FR_DAYS_SHORT[d.getDay()] + '</span>'
                   + '<span class="dp-num">' + d.getDate()
-                  + '<i class="dp-mon">/' + String(d.getMonth() + 1).padStart(2, '0')
+                  + '<i class="dp-mon' + (moisVisible ? '' : ' muet') + '">/'
+                  + String(d.getMonth() + 1).padStart(2, '0')
                   + '</i></span>'
                   + '<span class="dp-count">' + (n ? n : '·') + '</span>';
     if (n) {
