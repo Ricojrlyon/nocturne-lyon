@@ -40,6 +40,12 @@
     "confidence": "high",
     "seen_at": "2026-08-12"
   },
+  "Chapelle Notre-Dame-de-l\\'île-Barbe": {
+    "arr": null,
+    "checked_at": "2026-08-18",
+    "confidence": "failed",
+    "seen_at": "2026-08-18"
+  },
   "Colline de Fourvière": {
     "arr": "5e",
     "checked_at": "2026-08-12",
@@ -94,6 +100,12 @@
     "confidence": "failed",
     "seen_at": "2026-08-12"
   },
+  "Grand Hôtel-Dieu": {
+    "arr": "2e",
+    "checked_at": "2026-08-18",
+    "confidence": "high",
+    "seen_at": "2026-08-18"
+  },
   "Groom": {
     "arr": "1er",
     "confidence": "high",
@@ -109,6 +121,19 @@
     "arr": "Autre",
     "commune": "Décines-Charpieu",
     "confidence": "low"
+  },
+  "Irigny": {
+    "arr": "Autre",
+    "checked_at": "2026-08-18",
+    "commune": "Irigny",
+    "confidence": "low",
+    "seen_at": "2026-08-18"
+  },
+  "La Ferme du Vinatier": {
+    "arr": null,
+    "checked_at": "2026-08-18",
+    "confidence": "failed",
+    "seen_at": "2026-08-18"
   },
   "La Machinerie - Théâtre de Vénissieux": {
     "arr": "Autre",
@@ -224,6 +249,12 @@
     "commune": "Rontalon",
     "confidence": "low",
     "seen_at": "2026-08-12"
+  },
+  "Spacejunk": {
+    "arr": "1er",
+    "checked_at": "2026-08-18",
+    "confidence": "high",
+    "seen_at": "2026-08-18"
   },
   "TNP - Théâtre National Populaire": {
     "arr": "Villeurbanne",
