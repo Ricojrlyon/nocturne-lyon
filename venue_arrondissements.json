@@ -70,6 +70,13 @@
     "confidence": "high",
     "seen_at": "2026-08-19"
   },
+  "Espace Albert Camus": {
+    "arr": "Autre",
+    "checked_at": "2026-08-20",
+    "commune": "Bron",
+    "confidence": "low",
+    "seen_at": "2026-08-20"
+  },
   "Esplanade du Gros caillou": {
     "arr": "4e",
     "checked_at": "2026-08-12",
@@ -201,6 +208,12 @@
     "confidence": "skip",
     "seen_at": "2026-08-19"
   },
+  "L’Amicale Du Futur": {
+    "arr": "7e",
+    "checked_at": "2026-08-20",
+    "confidence": "high",
+    "seen_at": "2026-08-20"
+  },
   "MAM - Musée des Arts et de la Marionnette": {
     "arr": null,
     "checked_at": "2026-08-12",
@@ -255,6 +268,12 @@
     "confidence": "high",
     "seen_at": "2026-08-19"
   },
+  "Place Charles de Gaulle": {
+    "arr": "3e",
+    "checked_at": "2026-08-20",
+    "confidence": "high",
+    "seen_at": "2026-08-20"
+  },
   "Rontalon": {
     "arr": "Autre",
     "checked_at": "2026-08-12",
@@ -303,6 +322,12 @@
     "arr": "7e",
     "confidence": "high"
   },
+  "Théâtre des Marronniers": {
+    "arr": "2e",
+    "checked_at": "2026-08-20",
+    "confidence": "high",
+    "seen_at": "2026-08-20"
+  },
   "Théâtre du Point du Jour": {
     "arr": "5e",
     "checked_at": "2026-08-12",
@@ -312,6 +337,12 @@
   "Théâtres romains de Fourvière": {
     "arr": "5e",
     "confidence": "high"
+  },
+  "Trokson": {
+    "arr": "1er",
+    "checked_at": "2026-08-20",
+    "confidence": "high",
+    "seen_at": "2026-08-20"
   },
   "URDLA": {
     "arr": "Villeurbanne",
