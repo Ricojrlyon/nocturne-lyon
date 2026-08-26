@@ -3,7 +3,7 @@
     "arr": null,
     "checked_at": "2026-07-28",
     "confidence": "failed",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Amphithéâtre - Salle 3000": {
     "arr": "6e",
@@ -15,42 +15,42 @@
     "arr": "2e",
     "checked_at": "2026-08-19",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Au Rikiki": {
     "arr": "1er",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Baràgones": {
     "arr": "5e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Bieristan": {
     "arr": "Villeurbanne",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Bulle de son": {
     "arr": "9e",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "CAUE du Rhône": {
     "arr": "1er",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Centre social des Buers": {
     "arr": "Villeurbanne",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Chapelle Notre-Dame-de-l\\'île-Barbe": {
     "arr": null,
@@ -62,19 +62,19 @@
     "arr": "5e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Comoedia": {
     "arr": "7e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Célestins, théâtre de Lyon": {
     "arr": "2e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Espace Albert Camus": {
     "arr": "Autre",
@@ -87,13 +87,13 @@
     "arr": "4e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Fondation Bullukian": {
     "arr": "2e",
     "checked_at": "2026-08-19",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Galerie Françoise Besson": {
     "arr": "1er",
@@ -134,25 +134,37 @@
   "Groom": {
     "arr": "1er",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Gros Caillou": {
     "arr": "4e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Groupama Stadium": {
     "arr": "Autre",
     "commune": "Décines-Charpieu",
     "confidence": "low"
   },
+  "Hôtel 71": {
+    "arr": "2e",
+    "checked_at": "2026-08-26",
+    "confidence": "high",
+    "seen_at": "2026-08-26"
+  },
+  "Institut d\\'Art Contemporain": {
+    "arr": "Villeurbanne",
+    "checked_at": "2026-08-26",
+    "confidence": "high",
+    "seen_at": "2026-08-26"
+  },
   "Irigny": {
     "arr": "Autre",
     "checked_at": "2026-08-18",
     "commune": "Irigny",
     "confidence": "low",
-    "seen_at": "2026-08-18"
+    "seen_at": "2026-08-26"
   },
   "L'attrape-couleurs": {
     "arr": null,
@@ -170,44 +182,44 @@
     "arr": "Autre",
     "commune": "Vénissieux",
     "confidence": "low",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "La Ruche industrielle": {
     "arr": "Autre",
     "commune": "Vénissieux",
     "confidence": "low",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Le Complexe café-théâtre": {
     "arr": null,
     "checked_at": "2026-08-12",
     "confidence": "failed",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Le Toboggan": {
     "arr": "Autre",
     "checked_at": "2026-08-12",
     "commune": "Décines-Charpieu",
     "confidence": "low",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Les Clameurs": {
     "arr": "7e",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Les Grandes Voisines": {
     "arr": "Autre",
     "checked_at": "2026-08-12",
     "commune": "Francheville",
     "confidence": "low",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Librairie Terre des livres": {
     "arr": "7e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Lieu Privé": {
     "arr": null,
@@ -218,7 +230,7 @@
   "Lyon": {
     "arr": null,
     "confidence": "skip",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "L’Amicale Du Futur": {
     "arr": "7e",
@@ -236,13 +248,13 @@
     "arr": null,
     "checked_at": "2026-08-12",
     "confidence": "failed",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Maison Ravier": {
     "arr": "7e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Maison du livre, de l'image et du son": {
     "arr": null,
@@ -284,7 +296,7 @@
     "arr": null,
     "checked_at": "2026-08-12",
     "confidence": "failed",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Place Ambroise Courtois": {
     "arr": "8e",
@@ -303,7 +315,7 @@
     "checked_at": "2026-08-12",
     "commune": "Rontalon",
     "confidence": "low",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Spacejunk": {
     "arr": "1er",
@@ -315,32 +327,32 @@
     "arr": "Villeurbanne",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Théâtre La Mouche": {
     "arr": "7e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Théâtre Théo Argence": {
     "arr": "Autre",
     "checked_at": "2026-08-12",
     "commune": "Saint-Priest",
     "confidence": "low",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Théâtre de l'Iris": {
     "arr": "Villeurbanne",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Théâtre de la Croix-Rousse": {
     "arr": "4e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Théâtre de l’Elysée": {
     "arr": "7e",
@@ -356,7 +368,7 @@
     "arr": "5e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   },
   "Théâtres romains de Fourvière": {
     "arr": "5e",
@@ -378,6 +390,6 @@
     "arr": "Villeurbanne",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-19"
+    "seen_at": "2026-08-26"
   }
 }
