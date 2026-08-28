@@ -1,9 +1,9 @@
 {
   "Alliance Française de Lyon (Lyon 3e) ·  Salle des Rancy (Lyon 3e) ·  Le Marché Gare (Lyon 2e)": {
     "arr": null,
-    "checked_at": "2026-07-28",
+    "checked_at": "2026-08-28",
     "confidence": "failed",
-    "seen_at": "2026-08-26"
+    "seen_at": "2026-08-28"
   },
   "Amphithéâtre - Salle 3000": {
     "arr": "6e",
@@ -351,7 +351,7 @@
     "arr": null,
     "checked_at": "2026-08-21",
     "confidence": "failed",
-    "seen_at": "2026-08-21"
+    "seen_at": "2026-08-28"
   },
   "Musée Jean Couty": {
     "arr": "9e",
@@ -484,6 +484,13 @@
     "confidence": "low",
     "seen_at": "2026-08-26"
   },
+  "Saint-Cyr-au-Mont-d\\'Or": {
+    "arr": "Autre",
+    "checked_at": "2026-08-28",
+    "commune": "Saint-Cyr-au-Mont-d'Or",
+    "confidence": "low",
+    "seen_at": "2026-08-28"
+  },
   "Spacejunk": {
     "arr": "1er",
     "checked_at": "2026-08-18",
@@ -595,5 +602,12 @@
     "checked_at": "2026-08-12",
     "confidence": "high",
     "seen_at": "2026-08-26"
+  },
+  "médiathèque de Meyzieu": {
+    "arr": "Autre",
+    "checked_at": "2026-08-28",
+    "commune": "Meyzieu",
+    "confidence": "low",
+    "seen_at": "2026-08-28"
   }
 }
