@@ -82,9 +82,21 @@
     "confidence": "high",
     "seen_at": "2026-08-27"
   },
+  "Centre d'échanges de Perrache": {
+    "arr": "2e",
+    "checked_at": "2026-09-01",
+    "confidence": "high",
+    "seen_at": "2026-09-01"
+  },
   "Centre social des Buers": {
     "arr": "Villeurbanne",
     "checked_at": "2026-08-12",
+    "confidence": "high",
+    "seen_at": "2026-09-01"
+  },
+  "Ceysson & Bénétière": {
+    "arr": "1er",
+    "checked_at": "2026-09-01",
     "confidence": "high",
     "seen_at": "2026-09-01"
   },
@@ -190,7 +202,7 @@
     "arr": "2e",
     "checked_at": "2026-08-18",
     "confidence": "high",
-    "seen_at": "2026-08-25"
+    "seen_at": "2026-09-01"
   },
   "Groom": {
     "arr": "1er",
@@ -237,7 +249,7 @@
     "arr": null,
     "checked_at": "2026-08-25",
     "confidence": "failed",
-    "seen_at": "2026-08-25"
+    "seen_at": "2026-09-01"
   },
   "La Ferme du Vinatier": {
     "arr": null,
@@ -509,6 +521,12 @@
     "confidence": "low",
     "seen_at": "2026-09-01"
   },
+  "Piscine des Gratte-Ciel": {
+    "arr": "Villeurbanne",
+    "checked_at": "2026-09-01",
+    "confidence": "high",
+    "seen_at": "2026-09-01"
+  },
   "Place Ambroise Courtois": {
     "arr": "8e",
     "checked_at": "2026-08-12",
@@ -553,11 +571,18 @@
     "confidence": "low",
     "seen_at": "2026-09-01"
   },
+  "Salle Victor Hugo": {
+    "arr": "Autre",
+    "checked_at": "2026-09-01",
+    "commune": "Sathonay-Camp",
+    "confidence": "low",
+    "seen_at": "2026-09-01"
+  },
   "Spacejunk": {
     "arr": "1er",
     "checked_at": "2026-08-18",
     "confidence": "high",
-    "seen_at": "2026-08-25"
+    "seen_at": "2026-09-01"
   },
   "Square Delestraint": {
     "arr": "3e",
@@ -608,9 +633,21 @@
     "confidence": "high",
     "seen_at": "2026-09-01"
   },
+  "Théâtre de la Renaissance": {
+    "arr": null,
+    "checked_at": "2026-09-01",
+    "confidence": "failed",
+    "seen_at": "2026-09-01"
+  },
   "Théâtre de l’Elysée": {
     "arr": "7e",
     "confidence": "high"
+  },
+  "Théâtre des Clochards Célestes": {
+    "arr": "1er",
+    "checked_at": "2026-09-01",
+    "confidence": "high",
+    "seen_at": "2026-09-01"
   },
   "Théâtre des Marronniers": {
     "arr": "2e",
@@ -639,7 +676,7 @@
     "arr": "9e",
     "checked_at": "2026-08-25",
     "confidence": "high",
-    "seen_at": "2026-08-25"
+    "seen_at": "2026-09-01"
   },
   "Trokson": {
     "arr": "1er",
