@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-01T09:07:43.484139+00:00",
-  "count": 1215,
+  "generated_at": "2026-09-01T10:54:10.804345+00:00",
+  "count": 1224,
   "events": [
     {
       "venue": "Comoedia",
@@ -6061,6 +6061,19 @@
       "id": "6d279c35ef62"
     },
     {
+      "venue": "L'Épicerie Moderne",
+      "venue_slug": "l-epicerie-moderne",
+      "title": "Wu Lyf",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-06",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319207-wu-lyf.html",
+      "image": null,
+      "id": "b1b631711f7b"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "FAT FREDDY’S DROP",
@@ -6362,7 +6375,7 @@
     {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
-      "title": "Velumium + Ardente + Poisse",
+      "title": "Velumium + Ardente + Vosser",
       "subtitle": null,
       "category": null,
       "date_start": "2026-10-09",
@@ -6370,7 +6383,7 @@
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/velumium-ardente-poisse",
       "image": null,
-      "id": "0bbefd070e5a"
+      "id": "d8830b3bf60b"
     },
     {
       "venue": "Marché Gare",
@@ -6982,6 +6995,19 @@
       "url": "https://radiant-bellevue.fr/spectacles/geoffrey-secco/",
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/geoffrey-secco_radiant-bellevue-500x500.jpg",
       "id": "7f5b7a045dde"
+    },
+    {
+      "venue": "A Thou Bout d'Chant",
+      "venue_slug": "a-thou-bout-d-chant",
+      "title": "Nuit Noire + Arkange",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-15",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319209-nuit-noire-arkange.html",
+      "image": null,
+      "id": "7c547e569fd5"
     },
     {
       "venue": "Théâtre de la Renaissance",
@@ -7816,6 +7842,19 @@
       "id": "50b91f9ab40d"
     },
     {
+      "venue": "L'Épicerie Moderne",
+      "venue_slug": "l-epicerie-moderne",
+      "title": "Angine de poitrine",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-24",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319210-angine-de-poitrine.html",
+      "image": null,
+      "id": "62e00624914d"
+    },
+    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Spectacle de D@di et Ch@rlie",
@@ -8050,19 +8089,6 @@
       "id": "2cbfbb75d156"
     },
     {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Radio Hito + Katya Shirshkova",
-      "subtitle": "En partenariat avec La Maison de la Musique Contemporaine",
-      "category": "musique",
-      "date_start": "2026-10-28",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/radio-hito/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2023/07/RadioHito-back_©VasanthaYogananthan-650x812.jpg",
-      "id": "d56e67c08b0c"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "Myrath",
@@ -8115,6 +8141,19 @@
       "id": "d514fbf05310"
     },
     {
+      "venue": "Kraspek Myzik",
+      "venue_slug": "kraspek-myzik",
+      "title": "Lawn chair + No one Knows",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-28",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319211-lawn-chair-no-one-knows.html",
+      "image": null,
+      "id": "e63a30d2f857"
+    },
+    {
       "venue": "Improvidence",
       "venue_slug": "improvidence",
       "title": "On n'a pas le même titre !",
@@ -8128,6 +8167,19 @@
       "id": "f07d05501388"
     },
     {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "Radio Hito + Katya Shirshkova",
+      "subtitle": "En partenariat avec La Maison de la Musique Contemporaine",
+      "category": "musique",
+      "date_start": "2026-10-28",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.periscope-lyon.com/concerts/radio-hito/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2023/07/RadioHito-back_©VasanthaYogananthan-650x812.jpg",
+      "id": "8f37ff71d7e0"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Salon Des Vignerons Independants",
@@ -8139,6 +8191,19 @@
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-6",
       "image": "https://www.halle-tony-garnier.com/storage/143224/conversions/2026-10-29-SALON-DES-VIGNERONS-INDEPENDANTS-lyon-carre-1-20260824-164659-square.jpg",
       "id": "210b883f9443"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "GET THE SHOT",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-29",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://larayonne.org/evenement/get-the-shot/",
+      "image": "https://larayonne.org/wp-content/uploads/2026/09/VISUELS-SITE-26-27-500x282.png",
+      "id": "eaebf4855934"
     },
     {
       "venue": "L'Épicerie Moderne",
@@ -8425,6 +8490,19 @@
       "url": "https://improvidence.mapado.com/event/588456-le-telefilm-improvise-halloween",
       "image": "https://img.mapado.net/2025/7/9/686e3a72062da-telefilm-halloween-1.png_thumbs/600-600.png",
       "id": "bcf8cb63bc9d"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "SAINT LEVANT",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-01",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/saint-levant/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/09/saint-levant-500x500.jpg",
+      "id": "73543218a303"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -8854,6 +8932,19 @@
       "url": "https://le-sucre.eu/events/concert-12/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-06-at-14.53.25-480x600.jpeg",
       "id": "1f9ea40d053a"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Le Grand Sacripant",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-11-07",
+      "date_end": "2026-11-21",
+      "time": "18:45",
+      "url": "https://www.petit-bulletin.fr/agenda-317834-le-grand-sacripant.html",
+      "image": null,
+      "id": "c6e34efc4386"
     },
     {
       "venue": "La Rayonne",
@@ -9933,6 +10024,19 @@
       "url": "https://improvidence.mapado.com/event/14527-scenes-de-crime",
       "image": "https://img.mapado.net/2023/11/16/6556217687939-affiche-scene-s-de-crime-rvb.jpeg_thumbs/600-600.jpeg",
       "id": "ae32bcb63ab6"
+    },
+    {
+      "venue": "Bizarre!",
+      "venue_slug": "bizarre",
+      "title": "Zinée",
+      "subtitle": null,
+      "category": "Rap",
+      "date_start": "2026-11-20",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-308704-zin-e.html",
+      "image": null,
+      "id": "dd49e3f07568"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -14784,6 +14888,19 @@
       "id": "9e318a26ac8e"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Ça handi long",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2027-03-24",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
+      "image": null,
+      "id": "7be77bf53060"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Au Grand Passage",
@@ -15118,7 +15235,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/patrick-fiori-2",
-      "image": "https://www.halle-tony-garnier.com/storage/143265/conversions/2027-04-03-PATRICK-FIORI-patrick-fiori-carre-270403-lyo-20251128-085438-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/143279/conversions/2027-04-03-PATRICK-FIORI-patrick-fiori-270328-lyon-carr-20260901-115919-square.jpg",
       "id": "93411b98f25b"
     },
     {
@@ -15263,19 +15380,6 @@
       "url": "https://www.bourse-du-travail.com/rodrigue-353415.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/rodrigue-6.jpg",
       "id": "edf06199435a"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Ça handi long",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2027-04-14",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
-      "image": null,
-      "id": "37c4b2711353"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -15642,6 +15746,19 @@
       "id": "9f9897666f7c"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Ça handi long",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2027-07-15",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
+      "image": null,
+      "id": "f0fffb55d01d"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Generation Celine",
@@ -15727,10 +15844,10 @@
       "category": "humour",
       "date_start": "2027-11-25",
       "date_end": null,
-      "time": null,
+      "time": "20:00",
       "url": "https://www.bourse-du-travail.com/david-castello-lopes-410446.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/david-castello-lopes-dans-delicieux.jpg",
-      "id": "415818d54c69"
+      "id": "42f895d6dabd"
     },
     {
       "venue": "Bourse du Travail",
