@@ -5,13 +5,14 @@ list of upcoming events. The page structure is regular: each event has a
 title in an h-tag with a stable URL (/agenda-NNNNNN-slug.html), a category
 in parens on the next sibling line, then a list with venue and date.
 
-Un seul filtre éditorial : les musées (EXCLUDED_VENUE_PATTERNS), dont les
-expositions courent sur des mois et saturaient le feed. Les anciennes
-listes de blocage (catégories Théâtre / Conférences / Rencontres, lieux
-« librairie » / « theatre » / « dans toute la ville », et la whitelist
-Fourvière qui compensait la précédente) ont été retirées, ainsi que
-l'obligation d'avoir une catégorie. C'est la déduplication en trois passes
-(scrapers/dedup.py) qui se charge d'écarter les doublons quand un
+Deux filtres éditoriaux, et deux seulement :
+  * EXCLUDED_VENUE_PATTERNS — musées et galeries, dont les accrochages
+    courent sur des mois et saturaient le feed ;
+  * EXCLUDED_CATEGORY_PATTERNS — rencontres et dédicaces, lectures,
+    débats, photographie : ce ne sont pas des sorties.
+La catégorie reste facultative : un événement non catégorisé n'est jamais
+écarté. Tout le reste de l'agenda remonte, et c'est la déduplication en
+trois passes (scrapers/dedup.py) qui écarte les doublons quand un
 événement est aussi publié par la salle elle-même.
 
 Les 164 événements de l'agenda sont répartis sur 9 pages (`?p=N`) :
@@ -69,6 +70,20 @@ LONG_RUN_DAYS = 7
 # porter le mot dans leur nom (URDLA, Maison Ravier, CAUE du Rhône) — un
 # événement chacun, à ajouter nommément si besoin.
 EXCLUDED_VENUE_PATTERNS = ("musee", "museum", "galerie")
+
+# Catégories écartées, comparées sur le libellé normalisé (voir _normalize).
+# Ce ne sont pas des sorties : signatures en librairie, lectures publiques,
+# débats, accrochages photo. Mesuré sur la taxonomie complète du Petit
+# Bulletin — 314 événements, 30 catégories — ces motifs n'attrapent QUE les
+# quatre catégories visées : « Conférences », « Visites » et « Salons et
+# foires » restent, elles.
+#   rencontre / dedicace -> Rencontres et Dédicaces   (26 événements)
+#   lecture              -> Lectures                  (4)
+#   debat                -> Débats                    (1)
+#   photo                -> Photographie              (1)
+EXCLUDED_CATEGORY_PATTERNS = (
+    "rencontre", "dedicace", "lecture", "debat", "photo",
+)
 
 MONTHS_FR = {
     "janvier": 1, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
@@ -293,6 +308,13 @@ def _extract_events_from_soup(soup: BeautifulSoup) -> List[Event]:
 
         venue_norm = _normalize(venue)
         if any(p in venue_norm for p in EXCLUDED_VENUE_PATTERNS):
+            continue
+
+        # La catégorie reste facultative : sans elle _normalize rend une
+        # chaîne vide, qui ne contient aucun motif — un événement non
+        # catégorisé n'est donc jamais écarté ici.
+        cat_norm = _normalize(category)
+        if any(p in cat_norm for p in EXCLUDED_CATEGORY_PATTERNS):
             continue
 
         date_times = _parse_date_str(date_str)
