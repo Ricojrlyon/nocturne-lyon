@@ -47,10 +47,13 @@ USER_AGENT = (
     "+https://github.com/Ricojrlyon/nocturne-lyon)"
 )
 
-# Pages de l'agenda à parcourir au maximum (il y en a 9 aujourd'hui pour
-# 164 événements ; la boucle s'arrête d'elle-même quand une page n'apporte
-# plus rien de nouveau).
-MAX_PAGES = 15
+# Garde-fou anti-boucle, PAS une limite de lecture : fetch() s'arrête de
+# lui-même dès qu'une page n'apporte plus aucune URL nouvelle.
+# Il doit rester largement au-dessus de la taille réelle de l'agenda,
+# sinon il tronque en silence. Fixé à 15 quand l'agenda tenait en 9 pages,
+# il en comptait 21 six mois plus tard : les pages 16 à 21 étaient perdues,
+# soit près d'un tiers du contenu.
+MAX_PAGES = 40
 
 # Au-delà de ce nombre de jours, une plage devient UN événement à plage
 # plutôt qu'un événement par jour.
