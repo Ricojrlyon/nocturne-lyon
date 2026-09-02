@@ -11,6 +11,12 @@
     "confidence": "high",
     "seen_at": "2026-09-01"
   },
+  "Amphithéâtre de l'Opéra": {
+    "arr": null,
+    "checked_at": "2026-09-02",
+    "confidence": "failed",
+    "seen_at": "2026-09-02"
+  },
   "Archives municipales de Lyon": {
     "arr": "2e",
     "checked_at": "2026-09-01",
@@ -22,6 +28,12 @@
     "checked_at": "2026-08-12",
     "confidence": "high",
     "seen_at": "2026-09-01"
+  },
+  "Autour de l'image": {
+    "arr": "2e",
+    "checked_at": "2026-09-02",
+    "confidence": "high",
+    "seen_at": "2026-09-02"
   },
   "Baràgones": {
     "arr": "5e",
@@ -81,7 +93,7 @@
     "arr": "1er",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-26"
+    "seen_at": "2026-09-02"
   },
   "Café Rakwé": {
     "arr": "1er",
@@ -167,7 +179,13 @@
     "arr": "2e",
     "checked_at": "2026-08-19",
     "confidence": "high",
-    "seen_at": "2026-08-26"
+    "seen_at": "2026-09-02"
+  },
+  "Friche Lamartine": {
+    "arr": "3e",
+    "checked_at": "2026-09-02",
+    "confidence": "high",
+    "seen_at": "2026-09-02"
   },
   "Galerie Françoise Besson": {
     "arr": "1er",
@@ -332,6 +350,12 @@
     "confidence": "low",
     "seen_at": "2026-09-01"
   },
+  "Le Trokson": {
+    "arr": "1er",
+    "checked_at": "2026-09-02",
+    "confidence": "high",
+    "seen_at": "2026-09-02"
+  },
   "Les Clameurs": {
     "arr": "7e",
     "confidence": "high",
@@ -420,13 +444,19 @@
     "arr": "7e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-26"
+    "seen_at": "2026-09-02"
   },
   "Maison de l'environnement": {
     "arr": "7e",
     "checked_at": "2026-09-01",
     "confidence": "high",
     "seen_at": "2026-09-01"
+  },
+  "Maison du Livre, de l\\'Image et du Son": {
+    "arr": null,
+    "checked_at": "2026-09-02",
+    "confidence": "failed",
+    "seen_at": "2026-09-02"
   },
   "Maison du livre, de l'image et du son": {
     "arr": null,
@@ -563,6 +593,12 @@
     "checked_at": "2026-09-01",
     "confidence": "high",
     "seen_at": "2026-09-01"
+  },
+  "Rita-Plage": {
+    "arr": "Villeurbanne",
+    "checked_at": "2026-09-02",
+    "confidence": "high",
+    "seen_at": "2026-09-02"
   },
   "Rontalon": {
     "arr": "Autre",
@@ -707,7 +743,7 @@
     "arr": "Villeurbanne",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-08-26"
+    "seen_at": "2026-09-02"
   },
   "médiathèque de Meyzieu": {
     "arr": "Autre",
@@ -715,5 +751,11 @@
     "commune": "Meyzieu",
     "confidence": "low",
     "seen_at": "2026-09-01"
+  },
+  "Ô Totem live": {
+    "arr": null,
+    "checked_at": "2026-09-02",
+    "confidence": "failed",
+    "seen_at": "2026-09-02"
   }
 }
