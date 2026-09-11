@@ -138,6 +138,12 @@
     "confidence": "high",
     "seen_at": "2026-09-01"
   },
+  "Bussières": {
+    "arr": null,
+    "checked_at": "2026-09-11",
+    "confidence": "failed",
+    "seen_at": "2026-09-11"
+  },
   "CAUE du Rhône": {
     "arr": "1er",
     "checked_at": "2026-08-12",
@@ -539,7 +545,7 @@
   "Les Clameurs": {
     "arr": "7e",
     "confidence": "high",
-    "seen_at": "2026-09-01"
+    "seen_at": "2026-09-11"
   },
   "Les Grandes Voisines": {
     "arr": "Autre",
