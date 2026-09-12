@@ -641,9 +641,9 @@
   },
   "MAM - Musée des Arts et de la Marionnette": {
     "arr": null,
-    "checked_at": "2026-08-12",
+    "checked_at": "2026-09-12",
     "confidence": "failed",
-    "seen_at": "2026-09-08"
+    "seen_at": "2026-09-12"
   },
   "MJC Duchère": {
     "arr": null,
@@ -659,9 +659,9 @@
   },
   "MJC Louis Aragon / Jack Jack": {
     "arr": null,
-    "checked_at": "2026-08-12",
+    "checked_at": "2026-09-12",
     "confidence": "failed",
-    "seen_at": "2026-09-08"
+    "seen_at": "2026-09-12"
   },
   "MJC Oullins": {
     "arr": "Autre",
@@ -715,9 +715,9 @@
   },
   "Musée Paul-Dini": {
     "arr": null,
-    "checked_at": "2026-08-12",
+    "checked_at": "2026-09-12",
     "confidence": "failed",
-    "seen_at": "2026-09-08"
+    "seen_at": "2026-09-12"
   },
   "Musée Urbain Tony Garnier": {
     "arr": "8e",
@@ -764,9 +764,9 @@
   },
   "Parc Maurice Sautier": {
     "arr": null,
-    "checked_at": "2026-08-12",
+    "checked_at": "2026-09-12",
     "confidence": "failed",
-    "seen_at": "2026-09-08"
+    "seen_at": "2026-09-12"
   },
   "Parc de Miribel-Jonage": {
     "arr": "Autre",
@@ -1062,6 +1062,12 @@
     "commune": "Meyzieu",
     "confidence": "low",
     "seen_at": "2026-09-08"
+  },
+  "turbofarmer@riseup.net (Loire)": {
+    "arr": null,
+    "checked_at": "2026-09-12",
+    "confidence": "failed",
+    "seen_at": "2026-09-12"
   },
   "Ô Totem live": {
     "arr": null,
