@@ -416,6 +416,10 @@
     "fetched_at": "2026-09-09",
     "time": "18:00"
   },
+  "https://le-sucre.eu/events/s-society-168/": {
+    "fetched_at": "2026-09-14",
+    "time": "18:00"
+  },
   "https://le-sucre.eu/events/s-society-caravel-peaksou-carla-schmitt/": {
     "fetched_at": "2026-08-12",
     "time": "18:00"
@@ -438,6 +442,10 @@
   },
   "https://le-sucre.eu/events/type-beat-x-blob-party/": {
     "fetched_at": "2026-09-04",
+    "time": "23:00"
+  },
+  "https://le-sucre.eu/events/vitess-to-grand-v-all-live-long/": {
+    "fetched_at": "2026-09-14",
     "time": "23:00"
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/abonnez-vous": {
@@ -1483,6 +1491,10 @@
   "https://radiant-bellevue.fr/spectacles/mustang/": {
     "fetched_at": "2026-08-18",
     "time": "14:30"
+  },
+  "https://radiant-bellevue.fr/spectacles/nicolas-canteloup/": {
+    "fetched_at": "2026-09-14",
+    "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/oldelaf/": {
     "fetched_at": "2026-09-12",
@@ -3514,6 +3526,11 @@
         "09:30"
       ]
     ]
+  },
+  "https://www.comedieodeon.com/spectacle/jules-et-marcel/": {
+    "defaut": "19:00",
+    "exceptions": {},
+    "fetched_at": "2026-09-14"
   },
   "https://www.comedieodeon.com/spectacle/la-machine-de-turing/": {
     "defaut": "20:00",
