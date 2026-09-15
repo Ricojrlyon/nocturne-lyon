@@ -469,20 +469,41 @@ def _secondary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Ev
 def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Event, int]]:
     """Venue+date count-matching pairing pass.
 
-    Catches duplicates where the SAME event is reported by the venue scraper
-    (priority >= 100) with a lineup-style title (e.g. "ARTIST1 + ARTIST2 + ...")
-    and by an aggregator (priority < 100) with an event-name title (e.g.
-    "Festival X" or "Soirée Y") — titles too different for fuzzy matching.
+    Rattrape les doublons dont les deux titres sont trop éloignés pour
+    le rapprochement flou : la salle publie une affiche (« ARTIST1 +
+    ARTIST2 + … ») quand l'agrégateur publie le nom de la soirée
+    (« Festival X »), ou l'un des deux agrégateurs nomme la compagnie là
+    où l'autre nomme le spectacle.
 
     Rules at each (venue, date_start):
       * Bucket events: SCRAPER (prio >= 100) vs AGGREGATOR (prio < 100).
+      * Si AUCUN scraper de salle ne publie ce jour-là, les agrégateurs se
+        départagent entre eux, à leur propre priorité (Petit Bulletin 60
+        contre Ville Morte 50). Sans cette bascule, la passe se retirait
+        purement et simplement sur tout lieu qu'on ne scrappe pas — 123
+        salles sur 152 et 394 événements sur 2 717 au 2026-09-14, soit
+        quatre salles sur cinq mais un événement sur sept, les salles
+        scrappées étant les grosses — et deux agrégateurs y publiaient le
+        même spectacle côte à côte. Mesuré sur ce fil : 4 cas,
+        dont « Grand-merde » et « GRAND-ME(R)DE / CIE Bleuir Le Cœur » au
+        Théâtre de l'Élysée, similarité de titre 0,51 quand les passes 1
+        et 2 exigent 0,70 et 0,85.
+        Ce n'est pas un relâchement : les garde-fous ci-dessous ne
+        changent pas, et ce sont eux qui font tout le travail. Sur ce même
+        fil, les 4 appariements ajoutés sont 4 vrais doublons, et il reste
+        6 collisions non appariées qui n'en sont pas — une visite du
+        patrimoine contre une biennale, une exposition contre un concert.
+        Cinq tiennent à l'égalité des effectifs, la sixième au fait que la
+        passe range sur date_start : une plage d'octobre à décembre ne
+        croise pas le concert du 9 octobre.
       * If one of the buckets is empty: nothing to pair, leave alone.
-      * If counts are equal (N scrapers == N aggregators):
+      * If counts are equal (N hauts == N bas):
           - Sort both by (time or 'zz', title) to align them.
           - Pair them index-by-index.
-          - Each scraper wins identity (title, url, venue).
-          - Scraper inherits missing fields (time, category, subtitle, image).
-          - Aggregator is dropped.
+          - La priorité haute gagne l'identité (title, url, venue).
+          - Elle hérite des champs manquants (time, category, subtitle,
+            image).
+          - L'événement de priorité basse est écarté.
         Time-safety: if ANY aligned pair has two known times more than
         4 hours apart, the pairing is unreliable (e.g. afternoon kids
         show vs evening rock concert) — leave the whole group alone.
@@ -495,6 +516,9 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
         "IQ comedy club" (PB 18:00).
       * Radiant 06-26/27/28: same "COMPAGNIE DCA / PHILIPPE DECOUFLÉ" (scraper)
         vs "Extra Bal, un karaoké de la danse" (PB) on each of 3 nights.
+      * Toï Toï le Zinc 2026-09-19 : « Zermatt + Marguterie + Don't kill
+        the cow » (PB 20:30) vs « Zermatt - EP Release Show » (Ville Morte
+        20:30) — un lieu qu'aucun scraper ne couvre.
     """
     SCRAPER_PRIO_MIN = 100  # priorities >= this are venue scrapers
 
@@ -511,20 +535,33 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
         scrapers = [(e, p) for e, p in group if p >= SCRAPER_PRIO_MIN]
         aggs = [(e, p) for e, p in group if p < SCRAPER_PRIO_MIN]
 
-        # Nothing to pair (single source only)
-        if not scrapers or not aggs:
+        if scrapers and aggs:
+            hauts, bas = scrapers, aggs
+        elif aggs and not scrapers:
+            # Lieu qu'aucun scraper ne couvre : les agrégateurs se
+            # départagent à leur propre priorité. Exactement DEUX niveaux,
+            # sinon l'alignement n'a pas de sens — et trois agrégateurs au
+            # même endroit le même jour disent rarement la même chose.
+            niveaux = sorted({p for _, p in aggs}, reverse=True)
+            if len(niveaux) != 2:
+                result.extend(group)
+                continue
+            hauts = [x for x in aggs if x[1] == niveaux[0]]
+            bas = [x for x in aggs if x[1] == niveaux[1]]
+        else:
+            # Une seule source parle : rien à apparier.
             result.extend(group)
             continue
 
         # Counts must match for a deterministic pairing
-        if len(scrapers) != len(aggs):
+        if len(hauts) != len(bas):
             result.extend(group)
             continue
 
         # Pair by sort order: untimed events go last, then alphabetical.
         sort_key = lambda x: (x[0].time or "zz:zz", (x[0].title or "").lower())
-        scrapers_sorted = sorted(scrapers, key=sort_key)
-        aggs_sorted = sorted(aggs, key=sort_key)
+        hauts_sorted = sorted(hauts, key=sort_key)
+        bas_sorted = sorted(bas, key=sort_key)
 
         # Time-safety check on EVERY aligned pair (previously only N == 1):
         # if any pair has two known times more than 4 hours apart, they're
@@ -532,23 +569,23 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
         # rock concert) and the whole alignment is suspect — leave the
         # group alone rather than merge blindly.
         time_mismatch = any(
-            s_ev.time and a_ev.time
-            and _time_diff_minutes(s_ev.time, a_ev.time) > 240
-            for (s_ev, _), (a_ev, _) in zip(scrapers_sorted, aggs_sorted)
+            h_ev.time and b_ev.time
+            and _time_diff_minutes(h_ev.time, b_ev.time) > 240
+            for (h_ev, _), (b_ev, _) in zip(hauts_sorted, bas_sorted)
         )
         if time_mismatch:
             result.extend(group)
             continue
 
-        for (s_ev, s_prio), (a_ev, _) in zip(scrapers_sorted, aggs_sorted):
-            # Enrich scraper with missing fields from aggregator
+        for (h_ev, h_prio), (b_ev, _) in zip(hauts_sorted, bas_sorted):
+            # Le gagnant hérite des champs qui lui manquent.
             for field in ("time", "category", "subtitle", "image"):
-                if not getattr(s_ev, field, None):
-                    val = getattr(a_ev, field, None)
+                if not getattr(h_ev, field, None):
+                    val = getattr(b_ev, field, None)
                     if val:
-                        setattr(s_ev, field, val)
-            result.append((s_ev, s_prio))
-        # Aggregator events dropped
+                        setattr(h_ev, field, val)
+            result.append((h_ev, h_prio))
+        # Les événements de priorité basse sont écartés.
 
     return result
 
@@ -637,7 +674,8 @@ def deduplicate(tagged_events: List[Tuple[Event, int]]) -> List[Event]:
          N aggregator events, pair by sort order. Catches duplicates where
          the venue scraper has a lineup-style title ("ARTIST1 + ARTIST2 + ...")
          and the aggregator has an event-name title ("Festival X") — too
-         different for fuzzy matching.
+         different for fuzzy matching. Sur un lieu qu'aucun scraper ne
+         couvre, ce sont les deux agrégateurs qui s'apparient entre eux.
 
     Args:
       tagged_events: list of (event, source_priority) tuples.
