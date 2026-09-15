@@ -139,6 +139,12 @@
     "confidence": "failed",
     "seen_at": "2026-09-01"
   },
+  "Bulle de Son": {
+    "arr": "9e",
+    "checked_at": "2026-09-15",
+    "confidence": "high",
+    "seen_at": "2026-09-15"
+  },
   "Bulle de son": {
     "arr": "9e",
     "confidence": "high",
@@ -385,7 +391,7 @@
     "arr": "2e",
     "checked_at": "2026-09-08",
     "confidence": "high",
-    "seen_at": "2026-09-08"
+    "seen_at": "2026-09-15"
   },
   "IAC Villeurbanne": {
     "arr": "Villeurbanne",
@@ -1068,6 +1074,13 @@
     "commune": "Bron",
     "confidence": "low",
     "seen_at": "2026-09-09"
+  },
+  "Warmaudio": {
+    "arr": "Autre",
+    "checked_at": "2026-09-15",
+    "commune": "Décines-Charpieu",
+    "confidence": "low",
+    "seen_at": "2026-09-15"
   },
   "café galerie": {
     "arr": null,
