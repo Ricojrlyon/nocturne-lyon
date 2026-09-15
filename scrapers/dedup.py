@@ -568,6 +568,61 @@ def _time_diff_minutes(t1: str, t2: str) -> int:
     return min(diff, 1440 - diff)
 
 
+def _accents(s: str) -> int:
+    """Nombre de signes diacritiques portés par la chaîne."""
+    return sum(1 for c in unicodedata.normalize("NFD", s or "")
+               if unicodedata.category(c) == "Mn")
+
+
+def _unifie_orthographes(events: List[Event]) -> None:
+    """Une clé de lieu, une seule orthographe affichée.
+
+    canonical_venue_name() ne réécrit que les lieux INSCRITS dans
+    VENUE_CANONICAL. Un lieu absent de la table garde donc l'orthographe
+    de chaque source, et comme le frontend indexe l'arrondissement et
+    regroupe les cartes sur la chaîne EXACTE de `venue`, deux graphies
+    font deux salles : deux pastilles dans le filtre, deux compilations
+    là où il n'y a qu'un théâtre.
+
+    Mesuré sur le fil du 2026-09-14 : 3 clés sur 152 portaient plusieurs
+    graphies, soit 156 noms de salle affichés pour 152 salles. Le Théâtre
+    de l'Élysée en avait trois, dont une due à l'antislash du Petit
+    Bulletin corrigé à la source juste avant ; il en reste deux, qui ne
+    diffèrent que par la forme de l'apostrophe et l'accent de l'É. C'est
+    dire que corriger les sources une à une ne suffit pas — deux graphies
+    également correctes suffisent à scinder une salle.
+
+    L'élection se fait d'abord sur les ACCENTS, avant la fréquence. Une
+    source française laisse tomber les accents, elle n'en invente pas :
+    la graphie la plus accentuée est la moins dégradée. C'est le cas ici
+    même, où la fréquence aurait élu « Théâtre de l'Elysée » (7 events,
+    Ville Morte) contre « Théâtre de l'Élysée » (5, Petit Bulletin).
+    Viennent ensuite la fréquence, puis la longueur et l'ordre alphabé-
+    tique, qui ne servent qu'à rendre le choix total et donc stable d'un
+    run à l'autre.
+
+    Ce n'est qu'un filet : la table VENUE_CANONICAL reste le moyen de
+    fixer un nom d'affichage à la main, et elle passe AVANT — un lieu
+    qu'elle couvre arrive ici avec une seule graphie, et l'élection ne
+    trouve rien à faire.
+    """
+    par_cle: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
+    for e in events:
+        par_cle[_venue_key(e.venue)][e.venue] += 1
+    elus = {}
+    for cle, graphies in par_cle.items():
+        if len(graphies) < 2:
+            continue
+        elus[cle] = max(graphies,
+                        key=lambda g: (_accents(g), graphies[g], -len(g), g))
+    if not elus:
+        return
+    for e in events:
+        elu = elus.get(_venue_key(e.venue))
+        if elu:
+            e.venue = elu
+
+
 def deduplicate(tagged_events: List[Tuple[Event, int]]) -> List[Event]:
     """Deduplicate events across sources + canonicalize venue display names.
 
@@ -600,4 +655,6 @@ def deduplicate(tagged_events: List[Tuple[Event, int]]) -> List[Event]:
     # duplicate chips for "sonic" vs "Le Sonic".
     for e in final:
         e.venue = canonical_venue_name(e.venue)
+    # Puis, pour les lieux que la table ne couvre pas, élire une graphie.
+    _unifie_orthographes(final)
     return final
