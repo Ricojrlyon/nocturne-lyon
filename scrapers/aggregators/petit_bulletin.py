@@ -100,6 +100,28 @@ CATEGORIES_ECARTEES = frozenset(_normalize(c) for c in (
 ))
 
 
+# Le Petit Bulletin sert son HTML avec les apostrophes ÉCHAPPÉES — la
+# signature d'un addslashes() PHP appliqué à la sortie plutôt qu'à l'entrée
+# d'une requête. Le texte contient donc littéralement « Théâtre de l\'Élysée »,
+# antislash compris, et get_text() le rend tel quel. Vu le 2026-09-14 sur
+# quatre lieux et neuf événements ; aucun titre touché ce jour-là, mais rien
+# ne l'en protège, d'où l'application aux deux champs.
+#
+# Conséquence si on ne corrige pas : l'antislash s'affiche sur la carte, et
+# surtout le lieu devient une salle À PART — le frontend indexe l'arrondis-
+# sement et regroupe les cartes sur la chaîne EXACTE. Le Théâtre de l'Élysée
+# comptait ainsi trois entrées pour une salle.
+#
+# On ne retire que l'antislash qui précède une apostrophe ou un guillemet,
+# seul cas produit par addslashes : un antislash isolé dans un titre — rare
+# mais légitime — survit.
+_ANTISLASH_APOSTROPHE = re.compile(r"\\(['’\"])")
+
+
+def _desechappe(s: str) -> str:
+    return _ANTISLASH_APOSTROPHE.sub(r"\1", s or "")
+
+
 def _slugify(s: str) -> str:
     s = (s or "").lower()
     s = "".join(c for c in unicodedata.normalize("NFD", s)
@@ -255,7 +277,7 @@ def _extract_events_from_soup(soup: BeautifulSoup) -> List[Event]:
             continue
         seen_urls.add(href)
 
-        title = a.get_text(strip=True)
+        title = _desechappe(a.get_text(strip=True))
         if not title:
             continue
 
@@ -288,7 +310,7 @@ def _extract_events_from_soup(soup: BeautifulSoup) -> List[Event]:
                 lis = cur.find_all("li", recursive=False)
                 if len(lis) >= 1:
                     va = lis[0].find("a")
-                    venue = (va or lis[0]).get_text(strip=True)
+                    venue = _desechappe((va or lis[0]).get_text(strip=True))
                 if len(lis) >= 2:
                     da = lis[1].find("a")
                     date_str = (da or lis[1]).get_text(strip=True)
