@@ -44,6 +44,7 @@ from pathlib import Path
 from typing import Callable, List
 
 from scrapers import Event
+from scrapers.base import OFFSITE_PLUSIEURS
 from scrapers import (
     le_sucre, les_subs, marche_gare, radiant, la_rayonne, transbordeur,
     petit_salon, sonic, periscope, la_commune,
@@ -315,7 +316,16 @@ def main() -> int:
     #    venues trigger HTTP requests (1 req/sec). The frontend merges this
     #    file with its hardcoded map at load time (hardcoded entries win
     #    on conflict).
-    all_venues = list({e.venue for e in unique})
+    #    Les salles HORS LES MURS y passent aussi : la carte d'un concert
+    #    donne l'arrondissement de la salle où il se joue, pas de celle
+    #    qui le programme, et c'est donc cette salle-là qu'il faut
+    #    géocoder. La sentinelle des productions jouées dans plusieurs
+    #    salles n'est pas un nom de lieu et reste dehors.
+    all_venues = list(
+        {e.venue for e in unique}
+        | {e.offsite_venue for e in unique
+           if e.offsite_venue and e.offsite_venue != OFFSITE_PLUSIEURS}
+    )
     resolve_new_venues(all_venues,
                        known_venues=frontend_hardcoded_venues(),
                        verbose=True)
