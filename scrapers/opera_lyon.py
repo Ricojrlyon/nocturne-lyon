@@ -5,6 +5,9 @@ Strategy:
 1. Scrape listing page → get productions (title, date range, URL)
 2. For each production, fetch the detail page to get the first/main
    performance time (Opera shows "20h00" or "15h00" for matinées).
+
+Le listing se lit par CARTE, pas par lien : il a deux gabarits, et l'un
+d'eux sort le titre et la date du <a>. Voir _scrape_url.
 """
 from typing import List, Optional, Tuple
 from datetime import date as Date, timedelta
@@ -37,6 +40,7 @@ URL_CATEGORY_MAP = {
     "concert": "concert",
     "evenement": "événement",
     "opera-underground": "underground",
+    "conference": "conférence",
     "visites": "visite",
     "festival": "festival",
 }
@@ -88,6 +92,25 @@ def _extract_dates(text: str) -> Tuple[Optional[Date], Optional[Date]]:
             except ValueError:
                 pass
     return None, None
+
+
+def _par_prefixe(racine, prefixe: str) -> List[Tag]:
+    """Éléments dont une classe COMMENCE par le préfixe.
+
+    Le site est un Nuxt : ses classes portent un hash de build —
+    title_VhuBc, date_frXXU, subtitle_ZAgnv — qui change à chaque
+    déploiement. Le préfixe, lui, vient du nom de classe source et tient.
+
+    Le début compte : « title_ » cherché en sous-chaîne attrape aussi
+    « subtitle_ », et toute carte paraît alors en porter deux.
+    """
+    return [el for el in racine.find_all(attrs={"class": True})
+            if any(c.startswith(prefixe) for c in el["class"])]
+
+
+def _premier(racine, prefixe: str) -> Optional[Tag]:
+    els = _par_prefixe(racine, prefixe)
+    return els[0] if els else None
 
 
 def _category_from_url(href: str) -> Optional[str]:
@@ -160,50 +183,66 @@ def _scrape_url(url: str) -> List[dict]:
     seen_urls: set = set()
     today = Date.today()
 
-    for a in soup.select('a[href*="/programmation/saison-"]'):
+    # On part du TITRE et non du lien. Le listing a deux gabarits de
+    # carte : le premier met titre, date et sous-titre DANS le <a>, le
+    # second les met à côté, le <a> ne portant plus que l'image et une
+    # pastille de genre. Lire le lien ne voyait donc que le premier
+    # gabarit — 5 productions sur 14 au 2026-09-17, les 9 autres, dont
+    # Quatuor Béla et les Concerts du CNSMD, n'ayant jamais existé pour
+    # le site.
+    #
+    # Partir du titre attrape les deux, et en prime les champs sont lus
+    # à leur classe au lieu d'être devinés dans la suite des nœuds de
+    # texte. C'est ce devinage qui publiait « 14 déc. 2026 - 3 janv.
+    # 2027 » comme titre de La Fille de Madame Angot : le nœud de date
+    # était écarté par comparaison à deux motifs, dont aucun ne couvrait
+    # une plage à cheval sur deux années, et il passait donc en tête.
+    for titre_el in _par_prefixe(soup, "title_"):
+        carte, a = titre_el, None
+        for _ in range(6):
+            carte = carte.parent
+            if carte is None:
+                break
+            candidat = carte.select_one('a[href*="/programmation/saison-"]')
+            if candidat is None:
+                continue
+            # Une carte ne porte qu'un titre. Au-delà, on a débordé sur le
+            # carrousel entier et le lien trouvé n'est plus celui du titre.
+            if len(_par_prefixe(carte, "title_")) != 1:
+                break
+            a = candidat
+            break
+        if a is None:
+            continue
+
         href = a.get("href", "")
         if href.startswith("/"):
             href = HOST + href
         if "/programmation/saison-" not in href:
             continue
-        if href in (url, url + "/"):
-            continue
-        if href in seen_urls:
+        if href in (url, url + "/") or href in seen_urls:
             continue
 
-        text = a.get_text(" ", strip=True)
-        d_start, d_end = _extract_dates(text)
+        d_el = _premier(carte, "date_")
+        d_start, d_end = _extract_dates(d_el.get_text(" ", strip=True)
+                                        if d_el else "")
         if not d_start:
             continue
         if d_start < today and (d_end is None or d_end < today):
             continue
 
-        text_nodes = [t for t in a.stripped_strings]
-        candidates: List[str] = []
-        for tn in text_nodes:
-            if DATE_SINGLE.fullmatch(tn) or DATE_RANGE_SAME.fullmatch(tn):
-                continue
-            if tn.lower() in ("réserver", "programme", "filtrer", "+", "concert",
-                              "opéra", "danse", "évènement", "festival", "visites",
-                              "visite guidée", "opéra underground", "voir tout",
-                              "plus", "en savoir +"):
-                continue
-            if tn.lower().startswith("dès "):
-                continue
-            if len(tn) < 2 or len(tn) > 200:
-                continue
-            candidates.append(tn)
-        if not candidates:
+        title = titre_el.get_text(" ", strip=True)
+        if not title:
             continue
-        title = candidates[0]
-        subtitle = candidates[1] if len(candidates) > 1 else None
-        if subtitle and subtitle.lower() in ("dès 12 ans", "dès 14 ans"):
+        s_el = _premier(carte, "subtitle_")
+        subtitle = s_el.get_text(" ", strip=True) if s_el else None
+        if subtitle and subtitle.lower().startswith("dès "):
             subtitle = None
 
         category = _category_from_url(href) or "spectacle"
 
         image: Optional[str] = None
-        img = a.find("img")
+        img = carte.find("img")
         if img:
             src = img.get("src", "") or ""
             if src.startswith("http"):
