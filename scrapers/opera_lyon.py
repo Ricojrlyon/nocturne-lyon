@@ -31,10 +31,39 @@ HEADERS = {
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
-URLS = [
-    HOST + "/programmation-reservations/saison-2025-2026",
-    HOST + "/programmation-reservations/saison-2026-2027",
-]
+# L'Opéra range sa programmation par SAISON, une page par saison, nommée
+# « saison-2026-2027 ». Une saison court de septembre à juillet, et la page
+# de la saison écoulée est retirée du site — vérifié au 2026-09-17, où
+# saison-2025-2026 répondait déjà 404.
+#
+# Les adresses étaient écrites en dur, et c'était un piège à retardement :
+# vers l'été 2027 l'Opéra retirera saison-2026-2027 et publiera
+# saison-2027-2028, les DEUX adresses codées en dur seraient mortes le même
+# jour, et le scraper rendrait zéro en silence.
+#
+# Le mois de bascule est août : plus rien ne se joue dans une saison qui
+# s'achève en juillet, et sa page a disparu. Si une date de fin d'été
+# venait un jour à manquer, passer _MOIS_BASCULE à 9 garde la saison
+# sortante un mois de plus, au prix d'une requête sur une page morte.
+_MOIS_BASCULE = 8
+
+
+def _saisons(aujourdhui: Optional[Date] = None) -> List[str]:
+    """Adresses des listings à lire : la saison en cours et la suivante.
+
+    La suivante est lue TOUTE L'ANNÉE. Elle répond 404 la plupart du temps
+    — _scrape_url rend alors [] sans bruit — et le jour où l'Opéra la
+    publie, au printemps, elle est reprise sans qu'on ait rien à faire.
+    C'est nécessaire et pas seulement prudent : l'horizon de six mois du
+    scraper dépasse la fin de saison dès le mois de février.
+
+    La saison PASSÉE n'est plus lue. Sa page est retirée du site, et ce
+    qu'elle contiendrait serait de toute façon derrière nous.
+    """
+    j = aujourdhui or Date.today()
+    debut = j.year if j.month >= _MOIS_BASCULE else j.year - 1
+    return [HOST + "/programmation-reservations/saison-%d-%d" % (a, a + 1)
+            for a in (debut, debut + 1)]
 
 URL_CATEGORY_MAP = {
     "opera": "opéra",
@@ -366,9 +395,13 @@ def _scrape_url(url: str) -> List[dict]:
 
 
 def fetch() -> List[Event]:
+    # Calculées à chaque appel et non au chargement du module : un
+    # processus qui vivrait plus longtemps qu'une saison lirait sinon les
+    # adresses figées à son démarrage.
+    urls = _saisons()
     all_stubs: List[dict] = []
     seen_urls: set = set()
-    for url in URLS:
+    for url in urls:
         for stub in _scrape_url(url):
             if stub["url"] not in seen_urls:
                 seen_urls.add(stub["url"])
@@ -431,7 +464,7 @@ def fetch() -> List[Event]:
     if not events:
         print("=" * 60, file=sys.stderr)
         print("DIAGNOSTIC: Opéra de Lyon — 0 events", file=sys.stderr)
-        for url in URLS:
+        for url in urls:
             try:
                 resp = requests.get(url, timeout=15, headers=HEADERS)
                 print(f"  {url} -> {resp.status_code} ({len(resp.text)} bytes)",
