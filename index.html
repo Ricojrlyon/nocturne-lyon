@@ -1840,8 +1840,58 @@ const VENUE_ARRONDISSEMENT = {
 
 const ARRONDISSEMENT_ORDER = ['1er', '2e', '3e', '4e', '5e', '6e', '7e', '8e', '9e', 'Villeurbanne', 'Autre'];
 
+/* Communes hors Lyon et Villeurbanne. Sert à écrire « oullins » sur
+   l'étiquette d'un événement joué là-bas, plutôt que « ailleurs ».
+   venue_arrondissements.json en verse d'autres au chargement, celles que
+   le géocodeur note quand il trouve la salle mais hors de l'agglomération
+   étroite ; les entrées ci-dessous, vérifiées à la main, gagnent.
+   Le Théâtre de La Renaissance y est parce que Nominatim ne le connaît
+   pas — ni interrogé sur Lyon, ni sur Villeurbanne, ni sur
+   Oullins-Pierre-Bénite que sa fiche nomme pourtant. */
+const VENUE_COMMUNE = {
+  'Théâtre de La Renaissance': 'Oullins',   // 7 rue Orsel, Oullins-Pierre-Bénite
+};
+
+/* Valeur d'offsite_venue quand la production tourne dans PLUSIEURS salles
+   sans qu'on sache laquelle accueille quelle date. Doit rester identique
+   à OFFSITE_PLUSIEURS dans scrapers/base.py. */
+const OFFSITE_PLUSIEURS = '·ailleurs';
+
+/* La salle où l'on VA, qui n'est pas toujours celle qui programme :
+   l'Opéra donne des concerts Salle Molière et au Théâtre de La
+   Renaissance. `venue` reste celui qui programme — il groupe les cartes,
+   tient le filtre par lieu et donne le logo. */
+function lieuEffectif(e) {
+  return (e.offsite_venue && e.offsite_venue !== OFFSITE_PLUSIEURS)
+    ? e.offsite_venue : e.venue;
+}
+
+/* L'arrondissement est celui de la salle où l'on va. Un concert de
+   l'Opéra donné Salle Molière sort donc quand on filtre le 5e, et non
+   quand on filtre le 1er : le filtre répond à « qu'est-ce qui se passe
+   dans le 5e ce soir », pas à « qui le programme ».
+   Une production qui tourne dans plusieurs salles tombe dans « Autre » —
+   la seule réponse qui ne soit pas fausse un soir sur deux. */
 function eventArrondissement(e) {
-  return VENUE_ARRONDISSEMENT[e.venue] || 'Autre';
+  if (e.offsite_venue === OFFSITE_PLUSIEURS) return 'Autre';
+  return VENUE_ARRONDISSEMENT[lieuEffectif(e)] || 'Autre';
+}
+
+/* Ce que l'étiquette du coin haut droit écrit. Presque toujours
+   l'arrondissement ; pour un événement hors les murs, ce qu'on sait de
+   plus précis sur l'endroit :
+     salle géocodée dans Lyon      → « 5e », « villeurbanne »
+     salle géocodée hors Lyon      → sa commune, « saint-priest »
+     salle introuvable, ou plusieurs → « ailleurs »
+   « ailleurs » plutôt que « autre » : le second est un fourre-tout
+   géographique que portent déjà Bron ou Dardilly, le premier dit que
+   l'événement n'est pas chez celui qui l'affiche. */
+function etiquetteLieu(e) {
+  if (!e.offsite_venue) return eventArrondissement(e);
+  if (e.offsite_venue === OFFSITE_PLUSIEURS) return 'ailleurs';
+  const arr = VENUE_ARRONDISSEMENT[e.offsite_venue];
+  if (arr && arr !== 'Autre') return arr;
+  return VENUE_COMMUNE[e.offsite_venue] || 'ailleurs';
 }
 const VENUE_GROUP_ORDER_INDEX = new Map();
 VENUE_DISPLAY_ORDER.forEach((groupName, idx) => {
@@ -2596,6 +2646,12 @@ async function load() {
     try {
       const geo = await geoRes.value.json();
       for (const [venue, entry] of Object.entries(geo)) {
+        // La commune se prend même quand la carte codée en dur gagne sur
+        // l'arrondissement : les deux ne se contredisent pas, l'une dit
+        // le quartier et l'autre le nom de la ville.
+        if (entry.commune && !VENUE_COMMUNE[venue]) {
+          VENUE_COMMUNE[venue] = entry.commune;
+        }
         if (VENUE_ARRONDISSEMENT[venue]) continue;  // hardcoded wins
         if (entry.arr) VENUE_ARRONDISSEMENT[venue] = entry.arr;
       }
@@ -3351,7 +3407,16 @@ function groupCard(venue, evs, key) {
   const badges = new Set(evs.map(e => sourceBadgeHtml(e)));
   const sourceBadge = badges.size === 1 ? [...badges][0] : '';
 
-  const arr = eventArrondissement(evs[0]);
+  /* Une grappe peut mélanger des soirs chez soi et hors les murs : le
+     14 octobre, l'Opéra affiche un concert dans son Amphi et deux au
+     Théâtre de La Renaissance. Aucune étiquette n'est alors juste pour
+     l'ensemble, et on retombe sur l'arrondissement de la salle qui
+     PROGRAMME — la grappe représente sa soirée. Le détail réapparaît au
+     dépliage, chaque carte portant alors la sienne. */
+  const etiquettes = new Set(evs.map(etiquetteLieu));
+  const arr = etiquettes.size === 1
+    ? [...etiquettes][0]
+    : (VENUE_ARRONDISSEMENT[venue] || 'Autre');
   // Graine de l'enseigne : le lieu seul, pour que la grappe garde la même
   // apparence d'un jour à l'autre. Le suffixe évite de tomber sur la
   // graine d'un vrai événement.
@@ -3448,7 +3513,7 @@ function eventCard(e, seedOverride) {
     ? ' href="' + escapeHtml(href) + '" target="_blank" rel="noopener"'
     : '';
 
-  const arr = eventArrondissement(e);
+  const arr = etiquetteLieu(e);
   const arrLabel = '<span class="event-arr">' + escapeHtml(arr) + '</span>';
 
   // Layout = 3 grid rows: head / title / foot — précédés de la couche
