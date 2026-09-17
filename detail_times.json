@@ -119,6 +119,10 @@
     "fetched_at": "2026-07-22",
     "time": "17:30"
   },
+  "https://h-eat.eu/events/le-grand-souk/": {
+    "fetched_at": "2026-09-17",
+    "time": "00:00"
+  },
   "https://h-eat.eu/events/on-off-festival-fete-de-la-culture-sourde/": {
     "fetched_at": "2026-09-07",
     "time": "17:30"
@@ -152,13 +156,13 @@
     "time": "18:00"
   },
   "https://i-ac.eu/fr/RDV-satellites_2026/583_vernissage-jeune-creation-internationale-18e-biennale-de-lyon": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "heure": "19:00",
     "image": "https://i-ac.eu/img/thumbs_cache/400x300_bac26_jci_vernissage_1080x1080px.jpg",
     "relaches": []
   },
   "https://i-ac.eu/fr/RDV-satellites_2026/584_visites-du-week-end": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "heure": "16:00",
     "image": "https://i-ac.eu/img/thumbs_cache/400x300_img_9772.jpg",
     "relaches": [
@@ -413,7 +417,7 @@
     "time": "18:00"
   },
   "https://le-sucre.eu/events/s-society-165/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://le-sucre.eu/events/s-society-166/": {
@@ -577,6 +581,18 @@
         5,
         2,
         "20:30"
+      ]
+    ]
+  },
+  "https://maisondeladanse.com/programmation/saison2026-2027/ce-que-danser-rend-possible": {
+    "fetched_at": "2026-09-17",
+    "lieu": "Maison de la danse - Restaurant",
+    "seances": [
+      [
+        "lundi",
+        5,
+        10,
+        "18:30"
       ]
     ]
   },
@@ -1396,6 +1412,10 @@
     "fetched_at": "2026-09-01",
     "time": "20:30"
   },
+  "https://radiant-bellevue.fr/spectacles/le-proces-dune-vie/": {
+    "fetched_at": "2026-09-17",
+    "time": "20:30"
+  },
   "https://radiant-bellevue.fr/spectacles/leman-2/": {
     "fetched_at": "2026-09-12",
     "time": "20:00"
@@ -1469,7 +1489,7 @@
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/marathon-de-la-danse-3/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://radiant-bellevue.fr/spectacles/marc-lavoine/": {
@@ -1641,12 +1661,12 @@
     "time": "20:00"
   },
   "https://www.auditorium-lyon.com/fr/jep-2026": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": null,
     "seances": []
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/afterwork/concert-decouverte-1": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -1656,7 +1676,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/afterwork/concert-decouverte-4": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -1666,7 +1686,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/afterwork/concert-decouverte-5": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2584,7 +2604,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/bryant-salome": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2594,7 +2614,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/festival-lumiere-onl": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2604,7 +2624,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/festival-lumiere-orgue": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2614,7 +2634,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/la-haut": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2632,7 +2652,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/mecano-general": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2642,7 +2662,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/vertigo": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2660,7 +2680,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/concert/concert-caritatif": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2670,7 +2690,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/conference/importance-parsifal-wagner-histoire-musique": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -2680,7 +2700,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/conference/messie-handel": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -2690,7 +2710,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/conference/musique-tcheque": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -2700,7 +2720,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/conference/odyssee-du-cerveau": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2710,7 +2730,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/conference/tableaux-exposition-moussorgski-orchestration": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -2720,7 +2740,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/famille/azur-asmar": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2752,7 +2772,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/famille/petite-taupe": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2770,7 +2790,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/famille/quatre-saisons": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -2780,7 +2800,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/famille/trois-brigands-autres-contes": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2790,7 +2810,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/formation-invitee/collegium-1704": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2800,7 +2820,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/formation-invitee/pygmalion": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2810,7 +2830,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/formations-invitees/handel-messie": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2824,7 +2844,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/hors-murs/onl-atrium": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "L'Atrium / Tassin-la-Demi-Lune (69)",
     "seances": [
       [
@@ -2834,7 +2854,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/hors-murs/onl-au-bozar-bruxelles": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Bozar / Bruxelles (Belgique)",
     "seances": [
       [
@@ -2844,7 +2864,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/hors-murs/onl-grange-au-lac": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "La Grange au Lac (Évian)",
     "seances": [
       [
@@ -2854,7 +2874,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/hors-murs/onl-mc2": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "MC2 de Grenoble (38)",
     "seances": [
       [
@@ -2864,7 +2884,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jazz/melody-gardot": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2878,7 +2898,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jazz/orchestre-national-jazz": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2888,7 +2908,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jazz/tigran-hamasyan": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2918,7 +2938,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/beethoven-archiduc": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -2928,7 +2948,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/berg-webern": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -2938,7 +2958,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/brahms-quatuor": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -2948,7 +2968,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/brahms-zemlinsky": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -2958,7 +2978,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/dvorak-martinu": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -2968,7 +2988,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/dvorak-quintette": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -2978,7 +2998,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/hummel-martinu": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -2988,7 +3008,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/janacek-lettres-intimes": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -2998,7 +3018,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/martinu": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3008,7 +3028,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/mozart-smetana": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3018,7 +3038,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/paris-prague": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3028,7 +3048,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/reicha-janacek": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3038,7 +3058,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/schubert-tchaikovski": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3048,7 +3068,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/so-british": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3058,7 +3078,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/suk-schubert": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3068,7 +3088,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musiques-actuelles/birds-wire": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3078,7 +3098,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musiques-actuelles/chilly-gonzales-la-rumeur": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3088,7 +3108,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musiques-monde/orchestre-arabo-andalou-du-maroc": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3098,7 +3118,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orchestre-national-lyon/concert-etudiants": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3108,7 +3128,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orchestre-national-lyon/concert-ouverture": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3118,7 +3138,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orchestre-national-lyon/gautier-capucon-simone-young": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3132,7 +3152,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orchestre-national-lyon/mahler-symphonie-5": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3146,7 +3166,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orchestre-national-lyon/philippe-katerine-symphonique": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3160,7 +3180,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orgue/alma-bettencourt": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3170,7 +3190,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orgue/au-coeur-orgue": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3180,7 +3200,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orgue/concert-decouverte-3": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3190,7 +3210,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orgue/petit-concert-orgue-1": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3200,7 +3220,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orgue/petit-concert-orgue-2": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3210,7 +3230,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/pause-dejeuner/concert-decouverte-2": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3220,7 +3240,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/bach-weinberg": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3230,7 +3250,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/daniil-trifonov": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3240,7 +3260,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/francesco-piemontesi": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3250,7 +3270,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/giorgi-gigashvili": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3260,7 +3280,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/laureat-du-concours-amateur": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3270,7 +3290,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/lucas-debargue": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3280,7 +3300,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/melodie-michel-alexandra-bidi": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3290,7 +3310,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/nelson-goerner": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3300,7 +3320,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/brahms-berg": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3314,7 +3334,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/brahms-britten": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3328,7 +3348,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/bruckner-walton": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3342,7 +3362,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/janacek-dvorak": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3356,7 +3376,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/korngold-dvorak": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3370,7 +3390,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/mozart-chostakovitch": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3384,7 +3404,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/nouvel-an-prague": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3406,7 +3426,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/oiseau-feu": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3420,7 +3440,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/orchestre-du-cnsmd-lyon": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3430,7 +3450,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/rachmaninov-janacek": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3444,7 +3464,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/rachmaninov-sibelius": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3458,7 +3478,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/schumann-beethoven": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3472,7 +3492,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/tableaux-exposition": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3486,7 +3506,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/wagner-mahler": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3500,7 +3520,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/wagner-saint-saens": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3514,7 +3534,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/visite-guidee": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Auditorium de Lyon",
     "seances": [
       [
@@ -3524,7 +3544,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/visite-guidee-0": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": "Auditorium de Lyon",
     "seances": [
       [
@@ -3534,7 +3554,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/visites-guidees-jep-2026": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "lieu": null,
     "seances": [
       [
@@ -4550,7 +4570,7 @@
     ]
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/art-et-sciences-volcans-et-terres-lyonnaises": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "image": null,
     "seances": [
       [
@@ -4565,7 +4585,7 @@
     "titre": "Art et sciences : Volcans et terres lyonnaises"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/breton-fait-lmur": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -4580,7 +4600,7 @@
     "titre": "Breton fait l'mur !"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/carte-blanche-dalila-belaza-choregraphe": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -4591,7 +4611,7 @@
     "titre": "Carte blanche à Dalila Belaza, chorégraphe"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/carte-blanche-elise-chatauret-autrice-et-metteuse-en-scene": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -4602,7 +4622,7 @@
     "titre": "Carte blanche à Elise Chatauret, autrice et metteuse en scène"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/carte-blanche-jean-francois-sivadier": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -4613,8 +4633,8 @@
     "titre": "Carte blanche à Jean-François Sivadier"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/colloque-la-revolution-de-la-couleur-de-delacroix-aux-freres-lumiere": {
-    "fetched_at": "2026-09-09",
-    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-06/mur_breton_0.jpg?itok=Olabft-E",
+    "fetched_at": "2026-09-17",
+    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/content/medias/images/2020-02/architecture_rome.jpg?h=b005a5b4&itok=B2Frn4FO",
     "seances": [
       [
         "2027-01-07",
@@ -4657,7 +4677,7 @@
     "titre": "Des ronds, des carrés et... des animaux"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/du-regard-au-crayon": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/nos-corps-desirants.jpg?h=bd174762&itok=u6jfYYvB",
     "seances": [
       [
@@ -4668,7 +4688,7 @@
     "titre": "Du regard au crayon"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/erasmuseum-les-etudiants-internationaux-vous-accueillent-au-musee": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "image": null,
     "seances": [
       [
@@ -4679,8 +4699,8 @@
     "titre": "Erasmuseum : les étudiants internationaux vous accueillent au musée"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/festin-un-week-end-pour-tous-les-gouts": {
-    "fetched_at": "2026-09-09",
-    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-06/mur_breton_0.jpg?itok=Olabft-E",
+    "fetched_at": "2026-09-17",
+    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/cecile-lartigau_ondes-martenot_petra-hajska.jpg?h=bd174762&itok=ta5VQzRd",
     "seances": [
       [
         "2026-12-12",
@@ -4694,7 +4714,7 @@
     "titre": "Festin ! Un week-end pour tous les goûts…"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/ingres-par-lui-meme": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -4705,8 +4725,8 @@
     "titre": "Ingres par lui-même"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/journee-des-collectionneurs": {
-    "fetched_at": "2026-09-09",
-    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-06/mur_breton_0.jpg?itok=Olabft-E",
+    "fetched_at": "2026-09-17",
+    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/cecile-lartigau_ondes-martenot_petra-hajska.jpg?h=bd174762&itok=ta5VQzRd",
     "seances": [
       [
         "2027-02-06",
@@ -4727,8 +4747,8 @@
     "titre": "Journée d'études : Les Leçons de Rome – 11e édition"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/journees-europeennes-du-patrimoine": {
-    "fetched_at": "2026-09-09",
-    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-06/mur_breton_0.jpg?itok=Olabft-E",
+    "fetched_at": "2026-09-17",
+    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/cecile-lartigau_ondes-martenot_petra-hajska.jpg?h=bd174762&itok=ta5VQzRd",
     "seances": [
       [
         "2026-09-19",
@@ -4742,7 +4762,7 @@
     "titre": "Journées Européennes du Patrimoine"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/lartiste-furieux-lautoportrait-nu-de-jean-baptiste-frenet": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -4753,8 +4773,8 @@
     "titre": "L’artiste furieux ! L’Autoportrait nu de Jean-Baptiste Frénet"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/le-musee-fait-son-cinema-amours": {
-    "fetched_at": "2026-09-09",
-    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-06/mur_breton_0.jpg?itok=Olabft-E",
+    "fetched_at": "2026-09-17",
+    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/cecile-lartigau_ondes-martenot_petra-hajska.jpg?h=bd174762&itok=ta5VQzRd",
     "seances": [
       [
         "2027-01-16",
@@ -4775,8 +4795,8 @@
     "titre": "Le musée fait son cinéma : Femmes en fleurs"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/le-musee-fait-son-cinema-petites-pepites-et-grands-tresors": {
-    "fetched_at": "2026-09-09",
-    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-06/mur_breton_0.jpg?itok=Olabft-E",
+    "fetched_at": "2026-09-17",
+    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/cecile-lartigau_ondes-martenot_petra-hajska.jpg?h=bd174762&itok=ta5VQzRd",
     "seances": [
       [
         "2026-11-21",
@@ -4786,8 +4806,8 @@
     "titre": "Le musée fait son cinéma : Petites pépites et grands trésors"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/le-musee-fait-son-cinema-table": {
-    "fetched_at": "2026-09-09",
-    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-06/mur_breton_0.jpg?itok=Olabft-E",
+    "fetched_at": "2026-09-17",
+    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/cecile-lartigau_ondes-martenot_petra-hajska.jpg?h=bd174762&itok=ta5VQzRd",
     "seances": [
       [
         "2026-12-12",
@@ -4797,8 +4817,8 @@
     "titre": "Le musée fait son cinéma : À table !"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/le-musee-recopie": {
-    "fetched_at": "2026-09-09",
-    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-06/mur_breton_0.jpg?itok=Olabft-E",
+    "fetched_at": "2026-09-17",
+    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/cecile-lartigau_ondes-martenot_petra-hajska.jpg?h=bd174762&itok=ta5VQzRd",
     "seances": [
       [
         "2026-11-28",
@@ -4823,7 +4843,7 @@
     "titre": "Nocturne étudiante"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/nocturne-la-lampe-de-poche": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2025-02/barocbal.jpg?h=33503f50&itok=ePI_Dp0K",
     "seances": [
       [
@@ -4834,8 +4854,8 @@
     "titre": "Nocturne à la lampe de poche"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/nocturne-le-bal-du-musee": {
-    "fetched_at": "2026-09-09",
-    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2023-10/nocturnes_lampes_de_poche.jpg?h=a1e8ecc1&itok=TlgEk92B",
+    "fetched_at": "2026-09-17",
+    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/visiteurs-boltanski_0.jpg?h=bd174762&itok=gien0nOQ",
     "seances": [
       [
         "2027-01-08",
@@ -4845,7 +4865,7 @@
     "titre": "Nocturne : Le bal du musée"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/passe-compose-autour-du-musee-des-monuments-francais-dalexandre-lenoir": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -4856,7 +4876,7 @@
     "titre": "Passé composé : autour du musée des monuments français d’Alexandre Lenoir"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/presentation-des-ondes-martenot-par-cecile-lartigau": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2025-08/chapelle_ou_visite_groupe.jpg?h=3244e854&itok=9vjIoalP",
     "seances": [
       [
@@ -4882,7 +4902,7 @@
     "titre": "Regards croisés : quand le pinceau et le pistil se rencontrent..."
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/rendez-vous-avec-lune-des-commissaires-de-lexposition-musee-sentimental": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -4893,7 +4913,7 @@
     "titre": "Rendez-vous avec l'une des commissaires de l'exposition \"Musée Sentimental\""
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/rendez-vous-avec-une-designeuse-circulaire": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -4915,7 +4935,7 @@
     "titre": "Spectacle : La petite boîte à gant"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/une-icone-moderne-le-portrait-de-la-princesse-cantacuzene-par-pierre-puvis-de": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -4926,7 +4946,7 @@
     "titre": "Une icône moderne : le portrait de la princesse Cantacuzène par Pierre Puvis de Chavannes"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/une-petite-decouverte-du-dessin": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -4959,8 +4979,8 @@
     "titre": "Une petite Histoire du musée, l’abbaye des Dames de Saint Pierre"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/week-end-accessibilite": {
-    "fetched_at": "2026-09-09",
-    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-06/mur_breton_0.jpg?itok=Olabft-E",
+    "fetched_at": "2026-09-17",
+    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/cecile-lartigau_ondes-martenot_petra-hajska.jpg?h=bd174762&itok=ta5VQzRd",
     "seances": [
       [
         "2026-12-05",
@@ -4974,8 +4994,8 @@
     "titre": "Week-end accessibilité"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/week-end-chante": {
-    "fetched_at": "2026-09-09",
-    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-06/mur_breton_0.jpg?itok=Olabft-E",
+    "fetched_at": "2026-09-17",
+    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/cecile-lartigau_ondes-martenot_petra-hajska.jpg?h=bd174762&itok=ta5VQzRd",
     "seances": [
       [
         "2027-01-30",
@@ -5004,31 +5024,248 @@
     "titre": "Week-end Musée-à-brac"
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/clementine-margaine-sarah-margaine": {
-    "fetched_at": "2026-09-16",
+    "fetched_at": "2026-09-17",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2026-10-11",
+        "16:00"
+      ]
+    ],
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/lopera-par-lorchestre": {
-    "fetched_at": "2026-09-16",
+    "fetched_at": "2026-09-17",
+    "lieu": "Salle Molière, Lyon 5e, Théâtre Théo Argence - Saint-Priest",
+    "seances": [
+      [
+        "2026-09-18",
+        "20:00"
+      ],
+      [
+        "2026-11-28",
+        "20:00"
+      ]
+    ],
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/wagner-bruckner": {
     "fetched_at": "2026-09-09",
     "time": null
   },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/go-maestro-24": {
+    "fetched_at": "2026-09-17",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-10-12",
+        "18:30"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/grand-entretien-18": {
+    "fetched_at": "2026-09-17",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-10-04",
+        "14:30"
+      ]
+    ],
+    "time": "14:30"
+  },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/danse/icones": {
     "fetched_at": "2026-09-09",
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/danse/le-sacre-du-printemps-house": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-03",
+        "20:00"
+      ],
+      [
+        "2026-11-04",
+        "20:00"
+      ],
+      [
+        "2026-11-05",
+        "20:00"
+      ],
+      [
+        "2026-11-06",
+        "20:00"
+      ],
+      [
+        "2026-11-07",
+        "15:00"
+      ],
+      [
+        "2026-11-10",
+        "20:00"
+      ],
+      [
+        "2026-11-11",
+        "15:00"
+      ],
+      [
+        "2026-11-12",
+        "20:00"
+      ],
+      [
+        "2026-11-13",
+        "20:00"
+      ],
+      [
+        "2026-11-14",
+        "20:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/concerts-du-cnsmd-40": {
+    "fetched_at": "2026-09-17",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-10-14",
+        "12:30"
+      ],
+      [
+        "2026-10-15",
+        "12:30"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/leila-martial-elie-dufour-karma-bazar": {
+    "fetched_at": "2026-09-17",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-10-09",
+        "20:00"
+      ],
+      [
+        "2026-10-10",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/quatuor-bela": {
+    "fetched_at": "2026-09-17",
+    "lieu": "Théâtre de La Renaissance - Oullins-Pierre-Bénite",
+    "seances": [
+      [
+        "2026-10-14",
+        "19:00"
+      ]
+    ],
+    "time": "19:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/the-very-big-experimental-toubifri-orchestra-le-lac-1": {
+    "fetched_at": "2026-09-17",
+    "lieu": "Théâtre de La Renaissance - Oullins-Pierre-Bénite",
+    "seances": [
+      [
+        "2026-10-13",
+        "20:00"
+      ],
+      [
+        "2026-10-14",
+        "20:00"
+      ],
+      [
+        "2026-10-15",
+        "20:00"
+      ],
+      [
+        "2026-10-16",
+        "20:00"
+      ]
+    ],
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/la-fille-de-madame-angot": {
-    "fetched_at": "2026-09-16",
+    "fetched_at": "2026-09-17",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2026-12-14",
+        "20:00"
+      ],
+      [
+        "2026-12-16",
+        "20:00"
+      ],
+      [
+        "2026-12-19",
+        "20:00"
+      ],
+      [
+        "2026-12-21",
+        "20:00"
+      ],
+      [
+        "2026-12-23",
+        "20:00"
+      ],
+      [
+        "2026-12-29",
+        "20:00"
+      ],
+      [
+        "2026-12-31",
+        "20:00"
+      ],
+      [
+        "2027-01-03",
+        "16:00"
+      ]
+    ],
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/lamour-des-trois-oranges": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2026-10-04",
+        "16:00"
+      ],
+      [
+        "2026-10-06",
+        "20:00"
+      ],
+      [
+        "2026-10-08",
+        "20:00"
+      ],
+      [
+        "2026-10-10",
+        "20:00"
+      ],
+      [
+        "2026-10-12",
+        "20:00"
+      ],
+      [
+        "2026-10-16",
+        "20:00"
+      ],
+      [
+        "2026-10-18",
+        "16:00"
+      ],
+      [
+        "2026-10-20",
+        "20:00"
+      ]
+    ],
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/atelier-de-pratique-theatrale-en-lsf/": {
@@ -5036,27 +5273,27 @@
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/atelier-decriture-pour-les-adolescent%c2%b7es-de-15-ans/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/bazar-circus/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/bienvenue-aux-repetitions/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/boule-de-neige/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/dautres-familles-que-la-mienne/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/decouverte-du-tng-en-lsf-2/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/evidences-inconnues/": {
@@ -5064,51 +5301,51 @@
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/grandeur-nature/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/journees-europeennes-du-patrimoine/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-boule-de-neige/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-le-chat-sur-la-photo/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-liah-et-moi/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/labolition-des-privileges/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/le-chat-sur-la-photo-2/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/le-chat-sur-la-photo/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/le-voyage-de-kristoffer/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/liah-et-moi/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/parcours-immersif-et-pedagogique/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/rdv-popcorn-bazar-circus/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/rdv-popcorn-evidences-inconnues/": {
@@ -5116,23 +5353,23 @@
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/rdv-popcorn-labolition-des-privileges/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/rdv-popcorn-le-chat-sur-la-photo/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/rdv-popcorn-superstrat/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/spunk/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/superstrat/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/traversee/": {
@@ -5140,11 +5377,11 @@
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/visite-tactile-dautres-familles-que-la-mienne/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/visite-tactile-liah-et-moi/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.transbordeur.fr/evenement/8ruki-th-zed-10112026/": {
@@ -5357,6 +5594,11 @@
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/09/a-jeanne-1.png",
     "time": "19:00"
   },
+  "https://www.transbordeur.fr/evenement/jersey-08012027/": {
+    "fetched_at": "2026-09-17",
+    "image": "https://www.transbordeur.fr/wp-content/uploads/2026/03/COLO_02_bichro_creditjeromeblin-a-portrait.jpg",
+    "time": null
+  },
   "https://www.transbordeur.fr/evenement/jf-pauze-02022027/": {
     "fetched_at": "2026-09-12",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/03/a-jfpauze2.jpg",
@@ -5551,6 +5793,11 @@
     "fetched_at": "2026-08-18",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2024/04/The-Stranglers-bike.jpg",
     "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/the-warning-12032027/": {
+    "fetched_at": "2026-09-17",
+    "image": "https://www.transbordeur.fr/wp-content/uploads/2026/09/TheWarning_BrianZiff_0760_ALT_1-JPEG.jpg",
+    "time": "18:30"
   },
   "https://www.transbordeur.fr/evenement/tif-18102026/": {
     "fetched_at": "2026-08-18",
