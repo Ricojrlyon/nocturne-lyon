@@ -113,6 +113,26 @@ def _premier(racine, prefixe: str) -> Optional[Tag]:
     return els[0] if els else None
 
 
+# Les visites guidées de la maison, écartées comme partout ailleurs dans
+# le fil — les Beaux-Arts en écartent 53, l'Auditorium 56 ateliers, l'IAC
+# les siennes, le macLYON aussi. Ce ne sont pas des spectacles, elles
+# reviennent plusieurs fois par semaine toute la saison, et elles
+# noieraient la programmation : « Visites découverte commentées » annonce
+# à elle seule 108 séances jusqu'en juillet 2027, et les Journées du
+# Patrimoine 14 créneaux d'une demi-heure sur la même journée.
+#
+# La règle porte sur le titre ET le sous-titre : « Journées du
+# Patrimoine » ne se trahit que par son sous-titre « Visite découverte de
+# l'Opéra de Lyon ». Le Petit Bulletin continue d'en publier quelques-unes
+# de son côté, à une cadence de lecteur plutôt que de billetterie.
+_VISITE = re.compile(r"\bvisite", re.IGNORECASE)
+
+
+def _est_visite(titre: str, sous_titre: Optional[str]) -> bool:
+    return bool(_VISITE.search(titre or "")
+                or _VISITE.search(sous_titre or ""))
+
+
 def _category_from_url(href: str) -> Optional[str]:
     m = re.search(r"/programmation/saison-\d{4}-\d{4}/([^/]+)/", href)
     if m:
@@ -180,6 +200,7 @@ def _scrape_url(url: str) -> List[dict]:
 
     soup = BeautifulSoup(resp.text, "html.parser")
     stubs: List[dict] = []
+    visites: List[str] = []
     seen_urls: set = set()
     today = Date.today()
 
@@ -249,11 +270,17 @@ def _scrape_url(url: str) -> List[dict]:
                 image = src
 
         seen_urls.add(href)
+        if _est_visite(title, subtitle):
+            visites.append(title)
+            continue
         stubs.append({
             "title": title, "subtitle": subtitle, "category": category,
             "d_start": d_start, "d_end": d_end, "url": href, "image": image,
         })
 
+    if visites:
+        print("[Opéra] visites écartées : %s" % ", ".join(sorted(set(visites))),
+              file=sys.stderr)
     return stubs
 
 
