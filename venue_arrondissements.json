@@ -894,6 +894,12 @@
     "confidence": "low",
     "seen_at": "2026-09-08"
   },
+  "Salle Molière": {
+    "arr": "5e",
+    "checked_at": "2026-09-17",
+    "confidence": "high",
+    "seen_at": "2026-09-17"
+  },
   "Salle Victor Hugo": {
     "arr": "Autre",
     "checked_at": "2026-09-01",
@@ -961,6 +967,12 @@
     "commune": "Saint-Priest",
     "confidence": "low",
     "seen_at": "2026-09-15"
+  },
+  "Théâtre de La Renaissance": {
+    "arr": null,
+    "checked_at": "2026-09-17",
+    "confidence": "failed",
+    "seen_at": "2026-09-17"
   },
   "Théâtre de l'Iris": {
     "arr": "Villeurbanne",
