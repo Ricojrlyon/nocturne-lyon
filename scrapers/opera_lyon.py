@@ -194,7 +194,10 @@ def _seances_jsonld(soup: BeautifulSoup) -> List[list]:
     « L'opéra par l'Orchestre » annonçait ainsi 72 jours de concert pour
     deux dates, le 18 septembre et le 28 novembre. Mesuré sur les cinq
     productions que le site publiait au 2026-09-17 : 103 jours peints pour
-    28 représentations réelles.
+    29 représentations réelles. L'erreur va d'ailleurs dans les deux sens
+    — « La Fille de Madame Angot » ne peignait qu'UN jour pour huit
+    représentations, sa plage à cheval sur deux années n'ayant pas été
+    reconnue.
 
     Le champ `location` du JSON-LD, lui, est inutilisable : il répond
     « Opéra de Lyon » même pour les représentations données ailleurs.
