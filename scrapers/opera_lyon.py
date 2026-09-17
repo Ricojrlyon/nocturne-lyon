@@ -11,8 +11,10 @@ d'eux sort le titre et la date du <a>. Voir _scrape_url.
 """
 from typing import List, Optional, Tuple
 from datetime import date as Date, timedelta
+import json
 import re
 import sys
+import unicodedata
 import requests
 from bs4 import BeautifulSoup, Tag
 
@@ -140,54 +142,95 @@ def _category_from_url(href: str) -> Optional[str]:
     return None
 
 
-def _parse_time(text: str) -> Optional[str]:
-    """Extract time from Opera page text.
+def _sans_accents(t: str) -> str:
+    return "".join(c for c in unicodedata.normalize("NFD", (t or "").lower())
+                   if unicodedata.category(c) != "Mn")
 
-    Opera times are typically 20h00, 19h30, 15h00 (matinée).
-    Accept a broader range (10h-22h30) for classical shows.
+
+def _champ_fiche(soup: BeautifulSoup, nom: str) -> Optional[str]:
+    """Valeur d'un champ de la colonne d'informations de la fiche.
+
+    La fiche range ses métadonnées en paires étiquette/valeur — Dates,
+    Tarifs, Lieu, Durée, Âge, Début. On lit l'étiquette et on prend son
+    frère suivant, ce qui vaut mieux que de chercher l'information dans
+    le texte de la page : « 13h30 » et « 16h30 » y traînent en toutes
+    lettres, ce sont les horaires de la BILLETTERIE.
     """
-    # Contextual: "à 20h00", "Heure : 19h30"
-    m = re.search(
-        r"(?:à|heure|horaire|début|representation|représentation|séance)"
-        r"\s*[:\-]?\s*(\d{1,2})[h:](\d{0,2})",
-        text, re.IGNORECASE,
-    )
-    if m:
-        hh = int(m.group(1))
-        mm_s = m.group(2)
-        mm = int(mm_s) if mm_s else 0
-        if 10 <= hh <= 23:
-            return f"{hh:02d}:{mm:02d}"
-    # Standalone HHhMM or HH:MM
-    for m2 in re.finditer(r"\b(\d{1,2})[h:](\d{2})\b", text):
-        hh, mm = int(m2.group(1)), int(m2.group(2))
-        if 10 <= hh <= 23:
-            return f"{hh:02d}:{mm:02d}"
+    cible = _sans_accents(nom)
+    for lab in _par_prefixe(soup, "info-list__item__label"):
+        if _sans_accents(lab.get_text(strip=True)) == cible:
+            val = lab.find_next_sibling()
+            if val is not None:
+                return val.get_text(" ", strip=True)
     return None
 
 
-def _fetch_detail_time(url: str) -> Optional[str]:
-    """Fetch production detail page and extract the first performance time."""
-    try:
-        r = requests.get(url, timeout=10, headers=HEADERS)
-        if r.status_code != 200:
-            return None
-        soup = BeautifulSoup(r.text, "html.parser")
-        # Look for a schedule/calendar section
-        for selector in (
-            "[class*='schedule']", "[class*='calendar']", "[class*='seance']",
-            "[class*='representation']", "[class*='horaire']", "[class*='time']",
-            "table", "[class*='date']",
-        ):
-            for el in soup.select(selector)[:3]:
-                t = _parse_time(el.get_text(" ", strip=True))
-                if t:
-                    return t
-        # Scan first 800 chars of visible text
-        visible = soup.get_text(" ", strip=True)
-        return _parse_time(visible[:800])
-    except requests.RequestException:
+# « 19h », « 20h30 ». Le champ Début ne contient rien d'autre.
+_HEURE_CHAMP = re.compile(r"^(\d{1,2})\s*h\s*(\d{2})?$")
+
+
+def _heure_fiche(soup: BeautifulSoup) -> Optional[str]:
+    champ = _champ_fiche(soup, "Début")
+    m = _HEURE_CHAMP.match((champ or "").strip())
+    if not m:
         return None
+    hh, mm = int(m.group(1)), int(m.group(2) or 0)
+    return "%02d:%02d" % (hh, mm) if 0 <= hh <= 23 and 0 <= mm <= 59 else None
+
+
+# « 2026-11-28T20:00:00+01:00 ». On lit la date et l'heure TELLES QU'ÉCRITES,
+# sans toucher au décalage : il vaut déjà l'heure de Paris, et convertir
+# reviendrait à décaler une représentation de 20h00 à 19h00 la moitié de
+# l'année.
+_DEBUT_ISO = re.compile(r"^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2})")
+
+
+def _seances_jsonld(soup: BeautifulSoup) -> List[list]:
+    """[jour_iso, heure] de chaque représentation annoncée.
+
+    La fiche embarque un tableau schema.org/Event, UN PAR REPRÉSENTATION,
+    avec l'heure exacte. C'est la seule source juste : le listing ne donne
+    qu'une plage, et le frontend étale une plage sur chacun de ses jours.
+    « L'opéra par l'Orchestre » annonçait ainsi 72 jours de concert pour
+    deux dates, le 18 septembre et le 28 novembre. Mesuré sur les cinq
+    productions que le site publiait au 2026-09-17 : 103 jours peints pour
+    28 représentations réelles.
+
+    Le champ `location` du JSON-LD, lui, est inutilisable : il répond
+    « Opéra de Lyon » même pour les représentations données ailleurs.
+    C'est le champ Lieu de la fiche qui dit la vérité.
+    """
+    seances = set()
+    for sc in soup.find_all("script", type="application/ld+json"):
+        try:
+            data = json.loads(sc.string or "")
+        except (json.JSONDecodeError, TypeError):
+            continue
+        for ev in (data if isinstance(data, list) else [data]):
+            if not isinstance(ev, dict):
+                continue
+            if "Event" not in str(ev.get("@type", "")):
+                continue
+            m = _DEBUT_ISO.match(str(ev.get("startDate") or ""))
+            if m:
+                seances.add((m.group(1), m.group(2)))
+    return [list(x) for x in sorted(seances)]
+
+
+def _lire_fiche(url: str) -> Optional[dict]:
+    """Représentations, lieu et heure de secours. Rendu à detail_cache."""
+    try:
+        r = requests.get(url, timeout=20, headers=HEADERS)
+        r.raise_for_status()
+    except requests.RequestException as exc:
+        print(f"[Opéra] {url}: {exc}", file=sys.stderr)
+        return None
+    soup = BeautifulSoup(r.text, "html.parser")
+    return {
+        "seances": _seances_jsonld(soup),
+        "lieu": _champ_fiche(soup, "Lieu"),
+        "time": _heure_fiche(soup),
+    }
 
 
 def _scrape_url(url: str) -> List[dict]:
@@ -298,23 +341,47 @@ def fetch() -> List[Event]:
     horizon = Date.today() + timedelta(days=180)
     all_stubs = [s for s in all_stubs if s["d_start"] <= horizon]
 
-    # Fetch detail pages for time (cached across runs, throttled — see
-    # scrapers/detail_cache.py)
+    # Une carte par REPRÉSENTATION, pas une plage. Le listing ne donne
+    # qu'un intervalle, et le frontend l'étale sur chacun de ses jours :
+    # une plage annonce donc des soirs où rien ne se joue. Les fiches sont
+    # lues une fois puis mises en cache (scrapers/detail_cache.py).
     events: List[Event] = []
+    today_iso, horizon_iso = Date.today().isoformat(), horizon.isoformat()
+    sans_seance: List[str] = []
     for stub in all_stubs:
-        time_str = detail_cache.get_time(stub["url"], _fetch_detail_time)
-        events.append(Event(
+        fiche = detail_cache.get_details(stub["url"], _lire_fiche,
+                                         fields=("seances", "lieu", "time"))
+        commun = dict(
             venue=VENUE,
             venue_slug=SLUG,
             title=stub["title"],
             subtitle=stub["subtitle"],
             category=stub["category"],
-            date_start=iso(stub["d_start"]),
-            date_end=iso(stub["d_end"]) if stub["d_end"] else None,
-            time=time_str,
             url=stub["url"],
             image=stub["image"],
+        )
+        seances = fiche.get("seances") or []
+        if seances:
+            for jour_iso, heure in seances:
+                if not (today_iso <= jour_iso <= horizon_iso):
+                    continue
+                events.append(Event(date_start=jour_iso, date_end=None,
+                                    time=heure, **commun))
+            continue
+        # Pas de représentation annoncée — cela arrive sur les fiches
+        # gratuites et sur certains concerts : on retombe sur la plage du
+        # listing, et sur l'heure du champ « Début » quand il existe.
+        sans_seance.append(stub["title"])
+        events.append(Event(
+            date_start=iso(stub["d_start"]),
+            date_end=iso(stub["d_end"]) if stub["d_end"] else None,
+            time=fiche.get("time"),
+            **commun,
         ))
+
+    if sans_seance:
+        print("[Opéra] sans représentation annoncée, repli sur la plage du "
+              "listing : %s" % ", ".join(sans_seance), file=sys.stderr)
 
     if not events:
         print("=" * 60, file=sys.stderr)
