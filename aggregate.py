@@ -36,6 +36,7 @@ Politique éditoriale (septembre 2026) :
 """
 from __future__ import annotations
 import json
+import os
 import re
 import sys
 import traceback
@@ -158,6 +159,91 @@ def frontend_hardcoded_venues() -> set:
               "parser probably broken, check _VENUE_MAP_*_RE",
               file=sys.stderr)
     return venues
+
+
+# ---------------------------------------------------------------------------
+# Garde-fou : une salle scrappée en direct ne s'effondre pas toute seule
+# ---------------------------------------------------------------------------
+#
+# Un scraper qui rend 7 événements au lieu de 335 ne LÈVE pas : il rend une
+# liste courte, la passe traverse le pipeline sans un mot, et le workflow
+# commite. Le site perd alors une salle entière jusqu'au run suivant.
+#
+# Ce n'est pas une crainte de principe. Rejoué sur les 106 versions
+# d'events.json de l'historique, le cas s'est produit HUIT fois, réparties
+# sur SEPT runs — le 7 septembre en a perdu deux d'un coup —, et chaque
+# fois la version a été commitée :
+#
+#   Le Complexe café-théâtre  324 → 0   2026-09-08
+#   Le Complexe café-théâtre  335 → 0   2026-09-09 10:33 UTC
+#   Le Complexe café-théâtre  335 → 0   2026-09-10 10:24 UTC
+#   Le Complexe café-théâtre  341 → 0   2026-09-13 10:55 UTC
+#   Bourse du Travail          93 → 0   2026-08-31
+#   Le Transbordeur            73 → 0   2026-09-07
+#   La Halle Tony Garnier      54 → 0   2026-07-20
+#   Le Sucre                   47 → 0   2026-09-07
+#
+# Le Complexe échoue sur le cron et jamais en local, environ un run sur
+# quatre — ce qui ressemble à un blocage du site contre les runners
+# GitHub plutôt qu'à un bug de lecture.
+#
+# LE SEUIL VIENT DE CETTE MESURE. Sur les 105 couples de versions
+# consécutives, publier moins du QUART bloque exactement ces sept runs et
+# aucun autre. Les baisses légitimes les plus fortes de l'historique sont
+# à 33 % (TNG, run de validation local) et 44 % (Auditorium, le jour où
+# ses ateliers ont été filtrés) : un seuil à 40 % ou 50 % les prendrait
+# pour des pannes. Le plancher, lui, n'a jamais rien changé — les huit
+# pannes sont toutes des chutes à zéro depuis un grand nombre ; il est là
+# pour qu'une petite salle à 6 événements qui en perd 5 ne réveille
+# personne.
+EFFONDREMENT_PART = 0.25
+EFFONDREMENT_PLANCHER = 10
+
+# Une source directe se reconnaît à son HÔTE : tout ce qui n'est ni le
+# Petit Bulletin ni Ville Morte vient du site d'une salle. Les boutiques
+# Mapado (improvidence.mapado.com, espacegerson.mapado.com) en font
+# partie — ce sont les billetteries des salles, pas un agrégateur.
+_HOTES_AGREGATEURS = ("petit-bulletin.fr", "villemorte.fr")
+
+
+def _compte_direct(paires) -> dict[str, int]:
+    """Par lieu canonique, le nombre d'événements venus de la salle même."""
+    n: dict[str, int] = {}
+    for venue, url in paires:
+        if any(h in (url or "") for h in _HOTES_AGREGATEURS):
+            continue
+        cle = canonical_venue_name(venue or "")
+        if cle:
+            n[cle] = n.get(cle, 0) + 1
+    return n
+
+
+def _effondrements(nouveaux: List[Event],
+                   chemin: Path) -> list[tuple[str, int, int]]:
+    """Lieux qui publient moins du quart de ce qu'ils publiaient hier.
+
+    La comparaison porte sur les événements DIRECTS seulement : sans ce
+    tri, un agrégateur qui remonte encore trois dates masquerait la
+    disparition des trois cents autres.
+
+    Sans fichier précédent — première exécution, fichier illisible — il
+    n'y a pas de point de comparaison et on ne bloque rien.
+    """
+    try:
+        anciens = json.loads(chemin.read_text(encoding="utf-8"))["events"]
+    except (OSError, ValueError, KeyError, TypeError):
+        return []
+    avant = _compte_direct((e.get("venue"), e.get("url")) for e in anciens)
+    apres = _compte_direct((e.venue, e.url) for e in nouveaux)
+    pertes = []
+    for lieu, n_avant in avant.items():
+        if n_avant < EFFONDREMENT_PLANCHER:
+            continue
+        n_apres = apres.get(lieu, 0)
+        if n_apres < n_avant * EFFONDREMENT_PART:
+            pertes.append((lieu, n_avant, n_apres))
+    pertes.sort(key=lambda x: x[2] - x[1])
+    return pertes
 
 
 def main() -> int:
@@ -351,8 +437,33 @@ def main() -> int:
     all_failed = bool(report) and all(
         err is not None or n == 0 for _, n, err in report
     )
+
+    # Second filet, plus fin que le premier : celui-ci ne demande pas que
+    # TOUT échoue, il suffit qu'une salle s'effondre.
+    effondres = _effondrements(unique, out) if out.exists() else []
+    if effondres and os.environ.get("NOCTURNE_FORCER_ECRITURE") == "1":
+        print("\n[garde-fou] effondrement(s) passé(s) outre "
+              "(NOCTURNE_FORCER_ECRITURE=1).", file=sys.stderr)
+        effondres = []
+
     if all_failed and out.exists():
         print("\n[!] All implemented scrapers failed — keeping previous events.json.",
+              file=sys.stderr)
+        wrote = False
+    elif effondres:
+        print("\n[garde-fou] EFFONDREMENT — events.json n'est PAS réécrit.",
+              file=sys.stderr)
+        for lieu, n_avant, n_apres in effondres:
+            print("    %-34s %4d → %4d événements propres"
+                  % (lieu, n_avant, n_apres), file=sys.stderr)
+        print("    Une salle ne perd pas les trois quarts de son programme "
+              "en une nuit :\n"
+              "    son scraper a rendu une liste courte sans lever. "
+              "Relancer suffit\n"
+              "    d'ordinaire, la panne étant passagère. Si la perte est "
+              "RÉELLE — salle\n"
+              "    fermée, saison terminée —, relancer avec "
+              "NOCTURNE_FORCER_ECRITURE=1.",
               file=sys.stderr)
         wrote = False
     else:
@@ -374,7 +485,10 @@ def main() -> int:
                   f"(site changed? request swallowed?)")
         else:
             print(f"  ✓ {name:30s}  {n} events")
-    return 0
+    # Sortie non nulle sur effondrement : l'étape de commit du workflow est
+    # alors sautée et le run passe au rouge, ce qui est tout l'intérêt —
+    # une panne silencieuse devient une panne visible.
+    return 1 if effondres else 0
 
 
 if __name__ == "__main__":
