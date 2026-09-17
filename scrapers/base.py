@@ -19,6 +19,17 @@ class Event:
     time: Optional[str]         # "20:30" if known
     url: str                    # Link back to source page
     image: Optional[str]        # URL of cover image
+    # Salle réelle quand l'événement se joue AILLEURS que chez le `venue`
+    # qui le programme. `venue` reste celui qui programme — c'est lui qui
+    # groupe les cartes, tient le filtre et donne le logo —, et ce champ
+    # dit où l'on va. None quand l'événement se joue dans les murs, ce qui
+    # est le cas de l'écrasante majorité et de tous les scrapers qui
+    # n'alimentent pas ce champ.
+    #
+    # Le champ est en DERNIÈRE position et porte une valeur par défaut :
+    # les onze scrapers qui construisent des Event par mot-clé n'ont rien
+    # à changer.
+    offsite_venue: Optional[str] = None
 
     @property
     def id(self) -> str:
@@ -36,6 +47,14 @@ class Event:
         d = asdict(self)
         d["id"] = self.id
         return d
+
+
+# Valeur d'offsite_venue quand la production tourne dans PLUSIEURS salles
+# et que la source ne dit pas laquelle accueille quelle date. « L'opéra
+# par l'Orchestre » se joue Salle Molière et au Théâtre Théo Argence : y
+# élire une salle serait faux un soir sur deux. Le point médian en tête la
+# distingue d'un vrai nom de salle.
+OFFSITE_PLUSIEURS = "·ailleurs"
 
 
 # French month abbreviations -> month number (1-12).

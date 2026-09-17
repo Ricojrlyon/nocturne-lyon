@@ -19,7 +19,7 @@ import requests
 from bs4 import BeautifulSoup, Tag
 
 from . import detail_cache
-from .base import Event, iso, FR_MONTHS
+from .base import Event, iso, FR_MONTHS, OFFSITE_PLUSIEURS
 
 VENUE = "Opéra national de Lyon"
 SLUG  = "opera-lyon"
@@ -220,6 +220,41 @@ def _seances_jsonld(soup: BeautifulSoup) -> List[list]:
     return [list(x) for x in sorted(seances)]
 
 
+# Un mot qui désigne un lieu de spectacle. Sert à découper le champ Lieu
+# en SALLES : « Salle Molière, Lyon 5e, Théâtre Théo Argence - Saint-Priest »
+# en nomme deux, la mention « Lyon 5e » n'étant que l'adresse de la
+# première. Sans ce tri, une virgule de plus ferait une salle de plus.
+_MOT_DE_SALLE = re.compile(
+    r"\b(salle|th[eé][aâ]tre|amphi|op[eé]ra|auditorium|studio|chapelle|"
+    r"espace|maison|cin[eé]ma|halle|conservatoire)\b", re.IGNORECASE)
+
+
+def _hors_les_murs(lieu: Optional[str]) -> Optional[str]:
+    """Salle réelle, quand la production ne se joue pas dans les murs.
+
+    Rend None pour une production jouée à l'Opéra — l'Amphi compris, qui
+    est une salle de la maison —, le nom de la salle quand la fiche n'en
+    nomme qu'une, et OFFSITE_PLUSIEURS quand elle en nomme plusieurs.
+
+    Le suffixe de commune est retiré : « Théâtre Théo Argence -
+    Saint-Priest » devient « Théâtre Théo Argence », qui est déjà la clé
+    sous laquelle venue_arrondissements.json le connaît. C'est le
+    géocodeur qui dira Saint-Priest.
+    """
+    if not lieu:
+        return None
+    salles = [f.strip() for f in lieu.split(",") if _MOT_DE_SALLE.search(f)]
+    if not salles:
+        salles = [lieu.strip()]
+    dehors = [s for s in salles
+              if "opera de lyon" not in _sans_accents(s)]
+    if not dehors:
+        return None
+    if len(dehors) > 1:
+        return OFFSITE_PLUSIEURS
+    return re.split(r"\s[-–—]\s", dehors[0])[0].strip() or None
+
+
 def _lire_fiche(url: str) -> Optional[dict]:
     """Représentations, lieu et heure de secours. Rendu à detail_cache."""
     try:
@@ -351,6 +386,7 @@ def fetch() -> List[Event]:
     events: List[Event] = []
     today_iso, horizon_iso = Date.today().isoformat(), horizon.isoformat()
     sans_seance: List[str] = []
+    dehors: List[str] = []
     for stub in all_stubs:
         fiche = detail_cache.get_details(stub["url"], _lire_fiche,
                                          fields=("seances", "lieu", "time"))
@@ -362,7 +398,10 @@ def fetch() -> List[Event]:
             category=stub["category"],
             url=stub["url"],
             image=stub["image"],
+            offsite_venue=_hors_les_murs(fiche.get("lieu")),
         )
+        if commun["offsite_venue"]:
+            dehors.append("%s → %s" % (stub["title"], commun["offsite_venue"]))
         seances = fiche.get("seances") or []
         if seances:
             for jour_iso, heure in seances:
@@ -385,6 +424,9 @@ def fetch() -> List[Event]:
     if sans_seance:
         print("[Opéra] sans représentation annoncée, repli sur la plage du "
               "listing : %s" % ", ".join(sans_seance), file=sys.stderr)
+    if dehors:
+        print("[Opéra] hors les murs, CONSERVÉS et marqués : %s"
+              % " | ".join(dehors), file=sys.stderr)
 
     if not events:
         print("=" * 60, file=sys.stderr)
