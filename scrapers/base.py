@@ -91,21 +91,34 @@ OFFSITE_PLUSIEURS = "·ailleurs"
 TENTATIVES = 3
 ATTENTE = 2.0
 
+# Les codes qu'on réessaie, et EUX SEULS. Ce sont des pannes de
+# l'intermédiaire, pas des réponses du site : Ville Morte a rendu 502
+# Proxy Error depuis le runner le 2026-09-19, ses 262 événements ont
+# disparu du fil pour ce run, et une seconde tentative aurait suffi.
+# Un 403 ou un 404, au contraire, est une réponse : la répéter ne la
+# changera pas et ne ferait que tripler la durée du run.
+CODES_A_REESSAYER = (502, 503, 504)
+
 
 def get(url: str, *, headers: Optional[dict] = None, timeout: int = 30,
         tentatives: int = TENTATIVES, etiquette: str = "") -> requests.Response:
-    """requests.get, mais qui redonne sa chance à une connexion coupée."""
+    """requests.get, mais qui redonne sa chance aux pannes passagères."""
     derniere = None
+    prefixe = etiquette + " " if etiquette else ""
     for essai in range(1, tentatives + 1):
         try:
-            return requests.get(url, headers=headers, timeout=timeout)
+            r = requests.get(url, headers=headers, timeout=timeout)
+            if r.status_code not in CODES_A_REESSAYER or essai == tentatives:
+                return r
+            raison = "%d" % r.status_code
         except (requests.ConnectionError, requests.Timeout) as exc:
             derniere = exc
-            if essai < tentatives:
-                print("%s%s : connexion coupée (essai %d/%d), on réessaie"
-                      % (etiquette and etiquette + " ", url, essai, tentatives),
-                      file=sys.stderr)
-                time.sleep(ATTENTE * essai)
+            if essai == tentatives:
+                raise
+            raison = "connexion coupée"
+        print("%s%s : %s (essai %d/%d), on réessaie"
+              % (prefixe, url, raison, essai, tentatives), file=sys.stderr)
+        time.sleep(ATTENTE * essai)
     raise derniere
 
 
