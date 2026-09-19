@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T11:22:42.705620+00:00",
+  "generated_at": "2026-09-19T11:30:08.580644+00:00",
   "count": 2790,
   "events": [
     {
@@ -47,20 +47,6 @@
     {
       "venue": "Musée d'Art Contemporain",
       "venue_slug": "mac-lyon",
-      "title": "Visite Coulisses du musée",
-      "subtitle": "Un bâtiment créé par Renzo Piano",
-      "category": "visite",
-      "date_start": "2026-09-19",
-      "date_end": "2026-09-20",
-      "time": null,
-      "url": "https://www.mac-lyon.com/fr/programmation/visite-coulisses-du-musee",
-      "image": "https://www.mac-lyon.com/sites/mac/files/styles/programmation_results/public/2026-06/banniere_visite_archi_web.jpg?itok=Y_vnzVmh",
-      "offsite_venue": null,
-      "id": "98e46e3d0251"
-    },
-    {
-      "venue": "Musée d'Art Contemporain",
-      "venue_slug": "mac-lyon",
       "title": "18e Biennale de Lyon",
       "subtitle": "Passer d’un rêve à l’autre / To pass from one dream to another",
       "category": "exposition",
@@ -71,6 +57,20 @@
       "image": "https://www.mac-lyon.com/sites/mac/files/styles/programmation_results/public/2026-06/banniere_biennale_18_2026_web.jpg?itok=H9lsI8an",
       "offsite_venue": null,
       "id": "1b8ec9b44cbe"
+    },
+    {
+      "venue": "Musée d'Art Contemporain",
+      "venue_slug": "mac-lyon",
+      "title": "Visite Coulisses du musée",
+      "subtitle": "Un bâtiment créé par Renzo Piano",
+      "category": "visite",
+      "date_start": "2026-09-19",
+      "date_end": "2026-09-20",
+      "time": null,
+      "url": "https://www.mac-lyon.com/fr/programmation/visite-coulisses-du-musee",
+      "image": "https://www.mac-lyon.com/sites/mac/files/styles/programmation_results/public/2026-06/banniere_visite_archi_web.jpg?itok=Y_vnzVmh",
+      "offsite_venue": null,
+      "id": "98e46e3d0251"
     },
     {
       "venue": "Musée des Beaux-Arts",
