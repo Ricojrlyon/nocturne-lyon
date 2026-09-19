@@ -13,7 +13,7 @@ On passe donc par les deux compétitions, qui publient chacune leurs
 matchs sans rien demander :
 
   EuroLeague   api-live.euroleague.net, en clair, 19 matchs à domicile
-  Betclic      api-prod.lnb.fr, jeton anonyme public, 15 matchs
+  Betclic      api-prod.lnb.fr, en clair aussi, 15 matchs
 
 Les deux ensembles sont disjoints par construction — une rencontre
 appartient à une compétition et à une seule — et leur somme fait les 34
@@ -96,7 +96,12 @@ SALLE_BETCLIC = "Astroballe"
 
 EUROLEAGUE = ("https://api-live.euroleague.net/v2/competitions/E"
               "/seasons/E%d/games?teamCode=ASV")
-LNB_JETON = "https://lnb.fr/api/token"
+# lnb.fr, le site, rend un 403 nginx au runner GitHub — un blocage
+# d'adresses de centre de données, comme celui du club. Sa page de
+# calendrier demande d'abord un jeton à lnb.fr/api/token, et la première
+# version passait par là : elle échouait donc au premier appel.
+# Or api-prod.lnb.fr, qui est un AUTRE hôte, répond sans jeton. On ne
+# demande plus rien à lnb.fr.
 LNB_COMPET = ("https://api-prod.lnb.fr/competition/getDivisionCompetitionByYear"
               "?year=%d&division_external_id=1")
 LNB_CALENDRIER = "https://api-prod.lnb.fr/match/v3/getCalendar"
@@ -172,22 +177,12 @@ def _json_ou_bruit(r, etape: str) -> dict:
 
 
 def _lnb(saison: int) -> List[dict]:
-    """Matchs à domicile de Betclic ÉLITE : date et heure, pas de salle.
-
-    Le jeton est anonyme et public — la page du calendrier le demande pour
-    chaque visiteur. Il vaut un quart d'heure, largement de quoi tenir un
-    run.
-    """
+    """Matchs à domicile de Betclic ÉLITE : date et heure, pas de salle."""
+    entetes = dict(HEADERS)
+    entetes["Content-Type"] = "application/json"
+    entetes["Origin"] = "https://lnb.fr"
+    entetes["Referer"] = "https://lnb.fr/"
     try:
-        jeton = _json_ou_bruit(
-            base_get(LNB_JETON, headers=HEADERS, timeout=25,
-                     etiquette="[ASVEL]"), "jeton")["token"]
-        entetes = dict(HEADERS)
-        entetes["Authorization"] = "Bearer " + jeton
-        entetes["Content-Type"] = "application/json"
-        entetes["Origin"] = "https://lnb.fr"
-        entetes["Referer"] = "https://lnb.fr/"
-
         # L'identifiant de compétition change à chaque saison : on le
         # DEMANDE au lieu de l'écrire en dur, faute de quoi le scraper
         # rendrait zéro le jour où la saison tourne.
