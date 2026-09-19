@@ -1098,6 +1098,24 @@
       ]
     ]
   },
+  "https://maisondeladanse.com/programmation/saison2026-2027/strip": {
+    "fetched_at": "2026-09-19",
+    "lieu": "Les SUBS",
+    "seances": [
+      [
+        "jeudi",
+        18,
+        3,
+        "20:00"
+      ],
+      [
+        "vendredi",
+        19,
+        3,
+        "20:00"
+      ]
+    ]
+  },
   "https://maisondeladanse.com/programmation/saison2026-2027/trailer-park": {
     "fetched_at": "2026-09-16",
     "lieu": "Maison de la danse - Grande salle",
@@ -1627,6 +1645,10 @@
   "https://radiant-bellevue.fr/spectacles/the-hu-2/": {
     "fetched_at": "2026-09-12",
     "time": "20:00"
+  },
+  "https://radiant-bellevue.fr/spectacles/the-loop/": {
+    "fetched_at": "2026-09-19",
+    "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/the-witcher-iii/": {
     "fetched_at": "2026-09-12",
@@ -4936,8 +4958,8 @@
     "titre": "Rendez-vous avec une designeuse circulaire"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/spectacle-la-petite-boite-gant": {
-    "fetched_at": "2026-09-11",
-    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-06/mur_breton_0.jpg?itok=Olabft-E",
+    "fetched_at": "2026-09-19",
+    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2025-08/chapelle_ou_visite_groupe.jpg?h=3244e854&itok=9vjIoalP",
     "seances": [
       [
         "2026-10-10",
@@ -5021,8 +5043,8 @@
     "titre": "Week-end chanté"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/week-end-musee-brac": {
-    "fetched_at": "2026-09-11",
-    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-06/mur_breton_0.jpg?itok=Olabft-E",
+    "fetched_at": "2026-09-19",
+    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2025-08/chapelle_ou_visite_groupe.jpg?h=3244e854&itok=9vjIoalP",
     "seances": [
       [
         "2026-10-10",
@@ -5148,6 +5170,17 @@
       ]
     ],
     "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/adelaide-ferriere": {
+    "fetched_at": "2026-09-19",
+    "lieu": "Théâtre de La Renaissance - Oullins-Pierre-Bénite",
+    "seances": [
+      [
+        "2026-10-15",
+        "19:00"
+      ]
+    ],
+    "time": "19:00"
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/concerts-du-cnsmd-40": {
     "fetched_at": "2026-09-17",
@@ -5475,6 +5508,11 @@
   "https://www.transbordeur.fr/evenement/axel-bauer-13122026/": {
     "fetched_at": "2026-09-18",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/01/a-axelbauer2.jpg",
+    "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/ayron-jones-18032027/": {
+    "fetched_at": "2026-09-19",
+    "image": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-ayronjones2.jpeg",
     "time": "19:00"
   },
   "https://www.transbordeur.fr/evenement/beast-in-black-frozen-crown-sonata-arctica-15112026/": {
