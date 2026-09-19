@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-19T11:30:08.580644+00:00",
-  "count": 2790,
+  "generated_at": "2026-09-19T12:13:29.601714+00:00",
+  "count": 2800,
   "events": [
     {
       "venue": "Institut Lumière",
@@ -47,20 +47,6 @@
     {
       "venue": "Musée d'Art Contemporain",
       "venue_slug": "mac-lyon",
-      "title": "18e Biennale de Lyon",
-      "subtitle": "Passer d’un rêve à l’autre / To pass from one dream to another",
-      "category": "exposition",
-      "date_start": "2026-09-19",
-      "date_end": "2026-12-13",
-      "time": null,
-      "url": "https://www.mac-lyon.com/fr/programmation/18e-biennale-de-lyon",
-      "image": "https://www.mac-lyon.com/sites/mac/files/styles/programmation_results/public/2026-06/banniere_biennale_18_2026_web.jpg?itok=H9lsI8an",
-      "offsite_venue": null,
-      "id": "1b8ec9b44cbe"
-    },
-    {
-      "venue": "Musée d'Art Contemporain",
-      "venue_slug": "mac-lyon",
       "title": "Visite Coulisses du musée",
       "subtitle": "Un bâtiment créé par Renzo Piano",
       "category": "visite",
@@ -71,6 +57,20 @@
       "image": "https://www.mac-lyon.com/sites/mac/files/styles/programmation_results/public/2026-06/banniere_visite_archi_web.jpg?itok=Y_vnzVmh",
       "offsite_venue": null,
       "id": "98e46e3d0251"
+    },
+    {
+      "venue": "Musée d'Art Contemporain",
+      "venue_slug": "mac-lyon",
+      "title": "18e Biennale de Lyon",
+      "subtitle": "Passer d’un rêve à l’autre / To pass from one dream to another",
+      "category": "exposition",
+      "date_start": "2026-09-19",
+      "date_end": "2026-12-13",
+      "time": null,
+      "url": "https://www.mac-lyon.com/fr/programmation/18e-biennale-de-lyon",
+      "image": "https://www.mac-lyon.com/sites/mac/files/styles/programmation_results/public/2026-06/banniere_biennale_18_2026_web.jpg?itok=H9lsI8an",
+      "offsite_venue": null,
+      "id": "1b8ec9b44cbe"
     },
     {
       "venue": "Musée des Beaux-Arts",
@@ -1013,7 +1013,7 @@
     {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
-      "title": "Club : Garçon Sauvage x Polaris records",
+      "title": "Club : Garçon Sauvage x Polari records",
       "subtitle": "Cormac · Jordan Nocturne · L’Homme Seul",
       "category": "club",
       "date_start": "2026-09-19",
@@ -1022,7 +1022,7 @@
       "url": "https://le-sucre.eu/events/club-garcon-sauvage-polaris-records/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/07/Post-insta-GS-POLARIFormat_1080X1350-484x600.png",
       "offsite_venue": null,
-      "id": "b78895a7b09d"
+      "id": "f5a3101ca45b"
     },
     {
       "venue": "Le Petit Salon",
@@ -5883,6 +5883,20 @@
       "id": "a2e8fcd1d2b6"
     },
     {
+      "venue": "Palais des Sports de Gerland",
+      "venue_slug": "palais-des-sports-gerland",
+      "title": "LDLC ASVEL Féminin - La Tronche Melan",
+      "subtitle": "La Boulangère Wonderligue",
+      "category": "basket",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://ldlcasvelfeminin.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "1e45ee26a053"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "Festival Karavel 20",
@@ -8709,6 +8723,20 @@
       "image": "https://www.halle-tony-garnier.com/storage/144411/conversions/2026-10-11-TIGRE-DRAGON-FESTIVAL-LUMIERE-fl26-tigreetdragon-500x500-htg-20260918-085107-square.jpg",
       "offsite_venue": null,
       "id": "216a55fe837f"
+    },
+    {
+      "venue": "Palais des Sports de Gerland",
+      "venue_slug": "palais-des-sports-gerland",
+      "title": "LDLC ASVEL Féminin - Bourges",
+      "subtitle": "La Boulangère Wonderligue",
+      "category": "basket",
+      "date_start": "2026-10-11",
+      "date_end": null,
+      "time": "15:15",
+      "url": "https://ldlcasvelfeminin.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "e63815484d63"
     },
     {
       "venue": "Amphithéâtre du Centre de Congrès",
@@ -12995,6 +13023,20 @@
       "id": "1557397362dd"
     },
     {
+      "venue": "Palais des Sports de Gerland",
+      "venue_slug": "palais-des-sports-gerland",
+      "title": "LDLC ASVEL Féminin - Villeneuve d’Ascq",
+      "subtitle": "La Boulangère Wonderligue",
+      "category": "basket",
+      "date_start": "2026-10-23",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://ldlcasvelfeminin.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "a917eb0bf47d"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "CELESTE BARBER",
@@ -15345,6 +15387,20 @@
       "image": "https://www.halle-tony-garnier.com/storage/144418/conversions/2026-11-01-SALON-DES-VIGNERONS-INDEPENDANTS-lyon-carre-1-20260824-165114-square.jpg",
       "offsite_venue": null,
       "id": "8a18d20aa5e0"
+    },
+    {
+      "venue": "Palais des Sports de Gerland",
+      "venue_slug": "palais-des-sports-gerland",
+      "title": "LDLC ASVEL Féminin - Landerneau",
+      "subtitle": "La Boulangère Wonderligue",
+      "category": "basket",
+      "date_start": "2026-11-01",
+      "date_end": null,
+      "time": "15:15",
+      "url": "https://ldlcasvelfeminin.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "93f024d6a82a"
     },
     {
       "venue": "IAC Villeurbanne",
@@ -22333,6 +22389,20 @@
       "id": "41fc98af8ad0"
     },
     {
+      "venue": "Palais des Sports de Gerland",
+      "venue_slug": "palais-des-sports-gerland",
+      "title": "LDLC ASVEL Féminin - Chartres",
+      "subtitle": "La Boulangère Wonderligue",
+      "category": "basket",
+      "date_start": "2026-11-29",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://ldlcasvelfeminin.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "52b2bb057efd"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Paradoxe",
@@ -24235,6 +24305,20 @@
       "image": "https://www.croix-rousse.com/wp-content/uploads/2026/05/14.-Radio-live-1080x1080-1.png",
       "offsite_venue": null,
       "id": "c888f83dd68e"
+    },
+    {
+      "venue": "Palais des Sports de Gerland",
+      "venue_slug": "palais-des-sports-gerland",
+      "title": "LDLC ASVEL Féminin - Charleville-Mézières",
+      "subtitle": "La Boulangère Wonderligue",
+      "category": "basket",
+      "date_start": "2026-12-09",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://ldlcasvelfeminin.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "051a026764a0"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -26573,6 +26657,20 @@
       "image": "https://www.bourse-du-travail.com/img/evenement/chantal-ladesou-51.jpg",
       "offsite_venue": null,
       "id": "6c6a3234895e"
+    },
+    {
+      "venue": "Palais des Sports de Gerland",
+      "venue_slug": "palais-des-sports-gerland",
+      "title": "LDLC ASVEL Féminin - Charnay",
+      "subtitle": "La Boulangère Wonderligue",
+      "category": "basket",
+      "date_start": "2026-12-20",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://ldlcasvelfeminin.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "fbce83b77313"
     },
     {
       "venue": "Comédie Odéon",
@@ -29765,6 +29863,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/impro-club-festival-drolement-bien.jpg",
       "offsite_venue": null,
       "id": "26a830a857e6"
+    },
+    {
+      "venue": "Palais des Sports de Gerland",
+      "venue_slug": "palais-des-sports-gerland",
+      "title": "LDLC ASVEL Féminin - Angers",
+      "subtitle": "La Boulangère Wonderligue",
+      "category": "basket",
+      "date_start": "2027-01-16",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://ldlcasvelfeminin.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "31086df0163d"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -34625,6 +34737,20 @@
       "id": "f6ae54e9ebe7"
     },
     {
+      "venue": "Palais des Sports de Gerland",
+      "venue_slug": "palais-des-sports-gerland",
+      "title": "LDLC ASVEL Féminin - Basket Landes",
+      "subtitle": "La Boulangère Wonderligue",
+      "category": "basket",
+      "date_start": "2027-02-21",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://ldlcasvelfeminin.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "507fd8427cd9"
+    },
+    {
       "venue": "Improvidence",
       "venue_slug": "improvidence",
       "title": "Portrait de famille",
@@ -35267,6 +35393,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-anna-dans-sale-540x800.jpg",
       "offsite_venue": null,
       "id": "705ec212c062"
+    },
+    {
+      "venue": "Palais des Sports de Gerland",
+      "venue_slug": "palais-des-sports-gerland",
+      "title": "LDLC ASVEL Féminin - Toulouse",
+      "subtitle": "La Boulangère Wonderligue",
+      "category": "basket",
+      "date_start": "2027-02-27",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://ldlcasvelfeminin.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "f01b950d79a2"
     },
     {
       "venue": "Radiant-Bellevue",
