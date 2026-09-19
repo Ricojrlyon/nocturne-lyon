@@ -1,0 +1,105 @@
+{
+ "_lisez_moi": "Calendrier Betclic ÉLITE à domicile, relevé à la main sur https://ldlcasvel.com/calendrier/ : ldlcasvel.com rend 403 au runner GitHub. Régénérer avec « python -m scrapers.asvel_releve » depuis une connexion française, une fois par saison ou quand des dates bougent.",
+ "saison": 2026,
+ "releve_le": "2026-09-19",
+ "source": "https://ldlcasvel.com/calendrier/",
+ "matchs": [
+  {
+   "jour": "2026-10-11",
+   "heure": "19:00",
+   "salle": "Astroballe",
+   "adversaire": "Roanne",
+   "billet": "https://billetterie.seetickets.fr/ldlc-asvel-roanne-sport-astroballe-villeurbanne-11-octobre-2026-css5-asvel-pg101-ri11951713.html"
+  },
+  {
+   "jour": "2026-10-25",
+   "heure": "16:30",
+   "salle": "Astroballe",
+   "adversaire": "Nancy"
+  },
+  {
+   "jour": "2026-11-07",
+   "heure": "20:00",
+   "salle": "Astroballe",
+   "adversaire": "Pau-Lacq-Orthez"
+  },
+  {
+   "jour": "2026-11-22",
+   "heure": "19:00",
+   "salle": "Astroballe",
+   "adversaire": "Bourg-en-Bresse",
+   "desaccord_lnb": "2026-11-21 20:00"
+  },
+  {
+   "jour": "2026-12-13",
+   "heure": "19:00",
+   "salle": "Astroballe",
+   "adversaire": "Paris",
+   "desaccord_lnb": "2026-12-12 20:00"
+  },
+  {
+   "jour": "2026-12-19",
+   "heure": "20:00",
+   "salle": "Astroballe",
+   "adversaire": "Nanterre"
+  },
+  {
+   "jour": "2026-12-27",
+   "heure": "20:00",
+   "salle": "Astroballe",
+   "adversaire": "Dijon"
+  },
+  {
+   "jour": "2027-01-24",
+   "heure": "16:30",
+   "salle": "Astroballe",
+   "adversaire": "Strasbourg",
+   "desaccord_lnb": "2027-01-23 20:00"
+  },
+  {
+   "jour": "2027-02-07",
+   "heure": "19:00",
+   "salle": "Astroballe",
+   "adversaire": "Chalon-sur-Saône",
+   "desaccord_lnb": "2027-02-06 20:00"
+  },
+  {
+   "jour": "2027-02-13",
+   "heure": "20:00",
+   "salle": "Astroballe",
+   "adversaire": "Boulazac"
+  },
+  {
+   "jour": "2027-03-13",
+   "heure": "20:00",
+   "salle": "Astroballe",
+   "adversaire": "Le Mans"
+  },
+  {
+   "jour": "2027-03-27",
+   "heure": "20:00",
+   "salle": "Astroballe",
+   "adversaire": "Cholet"
+  },
+  {
+   "jour": "2027-04-10",
+   "heure": "20:00",
+   "salle": "Astroballe",
+   "adversaire": "Gravelines-Dunkerque"
+  },
+  {
+   "jour": "2027-05-01",
+   "heure": "20:00",
+   "salle": "Astroballe",
+   "adversaire": "Limoges",
+   "desaccord_lnb": "2027-04-27 20:00"
+  },
+  {
+   "jour": "2027-05-15",
+   "heure": "20:00",
+   "salle": "Astroballe",
+   "adversaire": "Saint-Quentin",
+   "desaccord_lnb": "2027-05-09 20:00"
+  }
+ ]
+}
