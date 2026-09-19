@@ -1829,6 +1829,7 @@ const VENUE_ARRONDISSEMENT = {
   // Autre (banlieue, Métropole)
   'Radiant-Bellevue': 'Autre',    // Caluire-et-Cuire
   'LDLC Arena': 'Autre',          // Décines
+  'Astroballe': 'Villeurbanne',   // 44 av. Marcel Cerdan, Villeurbanne
   "L'Épicerie Moderne": 'Autre',  // Feyzin
   'Grrrnd Zero': 'Autre',         // Vaulx-en-Velin
   'La Machinerie - Bizarre !': 'Autre', // Vénissieux
@@ -1925,6 +1926,15 @@ const TYPE_BUCKETS = [
   // Generic music catch-all (for events tagged just "concert" or "musique"
   // without specifying a subgenre). Comes AFTER the specific genres.
   { key: 'musique',     label: 'musique',     match: /musique|concert|\bsoul\b|\bfunk\b|\bdisco\b/i },
+  // Le sport. Placé avant le bloc non-musical parce que 'conference'
+  // revendique « rencontre », qui est le mot français pour un match :
+  // sans cette priorité, une « rencontre de basket » deviendrait une
+  // conférence. Il n'y a aucune autre collision — aucune règle plus haut
+  // ne nomme un sport —, la position est donc libre par ailleurs.
+  // Le bucket est plus large que ce qu'on scrappe aujourd'hui : l'ASVEL
+  // masculin est le premier club du fil, les suivants viendront avec
+  // leurs mots à eux.
+  { key: 'sport',       label: 'sport',       match: /basket|\bsport|rugby|\bfoot\b|football|handball|volley|hockey|athl[ée]tisme|\bnatation\b/i },
   // Non-music. humour BEFORE theatre because "Humour & Café Théâtre" must
   // go to humour (theatre regex would match the "Théâtre" substring).
   // Note: 'théâtre' has circumflex â, so the regex uses [aâ]tre to match
@@ -1992,7 +2002,7 @@ const TEINTES = {
   humour:    '#e8a94f', theatre:    '#cf6b7a', danse:     '#b57cc4',
   spectacle: '#e08a5c', expo:       '#9fbd7f', cine:      '#8fa0b8',
   conference:'#37b7c8', atelier:    '#c49a72', jeux:      '#7fb8a8',
-  autre:     '#9aa3ad',
+  sport:     '#a99829', autre:      '#9aa3ad',
 };
 function teinteDe(rawCategory) {
   return TEINTES[bucketOf(rawCategory)] || TEINTES.autre;
@@ -2020,8 +2030,13 @@ const FAMILLES = [
   { key: 'scene',   label: 'scène',
     buckets: ['humour', 'theatre', 'danse', 'spectacle'] },
   { key: 'expos',   label: 'expos',   buckets: ['expo'] },
+  // Le sport est rangé dans « autres » plutôt que de fonder une
+  // cinquième famille : à 34 matchs sur huit mois, une section « sport »
+  // ne porterait qu'une carte les soirs où elle apparaît — exactement la
+  // section maigre que le passage à cinq familles avait produite. Elle se
+  // justifiera le jour où le fil comptera plusieurs clubs.
   { key: 'autres',  label: 'autres',
-    buckets: ['cine', 'conference', 'atelier', 'jeux', 'autre'] },
+    buckets: ['cine', 'conference', 'atelier', 'jeux', 'sport', 'autre'] },
 ];
 const FAMILLE_DE_BUCKET = new Map();
 for (const f of FAMILLES) for (const b of f.buckets) FAMILLE_DE_BUCKET.set(b, f.key);
