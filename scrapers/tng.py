@@ -12,7 +12,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, img_src, iso, FR_MONTHS
+from .base import Event, img_src, iso, FR_MONTHS, get as base_get
 
 VENUE = "TNG"
 SLUG  = "tng"
@@ -119,7 +119,7 @@ def _parse_time(text: str) -> Optional[str]:
 def _fetch_detail_time(url: str) -> Optional[str]:
     """Fetch /evenement/<slug>/ and extract time."""
     try:
-        r = requests.get(url, timeout=10, headers=HEADERS)
+        r = base_get(url, timeout=10, headers=HEADERS)
         if r.status_code != 200:
             return None
         soup = BeautifulSoup(r.text, "html.parser")
@@ -139,7 +139,7 @@ def _fetch_detail_time(url: str) -> Optional[str]:
 
 def fetch() -> List[Event]:
     try:
-        resp = requests.get(URL, timeout=20, headers=HEADERS)
+        resp = base_get(URL, timeout=20, headers=HEADERS)
     except requests.RequestException:
         return []
     if resp.status_code != 200:
@@ -228,7 +228,7 @@ def fetch() -> List[Event]:
         print("=" * 60, file=sys.stderr)
         print("DIAGNOSTIC: TNG — 0 events", file=sys.stderr)
         try:
-            resp2 = requests.get(URL, timeout=15, headers=HEADERS)
+            resp2 = base_get(URL, timeout=15, headers=HEADERS)
             soup2 = BeautifulSoup(resp2.text, "html.parser")
             ev_links = soup2.select('a[href*="/evenement/"]')
             print(f"  /evenement/ <a> count: {len(ev_links)}", file=sys.stderr)

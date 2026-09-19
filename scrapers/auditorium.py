@@ -55,7 +55,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event
+from .base import Event, get as base_get
 
 VENUE = "Auditorium de Lyon"
 SLUG = "auditorium-lyon"
@@ -164,7 +164,7 @@ def _seances(txt: str) -> List[Tuple[str, Optional[str]]]:
 def _lire_fiche(url: str) -> Optional[dict]:
     """Séances et lieu réel d'un spectacle, lus dans l'encadré de la fiche."""
     try:
-        r = requests.get(url, headers=HEADERS, timeout=30)
+        r = base_get(url, headers=HEADERS, timeout=30)
         r.raise_for_status()
     except requests.RequestException as exc:
         print(f"[Auditorium] {url}: {exc}", file=sys.stderr)

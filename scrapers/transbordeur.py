@@ -21,7 +21,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, iso, img_src
+from .base import Event, iso, img_src, get as base_get
 
 VENUE = "Le Transbordeur"
 SLUG  = "transbordeur"
@@ -173,7 +173,7 @@ def _fetch_detail(url: str) -> Optional[dict]:
     """One GET on the detail page → {"time": …, "image": …} (or None on
     network error, so detail_cache keeps the previous values)."""
     try:
-        r = requests.get(url, timeout=12, headers=HEADERS)
+        r = base_get(url, timeout=12, headers=HEADERS)
         if r.status_code != 200:
             return None
         soup = BeautifulSoup(r.text, "html.parser")
@@ -203,7 +203,7 @@ def _diagnose_first_post():
     print("=" * 60, file=sys.stderr)
     print("DIAGNOSTIC: Le Transbordeur — inspecting first post", file=sys.stderr)
     try:
-        resp = requests.get(SITE + "/wp-json/wp/v2/evenement?per_page=1&_embed=1",
+        resp = base_get(SITE + "/wp-json/wp/v2/evenement?per_page=1&_embed=1",
                             timeout=20, headers=HEADERS)
         if resp.status_code != 200:
             print(f"  status: {resp.status_code}", file=sys.stderr)
@@ -240,8 +240,8 @@ def fetch() -> List[Event]:
     page = 1
     while page <= min(total_pages, 5):
         try:
-            resp = requests.get(f"{base_url}&page={page}",
-                                timeout=30, headers=HEADERS)
+            resp = base_get(f"{base_url}&page={page}", timeout=30,
+                            headers=HEADERS, etiquette="[Transbordeur]")
         except requests.RequestException as e:
             print(f"[Transbordeur] request failed (page {page}): {e}",
                   file=sys.stderr)

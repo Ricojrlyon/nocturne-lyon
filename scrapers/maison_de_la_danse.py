@@ -45,7 +45,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event
+from .base import Event, get as base_get
 
 VENUE = "Maison de la Danse"
 SLUG = "maison-de-la-danse"
@@ -154,7 +154,7 @@ def _lire_fiche(url: str) -> Optional[dict]:
     # vraies requêtes : un spectacle déjà en cache ne passe pas par là.
     time.sleep(CRAWL_DELAY)
     try:
-        r = requests.get(url, headers=HEADERS, timeout=30)
+        r = base_get(url, headers=HEADERS, timeout=30)
         r.raise_for_status()
     except requests.RequestException as exc:
         print(f"[Maison de la Danse] {url}: {exc}", file=sys.stderr)

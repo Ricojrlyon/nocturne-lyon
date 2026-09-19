@@ -20,7 +20,7 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, img_src, iso
+from .base import Event, img_src, iso, get as base_get
 
 VENUE = "La Halle Tony Garnier"
 SLUG = "halle-tony-garnier"
@@ -101,7 +101,7 @@ def _title_case(s: str) -> str:
 
 def _scrape_url(url: str) -> List[Event]:
     try:
-        resp = requests.get(url, timeout=20, headers=HEADERS)
+        resp = base_get(url, timeout=20, headers=HEADERS)
     except requests.RequestException:
         return []
     if resp.status_code != 200:
@@ -204,7 +204,7 @@ def fetch() -> List[Event]:
         print("DIAGNOSTIC: Halle Tony Garnier — 0 events", file=sys.stderr)
         for url in URLS:
             try:
-                resp = requests.get(url, timeout=15, headers=HEADERS)
+                resp = base_get(url, timeout=15, headers=HEADERS)
                 print(f"  {url} -> {resp.status_code} ({len(resp.text)} bytes)",
                       file=sys.stderr)
                 if resp.status_code == 200:

@@ -76,9 +76,18 @@ OFFSITE_PLUSIEURS = "·ailleurs"
 # requête qui rend 403 ou 404 ne la changera pas, et ne ferait que
 # tripler le temps du run pour rien.
 #
-# Le helper n'est PAS imposé aux vingt-cinq scrapers qui appellent
-# requests.get en direct : seuls ceux qui ont montré le défaut l'emploient.
-# Les autres l'adopteront quand ils casseront, une ligne à la fois.
+# Les 32 appels réseau des scrapers passent par ici. Rattraper une salle
+# à la fois ne menait nulle part : deux runs consécutifs du workflow ont
+# été bloqués par deux salles DIFFÉRENTES — le Périscope (connexion
+# réinitialisée), puis le Transbordeur (délai dépassé). Le runner GitHub
+# a un réseau capricieux vers ces sites, et chaque salle y passera.
+#
+# Trois appels restent en direct, et pour des raisons précises :
+#   geo.py    passe params=, que ce helper ne prend pas, et une panne
+#             Nominatim n'est de toute façon pas mise en cache — elle est
+#             donc déjà retentée au run suivant ;
+#   sonic.py  est sur la liste de ce qu'on ne touche pas ;
+#   ici même, c'est l'appel que l'on enveloppe.
 TENTATIVES = 3
 ATTENTE = 2.0
 

@@ -28,7 +28,7 @@ import unicodedata
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, img_src, parse_french_date, iso
+from .base import Event, img_src, parse_french_date, iso, get as base_get
 
 VENUE = "La Rayonne"
 SLUG = "la-rayonne"
@@ -130,7 +130,7 @@ def _find_card(link, max_levels: int = 6):
 
 
 def fetch() -> List[Event]:
-    resp = requests.get(URL, timeout=20, headers=HEADERS)
+    resp = base_get(URL, timeout=20, headers=HEADERS)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 

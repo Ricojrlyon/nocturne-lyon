@@ -16,7 +16,7 @@ import sys
 import requests
 from bs4 import BeautifulSoup, Tag
 
-from .base import Event, iso
+from .base import Event, iso, get as base_get
 
 VENUE = "Le Petit Salon"
 SLUG = "petit-salon"
@@ -79,7 +79,7 @@ def _date_for_block(block: Tag, h2: Tag) -> Optional[str]:
 
 
 def fetch() -> List[Event]:
-    resp = requests.get(URL, timeout=20, headers=HEADERS)
+    resp = base_get(URL, timeout=20, headers=HEADERS)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 

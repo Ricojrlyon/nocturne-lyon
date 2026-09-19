@@ -26,7 +26,7 @@ import unicodedata
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, iso, img_src
+from .base import Event, iso, img_src, get as base_get
 
 VENUE = "Les Subsistances"
 SLUG = "les-subs"
@@ -88,7 +88,7 @@ def _slug_to_title(url: str) -> str:
 
 
 def fetch() -> List[Event]:
-    resp = requests.get(URL, timeout=25, headers=HEADERS)
+    resp = base_get(URL, timeout=25, headers=HEADERS)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 

@@ -19,7 +19,7 @@ import requests
 from bs4 import BeautifulSoup, Tag
 
 from . import detail_cache
-from .base import Event, iso, FR_MONTHS, OFFSITE_PLUSIEURS
+from .base import Event, iso, FR_MONTHS, OFFSITE_PLUSIEURS, get as base_get
 
 VENUE = "Opéra national de Lyon"
 SLUG  = "opera-lyon"
@@ -287,7 +287,7 @@ def _hors_les_murs(lieu: Optional[str]) -> Optional[str]:
 def _lire_fiche(url: str) -> Optional[dict]:
     """Représentations, lieu et heure de secours. Rendu à detail_cache."""
     try:
-        r = requests.get(url, timeout=20, headers=HEADERS)
+        r = base_get(url, timeout=20, headers=HEADERS)
         r.raise_for_status()
     except requests.RequestException as exc:
         print(f"[Opéra] {url}: {exc}", file=sys.stderr)
@@ -302,7 +302,7 @@ def _lire_fiche(url: str) -> Optional[dict]:
 
 def _scrape_url(url: str) -> List[dict]:
     try:
-        resp = requests.get(url, timeout=20, headers=HEADERS)
+        resp = base_get(url, timeout=20, headers=HEADERS)
     except requests.RequestException:
         return []
     if resp.status_code != 200:
@@ -466,7 +466,7 @@ def fetch() -> List[Event]:
         print("DIAGNOSTIC: Opéra de Lyon — 0 events", file=sys.stderr)
         for url in urls:
             try:
-                resp = requests.get(url, timeout=15, headers=HEADERS)
+                resp = base_get(url, timeout=15, headers=HEADERS)
                 print(f"  {url} -> {resp.status_code} ({len(resp.text)} bytes)",
                       file=sys.stderr)
             except requests.RequestException as e:

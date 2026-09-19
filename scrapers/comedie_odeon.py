@@ -46,7 +46,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event
+from .base import Event, get as base_get
 
 VENUE = "Comédie Odéon"
 SLUG = "comedie-odeon"
@@ -96,7 +96,7 @@ def _heure(txt: str) -> Optional[str]:
 def _lire_fiche(url: str) -> Optional[dict]:
     """Horaire par défaut d'un spectacle et ses exceptions datées."""
     try:
-        r = requests.get(url, headers=HEADERS, timeout=30)
+        r = base_get(url, headers=HEADERS, timeout=30)
         r.raise_for_status()
     except requests.RequestException as exc:
         print(f"[Comédie Odéon] {url}: {exc}", file=sys.stderr)

@@ -43,7 +43,7 @@ from typing import List, Optional, Tuple
 import requests
 from bs4 import BeautifulSoup
 
-from ..base import Event
+from ..base import Event, get as base_get
 
 URL = "https://www.petit-bulletin.fr/agenda-recherche.html"
 BASE = "https://www.petit-bulletin.fr"
@@ -368,7 +368,7 @@ def fetch() -> List[Event]:
     for page in range(1, MAX_PAGES + 1):
         url = URL if page == 1 else f"{URL}?p={page}"
         try:
-            r = requests.get(url, headers=headers, timeout=30)
+            r = base_get(url, headers=headers, timeout=30)
         except requests.RequestException as exc:
             if page == 1:
                 raise

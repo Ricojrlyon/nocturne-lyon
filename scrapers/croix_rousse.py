@@ -43,7 +43,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event
+from .base import Event, get as base_get
 
 VENUE = "Théâtre de la Croix-Rousse"
 SLUG = "croix-rousse"
@@ -147,7 +147,7 @@ def _resoudre_seance(jour_court: str, jj: int, mois: List[int],
 def _lire_fiche(url: str) -> Optional[dict]:
     """Représentations d'un spectacle. Rendu à detail_cache."""
     try:
-        r = requests.get(url, headers=HEADERS, timeout=30)
+        r = base_get(url, headers=HEADERS, timeout=30)
         r.raise_for_status()
     except requests.RequestException as exc:
         print(f"[Croix-Rousse] {url}: {exc}", file=sys.stderr)

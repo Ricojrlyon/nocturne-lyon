@@ -17,7 +17,7 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, img_src, iso, FR_MONTHS
+from .base import Event, img_src, iso, FR_MONTHS, get as base_get
 
 VENUE = "La Commune"
 SLUG  = "la-commune"
@@ -46,7 +46,7 @@ def _french_month_num(s: str) -> Optional[int]:
 
 def _scrape_page(url: str) -> List[Event]:
     try:
-        resp = requests.get(url, timeout=20, headers=HEADERS)
+        resp = base_get(url, timeout=20, headers=HEADERS)
     except requests.RequestException:
         return []
     if resp.status_code != 200:
@@ -130,7 +130,7 @@ def fetch() -> List[Event]:
         print("DIAGNOSTIC: La Commune — 0 events", file=sys.stderr)
         for url in URLS:
             try:
-                resp = requests.get(url, timeout=15, headers=HEADERS)
+                resp = base_get(url, timeout=15, headers=HEADERS)
                 print(f"  {url} -> {resp.status_code} ({len(resp.text)} bytes)",
                       file=sys.stderr)
                 if resp.status_code == 200:

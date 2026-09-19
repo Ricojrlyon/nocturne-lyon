@@ -16,7 +16,7 @@ from zoneinfo import ZoneInfo
 import re
 import requests
 
-from ..base import Event
+from ..base import Event, get as base_get
 
 API_URL = "https://agenda.villemorte.fr/api/events"
 
@@ -90,7 +90,7 @@ def fetch() -> List[Event]:
         "User-Agent": "lyon-events-aggregator/1.0 (+https://github.com/Ricojrlyon/nocturne-lyon)",
         "Accept": "application/json",
     }
-    resp = requests.get(API_URL, headers=headers, timeout=20)
+    resp = base_get(API_URL, headers=headers, timeout=20)
     resp.raise_for_status()
     items = resp.json() or []
 

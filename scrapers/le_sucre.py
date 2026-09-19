@@ -10,7 +10,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, parse_french_date, iso
+from .base import Event, parse_french_date, iso, get as base_get
 
 VENUE = "Le Sucre"
 SLUG  = "le-sucre"
@@ -57,7 +57,7 @@ def _parse_time(text: str) -> Optional[str]:
 def _fetch_detail_time(url: str) -> Optional[str]:
     """Fetch event detail page and extract time."""
     try:
-        r = requests.get(url, timeout=10, headers=HEADERS)
+        r = base_get(url, timeout=10, headers=HEADERS)
         if r.status_code != 200:
             return None
         soup = BeautifulSoup(r.text, "html.parser")
@@ -79,7 +79,7 @@ def _fetch_detail_time(url: str) -> Optional[str]:
 
 def fetch() -> List[Event]:
     headers = HEADERS
-    resp = requests.get(URL, timeout=20, headers=headers)
+    resp = base_get(URL, timeout=20, headers=headers)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 

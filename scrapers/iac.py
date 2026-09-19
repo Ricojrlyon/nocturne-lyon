@@ -51,7 +51,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event
+from .base import Event, get as base_get
 
 VENUE = "IAC Villeurbanne"
 SLUG = "iac-villeurbanne"
@@ -179,7 +179,7 @@ def _lire_satellite(url: str) -> Optional[dict]:
     n'ouvre celle du satellite que pour ce qu'elle seule porte.
     """
     try:
-        r = requests.get(url, headers=HEADERS, timeout=30)
+        r = base_get(url, headers=HEADERS, timeout=30)
         r.raise_for_status()
     except requests.RequestException as exc:
         print(f"[IAC] {url}: {exc}", file=sys.stderr)
