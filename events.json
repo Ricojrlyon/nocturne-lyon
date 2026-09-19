@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-09-19T12:13:29.601714+00:00",
-  "count": 2800,
+  "generated_at": "2026-09-19T19:24:16.393602+00:00",
+  "count": 2815,
   "events": [
+    {
+      "venue": "IAC Villeurbanne",
+      "venue_slug": "iac-villeurbanne",
+      "title": "Jeune création internationale",
+      "subtitle": "Avec Martin Dutrait",
+      "category": "exposition",
+      "date_start": "2026-09-19",
+      "date_end": "2026-12-13",
+      "time": null,
+      "url": "https://i-ac.eu/fr/expositions/24_in-situ/2026/797_JEUNE-CREATION-INTERNATIONALE",
+      "image": "https://i-ac.eu/img/thumbs_cache/780x440_bac26_jci_rs_1080x1080px_hd.jpg",
+      "offsite_venue": null,
+      "id": "f10ee7f24177"
+    },
     {
       "venue": "Institut Lumière",
       "venue_slug": "institut-lumiere",
@@ -409,20 +423,6 @@
       "id": "ee3ef1660e82"
     },
     {
-      "venue": "IAC Villeurbanne",
-      "venue_slug": "iac-villeurbanne",
-      "title": "Jeune création internationale",
-      "subtitle": "Avec Martin Dutrait",
-      "category": "exposition",
-      "date_start": "2026-09-19",
-      "date_end": "2026-12-13",
-      "time": "14:00",
-      "url": "https://i-ac.eu/fr/expositions/24_in-situ/2026/797_JEUNE-CREATION-INTERNATIONALE",
-      "image": "https://i-ac.eu/img/thumbs_cache/780x440_bac26_jci_rs_1080x1080px_hd.jpg",
-      "offsite_venue": null,
-      "id": "ee8e35b5a0a5"
-    },
-    {
       "venue": "Musée des Confluences",
       "venue_slug": "musee-des-confluences",
       "title": "L’énigme d’une momie égyptienne • JEP 2026",
@@ -497,12 +497,12 @@
       "venue_slug": "la-machinerie-theatre-de-venissieux",
       "title": "Fête de rentrée",
       "subtitle": null,
-      "category": "musique",
+      "category": null,
       "date_start": "2026-09-19",
       "date_end": null,
       "time": "15:00",
       "url": "https://www.petit-bulletin.fr/agenda-318987-f-te-de-rentr-e.html",
-      "image": "https://agenda.villemorte.fr/media/thumb/a61eaf73ee3564bd45782632a2d7a815.jpg",
+      "image": null,
       "offsite_venue": null,
       "id": "7033d8e12614"
     },
@@ -651,12 +651,12 @@
       "venue_slug": "improvidence",
       "title": "En deux-deux",
       "subtitle": null,
-      "category": "café-théâtre",
+      "category": "Impro",
       "date_start": "2026-09-19",
       "date_end": null,
       "time": "18:00",
-      "url": "https://improvidence.mapado.com/event/606705-en-deux-deux",
-      "image": "https://img.mapado.net/2025/8/4/6890c69867523-en-deux-deux-duo-affiche-spectacle-v1-3.png_thumbs/600-600.png",
+      "url": "https://www.petit-bulletin.fr/agenda-318790-en-deux-deux.html",
+      "image": null,
       "offsite_venue": null,
       "id": "49520c5cd61f"
     },
@@ -731,34 +731,6 @@
       "id": "3bfe57b12697"
     },
     {
-      "venue": "Espace Gerson",
-      "venue_slug": "espace-gerson",
-      "title": "Le voisin #3 - Nouveau spectacle",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-09-19",
-      "date_end": null,
-      "time": "18:45",
-      "url": "https://espacegerson.mapado.com/event/716566-le-voisin-3-nouveau-spectacle",
-      "image": "https://img.mapado.net/2026/5/5/69fa12d26a9bb-voisin-3.png_thumbs/600-600.png",
-      "offsite_venue": null,
-      "id": "67786665d5f0"
-    },
-    {
-      "venue": "Alternatibar",
-      "venue_slug": "alternatibar",
-      "title": "Scène ouverte",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-09-19",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://agenda.villemorte.fr/event/scene-ouverte-7",
-      "image": "https://agenda.villemorte.fr/media/thumb/96cd4b7a33a2b925d190d48da3b2d931.jpg",
-      "offsite_venue": null,
-      "id": "ceffb7e8682c"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "JAYEL",
@@ -771,20 +743,6 @@
       "image": "https://larayonne.org/wp-content/uploads/2026/09/IMG_7392-500x699.jpeg",
       "offsite_venue": null,
       "id": "224d790bfec5"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Jackpot",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-09-19",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://improvidence.mapado.com/event/733422-jackpot",
-      "image": "https://img.mapado.net/2026/4/23/69ea07cb3f942-jackpot.jpeg_thumbs/600-600.jpeg",
-      "offsite_venue": null,
-      "id": "2da003e39f5e"
     },
     {
       "venue": "A Thou Bout d'Chant",
@@ -813,20 +771,6 @@
       "image": "https://agendarts.wordpress.com/wp-content/uploads/2026/06/les-3-becs-a-agendarts.jpg?w=960",
       "offsite_venue": null,
       "id": "9ea4b3ddb8b4"
-    },
-    {
-      "venue": "Boskop",
-      "venue_slug": "boskop",
-      "title": "Soirée La Tanière Drag > Édition HOT !",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-09-19",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/la-taniere-drag-greater-edition-hot",
-      "image": "https://agenda.villemorte.fr/media/thumb/9db9dddda038fc68a7828d8de9ad87fc.jpg",
-      "offsite_venue": null,
-      "id": "fe3519c2e473"
     },
     {
       "venue": "Bourse du Travail",
@@ -913,6 +857,20 @@
       "id": "9d6900cdb2c8"
     },
     {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "Anthony Kavanagh",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-19",
+      "date_end": "2026-09-19",
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-290042-anthony-kavanagh.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "a185d41c8b5f"
+    },
+    {
       "venue": "Toï Toï le Zinc",
       "venue_slug": "toi-toi-le-zinc",
       "title": "Zermatt + Marguterie + Don't kill the cow",
@@ -939,34 +897,6 @@
       "image": "https://agenda.villemorte.fr/media/thumb/9a792fb5b51e496d90da2485ca099d2a.jpg",
       "offsite_venue": null,
       "id": "696172d4c77f"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "FLEMME",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-09-19",
-      "date_end": null,
-      "time": "21:00",
-      "url": "https://improvidence.mapado.com/event/489025-flemme",
-      "image": "https://img.mapado.net/2025/10/22/68f8d4dc2597f-affiche-flemme-superette.jpeg_thumbs/600-600.jpeg",
-      "offsite_venue": null,
-      "id": "116bbafeefa3"
-    },
-    {
-      "venue": "Espace Gerson",
-      "venue_slug": "espace-gerson",
-      "title": "Anthony Kavanagh - Rodage",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-09-19",
-      "date_end": null,
-      "time": "21:15",
-      "url": "https://espacegerson.mapado.com/event/685538-anthony-kavanagh-rodage",
-      "image": "https://img.mapado.net/2026/9/15/6aa97512b15dc-copie-de-kavanagh-1.jpeg_thumbs/600-600.jpeg",
-      "offsite_venue": null,
-      "id": "20b8f5e2f7fc"
     },
     {
       "venue": "Le Complexe café-théâtre",
@@ -6303,6 +6233,20 @@
       "id": "606e79c1c6b8"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Jackpot",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-04",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://improvidence.mapado.com/event/733422-jackpot",
+      "image": "https://img.mapado.net/2026/4/23/69ea07cb3f942-jackpot.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "174ce9bbfb5f"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "S.society",
@@ -8877,6 +8821,20 @@
       "image": "https://le-sucre.eu/wp-content/uploads/2026/09/11_10-kangding-ray_-600x338.png",
       "offsite_venue": null,
       "id": "fe61071a7c03"
+    },
+    {
+      "venue": "Astroballe",
+      "venue_slug": "astroballe",
+      "title": "LDLC ASVEL - Roanne",
+      "subtitle": "Betclic ÉLITE",
+      "category": "basket",
+      "date_start": "2026-10-11",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://billetterie.seetickets.fr/ldlc-asvel-roanne-sport-astroballe-villeurbanne-11-octobre-2026-css5-asvel-pg101-ri11951713.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "b5e2050864c4"
     },
     {
       "venue": "Improvidence",
@@ -13023,6 +12981,20 @@
       "id": "1557397362dd"
     },
     {
+      "venue": "Les Clameurs",
+      "venue_slug": "les-clameurs",
+      "title": "Soirée d'Halloween drag show Les Dérailleurs",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-10-23",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/soiree-dhalloween-drag-show-les-derailleurs",
+      "image": null,
+      "offsite_venue": null,
+      "id": "f061bfaa2c01"
+    },
+    {
       "venue": "Palais des Sports de Gerland",
       "venue_slug": "palais-des-sports-gerland",
       "title": "LDLC ASVEL Féminin - Villeneuve d’Ascq",
@@ -13679,6 +13651,20 @@
       "image": "https://i-ac.eu/img/thumbs_cache/400x300_img_9772.jpg",
       "offsite_venue": null,
       "id": "d4e18b566472"
+    },
+    {
+      "venue": "Astroballe",
+      "venue_slug": "astroballe",
+      "title": "LDLC ASVEL - Nancy",
+      "subtitle": "Betclic ÉLITE",
+      "category": "basket",
+      "date_start": "2026-10-25",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://ldlcasvel.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "954adaf3dcb0"
     },
     {
       "venue": "Improvidence",
@@ -15277,6 +15263,20 @@
       "id": "81b28a5bd5cd"
     },
     {
+      "venue": "Les Clameurs",
+      "venue_slug": "les-clameurs",
+      "title": "Soirée de soutien à l'association BELLE BOUFFE!",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-10-31",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/soiree-de-soutien-a-lassociation-belle-bouffe",
+      "image": null,
+      "offsite_venue": null,
+      "id": "016e0057a905"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "STEPHAN EICHER",
@@ -15625,6 +15625,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/7318c6b2/one_night_at_the_golden_bar_alejandra_amere_726.jpg",
       "offsite_venue": null,
       "id": "c84c371bcbcb"
+    },
+    {
+      "venue": "Les Clameurs",
+      "venue_slug": "les-clameurs",
+      "title": "STAND UP POLITIQUE",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-11-03",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/stand-up-politique-14",
+      "image": null,
+      "offsite_venue": null,
+      "id": "237b6b28146d"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -16103,6 +16117,20 @@
       "id": "d86311b005c7"
     },
     {
+      "venue": "Les Clameurs",
+      "venue_slug": "les-clameurs",
+      "title": "Soirée concert : Subtile Comète",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/soiree-concert-subtile-comete",
+      "image": null,
+      "offsite_venue": null,
+      "id": "32dc82c5ee2a"
+    },
+    {
       "venue": "Opéra national de Lyon",
       "venue_slug": "opera-lyon",
       "title": "Le Sacre du printemps - House",
@@ -16231,16 +16259,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Said &Amp Wadie",
+      "title": "Said Et Wadie - Ztek Taw - Bourse Du Travail - Lyon",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-11-06",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/said-amp-wadie-436970.html",
+      "url": "https://www.bourse-du-travail.com/said-et-wadie-ztek-taw-bourse-du-travail-lyon-436970.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/said-and-amp-wadie.jpg",
       "offsite_venue": null,
-      "id": "02451539dad9"
+      "id": "cf08f8ff242d"
     },
     {
       "venue": "Théâtre de la Croix-Rousse",
@@ -16409,6 +16437,20 @@
       "image": "https://sonic-lyon.fr/wp-content/uploads/2026/09/NEUA-Photo-2-scaled-1-1024x683.jpg",
       "offsite_venue": null,
       "id": "9c4cb6a722a5"
+    },
+    {
+      "venue": "Les Clameurs",
+      "venue_slug": "les-clameurs",
+      "title": "Résidence de Radio Beguin",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-11-06",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/residence-de-radio-beguin",
+      "image": null,
+      "offsite_venue": null,
+      "id": "25e45593decd"
     },
     {
       "venue": "Marché Gare",
@@ -16859,6 +16901,20 @@
       "id": "ce2d86f9e412"
     },
     {
+      "venue": "Astroballe",
+      "venue_slug": "astroballe",
+      "title": "LDLC ASVEL - Pau-Lacq-Orthez",
+      "subtitle": "Betclic ÉLITE",
+      "category": "basket",
+      "date_start": "2026-11-07",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://ldlcasvel.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "ca370454de93"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Josman",
@@ -16913,6 +16969,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/rey-mendes.jpg",
       "offsite_venue": null,
       "id": "9349f67c5e57"
+    },
+    {
+      "venue": "Les Clameurs",
+      "venue_slug": "les-clameurs",
+      "title": "Anniversaire de la chorale militante et féministe LA CLAM!",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-07",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/anniversaire-de-la-chorale-militante-et-feministe-la-clam",
+      "image": null,
+      "offsite_venue": null,
+      "id": "b7b3a8d10524"
     },
     {
       "venue": "Marché Gare",
@@ -20681,6 +20751,20 @@
       "id": "c2c27dd3bf3e"
     },
     {
+      "venue": "Astroballe",
+      "venue_slug": "astroballe",
+      "title": "LDLC ASVEL - Bourg-en-Bresse",
+      "subtitle": "Betclic ÉLITE",
+      "category": "basket",
+      "date_start": "2026-11-22",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://ldlcasvel.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "173f703775e8"
+    },
+    {
       "venue": "Maison de la Danse",
       "venue_slug": "maison-de-la-danse",
       "title": "Ateliers singuliers",
@@ -22611,6 +22695,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/075930c1/paradoxe_gwendal_le_flem6.jpg",
       "offsite_venue": null,
       "id": "1d676790ba35"
+    },
+    {
+      "venue": "Les Clameurs",
+      "venue_slug": "les-clameurs",
+      "title": "STAND UP POLITIQUE",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-12-01",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/stand-up-politique-15",
+      "image": null,
+      "offsite_venue": null,
+      "id": "01d043ff9918"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -25385,6 +25483,20 @@
       "id": "dc4495d15e64"
     },
     {
+      "venue": "Astroballe",
+      "venue_slug": "astroballe",
+      "title": "LDLC ASVEL - Paris",
+      "subtitle": "Betclic ÉLITE",
+      "category": "basket",
+      "date_start": "2026-12-13",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://ldlcasvel.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "5841be423bd7"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "AXEL BAUER",
@@ -26505,6 +26617,20 @@
       "id": "e1bbd70dc4d0"
     },
     {
+      "venue": "Astroballe",
+      "venue_slug": "astroballe",
+      "title": "LDLC ASVEL - Nanterre",
+      "subtitle": "Betclic ÉLITE",
+      "category": "basket",
+      "date_start": "2026-12-19",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://ldlcasvel.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "6e83b9c7b9b0"
+    },
+    {
       "venue": "La Torpille",
       "venue_slug": "la-torpille",
       "title": "Vente aux enchères de Noël au profit de Jamais Sans Toit",
@@ -27401,6 +27527,20 @@
       "id": "68a8f75bb9da"
     },
     {
+      "venue": "Astroballe",
+      "venue_slug": "astroballe",
+      "title": "LDLC ASVEL - Dijon",
+      "subtitle": "Betclic ÉLITE",
+      "category": "basket",
+      "date_start": "2026-12-27",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://ldlcasvel.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "cddb0dd4f0b1"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "COUP FATAL",
@@ -28267,6 +28407,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/5daccfbb/rumba_theatre_national_wallonie_bruxelles_15.jpg",
       "offsite_venue": null,
       "id": "5b58cfd9fea6"
+    },
+    {
+      "venue": "Les Clameurs",
+      "venue_slug": "les-clameurs",
+      "title": "STAND UP POLITIQUE",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-01-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/stand-up-politique-16",
+      "image": null,
+      "offsite_venue": null,
+      "id": "e03996a24904"
     },
     {
       "venue": "Le Complexe café-théâtre",
@@ -30105,16 +30259,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Sellig \"Episode 7\"",
+      "title": "Sellig - Episode 7 - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-01-20",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/sellig-episode-7-445581.html",
+      "url": "https://www.bourse-du-travail.com/sellig-episode-7-tournee-445581.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/sellig-episode-7-2.jpg",
       "offsite_venue": null,
-      "id": "cb5538767567"
+      "id": "a114cc5f288b"
     },
     {
       "venue": "La Rayonne",
@@ -31011,6 +31165,20 @@
       "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Zone_dattentecMacha-Makeieff.jpg",
       "offsite_venue": null,
       "id": "946ca343c73a"
+    },
+    {
+      "venue": "Astroballe",
+      "venue_slug": "astroballe",
+      "title": "LDLC ASVEL - Strasbourg",
+      "subtitle": "Betclic ÉLITE",
+      "category": "basket",
+      "date_start": "2027-01-24",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://ldlcasvel.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "e82aca35a356"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -33169,6 +33337,20 @@
       "id": "272b1ca3aa4a"
     },
     {
+      "venue": "Astroballe",
+      "venue_slug": "astroballe",
+      "title": "LDLC ASVEL - Chalon-sur-Saône",
+      "subtitle": "Betclic ÉLITE",
+      "category": "basket",
+      "date_start": "2027-02-07",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://ldlcasvel.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "d01cd9cd043d"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "WHITECHAPEL + SYLOSIS + 200 STAB WOUNDS + TRIBAL GAZE",
@@ -33993,6 +34175,20 @@
       "image": "https://www.comedieodeon.com/wp-content/uploads/2026/09/LD-Affiche_BD.jpg",
       "offsite_venue": null,
       "id": "15dad9e3003b"
+    },
+    {
+      "venue": "Astroballe",
+      "venue_slug": "astroballe",
+      "title": "LDLC ASVEL - Boulazac",
+      "subtitle": "Betclic ÉLITE",
+      "category": "basket",
+      "date_start": "2027-02-13",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://ldlcasvel.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "de2f8a10d5d8"
     },
     {
       "venue": "Le Complexe café-théâtre",
@@ -37367,6 +37563,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/f063211f/collateral_2.jpg",
       "offsite_venue": null,
       "id": "a04eda28570c"
+    },
+    {
+      "venue": "Astroballe",
+      "venue_slug": "astroballe",
+      "title": "LDLC ASVEL - Le Mans",
+      "subtitle": "Betclic ÉLITE",
+      "category": "basket",
+      "date_start": "2027-03-13",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://ldlcasvel.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "6c80bc02d1d3"
     },
     {
       "venue": "Le Complexe café-théâtre",
