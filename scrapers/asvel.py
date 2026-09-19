@@ -1,62 +1,62 @@
-"""Scraper des matchs À DOMICILE du LDLC ASVEL, par les deux LIGUES.
+"""Les matchs À DOMICILE du LDLC ASVEL : 19 en direct, 15 relevés.
 
-POURQUOI PAS LE SITE DU CLUB. La première version lisait
-ldlcasvel.com/calendrier, qui porte tout : les 68 matchs de la saison, à
-domicile et à l'extérieur, avec salle et horaire. Elle marchait en local
-et rendait 403 depuis le runner GitHub — le site est derrière Cloudflare,
-qui refuse les adresses de centre de données. Les en-têtes complètes d'un
-navigateur n'y ont rien changé : le filtrage porte sur l'empreinte TLS ou
-sur le numéro d'AS. Imiter un navigateur jusqu'à cette couche aurait été
-contourner une protection délibérée, pas du scraping.
+DEUX SOURCES, PARCE QU'UNE SEULE NE PASSE PAS.
 
-On passe donc par les deux compétitions, qui publient chacune leurs
-matchs sans rien demander :
-
-  EuroLeague   api-live.euroleague.net, en clair, 19 matchs à domicile
-  Betclic      api-prod.lnb.fr, en clair aussi, 15 matchs
+  EuroLeague   api-live.euroleague.net, en direct, 19 matchs à domicile
+  Betclic      asvel_betclic.json, relevé à la main, 15 matchs
 
 Les deux ensembles sont disjoints par construction — une rencontre
 appartient à une compétition et à une seule — et leur somme fait les 34
 matchs à domicile que le site du club annonce.
 
-LA SALLE. L'ASVEL reçoit à l'Astroballe (Villeurbanne) et à la LDLC Arena
-(Décines). L'EuroLeague la donne par match. La LNB, elle, a bien un champ
-venue_name mais il est VIDE sur les 242 rencontres de la saison : les
-matchs de Betclic sont donc placés à l'Astroballe. Ce n'est pas une
-supposition en l'air, c'est une soustraction : le club annonce 20 matchs à
-l'Astroballe et 14 à la LDLC Arena ; l'EuroLeague en revendique 5 et 14 ;
-il reste 15 et 0 pour la Betclic. C'est aussi l'usage — la LDLC Arena sert
-aux grands soirs européens.
-  Le jour où un match de Betclic sera délocalisé à la LDLC Arena, on
-  l'annoncera à tort et RIEN ne le signalera : la LNB ne dit pas la salle.
-  C'est la faiblesse connue de ce scraper.
+POURQUOI LA BETCLIC EST FIGÉE. Les trois chemins qui la portent en ligne
+refusent le runner GitHub par un 403 : ldlcasvel.com, le site du club ;
+lnb.fr, celui de la ligue ; et api-prod.lnb.fr, son API, pourtant ouverte
+à qui la joint depuis une adresse résidentielle. C'est un blocage
+d'adresses de centre de données, et les en-têtes complètes d'un navigateur
+n'y changent rien : le filtrage porte sur l'empreinte TLS ou sur le numéro
+d'AS. Imiter un navigateur jusqu'à cette couche aurait été contourner une
+protection délibérée, pas du scraping.
+  Alors on lit le calendrier du club UNE FOIS, à la main, depuis Lyon, et
+  on écrit ce qu'on a lu dans asvel_betclic.json. Le fil le publie ensuite
+  tous les jours sans rien demander à personne. Le relevé se refait avec
+  « python -m scrapers.asvel_releve » — voir ce module pour le détail.
 
-L'HEURE. L'EuroLeague donne localDate, déjà à l'heure de Paris. La LNB
-donne match_time_utc, qu'il FAUT convertir : 15:30 UTC le 25 octobre 2026
-vaut 16:30 à Lyon, et 17:00 UTC le 11 octobre vaut 19:00 — le changement
-d'heure tombe entre les deux. zoneinfo s'en charge.
+LA SALLE, MAINTENANT DONNÉE. L'ASVEL reçoit à l'Astroballe (Villeurbanne)
+et à la LDLC Arena (Décines). L'EuroLeague la donne par match. La LNB, qui
+a bien un champ venue_name, le laisse VIDE sur les 242 rencontres de la
+saison : tant qu'elle servait de source, les matchs de Betclic étaient
+placés à l'Astroballe par soustraction — 20 matchs annoncés à l'Astroballe
+et 14 à la LDLC Arena, dont l'EuroLeague revendiquait 5 et 14, restaient
+15 et 0. Le relevé lit la salle sur la page du club, match par match, et
+confirme la soustraction. La faiblesse est levée : un match délocalisé à
+la LDLC Arena se verra au prochain relevé.
 
-UN DÉSACCORD DE SOURCES, ASSUMÉ. Comparées au calendrier du club le
-2026-09-19, les 19 dates d'EuroLeague concordent au jour et à la minute.
-Sur les 15 dates de Betclic, ONZE concordent et QUATRE non — la LNB les
-place le samedi à 20h00, le club le dimanche :
+L'HEURE. L'EuroLeague donne localDate, déjà à l'heure de Paris. Le relevé
+porte l'heure telle que le club l'affiche, elle aussi locale. Reste _lnb(),
+que le relevé appelle pour se comparer : la LNB donne match_time_utc, qu'il
+FAUT convertir — 15:30 UTC le 25 octobre 2026 vaut 16:30 à Lyon, et 17:00
+UTC le 11 octobre vaut 19:00, le changement d'heure tombant entre les deux.
+zoneinfo s'en charge.
 
-  Bourg-en-Bresse   LNB sam. 21 nov. 20:00   club dim. 22 nov. 19:00
-  Paris             LNB sam. 12 déc. 20:00   club dim. 13 déc. 19:00
-  Strasbourg        LNB sam. 23 jan. 20:00   club dim. 24 jan. 16:30
-  Chalon/Saône      LNB sam.  6 fév. 20:00   club dim.  7 fév. 19:00
+LE LIEN DE LA CARTE. Les cartes ouvrent le calendrier du club, qui refuse
+le runner mais répond très bien au navigateur du lecteur. Quand le relevé
+a trouvé une billetterie pour un match — les ventes n'ouvrent qu'à
+l'approche de la rencontre —, la carte mène directement à elle.
 
-On suit la LNB. C'est elle qui fixe le calendrier de sa compétition, elle
-est cohérente avec elle-même — ses horaires de diffusion télévisée
-tombent cinq minutes avant chacun de ces coups d'envoi —, elle porte bien
-les horaires NON standards quand ils sont connus (19:00 le 11 octobre,
-16:30 le 25), et surtout elle est la seule des deux que le runner puisse
-joindre. Mais le doute est réel, et si ces quatre dates se révélaient
-fausses, c'est le calendrier du club qui aurait raison.
+LA PÉREMPTION, SURVEILLÉE. Un calendrier figé vieillit : des dates bougent
+en cours de saison, et au 1er septembre suivant le fichier entier est
+caduc. Deux garde-fous, tous deux visibles en tête du run GitHub :
+saison dépassée, on ne publie AUCUN match de Betclic plutôt que ceux de
+l'an dernier ; relevé vieux de plus de 120 jours, on publie mais on
+réclame une relecture.
 """
 from typing import List, Optional
 from datetime import date as Date, datetime, timedelta
+from pathlib import Path
 from zoneinfo import ZoneInfo
+import json
+import os
 import sys
 
 import requests
@@ -90,9 +90,19 @@ SALLES = {
 }
 SLUGS = {"Astroballe": "astroballe", "LDLC Arena": "ldlc-arena"}
 
-# Faute de salle par match, la Betclic se joue à l'Astroballe — voir le
-# chapeau du module pour la soustraction qui l'établit.
+# Faute de salle par match, la LNB place la Betclic à l'Astroballe — voir
+# le chapeau du module pour la soustraction qui l'établit. Ne sert plus
+# qu'à _lnb(), que seul le relevé appelle : le fichier figé, lui, porte la
+# salle de chaque match.
 SALLE_BETCLIC = "Astroballe"
+
+# Le calendrier de Betclic, relevé à la main : voir scrapers/asvel_releve.py.
+BETCLIC_FIGE = Path(__file__).parent.parent / "asvel_betclic.json"
+
+# Au-delà, on réclame une relecture. Une saison court de septembre à mai :
+# quatre mois laissent le temps aux reprogrammations de s'accumuler sans
+# qu'on aboie tous les quinze jours.
+RELEVE_PERIME_JOURS = 120
 
 EUROLEAGUE = ("https://api-live.euroleague.net/v2/competitions/E"
               "/seasons/E%d/games?teamCode=ASV")
@@ -158,6 +168,60 @@ def _euroleague(saison: int, inconnues: list) -> List[dict]:
     return out
 
 
+def _alerte(message: str) -> None:
+    """Un avertissement qui se voit jusque dans l'en-tête du run."""
+    print("[ASVEL] " + message, file=sys.stderr)
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        print("::warning title=ASVEL::%s" % message.replace("\n", "%0A"))
+
+
+def _betclic(saison: int) -> List[dict]:
+    """Les matchs de Betclic ÉLITE, tels qu'on les a relevés à la main."""
+    try:
+        d = json.loads(BETCLIC_FIGE.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:
+        _alerte("relevé Betclic illisible (%s) : aucun match de Betclic au "
+                "fil, il faut relancer python -m scrapers.asvel_releve"
+                % exc)
+        return []
+
+    if d.get("saison") != saison:
+        _alerte("le relevé Betclic porte la saison %s-%s, on est en %d-%d : "
+                "aucun match de Betclic au fil tant qu'il n'est pas refait "
+                "(python -m scrapers.asvel_releve, depuis une connexion "
+                "française)"
+                % (d.get("saison"), (d.get("saison") or 0) + 1, saison,
+                   saison + 1))
+        return []
+
+    age = None
+    try:
+        age = (Date.today() - Date.fromisoformat(d["releve_le"])).days
+    except (KeyError, TypeError, ValueError):
+        pass
+    if age is not None and age > RELEVE_PERIME_JOURS:
+        _alerte("le relevé Betclic date de %d jours (%s) : des dates ont pu "
+                "bouger depuis, une relecture serait bonne"
+                % (age, d.get("releve_le")))
+
+    out = []
+    for m in d.get("matchs") or []:
+        salle = m.get("salle")
+        if salle not in SLUGS:
+            _alerte("relevé Betclic : salle inconnue %r le %s, match écarté"
+                    % (salle, m.get("jour")))
+            continue
+        out.append({
+            "jour": m["jour"],
+            "heure": m["heure"],
+            "salle": salle,
+            "adversaire": (m.get("adversaire") or "").strip(),
+            "competition": "Betclic ÉLITE",
+            "billet": m.get("billet"),
+        })
+    return out
+
+
 def _json_ou_bruit(r, etape: str) -> dict:
     """Le JSON d'une réponse, ou une erreur qui DIT ce qu'on a reçu.
 
@@ -177,7 +241,12 @@ def _json_ou_bruit(r, etape: str) -> dict:
 
 
 def _lnb(saison: int) -> List[dict]:
-    """Matchs à domicile de Betclic ÉLITE : date et heure, pas de salle."""
+    """Matchs à domicile de Betclic ÉLITE vus par la LIGUE : date et heure.
+
+    Le fil ne passe plus par ici — api-prod.lnb.fr rend 403 au runner. Seul
+    scrapers/asvel_releve.py appelle cette fonction, pour comparer ce que
+    dit la ligue à ce qu'affiche le club et consigner les écarts.
+    """
     entetes = dict(HEADERS)
     entetes["Content-Type"] = "application/json"
     entetes["Origin"] = "https://lnb.fr"
@@ -238,7 +307,7 @@ def fetch() -> List[Event]:
     saison = _saison()
     inconnues: List[str] = []
     euro = _euroleague(saison, inconnues)
-    lnb = _lnb(saison)
+    betclic = _betclic(saison)
 
     today = Date.today()
     horizon = today + timedelta(days=HORIZON_DAYS)
@@ -246,7 +315,7 @@ def fetch() -> List[Event]:
 
     events: List[Event] = []
     vus = set()
-    for m in sorted(euro + lnb, key=lambda x: (x["jour"], x["heure"])):
+    for m in sorted(euro + betclic, key=lambda x: (x["jour"], x["heure"])):
         if not (today_iso <= m["jour"] <= horizon_iso):
             continue
         if not m["adversaire"]:
@@ -266,16 +335,16 @@ def fetch() -> List[Event]:
             date_start=m["jour"],
             date_end=None,
             time=m["heure"],
-            url=LIEN,
+            url=m.get("billet") or LIEN,
             image=None,
         ))
 
     if inconnues:
         print("[ASVEL] salle inconnue, match(s) écarté(s) : %s"
               % ", ".join(sorted(set(inconnues))), file=sys.stderr)
-    print("[ASVEL] saison %d-%d : %d match(s) EuroLeague + %d Betclic à "
-          "domicile, %d retenu(s) sous %d jours"
-          % (saison, saison + 1, len(euro), len(lnb), len(events),
+    print("[ASVEL] saison %d-%d : %d match(s) EuroLeague (en direct) + %d "
+          "Betclic (relevés), %d retenu(s) sous %d jours"
+          % (saison, saison + 1, len(euro), len(betclic), len(events),
              HORIZON_DAYS), file=sys.stderr)
     return events
 
