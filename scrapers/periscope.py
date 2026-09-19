@@ -25,7 +25,7 @@ import unicodedata
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, iso, FR_MONTHS
+from .base import Event, iso, FR_MONTHS, get as base_get
 
 VENUE = "Le Périscope"
 SLUG = "periscope"
@@ -187,7 +187,8 @@ def fetch() -> List[Event]:
     for page in range(1, 7):
         page_url = URL if page == 1 else f"{URL}page/{page}/"
         try:
-            resp = requests.get(page_url, timeout=20, headers=HEADERS)
+            resp = base_get(page_url, timeout=20, headers=HEADERS,
+                            etiquette="[Périscope]")
         except requests.RequestException:
             if page == 1:
                 raise

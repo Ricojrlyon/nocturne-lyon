@@ -39,18 +39,44 @@ import unicodedata
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, iso
+from .base import Event, iso, get as base_get
 
 CLUB = "LDLC ASVEL"
 HOST = "https://ldlcasvel.com"
 URL = HOST + "/calendrier/"
 HORIZON_DAYS = 180
 
+# Le site est derrière Cloudflare, et Cloudflare a rendu 403 au runner
+# GitHub le 2026-09-19 alors que la même requête passe depuis une adresse
+# résidentielle. Les en-têtes sont donc celles COMPLÈTES d'un navigateur :
+# une requête qui annonce un Chrome sans envoyer ni Accept, ni Sec-Fetch-*,
+# ni Upgrade-Insecure-Requests se reconnaît au premier coup d'œil.
+#
+# Cela peut ne pas suffire : si le filtrage porte sur l'empreinte TLS ou
+# sur le numéro d'AS, aucune en-tête n'y changera rien. On le saura au
+# prochain run, c'est la seule façon de le savoir — la requête passe
+# d'ici, 403 ou non se décide à l'autre bout.
+#
+# Pas de « br » dans Accept-Encoding : brotli n'est pas installé (voir
+# requirements.txt), et l'annoncer ferait rendre un corps que requests ne
+# saurait pas décoder.
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                   "AppleWebKit/537.36 (KHTML, like Gecko) "
                   "Chrome/124.0.0.0 Safari/537.36",
-    "Accept-Language": "fr-FR,fr;q=0.9",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,"
+              "image/avif,image/webp,image/apng,*/*;q=0.8",
+    "Accept-Language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
+    "Accept-Encoding": "gzip, deflate",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+    "Sec-CH-UA": '"Chromium";v="124", "Google Chrome";v="124", '
+                 '"Not-A.Brand";v="99"',
+    "Sec-CH-UA-Mobile": "?0",
+    "Sec-CH-UA-Platform": '"Windows"',
 }
 
 # Les salles où l'ASVEL reçoit, avec l'orthographe que le site leur donne.
@@ -160,7 +186,7 @@ def _lignes(soup: BeautifulSoup) -> List[tuple]:
 
 def fetch() -> List[Event]:
     try:
-        r = requests.get(URL, timeout=30, headers=HEADERS)
+        r = base_get(URL, timeout=30, headers=HEADERS, etiquette="[ASVEL]")
         r.raise_for_status()
     except requests.RequestException as exc:
         print(f"[ASVEL] {URL}: {exc}", file=sys.stderr)

@@ -4,6 +4,10 @@ from datetime import datetime, date
 from typing import Optional
 import hashlib
 import re
+import sys
+import time
+
+import requests
 
 
 @dataclass
@@ -55,6 +59,45 @@ class Event:
 # élire une salle serait faux un soir sur deux. Le point médian en tête la
 # distingue d'un vrai nom de salle.
 OFFSITE_PLUSIEURS = "·ailleurs"
+
+
+# ---------------------------------------------------------------------------
+# Une requête qui réessaie quand la connexion se coupe
+# ---------------------------------------------------------------------------
+#
+# Certains serveurs réinitialisent la connexion au hasard. Le Périscope le
+# fait une fois sur deux depuis certaines adresses, et il l'a fait le
+# 2026-09-19 depuis le runner GitHub : son scraper a rendu zéro, et le
+# garde-fou d'aggregate.py a bloqué la publication de TOUT le fil pour une
+# seule salle.
+#
+# On ne réessaie QUE sur une rupture de transport — connexion coupée,
+# délai dépassé. Une réponse HTTP, elle, est une réponse : répéter une
+# requête qui rend 403 ou 404 ne la changera pas, et ne ferait que
+# tripler le temps du run pour rien.
+#
+# Le helper n'est PAS imposé aux vingt-cinq scrapers qui appellent
+# requests.get en direct : seuls ceux qui ont montré le défaut l'emploient.
+# Les autres l'adopteront quand ils casseront, une ligne à la fois.
+TENTATIVES = 3
+ATTENTE = 2.0
+
+
+def get(url: str, *, headers: Optional[dict] = None, timeout: int = 30,
+        tentatives: int = TENTATIVES, etiquette: str = "") -> requests.Response:
+    """requests.get, mais qui redonne sa chance à une connexion coupée."""
+    derniere = None
+    for essai in range(1, tentatives + 1):
+        try:
+            return requests.get(url, headers=headers, timeout=timeout)
+        except (requests.ConnectionError, requests.Timeout) as exc:
+            derniere = exc
+            if essai < tentatives:
+                print("%s%s : connexion coupée (essai %d/%d), on réessaie"
+                      % (etiquette and etiquette + " ", url, essai, tentatives),
+                      file=sys.stderr)
+                time.sleep(ATTENTE * essai)
+    raise derniere
 
 
 # French month abbreviations -> month number (1-12).
