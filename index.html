@@ -653,10 +653,25 @@
   @media (max-width: 560px) {
     .day-bar { gap: 9px; flex-wrap: wrap; }
     .day-bar .db-label { font-size: 9.5px; letter-spacing: 0.12em; }
-    /* Les quatre boutons prennent leur propre ligne : les tenir sur celle
+    /* Les cinq boutons prennent leur propre ligne : les tenir sur celle
        de la date écraserait le libellé du jour. */
     .day-bar .db-familles { flex: 1 0 100%; order: 3; }
     .day-bar .db-count { order: 2; }
+    /* À CINQ, les pastilles ne tiennent plus sur une ligne de téléphone :
+       386 px demandés pour 335 disponibles. On récupère la place sur
+       l'INTERLETTRAGE plutôt que sur le corps — 0,12 em à 9,5 px coûtait
+       une dizaine de pixels par pastille, et c'est du confort d'affiche,
+       pas de lecture. Le corps, lui, ne bouge pas : il est déjà au seuil
+       sous lequel des capitales monospace deviennent pénibles, seuil qui
+       avait fait remonter l'étiquette d'arrondissement de 8,5 à 9,5.
+       Mesuré : la rangée passe de 386 à 325 px, soit 10 px de marge sur
+       la journée la plus chargée.
+       Le retour à la ligne reste autorisé en dernier recours : sous
+       340 px de large — un vieux téléphone —, aucun réglage ne les fait
+       tenir, et mieux vaut une barre plus haute qu'une pastille qui sort
+       de l'écran. */
+    .fam-chip { letter-spacing: 0.04em; padding: 4px 6px; gap: 4px; }
+    .day-bar .db-familles { gap: 4px; flex-wrap: wrap; row-gap: 4px; }
   }
 
   /* ---------- event grid ---------- */
@@ -2030,13 +2045,19 @@ const FAMILLES = [
   { key: 'scene',   label: 'scène',
     buckets: ['humour', 'theatre', 'danse', 'spectacle'] },
   { key: 'expos',   label: 'expos',   buckets: ['expo'] },
-  // Le sport est rangé dans « autres » plutôt que de fonder une
-  // cinquième famille : à 34 matchs sur huit mois, une section « sport »
-  // ne porterait qu'une carte les soirs où elle apparaît — exactement la
-  // section maigre que le passage à cinq familles avait produite. Elle se
-  // justifiera le jour où le fil comptera plusieurs clubs.
+  // Le sport a sa famille. Il y a bien une cinquième section, et elle est
+  // maigre — mesuré sur le fil du 2026-09-19 : 15 journées la portent, et
+  // TOUJOURS avec une seule carte. Mais elle ne coûte presque rien à
+  // l'ensemble : 548 sections deviennent 558, et la part des sections de
+  // moins de trois cartes passe de 46 % à 47 %. Le fil en compte déjà
+  // beaucoup, une de plus ne change pas sa nature.
+  // C'est un arbitrage différent de celui qui avait fait annuler le
+  // passage à cinq familles : là, la cinquième famille prenait des cartes
+  // aux quatre autres et les affamait toutes. Ici elle apporte les
+  // siennes, que rien d'autre ne revendique.
+  { key: 'sport',   label: 'sport',   buckets: ['sport'] },
   { key: 'autres',  label: 'autres',
-    buckets: ['cine', 'conference', 'atelier', 'jeux', 'sport', 'autre'] },
+    buckets: ['cine', 'conference', 'atelier', 'jeux', 'autre'] },
 ];
 const FAMILLE_DE_BUCKET = new Map();
 for (const f of FAMILLES) for (const b of f.buckets) FAMILLE_DE_BUCKET.set(b, f.key);
