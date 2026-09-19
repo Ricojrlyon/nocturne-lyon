@@ -201,6 +201,33 @@ def frontend_hardcoded_venues() -> set:
 EFFONDREMENT_PART = 0.25
 EFFONDREMENT_PLANCHER = 10
 
+# CE QUE L'ON FAIT D'UN EFFONDREMENT. La premiere version refusait de
+# reecrire events.json et sortait en 1, ce qui faisait passer le run au
+# rouge. Deux runs consecutifs l'ont montree trop brutale : le 2026-09-19,
+# le Periscope puis le Transbordeur ont chacun lache une fois, et le fil
+# ENTIER est reste sans mise a jour deux fois de suite pour une seule
+# salle.
+#
+# Desormais la salle tombee GARDE SES EVENEMENTS DE LA VEILLE et le reste
+# du fil se publie normalement. Rien ne disparait, rien ne se fige : les
+# evenements repris vieillissent comme les autres et sortent du fil a leur
+# date. Une panne d'un jour ne se voit donc plus du tout cote lecteur.
+#
+# Reprendre indefiniment serait pire que bloquer : un scraper mort pour de
+# bon garderait ses evenements en vie des mois. La reprise est donc BORNEE
+# et le fil garde la trace du premier jour de reprise de chaque salle,
+# sous la cle « reprises ». Passe le delai, on laisse la salle se vider,
+# avec un avertissement plus dur.
+#
+# NOCTURNE_FORCER_ECRITURE=1 publie ce qui a ete reellement scrappe, sans
+# rien reprendre : c'est la sortie quand la perte est vraie — salle
+# fermee, saison finie.
+
+# Au-delà, la panne n'est plus passagère et la salle doit pouvoir se vider.
+# Sept jours : de quoi couvrir une coupure de plusieurs jours sans laisser
+# un scraper mort peupler le fil de fantômes pendant des mois.
+REPRISE_JOURS_MAX = 7
+
 # Une source directe se reconnaît à son HÔTE : tout ce qui n'est ni le
 # Petit Bulletin ni Ville Morte vient du site d'une salle. Les boutiques
 # Mapado (improvidence.mapado.com, espacegerson.mapado.com) en font
@@ -246,6 +273,95 @@ def _effondrements(nouveaux: List[Event],
             pertes.append((lieu, n_avant, n_apres))
     pertes.sort(key=lambda x: x[2] - x[1])
     return pertes
+
+
+def _priorite(url: str) -> int:
+    """Priorité de dédup d'un événement déjà publié, relue sur son hôte.
+
+    Les priorités ne survivent pas à events.json — seuls les événements y
+    sont écrits. On les reconstruit donc de la même façon que _compte_direct
+    reconnaît une source directe.
+    """
+    u = url or ""
+    if "petit-bulletin.fr" in u:
+        return 60
+    if "villemorte.fr" in u:
+        return 50
+    return 100
+
+
+def _event_depuis_dict(d: dict) -> Event:
+    """Un Event reconstruit depuis sa forme sérialisée."""
+    return Event(
+        venue=d.get("venue") or "",
+        venue_slug=d.get("venue_slug") or "",
+        title=d.get("title") or "",
+        subtitle=d.get("subtitle"),
+        category=d.get("category"),
+        date_start=d.get("date_start") or "",
+        date_end=d.get("date_end"),
+        time=d.get("time"),
+        url=d.get("url") or "",
+        image=d.get("image"),
+        offsite_venue=d.get("offsite_venue"),
+    )
+
+
+def _alerte(titre: str, message: str) -> None:
+    """Un avertissement qui se voit.
+
+    Sur GitHub Actions, l'annotation remonte en tête de la page du run —
+    sans quoi un run VERT porterait la panne enfouie dans mille lignes de
+    journal, et personne ne la verrait jamais. Ailleurs, stderr suffit.
+    """
+    print(message, file=sys.stderr)
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        print("::warning title=%s::%s" % (titre, message.replace("\n", "%0A")))
+
+
+def _reprendre(unique: List[Event], chemin: Path,
+               effondres: list, today_iso: str) -> tuple:
+    """Remet les événements de la veille pour les salles effondrées.
+
+    Ne reprend que les événements DIRECTS de ces salles : ce qu'un
+    agrégateur publiait hier, il l'a republié aujourd'hui, et le reprendre
+    ferait doublon. Ne reprend que ce qui n'est pas passé, avec la même
+    règle que l'étape 3.
+
+    Rend (événements repris, journal des reprises, salles abandonnées).
+    """
+    try:
+        fil = json.loads(chemin.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return [], {}, []
+    anciens = fil.get("events") or []
+    journal_avant = fil.get("reprises") or {}
+
+    lieux = {lieu for lieu, _, _ in effondres}
+    journal, abandons, repris = {}, [], []
+    for lieu in lieux:
+        depuis = journal_avant.get(lieu, today_iso)
+        try:
+            jours = (date.fromisoformat(today_iso)
+                     - date.fromisoformat(depuis)).days
+        except ValueError:
+            depuis, jours = today_iso, 0
+        if jours >= REPRISE_JOURS_MAX:
+            abandons.append((lieu, depuis, jours))
+            continue
+        journal[lieu] = depuis
+
+    for d in anciens:
+        lieu = canonical_venue_name(d.get("venue") or "")
+        if lieu not in journal:
+            continue
+        if any(h in (d.get("url") or "") for h in _HOTES_AGREGATEURS):
+            continue
+        if (d.get("date_end") or d.get("date_start") or "") < today_iso:
+            continue
+        repris.append(_event_depuis_dict(d))
+
+    return repris, journal, abandons
 
 
 def main() -> int:
@@ -384,6 +500,60 @@ def main() -> int:
     print(f"\n[dedup] {before} candidates → {len(unique)} unique "
           f"(-{before - len(unique)})")
 
+    # 6b) Garde-fou : une salle scrappée en direct ne s'effondre pas seule.
+    #     Voir le chapeau d'EFFONDREMENT_PART pour la mesure et la règle.
+    #     La détection est faite ICI, sur le fil dédoublonné, parce que
+    #     c'est sous cette forme que le fil précédent est écrit : comparer
+    #     un décompte d'avant-dédup à un décompte d'après ne voudrait rien
+    #     dire.
+    out = Path(__file__).parent / "events.json"
+    effondres = _effondrements(unique, out) if out.exists() else []
+    reprises: dict = {}
+    if effondres and os.environ.get("NOCTURNE_FORCER_ECRITURE") == "1":
+        _alerte("garde-fou contourné",
+                "[garde-fou] effondrement(s) publié(s) tels quels "
+                "(NOCTURNE_FORCER_ECRITURE=1) : "
+                + ", ".join("%s %d→%d" % t for t in effondres))
+        effondres = []
+
+    if effondres:
+        repris, reprises, abandons = _reprendre(unique, out, effondres,
+                                                today_iso)
+        if repris:
+            # On repasse par la dédup avec le fil complet : les événements
+            # repris n'ont PAS été confrontés aux publications du jour, et
+            # un agrégateur a pu annoncer entre-temps un spectacle que la
+            # salle annonçait hier. Les priorités sont reconstruites sur
+            # l'hôte, faute d'être écrites dans events.json.
+            avant_reprise = len(unique)
+            unique = deduplicate([(e, _priorite(e.url)) for e in unique]
+                                 + [(e, 100) for e in repris])
+            detail = ", ".join("%s %d→%d, %d repris"
+                               % (lieu, a, b,
+                                  sum(1 for e in repris
+                                      if canonical_venue_name(e.venue) == lieu))
+                               for lieu, a, b in effondres)
+            _alerte(
+                "salle reprise du fil précédent",
+                "[garde-fou] EFFONDREMENT : " + detail + ".\n"
+                "Le fil est publié, et ces salles gardent leurs événements "
+                "de la veille.\n"
+                "Une salle ne perd pas les trois quarts de son programme en "
+                "une nuit : son\n"
+                "scraper a rendu une liste courte sans lever. Si la perte "
+                "est RÉELLE — salle\n"
+                "fermée, saison finie —, relancer avec "
+                "NOCTURNE_FORCER_ECRITURE=1.")
+            print("[garde-fou] %d + %d repris → %d après dédup"
+                  % (avant_reprise, len(repris), len(unique)))
+        for lieu, depuis, jours in abandons:
+            _alerte(
+                "salle abandonnée après %d jours" % jours,
+                "[garde-fou] %s s'effondre depuis le %s, soit %d jours. "
+                "Au-delà de %d la panne n'est plus passagère : la salle "
+                "n'est PLUS reprise et va se vider du fil. Son scraper est "
+                "à réparer." % (lieu, depuis, jours, REPRISE_JOURS_MAX))
+
     # 7) Sort by date then time then venue.
     unique.sort(key=lambda e: (e.date_start, e.time or "00:00", e.venue))
 
@@ -423,8 +593,12 @@ def main() -> int:
         "count": len(unique),
         "events": [e.to_dict() for e in unique],
     }
-
-    out = Path(__file__).parent / "events.json"
+    # Le journal des reprises voyage avec le fil : c'est lui qui permet au
+    # run suivant de savoir depuis QUAND une salle est reprise, et donc de
+    # l'abandonner passé le délai. Absent quand tout va bien. Le frontend
+    # ne lit que « events » et ignore le reste.
+    if reprises:
+        payload["reprises"] = reprises
 
     # Safety net: if every scraper failed, do NOT overwrite the existing
     # events.json. The committed events.json shouldn't be wiped because of
@@ -440,32 +614,11 @@ def main() -> int:
         err is not None or n == 0 for _, n, err in report
     )
 
-    # Second filet, plus fin que le premier : celui-ci ne demande pas que
-    # TOUT échoue, il suffit qu'une salle s'effondre.
-    effondres = _effondrements(unique, out) if out.exists() else []
-    if effondres and os.environ.get("NOCTURNE_FORCER_ECRITURE") == "1":
-        print("\n[garde-fou] effondrement(s) passé(s) outre "
-              "(NOCTURNE_FORCER_ECRITURE=1).", file=sys.stderr)
-        effondres = []
-
+    # L'effondrement d'UNE salle ne bloque plus rien : il a été traité à
+    # l'étape 6b, par reprise du fil précédent. Ne reste ici que le filet
+    # d'origine, qui demande que TOUT ait échoué.
     if all_failed and out.exists():
         print("\n[!] All implemented scrapers failed — keeping previous events.json.",
-              file=sys.stderr)
-        wrote = False
-    elif effondres:
-        print("\n[garde-fou] EFFONDREMENT — events.json n'est PAS réécrit.",
-              file=sys.stderr)
-        for lieu, n_avant, n_apres in effondres:
-            print("    %-34s %4d → %4d événements propres"
-                  % (lieu, n_avant, n_apres), file=sys.stderr)
-        print("    Une salle ne perd pas les trois quarts de son programme "
-              "en une nuit :\n"
-              "    son scraper a rendu une liste courte sans lever. "
-              "Relancer suffit\n"
-              "    d'ordinaire, la panne étant passagère. Si la perte est "
-              "RÉELLE — salle\n"
-              "    fermée, saison terminée —, relancer avec "
-              "NOCTURNE_FORCER_ECRITURE=1.",
               file=sys.stderr)
         wrote = False
     else:
@@ -487,10 +640,10 @@ def main() -> int:
                   f"(site changed? request swallowed?)")
         else:
             print(f"  ✓ {name:30s}  {n} events")
-    # Sortie non nulle sur effondrement : l'étape de commit du workflow est
-    # alors sautée et le run passe au rouge, ce qui est tout l'intérêt —
-    # une panne silencieuse devient une panne visible.
-    return 1 if effondres else 0
+    # Un effondrement ne fait plus échouer le run : le fil est publié, la
+    # salle tombée reprise, et l'alerte remonte en annotation GitHub. Seul
+    # l'échec de TOUS les scrapers sort en 1.
+    return 0 if wrote else 1
 
 
 if __name__ == "__main__":
