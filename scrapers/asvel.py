@@ -153,6 +153,24 @@ def _euroleague(saison: int, inconnues: list) -> List[dict]:
     return out
 
 
+def _json_ou_bruit(r, etape: str) -> dict:
+    """Le JSON d'une réponse, ou une erreur qui DIT ce qu'on a reçu.
+
+    Sans ça, une page d'erreur HTML servie à la place du JSON ne laisse
+    qu'un « Expecting value: line 1 column 1 » qui n'apprend rien. Or
+    c'est exactement ce que le runner a obtenu le 2026-09-19 quand la
+    même requête passait depuis une adresse résidentielle : sans le corps
+    de la réponse, impossible de savoir qui refuse, ni pourquoi.
+    """
+    try:
+        return r.json()
+    except ValueError:
+        corps = (r.text or "")[:220].replace("\n", " ")
+        raise ValueError(
+            "%s : réponse non-JSON, statut %d, type %r, corps %r"
+            % (etape, r.status_code, r.headers.get("content-type"), corps))
+
+
 def _lnb(saison: int) -> List[dict]:
     """Matchs à domicile de Betclic ÉLITE : date et heure, pas de salle.
 
@@ -161,8 +179,9 @@ def _lnb(saison: int) -> List[dict]:
     run.
     """
     try:
-        jeton = base_get(LNB_JETON, headers=HEADERS, timeout=25,
-                         etiquette="[ASVEL]").json()["token"]
+        jeton = _json_ou_bruit(
+            base_get(LNB_JETON, headers=HEADERS, timeout=25,
+                     etiquette="[ASVEL]"), "jeton")["token"]
         entetes = dict(HEADERS)
         entetes["Authorization"] = "Bearer " + jeton
         entetes["Content-Type"] = "application/json"
@@ -172,8 +191,9 @@ def _lnb(saison: int) -> List[dict]:
         # L'identifiant de compétition change à chaque saison : on le
         # DEMANDE au lieu de l'écrire en dur, faute de quoi le scraper
         # rendrait zéro le jour où la saison tourne.
-        compet = base_get(LNB_COMPET % saison, headers=entetes, timeout=25,
-                          etiquette="[ASVEL]").json().get("data") or []
+        compet = _json_ou_bruit(
+            base_get(LNB_COMPET % saison, headers=entetes, timeout=25,
+                     etiquette="[ASVEL]"), "compétition").get("data") or []
         if not compet:
             print("[ASVEL] LNB : aucune compétition pour la saison %d"
                   % saison, file=sys.stderr)
@@ -189,7 +209,7 @@ def _lnb(saison: int) -> List[dict]:
             "limit": 500,
         })
         r.raise_for_status()
-        journees = r.json().get("data") or []
+        journees = _json_ou_bruit(r, "calendrier").get("data") or []
     except (requests.RequestException, ValueError, KeyError, IndexError) as exc:
         print("[ASVEL] LNB : %s" % exc, file=sys.stderr)
         return []
