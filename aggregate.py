@@ -53,6 +53,7 @@ from scrapers import (
     opera_lyon, tng,
     bourse_du_travail, improvidence, espace_gerson, complexe,
     celestins, tnp, maison_de_la_danse, croix_rousse, comedie_odeon,
+    chapelle_trinite,
     agendarts, auditorium, confluences, beaux_arts, iac, mac_lyon,
     asvel, asvel_feminin, volley, handball, rugby,
 )
@@ -88,6 +89,7 @@ SCRAPERS: list[tuple[str, Callable[[], List[Event]]]] = [
     ("Maison de la Danse",      maison_de_la_danse.fetch),
     ("Théâtre de la Croix-Rousse", croix_rousse.fetch),
     ("Comédie Odéon",           comedie_odeon.fetch),
+    ("Chapelle de la Trinité",  chapelle_trinite.fetch),
     ("Agend'arts",              agendarts.fetch),
     ("Auditorium de Lyon",      auditorium.fetch),
     ("Musée des Confluences",   confluences.fetch),
