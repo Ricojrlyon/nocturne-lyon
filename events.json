@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-20T07:13:27.861676+00:00",
-  "count": 2806,
+  "generated_at": "2026-09-20T07:52:24.944067+00:00",
+  "count": 2811,
   "events": [
     {
       "venue": "IAC Villeurbanne",
@@ -449,34 +449,6 @@
       "image": "https://img.mapado.net/2024/9/17/66e94c9a6d29f-vignette-catch.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "272711ef3077"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe-cafe-theatre",
-      "title": "Complexe comedy club",
-      "subtitle": null,
-      "category": "Humour & Café Théâtre",
-      "date_start": "2026-09-20",
-      "date_end": "2026-10-03",
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-307482-complexe-comedy-club.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "e8dd1820c7e5"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe-cafe-theatre",
-      "title": "Un grand cri d'amour",
-      "subtitle": null,
-      "category": "Théâtre",
-      "date_start": "2026-09-20",
-      "date_end": "2026-12-28",
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-302802-un-grand-cri-d-amour.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "f594713fdda9"
     },
     {
       "venue": "La Commune",
@@ -1867,20 +1839,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-09-25",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
-      "offsite_venue": null,
-      "id": "1202f8915a4f"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "De quoi je me mêle?",
       "subtitle": null,
       "category": "café-théâtre",
@@ -1891,6 +1849,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/de-quoi-je-me-mele-540x800.jpg",
       "offsite_venue": null,
       "id": "8b7c23f208b4"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-25",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "1202f8915a4f"
     },
     {
       "venue": "Les Clameurs",
@@ -2581,20 +2553,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-09-26",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
-      "offsite_venue": null,
-      "id": "bb1936877d09"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "De quoi je me mêle?",
       "subtitle": null,
       "category": "café-théâtre",
@@ -2605,6 +2563,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/de-quoi-je-me-mele-540x800.jpg",
       "offsite_venue": null,
       "id": "87b1b0d90f90"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "bb1936877d09"
     },
     {
       "venue": "Musée des Confluences",
@@ -2647,6 +2619,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "62ac3cbad3b4"
+    },
+    {
+      "venue": "Salle des Gratte-Ciel",
+      "venue_slug": "salle-des-gratte-ciel",
+      "title": "Villeurbanne Handball - Villemomble HB",
+      "subtitle": "Nationale 1 masculine",
+      "category": "handball",
+      "date_start": "2026-09-26",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.ffhandball.fr/competitions/saison-2026-2027-22/national/nationale-1-masculine-2026-2027-32469/poule-190839/rencontre-2638385/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "a3184f2c04af"
     },
     {
       "venue": "Toï Toï le Zinc",
@@ -3767,6 +3753,20 @@
       "image": "https://museedesconfluences.fr/sites/default/files/uploads/2026-07/images_siteweb_mdc_1920-1080_plantbeing_fdls.jpg",
       "offsite_venue": null,
       "id": "b4599b9237e2"
+    },
+    {
+      "venue": "Boskop",
+      "venue_slug": "boskop",
+      "title": "Lectures · Performances · Brrrazier Poétique #6",
+      "subtitle": null,
+      "category": "rencontre",
+      "date_start": "2026-10-01",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/memoire-minoritaire-brrrazier-poetique-6",
+      "image": "https://agenda.villemorte.fr/media/thumb/ec5c9a5af9a7a7097d010c09e815fae6.jpg",
+      "offsite_venue": null,
+      "id": "dcbf555511dc"
     },
     {
       "venue": "Les Subsistances",
@@ -4943,6 +4943,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/365262ac/true_west_20.jpg",
       "offsite_venue": null,
       "id": "5860dd3ce018"
+    },
+    {
+      "venue": "Gymnase Matthias Favier",
+      "venue_slug": "gymnase-matthias-favier",
+      "title": "Handball Club de Lyon féminines - St Genis Laval AL Handball 2",
+      "subtitle": "Nationale 3 féminine AURA",
+      "category": "handball",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.ffhandball.fr/competitions/saison-2026-2027-22/regional/nationale-3-feminine-aura-30494/poule-190149/rencontre-2650867/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "c3d3a0d62274"
     },
     {
       "venue": "Espace Gerson",
@@ -7547,6 +7561,20 @@
       "image": "https://img.mapado.net/2026/5/5/69fa12d26a9bb-voisin-3.png_thumbs/600-600.png",
       "offsite_venue": null,
       "id": "43aee501a3ce"
+    },
+    {
+      "venue": "Gymnase Matthias Favier",
+      "venue_slug": "gymnase-matthias-favier",
+      "title": "Handball Club de Lyon féminines - HBC Langeac",
+      "subtitle": "Nationale 3 féminine AURA",
+      "category": "handball",
+      "date_start": "2026-10-10",
+      "date_end": null,
+      "time": "18:45",
+      "url": "https://www.ffhandball.fr/competitions/saison-2026-2027-22/regional/nationale-3-feminine-aura-30494/poule-190149/rencontre-2650872/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "5b72bf8a49b0"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -10417,6 +10445,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "944f44e1a75f"
+    },
+    {
+      "venue": "Salle des Gratte-Ciel",
+      "venue_slug": "salle-des-gratte-ciel",
+      "title": "Villeurbanne Handball - Torcy HB Marne-La-Vallee",
+      "subtitle": "Nationale 1 masculine",
+      "category": "handball",
+      "date_start": "2026-10-17",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://www.ffhandball.fr/competitions/saison-2026-2027-22/national/nationale-1-masculine-2026-2027-32469/poule-190839/rencontre-2638397/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "cfe828c37d58"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -18077,6 +18119,20 @@
       "id": "d84545a07db3"
     },
     {
+      "venue": "Salle des Gratte-Ciel",
+      "venue_slug": "salle-des-gratte-ciel",
+      "title": "Villeurbanne Handball - Metz Handball",
+      "subtitle": "Nationale 1 masculine",
+      "category": "handball",
+      "date_start": "2026-11-14",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.ffhandball.fr/competitions/saison-2026-2027-22/national/nationale-1-masculine-2026-2027-32469/poule-190839/rencontre-2638409/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "39c4642f1820"
+    },
+    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Martin Eden",
@@ -22699,20 +22755,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-03",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
-      "offsite_venue": null,
-      "id": "9db7b1186ee7"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
       "subtitle": null,
       "category": "café-théâtre",
@@ -22737,6 +22779,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
       "offsite_venue": null,
       "id": "38080016baaf"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-03",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
+      "offsite_venue": null,
+      "id": "9db7b1186ee7"
     },
     {
       "venue": "Maison de la Danse",
@@ -22951,20 +23007,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-04",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
-      "offsite_venue": null,
-      "id": "5b3b078c675b"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Guillaume Sentou \"Un mec cool\"",
       "subtitle": null,
       "category": "café-théâtre",
@@ -22975,6 +23017,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
       "offsite_venue": null,
       "id": "cebdb9ac5785"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
+      "offsite_venue": null,
+      "id": "5b3b078c675b"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -23413,20 +23469,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-05",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
-      "offsite_venue": null,
-      "id": "70a3ec875633"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Guillaume Sentou \"Un mec cool\"",
       "subtitle": null,
       "category": "café-théâtre",
@@ -23437,6 +23479,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
       "offsite_venue": null,
       "id": "eea2838c459b"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
+      "offsite_venue": null,
+      "id": "70a3ec875633"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -26605,20 +26661,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-22",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
-      "offsite_venue": null,
-      "id": "4de028a261a0"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Dessine moi une impro !",
       "subtitle": null,
       "category": "café-théâtre",
@@ -26629,6 +26671,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/dessine-moi-une-impro-540x800.jpg",
       "offsite_venue": null,
       "id": "4ca980258bc5"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-22",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "4de028a261a0"
     },
     {
       "venue": "Bourse du Travail",
@@ -37971,6 +38027,20 @@
       "id": "ad336e37aa00"
     },
     {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-03-19",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "95b756f00436"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "500 Voix Pour Johnny",
@@ -39286,8 +39356,5 @@
       "offsite_venue": null,
       "id": "661d7f33aa0b"
     }
-  ],
-  "reprises": {
-    "Le Complexe café-théâtre": "2026-09-20"
-  }
+  ]
 }
