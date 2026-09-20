@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-20T09:07:22.428313+00:00",
-  "count": 2820,
+  "generated_at": "2026-09-20T09:28:03.772786+00:00",
+  "count": 2838,
   "events": [
     {
       "venue": "IAC Villeurbanne",
@@ -449,6 +449,34 @@
       "image": "https://img.mapado.net/2024/9/17/66e94c9a6d29f-vignette-catch.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "272711ef3077"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe-cafe-theatre",
+      "title": "Complexe comedy club",
+      "subtitle": null,
+      "category": "Humour & Café Théâtre",
+      "date_start": "2026-09-20",
+      "date_end": "2026-10-03",
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-307482-complexe-comedy-club.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "e8dd1820c7e5"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe-cafe-theatre",
+      "title": "Un grand cri d'amour",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-20",
+      "date_end": "2026-12-28",
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-302802-un-grand-cri-d-amour.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "f594713fdda9"
     },
     {
       "venue": "La Commune",
@@ -1839,20 +1867,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "De quoi je me mêle?",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-09-25",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/de-quoi-je-me-mele/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/de-quoi-je-me-mele-540x800.jpg",
-      "offsite_venue": null,
-      "id": "8b7c23f208b4"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
       "subtitle": null,
       "category": "café-théâtre",
@@ -1863,6 +1877,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
       "offsite_venue": null,
       "id": "1202f8915a4f"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "De quoi je me mêle?",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-25",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/de-quoi-je-me-mele/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/de-quoi-je-me-mele-540x800.jpg",
+      "offsite_venue": null,
+      "id": "8b7c23f208b4"
     },
     {
       "venue": "Les Clameurs",
@@ -2553,20 +2581,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "De quoi je me mêle?",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-09-26",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/de-quoi-je-me-mele/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/de-quoi-je-me-mele-540x800.jpg",
-      "offsite_venue": null,
-      "id": "87b1b0d90f90"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
       "subtitle": null,
       "category": "café-théâtre",
@@ -2577,6 +2591,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
       "offsite_venue": null,
       "id": "bb1936877d09"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "De quoi je me mêle?",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/de-quoi-je-me-mele/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/de-quoi-je-me-mele-540x800.jpg",
+      "offsite_venue": null,
+      "id": "87b1b0d90f90"
     },
     {
       "venue": "Musée des Confluences",
@@ -3520,13 +3548,13 @@
       "venue": "Chapelle de la Trinité",
       "venue_slug": "chapelle-de-la-trinite",
       "title": "Prima Donna",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
+      "subtitle": "Le Concert de l'Hostel Dieu & Blandine de Sansal",
+      "category": "classique",
       "date_start": "2026-09-30",
       "date_end": null,
       "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318976-prima-donna.html",
-      "image": null,
+      "url": "https://trinitelyon.mapado.com/event/732134-prima-donna-le-concert-de-lhostel-dieu-blandine-de-sansal",
+      "image": "https://img.mapado.net/2026/5/21/6a0ecc818b3f4-a-stella-blandine-de-sansal-cordes-william-sundfor.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "b808291f4f6d"
     },
@@ -6805,20 +6833,6 @@
       "image": "https://le-sucre.eu/wp-content/uploads/2026/05/carre-600x600.png",
       "offsite_venue": null,
       "id": "e6fe7cb2af26"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Liv Del Estal",
-      "subtitle": null,
-      "category": "Musique Electronique",
-      "date_start": "2026-10-09",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319441-liv-del-estal.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "fc8dc2bdafdb"
     },
     {
       "venue": "Le Transbordeur",
@@ -11570,13 +11584,13 @@
       "venue": "Chapelle de la Trinité",
       "venue_slug": "chapelle-de-la-trinite",
       "title": "Uppercut",
-      "subtitle": null,
-      "category": "Danse",
+      "subtitle": "Clash Chorégraphique (Festival Karavel)",
+      "category": "danse",
       "date_start": "2026-10-21",
       "date_end": null,
       "time": "17:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319396-uppercut.html",
-      "image": null,
+      "url": "https://trinitelyon.mapado.com/event/732141-uppercut-clash-choregraphique-festival-karavel",
+      "image": "https://img.mapado.net/2026/5/21/6a0ecd385e81b-1-uppercut-pierreplanchenault-2021jpg.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "009bcfd82f68"
     },
@@ -11663,6 +11677,20 @@
       "image": "https://www.auditorium-lyon.com/sites/default/files/styles/vignette_teaser_xl/public/upload/images/1920_OSMF%40JB-Bonnay-%282%29.jpg?h=d1cb525d&itok=FGmcj69O",
       "offsite_venue": null,
       "id": "451e8259095a"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Uppercut",
+      "subtitle": "Clash Chorégraphique (Festival Karavel)",
+      "category": "danse",
+      "date_start": "2026-10-21",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://trinitelyon.mapado.com/event/732141-uppercut-clash-choregraphique-festival-karavel",
+      "image": "https://img.mapado.net/2026/5/21/6a0ecd385e81b-1-uppercut-pierreplanchenault-2021jpg.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "2e63dfe65cf4"
     },
     {
       "venue": "Comédie Odéon",
@@ -12685,20 +12713,6 @@
       "image": "https://le-sucre.eu/wp-content/uploads/2026/07/EVEULYSSE-pop-lyon-site-carre.jpg",
       "offsite_venue": null,
       "id": "0dc2a9b1041e"
-    },
-    {
-      "venue": "Le Sucre",
-      "venue_slug": "le-sucre",
-      "title": "Ève + Ulysse",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-10-24",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319447-ve-ulysse.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "1a9e950d634a"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -14449,20 +14463,6 @@
       "image": "https://www.transbordeur.fr/wp-content/uploads/2026/04/PHOTO-2026-04-22-23-28-29-2.jpg",
       "offsite_venue": null,
       "id": "923de5c0fb75"
-    },
-    {
-      "venue": "Le Transbordeur",
-      "venue_slug": "transbordeur",
-      "title": "Nuit du gouyad #2",
-      "subtitle": null,
-      "category": "Sono Mondiale",
-      "date_start": "2026-10-30",
-      "date_end": null,
-      "time": "23:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319436-nuit-du-gouyad-2.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "ddbf864bd5a7"
     },
     {
       "venue": "Bourse du Travail",
@@ -17352,13 +17352,13 @@
       "venue": "Chapelle de la Trinité",
       "venue_slug": "chapelle-de-la-trinite",
       "title": "Musas",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
+      "subtitle": "Solo, ma non troppo",
+      "category": "classique",
       "date_start": "2026-11-12",
       "date_end": null,
       "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319403-musas.html",
-      "image": null,
+      "url": "https://trinitelyon.mapado.com/event/732246-musas-solo-ma-non-troppo",
+      "image": "https://img.mapado.net/2026/5/22/6a10c03948a85-musas-2-web-anne-laure-etienne.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "95ce8dcd0c67"
     },
@@ -17562,15 +17562,29 @@
       "venue": "Chapelle de la Trinité",
       "venue_slug": "chapelle-de-la-trinite",
       "title": "Une expo dans le vent",
-      "subtitle": null,
-      "category": "Sciences et Histoire",
+      "subtitle": "visite guidée",
+      "category": "conférence",
       "date_start": "2026-11-13",
       "date_end": null,
       "time": "18:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319405-une-expo-dans-le-vent.html",
-      "image": null,
+      "url": "https://trinitelyon.mapado.com/event/732267-une-expo-dans-le-vent-visite-guidee",
+      "image": "https://img.mapado.net/2026/6/2/6a1ed6920ad1d-673754034-1945076756368008-7002286431375010672-n.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "c9ec087450b8"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Une expo dans le vent",
+      "subtitle": "visite guidée",
+      "category": "conférence",
+      "date_start": "2026-11-13",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://trinitelyon.mapado.com/event/732267-une-expo-dans-le-vent-visite-guidee",
+      "image": "https://img.mapado.net/2026/6/2/6a1ed6920ad1d-673754034-1945076756368008-7002286431375010672-n.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "201ef539b81a"
     },
     {
       "venue": "Le Sucre",
@@ -17585,6 +17599,20 @@
       "image": "https://le-sucre.eu/wp-content/uploads/2026/06/carre-6-600x600.jpg",
       "offsite_venue": null,
       "id": "4bd9cc54ef0d"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Une expo dans le vent",
+      "subtitle": "visite guidée",
+      "category": "conférence",
+      "date_start": "2026-11-13",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://trinitelyon.mapado.com/event/732267-une-expo-dans-le-vent-visite-guidee",
+      "image": "https://img.mapado.net/2026/6/2/6a1ed6920ad1d-673754034-1945076756368008-7002286431375010672-n.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "e86946bd0a5a"
     },
     {
       "venue": "Comédie Odéon",
@@ -17702,13 +17730,13 @@
       "venue": "Chapelle de la Trinité",
       "venue_slug": "chapelle-de-la-trinite",
       "title": "Univers Gurdjieff #1",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
+      "subtitle": "Souffles orientaux",
+      "category": "classique",
       "date_start": "2026-11-13",
       "date_end": null,
       "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319404-univers-gurdjieff-1.html",
-      "image": null,
+      "url": "https://trinitelyon.mapado.com/event/732281-univers-gurdjieff-1-souffles-orientaux",
+      "image": "https://img.mapado.net/2026/5/28/6a181941a0fdb-gurdjieff2.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "98b5c3febc3c"
     },
@@ -17923,6 +17951,20 @@
       "id": "dc207e06c8c3"
     },
     {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Une expo dans le vent",
+      "subtitle": "visite guidée",
+      "category": "conférence",
+      "date_start": "2026-11-13",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://trinitelyon.mapado.com/event/732267-une-expo-dans-le-vent-visite-guidee",
+      "image": "https://img.mapado.net/2026/6/2/6a1ed6920ad1d-673754034-1945076756368008-7002286431375010672-n.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "1d1ded0f08e7"
+    },
+    {
       "venue": "Théâtre de la Croix-Rousse",
       "venue_slug": "croix-rousse",
       "title": "Fête d’ouverture Festiv·iel : Club La Bouche",
@@ -17949,6 +17991,62 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
       "offsite_venue": null,
       "id": "8701db758a92"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Une expo dans le vent",
+      "subtitle": "visite guidée",
+      "category": "conférence",
+      "date_start": "2026-11-14",
+      "date_end": null,
+      "time": "10:30",
+      "url": "https://trinitelyon.mapado.com/event/732267-une-expo-dans-le-vent-visite-guidee",
+      "image": "https://img.mapado.net/2026/6/2/6a1ed6920ad1d-673754034-1945076756368008-7002286431375010672-n.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "a60c922d1e79"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Une expo dans le vent",
+      "subtitle": "conférence de Guy Estimbre",
+      "category": "conférence",
+      "date_start": "2026-11-14",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://trinitelyon.mapado.com/event/732274-une-expo-dans-le-vent-conference-de-guy-estimbre",
+      "image": "https://img.mapado.net/2026/6/2/6a1ed6faabf96-guy-estimbre.png_thumbs/600-600.png",
+      "offsite_venue": null,
+      "id": "f30a71c1efca"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Une expo dans le vent",
+      "subtitle": "visite guidée",
+      "category": "conférence",
+      "date_start": "2026-11-14",
+      "date_end": null,
+      "time": "12:00",
+      "url": "https://trinitelyon.mapado.com/event/732267-une-expo-dans-le-vent-visite-guidee",
+      "image": "https://img.mapado.net/2026/6/2/6a1ed6920ad1d-673754034-1945076756368008-7002286431375010672-n.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "c436dfeee82b"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Une expo dans le vent",
+      "subtitle": "visite guidée",
+      "category": "conférence",
+      "date_start": "2026-11-14",
+      "date_end": null,
+      "time": "12:30",
+      "url": "https://trinitelyon.mapado.com/event/732267-une-expo-dans-le-vent-visite-guidee",
+      "image": "https://img.mapado.net/2026/6/2/6a1ed6920ad1d-673754034-1945076756368008-7002286431375010672-n.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "fb056566f393"
     },
     {
       "venue": "Théâtre de la Croix-Rousse",
@@ -18089,20 +18187,6 @@
       "image": "https://www.auditorium-lyon.com/sites/default/files/styles/vignette_teaser_xl/public/upload/images/1920_AlpeshChauhan_2025_4662_c_Susanne_diesner.jpg?h=302f8267&itok=5O3uc3YZ",
       "offsite_venue": null,
       "id": "e0c42c2796fa"
-    },
-    {
-      "venue": "Chapelle de la Trinité",
-      "venue_slug": "chapelle-de-la-trinite",
-      "title": "Une expo dans le vent",
-      "subtitle": null,
-      "category": "Sciences et Histoire",
-      "date_start": "2026-11-14",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319405-une-expo-dans-le-vent.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "6efb3d0fc51f"
     },
     {
       "venue": "Théâtre de la Croix-Rousse",
@@ -18290,13 +18374,13 @@
       "venue": "Chapelle de la Trinité",
       "venue_slug": "chapelle-de-la-trinite",
       "title": "Itinérances sacrées",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
+      "subtitle": "Autour du Miserere d'Allegri : de l'ombre à la lumière",
+      "category": "classique",
       "date_start": "2026-11-14",
       "date_end": null,
       "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319406-itin-rances-sacr-es.html",
-      "image": null,
+      "url": "https://trinitelyon.mapado.com/event/732288-itinerances-sacrees-autour-du-miserere-dallegri-de-lombre-a-la-lumiere",
+      "image": "https://img.mapado.net/2026/5/24/6a130ab160c47-signature-dulci-jubilo-alex-j-overton-anima-nostra.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "7444059a35e5"
     },
@@ -18441,6 +18525,20 @@
       "id": "f3f9c49704c0"
     },
     {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Atelier de yoga sonore",
+      "subtitle": null,
+      "category": "atelier",
+      "date_start": "2026-11-15",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://trinitelyon.mapado.com/event/732309-atelier-de-yoga-sonore",
+      "image": "https://img.mapado.net/2026/5/24/6a130a5597a1a-photo-lenaerts.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "2e3c0ca2bae8"
+    },
+    {
       "venue": "IAC Villeurbanne",
       "venue_slug": "iac-villeurbanne",
       "title": "Visites du week-end",
@@ -18499,16 +18597,16 @@
     {
       "venue": "Chapelle de la Trinité",
       "venue_slug": "chapelle-de-la-trinite",
-      "title": "Ovni Sonore",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
+      "title": "Ovni baroque",
+      "subtitle": "Emmanuelle Dauvin & Heather Newhouse",
+      "category": "classique",
       "date_start": "2026-11-15",
       "date_end": null,
       "time": "17:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319407-ovni-sonore.html",
-      "image": null,
+      "url": "https://trinitelyon.mapado.com/event/732316-ovni-baroque-emmanuelle-dauvin-heather-newhouse",
+      "image": "https://img.mapado.net/2026/5/24/6a130a74f12d5-ovnibaroque-duo-g-bocle.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
-      "id": "91da743af7c0"
+      "id": "625373fddd0d"
     },
     {
       "venue": "Agend'arts",
@@ -18569,16 +18667,16 @@
     {
       "venue": "Chapelle de la Trinité",
       "venue_slug": "chapelle-de-la-trinite",
-      "title": "Fanny Meteier",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
+      "title": "Gaspard",
+      "subtitle": "Fanny Meteier",
+      "category": "classique",
       "date_start": "2026-11-15",
       "date_end": null,
       "time": "19:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319408-fanny-meteier.html",
-      "image": null,
+      "url": "https://trinitelyon.mapado.com/event/732323-gaspard-fanny-meteier",
+      "image": "https://img.mapado.net/2026/5/24/6a130a0d8cb17-fanny-meteier.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
-      "id": "f4bfd3ea494e"
+      "id": "d1c1dda78d74"
     },
     {
       "venue": "Maison de la Danse",
@@ -18933,16 +19031,16 @@
     {
       "venue": "Chapelle de la Trinité",
       "venue_slug": "chapelle-de-la-trinite",
-      "title": "Sam Gendel et Sam Wilkes",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
+      "title": "Music for Saxofone and bass guitar",
+      "subtitle": "Sam Gendel and Sam Wilkes, Unrelated Tour",
+      "category": "classique",
       "date_start": "2026-11-18",
       "date_end": null,
       "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319409-sam-gendel-et-sam-wilkes.html",
-      "image": null,
+      "url": "https://trinitelyon.mapado.com/event/732463-music-for-saxofone-and-bass-guitar-sam-gendel-and-sam-wilkes-unrelated-tour",
+      "image": "https://img.mapado.net/2026/5/28/6a18194fb7750-sam-et-sam.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
-      "id": "cef26b236833"
+      "id": "e0082aa60293"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -22263,6 +22361,20 @@
       "id": "d4ecde786b89"
     },
     {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Rammstein on the beach",
+      "subtitle": "du métal au minimalisme",
+      "category": "classique",
+      "date_start": "2026-12-01",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://trinitelyon.mapado.com/event/732477-rammstein-on-the-beach-du-metal-au-minimalisme",
+      "image": "https://img.mapado.net/2026/5/28/6a18196dc2578-rammstein-beach.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "3234a0ffb188"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Paradoxe",
@@ -22811,6 +22923,20 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
+      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-03",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
+      "offsite_venue": null,
+      "id": "9db7b1186ee7"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
       "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
       "subtitle": null,
       "category": "café-théâtre",
@@ -22835,20 +22961,6 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
       "offsite_venue": null,
       "id": "38080016baaf"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
-      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-03",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
-      "offsite_venue": null,
-      "id": "9db7b1186ee7"
     },
     {
       "venue": "Maison de la Danse",
@@ -23063,20 +23175,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "Guillaume Sentou \"Un mec cool\"",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-04",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/guillaume-sentou-un-mec-cool/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
-      "offsite_venue": null,
-      "id": "cebdb9ac5785"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
       "subtitle": null,
       "category": "café-théâtre",
@@ -23087,6 +23185,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
       "offsite_venue": null,
       "id": "5b3b078c675b"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "Guillaume Sentou \"Un mec cool\"",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/guillaume-sentou-un-mec-cool/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
+      "offsite_venue": null,
+      "id": "cebdb9ac5785"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -23525,20 +23637,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "Guillaume Sentou \"Un mec cool\"",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-05",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/guillaume-sentou-un-mec-cool/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
-      "offsite_venue": null,
-      "id": "eea2838c459b"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
       "subtitle": null,
       "category": "café-théâtre",
@@ -23549,6 +23647,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
       "offsite_venue": null,
       "id": "70a3ec875633"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "Guillaume Sentou \"Un mec cool\"",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/guillaume-sentou-un-mec-cool/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
+      "offsite_venue": null,
+      "id": "eea2838c459b"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -25089,6 +25201,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/195da00d/projet_nanashi_b.jpg",
       "offsite_venue": null,
       "id": "44a3e12c34ec"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Missa Concertata",
+      "subtitle": "Le Concert de l'Hostel Dieu & Le Choeur de chambre de Namur",
+      "category": "classique",
+      "date_start": "2026-12-13",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://trinitelyon.mapado.com/event/732526-missa-concertata-le-concert-de-lhostel-dieu-le-choeur-de-chambre-de-namur",
+      "image": "https://img.mapado.net/2025/5/26/68347ccc6d699-vivaldi-sauvage-julie-cherki.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "563efed98bd4"
     },
     {
       "venue": "Agend'arts",
@@ -28941,6 +29067,20 @@
       "id": "a85bce7a96b7"
     },
     {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Pierre Hantaï joue Scarlatti",
+      "subtitle": "récital solo au clavecin",
+      "category": "classique",
+      "date_start": "2027-01-13",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://trinitelyon.mapado.com/event/732561-pierre-hantai-joue-scarlatti-recital-solo-au-clavecin",
+      "image": "https://img.mapado.net/2026/5/21/6a0efdd2d249a-pierre-hantai-jean-baptiste-millot-09256-scaled.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "ffd056467e0c"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Rumba",
@@ -30999,6 +31139,20 @@
       "id": "59513b9b4570"
     },
     {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Heaven",
+      "subtitle": "Une célébration de la musique anglaise de Byrd à Britten",
+      "category": "classique",
+      "date_start": "2027-01-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://trinitelyon.mapado.com/event/732589-heaven-une-celebration-de-la-musique-anglaise-de-byrd-a-britten",
+      "image": "https://img.mapado.net/2026/5/24/6a130adcdca6d-heaven-gros-plan-spirito.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "7f754cb21219"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Amour, Gloire et Ciment !",
@@ -32357,6 +32511,20 @@
       "id": "8f1448869528"
     },
     {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Dans le murmure d'une brise légère",
+      "subtitle": "Théologie du chill",
+      "category": "classique",
+      "date_start": "2027-02-04",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://trinitelyon.mapado.com/event/736915-dans-le-murmure-dune-brise-legere-theologie-du-chill",
+      "image": "https://img.mapado.net/2026/5/26/6a1570eae636c-mille-rhonat-chapelle-trinite-susiewaroude-4-copie.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "22b4f52e1dc2"
+    },
+    {
       "venue": "Musée des Confluences",
       "venue_slug": "musee-des-confluences",
       "title": "Nocturne Dabkeh on Fire",
@@ -32439,6 +32607,20 @@
       "image": "https://www.croix-rousse.com/wp-content/uploads/2026/05/19.-Cirque-queer-1080x1080-1.png",
       "offsite_venue": null,
       "id": "44a22ee2d0f2"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Univers Gurdjieff #2",
+      "subtitle": "Du sacré au minimalisme",
+      "category": "classique",
+      "date_start": "2027-02-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://trinitelyon.mapado.com/event/732603-univers-gurdjieff-2-du-sacre-au-minimalisme",
+      "image": "https://img.mapado.net/2026/5/28/6a1819fd51e4b-gurdjieff3.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "e8add8bd838a"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -32565,6 +32747,20 @@
       "image": "https://www.bourse-du-travail.com/img/evenement/pierre-emmanuel-barre-and-aymeric-lompret--une-heure-trente---tournee-2.jpg",
       "offsite_venue": null,
       "id": "01930ae3c83b"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Nuit Pierre Henry",
+      "subtitle": "Danser sur l'Apocalypse",
+      "category": "classique",
+      "date_start": "2027-02-05",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://trinitelyon.mapado.com/event/732638-nuit-pierre-henry-danser-sur-lapocalypse",
+      "image": "https://img.mapado.net/2026/5/28/6a1819baea3f1-pierre-henry-page-de-gauche.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "9ee6337fd207"
     },
     {
       "venue": "Comédie Odéon",
@@ -32861,6 +33057,20 @@
       "id": "21c9c46635a7"
     },
     {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Suite pour une porte et un soupir",
+      "subtitle": "Performance solo pour diabolo et bandes magnétiques",
+      "category": "classique",
+      "date_start": "2027-02-06",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://trinitelyon.mapado.com/event/732666-suite-pour-une-porte-et-un-soupir-performance-solo-pour-diabolo-et-bandes-magnetiques",
+      "image": "https://img.mapado.net/2026/5/21/6a0f01982900c-kit-2.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "c413ff9ba331"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Oratorio nomade",
@@ -32943,6 +33153,20 @@
       "image": "https://www.auditorium-lyon.com/sites/default/files/styles/vignette_teaser_xl/public/upload/images/1920_05-Melody_Gardo_c_Denis-Boulze.jpg?h=00326286&itok=TUwtOTvm",
       "offsite_venue": null,
       "id": "97706b848b3c"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "All We Get Is Life",
+      "subtitle": "Entre John Dowland et John Cage",
+      "category": "classique",
+      "date_start": "2027-02-06",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://trinitelyon.mapado.com/event/736887-all-we-get-is-life-entre-john-dowland-et-john-cage",
+      "image": "https://img.mapado.net/2026/5/26/6a15674545fd3-all-we-get-a3-copyright-benjamin-henon.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "b523fc2fb655"
     },
     {
       "venue": "Le Complexe café-théâtre",
@@ -33083,6 +33307,20 @@
       "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/5_Tout_est_calmecJean-Louis_Fernandez.jpg",
       "offsite_venue": null,
       "id": "e006087010ae"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "In Nomine",
+      "subtitle": "De Pérotin à Steve Reich",
+      "category": "classique",
+      "date_start": "2027-02-07",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://trinitelyon.mapado.com/event/732708-in-nomine-de-perotin-a-steve-reich",
+      "image": "https://img.mapado.net/2026/5/28/6a1819d36746d-innomine.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "45e2ff2a57cb"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -35561,6 +35799,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "6716bc76ed75"
+    },
+    {
+      "venue": "Chapelle de la Trinité",
+      "venue_slug": "chapelle-de-la-trinite",
+      "title": "Stabat Mater",
+      "subtitle": "Le Concert de l'Hostel Dieu & La Camera Delle Lacrime, Une relecture croisée de l'oeuvre de Vivaldi",
+      "category": "classique",
+      "date_start": "2027-03-02",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://trinitelyon.mapado.com/event/732736-stabat-mater-le-concert-de-lhostel-dieu-la-camera-delle-lacrime-une-relecture-croisee-de-loeuvre-de-vivaldi",
+      "image": "https://img.mapado.net/2026/5/24/6a1308dee9f51-web-2025-10-31-clermont-ferrand-opera-yann-cabello.png_thumbs/600-600.png",
+      "offsite_venue": null,
+      "id": "7dbb113ecba5"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -39482,5 +39734,8 @@
       "offsite_venue": null,
       "id": "661d7f33aa0b"
     }
-  ]
+  ],
+  "reprises": {
+    "Le Complexe café-théâtre": "2026-09-20"
+  }
 }
