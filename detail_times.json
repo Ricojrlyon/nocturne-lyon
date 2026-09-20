@@ -510,8 +510,44 @@
       ]
     ]
   },
+  "https://maisondeladanse.com/programmation/saison2026-2027/apres-moi-le-deluge": {
+    "fetched_at": "2026-09-20",
+    "lieu": "Maison de la danse - Grande salle",
+    "seances": [
+      [
+        "vendredi",
+        19,
+        3,
+        "20:30"
+      ],
+      [
+        "samedi",
+        20,
+        3,
+        "20:30"
+      ],
+      [
+        "lundi",
+        22,
+        3,
+        "19:30"
+      ],
+      [
+        "mardi",
+        23,
+        3,
+        "20:30"
+      ],
+      [
+        "mercredi",
+        24,
+        3,
+        "19:30"
+      ]
+    ]
+  },
   "https://maisondeladanse.com/programmation/saison2026-2027/ateliers-singuliers": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-09-20",
     "lieu": "Maison de la Danse",
     "seances": [
       [
@@ -1296,6 +1332,10 @@
   },
   "https://radiant-bellevue.fr/spectacles/emily-loizeau-quatuor-debussy/": {
     "fetched_at": "2026-09-12",
+    "time": "20:30"
+  },
+  "https://radiant-bellevue.fr/spectacles/en-therapie/": {
+    "fetched_at": "2026-09-20",
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/eric-fraticelli/": {
@@ -5353,7 +5393,7 @@
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/evidences-inconnues/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-09-20",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/grandeur-nature/": {
