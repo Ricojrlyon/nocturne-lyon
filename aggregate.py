@@ -54,7 +54,7 @@ from scrapers import (
     bourse_du_travail, improvidence, espace_gerson, complexe,
     celestins, tnp, maison_de_la_danse, croix_rousse, comedie_odeon,
     agendarts, auditorium, confluences, beaux_arts, iac, mac_lyon,
-    asvel, asvel_feminin,
+    asvel, asvel_feminin, volley,
 )
 from scrapers.aggregators import villemorte, petit_bulletin
 from scrapers.categorie import combler as combler_categories
@@ -96,6 +96,7 @@ SCRAPERS: list[tuple[str, Callable[[], List[Event]]]] = [
     ("Musée d'Art Contemporain", mac_lyon.fetch),
     ("LDLC ASVEL",               asvel.fetch),
     ("LDLC ASVEL Féminin",       asvel_feminin.fetch),
+    ("Volley national lyonnais", volley.fetch),
 ]
 
 # Exclusions qu'un scraper de salle décide et que les agrégateurs doivent
