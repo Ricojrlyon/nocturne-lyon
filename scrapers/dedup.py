@@ -497,6 +497,25 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
         passe range sur date_start : une plage d'octobre à décembre ne
         croise pas le concert du 9 octobre.
       * If one of the buckets is empty: nothing to pair, leave alone.
+      * D'ABORD, les paires à la MINUTE PRÈS : quand une seule source
+        haute et une seule source basse annoncent un événement à la même
+        heure exacte, au même endroit, le même jour, c'est le même. On
+        les fusionne sans regarder les titres, puis on laisse le reste à
+        la règle des effectifs.
+        Cette règle est plus SÛRE que celle des effectifs, pas plus
+        laxiste : celle-ci apparie sur l'ordre de tri, celle-là sur une
+        égalité d'horaire à la minute. Elle ne change le résultat que
+        lorsque les effectifs diffèrent, ou lorsque l'alignement par tri
+        aurait apparié de travers.
+        Mesuré sur le fil du 2026-09-20 : la Chapelle de la Trinité, le
+        15 novembre, où la salle annonce « Ovni baroque » 17:00 et
+        « Gaspard » 19:00 quand le Petit Bulletin dit « Ovni Sonore »
+        17:00 et « Fanny Meteier » 19:00 — deux soirées, quatre titres,
+        aucune similarité suffisante. La règle des effectifs refusait de
+        les toucher, à raison : un atelier de yoga à 10:00 sans
+        contrepartie et une visite d'expo à 18:00 sans contrepartie
+        rendaient l'alignement faux. Les deux paires exactes se
+        fusionnent, les deux orphelins restent.
       * If counts are equal (N hauts == N bas):
           - Sort both by (time or 'zz', title) to align them.
           - Pair them index-by-index.
@@ -521,6 +540,14 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
         20:30) — un lieu qu'aucun scraper ne couvre.
     """
     SCRAPER_PRIO_MIN = 100  # priorities >= this are venue scrapers
+
+    def fusionne(h_ev: Event, b_ev: Event) -> None:
+        """Le gagnant hérite des champs qui lui manquent."""
+        for field in ("time", "category", "subtitle", "image"):
+            if not getattr(h_ev, field, None):
+                val = getattr(b_ev, field, None)
+                if val:
+                    setattr(h_ev, field, val)
 
     by_venue_date: dict[tuple[str, str], list[tuple[Event, int]]] = defaultdict(list)
     for ev, prio in events_with_prio:
@@ -553,9 +580,42 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
             result.extend(group)
             continue
 
-        # Counts must match for a deterministic pairing
+        # Les paires à la minute près, d'abord : un seul de chaque côté
+        # à cette heure-là, au même endroit, le même jour.
+        par_heure_hauts: dict = defaultdict(list)
+        par_heure_bas: dict = defaultdict(list)
+        for x in hauts:
+            if x[0].time:
+                par_heure_hauts[x[0].time].append(x)
+        for x in bas:
+            if x[0].time:
+                par_heure_bas[x[0].time].append(x)
+
+        apparies_hauts, apparies_bas = set(), set()
+        for heure, uns in par_heure_hauts.items():
+            autres = par_heure_bas.get(heure) or []
+            if len(uns) != 1 or len(autres) != 1:
+                continue            # deux salles d'un même lieu, ou rien
+            (h_ev, h_prio), (b_ev, _) = uns[0], autres[0]
+            fusionne(h_ev, b_ev)
+            result.append((h_ev, h_prio))
+            apparies_hauts.add(id(h_ev))
+            apparies_bas.add(id(b_ev))
+
+        if apparies_hauts:
+            hauts = [x for x in hauts if id(x[0]) not in apparies_hauts]
+            bas = [x for x in bas if id(x[0]) not in apparies_bas]
+            if not hauts and not bas:
+                continue
+            if not hauts or not bas:
+                result.extend(hauts + bas)
+                continue
+
+        # Counts must match for a deterministic pairing. On rend le
+        # RESTE et non le groupe entier : ce qui a déjà été apparié à la
+        # minute près est parti dans `result`.
         if len(hauts) != len(bas):
-            result.extend(group)
+            result.extend(hauts + bas)
             continue
 
         # Pair by sort order: untimed events go last, then alphabetical.
@@ -574,16 +634,11 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
             for (h_ev, _), (b_ev, _) in zip(hauts_sorted, bas_sorted)
         )
         if time_mismatch:
-            result.extend(group)
+            result.extend(hauts + bas)
             continue
 
         for (h_ev, h_prio), (b_ev, _) in zip(hauts_sorted, bas_sorted):
-            # Le gagnant hérite des champs qui lui manquent.
-            for field in ("time", "category", "subtitle", "image"):
-                if not getattr(h_ev, field, None):
-                    val = getattr(b_ev, field, None)
-                    if val:
-                        setattr(h_ev, field, val)
+            fusionne(h_ev, b_ev)
             result.append((h_ev, h_prio))
         # Les événements de priorité basse sont écartés.
 
