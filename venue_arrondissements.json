@@ -21,7 +21,7 @@
     "arr": null,
     "checked_at": "2026-09-07",
     "confidence": "failed",
-    "seen_at": "2026-09-14"
+    "seen_at": "2026-09-21"
   },
   "Amphithéâtre du Centre de Congrès": {
     "arr": null,
@@ -63,7 +63,7 @@
     "arr": "9e",
     "checked_at": "2026-09-07",
     "confidence": "high",
-    "seen_at": "2026-09-14"
+    "seen_at": "2026-09-21"
   },
   "Autour de l'image": {
     "arr": "2e",
@@ -75,7 +75,7 @@
     "arr": null,
     "checked_at": "2026-09-07",
     "confidence": "failed",
-    "seen_at": "2026-09-14"
+    "seen_at": "2026-09-21"
   },
   "Baràgones": {
     "arr": "5e",
@@ -118,7 +118,7 @@
     "checked_at": "2026-09-07",
     "commune": "Vénissieux",
     "confidence": "low",
-    "seen_at": "2026-09-14"
+    "seen_at": "2026-09-21"
   },
   "Brasserie Georges": {
     "arr": "2e",
@@ -166,7 +166,7 @@
     "arr": "Villeurbanne",
     "checked_at": "2026-09-07",
     "confidence": "high",
-    "seen_at": "2026-09-14"
+    "seen_at": "2026-09-21"
   },
   "Café Rakwé": {
     "arr": "1er",
@@ -397,7 +397,7 @@
     "arr": "Villeurbanne",
     "checked_at": "2026-09-07",
     "confidence": "high",
-    "seen_at": "2026-09-14"
+    "seen_at": "2026-09-21"
   },
   "Ile Egalité": {
     "arr": "Villeurbanne",
@@ -515,7 +515,7 @@
     "arr": "4e",
     "checked_at": "2026-09-07",
     "confidence": "high",
-    "seen_at": "2026-09-14"
+    "seen_at": "2026-09-21"
   },
   "Le Boui Boui": {
     "arr": "5e",
@@ -638,7 +638,7 @@
     "arr": "1er",
     "checked_at": "2026-08-27",
     "confidence": "high",
-    "seen_at": "2026-09-14"
+    "seen_at": "2026-09-21"
   },
   "Lieu Privé": {
     "arr": null,
@@ -878,13 +878,13 @@
     "arr": "1er",
     "checked_at": "2026-09-07",
     "confidence": "high",
-    "seen_at": "2026-09-14"
+    "seen_at": "2026-09-21"
   },
   "Rita-Plage": {
     "arr": "Villeurbanne",
     "checked_at": "2026-09-07",
     "confidence": "high",
-    "seen_at": "2026-09-14"
+    "seen_at": "2026-09-21"
   },
   "Rontalon": {
     "arr": "Autre",
@@ -930,6 +930,12 @@
     "checked_at": "2026-09-01",
     "confidence": "high",
     "seen_at": "2026-09-01"
+  },
+  "Studio Nafas": {
+    "arr": null,
+    "checked_at": "2026-09-21",
+    "confidence": "failed",
+    "seen_at": "2026-09-21"
   },
   "Studio de danse du CCNR": {
     "arr": null,
@@ -1123,7 +1129,7 @@
     "arr": null,
     "checked_at": "2026-09-07",
     "confidence": "failed",
-    "seen_at": "2026-09-14"
+    "seen_at": "2026-09-21"
   },
   "Ô boudoir": {
     "arr": null,

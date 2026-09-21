@@ -115,10 +115,6 @@
     "fetched_at": "2026-08-21",
     "time": "18:00"
   },
-  "https://h-eat.eu/events/le-bazar-xxl/": {
-    "fetched_at": "2026-07-22",
-    "time": "17:30"
-  },
   "https://h-eat.eu/events/le-grand-souk/": {
     "fetched_at": "2026-09-17",
     "time": "00:00"
@@ -1134,6 +1130,18 @@
       ]
     ]
   },
+  "https://maisondeladanse.com/programmation/saison2026-2027/soiree-18-30-ans": {
+    "fetched_at": "2026-09-21",
+    "lieu": "Maison de la Danse",
+    "seances": [
+      [
+        "jeudi",
+        15,
+        10,
+        "18:30"
+      ]
+    ]
+  },
   "https://maisondeladanse.com/programmation/saison2026-2027/strip": {
     "fetched_at": "2026-09-19",
     "lieu": "Les SUBS",
@@ -1421,6 +1429,10 @@
   "https://radiant-bellevue.fr/spectacles/la-miserable/": {
     "fetched_at": "2026-09-12",
     "time": "16:00"
+  },
+  "https://radiant-bellevue.fr/spectacles/la-noce-dalfonse/": {
+    "fetched_at": "2026-09-21",
+    "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/la-salida/": {
     "fetched_at": "2026-09-12",
@@ -3637,6 +3649,11 @@
       ]
     ]
   },
+  "https://www.comedieodeon.com/spectacle/jovany-le-dernier-saltimbanque/": {
+    "defaut": "20:00",
+    "exceptions": {},
+    "fetched_at": "2026-09-21"
+  },
   "https://www.comedieodeon.com/spectacle/jules-et-marcel/": {
     "defaut": "19:00",
     "exceptions": {},
@@ -5097,6 +5114,17 @@
     ],
     "titre": "Week-end Musée-à-brac"
   },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/arielle-beck": {
+    "fetched_at": "2026-09-21",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2026-10-15",
+        "20:00"
+      ]
+    ],
+    "time": null
+  },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/beethoven-sibelius": {
     "fetched_at": "2026-09-18",
     "lieu": "Opéra de Lyon",
@@ -5412,6 +5440,10 @@
     "fetched_at": "2026-09-17",
     "time": null
   },
+  "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-lenfant-ocean/": {
+    "fetched_at": "2026-09-21",
+    "time": null
+  },
   "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-liah-et-moi/": {
     "fetched_at": "2026-09-17",
     "time": null
@@ -5432,6 +5464,10 @@
     "fetched_at": "2026-09-17",
     "time": null
   },
+  "https://www.tng-lyon.fr/evenement/lenfant-ocean/": {
+    "fetched_at": "2026-09-21",
+    "time": null
+  },
   "https://www.tng-lyon.fr/evenement/liah-et-moi/": {
     "fetched_at": "2026-09-17",
     "time": null
@@ -5445,7 +5481,7 @@
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/rdv-popcorn-evidences-inconnues/": {
-    "fetched_at": "2026-09-13",
+    "fetched_at": "2026-09-21",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/rdv-popcorn-labolition-des-privileges/": {
