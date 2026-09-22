@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-21T11:42:56.800800+00:00",
-  "count": 2855,
+  "generated_at": "2026-09-22T10:45:22.129629+00:00",
+  "count": 2903,
   "events": [
     {
       "venue": "IAC Villeurbanne",
@@ -8,13 +8,13 @@
       "title": "Jeune création internationale",
       "subtitle": "Avec Martin Dutrait",
       "category": "exposition",
-      "date_start": "2026-09-21",
+      "date_start": "2026-09-22",
       "date_end": "2026-12-13",
       "time": null,
       "url": "https://i-ac.eu/fr/expositions/24_in-situ/2026/797_JEUNE-CREATION-INTERNATIONALE",
       "image": "https://i-ac.eu/img/thumbs_cache/780x440_bac26_jci_rs_1080x1080px_hd.jpg",
       "offsite_venue": null,
-      "id": "62e26b98bb74"
+      "id": "25e29d0c3855"
     },
     {
       "venue": "Institut Lumière",
@@ -22,13 +22,13 @@
       "title": "Rétrospective Simone Signoret",
       "subtitle": null,
       "category": "projection",
-      "date_start": "2026-09-21",
+      "date_start": "2026-09-22",
       "date_end": "2026-10-03",
       "time": null,
       "url": "https://www.petit-bulletin.fr/agenda-319118-r-trospective-simone-signoret.html",
       "image": null,
       "offsite_venue": null,
-      "id": "17e5b23b2627"
+      "id": "573457ca14ec"
     },
     {
       "venue": "Institut Lumière",
@@ -36,237 +36,13 @@
       "title": "Rétrospective Milos Forman",
       "subtitle": null,
       "category": "projection",
-      "date_start": "2026-09-21",
+      "date_start": "2026-09-22",
       "date_end": "2026-10-04",
       "time": null,
       "url": "https://www.petit-bulletin.fr/agenda-319119-r-trospective-milos-forman.html",
       "image": null,
       "offsite_venue": null,
-      "id": "c3c37d8fab0f"
-    },
-    {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Atelier Phonograffiti Lyon | Custom vinyles & street art",
-      "subtitle": null,
-      "category": "atelier",
-      "date_start": "2026-09-21",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/atelier-phonograffiti-lyon-custom-vinyles-street-art/",
-      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-caea60a/lacommune.co/wp-content/uploads/2026/07/21-1-1-768x960.jpg",
-      "offsite_venue": null,
-      "id": "fe9ce7c0d416"
-    },
-    {
-      "venue": "Musée Urbain Tony Garnier",
-      "venue_slug": "musee-urbain-tony-garnier",
-      "title": "Voyages en cité, 1973-1990 : vivre dans les quartiers populaires",
-      "subtitle": null,
-      "category": "Sciences et Histoire",
-      "date_start": "2026-09-21",
-      "date_end": "2027-12-18",
-      "time": null,
-      "url": "https://www.petit-bulletin.fr/agenda-316752-voyages-en-cit-1973-1990-vivre-dans-les-quartiers-populaires.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "db2fb6d6ab94"
-    },
-    {
-      "venue": "Musée des Beaux-Arts",
-      "venue_slug": "musee-des-beaux-arts",
-      "title": "Musée sentimental",
-      "subtitle": "André Breton, Daniel Spoerri, Joseph Cornell, Annette Messager, Marcel Duchamp, Ben…",
-      "category": "exposition",
-      "date_start": "2026-09-21",
-      "date_end": "2027-03-14",
-      "time": null,
-      "url": "https://www.mba-lyon.fr/fr/fiche-programmation/musee-sentimental",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/content/medias/images/2020-05/cornell-andromeda_ss-crop.jpg?itok=qrynuHoA",
-      "offsite_venue": null,
-      "id": "f79698da864b"
-    },
-    {
-      "venue": "L'Aqueduc",
-      "venue_slug": "l-aqueduc",
-      "title": "O'Malley",
-      "subtitle": null,
-      "category": "Street Art",
-      "date_start": "2026-09-21",
-      "date_end": "2026-10-23",
-      "time": "10:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319046-oemalley.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "8ccf4bf982ac"
-    },
-    {
-      "venue": "Au Rikiki",
-      "venue_slug": "au-rikiki",
-      "title": "Rouge",
-      "subtitle": null,
-      "category": "Théâtre",
-      "date_start": "2026-09-21",
-      "date_end": "2026-10-14",
-      "time": "10:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319347-rouge.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "f95d2a5448f5"
-    },
-    {
-      "venue": "MAM - Musée des Arts et de la Marionnette",
-      "venue_slug": "mam-musee-des-arts-et-de-la-marionnette",
-      "title": "Carte blanche à La Compagnie à - Le rire, l'intime, le politique",
-      "subtitle": null,
-      "category": "Art graphique",
-      "date_start": "2026-09-21",
-      "date_end": "2027-03-31",
-      "time": "10:30",
-      "url": "https://www.petit-bulletin.fr/agenda-314275-carte-blanche-la-compagnie-le-rire-l-intime-le-politique.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "c60d3da39f7c"
-    },
-    {
-      "venue": "Archives municipales de Lyon",
-      "venue_slug": "archives-municipales-de-lyon",
-      "title": "Natalie Zemon Davis",
-      "subtitle": null,
-      "category": "Sciences et Histoire",
-      "date_start": "2026-09-21",
-      "date_end": "2026-12-12",
-      "time": "13:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319056-natalie-zemon-davis.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "a96b8dfd2dd6"
-    },
-    {
-      "venue": "Archives municipales de Lyon",
-      "venue_slug": "archives-municipales-de-lyon",
-      "title": "Arch'ivres en Turakie",
-      "subtitle": null,
-      "category": "Sciences et Histoire",
-      "date_start": "2026-09-21",
-      "date_end": "2027-01-30",
-      "time": "13:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319054-arch-ivres-en-turakie.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "8821b7203a67"
-    },
-    {
-      "venue": "Spacejunk",
-      "venue_slug": "spacejunk",
-      "title": "Cobie",
-      "subtitle": null,
-      "category": "Street Art",
-      "date_start": "2026-09-21",
-      "date_end": "2026-11-07",
-      "time": "14:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319040-cobie.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "174f8bdef2cd"
-    },
-    {
-      "venue": "Archives municipales de Lyon",
-      "venue_slug": "archives-municipales-de-lyon",
-      "title": "Lyon, carrefour de la diplomatie méditerranéenne ? L'ambassade ottomane de 1721",
-      "subtitle": null,
-      "category": "Conférences",
-      "date_start": "2026-09-21",
-      "date_end": null,
-      "time": "18:15",
-      "url": "https://www.petit-bulletin.fr/agenda-319102-lyon-carrefour-de-la-diplomatie-m-diterran-enne-leambassade-ottomane-de-1721.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "044a37ef2024"
-    },
-    {
-      "venue": "Blue Monday",
-      "venue_slug": "blue-monday",
-      "title": "COMEDY CLUB GRATUIT",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-09-21",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://agenda.villemorte.fr/event/comedy-club-gratuit",
-      "image": "https://agenda.villemorte.fr/media/thumb/c7576e6e0ec155693900637201fa40b0.jpg",
-      "offsite_venue": null,
-      "id": "596236a91c4d"
-    },
-    {
-      "venue": "Big White",
-      "venue_slug": "big-white",
-      "title": "Big Comedy Club - Stand-up au chapeau tous les lundi",
-      "subtitle": null,
-      "category": "théâtre",
-      "date_start": "2026-09-21",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/big-comedy-club-stand-up-au-chapeau-tous-les-lundi-1",
-      "image": "https://agenda.villemorte.fr/media/thumb/d91ed24231be344def011cc719322417.jpg",
-      "offsite_venue": null,
-      "id": "45fdddf87aec"
-    },
-    {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "Hole Dweller + Coniferous Myst + Dragonkeep + Portcullis",
-      "subtitle": null,
-      "category": "Musique Electronique",
-      "date_start": "2026-09-21",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319234-hole-dweller-coniferous-myst-dragonkeep-portcullis.html",
-      "image": "https://agenda.villemorte.fr/media/thumb/f8f7a7fdfa39ba2dd37fe6d896ea0ea4.jpg",
-      "offsite_venue": null,
-      "id": "08da6985a5bd"
-    },
-    {
-      "venue": "Espace Gerson",
-      "venue_slug": "espace-gerson",
-      "title": "Yoanna Sallese - Conviction molle",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-09-21",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://espacegerson.mapado.com/event/709286-yoanna-sallese-conviction-molle",
-      "image": "https://img.mapado.net/2026/4/24/69eb8da34f996-yoanna-sallese.png_thumbs/600-600.png",
-      "offsite_venue": null,
-      "id": "95e65b25a205"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
-      "title": "Un grand cri d'amour",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-09-21",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.lecomplexelyon.com/programme/un-grand-cri-damour/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/un-grand-cri-damour-540x800.jpg",
-      "offsite_venue": null,
-      "id": "774b0d9731ba"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
-      "title": "\"À la fin il meurt\"",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-09-21",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.lecomplexelyon.com/programme/a-la-fin-il-meurt/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/a-la-fin-il-meurt-540x800.jpg",
-      "offsite_venue": null,
-      "id": "7e1ed1156990"
+      "id": "e6017e80059e"
     },
     {
       "venue": "La Commune",
@@ -281,6 +57,118 @@
       "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-caea60a/lacommune.co/wp-content/uploads/2025/11/22-1-768x960.jpg",
       "offsite_venue": null,
       "id": "7b3e83710166"
+    },
+    {
+      "venue": "Musée Urbain Tony Garnier",
+      "venue_slug": "musee-urbain-tony-garnier",
+      "title": "Voyages en cité, 1973-1990 : vivre dans les quartiers populaires",
+      "subtitle": null,
+      "category": "Sciences et Histoire",
+      "date_start": "2026-09-22",
+      "date_end": "2027-12-18",
+      "time": null,
+      "url": "https://www.petit-bulletin.fr/agenda-316752-voyages-en-cit-1973-1990-vivre-dans-les-quartiers-populaires.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "2599c9a0334e"
+    },
+    {
+      "venue": "Musée des Beaux-Arts",
+      "venue_slug": "musee-des-beaux-arts",
+      "title": "Musée sentimental",
+      "subtitle": "André Breton, Daniel Spoerri, Joseph Cornell, Annette Messager, Marcel Duchamp, Ben…",
+      "category": "exposition",
+      "date_start": "2026-09-22",
+      "date_end": "2027-03-14",
+      "time": null,
+      "url": "https://www.mba-lyon.fr/fr/fiche-programmation/musee-sentimental",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/content/medias/images/2020-05/cornell-andromeda_ss-crop.jpg?itok=qrynuHoA",
+      "offsite_venue": null,
+      "id": "41658568d439"
+    },
+    {
+      "venue": "L'Aqueduc",
+      "venue_slug": "l-aqueduc",
+      "title": "O'Malley",
+      "subtitle": null,
+      "category": "Street Art",
+      "date_start": "2026-09-22",
+      "date_end": "2026-10-23",
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319046-oemalley.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "131062803b33"
+    },
+    {
+      "venue": "Au Rikiki",
+      "venue_slug": "au-rikiki",
+      "title": "Rouge",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-09-22",
+      "date_end": "2026-10-14",
+      "time": "10:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319347-rouge.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "6d9fd68b19b0"
+    },
+    {
+      "venue": "MAM - Musée des Arts et de la Marionnette",
+      "venue_slug": "mam-musee-des-arts-et-de-la-marionnette",
+      "title": "Carte blanche à La Compagnie à - Le rire, l'intime, le politique",
+      "subtitle": null,
+      "category": "Art graphique",
+      "date_start": "2026-09-22",
+      "date_end": "2027-03-31",
+      "time": "10:30",
+      "url": "https://www.petit-bulletin.fr/agenda-314275-carte-blanche-la-compagnie-le-rire-l-intime-le-politique.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "cfff8484cbde"
+    },
+    {
+      "venue": "Archives municipales de Lyon",
+      "venue_slug": "archives-municipales-de-lyon",
+      "title": "Natalie Zemon Davis",
+      "subtitle": null,
+      "category": "Sciences et Histoire",
+      "date_start": "2026-09-22",
+      "date_end": "2026-12-12",
+      "time": "13:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319056-natalie-zemon-davis.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "4f9c8ade99a2"
+    },
+    {
+      "venue": "Archives municipales de Lyon",
+      "venue_slug": "archives-municipales-de-lyon",
+      "title": "Arch'ivres en Turakie",
+      "subtitle": null,
+      "category": "Sciences et Histoire",
+      "date_start": "2026-09-22",
+      "date_end": "2027-01-30",
+      "time": "13:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319054-arch-ivres-en-turakie.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "e6cc86931180"
+    },
+    {
+      "venue": "Spacejunk",
+      "venue_slug": "spacejunk",
+      "title": "Cobie",
+      "subtitle": null,
+      "category": "Street Art",
+      "date_start": "2026-09-22",
+      "date_end": "2026-11-07",
+      "time": "14:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319040-cobie.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "463d43bc8f17"
     },
     {
       "venue": "Le Sucre",
@@ -425,20 +313,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "Stand-up spécial Couples",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-09-22",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.lecomplexelyon.com/programme/stand-up-special-couples/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/stand-up-special-couples-540x800.jpg",
-      "offsite_venue": null,
-      "id": "c13d0bdeeb9c"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Dessine moi une impro !",
       "subtitle": null,
       "category": "café-théâtre",
@@ -449,6 +323,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/dessine-moi-une-impro-540x800.jpg",
       "offsite_venue": null,
       "id": "e3d3f3709ab5"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "Stand-up spécial Couples",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-22",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.lecomplexelyon.com/programme/stand-up-special-couples/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/stand-up-special-couples-540x800.jpg",
+      "offsite_venue": null,
+      "id": "c13d0bdeeb9c"
     },
     {
       "venue": "Trokson",
@@ -684,7 +572,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.theatredescelestins.com/fr/programmation/2026-2027/creation/dans-le-ventre-des-cerveaux",
-      "image": "https://www.theatredescelestins.com/assets/q75-w600/7542aa0f/dans_le_ventre_des_cerveaux_1169.jpg",
+      "image": "https://www.theatredescelestins.com/assets/q75-w600/32d6150e/sl_dans_le_ventre_des_cerveaux_1169_1_.jpg",
       "offsite_venue": null,
       "id": "86328c00327c"
     },
@@ -992,7 +880,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://www.theatredescelestins.com/fr/programmation/2026-2027/creation/dans-le-ventre-des-cerveaux",
-      "image": "https://www.theatredescelestins.com/assets/q75-w600/7542aa0f/dans_le_ventre_des_cerveaux_1169.jpg",
+      "image": "https://www.theatredescelestins.com/assets/q75-w600/32d6150e/sl_dans_le_ventre_des_cerveaux_1169_1_.jpg",
       "offsite_venue": null,
       "id": "e1d64ecdf3a3"
     },
@@ -1538,7 +1426,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.theatredescelestins.com/fr/programmation/2026-2027/creation/dans-le-ventre-des-cerveaux",
-      "image": "https://www.theatredescelestins.com/assets/q75-w600/7542aa0f/dans_le_ventre_des_cerveaux_1169.jpg",
+      "image": "https://www.theatredescelestins.com/assets/q75-w600/32d6150e/sl_dans_le_ventre_des_cerveaux_1169_1_.jpg",
       "offsite_venue": null,
       "id": "51c79e2137aa"
     },
@@ -1559,20 +1447,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "De quoi je me mêle?",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-09-25",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/de-quoi-je-me-mele/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/de-quoi-je-me-mele-540x800.jpg",
-      "offsite_venue": null,
-      "id": "8b7c23f208b4"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
       "subtitle": null,
       "category": "café-théâtre",
@@ -1583,6 +1457,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
       "offsite_venue": null,
       "id": "1202f8915a4f"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "De quoi je me mêle?",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-25",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/de-quoi-je-me-mele/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/de-quoi-je-me-mele-540x800.jpg",
+      "offsite_venue": null,
+      "id": "8b7c23f208b4"
     },
     {
       "venue": "Les Clameurs",
@@ -2168,7 +2056,7 @@
       "date_end": null,
       "time": "19:00",
       "url": "https://www.theatredescelestins.com/fr/programmation/2026-2027/creation/dans-le-ventre-des-cerveaux",
-      "image": "https://www.theatredescelestins.com/assets/q75-w600/7542aa0f/dans_le_ventre_des_cerveaux_1169.jpg",
+      "image": "https://www.theatredescelestins.com/assets/q75-w600/32d6150e/sl_dans_le_ventre_des_cerveaux_1169_1_.jpg",
       "offsite_venue": null,
       "id": "4771481f69e0"
     },
@@ -2273,6 +2161,20 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "bb1936877d09"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
       "title": "De quoi je me mêle?",
       "subtitle": null,
       "category": "café-théâtre",
@@ -2285,18 +2187,18 @@
       "id": "87b1b0d90f90"
     },
     {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
-      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "LET’S QUEER 2",
       "subtitle": null,
-      "category": "café-théâtre",
+      "category": "club",
       "date_start": "2026-09-26",
       "date_end": null,
       "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
+      "url": "https://sonic-lyon.fr/evenement/lets-queer-2/",
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/09/IMG_1593-821x1024.jpeg",
       "offsite_venue": null,
-      "id": "bb1936877d09"
+      "id": "9936581d1893"
     },
     {
       "venue": "Musée des Confluences",
@@ -2400,7 +2302,7 @@
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "Morenica + Diámelo",
-      "subtitle": "Release Party · En partenariat avec Tardigrade",
+      "subtitle": "Concert annulé",
       "category": "musique",
       "date_start": "2026-09-26",
       "date_end": null,
@@ -2546,7 +2448,7 @@
       "date_end": null,
       "time": "16:00",
       "url": "https://www.theatredescelestins.com/fr/programmation/2026-2027/creation/dans-le-ventre-des-cerveaux",
-      "image": "https://www.theatredescelestins.com/assets/q75-w600/7542aa0f/dans_le_ventre_des_cerveaux_1169.jpg",
+      "image": "https://www.theatredescelestins.com/assets/q75-w600/32d6150e/sl_dans_le_ventre_des_cerveaux_1169_1_.jpg",
       "offsite_venue": null,
       "id": "bb657ad50948"
     },
@@ -2619,6 +2521,20 @@
       "image": "https://img.mapado.net/2026/4/23/69ea07cb3f942-jackpot.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "99e89de06320"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Oyster Sunday x Cochon Iodé",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-09-27",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://h-eat.eu/events/oyster-sunday-cochon-iode/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/09/27sept-576x720.png",
+      "offsite_venue": null,
+      "id": "f10808677247"
     },
     {
       "venue": "Improvidence",
@@ -2717,6 +2633,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "3c37d464e923"
+    },
+    {
+      "venue": "Big White",
+      "venue_slug": "big-white",
+      "title": "Big Comedy Club - Stand-up au chapeau tous les lundi",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-09-28",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/big-comedy-club-stand-up-au-chapeau-tous-les-lundi-2",
+      "image": "https://agenda.villemorte.fr/media/thumb/d91ed24231be344def011cc719322417.jpg",
+      "offsite_venue": null,
+      "id": "0937723ba9c5"
     },
     {
       "venue": "Espace Gerson",
@@ -2882,7 +2812,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://www.theatredescelestins.com/fr/programmation/2026-2027/creation/dans-le-ventre-des-cerveaux",
-      "image": "https://www.theatredescelestins.com/assets/q75-w600/7542aa0f/dans_le_ventre_des_cerveaux_1169.jpg",
+      "image": "https://www.theatredescelestins.com/assets/q75-w600/32d6150e/sl_dans_le_ventre_des_cerveaux_1169_1_.jpg",
       "offsite_venue": null,
       "id": "2ccddef4089c"
     },
@@ -3274,7 +3204,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.theatredescelestins.com/fr/programmation/2026-2027/creation/dans-le-ventre-des-cerveaux",
-      "image": "https://www.theatredescelestins.com/assets/q75-w600/7542aa0f/dans_le_ventre_des_cerveaux_1169.jpg",
+      "image": "https://www.theatredescelestins.com/assets/q75-w600/32d6150e/sl_dans_le_ventre_des_cerveaux_1169_1_.jpg",
       "offsite_venue": null,
       "id": "2ac9f7e2df1d"
     },
@@ -3405,6 +3335,20 @@
       "id": "dc43aca97f40"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-de-lyon",
+      "title": "Visites découverte commentées",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-10-01",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "8f2f109c0daa"
+    },
+    {
       "venue": "Bieristan",
       "venue_slug": "bieristan",
       "title": "Flam's Party !",
@@ -3498,7 +3442,7 @@
       "date_end": null,
       "time": "19:00",
       "url": "https://www.les-subs.com/evenement/festiva-sens-interdits-khalil-khalil-khalil-albatran-bilal-alkhatib/",
-      "image": "https://www.les-subs.com/wp-content/uploads/2024/04/creation.png",
+      "image": "https://www.les-subs.com/wp-content/uploads/2026/03/3-by-bilal-alkhatib-1-200x200.jpg",
       "offsite_venue": null,
       "id": "4aa436a9ba83"
     },
@@ -3526,7 +3470,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://www.theatredescelestins.com/fr/programmation/2026-2027/creation/dans-le-ventre-des-cerveaux",
-      "image": "https://www.theatredescelestins.com/assets/q75-w600/7542aa0f/dans_le_ventre_des_cerveaux_1169.jpg",
+      "image": "https://www.theatredescelestins.com/assets/q75-w600/32d6150e/sl_dans_le_ventre_des_cerveaux_1169_1_.jpg",
       "offsite_venue": null,
       "id": "50cc56632179"
     },
@@ -3680,7 +3624,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/the-world-of-queen",
-      "image": "https://www.halle-tony-garnier.com/storage/144533/conversions/2026-10-01-THE-WORLD-OF-QUEEN-3-visuel-twoq-carre-1080x1080-copi-20241011-163641-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144601/conversions/2026-10-01-THE-WORLD-OF-QUEEN-3-visuel-twoq-carre-1080x1080-copi-20241011-163641-square.jpg",
       "offsite_venue": null,
       "id": "3611a8088b2f"
     },
@@ -3965,6 +3909,20 @@
       "id": "b03d07a96d11"
     },
     {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "soirée de soutien à la Cabine de douche",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-02",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://agenda.villemorte.fr/event/soiree-de-soutien-a-la-cabine-de-douche",
+      "image": "https://agenda.villemorte.fr/media/thumb/b523ca55b0bec408f95c0f903c2c1c9e.jpg",
+      "offsite_venue": null,
+      "id": "35f4df6f45b0"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "MIOSSEC",
@@ -3988,9 +3946,23 @@
       "date_end": null,
       "time": "19:00",
       "url": "https://www.les-subs.com/evenement/festiva-sens-interdits-khalil-khalil-khalil-albatran-bilal-alkhatib/",
-      "image": "https://www.les-subs.com/wp-content/uploads/2024/04/creation.png",
+      "image": "https://www.les-subs.com/wp-content/uploads/2026/03/3-by-bilal-alkhatib-1-200x200.jpg",
       "offsite_venue": null,
       "id": "976acfdc55a3"
+    },
+    {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Metalifest #5",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-02",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319541-metalifest-5.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "ae98608b7e05"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -4128,23 +4100,9 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.theatredescelestins.com/fr/programmation/2026-2027/creation/dans-le-ventre-des-cerveaux",
-      "image": "https://www.theatredescelestins.com/assets/q75-w600/7542aa0f/dans_le_ventre_des_cerveaux_1169.jpg",
+      "image": "https://www.theatredescelestins.com/assets/q75-w600/32d6150e/sl_dans_le_ventre_des_cerveaux_1169_1_.jpg",
       "offsite_venue": null,
       "id": "d3a5be9dd36b"
-    },
-    {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "soirée de soutien à la Cabine de douche",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-02",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/soiree-de-soutien-a-la-cabine-de-douche",
-      "image": null,
-      "offsite_venue": null,
-      "id": "06d69cb4f949"
     },
     {
       "venue": "LDLC Arena",
@@ -4385,6 +4343,20 @@
       "id": "fadb80d021df"
     },
     {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Crépus Couture SS27 – Fée des stars",
+      "subtitle": null,
+      "category": "dj set",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/crepus-couture-fee-des-stars-la-commune/",
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-caea60a/lacommune.co/wp-content/uploads/2025/11/1080x1350_OCTOBRE-768x960.jpg",
+      "offsite_venue": null,
+      "id": "ad83591878e1"
+    },
+    {
       "venue": "Le Petit Salon",
       "venue_slug": "petit-salon",
       "title": "VITESSE : ZWILLING / SLMT / PIX & MORE",
@@ -4399,6 +4371,20 @@
       "id": "63d511ecce95"
     },
     {
+      "venue": "Musée d'Art Contemporain",
+      "venue_slug": "mac-lyon",
+      "title": "Visite commentée de la Biennale de Lyon",
+      "subtitle": "Dès 12 ans, au macLYON",
+      "category": "visite",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.mac-lyon.com/fr/programmation/visite-commentee-de-la-biennale-de-lyon",
+      "image": "https://www.mac-lyon.com/sites/mac/files/styles/programmation_results/public/2026-07/banniere_enfant_famille_web.jpg?itok=41ieO6ia",
+      "offsite_venue": null,
+      "id": "4f5ed7cbc712"
+    },
+    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "Atelier intergénérationnel – Boule de Neige",
@@ -4411,6 +4397,20 @@
       "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/La-fabrique-des-souvenirs-Boule-de-neige_460x460.png",
       "offsite_venue": null,
       "id": "0392e3429e66"
+    },
+    {
+      "venue": "La Sucrière",
+      "venue_slug": "la-sucriere",
+      "title": "Marché de la Mode Vintage",
+      "subtitle": null,
+      "category": "Salons et foires",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-303719-march-de-la-mode-vintage.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "eb05148edf75"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -4509,6 +4509,20 @@
       "image": "https://museedesconfluences.fr/sites/default/files/uploads/2026-07/fdls_archobruit.jpg",
       "offsite_venue": null,
       "id": "e3773f020709"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-de-lyon",
+      "title": "Visites découverte commentées",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "3d8ef4403173"
     },
     {
       "venue": "Musée des Confluences",
@@ -4707,6 +4721,20 @@
       "id": "676c522f3f8b"
     },
     {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Revenge + Titan + Highway + Fortunato",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319540-revenge-titan-highway-fortunato.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "1ad6117191fb"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Dans le ventre des cerveaux",
@@ -4716,7 +4744,7 @@
       "date_end": null,
       "time": "19:00",
       "url": "https://www.theatredescelestins.com/fr/programmation/2026-2027/creation/dans-le-ventre-des-cerveaux",
-      "image": "https://www.theatredescelestins.com/assets/q75-w600/7542aa0f/dans_le_ventre_des_cerveaux_1169.jpg",
+      "image": "https://www.theatredescelestins.com/assets/q75-w600/32d6150e/sl_dans_le_ventre_des_cerveaux_1169_1_.jpg",
       "offsite_venue": null,
       "id": "288f7d3fd66d"
     },
@@ -4961,16 +4989,16 @@
     {
       "venue": "Toï Toï le Zinc",
       "venue_slug": "toi-toi-le-zinc",
-      "title": "HORIZON NUIT - LIGNES DE FUITE et points de rencontre - RELEAZ PARTY",
+      "title": "Horizon Nuit + Esther Esther + Rudy What + Bruit + Papa Veille",
       "subtitle": null,
-      "category": "musique",
+      "category": "Rock & Pop",
       "date_start": "2026-10-03",
       "date_end": null,
       "time": "20:30",
-      "url": "https://agenda.villemorte.fr/event/horizon-nuit-lignes-de-fuite-et-points-de-rencontre-releaz-party",
+      "url": "https://www.petit-bulletin.fr/agenda-319544-horizon-nuit-esther-esther-rudy-what-bruit-papa-veille.html",
       "image": "https://agenda.villemorte.fr/media/thumb/612aa3cc659743620465d15c5aa0f894.jpg",
       "offsite_venue": null,
-      "id": "b737edb62d80"
+      "id": "82bef6c82138"
     },
     {
       "venue": "Improvidence",
@@ -5421,6 +5449,20 @@
       "id": "38d3ef11b5fd"
     },
     {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Hexis + Rorcal + Violence",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-05",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319539-hexis-rorcal-violence.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "8452398a8954"
+    },
+    {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
       "title": "DazzlingKillmen (Us) + Pord + Comte Zero",
@@ -5521,16 +5563,16 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Gratuit Déjeuner-Concert Déjeuner-Concert Labo du Conservatoire",
+      "title": "Gratuit Déjeuner-Concert LA COMTESSE Déjeuner-Concert du Labo",
       "subtitle": null,
       "category": "Rock & Pop",
       "date_start": "2026-10-06",
       "date_end": null,
       "time": "12:30",
-      "url": "https://marchegare.fr/agenda/dejeuner-concert-0",
-      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-06/dejconcert-defaut.png",
+      "url": "https://marchegare.fr/agenda/la-comtesse-26",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2025-09/camscanner_20-09-2025_10.22_1.jpg",
       "offsite_venue": null,
-      "id": "723fb5cef99c"
+      "id": "7cee27ab9062"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -5629,6 +5671,20 @@
       "image": "https://agenda.villemorte.fr/media/thumb/5297b26396e49252264633221d410388.jpg",
       "offsite_venue": null,
       "id": "5c6e17ef9ff8"
+    },
+    {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Hitten + Haunt + Kamikrazy",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-06",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319538-hitten-haunt-kamikrazy.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "eb0c9867764a"
     },
     {
       "venue": "Bourse du Travail",
@@ -5813,6 +5869,20 @@
       "id": "939e4bb32db8"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-de-lyon",
+      "title": "Visites découverte commentées",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-10-07",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "6deacedb90ee"
+    },
+    {
       "venue": "Chapelle du Vinatier",
       "venue_slug": "chapelle-du-vinatier",
       "title": "Circo Infinito",
@@ -5937,6 +6007,20 @@
       "image": "https://agenda.villemorte.fr/media/thumb/ce05145eba0fc3aea287ede74a42de44.jpg",
       "offsite_venue": null,
       "id": "be421081a585"
+    },
+    {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Heartline + Big rock show + guest",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-07",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319537-heartline-big-rock-show-guest.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "ce6493585be2"
     },
     {
       "venue": "Bizarre!",
@@ -6193,7 +6277,7 @@
     {
       "venue": "Boskop",
       "venue_slug": "boskop",
-      "title": "Documentaire Bis : \"Cane Toads: An Unnatural History\" (1988) + Courts métrages",
+      "title": "Documentaire Mutants : \"Cane Toads: An Unnatural History\" (1988) + Courts métrages",
       "subtitle": null,
       "category": "cinéma",
       "date_start": "2026-10-08",
@@ -6202,7 +6286,7 @@
       "url": "https://agenda.villemorte.fr/event/documentaire-bis-cane-toads-an-unnatural-history-1988-courts-metrages",
       "image": null,
       "offsite_venue": null,
-      "id": "d8581ea83e29"
+      "id": "b6ec48bc70dc"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -6315,6 +6399,20 @@
       "image": "https://www.auditorium-lyon.com/sites/default/files/styles/vignette_teaser_xl/public/upload/images/Simone-Young2_c_Sandra-Steh_1920.jpg?h=468a0b19&itok=i4qSJwW8",
       "offsite_venue": null,
       "id": "3101adcda61e"
+    },
+    {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Animaux Formidables",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-08",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319536-animaux-formidables.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "6b812c9739ce"
     },
     {
       "venue": "Bizarre!",
@@ -6567,6 +6665,20 @@
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2022/03/BUCK-PHOTO-PRESSE-©-Thomas-Pierre-650x433.jpg",
       "offsite_venue": null,
       "id": "26db50f1097e"
+    },
+    {
+      "venue": "Parc Chabrières",
+      "venue_slug": "parc-chabrieres",
+      "title": "Oktoberfest",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-10-09",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319545-oktoberfest.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "a53688f031f6"
     },
     {
       "venue": "Le Sucre",
@@ -7019,16 +7131,16 @@
     {
       "venue": "Toï Toï le Zinc",
       "venue_slug": "toi-toi-le-zinc",
-      "title": "Samba Toy ² \"Les meufs font la teuf\"",
+      "title": "Samba Toy ²",
       "subtitle": null,
-      "category": "musique",
+      "category": "Sono Mondiale",
       "date_start": "2026-10-09",
       "date_end": null,
       "time": "20:30",
-      "url": "https://agenda.villemorte.fr/event/samba-toy-les-meufs-font-la-teuf",
+      "url": "https://www.petit-bulletin.fr/agenda-319543-samba-toy-i.html",
       "image": "https://agenda.villemorte.fr/media/thumb/fa5671ed15341cfd500fa6736fd14548.jpg",
       "offsite_venue": null,
-      "id": "cf0394c23fa2"
+      "id": "7ea89417e4f2"
     },
     {
       "venue": "Au Rikiki",
@@ -7199,6 +7311,34 @@
       "id": "3111ecd05b47"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-de-lyon",
+      "title": "Visites découverte commentées",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-10-10",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "f5f6e025dd80"
+    },
+    {
+      "venue": "Les Subsistances",
+      "venue_slug": "les-subs",
+      "title": "Minipousses danse",
+      "subtitle": "Alice Boivin",
+      "category": "atelier",
+      "date_start": "2026-10-10",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.les-subs.com/evenement/minipousses-danse/",
+      "image": "https://www.les-subs.com/wp-content/uploads/2023/03/lessubs-minipousses-cirqueogregoryrubinstein-collectifdesflousfurieux-3-200x200.jpg",
+      "offsite_venue": null,
+      "id": "81bc521469af"
+    },
+    {
       "venue": "Musée des Beaux-Arts",
       "venue_slug": "musee-des-beaux-arts",
       "title": "Spectacle : La petite boîte à gant",
@@ -7306,9 +7446,23 @@
       "date_end": null,
       "time": "18:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/soiree-d-ouverture-festival-lumiere",
-      "image": "https://www.halle-tony-garnier.com/storage/144534/conversions/2026-10-10-SOIREE-D-OUVERTURE-FESTIVAL-LUMIERE-fl2026-aff-rs-1080x1080-v2-20260630-111123-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144602/conversions/2026-10-10-SOIREE-D-OUVERTURE-FESTIVAL-LUMIERE-fl2026-aff-rs-1080x1080-v2-20260630-111123-square.jpg",
       "offsite_venue": null,
       "id": "c1ef497316fc"
+    },
+    {
+      "venue": "Parc Chabrières",
+      "venue_slug": "parc-chabrieres",
+      "title": "Oktoberfest",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-10-10",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319545-oktoberfest.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "e80be9fc522d"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -7810,7 +7964,7 @@
       "date_end": null,
       "time": "10:15",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/chaplin-en-cine-concert-festival-lumiere",
-      "image": "https://www.halle-tony-garnier.com/storage/144535/conversions/2026-10-11-CHAPLIN-EN-CINE-CONCERT-FESTIVAL-LUMIERE-fl26-rs-chaplin2-20260904-090630-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144603/conversions/2026-10-11-CHAPLIN-EN-CINE-CONCERT-FESTIVAL-LUMIERE-fl26-rs-chaplin2-20260904-090630-square.jpg",
       "offsite_venue": null,
       "id": "b157569987dc"
     },
@@ -7838,7 +7992,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/tigre-dragon-festival-lumiere",
-      "image": "https://www.halle-tony-garnier.com/storage/144536/conversions/2026-10-11-TIGRE-DRAGON-FESTIVAL-LUMIERE-fl26-tigreetdragon-500x500-htg-20260918-085107-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144604/conversions/2026-10-11-TIGRE-DRAGON-FESTIVAL-LUMIERE-fl26-tigreetdragon-500x500-htg-20260918-085107-square.jpg",
       "offsite_venue": null,
       "id": "216a55fe837f"
     },
@@ -8011,6 +8165,20 @@
       "id": "fe61071a7c03"
     },
     {
+      "venue": "Parc Chabrières",
+      "venue_slug": "parc-chabrieres",
+      "title": "Oktoberfest",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-10-11",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319545-oktoberfest.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "5b4266c4b23a"
+    },
+    {
       "venue": "Astroballe",
       "venue_slug": "astroballe",
       "title": "LDLC ASVEL - Roanne",
@@ -8039,6 +8207,20 @@
       "id": "8d9a16e488d5"
     },
     {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Horskh",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-11",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319535-horskh.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "e4ef3b730c41"
+    },
+    {
       "venue": "Kraspek Myzik",
       "venue_slug": "kraspek-myzik",
       "title": "DORDOGNE",
@@ -8051,6 +8233,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "93b0b58a6aa1"
+    },
+    {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Happy Hour de l’écologie politique",
+      "subtitle": null,
+      "category": "conférences et tables rondes",
+      "date_start": "2026-10-12",
+      "date_end": null,
+      "time": null,
+      "url": "https://lacommune.co/event/happy-hour-de-lecologie-politique/",
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-caea60a/lacommune.co/wp-content/uploads/2026/07/1080x1350_OCTOBRE-768x960.jpg",
+      "offsite_venue": null,
+      "id": "aa35ee6dd2dd"
     },
     {
       "venue": "La Commune",
@@ -8219,6 +8415,20 @@
       "image": "https://le-sucre.eu/wp-content/uploads/2026/07/Plan-de-travail-22-480x600.png",
       "offsite_venue": null,
       "id": "3e95a6eca066"
+    },
+    {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Onslaught + The Prophecy 23 + Toranaga UK",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-13",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319534-onslaught-the-prophecy-23-toranaga-uk.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "01bf411a23c8"
     },
     {
       "venue": "Bieristan",
@@ -8597,6 +8807,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "4f902d27f470"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-de-lyon",
+      "title": "Visites découverte commentées",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-10-14",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "bd2f0a2fc742"
     },
     {
       "venue": "Bibliothèque du 7e Gerland Hannah Arendt",
@@ -9098,14 +9322,14 @@
       "date_end": null,
       "time": "18:30",
       "url": "https://maisondeladanse.com/programmation/saison2026-2027/soiree-18-30-ans",
-      "image": "https://maisondeladanse.com/sites/default/files/styles/vignette_saison_2016/public/spectacle/saison/tanzmainz1830-s.jpg?itok=BsrJLnyJ",
+      "image": "https://maisondeladanse.com/sites/default/files/styles/vignette_saison_2016/public/spectacle/saison/visuel_tanzmainz-saison.jpg?itok=ujZe-Lci",
       "offsite_venue": null,
       "id": "956ad44a4813"
     },
     {
       "venue": "Boskop",
       "venue_slug": "boskop",
-      "title": "Voyage dans l'animation japonaise · Mamoru Oshii",
+      "title": "Mamoru Oshii : Voyage dans l'animation japonaise",
       "subtitle": null,
       "category": null,
       "date_start": "2026-10-15",
@@ -9114,7 +9338,7 @@
       "url": "https://agenda.villemorte.fr/event/voyage-dans-lanimation-japonaise-mamoru-oshii",
       "image": null,
       "offsite_venue": null,
-      "id": "3ba33ca0f346"
+      "id": "d0656c5565d8"
     },
     {
       "venue": "Les Subsistances",
@@ -9241,6 +9465,20 @@
       "image": "https://www.auditorium-lyon.com/sites/default/files/styles/vignette_teaser_xl/public/upload/images/METROPOLIS_1926_19_c_Institut_Lumiere_1920.jpg?h=f1310ffb&itok=AHueQd6F",
       "offsite_venue": null,
       "id": "d8428a15237f"
+    },
+    {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Eyes + Kibosh + Maran",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-15",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319533-eyes-kibosh-maran.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "4dd46402ff83"
     },
     {
       "venue": "Bizarre!",
@@ -9551,6 +9789,20 @@
       "id": "205e5a3cb2e0"
     },
     {
+      "venue": "Toï Toï le Zinc",
+      "venue_slug": "toi-toi-le-zinc",
+      "title": "VioleTT Pi + Kill Me Don't Panic + Second Major",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-15",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319542-violett-pi-kill-me-donet-panic-second-major.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "3c15a0221d1b"
+    },
+    {
       "venue": "Trokson",
       "venue_slug": "trokson",
       "title": "Monsso les Mines (Musique non productive pour gens contre productifs, alcooliques, drogués et autres cœurs brisés) + 666moky (Blues thrash)",
@@ -9591,6 +9843,20 @@
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/09/priscilla-press-pic-3-650x366.png",
       "offsite_venue": null,
       "id": "6ff5944d9c6d"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "FRIXION : FLYMEON / LUKE NOIZE / ANDUJ / NEØKHIN & MORE",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-10-16",
+      "date_end": null,
+      "time": null,
+      "url": "https://shotgun.live/events/flymeon-lukenoize-anduj-neokhin-and-more?utm_source=site-web",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/09/Frixion_16102026_lepetitsalon-1024x576.png",
+      "offsite_venue": null,
+      "id": "c4af33b829c2"
     },
     {
       "venue": "Musée des Confluences",
@@ -10265,6 +10531,20 @@
       "id": "e0ce88db0b4a"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-de-lyon",
+      "title": "Visites découverte commentées",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-10-17",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "54028c73519a"
+    },
+    {
       "venue": "Matmut Stadium de Gerland",
       "venue_slug": "matmut-stadium-gerland",
       "title": "LOU Rugby - Hollywoodbets Sharks",
@@ -10708,7 +10988,7 @@
       "date_end": null,
       "time": "20:45",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/nuit-freres-coen-festival-lumiere",
-      "image": "https://www.halle-tony-garnier.com/storage/144597/conversions/2026-10-17-NUIT-FRERES-COEN-FESTIVAL-LUMIERE-couv-freres-coen-2026-20260911-141928-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144605/conversions/2026-10-17-NUIT-FRERES-COEN-FESTIVAL-LUMIERE-couv-freres-coen-2026-20260911-141928-square.jpg",
       "offsite_venue": null,
       "id": "7d3f7db2a74f"
     },
@@ -10848,7 +11128,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/seance-de-cloture-lumiere-the-big-lebowski",
-      "image": "https://www.halle-tony-garnier.com/storage/144538/conversions/2026-10-18-SEANCE-DE-CLOTURE-LUMIERE-THE-BIG-LEBOWSKI-couv-freres-coen-2026-20260911-142433-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144606/conversions/2026-10-18-SEANCE-DE-CLOTURE-LUMIERE-THE-BIG-LEBOWSKI-couv-freres-coen-2026-20260911-142433-square.jpg",
       "offsite_venue": null,
       "id": "d1ace2df2686"
     },
@@ -10923,6 +11203,20 @@
       "id": "bdfa8e3d5f7b"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Oyster Sunday x Cochon Iodé x Satriale’s Family",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-10-18",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://h-eat.eu/events/oyster-sunday-x-cochon-iode-x-satriales-family/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/09/Plan-de-travail-3-1-576x720.png",
+      "offsite_venue": null,
+      "id": "5536d31dd66b"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "TIF",
@@ -10949,6 +11243,20 @@
       "image": "https://img.mapado.net/2024/9/17/66e94c9a6d29f-vignette-catch.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "35cfd9863a3d"
+    },
+    {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Killus + Waking the sleeping bear + Sleazyz",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-18",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319532-killus-waking-the-sleeping-bear-sleazyz.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "e79e1d7eef84"
     },
     {
       "venue": "Marché Gare",
@@ -11047,6 +11355,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "f212d00a9c81"
+    },
+    {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Lansdowne + Joe Hermes + Trackside",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-19",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319531-lansdowne-joe-hermes-trackside.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "fd0b1a56ac10"
     },
     {
       "venue": "La Rayonne",
@@ -11259,6 +11581,20 @@
       "id": "360e0653846e"
     },
     {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Duel + Occult Hand Order",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-20",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319530-duel-occult-hand-order.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "57e7bd45e2f9"
+    },
+    {
       "venue": "Le Sonic",
       "venue_slug": "sonic",
       "title": "The Homesick + group-ensemble",
@@ -11399,6 +11735,34 @@
       "id": "0f64cb2e0b0b"
     },
     {
+      "venue": "Amphithéâtre de l'Opéra",
+      "venue_slug": "amphitheatre-de-l-opera",
+      "title": "Un Américain en Italie : plongée dans la fabuleuse collection sonore d'Alan Lomax",
+      "subtitle": null,
+      "category": "Conférences",
+      "date_start": "2026-10-21",
+      "date_end": null,
+      "time": "12:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319549-un-am-ricain-en-italie-plong-e-dans-la-fabuleuse-collection-sonore-dealan-lomax.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "e322c719bbc3"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-de-lyon",
+      "title": "Visites découverte commentées",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-10-21",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "2712622c913c"
+    },
+    {
       "venue": "Musée des Confluences",
       "venue_slug": "musee-des-confluences",
       "title": "Théâtre kamishibaï - Bama et l'antilope cheval",
@@ -11467,6 +11831,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/improminots.jpg",
       "offsite_venue": null,
       "id": "afe70f734962"
+    },
+    {
+      "venue": "MAM - Musée des Arts et de la Marionnette",
+      "venue_slug": "mam-musee-des-arts-et-de-la-marionnette",
+      "title": "Au Musée !",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-10-21",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319551-au-mus-e.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "95428e70a40d"
     },
     {
       "venue": "Théâtre La Mouche",
@@ -12099,20 +12477,6 @@
       "id": "02b98c1a7c23"
     },
     {
-      "venue": "La Commune",
-      "venue_slug": "la-commune",
-      "title": "Dispo Dating",
-      "subtitle": null,
-      "category": "immersif",
-      "date_start": "2026-10-23",
-      "date_end": null,
-      "time": null,
-      "url": "https://lacommune.co/event/dispo-dating/",
-      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-caea60a/lacommune.co/wp-content/uploads/2026/01/23-1-768x960.jpg",
-      "offsite_venue": null,
-      "id": "98d11bfbbbca"
-    },
-    {
       "venue": "Auditorium de Lyon",
       "venue_slug": "auditorium-lyon",
       "title": "Le Carnaval des émotions",
@@ -12533,6 +12897,34 @@
       "id": "2dfc23e056b6"
     },
     {
+      "venue": "La Commune",
+      "venue_slug": "la-commune",
+      "title": "Dispo Dating",
+      "subtitle": null,
+      "category": "immersif",
+      "date_start": "2026-10-23",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://lacommune.co/event/dispo-dating/",
+      "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-caea60a/lacommune.co/wp-content/uploads/2026/01/23-1-768x960.jpg",
+      "offsite_venue": null,
+      "id": "295e32f03e16"
+    },
+    {
+      "venue": "Bar des Capucins",
+      "venue_slug": "bar-des-capucins",
+      "title": "AVIDE AMANT + PIF & THE GEE GEE'S",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-23",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://agenda.villemorte.fr/event/avide-amant-pif-and-the-gee-gees",
+      "image": null,
+      "offsite_venue": null,
+      "id": "24c50922dcc3"
+    },
+    {
       "venue": "Improvidence",
       "venue_slug": "improvidence",
       "title": "Antoine Rabault improvise avec lui-même",
@@ -12587,6 +12979,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "f4953e0fff77"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-de-lyon",
+      "title": "Visites découverte commentées",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-10-24",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "24d5750e1a68"
     },
     {
       "venue": "La Commune",
@@ -12673,6 +13079,20 @@
       "id": "d13252f9c782"
     },
     {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "💸🎰💰 MEGAFLOUZE 💰🎰💸 / Soirée de soutien à Entraide queer Afghanistan et aux frais médicaux d'une camarade trans exilée",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-24",
+      "date_end": null,
+      "time": "17:30",
+      "url": "https://agenda.villemorte.fr/event/megaflouze-soiree-de-soutien-a-entraide-queer-afghanistan-et-aux-frais-medicaux-dune-camarade-trans-exilee",
+      "image": "https://agenda.villemorte.fr/media/thumb/d6a5268b8108d10c880e53453f017efc.jpg",
+      "offsite_venue": null,
+      "id": "f37c3cb0d089"
+    },
+    {
       "venue": "Auditorium de Lyon",
       "venue_slug": "auditorium-lyon",
       "title": "Nelson Goerner",
@@ -12755,6 +13175,20 @@
       "image": "https://img.mapado.net/2026/5/5/69fa12d26a9bb-voisin-3.png_thumbs/600-600.png",
       "offsite_venue": null,
       "id": "411403deaa0d"
+    },
+    {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "Mork + Soulburn + Terres Froides",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-24",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319529-mork-soulburn-terres-froides.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "aed262bf3d24"
     },
     {
       "venue": "Les Clameurs",
@@ -12869,20 +13303,6 @@
       "id": "5774d8868174"
     },
     {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "soirée de soutien à collectif queer afghan",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-24",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/soiree-de-soutien-a-collectif-queer-afghan",
-      "image": null,
-      "offsite_venue": null,
-      "id": "464037b8a809"
-    },
-    {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
       "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
@@ -12913,7 +13333,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Urban Pop NOOR",
+      "title": "Urban Pop NOOR + MARGUTERIE",
       "subtitle": null,
       "category": "Rock & Pop",
       "date_start": "2026-10-24",
@@ -12922,7 +13342,7 @@
       "url": "https://marchegare.fr/agenda/noor",
       "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-05/noor_web.jpg",
       "offsite_venue": null,
-      "id": "09415190cd55"
+      "id": "b3fdf1f07380"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -13004,7 +13424,7 @@
       "date_end": null,
       "time": "22:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/nuit-encore-x-23-59",
-      "image": "https://www.halle-tony-garnier.com/storage/144539/conversions/2026-10-24-NUIT-ENCORE-X-23-59-carre-4-20260703-170839-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144607/conversions/2026-10-24-NUIT-ENCORE-X-23-59-carre-4-20260703-170839-square.jpg",
       "offsite_venue": null,
       "id": "2fff0957546e"
     },
@@ -13639,6 +14059,20 @@
       "id": "1d5fa51c23f8"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-de-lyon",
+      "title": "Visites découverte commentées",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-10-28",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "10f72283df48"
+    },
+    {
       "venue": "Au Rikiki",
       "venue_slug": "au-rikiki",
       "title": "Lucie et la potion pourrite",
@@ -13984,7 +14418,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-6",
-      "image": "https://www.halle-tony-garnier.com/storage/144540/conversions/2026-10-29-SALON-DES-VIGNERONS-INDEPENDANTS-lyon-carre-1-20260824-164659-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144608/conversions/2026-10-29-SALON-DES-VIGNERONS-INDEPENDANTS-lyon-carre-1-20260824-164659-square.jpg",
       "offsite_venue": null,
       "id": "210b883f9443"
     },
@@ -14015,6 +14449,34 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/improminots.jpg",
       "offsite_venue": null,
       "id": "f912ab736ea7"
+    },
+    {
+      "venue": "Amphithéâtre de l'Opéra",
+      "venue_slug": "amphitheatre-de-l-opera",
+      "title": "Simon Jeffes et le Penguin Cafe Orchestra",
+      "subtitle": null,
+      "category": "Conférences",
+      "date_start": "2026-10-29",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319550-simon-jeffes-et-le-penguin-cafe-orchestra.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "260c784deb5f"
+    },
+    {
+      "venue": "Bar Rock'n Eat",
+      "venue_slug": "bar-rock-n-eat",
+      "title": "7Weeks + Mike Noegraf",
+      "subtitle": null,
+      "category": "Rock & Pop",
+      "date_start": "2026-10-29",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319528-7weeks-mike-noegraf.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "3c18fd46353c"
     },
     {
       "venue": "Boskop",
@@ -14185,18 +14647,18 @@
       "id": "86185997dc8d"
     },
     {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Challenges",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-10-29",
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Bienvenue aux répétitions !",
+      "subtitle": "Le Voyage de Kristoffer",
+      "category": "théâtre",
+      "date_start": "2026-10-30",
       "date_end": null,
-      "time": "21:00",
-      "url": "https://improvidence.mapado.com/event/447683-challenges",
-      "image": "https://img.mapado.net/2026/8/19/6a8586bb5492f-visuels-shows-challenges-2026.jpeg_thumbs/600-600.jpeg",
+      "time": null,
+      "url": "https://www.tng-lyon.fr/evenement/bienvenue-aux-repetitions/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Repetition-publique-Kristoffer_460x460.png",
       "offsite_venue": null,
-      "id": "0d4dc0bb627e"
+      "id": "11d953bdddde"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -14208,7 +14670,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-7",
-      "image": "https://www.halle-tony-garnier.com/storage/144541/conversions/2026-10-30-SALON-DES-VIGNERONS-INDEPENDANTS-lyon-carre-1-20260824-164827-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144609/conversions/2026-10-30-SALON-DES-VIGNERONS-INDEPENDANTS-lyon-carre-1-20260824-164827-square.jpg",
       "offsite_venue": null,
       "id": "ad12b2b22ce3"
     },
@@ -14530,7 +14992,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-8",
-      "image": "https://www.halle-tony-garnier.com/storage/144542/conversions/2026-10-31-SALON-DES-VIGNERONS-INDEPENDANTS-lyon-carre-1-20260824-164941-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144610/conversions/2026-10-31-SALON-DES-VIGNERONS-INDEPENDANTS-lyon-carre-1-20260824-164941-square.jpg",
       "offsite_venue": null,
       "id": "d83e0a392b7b"
     },
@@ -14547,6 +15009,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "9e28ec453755"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-de-lyon",
+      "title": "Visites découverte commentées",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-10-31",
+      "date_end": null,
+      "time": "13:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "3f30509241ac"
     },
     {
       "venue": "Au Rikiki",
@@ -14964,7 +15440,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salon-des-vignerons-independants-9",
-      "image": "https://www.halle-tony-garnier.com/storage/144543/conversions/2026-11-01-SALON-DES-VIGNERONS-INDEPENDANTS-lyon-carre-1-20260824-165114-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144611/conversions/2026-11-01-SALON-DES-VIGNERONS-INDEPENDANTS-lyon-carre-1-20260824-165114-square.jpg",
       "offsite_venue": null,
       "id": "8a18d20aa5e0"
     },
@@ -15692,7 +16168,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/djadja-dinaz-2",
-      "image": "https://www.halle-tony-garnier.com/storage/144544/conversions/2026-11-05-DJADJA-DINAZ-carre-5-20250709-085039-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144612/conversions/2026-11-05-DJADJA-DINAZ-carre-5-20250709-085039-square.jpg",
       "offsite_venue": null,
       "id": "38be92eb323a"
     },
@@ -15986,7 +16462,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/djadja-dinaz-3",
-      "image": "https://www.halle-tony-garnier.com/storage/144545/conversions/2026-11-06-DJADJA-DINAZ-carre-djadja2-20260126-105855-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144613/conversions/2026-11-06-DJADJA-DINAZ-carre-djadja2-20260126-105855-square.jpg",
       "offsite_venue": null,
       "id": "8b3f2fdf62ff"
     },
@@ -16518,7 +16994,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/josman-2",
-      "image": "https://www.halle-tony-garnier.com/storage/144546/conversions/2026-11-07-JOSMAN-carre-josma-20260210-152457-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144614/conversions/2026-11-07-JOSMAN-carre-josma-20260210-152457-square.jpg",
       "offsite_venue": null,
       "id": "1b4efb369f99"
     },
@@ -17022,7 +17498,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/the-world-of-hans-zimmer-2",
-      "image": "https://www.halle-tony-garnier.com/storage/144547/conversions/2026-11-10-THE-WORLD-OF-HANS-ZIMMER-wohz-2026-generique-visuelweb-newsletter-2400x200-20250317-112306-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144615/conversions/2026-11-10-THE-WORLD-OF-HANS-ZIMMER-wohz-2026-generique-visuelweb-newsletter-2400x200-20250317-112306-square.jpg",
       "offsite_venue": null,
       "id": "a256426cb8c7"
     },
@@ -17109,6 +17585,20 @@
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/03/Thomas-Fresen_radiant-bellevue-1-500x500.jpg",
       "offsite_venue": null,
       "id": "2a582d82a3d6"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "AL-WALID + K3NYA + SLMVX + VVS237",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-11-10",
+      "date_end": null,
+      "time": "23:30",
+      "url": "https://www.transbordeur.fr/evenement/al-walid-k3nya-slmvx-vvs237-10112026/",
+      "image": "https://www.transbordeur.fr/wp-content/uploads/2026/09/Photo-de-presse-Al-Walid-2-BIG-MAN-TINGS-credit-_-Mr.Walker.jpeg",
+      "offsite_venue": null,
+      "id": "91b1e941bfc9"
     },
     {
       "venue": "Le Périscope",
@@ -17246,7 +17736,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/malik-bentalha-2",
-      "image": "https://www.halle-tony-garnier.com/storage/144548/conversions/2026-11-11-MALIK-BENTALHA-malikbentalha-nouveaumonde-officiel-digitick-1080x108-20250829-144651-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144616/conversions/2026-11-11-MALIK-BENTALHA-malikbentalha-nouveaumonde-officiel-digitick-1080x108-20250829-144651-square.jpg",
       "offsite_venue": null,
       "id": "dfa88e684fee"
     },
@@ -18791,6 +19281,20 @@
       "id": "d1c1dda78d74"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Oyster Sunday x Cochon Iodé",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-11-15",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://h-eat.eu/events/oyster-sunday-x-cochon-iode/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/09/Plan-de-travail-5-1-576x720.png",
+      "offsite_venue": null,
+      "id": "3637bc117deb"
+    },
+    {
       "venue": "Maison de la Danse",
       "venue_slug": "maison-de-la-danse",
       "title": "Ateliers singuliers",
@@ -19472,7 +19976,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/l-heritage-goldman-2-2",
-      "image": "https://www.halle-tony-garnier.com/storage/144549/conversions/2026-11-19-L-HERITAGE-GOLDMAN-2-heritagegoldman-1080-lyo-20251002-100344-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144617/conversions/2026-11-19-L-HERITAGE-GOLDMAN-2-heritagegoldman-1080-lyo-20251002-100344-square.jpg",
       "offsite_venue": null,
       "id": "d019b4b5bf44"
     },
@@ -23035,6 +23539,20 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
+      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-03",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
+      "offsite_venue": null,
+      "id": "9db7b1186ee7"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
       "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
       "subtitle": null,
       "category": "café-théâtre",
@@ -23059,20 +23577,6 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
       "offsite_venue": null,
       "id": "38080016baaf"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
-      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-03",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
-      "offsite_venue": null,
-      "id": "9db7b1186ee7"
     },
     {
       "venue": "Maison de la Danse",
@@ -23280,23 +23784,9 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disiz",
-      "image": "https://www.halle-tony-garnier.com/storage/144550/conversions/2026-12-04-disiz-disiz500x500-20251204-130657-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144618/conversions/2026-12-04-disiz-disiz500x500-20251204-130657-square.jpg",
       "offsite_venue": null,
       "id": "8ccde2d1c8ab"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
-      "title": "Guillaume Sentou \"Un mec cool\"",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-04",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/guillaume-sentou-un-mec-cool/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
-      "offsite_venue": null,
-      "id": "cebdb9ac5785"
     },
     {
       "venue": "Le Complexe café-théâtre",
@@ -23311,6 +23801,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
       "offsite_venue": null,
       "id": "5b3b078c675b"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "Guillaume Sentou \"Un mec cool\"",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/guillaume-sentou-un-mec-cool/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
+      "offsite_venue": null,
+      "id": "cebdb9ac5785"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -23749,20 +24253,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "Guillaume Sentou \"Un mec cool\"",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-05",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/guillaume-sentou-un-mec-cool/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
-      "offsite_venue": null,
-      "id": "eea2838c459b"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
       "subtitle": null,
       "category": "café-théâtre",
@@ -23773,6 +24263,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
       "offsite_venue": null,
       "id": "70a3ec875633"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "Guillaume Sentou \"Un mec cool\"",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/guillaume-sentou-un-mec-cool/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
+      "offsite_venue": null,
+      "id": "eea2838c459b"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -24806,7 +25310,7 @@
       "date_end": null,
       "time": "21:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/face2face-all-night-long",
-      "image": "https://www.halle-tony-garnier.com/storage/144551/conversions/2026-12-11-FACE2FACE-ALL-NIGHT-LONG-4to-20260721-115213-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144619/conversions/2026-12-11-FACE2FACE-ALL-NIGHT-LONG-4to-20260721-115213-square.jpg",
       "offsite_venue": null,
       "id": "87c50ab049ac"
     },
@@ -25369,6 +25873,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "5841be423bd7"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Oyster Sunday x Cochon Iodé x S festival",
+      "subtitle": null,
+      "category": "festival",
+      "date_start": "2026-12-13",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://h-eat.eu/events/oyster-sunday-x-cochon-iode-x-s-festival/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/09/Plan-de-travail-6-576x720.png",
+      "offsite_venue": null,
+      "id": "c2906ed937f7"
     },
     {
       "venue": "Le Transbordeur",
@@ -26206,7 +26724,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-en-concert-suivez-vos-reves",
-      "image": "https://www.halle-tony-garnier.com/storage/144552/conversions/2026-12-18-DISNEY-EN-CONCERT-SUIVEZ-VOS-REVES-disney-carre-lyo-20251104-163638-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144620/conversions/2026-12-18-DISNEY-EN-CONCERT-SUIVEZ-VOS-REVES-disney-carre-lyo-20251104-163638-square.jpg",
       "offsite_venue": null,
       "id": "4c46d99b7e0b"
     },
@@ -28698,7 +29216,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/goldmen-concert-100-goldman",
-      "image": "https://www.halle-tony-garnier.com/storage/144553/conversions/2027-01-08-GOLDMEN-CONCERT-100-GOLDMAN-goldmen-carre-copi-20250411-144142-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144621/conversions/2027-01-08-GOLDMEN-CONCERT-100-GOLDMAN-goldmen-carre-copi-20250411-144142-square.jpg",
       "offsite_venue": null,
       "id": "9cae03700f3c"
     },
@@ -28866,7 +29384,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/harry-potter-et-le-prince-de-sang-mele",
-      "image": "https://www.halle-tony-garnier.com/storage/144554/conversions/2027-01-09-HARRY-POTTER-ET-LE-PRINCE-DE-SANG-MELE-hp6-artwor-20260105-143104-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144622/conversions/2027-01-09-HARRY-POTTER-ET-LE-PRINCE-DE-SANG-MELE-hp6-artwor-20260105-143104-square.jpg",
       "offsite_venue": null,
       "id": "80487e51b923"
     },
@@ -29202,7 +29720,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/one-night-of-queen-2",
-      "image": "https://www.halle-tony-garnier.com/storage/144555/conversions/2027-01-13-ONE-NIGHT-OF-QUEEN-onoq-1080-lyo-20250507-141114-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144623/conversions/2027-01-13-ONE-NIGHT-OF-QUEEN-onoq-1080-lyo-20250507-141114-square.jpg",
       "offsite_venue": null,
       "id": "d36fa43e7d82"
     },
@@ -29454,7 +29972,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/les-chevaliers-du-fiel-2",
-      "image": "https://www.halle-tony-garnier.com/storage/144556/conversions/2027-01-14-LES-CHEVALIERS-DU-FIEL-header-event-carre-20260710-150605-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144624/conversions/2027-01-14-LES-CHEVALIERS-DU-FIEL-header-event-carre-20260710-150605-square.jpg",
       "offsite_venue": null,
       "id": "5265d5dc149c"
     },
@@ -29846,7 +30364,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/lion-le-roi-est-de-retour",
-      "image": "https://www.halle-tony-garnier.com/storage/144557/conversions/2027-01-16-LION-LE-ROI-EST-DE-RETOUR-lion-1080x1080-copie-20260409-104932-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144625/conversions/2027-01-16-LION-LE-ROI-EST-DE-RETOUR-lion-1080x1080-copie-20260409-104932-square.jpg",
       "offsite_venue": null,
       "id": "91d9dd9e0953"
     },
@@ -30000,7 +30518,7 @@
       "date_end": null,
       "time": "20:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/olivier-de-benoist",
-      "image": "https://www.halle-tony-garnier.com/storage/144558/conversions/2027-01-16-OLIVIER-DE-BENOIST-odb-ledroitaubonheur-tournee-carre-copi-20260423-100914-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144626/conversions/2027-01-16-OLIVIER-DE-BENOIST-odb-ledroitaubonheur-tournee-carre-copi-20260423-100914-square.jpg",
       "offsite_venue": null,
       "id": "da6add811841"
     },
@@ -30196,7 +30714,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/clement-viktorovitch",
-      "image": "https://www.halle-tony-garnier.com/storage/144559/conversions/2027-01-19-CLEMENT-VIKTOROVITCH-cviktor-carre-lyo-20260417-103157-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144627/conversions/2027-01-19-CLEMENT-VIKTOROVITCH-cviktor-carre-lyo-20260417-103157-square.jpg",
       "offsite_venue": null,
       "id": "bba5ebee3dbe"
     },
@@ -31386,7 +31904,7 @@
       "date_end": null,
       "time": "17:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-2",
-      "image": "https://www.halle-tony-garnier.com/storage/144560/conversions/2027-01-27-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-160137-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144628/conversions/2027-01-27-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-160137-square.jpg",
       "offsite_venue": null,
       "id": "4595c3a3c14a"
     },
@@ -31820,7 +32338,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-3",
-      "image": "https://www.halle-tony-garnier.com/storage/144561/conversions/2027-01-29-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-160502-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144629/conversions/2027-01-29-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-160502-square.jpg",
       "offsite_venue": null,
       "id": "2ebfe953dfc1"
     },
@@ -32044,7 +32562,7 @@
       "date_end": null,
       "time": "10:15",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-4",
-      "image": "https://www.halle-tony-garnier.com/storage/144562/conversions/2027-01-30-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-160802-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144630/conversions/2027-01-30-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-160802-square.jpg",
       "offsite_venue": null,
       "id": "960700e6646d"
     },
@@ -32058,7 +32576,7 @@
       "date_end": null,
       "time": "14:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-5",
-      "image": "https://www.halle-tony-garnier.com/storage/144563/conversions/2027-01-30-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-160958-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144631/conversions/2027-01-30-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-160958-square.jpg",
       "offsite_venue": null,
       "id": "7e76c60d891c"
     },
@@ -32100,7 +32618,7 @@
       "date_end": null,
       "time": "17:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-6",
-      "image": "https://www.halle-tony-garnier.com/storage/144564/conversions/2027-01-30-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-161133-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144632/conversions/2027-01-30-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-161133-square.jpg",
       "offsite_venue": null,
       "id": "3693d238ea58"
     },
@@ -32282,7 +32800,7 @@
       "date_end": null,
       "time": "10:15",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-7",
-      "image": "https://www.halle-tony-garnier.com/storage/144565/conversions/2027-01-31-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-161311-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144633/conversions/2027-01-31-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-161311-square.jpg",
       "offsite_venue": null,
       "id": "9b8c4c1badaf"
     },
@@ -32296,7 +32814,7 @@
       "date_end": null,
       "time": "14:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/disney-sur-glace-le-voyage-enchante-8",
-      "image": "https://www.halle-tony-garnier.com/storage/144566/conversions/2027-01-31-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-161449-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144634/conversions/2027-01-31-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-161449-square.jpg",
       "offsite_venue": null,
       "id": "b56d26a893dd"
     },
@@ -32408,7 +32926,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/forever-tribute-michael-jackson",
-      "image": "https://www.halle-tony-garnier.com/storage/144567/conversions/2027-02-02-FOREVER-TRIBUTE-MICHAEL-JACKSON-forever-carre-lyo-20250828-084343-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144635/conversions/2027-02-02-FOREVER-TRIBUTE-MICHAEL-JACKSON-forever-carre-lyo-20250828-084343-square.jpg",
       "offsite_venue": null,
       "id": "14148c08ae28"
     },
@@ -33150,7 +33668,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/aldebert-3",
-      "image": "https://www.halle-tony-garnier.com/storage/144568/conversions/2027-02-06-1.-ALDEBERT-LDC-carre-lyon-copie-20260121-150153-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144636/conversions/2027-02-06-1.-ALDEBERT-LDC-carre-lyon-copie-20260121-150153-square.jpg",
       "offsite_venue": null,
       "id": "21397db5a6f9"
     },
@@ -33444,7 +33962,7 @@
       "date_end": null,
       "time": "18:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/square-enix",
-      "image": "https://www.halle-tony-garnier.com/storage/144569/conversions/2027-02-07-SQUARE-ENIX-kv-3000x3000-lyo-20251205-091514-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144637/conversions/2027-02-07-SQUARE-ENIX-kv-3000x3000-lyo-20251205-091514-square.jpg",
       "offsite_venue": null,
       "id": "272b1ca3aa4a"
     },
@@ -33738,7 +34256,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/nawell-madani",
-      "image": "https://www.halle-tony-garnier.com/storage/144570/conversions/2027-02-10-NAWELL-MADANI-carre-9568-u-20260127-113850-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144638/conversions/2027-02-10-NAWELL-MADANI-carre-9568-u-20260127-113850-square.jpg",
       "offsite_venue": null,
       "id": "1e43f410343a"
     },
@@ -34858,7 +35376,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams",
-      "image": "https://www.halle-tony-garnier.com/storage/144571/conversions/2027-02-19-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-145844-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144639/conversions/2027-02-19-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-145844-square.jpg",
       "offsite_venue": null,
       "id": "2352ed756750"
     },
@@ -34928,7 +35446,7 @@
       "date_end": null,
       "time": "14:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-2",
-      "image": "https://www.halle-tony-garnier.com/storage/144572/conversions/2027-02-20-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-150100-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144640/conversions/2027-02-20-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-150100-square.jpg",
       "offsite_venue": null,
       "id": "b2618ecfeaa6"
     },
@@ -34984,7 +35502,7 @@
       "date_end": null,
       "time": "17:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-3",
-      "image": "https://www.halle-tony-garnier.com/storage/144573/conversions/2027-02-20-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-150224-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144641/conversions/2027-02-20-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-150224-square.jpg",
       "offsite_venue": null,
       "id": "9b73f68acc52"
     },
@@ -35068,7 +35586,7 @@
       "date_end": null,
       "time": "13:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-4",
-      "image": "https://www.halle-tony-garnier.com/storage/144574/conversions/2027-02-21-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-150331-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144642/conversions/2027-02-21-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-150331-square.jpg",
       "offsite_venue": null,
       "id": "f6ae54e9ebe7"
     },
@@ -35124,7 +35642,7 @@
       "date_end": null,
       "time": "16:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-5",
-      "image": "https://www.halle-tony-garnier.com/storage/144575/conversions/2027-02-21-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-150434-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144643/conversions/2027-02-21-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-150434-square.jpg",
       "offsite_venue": null,
       "id": "9333db6e2bca"
     },
@@ -35505,6 +36023,20 @@
       "image": "https://img.mapado.net/2026/1/26/69772dc1cb2f5-toi-moi-affiche-facon-film-1.png_thumbs/600-600.png",
       "offsite_venue": null,
       "id": "ce865dd02117"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "POMME",
+      "subtitle": null,
+      "category": "chanson",
+      "date_start": "2027-02-25",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/pomme/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/09/pomme-500x500.jpg",
+      "offsite_venue": null,
+      "id": "1bf3aa9fdfdb"
     },
     {
       "venue": "Espace Gerson",
@@ -36440,7 +36972,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/marine",
-      "image": "https://www.halle-tony-garnier.com/storage/144576/conversions/2027-03-05-MARINE-marine-tournee-2026-carr-20251218-093105-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144644/conversions/2027-03-05-MARINE-marine-tournee-2026-carr-20251218-093105-square.jpg",
       "offsite_venue": null,
       "id": "74b78cf742fb"
     },
@@ -36734,7 +37266,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/les-annees-80-2",
-      "image": "https://www.halle-tony-garnier.com/storage/144577/conversions/2027-03-06-LES-ANNEES-80-la80-carre-lyo-20251212-115951-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144645/conversions/2027-03-06-LES-ANNEES-80-la80-carre-lyo-20251212-115951-square.jpg",
       "offsite_venue": null,
       "id": "a094e7839744"
     },
@@ -38029,16 +38561,16 @@
     {
       "venue": "La Machinerie - Théâtre de Vénissieux",
       "venue_slug": "la-machinerie-theatre-de-venissieux",
-      "title": "Bâtir - Salim Djaferi",
+      "title": "Bâtir",
       "subtitle": null,
-      "category": "théâtre",
+      "category": "Théâtre",
       "date_start": "2027-03-16",
-      "date_end": "2027-03-17",
+      "date_end": null,
       "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/batir-salim-djaferi",
+      "url": "https://www.petit-bulletin.fr/agenda-319193-b-tir.html",
       "image": "https://agenda.villemorte.fr/media/thumb/035711c5c5183fa89bf559991fc7e78c.jpg",
       "offsite_venue": null,
-      "id": "50e18068245a"
+      "id": "98472b8d7eab"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -38148,7 +38680,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/bernard-lavilliers",
-      "image": "https://www.halle-tony-garnier.com/storage/144578/conversions/2027-03-17-BERNARD-LAVILLIERS-b.-lavilliers-carre-ldc-copie-20260915-164104-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144646/conversions/2027-03-17-BERNARD-LAVILLIERS-b.-lavilliers-carre-ldc-copie-20260915-164104-square.jpg",
       "offsite_venue": null,
       "id": "66b581d45da6"
     },
@@ -38470,7 +39002,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/michele-laroque-kad-merad-l-age-bete",
-      "image": "https://www.halle-tony-garnier.com/storage/144579/conversions/2027-03-19-MICHELE-LAROQUE-KAD-MERAD-L-AGE-BETE-lagebete-ecommerce-1080x108-20251017-104323-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144647/conversions/2027-03-19-MICHELE-LAROQUE-KAD-MERAD-L-AGE-BETE-lagebete-ecommerce-1080x108-20251017-104323-square.jpg",
       "offsite_venue": null,
       "id": "e108ea3962f2"
     },
@@ -38643,6 +39175,48 @@
       "id": "b070c9194baa"
     },
     {
+      "venue": "Célestins, théâtre de Lyon",
+      "venue_slug": "celestins",
+      "title": "Mon vrai nom est Elisabeth",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2027-03-20",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.theatredescelestins.com/fr/programmation/2026-2027/celestine/mon-vrai-nom-est-elisabeth",
+      "image": "https://www.theatredescelestins.com/assets/q75-w600/f642adfb/mon_vrai_nom_est_elisabeth_elene_shatberashvili.jpg",
+      "offsite_venue": null,
+      "id": "36a281273e50"
+    },
+    {
+      "venue": "Célestins, théâtre de Lyon",
+      "venue_slug": "celestins",
+      "title": "La Fête",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2027-03-20",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.theatredescelestins.com/fr/programmation/2026-2027/grande-salle/la-fete",
+      "image": "https://www.theatredescelestins.com/assets/q75-w600/6aff517c/la_fete_0743_christopheengels.jpg",
+      "offsite_venue": null,
+      "id": "ddea7373cc24"
+    },
+    {
+      "venue": "Le Transbordeur",
+      "venue_slug": "transbordeur",
+      "title": "TEDDYBEAR",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-03-20",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.transbordeur.fr/evenement/teddybear-20032027/",
+      "image": "https://www.transbordeur.fr/wp-content/uploads/2026/09/a-teddybear-1.jpg",
+      "offsite_venue": null,
+      "id": "81d4b5bd4265"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "500 Voix Pour Johnny",
@@ -38652,7 +39226,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/500-voix-pour-johnny",
-      "image": "https://www.halle-tony-garnier.com/storage/144580/conversions/2027-03-20-500-VOIX-POUR-JOHNNY-affiche-johnny-officielle-2-20260707-171745-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144648/conversions/2027-03-20-500-VOIX-POUR-JOHNNY-affiche-johnny-officielle-2-20260707-171745-square.jpg",
       "offsite_venue": null,
       "id": "f227e3726650"
     },
@@ -38725,6 +39299,90 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
       "offsite_venue": null,
       "id": "92a7aeac7e06"
+    },
+    {
+      "venue": "Matmut Stadium de Gerland",
+      "venue_slug": "matmut-stadium-gerland",
+      "title": "LOU Rugby féminines - Rugby Club Toulon Provence Mediterranee",
+      "subtitle": "Élite 1 féminine",
+      "category": "rugby",
+      "date_start": "2027-03-21",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://monclubhouse.ffr.fr/nationales/elite-1-feminine/match/1598358",
+      "image": null,
+      "offsite_venue": null,
+      "id": "2c09f93640e8"
+    },
+    {
+      "venue": "Palais des Sports de Gerland",
+      "venue_slug": "palais-des-sports-gerland",
+      "title": "LDLC ASVEL Féminin - Lattes Montpellier",
+      "subtitle": "La Boulangère Wonderligue",
+      "category": "basket",
+      "date_start": "2027-03-21",
+      "date_end": null,
+      "time": "15:30",
+      "url": "https://ldlcasvelfeminin.com/calendrier/",
+      "image": null,
+      "offsite_venue": null,
+      "id": "9c7bb6400be8"
+    },
+    {
+      "venue": "Auditorium de Lyon",
+      "venue_slug": "auditorium-lyon",
+      "title": "Le Mécano de la «General»",
+      "subtitle": "Buster Keaton / MoniCa Melcova",
+      "category": "concert",
+      "date_start": "2027-03-21",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/mecano-general",
+      "image": "https://www.auditorium-lyon.com/sites/default/files/styles/vignette_teaser_xl/public/upload/images/Mecano_General05_c_United_Artists-Buster_Keaton-_DR.jpg?h=5a49ea8c&itok=PP3punn7",
+      "offsite_venue": null,
+      "id": "a5ccd3547759"
+    },
+    {
+      "venue": "Musée des Confluences",
+      "venue_slug": "musee-des-confluences",
+      "title": "Le sonneur à ventre jaune",
+      "subtitle": "10 ans et +",
+      "category": "concert",
+      "date_start": "2027-03-21",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://museedesconfluences.fr/agenda/le-sonneur-ventre-jaune",
+      "image": "https://museedesconfluences.fr/sites/default/files/uploads/2026-06/images_siteweb_mdc_1080-1080_sonnerv2.jpg",
+      "offsite_venue": null,
+      "id": "8a2b8bfc23b4"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Album de famille",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-03-21",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://improvidence.mapado.com/event/824299-album-de-famille",
+      "image": "https://img.mapado.net/2026/8/4/6a71b13d2f050-album-de-famille-visuel-1.png_thumbs/600-600.png",
+      "offsite_venue": null,
+      "id": "2b6c0fc13901"
+    },
+    {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "LA NOCE D’ALFONSE",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2027-03-21",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://radiant-bellevue.fr/spectacles/la-noce-dalfonse/",
+      "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/la-noce-d-alphonse-500x500.jpg",
+      "offsite_venue": null,
+      "id": "4a16be53287e"
     },
     {
       "venue": "Bourse du Travail",
@@ -39156,7 +39814,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/patrick-fiori-2",
-      "image": "https://www.halle-tony-garnier.com/storage/144581/conversions/2027-04-03-PATRICK-FIORI-patrick-fiori-270328-lyon-carr-20260901-115919-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144649/conversions/2027-04-03-PATRICK-FIORI-patrick-fiori-270328-lyon-carr-20260901-115919-square.jpg",
       "offsite_venue": null,
       "id": "93411b98f25b"
     },
@@ -39170,7 +39828,7 @@
       "date_end": null,
       "time": "18:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/glorious",
-      "image": "https://www.halle-tony-garnier.com/storage/144582/conversions/2027-04-04-GLORIOUS-500x500-lyon-glorious-20260415-121947-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144650/conversions/2027-04-04-GLORIOUS-500x500-lyon-glorious-20260415-121947-square.jpg",
       "offsite_venue": null,
       "id": "ba9cb766b04c"
     },
@@ -39226,7 +39884,7 @@
       "date_end": null,
       "time": "19:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/megadeth",
-      "image": "https://www.halle-tony-garnier.com/storage/144583/conversions/2027-04-08-MEGADETH-megadeth-2027-visuelweb-post-1080x1080-lyo-20260824-150112-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144651/conversions/2027-04-08-MEGADETH-megadeth-2027-visuelweb-post-1080x1080-lyo-20260824-150112-square.jpg",
       "offsite_venue": null,
       "id": "8aa2f77da146"
     },
@@ -39296,7 +39954,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/star-wars-in-concert-un-nouvel-espoir",
-      "image": "https://www.halle-tony-garnier.com/storage/144584/conversions/2027-04-10-STAR-WARS-star-wars-carre-lyo-20260428-160425-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144652/conversions/2027-04-10-STAR-WARS-star-wars-carre-lyo-20260428-160425-square.jpg",
       "offsite_venue": null,
       "id": "7015d6516327"
     },
@@ -39315,6 +39973,20 @@
       "id": "edf06199435a"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng-vaise",
+      "title": "Bienvenue aux répétitions !",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2027-04-16",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319552-bienvenue-aux-r-p-titions.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "59dd682192bb"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Mosimann",
@@ -39324,7 +39996,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/mosimann",
-      "image": "https://www.halle-tony-garnier.com/storage/144585/conversions/2027-04-16-MOSIMANN-carre-mosi1-20260824-164020-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144653/conversions/2027-04-16-MOSIMANN-carre-mosi1-20260824-164020-square.jpg",
       "offsite_venue": null,
       "id": "da506224d7eb"
     },
@@ -39492,7 +40164,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/suzane",
-      "image": "https://www.halle-tony-garnier.com/storage/144586/conversions/2027-05-18-SUZANE-2000x2000-suzane-zenithstour-lyo-20260331-151852-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144654/conversions/2027-05-18-SUZANE-2000x2000-suzane-zenithstour-lyo-20260331-151852-square.jpg",
       "offsite_venue": null,
       "id": "113efc2897c8"
     },
@@ -39637,18 +40309,18 @@
       "id": "add17a039a06"
     },
     {
-      "venue": "Théâtre Théo Argence",
-      "venue_slug": "theatre-theo-argence",
-      "title": "Il ne m'est jamais rien arrivé",
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Edgar-Yves Jr.",
       "subtitle": null,
-      "category": "Théâtre",
-      "date_start": "2027-05-29",
+      "category": "humour",
+      "date_start": "2027-06-04",
       "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-314279-il-ne-m-est-jamais-rien-arriv.html",
-      "image": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/edgar-yves-jr-451128.html",
+      "image": "https://www.bourse-du-travail.com/img/evenement/edgar-yves-jr-14.jpg",
       "offsite_venue": null,
-      "id": "d9c03ebdef5d"
+      "id": "0e9f0aa1efa1"
     },
     {
       "venue": "Bourse du Travail",
@@ -39791,20 +40463,6 @@
       "id": "cd8e5fbbba72"
     },
     {
-      "venue": "Baràgones",
-      "venue_slug": "baragones",
-      "title": "Portraits Hôtel - Nuits troubles",
-      "subtitle": null,
-      "category": "Théâtre",
-      "date_start": "2027-09-20",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319001-portraits-h-tel-nuits-troubles.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "58db89682e88"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Generation Celine",
@@ -39814,7 +40472,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/generation-celine-2",
-      "image": "https://www.halle-tony-garnier.com/storage/144587/conversions/2027-09-29-GENERATION-CELINE-generationceline-carre-lyon-202-20260105-154614-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144655/conversions/2027-09-29-GENERATION-CELINE-generationceline-carre-lyon-202-20260105-154614-square.jpg",
       "offsite_venue": null,
       "id": "4f8eececf37d"
     },
@@ -39828,7 +40486,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/la-rue-ketanou",
-      "image": "https://www.halle-tony-garnier.com/storage/144588/conversions/2027-10-01-LA-RUE-KETANOU-larueketanou-chanson-lyon-site-carre-1-20260624-105135-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144656/conversions/2027-10-01-LA-RUE-KETANOU-larueketanou-chanson-lyon-site-carre-1-20260624-105135-square.jpg",
       "offsite_venue": null,
       "id": "620a0d9b3588"
     },
@@ -39856,7 +40514,7 @@
       "date_end": null,
       "time": "14:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/salut-les-copains-la-tournee",
-      "image": "https://www.halle-tony-garnier.com/storage/144589/conversions/2027-11-18-SALUT-LES-COPAINS-LA-TOURNEE-postsalut-les-copains-lyo-20260715-134159-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144657/conversions/2027-11-18-SALUT-LES-COPAINS-LA-TOURNEE-postsalut-les-copains-lyo-20260715-134159-square.jpg",
       "offsite_venue": null,
       "id": "25538db13fb8"
     },
@@ -39870,7 +40528,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/i-gotta-feeling-saison-3",
-      "image": "https://www.halle-tony-garnier.com/storage/144590/conversions/2027-11-18-I-GOTTA-FEELING-SAISON-3-igf-2027-carre-769-lyo-20260204-141943-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144658/conversions/2027-11-18-I-GOTTA-FEELING-SAISON-3-igf-2027-carre-769-lyo-20260204-141943-square.jpg",
       "offsite_venue": null,
       "id": "fb2d7ec96427"
     },
@@ -39926,7 +40584,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/gael-faye",
-      "image": "https://www.halle-tony-garnier.com/storage/144591/conversions/2027-11-27-GAEL-FAYE-gae-9568-el-faye-tourne-9568-ue-ze-9568-unith-1080-1350-copi-20260603-163108-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144659/conversions/2027-11-27-GAEL-FAYE-gae-9568-el-faye-tourne-9568-ue-ze-9568-unith-1080-1350-copi-20260603-163108-square.jpg",
       "offsite_venue": null,
       "id": "6beb9713ac66"
     },
@@ -39940,9 +40598,23 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/philippe-caveriviere",
-      "image": "https://www.halle-tony-garnier.com/storage/144592/conversions/2027-12-10-PHILIPPE-CAVERIVIERE-philippecaveriviere-tournee-fnac-1080x1080-copie-1-20260414-114358-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144660/conversions/2027-12-10-PHILIPPE-CAVERIVIERE-philippecaveriviere-tournee-fnac-1080x1080-copie-1-20260414-114358-square.jpg",
       "offsite_venue": null,
       "id": "95ab438b6959"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Sebastian Marx",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2027-12-18",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.bourse-du-travail.com/sebastian-marx-451131.html",
+      "image": "https://www.bourse-du-travail.com/img/evenement/sebastian-marx.jpg",
+      "offsite_venue": null,
+      "id": "efa93c92ddaa"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -39954,7 +40626,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/festival-mondial-de-la-magie",
-      "image": "https://www.halle-tony-garnier.com/storage/144593/conversions/2028-01-14-FESTIVAL-MONDIAL-DE-LA-MAGIE-vignette-billetterie-saison-4-copi-20251121-110434-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144661/conversions/2028-01-14-FESTIVAL-MONDIAL-DE-LA-MAGIE-vignette-billetterie-saison-4-copi-20251121-110434-square.jpg",
       "offsite_venue": null,
       "id": "745d9cc9feff"
     },
@@ -39968,9 +40640,12 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/era-2",
-      "image": "https://www.halle-tony-garnier.com/storage/144594/conversions/2028-03-01-ERA-era1-bi-20260330-165423-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/144662/conversions/2028-03-01-ERA-era1-bi-20260330-165423-square.jpg",
       "offsite_venue": null,
       "id": "661d7f33aa0b"
     }
-  ]
+  ],
+  "reprises": {
+    "Le Complexe café-théâtre": "2026-09-22"
+  }
 }
