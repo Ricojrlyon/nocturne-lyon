@@ -87,10 +87,6 @@
     "fetched_at": "2026-09-01",
     "time": "18:00"
   },
-  "https://h-eat.eu/events/grand-tournoi-petanque-ete/": {
-    "fetched_at": "2026-07-24",
-    "time": "18:30"
-  },
   "https://h-eat.eu/events/house-yoga-club-2/": {
     "fetched_at": "2026-09-15",
     "time": "19:00"
@@ -398,6 +394,10 @@
   },
   "https://le-sucre.eu/events/magic-mardi-92/": {
     "fetched_at": "2026-09-03",
+    "time": "18:00"
+  },
+  "https://le-sucre.eu/events/magic-mardi-93/": {
+    "fetched_at": "2026-09-23",
     "time": "18:00"
   },
   "https://le-sucre.eu/events/s-society-153/": {
@@ -1303,7 +1303,7 @@
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/brunch-hip-hop/": {
-    "fetched_at": "2026-09-15",
+    "fetched_at": "2026-09-23",
     "time": null
   },
   "https://radiant-bellevue.fr/spectacles/camille-chamoux-2/": {
@@ -1480,6 +1480,10 @@
   },
   "https://radiant-bellevue.fr/spectacles/le-cas-pucine/": {
     "fetched_at": "2026-09-11",
+    "time": "20:30"
+  },
+  "https://radiant-bellevue.fr/spectacles/le-cercle-des-poetes-disparus-3/": {
+    "fetched_at": "2026-09-23",
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/le-chant-des-lions/": {
@@ -5413,7 +5417,7 @@
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/atelier-de-pratique-theatrale-en-lsf/": {
-    "fetched_at": "2026-09-15",
+    "fetched_at": "2026-09-23",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/atelier-decriture-pour-les-adolescent%c2%b7es-de-15-ans/": {
@@ -5442,6 +5446,10 @@
   },
   "https://www.tng-lyon.fr/evenement/evidences-inconnues/": {
     "fetched_at": "2026-09-20",
+    "time": null
+  },
+  "https://www.tng-lyon.fr/evenement/fete-halloween-au-tng/": {
+    "fetched_at": "2026-09-23",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/grandeur-nature/": {
@@ -5525,7 +5533,7 @@
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/traversee/": {
-    "fetched_at": "2026-09-15",
+    "fetched_at": "2026-09-23",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/visite-tactile-dautres-familles-que-la-mienne/": {
