@@ -148,7 +148,7 @@
   "Bulle de son": {
     "arr": "9e",
     "confidence": "high",
-    "seen_at": "2026-09-01"
+    "seen_at": "2026-09-24"
   },
   "Bussières": {
     "arr": null,
@@ -376,7 +376,7 @@
     "arr": "2e",
     "checked_at": "2026-08-18",
     "confidence": "high",
-    "seen_at": "2026-09-08"
+    "seen_at": "2026-09-24"
   },
   "Groom": {
     "arr": "1er",
@@ -731,7 +731,13 @@
     "checked_at": "2026-09-10",
     "commune": "Oullins-Pierre-Bénite",
     "confidence": "low",
-    "seen_at": "2026-09-17"
+    "seen_at": "2026-09-24"
+  },
+  "MJC Saint-Just": {
+    "arr": "5e",
+    "checked_at": "2026-09-24",
+    "confidence": "high",
+    "seen_at": "2026-09-24"
   },
   "Maison Ravier": {
     "arr": "7e",
@@ -961,7 +967,7 @@
     "arr": "5e",
     "checked_at": "2026-09-17",
     "confidence": "high",
-    "seen_at": "2026-09-17"
+    "seen_at": "2026-09-24"
   },
   "Salle Victor Hugo": {
     "arr": "Autre",
@@ -1041,7 +1047,7 @@
     "arr": null,
     "checked_at": "2026-09-17",
     "confidence": "failed",
-    "seen_at": "2026-09-17"
+    "seen_at": "2026-09-24"
   },
   "Théâtre de l'Iris": {
     "arr": "Villeurbanne",
@@ -1053,7 +1059,7 @@
     "arr": "7e",
     "checked_at": "2026-09-10",
     "confidence": "high",
-    "seen_at": "2026-09-17"
+    "seen_at": "2026-09-24"
   },
   "Théâtre de l\\'Élysée": {
     "arr": "7e",
@@ -1174,6 +1180,12 @@
     "checked_at": "2026-09-10",
     "confidence": "failed",
     "seen_at": "2026-09-10"
+  },
+  "ile égalité": {
+    "arr": "Villeurbanne",
+    "checked_at": "2026-09-24",
+    "confidence": "high",
+    "seen_at": "2026-09-24"
   },
   "médiathèque de Meyzieu": {
     "arr": "Autre",
