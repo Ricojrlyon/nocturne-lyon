@@ -300,6 +300,12 @@
     "confidence": "high",
     "seen_at": "2026-08-26"
   },
+  "Fabuleuse Cantine Lyon 7": {
+    "arr": null,
+    "checked_at": "2026-09-26",
+    "confidence": "failed",
+    "seen_at": "2026-09-26"
+  },
   "Factatory": {
     "arr": null,
     "checked_at": "2026-09-08",
@@ -706,7 +712,7 @@
     "arr": null,
     "checked_at": "2026-09-12",
     "confidence": "failed",
-    "seen_at": "2026-09-19"
+    "seen_at": "2026-09-26"
   },
   "MJC Duchère": {
     "arr": null,
@@ -724,7 +730,7 @@
     "arr": null,
     "checked_at": "2026-09-12",
     "confidence": "failed",
-    "seen_at": "2026-09-19"
+    "seen_at": "2026-09-26"
   },
   "MJC Oullins": {
     "arr": "Autre",
@@ -860,7 +866,7 @@
     "arr": null,
     "checked_at": "2026-09-12",
     "confidence": "failed",
-    "seen_at": "2026-09-19"
+    "seen_at": "2026-09-26"
   },
   "Parc de Miribel-Jonage": {
     "arr": "Autre",
@@ -1204,7 +1210,7 @@
     "arr": null,
     "checked_at": "2026-09-12",
     "confidence": "failed",
-    "seen_at": "2026-09-19"
+    "seen_at": "2026-09-26"
   },
   "Ô Totem live": {
     "arr": null,

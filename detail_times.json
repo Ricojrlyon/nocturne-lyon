@@ -192,6 +192,10 @@
     "fetched_at": "2026-09-04",
     "time": "23:00"
   },
+  "https://le-sucre.eu/events/after-plavace-5-ans-w-buhi/": {
+    "fetched_at": "2026-09-26",
+    "time": "23:00"
+  },
   "https://le-sucre.eu/events/blob-party/": {
     "fetched_at": "2026-09-11",
     "time": "23:00"
@@ -2866,7 +2870,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/famille/carnaval-emotions": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-09-26",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -3026,7 +3030,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/eleves-du-cnsmd-lyon-12-nov-26": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-09-26",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -3036,7 +3040,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/eleves-du-cnsmd-lyon-15-oct-26": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-09-26",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -5152,7 +5156,7 @@
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/beethoven-sibelius": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-09-26",
     "lieu": "Opéra de Lyon",
     "seances": [
       [
@@ -5566,6 +5570,11 @@
     "image": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-acidarab2.jpg",
     "time": "19:00"
   },
+  "https://www.transbordeur.fr/evenement/adele-castillon-25032027/": {
+    "fetched_at": "2026-09-26",
+    "image": "https://www.transbordeur.fr/wp-content/uploads/2024/12/a-adelecastillon.jpg",
+    "time": "19:00"
+  },
   "https://www.transbordeur.fr/evenement/afar-canine-cracks-2016-24092026/": {
     "fetched_at": "2026-09-01",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/07/a-afar.jpeg",
@@ -5878,6 +5887,11 @@
   },
   "https://www.transbordeur.fr/evenement/meryl-01102026/": {
     "fetched_at": "2026-09-18",
+    "image": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-meryl.jpeg",
+    "time": "18:30"
+  },
+  "https://www.transbordeur.fr/evenement/meryl-lawskie-01102026/": {
+    "fetched_at": "2026-09-26",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-meryl.jpeg",
     "time": "18:30"
   },
