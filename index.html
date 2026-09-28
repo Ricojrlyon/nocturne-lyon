@@ -1747,6 +1747,8 @@ const VENUE_DISPLAY_ORDER = ['soirée', 'concerts', 'spectacles & musiques', 'li
    Unmapped venues default to 'Autre' via eventArrondissement(). */
 const VENUE_ARRONDISSEMENT = {
   // Lyon 1er (Terreaux, Pentes Croix-Rousse)
+  "Amphithéâtre de l'Opéra": '1er', // place de la Comédie — la petite salle de l'Opéra
+  'Bar des Capucins': '1er',      // place des Capucins
   'Le Complexe café-théâtre': '1er', // 7 rue des Capucins
   'Opéra national de Lyon': '1er',
   'Célestins, théâtre de Lyon': '2e', // place des Célestins
@@ -1767,6 +1769,8 @@ const VENUE_ARRONDISSEMENT = {
   'Péristyle Opéra': '1er',       // place de la Comédie, devant l'Opéra
 
   // Lyon 2e (Presqu'île, Confluence)
+  'Momie Romance': '2e',          // 31 rue Franklin
+  'Ô boudoir': '2e',              // 15 rue de Condé
   'Le Sucre': '2e',
   'Marché Gare': '2e',
   'Le Périscope': '2e',
@@ -1780,6 +1784,9 @@ const VENUE_ARRONDISSEMENT = {
   'Escale Solidaire du 2': '2e',  // 25 rue Delandine
 
   // Lyon 3e (Part-Dieu, Guillotière)
+  'Café La Médiane': '3e',        // 255 rue de Créqui
+  'La Médiane, tiers-lieu féministe': '3e', // même adresse, autre graphie
+  'Studio Nafas': '3e',           // 10 rue Marignan
   'Bourse du Travail': '3e',
   'Auditorium de Lyon': '3e',
   'La Marquise': '3e',            // péniche 20 quai Victor Augagneur
@@ -1791,11 +1798,14 @@ const VENUE_ARRONDISSEMENT = {
   'Friche Artistique Lamartine | La Robinetterie': '3e', // rue Lamartine
 
   // Lyon 4e (Croix-Rousse plateau)
+  'La Cadette - Librairie Vivement Dimanche': '4e', // 16 grande-rue de la Croix-Rousse
   "Agend'arts": '4e',
   'Aquarium ciné-café': '4e',     // 10 rue Dumont
   'Gymnase René Baillieu': '4e',  // 53 rue Philippe de Lassalle — le Lyon Croix-Rousse Volley y reçoit
 
   // Lyon 5e (Vieux Lyon, Fourvière, Saint-Just)
+  'MAM - Musée des Arts et de la Marionnette': '5e', // 1 place du Petit Collège (Gadagne)
+  'Cloître du Fourvière Hôtel': '5e', // 23 rue Roger Radisson
   'Musées Gadagne': '5e',
   'Salle Molière': '5e',          // 18 quai de Bondy
   'Le Sonic': '5e',               // péniche 4 quai des Étroits
@@ -1804,9 +1814,12 @@ const VENUE_ARRONDISSEMENT = {
   'Maison des Passages': '5e',    // 44 rue Saint-Georges
 
   // Lyon 6e (Brotteaux, Tête d'Or, Cité Internationale)
+  'Amphithéâtre du Centre de Congrès': '6e', // 10 quai Charles de Gaulle
   "Musée d'Art Contemporain": '6e',
 
   // Lyon 7e (Gerland, Guillotière, Jean Macé)
+  'Fabuleuse Cantine Lyon 7': '7e', // 107 rue de Marseille
+  'Factatory': '7e',              // 15 rue Paul Massimi
   'La Halle Tony Garnier': '7e',
   'La Commune': '7e',             // 3 rue Pré-Gaudry
   'Le Petit Salon': '7e',         // 3 rue de Cronstadt
@@ -1824,6 +1837,7 @@ const VENUE_ARRONDISSEMENT = {
   'Matmut Stadium de Gerland': '7e',     // 353 av. Jean Jaurès — le LOU y reçoit, hommes et femmes
 
   // Lyon 8e (Monplaisir, États-Unis, Bachut)
+  'MJC Laënnec-Mermoz- Salle Genton': '8e', // 21 rue Genton — graphie du Petit Bulletin, sans espace
   'Maison de la Danse': '8e',
   'Théâtre de la Croix-Rousse': '4e', // place Joannès Ambre
   'HEAT': '8e',
@@ -1832,11 +1846,13 @@ const VENUE_ARRONDISSEMENT = {
   'Place du 8 mai 1945, Lyon 8e': '8e',
 
   // Lyon 9e (Vaise, La Duchère)
+  'MJC Duchère': '9e',            // 237 rue des Érables
   'TNG': '9e',                    // 23 rue de Bourgogne
   'Gymnase Matthias Favier': '9e', // 2 place Schönberg — le Handball Club de Lyon y reçoit
   "Bar Rock'n Eat": '9e',         // 32 quai d'Arloing
 
   // Villeurbanne
+  "Maison du livre, de l'image et du son": 'Villeurbanne', // 247 cours Émile Zola (MLIS)
   'Le Transbordeur': 'Villeurbanne',
   'TNP - Théâtre National Populaire': 'Villeurbanne', // 8 place Lazare-Goujon
   'La Rayonne': 'Villeurbanne',
@@ -1892,6 +1908,19 @@ const VENUE_COMMUNE = {
   "L'Aqueduc": 'Dardilly',                  // 1 rue Jean Moulin
   'Jack Jack - MJC Aragon': 'Bron',         // 2 rue Salvador Allende
   'Bois de Sermenaz à Rillieux-la-Pape': 'Rillieux-la-Pape',
+
+  // Salles que Nominatim ne trouve pas, situées à la main sur la fiche
+  // de l'agrégateur qui les publie — c'est de là que viennent les
+  // adresses ci-dessous. L'Atrium valait le détour : il porte le nom
+  // d'un hôtel de ville sans dire lequel, et ce n'est pas celui de Lyon.
+  'MJC Louis Aragon / Jack Jack': 'Bron',   // 16 place Gaillard Romanet, 69500 — autre graphie de Jack Jack
+  'La Ferme du Vinatier': 'Bron',           // 95 bd Pinel, 69500, dans l'hôpital
+  'Chapelle du Vinatier': 'Bron',           // même hôpital
+  "Atrium de l'hôtel de ville": 'Genas',    // place du Général de Gaulle, 69740
+  'Théâtre Cinéma Jean Carmet': 'Mornant',  // bd du Pilat, 69440
+  'Ô Totem live': 'Rillieux-la-Pape',       // 9 bis av. Général Leclerc, 69140
+  'Théâtre François Ponsard': 'Vienne',     // 4 rue Chantelouve, 38200 — hors Métropole, le Petit Bulletin le publie
+  "Bibliothèque de Saint Didier-au-Mont-d'Or - Maison Meunier": "Saint-Didier-au-Mont-d'Or",
 };
 
 /* Valeur d'offsite_venue quand la production tourne dans PLUSIEURS salles
