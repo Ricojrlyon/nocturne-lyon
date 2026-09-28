@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-28T07:40:55.199480+00:00",
-  "count": 2950,
+  "generated_at": "2026-09-28T12:35:54.635808+00:00",
+  "count": 2965,
   "events": [
     {
       "venue": "IAC Villeurbanne",
@@ -353,20 +353,6 @@
       "id": "474a5657426a"
     },
     {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe-cafe-theatre",
-      "title": "Complexe comedy club",
-      "subtitle": null,
-      "category": "Humour & Café Théâtre",
-      "date_start": "2026-09-28",
-      "date_end": "2026-10-03",
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-307482-complexe-comedy-club.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "2dbd84c773f7"
-    },
-    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Gratuit Déjeuner-Concert TULIPE TULIPE Dispositif Avant-Scène",
@@ -425,8 +411,8 @@
     {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
-      "title": "Magic Mardi",
-      "subtitle": "DJ Alé · Fervinho · Pipas",
+      "title": "Magic Mardi x Fervinho Crew",
+      "subtitle": "DJ Alé · Pipas · Erica Do Futuro",
       "category": null,
       "date_start": "2026-09-29",
       "date_end": null,
@@ -434,7 +420,7 @@
       "url": "https://le-sucre.eu/events/magic-mardi-92/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/09/Plan-de-travail-20-480x600.png",
       "offsite_venue": null,
-      "id": "c792dfc6463f"
+      "id": "290d2710b07a"
     },
     {
       "venue": "Gare de Perrache",
@@ -477,6 +463,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "8641e0d7a99c"
+    },
+    {
+      "venue": "Blue Monday",
+      "venue_slug": "blue-monday",
+      "title": "SCÈNE OUVERTE DU BLUE MONDAY",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-09-29",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://agenda.villemorte.fr/event/scene-ouverte-du-blue-monday",
+      "image": "https://agenda.villemorte.fr/media/thumb/51ec2ecb0a0e577f4cdd612eb3514bf8.jpg",
+      "offsite_venue": null,
+      "id": "29715823856d"
     },
     {
       "venue": "Collège Supérieur Lyon",
@@ -999,20 +999,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-09-30",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
-      "offsite_venue": null,
-      "id": "3f6ce2a41e81"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "\"Surbooking\"",
       "subtitle": null,
       "category": "café-théâtre",
@@ -1023,6 +1009,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/surbooking-540x800.jpg",
       "offsite_venue": null,
       "id": "70efb53b8fec"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-09-30",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "3f6ce2a41e81"
     },
     {
       "venue": "Improvidence",
@@ -1671,7 +1671,7 @@
     {
       "venue": "La Commune",
       "venue_slug": "la-commune",
-      "title": "Jeudi Rose",
+      "title": "Vendredi Rose",
       "subtitle": null,
       "category": "dj set",
       "date_start": "2026-10-02",
@@ -1680,7 +1680,7 @@
       "url": "https://lacommune.co/event/vendredi-rose/",
       "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-d01535d/lacommune.co/wp-content/uploads/2025/10/2-2-768x960.jpg",
       "offsite_venue": null,
-      "id": "b6148fdab675"
+      "id": "b4f6923fe264"
     },
     {
       "venue": "Musée des Confluences",
@@ -2339,6 +2339,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "eb05148edf75"
+    },
+    {
+      "venue": "Place de la Croix-Rousse",
+      "venue_slug": "place-de-la-croix-rousse",
+      "title": "Vogue des marrons",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-10-03",
+      "date_end": "2026-11-11",
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319641-vogue-des-marrons.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "183969b2dd75"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -3589,6 +3603,20 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
+      "title": "Formation Présentation de la saison d'ateliers ATELIER ENVIRONNEMENT PRO",
+      "subtitle": null,
+      "category": "atelier",
+      "date_start": "2026-10-06",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://marchegare.fr/agenda/presentation-de-lenvironnement-professionnel-de-lartiste-10h-1",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/import_billetterie/295-illustration_id-1757412294.jpg",
+      "offsite_venue": null,
+      "id": "7361670a06c2"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
       "title": "Gratuit Déjeuner-Concert LA COMTESSE Déjeuner-Concert du Labo",
       "subtitle": null,
       "category": "Rock & Pop",
@@ -3599,6 +3627,20 @@
       "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2025-09/camscanner_20-09-2025_10.22_1.jpg",
       "offsite_venue": null,
       "id": "7cee27ab9062"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Formation Présentation de la saison d'ateliers ATELIER ENVIRONNEMENT PRO",
+      "subtitle": null,
+      "category": "atelier",
+      "date_start": "2026-10-06",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://marchegare.fr/agenda/presentation-de-lenvironnement-professionnel-de-lartiste-14h-1",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/import_billetterie/295-illustration_id-1757412294.jpg",
+      "offsite_venue": null,
+      "id": "417ac74648b2"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -4509,6 +4551,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/dec258dc/angelo_focolare_c_masiarpasquali_piccolo_2.jpg",
       "offsite_venue": null,
       "id": "fbe36e2bb46d"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Jackpot",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-08",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/733422-jackpot",
+      "image": "https://img.mapado.net/2026/4/23/69ea07cb3f942-jackpot.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "bc23e31218c0"
     },
     {
       "venue": "L'Épicerie Moderne",
@@ -5685,6 +5741,20 @@
       "image": "https://i-ac.eu/img/thumbs_cache/400x300_img_9772.jpg",
       "offsite_venue": null,
       "id": "ef9effe999bd"
+    },
+    {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "Day Club Tech House « ON STAGE » : CAM STOCKMAN + Valentine Groove + Raya + Casamankka + Cambo",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-10",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://larayonne.org/evenement/day-club-tech-house-on-stage-cam-stockman-valentine-groove-raya-casamankka-cambo/",
+      "image": "https://larayonne.org/wp-content/uploads/2026/09/Format-1200-x-1120-px-500x467.png",
+      "offsite_venue": null,
+      "id": "9d4282224a38"
     },
     {
       "venue": "Les Subsistances",
@@ -7549,6 +7619,20 @@
       "id": "bbc0a74b5428"
     },
     {
+      "venue": "Collège Supérieur Lyon",
+      "venue_slug": "college-superieur-lyon",
+      "title": "Voir le monde autrement",
+      "subtitle": null,
+      "category": "Conférences",
+      "date_start": "2026-10-14",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319630-voir-le-monde-autrement.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "4b118213efb3"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "7 rue des Alouettes",
@@ -7927,6 +8011,20 @@
       "id": "d0656c5565d8"
     },
     {
+      "venue": "Goethe-Institut",
+      "venue_slug": "goethe-institut",
+      "title": "hOURS",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-10-15",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319632-hours.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "4d8c05f622fa"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Face B",
@@ -7967,6 +8065,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "44ed6a960dea"
+    },
+    {
+      "venue": "Collège Supérieur Lyon",
+      "venue_slug": "college-superieur-lyon",
+      "title": "Pourquoi Spinoza nomme-t-il le principe Dieu ?",
+      "subtitle": null,
+      "category": "Conférences",
+      "date_start": "2026-10-15",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319631-pourquoi-spinoza-nomme-t-il-le-principe-dieu.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "9bc96213e556"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -9159,6 +9271,34 @@
       "id": "9b15f19ba5a2"
     },
     {
+      "venue": "Goethe-Institut",
+      "venue_slug": "goethe-institut",
+      "title": "Lyon se souvient",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-10-17",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319633-lyon-se-souvient.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "ad27cd8b416f"
+    },
+    {
+      "venue": "Momie Romance",
+      "venue_slug": "momie-romance",
+      "title": "Ema Dinkel",
+      "subtitle": null,
+      "category": "Rencontres et Dédicaces",
+      "date_start": "2026-10-17",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319638-ema-dinkel.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "c7ad0b9eb68a"
+    },
+    {
       "venue": "IAC Villeurbanne",
       "venue_slug": "iac-villeurbanne",
       "title": "Visites du week-end",
@@ -9476,7 +9616,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://agenda.villemorte.fr/event/soiree-gender-reveal-party-avec-gui-john-travelota-messalina-mescalina-miss-joli-butt-kunt",
-      "image": null,
+      "image": "https://agenda.villemorte.fr/media/thumb/7d80a4ce2dbfe8579e534210f9fa1618.jpg",
       "offsite_venue": null,
       "id": "3292fb487ab1"
     },
@@ -9621,6 +9761,20 @@
       "id": "2771d21c9ee9"
     },
     {
+      "venue": "Goethe-Institut",
+      "venue_slug": "goethe-institut",
+      "title": "Blindtest : les Allemand·e·s ont du talent !",
+      "subtitle": null,
+      "category": "Jeux",
+      "date_start": "2026-10-17",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319634-blindtest-les-allemand-e-s-ont-du-talent.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "a286349a9421"
+    },
+    {
       "venue": "Improvidence",
       "venue_slug": "improvidence",
       "title": "Mon pote",
@@ -9759,6 +9913,20 @@
       "image": "https://www.halle-tony-garnier.com/storage/144994/conversions/2026-10-18-SEANCE-DE-CLOTURE-LUMIERE-THE-BIG-LEBOWSKI-couv-freres-coen-2026-20260911-142433-square.jpg",
       "offsite_venue": null,
       "id": "d1ace2df2686"
+    },
+    {
+      "venue": "Librairie Momie",
+      "venue_slug": "librairie-momie",
+      "title": "Laurie Gilmore",
+      "subtitle": null,
+      "category": "Rencontres et Dédicaces",
+      "date_start": "2026-10-18",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319639-laurie-gilmore.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "a8d64688949e"
     },
     {
       "venue": "IAC Villeurbanne",
@@ -10305,6 +10473,20 @@
       "image": "https://sonic-lyon.fr/wp-content/uploads/2026/06/THE_HOMESICK_presspic3_2026CDanny_Griffioen-1.jpg",
       "offsite_venue": null,
       "id": "e5cd71040a5a"
+    },
+    {
+      "venue": "Librairie La Tanière",
+      "venue_slug": "librairie-la-taniere",
+      "title": "Emma Étienne",
+      "subtitle": null,
+      "category": "Rencontres et Dédicaces",
+      "date_start": "2026-10-20",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319629-emma-tienne.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "319c731a4482"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -10923,20 +11105,6 @@
       "id": "fa4af55f40da"
     },
     {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-de-lyon",
-      "title": "Visites découverte commentées",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-10-22",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "88ecca7731b1"
-    },
-    {
       "venue": "Hôtel 71",
       "venue_slug": "hotel-71",
       "title": "Les visiteurs du jeudi : Claude Mouriéras",
@@ -11019,6 +11187,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "989462d2a006"
+    },
+    {
+      "venue": "Librairie L'œil cacodylate",
+      "venue_slug": "librairie-l-il-cacodylate",
+      "title": "La littérature de Djuna Barnes",
+      "subtitle": null,
+      "category": "Conférences",
+      "date_start": "2026-10-22",
+      "date_end": null,
+      "time": "19:15",
+      "url": "https://www.petit-bulletin.fr/agenda-319627-la-litt-rature-de-djuna-barnes.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "b6752c08c1db"
     },
     {
       "venue": "Improvidence",
@@ -11509,6 +11691,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "cdc9b11d963a"
+    },
+    {
+      "venue": "Café Mio",
+      "venue_slug": "cafe-mio",
+      "title": "Comédy club de lecture - twilight",
+      "subtitle": null,
+      "category": "théâtre",
+      "date_start": "2026-10-23",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/comedy-club-de-lecture-twilight",
+      "image": "https://agenda.villemorte.fr/media/thumb/f2e72ada43342ad081cc1aab0fda841d.jpg",
+      "offsite_venue": null,
+      "id": "e6de2001994a"
     },
     {
       "venue": "Comédie Odéon",
@@ -12787,20 +12983,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-10-27",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
-      "offsite_venue": null,
-      "id": "a8f397f6babb"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Mon héros",
       "subtitle": null,
       "category": "café-théâtre",
@@ -12811,6 +12993,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/mon-heros-540x800.jpg",
       "offsite_venue": null,
       "id": "a899efa9822d"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-27",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "a8f397f6babb"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -12979,6 +13175,20 @@
       "image": "https://www.transbordeur.fr/wp-content/uploads/2026/03/a-wallacecleaver1-e1774624267890.jpeg",
       "offsite_venue": null,
       "id": "473f3dcad9b4"
+    },
+    {
+      "venue": "Librairie à soi.e",
+      "venue_slug": "librairie-a-soi-e",
+      "title": "L. Bigòrra",
+      "subtitle": null,
+      "category": "Rencontres et Dédicaces",
+      "date_start": "2026-10-28",
+      "date_end": null,
+      "time": "19:15",
+      "url": "https://www.petit-bulletin.fr/agenda-319640-l-big-rra.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "5a9ce303552c"
     },
     {
       "venue": "Théâtre des Clochards Célestes",
@@ -13289,20 +13499,6 @@
       "id": "f912ab736ea7"
     },
     {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-de-lyon",
-      "title": "Visites découverte commentées",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-10-29",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "2509a5f5f69d"
-    },
-    {
       "venue": "Amphithéâtre de l'Opéra",
       "venue_slug": "amphitheatre-de-l-opera",
       "title": "Simon Jeffes et le Penguin Cafe Orchestra",
@@ -13373,6 +13569,34 @@
       "id": "eaebf4855934"
     },
     {
+      "venue": "Librairie L'œil cacodylate",
+      "venue_slug": "librairie-l-il-cacodylate",
+      "title": "Sylvain Bourmeau",
+      "subtitle": null,
+      "category": "Rencontres et Dédicaces",
+      "date_start": "2026-10-29",
+      "date_end": null,
+      "time": "19:15",
+      "url": "https://www.petit-bulletin.fr/agenda-319628-sylvain-bourmeau.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "890efa78fcea"
+    },
+    {
+      "venue": "Grrrnd Zero",
+      "venue_slug": "grrrnd-zero",
+      "title": "Cancer Void + Teratoma + Abyssal Blast",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-29",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://agenda.villemorte.fr/event/cancer-void-teratoma-abyssal-blast",
+      "image": "https://agenda.villemorte.fr/media/thumb/34ba10ff7025970c034ada6199e8d332.jpg",
+      "offsite_venue": null,
+      "id": "9554edbb7c82"
+    },
+    {
       "venue": "L'Épicerie Moderne",
       "venue_slug": "l-epicerie-moderne",
       "title": "The Notwist + Les Marquises",
@@ -13427,20 +13651,6 @@
       "image": "https://www.comedieodeon.com/wp-content/uploads/2025/04/LaMachine_Turing_afftournee_GENARO_BD-1.jpg",
       "offsite_venue": null,
       "id": "1c0e6e3e84a8"
-    },
-    {
-      "venue": "Grrrnd Zero",
-      "venue_slug": "grrrnd-zero",
-      "title": "Cancer Void + Teratoma + Abyssal Blast",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-10-29",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/cancer-void-teratoma-abyssal-blast",
-      "image": null,
-      "offsite_venue": null,
-      "id": "67917fc99d75"
     },
     {
       "venue": "Espace Gerson",
@@ -13851,8 +14061,8 @@
     {
       "venue": "TNG",
       "venue_slug": "tng",
-      "title": "Fête Halloween au TNG !",
-      "subtitle": "La nuit du Transylvalmy",
+      "title": "Halloween au TNG !",
+      "subtitle": "UNE SOIRÉE EN TRANSYLVALMY",
       "category": "théâtre",
       "date_start": "2026-10-31",
       "date_end": null,
@@ -13860,7 +14070,7 @@
       "url": "https://www.tng-lyon.fr/evenement/fete-halloween-au-tng/",
       "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/09/460x460_HALLOWEEN_2.png",
       "offsite_venue": null,
-      "id": "7acbc0c2fae7"
+      "id": "c36fd8b634d2"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -16213,20 +16423,6 @@
       "image": "https://agendarts.wordpress.com/wp-content/uploads/2025/06/dsf9071.jpg?w=1024",
       "offsite_venue": null,
       "id": "2cab882dae46"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Jackpot",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-11-08",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://improvidence.mapado.com/event/733422-jackpot",
-      "image": "https://img.mapado.net/2026/4/23/69ea07cb3f942-jackpot.jpeg_thumbs/600-600.jpeg",
-      "offsite_venue": null,
-      "id": "5417e6ac0c1f"
     },
     {
       "venue": "Le Sucre",
@@ -19071,20 +19267,6 @@
       "id": "1c31667c2cb7"
     },
     {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Soul Urban Pop MYRA",
-      "subtitle": null,
-      "category": "rock",
-      "date_start": "2026-11-19",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://marchegare.fr/agenda/myra",
-      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-07/myra_c_arnaud_ele3.jpg",
-      "offsite_venue": null,
-      "id": "5cd87d43ac01"
-    },
-    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Martin Eden",
@@ -19447,20 +19629,6 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/salima-passion-540x800.jpg",
       "offsite_venue": null,
       "id": "6a1cd2fdf58a"
-    },
-    {
-      "venue": "Marché Gare",
-      "venue_slug": "marche-gare",
-      "title": "Hors les murs Rap Urban Pop ZINÉE > à Bizarre! Vénissieux",
-      "subtitle": null,
-      "category": "rock",
-      "date_start": "2026-11-20",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://marchegare.fr/agenda/zinee",
-      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-04/photo_zinee_1_c_rafaelle.jpg",
-      "offsite_venue": null,
-      "id": "db8557647313"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -20333,20 +20501,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-11-24",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
-      "offsite_venue": null,
-      "id": "186248190aac"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Mon héros",
       "subtitle": null,
       "category": "café-théâtre",
@@ -20357,6 +20511,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/mon-heros-540x800.jpg",
       "offsite_venue": null,
       "id": "2ffe4c7014cb"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-24",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "186248190aac"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -22979,20 +23147,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-04",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
-      "offsite_venue": null,
-      "id": "5b3b078c675b"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Guillaume Sentou \"Un mec cool\"",
       "subtitle": null,
       "category": "café-théâtre",
@@ -23003,6 +23157,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
       "offsite_venue": null,
       "id": "cebdb9ac5785"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
+      "offsite_venue": null,
+      "id": "5b3b078c675b"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -23455,20 +23623,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-05",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
-      "offsite_venue": null,
-      "id": "70a3ec875633"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Guillaume Sentou \"Un mec cool\"",
       "subtitle": null,
       "category": "café-théâtre",
@@ -23479,6 +23633,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
       "offsite_venue": null,
       "id": "eea2838c459b"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
+      "offsite_venue": null,
+      "id": "70a3ec875633"
     },
     {
       "venue": "Le Sonic",
@@ -27431,20 +27599,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-29",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
-      "offsite_venue": null,
-      "id": "f95451493601"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Mon héros",
       "subtitle": null,
       "category": "café-théâtre",
@@ -27455,6 +27609,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/mon-heros-540x800.jpg",
       "offsite_venue": null,
       "id": "7075bb8bd7a4"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-29",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "f95451493601"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -27669,20 +27837,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "De quoi je me mêle?",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-31",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.lecomplexelyon.com/programme/de-quoi-je-me-mele/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/de-quoi-je-me-mele-540x800.jpg",
-      "offsite_venue": null,
-      "id": "459c1959bdd0"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
       "subtitle": null,
       "category": "café-théâtre",
@@ -27707,6 +27861,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sous-le-sapin-les-emmerdes-31dec-540x800.jpg",
       "offsite_venue": null,
       "id": "ccd2da1a4a5f"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "De quoi je me mêle?",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-31",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.lecomplexelyon.com/programme/de-quoi-je-me-mele/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/de-quoi-je-me-mele-540x800.jpg",
+      "offsite_venue": null,
+      "id": "459c1959bdd0"
     },
     {
       "venue": "Le Complexe café-théâtre",
@@ -27809,20 +27977,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "De quoi je me mêle?",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-31",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/de-quoi-je-me-mele/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/de-quoi-je-me-mele-540x800.jpg",
-      "offsite_venue": null,
-      "id": "755dc7a14e1f"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
       "subtitle": null,
       "category": "café-théâtre",
@@ -27847,6 +28001,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sous-le-sapin-les-emmerdes-31dec-540x800.jpg",
       "offsite_venue": null,
       "id": "7541755c4567"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "De quoi je me mêle?",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-31",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/de-quoi-je-me-mele/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/de-quoi-je-me-mele-540x800.jpg",
+      "offsite_venue": null,
+      "id": "755dc7a14e1f"
     },
     {
       "venue": "Le Complexe café-théâtre",
@@ -29863,6 +30031,20 @@
       "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Zone_dattentecMacha-Makeieff.jpg",
       "offsite_venue": null,
       "id": "819ccb6afb0f"
+    },
+    {
+      "venue": "Comédie Odéon",
+      "venue_slug": "comedie-odeon",
+      "title": "PARCOURS – Rencontre avec Nicolas Pagnol",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2027-01-16",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.comedieodeon.com/spectacle/parcours-rencontre-avec-nicolas-pagnol/",
+      "image": "https://www.comedieodeon.com/wp-content/uploads/2026/09/Nicolas_Pagnol_REG_affiche.jpg",
+      "offsite_venue": null,
+      "id": "9e98f5847c77"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -35355,20 +35537,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2027-02-23",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
-      "offsite_venue": null,
-      "id": "3e0eee9f6953"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Mon héros",
       "subtitle": null,
       "category": "café-théâtre",
@@ -35379,6 +35547,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/mon-heros-540x800.jpg",
       "offsite_venue": null,
       "id": "0a7c26a3ff12"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-02-23",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "3e0eee9f6953"
     },
     {
       "venue": "Théâtre de la Croix-Rousse",
@@ -39847,6 +40029,20 @@
       "id": "de38324fb86d"
     },
     {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-03-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "1b7876119841"
+    },
+    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Le Voyage d’hiver",
@@ -40085,6 +40281,20 @@
       "id": "b63bac744f73"
     },
     {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-03-27",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "09c17a62f2ff"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins-theatre-de-lyon",
       "title": "Chiens",
@@ -40111,20 +40321,6 @@
       "image": "https://www.les-subs.com/wp-content/uploads/2026/07/visuel-subsidiaire-gabriel-laurent-200x200.jpg",
       "offsite_venue": null,
       "id": "4b33c6aa7871"
-    },
-    {
-      "venue": "Espace Gerson",
-      "venue_slug": "espace-gerson",
-      "title": "L'impro FFF",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2027-03-30",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319345-l-impro-fff.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "382c83031e53"
     },
     {
       "venue": "La Machinerie - Théâtre de Vénissieux",
@@ -40533,20 +40729,6 @@
       "id": "edf06199435a"
     },
     {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Ça handi long",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2027-04-14",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "37c4b2711353"
-    },
-    {
       "venue": "TNG",
       "venue_slug": "tng-vaise",
       "title": "Bienvenue aux répétitions !",
@@ -40615,6 +40797,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "86f2e30e4445"
+    },
+    {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "L'impro FFF",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2027-04-27",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319345-l-impro-fff.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "ab7b3eea00be"
     },
     {
       "venue": "Théâtre de la Croix-Rousse",
@@ -40741,6 +40937,20 @@
       "image": "https://www.bourse-du-travail.com/img/evenement/mam-issabre-au-festival-les-lions-du-rire.jpg",
       "offsite_venue": null,
       "id": "009fd03a963e"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Ça handi long",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2027-05-13",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "34e2076f4d3f"
     },
     {
       "venue": "Bourse du Travail",
@@ -41023,20 +41233,6 @@
       "id": "9f9897666f7c"
     },
     {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Ça handi long",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2027-08-26",
-      "date_end": null,
-      "time": "21:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "b0f3cc037624"
-    },
-    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "THE PINEAPPLE THIEF",
@@ -41088,7 +41284,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/jok-air",
-      "image": "https://www.halle-tony-garnier.com/storage/145046/conversions/2027-11-04-JOK-AIR-carre-jokai-20260923-100329-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/145054/conversions/2027-11-04-JOK-AIR-carre-jokai-20260923-100329-square.jpg",
       "offsite_venue": null,
       "id": "be3cab312ea0"
     },
@@ -41170,11 +41366,11 @@
       "category": "humour",
       "date_start": "2027-11-25",
       "date_end": null,
-      "time": "20:00",
+      "time": null,
       "url": "https://www.bourse-du-travail.com/david-castello-lopes-410446.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/david-castello-lopes-dans-delicieux.jpg",
       "offsite_venue": null,
-      "id": "42f895d6dabd"
+      "id": "415818d54c69"
     },
     {
       "venue": "Bourse du Travail",
@@ -41247,6 +41443,20 @@
       "id": "80f58e220a27"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Ça handi long",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2027-12-22",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "46d73ae64d2d"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Festival Mondial De La Magie",
@@ -41302,9 +41512,5 @@
       "offsite_venue": null,
       "id": "28db94d2c949"
     }
-  ],
-  "reprises": {
-    "Le Complexe café-théâtre": "2026-09-27",
-    "La Rayonne": "2026-09-28"
-  }
+  ]
 }
