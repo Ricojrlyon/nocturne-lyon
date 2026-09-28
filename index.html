@@ -1870,8 +1870,28 @@ const ARRONDISSEMENT_ORDER = ['1er', '2e', '3e', '4e', '5e', '6e', '7e', '8e', '
    Le Théâtre de La Renaissance y est parce que Nominatim ne le connaît
    pas — ni interrogé sur Lyon, ni sur Villeurbanne, ni sur
    Oullins-Pierre-Bénite que sa fiche nomme pourtant. */
+/* Les noms s'écrivent ENTIERS ici — « Oullins-Pierre-Bénite », pas
+   « Oullins » : c'est villeCourte() qui abrège, et lui seul. Sans
+   cette règle, une commune s'affichait de deux façons selon qu'elle
+   vienne de cette table ou du géocodage — « Décines » pour la LDLC
+   Arena, « Décines… » pour le Toboggan, à deux rues l'une de l'autre. */
 const VENUE_COMMUNE = {
-  'Théâtre de La Renaissance': 'Oullins',   // 7 rue Orsel, Oullins-Pierre-Bénite
+  'Théâtre de La Renaissance': 'Oullins-Pierre-Bénite', // 7 rue Orsel
+
+  // Les salles que VENUE_ARRONDISSEMENT range en « Autre ». Le géocodeur
+  // ne les voit jamais — aggregate.py lui épargne tout lieu déjà codé en
+  // dur —, si bien qu'elles portaient « autre » alors que leur ville
+  // était écrite en commentaire deux lignes plus haut. Le Radiant à lui
+  // seul pesait 143 cartes du fil au 2026-09-28.
+  'Radiant-Bellevue': 'Caluire-et-Cuire',   // 1 rue Jean Moulin
+  'LDLC Arena': 'Décines-Charpieu',         // 350 av. Jean Jaurès
+  "L'Épicerie Moderne": 'Feyzin',           // place René Lescot
+  'Grrrnd Zero': 'Vaulx-en-Velin',          // 60 av. de Bohlen
+  'La Machinerie - Bizarre !': 'Vénissieux',
+  'Domaine de Lacroix-Laval': "Marcy-l'Étoile",
+  "L'Aqueduc": 'Dardilly',                  // 1 rue Jean Moulin
+  'Jack Jack - MJC Aragon': 'Bron',         // 2 rue Salvador Allende
+  'Bois de Sermenaz à Rillieux-la-Pape': 'Rillieux-la-Pape',
 };
 
 /* Valeur d'offsite_venue quand la production tourne dans PLUSIEURS salles
@@ -1899,6 +1919,40 @@ function eventArrondissement(e) {
   return VENUE_ARRONDISSEMENT[lieuEffectif(e)] || 'Autre';
 }
 
+/* Le badge est étroit — il se cale à droite de la ligne du lieu, dont
+   le nom se tronque pour lui laisser la place. Au-delà de treize signes,
+   une commune composée mange ce nom : on coupe donc au premier trait
+   d'union, « Caluire-et-Cuire » devenant « caluire… ».
+   Sauf quand le premier morceau ne veut rien dire seul : « Saint »,
+   « Sainte », « La », « Le », « Les » gardent le suivant, et
+   « Sainte-Foy-lès-Lyon » donne « sainte-foy… » plutôt que « sainte… ».
+   Treize signes, c'est « villeurbanne » plus un : la plus longue
+   étiquette qui ait déjà cours, et qui tient. */
+const VILLE_MAX = 13;
+const VILLE_PREFIXES = new Set(['saint', 'sainte', 'st', 'ste',
+                                'la', 'le', 'les']);
+function villeCourte(ville) {
+  if (!ville || ville.length <= VILLE_MAX) return ville;
+  const bouts = ville.split('-');
+  const garde = VILLE_PREFIXES.has(bouts[0].toLowerCase()) ? 2 : 1;
+  const court = bouts.slice(0, garde).join('-');
+  return court.length < ville.length ? court + '…' : ville;
+}
+
+/* Ce qu'on sait de plus précis sur l'endroit d'une salle :
+     dans Lyon ou Villeurbanne  → « 5e », « villeurbanne »
+     ailleurs, commune connue   → « caluire… », « saint-priest »
+     commune inconnue           → « Autre »
+   La commune vient de la table ci-dessus ou du géocodage, versé au
+   chargement. C'est l'ÉTIQUETTE qui gagne en précision, pas le filtre :
+   la puce « autre » continue de les regrouper toutes, sans quoi la
+   rangée passerait de onze puces à trente-cinq. */
+function etiquetteDuLieu(nom) {
+  const arr = VENUE_ARRONDISSEMENT[nom];
+  if (arr && arr !== 'Autre') return arr;
+  return villeCourte(VENUE_COMMUNE[nom]) || 'Autre';
+}
+
 /* Ce que l'étiquette du coin haut droit écrit. Presque toujours
    l'arrondissement ; pour un événement hors les murs, ce qu'on sait de
    plus précis sur l'endroit :
@@ -1909,11 +1963,10 @@ function eventArrondissement(e) {
    géographique que portent déjà Bron ou Dardilly, le premier dit que
    l'événement n'est pas chez celui qui l'affiche. */
 function etiquetteLieu(e) {
-  if (!e.offsite_venue) return eventArrondissement(e);
+  if (!e.offsite_venue) return etiquetteDuLieu(lieuEffectif(e));
   if (e.offsite_venue === OFFSITE_PLUSIEURS) return 'ailleurs';
-  const arr = VENUE_ARRONDISSEMENT[e.offsite_venue];
-  if (arr && arr !== 'Autre') return arr;
-  return VENUE_COMMUNE[e.offsite_venue] || 'ailleurs';
+  const t = etiquetteDuLieu(e.offsite_venue);
+  return t === 'Autre' ? 'ailleurs' : t;
 }
 const VENUE_GROUP_ORDER_INDEX = new Map();
 VENUE_DISPLAY_ORDER.forEach((groupName, idx) => {
@@ -2700,6 +2753,26 @@ async function load() {
     } catch (_) { /* malformed JSON — ignore */ }
   }
 
+  // Réconciliation des graphies. Le fil écrit « Théâtre de la
+  // Renaissance » quand la table dit « ... de La Renaissance » : la clé
+  // ne matche pas, et la carte tombe dans « autre » sans que rien ne le
+  // signale. Une seule collision aujourd'hui sur 155 lieux, mais elle
+  // est invisible, et le prochain scraper en apportera d'autres. On
+  // aligne donc les clés sur les noms que le fil emploie vraiment.
+  const sansCasse = nom => (nom || '').normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
+  for (const [table, valeurs] of [[VENUE_ARRONDISSEMENT, VENUE_ARRONDISSEMENT],
+                                  [VENUE_COMMUNE, VENUE_COMMUNE]]) {
+    const parNorm = new Map(Object.keys(table).map(k => [sansCasse(k), k]));
+    for (const e of state.events) {
+      for (const nom of [e.venue, e.offsite_venue]) {
+        if (!nom || nom in table) continue;
+        const cle = parNorm.get(sansCasse(nom));
+        if (cle) table[nom] = valeurs[cle];
+      }
+    }
+  }
+
   buildVenueHomepages();
 
   // Chiffres et date de mise à jour : en pied de page, pas dans le
@@ -3458,7 +3531,7 @@ function groupCard(venue, evs, key) {
   const etiquettes = new Set(evs.map(etiquetteLieu));
   const arr = etiquettes.size === 1
     ? [...etiquettes][0]
-    : (VENUE_ARRONDISSEMENT[venue] || 'Autre');
+    : etiquetteDuLieu(venue);
   // Graine de l'enseigne : le lieu seul, pour que la grappe garde la même
   // apparence d'un jour à l'autre. Le suffixe évite de tomber sur la
   // graine d'un vrai événement.
