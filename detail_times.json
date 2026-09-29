@@ -19,6 +19,10 @@
     "fetched_at": "2026-09-07",
     "time": "20:00"
   },
+  "https://h-eat.eu/events/boeuf-brocoli-miss-sheitana-xoxo-and-more/": {
+    "fetched_at": "2026-09-29",
+    "time": "18:00"
+  },
   "https://h-eat.eu/events/bouillante-x-ateliers-dj-sets-marche-lesbien/": {
     "fetched_at": "2026-09-15",
     "time": "18:00"
@@ -28,11 +32,11 @@
     "time": "18:00"
   },
   "https://h-eat.eu/events/chess-bar-x-heat-10/": {
-    "fetched_at": "2026-08-27",
+    "fetched_at": "2026-09-29",
     "time": "18:00"
   },
   "https://h-eat.eu/events/chess-bar-x-heat-11/": {
-    "fetched_at": "2026-08-12",
+    "fetched_at": "2026-09-29",
     "time": "18:00"
   },
   "https://h-eat.eu/events/chess-bar-x-heat-6/": {
@@ -111,6 +115,10 @@
     "fetched_at": "2026-09-17",
     "time": "00:00"
   },
+  "https://h-eat.eu/events/le-labo-de-clairie/": {
+    "fetched_at": "2026-09-29",
+    "time": "17:30"
+  },
   "https://h-eat.eu/events/on-off-festival-fete-de-la-culture-sourde/": {
     "fetched_at": "2026-09-07",
     "time": "17:30"
@@ -151,12 +159,28 @@
     "fetched_at": "2026-09-15",
     "time": "19:00"
   },
+  "https://h-eat.eu/events/s-festival-christmas-market/": {
+    "fetched_at": "2026-09-29",
+    "time": "19:00"
+  },
+  "https://h-eat.eu/events/s-festival-le-circuit/": {
+    "fetched_at": "2026-09-29",
+    "time": "18:00"
+  },
+  "https://h-eat.eu/events/s-festival-s-christmas-market/": {
+    "fetched_at": "2026-09-29",
+    "time": "19:00"
+  },
   "https://h-eat.eu/events/satriales-family-friends/": {
     "fetched_at": "2026-08-23",
     "time": "17:30"
   },
   "https://h-eat.eu/events/stakhan-isa/": {
     "fetched_at": "2026-08-12",
+    "time": "18:00"
+  },
+  "https://h-eat.eu/events/vandale-radio-2/": {
+    "fetched_at": "2026-09-29",
     "time": "18:00"
   },
   "https://i-ac.eu/fr/RDV-satellites_2026/583_vernissage-jeune-creation-internationale-18e-biennale-de-lyon": {
@@ -400,6 +424,14 @@
     "fetched_at": "2026-09-23",
     "time": "18:00"
   },
+  "https://le-sucre.eu/events/s-festival-2/": {
+    "fetched_at": "2026-09-29",
+    "time": "23:00"
+  },
+  "https://le-sucre.eu/events/s-festival/": {
+    "fetched_at": "2026-09-29",
+    "time": "23:00"
+  },
   "https://le-sucre.eu/events/s-society-153/": {
     "fetched_at": "2026-08-12",
     "time": "18:00"
@@ -446,6 +478,10 @@
   },
   "https://le-sucre.eu/events/s-society-168/": {
     "fetched_at": "2026-09-14",
+    "time": "18:00"
+  },
+  "https://le-sucre.eu/events/s-society-169/": {
+    "fetched_at": "2026-09-29",
     "time": "18:00"
   },
   "https://le-sucre.eu/events/s-society-caravel-peaksou-carla-schmitt/": {
@@ -1147,7 +1183,7 @@
     ]
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/soiree-18-30-ans": {
-    "fetched_at": "2026-09-21",
+    "fetched_at": "2026-09-29",
     "lieu": "Maison de la Danse",
     "seances": [
       [
@@ -2805,6 +2841,16 @@
       ]
     ]
   },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/concert/soiree-agnes-jaoui": {
+    "fetched_at": "2026-09-29",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2026-10-12",
+        "19:30"
+      ]
+    ]
+  },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/conference/importance-parsifal-wagner-histoire-musique": {
     "fetched_at": "2026-09-25",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
@@ -3682,7 +3728,7 @@
   "https://www.comedieodeon.com/spectacle/jovany-le-dernier-saltimbanque/": {
     "defaut": "20:00",
     "exceptions": {},
-    "fetched_at": "2026-09-21"
+    "fetched_at": "2026-09-29"
   },
   "https://www.comedieodeon.com/spectacle/jules-et-marcel/": {
     "defaut": "19:00",
@@ -4768,6 +4814,17 @@
     ],
     "titre": "Colloque : La Révolution de la couleur, de Delacroix aux frères Lumière"
   },
+  "https://www.mba-lyon.fr/fr/fiche-programmation/conference-debat-des-grands-temoins-du-congres-frame-2026": {
+    "fetched_at": "2026-09-29",
+    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/content/medias/images/2020-02/delacroix_femme_caressant_perroquet.jpg?h=955c600a&itok=tav5tzXs",
+    "seances": [
+      [
+        "2026-10-16",
+        "15:00"
+      ]
+    ],
+    "titre": "Conférence-débat des grands témoins du Congrès FRAME 2026"
+  },
   "https://www.mba-lyon.fr/fr/fiche-programmation/conference-lenseignement-de-padiamenope-ou-comment-vivre-la-mort-dans-la-vallee": {
     "fetched_at": "2026-09-09",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-06/mur_breton_0.jpg?itok=Olabft-E",
@@ -5149,7 +5206,7 @@
     "titre": "Week-end Musée-à-brac"
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/arielle-beck": {
-    "fetched_at": "2026-09-21",
+    "fetched_at": "2026-09-29",
     "lieu": "Opéra de Lyon",
     "seances": [
       [
@@ -5191,6 +5248,17 @@
       ],
       [
         "2026-11-28",
+        "20:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/raul-refree-maria-mazzotta-quatuor-lomax-davide-ambrogio": {
+    "fetched_at": "2026-09-29",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2026-10-25",
         "20:00"
       ]
     ],
@@ -5490,7 +5558,7 @@
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-lenfant-ocean/": {
-    "fetched_at": "2026-09-21",
+    "fetched_at": "2026-09-29",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-liah-et-moi/": {
@@ -5514,7 +5582,7 @@
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/lenfant-ocean/": {
-    "fetched_at": "2026-09-21",
+    "fetched_at": "2026-09-29",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/liah-et-moi/": {
@@ -5530,7 +5598,7 @@
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/rdv-popcorn-evidences-inconnues/": {
-    "fetched_at": "2026-09-21",
+    "fetched_at": "2026-09-29",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/rdv-popcorn-labolition-des-privileges/": {
@@ -5692,6 +5760,11 @@
   },
   "https://www.transbordeur.fr/evenement/dj-krush-13102026/": {
     "fetched_at": "2026-09-18",
+    "image": "https://www.transbordeur.fr/wp-content/uploads/2026/03/nb-djkrush-Grande.jpeg",
+    "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/dj-krush-killer-butterfly-13102026/": {
+    "fetched_at": "2026-09-29",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/03/nb-djkrush-Grande.jpeg",
     "time": "19:00"
   },
@@ -5920,6 +5993,11 @@
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/06/a-miossec.jpeg",
     "time": "19:00"
   },
+  "https://www.transbordeur.fr/evenement/miossec-yann-ponthus-02102026/": {
+    "fetched_at": "2026-09-29",
+    "image": "https://www.transbordeur.fr/wp-content/uploads/2026/06/a-miossec.jpeg",
+    "time": "19:00"
+  },
   "https://www.transbordeur.fr/evenement/nes-23102026/": {
     "fetched_at": "2026-09-18",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/01/a-nes.png",
@@ -6030,6 +6108,11 @@
     "image": "https://www.transbordeur.fr/wp-content/uploads/2024/04/The-Stranglers-bike.jpg",
     "time": "19:00"
   },
+  "https://www.transbordeur.fr/evenement/the-stranglers-brother-junior-30112026/": {
+    "fetched_at": "2026-09-29",
+    "image": "https://www.transbordeur.fr/wp-content/uploads/2024/04/The-Stranglers-bike.jpg",
+    "time": "18:30"
+  },
   "https://www.transbordeur.fr/evenement/the-warning-12032027/": {
     "fetched_at": "2026-09-17",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/09/TheWarning_BrianZiff_0760_ALT_1-JPEG.jpg",
@@ -6052,6 +6135,11 @@
   },
   "https://www.transbordeur.fr/evenement/wallace-cleaver-28102026/": {
     "fetched_at": "2026-09-18",
+    "image": "https://www.transbordeur.fr/wp-content/uploads/2026/03/a-wallacecleaver1-e1774624267890.jpeg",
+    "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/wallace-cleaver-henri-bleu-28102026/": {
+    "fetched_at": "2026-09-29",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/03/a-wallacecleaver1-e1774624267890.jpeg",
     "time": "19:00"
   },
