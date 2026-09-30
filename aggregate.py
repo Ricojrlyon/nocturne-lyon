@@ -272,6 +272,36 @@ VOLUME_FIGE_JOURS_MAX = 3
 # partie — ce sont les billetteries des salles, pas un agrégateur.
 _HOTES_AGREGATEURS = ("petit-bulletin.fr", "villemorte.fr")
 
+# LES AGRÉGATEURS AUSSI. Le garde-fou par salle ne compte que les
+# événements DIRECTS, et c'est voulu : un agrégateur qui remonte encore
+# trois dates ne doit pas masquer la chute d'une salle. Mais la même panne
+# frappe un agrégateur, et ce qu'il publie SEUL — les lieux qu'aucun
+# scraper ne couvre — disparaissait alors du site jusqu'au passage
+# suivant : 324 événements pour le Petit Bulletin et 158 pour Ville Morte
+# au 2026-09-30, seize pour cent du fil.
+#
+# Rejoué sur les 131 couples de publications consécutives de l'historique,
+# le cas s'est produit DEUX fois, deux fois chez Ville Morte, deux fois
+# jusqu'à zéro :
+#
+#   Ville Morte   116 → 0   2026-08-25
+#   Ville Morte   159 → 0   2026-09-19   502 Proxy Error
+#
+# Les plus fortes baisses normales sont à −21 %, chez l'un comme chez
+# l'autre. Le seuil des salles — moins du quart — attrape donc les deux
+# pannes et rien d'autre : on reprend la même règle, le même plancher, le
+# même délai de reprise, le même journal et le même forçage. Seule la
+# priorité change à la reprise : un événement repris d'un agrégateur garde
+# SA priorité, et continue de perdre face à la salle qui publie le même
+# spectacle aujourd'hui.
+_AGREGATEURS_SURVEILLES = (("Petit Bulletin", "petit-bulletin.fr"),
+                           ("Ville Morte", "villemorte.fr"))
+
+# Dans le journal « reprises », un agrégateur s'écrit avec ce préfixe : le
+# journal des salles est indexé par nom de lieu, et les deux ne doivent
+# jamais pouvoir se croiser.
+_PREFIXE_JOURNAL_AGREGATEUR = "agrégateur:"
+
 
 def _compte_direct(paires) -> dict[str, int]:
     """Par lieu canonique, le nombre d'événements venus de la salle même."""
@@ -423,6 +453,75 @@ def _reprendre(unique: List[Event], chemin: Path,
             continue
         repris.append(_event_depuis_dict(d))
 
+    return repris, journal, abandons
+
+
+def _effondrements_agregateurs(nouveaux: List[Event], chemin: Path,
+                               today_iso: str) -> list[tuple[str, int, int]]:
+    """Agrégateurs dont la part PROPRE tombe sous le quart de la veille.
+
+    La part propre, c'est ce qui reste d'un agrégateur une fois le fil
+    dédoublonné : les événements qu'aucune salle scrappée ne couvre. On la
+    compare à ce que la veille en comptait ENCORE à venir. Sans fichier
+    précédent, rien.
+    """
+    try:
+        anciens = json.loads(chemin.read_text(encoding="utf-8"))["events"]
+    except (OSError, ValueError, KeyError, TypeError):
+        return []
+    pertes = []
+    for nom, hote in _AGREGATEURS_SURVEILLES:
+        avant = sum(1 for e in anciens
+                    if hote in (e.get("url") or "")
+                    and (e.get("date_end") or e.get("date_start") or "")
+                    >= today_iso)
+        if avant < EFFONDREMENT_PLANCHER:
+            continue
+        apres = sum(1 for e in nouveaux if hote in (e.url or ""))
+        if apres < avant * EFFONDREMENT_PART:
+            pertes.append((nom, avant, apres))
+    return pertes
+
+
+def _reprendre_agregateurs(chemin: Path, effondres: list,
+                           today_iso: str) -> tuple:
+    """Remet les événements de la veille des agrégateurs effondrés.
+
+    Même bornage que pour les salles : le journal garde le premier jour de
+    reprise, et passé REPRISE_JOURS_MAX jours l'agrégateur n'est plus
+    repris. Ne reprend que ce qui n'est pas passé.
+
+    Rend (événements repris, journal des reprises, agrégateurs abandonnés).
+    """
+    try:
+        fil = json.loads(chemin.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return [], {}, []
+    if not isinstance(fil, dict):
+        return [], {}, []
+    anciens = fil.get("events") or []
+    journal_avant = fil.get("reprises") or {}
+    hote_de = dict(_AGREGATEURS_SURVEILLES)
+
+    journal, abandons, hotes = {}, [], []
+    for nom, _, _ in effondres:
+        cle = _PREFIXE_JOURNAL_AGREGATEUR + nom
+        depuis = journal_avant.get(cle, today_iso)
+        try:
+            jours = (date.fromisoformat(today_iso)
+                     - date.fromisoformat(depuis)).days
+        except ValueError:
+            depuis, jours = today_iso, 0
+        if jours >= REPRISE_JOURS_MAX:
+            abandons.append((nom, depuis, jours))
+            continue
+        journal[cle] = depuis
+        hotes.append(hote_de[nom])
+
+    repris = [_event_depuis_dict(d) for d in anciens
+              if any(h in (d.get("url") or "") for h in hotes)
+              and (d.get("date_end") or d.get("date_start") or "")
+              >= today_iso]
     return repris, journal, abandons
 
 
@@ -615,6 +714,54 @@ def main() -> int:
                 "Au-delà de %d la panne n'est plus passagère : la salle "
                 "n'est PLUS reprise et va se vider du fil. Son scraper est "
                 "à réparer." % (lieu, depuis, jours, REPRISE_JOURS_MAX))
+
+    # 6c) Le même garde-fou pour les AGRÉGATEURS. Voir le chapeau de
+    #     _AGREGATEURS_SURVEILLES : ce qu'un agrégateur publie seul
+    #     disparaissait du site le jour où il tombait. La 6b n'est pas
+    #     touchée ; cette étape vient après elle, sur le fil qu'elle rend.
+    effondres_agr = (_effondrements_agregateurs(unique, out, today_iso)
+                     if out.exists() else [])
+    if effondres_agr and os.environ.get("NOCTURNE_FORCER_ECRITURE") == "1":
+        _alerte("garde-fou contourné",
+                "[garde-fou] effondrement(s) d'agrégateur publié(s) tels "
+                "quels (NOCTURNE_FORCER_ECRITURE=1) : "
+                + ", ".join("%s %d→%d" % t for t in effondres_agr))
+        effondres_agr = []
+
+    if effondres_agr:
+        repris_agr, journal_agr, abandons_agr = _reprendre_agregateurs(
+            out, effondres_agr, today_iso)
+        reprises.update(journal_agr)
+        if repris_agr:
+            # Chacun garde SA priorité, relue sur son hôte : un événement
+            # repris du Petit Bulletin doit continuer de perdre face à la
+            # salle qui publie le même spectacle aujourd'hui.
+            avant_reprise = len(unique)
+            unique = deduplicate([(e, _priorite(e.url)) for e in unique]
+                                 + [(e, _priorite(e.url)) for e in repris_agr])
+            hote_de = dict(_AGREGATEURS_SURVEILLES)
+            detail = ", ".join(
+                "%s %d→%d, %d repris"
+                % (nom, a, b,
+                   sum(1 for e in repris_agr if hote_de[nom] in (e.url or "")))
+                for nom, a, b in effondres_agr)
+            _alerte(
+                "agrégateur repris du fil précédent",
+                "[garde-fou] EFFONDREMENT d'agrégateur : " + detail + ".\n"
+                "Le fil est publié, et les lieux que seul cet agrégateur "
+                "couvre gardent leurs événements de la veille.\n"
+                "Si la perte est RÉELLE, relancer avec "
+                "NOCTURNE_FORCER_ECRITURE=1.")
+            print("[garde-fou] %d + %d repris → %d après dédup"
+                  % (avant_reprise, len(repris_agr), len(unique)))
+        for nom, depuis, jours in abandons_agr:
+            _alerte(
+                "agrégateur abandonné après %d jours" % jours,
+                "[garde-fou] %s s'effondre depuis le %s, soit %d jours. "
+                "Au-delà de %d la panne n'est plus passagère : ses "
+                "événements ne sont PLUS repris et vont quitter le fil. Son "
+                "scraper est à réparer."
+                % (nom, depuis, jours, REPRISE_JOURS_MAX))
 
     # 7) Sort by date then time then venue.
     unique.sort(key=lambda e: (e.date_start, e.time or "00:00", e.venue))
