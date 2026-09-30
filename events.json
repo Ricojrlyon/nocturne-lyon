@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-30T09:24:47.405574+00:00",
-  "count": 2971,
+  "generated_at": "2026-09-30T09:41:35.855234+00:00",
+  "count": 2975,
   "events": [
     {
       "venue": "IAC Villeurbanne",
@@ -99,6 +99,48 @@
       "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/content/medias/images/2020-05/cornell-andromeda_ss-crop.jpg?itok=qrynuHoA",
       "offsite_venue": null,
       "id": "f0bc4e1b521b"
+    },
+    {
+      "venue": "Musée des Confluences",
+      "venue_slug": "musee-des-confluences",
+      "title": "Trop forts !",
+      "subtitle": null,
+      "category": "exposition",
+      "date_start": "2026-09-30",
+      "date_end": "2026-10-18",
+      "time": null,
+      "url": "https://museedesconfluences.fr/expositions/expositions-temporaires/trop-forts-expofr",
+      "image": "https://museedesconfluences.fr/sites/default/files/uploads/2024-09/une-tropforts-exposition.png",
+      "offsite_venue": null,
+      "id": "89533b1331c4"
+    },
+    {
+      "venue": "Musée des Confluences",
+      "venue_slug": "musee-des-confluences",
+      "title": "Corée du Nord",
+      "subtitle": "par Stéphan Gladieu",
+      "category": "exposition",
+      "date_start": "2026-09-30",
+      "date_end": "2028-01-02",
+      "time": null,
+      "url": "https://museedesconfluences.fr/expositions/expositions-temporaires/coree-du-nord-expo",
+      "image": "https://museedesconfluences.fr/sites/default/files/uploads/2025-06/une-expo-coree.png",
+      "offsite_venue": null,
+      "id": "4df33649d009"
+    },
+    {
+      "venue": "Musée des Confluences",
+      "venue_slug": "musee-des-confluences",
+      "title": "Au Mali, quand les animaux dansent",
+      "subtitle": "Donation Sonia et Albert Loeb",
+      "category": "exposition",
+      "date_start": "2026-09-30",
+      "date_end": "2027-02-07",
+      "time": null,
+      "url": "https://museedesconfluences.fr/expositions/expositions-temporaires/au-mali",
+      "image": "https://museedesconfluences.fr/sites/default/files/uploads/2026-04/photo_exposition_mali-animaux-dansent_museedesconfluences2.jpg",
+      "offsite_venue": null,
+      "id": "223f3ce83c77"
     },
     {
       "venue": "Marché Gare",
@@ -8239,12 +8281,12 @@
       "venue_slug": "musee-des-confluences",
       "title": "Animal culte",
       "subtitle": null,
-      "category": "Sciences et Histoire",
+      "category": "exposition",
       "date_start": "2026-10-16",
-      "date_end": null,
+      "date_end": "2027-08-15",
       "time": "10:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319226-animal-culte.html",
-      "image": null,
+      "url": "https://museedesconfluences.fr/expositions/expositions-temporaires/animal-culte",
+      "image": "https://museedesconfluences.fr/sites/default/files/uploads/2026-05/photo_exposition_animalculte_pagexpo_2.jpg",
       "offsite_venue": null,
       "id": "2708f20ddc96"
     },
@@ -25971,6 +26013,20 @@
       "image": "https://www.bourse-du-travail.com/img/evenement/djal-dans-en-pleine-conscience-4.jpg",
       "offsite_venue": null,
       "id": "01a6fd019302"
+    },
+    {
+      "venue": "Musée des Confluences",
+      "venue_slug": "musee-des-confluences",
+      "title": "Papillons",
+      "subtitle": null,
+      "category": "exposition",
+      "date_start": "2026-12-18",
+      "date_end": "2028-10-22",
+      "time": null,
+      "url": "https://museedesconfluences.fr/expositions/expositions-temporaires/papillons",
+      "image": "https://museedesconfluences.fr/sites/default/files/uploads/2026-06/photo_tetiere_expo_papillon_v4.jpg",
+      "offsite_venue": null,
+      "id": "f36d61f00fb8"
     },
     {
       "venue": "Auditorium de Lyon",
