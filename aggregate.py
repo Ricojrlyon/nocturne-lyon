@@ -234,6 +234,38 @@ EFFONDREMENT_PLANCHER = 10
 # un scraper mort peupler le fil de fantômes pendant des mois.
 REPRISE_JOURS_MAX = 7
 
+# LE VOLUME TOTAL, en dernier recours. Le garde-fou ci-dessus regarde
+# chaque salle, et ne voit donc pas une perte RÉPARTIE : un bug de code qui
+# retirerait trois cartes sur dix partout, une dédup devenue trop gourmande,
+# un filtre mal écrit. Aucune salle ne s'effondre, et le fil entier maigrit
+# sans un mot avant d'être publié.
+#
+# On refuse donc de publier un fil qui tombe sous les TROIS QUARTS de ce que
+# la veille comptait encore à venir — les événements de la veille passés
+# entre-temps ne sont pas une perte. Rejoué sur les 131 couples de
+# publications consécutives de l'historique (juillet à septembre 2026), la
+# plus forte baisse légitime est de 15 %, le 12 juillet, 631 → 539 ; aucune
+# n'a dépassé 20 %. Le seuil n'aurait jamais sonné, et il attrape une perte
+# de trente pour cent.
+#
+# Il ne peut pas bloquer pour UNE salle : la plus grosse, Le Complexe, pèse
+# onze pour cent du fil, et celles qui s'effondrent ont de toute façon été
+# reprises à l'étape 6b, avant ce contrôle.
+#
+# Ce garde-fou ne peut qu'EMPÊCHER une publication, jamais modifier le fil.
+# Au pire, le site garde les données de la veille un jour de trop. Le run
+# sort alors en 1 — rouge, avec un courriel —, parce que le site n'a pas été
+# mis à jour et qu'il faut qu'un humain regarde.
+#
+# UN BLOCAGE N'EST PAS ÉTERNEL. Une baisse RÉELLE — une source retirée
+# exprès, une fin de saison — ferait sonner le garde-fou chaque matin, le
+# fichier de la veille ne changeant plus : le site resterait figé pour de
+# bon. Passé VOLUME_FIGE_JOURS_MAX jours sans publication, on publie donc
+# quand même, avec une alerte. NOCTURNE_FORCER_ECRITURE=1 publie tout de
+# suite, comme pour le garde-fou par salle.
+VOLUME_PART_MIN = 0.75
+VOLUME_FIGE_JOURS_MAX = 3
+
 # Une source directe se reconnaît à son HÔTE : tout ce qui n'est ni le
 # Petit Bulletin ni Ville Morte vient du site d'une salle. Les boutiques
 # Mapado (improvidence.mapado.com, espacegerson.mapado.com) en font
@@ -279,6 +311,30 @@ def _effondrements(nouveaux: List[Event],
             pertes.append((lieu, n_avant, n_apres))
     pertes.sort(key=lambda x: x[2] - x[1])
     return pertes
+
+
+def _chute_de_volume(n_nouveau: int, chemin: Path,
+                     today_iso: str) -> tuple[int, int] | None:
+    """(encore à venir dans le fil précédent, son âge en jours), si le
+    nouveau fil tombe sous VOLUME_PART_MIN de ce nombre.
+
+    None quand tout va bien — ou quand il n'y a pas de point de
+    comparaison, première exécution ou fichier illisible : on ne bloque
+    rien sur une référence qu'on n'a pas.
+    """
+    try:
+        precedent = json.loads(chemin.read_text(encoding="utf-8"))
+        anciens = precedent["events"]
+        genere = date.fromisoformat(str(precedent["generated_at"])[:10])
+    except (OSError, ValueError, KeyError, TypeError):
+        return None
+    # Même règle qu'à l'étape 3 : un événement vit jusqu'à sa fin.
+    encore = sum(1 for e in anciens
+                 if (e.get("date_end") or e.get("date_start") or "")
+                 >= today_iso)
+    if not encore or n_nouveau >= encore * VOLUME_PART_MIN:
+        return None
+    return encore, (date.fromisoformat(today_iso) - genere).days
 
 
 def _priorite(url: str) -> int:
@@ -628,15 +684,43 @@ def main() -> int:
               file=sys.stderr)
         wrote = False
     else:
-        out.write_text(json.dumps(payload, ensure_ascii=False, indent=2),
-                       encoding="utf-8")
+        # Dernier contrôle : le VOLUME total, que le garde-fou par salle ne
+        # voit pas. Voir le chapeau de VOLUME_PART_MIN.
         wrote = True
+        chute = _chute_de_volume(len(unique), out, today_iso)
+        if chute:
+            encore, age = chute
+            constat = ("%d événements à publier contre %d encore à venir dans "
+                       "le fil précédent, soit %d %%"
+                       % (len(unique), encore,
+                          round(100 * len(unique) / encore)))
+            if os.environ.get("NOCTURNE_FORCER_ECRITURE") == "1":
+                _alerte("garde-fou de volume contourné",
+                        "[garde-fou] " + constat + ". Publié quand même "
+                        "(NOCTURNE_FORCER_ECRITURE=1).")
+            elif age > VOLUME_FIGE_JOURS_MAX:
+                _alerte("site figé depuis %d jours : publication forcée" % age,
+                        "[garde-fou] " + constat + ".\nLe site n'a plus été "
+                        "mis à jour depuis %d jours : on publie quand même, "
+                        "la baisse est sans doute réelle. À vérifier." % age)
+            else:
+                _alerte("baisse de volume : fil NON publié",
+                        "[garde-fou] " + constat + ".\nLe fichier de la veille "
+                        "est conservé : une perte aussi large, sans salle "
+                        "effondrée, ressemble à un bug.\nSi la baisse est "
+                        "réelle, relancer avec NOCTURNE_FORCER_ECRITURE=1 ; "
+                        "sinon le site publiera de lui-même dans %d jour(s)."
+                        % (VOLUME_FIGE_JOURS_MAX + 1 - age))
+                wrote = False
+        if wrote:
+            out.write_text(json.dumps(payload, ensure_ascii=False, indent=2),
+                           encoding="utf-8")
 
     # Pretty CLI summary
     if wrote:
         print(f"\nWrote {len(unique)} upcoming events to {out}")
     else:
-        print(f"\nKept previous events.json ({out}) — no fresh data this run.")
+        print(f"\nKept previous events.json ({out}) — not overwritten this run.")
     print("\nPer-venue report:")
     for name, n, err in report:
         if err:
