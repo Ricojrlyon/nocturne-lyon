@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-30T09:41:35.855234+00:00",
-  "count": 2975,
+  "generated_at": "2026-09-30T11:47:21.668390+00:00",
+  "count": 2980,
   "events": [
     {
       "venue": "IAC Villeurbanne",
@@ -1865,6 +1865,20 @@
       "id": "25f3eef5c00e"
     },
     {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "DARK 80s PARTY",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-10-02",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://sonic-lyon.fr/evenement/dark-80s-party-10/",
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2025/11/574582130_1291717882988746_4882948231006999707_n.jpg",
+      "offsite_venue": null,
+      "id": "644b701c89d6"
+    },
+    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Blob Party",
@@ -2689,6 +2703,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
       "offsite_venue": null,
       "id": "0f49f52bcde3"
+    },
+    {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "SUZANNE AU SONIC",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://sonic-lyon.fr/evenement/suzanne-au-sonic-10/",
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/09/2F408A01-1288-47FB-8145-3313E0224461-1024x536.jpeg",
+      "offsite_venue": null,
+      "id": "f1309d0492c4"
     },
     {
       "venue": "Le Sucre",
@@ -6628,7 +6656,7 @@
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Magic Mardi",
-      "subtitle": "Esmoz · De Santi · Neuron",
+      "subtitle": "Esmoz · De Santi · Neuron N0.3",
       "category": "Musique Electronique",
       "date_start": "2026-10-13",
       "date_end": null,
@@ -7029,20 +7057,6 @@
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/07/©-Mikel-Muneton2-650x520.jpg",
       "offsite_venue": null,
       "id": "6c3f9661c480"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "La Relève",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-10-13",
-      "date_end": null,
-      "time": "21:30",
-      "url": "https://improvidence.mapado.com/event/154968-la-releve",
-      "image": "https://img.mapado.net/2022/10/24/635646c2a2c98-1.jpeg_thumbs/600-600.jpeg",
-      "offsite_venue": null,
-      "id": "29455e789e52"
     },
     {
       "venue": "La Commune",
@@ -15319,6 +15333,20 @@
       "id": "f8de90c138c7"
     },
     {
+      "venue": "Le Sucre",
+      "venue_slug": "le-sucre",
+      "title": "GRAME x Algorave",
+      "subtitle": "Ralt144MI · Neon Delice · Eye Measure · Bubobubobubo · Telemele · Den Ree · Nikilia · ibvp",
+      "category": "concert",
+      "date_start": "2026-11-06",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://le-sucre.eu/events/algorave/",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/09/Algorave-600x355.jpg",
+      "offsite_venue": null,
+      "id": "63981e140a78"
+    },
+    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "LA P’TITE FUMEE",
@@ -17582,7 +17610,7 @@
       "date_end": null,
       "time": "23:00",
       "url": "https://le-sucre.eu/events/club-65/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/09/SUCRE@noemielact-17-copie-600x400.jpg",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/09/vignette_exaequa-600x600.jpg",
       "offsite_venue": null,
       "id": "17af44e01317"
     },
@@ -17599,6 +17627,20 @@
       "image": "https://img.mapado.net/2026/6/2/6a1ed6920ad1d-673754034-1945076756368008-7002286431375010672-n.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "a60c922d1e79"
+    },
+    {
+      "venue": "Place de Francfort",
+      "venue_slug": "place-de-francfort",
+      "title": "La Part-Dieu, un territoire pour l'art des Trente Glorieuses à aujourd'hui",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-11-14",
+      "date_end": null,
+      "time": "10:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319742-la-part-dieu-un-territoire-pour-leart-des-trente-glorieuses-aujourdehui.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "fe1e1c384aa8"
     },
     {
       "venue": "Chapelle de la Trinité",
@@ -18136,13 +18178,13 @@
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "club x EXAEQUA",
-      "subtitle": "Line-up soon !",
+      "subtitle": "Derive · Flore · rRoxymore · & more",
       "category": "club",
       "date_start": "2026-11-14",
       "date_end": null,
       "time": "23:00",
       "url": "https://le-sucre.eu/events/club-67/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/09/SUCRE@noemielact-17-copie-600x400.jpg",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/09/vignette_exaequa-600x600.jpg",
       "offsite_venue": null,
       "id": "20dff71b85c1"
     },
@@ -21421,6 +21463,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/3f073da2/visite_llcer_lyon_3_23.jpg",
       "offsite_venue": null,
       "id": "f0931cd1137c"
+    },
+    {
+      "venue": "Station de métro Vénissieux",
+      "venue_slug": "station-de-metro-venissieux",
+      "title": "Vénissieux, un territoire pour l'art contemporain",
+      "subtitle": null,
+      "category": "Visites",
+      "date_start": "2026-11-28",
+      "date_end": null,
+      "time": "10:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319743-v-nissieux-un-territoire-pour-leart-contemporain.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "be093964317e"
     },
     {
       "venue": "Théâtre de la Croix-Rousse",
@@ -38491,16 +38547,16 @@
     {
       "venue": "La Machinerie - Théâtre de Vénissieux",
       "venue_slug": "la-machinerie-theatre-de-venissieux",
-      "title": "Bâtir - Salim Djaferi",
+      "title": "Bâtir",
       "subtitle": null,
-      "category": "théâtre",
+      "category": "Théâtre",
       "date_start": "2027-03-16",
-      "date_end": "2027-03-17",
+      "date_end": null,
       "time": "20:00",
-      "url": "https://agenda.villemorte.fr/event/batir-salim-djaferi",
+      "url": "https://www.petit-bulletin.fr/agenda-319193-b-tir.html",
       "image": "https://agenda.villemorte.fr/media/thumb/035711c5c5183fa89bf559991fc7e78c.jpg",
       "offsite_venue": null,
-      "id": "50e18068245a"
+      "id": "98472b8d7eab"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -41303,18 +41359,32 @@
       "id": "9f9897666f7c"
     },
     {
+      "venue": "Espace Gerson",
+      "venue_slug": "espace-gerson",
+      "title": "L'impro FFF",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2027-06-29",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-319345-l-impro-fff.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "051e9b6215bf"
+    },
+    {
       "venue": "Improvidence",
       "venue_slug": "improvidence",
       "title": "Ça handi long",
       "subtitle": null,
       "category": "Impro",
-      "date_start": "2027-08-26",
+      "date_start": "2027-07-15",
       "date_end": null,
       "time": "21:00",
       "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
       "image": null,
       "offsite_venue": null,
-      "id": "b0f3cc037624"
+      "id": "f0fffb55d01d"
     },
     {
       "venue": "La Rayonne",

@@ -949,6 +949,12 @@
     "confidence": "high",
     "seen_at": "2026-09-08"
   },
+  "Place de Francfort": {
+    "arr": "3e",
+    "checked_at": "2026-09-30",
+    "confidence": "high",
+    "seen_at": "2026-09-30"
+  },
   "Place de la Croix-Rousse": {
     "arr": "4e",
     "checked_at": "2026-09-28",
@@ -1035,6 +1041,12 @@
     "checked_at": "2026-09-01",
     "confidence": "high",
     "seen_at": "2026-09-01"
+  },
+  "Station de métro Vénissieux": {
+    "arr": null,
+    "checked_at": "2026-09-30",
+    "confidence": "failed",
+    "seen_at": "2026-09-30"
   },
   "Studio Nafas": {
     "arr": null,
