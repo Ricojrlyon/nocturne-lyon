@@ -1,14 +1,15 @@
 # *nocturne · lyon
 
 Agrégateur d'événements culturels lyonnais — concerts, clubs, danse, expos,
-lieux hybrides — scrappés chaque nuit sur les sites d'une quinzaine de salles
-et affichés sur une page statique hébergée par GitHub Pages :
+sport, lieux hybrides — scrappés chaque matin sur les sites de trente-cinq
+salles, musées et clubs, et affichés sur une page statique hébergée par
+GitHub Pages :
 <https://ricojrlyon.github.io/nocturne-lyon/>
 
 ## Fonctionnement
 
 ```
-29 scrapers venue ──┐
+35 scrapers venue ──┐
                     ├─→ dédup 3 passes ─→ events.json ─→ index.html (GitHub Pages)
 2 agrégateurs ──────┘         │
 (Petit Bulletin,              ├─→ venue_arrondissements.json (géocodage Nominatim)
@@ -22,8 +23,12 @@ les trois fichiers de données.
 - **`scrapers/*.py`** — un module par salle (`requests` + BeautifulSoup).
   Chaque module expose `fetch() -> List[Event]`. Les échecs d'une salle ne
   font pas tomber le run : la salle est signalée en erreur, les autres passent.
+  Les appels réseau passent par `base.get` (exceptions motivées dans
+  `scrapers/base.py`), qui réessaie sur une coupure, un délai dépassé ou un
+  502/503/504 — jamais sur une vraie réponse du site.
 - **`scrapers/mapado.py`** — lecture commune des billetteries Mapado,
-  utilisée par `improvidence.py` et `espace_gerson.py`. Ces boutiques sont
+  utilisée par `improvidence.py`, `espace_gerson.py` et
+  `chapelle_trinite.py`. Ces boutiques sont
   des Next.js dont chaque page embarque son état d'hydratation en JSON :
   on lit ce JSON, pas le HTML, les classes CSS de Mapado étant des
   hachages regénérés à chaque déploiement. Point d'attention : une
@@ -196,7 +201,11 @@ les trois fichiers de données.
   Autre particularité : les dates des séances n'y portent pas d'année,
   déduite de la plage du catalogue puis roulée quand le mois recule — et
   validée par le nom du jour de la semaine, qui écarte toute déduction
-  fausse plutôt que de publier une date erronée.
+  fausse plutôt que de publier une date erronée. Enfin, son hébergeur
+  (SiteGround) sert parfois aux machines de GitHub une vérification
+  anti-robot à la place de la page : le scraper la reconnaît, redemande
+  deux fois, puis renonce en le disant, et le garde-fou reprend le
+  programme de la veille.
 - **`scrapers/aggregators/`** — sources multi-lieux : Petit Bulletin et
   Ville Morte (API Gancio). Priorité inférieure aux scrapers venue : en cas
   de doublon, le scraper de la salle gagne l'identité et hérite des champs
@@ -227,12 +236,23 @@ les trois fichiers de données.
   déjà hardcodés dans `VENUE_ARRONDISSEMENT` (index.html, source de vérité,
   parsée au run par aggregate.py) ne sont jamais interrogés.
 - **`scrapers/detail_cache.py`** — cache persistant `url → heure` pour les
-  6 scrapers qui fetchent des pages détail (TTL 30 j si heure trouvée,
+  13 modules qui ouvrent des pages détail (TTL 30 j si heure trouvée,
   7 j sinon, purge à 60 j). Divise le temps de run par ~8 dès le 2ᵉ passage.
 - **`aggregate.py`** — orchestre le tout, filtre le passé (les événements
   en cours sont conservés jusqu'à leur `date_end`), écrit `events.json`.
-  Garde-fou : si toutes les sources échouent ou rendent 0 événement, le
-  `events.json` précédent n'est pas écrasé.
+  Quatre garde-fous, du plus local au plus large :
+  - une salle scrappée en direct qui tombe sous le quart de la veille
+    garde ses événements de la veille, sept jours au plus (journal
+    `reprises` dans `events.json`) ;
+  - de même pour le Petit Bulletin et Ville Morte ;
+  - un fil qui tombe sous les trois quarts de ce que la veille comptait
+    encore à venir n'est pas publié — passé trois jours sans publication,
+    il l'est quand même, avec une alerte ;
+  - si toutes les sources échouent, le `events.json` précédent n'est pas
+    écrasé.
+
+  `NOCTURNE_FORCER_ECRITURE=1` publie ce qui a été réellement scrappé,
+  pour une perte réelle : salle fermée, saison finie.
 - **`index.html`** — frontend vanilla JS autonome : filtres par date/lieu/
   arrondissement/type, recherche insensible aux accents (titre, lieu,
   line-up), expansion des événements multi-jours, groupes de lieux.
@@ -250,8 +270,9 @@ python aggregate.py               # run complet → events.json + caches
 python -m scrapers.le_sucre       # tester un scraper isolément
 ```
 
-Premier run : quelques minutes (remplissage du cache des heures).
-Runs suivants : ~30 secondes.
+Premier run : nettement plus long, le temps de remplir le cache des heures.
+Runs suivants : 7 à 8 minutes — plusieurs salles imposent un délai entre deux
+pages (mesuré sur GitHub en octobre 2026).
 
 ## Ajouter une salle
 
@@ -276,7 +297,7 @@ Runs suivants : ~30 secondes.
 Une carte groupée réunit plusieurs spectacles d'un même lieu le même
 jour. N'ayant pas d'affiche à montrer, elle tirait un motif de secours.
 Les salles qui jouent plusieurs fois par soir y portent désormais leur
-marque : six lieux, 324 des 384 cartes groupées.
+marque : dix-sept lieux, 653 des 837 cartes groupées au 1er octobre 2026.
 
 Le logo est traité comme une affiche — `brightness(0.50) contrast(1.06)`,
 trame sérigraphie et voile du haut par-dessus — à deux détails près.
@@ -332,8 +353,9 @@ motif.
   100 événements écartés, dont 68 en galerie et 9 en musée non scrappé,
   soit 1 443 jours cumulés d'accrochage sur l'horizon.
 - **Familles d'affichage** (`FAMILLES`, index.html) : musique, scène,
-  expos, autres. Quatre et non dix-huit — les buckets restent la maille
-  fine, mais autant de sections dans une journée seraient illisibles.
+  expos, sport, autres. Cinq et non dix-neuf — les buckets restent la
+  maille fine, mais autant de sections dans une journée seraient
+  illisibles.
   Chaque barre de journée porte un bouton par famille : l'état est
   GLOBAL, le compte est celui du JOUR. Au-delà de dix cartes la journée
   se découpe en sections titrées par famille (`SEUIL_SECTIONS`) ; en
