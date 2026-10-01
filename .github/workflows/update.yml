@@ -32,8 +32,19 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      # Les tests de la logique, AVANT de collecter (voir tests/__init__.py).
+      # Un échec arrête le passage : rien n'est publié, et le site garde sa
+      # version de la veille plutôt que d'en publier une cassée.
+      - name: Tests de la logique
+        run: python -m unittest discover -s tests -t . -v
+
       - name: Run aggregator
         run: python aggregate.py
+
+      # Le fil frais, contrôlé avant de partir : sa forme, et la page qui
+      # s'affiche avec. Même règle : un échec, et rien n'est publié.
+      - name: Contrôle du fil avant publication
+        run: python -m unittest tests.verif_fil tests.verif_page -v
 
       - name: Commit updated events.json
         run: |
