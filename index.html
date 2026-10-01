@@ -2766,9 +2766,13 @@ async function load() {
   // It only contains venues NOT already in the hardcoded VENUE_ARRONDISSEMENT
   // map above. If the file is missing (first run, local dev), we silently
   // ignore it — the hardcoded map is still fully functional.
+  // « no-cache » et non « no-store » : le navigateur redemande toujours au
+  // serveur si le fichier a changé — le site reste aussi frais —, mais ne
+  // le retélécharge plus quand il n'a pas bougé. Le serveur répond alors
+  // « 304 » en quelques octets, au lieu des 190 Ko du fil à chaque visite.
   const [eventsRes, geoRes] = await Promise.allSettled([
-    fetch('events.json', { cache: 'no-store' }),
-    fetch('venue_arrondissements.json', { cache: 'no-store' }),
+    fetch('events.json', { cache: 'no-cache' }),
+    fetch('venue_arrondissements.json', { cache: 'no-cache' }),
   ]);
 
   if (eventsRes.status === 'rejected') throw eventsRes.reason;
