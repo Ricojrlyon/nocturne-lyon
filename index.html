@@ -3349,7 +3349,15 @@ function render() {
   firstRenderDone = true;
   if (!animate) { renderFeed(); return; }
   try {
-    document.startViewTransition(() => renderFeed());
+    const fondu = document.startViewTransition(() => renderFeed());
+    // Un fondu interrompu — un nouveau filtre avant qu'il s'achève, un onglet
+    // qui cesse de s'afficher — rejette la promesse « ready », et la console
+    // le notait en erreur. Ce n'en est pas une : la mise à jour a lieu quand
+    // même. « finished » est tenue aussi, sans quoi une vraie erreur de
+    // renderFeed() serait signalée deux fois ; elle l'est une fois, par
+    // updateCallbackDone, qu'on laisse telle quelle.
+    fondu.ready.catch(() => {});
+    fondu.finished.catch(() => {});
   } catch (_) {
     renderFeed();   // jamais de mise à jour perdue à cause de l'animation
   }

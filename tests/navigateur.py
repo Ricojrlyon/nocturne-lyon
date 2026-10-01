@@ -17,6 +17,7 @@ import shutil
 import subprocess
 import tempfile
 import threading
+import time
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
@@ -131,8 +132,13 @@ class _Gestionnaire(http.server.SimpleHTTPRequestHandler):
 
 
 def jouer(evenements: dict, lieux: dict | None, *, date_figee: bool,
-          scenarios: str = "tous", delai: int = 240) -> dict:
+          scenarios: str = "tous", animations: bool = False,
+          delai: int = 240) -> dict:
     """Joue la page et rend le relevé du pilote.
+
+    `animations` : sans lui, le navigateur demande « moins d'animations » et
+    la page se met à jour d'un coup ; avec lui, elle joue ses fondus, comme
+    chez la plupart des visiteurs.
 
     Lève RuntimeError si aucun navigateur n'est disponible, ou s'il n'a rien
     renvoyé — l'appelant décide alors de sauter ou d'échouer.
@@ -140,7 +146,9 @@ def jouer(evenements: dict, lieux: dict | None, *, date_figee: bool,
     navigateur = trouver()
     if not navigateur:
         raise RuntimeError("aucun navigateur de la famille Chrome")
-    with tempfile.TemporaryDirectory() as tmp:
+    # ignore_cleanup_errors : sous Windows, un processus du navigateur qui
+    # s'attarde un instant tient encore son profil, et le ménage échouerait.
+    with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp:
         site, profil = Path(tmp) / "site", Path(tmp) / "profil"
         site.mkdir()
         preparer_site(site, evenements, lieux, date_figee, scenarios)
@@ -159,16 +167,36 @@ def jouer(evenements: dict, lieux: dict | None, *, date_figee: bool,
             # sans fondu (voir render() dans index.html). Avec le fondu, la
             # mise à jour arrive une image plus tard, et un relevé pouvait
             # saisir l'affichage d'AVANT selon le chronométrage.
+            #
+            # En TEMPS RÉEL, et non sous l'horloge accélérée de Chrome
+            # (--virtual-time-budget) : celle-ci fait filer les pauses du
+            # pilote en un instant, quand les fondus suivent le temps de
+            # l'écran — un relevé tombait alors avant la fin du dernier
+            # fondu. Le navigateur reste ouvert jusqu'au relevé, puis il est
+            # fermé.
             options = ["--headless=new", "--disable-gpu", "--no-first-run",
                        "--no-default-browser-check", "--disable-extensions",
-                       "--force-prefers-reduced-motion",
+                       "--force-prefers-reduced-motion", "--remote-debugging-port=0",
                        "--user-data-dir=%s" % profil, "--lang=fr-FR",
-                       "--window-size=1280,900", "--virtual-time-budget=120000",
-                       "--dump-dom", url]
+                       "--window-size=1280,900", url]
+            if animations:
+                options.remove("--force-prefers-reduced-motion")
             if platform.system() == "Linux":
                 options.insert(1, "--no-sandbox")
-            subprocess.run([navigateur] + options, env=env, timeout=delai,
-                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            proc = subprocess.Popen([navigateur] + options, env=env,
+                                    stdout=subprocess.DEVNULL,
+                                    stderr=subprocess.DEVNULL)
+            try:
+                fin = time.monotonic() + delai
+                while (not serveur.resultats and proc.poll() is None
+                       and time.monotonic() < fin):
+                    time.sleep(0.2)
+            finally:
+                proc.terminate()
+                try:
+                    proc.wait(timeout=15)
+                except subprocess.TimeoutExpired:
+                    proc.kill()
         finally:
             serveur.shutdown()
             serveur.server_close()

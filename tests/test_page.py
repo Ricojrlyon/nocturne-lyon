@@ -76,5 +76,35 @@ class PageFigee(unittest.TestCase):
             self.fail("l'affichage a changé — " + premier_ecart(attendu, obtenu))
 
 
+class PageAvecFondus(unittest.TestCase):
+    """Le chemin de la plupart des visiteurs : la page avec ses fondus.
+
+    Le test de référence tourne en « moins d'animations », pour que ses
+    relevés ne dépendent pas du chronométrage d'un fondu. Celui-ci joue les
+    fondus, et enchaîne les filtres plus vite qu'ils ne s'achèvent : la
+    page doit rester sans erreur (BUG-6), et revenir exactement à son
+    affichage de départ.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        evenements, lieux = donnees_figees()
+        cls.releve, cls.probleme = navigateur.releve_ou_probleme(
+            evenements=evenements, lieux=lieux, date_figee=True,
+            scenarios="rafale", animations=True)
+
+    def setUp(self):
+        navigateur.sauter_si_indisponible(self, self.probleme)
+
+    def test_filtres_en_rafale_sans_erreur(self):
+        self.assertNotIn("echec", self.releve, self.releve.get("echec"))
+        self.assertEqual(self.releve["erreurs_fin"], [])
+
+    def test_retour_exact_a_l_affichage_de_depart(self):
+        s = self.releve["scenarios"]
+        self.assertEqual(s["apres_rafale"], s["tout"])
+        self.assertGreater(len(s["tout"]["jours"]), 0)
+
+
 if __name__ == "__main__":
     unittest.main()

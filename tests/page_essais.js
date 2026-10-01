@@ -119,6 +119,15 @@
       await cliquer('#feed button.event[data-venue-day]');
       const deplie = await releve();
       res.scenarios.premier_groupe_deplie = { vide: deplie.vide, jours: deplie.jours.slice(0, 1) };
+    } else if (SCENARIOS === 'rafale') {
+      // Un visiteur pressé, AVEC les fondus : cinq filtres en rafale, sans
+      // attendre qu'un fondu s'achève, puis le retour à « tout ».
+      for (const quand of ['weekend', 'nextweek', 'all', 'weekend', 'all']) {
+        document.querySelector('#filterWhen .chip[data-when="' + quand + '"]').click();
+        await pause(30);
+      }
+      await pause(2500);
+      res.scenarios.apres_rafale = await releve();
     }
     res.erreurs_fin = window.__erreurs;
     await envoyer(res);
