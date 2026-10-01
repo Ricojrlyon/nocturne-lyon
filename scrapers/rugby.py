@@ -105,11 +105,19 @@ _LETTRES = re.compile(r"[A-Za-zÀ-ÿ]+")
 PUSH = re.compile(r'self\.__next_f\.push\(\[1,\s*"((?:[^"\\]|\\.)*)"\]\)')
 
 
+# Les collecteurs sportifs restent autonomes, sans module commun — c'est
+# voulu —, d'où ces copies : chacune signale ses jumelles. Copie identique
+# dans volley.py, handball.py et asvel_feminin.py : une correction faite ici
+# se reporte là-bas.
 def _norm(t: str) -> str:
     return "".join(c for c in unicodedata.normalize("NFD", (t or "").lower())
                    if unicodedata.category(c) != "Mn").strip()
 
 
+# Même outil dans handball.py et volley.py, qui développe en plus les
+# abréviations ; celui-ci resserre en plus les espaces. PARTICULES et
+# _LETTRES y sont les mêmes ; SIGLES est propre à chaque sport. Une
+# correction de la logique commune se reporte dans les trois.
 def _joli(nom: str) -> str:
     """« STADE ROCHELAIS » → « Stade Rochelais », « RC TOULON » → « RC Toulon »."""
     mots = re.split(r"(\s+)", (nom or "").strip())
@@ -130,6 +138,8 @@ def _joli(nom: str) -> str:
     return re.sub(r"\s{2,}", " ", "".join(out)).strip()
 
 
+# Même outil dans volley.py, handball.py et asvel.py, au préfixe près : une
+# correction se reporte là-bas.
 def _alerte(message: str) -> None:
     """Un avertissement qui se voit jusque dans l'en-tête du run."""
     print("[RUGBY] " + message, file=sys.stderr)

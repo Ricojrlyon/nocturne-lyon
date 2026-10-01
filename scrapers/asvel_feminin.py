@@ -77,6 +77,10 @@ LIGNE = re.compile(
     r"(.*)$")
 
 
+# Les collecteurs sportifs restent autonomes, sans module commun — c'est
+# voulu —, d'où ces copies : chacune signale ses jumelles. Copie identique
+# dans volley.py, handball.py et rugby.py : une correction faite ici se
+# reporte là-bas.
 def _norm(t: str) -> str:
     return "".join(c for c in unicodedata.normalize("NFD", (t or "").lower())
                    if unicodedata.category(c) != "Mn").strip()

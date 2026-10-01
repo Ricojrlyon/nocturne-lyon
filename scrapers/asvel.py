@@ -125,6 +125,11 @@ LNB_CLUB = "Lyon-Villeurbanne"
 MOIS_BASCULE = 8
 
 
+# Les collecteurs sportifs restent autonomes, sans module commun — c'est
+# voulu —, d'où ces copies : chacune signale ses jumelles. Même calcul dans
+# volley.py, qui rend la saison entière (2026/2027) plutôt que l'année de
+# début. MOIS_BASCULE y vaut aussi 8. Une correction de la bascule se
+# reporte dans les deux.
 def _saison(aujourdhui: Optional[Date] = None) -> int:
     j = aujourdhui or Date.today()
     return j.year if j.month >= MOIS_BASCULE else j.year - 1
@@ -168,6 +173,8 @@ def _euroleague(saison: int, inconnues: list) -> List[dict]:
     return out
 
 
+# Même outil dans volley.py, handball.py et rugby.py, au préfixe près : une
+# correction se reporte là-bas.
 def _alerte(message: str) -> None:
     """Un avertissement qui se voit jusque dans l'en-tête du run."""
     print("[ASVEL] " + message, file=sys.stderr)

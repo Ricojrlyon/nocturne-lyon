@@ -126,11 +126,19 @@ DEVELOPPEMENTS = {"ASS": "Association"}
 _LETTRES = re.compile(r"[A-Za-zÀ-ÿ]+")
 
 
+# Les collecteurs sportifs restent autonomes, sans module commun — c'est
+# voulu —, d'où ces copies : chacune signale ses jumelles. Copie identique
+# dans handball.py, rugby.py et asvel_feminin.py : une correction faite ici
+# se reporte là-bas.
 def _norm(t: str) -> str:
     return "".join(c for c in unicodedata.normalize("NFD", (t or "").lower())
                    if unicodedata.category(c) != "Mn").strip()
 
 
+# Même outil dans handball.py et rugby.py ; celui-ci développe en plus les
+# abréviations (DEVELOPPEMENTS). PARTICULES et _LETTRES y sont les mêmes ;
+# SIGLES est propre à chaque sport. Une correction de la logique commune se
+# reporte dans les trois.
 def _joli(nom: str) -> str:
     """« AS CALUIRE ET CUIRE » → « AS Caluire et Cuire ».
 
@@ -158,12 +166,17 @@ def _joli(nom: str) -> str:
     return "".join(out)
 
 
+# Même calcul dans asvel.py, qui rend l'année de début plutôt que la saison
+# entière (2026/2027). MOIS_BASCULE y vaut aussi 8. Une correction de la
+# bascule se reporte dans les deux.
 def _saison(aujourdhui: Optional[Date] = None) -> str:
     j = aujourdhui or Date.today()
     debut = j.year if j.month >= MOIS_BASCULE else j.year - 1
     return "%d/%d" % (debut, debut + 1)
 
 
+# Même outil dans handball.py, rugby.py et asvel.py, au préfixe près : une
+# correction se reporte là-bas.
 def _alerte(message: str) -> None:
     """Un avertissement qui se voit jusque dans l'en-tête du run."""
     print("[VOLLEY] " + message, file=sys.stderr)
