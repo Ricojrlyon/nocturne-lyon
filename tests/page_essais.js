@@ -21,11 +21,13 @@
     return [el.tagName.toLowerCase(), el.getAttribute('href') || '', norme(c.textContent)];
   };
 
+  // On ne conclut que sur trois relevés de suite sans journée nouvelle : une
+  // image de retard du navigateur ne doit pas passer pour la fin du fil.
   const toutAfficher = async () => {
-    let avant = -1;
-    for (let i = 0; i < 500; i++) {
+    let avant = -1, stable = 0;
+    for (let i = 0; i < 1000 && stable < 3; i++) {
       const n = document.querySelectorAll('#feed section.day').length;
-      if (n === avant) break;
+      stable = n === avant ? stable + 1 : 0;
       avant = n;
       window.scrollTo(0, document.documentElement.scrollHeight);
       await pause(80);
@@ -128,6 +130,27 @@
       }
       await pause(2500);
       res.scenarios.apres_rafale = await releve();
+    } else if (SCENARIOS === 'navigation') {
+      // La barre des 14 jours, touchée juste après un rendu : la journée
+      // n'est pas encore construite (affichage par morceaux), et doit
+      // pourtant arriver en haut de l'écran. On relève celle qui y est.
+      res.pastilles_suivies = [];
+      for (const i of [1, 6, 13]) {
+        window.scrollTo(0, 0);
+        document.getElementById('clearFilters').click();
+        document.querySelectorAll('.day-pill')[i].click();
+        await pause(600);
+        const s = [...document.querySelectorAll('#feed section.day')]
+          .find(s => s.getBoundingClientRect().bottom > 12);
+        res.pastilles_suivies.push(s ? [s.id, Math.round(s.getBoundingClientRect().top)] : null);
+      }
+      // La recherche du navigateur (Ctrl+F) porte sur tout le fil : il se
+      // construit d'un coup avant qu'elle ne s'ouvre.
+      window.scrollTo(0, 0);
+      await effacer();
+      res.journees_avant_ctrl_f = document.querySelectorAll('#feed section.day').length;
+      document.body.dispatchEvent(new KeyboardEvent('keydown', { key: 'f', ctrlKey: true, bubbles: true }));
+      res.journees_apres_ctrl_f = document.querySelectorAll('#feed section.day').length;
     }
     res.erreurs_fin = window.__erreurs;
     await envoyer(res);

@@ -2890,8 +2890,14 @@ function buildDaystrip() {
     if (n) {
       btn.title = n + (n > 1 ? ' événements' : ' événement');
       btn.addEventListener('click', () => {
+        // Le jour n'est peut-être pas encore construit (voir « affichage
+        // par morceaux ») : on construit jusqu'à lui, puis de quoi remplir
+        // l'écran sous lui, pour qu'il vienne en haut comme avant.
+        construireJusqua(iso);
         const target = document.getElementById('day-' + iso);
         if (!target) return;
+        remplirJusqua(target.getBoundingClientRect().top + window.scrollY
+                      + window.innerHeight);
         const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
         target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
       });
@@ -3366,6 +3372,9 @@ function render() {
 function renderFeed() {
   const feed = document.getElementById('feed');
   const events = filtered();
+  // Le rendu précédent avait peut-être encore des journées à construire
+  // (voir « affichage par morceaux ») : c'est ce rendu-ci qui fait foi.
+  arreterLaSuite();
 
   if (events.length === 0) {
     feed.innerHTML = '<div class="empty-state"><p>rien dans ce filtre</p></div>';
@@ -3379,7 +3388,7 @@ function renderFeed() {
   }
   const sortedDates = Array.from(groups.keys()).sort();
   const today = new Date(); today.setHours(0,0,0,0);
-  const html = [];
+  const jours = [];
   lastRenderDays.clear();
 
   for (const iso of sortedDates) {
@@ -3415,25 +3424,7 @@ function renderFeed() {
     const comptes = comptesParFamille(list);
     const visibles = filtrerParFamille(list);
     if (!visibles.length) continue;      // journée entièrement éteinte
-
-    const d = parseIso(iso);
-    const dd = String(d.getDate()).padStart(2, '0');
-    const mm = String(d.getMonth() + 1).padStart(2, '0');
-    const n = visibles.length;
-
-    html.push('<section class="day" id="day-' + iso + '">');
-    html.push('  <div class="day-bar">');
-    html.push('    <span class="db-date">' + dd + '/' + mm + '</span>');
-    html.push('    <span class="db-label">' + FR_DAYS_FULL[d.getDay()] + ' '
-                 + d.getDate() + ' ' + FR_MONTHS[d.getMonth()] + '</span>');
-    html.push('    ' + famillesHtml(comptes));
-    html.push('    <span class="db-count">' + String(n).padStart(2, '0')
-                 + ' évt' + (n > 1 ? 's' : '') + '</span>');
-    html.push('  </div>');
-    html.push('  <div class="day-body">');
-    html.push(dayCardsHtml(iso, visibles));
-    html.push('  </div>');
-    html.push('</section>');
+    jours.push({ iso, comptes, visibles });
     // Mémorisé pour le dépliage : il ne reconstruit qu'une journée et n'a
     // donc pas à refaire le filtrage ni le tri (voir toggleGroup).
     lastRenderDays.set(iso, visibles);
@@ -3441,7 +3432,7 @@ function renderFeed() {
   // Toutes les familles éteintes : la boucle n'a rien produit, et le
   // garde-fou du début — qui compte les ÉVÉNEMENTS, avant regroupement —
   // ne pouvait pas le voir.
-  if (!html.length) {
+  if (!jours.length) {
     // Les boutons vivent dans les barres de journée : sans journée, plus
     // de boutons, et donc aucun moyen de revenir en arrière. L'état vide
     // porte donc ses propres boutons, avec les comptes de TOUTE la
@@ -3453,8 +3444,172 @@ function renderFeed() {
                    + '</div>';
     return;
   }
-  feed.innerHTML = html.join('\n');
+  construireLeFil(feed, jours);
 }
+
+/* Une journée du fil : sa barre — date, familles, compte — puis ses cartes. */
+function journeeHtml({ iso, comptes, visibles }) {
+  const d = parseIso(iso);
+  const dd = String(d.getDate()).padStart(2, '0');
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  const n = visibles.length;
+  const html = [];
+  html.push('<section class="day" id="day-' + iso + '">');
+  html.push('  <div class="day-bar">');
+  html.push('    <span class="db-date">' + dd + '/' + mm + '</span>');
+  html.push('    <span class="db-label">' + FR_DAYS_FULL[d.getDay()] + ' '
+               + d.getDate() + ' ' + FR_MONTHS[d.getMonth()] + '</span>');
+  html.push('    ' + famillesHtml(comptes));
+  html.push('    <span class="db-count">' + String(n).padStart(2, '0')
+               + ' évt' + (n > 1 ? 's' : '') + '</span>');
+  html.push('  </div>');
+  html.push('  <div class="day-body">');
+  html.push(dayCardsHtml(iso, visibles));
+  html.push('  </div>');
+  html.push('</section>');
+  return html.join('\n');
+}
+
+/* ---------- affichage par morceaux ----------
+   Le fil entier, c'est quelque 240 journées, 3 300 cartes et plus de
+   80 000 éléments (octobre 2026) : les construire d'un coup figeait la
+   page jusqu'à une demi-seconde à chaque filtre sur un PC, plusieurs
+   secondes sur un téléphone. On construit donc de quoi remplir l'écran,
+   puis les journées suivantes un peu avant que le défilement ne les
+   atteigne. Les quatorze jours de la barre de dates se construisent dans
+   la foulée, journée par journée, quand la page n'a rien d'autre à faire :
+   une pastille touchée trouve sa journée prête. Les journées, leur ordre
+   et leurs cartes restent exactement ceux d'avant : seul change le MOMENT
+   où une journée est construite.
+
+   Là où la page entière est attendue, le reste se construit d'un coup : la
+   recherche du navigateur (Ctrl+F, F3), la touche Fin, l'impression. Au
+   clavier, la tabulation passe de la dernière journée construite à la
+   suivante, et non au pied de page. */
+
+/* Taille du premier morceau, en événements, par journées entières. Il
+   couvre largement un écran, et un fil court — un weekend, une semaine —
+   y tient en entier : il se construit d'un coup, comme avant. La suite
+   vient ensuite journée par journée. */
+const MORCEAU_INITIAL = 400;
+let suiteDuFil = null;   // { jours, prochain, guetteur }, tant qu'il en reste
+
+function construireLeFil(feed, jours) {
+  // Un visiteur qui change de filtre au milieu de la page doit y rester,
+  // comme quand tout se construisait d'un coup : on note où il en est.
+  const y = window.scrollY;
+  const suite = { jours, prochain: 0, guetteur: null };
+  const html = [];
+  let n = 0;
+  while (suite.prochain < jours.length && n < MORCEAU_INITIAL) {
+    const jour = jours[suite.prochain++];
+    html.push(journeeHtml(jour));
+    n += jour.visibles.length;
+  }
+  feed.innerHTML = html.join('\n');
+  if (suite.prochain >= jours.length) return;
+  suiteDuFil = suite;
+  // Son écran doit être couvert tout de suite, et non à l'image suivante :
+  // le fil ne doit pas raccourcir sous lui.
+  remplirJusqua(y + window.innerHeight);
+  if (window.scrollY !== y) window.scrollTo(window.scrollX, y);
+  if (!suiteDuFil) return;
+  if (typeof IntersectionObserver !== 'function') { construireTout(); return; }
+  // Le guetteur suit la DERNIÈRE journée construite : quand elle arrive à
+  // moins de deux écrans du bas de la fenêtre, on construit la suite —
+  // autant de journées qu'en tiennent huit millisecondes, plusieurs sur un
+  // PC, une seule sur un téléphone lent : le défilement n'accroche pas.
+  suite.guetteur = new IntersectionObserver(entrees => {
+    if (suiteDuFil !== suite
+        || !entrees.some(e => e.isIntersecting && e.target === feed.lastElementChild)) return;
+    const debut = performance.now();
+    do { ajouterJournees(1); } while (suiteDuFil === suite && performance.now() - debut < 8);
+  }, { rootMargin: '0px 0px 200% 0px' });
+  suite.guetteur.observe(feed.lastElementChild);
+  preparerLaBarreDesJours(suite);
+}
+
+/* Les quatorze jours de la barre de dates, construits dans la foulée,
+   journée par journée, quand la page n'a rien d'autre à faire. */
+function preparerLaBarreDesJours(suite) {
+  const fin = new Date(); fin.setHours(0, 0, 0, 0); fin.setDate(fin.getDate() + 13);
+  const horizon = isoOf(fin);
+  const reste = () => suiteDuFil === suite && suite.jours[suite.prochain - 1].iso < horizon;
+  const plusTard = window.requestIdleCallback
+    ? f => window.requestIdleCallback(f)
+    : f => setTimeout(f, 50);
+  const etape = repos => {
+    while (reste()) {
+      ajouterJournees(1);
+      if (!repos || repos.timeRemaining() <= 0) break;
+    }
+    if (reste()) plusTard(etape);
+  };
+  if (reste()) plusTard(etape);
+}
+
+/* Ajoute au fil les `combien` journées suivantes — toutes, sans nombre. */
+function ajouterJournees(combien = Infinity) {
+  const suite = suiteDuFil;
+  if (!suite) return;
+  const feed = document.getElementById('feed');
+  const avant = feed.lastElementChild;
+  const html = [];
+  while (suite.prochain < suite.jours.length && html.length < combien) {
+    html.push(journeeHtml(suite.jours[suite.prochain++]));
+  }
+  // Le saut de ligne qui séparait déjà les journées : une fois tout
+  // construit, le fil est identique, au caractère près, à celui d'avant.
+  feed.insertAdjacentHTML('beforeend', '\n' + html.join('\n'));
+  if (suite.prochain >= suite.jours.length) { arreterLaSuite(); return; }
+  if (suite.guetteur) {
+    suite.guetteur.unobserve(avant);
+    suite.guetteur.observe(feed.lastElementChild);
+  }
+}
+
+function arreterLaSuite() {
+  if (suiteDuFil && suiteDuFil.guetteur) suiteDuFil.guetteur.disconnect();
+  suiteDuFil = null;
+}
+
+/* Construit jusqu'à ce que le fil descende au-delà de `bas`, compté depuis
+   le haut de la page. */
+function remplirJusqua(bas) {
+  const feed = document.getElementById('feed');
+  while (suiteDuFil
+         && feed.lastElementChild.getBoundingClientRect().bottom + window.scrollY < bas) {
+    ajouterJournees(1);
+  }
+}
+
+/* Construit jusqu'à la journée `iso` — ou jusqu'à la première qui la
+   suit, si le filtre l'a écartée. */
+function construireJusqua(iso) {
+  while (suiteDuFil && suiteDuFil.jours[suiteDuFil.prochain - 1].iso < iso) {
+    ajouterJournees(1);
+  }
+}
+
+function construireTout() {
+  ajouterJournees();
+}
+
+document.getElementById('feed').addEventListener('focusin', e => {
+  if (suiteDuFil && e.target.closest('section.day') === e.currentTarget.lastElementChild) {
+    ajouterJournees(1);
+  }
+});
+document.addEventListener('keydown', e => {
+  if (!suiteDuFil) return;
+  const k = e.key;
+  // AltGr se signale comme Ctrl+Alt : ce sont alors des caractères tapés.
+  const chercher = (e.ctrlKey || e.metaKey) && !e.altKey && /^[fg]$/i.test(k);
+  const fin = k === 'End'
+    && !(e.target.closest && e.target.closest('input, textarea, select, [contenteditable]'));
+  if (chercher || k === 'F3' || fin) construireTout();
+});
+addEventListener('beforeprint', construireTout);
 
 /* Cartes d'une journée. Regroupement (lieu, jour) : la grappe prend la
    position de son PREMIER membre dans la liste déjà triée, sinon

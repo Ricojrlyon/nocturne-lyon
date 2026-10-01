@@ -106,5 +106,38 @@ class PageAvecFondus(unittest.TestCase):
         self.assertGreater(len(s["tout"]["jours"]), 0)
 
 
+class PageNavigation(unittest.TestCase):
+    """Ce que l'affichage par morceaux (PERF-1) ne doit pas changer.
+
+    La page ne construit d'abord que les premières journées. La barre des
+    14 jours doit pourtant amener chacune en haut de l'écran, même pas
+    encore construite ; et la recherche du navigateur, Ctrl+F, doit
+    trouver tout le fil.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        evenements, lieux = donnees_figees()
+        cls.releve, cls.probleme = navigateur.releve_ou_probleme(
+            evenements=evenements, lieux=lieux, date_figee=True,
+            scenarios="navigation")
+
+    def setUp(self):
+        navigateur.sauter_si_indisponible(self, self.probleme)
+        self.assertNotIn("echec", self.releve, self.releve.get("echec"))
+
+    def test_la_barre_des_jours_amene_au_bon_jour(self):
+        # Le 2, le 7 et le 14 octobre ; 8 px : la marge de la journée.
+        self.assertEqual(self.releve["pastilles_suivies"],
+                         [["day-2026-10-02", 8], ["day-2026-10-07", 8],
+                          ["day-2026-10-14", 8]])
+
+    def test_ctrl_f_construit_tout_le_fil(self):
+        total = len(self.releve["scenarios"]["tout"]["jours"])
+        self.assertLess(self.releve["journees_avant_ctrl_f"], total)
+        self.assertEqual(self.releve["journees_apres_ctrl_f"], total)
+        self.assertEqual(self.releve["erreurs_fin"], [])
+
+
 if __name__ == "__main__":
     unittest.main()
