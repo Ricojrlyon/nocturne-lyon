@@ -196,12 +196,14 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  /* Le compte SUIT son nom. Poussé au bord droit de la colonne, il
+     tombait à 16 px de la case de la colonne voisine et se lisait comme
+     le sien : « atelier … 24 □ autre ». */
   .filter-liste .fl-n {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     color: var(--ink-mute);
     font-variant-numeric: tabular-nums;
-    margin-left: auto;
     flex: 0 0 auto;
   }
   .filter-liste label:has(input:checked) { color: var(--hot); }
