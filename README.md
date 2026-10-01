@@ -274,6 +274,40 @@ Premier run : nettement plus long, le temps de remplir le cache des heures.
 Runs suivants : 7 à 8 minutes — plusieurs salles imposent un délai entre deux
 pages (mesuré sur GitHub en octobre 2026).
 
+## Tests
+
+```bash
+python -m unittest discover -s tests -t . -v      # la logique, sans réseau
+python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
+```
+
+- **La logique**, en une dizaine de secondes et sans réseau : la lecture
+  des dates en français, le dédoublonnage règle par règle, les nouveaux
+  essais réseau, la vérification anti-robot du Complexe, les garde-fous
+  d'`aggregate.py` — et deux RÉFÉRENCES figées. La chaîne de publication
+  entière est rejouée sur une collecte réelle (celle du 1er octobre 2026,
+  dans `tests/donnees/`) et doit rendre le même fil au caractère près ; la
+  page est jouée dans un navigateur sans fenêtre, sur ces données et à
+  cette date, et ses neuf scénarios de visiteur doivent afficher les mêmes
+  cartes.
+- **Le fil du jour**, après la collecte : la forme d'`events.json`, et la
+  page qui s'affiche avec, sans erreur et avec les bons compteurs.
+
+Le workflow lance les premiers AVANT de collecter et les seconds AVANT de
+publier : un échec arrête le passage, qui passe au rouge, et le site garde
+sa version de la veille plutôt que d'en publier une cassée.
+
+Les tests de page demandent un navigateur de la famille Chrome — Chrome,
+Chromium ou Edge ; sans lui, ils sont sautés et le disent. Ils le sont
+aussi, avec une alerte, quand le navigateur ne rend rien : c'est alors la
+machine qui fait défaut, pas le site, et cela ne doit pas bloquer la
+publication.
+
+Quand un changement est VOULU — une règle de dédoublonnage, le dessin
+d'une carte —, les références se recalculent avec
+`python -m tests.regenerer` (ou `chaine`, ou `page`) ; relire ensuite le
+diff de `tests/donnees/`.
+
 ## Ajouter une salle
 
 1. Créer `scrapers/ma_salle.py` exposant `fetch() -> List[Event]`
