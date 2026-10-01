@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-01T08:52:32.926657+00:00",
-  "count": 2983,
+  "generated_at": "2026-10-01T09:24:45.355867+00:00",
+  "count": 2984,
   "events": [
     {
       "venue": "IAC Villeurbanne",
@@ -7320,7 +7320,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/eleves-du-cnsmd-lyon-15-oct-26",
-      "image": "https://www.auditorium-lyon.com/sites/default/files/styles/vignette_teaser_xl/public/upload/images/Duo_Baron-Fleury_c_DR_1920.jpg?h=c03e9ba6&itok=QKY3AoqX",
+      "image": "https://www.auditorium-lyon.com/sites/default/files/styles/vignette_teaser_xl/public/upload/images/Duo_Baron-Fleury_c_DR_Proton_1920.jpg?h=eeac8576&itok=28ERKErN",
       "offsite_venue": null,
       "id": "e098694e75e6"
     },
@@ -12363,6 +12363,20 @@
       "image": "https://agenda.villemorte.fr/media/thumb/5583f375a9ff5bf9305f344e3d3c2a7c.jpg",
       "offsite_venue": null,
       "id": "ace983350caa"
+    },
+    {
+      "venue": "Le Sonic",
+      "venue_slug": "sonic",
+      "title": "The Telescopes",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2026-10-27",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://sonic-lyon.fr/evenement/the-telescopes/",
+      "image": "https://sonic-lyon.fr/wp-content/uploads/2026/10/1-telescopes.jpg",
+      "offsite_venue": null,
+      "id": "4ec45fd2481a"
     },
     {
       "venue": "Marché Gare",
