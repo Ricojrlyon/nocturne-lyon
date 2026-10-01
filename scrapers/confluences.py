@@ -44,7 +44,7 @@ from __future__ import annotations
 import re
 import sys
 import unicodedata
-from datetime import date as Date, datetime, timedelta
+from datetime import date as Date, timedelta
 from typing import Dict, List, Optional, Tuple
 
 import requests

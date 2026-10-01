@@ -25,7 +25,6 @@ from __future__ import annotations
 from typing import List, Optional
 import re
 import unicodedata
-import requests
 from bs4 import BeautifulSoup
 
 from .base import Event, img_src, parse_french_date, iso, get as base_get

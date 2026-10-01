@@ -121,16 +121,6 @@ def _plat(el) -> str:
     return re.sub(r"\s+", " ", el.get_text(" ", strip=True)) if el else ""
 
 
-def _sans_etiquette(el, etiquette: str) -> str:
-    """Texte d'un champ Drupal, privé de son libellé.
-
-    Le gabarit rend « Type de rendez-vous Nocturnes » d'un seul bloc :
-    le libellé est là, simplement masqué en CSS.
-    """
-    txt = _plat(el)
-    return re.sub(r"^" + re.escape(etiquette) + r"\s*", "", txt).strip()
-
-
 def _seances(soup: BeautifulSoup) -> List[Tuple[str, Optional[str]]]:
     """(date ISO, heure) pour chaque séance de la fiche."""
     out: List[Tuple[str, Optional[str]]] = []

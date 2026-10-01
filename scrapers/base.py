@@ -1,6 +1,6 @@
 """Common types and helpers for venue scrapers."""
 from dataclasses import dataclass, asdict
-from datetime import datetime, date
+from datetime import date
 from typing import Optional
 from urllib.parse import urlsplit
 import hashlib

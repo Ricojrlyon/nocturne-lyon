@@ -5,7 +5,6 @@ in a link to /agenda/<slug>, and contains the date and a category pill.
 """
 from typing import List
 import re
-import requests
 from bs4 import BeautifulSoup
 
 from .base import Event, img_src, parse_french_date, iso, get as base_get

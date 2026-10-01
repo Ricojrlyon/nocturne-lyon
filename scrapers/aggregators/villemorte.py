@@ -14,7 +14,6 @@ from datetime import datetime, date, timedelta
 from typing import List, Optional
 from zoneinfo import ZoneInfo
 import re
-import requests
 
 from ..base import Event, get as base_get
 

@@ -39,7 +39,7 @@ import sys
 import time
 import unicodedata
 from datetime import date as Date, timedelta
-from typing import Dict, List, Optional
+from typing import List, Optional
 
 import requests
 from bs4 import BeautifulSoup

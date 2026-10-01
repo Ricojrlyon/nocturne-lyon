@@ -23,7 +23,6 @@ from datetime import date as Date
 import re
 import sys
 import unicodedata
-import requests
 from bs4 import BeautifulSoup
 
 from .base import Event, iso, img_src, get as base_get

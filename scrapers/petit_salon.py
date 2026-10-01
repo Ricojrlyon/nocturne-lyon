@@ -13,7 +13,6 @@ from typing import List, Optional
 from datetime import date as Date
 import re
 import sys
-import requests
 from bs4 import BeautifulSoup, Tag
 
 from .base import Event, iso, get as base_get
