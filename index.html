@@ -1483,6 +1483,21 @@
   }
   .empty-state p::before { content: "( "; color: var(--ink-mute); }
   .empty-state p::after { content: " )"; color: var(--ink-mute); }
+  /* Chargement échoué. L'aide et le détail ne sont pas des <p>, qui
+     prendraient les parenthèses du titre. */
+  .erreur-chargement .ec-aide {
+    max-width: 34em;
+    margin: 14px auto 22px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .erreur-chargement .ec-detail {
+    margin-top: 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    overflow-wrap: anywhere;
+  }
+  .ec-reessayer:focus-visible { outline: 2px solid var(--warm); outline-offset: 2px; }
 
   /* ---------- footer ---------- */
   footer {
@@ -2757,6 +2772,9 @@ async function load() {
   ]);
 
   if (eventsRes.status === 'rejected') throw eventsRes.reason;
+  // Une page d'erreur du serveur (404, 503…) n'est pas un fil : la lire
+  // comme du JSON donnait une erreur de syntaxe sans rapport avec la panne.
+  if (!eventsRes.value.ok) throw new Error('HTTP ' + eventsRes.value.status);
   const data = await eventsRes.value.json();
   state.events = data.events || [];
   // Les occurrences ne dépendent que de state.events : calculées une seule
@@ -3758,10 +3776,30 @@ if (document.fonts && document.fonts.ready) {
   });
 }
 
-load().catch(err => {
-  document.getElementById('feed').innerHTML =
-    '<div class="empty-state"><p>erreur de chargement</p><p style="font-family:monospace;font-size:12px;text-transform:none;color:#a59f86">' + err + '</p></div>';
-});
+/* Le chargement a échoué : le dire en clair, avec de quoi réessayer. Le
+   message d'avant montrait l'erreur brute du navigateur — « TypeError:
+   Failed to fetch » —, n'offrait aucune suite, et l'insérait telle quelle
+   dans la page : un texte d'erreur qui cite le fichier reçu y aurait été
+   lu comme du HTML. Le détail reste, en petit et échappé, pour qui doit
+   diagnostiquer. Réessayer recharge la page entière plutôt que de relancer
+   un chargement peut-être à moitié fait. */
+function erreurDeChargement(err) {
+  console.error(err);
+  const detail = String((err && err.message) || err || '').slice(0, 160);
+  const feed = document.getElementById('feed');
+  feed.innerHTML = '<div class="empty-state erreur-chargement" role="alert">'
+    + "<p>le programme n'a pas pu se charger</p>"
+    + '<div class="ec-aide">vérifiez votre connexion, puis réessayez — '
+    + 'ou revenez dans quelques minutes.</div>'
+    + '<button type="button" class="chip ec-reessayer">réessayer</button>'
+    + (detail ? '<div class="ec-detail">détail technique : '
+                + escapeHtml(detail) + '</div>' : '')
+    + '</div>';
+  feed.querySelector('.ec-reessayer')
+      .addEventListener('click', () => location.reload());
+}
+
+load().catch(erreurDeChargement);
 </script>
 
 </body>
