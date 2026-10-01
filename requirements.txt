@@ -1,2 +1,11 @@
-requests>=2.31
-beautifulsoup4>=4.12
+# Versions FIGÉES. Avec « au moins la version X », chaque passage
+# installait la dernière parue : une version majeure nouvelle pouvait
+# changer la lecture des pages sans qu'une ligne du projet ait bougé.
+# Ce sont celles que le workflow installait au 2026-10-01, éprouvées en
+# production. Les monter est un geste voulu : changer le numéro, lancer un
+# passage, comparer le rapport par salle.
+requests==2.34.2
+beautifulsoup4==4.15.0
+# Le moteur des sélecteurs CSS de BeautifulSoup (soup.select), dont il
+# n'impose aucun plafond ; requests plafonne déjà urllib3 sous la 3.
+soupsieve>=2.8,<3
