@@ -2898,8 +2898,21 @@ function buildDaystrip() {
         if (!target) return;
         remplirJusqua(target.getBoundingClientRect().top + window.scrollY
                       + window.innerHeight);
+        // Une journée lointaine — à plus d'un écran — se rejoint d'un saut.
+        // Le défilement en douceur visait la position qu'elle avait au
+        // départ ; or les journées à traverser, jamais affichées, n'ont
+        // qu'une hauteur estimée (contain-intrinsic-size, 420 px), bien
+        // moindre que la vraie : elles grandissaient en passant à l'écran,
+        // la journée visée reculait d'autant, et le défilement s'arrêtait
+        // plusieurs jours trop tôt. Le saut, lui, tombe juste : c'était déjà
+        // celui des visiteurs qui demandent moins d'animations. Arriver juste
+        // ET en douceur obligeait à afficher au passage les journées
+        // traversées, et un téléphone lent en saccadait une demi-seconde.
+        // Une journée proche se rejoint toujours en douceur : le chemin est
+        // déjà à l'écran, à sa vraie taille.
         const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-        target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+        const loin = Math.abs(target.getBoundingClientRect().top) > window.innerHeight;
+        target.scrollIntoView({ behavior: reduce || loin ? 'auto' : 'smooth', block: 'start' });
       });
     } else {
       btn.disabled = true;

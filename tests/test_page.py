@@ -139,5 +139,32 @@ class PageNavigation(unittest.TestCase):
         self.assertEqual(self.releve["erreurs_fin"], [])
 
 
+class PastillesAvecFondus(unittest.TestCase):
+    """BUG-7 : avec les fondus, la pastille d'un jour proche fait défiler la
+    page en douceur, celle d'un jour lointain la fait sauter, par-dessus des
+    journées jamais affichées. Dans les deux cas, la page doit s'arrêter sur
+    SA journée — le défilement en douceur s'arrêtait quelques jours plus
+    tôt."""
+
+    @classmethod
+    def setUpClass(cls):
+        evenements, lieux = donnees_figees()
+        cls.releve, cls.probleme = navigateur.releve_ou_probleme(
+            evenements=evenements, lieux=lieux, date_figee=True,
+            scenarios="pastilles_fondues", animations=True)
+
+    def setUp(self):
+        navigateur.sauter_si_indisponible(self, self.probleme)
+        self.assertNotIn("echec", self.releve, self.releve.get("echec"))
+
+    def test_la_pastille_amene_au_bon_jour_meme_en_douceur(self):
+        # Le 1er octobre, proche : en douceur ; le 7 et le 14, lointains :
+        # d'un saut. 8 px : la marge de la journée.
+        self.assertEqual(self.releve["pastilles_suivies"],
+                         [["day-2026-10-01", 8], ["day-2026-10-07", 8],
+                          ["day-2026-10-14", 8]])
+        self.assertEqual(self.releve["erreurs_fin"], [])
+
+
 if __name__ == "__main__":
     unittest.main()

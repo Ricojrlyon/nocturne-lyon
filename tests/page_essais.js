@@ -151,6 +151,29 @@
       res.journees_avant_ctrl_f = document.querySelectorAll('#feed section.day').length;
       document.body.dispatchEvent(new KeyboardEvent('keydown', { key: 'f', ctrlKey: true, bubbles: true }));
       res.journees_apres_ctrl_f = document.querySelectorAll('#feed section.day').length;
+    } else if (SCENARIOS === 'pastilles_fondues') {
+      // Avec les fondus : la pastille d'un jour proche fait défiler la page
+      // en douceur, celle d'un jour lointain la fait sauter, par-dessus des
+      // journées qui, juste après un rendu, n'ont encore jamais été
+      // affichées. On attend que la page s'arrête, puis on relève la
+      // journée arrivée en haut de l'écran.
+      res.pastilles_suivies = [];
+      for (const i of [0, 6, 13]) {
+        window.scrollTo(0, 0);
+        await effacer();
+        await pause(400);
+        document.querySelectorAll('.day-pill')[i].click();
+        for (let k = 0; k < 30 && window.scrollY === 0; k++) await pause(100);
+        let y = -1, stable = 0;
+        for (let k = 0; k < 100 && stable < 3; k++) {
+          stable = window.scrollY === y ? stable + 1 : 0;
+          y = window.scrollY;
+          await pause(100);
+        }
+        const s = [...document.querySelectorAll('#feed section.day')]
+          .find(s => s.getBoundingClientRect().bottom > 12);
+        res.pastilles_suivies.push(s ? [s.id, Math.round(s.getBoundingClientRect().top)] : null);
+      }
     }
     res.erreurs_fin = window.__erreurs;
     await envoyer(res);
