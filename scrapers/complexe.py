@@ -39,7 +39,7 @@ from typing import List, Optional
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event
+from .base import Event, get as base_get
 
 # Même graphie que le Petit Bulletin, qui remonte aussi cette salle :
 # c'est ce qui permet à la dédup de regrouper les deux sources.
@@ -154,7 +154,7 @@ def _page(session: requests.Session, url: str, attentes: list,
     essai = 0
     while True:
         essai += 1
-        r = session.get(url, headers=HEADERS, timeout=30)
+        r = base_get(url, session=session, headers=HEADERS, timeout=30)
         r.raise_for_status()
         refus = _verification(r)
         if not refus and (attendu is None or attendu.encode() in r.content):

@@ -177,7 +177,8 @@ def _expositions(session: requests.Session, today: Date,
     vers la fiche, une image. On lit donc de <h1> en <h1>.
     """
     try:
-        r = session.get(BASE + EXPOSITIONS, headers=HEADERS, timeout=30)
+        r = base_get(BASE + EXPOSITIONS, session=session, headers=HEADERS,
+                     timeout=30)
         r.raise_for_status()
     except requests.RequestException as exc:
         print(f"[Beaux-Arts] {EXPOSITIONS}: {exc}", file=sys.stderr)
@@ -247,7 +248,7 @@ def _cartes(session: requests.Session) -> Dict[str, Tuple[str, str]]:
     for page in range(PAGES_MAX):
         url = LISTING + (f"?page={page}" if page else "")
         try:
-            r = session.get(url, headers=HEADERS, timeout=30)
+            r = base_get(url, session=session, headers=HEADERS, timeout=30)
             r.raise_for_status()
         except requests.RequestException as exc:
             print(f"[Beaux-Arts] {url}: {exc}", file=sys.stderr)

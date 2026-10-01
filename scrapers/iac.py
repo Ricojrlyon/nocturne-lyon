@@ -203,7 +203,8 @@ def _fiches_expo(session: requests.Session) -> List[str]:
     out: List[str] = []
     for chemin in INDEX:
         try:
-            r = session.get(BASE + chemin, headers=HEADERS, timeout=30)
+            r = base_get(BASE + chemin, session=session, headers=HEADERS,
+                         timeout=30)
             r.raise_for_status()
         except requests.RequestException as exc:
             print(f"[IAC] {chemin}: {exc}", file=sys.stderr)
@@ -243,7 +244,8 @@ def fetch() -> List[Event]:
 
     for lien in liens:
         try:
-            r = session.get(BASE + lien, headers=HEADERS, timeout=30)
+            r = base_get(BASE + lien, session=session, headers=HEADERS,
+                         timeout=30)
             r.raise_for_status()
         except requests.RequestException as exc:
             print(f"[IAC] {lien}: {exc}", file=sys.stderr)

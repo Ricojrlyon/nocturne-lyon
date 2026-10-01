@@ -209,7 +209,7 @@ def fetch() -> List[Event]:
     for ym in _mois_horizon(today, horizon):
         url = f"{BASE}/fr/agenda/{ym}"
         try:
-            r = session.get(url, headers=HEADERS, timeout=30)
+            r = base_get(url, session=session, headers=HEADERS, timeout=30)
             r.raise_for_status()
         except requests.RequestException as exc:
             print(f"[Auditorium] {url}: {exc}", file=sys.stderr)

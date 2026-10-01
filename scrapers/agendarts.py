@@ -72,7 +72,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import categorie
-from .base import Event
+from .base import Event, get as base_get
 
 VENUE = "Agend'arts"
 SLUG = "agend-arts"
@@ -219,8 +219,8 @@ def _annee(jour: int, mois: int, txt: str, annees_cat: Set[int],
 
 
 def _get(session: requests.Session, chemin: str, **params) -> list:
-    r = session.get(f"{API}/{chemin}", params=params, headers=HEADERS,
-                    timeout=30)
+    r = base_get(f"{API}/{chemin}", session=session, params=params,
+                 headers=HEADERS, timeout=30)
     r.raise_for_status()
     return r.json()
 

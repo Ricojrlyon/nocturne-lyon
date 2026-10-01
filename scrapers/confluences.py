@@ -49,7 +49,7 @@ from typing import Dict, List, Optional, Tuple
 
 import requests
 
-from .base import Event
+from .base import Event, get as base_get
 
 VENUE = "Musée des Confluences"
 SLUG = "musee-des-confluences"
@@ -124,7 +124,8 @@ def _tout(session: requests.Session, type_noeud: str,
         if not url:
             break
         try:
-            r = session.get(url, params=params, headers=HEADERS, timeout=40)
+            r = base_get(url, session=session, params=params,
+                         headers=HEADERS, timeout=40)
             r.raise_for_status()
             j = r.json()
         except (requests.RequestException, ValueError) as exc:

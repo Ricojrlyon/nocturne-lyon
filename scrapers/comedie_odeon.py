@@ -154,7 +154,7 @@ def fetch() -> List[Event]:
     horizon = today + timedelta(days=HORIZON_DAYS)
 
     session = requests.Session()
-    r = session.get(LISTING, headers=HEADERS, timeout=30)
+    r = base_get(LISTING, session=session, headers=HEADERS, timeout=30)
     r.raise_for_status()
     soup = BeautifulSoup(r.text, "html.parser")
 

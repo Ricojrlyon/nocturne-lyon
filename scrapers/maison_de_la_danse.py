@@ -217,7 +217,7 @@ def fetch() -> List[Event]:
 
     session = requests.Session()
     url_saison = _url_saison(today)
-    r = session.get(url_saison, headers=HEADERS, timeout=30)
+    r = base_get(url_saison, session=session, headers=HEADERS, timeout=30)
     r.raise_for_status()
     soup = BeautifulSoup(r.text, "html.parser")
 

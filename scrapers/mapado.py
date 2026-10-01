@@ -43,7 +43,7 @@ from typing import Callable, List, Optional
 
 import requests
 
-from .base import Event
+from .base import Event, get as base_get
 
 IMG_HOST = "https://img.mapado.net"
 IMG_SIZE = "600-600"            # les cartes font 392 px de large
@@ -105,7 +105,7 @@ def shows(session: requests.Session, shop: str,
     `garder` reçoit le dict Venue du spectacle (jamais None : un
     dictionnaire vide si le Ticketing n'en porte pas).
     """
-    r = session.get(shop + "/", headers=HEADERS, timeout=25)
+    r = base_get(shop + "/", session=session, headers=HEADERS, timeout=25)
     r.raise_for_status()
     data = next_data(r.text)
     if data is None:
@@ -133,7 +133,8 @@ def shows(session: requests.Session, shop: str,
 
 def sessions(session: requests.Session, shop: str, slug: str) -> List[str]:
     """Dates de début des séances d'un spectacle, en ISO avec fuseau."""
-    r = session.get(f"{shop}/event/{slug}", headers=HEADERS, timeout=25)
+    r = base_get(f"{shop}/event/{slug}", session=session, headers=HEADERS,
+                 timeout=25)
     r.raise_for_status()
     data = next_data(r.text)
     if data is None:

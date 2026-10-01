@@ -107,7 +107,8 @@ def _saison_attendue(today: Date) -> str:
 
 
 def _api(session: requests.Session, chemin: str, **params) -> list:
-    r = session.get(f"{API}/{chemin}", params=params, headers=HEADERS, timeout=30)
+    r = base_get(f"{API}/{chemin}", session=session, params=params,
+                 headers=HEADERS, timeout=30)
     r.raise_for_status()
     d = r.json()
     return d if isinstance(d, list) else []

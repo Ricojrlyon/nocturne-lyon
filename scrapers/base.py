@@ -2,6 +2,7 @@
 from dataclasses import dataclass, asdict
 from datetime import datetime, date
 from typing import Optional
+from urllib.parse import urlsplit
 import hashlib
 import re
 import sys
@@ -76,17 +77,26 @@ OFFSITE_PLUSIEURS = "·ailleurs"
 # requête qui rend 403 ou 404 ne la changera pas, et ne ferait que
 # tripler le temps du run pour rien.
 #
-# Les 32 appels réseau des scrapers passent par ici. Rattraper une salle
+# Les appels réseau des scrapers passent par ici. Rattraper une salle
 # à la fois ne menait nulle part : deux runs consécutifs du workflow ont
 # été bloqués par deux salles DIFFÉRENTES — le Périscope (connexion
 # réinitialisée), puis le Transbordeur (délai dépassé). Le runner GitHub
 # a un réseau capricieux vers ces sites, et chaque salle y passera.
 #
-# Trois appels restent en direct, et pour des raisons précises :
-#   geo.py    passe params=, que ce helper ne prend pas, et une panne
-#             Nominatim n'est de toute façon pas mise en cache — elle est
-#             donc déjà retentée au run suivant ;
-#   sonic.py  est sur la liste de ce qu'on ne touche pas ;
+# Y COMPRIS les appels faits dans une session : `session=` garde au
+# scraper la sienne, cookies et connexions avec. Ces 17 appels-là, dans
+# 13 fichiers, étaient restés en direct jusqu'au 2026-10-01 avec l'export
+# POST du volley, et le Musée des Confluences l'a payé cinq fois en deux
+# semaines : un délai de lecture dépassé, et ses expositions — quatre à
+# six — perdues pour le passage. Le garde-fou ne l'a vu qu'une fois, le
+# jour où le reste de son programme manquait aussi.
+#
+# Restent en direct, et pour des raisons précises :
+#   geo.py           une panne Nominatim n'est pas mise en cache : elle
+#                    est donc déjà retentée au run suivant ;
+#   sonic.py         est sur la liste de ce qu'on ne touche pas ;
+#   asvel_releve.py  et le POST de asvel._lnb(), qu'il est seul à
+#                    appeler : c'est le relevé MANUEL, lancé à la main ;
 #   ici même, c'est l'appel que l'on enveloppe.
 TENTATIVES = 3
 ATTENTE = 2.0
@@ -99,27 +109,59 @@ ATTENTE = 2.0
 # changera pas et ne ferait que tripler la durée du run.
 CODES_A_REESSAYER = (502, 503, 504)
 
+# Un hôte qui vient d'épuiser ses essais sur une rupture de transport n'en
+# reçoit plus qu'UN par appel, jusqu'à ce qu'il réponde de nouveau. Sans
+# cela, un site tombé au milieu d'une boucle de pages coûterait trois
+# délais par page au lieu d'un — 74 pages au Complexe, plus d'une heure de
+# plus. Avec, une panne ne coûte que deux essais de plus qu'au temps où
+# l'on ne réessayait pas.
+_INJOIGNABLES: set = set()
+
 
 def get(url: str, *, headers: Optional[dict] = None, timeout: int = 30,
-        tentatives: int = TENTATIVES, etiquette: str = "") -> requests.Response:
-    """requests.get, mais qui redonne sa chance aux pannes passagères."""
+        tentatives: int = TENTATIVES, etiquette: str = "",
+        session: Optional[requests.Session] = None,
+        params: Optional[dict] = None, data: Optional[dict] = None,
+        methode: str = "GET") -> requests.Response:
+    """requests.get, mais qui redonne sa chance aux pannes passagères.
+
+    `session` : celle du scraper quand il en tient une. `params` et `data`
+    vont à requests tels quels.
+    """
     derniere = None
     prefixe = etiquette + " " if etiquette else ""
+    client = requests if session is None else session
+    hote = urlsplit(url).netloc
+    if hote in _INJOIGNABLES:
+        tentatives = 1
     for essai in range(1, tentatives + 1):
         try:
-            r = requests.get(url, headers=headers, timeout=timeout)
+            r = client.request(methode, url, params=params, data=data,
+                               headers=headers, timeout=timeout)
+            _INJOIGNABLES.discard(hote)
             if r.status_code not in CODES_A_REESSAYER or essai == tentatives:
                 return r
             raison = "%d" % r.status_code
         except (requests.ConnectionError, requests.Timeout) as exc:
             derniere = exc
             if essai == tentatives:
+                if tentatives > 1:
+                    print("%s%s : injoignable après %d essais — un seul par "
+                          "appel désormais, jusqu'à ce qu'il réponde"
+                          % (prefixe, hote, tentatives), file=sys.stderr)
+                _INJOIGNABLES.add(hote)
                 raise
             raison = "connexion coupée"
         print("%s%s : %s (essai %d/%d), on réessaie"
               % (prefixe, url, raison, essai, tentatives), file=sys.stderr)
         time.sleep(ATTENTE * essai)
     raise derniere
+
+
+def post(url: str, **options) -> requests.Response:
+    """get(), en POST. RÉSERVÉ aux requêtes qui ne font que LIRE — un
+    export, une recherche : rejouer un POST qui écrit le doublerait."""
+    return get(url, methode="POST", **options)
 
 
 # French month abbreviations -> month number (1-12).

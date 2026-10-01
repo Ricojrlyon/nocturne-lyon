@@ -54,7 +54,7 @@ import unicodedata
 
 import requests
 
-from .base import Event, iso
+from .base import Event, iso, post as base_post
 
 HORIZON_DAYS = 180
 
@@ -173,7 +173,7 @@ def _alerte(message: str) -> None:
 
 def _lignes(numero: str, saison: str) -> List[dict]:
     """L'export CSV d'un club, en dictionnaires."""
-    r = requests.post(EXPORT, headers=HEADERS, timeout=30, data={
+    r = base_post(EXPORT, headers=HEADERS, timeout=30, data={
         "cnclub": numero,
         "cal_saison": saison,
         "typ_edition": "E",

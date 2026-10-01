@@ -44,7 +44,7 @@ from typing import Dict, List, Optional
 
 import requests
 
-from .base import Event
+from .base import Event, get as base_get
 
 # Graphie du Petit Bulletin, qui remonte aussi cette salle : c'est ce qui
 # permet à la dédup de regrouper les deux sources.
@@ -119,7 +119,7 @@ def _pages(session: requests.Session, chemin: str, params: dict) -> List[dict]:
             time.sleep(MIN_INTERVAL)
         q = dict(params, itemsPerPage=PAGE_SIZE, page=page)
         url = BASE + chemin + "?" + urllib.parse.urlencode(q)
-        r = session.get(url, headers=HEADERS, timeout=30)
+        r = base_get(url, session=session, headers=HEADERS, timeout=30)
         r.raise_for_status()
         lot = r.json()
         if not isinstance(lot, list) or not lot:

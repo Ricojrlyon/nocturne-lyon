@@ -40,7 +40,7 @@ from typing import Dict, List, Optional
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event
+from .base import Event, get as base_get
 
 # Graphie du Petit Bulletin, qui remonte aussi cette salle : c'est ce qui
 # permet à la dédup de regrouper les deux sources.
@@ -111,7 +111,7 @@ def _titre_et_sous_titre(a) -> tuple:
 
 def _affiche(session: requests.Session, url: str) -> Optional[str]:
     """og:image de la fiche spectacle."""
-    r = session.get(url, headers=HEADERS, timeout=30)
+    r = base_get(url, session=session, headers=HEADERS, timeout=30)
     r.raise_for_status()
     soup = BeautifulSoup(r.text, "html.parser")
     og = soup.select_one('meta[property="og:image"]')
@@ -125,7 +125,7 @@ def fetch() -> List[Event]:
     fin = (today + timedelta(days=HORIZON_DAYS)).isoformat()
 
     session = requests.Session()
-    r = session.get(AGENDA, headers=HEADERS, timeout=30)
+    r = base_get(AGENDA, session=session, headers=HEADERS, timeout=30)
     r.raise_for_status()
     soup = BeautifulSoup(r.text, "html.parser")
 

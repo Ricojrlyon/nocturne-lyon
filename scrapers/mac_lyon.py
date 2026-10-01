@@ -48,7 +48,7 @@ from typing import Dict, List, Optional, Tuple
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event
+from .base import Event, get as base_get
 
 VENUE = "Musée d'Art Contemporain"
 SLUG = "mac-lyon"
@@ -135,7 +135,8 @@ def _cartes(session: requests.Session) -> Dict[str, dict]:
     out: Dict[str, dict] = {}
     for chemin in LISTES:
         try:
-            r = session.get(BASE + chemin, headers=HEADERS, timeout=30)
+            r = base_get(BASE + chemin, session=session, headers=HEADERS,
+                         timeout=30)
             r.raise_for_status()
         except requests.RequestException as exc:
             print(f"[macLYON] {chemin}: {exc}", file=sys.stderr)
