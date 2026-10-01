@@ -154,7 +154,7 @@
   "Bulle de son": {
     "arr": "9e",
     "confidence": "high",
-    "seen_at": "2026-09-24"
+    "seen_at": "2026-10-01"
   },
   "Bussières": {
     "arr": null,
@@ -400,7 +400,7 @@
     "arr": "2e",
     "checked_at": "2026-08-18",
     "confidence": "high",
-    "seen_at": "2026-09-24"
+    "seen_at": "2026-10-01"
   },
   "Groom": {
     "arr": "1er",
@@ -761,7 +761,7 @@
     "arr": "5e",
     "checked_at": "2026-09-24",
     "confidence": "high",
-    "seen_at": "2026-09-24"
+    "seen_at": "2026-10-01"
   },
   "Maison Ravier": {
     "arr": "7e",
@@ -1015,7 +1015,13 @@
     "arr": "5e",
     "checked_at": "2026-09-17",
     "confidence": "high",
-    "seen_at": "2026-09-24"
+    "seen_at": "2026-10-01"
+  },
+  "Salle Paul Garcin": {
+    "arr": "1er",
+    "checked_at": "2026-10-01",
+    "confidence": "high",
+    "seen_at": "2026-10-01"
   },
   "Salle Victor Hugo": {
     "arr": "Autre",
@@ -1101,7 +1107,7 @@
     "arr": null,
     "checked_at": "2026-09-17",
     "confidence": "failed",
-    "seen_at": "2026-09-24"
+    "seen_at": "2026-10-01"
   },
   "Théâtre de l'Iris": {
     "arr": "Villeurbanne",
@@ -1239,7 +1245,7 @@
     "arr": "Villeurbanne",
     "checked_at": "2026-09-24",
     "confidence": "high",
-    "seen_at": "2026-09-24"
+    "seen_at": "2026-10-01"
   },
   "médiathèque de Meyzieu": {
     "arr": "Autre",
