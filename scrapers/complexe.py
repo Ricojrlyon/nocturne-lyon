@@ -64,6 +64,31 @@ HEADERS = {
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
+# LA VÉRIFICATION ANTI-ROBOT DE L'HÉBERGEUR. Le site est chez SiteGround
+# — l'en-tête Host-Header de ses serveurs le signe —, dont le bouclier
+# sert parfois, à la place de la page, une vérification destinée aux
+# navigateurs : un code 202 et quelques lignes qui renvoient vers
+# /.well-known/sgcaptcha/. Ce n'est pas une erreur HTTP —
+# raise_for_status() la laisse passer —, et le collecteur la lisait comme
+# un catalogue vide, en accusant à tort la structure du site. Sa forme
+# exacte n'a pas pu être observée d'ici, le site ne la sert jamais en
+# local : d'où la parade de _page sur le contenu attendu.
+#
+# Relevé sur les 43 passages du workflow du 7 au 30 septembre 2026 : 13
+# échecs, jamais en local. 11 dès /actuellement/. Les 2 autres ont lu le
+# catalogue, puis plus une seule séance sur la minute de pages spectacle
+# qui suivait : un refus installé tient donc au moins une minute, d'où la
+# première attente. Aucun lien avec la région du runner, et les refus
+# viennent par vagues : 4 passages sur 4 du 8 au 10 septembre, puis 0 sur
+# 15.
+#
+# On ne cherche PAS à franchir la vérification : c'est une protection que
+# le site a voulue, et l'UA reste franc. On redemande plus tard, puis on
+# renonce en le disant, et le garde-fou d'aggregate.py reprend le
+# programme de la veille. Les attentes forment un budget COMMUN à tout le
+# passage : un refus installé coûte trois minutes, pas trois par page.
+ATTENTES_VERIFICATION = (60, 120)
+
 MOIS = {"janvier": 1, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
         "juin": 6, "juillet": 7, "aout": 8, "septembre": 9,
         "octobre": 10, "novembre": 11, "decembre": 12}
@@ -101,14 +126,61 @@ def _image(item) -> Optional[str]:
     return url if url.startswith("http") else None
 
 
-def _catalogue(session: requests.Session) -> List[dict]:
+class VerificationAntiRobot(RuntimeError):
+    """L'hébergeur a servi sa vérification anti-robot au lieu de la page."""
+
+
+def _verification(r: requests.Response) -> bool:
+    """La réponse est-elle la vérification de SiteGround, et non la page ?
+
+    Trois signes, dont aucun ne paraît sur les 75 vraies pages relevées à
+    l'écriture — toutes en 200, de 240 à 580 Ko : le code 202, l'en-tête
+    sg-captcha, le chemin sgcaptcha dans le corps.
+    """
+    return (r.status_code == 202 or "sg-captcha" in r.headers
+            or b"sgcaptcha" in r.content)
+
+
+def _page(session: requests.Session, url: str, attentes: list,
+          attendu: Optional[str] = None) -> requests.Response:
+    """GET qui reconnaît la vérification anti-robot et redemande plus tard.
+
+    Chaque nouvel essai consomme une attente du budget `attentes`, partagé
+    par tout le passage. Une page privée de `attendu`, quand on le donne,
+    est redemandée de même : c'est la parade si la vérification changeait
+    de forme. Budget épuisé, la vérification lève VerificationAntiRobot ;
+    une page seulement privée de l'attendu est rendue, et l'appelant juge.
+    """
+    essai = 0
+    while True:
+        essai += 1
+        r = session.get(url, headers=HEADERS, timeout=30)
+        r.raise_for_status()
+        refus = _verification(r)
+        if not refus and (attendu is None or attendu.encode() in r.content):
+            return r
+        if not attentes:
+            if refus:
+                raise VerificationAntiRobot(
+                    f"vérification anti-robot de l'hébergeur (HTTP "
+                    f"{r.status_code}) au lieu de {url}, {essai} essai(s)")
+            return r
+        pause = attentes.pop(0)
+        quoi = ("vérification anti-robot de l'hébergeur" if refus
+                else "page sans le contenu attendu")
+        print(f"[Le Complexe] {url} : {quoi} (HTTP {r.status_code}, "
+              f"{len(r.content)} octets), nouvel essai dans {pause} s",
+              file=sys.stderr)
+        time.sleep(pause)
+
+
+def _catalogue(session: requests.Session, attentes: list) -> List[dict]:
     """Spectacles du catalogue, avec leur plage de dates annotée d'années.
 
     On écarte les entrées de l'accordéon : ce sont les séances des sept
     prochains jours, et leur date ne porte pas d'année.
     """
-    r = session.get(LISTING, headers=HEADERS, timeout=30)
-    r.raise_for_status()
+    r = _page(session, LISTING, attentes, attendu="tly_productItem")
     soup = BeautifulSoup(r.text, "html.parser")
 
     out = []
@@ -148,15 +220,14 @@ def _catalogue(session: requests.Session) -> List[dict]:
 
 
 def _seances(session: requests.Session, url: str,
-             annee: int, tag: str) -> List[tuple]:
+             annee: int, tag: str, attentes: list) -> List[tuple]:
     """(date ISO, heure) de chaque représentation d'un spectacle.
 
     La sélection est cadrée sur la table des représentations : la classe
     .tly_productDate sert aussi aux plages du catalogue et pourrait
     apparaître dans d'éventuels blocs de spectacles liés.
     """
-    r = session.get(url, headers=HEADERS, timeout=30)
-    r.raise_for_status()
+    r = _page(session, url, attentes)
     soup = BeautifulSoup(r.text, "html.parser")
 
     blocs = soup.select(".tly_productDatesTable .tly_productDate")
@@ -201,7 +272,8 @@ def fetch() -> List[Event]:
     today_iso = today.isoformat()
 
     session = requests.Session()
-    shows = _catalogue(session)
+    attentes = list(ATTENTES_VERIFICATION)
+    shows = _catalogue(session, attentes)
     if not shows:
         # Page lisible mais catalogue vide : la structure a changé. On le
         # signale, plutôt que de rendre une liste vide silencieuse
@@ -217,9 +289,13 @@ def fetch() -> List[Event]:
             time.sleep(MIN_INTERVAL)
         try:
             seances = _seances(session, show["url"], show["annee"],
-                               "Le Complexe")
+                               "Le Complexe", attentes)
         except requests.RequestException as exc:
-            # Une page qui tombe ne doit pas emporter les autres.
+            # Une page qui tombe ne doit pas emporter les autres. La
+            # vérification anti-robot, elle, n'est pas attrapée ici :
+            # installée, elle refuserait aussi toutes les suivantes. Elle
+            # remonte, et le programme de la veille est repris EN ENTIER
+            # plutôt qu'un programme troué publié comme complet.
             print(f"[Le Complexe] {show['url']}: {exc}", file=sys.stderr)
             illisibles += 1
             continue
