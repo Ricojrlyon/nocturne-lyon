@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T18:53:20.003868+00:00",
+  "generated_at": "2026-10-02T19:14:51.778216+00:00",
   "count": 2975,
   "sources": 37,
   "events": [
@@ -744,20 +744,6 @@
       "image": "https://agenda.villemorte.fr/media/thumb/a764a91b0084f82c92d90f14ee375d3d.jpg",
       "offsite_venue": null,
       "id": "1582fc623ac6"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "SITCOM",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-10-02",
-      "date_end": null,
-      "time": "21:00",
-      "url": "https://improvidence.mapado.com/event/619242-sitcom",
-      "image": "https://img.mapado.net/2025/9/4/68b957ca950ae-sitcom-1.jpeg_thumbs/600-600.jpeg",
-      "offsite_venue": null,
-      "id": "25f3eef5c00e"
     },
     {
       "venue": "Le Sonic",
@@ -4818,6 +4804,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/chloe-drouet-rode-540x800.jpg",
       "offsite_venue": null,
       "id": "5ad358938402"
+    },
+    {
+      "venue": "Les Clameurs",
+      "venue_slug": "les-clameurs",
+      "title": "Soirée de soutien des Clameurs - DJ SET DARK DISCO TRANCE",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-10-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://agenda.villemorte.fr/event/soiree-de-soutien-des-clameurs-dj-set-dark-disco-trance",
+      "image": "https://agenda.villemorte.fr/media/thumb/85fb85dda3f99465c39a85ef386462c0.jpg",
+      "offsite_venue": null,
+      "id": "ec8f919c92af"
     },
     {
       "venue": "Marché Gare",
