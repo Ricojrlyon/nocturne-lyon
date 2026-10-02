@@ -69,6 +69,63 @@ class DatesDuPetitBulletin(unittest.TestCase):
                           ("2026-10-15", "19:00", None),
                           ("2026-10-16", "19:00", None)])
 
+    def test_plage_courte_seulement_les_jours_nommes(self):
+        # BUG-18. Le TNG ne propose ce parcours que le mercredi et le samedi.
+        self.assertEqual(self.lire("Du 4 au 7 novembre 2026, mercredi et samedi à 15h, "
+                                   "sur réservation"),
+                         [("2026-11-04", "15:00", None), ("2026-11-07", "15:00", None)])
+
+    def test_plage_courte_relache_du_lundi_et_heure_de_chaque_jour(self):
+        # « Pétrole » aux Célestins : pas de représentation le lundi 30.
+        self.assertEqual(self.lire("Du 26 novembre au 2 décembre 2026, du mardi au vendredi "
+                                   "à 19h30, samedi à 19h, dimanche à 16h"),
+                         [("2026-11-26", "19:30", None), ("2026-11-27", "19:30", None),
+                          ("2026-11-28", "19:00", None), ("2026-11-29", "16:00", None),
+                          ("2026-12-01", "19:30", None), ("2026-12-02", "19:30", None)])
+
+    def test_plage_courte_relache_nommee(self):
+        self.assertEqual(self.lire("Du 4 au 7 novembre 2026, à 20h45, relâche le jeudi"),
+                         [("2026-11-04", "20:45", None), ("2026-11-06", "20:45", None),
+                          ("2026-11-07", "20:45", None)])
+
+    def test_plage_courte_sauf_change_l_heure_sans_oter_le_jour(self):
+        self.assertEqual(self.lire("Du 7 au 10 octobre 2026, à 20h30 sauf samedi à 21h15"),
+                         [("2026-10-07", "20:30", None), ("2026-10-08", "20:30", None),
+                          ("2026-10-09", "20:30", None), ("2026-10-10", "21:15", None)])
+
+    def test_plage_courte_sauf_plusieurs_jours_a_une_autre_heure(self):
+        self.assertEqual(self.lire("Du 5 au 9 octobre 2026, à 19h sauf lundi et mardi à 20h"),
+                         [("2026-10-05", "20:00", None), ("2026-10-06", "20:00", None),
+                          ("2026-10-07", "19:00", None), ("2026-10-08", "19:00", None),
+                          ("2026-10-09", "19:00", None)])
+
+    def test_plage_courte_jours_de_la_semaine_a_cheval(self):
+        self.assertEqual(self.lire("Du 2 au 8 octobre 2026, du samedi au lundi à 20h"),
+                         [("2026-10-03", "20:00", None), ("2026-10-04", "20:00", None),
+                          ("2026-10-05", "20:00", None)])
+
+    def test_plage_courte_tournure_inconnue_rien_n_est_ote(self):
+        # « samedi à midi » ne se lit pas : mieux vaut une séance de trop que
+        # la vraie du samedi perdue.
+        self.assertEqual([d for d, _, _ in self.lire("Du 7 au 10 octobre 2026, mercredi à 20h, "
+                                                     "samedi à midi")],
+                         ["2026-10-07", "2026-10-08", "2026-10-09", "2026-10-10"])
+
+    def test_plage_courte_date_dans_les_horaires_rien_n_est_ote(self):
+        self.assertEqual([d for d, _, _ in self.lire("Du 4 au 7 novembre 2026, mercredi à 20h, "
+                                                     "7 novembre à 15h")],
+                         ["2026-11-04", "2026-11-05", "2026-11-06", "2026-11-07"])
+
+    def test_plage_courte_sauf_sans_heure_commune_rien_n_est_ote(self):
+        # Le lundi est-il ôté, ou joué à 20h ? Dans le doute, on n'ôte rien.
+        self.assertEqual([d for d, _, _ in self.lire("Du 5 au 9 octobre 2026, tous les jours "
+                                                     "sauf le lundi à 20h")],
+                         ["2026-10-05", "2026-10-06", "2026-10-07", "2026-10-08", "2026-10-09"])
+
+    def test_plage_courte_aucun_jour_de_la_plage_nomme_rien_n_est_ote(self):
+        self.assertEqual([d for d, _, _ in self.lire("Du 7 au 9 octobre 2026, samedi à 20h")],
+                         ["2026-10-07", "2026-10-08", "2026-10-09"])
+
     def test_plage_longue_un_seul_evenement(self):
         self.assertEqual(self.lire("Du 1 au 30 novembre 2026"),
                          [("2026-11-01", None, "2026-11-30")])

@@ -26,7 +26,8 @@ L'agenda est paginé (`?p=N`) et fetch() suit toutes les pages.
 
 Dates :
   * jour unique          → un Event
-  * plage ≤ 7 jours      → un Event par jour (petits festivals)
+  * plage ≤ 7 jours      → un Event par jour (petits festivals) ; seulement
+                           les jours de jeu quand le texte les nomme
   * plage > 7 jours      → UN Event à plage (date_start..date_end)
   * « Jusqu'au X »       → UN Event à plage, du jour courant à X
 Rien n'est jeté : le frontend déploie les plages sur chacun de leurs
@@ -141,12 +142,101 @@ def _jour_de(annee: int, mois: int, jour: int) -> Optional[str]:
         return None
 
 
+# Les horaires d'une plage courte, lus dans le texte normalisé (sans accents
+# ni ponctuation) : « du mardi au vendredi a 19h30 samedi a 19h ».
+_NOM = r"(lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)s?"
+_JOUR = r"(?:lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)s?"
+_GROUPE = r"(?:du\s+{j}\s+au\s+{j}|{j})(?:\s+(?:et\s+)?(?:du\s+{j}\s+au\s+{j}|{j}))*".format(j=_JOUR)
+# « mardi et jeudi a 19h30 », « du mardi au vendredi a 19h30 », « samedi de 11h a 18h »
+_CRENEAU = re.compile(r"\b(" + _GROUPE + r")\s+(?:a|de)\s+(\d{1,2})h(\d{0,2})\b")
+# « relache le jeudi », « sauf le lundi » ; mais pas « sauf samedi a 21h15 »,
+# qui change l'heure du samedi sans l'ôter.
+_RELACHE = re.compile(r"\b(?:relache|sauf)\s+(?:les?\s+)?(" + _GROUPE + r")\b"
+                      r"(?!\s+(?:(?:et\s+)?(?:du\s+)?" + _JOUR + r"|(?:a|de)\s+\d))")
+_MOIS_NOMME = re.compile(r"\b(?:janvier|fevrier|mars|avril|mai|juin|juillet|aout|"
+                         r"septembre|octobre|novembre|decembre)\b")
+
+
+def _hhmm(hh: str, mm: str) -> Optional[str]:
+    """« 19 », « 30 » -> « 19:30 » ; None pour une heure qui n'existe pas."""
+    h, m = int(hh), int(mm or 0)
+    return f"{h:02d}:{m:02d}" if h < 24 and m < 60 else None
+
+
+def _jours_du_groupe(groupe: str) -> set:
+    """Les jours (0 = lundi) de « mardi et jeudi », « du mardi au vendredi »."""
+    jours = set()
+    for debut, fin in re.findall(r"\bdu\s+" + _NOM + r"\s+au\s+" + _NOM, groupe):
+        i, j = _JOURS_FR.index(debut), _JOURS_FR.index(fin)
+        jours.add(i)
+        while i != j:
+            i = (i + 1) % 7
+            jours.add(i)
+    reste = re.sub(r"\bdu\s+" + _JOUR + r"\s+au\s+" + _JOUR, " ", groupe)
+    jours.update(_JOURS_FR.index(n) for n in re.findall(r"\b" + _NOM + r"\b", reste))
+    return jours
+
+
+def _jours_de_jeu(horaires: str) -> Tuple[Optional[set], dict, Optional[str]]:
+    """Les jours où se joue une plage courte, et l'heure de chacun (BUG-18).
+
+    `horaires` est le texte normalisé qui suit la plage. Rend (jours, heures,
+    heure_commune) : les jours de la semaine joués (0 = lundi), ou None quand
+    le texte ne les restreint pas ; l'heure de chaque jour nommé ; l'heure
+    des autres jours.
+
+      « mercredi et samedi a 15h »         mercredi et samedi seulement
+      « du mardi au vendredi a 19h30
+        samedi a 19h dimanche a 16h »      pas le lundi (relâche)
+      « a 20h30 sauf samedi a 21h15 »      tous les jours, samedi à 21h15
+      « a 20h45 relache le jeudi »         tous les jours sauf le jeudi
+
+    Devant une tournure inconnue — un jour nommé hors d'un horaire
+    (« rencontre jeudi », « samedi à midi »), une date (« 7 novembre à
+    15h »), un « sauf le lundi à 20h » sans heure commune —, on n'ôte rien :
+    mieux vaut une séance de trop qu'une vraie séance perdue.
+    """
+    rien = (None, {}, None)
+    if _MOIS_NOMME.search(horaires):
+        return rien
+    creneaux = list(_CRENEAU.finditer(horaires))
+    relaches = list(_RELACHE.finditer(horaires))
+    zones = [m.span() for m in creneaux + relaches]
+    if any(not any(a <= n.start() < b for a, b in zones)
+           for n in re.finditer(r"\b" + _JOUR + r"\b", horaires)):
+        return rien
+    heure = re.search(r"\b(\d{1,2})h(\d{0,2})\b", horaires)
+    commune = None
+    if heure and (not creneaux or heure.start() < creneaux[0].start()):
+        commune = _hhmm(heure.group(1), heure.group(2))
+    if commune is None and any(re.search(r"\bsauf(?:\s+les?)?\s*$", horaires[:m.start()])
+                               for m in creneaux):
+        return rien
+    nommes, heures = set(), {}
+    for m in creneaux:
+        h = _hhmm(m.group(2), m.group(3))
+        for j in _jours_du_groupe(m.group(1)):
+            nommes.add(j)
+            if h:
+                heures.setdefault(j, h)
+    exclus = set()
+    for m in relaches:
+        exclus |= _jours_du_groupe(m.group(1))
+    if commune or not creneaux:
+        jours = (set(range(7)) - exclus) if exclus else None
+    else:
+        jours = nommes - exclus
+    return jours, heures, commune
+
+
 def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
     """Parse une chaîne de date du Petit Bulletin.
 
     Renvoie une LISTE de triplets (date_start, heure, date_end) :
       "Mardi 26 mai 2026 à 20h"        -> [("2026-05-26", "20:00", None)]
       "Du 26 au 28 mai 2026, à 19h"    -> 3 entrées, date_end None
+      "Du 26 au 30 mai 2026, mardi et jeudi à 19h30, samedi à 19h"
+                                       -> le 26 et le 28 à 19h30, le 30 à 19h
       "Du 1 au 30 juin 2026"           -> [("2026-06-01", None, "2026-06-30")]
       "Jusqu'au 16 août 2026, ..."     -> [(aujourd'hui, None, "2026-08-16")]
       "Samedi 30 mai et Dimanche 31 mai à 20h"
@@ -200,7 +290,8 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
             pass
         return y
 
-    def _expand(start: date, end: date) -> List[Tuple[str, Optional[str], Optional[str]]]:
+    def _expand(start: date, end: date,
+                horaires: str = "") -> List[Tuple[str, Optional[str], Optional[str]]]:
         """Plage courte -> un événement par jour ; longue -> un seul à plage."""
         if end < start:
             return []
@@ -210,13 +301,18 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
             # l'afficher — avec un badge « en cours » au-delà de 30 jours.
             eff = max(start, today)
             return [(eff.isoformat(), time_str, end.isoformat())]
-        out = []
-        d = start
-        while d <= end:
-            if d.isoformat() >= today_iso:
-                out.append((d.isoformat(), time_str, None))
-            d += timedelta(days=1)
-        return out
+        # BUG-18 : chaque jour de la plage devenait une séance, relâche
+        # comprise. « Pétrole », du 26 novembre au 2 décembre « du mardi au
+        # vendredi à 19h30, samedi à 19h, dimanche à 16h », était aussi
+        # publié le lundi 30, et à 19h30 le dimanche. On ne garde que les
+        # jours de jeu que le texte nomme, chacun à son heure.
+        jours, heures, commune = _jours_de_jeu(horaires)
+        plage = [start + timedelta(days=i) for i in range((end - start).days + 1)]
+        if jours is not None and not any(d.weekday() in jours for d in plage):
+            jours = None        # aucun jour de la plage n'est nommé : on n'ôte rien
+        return [(d.isoformat(), heures.get(d.weekday(), commune or time_str), None)
+                for d in plage
+                if d.isoformat() >= today_iso and (jours is None or d.weekday() in jours)]
 
     has_du_range = bool(re.search(
         r"\bdu\s+\d+(?:er)?\s+(?:\w+\s+)?au\s+\d+(?:er)?\s", norm))
@@ -243,7 +339,7 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
         d1, d2, month = int(m.group(1)), int(m.group(2)), MONTHS_FR[m.group(3)]
         year = _year_for(month, d1, m.group(4))
         try:
-            return _expand(date(year, month, d1), date(year, month, d2))
+            return _expand(date(year, month, d1), date(year, month, d2), norm[m.end():])
         except ValueError:
             return []
 
@@ -258,7 +354,7 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
         # "du 30 decembre au 2 janvier 2027" : l'année écrite est celle de la fin.
         year_start = year_end - 1 if m1 > m2 else year_end
         try:
-            return _expand(date(year_start, m1, d1), date(year_end, m2, d2))
+            return _expand(date(year_start, m1, d1), date(year_end, m2, d2), norm[m.end():])
         except ValueError:
             return []
 
