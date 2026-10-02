@@ -148,6 +148,36 @@ def _annee_par_jour_semaine(jour_nom: str, jj: int, mois: int,
     return None
 
 
+def _suite_des_mois(nommes: List[int]) -> List[int]:
+    """« SEPTEMBRE - NOVEMBRE » est une période : septembre, octobre ET
+    novembre. Les mois sont dépliés entre deux mois nommés (BUG-22)."""
+    suite: List[int] = []
+    for m in nommes:
+        while suite and suite[-1] != m and len(suite) < 12:
+            suite.append(suite[-1] % 12 + 1)
+        if not suite or suite[-1] != m:
+            suite.append(m)
+    return suite
+
+
+_SAISON = re.compile(r"saison(\d{4})-(\d{4})")
+
+
+def _concorde(jour_nom: str, jj: int, mois: int, url: str) -> bool:
+    """Le jour de la semaine tombe-t-il juste ce mois-là ? L'année est celle
+    de la saison que porte l'adresse de la fiche (« saison2026-2027 »)
+    — d'août à décembre la première, de janvier à juillet la seconde. Sans
+    saison lisible, on ne sait pas : la réponse est oui."""
+    s = _SAISON.search(url or "")
+    if not s:
+        return True
+    an = int(s.group(1)) if mois >= 8 else int(s.group(2))
+    try:
+        return JOURS[Date(an, mois, jj).weekday()] == jour_nom
+    except ValueError:
+        return False
+
+
 def _lire_fiche(url: str) -> Optional[dict]:
     """Lieu et représentations d'un spectacle. Rendu à detail_cache."""
     # Le délai demandé par robots.txt, posé ici pour ne frapper que les
@@ -176,7 +206,11 @@ def _lire_fiche(url: str) -> Optional[dict]:
         # et l'on avance au mois suivant dès que le quantième recule.
         # Sans ça, les longues séries ne rendaient aucune séance : trois
         # spectacles perdus en silence, dont Slava's Snowshow.
-        mois_liste = [n for n in (_mois(m) for m in _MOT.findall(etiquette)) if n]
+        # Les deux mois nommés bornent une PÉRIODE (BUG-22) : « SEPTEMBRE -
+        # NOVEMBRE » couvre aussi octobre, et les lundis 5 et 12 octobre
+        # des Ateliers singuliers, lus en novembre, étaient perdus.
+        mois_liste = _suite_des_mois(
+            [n for n in (_mois(m) for m in _MOT.findall(etiquette)) if n])
         if not mois_liste:
             continue
         rang, precedent, jour_precedent = 0, None, None
@@ -199,6 +233,13 @@ def _lire_fiche(url: str) -> Optional[dict]:
                     and (jj < precedent
                          or (jj == precedent and jour_nom != jour_precedent))):
                 rang += 1
+            # Une série peut aussi SAUTER un mois de sa période — « OCTOBRE -
+            # DÉCEMBRE » sans séance en novembre. Le jour de la semaine
+            # désigne alors le bon parmi les suivants, sans jamais revenir
+            # en arrière : un samedi 5 est en décembre 2026, pas en novembre.
+            if not _concorde(jour_nom, jj, mois_liste[rang], url):
+                rang = next((k for k in range(rang + 1, len(mois_liste))
+                             if _concorde(jour_nom, jj, mois_liste[k], url)), rang)
             precedent, jour_precedent = jj, jour_nom
             heure = None
             for c in cellules[1:]:
