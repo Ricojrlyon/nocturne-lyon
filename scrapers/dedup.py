@@ -21,7 +21,7 @@ from datetime import date, timedelta
 from difflib import SequenceMatcher
 from typing import List, Tuple
 
-from .base import Event
+from .base import Event, OFFSITE_PLUSIEURS
 
 
 # ============================================================================
@@ -199,6 +199,20 @@ def _venue_key(venue: str) -> str:
     return _normalize_text(canonical_venue_name(venue))
 
 
+def _salle_reelle(ev: Event) -> str:
+    """La salle où l'on va : celle du hors-les-murs quand elle est connue.
+
+    BUG-15 : l'Opéra joue « Quatuor Béla » au Théâtre de La Renaissance, et
+    le Petit Bulletin annonce le même concert à la Renaissance. Groupés
+    chacun sous leur `venue`, les deux ne se croisaient pas en passe 1, et
+    la passe 2 écarte les titres courts : deux cartes pour un concert.
+    OFFSITE_PLUSIEURS ne désigne aucune salle : on garde alors le `venue`.
+    """
+    if ev.offsite_venue and ev.offsite_venue != OFFSITE_PLUSIEURS:
+        return ev.offsite_venue
+    return ev.venue
+
+
 def _title_similarity(a: str, b: str) -> float:
     """Fuzzy title similarity in [0, 1].
 
@@ -213,7 +227,19 @@ def _title_similarity(a: str, b: str) -> float:
     if len(na) >= 4 and len(nb) >= 4:
         if (f" {na} " in f" {nb} ") or (f" {nb} " in f" {na} "):
             return 1.0
+    # Un titre qui n'est autre que le titre CITÉ de l'autre (BUG-15) :
+    # l'Opéra écrit « The Very Big Experimental Toubifri Orchestra "Le
+    # Lac" », le Petit Bulletin « Le Lac » — réduit à « lac », sous les
+    # quatre lettres du test d'inclusion.
+    for long_, court in ((a, nb), (b, na)):
+        if any(_normalize_text(m.group(1)) == court
+               for m in _TITRE_CITE.finditer(long_)):
+            return 1.0
     return SequenceMatcher(None, na, nb).ratio()
+
+
+# Le titre d'un spectacle cité dans un titre plus long : « Artiste "Titre" ».
+_TITRE_CITE = re.compile(r'["«“]\s*([^"»”]+?)\s*["»”]')
 
 
 # Titles that legitimately recur at several venues on the same day —
@@ -373,7 +399,8 @@ def _primary_dedup(tagged_events: List[Tuple[Event, int]]) -> List[Tuple[Event, 
     groups: dict[tuple[str, str], list[tuple[Event, int]]] = defaultdict(list)
     for ev, prio in tagged_events:
         for day_iso in _days_covered(ev):
-            groups[(_venue_key(ev.venue), day_iso)].append((ev, prio))
+            # Un hors-les-murs se range sous la salle où il se joue (BUG-15).
+            groups[(_venue_key(_salle_reelle(ev)), day_iso)].append((ev, prio))
 
     result: List[Tuple[Event, int]] = []
     emitted_ids: set[int] = set()

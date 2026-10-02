@@ -3,6 +3,7 @@ qui ne le doit pas. Priorités : salle 100, Petit Bulletin 60, Ville Morte 50.""
 import unittest
 from datetime import date, timedelta
 
+from scrapers.base import OFFSITE_PLUSIEURS
 from scrapers.dedup import canonical_venue_name, deduplicate
 from tests.outils import evenement
 
@@ -52,6 +53,46 @@ class PremierePasse(unittest.TestCase):
                           J + timedelta(days=2), heure=None, url=PB % 3)
         out = deduplicate([(plage, 100), (jour3, 60)])
         self.assertEqual([e.url for e in out], [plage.url])
+
+
+class HorsLesMurs(unittest.TestCase):
+    """Un hors-les-murs se range, en passe 1, sous la salle où il se joue
+    (BUG-15) : l'Opéra au Théâtre de La Renaissance, que le Petit Bulletin
+    annonce à la Renaissance."""
+
+    def opera(self, titre, heure="19:00", salle="Théâtre de La Renaissance"):
+        ev = evenement("Opéra national de Lyon", titre, J, heure=heure)
+        ev.offsite_venue = salle
+        return ev
+
+    def test_meme_concert_annonce_a_sa_salle_reelle(self):
+        # « Quatuor Béla » est trop court pour la passe 2, entre deux lieux.
+        op = self.opera("Quatuor Béla")
+        pb = evenement("Théâtre de la Renaissance", "Quatuor Béla", J, heure="19:00", url=PB % 10)
+        out = deduplicate([(op, 100), (pb, 60)])
+        self.assertEqual([(e.venue, e.offsite_venue, e.url) for e in out],
+                         [("Opéra national de Lyon", "Théâtre de La Renaissance", op.url)])
+
+    def test_un_titre_qui_est_le_titre_cite_de_l_autre(self):
+        op = self.opera('The Very Big Experimental Toubifri Orchestra "Le Lac"', heure="20:00")
+        pb = evenement("Théâtre de la Renaissance", "Le Lac", J, heure="20:30", url=PB % 11)
+        out = deduplicate([(op, 100), (pb, 60)])
+        self.assertEqual([(e.title, e.time) for e in out], [(op.title, "20:00")])
+
+    def test_le_titre_cite_ne_traverse_pas_les_lieux(self):
+        # Entre deux lieux, un titre court reste à part : la règle du titre
+        # cité ne joue que dans une même salle, un même jour.
+        a = evenement("Le Sucre", 'DJ X "Le Lac"', J, heure="23:00")
+        b = evenement("Le Transbordeur", "Le Lac", J, heure="23:00", url=PB % 13)
+        self.assertEqual(len(deduplicate([(a, 100), (b, 60)])), 2)
+
+    def test_plusieurs_salles_ne_nomment_aucune_salle(self):
+        # OFFSITE_PLUSIEURS : deux productions en tournée le même soir ne se
+        # croisent pas pour autant sous une salle « ailleurs ».
+        a = self.opera("Gala lyrique", salle=OFFSITE_PLUSIEURS)
+        b = evenement("Auditorium de Lyon", "Gala lyrique", J, heure="19:00")
+        b.offsite_venue = OFFSITE_PLUSIEURS
+        self.assertEqual(len(deduplicate([(a, 100), (b, 100)])), 2)
 
 
 class DeuxiemePasse(unittest.TestCase):
