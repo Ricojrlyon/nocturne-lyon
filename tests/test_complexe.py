@@ -74,10 +74,35 @@ class LectureDuSite(unittest.TestCase):
     def test_seances_annee_roulee_et_jour_controle(self):
         site = FauxSite({A: PAGE_A})
         journal = io.StringIO()
-        with contextlib.redirect_stderr(journal):
+        with mock.patch.object(complexe, "Date", date_figee(date(2026, 10, 1))), \
+                contextlib.redirect_stderr(journal):
             out = complexe._seances(site, A, 2026, "Le Complexe", [])
         self.assertEqual(out, [("2026-12-31", "20:30"), ("2027-01-01", "21:00")])
         self.assertIn("1 séance(s) écartée(s)", journal.getvalue())
+
+    def test_seances_apres_le_nouvel_an_seulement(self):
+        # BUG-12 : la page ne garde que les séances à venir. Plage « du
+        # 23/09/2026 au 20/01/2027 », année 2026 : il ne restait à Jules
+        # Robin que « mercredi 20 janvier », écartée à chaque passage — et
+        # au 1er janvier, tous les spectacles à cheval sur deux ans
+        # perdaient ainsi leurs séances de l'année neuve.
+        cas = [
+            (date(2026, 10, 1), [("Mercredi 20 janvier", "20h30")], [("2027-01-20", "20:30")]),
+            (date(2027, 1, 5), [("Vendredi 8 janvier", "20h00"), ("Samedi 9 janvier", "20h00"),
+                                ("Mardi 2 février", "19h30")],
+             [("2027-01-08", "20:00"), ("2027-01-09", "20:00"), ("2027-02-02", "19:30")]),
+            # Passée de moins de quinze jours, pas encore retirée : même année.
+            (date(2026, 10, 1), [("Mardi 29 septembre", "20h00")], [("2026-09-29", "20:00")]),
+            # Le contrôle du jour garde le dernier mot : le 20 janvier 2027
+            # est un mercredi, pas un lundi.
+            (date(2026, 10, 1), [("Lundi 20 janvier", "20h30")], []),
+        ]
+        for jour, lignes, attendu in cas:
+            site = FauxSite({A: seances(*lignes)})
+            with mock.patch.object(complexe, "Date", date_figee(jour)), \
+                    contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(complexe._seances(site, A, 2026, "Le Complexe", []), attendu,
+                                 "au %s" % jour)
 
 
 class VerificationAntiRobot(unittest.TestCase):

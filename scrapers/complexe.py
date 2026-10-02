@@ -22,10 +22,11 @@ Deux étapes :
      .tly_day (date française SANS année), .tly_hour, et la salle.
 
 L'année est déduite de la plage du catalogue, puis roulée dès que le mois
-recule d'une séance à la suivante. Le nom du JOUR DE LA SEMAINE sert de
-contrôle : si la date calculée ne tombe pas ce jour-là, la déduction est
-fausse et la séance est écartée plutôt que publiée de travers. Mesuré à
-l'écriture : 214 séances sur 214 validées.
+recule d'une séance à la suivante — ou d'entrée, quand la première séance
+est déjà passée de loin (voir _passee_de_loin). Le nom du JOUR DE LA
+SEMAINE sert de contrôle : si la date calculée ne tombe pas ce jour-là, la
+déduction est fausse et la séance est écartée plutôt que publiée de
+travers. Mesuré à l'écriture : 214 séances sur 214 validées.
 """
 from __future__ import annotations
 
@@ -228,6 +229,24 @@ def _catalogue(session: requests.Session, attentes: list) -> List[dict]:
     return list(par_url.values())
 
 
+def _passee_de_loin(annee: int, mois: int, jj: int) -> bool:
+    """La date tombe-t-elle plus de quinze jours avant aujourd'hui ?
+
+    La page d'un spectacle ne garde que les séances à venir. Quand il n'en
+    reste qu'après le Nouvel An, l'année de début de la plage ne vaut plus
+    — « du 23/09/2026 au 20/01/2027 » donnait 2026 — et aucun mois ne
+    recule pour la faire rouler : le 20 janvier de Jules Robin tombait en
+    2026, et le contrôle du jour l'écartait à chaque passage. Une PREMIÈRE
+    séance déjà passée de loin est donc celle de l'année suivante. Les
+    quinze jours de grâce (comme tng.py) gardent à son année une séance
+    tout juste passée que la page n'a pas encore retirée.
+    """
+    try:
+        return (Date.today() - Date(annee, mois, jj)).days > 15
+    except ValueError:
+        return False
+
+
 def _seances(session: requests.Session, url: str,
              annee: int, tag: str, attentes: list) -> List[tuple]:
     """(date ISO, heure) de chaque représentation d'un spectacle.
@@ -253,6 +272,8 @@ def _seances(session: requests.Session, url: str,
             continue
         if precedent and (mois, jj) < precedent:
             annee += 1                   # le mois recule : année suivante
+        elif precedent is None and _passee_de_loin(annee, mois, jj):
+            annee += 1                   # déjà passée : année suivante
         precedent = (mois, jj)
         try:
             d = Date(annee, mois, jj)
