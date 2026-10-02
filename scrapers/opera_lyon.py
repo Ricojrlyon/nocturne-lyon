@@ -70,7 +70,10 @@ URL_CATEGORY_MAP = {
     "danse": "danse",
     "concert": "concert",
     "evenement": "événement",
-    "opera-underground": "underground",
+    # Une série de concerts — Quatuor Béla, Leïla Martial, le CNSMD. Le
+    # nom de la série, « underground », n'est pas un genre que la page
+    # sache ranger : ses concerts tombaient dans « autres » (BUG-23).
+    "opera-underground": "concert",
     "conference": "conférence",
     "visites": "visite",
     "festival": "festival",

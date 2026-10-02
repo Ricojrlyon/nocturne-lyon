@@ -65,6 +65,14 @@ HEADERS = {
 # l'emporter sur « cirque ».
 PUBLICS = ("pour les", "en famille", "jeune public", "tout public")
 
+# Termes qui précisent une forme sans dire le genre, et que la page ne sait
+# pas ranger. Pris en premier, ils envoyaient « Nelvar » (« heroic
+# fantasy », « théâtre ») dans la famille « autres » (BUG-23). Ils cèdent
+# la place au genre que la fiche porte aussi — sur la saison 2026-2027,
+# chacun de ces spectacles porte « théâtre » ou « cabaret ».
+PRECISIONS = ("bruitages", "confidences", "heroic fantasy", "masque", "radio",
+              "revue")
+
 MOIS_CANON = ("janvier", "fevrier", "mars", "avril", "mai", "juin",
               "juillet", "aout", "septembre", "octobre", "novembre",
               "decembre")
@@ -201,11 +209,10 @@ def _lire_fiche(url: str) -> Optional[dict]:
 
 
 def _categorie(ids: List[int], noms: Dict[int, str]) -> Optional[str]:
-    for i in ids or []:
-        nom = _texte(noms.get(i))
-        if nom and not any(p in _norm(nom) for p in PUBLICS):
-            return nom
-    return None
+    genres = [n for n in (_texte(noms.get(i)) for i in ids or [])
+              if n and not any(p in _norm(n) for p in PUBLICS)]
+    return next((n for n in genres if _norm(n) not in PRECISIONS),
+                genres[0] if genres else None)
 
 
 def fetch() -> List[Event]:

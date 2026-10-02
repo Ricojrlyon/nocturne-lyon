@@ -39,8 +39,19 @@ DATE_TRIPLE = re.compile(
 
 CATEGORIES = (
     "Musique", "Chanson", "Humour", "Magie", "Théâtre", "Danse",
+    # « Cirque » manquait : Sans Regrets ?, The Genesis… restaient sans
+    # genre, rangés dans la famille « autres » (BUG-23).
+    "Cirque",
     "Famille", "Scolaires", "Club Bellevue", "Nouveauté",
 )
+
+
+def _categorie(text: str) -> Optional[str]:
+    """Le premier genre du site que nomme la carte, ou None."""
+    for kw in CATEGORIES:
+        if kw in text:
+            return kw.lower()
+    return None
 
 
 def _french_month_num(s: str) -> Optional[int]:
@@ -111,6 +122,7 @@ def fetch() -> List[Event]:
     # Pass 1: collect stubs from listing
     raw_stubs: List[dict] = []
     seen_urls: set = set()
+    stub_par_url: dict = {}
 
     for a in soup.select('a[href*="/spectacles/"]'):
         href = a.get("href", "")
@@ -121,6 +133,13 @@ def fetch() -> List[Event]:
         if "/spectacles/" not in href or href.endswith("/spectacles/"):
             continue
         if href in seen_urls:
+            # BUG-23 : la page montre un spectacle deux fois — le bandeau
+            # « à la une », SANS genre, puis la liste, avec (« Chanson
+            # ETIENNE DAHO … »). La première carte gardée, le genre se
+            # perdait, et le concert tombait dans la famille « autres ».
+            stub = stub_par_url.get(href)
+            if stub is not None and stub["category"] is None:
+                stub["category"] = _categorie(_find_card(a).get_text(" ", strip=True))
             continue
 
         card = _find_card(a)
@@ -169,11 +188,7 @@ def fetch() -> List[Event]:
         if not title or len(title) < 2:
             continue
 
-        category: Optional[str] = None
-        for kw in CATEGORIES:
-            if kw in text:
-                category = kw.lower()
-                break
+        category = _categorie(text)
 
         image: Optional[str] = None
         for img in card.find_all("img"):
@@ -187,6 +202,7 @@ def fetch() -> List[Event]:
             "title": title, "category": category,
             "url": href, "image": image,
         })
+        stub_par_url[href] = raw_stubs[-1]
 
     # Cap horizon: keep only dates within ~6 months and drop stubs with no
     # remaining date BEFORE the detail-page fetch phase — the homepage lists

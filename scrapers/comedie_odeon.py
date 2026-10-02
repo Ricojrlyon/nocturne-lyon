@@ -88,6 +88,19 @@ _TITRE_POP = re.compile(
     r'class="titlePop">(.*?)</span>.*?href="([^"]*/spectacle/[^"]+)"', re.S)
 
 
+def _genre(data_category: Optional[str]) -> Optional[str]:
+    """L'étiquette d'un spectacle, lue dans les jetons de sa carte."""
+    jetons = [j.lower() for j in (data_category or "").split()]
+    genre = next((GENRES[j] for j in jetons if j in GENRES), None)
+    if genre is None and "jeune-public" in jetons:
+        # BUG-23 : un spectacle pour enfants ne porte souvent QUE
+        # « jeune-public », qui dit le public et non le genre. Sans
+        # étiquette, « Le Petit Prince » tombait dans la famille « autres » ;
+        # « spectacle » le range dans la scène.
+        genre = "spectacle jeune public"
+    return genre
+
+
 def _heure(txt: str) -> Optional[str]:
     m = _HEURE.search(txt or "")
     return f"{int(m.group(1)):02d}:{m.group(2) or '00'}" if m else None
@@ -167,8 +180,7 @@ def fetch() -> List[Event]:
         cap = art.select_one(".dateCaption")
         resume = cap.get_text(" ", strip=True).replace("Voir plus", "") if cap else ""
         img = art.select_one("img.wp-post-image")
-        genre = next((GENRES[j] for j in (art.get("data-category") or "").split()
-                      if j.lower() in GENRES), None)
+        genre = _genre(art.get("data-category"))
         spectacles[a["href"]] = {
             "titre": _html.unescape(h2.get_text(" ", strip=True)),
             "image": img.get("src") if img else None,
