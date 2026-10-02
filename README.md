@@ -21,7 +21,11 @@ Le pipeline tourne quotidiennement à 04:17 UTC — 6 h 17 à Paris l'été,
 ([.github/workflows/update.yml](.github/workflows/update.yml)) et committe
 les trois fichiers de données. La minute est choisie creuse : programmé à
 l'heure pile, le passage partait chaque jour quatre à six heures en
-retard, GitHub retardant les tâches du début de l'heure.
+retard, GitHub retardant les tâches du début de l'heure. Un seul passage
+tourne à la fois : lancé à la main pendant le passage programmé, ou
+l'inverse, le second attend la fin du premier, puis repart du fil que
+celui-ci vient de publier — deux passages simultanés échouaient à la
+publication du second.
 
 - **`scrapers/*.py`** — un module par salle (`requests` + BeautifulSoup).
   Chaque module expose `fetch() -> List[Event]`. Les échecs d'une salle ne
@@ -164,6 +168,16 @@ retard, GitHub retardant les tâches du début de l'heure.
   machine. Les affiches viennent de l'`og:image` des fiches spectacle —
   dix-sept fiches pour cent vingt-trois représentations, le même
   spectacle se jouant dix à dix-sept fois.
+- **`scrapers/tng.py`** — le TNG. Les cartes du programme n'écrivent que
+  la plage d'un spectacle (« 02 > 06 oct. », le mois une seule fois),
+  relâches et séances scolaires comprises. Le scraper ouvre donc chaque
+  fiche et publie une date par séance TOUT PUBLIC : la liste scolaire,
+  réservée aux classes, est écartée comme à l'Auditorium, et le nom du
+  jour contrôle chaque date. Une séance à plus d'une semaine des dates de
+  la carte est une erreur de saisie de la fiche et n'est pas retenue ;
+  faute de séance, la carte fait foi. La fiche est relue à chaque
+  passage, sans le cache des heures : une séance ajoutée ou retirée se
+  voit dès le lendemain.
 - **`scrapers/beaux_arts.py`** — le Musée des Beaux-Arts. Drupal sans
   JSON:API, mais très régulier : une liste paginée qui porte le type de
   chaque rendez-vous, et une fiche où chaque séance occupe sa ligne,
@@ -216,11 +230,32 @@ retard, GitHub retardant les tâches du début de l'heure.
   Ville Morte (API Gancio). Priorité inférieure aux scrapers venue : en cas
   de doublon, le scraper de la salle gagne l'identité et hérite des champs
   manquants (heure, catégorie…).
+  Le Petit Bulletin écrit ses dates en toutes lettres, et leur lecture a
+  ses règles, chacune payée d'une erreur publiée :
+  - toutes les dates d'une annonce comptent (« Jeudi 1 octobre et
+    Vendredi 2 octobre »), chacune à l'heure de son jour quand le texte
+    en donne une (« jeudi à 20h, vendredi à 18h ») ;
+  - le jour de la semaine fixe l'année ; sans lui, une date passée de
+    moins de quinze jours reste dans l'année en cours — « jeudi 1
+    octobre », lu le 2, devenait une soirée fantôme un an plus tard ;
+  - une plage courte ne garde que les jours de jeu qu'elle nomme (« du
+    mardi au vendredi à 19h30, samedi à 19h », « relâche le jeudi »),
+    chacun à son heure ; devant une tournure inconnue, rien n'est ôté :
+    mieux vaut une séance de trop qu'une vraie séance perdue ;
+  - deux jours qui se suivent sous un horaire qui passe minuit (« de 22h
+    à 4h30 ») ne font qu'une nuit ;
+  - l'année du début d'une longue plage (« Du 16 octobre 2026 au 15 août
+    2027 ») est lue elle aussi : sans elle, la plage devenait son seul
+    premier jour.
 - **`scrapers/dedup.py`** — canonicalisation des noms de lieux
   (`VENUE_CANONICAL`) + déduplication en 3 passes : (lieu, jour) avec
   fuzzy-match des titres ≥ 0,7 (les plages multi-jours sont indexées sur
   chaque jour couvert), cross-venue ≥ 0,85 (titres génériques exclus),
   puis pairing scraper/agrégateur à effectifs égaux avec garde temporel 4 h.
+  Le lieu est celui où l'on va : un hors-les-murs se range sous sa vraie
+  salle, et un titre cité vaut le titre long qui le cite (« Le Lac » pour
+  « … "Le Lac" ») — sans quoi le concert de l'Opéra au Théâtre de La
+  Renaissance et l'annonce du Petit Bulletin restaient deux cartes.
   Les deux premières passes portent un garde supplémentaire
   (`_seances_distinctes`) : au sein d'une MÊME source, deux horaires
   connus et différents sont deux représentations, jamais un doublon. Sans
@@ -242,11 +277,13 @@ retard, GitHub retardant les tâches du début de l'heure.
   déjà hardcodés dans `VENUE_ARRONDISSEMENT` (index.html, source de vérité,
   parsée au run par aggregate.py) ne sont jamais interrogés.
 - **`scrapers/detail_cache.py`** — cache persistant `url → heure` pour les
-  13 modules qui ouvrent des pages détail (TTL 30 j si heure trouvée,
+  12 modules qui ouvrent des pages détail (TTL 30 j si heure trouvée,
   7 j sinon, purge à 60 j). Divise le temps de run par ~8 dès le 2ᵉ passage.
+  Le TNG n'y passe plus : ses fiches portent les séances, qui changent.
 - **`aggregate.py`** — orchestre le tout, filtre le passé (les événements
-  en cours sont conservés jusqu'à leur `date_end`), écrit `events.json`.
-  Quatre garde-fous, du plus local au plus large :
+  en cours sont conservés jusqu'à leur `date_end`), écarte les événements
+  que leur source dit annulés (voir « Politique éditoriale »), écrit
+  `events.json`. Quatre garde-fous, du plus local au plus large :
   - une salle scrappée en direct qui tombe sous le quart de la veille
     garde ses événements de la veille, sept jours au plus (journal
     `reprises` dans `events.json`). Une petite salle, sous dix
@@ -254,7 +291,8 @@ retard, GitHub retardant les tâches du début de l'heure.
     page introuvable —, pas quand elle a simplement moins de dates. Pour
     savoir quels lieux reprendre, le fil garde ceux que chaque collecteur
     a rendus (`lieux_des_collecteurs`) : le handball, par exemple, joue
-    dans deux gymnases ;
+    dans deux gymnases. Une salle reprise écarte aussi les plages
+    d'agrégateur qu'elle porte, comme un jour où elle répond ;
   - de même pour le Petit Bulletin et Ville Morte ;
   - un fil qui tombe sous les trois quarts de ce que la veille comptait
     encore à venir n'est pas publié — passé trois jours sans publication,
@@ -296,15 +334,15 @@ python -m unittest discover -s tests -t . -v      # la logique, sans réseau
 python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
 ```
 
-- **La logique**, en une minute environ et sans réseau : la lecture
-  des dates en français, le dédoublonnage règle par règle, les nouveaux
-  essais réseau, la vérification anti-robot du Complexe, les garde-fous
-  d'`aggregate.py` — et deux RÉFÉRENCES figées. La chaîne de publication
-  entière est rejouée sur une collecte réelle (celle du 1er octobre 2026,
-  dans `tests/donnees/`) et doit rendre le même fil au caractère près ; la
-  page est jouée dans un navigateur sans fenêtre, sur ces données et à
-  cette date, et ses neuf scénarios de visiteur doivent afficher les mêmes
-  cartes.
+- **La logique**, en une minute et demie environ et sans réseau : la
+  lecture des dates en français, le dédoublonnage règle par règle, les
+  nouveaux essais réseau, la vérification anti-robot du Complexe, les
+  annulés, les garde-fous d'`aggregate.py` — et deux RÉFÉRENCES figées.
+  La chaîne de publication entière est rejouée sur une collecte réelle
+  (celle du 1er octobre 2026, dans `tests/donnees/`) et doit rendre le
+  même fil au caractère près ; la page est jouée dans un navigateur sans
+  fenêtre, sur ces données et à cette date, et ses neuf scénarios de
+  visiteur doivent afficher les mêmes cartes.
 - **Le fil du jour**, après la collecte : la forme d'`events.json`, et la
   page qui s'affiche avec, sans erreur et avec les bons compteurs.
 
@@ -385,10 +423,22 @@ motif.
 
 ## Politique éditoriale
 
-- **Ville Morte : aucun filtre**, tout son agenda remonte. C'est la
-  déduplication qui écarte les doublons quand un événement est aussi
-  publié par la salle elle-même.
-- **Petit Bulletin : un seul filtre**, quatre catégories d'arts
+- **Événements annulés : écartés, quelle que soit la source.** Le mot
+  doit être placé là où une source l'écrit pour annuler : en tête du
+  titre (« Annulé … », « ANNULE // … », « (Annulé) … »), seul entre
+  parenthèses ou crochets, en fin de titre après un tiret, ou comme titre
+  ou sous-titre entier (« Concert annulé »). Ailleurs, il ne suffit pas,
+  et un titre qui annonce un remplacement est gardé : « Almond Butyl -
+  annulé / remplacé par Viviane Cavale » était une soirée qui a bien eu
+  lieu. « Reporté » n'est pas traité, la date affichée pouvant être la
+  nouvelle. Le filtre passe APRÈS la déduplication : quand la salle écrit
+  « Annulé » et qu'un agrégateur republie le même spectacle sans le dire,
+  les deux disparaissent. Chaque événement écarté est nommé dans le
+  journal du passage.
+- **Ville Morte : aucun filtre propre**, tout son agenda remonte, hors
+  annulés. C'est la déduplication qui écarte les doublons quand un
+  événement est aussi publié par la salle elle-même.
+- **Petit Bulletin : un seul filtre propre**, quatre catégories d'arts
   plastiques — Peinture & Dessin, Art contemporain et numérique,
   Photographie, Design & Architecture (`CATEGORIES_ECARTEES`). La
   décision a changé deux fois, et pour des raisons différentes. Deux
@@ -439,6 +489,11 @@ motif.
   salle rapporte précisément, et en inventerait les soirs sans
   représentation. La dédup ne peut pas rattraper ce cas : il suffit que la
   plage gagne un seul jour pour être émise, puis repeindre toute sa durée.
+  La règle vaut aussi un soir où la salle ne répond pas et où ses séances
+  sont reprises de la veille : elle ne reconnaissait la salle qu'à ses
+  événements du jour, et la plage « Un grand cri d'amour » du Petit
+  Bulletin, du 2 octobre au 28 décembre, s'affichait alors tous les soirs
+  pour un spectacle du lundi.
 - **La Rayonne** : ses formations et ateliers professionnels sont écartés
   — c'est une programmation parallèle, pas un choix éditorial.
 
