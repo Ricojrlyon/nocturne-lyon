@@ -800,12 +800,17 @@ def main() -> int:
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "count": len(unique),
+        # Le nombre de sources que lit le site, salles et agendas, pour le
+        # pied de page : il suit ainsi les deux listes du haut de ce
+        # fichier, sans chiffre à tenir à la main — la page affichait
+        # encore « 17 sources » quand le site en lisait 37.
+        "sources": len(SCRAPERS) + len(AGGREGATORS),
         "events": [e.to_dict() for e in unique],
     }
     # Le journal des reprises voyage avec le fil : c'est lui qui permet au
     # run suivant de savoir depuis QUAND une salle est reprise, et donc de
     # l'abandonner passé le délai. Absent quand tout va bien. Le frontend
-    # ne lit que « events » et ignore le reste.
+    # ne le lit pas.
     if reprises:
         payload["reprises"] = reprises
 

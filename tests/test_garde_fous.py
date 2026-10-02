@@ -56,6 +56,16 @@ class GardeFous(unittest.TestCase):
         self.assertEqual(len(fil["events"]), len(VEILLE))
         self.assertNotIn("reprises", fil)
 
+    def test_le_fil_dit_combien_de_sources_le_site_lit(self):
+        # BUG-9 : le pied de page affiche ce nombre. Il suit les listes de
+        # collecteurs — 5 salles et 2 agendas ici —, et compte aussi une
+        # salle tombée ce jour-là : le site la lit toujours.
+        for salles in (normales(), normales(HEAT=panne)):
+            with atelier(J) as a:
+                a.veille(VEILLE)
+                self.assertEqual(a.lancer(salles, agregateurs()), 0)
+                self.assertEqual(a.publie()["sources"], len(SALLES) + 2)
+
     def test_salle_tombee_reprise_de_la_veille(self):
         with atelier(J) as a:
             a.veille(VEILLE)

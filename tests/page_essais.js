@@ -104,6 +104,9 @@
       pastilles: [...document.querySelectorAll('.day-pill')].map(p => norme(p.textContent)),
       scenarios: {},
     };
+    // Le nombre de sources du pied de page : seul le contrôle du fil du jour
+    // (verif_page) le vérifie, la référence figée ne le relève pas.
+    if (SCENARIOS === 'tout') res.sources = norme((document.getElementById('footerSources') || {}).textContent);
     res.scenarios.tout = await releve();
 
     if (SCENARIOS === 'tous') {

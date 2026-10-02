@@ -1666,7 +1666,7 @@
     <div class="col">
       <div><span class="ind">§</span> données scrapées sur les sites des lieux</div>
       <div><span class="ind">§</span> <span id="footerIndex">—</span> événements ·
-           <span id="footerVenues">—</span> lieux · 17 sources</div>
+           <span id="footerVenues">—</span> lieux · <span id="footerSources">37</span> sources</div>
       <div><span class="ind">§</span> dernière mise à jour <span id="lastUpdated">—</span></div>
     </div>
     <div class="col col-right">
@@ -2848,6 +2848,9 @@ async function load() {
   document.getElementById('footerVenues').textContent =
     new Set(state.events.map(e => e.venue)).size;
   document.getElementById('lastUpdated').textContent = formatUpdated(data.generated_at);
+  // Le nombre de sources vient du fil, qui suit la liste des collecteurs ;
+  // un fil plus ancien, sans ce nombre, laisse celui qu'écrit la page.
+  if (data.sources > 0) document.getElementById('footerSources').textContent = data.sources;
 
   classerLieux();
   buildArrondissementFilters();

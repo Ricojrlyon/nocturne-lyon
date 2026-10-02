@@ -42,6 +42,10 @@ class PageDuJour(unittest.TestCase):
         self.assertEqual(self.releve["evenements"], n)
         self.assertEqual(self.releve["index"], str(n))
         self.assertEqual(len(self.releve["pastilles"]), 14)
+        # Le nombre de sources : celui qu'annonce le fil. Un fil plus ancien
+        # n'en porte pas ; la page garde alors le sien.
+        if "sources" in self.fil:
+            self.assertEqual(self.releve["sources"], str(self.fil["sources"]))
 
 
 if __name__ == "__main__":
