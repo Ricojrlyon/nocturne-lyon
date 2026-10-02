@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-02T11:40:16.364537+00:00",
-  "count": 2959,
+  "generated_at": "2026-10-02T13:31:04.884921+00:00",
+  "count": 2960,
   "sources": 37,
   "events": [
     {
@@ -10194,20 +10194,6 @@
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2025/02/tina-arena_radiant-bellevue-Recupere-500x500.jpg",
       "offsite_venue": null,
       "id": "437a693c0b36"
-    },
-    {
-      "venue": "Trokson",
-      "venue_slug": "trokson",
-      "title": "Klub Sandwich (Grrls dj set/ Rock'n'Roll,Party songs, Dark 70's,80's,90's,00's)",
-      "subtitle": null,
-      "category": "rock",
-      "date_start": "2026-10-22",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://agenda.villemorte.fr/event/klub-sandwich-grrls-dj-set-rocknrollparty-songs-dark-70s80s90s00s-2",
-      "image": null,
-      "offsite_venue": null,
-      "id": "ef31daaa4e9c"
     },
     {
       "venue": "Improvidence",
@@ -29964,6 +29950,20 @@
       "id": "4aead49acbc3"
     },
     {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "Jules Robin \"Besoin d'amour\"",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-01-20",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.lecomplexelyon.com/programme/jules-robin-besoin-damour/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/jules-robin-540x800.jpg",
+      "offsite_venue": null,
+      "id": "37f5ac79b7ad"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LE PÈRE",
@@ -34120,6 +34120,20 @@
       "image": "https://img.mapado.net/2026/6/17/6a329b9726627-machart.png_thumbs/600-600.png",
       "offsite_venue": null,
       "id": "ff353e8badac"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Teletech",
+      "subtitle": null,
+      "category": "concert",
+      "date_start": "2027-02-13",
+      "date_end": null,
+      "time": "21:30",
+      "url": "https://www.halle-tony-garnier.com/fr/programmation/teletech-3",
+      "image": "https://www.halle-tony-garnier.com/storage/145316/conversions/2027-02-13-TELETECH-2027-02-13-teletech-lyon-square-20261002-152202-square.jpg",
+      "offsite_venue": null,
+      "id": "f188d50f5fa9"
     },
     {
       "venue": "Le Complexe café-théâtre",
