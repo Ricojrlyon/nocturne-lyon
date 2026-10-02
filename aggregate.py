@@ -650,20 +650,29 @@ def _ecarter_les_plages_d_agregateur(all_tagged: list[tuple[Event, int]]
     #
     # Mesuré à l'introduction de la règle : 2 plages, toutes deux à
     # Improvidence, 22 jours affichés dont 14 en collision directe.
+    #
+    # Un lieu scrappé se reconnaît ici à ses événements du jour : quand son
+    # collecteur tombe, c'est l'étape 6b qui applique la règle, au moment
+    # de reprendre ses événements de la veille (BUG-21).
     scraped_venues = {
         canonical_venue_name(e.venue) for e, p in all_tagged if p >= 100
     }
     before_ranges = len(all_tagged)
     all_tagged = [
         (e, p) for e, p in all_tagged
-        if not (p < 100 and e.date_end and e.date_end != e.date_start
-                and canonical_venue_name(e.venue) in scraped_venues)
+        if not _plage_d_agregateur_sur(e, p, scraped_venues)
     ]
     dropped_ranges = before_ranges - len(all_tagged)
     if dropped_ranges:
         print(f"[plages] {dropped_ranges} plage(s) d'agrégateur écartée(s) "
               f"sur un lieu scrappé en direct")
     return all_tagged
+
+
+def _plage_d_agregateur_sur(e: Event, prio: int, salles: set) -> bool:
+    """Une plage d'agrégateur sur l'une de ces salles lues en direct ?"""
+    return (prio < 100 and bool(e.date_end) and e.date_end != e.date_start
+            and canonical_venue_name(e.venue) in salles)
 
 
 def _appliquer_les_regles_des_salles(all_tagged: list[tuple[Event, int]]
@@ -780,6 +789,22 @@ def _garde_fou_des_salles(unique: List[Event], out: Path, today_iso: str,
         repris, reprises, abandons = _reprendre(unique, out,
                                                 effondres + pannes, today_iso)
         if repris:
+            # BUG-21 : l'étape 2.4 n'a pas reconnu ces salles, faute de leurs
+            # événements du jour, et a laissé passer les plages d'agrégateur
+            # qu'elles portent. Le Complexe refusé par son hébergeur, la plage
+            # « Un grand cri d'amour » du Petit Bulletin (2 octobre → 28
+            # décembre) s'affichait tous les soirs, quand le spectacle ne se
+            # joue que le lundi. On les écarte ici, avant la dédup : le fil
+            # d'une salle reprise est celui d'un jour où elle répond.
+            salles_reprises = {canonical_venue_name(e.venue) for e in repris}
+            avant_plages = len(unique)
+            unique = [e for e in unique
+                      if not _plage_d_agregateur_sur(e, _priorite(e.url),
+                                                     salles_reprises)]
+            if len(unique) < avant_plages:
+                print(f"[plages] {avant_plages - len(unique)} plage(s) "
+                      f"d'agrégateur écartée(s) sur une salle reprise de la "
+                      f"veille")
             # On repasse par la dédup avec le fil complet : les événements
             # repris n'ont PAS été confrontés aux publications du jour, et
             # un agrégateur a pu annoncer entre-temps un spectacle que la

@@ -82,6 +82,45 @@ class GardeFous(unittest.TestCase):
         self.assertEqual(sum(1 for e in fil["events"] if e["venue"] == "HEAT"), 30)
         self.assertEqual(fil["reprises"], {"HEAT": J.isoformat()})
 
+    def test_salle_reprise_sans_les_plages_de_l_agregateur(self):
+        # BUG-21. HEAT ne répond pas : ses événements de la veille sont
+        # repris, et la plage que le Petit Bulletin publie sur HEAT ne doit
+        # pas s'afficher chaque soir à côté d'eux, ni leur céder son affiche.
+        # La plage d'un lieu que nul collecteur ne lit, elle, reste.
+        seance = evenement("HEAT", "Un grand cri d'amour", J + timedelta(days=5),
+                           url="https://heat.exemple.org/e/cri")
+        plage = evenement("HEAT", "Un grand cri d'amour", J + timedelta(days=1),
+                          fin=J + timedelta(days=88), image="https://pb.exemple.org/affiche.jpg",
+                          url="https://www.petit-bulletin.fr/agenda-302802")
+        ailleurs = evenement("Salle PB 3", "Festival au long cours", J + timedelta(days=1),
+                             fin=J + timedelta(days=40),
+                             url="https://www.petit-bulletin.fr/agenda-302803")
+        with atelier(J) as a:
+            a.veille(VEILLE + [seance])
+            self.assertEqual(a.lancer(normales(HEAT=lambda: []),
+                                      agregateurs(pb=copies(PB + [plage, ailleurs]))), 0)
+            fil = a.publie()
+            journal = a.journal.getvalue()
+        par_url = {e["url"]: e for e in fil["events"]}
+        self.assertNotIn(plage.url, par_url)
+        self.assertIn(ailleurs.url, par_url)
+        self.assertIsNone(par_url[seance.url]["image"])
+        self.assertEqual(sum(1 for e in fil["events"] if e["venue"] == "HEAT"), 31)
+        self.assertIn("1 plage(s) d'agrégateur écartée(s) sur une salle reprise", journal)
+
+    def test_salle_non_reprise_garde_la_plage_de_l_agregateur(self):
+        # Publication forcée : la perte est réelle, rien n'est repris, et la
+        # plage de l'agrégateur est tout ce qui reste de la salle.
+        plage = evenement("HEAT", "Un grand cri d'amour", J + timedelta(days=1),
+                          fin=J + timedelta(days=88),
+                          url="https://www.petit-bulletin.fr/agenda-302802")
+        with atelier(J) as a:
+            a.veille(VEILLE)
+            self.assertEqual(a.lancer(normales(HEAT=lambda: []),
+                                      agregateurs(pb=copies(PB + [plage])), forcer=True), 0)
+            fil = a.publie()
+        self.assertEqual([e["url"] for e in fil["events"] if e["venue"] == "HEAT"], [plage.url])
+
     def test_salle_tombee_depuis_sept_jours_n_est_plus_reprise(self):
         with atelier(J) as a:
             a.veille(VEILLE, reprises={"HEAT": (J - timedelta(days=7)).isoformat()})
