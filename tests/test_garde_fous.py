@@ -91,6 +91,22 @@ class GardeFous(unittest.TestCase):
         self.assertEqual(compte(fil, "villemorte"), 30)
         self.assertEqual(fil["reprises"], {"agrégateur:Ville Morte": J.isoformat()})
 
+    def test_salle_et_agregateur_tombes_le_meme_jour(self):
+        # Les deux garde-fous dans leur ordre : la salle d'abord (6b), puis
+        # l'agrégateur, sur le fil qu'elle rend (6c). Chacun reprend les
+        # siens ; le journal et les alertes suivent cet ordre.
+        with atelier(J) as a:
+            a.veille(VEILLE)
+            self.assertEqual(a.lancer(normales(HEAT=lambda: []), agregateurs(vm=panne)), 0)
+            fil = a.publie()
+            journal = a.journal.getvalue()
+        self.assertEqual(sum(1 for e in fil["events"] if e["venue"] == "HEAT"), 30)
+        self.assertEqual(compte(fil, "villemorte"), 30)
+        self.assertEqual(list(fil["reprises"].items()),
+                         [("HEAT", J.isoformat()), ("agrégateur:Ville Morte", J.isoformat())])
+        self.assertLess(journal.index("EFFONDREMENT : HEAT"),
+                        journal.index("EFFONDREMENT d'agrégateur : Ville Morte"))
+
     def test_repris_de_l_agregateur_et_publie_par_la_salle_une_seule_carte(self):
         soir = J + timedelta(days=7)
         vu_par_pb = evenement("Le Sucre", "Nuit Kompakt avec Superpitcher", soir,

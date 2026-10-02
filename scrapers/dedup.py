@@ -539,110 +539,131 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
         the cow » (PB 20:30) vs « Zermatt - EP Release Show » (Ville Morte
         20:30) — un lieu qu'aucun scraper ne couvre.
     """
-    SCRAPER_PRIO_MIN = 100  # priorities >= this are venue scrapers
-
-    def fusionne(h_ev: Event, b_ev: Event) -> None:
-        """Le gagnant hérite des champs qui lui manquent."""
-        for field in ("time", "category", "subtitle", "image"):
-            if not getattr(h_ev, field, None):
-                val = getattr(b_ev, field, None)
-                if val:
-                    setattr(h_ev, field, val)
-
     by_venue_date: dict[tuple[str, str], list[tuple[Event, int]]] = defaultdict(list)
     for ev, prio in events_with_prio:
         by_venue_date[(_venue_key(ev.venue), ev.date_start)].append((ev, prio))
 
     result: List[Tuple[Event, int]] = []
-    for key, group in by_venue_date.items():
-        if len(group) < 2:
-            result.extend(group)
-            continue
-
-        scrapers = [(e, p) for e, p in group if p >= SCRAPER_PRIO_MIN]
-        aggs = [(e, p) for e, p in group if p < SCRAPER_PRIO_MIN]
-
-        if scrapers and aggs:
-            hauts, bas = scrapers, aggs
-        elif aggs and not scrapers:
-            # Lieu qu'aucun scraper ne couvre : les agrégateurs se
-            # départagent à leur propre priorité. Exactement DEUX niveaux,
-            # sinon l'alignement n'a pas de sens — et trois agrégateurs au
-            # même endroit le même jour disent rarement la même chose.
-            niveaux = sorted({p for _, p in aggs}, reverse=True)
-            if len(niveaux) != 2:
-                result.extend(group)
-                continue
-            hauts = [x for x in aggs if x[1] == niveaux[0]]
-            bas = [x for x in aggs if x[1] == niveaux[1]]
-        else:
-            # Une seule source parle : rien à apparier.
-            result.extend(group)
-            continue
-
-        # Les paires à la minute près, d'abord : un seul de chaque côté
-        # à cette heure-là, au même endroit, le même jour.
-        par_heure_hauts: dict = defaultdict(list)
-        par_heure_bas: dict = defaultdict(list)
-        for x in hauts:
-            if x[0].time:
-                par_heure_hauts[x[0].time].append(x)
-        for x in bas:
-            if x[0].time:
-                par_heure_bas[x[0].time].append(x)
-
-        apparies_hauts, apparies_bas = set(), set()
-        for heure, uns in par_heure_hauts.items():
-            autres = par_heure_bas.get(heure) or []
-            if len(uns) != 1 or len(autres) != 1:
-                continue            # deux salles d'un même lieu, ou rien
-            (h_ev, h_prio), (b_ev, _) = uns[0], autres[0]
-            fusionne(h_ev, b_ev)
-            result.append((h_ev, h_prio))
-            apparies_hauts.add(id(h_ev))
-            apparies_bas.add(id(b_ev))
-
-        if apparies_hauts:
-            hauts = [x for x in hauts if id(x[0]) not in apparies_hauts]
-            bas = [x for x in bas if id(x[0]) not in apparies_bas]
-            if not hauts and not bas:
-                continue
-            if not hauts or not bas:
-                result.extend(hauts + bas)
-                continue
-
-        # Counts must match for a deterministic pairing. On rend le
-        # RESTE et non le groupe entier : ce qui a déjà été apparié à la
-        # minute près est parti dans `result`.
-        if len(hauts) != len(bas):
-            result.extend(hauts + bas)
-            continue
-
-        # Pair by sort order: untimed events go last, then alphabetical.
-        sort_key = lambda x: (x[0].time or "zz:zz", (x[0].title or "").lower())
-        hauts_sorted = sorted(hauts, key=sort_key)
-        bas_sorted = sorted(bas, key=sort_key)
-
-        # Time-safety check on EVERY aligned pair (previously only N == 1):
-        # if any pair has two known times more than 4 hours apart, they're
-        # probably distinct events (e.g. afternoon kids show vs evening
-        # rock concert) and the whole alignment is suspect — leave the
-        # group alone rather than merge blindly.
-        time_mismatch = any(
-            h_ev.time and b_ev.time
-            and _time_diff_minutes(h_ev.time, b_ev.time) > 240
-            for (h_ev, _), (b_ev, _) in zip(hauts_sorted, bas_sorted)
-        )
-        if time_mismatch:
-            result.extend(hauts + bas)
-            continue
-
-        for (h_ev, h_prio), (b_ev, _) in zip(hauts_sorted, bas_sorted):
-            fusionne(h_ev, b_ev)
-            result.append((h_ev, h_prio))
-        # Les événements de priorité basse sont écartés.
-
+    for group in by_venue_date.values():
+        result.extend(_apparier_lieu_jour(group))
     return result
+
+
+def _apparier_lieu_jour(group: List[Tuple[Event, int]]) -> List[Tuple[Event, int]]:
+    """La passe 3 sur UN lieu et UN jour (voir _tertiary_dedup) : ce qu'il
+    en reste, dans l'ordre où elle le rend — les paires à la minute près,
+    puis celles de l'alignement, ou à leur place le reste tel quel."""
+    if len(group) < 2:
+        return group
+    camps = _camps_a_apparier(group)
+    if camps is None:
+        return group
+    rendu, hauts, bas = _paires_a_la_minute(*camps)
+    # On rend le RESTE et non le groupe entier : ce qui a déjà été apparié
+    # à la minute près est dans `rendu`.
+    if not hauts or not bas:
+        return rendu + hauts + bas
+    paires = _alignement_par_effectifs(hauts, bas)
+    if paires is None:
+        return rendu + hauts + bas
+    for (h_ev, h_prio), (b_ev, _) in paires:
+        _fusionne(h_ev, b_ev)
+        rendu.append((h_ev, h_prio))
+    # Les événements de priorité basse sont écartés.
+    return rendu
+
+
+def _camps_a_apparier(group: List[Tuple[Event, int]]) -> tuple | None:
+    """Les deux camps d'un lieu et d'un jour, (hauts, bas) — None quand une
+    seule source parle, ou que les agrégateurs n'ont pas exactement deux
+    niveaux de priorité."""
+    SCRAPER_PRIO_MIN = 100  # priorities >= this are venue scrapers
+    scrapers = [(e, p) for e, p in group if p >= SCRAPER_PRIO_MIN]
+    aggs = [(e, p) for e, p in group if p < SCRAPER_PRIO_MIN]
+
+    if scrapers and aggs:
+        return scrapers, aggs
+    if aggs and not scrapers:
+        # Lieu qu'aucun scraper ne couvre : les agrégateurs se
+        # départagent à leur propre priorité. Exactement DEUX niveaux,
+        # sinon l'alignement n'a pas de sens — et trois agrégateurs au
+        # même endroit le même jour disent rarement la même chose.
+        niveaux = sorted({p for _, p in aggs}, reverse=True)
+        if len(niveaux) != 2:
+            return None
+        return ([x for x in aggs if x[1] == niveaux[0]],
+                [x for x in aggs if x[1] == niveaux[1]])
+    # Une seule source parle : rien à apparier.
+    return None
+
+
+def _paires_a_la_minute(hauts: List[Tuple[Event, int]], bas: List[Tuple[Event, int]]):
+    """Les paires à la minute près : un seul de chaque côté à cette
+    heure-là, au même endroit, le même jour. Rend (les gagnants fusionnés,
+    les hauts restants, les bas restants)."""
+    par_heure_hauts: dict = defaultdict(list)
+    par_heure_bas: dict = defaultdict(list)
+    for x in hauts:
+        if x[0].time:
+            par_heure_hauts[x[0].time].append(x)
+    for x in bas:
+        if x[0].time:
+            par_heure_bas[x[0].time].append(x)
+
+    rendu: List[Tuple[Event, int]] = []
+    apparies_hauts, apparies_bas = set(), set()
+    for heure, uns in par_heure_hauts.items():
+        autres = par_heure_bas.get(heure) or []
+        if len(uns) != 1 or len(autres) != 1:
+            continue            # deux salles d'un même lieu, ou rien
+        (h_ev, h_prio), (b_ev, _) = uns[0], autres[0]
+        _fusionne(h_ev, b_ev)
+        rendu.append((h_ev, h_prio))
+        apparies_hauts.add(id(h_ev))
+        apparies_bas.add(id(b_ev))
+
+    if apparies_hauts:
+        hauts = [x for x in hauts if id(x[0]) not in apparies_hauts]
+        bas = [x for x in bas if id(x[0]) not in apparies_bas]
+    return rendu, hauts, bas
+
+
+def _alignement_par_effectifs(hauts: List[Tuple[Event, int]],
+                              bas: List[Tuple[Event, int]]):
+    """Les paires (haut, bas) alignées par ordre de tri, quand les deux
+    camps ont le même effectif — None sinon, ou quand une paire a deux
+    heures connues à plus de 4 h l'une de l'autre."""
+    # Counts must match for a deterministic pairing.
+    if len(hauts) != len(bas):
+        return None
+
+    # Pair by sort order: untimed events go last, then alphabetical.
+    sort_key = lambda x: (x[0].time or "zz:zz", (x[0].title or "").lower())
+    hauts_sorted = sorted(hauts, key=sort_key)
+    bas_sorted = sorted(bas, key=sort_key)
+
+    # Time-safety check on EVERY aligned pair (previously only N == 1):
+    # if any pair has two known times more than 4 hours apart, they're
+    # probably distinct events (e.g. afternoon kids show vs evening
+    # rock concert) and the whole alignment is suspect — leave the
+    # group alone rather than merge blindly.
+    time_mismatch = any(
+        h_ev.time and b_ev.time
+        and _time_diff_minutes(h_ev.time, b_ev.time) > 240
+        for (h_ev, _), (b_ev, _) in zip(hauts_sorted, bas_sorted)
+    )
+    if time_mismatch:
+        return None
+    return list(zip(hauts_sorted, bas_sorted))
+
+
+def _fusionne(h_ev: Event, b_ev: Event) -> None:
+    """Le gagnant hérite des champs qui lui manquent."""
+    for field in ("time", "category", "subtitle", "image"):
+        if not getattr(h_ev, field, None):
+            val = getattr(b_ev, field, None)
+            if val:
+                setattr(h_ev, field, val)
 
 
 def _time_diff_minutes(t1: str, t2: str) -> int:
