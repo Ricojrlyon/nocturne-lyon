@@ -3,6 +3,8 @@ synthétiques, qui reprennent la structure du vrai site : la carte du
 programme et sa plage « 02 > 06 oct. », et la fiche du spectacle avec ses
 deux listes de séances, tout public (div.event-sessions) et scolaires
 (div.event-school)."""
+import contextlib
+import io
 import unittest
 from datetime import date
 from unittest import mock
@@ -39,9 +41,12 @@ class SeancesToutPublic(unittest.TestCase):
         pages = {tng.URL: "<html><body>%s</body></html>" % "".join(cartes)}
         pages.update({FICHE % slug: html for slug, html in fiches.items()})
         site = FauxSite(pages)
+        # Le journal du collecteur (son DIAGNOSTIC quand il ne rend rien) ne
+        # doit pas se mêler à celui du passage.
         with mock.patch.object(tng, "Date", date_figee(jour)), \
                 mock.patch.object(tng.time, "sleep", lambda s: None), \
-                mock.patch("requests.request", site.request):
+                mock.patch("requests.request", site.request), \
+                contextlib.redirect_stderr(io.StringIO()):
             return [(e.date_start, e.date_end, e.time, e.title) for e in tng.fetch()]
 
     def test_une_date_par_seance_tout_public_sans_les_scolaires(self):
