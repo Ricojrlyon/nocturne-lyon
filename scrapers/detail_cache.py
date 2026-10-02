@@ -1,7 +1,7 @@
 """Persistent cache for event detail-page times.
 
-Several venue scrapers (Le Sucre, Radiant, HEAT, TNG, Opéra,
-Transbordeur) must fetch one detail page per event just to extract the
+Several venue scrapers (Le Sucre, Radiant, HEAT, Opéra, Transbordeur…)
+must fetch one detail page per event just to extract the
 show time. Night after night those pages are the same — this cache
 persists url → time in detail_times.json (committed by the workflow,
 same pattern as venue_arrondissements.json) and eliminates ~90% of the

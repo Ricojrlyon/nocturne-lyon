@@ -1,17 +1,19 @@
 """Scraper for Théâtre Nouvelle Génération (tng-lyon.fr).
 
 Listing page: <a href="/evenement/<slug>/"> wraps all card data.
-Time: on the detail page. TNG shows are typically 20h30 or 15h (matinée).
-Strategy: collect stubs from listing, then fetch each detail page for time.
+Dates et heures : sur la fiche de chaque spectacle, qui liste ses séances
+tout public (voir _seances_publiques).
+Strategy: collect stubs from listing, then fetch each detail page for its
+public sessions — one Event per session.
 """
 from typing import List, Optional, Tuple
 from datetime import date as Date, timedelta
 import re
 import sys
+import time
 import requests
 from bs4 import BeautifulSoup
 
-from . import detail_cache
 from .base import Event, img_src, iso, FR_MONTHS, get as base_get
 
 VENUE = "TNG"
@@ -31,8 +33,11 @@ SHORT_MONTHS = {
     "oct": 10, "nov": 11, "dec": 12, "déc": 12,
 }
 
+# « 02 oct. > 06 oct. », mais aussi « 02 > 06 oct. », le mois écrit une
+# seule fois : c'est ainsi que le programme écrit ses plages (BUG-16), et
+# la date de fin passait seule pour la date du spectacle.
 DATE_RANGE = re.compile(
-    r"(\d{1,2})\s+([\wéèêôû]+)\s*[>→–\-]\s*(\d{1,2})\s+([\wéèêôû]+)",
+    r"\b(\d{1,2})(?:\s+([\wéèêôû]+)\.?)?\s*[>→–\-]\s*(\d{1,2})\s+([\wéèêôû]+)",
     re.IGNORECASE | re.DOTALL,
 )
 DATE_SINGLE = re.compile(
@@ -68,7 +73,8 @@ def _extract_dates(text: str) -> Tuple[Optional[Date], Optional[Date]]:
     m = DATE_RANGE.search(text)
     if m:
         d1, mo1, d2, mo2 = m.groups()
-        month1, month2 = _normalize_month(mo1), _normalize_month(mo2)
+        month2 = _normalize_month(mo2)
+        month1 = _normalize_month(mo1) if mo1 else month2
         if month1 and month2:
             try:
                 day1, day2 = int(d1), int(d2)
@@ -96,45 +102,64 @@ def _extract_dates(text: str) -> Tuple[Optional[Date], Optional[Date]]:
     return None, None
 
 
-def _parse_time(text: str) -> Optional[str]:
-    """Extract time. TNG: theatre times 10h-22h range."""
-    m = re.search(
-        r"(?:à|heure|horaire|début|debut|représentation|seance|séance)"
-        r"\s*[:\-]?\s*(\d{1,2})[h:](\d{0,2})",
-        text, re.IGNORECASE,
-    )
-    if m:
-        hh = int(m.group(1))
-        mm_s = m.group(2)
-        mm = int(mm_s) if mm_s else 0
-        if 10 <= hh <= 22:
-            return f"{hh:02d}:{mm:02d}"
-    for m2 in re.finditer(r"\b(\d{1,2})[h:](\d{2})\b", text):
-        hh, mm = int(m2.group(1)), int(m2.group(2))
-        if 10 <= hh <= 22:
-            return f"{hh:02d}:{mm:02d}"
-    return None
+JOURS = ("lun", "mar", "mer", "jeu", "ven", "sam", "dim")
+
+# Une séance de la fiche n'est retenue qu'à une semaine au plus des dates
+# de la carte du programme. Au-delà, c'est une erreur de saisie : la fiche
+# de l'atelier intergénérationnel du « Chat sur la photo » (carte : 30
+# janvier) reprenait la séance du 16 janvier d'un autre atelier.
+MARGE_SEANCES = timedelta(days=7)
+MIN_INTERVAL = 0.4
 
 
-def _fetch_detail_time(url: str) -> Optional[str]:
-    """Fetch /evenement/<slug>/ and extract time."""
+def _seances_publiques(url: str) -> List[Tuple[Date, Optional[str]]]:
+    """(jour, heure) des séances TOUT PUBLIC de la fiche d'un spectacle.
+
+    BUG-16 : la carte du programme ne donne qu'une plage (« 02 > 06
+    oct. »), qui couvre aussi les séances scolaires et les relâches. La
+    fiche, elle, liste ses séances à part, div.event-sessions : un mois en
+    p.month, puis par séance le jour (« ven 02 ») et une ou plusieurs
+    heures. Les séances scolaires, div.event-school, réservées aux classes,
+    sont écartées comme à l'Auditorium. L'année n'est pas écrite
+    (_smart_year), et le nom du jour la contrôle. Liste vide si la fiche
+    ne répond pas ou n'a pas de séances.
+    """
     try:
         r = base_get(url, timeout=10, headers=HEADERS)
-        if r.status_code != 200:
-            return None
-        soup = BeautifulSoup(r.text, "html.parser")
-        for selector in (
-            "[class*='horaire']", "[class*='time']", "[class*='heure']",
-            "[class*='schedule']", "[class*='seance']", "[class*='date']", "time",
-        ):
-            for el in soup.select(selector)[:4]:
-                t = _parse_time(el.get_text(" ", strip=True))
-                if t:
-                    return t
-        visible = soup.get_text(" ", strip=True)
-        return _parse_time(visible[:800])
     except requests.RequestException:
-        return None
+        return []
+    if r.status_code != 200:
+        return []
+    bloc = BeautifulSoup(r.text, "html.parser").select_one("div.event-sessions")
+    if bloc is None:
+        return []
+    today = Date.today()
+    out: List[Tuple[Date, Optional[str]]] = []
+    mois = None
+    for el in bloc.find_all(["p", "div"], recursive=False):
+        classes = el.get("class") or []
+        if "month" in classes:
+            mois = _normalize_month(el.get_text(strip=True))
+            continue
+        if "session-line" not in classes or not mois:
+            continue
+        jour = el.select_one("p.date")
+        m = (re.match(r"\s*([a-z]{3})[a-z]*\.?\s+(\d{1,2})\b",
+                      jour.get_text(" ", strip=True).lower()) if jour else None)
+        if not m:
+            continue
+        try:
+            d = Date(_smart_year(mois, int(m.group(2)), today), mois, int(m.group(2)))
+        except ValueError:
+            continue
+        if JOURS[d.weekday()] != m.group(1):
+            continue                     # le jour annoncé contredit la date
+        heures = [re.search(r"\b(\d{1,2})[h:](\d{2})\b", h.get_text(" ", strip=True))
+                  for h in el.select("span.hour")]
+        heures = [f"{int(h.group(1)):02d}:{h.group(2)}" for h in heures if h]
+        for heure in heures or [None]:
+            out.append((d, heure))
+    return out
 
 
 def fetch() -> List[Event]:
@@ -206,23 +231,41 @@ def fetch() -> List[Event]:
     horizon = Date.today() + timedelta(days=180)
     stubs = [s for s in stubs if s["d_start"] <= horizon]
 
-    # Fetch detail pages for time (cached across runs, throttled — see
-    # scrapers/detail_cache.py)
+    # Une date par séance tout public de la fiche (BUG-16). La fiche est
+    # relue à chaque passage, sans le cache des heures : une séance ajoutée
+    # ou retirée doit se voir dès le lendemain. Sans séance utilisable, la
+    # plage de la carte, comme avant.
     events: List[Event] = []
-    for stub in stubs:
-        time_str = detail_cache.get_time(stub["url"], _fetch_detail_time)
-        events.append(Event(
-            venue=VENUE,
-            venue_slug=SLUG,
-            title=stub["title"],
-            subtitle=stub["subtitle"],
-            category="théâtre",
-            date_start=iso(stub["d_start"]),
-            date_end=iso(stub["d_end"]) if stub["d_end"] else None,
-            time=time_str,
-            url=stub["url"],
-            image=stub["image"],
-        ))
+    for i, stub in enumerate(stubs):
+        if i:
+            time.sleep(MIN_INTERVAL)
+        debut, fin = stub["d_start"], stub["d_end"] or stub["d_start"]
+        toutes = _seances_publiques(stub["url"])
+        proches = [(d, h) for d, h in toutes
+                   if debut - MARGE_SEANCES <= d <= fin + MARGE_SEANCES]
+        if proches:
+            # Celles qui restent à venir ; aucune si le public a vu sa
+            # dernière séance, même quand la carte court encore — ses
+            # derniers jours ne sont plus que des séances scolaires.
+            dates = [(d, None, h) for d, h in proches if today <= d <= horizon]
+        else:
+            # Faute de séance retenue, la carte ; l'heure de la fiche reste
+            # bonne à prendre quand seule sa date est fausse.
+            dates = [(stub["d_start"], stub["d_end"],
+                      next((h for _, h in toutes if h), None))]
+        for d_start, d_end, heure in dates:
+            events.append(Event(
+                venue=VENUE,
+                venue_slug=SLUG,
+                title=stub["title"],
+                subtitle=stub["subtitle"],
+                category="théâtre",
+                date_start=iso(d_start),
+                date_end=iso(d_end) if d_end else None,
+                time=heure,
+                url=stub["url"],
+                image=stub["image"],
+            ))
 
     if not events:
         print("=" * 60, file=sys.stderr)
