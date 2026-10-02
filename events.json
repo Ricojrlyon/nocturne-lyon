@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-02T09:03:09.107935+00:00",
-  "count": 2958,
+  "generated_at": "2026-10-02T10:00:42.827076+00:00",
+  "count": 2951,
   "sources": 37,
   "events": [
     {
@@ -636,20 +636,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "Audrey Perrin dans \"Je ne simule plus\"",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-10-02",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/audrey-perrin-dans-je-ne-simule-plus/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/audrey-perrin-540x800.jpg",
-      "offsite_venue": null,
-      "id": "1d2781c3f897"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
       "subtitle": null,
       "category": "café-théâtre",
@@ -660,6 +646,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
       "offsite_venue": null,
       "id": "f4d9b21f6699"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "Audrey Perrin dans \"Je ne simule plus\"",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-02",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/audrey-perrin-dans-je-ne-simule-plus/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/audrey-perrin-540x800.jpg",
+      "offsite_venue": null,
+      "id": "1d2781c3f897"
     },
     {
       "venue": "Au Rikiki",
@@ -744,6 +744,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "35f0a674d608"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe-cafe-theatre",
+      "title": "Un grand cri d'amour",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-10-02",
+      "date_end": "2026-12-28",
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-302802-un-grand-cri-d-amour.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "a758e5a4d514"
     },
     {
       "venue": "Le Toboggan",
@@ -1476,20 +1490,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "Audrey Perrin dans \"Je ne simule plus\"",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-10-03",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/audrey-perrin-dans-je-ne-simule-plus/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/audrey-perrin-540x800.jpg",
-      "offsite_venue": null,
-      "id": "a294dc09e8d0"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
       "subtitle": null,
       "category": "café-théâtre",
@@ -1500,6 +1500,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
       "offsite_venue": null,
       "id": "bf9dd5d9baff"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "Audrey Perrin dans \"Je ne simule plus\"",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/audrey-perrin-dans-je-ne-simule-plus/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/audrey-perrin-540x800.jpg",
+      "offsite_venue": null,
+      "id": "a294dc09e8d0"
     },
     {
       "venue": "Les Subsistances",
@@ -4468,20 +4482,6 @@
       "image": "https://www.les-subs.com/wp-content/uploads/2023/03/lessubs-minipousses-cirqueogregoryrubinstein-collectifdesflousfurieux-3-200x200.jpg",
       "offsite_venue": null,
       "id": "714b76b56b71"
-    },
-    {
-      "venue": "Matmut Stadium de Gerland",
-      "venue_slug": "matmut-stadium-gerland",
-      "title": "LOU Rugby - Stade Rochelais",
-      "subtitle": null,
-      "category": "rugby",
-      "date_start": "2026-10-10",
-      "date_end": null,
-      "time": "16:35",
-      "url": "https://billetterie.lourugby.fr/fr/sticker/163",
-      "image": null,
-      "offsite_venue": null,
-      "id": "9c14e45cf96f"
     },
     {
       "venue": "Auditorium de Lyon",
@@ -7998,20 +7998,6 @@
       "id": "54028c73519a"
     },
     {
-      "venue": "Matmut Stadium de Gerland",
-      "venue_slug": "matmut-stadium-gerland",
-      "title": "LOU Rugby - Hollywoodbets Sharks",
-      "subtitle": null,
-      "category": "rugby",
-      "date_start": "2026-10-17",
-      "date_end": null,
-      "time": "14:00",
-      "url": "https://billetterie.lourugby.fr/fr/sticker/193",
-      "image": null,
-      "offsite_venue": null,
-      "id": "8285ef8d576d"
-    },
-    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Minipousses cirque",
@@ -8640,20 +8626,6 @@
       "image": null,
       "offsite_venue": null,
       "id": "dd977f3838d4"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "La Relève",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-10-18",
-      "date_end": null,
-      "time": "15:00",
-      "url": "https://improvidence.mapado.com/event/154968-la-releve",
-      "image": "https://img.mapado.net/2022/10/24/635646c2a2c98-1.jpeg_thumbs/600-600.jpeg",
-      "offsite_venue": null,
-      "id": "575c3f0d75e7"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -14237,7 +14209,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/djadja-dinaz-2",
-      "image": "https://www.halle-tony-garnier.com/storage/145262/conversions/2026-11-05-DJADJA-DINAZ-carre-5-20250709-085039-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/145315/conversions/2026-11-05-DJADJA-DINAZ-carre-5-20250709-085039-square.jpg",
       "offsite_venue": null,
       "id": "38be92eb323a"
     },
@@ -16183,7 +16155,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://trinitelyon.mapado.com/event/732246-musas-solo-ma-non-troppo",
-      "image": "https://img.mapado.net/2026/5/22/6a10c03948a85-musas-2-web-anne-laure-etienne.jpeg_thumbs/600-600.jpeg",
+      "image": "https://img.mapado.net/2026/10/2/6abf7a08b9e3d-musas-mapado.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "95ce8dcd0c67"
     },
@@ -16379,7 +16351,7 @@
       "date_end": null,
       "time": "18:00",
       "url": "https://trinitelyon.mapado.com/event/732267-une-expo-dans-le-vent-visite-guidee",
-      "image": "https://img.mapado.net/2026/6/2/6a1ed6920ad1d-673754034-1945076756368008-7002286431375010672-n.jpeg_thumbs/600-600.jpeg",
+      "image": "https://img.mapado.net/2026/10/2/6abf7bd993c27-expo-mapado.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "c9ec087450b8"
     },
@@ -16393,7 +16365,7 @@
       "date_end": null,
       "time": "18:30",
       "url": "https://trinitelyon.mapado.com/event/732267-une-expo-dans-le-vent-visite-guidee",
-      "image": "https://img.mapado.net/2026/6/2/6a1ed6920ad1d-673754034-1945076756368008-7002286431375010672-n.jpeg_thumbs/600-600.jpeg",
+      "image": "https://img.mapado.net/2026/10/2/6abf7bd993c27-expo-mapado.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "201ef539b81a"
     },
@@ -16421,7 +16393,7 @@
       "date_end": null,
       "time": "19:00",
       "url": "https://trinitelyon.mapado.com/event/732267-une-expo-dans-le-vent-visite-guidee",
-      "image": "https://img.mapado.net/2026/6/2/6a1ed6920ad1d-673754034-1945076756368008-7002286431375010672-n.jpeg_thumbs/600-600.jpeg",
+      "image": "https://img.mapado.net/2026/10/2/6abf7bd993c27-expo-mapado.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "e86946bd0a5a"
     },
@@ -16547,7 +16519,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://trinitelyon.mapado.com/event/732281-univers-gurdjieff-1-souffles-orientaux",
-      "image": "https://img.mapado.net/2026/5/28/6a181941a0fdb-gurdjieff2.jpeg_thumbs/600-600.jpeg",
+      "image": "https://img.mapado.net/2026/10/2/6abf7dcbf4039-gurdjieff-mapado.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "98b5c3febc3c"
     },
@@ -16757,7 +16729,7 @@
       "date_end": null,
       "time": "21:30",
       "url": "https://trinitelyon.mapado.com/event/732267-une-expo-dans-le-vent-visite-guidee",
-      "image": "https://img.mapado.net/2026/6/2/6a1ed6920ad1d-673754034-1945076756368008-7002286431375010672-n.jpeg_thumbs/600-600.jpeg",
+      "image": "https://img.mapado.net/2026/10/2/6abf7bd993c27-expo-mapado.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "1d1ded0f08e7"
     },
@@ -16813,7 +16785,7 @@
       "date_end": null,
       "time": "10:30",
       "url": "https://trinitelyon.mapado.com/event/732267-une-expo-dans-le-vent-visite-guidee",
-      "image": "https://img.mapado.net/2026/6/2/6a1ed6920ad1d-673754034-1945076756368008-7002286431375010672-n.jpeg_thumbs/600-600.jpeg",
+      "image": "https://img.mapado.net/2026/10/2/6abf7bd993c27-expo-mapado.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "a60c922d1e79"
     },
@@ -16841,7 +16813,7 @@
       "date_end": null,
       "time": "11:00",
       "url": "https://trinitelyon.mapado.com/event/732274-une-expo-dans-le-vent-conference-de-guy-estimbre",
-      "image": "https://img.mapado.net/2026/6/2/6a1ed6faabf96-guy-estimbre.png_thumbs/600-600.png",
+      "image": "https://img.mapado.net/2026/10/2/6abf7c0a1be20-conf-mapado.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "f30a71c1efca"
     },
@@ -16855,7 +16827,7 @@
       "date_end": null,
       "time": "12:00",
       "url": "https://trinitelyon.mapado.com/event/732267-une-expo-dans-le-vent-visite-guidee",
-      "image": "https://img.mapado.net/2026/6/2/6a1ed6920ad1d-673754034-1945076756368008-7002286431375010672-n.jpeg_thumbs/600-600.jpeg",
+      "image": "https://img.mapado.net/2026/10/2/6abf7bd993c27-expo-mapado.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "c436dfeee82b"
     },
@@ -16869,7 +16841,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://trinitelyon.mapado.com/event/732267-une-expo-dans-le-vent-visite-guidee",
-      "image": "https://img.mapado.net/2026/6/2/6a1ed6920ad1d-673754034-1945076756368008-7002286431375010672-n.jpeg_thumbs/600-600.jpeg",
+      "image": "https://img.mapado.net/2026/10/2/6abf7bd993c27-expo-mapado.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "fb056566f393"
     },
@@ -17219,7 +17191,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://trinitelyon.mapado.com/event/732288-itinerances-sacrees-autour-du-miserere-dallegri-de-lombre-a-la-lumiere",
-      "image": "https://img.mapado.net/2026/5/24/6a130ab160c47-signature-dulci-jubilo-alex-j-overton-anima-nostra.jpeg_thumbs/600-600.jpeg",
+      "image": "https://img.mapado.net/2026/10/2/6abf7cbe0190f-dulci-jubilo-mapado.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "7444059a35e5"
     },
@@ -17415,7 +17387,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://trinitelyon.mapado.com/event/732309-atelier-de-yoga-sonore",
-      "image": "https://img.mapado.net/2026/5/24/6a130a5597a1a-photo-lenaerts.jpeg_thumbs/600-600.jpeg",
+      "image": "https://img.mapado.net/2026/10/2/6abf7cc7f0438-yoga-mapado.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "2e3c0ca2bae8"
     },
@@ -17485,7 +17457,7 @@
       "date_end": null,
       "time": "17:00",
       "url": "https://trinitelyon.mapado.com/event/732316-ovni-baroque-emmanuelle-dauvin-heather-newhouse",
-      "image": "https://img.mapado.net/2026/5/24/6a130a74f12d5-ovnibaroque-duo-g-bocle.jpeg_thumbs/600-600.jpeg",
+      "image": "https://img.mapado.net/2026/10/2/6abf7d11eaf14-ovni-baroque-mapado.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "625373fddd0d"
     },
@@ -17583,7 +17555,7 @@
       "date_end": null,
       "time": "19:00",
       "url": "https://trinitelyon.mapado.com/event/732323-gaspard-fanny-meteier",
-      "image": "https://img.mapado.net/2026/5/24/6a130a0d8cb17-fanny-meteier.jpeg_thumbs/600-600.jpeg",
+      "image": "https://img.mapado.net/2026/10/2/6abf7d2bedb22-gaspard-mapado.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "d1c1dda78d74"
     },
@@ -18045,7 +18017,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://trinitelyon.mapado.com/event/732463-music-for-saxofone-and-bass-guitar-sam-gendel-and-sam-wilkes-unrelated-tour",
-      "image": "https://img.mapado.net/2026/5/28/6a18194fb7750-sam-et-sam.jpeg_thumbs/600-600.jpeg",
+      "image": "https://img.mapado.net/2026/10/2/6abf7deaa9381-saxofone-mapado.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "e0082aa60293"
     },
@@ -22476,20 +22448,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "Guillaume Sentou \"Un mec cool\"",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-04",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/guillaume-sentou-un-mec-cool/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
-      "offsite_venue": null,
-      "id": "cebdb9ac5785"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
       "subtitle": null,
       "category": "café-théâtre",
@@ -22500,6 +22458,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
       "offsite_venue": null,
       "id": "5b3b078c675b"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "Guillaume Sentou \"Un mec cool\"",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/guillaume-sentou-un-mec-cool/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
+      "offsite_venue": null,
+      "id": "cebdb9ac5785"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -22966,20 +22938,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "Guillaume Sentou \"Un mec cool\"",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-05",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/guillaume-sentou-un-mec-cool/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
-      "offsite_venue": null,
-      "id": "eea2838c459b"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
       "subtitle": null,
       "category": "café-théâtre",
@@ -22990,6 +22948,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
       "offsite_venue": null,
       "id": "70a3ec875633"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "Guillaume Sentou \"Un mec cool\"",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/guillaume-sentou-un-mec-cool/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
+      "offsite_venue": null,
+      "id": "eea2838c459b"
     },
     {
       "venue": "Le Sonic",
@@ -24812,20 +24784,6 @@
       "id": "f4faa4eff7dd"
     },
     {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "La Relève",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-15",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://improvidence.mapado.com/event/154968-la-releve",
-      "image": "https://img.mapado.net/2022/10/24/635646c2a2c98-1.jpeg_thumbs/600-600.jpeg",
-      "offsite_venue": null,
-      "id": "e323ae1d8e59"
-    },
-    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Projet Nanashi",
@@ -24922,20 +24880,6 @@
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/oldelaf-500x500.jpg",
       "offsite_venue": null,
       "id": "42323fd5cd88"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "La Relève",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-15",
-      "date_end": null,
-      "time": "21:00",
-      "url": "https://improvidence.mapado.com/event/154968-la-releve",
-      "image": "https://img.mapado.net/2022/10/24/635646c2a2c98-1.jpeg_thumbs/600-600.jpeg",
-      "offsite_venue": null,
-      "id": "9c646fbd9af7"
     },
     {
       "venue": "Musée des Beaux-Arts",
@@ -29614,20 +29558,6 @@
       "id": "2372645570e5"
     },
     {
-      "venue": "Matmut Stadium de Gerland",
-      "venue_slug": "matmut-stadium-gerland",
-      "title": "LOU Rugby - Newcastle Red Bulls",
-      "subtitle": null,
-      "category": "rugby",
-      "date_start": "2027-01-17",
-      "date_end": null,
-      "time": "14:00",
-      "url": "https://billetterie.lourugby.fr/fr/sticker/195",
-      "image": null,
-      "offsite_venue": null,
-      "id": "51546977bd47"
-    },
-    {
       "venue": "Gymnase René Baillieu",
       "venue_slug": "gymnase-rene-baillieu",
       "title": "Lyon Croix-Rousse féminines - Coudoux Velaux la Fare Volley-Ball",
@@ -33212,20 +33142,6 @@
       "id": "a8216136fa40"
     },
     {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "La Relève",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2027-02-09",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://improvidence.mapado.com/event/154968-la-releve",
-      "image": "https://img.mapado.net/2022/10/24/635646c2a2c98-1.jpeg_thumbs/600-600.jpeg",
-      "offsite_venue": null,
-      "id": "aea481f1dbf1"
-    },
-    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "HISTOIRES DÉCOLONIALES #PORTRAITS CROISÉS",
@@ -33322,20 +33238,6 @@
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-jeu-de-l-amour-et-du-hasard-500x500.jpg",
       "offsite_venue": null,
       "id": "a2ee3a16a322"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "La Relève",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2027-02-09",
-      "date_end": null,
-      "time": "21:00",
-      "url": "https://improvidence.mapado.com/event/154968-la-releve",
-      "image": "https://img.mapado.net/2022/10/24/635646c2a2c98-1.jpeg_thumbs/600-600.jpeg",
-      "offsite_venue": null,
-      "id": "bc169b18cb13"
     },
     {
       "venue": "Comédie Odéon",
@@ -41415,5 +41317,8 @@
       "offsite_venue": null,
       "id": "28db94d2c949"
     }
-  ]
+  ],
+  "reprises": {
+    "Le Complexe café-théâtre": "2026-10-02"
+  }
 }
