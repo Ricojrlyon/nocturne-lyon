@@ -16,13 +16,17 @@ GitHub Pages :
  Ville Morte)                 └─→ detail_times.json (cache des heures)
 ```
 
-Le pipeline tourne quotidiennement à 06h00 UTC via GitHub Actions
+Le pipeline tourne quotidiennement à 04:17 UTC — 6 h 17 à Paris l'été,
+5 h 17 l'hiver — via GitHub Actions
 ([.github/workflows/update.yml](.github/workflows/update.yml)) et committe
-les trois fichiers de données.
+les trois fichiers de données. La minute est choisie creuse : programmé à
+l'heure pile, le passage partait chaque jour quatre à six heures en
+retard, GitHub retardant les tâches du début de l'heure.
 
 - **`scrapers/*.py`** — un module par salle (`requests` + BeautifulSoup).
   Chaque module expose `fetch() -> List[Event]`. Les échecs d'une salle ne
-  font pas tomber le run : la salle est signalée en erreur, les autres passent.
+  font pas tomber le run : la salle est signalée en erreur, jusqu'en tête
+  de la page du passage sur GitHub, et les autres passent.
   Les appels réseau passent par `base.get` (exceptions motivées dans
   `scrapers/base.py`), qui réessaie sur une coupure, un délai dépassé ou un
   502/503/504 — jamais sur une vraie réponse du site.
@@ -203,9 +207,11 @@ les trois fichiers de données.
   validée par le nom du jour de la semaine, qui écarte toute déduction
   fausse plutôt que de publier une date erronée. Enfin, son hébergeur
   (SiteGround) sert parfois aux machines de GitHub une vérification
-  anti-robot à la place de la page : le scraper la reconnaît, redemande
-  deux fois, puis renonce en le disant, et le garde-fou reprend le
-  programme de la veille.
+  anti-robot à la place de la page : le scraper la reconnaît et renonce
+  aussitôt en le disant, et le garde-fou reprend le programme de la
+  veille. Il ne redemande plus : sur les refus d'octobre 2026, deux
+  nouveaux essais dans le même passage n'en ont rattrapé aucun, et
+  coûtaient trois minutes.
 - **`scrapers/aggregators/`** — sources multi-lieux : Petit Bulletin et
   Ville Morte (API Gancio). Priorité inférieure aux scrapers venue : en cas
   de doublon, le scraper de la salle gagne l'identité et hérite des champs
@@ -243,7 +249,12 @@ les trois fichiers de données.
   Quatre garde-fous, du plus local au plus large :
   - une salle scrappée en direct qui tombe sous le quart de la veille
     garde ses événements de la veille, sept jours au plus (journal
-    `reprises` dans `events.json`) ;
+    `reprises` dans `events.json`). Une petite salle, sous dix
+    événements, n'est reprise que si son collecteur échoue — erreur,
+    page introuvable —, pas quand elle a simplement moins de dates. Pour
+    savoir quels lieux reprendre, le fil garde ceux que chaque collecteur
+    a rendus (`lieux_des_collecteurs`) : le handball, par exemple, joue
+    dans deux gymnases ;
   - de même pour le Petit Bulletin et Ville Morte ;
   - un fil qui tombe sous les trois quarts de ce que la veille comptait
     encore à venir n'est pas publié — passé trois jours sans publication,
@@ -252,7 +263,11 @@ les trois fichiers de données.
     écrasé.
 
   `NOCTURNE_FORCER_ECRITURE=1` publie ce qui a été réellement scrappé,
-  pour une perte réelle : salle fermée, saison finie.
+  pour une perte réelle : salle fermée, saison finie. Sur GitHub, c'est la
+  case « Forcer la publication » d'un lancement à la main (Actions →
+  Update events daily → Run workflow). Elle coupe tous les garde-fous du
+  passage : une salle en panne passagère ce jour-là ne serait pas reprise
+  non plus.
 - **`index.html`** — frontend vanilla JS autonome : filtres par date/lieu/
   arrondissement/type, recherche insensible aux accents (titre, lieu,
   line-up), expansion des événements multi-jours, groupes de lieux.
@@ -281,7 +296,7 @@ python -m unittest discover -s tests -t . -v      # la logique, sans réseau
 python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
 ```
 
-- **La logique**, en une dizaine de secondes et sans réseau : la lecture
+- **La logique**, en une minute environ et sans réseau : la lecture
   des dates en français, le dédoublonnage règle par règle, les nouveaux
   essais réseau, la vérification anti-robot du Complexe, les garde-fous
   d'`aggregate.py` — et deux RÉFÉRENCES figées. La chaîne de publication
