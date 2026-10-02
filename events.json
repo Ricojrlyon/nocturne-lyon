@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-02T15:31:03.228069+00:00",
-  "count": 2979,
+  "generated_at": "2026-10-02T16:35:13.603751+00:00",
+  "count": 2988,
   "sources": 37,
   "events": [
     {
@@ -636,20 +636,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "Audrey Perrin dans \"Je ne simule plus\"",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-10-02",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/audrey-perrin-dans-je-ne-simule-plus/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/audrey-perrin-540x800.jpg",
-      "offsite_venue": null,
-      "id": "1d2781c3f897"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
       "subtitle": null,
       "category": "café-théâtre",
@@ -660,6 +646,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/complexe-comedy-club-540x800.jpg",
       "offsite_venue": null,
       "id": "f4d9b21f6699"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "Audrey Perrin dans \"Je ne simule plus\"",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-02",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/audrey-perrin-dans-je-ne-simule-plus/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/audrey-perrin-540x800.jpg",
+      "offsite_venue": null,
+      "id": "1d2781c3f897"
     },
     {
       "venue": "Au Rikiki",
@@ -744,6 +744,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "35f0a674d608"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe-cafe-theatre",
+      "title": "Un grand cri d'amour",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-10-02",
+      "date_end": "2026-12-28",
+      "time": "20:30",
+      "url": "https://www.petit-bulletin.fr/agenda-302802-un-grand-cri-d-amour.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "a758e5a4d514"
     },
     {
       "venue": "Le Toboggan",
@@ -1264,6 +1278,20 @@
       "id": "1e2021ff70f8"
     },
     {
+      "venue": "Cloître du Fourvière Hôtel",
+      "venue_slug": "cloitre-du-fourviere-hotel",
+      "title": "Portraits Hôtel - Jours de désirs",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319366-portraits-h-tel-jours-de-d-sirs.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "99bc80bb7993"
+    },
+    {
       "venue": "Improvidence",
       "venue_slug": "improvidence",
       "title": "On n'a pas le même titre !",
@@ -1490,20 +1518,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "Audrey Perrin dans \"Je ne simule plus\"",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-10-03",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/audrey-perrin-dans-je-ne-simule-plus/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/audrey-perrin-540x800.jpg",
-      "offsite_venue": null,
-      "id": "a294dc09e8d0"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
       "subtitle": null,
       "category": "café-théâtre",
@@ -1514,6 +1528,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/complexe-comedy-club-540x800.jpg",
       "offsite_venue": null,
       "id": "bf9dd5d9baff"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "Audrey Perrin dans \"Je ne simule plus\"",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/audrey-perrin-dans-je-ne-simule-plus/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/audrey-perrin-540x800.jpg",
+      "offsite_venue": null,
+      "id": "a294dc09e8d0"
     },
     {
       "venue": "Les Subsistances",
@@ -1740,6 +1768,20 @@
       "id": "0546946f0ccd"
     },
     {
+      "venue": "La Sucrière",
+      "venue_slug": "la-sucriere",
+      "title": "Marché de la Mode Vintage",
+      "subtitle": null,
+      "category": "Salons et foires",
+      "date_start": "2026-10-04",
+      "date_end": null,
+      "time": "10:00",
+      "url": "https://www.petit-bulletin.fr/agenda-303719-march-de-la-mode-vintage.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "cbe2f8126757"
+    },
+    {
       "venue": "Musée des Confluences",
       "venue_slug": "musee-des-confluences",
       "title": "Fête de la science 2026 Ctrl+EAT",
@@ -1950,6 +1992,20 @@
       "id": "78e7839b4072"
     },
     {
+      "venue": "Radiant-Bellevue",
+      "venue_slug": "radiant-bellevue",
+      "title": "La couleur de la grenade",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-10-04",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.petit-bulletin.fr/agenda-308445-la-couleur-de-la-grenade.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "730dcc6311fc"
+    },
+    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Avant que les mots ne retournent à l’air",
@@ -2088,6 +2144,20 @@
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/07/MARATHON-DE-LA-DANSE-500x500.jpg",
       "offsite_venue": null,
       "id": "145e4b6a2a74"
+    },
+    {
+      "venue": "Hôtel Carlton",
+      "venue_slug": "hotel-carlton",
+      "title": "Portraits Hôtel - Jours de désirs",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-10-05",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319366-portraits-h-tel-jours-de-d-sirs.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "4136ede6151a"
     },
     {
       "venue": "Archives municipales de Lyon",
@@ -3966,6 +4036,20 @@
       "id": "d8830b3bf60b"
     },
     {
+      "venue": "L'Echappée",
+      "venue_slug": "l-echappee",
+      "title": "Imagine que...",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2026-10-09",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319381-imagine-que.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "cd22e426ce23"
+    },
+    {
       "venue": "La Machinerie - Bizarre !",
       "venue_slug": "la-machinerie-bizarre",
       "title": "Hold Fast - Cie Ma’, Marion Alzieu",
@@ -4012,7 +4096,7 @@
       "venue_slug": "marche-gare",
       "title": "Rap ANTON SERRA · LUCIO BUKOWSKI · OSTER LAPWASS Les 10+1 ans de l'album \"La Plume et le Brise-Glace\"",
       "subtitle": null,
-      "category": "rap",
+      "category": "Rap",
       "date_start": "2026-10-09",
       "date_end": null,
       "time": "20:00",
@@ -7858,20 +7942,6 @@
       "id": "07569d4e0d99"
     },
     {
-      "venue": "Bourse du Travail",
-      "venue_slug": "bourse-du-travail",
-      "title": "Panayotis Pascot - Entre Les Deux - Tournée",
-      "subtitle": null,
-      "category": "humour",
-      "date_start": "2026-10-17",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.bourse-du-travail.com/panayotis-pascot-entre-les-deux-tournee-373806.html",
-      "image": "https://www.bourse-du-travail.com/img/evenement/panayotis-pascot--entre-les-deux--tournee-69.jpg",
-      "offsite_venue": null,
-      "id": "00b45a1847b3"
-    },
-    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Cabaret Zéro Déchet",
@@ -8418,6 +8488,20 @@
       "id": "11b13e60223a"
     },
     {
+      "venue": "Au Rikiki",
+      "venue_slug": "au-rikiki",
+      "title": "Scapin : mode d'emploi",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-10-17",
+      "date_end": null,
+      "time": "20:45",
+      "url": "https://www.petit-bulletin.fr/agenda-317559-scapin-mode-deemploi.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "5140bb931118"
+    },
+    {
       "venue": "Institut Lumière",
       "venue_slug": "institut-lumiere",
       "title": "Nuit géante - Les frères Coen",
@@ -8458,6 +8542,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "2771d21c9ee9"
+    },
+    {
+      "venue": "Bourse du Travail",
+      "venue_slug": "bourse-du-travail",
+      "title": "Panayotis Pascot - Entre Les Deux - Tournée",
+      "subtitle": null,
+      "category": "humour",
+      "date_start": "2026-10-17",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.bourse-du-travail.com/panayotis-pascot-entre-les-deux-tournee-373806.html",
+      "image": "https://www.bourse-du-travail.com/img/evenement/panayotis-pascot--entre-les-deux--tournee-69.jpg",
+      "offsite_venue": null,
+      "id": "f60ef44649d7"
     },
     {
       "venue": "Goethe-Institut",
@@ -8584,6 +8682,20 @@
       "image": "https://h-eat.eu/wp-content/uploads/2026/09/Plan-de-travail-3-1-576x720.png",
       "offsite_venue": null,
       "id": "4b79c4f419b9"
+    },
+    {
+      "venue": "Salle Molière",
+      "venue_slug": "salle-moliere",
+      "title": "Une heure, un concert #1",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
+      "date_start": "2026-10-18",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319516-une-heure-un-concert-1.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "bb32bd6b1b4d"
     },
     {
       "venue": "Musée des Beaux-Arts",
@@ -11384,6 +11496,20 @@
       "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/1c704297/2026_10_22_raul_refree_quatuor_lomax_co_bi_1160x1472.jpg",
       "offsite_venue": null,
       "id": "68d6b3e80178"
+    },
+    {
+      "venue": "La Halle Tony Garnier",
+      "venue_slug": "halle-tony-garnier",
+      "title": "Encore X 23:59",
+      "subtitle": null,
+      "category": "Musique Electronique",
+      "date_start": "2026-10-25",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://www.petit-bulletin.fr/agenda-314660-encore-x-23-59.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "a6acedfc5a5b"
     },
     {
       "venue": "La Commune",
@@ -18764,6 +18890,20 @@
       "id": "6a1cd2fdf58a"
     },
     {
+      "venue": "MJC Saint-Just",
+      "venue_slug": "mjc-saint-just",
+      "title": "Entretien",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2026-11-20",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319626-entretien.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "e45bb98aadd0"
+    },
+    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Hors les murs Rap Urban Pop ZINÉE > à Bizarre! Vénissieux",
@@ -22476,20 +22616,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "Guillaume Sentou \"Un mec cool\"",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-04",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/guillaume-sentou-un-mec-cool/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/guillaume-sentou-540x800.jpg",
-      "offsite_venue": null,
-      "id": "cebdb9ac5785"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
       "subtitle": null,
       "category": "café-théâtre",
@@ -22500,6 +22626,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/sarah-lele-540x800.jpg",
       "offsite_venue": null,
       "id": "5b3b078c675b"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "Guillaume Sentou \"Un mec cool\"",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/guillaume-sentou-un-mec-cool/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/guillaume-sentou-540x800.jpg",
+      "offsite_venue": null,
+      "id": "cebdb9ac5785"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -29304,6 +29444,20 @@
       "image": "https://www.croix-rousse.com/wp-content/uploads/2026/05/Roméo-et-Juliette-1080x1080-1.png",
       "offsite_venue": null,
       "id": "9ca869c1b78b"
+    },
+    {
+      "venue": "Théâtre de la Renaissance",
+      "venue_slug": "theatre-de-la-renaissance",
+      "title": "Bloom Again",
+      "subtitle": null,
+      "category": "Danse",
+      "date_start": "2027-01-15",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319178-bloom-again.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "7eca6a80ca10"
     },
     {
       "venue": "Espace Gerson",
@@ -38448,6 +38602,20 @@
       "id": "66b581d45da6"
     },
     {
+      "venue": "La Machinerie - Théâtre de Vénissieux",
+      "venue_slug": "la-machinerie-theatre-de-venissieux",
+      "title": "Bâtir",
+      "subtitle": null,
+      "category": "Théâtre",
+      "date_start": "2027-03-17",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.petit-bulletin.fr/agenda-319193-b-tir.html",
+      "image": "https://agenda.villemorte.fr/media/thumb/035711c5c5183fa89bf559991fc7e78c.jpg",
+      "offsite_venue": null,
+      "id": "dd4b474fdcfa"
+    },
+    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Ma maison est noire",
@@ -41388,34 +41556,6 @@
       "id": "4f8eececf37d"
     },
     {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Khalil Khalil",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2027-10-01",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319332-khalil-khalil.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "0ce53e069c38"
-    },
-    {
-      "venue": "Auditorium de Lyon",
-      "venue_slug": "auditorium-de-lyon",
-      "title": "Gautier Capuçon / Simone Young",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
-      "date_start": "2027-10-01",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319465-gautier-capu-on-simone-young.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "fe83424d43fa"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "La Rue Kétanou",
@@ -41428,20 +41568,6 @@
       "image": "https://www.halle-tony-garnier.com/storage/145307/conversions/2027-10-01-LA-RUE-KETANOU-larueketanou-chanson-lyon-site-carre-1-20260624-105135-square.jpg",
       "offsite_venue": null,
       "id": "620a0d9b3588"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "Shabaab",
-      "subtitle": null,
-      "category": "Danse",
-      "date_start": "2027-10-01",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319333-shabaab.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "b8de2af85dd7"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -41710,6 +41836,9 @@
       "id": "28db94d2c949"
     }
   ],
+  "reprises": {
+    "Le Complexe café-théâtre": "2026-10-02"
+  },
   "lieux_des_collecteurs": {
     "Le Sucre": [
       "Le Sucre"
