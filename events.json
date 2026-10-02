@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-02T13:31:04.884921+00:00",
-  "count": 2960,
+  "generated_at": "2026-10-02T14:39:02.669816+00:00",
+  "count": 2961,
   "sources": 37,
   "events": [
     {
@@ -872,20 +872,6 @@
       "id": "edfbfa570b9e"
     },
     {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Le Grand Souk",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-10-03",
-      "date_end": null,
-      "time": "00:00",
-      "url": "https://h-eat.eu/events/le-grand-souk/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/09/grandsouk-576x720.jpg",
-      "offsite_venue": null,
-      "id": "fadb80d021df"
-    },
-    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Crépus Couture SS27 – Fée des stars",
@@ -1052,6 +1038,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "c46978d75202"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Le Grand Souk",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://h-eat.eu/events/le-grand-souk/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/09/grandsouk-576x720.jpg",
+      "offsite_venue": null,
+      "id": "ff3f95bbaee1"
     },
     {
       "venue": "Musée des Confluences",
@@ -2699,11 +2699,11 @@
       "category": "jeux",
       "date_start": "2026-10-07",
       "date_end": null,
-      "time": "17:30",
+      "time": "18:00",
       "url": "https://h-eat.eu/events/chess-bar-x-heat-6/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
       "offsite_venue": null,
-      "id": "7f36750e5637"
+      "id": "1e8ecaa09738"
     },
     {
       "venue": "Les Subsistances",
@@ -4850,7 +4850,7 @@
     {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
-      "title": "Bientôt épuisé sur ce point de vente Post-Metal HYPNO5E + HIPPOTRAKTOR",
+      "title": "Épuisé sur ce point de vente Post-Metal HYPNO5E + HIPPOTRAKTOR",
       "subtitle": null,
       "category": "Rock & Pop",
       "date_start": "2026-10-10",
@@ -4859,7 +4859,7 @@
       "url": "https://marchegare.fr/agenda/hypno5e-hippotraktor",
       "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-04/1532-15_web.jpg",
       "offsite_venue": null,
-      "id": "d26b8c2a23e0"
+      "id": "192849b2e6c5"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -7284,6 +7284,20 @@
       "id": "2afddc471aaa"
     },
     {
+      "venue": "Musée d'Art Contemporain",
+      "venue_slug": "mac-lyon",
+      "title": "Nocturne au musée",
+      "subtitle": "Exposition, nocturne, DJ sets...",
+      "category": "exposition",
+      "date_start": "2026-10-16",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.mac-lyon.com/fr/programmation/nocturne-au-musee",
+      "image": "https://www.mac-lyon.com/sites/mac/files/styles/programmation_results/public/2026-06/banniere_banniere_web.jpg?itok=sP8zFOAl",
+      "offsite_venue": null,
+      "id": "e7d2d0b2ad27"
+    },
+    {
       "venue": "Musée des Confluences",
       "venue_slug": "musee-des-confluences",
       "title": "Animal culte",
@@ -8642,6 +8656,20 @@
       "id": "a83d337e96a2"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Oyster Sunday x Cochon Iodé x Satriale’s Family",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-10-18",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://h-eat.eu/events/oyster-sunday-x-cochon-iode-x-satriales-family/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/09/Plan-de-travail-3-1-576x720.png",
+      "offsite_venue": null,
+      "id": "4b79c4f419b9"
+    },
+    {
       "venue": "Musée des Beaux-Arts",
       "venue_slug": "musee-des-beaux-arts",
       "title": "Erasmuseum : les étudiants internationaux vous accueillent au musée",
@@ -8780,20 +8808,6 @@
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/01/philippe-lellouche_radiant-bellevue-500x500.jpg",
       "offsite_venue": null,
       "id": "bdfa8e3d5f7b"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Oyster Sunday x Cochon Iodé x Satriale’s Family",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-10-18",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://h-eat.eu/events/oyster-sunday-x-cochon-iode-x-satriales-family/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/09/Plan-de-travail-3-1-576x720.png",
-      "offsite_venue": null,
-      "id": "5536d31dd66b"
     },
     {
       "venue": "Le Transbordeur",
@@ -11290,7 +11304,7 @@
     {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
-      "title": "Récital piano #précipité",
+      "title": "Récital de piano #précipité",
       "subtitle": "— Pour te comprendre",
       "category": "théâtre",
       "date_start": "2026-10-25",
@@ -11299,7 +11313,7 @@
       "url": "https://www.tnp-villeurbanne.com/spectacle/piano-solo-precipite/",
       "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/05/Piano_solo_Clement_Griffault.jpg",
       "offsite_venue": null,
-      "id": "a71871a4e10e"
+      "id": "1da4dc984616"
     },
     {
       "venue": "Gymnase René Baillieu",
@@ -11953,11 +11967,11 @@
       "category": "jeux",
       "date_start": "2026-10-28",
       "date_end": null,
-      "time": "17:30",
+      "time": "18:00",
       "url": "https://h-eat.eu/events/chess-bar-x-heat-9/",
       "image": "https://h-eat.eu/wp-content/uploads/2026/04/L1300825-480x720.jpg",
       "offsite_venue": null,
-      "id": "65007ba3dd8a"
+      "id": "2c5c3c5aa998"
     },
     {
       "venue": "HEAT",
@@ -14566,7 +14580,7 @@
     {
       "venue": "Grrrnd Zero",
       "venue_slug": "grrrnd-zero",
-      "title": "Tenace + Repeal",
+      "title": "Tenace + Repeal + Touccan + Monde Moderne + Hinin",
       "subtitle": null,
       "category": "musique",
       "date_start": "2026-11-06",
@@ -14575,7 +14589,7 @@
       "url": "https://agenda.villemorte.fr/event/tenace-repeal",
       "image": null,
       "offsite_venue": null,
-      "id": "e5416457f9a7"
+      "id": "db23df59a44c"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -17448,6 +17462,20 @@
       "id": "2e3c0ca2bae8"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Oyster Sunday x Cochon Iodé",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-11-15",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://h-eat.eu/events/oyster-sunday-x-cochon-iode/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/09/Plan-de-travail-5-1-576x720.png",
+      "offsite_venue": null,
+      "id": "0ac86ace4043"
+    },
+    {
       "venue": "IAC Villeurbanne",
       "venue_slug": "iac-villeurbanne",
       "title": "Visites du week-end",
@@ -17600,20 +17628,6 @@
       "image": "https://img.mapado.net/2026/10/2/6abf7d2bedb22-gaspard-mapado.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "d1c1dda78d74"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Oyster Sunday x Cochon Iodé",
-      "subtitle": null,
-      "category": null,
-      "date_start": "2026-11-15",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://h-eat.eu/events/oyster-sunday-x-cochon-iode/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/09/Plan-de-travail-5-1-576x720.png",
-      "offsite_venue": null,
-      "id": "3637bc117deb"
     },
     {
       "venue": "Improvidence",
@@ -24168,6 +24182,20 @@
       "id": "0de6cb52de6b"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "S festival : S christmas market",
+      "subtitle": null,
+      "category": "festival",
+      "date_start": "2026-12-12",
+      "date_end": null,
+      "time": "12:00",
+      "url": "https://h-eat.eu/events/s-festival-christmas-market/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/09/S-festival-2026-lidentite-visuelle-signee-par-@antoineeckart-Une-affiche-a-plusieurs-niveaux-d-576x720.jpg",
+      "offsite_venue": null,
+      "id": "957aab20111a"
+    },
+    {
       "venue": "Musée des Beaux-Arts",
       "venue_slug": "musee-des-beaux-arts",
       "title": "Festin ! Un week-end pour tous les goûts…",
@@ -24348,20 +24376,6 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/7f5c325a/le_dindon_simon_gosselin_1_33.jpg",
       "offsite_venue": null,
       "id": "1d1c4af3f734"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "S festival : S christmas market",
-      "subtitle": null,
-      "category": "festival",
-      "date_start": "2026-12-12",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://h-eat.eu/events/s-festival-christmas-market/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/09/S-festival-2026-lidentite-visuelle-signee-par-@antoineeckart-Une-affiche-a-plusieurs-niveaux-d-576x720.jpg",
-      "offsite_venue": null,
-      "id": "b169d4f49919"
     },
     {
       "venue": "La Rayonne",
@@ -24588,6 +24602,34 @@
       "id": "ef8e8a5dde61"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Oyster Sunday x Cochon Iodé x S festival",
+      "subtitle": null,
+      "category": "festival",
+      "date_start": "2026-12-13",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://h-eat.eu/events/oyster-sunday-x-cochon-iode-x-s-festival/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/09/Plan-de-travail-6-576x720.png",
+      "offsite_venue": null,
+      "id": "a0e72471dff3"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "S festival : S christmas market",
+      "subtitle": null,
+      "category": "festival",
+      "date_start": "2026-12-13",
+      "date_end": null,
+      "time": "12:00",
+      "url": "https://h-eat.eu/events/s-festival-s-christmas-market/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/09/S-festival-2026-lidentite-visuelle-signee-par-@antoineeckart-Une-affiche-a-plusieurs-niveaux-d-576x720.jpg",
+      "offsite_venue": null,
+      "id": "72c1c0e37df6"
+    },
+    {
       "venue": "Musée des Beaux-Arts",
       "venue_slug": "musee-des-beaux-arts",
       "title": "Festin ! Un week-end pour tous les goûts…",
@@ -24698,34 +24740,6 @@
       "image": null,
       "offsite_venue": null,
       "id": "5841be423bd7"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "Oyster Sunday x Cochon Iodé x S festival",
-      "subtitle": null,
-      "category": "festival",
-      "date_start": "2026-12-13",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://h-eat.eu/events/oyster-sunday-x-cochon-iode-x-s-festival/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/09/Plan-de-travail-6-576x720.png",
-      "offsite_venue": null,
-      "id": "c2906ed937f7"
-    },
-    {
-      "venue": "HEAT",
-      "venue_slug": "heat",
-      "title": "S festival : S christmas market",
-      "subtitle": null,
-      "category": "festival",
-      "date_start": "2026-12-13",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://h-eat.eu/events/s-festival-s-christmas-market/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/09/S-festival-2026-lidentite-visuelle-signee-par-@antoineeckart-Une-affiche-a-plusieurs-niveaux-d-576x720.jpg",
-      "offsite_venue": null,
-      "id": "3a4d072635b2"
     },
     {
       "venue": "Le Transbordeur",
@@ -34131,7 +34145,7 @@
       "date_end": null,
       "time": "21:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/teletech-3",
-      "image": "https://www.halle-tony-garnier.com/storage/145316/conversions/2027-02-13-TELETECH-2027-02-13-teletech-lyon-square-20261002-152202-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/145319/conversions/2027-02-13-TELETECH-2027-02-13-teletech-lyon-square-20261002-152202-square.jpg",
       "offsite_venue": null,
       "id": "f188d50f5fa9"
     },
