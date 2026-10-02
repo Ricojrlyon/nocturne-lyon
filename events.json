@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T11:08:37.693760+00:00",
+  "generated_at": "2026-10-02T11:23:03.439917+00:00",
   "count": 2959,
   "sources": 37,
   "events": [
@@ -38476,6 +38476,20 @@
       "id": "2ba93e33370e"
     },
     {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "THE PINEAPPLE THIEF",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2027-03-19",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://larayonne.org/evenement/the-pineapple-thief-2/",
+      "image": "https://larayonne.org/wp-content/uploads/2026/09/Header-500x266.jpg",
+      "offsite_venue": null,
+      "id": "c3bdad6be1f5"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Mon vrai nom est Elisabeth",
@@ -41080,20 +41094,6 @@
       "id": "f0fffb55d01d"
     },
     {
-      "venue": "La Rayonne",
-      "venue_slug": "la-rayonne",
-      "title": "THE PINEAPPLE THIEF",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2027-09-08",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://larayonne.org/evenement/the-pineapple-thief-2/",
-      "image": "https://larayonne.org/wp-content/uploads/2026/09/Header-500x266.jpg",
-      "offsite_venue": null,
-      "id": "cd8e5fbbba72"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Generation Celine",
@@ -41429,5 +41429,115 @@
       "offsite_venue": null,
       "id": "28db94d2c949"
     }
-  ]
+  ],
+  "lieux_des_collecteurs": {
+    "Le Sucre": [
+      "Le Sucre"
+    ],
+    "Les Subsistances": [
+      "Les Subsistances"
+    ],
+    "Marché Gare": [
+      "Marché Gare"
+    ],
+    "Radiant-Bellevue": [
+      "Radiant-Bellevue"
+    ],
+    "La Rayonne": [
+      "La Rayonne"
+    ],
+    "Le Transbordeur": [
+      "Le Transbordeur"
+    ],
+    "Le Petit Salon": [
+      "Le Petit Salon"
+    ],
+    "Le Sonic": [
+      "Le Sonic"
+    ],
+    "Le Périscope": [
+      "Le Périscope"
+    ],
+    "La Commune": [
+      "La Commune"
+    ],
+    "HEAT": [
+      "HEAT"
+    ],
+    "La Halle Tony Garnier": [
+      "La Halle Tony Garnier"
+    ],
+    "Opéra de Lyon": [
+      "Opéra national de Lyon"
+    ],
+    "TNG": [
+      "TNG"
+    ],
+    "Bourse du Travail": [
+      "Bourse du Travail"
+    ],
+    "Improvidence": [
+      "Improvidence"
+    ],
+    "Espace Gerson": [
+      "Espace Gerson"
+    ],
+    "Le Complexe": [
+      "Le Complexe café-théâtre"
+    ],
+    "Célestins": [
+      "Célestins, théâtre de Lyon"
+    ],
+    "TNP": [
+      "TNP - Théâtre National Populaire"
+    ],
+    "Maison de la Danse": [
+      "Maison de la Danse"
+    ],
+    "Théâtre de la Croix-Rousse": [
+      "Théâtre de la Croix-Rousse"
+    ],
+    "Comédie Odéon": [
+      "Comédie Odéon"
+    ],
+    "Chapelle de la Trinité": [
+      "Chapelle de la Trinité"
+    ],
+    "Agend'arts": [
+      "Agend'arts"
+    ],
+    "Auditorium de Lyon": [
+      "Auditorium de Lyon"
+    ],
+    "Musée des Confluences": [
+      "Musée des Confluences"
+    ],
+    "Musée des Beaux-Arts": [
+      "Musée des Beaux-Arts"
+    ],
+    "IAC Villeurbanne": [
+      "IAC Villeurbanne"
+    ],
+    "Musée d'Art Contemporain": [
+      "Musée d'Art Contemporain"
+    ],
+    "LDLC ASVEL": [
+      "Astroballe",
+      "LDLC Arena"
+    ],
+    "LDLC ASVEL Féminin": [
+      "Palais des Sports de Gerland"
+    ],
+    "Volley national lyonnais": [
+      "Gymnase Mado Bonnet",
+      "Gymnase René Baillieu"
+    ],
+    "Handball national lyonnais": [
+      "Gymnase Matthias Favier",
+      "Salle des Gratte-Ciel"
+    ],
+    "LOU Rugby": [
+      "Matmut Stadium de Gerland"
+    ]
+  }
 }
