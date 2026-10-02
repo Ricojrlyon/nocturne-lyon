@@ -372,8 +372,21 @@ def _scrape_url(url: str) -> List[dict]:
 
         category = _category_from_url(href) or "spectacle"
 
+        # L'affiche (BUG-14). Quand le titre est lui-même le lien, le bloc
+        # trouvé plus haut s'arrête au texte : l'image est à côté, dans un
+        # autre lien vers la même fiche — les concerts « Opéra Underground »
+        # n'avaient ainsi jamais d'affiche. On remonte jusqu'au bloc qui la
+        # porte, tant qu'il ne porte qu'un titre : jamais celle d'un voisin.
+        bloc = carte
+        for _ in range(2):
+            if bloc.find("img") is not None:
+                break
+            parent = bloc.parent
+            if parent is None or len(_par_prefixe(parent, "title_")) != 1:
+                break
+            bloc = parent
         image: Optional[str] = None
-        img = carte.find("img")
+        img = bloc.find("img")
         if img:
             src = img.get("src", "") or ""
             if src.startswith("http"):
