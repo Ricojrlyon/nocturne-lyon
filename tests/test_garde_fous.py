@@ -19,6 +19,14 @@ def programme(salle, n=30, debut=1):
 
 
 DIRECT = {s: programme(s) for s in SALLES}
+# SUIVI-2 : une petite salle, sous le plancher du garde-fou (10 événements),
+# et un collecteur qui joue dans deux gymnases.
+PETITE = "Le Petit Salon"
+PROG_PETITE = programme(PETITE, n=5)
+HAND = "Handball national lyonnais"
+GYMNASES = ["Gymnase Matthias Favier", "Salle des Gratte-Ciel"]
+PROG_HAND = [evenement(GYMNASES[i % 2], "Match HNL n°%d" % i, J + timedelta(days=3 + 7 * i),
+                       url="https://handball.exemple.org/m/%d" % i) for i in range(5)]
 PB = [evenement("Salle PB %d" % (i % 12), "Spectacle PB %d" % i, J + timedelta(days=1 + i % 50),
                 url="https://www.petit-bulletin.fr/agenda-%d" % i) for i in range(60)]
 VM = [evenement("Lieu VM %d" % (i % 6), "Concert VM %d" % i, J + timedelta(days=1 + i % 50),
@@ -106,6 +114,85 @@ class GardeFous(unittest.TestCase):
                          [("HEAT", J.isoformat()), ("agrégateur:Ville Morte", J.isoformat())])
         self.assertLess(journal.index("EFFONDREMENT : HEAT"),
                         journal.index("EFFONDREMENT d'agrégateur : Ville Morte"))
+
+    def test_chaque_source_en_echec_est_signalee_en_tete_du_passage(self):
+        # SUIVI-2 : une annotation GitHub par source qui lève, salle ou
+        # agrégateur. Une grande salle reste reprise par l'effondrement.
+        with atelier(J) as a:
+            a.veille(VEILLE)
+            a.lancer(normales(HEAT=panne), agregateurs(vm=panne), github=True)
+            journal = a.journal.getvalue()
+        for nom in ("HEAT", "Ville Morte"):
+            self.assertIn("::warning title=source en échec::[source en échec] %s — "
+                          "RuntimeError: 502 Proxy Error" % nom, journal)
+        self.assertIn("EFFONDREMENT : HEAT", journal)
+        self.assertNotIn("PANNE", journal)
+
+    def test_petite_salle_dont_le_collecteur_leve_reprise_de_la_veille(self):
+        # Au premier passage, sans trace des lieux des collecteurs, le lieu
+        # d'un collecteur est son nom.
+        with atelier(J) as a:
+            a.veille(VEILLE + PROG_PETITE)
+            self.assertEqual(a.lancer(normales() + [(PETITE, panne)], agregateurs()), 0)
+            fil = a.publie()
+            journal = a.journal.getvalue()
+        self.assertEqual(sum(1 for e in fil["events"] if e["venue"] == PETITE), 5)
+        self.assertEqual(fil["reprises"], {PETITE: J.isoformat()})
+        self.assertIn("PANNE : Le Petit Salon 5→0, 5 repris", journal)
+        self.assertNotIn("EFFONDREMENT", journal)
+
+    def test_petite_salle_qui_rend_moins_de_dates_n_est_pas_reprise(self):
+        for rendu in ([], PROG_PETITE[:1]):
+            with atelier(J) as a:
+                a.veille(VEILLE + PROG_PETITE)
+                a.lancer(normales() + [(PETITE, copies(rendu))], agregateurs())
+                fil = a.publie()
+            self.assertEqual(sum(1 for e in fil["events"] if e["venue"] == PETITE), len(rendu))
+            self.assertNotIn("reprises", fil)
+
+    def test_petite_salle_en_panne_depuis_sept_jours_n_est_plus_reprise(self):
+        with atelier(J) as a:
+            a.veille(VEILLE + PROG_PETITE, reprises={PETITE: (J - timedelta(days=7)).isoformat()})
+            a.lancer(normales() + [(PETITE, panne)], agregateurs())
+            fil = a.publie()
+            journal = a.journal.getvalue()
+        self.assertEqual(sum(1 for e in fil["events"] if e["venue"] == PETITE), 0)
+        self.assertIn("PLUS reprise", journal)
+
+    def test_collecteur_a_deux_lieux_tombe_le_lendemain(self):
+        # Le handball joue dans deux gymnases : c'est la trace de la veille,
+        # « lieux_des_collecteurs », qui dit lesquels reprendre. Le
+        # collecteur en échec la garde pour le surlendemain.
+        with atelier(J) as a:
+            a.veille(VEILLE)
+            a.lancer(normales() + [(HAND, copies(PROG_HAND))], agregateurs())
+            self.assertEqual(a.publie()["lieux_des_collecteurs"][HAND], GYMNASES)
+            a.jour = J + timedelta(days=1)
+            a.lancer(normales() + [(HAND, panne)], agregateurs())
+            fil = a.publie()
+        self.assertEqual(sum(1 for e in fil["events"] if e["venue"] in GYMNASES), 5)
+        self.assertEqual(fil["reprises"], {g: (J + timedelta(days=1)).isoformat()
+                                           for g in GYMNASES})
+        self.assertEqual(fil["lieux_des_collecteurs"][HAND], GYMNASES)
+
+    def test_collecteur_qui_ne_rendait_rien_hier_ne_fait_rien_reprendre(self):
+        # La trace dit qu'hier ce collecteur n'a rien rendu : les dates de
+        # la salle venaient d'une autre source, et ne sont pas reprises.
+        with atelier(J) as a:
+            a.veille(VEILLE + PROG_PETITE, lieux={PETITE: []})
+            a.lancer(normales() + [(PETITE, panne)], agregateurs())
+            fil = a.publie()
+        self.assertNotIn("reprises", fil)
+        self.assertEqual(fil["lieux_des_collecteurs"][PETITE], [])
+
+    def test_forcage_ne_reprend_pas_non_plus_la_petite_salle(self):
+        with atelier(J) as a:
+            a.veille(VEILLE + PROG_PETITE)
+            self.assertEqual(a.lancer(normales() + [(PETITE, panne)], agregateurs(),
+                                      forcer=True), 0)
+            fil = a.publie()
+        self.assertEqual(sum(1 for e in fil["events"] if e["venue"] == PETITE), 0)
+        self.assertNotIn("reprises", fil)
 
     def test_repris_de_l_agregateur_et_publie_par_la_salle_une_seule_carte(self):
         soir = J + timedelta(days=7)

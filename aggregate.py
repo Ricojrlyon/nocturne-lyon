@@ -343,6 +343,62 @@ def _effondrements(nouveaux: List[Event],
     return pertes
 
 
+# LES PETITES SALLES (SUIVI-2). Sous EFFONDREMENT_PLANCHER, le garde-fou
+# ci-dessus ne regarde pas : une salle à six dates qui en perd cinq peut
+# être une vraie fin de programme. Mais quand son COLLECTEUR LÈVE — page
+# introuvable, site en panne —, il n'y a pas de doute : le 2 octobre 2026,
+# l'agenda du Petit Salon a répondu 404, et la salle est passée de cinq
+# soirées à deux sur le site, sans reprise ni alerte. Une petite salle dont
+# le collecteur lève reprend donc la veille comme une grande, avec le même
+# délai et le même journal. Une petite salle qui rend simplement moins de
+# dates, elle, n'est pas reprise.
+#
+# Le garde-fou compte par LIEU, une panne se lit par COLLECTEUR : le
+# handball joue dans deux gymnases, le volley dans deux autres. Le fil
+# garde donc les lieux que chaque collecteur a rendus, sous la clé
+# « lieux_des_collecteurs », et un collecteur en échec garde ceux de la
+# veille. Sans cette trace — au premier passage —, son lieu est son nom,
+# ce qui vaut pour toutes les salles.
+def _lieux_des_collecteurs(lieux: dict, chemin: Path) -> tuple[dict, dict]:
+    """(lieux à écrire dans le fil, lieux des collecteurs en échec).
+
+    `lieux` vient de _collecter : pour chaque collecteur de salle, les
+    lieux qu'il a rendus, ou None s'il a levé.
+    """
+    try:
+        hier = json.loads(chemin.read_text(encoding="utf-8"))
+        hier = hier.get("lieux_des_collecteurs") or {}
+    except (OSError, ValueError, AttributeError):
+        hier = {}
+    if not isinstance(hier, dict):
+        hier = {}
+    # Une liste vide est une trace : hier, le collecteur n'a rien rendu.
+    en_panne = {nom: hier.get(nom, [canonical_venue_name(nom)])
+                for nom, rendus in lieux.items() if rendus is None}
+    return ({nom: en_panne.get(nom, rendus) for nom, rendus in lieux.items()},
+            en_panne)
+
+
+def _petites_salles_en_panne(nouveaux: List[Event], chemin: Path,
+                             en_panne: dict) -> list[tuple[str, int, int]]:
+    """Petites salles dont le collecteur a levé : (lieu, hier, aujourd'hui).
+
+    Petite : moins de EFFONDREMENT_PLANCHER événements directs dans le fil
+    précédent. `en_panne` donne les lieux de chaque collecteur en échec.
+    """
+    if not en_panne:
+        return []
+    try:
+        anciens = json.loads(chemin.read_text(encoding="utf-8"))["events"]
+    except (OSError, ValueError, KeyError, TypeError):
+        return []
+    avant = _compte_direct((e.get("venue"), e.get("url")) for e in anciens)
+    apres = _compte_direct((e.venue, e.url) for e in nouveaux)
+    lieux = {lieu for rendus in en_panne.values() for lieu in rendus}
+    return sorted((lieu, avant[lieu], apres.get(lieu, 0)) for lieu in lieux
+                  if 0 < avant.get(lieu, 0) < EFFONDREMENT_PLANCHER)
+
+
 def _chute_de_volume(n_nouveau: int, chemin: Path,
                      today_iso: str) -> tuple[int, int] | None:
     """(encore à venir dans le fil précédent, son âge en jours), si le
@@ -525,16 +581,20 @@ def _reprendre_agregateurs(chemin: Path, effondres: list,
     return repris, journal, abandons
 
 
-def _collecter() -> tuple[list[tuple[Event, int]], list]:
+def _collecter() -> tuple[list[tuple[Event, int]], list, dict]:
     """Étapes 1 et 2 : chaque collecteur de salle, puis chaque agrégateur.
 
-    Rend les événements, chacun étiqueté de la priorité de sa source, et
-    le compte rendu (nom, nombre d'événements, erreur) de chaque source.
-    Une source qui lève est notée en échec sans arrêter les autres.
+    Rend les événements, chacun étiqueté de la priorité de sa source, le
+    compte rendu (nom, nombre d'événements, erreur) de chaque source, et
+    les lieux que chaque collecteur de salle a rendus — None s'il a levé.
+    Une source qui lève est notée en échec sans arrêter les autres, et
+    signalée en tête du passage (SUIVI-2) : enfouie dans le journal d'un
+    run vert, la panne du Petit Salon n'aurait été vue de personne.
     """
     # Each event is tagged with a (source) priority for deduplication.
     all_tagged: list[tuple[Event, int]] = []
     report = []
+    lieux: dict = {}
 
     # 1) Venue-specific scrapers
     for name, fn in SCRAPERS:
@@ -543,10 +603,15 @@ def _collecter() -> tuple[list[tuple[Event, int]], list]:
             for e in events:
                 all_tagged.append((e, 100))
             report.append((name, len(events), None))
+            lieux[name] = sorted({canonical_venue_name(e.venue or "")
+                                  for e in events} - {""})
         except Exception as e:  # noqa: BLE001
             tb = traceback.format_exc(limit=2)
             report.append((name, 0, f"{type(e).__name__}: {e}"))
+            lieux[name] = None
             print(f"[FAIL] {name}: {tb}", file=sys.stderr)
+            _alerte("source en échec",
+                    f"[source en échec] {name} — {type(e).__name__}: {e}")
 
     # 2) Aggregators (multi-venue sources)
     for name, fn, prio in AGGREGATORS:
@@ -559,7 +624,9 @@ def _collecter() -> tuple[list[tuple[Event, int]], list]:
             tb = traceback.format_exc(limit=2)
             report.append((name, 0, f"{type(e).__name__}: {e}"))
             print(f"[FAIL aggregator] {name}: {tb}", file=sys.stderr)
-    return all_tagged, report
+            _alerte("source en échec",
+                    f"[source en échec] {name} — {type(e).__name__}: {e}")
+    return all_tagged, report, lieux
 
 
 def _ecarter_les_plages_d_agregateur(all_tagged: list[tuple[Event, int]]
@@ -678,11 +745,13 @@ def _sans_titre_vide(upcoming_tagged: list[tuple[Event, int]]
     return clean_tagged
 
 
-def _garde_fou_des_salles(unique: List[Event], out: Path,
-                          today_iso: str) -> tuple[List[Event], dict]:
-    """Étape 6b : une salle effondrée reprend ses événements de la veille.
+def _garde_fou_des_salles(unique: List[Event], out: Path, today_iso: str,
+                          en_panne: dict) -> tuple[List[Event], dict]:
+    """Étape 6b : une salle effondrée reprend ses événements de la veille,
+    une petite salle aussi quand son collecteur a levé (SUIVI-2).
 
-    Rend le fil, complété des reprises, et le journal des reprises.
+    `en_panne` : les lieux de chaque collecteur en échec. Rend le fil,
+    complété des reprises, et le journal des reprises.
     """
     # 6b) Garde-fou : une salle scrappée en direct ne s'effondre pas seule.
     #     Voir le chapeau d'EFFONDREMENT_PART pour la mesure et la règle.
@@ -691,17 +760,22 @@ def _garde_fou_des_salles(unique: List[Event], out: Path,
     #     un décompte d'avant-dédup à un décompte d'après ne voudrait rien
     #     dire.
     effondres = _effondrements(unique, out) if out.exists() else []
+    # Les petites salles dont le collecteur a levé : voir le chapeau de
+    # _lieux_des_collecteurs.
+    pannes = (_petites_salles_en_panne(unique, out, en_panne)
+              if out.exists() else [])
     reprises: dict = {}
-    if effondres and os.environ.get("NOCTURNE_FORCER_ECRITURE") == "1":
+    forcer = os.environ.get("NOCTURNE_FORCER_ECRITURE") == "1"
+    if (effondres or pannes) and forcer:
         _alerte("garde-fou contourné",
                 "[garde-fou] effondrement(s) publié(s) tels quels "
                 "(NOCTURNE_FORCER_ECRITURE=1) : "
-                + ", ".join("%s %d→%d" % t for t in effondres))
-        effondres = []
+                + ", ".join("%s %d→%d" % t for t in effondres + pannes))
+        effondres, pannes = [], []
 
-    if effondres:
-        repris, reprises, abandons = _reprendre(unique, out, effondres,
-                                                today_iso)
+    if effondres or pannes:
+        repris, reprises, abandons = _reprendre(unique, out,
+                                                effondres + pannes, today_iso)
         if repris:
             # On repasse par la dédup avec le fil complet : les événements
             # repris n'ont PAS été confrontés aux publications du jour, et
@@ -711,22 +785,32 @@ def _garde_fou_des_salles(unique: List[Event], out: Path,
             avant_reprise = len(unique)
             unique = deduplicate([(e, _priorite(e.url)) for e in unique]
                                  + [(e, 100) for e in repris])
-            detail = ", ".join("%s %d→%d, %d repris"
-                               % (lieu, a, b,
-                                  sum(1 for e in repris
-                                      if canonical_venue_name(e.venue) == lieu))
-                               for lieu, a, b in effondres)
-            _alerte(
-                "salle reprise du fil précédent",
-                "[garde-fou] EFFONDREMENT : " + detail + ".\n"
-                "Le fil est publié, et ces salles gardent leurs événements "
-                "de la veille.\n"
-                "Une salle ne perd pas les trois quarts de son programme en "
-                "une nuit : son\n"
-                "scraper a rendu une liste courte sans lever. Si la perte "
-                "est RÉELLE — salle\n"
-                "fermée, saison finie —, relancer avec "
-                "NOCTURNE_FORCER_ECRITURE=1.")
+
+            lieux_repris = [canonical_venue_name(e.venue) for e in repris]
+
+            def detail(salles):
+                return ", ".join("%s %d→%d, %d repris"
+                                 % (lieu, a, b, lieux_repris.count(lieu))
+                                 for lieu, a, b in salles)
+            if effondres:
+                _alerte(
+                    "salle reprise du fil précédent",
+                    "[garde-fou] EFFONDREMENT : " + detail(effondres) + ".\n"
+                    "Le fil est publié, et ces salles gardent leurs "
+                    "événements de la veille.\n"
+                    "Une salle ne perd pas les trois quarts de son programme "
+                    "en une nuit : son\n"
+                    "scraper a rendu une liste courte sans lever. Si la "
+                    "perte est RÉELLE — salle\n"
+                    "fermée, saison finie —, relancer avec "
+                    "NOCTURNE_FORCER_ECRITURE=1.")
+            if pannes:
+                _alerte(
+                    "petite salle reprise du fil précédent",
+                    "[garde-fou] PANNE : " + detail(pannes) + ".\n"
+                    "Le collecteur de ces petites salles a levé : elles "
+                    "gardent leurs événements\n"
+                    "de la veille, %d jours au plus." % REPRISE_JOURS_MAX)
             print("[garde-fou] %d + %d repris → %d après dédup"
                   % (avant_reprise, len(repris), len(unique)))
         for lieu, depuis, jours in abandons:
@@ -820,9 +904,10 @@ def _geocoder_les_nouveaux_lieux(unique: List[Event]) -> None:
                        verbose=True)
 
 
-def _contenu_du_fil(unique: List[Event], reprises: dict) -> dict:
-    """Ce qu'events.json contiendra : l'en-tête, les événements, et le
-    journal des reprises s'il y en a."""
+def _contenu_du_fil(unique: List[Event], reprises: dict,
+                    lieux: dict) -> dict:
+    """Ce qu'events.json contiendra : l'en-tête, les événements, le
+    journal des reprises s'il y en a, et les lieux des collecteurs."""
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "count": len(unique),
@@ -839,6 +924,11 @@ def _contenu_du_fil(unique: List[Event], reprises: dict) -> dict:
     # ne le lit pas.
     if reprises:
         payload["reprises"] = reprises
+    # Les lieux que chaque collecteur a rendus : c'est par eux que le run
+    # suivant sait quelles petites salles reprendre si l'un d'eux lève
+    # (SUIVI-2). Le frontend ne les lit pas.
+    if lieux:
+        payload["lieux_des_collecteurs"] = lieux
     return payload
 
 
@@ -924,7 +1014,7 @@ def main() -> int:
     """Un passage complet, étape par étape : collecte, nettoyage,
     dédoublonnage, garde-fous, puis publication d'events.json. Rend 0, ou
     1 quand le fil n'a pas été écrit."""
-    all_tagged, report = _collecter()
+    all_tagged, report, lieux = _collecter()
     all_tagged = _ecarter_les_plages_d_agregateur(all_tagged)
     all_tagged = _appliquer_les_regles_des_salles(all_tagged)
 
@@ -947,7 +1037,8 @@ def main() -> int:
           f"(-{before - len(unique)})")
 
     out = Path(__file__).parent / "events.json"
-    unique, reprises = _garde_fou_des_salles(unique, out, today_iso)
+    lieux, en_panne = _lieux_des_collecteurs(lieux, out)
+    unique, reprises = _garde_fou_des_salles(unique, out, today_iso, en_panne)
     unique = _garde_fou_des_agregateurs(unique, out, today_iso, reprises)
 
     # 7) Sort by date then time then venue.
@@ -963,7 +1054,8 @@ def main() -> int:
           f"{sans_cat} restée(s) sans catégorie")
 
     _geocoder_les_nouveaux_lieux(unique)
-    wrote = _publier(_contenu_du_fil(unique, reprises), report, out, today_iso)
+    wrote = _publier(_contenu_du_fil(unique, reprises, lieux), report, out,
+                     today_iso)
     _resumer(report, wrote, len(unique), out)
     # Un effondrement ne fait plus échouer le run : le fil est publié, la
     # salle tombée reprise, et l'alerte remonte en annotation GitHub. Seul

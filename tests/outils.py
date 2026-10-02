@@ -131,21 +131,33 @@ class Atelier:
         self.fichier = dossier / "events.json"
 
     def veille(self, evenements, *, age_jours: int = 1,
-               reprises: dict | None = None) -> None:
-        """Écrit le fil publié « hier » — ou il y a `age_jours` jours."""
+               reprises: dict | None = None, lieux: dict | None = None) -> None:
+        """Écrit le fil publié « hier » — ou il y a `age_jours` jours.
+
+        `lieux` : la trace des lieux de chaque collecteur, absente sinon.
+        """
         d = {"generated_at": (self.jour - timedelta(days=age_jours)).isoformat()
              + "T06:00:00+00:00",
              "events": [e.to_dict() for e in evenements]}
         if reprises:
             d["reprises"] = reprises
+        if lieux:
+            d["lieux_des_collecteurs"] = lieux
         self.fichier.write_text(json.dumps(d, ensure_ascii=False), encoding="utf-8")
 
-    def lancer(self, salles, agregateurs=(), forcer: bool = False) -> int:
-        """salles : [(nom, fonction)] ; agregateurs : [(nom, fonction, priorité)]."""
+    def lancer(self, salles, agregateurs=(), forcer: bool = False,
+               github: bool = False) -> int:
+        """salles : [(nom, fonction)] ; agregateurs : [(nom, fonction, priorité)].
+
+        `github` : comme sur GitHub Actions, les alertes s'écrivent aussi en
+        annotations (« ::warning »), capturées dans le journal.
+        """
         env = {k: v for k, v in os.environ.items()
                if k not in ("NOCTURNE_FORCER_ECRITURE", "GITHUB_ACTIONS")}
         if forcer:
             env["NOCTURNE_FORCER_ECRITURE"] = "1"
+        if github:
+            env["GITHUB_ACTIONS"] = "true"
         with mock.patch.object(aggregate, "__file__", str(self.dossier / "aggregate.py")), \
                 mock.patch.object(aggregate, "date", date_figee(self.jour)), \
                 mock.patch.object(aggregate, "save_detail_cache", lambda *a, **k: None), \
