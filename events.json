@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-02T10:00:42.827076+00:00",
-  "count": 2951,
+  "generated_at": "2026-10-02T11:08:37.693760+00:00",
+  "count": 2959,
   "sources": 37,
   "events": [
     {
@@ -636,20 +636,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-10-02",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
-      "offsite_venue": null,
-      "id": "f4d9b21f6699"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Audrey Perrin dans \"Je ne simule plus\"",
       "subtitle": null,
       "category": "café-théâtre",
@@ -660,6 +646,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/audrey-perrin-540x800.jpg",
       "offsite_venue": null,
       "id": "1d2781c3f897"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-02",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "f4d9b21f6699"
     },
     {
       "venue": "Au Rikiki",
@@ -744,20 +744,6 @@
       "image": null,
       "offsite_venue": null,
       "id": "35f0a674d608"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe-cafe-theatre",
-      "title": "Un grand cri d'amour",
-      "subtitle": null,
-      "category": "Théâtre",
-      "date_start": "2026-10-02",
-      "date_end": "2026-12-28",
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-302802-un-grand-cri-d-amour.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "a758e5a4d514"
     },
     {
       "venue": "Le Toboggan",
@@ -1490,20 +1476,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-10-03",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
-      "offsite_venue": null,
-      "id": "bf9dd5d9baff"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Audrey Perrin dans \"Je ne simule plus\"",
       "subtitle": null,
       "category": "café-théâtre",
@@ -1514,6 +1486,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/audrey-perrin-540x800.jpg",
       "offsite_venue": null,
       "id": "a294dc09e8d0"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "bf9dd5d9baff"
     },
     {
       "venue": "Les Subsistances",
@@ -4484,6 +4470,20 @@
       "id": "714b76b56b71"
     },
     {
+      "venue": "Matmut Stadium de Gerland",
+      "venue_slug": "matmut-stadium-gerland",
+      "title": "LOU Rugby - Stade Rochelais",
+      "subtitle": null,
+      "category": "rugby",
+      "date_start": "2026-10-10",
+      "date_end": null,
+      "time": "16:35",
+      "url": "https://billetterie.lourugby.fr/fr/sticker/163",
+      "image": null,
+      "offsite_venue": null,
+      "id": "9c14e45cf96f"
+    },
+    {
       "venue": "Auditorium de Lyon",
       "venue_slug": "auditorium-lyon",
       "title": "Schumann / Beethoven",
@@ -5448,6 +5448,20 @@
       "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-8bc2a82/lacommune.co/wp-content/uploads/2026/02/1080x1350_OCTOBRE-768x960.jpg",
       "offsite_venue": null,
       "id": "eaddab099249"
+    },
+    {
+      "venue": "Musée d'Art Contemporain",
+      "venue_slug": "mac-lyon",
+      "title": "Art et santé mentale",
+      "subtitle": "Conférence-débat de Gaëlle Blanchard-Leclère et Perrine Lacroix",
+      "category": null,
+      "date_start": "2026-10-12",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.mac-lyon.com/fr/programmation/art-et-sante-mentale",
+      "image": "https://www.mac-lyon.com/sites/mac/files/styles/programmation_results/public/2026-06/banniere_visite_archi_web.jpg?itok=Y_vnzVmh",
+      "offsite_venue": null,
+      "id": "0749c5701af5"
     },
     {
       "venue": "Biéristan",
@@ -7998,6 +8012,20 @@
       "id": "54028c73519a"
     },
     {
+      "venue": "Matmut Stadium de Gerland",
+      "venue_slug": "matmut-stadium-gerland",
+      "title": "LOU Rugby - Hollywoodbets Sharks",
+      "subtitle": null,
+      "category": "rugby",
+      "date_start": "2026-10-17",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://billetterie.lourugby.fr/fr/sticker/193",
+      "image": null,
+      "offsite_venue": null,
+      "id": "8285ef8d576d"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Minipousses cirque",
@@ -8626,6 +8654,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "dd977f3838d4"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "La Relève",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-18",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://improvidence.mapado.com/event/154968-la-releve",
+      "image": "https://img.mapado.net/2022/10/24/635646c2a2c98-1.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "575c3f0d75e7"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -13472,6 +13514,20 @@
       "id": "599dee3f262a"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Jackpot",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-01",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://improvidence.mapado.com/event/733422-jackpot",
+      "image": "https://img.mapado.net/2026/4/23/69ea07cb3f942-jackpot.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "9a0d1d2a42a4"
+    },
+    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Matildy + Nico Etoile",
@@ -15360,6 +15416,20 @@
       "image": "https://i-ac.eu/img/thumbs_cache/400x300_img_9772.jpg",
       "offsite_venue": null,
       "id": "521118c6096c"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "30 Impros Chrono",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-11-08",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://improvidence.mapado.com/event/189814-30-impros-chrono",
+      "image": "https://img.mapado.net/2023/3/24/641dcdaeee02f-affiche-30-impros-chrono.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "ae2bbfa09e6b"
     },
     {
       "venue": "Comédie Odéon",
@@ -17502,20 +17572,6 @@
       "image": null,
       "offsite_venue": null,
       "id": "436679de1f34"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Jackpot",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-11-15",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://improvidence.mapado.com/event/733422-jackpot",
-      "image": "https://img.mapado.net/2026/4/23/69ea07cb3f942-jackpot.jpeg_thumbs/600-600.jpeg",
-      "offsite_venue": null,
-      "id": "f8b2f32e24cc"
     },
     {
       "venue": "Le Sucre",
@@ -22448,20 +22504,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-04",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
-      "offsite_venue": null,
-      "id": "5b3b078c675b"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Guillaume Sentou \"Un mec cool\"",
       "subtitle": null,
       "category": "café-théâtre",
@@ -22472,6 +22514,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
       "offsite_venue": null,
       "id": "cebdb9ac5785"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
+      "offsite_venue": null,
+      "id": "5b3b078c675b"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -22938,20 +22994,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-05",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
-      "offsite_venue": null,
-      "id": "70a3ec875633"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Guillaume Sentou \"Un mec cool\"",
       "subtitle": null,
       "category": "café-théâtre",
@@ -22962,6 +23004,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/guillaume-sentou-540x800.jpg",
       "offsite_venue": null,
       "id": "eea2838c459b"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-05",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/09/sarah-lele-540x800.jpg",
+      "offsite_venue": null,
+      "id": "70a3ec875633"
     },
     {
       "venue": "Le Sonic",
@@ -24784,6 +24840,20 @@
       "id": "f4faa4eff7dd"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "La Relève",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-15",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/154968-la-releve",
+      "image": "https://img.mapado.net/2022/10/24/635646c2a2c98-1.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "e323ae1d8e59"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Projet Nanashi",
@@ -24880,6 +24950,20 @@
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/04/oldelaf-500x500.jpg",
       "offsite_venue": null,
       "id": "42323fd5cd88"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "La Relève",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-15",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/154968-la-releve",
+      "image": "https://img.mapado.net/2022/10/24/635646c2a2c98-1.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "9c646fbd9af7"
     },
     {
       "venue": "Musée des Beaux-Arts",
@@ -26532,20 +26616,6 @@
       "image": "https://www.comedieodeon.com/wp-content/uploads/2026/07/ALDN-Affiche_BD.jpg",
       "offsite_venue": null,
       "id": "8850689d8fc4"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "30 Impros Chrono",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-26",
-      "date_end": null,
-      "time": "16:30",
-      "url": "https://improvidence.mapado.com/event/189814-30-impros-chrono",
-      "image": "https://img.mapado.net/2023/3/24/641dcdaeee02f-affiche-30-impros-chrono.jpeg_thumbs/600-600.jpeg",
-      "offsite_venue": null,
-      "id": "c926700b339b"
     },
     {
       "venue": "Comédie Odéon",
@@ -29556,6 +29626,20 @@
       "image": "https://www.bourse-du-travail.com/img/evenement/paul-de-saint-sernin-4.jpg",
       "offsite_venue": null,
       "id": "2372645570e5"
+    },
+    {
+      "venue": "Matmut Stadium de Gerland",
+      "venue_slug": "matmut-stadium-gerland",
+      "title": "LOU Rugby - Newcastle Red Bulls",
+      "subtitle": null,
+      "category": "rugby",
+      "date_start": "2027-01-17",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://billetterie.lourugby.fr/fr/sticker/195",
+      "image": null,
+      "offsite_venue": null,
+      "id": "51546977bd47"
     },
     {
       "venue": "Gymnase René Baillieu",
@@ -33142,6 +33226,20 @@
       "id": "a8216136fa40"
     },
     {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "La Relève",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-02-09",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://improvidence.mapado.com/event/154968-la-releve",
+      "image": "https://img.mapado.net/2022/10/24/635646c2a2c98-1.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "aea481f1dbf1"
+    },
+    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "HISTOIRES DÉCOLONIALES #PORTRAITS CROISÉS",
@@ -33238,6 +33336,20 @@
       "image": "https://radiant-bellevue.fr/wp-content/uploads/2026/06/le-jeu-de-l-amour-et-du-hasard-500x500.jpg",
       "offsite_venue": null,
       "id": "a2ee3a16a322"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "La Relève",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2027-02-09",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://improvidence.mapado.com/event/154968-la-releve",
+      "image": "https://img.mapado.net/2022/10/24/635646c2a2c98-1.jpeg_thumbs/600-600.jpeg",
+      "offsite_venue": null,
+      "id": "bc169b18cb13"
     },
     {
       "venue": "Comédie Odéon",
@@ -41317,8 +41429,5 @@
       "offsite_venue": null,
       "id": "28db94d2c949"
     }
-  ],
-  "reprises": {
-    "Le Complexe café-théâtre": "2026-10-02"
-  }
+  ]
 }
