@@ -130,6 +130,17 @@ def _slugify(s: str) -> str:
     return s
 
 
+_JOURS_FR = ("lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche")
+
+
+def _jour_de(annee: int, mois: int, jour: int) -> Optional[str]:
+    """Le jour de la semaine d'une date, en français ; None si elle n'existe pas."""
+    try:
+        return _JOURS_FR[date(annee, mois, jour).weekday()]
+    except ValueError:
+        return None
+
+
 def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
     """Parse une chaîne de date du Petit Bulletin.
 
@@ -138,7 +149,10 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
       "Du 26 au 28 mai 2026, à 19h"    -> 3 entrées, date_end None
       "Du 1 au 30 juin 2026"           -> [("2026-06-01", None, "2026-06-30")]
       "Jusqu'au 16 août 2026, ..."     -> [(aujourd'hui, None, "2026-08-16")]
-      "30 mai et 31 mai à 20h"         -> [("2026-05-30", "20:00", None)]
+      "Samedi 30 mai et Dimanche 31 mai à 20h"
+                                       -> [("2026-05-30", "20:00", None),
+                                           ("2026-05-31", "20:00", None)]
+      "... samedi à 20h, dimanche à 16h" : une heure par jour
 
     Liste vide seulement si aucune date n'est lisible ou si l'événement est
     entièrement passé.
@@ -149,6 +163,7 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
 
     MOIS = (r"(janvier|fevrier|mars|avril|mai|juin|juillet|aout|"
             r"septembre|octobre|novembre|decembre)")
+    JOURS = "|".join(_JOURS_FR)
 
     # Heure : "à HHh", "à HHhMM", "de HHh à HHh"
     time_str: Optional[str] = None
@@ -159,13 +174,27 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
         if 0 <= hh < 24 and 0 <= mm < 60:
             time_str = f"{hh:02d}:{mm:02d}"
 
-    def _year_for(month: int, day: int, explicit: Optional[str]) -> int:
-        """Année explicite si présente, sinon la prochaine occurrence."""
+    def _year_for(month: int, day: int, explicit: Optional[str],
+                  jour_semaine: Optional[str] = None) -> int:
+        """Année explicite si présente ; sinon celle que le jour de la
+        semaine désigne ; sinon la prochaine occurrence.
+
+        BUG-17 : « Jeudi 1 octobre », lu le 2, partait au 1er octobre 2027
+        — une soirée fantôme un an plus tard —, toute date passée d'un seul
+        jour passant à l'année suivante. Le jour de la semaine tranche : le
+        1er octobre 2027 est un vendredi, c'est donc 2026, et la date passée
+        est écartée. Sans lui, quinze jours de grâce, comme tng.py.
+        """
         if explicit:
             return int(explicit)
+        if jour_semaine:
+            candidates = [y for y in (today.year, today.year + 1)
+                          if _jour_de(y, month, day) == jour_semaine]
+            if len(candidates) == 1:
+                return candidates[0]
         y = today.year
         try:
-            if date(y, month, day) < today:
+            if (today - date(y, month, day)).days > 15:
                 y += 1
         except ValueError:
             pass
@@ -233,19 +262,40 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
         except ValueError:
             return []
 
-    # 4) Date unique : premier "DD mois [YYYY]" rencontré
-    m = re.search(r"\b(\d{1,2})(?:er)?\s+" + MOIS + r"(?:\s+(\d{4}))?", norm)
+    # 4) Date(s) isolée(s) : le premier « [jour] DD mois [YYYY] », et ceux
+    #    qui le suivent aussitôt, joints par « et » ou une virgule (BUG-17) :
+    #    « Jeudi 1 octobre et Vendredi 2 octobre à 19h ». Seule la première
+    #    date était lue, la seconde perdue. Chaque date prend l'heure de SON
+    #    jour quand le texte en donne une (« jeudi à 20h, vendredi à 18h »),
+    #    l'heure commune sinon.
+    une_date = (r"(?:\b(" + JOURS + r")\s+)?\b(\d{1,2})(?:er)?\s+" + MOIS
+                + r"(?:\s+(\d{4}))?")
+    m = re.search(une_date, norm)
     if not m:
         return []
-    day, month = int(m.group(1)), MONTHS_FR[m.group(2)]
-    year = _year_for(month, day, m.group(3))
-    try:
-        d = date(year, month, day)
-    except ValueError:
-        return []
-    if d.isoformat() < today_iso:
-        return []
-    return [(d.isoformat(), time_str, None)]
+    trouvees = [m]
+    suite = re.compile(r"\s+(?:et\s+)?" + une_date)
+    while True:
+        m = suite.match(norm, trouvees[-1].end())
+        if not m:
+            break
+        trouvees.append(m)
+    par_jour = {}
+    for j, hh, mm in re.findall(r"\b(" + JOURS + r")s?\s+(?:a|de)\s+(\d{1,2})h(\d{0,2})\b",
+                                norm):
+        if int(hh) < 24 and int(mm or 0) < 60:
+            par_jour.setdefault(j, f"{int(hh):02d}:{int(mm or 0):02d}")
+    out = []
+    for m in trouvees:
+        jour_semaine, day, month = m.group(1), int(m.group(2)), MONTHS_FR[m.group(3)]
+        try:
+            d = date(_year_for(month, day, m.group(4), jour_semaine), month, day)
+        except ValueError:
+            continue
+        if d.isoformat() < today_iso:
+            continue
+        out.append((d.isoformat(), par_jour.get(_JOURS_FR[d.weekday()], time_str), None))
+    return out
 
 
 def _extract_events_from_soup(soup: BeautifulSoup) -> List[Event]:

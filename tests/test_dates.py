@@ -86,8 +86,39 @@ class DatesDuPetitBulletin(unittest.TestCase):
                          [("2026-10-01", None, "2026-11-16")])
 
     def test_sans_annee_mois_passe_annee_suivante(self):
-        self.assertEqual(self.lire("Mardi 15 septembre à 20h"),
+        # Le 15 septembre 2027 est un mercredi : c'est bien l'an prochain.
+        self.assertEqual(self.lire("Mercredi 15 septembre à 20h"),
                          [("2027-09-15", "20:00", None)])
+
+    def test_le_jour_de_la_semaine_designe_l_annee(self):
+        # BUG-17. Un mardi 15 septembre n'existe pas en 2027 : c'est celui
+        # de 2026, déjà passé — et non une soirée fantôme l'an prochain.
+        self.assertEqual(self.lire("Mardi 15 septembre à 20h"), [])
+
+    def test_sans_jour_de_la_semaine_quinze_jours_de_grace(self):
+        # Passée d'un jour seulement, une date reste de cette année — et
+        # elle est écartée —, au lieu de partir à l'an prochain.
+        self.assertEqual(self.lire("30 septembre à 19h"), [])
+
+    def test_deux_dates_dont_la_premiere_est_passee(self):
+        # « Jeudi 1 octobre et Vendredi 2 octobre », lu le 2 : la première
+        # date partait en 2027, la seconde était perdue.
+        self.assertEqual(self.lire("Mercredi 30 septembre et Jeudi 1 octobre à 19h"),
+                         [("2026-10-01", "19:00", None)])
+
+    def test_deux_dates_une_heure_chacune(self):
+        self.assertEqual(self.lire("Samedi 3 octobre et Dimanche 4 octobre samedi à 20h, "
+                                   "dimanche à 16h"),
+                         [("2026-10-03", "20:00", None), ("2026-10-04", "16:00", None)])
+
+    def test_deux_dates_une_heure_commune(self):
+        self.assertEqual(self.lire("Vendredi 16 octobre et Samedi 17 octobre à 20h45"),
+                         [("2026-10-16", "20:45", None), ("2026-10-17", "20:45", None)])
+
+    def test_une_date_citee_plus_loin_n_est_pas_une_seance(self):
+        # Seules les dates jointes par « et » ou une virgule font une liste.
+        self.assertEqual(self.lire("Mardi 13 octobre 2026 à 20h, report du 6 octobre"),
+                         [("2026-10-13", "20:00", None)])
 
     def test_evenement_passe_ecarte(self):
         self.assertEqual(self.lire("Mardi 1er septembre 2026"), [])
