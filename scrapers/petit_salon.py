@@ -1,13 +1,14 @@
-"""Scraper for Le Petit Salon (lpslyon.fr/evenements-le-petit-salon/).
+"""Scraper for Le Petit Salon (lpslyon.fr/programmation/).
 
-The diagnostic from the previous run confirmed:
-- 17 <h2> elements with the right titles ("THIS IS HIT MACHINE", etc.)
-- 34 DD/MM date matches in the page
+Site refait le 2026-10-02 : l'ancienne page agenda
+(/evenements-le-petit-salon/) répond 404. La programmation est désormais
+sur /programmation/, une carte par soirée, datée « ven 02 Oct » et non
+plus « 02/10 » (le JJ/MM ne reste que sur les soirées passées).
 
 Previous version failed because _find_preceding_date walked through DOM
 siblings BEFORE the h2, but on this site the date pill is nested as a
 sibling INSIDE the same parent block as the h2. The fix: walk UP to the
-parent block then search the whole block's text for DD/MM.
+parent block then search the whole block's text for the date.
 """
 from typing import List, Optional
 from datetime import date as Date
@@ -15,11 +16,11 @@ import re
 import sys
 from bs4 import BeautifulSoup, Tag
 
-from .base import Event, iso, get as base_get
+from .base import Event, iso, FR_MONTHS, get as base_get
 
 VENUE = "Le Petit Salon"
 SLUG = "petit-salon"
-URL = "https://www.lpslyon.fr/evenements-le-petit-salon/"
+URL = "https://www.lpslyon.fr/programmation/"
 HOST = "https://www.lpslyon.fr"
 
 HEADERS = {
@@ -28,7 +29,22 @@ HEADERS = {
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
-DATE_RE = re.compile(r"\b(\d{2})/(\d{2})\b")
+# « ven 02 Oct » : le quantième, puis le mois, abrégé comme WordPress
+# l'écrit en français (« Sep », « Fév », « Juil ») ou en toutes lettres.
+# Seuls des noms de mois sont reconnus : un titre comme « 10 ANS DU
+# CLUB » ne doit pas passer pour une date.
+_MOIS = (r"janv?(?:ier)?|f[ée]vr?(?:ier)?|mars?|avr(?:il)?|mai|juin|juil(?:let)?"
+         r"|ao[ûu]t?|sept?(?:embre)?|oct(?:obre)?|nov(?:embre)?|d[ée]c(?:embre)?")
+DATE_RE = re.compile(r"\b(\d{1,2})\s+(%s)\b" % _MOIS, re.IGNORECASE)
+
+
+def _mois(mot: str) -> Optional[int]:
+    """Numéro du mois. « Sep », « Fév », « Jan », « Mar » sont plus courts
+    que les clés de FR_MONTHS (« sept », « févr »…) : on prend alors la
+    clé qui commence par eux."""
+    mot = mot.lower()
+    return FR_MONTHS.get(mot) or next(
+        (n for cle, n in FR_MONTHS.items() if cle.startswith(mot)), None)
 
 
 def _smart_year(month: int, day: int) -> int:
@@ -93,7 +109,11 @@ def fetch() -> List[Event]:
         if title.lower() in ("nos évènements", "menu", "accès"):
             continue
 
-        block = _find_event_block(h2)
+        # La carte entière de la soirée (refonte du 2026-10-02) : sa date
+        # précède le titre, l'affiche et le bouton « Réserver » y sont. Un
+        # titre qui contient une date (« HALLOWEEN 31 OCT ») ne trompe ni
+        # sur le jour ni sur le lien. Sans carte, le plus petit bloc daté.
+        block = h2.find_parent("article", class_="card-event") or _find_event_block(h2)
         if block is None:
             continue
         date_str = _date_for_block(block, h2)
@@ -103,8 +123,8 @@ def fetch() -> List[Event]:
         m = DATE_RE.match(date_str)
         if not m:
             continue
-        day, month = int(m.group(1)), int(m.group(2))
-        if not (1 <= month <= 12 and 1 <= day <= 31):
+        day, month = int(m.group(1)), _mois(m.group(2))
+        if not (month and 1 <= day <= 31):
             continue
         try:
             year = _smart_year(month, day)
@@ -122,7 +142,8 @@ def fetch() -> List[Event]:
         href = URL
         link_el = None
         for a in block.find_all("a", href=True):
-            if "yp.events" in a["href"] or "billetterie" in a["href"].lower():
+            if ("yp.events" in a["href"] or "shotgun.live" in a["href"]
+                    or "billetterie" in a["href"].lower()):
                 link_el = a
                 break
         if link_el is None:
