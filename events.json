@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-02T15:00:24.956282+00:00",
-  "count": 2950,
+  "generated_at": "2026-10-02T15:31:03.228069+00:00",
+  "count": 2979,
   "sources": 37,
   "events": [
     {
@@ -495,17 +495,17 @@
     },
     {
       "venue": "TNG",
-      "venue_slug": "tng-vaise",
+      "venue_slug": "tng",
       "title": "Boule de neige",
-      "subtitle": null,
-      "category": "Théâtre",
+      "subtitle": "Odile Grosset-Grange",
+      "category": "théâtre",
       "date_start": "2026-10-02",
       "date_end": null,
       "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319354-boule-de-neige.html",
-      "image": null,
+      "url": "https://www.tng-lyon.fr/evenement/boule-de-neige/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_BDN.png",
       "offsite_venue": null,
-      "id": "3edf17929934"
+      "id": "02e7bdb84c3a"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -859,17 +859,17 @@
     },
     {
       "venue": "Le Petit Salon",
-      "venue_slug": "le-petit-salon",
-      "title": "23:59",
+      "venue_slug": "petit-salon",
+      "title": "CREEDS INVITES DJ SCHNAKE, JULIAN WILD, JKLL & MORE",
       "subtitle": null,
-      "category": "Musique Electronique",
+      "category": "club",
       "date_start": "2026-10-02",
       "date_end": null,
       "time": "23:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319477-23-59.html",
-      "image": null,
+      "url": "https://shotgun.live/events/creedsinvitesdjschnake",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/09/shotgun-cover-414-1790930365.jpg",
       "offsite_venue": null,
-      "id": "2de7774ee572"
+      "id": "edfbfa570b9e"
     },
     {
       "venue": "La Commune",
@@ -886,6 +886,20 @@
       "id": "ad83591878e1"
     },
     {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "VITESSE : ZWILLING, SLMT, PIX & MORE",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": null,
+      "url": "https://shotgun.live/events/zwilling-slmt-pix-more",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/09/shotgun-cover-910-1790930365.jpg",
+      "offsite_venue": null,
+      "id": "0561262b2a7d"
+    },
+    {
       "venue": "Musée d'Art Contemporain",
       "venue_slug": "mac-lyon",
       "title": "Visite commentée de la Biennale de Lyon",
@@ -898,20 +912,6 @@
       "image": "https://www.mac-lyon.com/sites/mac/files/styles/programmation_results/public/2026-07/banniere_enfant_famille_web.jpg?itok=41ieO6ia",
       "offsite_venue": null,
       "id": "4f5ed7cbc712"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Atelier intergénérationnel – Boule de Neige",
-      "subtitle": "Atelier intergénérationnel",
-      "category": "théâtre",
-      "date_start": "2026-10-03",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-boule-de-neige/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/La-fabrique-des-souvenirs-Boule-de-neige_460x460.png",
-      "offsite_venue": null,
-      "id": "0392e3429e66"
     },
     {
       "venue": "La Sucrière",
@@ -1096,6 +1096,20 @@
       "id": "8402b06025d5"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Atelier intergénérationnel – Boule de Neige",
+      "subtitle": "Atelier intergénérationnel",
+      "category": "théâtre",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-boule-de-neige/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/La-fabrique-des-souvenirs-Boule-de-neige_460x460.png",
+      "offsite_venue": null,
+      "id": "d1ae9bf1f9c8"
+    },
+    {
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "CHÉRI + Mauvaise Bouche + Caïman + Tayri + Maldonne",
@@ -1220,6 +1234,20 @@
       "image": "https://museedesconfluences.fr/sites/default/files/uploads/2026-07/lesfrigossacres.jpg",
       "offsite_venue": null,
       "id": "3b124cc23a6b"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Boule de neige",
+      "subtitle": "Odile Grosset-Grange",
+      "category": "théâtre",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://www.tng-lyon.fr/evenement/boule-de-neige/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_BDN.png",
+      "offsite_venue": null,
+      "id": "f4ab7adcef11"
     },
     {
       "venue": "Auditorium de Lyon",
@@ -2230,20 +2258,6 @@
       "id": "69ed0021976a"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Boule de neige",
-      "subtitle": "Odile Grosset-Grange",
-      "category": "théâtre",
-      "date_start": "2026-10-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/boule-de-neige/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_BDN.png",
-      "offsite_venue": null,
-      "id": "b73d6abebbc6"
-    },
-    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Formation Présentation de la saison d'ateliers ATELIER ENVIRONNEMENT PRO",
@@ -2960,20 +2974,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "Ayrton dans \"Nouvelle vision\"",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-10-07",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.lecomplexelyon.com/programme/ayrton-dans-nouvelle-vision/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/ayrton-nouvelle-vision-540x800.jpg",
-      "offsite_venue": null,
-      "id": "5b931f9385fa"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Faites l'apéro pas la guerre",
       "subtitle": null,
       "category": "café-théâtre",
@@ -3656,6 +3656,20 @@
       "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-8bc2a82/lacommune.co/wp-content/uploads/2026/01/9-1-768x960.jpg",
       "offsite_venue": null,
       "id": "da307688178c"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS RAVE (D&B EDITION) : RUNNING, KLAZ, ROSS & MORE",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-10-09",
+      "date_end": null,
+      "time": null,
+      "url": "https://shotgun.live/events/this-is-rave-running-4k-klaz-ross-nataskank-b2b-mescud",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/09/shotgun-cover-912-1790871927.jpg",
+      "offsite_venue": null,
+      "id": "8ae3510fd21b"
     },
     {
       "venue": "Parc Chabrières",
@@ -5031,17 +5045,17 @@
     },
     {
       "venue": "Le Petit Salon",
-      "venue_slug": "le-petit-salon",
-      "title": "XLR Events",
+      "venue_slug": "petit-salon",
+      "title": "LEBLANC, D.J.S, SOONS & MORE",
       "subtitle": null,
-      "category": "Musique Electronique",
+      "category": "club",
       "date_start": "2026-10-10",
       "date_end": null,
       "time": "23:30",
-      "url": "https://www.petit-bulletin.fr/agenda-317318-xlr-events.html",
-      "image": null,
+      "url": "https://shotgun.live/events/leblanc-djs-soonsandmore",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/09/shotgun-cover-415-1790930365.jpg",
       "offsite_venue": null,
-      "id": "4e76eadbb954"
+      "id": "cc0d0f7f04d2"
     },
     {
       "venue": "La Commune",
@@ -6024,20 +6038,6 @@
       "id": "569090da6367"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Atelier d’écriture pour les adolescent·es de 15 ans",
-      "subtitle": "Atelier d’écriture pour les adolescent·es de 15 ans\nAvec Estelle Savasta, artiste associée\nAutrice et metteuse en s…",
-      "category": "théâtre",
-      "date_start": "2026-10-14",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/atelier-decriture-pour-les-adolescent%c2%b7es-de-15-ans/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/DAUTRESFAMILLES_Atelier-ecriture_460x460.png",
-      "offsite_venue": null,
-      "id": "e78536432fe3"
-    },
-    {
       "venue": "Musées Gadagne",
       "venue_slug": "musees-gadagne",
       "title": "Journée d'étude - De la fouille au musée : la place de l'archéologie dans le récit de territoire",
@@ -6106,6 +6106,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "bd2f0a2fc742"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Atelier d’écriture pour les adolescent·es de 15 ans",
+      "subtitle": "Atelier d’écriture pour les adolescent·es de 15 ans\nAvec Estelle Savasta, artiste associée\nAutrice et metteuse en s…",
+      "category": "théâtre",
+      "date_start": "2026-10-14",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://www.tng-lyon.fr/evenement/atelier-decriture-pour-les-adolescent%c2%b7es-de-15-ans/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/DAUTRESFAMILLES_Atelier-ecriture_460x460.png",
+      "offsite_venue": null,
+      "id": "11b1237b5826"
     },
     {
       "venue": "Bibliothèque du 7e Gerland Hannah Arendt",
@@ -7186,6 +7200,20 @@
       "id": "6ff5944d9c6d"
     },
     {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "FLYMEON (EVIL TWIN SHOW), LUKE NOIZE, ANDUJ, NEØKHIN & MORE",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-10-16",
+      "date_end": null,
+      "time": null,
+      "url": "https://shotgun.live/events/flymeon-lukenoize-anduj-neokhin-and-more",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/09/shotgun-cover-915-1790930366.jpg",
+      "offsite_venue": null,
+      "id": "2afddc471aaa"
+    },
+    {
       "venue": "Musée d'Art Contemporain",
       "venue_slug": "mac-lyon",
       "title": "Nocturne au musée",
@@ -7856,6 +7884,20 @@
       "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-8bc2a82/lacommune.co/wp-content/uploads/2025/02/17-1-768x960.jpg",
       "offsite_venue": null,
       "id": "911cbd4b0931"
+    },
+    {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "THIS IS RAVE (Y2K EDITION) : DJ SÉCURITÉ, SAY IT LOUD & MORE",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-10-17",
+      "date_end": null,
+      "time": null,
+      "url": "https://shotgun.live/events/this-is-rave-y2k-dj-securite-say-it-loud-and-more",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/10/shotgun-cover-1159-1790930366.jpg",
+      "offsite_venue": null,
+      "id": "494049025414"
     },
     {
       "venue": "Musée d'Art Contemporain",
@@ -12450,20 +12492,6 @@
       "id": "86185997dc8d"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Bienvenue aux répétitions !",
-      "subtitle": "Le Voyage de Kristoffer",
-      "category": "théâtre",
-      "date_start": "2026-10-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/bienvenue-aux-repetitions/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Repetition-publique-Kristoffer_460x460.png",
-      "offsite_venue": null,
-      "id": "11d953bdddde"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Salon Des Vignerons Independants",
@@ -12518,6 +12546,20 @@
       "image": "https://www.comedieodeon.com/wp-content/uploads/2026/07/Affiche_quelcirque_BD.jpg",
       "offsite_venue": null,
       "id": "ee3be889ad88"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Bienvenue aux répétitions !",
+      "subtitle": "Le Voyage de Kristoffer",
+      "category": "théâtre",
+      "date_start": "2026-10-30",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.tng-lyon.fr/evenement/bienvenue-aux-repetitions/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Repetition-publique-Kristoffer_460x460.png",
+      "offsite_venue": null,
+      "id": "72a9dc256ae4"
     },
     {
       "venue": "Le Complexe café-théâtre",
@@ -12912,20 +12954,6 @@
       "id": "54a382b0b351"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Halloween au TNG !",
-      "subtitle": "UNE SOIRÉE EN TRANSYLVALMY",
-      "category": "théâtre",
-      "date_start": "2026-10-31",
-      "date_end": null,
-      "time": "15:00",
-      "url": "https://www.tng-lyon.fr/evenement/fete-halloween-au-tng/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/09/460x460_HALLOWEEN_2.png",
-      "offsite_venue": null,
-      "id": "c8fdc1533054"
-    },
-    {
       "venue": "Théâtre de la Croix-Rousse",
       "venue_slug": "croix-rousse",
       "title": "Projection : L’Étrange Noël de monsieur Jack de Tim Burton & Henry Selick",
@@ -12952,6 +12980,20 @@
       "image": "https://i-ac.eu/img/thumbs_cache/400x300_img_9772.jpg",
       "offsite_venue": null,
       "id": "e23e58cbb6d8"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Halloween au TNG !",
+      "subtitle": "UNE SOIRÉE EN TRANSYLVALMY",
+      "category": "théâtre",
+      "date_start": "2026-10-31",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.tng-lyon.fr/evenement/fete-halloween-au-tng/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/09/460x460_HALLOWEEN_2.png",
+      "offsite_venue": null,
+      "id": "9cd3277c2cfe"
     },
     {
       "venue": "Improvidence",
@@ -13739,17 +13781,17 @@
     },
     {
       "venue": "TNG",
-      "venue_slug": "tng-vaise",
+      "venue_slug": "tng",
       "title": "Parcours immersif et pédagogique",
-      "subtitle": null,
-      "category": "Visites",
+      "subtitle": "Autour du spectacle Le Voyage de Kristoffer",
+      "category": "théâtre",
       "date_start": "2026-11-04",
       "date_end": null,
       "time": "15:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319749-parcours-immersif-et-p-dagogique.html",
-      "image": null,
+      "url": "https://www.tng-lyon.fr/evenement/parcours-immersif-et-pedagogique/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Le-voyage-de-Krstiffer_Parcours_460x460.png",
       "offsite_venue": null,
-      "id": "c54dcdf2fab3"
+      "id": "0bb9ab2da19b"
     },
     {
       "venue": "Le Transbordeur",
@@ -14732,6 +14774,20 @@
       "id": "d9c8b2326c81"
     },
     {
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "BASED ON REAL FACTS : BASET, ABSTRAAL, INNERMIND & MORE",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-11-07",
+      "date_end": null,
+      "time": null,
+      "url": "https://shotgun.live/events/based-on-real-facts-baset-abstraal-innermind-catiba-and-more",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/09/shotgun-cover-917-1790871930.jpg",
+      "offsite_venue": null,
+      "id": "d4fac391ba34"
+    },
+    {
       "venue": "Le Périscope",
       "venue_slug": "periscope",
       "title": "Otomo Yoshihide New Jazz Quintet",
@@ -14744,20 +14800,6 @@
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/09/1-650x436.jpg",
       "offsite_venue": null,
       "id": "7a109adbd937"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "LE VOYAGE DE KRISTOFFER",
-      "subtitle": "Émilie Anna Maillet, Cie Ex Voto à la Lune",
-      "category": "théâtre",
-      "date_start": "2026-11-07",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/le-voyage-de-kristoffer/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_VOYAGE.png",
-      "offsite_venue": null,
-      "id": "ba91f339a657"
     },
     {
       "venue": "Auditorium de Lyon",
@@ -14828,6 +14870,20 @@
       "image": "https://img.mapado.net/2020/9/16/5f61dd72f1bd4-affiche-playlist-web.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "78802dffb1db"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "LE VOYAGE DE KRISTOFFER",
+      "subtitle": "Émilie Anna Maillet, Cie Ex Voto à la Lune",
+      "category": "théâtre",
+      "date_start": "2026-11-07",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://www.tng-lyon.fr/evenement/le-voyage-de-kristoffer/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_VOYAGE.png",
+      "offsite_venue": null,
+      "id": "6155efb5b209"
     },
     {
       "venue": "Improvidence",
@@ -17910,6 +17966,20 @@
       "id": "c1f5f95437a0"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "L’Abolition des privilèges",
+      "subtitle": "Hugues Duchêne, Cie Le Royal Velours",
+      "category": "théâtre",
+      "date_start": "2026-11-18",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.tng-lyon.fr/evenement/labolition-des-privileges/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Aboltion_460x460-1.png",
+      "offsite_venue": null,
+      "id": "c9474a2c12a5"
+    },
+    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Oh les beaux jours",
@@ -18204,6 +18274,20 @@
       "id": "800145451808"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "L’Abolition des privilèges",
+      "subtitle": "Hugues Duchêne, Cie Le Royal Velours",
+      "category": "théâtre",
+      "date_start": "2026-11-19",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.tng-lyon.fr/evenement/labolition-des-privileges/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Aboltion_460x460-1.png",
+      "offsite_venue": null,
+      "id": "800753fbe9bf"
+    },
+    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Oh les beaux jours",
@@ -18400,18 +18484,18 @@
       "id": "6ba59944f2cf"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "RDV Pop’Corn – L’Abolition des privilèges",
-      "subtitle": "Un jour par mois le TNG vous donne rendez-vous et c’est gratuit !\nDécouverte des spectacles, ateliers créatifs, Pop�…",
-      "category": "théâtre",
+      "venue": "Le Petit Salon",
+      "venue_slug": "petit-salon",
+      "title": "TNT (TECHNOBOY & TUNEBOY), GLASKEEN, ISTIGKEIT, RDØ & MORE",
+      "subtitle": null,
+      "category": "club",
       "date_start": "2026-11-20",
       "date_end": null,
       "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-labolition-des-privileges/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/AbolitionPrivilege_PopCorn_460x460.png",
+      "url": "https://shotgun.live/events/tnt-glaskeen-istigkeit-rdo-and-more",
+      "image": "https://www.lpslyon.fr/wp-content/uploads/2026/09/shotgun-cover-919-1790930367.jpg",
       "offsite_venue": null,
-      "id": "44e8fa130b6e"
+      "id": "f7e950e7a2e6"
     },
     {
       "venue": "Musée des Beaux-Arts",
@@ -18498,6 +18582,20 @@
       "id": "0d07263bcd96"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "RDV Pop’Corn – L’Abolition des privilèges",
+      "subtitle": "Un jour par mois le TNG vous donne rendez-vous et c’est gratuit !\nDécouverte des spectacles, ateliers créatifs, Pop�…",
+      "category": "théâtre",
+      "date_start": "2026-11-20",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-labolition-des-privileges/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/AbolitionPrivilege_PopCorn_460x460.png",
+      "offsite_venue": null,
+      "id": "39c75c100675"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Le Procès de Jeanne Bloch",
@@ -18524,6 +18622,20 @@
       "image": "https://img.mapado.net/2023/11/16/6556217687939-affiche-scene-s-de-crime-rvb.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "ae32bcb63ab6"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "L’Abolition des privilèges",
+      "subtitle": "Hugues Duchêne, Cie Le Royal Velours",
+      "category": "théâtre",
+      "date_start": "2026-11-20",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.tng-lyon.fr/evenement/labolition-des-privileges/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Aboltion_460x460-1.png",
+      "offsite_venue": null,
+      "id": "257db4bdd13b"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -21676,6 +21788,20 @@
       "id": "b6a4c49443be"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Grandeur nature",
+      "subtitle": "Magalie Nadaud et Nicolas Liautard, Cie Robert de profil",
+      "category": "théâtre",
+      "date_start": "2026-12-02",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.tng-lyon.fr/evenement/grandeur-nature/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_GRANDEUR-NATURE-1.png",
+      "offsite_venue": null,
+      "id": "fa9642af4f9c"
+    },
+    {
       "venue": "Auditorium de Lyon",
       "venue_slug": "auditorium-lyon",
       "title": "L’importance de Parsifal de Wagner dans l’histoire de la musique",
@@ -22488,20 +22614,6 @@
       "id": "60bee1b43b36"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Grandeur nature",
-      "subtitle": "Magalie Nadaud et Nicolas Liautard, Cie Robert de profil",
-      "category": "théâtre",
-      "date_start": "2026-12-05",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/grandeur-nature/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_GRANDEUR-NATURE-1.png",
-      "offsite_venue": null,
-      "id": "3177a07f7775"
-    },
-    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Journée mortelle",
@@ -22600,6 +22712,20 @@
       "id": "52b6b60c5345"
     },
     {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-05",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/sarah-lele-540x800.jpg",
+      "offsite_venue": null,
+      "id": "b125e6080be2"
+    },
+    {
       "venue": "Maison de la Danse",
       "venue_slug": "maison-de-la-danse",
       "title": "Slava’s Snowshow",
@@ -22682,6 +22808,20 @@
       "image": "https://img.mapado.net/2023/6/19/64901c6f31b4c-affiche-le-putsch-sans-dates.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "49a93158984c"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Grandeur nature",
+      "subtitle": "Magalie Nadaud et Nicolas Liautard, Cie Robert de profil",
+      "category": "théâtre",
+      "date_start": "2026-12-05",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://www.tng-lyon.fr/evenement/grandeur-nature/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_GRANDEUR-NATURE-1.png",
+      "offsite_venue": null,
+      "id": "c5c4fec8704f"
     },
     {
       "venue": "Auditorium de Lyon",
@@ -23300,6 +23440,20 @@
       "id": "371f5791aee6"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "[Superstrat[",
+      "subtitle": "Anne Nguyen, Cie par Terre",
+      "category": "théâtre",
+      "date_start": "2026-12-09",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.tng-lyon.fr/evenement/superstrat/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_SPERSTRAT.png",
+      "offsite_venue": null,
+      "id": "75af3e851c28"
+    },
+    {
       "venue": "Comédie Odéon",
       "venue_slug": "comedie-odeon",
       "title": "Le Porteur d’Histoire",
@@ -23762,6 +23916,20 @@
       "id": "01b1f5d0b5d4"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "[Superstrat[",
+      "subtitle": "Anne Nguyen, Cie par Terre",
+      "category": "théâtre",
+      "date_start": "2026-12-11",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.tng-lyon.fr/evenement/superstrat/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_SPERSTRAT.png",
+      "offsite_venue": null,
+      "id": "82f53f10aa0c"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Projet Nanashi",
@@ -24014,20 +24182,6 @@
       "id": "ba9b7302f3e2"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "RDV Pop’Corn – [Superstrat[",
-      "subtitle": "Un jour par mois le TNG vous donne rendez-vous et c’est gratuit !\nDécouverte des spectacles, ateliers créatifs, Pop�…",
-      "category": "théâtre",
-      "date_start": "2026-12-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-superstrat/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Superstrat_PopCorn_460x460.png",
-      "offsite_venue": null,
-      "id": "0de6cb52de6b"
-    },
-    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "S festival : S christmas market",
@@ -24054,6 +24208,20 @@
       "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
       "offsite_venue": null,
       "id": "a6e13a665dee"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "RDV Pop’Corn – [Superstrat[",
+      "subtitle": "Un jour par mois le TNG vous donne rendez-vous et c’est gratuit !\nDécouverte des spectacles, ateliers créatifs, Pop�…",
+      "category": "théâtre",
+      "date_start": "2026-12-12",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-superstrat/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Superstrat_PopCorn_460x460.png",
+      "offsite_venue": null,
+      "id": "b9709039f05f"
     },
     {
       "venue": "Musée des Beaux-Arts",
@@ -24138,6 +24306,20 @@
       "image": "https://agenda.villemorte.fr/media/thumb/ff7a982529b3a7915d3d21fdf3423bf1.jpg",
       "offsite_venue": null,
       "id": "b09473dd90e2"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "[Superstrat[",
+      "subtitle": "Anne Nguyen, Cie par Terre",
+      "category": "théâtre",
+      "date_start": "2026-12-12",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://www.tng-lyon.fr/evenement/superstrat/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_SPERSTRAT.png",
+      "offsite_venue": null,
+      "id": "f532030644cd"
     },
     {
       "venue": "Auditorium de Lyon",
@@ -29026,6 +29208,20 @@
       "id": "640ba8d870f9"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Liah et moi",
+      "subtitle": "Pauline Sales artiste associée, cie à l’envi",
+      "category": "théâtre",
+      "date_start": "2027-01-15",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.tng-lyon.fr/evenement/liah-et-moi/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_LIAH-ET-MOI.png",
+      "offsite_venue": null,
+      "id": "1ff5db8ffb2b"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Rumba",
@@ -29194,20 +29390,6 @@
       "id": "8f5410f00750"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Visite tactile – Liah et moi",
-      "subtitle": "Liah et moi\nsam. 16 jan. 17h\nVersion chuchotée aux casques et visite tactile du décor et des costumes avant la représ…",
-      "category": "théâtre",
-      "date_start": "2027-01-16",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/visite-tactile-liah-et-moi/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/LIAH_Visite-tactile_Ateliers_460x460.png",
-      "offsite_venue": null,
-      "id": "dc755c69212a"
-    },
-    {
       "venue": "Auditorium de Lyon",
       "venue_slug": "auditorium-lyon",
       "title": "Azur et Asmar",
@@ -29220,6 +29402,20 @@
       "image": "https://www.auditorium-lyon.com/sites/default/files/styles/vignette_teaser_xl/public/upload/images/Azur_Asmar_c_2006_Nord-Ouest_Production-1920.jpg?h=59270fba&itok=wHBtPWgk",
       "offsite_venue": null,
       "id": "b2019d3537a6"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Atelier intergénérationnel – Liah et moi",
+      "subtitle": "Atelier intergénérationnel",
+      "category": "théâtre",
+      "date_start": "2027-01-16",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-liah-et-moi/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/LIAH_Fabriquedessouvenirs_Ateliers_460x460.png",
+      "offsite_venue": null,
+      "id": "ad803dd452ad"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -29248,6 +29444,20 @@
       "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
       "offsite_venue": null,
       "id": "201c7ee1f71e"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Visite tactile – Liah et moi",
+      "subtitle": "Liah et moi\nsam. 16 jan. 17h\nVersion chuchotée aux casques et visite tactile du décor et des costumes avant la représ…",
+      "category": "théâtre",
+      "date_start": "2027-01-16",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://www.tng-lyon.fr/evenement/visite-tactile-liah-et-moi/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/LIAH_Visite-tactile_Ateliers_460x460.png",
+      "offsite_venue": null,
+      "id": "8142ff79c6b9"
     },
     {
       "venue": "Improvidence",
@@ -29682,6 +29892,20 @@
       "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
       "offsite_venue": null,
       "id": "3cfa19333962"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Spunk!",
+      "subtitle": "Lucie Rébéré, Cie la maison",
+      "category": "théâtre",
+      "date_start": "2027-01-20",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.tng-lyon.fr/evenement/spunk/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_SPUNK.png",
+      "offsite_venue": null,
+      "id": "f3f04b42157b"
     },
     {
       "venue": "La Rayonne",
@@ -30335,11 +30559,11 @@
       "category": "théâtre",
       "date_start": "2027-01-23",
       "date_end": null,
-      "time": null,
+      "time": "15:00",
       "url": "https://www.tng-lyon.fr/evenement/spunk/",
       "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_SPUNK.png",
       "offsite_venue": null,
-      "id": "f3fdbf1881fe"
+      "id": "3c68815195c7"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -30438,6 +30662,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/24c0d764/empereurs_1.jpg",
       "offsite_venue": null,
       "id": "37485e6d8079"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Spunk!",
+      "subtitle": "Lucie Rébéré, Cie la maison",
+      "category": "théâtre",
+      "date_start": "2027-01-23",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.tng-lyon.fr/evenement/spunk/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_SPUNK.png",
+      "offsite_venue": null,
+      "id": "5ab4a05ee15f"
     },
     {
       "venue": "Théâtre de la Croix-Rousse",
@@ -30816,6 +31054,20 @@
       "image": "https://www.halle-tony-garnier.com/storage/136943/conversions/2027-01-27-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-154043-square.jpg",
       "offsite_venue": null,
       "id": "13871667903e"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Le chat sur la photo",
+      "subtitle": "Odile Grosset-Grange, TNG-CDN de Lyon",
+      "category": "théâtre",
+      "date_start": "2027-01-27",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.tng-lyon.fr/evenement/le-chat-sur-la-photo/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_CHATSURLAPHOTO-1.png",
+      "offsite_venue": null,
+      "id": "efe84df6c420"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -31476,34 +31728,6 @@
       "id": "1ec7a53feb1f"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "RDV Pop’Corn – Le chat sur la photo",
-      "subtitle": "Un jour par mois le TNG vous donne rendez-vous et c’est gratuit !\nDécouverte des spectacles, ateliers créatifs, Pop�…",
-      "category": "théâtre",
-      "date_start": "2027-01-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-le-chat-sur-la-photo/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Lechat_PopCorn_460x460.png",
-      "offsite_venue": null,
-      "id": "9f5b01e2eac6"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Atelier intergénérationnel- Le chat sur la photo",
-      "subtitle": "Atelier intergénérationnel",
-      "category": "théâtre",
-      "date_start": "2027-01-30",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-le-chat-sur-la-photo/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Lechat_Fabrique-des-souvenirs_460x460.png",
-      "offsite_venue": null,
-      "id": "711ad94db74e"
-    },
-    {
       "venue": "Musée des Beaux-Arts",
       "venue_slug": "musee-des-beaux-arts",
       "title": "Week-end chanté",
@@ -31532,6 +31756,20 @@
       "id": "960700e6646d"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Le chat sur la photo",
+      "subtitle": "Odile Grosset-Grange, TNG-CDN de Lyon",
+      "category": "théâtre",
+      "date_start": "2027-01-30",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://www.tng-lyon.fr/evenement/le-chat-sur-la-photo-2/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_CHAT2.png",
+      "offsite_venue": null,
+      "id": "3e594c96fd44"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Disney Sur Glace - Le Voyage Enchante",
@@ -31544,6 +31782,48 @@
       "image": "https://www.halle-tony-garnier.com/storage/145281/conversions/2027-01-30-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-160958-square.jpg",
       "offsite_venue": null,
       "id": "7e76c60d891c"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "RDV Pop’Corn – Le chat sur la photo",
+      "subtitle": "Un jour par mois le TNG vous donne rendez-vous et c’est gratuit !\nDécouverte des spectacles, ateliers créatifs, Pop�…",
+      "category": "théâtre",
+      "date_start": "2027-01-30",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-le-chat-sur-la-photo/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Lechat_PopCorn_460x460.png",
+      "offsite_venue": null,
+      "id": "269e18090b22"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Atelier intergénérationnel- Le chat sur la photo",
+      "subtitle": "Atelier intergénérationnel",
+      "category": "théâtre",
+      "date_start": "2027-01-30",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-le-chat-sur-la-photo/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Lechat_Fabrique-des-souvenirs_460x460.png",
+      "offsite_venue": null,
+      "id": "d60bcf933b68"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Le chat sur la photo",
+      "subtitle": "Odile Grosset-Grange, TNG-CDN de Lyon",
+      "category": "théâtre",
+      "date_start": "2027-01-30",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.tng-lyon.fr/evenement/le-chat-sur-la-photo-2/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_CHAT2.png",
+      "offsite_venue": null,
+      "id": "383eb126b099"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -31756,20 +32036,6 @@
       "id": "69550a4c73b8"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Le chat sur la photo",
-      "subtitle": "Odile Grosset-Grange, TNG-CDN de Lyon",
-      "category": "théâtre",
-      "date_start": "2027-01-31",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/le-chat-sur-la-photo/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_CHATSURLAPHOTO-1.png",
-      "offsite_venue": null,
-      "id": "e0b9a5b957ba"
-    },
-    {
       "venue": "Musée des Beaux-Arts",
       "venue_slug": "musee-des-beaux-arts",
       "title": "Week-end chanté",
@@ -31798,6 +32064,20 @@
       "id": "9b8c4c1badaf"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Le chat sur la photo",
+      "subtitle": "Odile Grosset-Grange, TNG-CDN de Lyon",
+      "category": "théâtre",
+      "date_start": "2027-01-31",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://www.tng-lyon.fr/evenement/le-chat-sur-la-photo-2/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_CHAT2.png",
+      "offsite_venue": null,
+      "id": "3cf6919c934f"
+    },
+    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Disney Sur Glace - Le Voyage Enchante",
@@ -31810,6 +32090,20 @@
       "image": "https://www.halle-tony-garnier.com/storage/145284/conversions/2027-01-31-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-161449-square.jpg",
       "offsite_venue": null,
       "id": "b56d26a893dd"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Le chat sur la photo",
+      "subtitle": "Odile Grosset-Grange, TNG-CDN de Lyon",
+      "category": "théâtre",
+      "date_start": "2027-01-31",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.tng-lyon.fr/evenement/le-chat-sur-la-photo-2/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_CHAT2.png",
+      "offsite_venue": null,
+      "id": "77edd9f01f29"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -31894,6 +32188,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/efc1779e/hautesperchees_christophe_raynaud_de_lage_067.jpg",
       "offsite_venue": null,
       "id": "1c19e408557b"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "D’autres familles que la mienne",
+      "subtitle": "Estelle Savasta",
+      "category": "théâtre",
+      "date_start": "2027-02-02",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.tng-lyon.fr/evenement/dautres-familles-que-la-mienne/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_DAUTRES-FAMILLES.png",
+      "offsite_venue": null,
+      "id": "647f44694b7e"
     },
     {
       "venue": "Théâtre La Mouche",
@@ -32092,6 +32400,20 @@
       "id": "4a3195ab0871"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "D’autres familles que la mienne",
+      "subtitle": "Estelle Savasta",
+      "category": "théâtre",
+      "date_start": "2027-02-03",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.tng-lyon.fr/evenement/dautres-familles-que-la-mienne/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_DAUTRES-FAMILLES.png",
+      "offsite_venue": null,
+      "id": "1285cf458098"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Hautes Perchées",
@@ -32244,6 +32566,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/efc1779e/hautesperchees_christophe_raynaud_de_lage_067.jpg",
       "offsite_venue": null,
       "id": "8071e86eb006"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "D’autres familles que la mienne",
+      "subtitle": "Estelle Savasta",
+      "category": "théâtre",
+      "date_start": "2027-02-04",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.tng-lyon.fr/evenement/dautres-familles-que-la-mienne/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_DAUTRES-FAMILLES.png",
+      "offsite_venue": null,
+      "id": "996fafb4a3b2"
     },
     {
       "venue": "Théâtre de la Croix-Rousse",
@@ -32470,6 +32806,20 @@
       "id": "27f09ec2c502"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "D’autres familles que la mienne",
+      "subtitle": "Estelle Savasta",
+      "category": "théâtre",
+      "date_start": "2027-02-05",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.tng-lyon.fr/evenement/dautres-familles-que-la-mienne/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_DAUTRES-FAMILLES.png",
+      "offsite_venue": null,
+      "id": "c2bd9648980a"
+    },
+    {
       "venue": "Astroballe",
       "venue_slug": "astroballe",
       "title": "LDLC ASVEL - Fenerbahce Tarfin Istanbul",
@@ -32666,20 +33016,6 @@
       "id": "a7f754241a23"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Visite tactile – D’autres familles que la mienne",
-      "subtitle": "Représentation audiodécrite précédée d’une visite tactile.\nRenseignements et inscriptions\nvanina.chaize@tng-lyo…",
-      "category": "théâtre",
-      "date_start": "2027-02-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/visite-tactile-dautres-familles-que-la-mienne/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/DAUTRESFAMILLES_Visite-tactile_Ateliers_460x460.png",
-      "offsite_venue": null,
-      "id": "d09cc41aed41"
-    },
-    {
       "venue": "Musée des Beaux-Arts",
       "venue_slug": "musee-des-beaux-arts",
       "title": "Journée des collectionneurs",
@@ -32748,6 +33084,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/5fe31a30/oratorio_documentaire.jpg",
       "offsite_venue": null,
       "id": "fb103d948190"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Visite tactile – D’autres familles que la mienne",
+      "subtitle": "Représentation audiodécrite précédée d’une visite tactile.\nRenseignements et inscriptions\nvanina.chaize@tng-lyo…",
+      "category": "théâtre",
+      "date_start": "2027-02-06",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.tng-lyon.fr/evenement/visite-tactile-dautres-familles-que-la-mienne/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/DAUTRESFAMILLES_Visite-tactile_Ateliers_460x460.png",
+      "offsite_venue": null,
+      "id": "2e9d1a587659"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -33212,6 +33562,34 @@
       "id": "bc169b18cb13"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Bazar Circus, l’orchestre fait son cirque !",
+      "subtitle": "Un conte de Carl Norac – Dessin en direct, Juliette Barbanègre Récitant, Dominique Pinon – Conception musicale, David Pastor Orchestre de l’Opéra de Lyon",
+      "category": "théâtre",
+      "date_start": "2027-02-10",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.tng-lyon.fr/evenement/bazar-circus/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_BAZAR-CIRCUS.png",
+      "offsite_venue": null,
+      "id": "f606db58faa1"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Bazar Circus, l’orchestre fait son cirque !",
+      "subtitle": "Un conte de Carl Norac – Dessin en direct, Juliette Barbanègre Récitant, Dominique Pinon – Conception musicale, David Pastor Orchestre de l’Opéra de Lyon",
+      "category": "théâtre",
+      "date_start": "2027-02-10",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.tng-lyon.fr/evenement/bazar-circus/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_BAZAR-CIRCUS.png",
+      "offsite_venue": null,
+      "id": "35fca2fdeb45"
+    },
+    {
       "venue": "Comédie Odéon",
       "venue_slug": "comedie-odeon",
       "title": "Jules et Marcel",
@@ -33632,34 +34010,6 @@
       "id": "c1b4c6e0e14a"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Bazar Circus, l’orchestre fait son cirque !",
-      "subtitle": "Un conte de Carl Norac – Dessin en direct, Juliette Barbanègre Récitant, Dominique Pinon – Conception musicale, David Pastor Orchestre de l’Opéra de Lyon",
-      "category": "théâtre",
-      "date_start": "2027-02-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/bazar-circus/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_BAZAR-CIRCUS.png",
-      "offsite_venue": null,
-      "id": "d486efe1de45"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "RDV Pop’Corn – Bazar Circus",
-      "subtitle": "Un jour par mois le TNG vous donne rendez-vous et c’est gratuit !\nDécouverte des spectacles, ateliers créatifs, Pop�…",
-      "category": "théâtre",
-      "date_start": "2027-02-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-bazar-circus/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/BazarCircus_PopCorn_460x460.png",
-      "offsite_venue": null,
-      "id": "b53a1cdd79d5"
-    },
-    {
       "venue": "Comédie Odéon",
       "venue_slug": "comedie-odeon",
       "title": "Jules et Marcel",
@@ -33700,6 +34050,34 @@
       "image": "https://www.transbordeur.fr/wp-content/uploads/2026/06/a-uglykidjoe.jpeg",
       "offsite_venue": null,
       "id": "3e137455d050"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Bazar Circus, l’orchestre fait son cirque !",
+      "subtitle": "Un conte de Carl Norac – Dessin en direct, Juliette Barbanègre Récitant, Dominique Pinon – Conception musicale, David Pastor Orchestre de l’Opéra de Lyon",
+      "category": "théâtre",
+      "date_start": "2027-02-12",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.tng-lyon.fr/evenement/bazar-circus/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_BAZAR-CIRCUS.png",
+      "offsite_venue": null,
+      "id": "e5a08ca84ebe"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "RDV Pop’Corn – Bazar Circus",
+      "subtitle": "Un jour par mois le TNG vous donne rendez-vous et c’est gratuit !\nDécouverte des spectacles, ateliers créatifs, Pop�…",
+      "category": "théâtre",
+      "date_start": "2027-02-12",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-bazar-circus/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/BazarCircus_PopCorn_460x460.png",
+      "offsite_venue": null,
+      "id": "f42db78d3ad9"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -36278,34 +36656,6 @@
       "id": "75a2a5f371c6"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Traversée",
-      "subtitle": "Marie-Eve Huot, Le Carrousel",
-      "category": "théâtre",
-      "date_start": "2027-03-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/traversee/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_TRAVERSEE.png",
-      "offsite_venue": null,
-      "id": "a0510dff8edb"
-    },
-    {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Atelier de pratique théâtrale en LSF",
-      "subtitle": "Autour du spectacle Traversée",
-      "category": "théâtre",
-      "date_start": "2027-03-06",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/atelier-de-pratique-theatrale-en-lsf/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Ateliers-LSF-Traversee_460x460.png",
-      "offsite_venue": null,
-      "id": "b6e4854fae15"
-    },
-    {
       "venue": "Théâtre de la Croix-Rousse",
       "venue_slug": "croix-rousse",
       "title": "Atelier d’écriture avec Logan De Carvalho",
@@ -36320,6 +36670,20 @@
       "id": "b5f4e0794ba9"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Atelier de pratique théâtrale en LSF",
+      "subtitle": "Autour du spectacle Traversée",
+      "category": "théâtre",
+      "date_start": "2027-03-06",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.tng-lyon.fr/evenement/atelier-de-pratique-theatrale-en-lsf/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Ateliers-LSF-Traversee_460x460.png",
+      "offsite_venue": null,
+      "id": "925e072b9ccd"
+    },
+    {
       "venue": "Théâtre de la Croix-Rousse",
       "venue_slug": "croix-rousse",
       "title": "L’Art d’avoir toujours raison",
@@ -36332,6 +36696,20 @@
       "image": "https://www.croix-rousse.com/wp-content/uploads/2026/05/LART-davoir-toujours-raison-1080x1080-1.png",
       "offsite_venue": null,
       "id": "f47eb2e2d4ae"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Traversée",
+      "subtitle": "Marie-Eve Huot, Le Carrousel",
+      "category": "théâtre",
+      "date_start": "2027-03-06",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://www.tng-lyon.fr/evenement/traversee/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_TRAVERSEE.png",
+      "offsite_venue": null,
+      "id": "496621edded2"
     },
     {
       "venue": "Auditorium de Lyon",
@@ -37048,20 +37426,6 @@
       "id": "a708e7dfb90c"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "Évidences inconnues",
-      "subtitle": "Kurt Demey et Joris Vanvinckenroye, Cie Rode Boom",
-      "category": "théâtre",
-      "date_start": "2027-03-11",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/evidences-inconnues/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_EVIDENCES.png",
-      "offsite_venue": null,
-      "id": "2f21af459863"
-    },
-    {
       "venue": "Comédie Odéon",
       "venue_slug": "comedie-odeon",
       "title": "Jules et Marcel",
@@ -37144,6 +37508,20 @@
       "image": "https://img.mapado.net/2025/7/16/6877a93c803cf-duos-des-eux-vignette.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "c59b7340f3aa"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Évidences inconnues",
+      "subtitle": "Kurt Demey et Joris Vanvinckenroye, Cie Rode Boom",
+      "category": "théâtre",
+      "date_start": "2027-03-11",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.tng-lyon.fr/evenement/evidences-inconnues/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_EVIDENCES.png",
+      "offsite_venue": null,
+      "id": "5c56e86442a9"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -37314,20 +37692,6 @@
       "id": "09bd9eff9805"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "RDV Pop’Corn – Evidences inconnues",
-      "subtitle": "Un jour par mois le TNG vous donne rendez-vous et c’est gratuit !\nDécouverte des spectacles, ateliers créatifs, Pop�…",
-      "category": "théâtre",
-      "date_start": "2027-03-12",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-evidences-inconnues/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Evidences_PopCorn_460x460.png",
-      "offsite_venue": null,
-      "id": "1c2b69be6a63"
-    },
-    {
       "venue": "Le Transbordeur",
       "venue_slug": "transbordeur",
       "title": "THE WARNING",
@@ -37370,6 +37734,20 @@
       "id": "c4def8522d2d"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "RDV Pop’Corn – Evidences inconnues",
+      "subtitle": "Un jour par mois le TNG vous donne rendez-vous et c’est gratuit !\nDécouverte des spectacles, ateliers créatifs, Pop�…",
+      "category": "théâtre",
+      "date_start": "2027-03-12",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-evidences-inconnues/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Evidences_PopCorn_460x460.png",
+      "offsite_venue": null,
+      "id": "58ba098476a5"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Collatéral – Le Projet Ma Sœur",
@@ -37382,6 +37760,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/f063211f/collateral_2.jpg",
       "offsite_venue": null,
       "id": "4d8d9697f38a"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Évidences inconnues",
+      "subtitle": "Kurt Demey et Joris Vanvinckenroye, Cie Rode Boom",
+      "category": "théâtre",
+      "date_start": "2027-03-12",
+      "date_end": null,
+      "time": "19:30",
+      "url": "https://www.tng-lyon.fr/evenement/evidences-inconnues/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_EVIDENCES.png",
+      "offsite_venue": null,
+      "id": "7271652567f4"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -38518,20 +38910,6 @@
       "id": "95b756f00436"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng",
-      "title": "L’enfant océan",
-      "subtitle": "Frédéric Sonntag, Cie AsaNIsiMAsa",
-      "category": "théâtre",
-      "date_start": "2027-03-20",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.tng-lyon.fr/evenement/lenfant-ocean/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_ENFANT-OCEAN.png",
-      "offsite_venue": null,
-      "id": "9ef9a0a5db0c"
-    },
-    {
       "venue": "Auditorium de Lyon",
       "venue_slug": "auditorium-lyon",
       "title": "Là-haut",
@@ -38544,6 +38922,20 @@
       "image": "https://www.auditorium-lyon.com/sites/default/files/styles/vignette_teaser_xl/public/upload/images/1920_La-haut_2J3A0395-1b-copie.jpg?h=8a49d898&itok=z9PtDss1",
       "offsite_venue": null,
       "id": "0d99d7e46803"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Atelier intergénérationnel – L’Enfant Océan",
+      "subtitle": "Atelier intergénérationnel",
+      "category": "théâtre",
+      "date_start": "2027-03-20",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-lenfant-ocean/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/ENFANTOCEAN_Fabriquedessouvenirs_Ateliers_460x460.png",
+      "offsite_venue": null,
+      "id": "00929ea20b9d"
     },
     {
       "venue": "Musée des Confluences",
@@ -38572,6 +38964,20 @@
       "image": "https://img.mapado.net/2025/9/4/68b957ca950ae-sitcom-1.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "f5f29d1a6bfe"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "L’enfant océan",
+      "subtitle": "Frédéric Sonntag, Cie AsaNIsiMAsa",
+      "category": "théâtre",
+      "date_start": "2027-03-20",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://www.tng-lyon.fr/evenement/lenfant-ocean/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/460x460_ENFANT-OCEAN.png",
+      "offsite_venue": null,
+      "id": "923454551af2"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -41323,7 +41729,9 @@
     "Le Transbordeur": [
       "Le Transbordeur"
     ],
-    "Le Petit Salon": [],
+    "Le Petit Salon": [
+      "Le Petit Salon"
+    ],
     "Le Sonic": [
       "Le Sonic"
     ],
