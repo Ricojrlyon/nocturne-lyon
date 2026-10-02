@@ -287,6 +287,15 @@ class GardeFous(unittest.TestCase):
         self.assertIn("default: false", entree)
         self.assertEqual(wf.count("NOCTURNE_FORCER_ECRITURE: ${{ inputs.forcer && '1' || '' }}"), 1)
 
+    def test_deux_passages_ne_se_chevauchent_pas(self):
+        # Le second passage attend la fin du premier, puis repart de la
+        # branche telle qu'elle est alors, fil du premier compris.
+        wf = (RACINE / ".github" / "workflows" / "update.yml").read_text(encoding="utf-8")
+        self.assertIn("\nconcurrency:\n  group: maj-du-fil\n  cancel-in-progress: false\n",
+                      wf.split("jobs:", 1)[0])
+        self.assertIn("- uses: actions/checkout@v7\n        with:\n          ref: ${{ github.ref }}\n",
+                      wf)
+
     def test_les_alertes_disent_comment_forcer(self):
         # Les trois alertes qui conseillent de forcer nomment la case.
         moitie = {s: copies(DIRECT[s][:18]) for s in SALLES}

@@ -25,6 +25,17 @@ on:
 permissions:
   contents: write
 
+# Un passage à la fois. Lancé à la main pendant le passage programmé, ou
+# l'inverse, le second attend la fin du premier au lieu de tourner en même
+# temps : sinon il repartait du fil d'AVANT, et sa publication butait sur
+# celle du premier (« git pull --rebase » en conflit sur events.json,
+# passage rouge). GitHub ne garde qu'UN passage en attente : un troisième
+# lancement remplace celui qui attend — annulé, en gris — et fait le même
+# travail, un peu plus tard.
+concurrency:
+  group: maj-du-fil
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -37,7 +48,13 @@ jobs:
       # v7, et non plus v4 et v5 : ces versions visaient Node.js 20, que
       # GitHub abandonne et ne faisait plus tourner que de force, avec un
       # avertissement à chaque passage.
+      # La branche telle qu'elle est au DÉPART du passage, et non telle
+      # qu'elle était quand il a été demandé : un passage qui a attendu la
+      # fin d'un autre (voir concurrency) repart du fil que celui-ci vient
+      # de publier.
       - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.ref }}
 
       - name: Setup Python
         uses: actions/setup-python@v7
@@ -75,8 +92,9 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update events ($(date -u +'%Y-%m-%d %H:%M UTC'))"
-            # Un commit poussé entre le checkout et le push (run manuel
-            # croisant le cron, édition directe) ferait échouer le push.
+            # Un commit poussé entre le checkout et le push (une retouche du
+            # code) ferait échouer le push. Deux passages, eux, ne se
+            # croisent plus : voir concurrency.
             git pull --rebase
             git push
           fi
