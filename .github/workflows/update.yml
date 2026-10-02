@@ -2,7 +2,13 @@ name: Update events daily
 
 on:
   schedule:
-    - cron: '0 6 * * *'
+    # 04:17 UTC : 6 h 17 à Paris l'été, 5 h 17 l'hiver (GitHub compte en
+    # UTC). Programmé à l'heure pile (« 0 6 », 8 h à Paris), le passage
+    # partait chaque jour 4 à 6 heures en retard : sur 154 passages de mai
+    # à octobre 2026, entre 09:43 et 12:29 UTC. GitHub retarde les tâches
+    # programmées en début d'heure, les plus demandées ; une minute creuse,
+    # plus tôt, doit réduire ce retard, sans garantie (CI-2, 2 octobre 2026).
+    - cron: '17 4 * * *'
   workflow_dispatch:
 
 permissions:
