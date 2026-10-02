@@ -138,6 +138,21 @@ class DatesDuPetitBulletin(unittest.TestCase):
                           ("2027-01-01", "21:00", None),
                           ("2027-01-02", "21:00", None)])
 
+    def test_plage_longue_avec_l_annee_du_debut(self):
+        # BUG-20. « Animal culte », au Musée des Confluences, n'était
+        # annoncée que le 16 octobre.
+        self.assertEqual(self.lire("Du 16 octobre 2026 au 15 août 2027, de 10h30 à 18h30"),
+                         [("2026-10-16", "10:30", "2027-08-15")])
+
+    def test_plage_de_plus_d_un_an_garde_l_annee_du_debut(self):
+        self.assertEqual(self.lire("Du 16 octobre 2026 au 15 décembre 2027"),
+                         [("2026-10-16", None, "2027-12-15")])
+
+    def test_plage_courte_avec_les_deux_annees(self):
+        self.assertEqual(self.lire("Du 30 décembre 2026 au 2 janvier 2027 à 21h"),
+                         [("2026-12-30", "21:00", None), ("2026-12-31", "21:00", None),
+                          ("2027-01-01", "21:00", None), ("2027-01-02", "21:00", None)])
+
     def test_jusqu_au_commence_aujourd_hui(self):
         self.assertEqual(self.lire("Jusqu'au 16 novembre 2026"),
                          [("2026-10-01", None, "2026-11-16")])

@@ -343,16 +343,21 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
         except ValueError:
             return []
 
-    # 3) Plage à cheval sur deux mois : "Du 28 mai au 3 juin 2026"
-    m = re.search(r"\bdu\s+(\d{1,2})(?:er)?\s+" + MOIS
+    # 3) Plage à cheval sur deux mois : "Du 28 mai au 3 juin 2026", ou avec
+    #    l'année du début : "Du 16 octobre 2026 au 15 août 2027". BUG-20 :
+    #    cette année-là n'était pas attendue, la plage échappait à la
+    #    lecture et devenait son seul premier jour — une exposition de dix
+    #    mois annoncée un seul jour.
+    m = re.search(r"\bdu\s+(\d{1,2})(?:er)?\s+" + MOIS + r"(?:\s+(\d{4}))?"
                   + r"\s+au\s+(\d{1,2})(?:er)?\s+" + MOIS
                   + r"(?:\s+(\d{4}))?", norm)
     if m:
         d1, m1 = int(m.group(1)), MONTHS_FR[m.group(2)]
-        d2, m2 = int(m.group(3)), MONTHS_FR[m.group(4)]
-        year_end = _year_for(m2, d2, m.group(5))
+        d2, m2 = int(m.group(4)), MONTHS_FR[m.group(5)]
+        year_end = _year_for(m2, d2, m.group(6))
         # "du 30 decembre au 2 janvier 2027" : l'année écrite est celle de la fin.
-        year_start = year_end - 1 if m1 > m2 else year_end
+        year_start = (int(m.group(3)) if m.group(3)
+                      else year_end - 1 if m1 > m2 else year_end)
         try:
             return _expand(date(year_start, m1, d1), date(year_end, m2, d2), norm[m.end():])
         except ValueError:
