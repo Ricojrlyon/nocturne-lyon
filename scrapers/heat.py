@@ -1,6 +1,7 @@
 """Scraper for HEAT (h-eat.eu/events/).
 
-Listing page gives date + title. Time is on each event's detail page.
+Listing page gives date + title. Time is on each event's detail page
+(span.hour-start, dans l'article de l'événement).
 Strategy: collect all event URLs from listing, then fetch each detail
 page to extract the time (rate-limited to 0.4 s/request).
 """
@@ -88,17 +89,30 @@ def _fetch_detail_time(url: str) -> Optional[str]:
         if r.status_code != 200:
             return None
         soup = BeautifulSoup(r.text, "html.parser")
+        # On ne lit que l'article de l'événement (BUG-13) : le bandeau du
+        # site, « Afterwork : Happy Hour de 17:30 à 20:00 », est hors de
+        # lui, et passait pour l'heure de chaque événement relu.
+        zone = soup.find("article") or soup
+        # L'heure de DÉBUT a sa balise : « 11:00 — 00:00 » s'écrit
+        # span.hour-start, span.hour-end. Elle vaut à toute heure — un
+        # marché de 11:00 à 19:00 était publié à 19:00, son heure de fin,
+        # _parse_time n'acceptant que le soir.
+        debut = zone.select_one(".hour-start")
+        m = re.fullmatch(r"\s*([01]?\d|2[0-3])[h:]([0-5]\d)\s*",
+                         debut.get_text()) if debut else None
+        if m:
+            return f"{int(m.group(1)):02d}:{m.group(2)}"
         # Try dedicated time elements first
         for selector in (
             "[class*='time']", "[class*='horaire']", "[class*='heure']",
             "[class*='schedule']", "time", "[class*='date']",
         ):
-            for el in soup.select(selector)[:3]:
+            for el in zone.select(selector)[:3]:
                 t = _parse_time(el.get_text(" ", strip=True))
                 if t:
                     return t
         # Try the first 400 chars of visible text (header area)
-        visible = soup.get_text(" ", strip=True)
+        visible = zone.get_text(" ", strip=True)
         # Contextual search
         m = re.search(
             r"(?:ouverture|portes?|début|debut|horaire|heure|à partir|opening|start)"
