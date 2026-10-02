@@ -10,6 +10,17 @@ on:
     # plus tôt, doit réduire ce retard, sans garantie (CI-2, 2 octobre 2026).
     - cron: '17 4 * * *'
   workflow_dispatch:
+    inputs:
+      # OPT-1 : la case d'un lancement à la main (« Run workflow »). Cochée,
+      # le passage publie ce qu'il a collecté, tel quel : il ne reprend pas
+      # la veille d'une salle tombée et ne bloque pas une baisse de volume
+      # (NOCTURNE_FORCER_ECRITURE, voir aggregate.py). Pour une perte RÉELLE
+      # seulement — salle fermée, saison finie : une salle en panne
+      # passagère ce jour-là ne serait pas reprise non plus.
+      forcer:
+        description: "Forcer la publication — perte réelle seulement (salle fermée, saison finie)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -45,6 +56,10 @@ jobs:
 
       - name: Run aggregator
         run: python aggregate.py
+        env:
+          # « 1 » quand la case « Forcer la publication » est cochée, vide
+          # sinon — et toujours vide pour le passage programmé.
+          NOCTURNE_FORCER_ECRITURE: ${{ inputs.forcer && '1' || '' }}
 
       # Le fil frais, contrôlé avant de partir : sa forme, et la page qui
       # s'affiche avec. Même règle : un échec, et rien n'est publié.

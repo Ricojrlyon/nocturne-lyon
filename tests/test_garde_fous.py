@@ -6,7 +6,7 @@ import copy
 import unittest
 from datetime import date, timedelta
 
-from tests.outils import atelier, evenement
+from tests.outils import RACINE, atelier, evenement
 
 J = date(2026, 10, 1)
 SALLES = ["Le Sucre", "HEAT", "La Commune", "TNG", "Célestins"]
@@ -236,6 +236,30 @@ class GardeFous(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertEqual(sum(1 for e in fil["events"] if e["venue"] == "HEAT"), 0)
         self.assertNotIn("reprises", fil)
+
+    def test_la_case_forcer_du_lancement_a_la_main_est_branchee(self):
+        # OPT-1 : la case « Forcer la publication » de update.yml doit
+        # allumer le réglage que lit aggregate.py, et lui seul.
+        wf = (RACINE / ".github" / "workflows" / "update.yml").read_text(encoding="utf-8")
+        entree = wf.split("workflow_dispatch:", 1)[1].split("permissions:", 1)[0]
+        self.assertIn("forcer:", entree)
+        self.assertIn('description: "Forcer la publication', entree)
+        self.assertIn("type: boolean", entree)
+        self.assertIn("default: false", entree)
+        self.assertEqual(wf.count("NOCTURNE_FORCER_ECRITURE: ${{ inputs.forcer && '1' || '' }}"), 1)
+
+    def test_les_alertes_disent_comment_forcer(self):
+        # Les trois alertes qui conseillent de forcer nomment la case.
+        moitie = {s: copies(DIRECT[s][:18]) for s in SALLES}
+        cas = [(normales(HEAT=lambda: []), agregateurs()),                 # salle
+               (normales(), agregateurs(vm=panne)),                         # agrégateur
+               (normales(**moitie), agregateurs(pb=copies(PB[:36]),         # volume
+                                                vm=copies(VM[:18])))]
+        for salles, agr in cas:
+            with atelier(J) as a:
+                a.veille(VEILLE)
+                a.lancer(salles, agr)
+                self.assertIn("en cochant « Forcer la publication »", a.journal.getvalue())
 
     def test_toutes_les_sources_en_echec(self):
         with atelier(J) as a:

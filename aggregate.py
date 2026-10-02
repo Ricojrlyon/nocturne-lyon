@@ -227,7 +227,8 @@ EFFONDREMENT_PLANCHER = 10
 #
 # NOCTURNE_FORCER_ECRITURE=1 publie ce qui a ete reellement scrappe, sans
 # rien reprendre : c'est la sortie quand la perte est vraie — salle
-# fermee, saison finie.
+# fermee, saison finie. Sur GitHub, c'est la case « Forcer la
+# publication » d'un lancement a la main (OPT-1, voir update.yml).
 
 # Au-delà, la panne n'est plus passagère et la salle doit pouvoir se vider.
 # Sept jours : de quoi couvrir une coupure de plusieurs jours sans laisser
@@ -802,8 +803,9 @@ def _garde_fou_des_salles(unique: List[Event], out: Path, today_iso: str,
                     "en une nuit : son\n"
                     "scraper a rendu une liste courte sans lever. Si la "
                     "perte est RÉELLE — salle\n"
-                    "fermée, saison finie —, relancer avec "
-                    "NOCTURNE_FORCER_ECRITURE=1.")
+                    "fermée, saison finie —, relancer à la main en cochant "
+                    "« Forcer la publication »\n"
+                    "(NOCTURNE_FORCER_ECRITURE=1).")
             if pannes:
                 _alerte(
                     "petite salle reprise du fil précédent",
@@ -865,8 +867,9 @@ def _garde_fou_des_agregateurs(unique: List[Event], out: Path,
                 "[garde-fou] EFFONDREMENT d'agrégateur : " + detail + ".\n"
                 "Le fil est publié, et les lieux que seul cet agrégateur "
                 "couvre gardent leurs événements de la veille.\n"
-                "Si la perte est RÉELLE, relancer avec "
-                "NOCTURNE_FORCER_ECRITURE=1.")
+                "Si la perte est RÉELLE, relancer à la main en cochant "
+                "« Forcer la publication »\n"
+                "(NOCTURNE_FORCER_ECRITURE=1).")
             print("[garde-fou] %d + %d repris → %d après dédup"
                   % (avant_reprise, len(repris_agr), len(unique)))
         for nom, depuis, jours in abandons_agr:
@@ -982,7 +985,8 @@ def _publier(payload: dict, report: list, out: Path, today_iso: str) -> bool:
                         "[garde-fou] " + constat + ".\nLe fichier de la veille "
                         "est conservé : une perte aussi large, sans salle "
                         "effondrée, ressemble à un bug.\nSi la baisse est "
-                        "réelle, relancer avec NOCTURNE_FORCER_ECRITURE=1 ; "
+                        "réelle, relancer à la main en cochant « Forcer la "
+                        "publication »\n(NOCTURNE_FORCER_ECRITURE=1) ; "
                         "sinon le site publiera de lui-même dans %d jour(s)."
                         % (VOLUME_FIGE_JOURS_MAX + 1 - age))
                 wrote = False
