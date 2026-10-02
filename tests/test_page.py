@@ -138,6 +138,24 @@ class PageNavigation(unittest.TestCase):
         self.assertEqual(self.releve["journees_apres_ctrl_f"], total)
         self.assertEqual(self.releve["erreurs_fin"], [])
 
+    def test_une_famille_eteinte_au_milieu_garde_sa_journee(self):
+        verifier_famille_au_milieu(self, self.releve["familles_suivies"])
+
+
+def verifier_famille_au_milieu(cas, suivi):
+    """BUG-8 : une famille éteinte ou rallumée dans la barre d'une journée,
+    au milieu de la page, laisse le visiteur sur CETTE journée. Le haut de
+    la journée, avant → après, dans les trois positions du pilote."""
+    # À un pixel près : une journée peut commencer entre deux pixels, et le
+    # défilement, lui, avance de pixel en pixel.
+    (a1, p1), (a2, p2), (a3, p3) = suivi
+    cas.assertAlmostEqual(a1, 8, delta=1)   # barre à sa place…
+    cas.assertAlmostEqual(p1, a1, delta=1)  # … rien ne bouge
+    cas.assertLess(a2, 0)                   # barre collée, visiteur dans la journée :
+    cas.assertAlmostEqual(p2, 8, delta=1)   # la journée revient à son début
+    cas.assertGreater(a3, 8)                # la veille à l'écran au-dessus :
+    cas.assertAlmostEqual(p3, a3, delta=1)  # la journée ne bouge pas
+
 
 class PastillesAvecFondus(unittest.TestCase):
     """BUG-7 : avec les fondus, la pastille d'un jour proche fait défiler la
@@ -164,6 +182,9 @@ class PastillesAvecFondus(unittest.TestCase):
                          [["day-2026-10-01", 8], ["day-2026-10-07", 8],
                           ["day-2026-10-14", 8]])
         self.assertEqual(self.releve["erreurs_fin"], [])
+
+    def test_une_famille_eteinte_au_milieu_garde_sa_journee(self):
+        verifier_famille_au_milieu(self, self.releve["familles_suivies"])
 
 
 if __name__ == "__main__":

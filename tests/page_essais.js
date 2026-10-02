@@ -54,6 +54,38 @@
     await pause(400);
   };
 
+  // Une famille éteinte ou rallumée dans la barre du 10 octobre, au milieu
+  // de la page. On relève le haut de cette journée, avant et après, dans
+  // trois positions : sa barre à sa place en haut de l'écran ; sa barre
+  // collée en haut, le visiteur au milieu de la journée ; la journée plus
+  // bas, la veille à l'écran au-dessus d'elle.
+  const familleAuMilieu = async () => {
+    const jour = () => document.getElementById('day-2026-10-10');
+    const haut = () => Math.round(jour().getBoundingClientRect().top);
+    window.scrollTo(0, 0);
+    await effacer();
+    await pause(400);
+    document.querySelectorAll('.day-pill')[9].click();
+    await pause(800);
+    const f = jour().querySelector('.fam-chip:not([disabled])').dataset.famille;
+    const toucher = async () => {
+      const avant = haut();
+      jour().querySelector('.fam-chip[data-famille="' + f + '"]').click();
+      await pause(800);
+      return [avant, haut()];
+    };
+    const suivi = [await toucher()];
+    window.scrollBy(0, 600);
+    await pause(300);
+    suivi.push(await toucher());
+    window.scrollBy(0, -350);
+    await pause(300);
+    window.scrollBy(0, haut() - 350);     // la veille, affichée, a pu grandir
+    await pause(300);
+    suivi.push(await toucher());
+    return suivi;
+  };
+
   try {
     for (let i = 0; i < 600; i++) {
       if (document.querySelector('#feed .event, #feed .empty-state')) break;
@@ -151,6 +183,7 @@
       res.journees_avant_ctrl_f = document.querySelectorAll('#feed section.day').length;
       document.body.dispatchEvent(new KeyboardEvent('keydown', { key: 'f', ctrlKey: true, bubbles: true }));
       res.journees_apres_ctrl_f = document.querySelectorAll('#feed section.day').length;
+      res.familles_suivies = await familleAuMilieu();
     } else if (SCENARIOS === 'pastilles_fondues') {
       // Avec les fondus : la pastille d'un jour proche fait défiler la page
       // en douceur, celle d'un jour lointain la fait sauter, par-dessus des
@@ -174,6 +207,7 @@
           .find(s => s.getBoundingClientRect().bottom > 12);
         res.pastilles_suivies.push(s ? [s.id, Math.round(s.getBoundingClientRect().top)] : null);
       }
+      res.familles_suivies = await familleAuMilieu();
     }
     res.erreurs_fin = window.__erreurs;
     await envoyer(res);

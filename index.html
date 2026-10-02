@@ -3388,6 +3388,8 @@ function renderFeed() {
   // Le rendu précédent avait peut-être encore des journées à construire
   // (voir « affichage par morceaux ») : c'est ce rendu-ci qui fait foi.
   arreterLaSuite();
+  const ancre = ancreDuRendu;           // voir revenirALaJournee
+  ancreDuRendu = null;
 
   if (events.length === 0) {
     feed.innerHTML = '<div class="empty-state"><p>rien dans ce filtre</p></div>';
@@ -3457,7 +3459,7 @@ function renderFeed() {
                    + '</div>';
     return;
   }
-  construireLeFil(feed, jours);
+  construireLeFil(feed, jours, ancre);
 }
 
 /* Une journée du fil : sa barre — date, familles, compte — puis ses cartes. */
@@ -3506,8 +3508,9 @@ function journeeHtml({ iso, comptes, visibles }) {
    vient ensuite journée par journée. */
 const MORCEAU_INITIAL = 400;
 let suiteDuFil = null;   // { jours, prochain, guetteur }, tant qu'il en reste
+let ancreDuRendu = null; // { iso, haut } : la journée à garder sous le doigt
 
-function construireLeFil(feed, jours) {
+function construireLeFil(feed, jours, ancre) {
   // Un visiteur qui change de filtre au milieu de la page doit y rester,
   // comme quand tout se construisait d'un coup : on note où il en est.
   const y = window.scrollY;
@@ -3520,12 +3523,13 @@ function construireLeFil(feed, jours) {
     n += jour.visibles.length;
   }
   feed.innerHTML = html.join('\n');
-  if (suite.prochain >= jours.length) return;
-  suiteDuFil = suite;
-  // Son écran doit être couvert tout de suite, et non à l'image suivante :
-  // le fil ne doit pas raccourcir sous lui.
-  remplirJusqua(y + window.innerHeight);
-  if (window.scrollY !== y) window.scrollTo(window.scrollX, y);
+  if (suite.prochain < jours.length) suiteDuFil = suite;
+  if (!(ancre && revenirALaJournee(ancre)) && suiteDuFil) {
+    // Son écran doit être couvert tout de suite, et non à l'image
+    // suivante : le fil ne doit pas raccourcir sous lui.
+    remplirJusqua(y + window.innerHeight);
+    if (window.scrollY !== y) window.scrollTo(window.scrollX, y);
+  }
   if (!suiteDuFil) return;
   if (typeof IntersectionObserver !== 'function') { construireTout(); return; }
   // Le guetteur suit la DERNIÈRE journée construite : quand elle arrive à
@@ -3606,6 +3610,41 @@ function construireJusqua(iso) {
 
 function construireTout() {
   ajouterJournees();
+}
+
+/* Une famille éteinte ou rallumée dans la barre d'une journée reconstruit
+   tout le fil, et les journées neuves perdent leur hauteur mesurée : à la
+   même position de défilement, la page montrait alors des semaines plus
+   loin (le 10 octobre menait au 23 novembre, au 16 février sur un
+   téléphone). La journée touchée — ou, si le filtre l'a vidée, la
+   suivante — revient donc où le visiteur la voyait : à la même hauteur si
+   sa barre était à sa place, à son début si la barre était collée en haut
+   de l'écran, le visiteur au milieu de cette journée dont les cartes
+   viennent de changer. Faux si aucune journée ne convient : le fil garde
+   alors la position de défilement. */
+function revenirALaJournee(ancre) {
+  construireJusqua(ancre.iso);
+  const cible = [...document.querySelectorAll('#feed section.day')]
+    .find(s => s.id.slice(4) >= ancre.iso);
+  if (!cible) return false;
+  remplirJusqua(cible.getBoundingClientRect().top + window.scrollY + window.innerHeight);
+  const voulu = Math.max(ancre.haut, parseFloat(getComputedStyle(cible).scrollMarginTop) || 0);
+  const placer = () => {
+    const ecart = cible.getBoundingClientRect().top - voulu;
+    if (Math.abs(ecart) >= 1) window.scrollBy(0, ecart);
+  };
+  placer();
+  // Les journées voisines, neuves elles aussi, ne prennent leur vraie
+  // taille qu'à l'image suivante, et peuvent encore la déplacer : on la
+  // replace trois images durant.
+  let fois = 0;
+  const encore = () => {
+    if (!cible.isConnected) return;
+    placer();
+    if (++fois < 3) requestAnimationFrame(encore);
+  };
+  requestAnimationFrame(encore);
+  return true;
 }
 
 document.getElementById('feed').addEventListener('focusin', e => {
@@ -3952,6 +3991,9 @@ document.getElementById('feed').addEventListener('click', ev => {
     const k = fam.dataset.famille;
     if (state.famillesOff.has(k)) state.famillesOff.delete(k);
     else state.famillesOff.add(k);
+    // La journée dont on touche la barre reste sous le doigt.
+    const jour = fam.closest('section.day');
+    if (jour) ancreDuRendu = { iso: jour.id.slice(4), haut: jour.getBoundingClientRect().top };
     render();
     return;
   }
