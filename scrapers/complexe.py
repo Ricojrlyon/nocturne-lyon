@@ -83,11 +83,18 @@ HEADERS = {
 # 15.
 #
 # On ne cherche PAS à franchir la vérification : c'est une protection que
-# le site a voulue, et l'UA reste franc. On redemande plus tard, puis on
-# renonce en le disant, et le garde-fou d'aggregate.py reprend le
-# programme de la veille. Les attentes forment un budget COMMUN à tout le
-# passage : un refus installé coûte trois minutes, pas trois par page.
-ATTENTES_VERIFICATION = (60, 120)
+# le site a voulue, et l'UA reste franc. On renonce en le disant, et le
+# garde-fou d'aggregate.py reprend le programme de la veille.
+#
+# PLUS D'ATTENTE (SUIVI-1, 2 octobre 2026). On redemandait après 60 puis
+# 120 s, sur un budget commun à tout le passage. Mesuré sur les passages
+# des 1er et 2 octobre : 4 refus, et chaque fois les deux nouveaux essais
+# refusés aussi — aucun sauvetage, trois minutes de passage perdues par
+# refus. Un refus tient donc au moins trois minutes sur la machine qui le
+# reçoit ; ce sont les passages suivants, sur d'autres machines, qui sont
+# servis. Le budget est vide : _page renonce au premier refus. La
+# mécanique reste, pour le jour où une attente servirait.
+ATTENTES_VERIFICATION = ()
 
 MOIS = {"janvier": 1, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
         "juin": 6, "juillet": 7, "aout": 8, "septembre": 9,
@@ -143,10 +150,12 @@ def _verification(r: requests.Response) -> bool:
 
 def _page(session: requests.Session, url: str, attentes: list,
           attendu: Optional[str] = None) -> requests.Response:
-    """GET qui reconnaît la vérification anti-robot et redemande plus tard.
+    """GET qui reconnaît la vérification anti-robot et, si le budget le
+    permet, redemande plus tard.
 
     Chaque nouvel essai consomme une attente du budget `attentes`, partagé
-    par tout le passage. Une page privée de `attendu`, quand on le donne,
+    par tout le passage — vide depuis SUIVI-1 (voir ATTENTES_VERIFICATION) :
+    pas de nouvel essai. Une page privée de `attendu`, quand on le donne,
     est redemandée de même : c'est la parade si la vérification changeait
     de forme. Budget épuisé, la vérification lève VerificationAntiRobot ;
     une page seulement privée de l'attendu est rendue, et l'appelant juge.

@@ -1,6 +1,7 @@
 """Le collecteur du Complexe : lecture du catalogue et des séances, et la
-vérification anti-robot de son hébergeur (BUG-3). Pages synthétiques, qui
-reprennent la structure du vrai site (classes « tly_ »)."""
+vérification anti-robot de son hébergeur (BUG-3), à laquelle il renonce
+sans attendre depuis SUIVI-1. Pages synthétiques, qui reprennent la
+structure du vrai site (classes « tly_ »)."""
 import contextlib
 import io
 import unittest
@@ -116,30 +117,40 @@ class VerificationAntiRobot(unittest.TestCase):
         self.assertTrue(all(e.venue == complexe.VENUE for e in evs))
         self.assertEqual(self.attentes_de_verification(), [])
 
-    def test_refuse_une_fois_puis_servi(self):
-        evs = self.lancer(FauxSite({LISTING: CATALOGUE, A: PAGE_A, B: PAGE_B},
-                                   {LISTING: [VERIF]}))
-        self.assertEqual(len(evs), 4)
-        self.assertEqual(self.attentes_de_verification(), [60])
-
-    def test_page_inconnue_sans_catalogue_puis_servie(self):
-        evs = self.lancer(FauxSite({LISTING: CATALOGUE, A: PAGE_A, B: PAGE_B},
-                                   {LISTING: [(200, b"<html>Un instant</html>", {})]}))
-        self.assertEqual(len(evs), 4)
-        self.assertEqual(self.attentes_de_verification(), [60])
-
-    def test_refuse_pour_de_bon_on_renonce_en_le_disant(self):
-        site = FauxSite({LISTING: CATALOGUE}, {LISTING: [VERIF] * 3})
-        with self.assertRaises(complexe.VerificationAntiRobot):
+    def test_refuse_on_renonce_aussitot_en_le_disant(self):
+        # SUIVI-1 : plus d'attente. Le refus n'est pas redemandé, même quand
+        # un nouvel essai aurait été servi — mesuré, il ne l'était jamais
+        # dans le même passage.
+        site = FauxSite({LISTING: CATALOGUE, A: PAGE_A, B: PAGE_B}, {LISTING: [VERIF]})
+        with self.assertRaisesRegex(complexe.VerificationAntiRobot, "1 essai"):
             self.lancer(site)
-        self.assertEqual(self.attentes_de_verification(), [60, 120])
-        self.assertEqual(site.appels, [LISTING] * 3)
+        self.assertEqual(self.attentes_de_verification(), [])
+        self.assertEqual(site.appels, [LISTING])
+
+    def test_page_inconnue_sans_catalogue_rendue_vide(self):
+        # Ni la vérification ni le catalogue : rendue vide aussitôt, et le
+        # garde-fou d'aggregate.py reprend la veille.
+        site = FauxSite({LISTING: CATALOGUE, A: PAGE_A, B: PAGE_B},
+                        {LISTING: [(200, b"<html>Un instant</html>", {})]})
+        self.assertEqual(self.lancer(site), [])
+        self.assertEqual(self.attentes_de_verification(), [])
+        self.assertEqual(site.appels, [LISTING])
+
+    def test_avec_un_budget_d_attente_le_refus_est_redemande(self):
+        # La mécanique reste en état, pour le jour où une attente servirait :
+        # il suffit de rendre un budget à ATTENTES_VERIFICATION.
+        site = FauxSite({LISTING: CATALOGUE, A: PAGE_A, B: PAGE_B}, {LISTING: [VERIF]})
+        with mock.patch.object(complexe, "ATTENTES_VERIFICATION", (60, 120)):
+            evs = self.lancer(site)
+        self.assertEqual(len(evs), 4)
+        self.assertEqual(self.attentes_de_verification(), [60])
 
     def test_page_spectacle_refusee_pas_de_programme_troue(self):
         site = FauxSite({LISTING: CATALOGUE, A: PAGE_A, B: PAGE_B}, {A: [VERIF] * 3})
         with self.assertRaises(complexe.VerificationAntiRobot):
             self.lancer(site)
         self.assertNotIn(B, site.appels)    # plus rien demandé après le refus
+        self.assertEqual(self.attentes_de_verification(), [])
 
 
 if __name__ == "__main__":
