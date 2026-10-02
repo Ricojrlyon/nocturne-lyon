@@ -19,9 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     # Sans limite, GitHub laisse un passage bloqué tourner six heures. Le
     # plus long des 214 passages connus a duré 12 minutes : une heure
-    # absorbe les attentes du Complexe, les nouveaux essais réseau et un
-    # cache de pages à refaire, et arrête un passage bloqué cinq heures
-    # plus tôt.
+    # absorbe les nouveaux essais réseau et un cache de pages à refaire, et
+    # arrête un passage bloqué cinq heures plus tôt.
     timeout-minutes: 60
     steps:
       # v7, et non plus v4 et v5 : ces versions visaient Node.js 20, que
