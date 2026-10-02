@@ -24,6 +24,8 @@ Politique éditoriale (septembre 2026) :
     revient pour une raison nouvelle : le frontend affiche désormais les
     événements longs sur CHACUN de leurs jours, si bien qu'un accrochage
     de trois mois pèse quatre-vingt-dix cartes et non plus une.
+  - Pour toutes les sources, une exception : un événement que sa source
+    dit annulé n'est pas publié (BUG-19, voir _sans_les_annules).
   - Les événements longs (expos, festivals au long cours) ne sont pas
     jetés : ils deviennent des événements à plage date_start..date_end,
     que le frontend déploie jour par jour dans son horizon.
@@ -883,6 +885,57 @@ def _garde_fou_des_agregateurs(unique: List[Event], out: Path,
     return unique
 
 
+# BUG-19 : un événement que sa source dit annulé était publié comme les
+# autres — « (annulé) Electric Doom Synthesis… » (Grrrnd Zero, par Ville
+# Morte), « [annulé] AG de la RiV » (Biéristan), « Annulé Formation… »
+# (Marché Gare, par la salle). Formes relevées sur 84 jours de fils publiés,
+# de juillet à octobre 2026 : le mot en tête du titre (« Annulé … »,
+# « ANNULE // … », « (Annulé) … »), seul entre parenthèses ou crochets
+# (« … [annulé] »), ou un sous-titre qui n'est que l'avis (« Concert
+# annulé »). Le mot en fin de titre (« … - ANNULÉ ») suit la même logique.
+#
+# Ailleurs, le mot ne suffit pas : « Almond Butyl - annulé / remplacé par
+# Viviane Cavale » est une soirée qui a bien lieu, et un sous-titre peut
+# raconter une tournée annulée l'an passé. Un titre qui annonce un
+# remplacement est toujours gardé.
+_ANNULE = r"annul[eé](?:e|s|es)?"
+_AVIS_D_ANNULATION = (r"(?:(?:concert|spectacle|soir[eé]e|date|[eé]v[eé]nement|"
+                      r"s[eé]ance|repr[eé]sentation)\s+)?" + _ANNULE)
+_TITRE_ANNULE = re.compile(r"^\W*" + _ANNULE + r"\b"
+                           r"|[(\[]\s*" + _AVIS_D_ANNULATION + r"[\s!.]*[)\]]"
+                           r"|[-–—:/|]\s*" + _ANNULE + r"\W*$", re.I)
+_AVIS_SEUL = re.compile(r"^\W*" + _AVIS_D_ANNULATION + r"\W*$", re.I)
+
+
+def _est_annule(e: Event) -> bool:
+    """La source dit-elle l'événement annulé ? Voir _TITRE_ANNULE."""
+    titre, sous_titre = e.title or "", e.subtitle or ""
+    if re.search(r"remplac", titre + " " + sous_titre, re.I):
+        return False
+    return bool(_TITRE_ANNULE.search(titre) or _AVIS_SEUL.match(titre)
+                or _AVIS_SEUL.match(sous_titre))
+
+
+def _sans_les_annules(unique: List[Event]) -> List[Event]:
+    """Étape 6d : sans les événements que leur source dit annulés (BUG-19).
+
+    APRÈS la dédup et les garde-fous, pour deux raisons. Quand la salle
+    écrit « Annulé » et qu'un agrégateur republie le même spectacle sans le
+    dire, la dédup les a fondus sous le titre de la salle : écarter l'annulé
+    avant elle laisserait la version de l'agrégateur, et le spectacle annulé
+    resterait affiché. Et un événement repris de la veille par un garde-fou
+    passe ainsi lui aussi par ce filtre.
+    """
+    gardes = []
+    for e in unique:
+        if _est_annule(e):
+            # Nommé dans le journal : une lecture fautive doit se voir.
+            print(f"[annulés] écarté : {e.venue}, {e.date_start} — {e.title!r}")
+            continue
+        gardes.append(e)
+    return gardes
+
+
 def _geocoder_les_nouveaux_lieux(unique: List[Event]) -> None:
     """Étape 8 : l'arrondissement des lieux que la page ne connaît pas."""
     # 8) Geocode any new venues not already in the frontend's hardcoded
@@ -1044,6 +1097,7 @@ def main() -> int:
     lieux, en_panne = _lieux_des_collecteurs(lieux, out)
     unique, reprises = _garde_fou_des_salles(unique, out, today_iso, en_panne)
     unique = _garde_fou_des_agregateurs(unique, out, today_iso, reprises)
+    unique = _sans_les_annules(unique)
 
     # 7) Sort by date then time then venue.
     unique.sort(key=lambda e: (e.date_start, e.time or "00:00", e.venue))
