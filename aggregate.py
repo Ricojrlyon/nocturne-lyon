@@ -525,7 +525,13 @@ def _reprendre_agregateurs(chemin: Path, effondres: list,
     return repris, journal, abandons
 
 
-def main() -> int:
+def _collecter() -> tuple[list[tuple[Event, int]], list]:
+    """Étapes 1 et 2 : chaque collecteur de salle, puis chaque agrégateur.
+
+    Rend les événements, chacun étiqueté de la priorité de sa source, et
+    le compte rendu (nom, nombre d'événements, erreur) de chaque source.
+    Une source qui lève est notée en échec sans arrêter les autres.
+    """
     # Each event is tagged with a (source) priority for deduplication.
     all_tagged: list[tuple[Event, int]] = []
     report = []
@@ -553,7 +559,12 @@ def main() -> int:
             tb = traceback.format_exc(limit=2)
             report.append((name, 0, f"{type(e).__name__}: {e}"))
             print(f"[FAIL aggregator] {name}: {tb}", file=sys.stderr)
+    return all_tagged, report
 
+
+def _ecarter_les_plages_d_agregateur(all_tagged: list[tuple[Event, int]]
+                                     ) -> list[tuple[Event, int]]:
+    """Étape 2.4 : sans les plages d'agrégateur sur un lieu scrappé."""
     # 2.4) Écarter les PLAGES d'agrégateur sur un lieu qu'on scrappe.
     #
     # Un agrégateur qui voit un spectacle joué plusieurs soirs le publie
@@ -582,7 +593,13 @@ def main() -> int:
     if dropped_ranges:
         print(f"[plages] {dropped_ranges} plage(s) d'agrégateur écartée(s) "
               f"sur un lieu scrappé en direct")
+    return all_tagged
 
+
+def _appliquer_les_regles_des_salles(all_tagged: list[tuple[Event, int]]
+                                     ) -> list[tuple[Event, int]]:
+    """Étape 2.4b : les exclusions d'un scraper de salle, appliquées aussi
+    aux agrégateurs sur son lieu."""
     # 2.4b) Appliquer aux agrégateurs les exclusions qu'un scraper de
     # salle décide. Un scraper qui écarte volontairement une partie de la
     # programmation — les visites guidées de l'IAC, hors celles du
@@ -603,22 +620,25 @@ def main() -> int:
     if dropped_filtres:
         print(f"[filtres] {dropped_filtres} événement(s) d'agrégateur "
               f"écarté(s) par la règle de la salle")
+    return all_tagged
 
-    # 2.5) Persist the detail-page time cache (url → time), committed by
-    # the workflow like venue_arrondissements.json. Without this save,
-    # every run would re-fetch the same detail pages from scratch.
-    save_detail_cache()
 
+def _a_venir(all_tagged: list[tuple[Event, int]],
+             today_iso: str) -> list[tuple[Event, int]]:
+    """Étape 3 : sans les événements terminés."""
     # 3) Drop past events. An event is upcoming as long as it hasn't ENDED:
     # keep ongoing runs (date_start in the past but date_end today or later,
     # e.g. multi-day shows) — several scrapers preserve those on purpose and
     # the frontend knows how to render them.
-    today_iso = date.today().isoformat()
-    upcoming_tagged = [
+    return [
         (e, p) for e, p in all_tagged
         if e.date_start and (e.date_end or e.date_start) >= today_iso
     ]
 
+
+def _effacer_les_liens_non_absolus(upcoming_tagged: list[tuple[Event, int]]
+                                   ) -> None:
+    """Étape 4 : un lien qui n'est pas absolu est vidé, l'événement gardé."""
     # 4) Sanity-check URLs. Any event whose URL is not absolute (http/https)
     # gets logged and replaced with the empty string — which the frontend
     # treats as "no link" rather than rendering a relative href that would
@@ -636,6 +656,10 @@ def main() -> int:
         print(f"[URL!] {bad_urls} event(s) had non-absolute URLs — cleared.",
               file=sys.stderr)
 
+
+def _sans_titre_vide(upcoming_tagged: list[tuple[Event, int]]
+                     ) -> list[tuple[Event, int]]:
+    """Étape 5 : sans les événements au titre vide."""
     # 5) Sanity-check titles. Events with empty/missing title are silently
     # dropped (they would render as visually empty cards in the UI).
     bad_titles = 0
@@ -651,23 +675,21 @@ def main() -> int:
     if bad_titles:
         print(f"[TITLE!] {bad_titles} event(s) had empty titles — dropped.",
               file=sys.stderr)
-    upcoming_tagged = clean_tagged
+    return clean_tagged
 
-    # 6) Cross-source deduplication. Groups events by (venue, date), then
-    # fuzzy-matches titles within each group. On duplicates, keeps the
-    # highest-priority source.
-    before = len(upcoming_tagged)
-    unique = deduplicate(upcoming_tagged)
-    print(f"\n[dedup] {before} candidates → {len(unique)} unique "
-          f"(-{before - len(unique)})")
 
+def _garde_fou_des_salles(unique: List[Event], out: Path,
+                          today_iso: str) -> tuple[List[Event], dict]:
+    """Étape 6b : une salle effondrée reprend ses événements de la veille.
+
+    Rend le fil, complété des reprises, et le journal des reprises.
+    """
     # 6b) Garde-fou : une salle scrappée en direct ne s'effondre pas seule.
     #     Voir le chapeau d'EFFONDREMENT_PART pour la mesure et la règle.
     #     La détection est faite ICI, sur le fil dédoublonné, parce que
     #     c'est sous cette forme que le fil précédent est écrit : comparer
     #     un décompte d'avant-dédup à un décompte d'après ne voudrait rien
     #     dire.
-    out = Path(__file__).parent / "events.json"
     effondres = _effondrements(unique, out) if out.exists() else []
     reprises: dict = {}
     if effondres and os.environ.get("NOCTURNE_FORCER_ECRITURE") == "1":
@@ -714,7 +736,16 @@ def main() -> int:
                 "Au-delà de %d la panne n'est plus passagère : la salle "
                 "n'est PLUS reprise et va se vider du fil. Son scraper est "
                 "à réparer." % (lieu, depuis, jours, REPRISE_JOURS_MAX))
+    return unique, reprises
 
+
+def _garde_fou_des_agregateurs(unique: List[Event], out: Path,
+                               today_iso: str, reprises: dict) -> List[Event]:
+    """Étape 6c : un agrégateur effondré reprend ses événements de la veille.
+
+    Rend le fil, complété des reprises ; le journal des reprises est
+    complété en place.
+    """
     # 6c) Le même garde-fou pour les AGRÉGATEURS. Voir le chapeau de
     #     _AGREGATEURS_SURVEILLES : ce qu'un agrégateur publie seul
     #     disparaissait du site le jour où il tombait. La 6b n'est pas
@@ -762,20 +793,11 @@ def main() -> int:
                 "événements ne sont PLUS repris et vont quitter le fil. Son "
                 "scraper est à réparer."
                 % (nom, depuis, jours, REPRISE_JOURS_MAX))
-
-    # 7) Sort by date then time then venue.
-    unique.sort(key=lambda e: (e.date_start, e.time or "00:00", e.venue))
+    return unique
 
 
-    # 7b) Combler les catégories manquantes. APRÈS la déduplication, et
-    #     c'est important : quand un même événement remonte de deux
-    #     sources, la dédup a déjà hérité la catégorie de celle qui en
-    #     avait une. On ne déduit donc que pour ce qui en manque
-    #     réellement, et jamais par-dessus une catégorie de source.
-    comble, sans_cat = combler_categories(unique)
-    print(f"[catégories] {comble} comblée(s) par déduction, "
-          f"{sans_cat} restée(s) sans catégorie")
-
+def _geocoder_les_nouveaux_lieux(unique: List[Event]) -> None:
+    """Étape 8 : l'arrondissement des lieux que la page ne connaît pas."""
     # 8) Geocode any new venues not already in the frontend's hardcoded
     #    VENUE_ARRONDISSEMENT map (parsée en direct depuis index.html —
     #    source de vérité unique, voir frontend_hardcoded_venues).
@@ -797,6 +819,10 @@ def main() -> int:
                        known_venues=frontend_hardcoded_venues(),
                        verbose=True)
 
+
+def _contenu_du_fil(unique: List[Event], reprises: dict) -> dict:
+    """Ce qu'events.json contiendra : l'en-tête, les événements, et le
+    journal des reprises s'il y en a."""
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "count": len(unique),
@@ -813,7 +839,13 @@ def main() -> int:
     # ne le lit pas.
     if reprises:
         payload["reprises"] = reprises
+    return payload
 
+
+def _publier(payload: dict, report: list, out: Path, today_iso: str) -> bool:
+    """Écrit events.json, sauf si TOUTES les sources ont échoué ou si le
+    volume s'effondre sans explication. Vrai si le fil a été écrit."""
+    nombre = payload["count"]
     # Safety net: if every scraper failed, do NOT overwrite the existing
     # events.json. The committed events.json shouldn't be wiped because of
     # a transient network blip or because every site changed format on the
@@ -839,13 +871,13 @@ def main() -> int:
         # Dernier contrôle : le VOLUME total, que le garde-fou par salle ne
         # voit pas. Voir le chapeau de VOLUME_PART_MIN.
         wrote = True
-        chute = _chute_de_volume(len(unique), out, today_iso)
+        chute = _chute_de_volume(nombre, out, today_iso)
         if chute:
             encore, age = chute
             constat = ("%d événements à publier contre %d encore à venir dans "
                        "le fil précédent, soit %d %%"
-                       % (len(unique), encore,
-                          round(100 * len(unique) / encore)))
+                       % (nombre, encore,
+                          round(100 * nombre / encore)))
             if os.environ.get("NOCTURNE_FORCER_ECRITURE") == "1":
                 _alerte("garde-fou de volume contourné",
                         "[garde-fou] " + constat + ". Publié quand même "
@@ -867,10 +899,14 @@ def main() -> int:
         if wrote:
             out.write_text(json.dumps(payload, ensure_ascii=False, indent=2),
                            encoding="utf-8")
+    return wrote
 
+
+def _resumer(report: list, wrote: bool, nombre: int, out: Path) -> None:
+    """Le compte rendu du passage, source par source."""
     # Pretty CLI summary
     if wrote:
-        print(f"\nWrote {len(unique)} upcoming events to {out}")
+        print(f"\nWrote {nombre} upcoming events to {out}")
     else:
         print(f"\nKept previous events.json ({out}) — not overwritten this run.")
     print("\nPer-venue report:")
@@ -882,11 +918,57 @@ def main() -> int:
                   f"(site changed? request swallowed?)")
         else:
             print(f"  ✓ {name:30s}  {n} events")
+
+
+def main() -> int:
+    """Un passage complet, étape par étape : collecte, nettoyage,
+    dédoublonnage, garde-fous, puis publication d'events.json. Rend 0, ou
+    1 quand le fil n'a pas été écrit."""
+    all_tagged, report = _collecter()
+    all_tagged = _ecarter_les_plages_d_agregateur(all_tagged)
+    all_tagged = _appliquer_les_regles_des_salles(all_tagged)
+
+    # 2.5) Persist the detail-page time cache (url → time), committed by
+    # the workflow like venue_arrondissements.json. Without this save,
+    # every run would re-fetch the same detail pages from scratch.
+    save_detail_cache()
+
+    today_iso = date.today().isoformat()
+    upcoming_tagged = _a_venir(all_tagged, today_iso)
+    _effacer_les_liens_non_absolus(upcoming_tagged)
+    upcoming_tagged = _sans_titre_vide(upcoming_tagged)
+
+    # 6) Cross-source deduplication. Groups events by (venue, date), then
+    # fuzzy-matches titles within each group. On duplicates, keeps the
+    # highest-priority source.
+    before = len(upcoming_tagged)
+    unique = deduplicate(upcoming_tagged)
+    print(f"\n[dedup] {before} candidates → {len(unique)} unique "
+          f"(-{before - len(unique)})")
+
+    out = Path(__file__).parent / "events.json"
+    unique, reprises = _garde_fou_des_salles(unique, out, today_iso)
+    unique = _garde_fou_des_agregateurs(unique, out, today_iso, reprises)
+
+    # 7) Sort by date then time then venue.
+    unique.sort(key=lambda e: (e.date_start, e.time or "00:00", e.venue))
+
+    # 7b) Combler les catégories manquantes. APRÈS la déduplication, et
+    #     c'est important : quand un même événement remonte de deux
+    #     sources, la dédup a déjà hérité la catégorie de celle qui en
+    #     avait une. On ne déduit donc que pour ce qui en manque
+    #     réellement, et jamais par-dessus une catégorie de source.
+    comble, sans_cat = combler_categories(unique)
+    print(f"[catégories] {comble} comblée(s) par déduction, "
+          f"{sans_cat} restée(s) sans catégorie")
+
+    _geocoder_les_nouveaux_lieux(unique)
+    wrote = _publier(_contenu_du_fil(unique, reprises), report, out, today_iso)
+    _resumer(report, wrote, len(unique), out)
     # Un effondrement ne fait plus échouer le run : le fil est publié, la
     # salle tombée reprise, et l'alerte remonte en annotation GitHub. Seul
     # l'échec de TOUS les scrapers sort en 1.
     return 0 if wrote else 1
-
 
 if __name__ == "__main__":
     sys.exit(main())
