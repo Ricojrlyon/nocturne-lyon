@@ -115,6 +115,20 @@ class DatesDuPetitBulletin(unittest.TestCase):
         self.assertEqual(self.lire("Vendredi 16 octobre et Samedi 17 octobre à 20h45"),
                          [("2026-10-16", "20:45", None), ("2026-10-17", "20:45", None)])
 
+    def test_une_nuit_a_cheval_sur_minuit_est_une_seule_soiree(self):
+        # « Samedi 24 octobre et Dimanche 25 octobre de 22h à 4h30 » : la
+        # Halle Tony Garnier annonce UNE nuit, le 24, jusqu'à 4h30.
+        self.assertEqual(self.lire("Samedi 3 octobre et Dimanche 4 octobre de 22h à 4h30"),
+                         [("2026-10-03", "22:00", None)])
+
+    def test_deux_journees_de_10h_a_19h_restent_deux(self):
+        self.assertEqual(self.lire("Samedi 3 octobre et Dimanche 4 octobre de 10h à 19h"),
+                         [("2026-10-03", "10:00", None), ("2026-10-04", "10:00", None)])
+
+    def test_deux_nuits_a_une_semaine_d_ecart_restent_deux(self):
+        self.assertEqual(self.lire("Vendredi 2 octobre et Vendredi 9 octobre de 23h à 5h"),
+                         [("2026-10-02", "23:00", None), ("2026-10-09", "23:00", None)])
+
     def test_une_date_citee_plus_loin_n_est_pas_une_seance(self):
         # Seules les dates jointes par « et » ou une virgule font une liste.
         self.assertEqual(self.lire("Mardi 13 octobre 2026 à 20h, report du 6 octobre"),

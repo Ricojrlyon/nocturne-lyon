@@ -285,17 +285,25 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
                                 norm):
         if int(hh) < 24 and int(mm or 0) < 60:
             par_jour.setdefault(j, f"{int(hh):02d}:{int(mm or 0):02d}")
-    out = []
+    dates = []
     for m in trouvees:
         jour_semaine, day, month = m.group(1), int(m.group(2)), MONTHS_FR[m.group(3)]
         try:
-            d = date(_year_for(month, day, m.group(4), jour_semaine), month, day)
+            dates.append(date(_year_for(month, day, m.group(4), jour_semaine), month, day))
         except ValueError:
             continue
-        if d.isoformat() < today_iso:
-            continue
-        out.append((d.isoformat(), par_jour.get(_JOURS_FR[d.weekday()], time_str), None))
-    return out
+    # Deux jours qui se suivent et un horaire qui passe minuit : « Samedi 24
+    # octobre et Dimanche 25 octobre de 22h à 4h30 » est UNE nuit, celle du
+    # samedi — la Halle Tony Garnier l'annonce « le 24 octobre, fin 04h30 » —,
+    # et non deux soirées.
+    nuit = re.search(r"\bde\s+(\d{1,2})h(\d{0,2})\s+a\s+(\d{1,2})h(\d{0,2})\b", norm)
+    if (nuit and not par_jour and len(dates) == 2
+            and dates[1] - dates[0] == timedelta(days=1)
+            and (int(nuit.group(3)), int(nuit.group(4) or 0))
+            < (int(nuit.group(1)), int(nuit.group(2) or 0))):
+        dates = dates[:1]
+    return [(d.isoformat(), par_jour.get(_JOURS_FR[d.weekday()], time_str), None)
+            for d in dates if d.isoformat() >= today_iso]
 
 
 def _extract_events_from_soup(soup: BeautifulSoup) -> List[Event]:
