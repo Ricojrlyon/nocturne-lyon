@@ -356,35 +356,58 @@ def _effondrements(nouveaux: List[Event],
 # délai et le même journal. Une petite salle qui rend simplement moins de
 # dates, elle, n'est pas reprise.
 #
+# RIEN n'est pas « moins » (BUG-25). Le même 2 octobre, la page du Petit
+# Salon s'est deux fois affichée sans une soirée, mais sans erreur : ses
+# huit dates ont quitté le site jusqu'au passage suivant, celle du soir
+# comprise. Un collecteur qui ne rend AUCUN événement, alors que ses lieux
+# annonçaient la veille des dates encore à venir, est donc en échec lui
+# aussi. S'il ne leur restait que des dates passées, son silence est une
+# vraie fin de programme.
+#
 # Le garde-fou compte par LIEU, une panne se lit par COLLECTEUR : le
 # handball joue dans deux gymnases, le volley dans deux autres. Le fil
 # garde donc les lieux que chaque collecteur a rendus, sous la clé
 # « lieux_des_collecteurs », et un collecteur en échec garde ceux de la
 # veille. Sans cette trace — au premier passage —, son lieu est son nom,
 # ce qui vaut pour toutes les salles.
-def _lieux_des_collecteurs(lieux: dict, chemin: Path) -> tuple[dict, dict]:
+def _lieux_des_collecteurs(lieux: dict, chemin: Path,
+                           today_iso: str) -> tuple[dict, dict]:
     """(lieux à écrire dans le fil, lieux des collecteurs en échec).
 
     `lieux` vient de _collecter : pour chaque collecteur de salle, les
-    lieux qu'il a rendus, ou None s'il a levé.
+    lieux qu'il a rendus, ou None s'il a levé. Un collecteur qui n'a rien
+    rendu est en échec quand ses lieux annonçaient hier des dates encore à
+    venir (BUG-25).
     """
     try:
-        hier = json.loads(chemin.read_text(encoding="utf-8"))
-        hier = hier.get("lieux_des_collecteurs") or {}
+        precedent = json.loads(chemin.read_text(encoding="utf-8"))
+        hier = precedent.get("lieux_des_collecteurs") or {}
+        anciens = precedent.get("events") or []
     except (OSError, ValueError, AttributeError):
-        hier = {}
+        hier, anciens = {}, []
     if not isinstance(hier, dict):
         hier = {}
+    if not isinstance(anciens, list):
+        anciens = []
+    # Même règle qu'à l'étape 3 : un événement vit jusqu'à sa fin.
+    attendus = set(_compte_direct(
+        (e.get("venue"), e.get("url")) for e in anciens
+        if isinstance(e, dict)
+        and (e.get("date_end") or e.get("date_start") or "") >= today_iso))
     # Une liste vide est une trace : hier, le collecteur n'a rien rendu.
-    en_panne = {nom: hier.get(nom, [canonical_venue_name(nom)])
-                for nom, rendus in lieux.items() if rendus is None}
+    en_panne = {}
+    for nom, rendus in lieux.items():
+        trace = hier.get(nom, [canonical_venue_name(nom)])
+        if rendus is None or (not rendus and attendus.intersection(trace or [])):
+            en_panne[nom] = trace
     return ({nom: en_panne.get(nom, rendus) for nom, rendus in lieux.items()},
             en_panne)
 
 
 def _petites_salles_en_panne(nouveaux: List[Event], chemin: Path,
                              en_panne: dict) -> list[tuple[str, int, int]]:
-    """Petites salles dont le collecteur a levé : (lieu, hier, aujourd'hui).
+    """Petites salles dont le collecteur a levé, ou n'a rien rendu (BUG-25) :
+    (lieu, hier, aujourd'hui).
 
     Petite : moins de EFFONDREMENT_PLANCHER événements directs dans le fil
     précédent. `en_panne` donne les lieux de chaque collecteur en échec.
@@ -760,7 +783,8 @@ def _sans_titre_vide(upcoming_tagged: list[tuple[Event, int]]
 def _garde_fou_des_salles(unique: List[Event], out: Path, today_iso: str,
                           en_panne: dict) -> tuple[List[Event], dict]:
     """Étape 6b : une salle effondrée reprend ses événements de la veille,
-    une petite salle aussi quand son collecteur a levé (SUIVI-2).
+    une petite salle aussi quand son collecteur a levé (SUIVI-2) ou n'a
+    rien rendu (BUG-25).
 
     `en_panne` : les lieux de chaque collecteur en échec. Rend le fil,
     complété des reprises, et le journal des reprises.
@@ -772,8 +796,8 @@ def _garde_fou_des_salles(unique: List[Event], out: Path, today_iso: str,
     #     un décompte d'avant-dédup à un décompte d'après ne voudrait rien
     #     dire.
     effondres = _effondrements(unique, out) if out.exists() else []
-    # Les petites salles dont le collecteur a levé : voir le chapeau de
-    # _lieux_des_collecteurs.
+    # Les petites salles dont le collecteur a levé, ou n'a rien rendu : voir
+    # le chapeau de _lieux_des_collecteurs.
     pannes = (_petites_salles_en_panne(unique, out, en_panne)
               if out.exists() else [])
     reprises: dict = {}
@@ -837,9 +861,10 @@ def _garde_fou_des_salles(unique: List[Event], out: Path, today_iso: str,
                 _alerte(
                     "petite salle reprise du fil précédent",
                     "[garde-fou] PANNE : " + detail(pannes) + ".\n"
-                    "Le collecteur de ces petites salles a levé : elles "
-                    "gardent leurs événements\n"
-                    "de la veille, %d jours au plus." % REPRISE_JOURS_MAX)
+                    "Le collecteur de ces petites salles a levé, ou n'a rien "
+                    "rendu : elles gardent\n"
+                    "leurs événements de la veille, %d jours au plus."
+                    % REPRISE_JOURS_MAX)
             print("[garde-fou] %d + %d repris → %d après dédup"
                   % (avant_reprise, len(repris), len(unique)))
         for lieu, depuis, jours in abandons:
@@ -1119,7 +1144,7 @@ def main() -> int:
           f"(-{before - len(unique)})")
 
     out = Path(__file__).parent / "events.json"
-    lieux, en_panne = _lieux_des_collecteurs(lieux, out)
+    lieux, en_panne = _lieux_des_collecteurs(lieux, out, today_iso)
     unique, reprises = _garde_fou_des_salles(unique, out, today_iso, en_panne)
     unique = _garde_fou_des_agregateurs(unique, out, today_iso, reprises)
     unique = _sans_les_annules(unique)

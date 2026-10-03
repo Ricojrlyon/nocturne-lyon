@@ -181,13 +181,49 @@ class GardeFous(unittest.TestCase):
         self.assertNotIn("EFFONDREMENT", journal)
 
     def test_petite_salle_qui_rend_moins_de_dates_n_est_pas_reprise(self):
-        for rendu in ([], PROG_PETITE[:1]):
-            with atelier(J) as a:
-                a.veille(VEILLE + PROG_PETITE)
-                a.lancer(normales() + [(PETITE, copies(rendu))], agregateurs())
-                fil = a.publie()
-            self.assertEqual(sum(1 for e in fil["events"] if e["venue"] == PETITE), len(rendu))
-            self.assertNotIn("reprises", fil)
+        with atelier(J) as a:
+            a.veille(VEILLE + PROG_PETITE)
+            a.lancer(normales() + [(PETITE, copies(PROG_PETITE[:1]))], agregateurs())
+            fil = a.publie()
+        self.assertEqual(sum(1 for e in fil["events"] if e["venue"] == PETITE), 1)
+        self.assertNotIn("reprises", fil)
+
+    def test_petite_salle_qui_ne_rend_plus_rien_reprise_de_la_veille(self):
+        # BUG-25 : la page du Petit Salon s'affichait vide, sans erreur, et
+        # ses soirées quittaient le site sans alerte. Rien n'est pas
+        # « moins » : ses dates d'hier étaient encore à venir.
+        with atelier(J) as a:
+            a.veille(VEILLE + PROG_PETITE, lieux={PETITE: [PETITE]})
+            a.lancer(normales() + [(PETITE, copies([]))], agregateurs(), github=True)
+            fil = a.publie()
+            journal = a.journal.getvalue()
+        self.assertEqual(sum(1 for e in fil["events"] if e["venue"] == PETITE), 5)
+        self.assertEqual(fil["reprises"], {PETITE: J.isoformat()})
+        self.assertIn("::warning title=petite salle reprise du fil précédent::"
+                      "[garde-fou] PANNE : Le Petit Salon 5→0, 5 repris", journal)
+        # La trace d'hier est gardée, pour le lendemain.
+        self.assertEqual(fil["lieux_des_collecteurs"][PETITE], [PETITE])
+
+    def test_la_soiree_du_jour_meme_est_encore_a_venir(self):
+        # C'est elle que BUG-25 faisait disparaître : la soirée du soir.
+        with atelier(J) as a:
+            a.veille(VEILLE + programme(PETITE, n=1, debut=0), lieux={PETITE: [PETITE]})
+            a.lancer(normales() + [(PETITE, copies([]))], agregateurs())
+            fil = a.publie()
+        self.assertEqual([e["date_start"] for e in fil["events"] if e["venue"] == PETITE],
+                         [J.isoformat()])
+
+    def test_petite_salle_sans_date_a_venir_qui_ne_rend_rien_n_est_pas_reprise(self):
+        # Hier, il ne lui restait qu'une date, passée depuis : le silence du
+        # collecteur est une vraie fin de programme.
+        with atelier(J) as a:
+            a.veille(VEILLE + programme(PETITE, n=1, debut=-1), lieux={PETITE: [PETITE]})
+            a.lancer(normales() + [(PETITE, copies([]))], agregateurs())
+            fil = a.publie()
+            journal = a.journal.getvalue()
+        self.assertNotIn("reprises", fil)
+        self.assertNotIn("PANNE", journal)
+        self.assertEqual(fil["lieux_des_collecteurs"][PETITE], [])
 
     def test_petite_salle_en_panne_depuis_sept_jours_n_est_plus_reprise(self):
         with atelier(J) as a:
