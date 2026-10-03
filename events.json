@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-03T09:59:56.784680+00:00",
-  "count": 2939,
+  "generated_at": "2026-10-03T10:36:32.490200+00:00",
+  "count": 3047,
   "sources": 37,
   "events": [
     {
@@ -7480,18 +7480,18 @@
       "id": "acfd2989dc6b"
     },
     {
-      "venue": "Salle Molière",
-      "venue_slug": "salle-moliere",
-      "title": "Une heure, un concert #1",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Une heure, un concert",
+      "subtitle": "Autour de Sergueï Prokofiev",
+      "category": "concert",
       "date_start": "2026-10-17",
       "date_end": null,
       "time": "18:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319516-une-heure-un-concert-1.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "12594c63bd67"
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/une-heure-un-concert-serguei-prokofiev",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/446f9583/l_opera_par_l_orchestre_principal.jpg",
+      "offsite_venue": "Salle Molière",
+      "id": "eff9e66d6568"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -7928,18 +7928,18 @@
       "id": "4b79c4f419b9"
     },
     {
-      "venue": "Salle Molière",
-      "venue_slug": "salle-moliere",
-      "title": "Une heure, un concert #1",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Une heure, un concert",
+      "subtitle": "Autour de Sergueï Prokofiev",
+      "category": "concert",
       "date_start": "2026-10-18",
       "date_end": null,
       "time": "11:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319516-une-heure-un-concert-1.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "bb32bd6b1b4d"
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/une-heure-un-concert-serguei-prokofiev",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/446f9583/l_opera_par_l_orchestre_principal.jpg",
+      "offsite_venue": "Salle Molière",
+      "id": "d8ad33c89f1c"
     },
     {
       "venue": "Musée des Beaux-Arts",
@@ -8138,6 +8138,20 @@
       "id": "e79e1d7eef84"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Eloge du peuple savant",
+      "subtitle": "Concerts, conférences, projection, ateliers",
+      "category": "concert",
+      "date_start": "2026-10-19",
+      "date_end": "2026-10-31",
+      "time": null,
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/eloge-du-peuple-savant",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_10_29_eloge_simonjeffes_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "c26f6a6f6d05"
+    },
+    {
       "venue": "Au Rikiki",
       "venue_slug": "au-rikiki",
       "title": "Le chant des lucioles",
@@ -8223,17 +8237,17 @@
     },
     {
       "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-de-lyon",
+      "venue_slug": "opera-lyon",
       "title": "Giovanna Marini, la voix des invisibles",
-      "subtitle": null,
-      "category": null,
+      "subtitle": "De Christian Argentino et Marie-Laure Désidéri",
+      "category": "concert",
       "date_start": "2026-10-19",
       "date_end": null,
       "time": "18:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319518-giovanna-marini-la-voix-des-invisibles.html",
-      "image": null,
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/giovanna-marini-la-voix-des-invisibles",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/eb9085b2/g.marini_la_voix..._8_bi_1160x1472.jpg",
       "offsite_venue": null,
-      "id": "f212d00a9c81"
+      "id": "30dd45af63fc"
     },
     {
       "venue": "Bar Rock'n Eat",
@@ -8684,18 +8698,18 @@
       "id": "0f64cb2e0b0b"
     },
     {
-      "venue": "Amphithéâtre de l'Opéra",
-      "venue_slug": "amphitheatre-de-l-opera",
-      "title": "Un Américain en Italie : plongée dans la fabuleuse collection sonore d'Alan Lomax",
-      "subtitle": null,
-      "category": "Conférences",
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Un Américain en Italie : plongée dans la fabuleuse collection sonore d’Alan Lomax",
+      "subtitle": "",
+      "category": "concert",
       "date_start": "2026-10-21",
       "date_end": null,
       "time": "12:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319549-un-am-ricain-en-italie-plong-e-dans-la-fabuleuse-collection-sonore-dealan-lomax.html",
-      "image": null,
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/un-americain-en-italie-plongee-dans-la-fabuleuse-collection-sonore-dalan-lomax",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_10_27et28_atelier_la_marelle_bi_1160x1472.jpg",
       "offsite_venue": null,
-      "id": "e322c719bbc3"
+      "id": "70d468d25395"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -8936,20 +8950,6 @@
       "id": "5e656d436180"
     },
     {
-      "venue": "Amphithéâtre de l'Opéra",
-      "venue_slug": "amphitheatre-de-l-opera",
-      "title": "Crimi",
-      "subtitle": null,
-      "category": "Sono Mondiale",
-      "date_start": "2026-10-21",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-300080-crimi.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "9e9c15bf6291"
-    },
-    {
       "venue": "Auditorium de Lyon",
       "venue_slug": "auditorium-lyon",
       "title": "Concert caritatif",
@@ -9004,6 +9004,20 @@
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/07/13.Tag-Pernette-Houdayer-650x433.jpg",
       "offsite_venue": null,
       "id": "b6293917f87d"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Crimi \"Meli\"",
+      "subtitle": "Groove d’Italie et du Maghreb",
+      "category": "concert",
+      "date_start": "2026-10-21",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/crimi-meli",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/8f07f1da/crimi_promo_bd_marion_bornaz.03_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "1f667ee45354"
     },
     {
       "venue": "Espace Gerson",
@@ -9174,20 +9188,6 @@
       "id": "fa4af55f40da"
     },
     {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-de-lyon",
-      "title": "Visites découverte commentées",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-10-22",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "88ecca7731b1"
-    },
-    {
       "venue": "Hôtel 71",
       "venue_slug": "hotel-71",
       "title": "Les visiteurs du jeudi : Claude Mouriéras",
@@ -9342,20 +9342,6 @@
       "id": "4861a4fa9e9e"
     },
     {
-      "venue": "Amphithéâtre de l'Opéra",
-      "venue_slug": "amphitheatre-de-l-opera",
-      "title": "Fawzy & Amin Al Aiedy + Yeni Gayda & Merve Salgar",
-      "subtitle": null,
-      "category": "Sono Mondiale",
-      "date_start": "2026-10-22",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319519-fawzy-amin-al-aiedy-yeni-gayda-merve-salgar.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "72ba6cd24610"
-    },
-    {
       "venue": "Comédie Odéon",
       "venue_slug": "comedie-odeon",
       "title": "La Machine de Turing",
@@ -9424,6 +9410,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "3dcdf1e48085"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Fawzy & Amin Al Aiedy / Yeni Gayda + Merve Salgar",
+      "subtitle": "Folk irakien et transes anatoliennes",
+      "category": "concert",
+      "date_start": "2026-10-22",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/fawzy-amin-al-aiedy-yeni-gayda-merve-salgar",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_10_22_fawzy_amin_c_patrick_lambin_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "1f697d824731"
     },
     {
       "venue": "Espace Gerson",
@@ -10924,6 +10924,20 @@
       "id": "3b659aab9309"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Atelier “La Marelle” : découverte du gamelan avec Jean-Pierre Goudard",
+      "subtitle": "",
+      "category": "atelier",
+      "date_start": "2026-10-27",
+      "date_end": null,
+      "time": "14:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/atelier-la-marelle-decouverte-du-gamelan-avec-jean-pierre-goudard",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/eb9085b2/ateliergamelan_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "ed2233341f54"
+    },
+    {
       "venue": "Comédie Odéon",
       "venue_slug": "comedie-odeon",
       "title": "Quel Cirque !",
@@ -11162,6 +11176,20 @@
       "id": "8dc1d05e0ad3"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Atelier “La Marelle” : découverte du gamelan avec Jean-Pierre Goudard",
+      "subtitle": "",
+      "category": "atelier",
+      "date_start": "2026-10-28",
+      "date_end": null,
+      "time": "09:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/atelier-la-marelle-decouverte-du-gamelan-avec-jean-pierre-goudard",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/eb9085b2/ateliergamelan_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "c9a50cb43f38"
+    },
+    {
       "venue": "Au Rikiki",
       "venue_slug": "au-rikiki",
       "title": "S'envoler sans voler !",
@@ -11316,20 +11344,6 @@
       "id": "e1ba76df3948"
     },
     {
-      "venue": "Amphithéâtre de l'Opéra",
-      "venue_slug": "amphitheatre-de-l-opera",
-      "title": "Compagnie Kotekan Tiga",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
-      "date_start": "2026-10-28",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319522-compagnie-kotekan-tiga.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "65f2af63d43f"
-    },
-    {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
       "title": "Linh",
@@ -11370,6 +11384,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "bbf357ddf54d"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Compagnie Kotekan Tiga",
+      "subtitle": "Création pour gamelan et danse indonésienne",
+      "category": "concert",
+      "date_start": "2026-10-28",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/compagnie-kotekan-tiga",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_10_28_compagnie_kotekan_photos_tiga_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "489adcd4776c"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -11610,34 +11638,6 @@
       "id": "f912ab736ea7"
     },
     {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-de-lyon",
-      "title": "Visites découverte commentées",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-10-29",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "2509a5f5f69d"
-    },
-    {
-      "venue": "Amphithéâtre de l'Opéra",
-      "venue_slug": "amphitheatre-de-l-opera",
-      "title": "Simon Jeffes et le Penguin Cafe Orchestra",
-      "subtitle": null,
-      "category": "Conférences",
-      "date_start": "2026-10-29",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319550-simon-jeffes-et-le-penguin-cafe-orchestra.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "260c784deb5f"
-    },
-    {
       "venue": "Hôtel 71",
       "venue_slug": "hotel-71",
       "title": "Les visiteurs du jeudi : Fabrice Arfi",
@@ -11650,6 +11650,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "8a04cd1d71e8"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Simon Jeffes et le Penguin Cafe Orchestra",
+      "subtitle": "Éloge des oiseaux rares #7",
+      "category": "concert",
+      "date_start": "2026-10-29",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/simon-jeffes-et-le-penguin-cafe-orchestra",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_10_29_eloge_simonjeffes_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "cdcae3abeeb1"
     },
     {
       "venue": "Bar Rock'n Eat",
@@ -12464,20 +12478,6 @@
       "id": "b10520214d9d"
     },
     {
-      "venue": "Amphithéâtre de l'Opéra",
-      "venue_slug": "amphitheatre-de-l-opera",
-      "title": "Maria Chivu",
-      "subtitle": null,
-      "category": "Sono Mondiale",
-      "date_start": "2026-10-31",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319523-maria-chivu.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "ee211fd1d98d"
-    },
-    {
       "venue": "Auditorium de Lyon",
       "venue_slug": "auditorium-lyon",
       "title": "Philippe Katerine Symphonique",
@@ -12616,6 +12616,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "016e0057a905"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Maria Chivu",
+      "subtitle": "Chants des campagnes roumaines",
+      "category": "concert",
+      "date_start": "2026-10-31",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/maria-chivu",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_10_31_maria_chivu_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "270ecc918c34"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -13120,6 +13134,20 @@
       "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Le-voyage-de-Krstiffer_Parcours_460x460.png",
       "offsite_venue": null,
       "id": "0bb9ab2da19b"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Le Roi des ours",
+      "subtitle": "Ensemble TACTUS",
+      "category": "spectacle jeune public",
+      "date_start": "2026-11-04",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/en-famille/le-roi-des-ours-1",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/4ef6f089/leroidesours_c_orianemarie_web_2880x1926.jpg",
+      "offsite_venue": null,
+      "id": "1e01a07876d3"
     },
     {
       "venue": "Le Transbordeur",
@@ -14116,6 +14144,20 @@
       "id": "a1a7ae298040"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Le Roi des ours",
+      "subtitle": "Ensemble TACTUS",
+      "category": "spectacle jeune public",
+      "date_start": "2026-11-07",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/en-famille/le-roi-des-ours-1",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/4ef6f089/leroidesours_c_orianemarie_web_2880x1926.jpg",
+      "offsite_venue": null,
+      "id": "35a903ffb666"
+    },
+    {
       "venue": "TNG",
       "venue_slug": "tng",
       "title": "Parcours immersif et pédagogique",
@@ -14690,6 +14732,20 @@
       "id": "bc8f8630e120"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Stefan Petković",
+      "subtitle": "Récital de chant du Lyon Opéra Studio",
+      "category": "concert",
+      "date_start": "2026-11-08",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/stefan-petkovic",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/0a1fcec1/stephan_petkovich_visuel_principal.jpg",
+      "offsite_venue": null,
+      "id": "1c8fae7f4e84"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "Elie Semoun",
@@ -14844,6 +14900,20 @@
       "id": "aabb34f93fee"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Le maloya, en plein cœur et au-delà",
+      "subtitle": "Une semaine avec la Compagnie Discobole",
+      "category": "concert",
+      "date_start": "2026-11-10",
+      "date_end": "2026-11-15",
+      "time": null,
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/le-maloya-en-plein-coeur-et-au-dela",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/eb9085b2/2026_11_13_maloya_ritual_riots2_c_cecile_rogue_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "9c8c3e992ada"
+    },
+    {
       "venue": "La Rayonne",
       "venue_slug": "la-rayonne",
       "title": "IMPERICON FESTIVAL 2026 : Death Dominion avec Carnifex + Despised Icon + Suffocation + Gates to hell",
@@ -14984,6 +15054,20 @@
       "id": "29ca31cd3490"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Théo Girard, Stéphane Hoareau & invité(e)s -Les Capsules Discobole",
+      "subtitle": "Créations et rencontres in situ",
+      "category": "concert",
+      "date_start": "2026-11-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/theo-girard-stephane-hoareau-invite-e-s-les-capsules-discobole",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_11_10_theo_girad_dsc_0199_n_b_caj_credit_andre_henrot_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "554e1f550e59"
+    },
+    {
       "venue": "Espace Gerson",
       "venue_slug": "espace-gerson",
       "title": "Embrasse ta mère",
@@ -15070,6 +15154,34 @@
     {
       "venue": "Opéra national de Lyon",
       "venue_slug": "opera-lyon",
+      "title": "Atelier “Utïs” (cloches tubulaires), par Théo Girard",
+      "subtitle": "",
+      "category": "atelier",
+      "date_start": "2026-11-11",
+      "date_end": null,
+      "time": "10:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/atelier-utis-cloches-tubulaires-par-theo-girard",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_11_11_atelier_utis_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "e94c475c601d"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Ateliers chorale maloya par Romane Deconfin et Stéphane Hoareau",
+      "subtitle": "",
+      "category": "atelier",
+      "date_start": "2026-11-11",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/ateliers-chorale-maloya-par-romane-deconfin-et-stephane-hoareau",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/eb9085b2/romane_deconfin_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "4fad636beb20"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
       "title": "Le Sacre du printemps - House",
       "subtitle": "Mats Ek - Sharon Eyal",
       "category": "danse",
@@ -15080,6 +15192,48 @@
       "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/29b8e90d/principal_sacre.jpg",
       "offsite_venue": null,
       "id": "98daeff390c5"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Ateliers chorale maloya par Romane Deconfin et Stéphane Hoareau",
+      "subtitle": "",
+      "category": "atelier",
+      "date_start": "2026-11-11",
+      "date_end": null,
+      "time": "15:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/ateliers-chorale-maloya-par-romane-deconfin-et-stephane-hoareau",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/eb9085b2/romane_deconfin_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "ad5b4d7d016d"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Alors on danse ?",
+      "subtitle": "Le Sacre du printemps / House",
+      "category": "conférence",
+      "date_start": "2026-11-11",
+      "date_end": null,
+      "time": "17:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/alors-on-danse-7",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/70343d04/grdentretien_sacre_2.jpg",
+      "offsite_venue": null,
+      "id": "37ed4cfe5a40"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Mini-concert conférencé : Le maloya, par Stéphane Hoareau et Romane Deconfin",
+      "subtitle": "",
+      "category": "concert",
+      "date_start": "2026-11-11",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/mini-concert-conference-le-maloya-par-stephane-hoareau-et-romane-deconfin",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_11_11_mini_concert_conference_le_maloya_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "c99ef388a32f"
     },
     {
       "venue": "Comédie Odéon",
@@ -15458,6 +15612,20 @@
       "image": "https://api.opera-lyon.com/assets/q80-w634-c448x568/29b8e90d/principal_sacre.jpg",
       "offsite_venue": null,
       "id": "2bdb157baa0c"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Transkabar - Shamane",
+      "subtitle": "Transe rock maloya",
+      "category": "concert",
+      "date_start": "2026-11-12",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/transkabar-shamane",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_11_12_shamane_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "32cfc4a2cc94"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -15866,6 +16034,20 @@
       "id": "37148085a959"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Transkabar - Ritual Riots",
+      "subtitle": "Transe rock maloya",
+      "category": "concert",
+      "date_start": "2026-11-13",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/transkabar-ritual-riots",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_11_13_ritual_riots2_c_cecile_rogue_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "82556f8bdd1b"
+    },
+    {
       "venue": "Salle Paul Garcin",
       "venue_slug": "salle-paul-garcin",
       "title": "Lyon burlesque festival",
@@ -16188,6 +16370,20 @@
       "id": "caff28e1fca6"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Le disque du siècle",
+      "subtitle": "Théo Girard et Stéphane Hoareau présentent “Rest’ La Maloya” d’Alain Péters",
+      "category": "concert",
+      "date_start": "2026-11-14",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/le-disque-du-siecle-29",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/93399cff/disque_du_siecle_sept_dec_26_bi_1160x1472.jpg",
+      "offsite_venue": "Médiathèque du Bachut, Lyon 8e",
+      "id": "84cb78278c3e"
+    },
+    {
       "venue": "Improvidence",
       "venue_slug": "improvidence",
       "title": "30 Impros Chrono",
@@ -16242,6 +16438,20 @@
       "image": "https://www.auditorium-lyon.com/sites/default/files/styles/vignette_teaser_xl/public/upload/images/1920_AlpeshChauhan_2025_4662_c_Susanne_diesner.jpg?h=302f8267&itok=5O3uc3YZ",
       "offsite_venue": null,
       "id": "e0c42c2796fa"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Une heure, un concert",
+      "subtitle": "Autour de Igor Stravinski",
+      "category": "concert",
+      "date_start": "2026-11-14",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/une-heure-un-concert-igor-stravinski",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/446f9583/l_opera_par_l_orchestre_principal.jpg",
+      "offsite_venue": "Salle Molière",
+      "id": "243de76b670a"
     },
     {
       "venue": "Théâtre de la Croix-Rousse",
@@ -16678,6 +16888,20 @@
       "id": "0ac86ace4043"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Une heure, un concert",
+      "subtitle": "Autour de Igor Stravinski",
+      "category": "concert",
+      "date_start": "2026-11-15",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/une-heure-un-concert-igor-stravinski",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/446f9583/l_opera_par_l_orchestre_principal.jpg",
+      "offsite_venue": "Salle Molière",
+      "id": "fe8eef950f21"
+    },
+    {
       "venue": "IAC Villeurbanne",
       "venue_slug": "iac-villeurbanne",
       "title": "Visites du week-end",
@@ -16858,6 +17082,20 @@
       "image": "https://img.mapado.net/2024/9/17/66e94c9a6d29f-vignette-catch.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "2e59055a7d6f"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Discobole Orchestra invite Christine Salem + DJ sets",
+      "subtitle": "Grande fête maloya à 360°",
+      "category": "concert",
+      "date_start": "2026-11-15",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/discobole-orchestra-invite-christine-salem-dj-sets",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_11_15_discoboleorchestra_credit_marie_digard_carre_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "c351d894ba56"
     },
     {
       "venue": "Maison de la Danse",
@@ -17056,6 +17294,20 @@
       "id": "1661003ed2f7"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Hôtel Particulier & invité(e)s \"Dans ta poche\"",
+      "subtitle": "Pop-rock intimiste et habité",
+      "category": "concert",
+      "date_start": "2026-11-17",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/hotel-particulier-invite-e-s-dans-ta-poche",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_11_17_hotel_particulier_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "61bc8d6d4bd7"
+    },
+    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Martin Eden",
@@ -17194,6 +17446,20 @@
       "image": "https://www.croix-rousse.com/wp-content/uploads/2026/06/Jeux-de-société.png",
       "offsite_venue": null,
       "id": "ec34f1a35c20"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Concerts du CNSMD",
+      "subtitle": "Etudiants et étudiantes du CNSMD de Lyon",
+      "category": "concert",
+      "date_start": "2026-11-18",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/concerts-du-cnsmd-41",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/68bfdcdd/concerts_cnsmd_c_hugosainterose_bi_oct_dec26_1160x1472px.jpg",
+      "offsite_venue": null,
+      "id": "59cb1f417a5d"
     },
     {
       "venue": "Comédie Odéon",
@@ -17348,6 +17614,20 @@
       "image": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-marcusgad.jpeg",
       "offsite_venue": null,
       "id": "2fb363df6cd6"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Sam Wilkes & Sam Gendel",
+      "subtitle": "Inventions rêveuses pour sax et basse",
+      "category": "concert",
+      "date_start": "2026-11-18",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/sam-wilkes-sam-gendel",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_12_18_sam_gendel_sam_wilkes_2026_bi_1160x1472.jpg",
+      "offsite_venue": "Chapelle de la Trinité",
+      "id": "6a1bba32e584"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -17672,6 +17952,20 @@
       "id": "02ef67e10dc7"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Roberto Fonseca & Vincent Segal",
+      "subtitle": "Conversation transatlantique",
+      "category": "concert",
+      "date_start": "2026-11-19",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/roberto-fonseca-vincent-segal",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_11_19_roberto_fonseca_vincent_segal_c_johannsauty_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "8c97bf2cb649"
+    },
+    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Martin Eden",
@@ -17824,6 +18118,20 @@
       "image": "https://le-sucre.eu/wp-content/uploads/2026/04/insta-2-480x600.jpg",
       "offsite_venue": null,
       "id": "c54c77d30364"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Concerts du CNSMD",
+      "subtitle": "Etudiants et étudiantes du CNSMD de Lyon",
+      "category": "concert",
+      "date_start": "2026-11-20",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/concerts-du-cnsmd-41",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/68bfdcdd/concerts_cnsmd_c_hugosainterose_bi_oct_dec26_1160x1472px.jpg",
+      "offsite_venue": null,
+      "id": "01d9e345518a"
     },
     {
       "venue": "Musée des Beaux-Arts",
@@ -18554,6 +18862,20 @@
       "id": "8965fc65dcc3"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Beethoven / Mahler / Schumann",
+      "subtitle": "Vitali Alekseenok",
+      "category": "concert",
+      "date_start": "2026-11-21",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/beethoven-mahler-schumann",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/d46845bb/mahler_schumann_stephane_degout_c_cedric_roulliat_2880x1926.jpg",
+      "offsite_venue": null,
+      "id": "baa37bf199ba"
+    },
+    {
       "venue": "Salle Victor Hugo",
       "venue_slug": "salle-victor-hugo",
       "title": "Noam Sinseau",
@@ -18720,6 +19042,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/b9394898/thesee_sa_vie_nouvelle_theatre_vidy_lausanne_claudia_ndebele_4.jpg",
       "offsite_venue": null,
       "id": "17feba6c89de"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Bertrand Chamayou",
+      "subtitle": "Piano à Lyon",
+      "category": "concert",
+      "date_start": "2026-11-22",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/bertrand-chamayou",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/a6de494e/bertrand_chamayou_c_audoin_desforges_2880x1926_v2_.jpg",
+      "offsite_venue": null,
+      "id": "af0420d63afe"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -19198,32 +19534,32 @@
       "id": "3a343052b341"
     },
     {
-      "venue": "Amphithéâtre de l'Opéra",
-      "venue_slug": "amphitheatre-de-l-opera",
-      "title": "Les Marquises",
-      "subtitle": null,
-      "category": "Rock & Pop",
-      "date_start": "2026-11-25",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319217-les-marquises.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "ca007de50d17"
-    },
-    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Soundtrack to a Coup d'état",
-      "subtitle": null,
-      "category": "musique",
+      "subtitle": "Gratuit · Ciné-Club",
+      "category": "Projection",
       "date_start": "2026-11-25",
       "date_end": null,
       "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319750-soundtrack-to-a-coup-d-tat.html",
-      "image": null,
+      "url": "https://marchegare.fr/agenda/soundtrack-coup-detat",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-07/2024_soundtrack_to_a_coup_d_etat_johan_grimonprez_andre_e_blouin_terence_spencer_popperfoto.jpg",
       "offsite_venue": null,
       "id": "17c660983d23"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Les Marquises Malaterre",
+      "subtitle": "Post-rock organique et sensible",
+      "category": "concert",
+      "date_start": "2026-11-25",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/les-marquises-malaterre",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_11_25_les_marquises_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "4bd14f5518ae"
     },
     {
       "venue": "Espace Gerson",
@@ -19532,6 +19868,20 @@
       "image": "https://agenda.villemorte.fr/media/thumb/bc5215b627ea8bcf4a3fecbe7257143f.jpg",
       "offsite_venue": null,
       "id": "92c8f07d76c0"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "KALIKA",
+      "subtitle": "+ YANKA",
+      "category": "Urban Pop",
+      "date_start": "2026-11-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/kalika-26",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-03/cover_ma_claque_cvassovu.png",
+      "offsite_venue": null,
+      "id": "3d21b1cf2b31"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -20444,6 +20794,20 @@
       "id": "f50198af9216"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Pi Ja Ma",
+      "subtitle": "+ MILENA",
+      "category": "Indie Pop",
+      "date_start": "2026-11-28",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/pi-ja-ma",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-03/pi_ja_ma_4_-_credit_lola_dubas.jpg",
+      "offsite_venue": null,
+      "id": "5f10344e01e4"
+    },
+    {
       "venue": "Musée des Confluences",
       "venue_slug": "musee-des-confluences",
       "title": "Arthur H, Nicolas Repac et Benjamin Flao · Techniciens du Sacré",
@@ -20458,18 +20822,32 @@
       "id": "40250ceded68"
     },
     {
-      "venue": "Théâtre Théo Argence",
-      "venue_slug": "theatre-theo-argence",
-      "title": "L'opéra par l'Orchestre",
-      "subtitle": null,
-      "category": "Classique et Lyrique",
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "L’opéra par l’Orchestre",
+      "subtitle": "Carmen, Cappriccio, Guillaume Tell…",
+      "category": "concert",
       "date_start": "2026-11-28",
       "date_end": null,
       "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318967-leop-ra-par-leorchestre.html",
-      "image": null,
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/lopera-par-lorchestre",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/446f9583/l_opera_par_l_orchestre_principal.jpg",
+      "offsite_venue": "Théâtre Théo Argence",
+      "id": "9f70890fd45f"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Richard Robert & Co \"Empreintes\"",
+      "subtitle": "Longre/Mardirossian/Rhonat/Robert \"Georges Perros, quelques notes en passant\"",
+      "category": "concert",
+      "date_start": "2026-11-28",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/richard-robert-co-empreintes",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/da04030d/empreintes_georges_perros_img_4840_bi_1160x1472.jpg",
       "offsite_venue": null,
-      "id": "578d5a349ed9"
+      "id": "e0a0fd193bbc"
     },
     {
       "venue": "Maison de la Danse",
@@ -20722,6 +21100,20 @@
       "image": "https://le-sucre.eu/wp-content/uploads/2026/09/ANETHA_Photographer-VictorJacques_Stylist-MagdalenaRoe_MUA-LorelenCoriton_Hair-AlexisMercier_Outfit-Mase_8-2-600x400.jpg",
       "offsite_venue": null,
       "id": "6a9f0b64d2a6"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Barbara Skora",
+      "subtitle": "Récital de chant du Lyon Opéra Studio",
+      "category": "concert",
+      "date_start": "2026-11-29",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/barbara-skora",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/d30cb72f/barbara_skora_principal.jpg",
+      "offsite_venue": null,
+      "id": "b38a8a795d2f"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -21200,6 +21592,34 @@
       "id": "95bb2d474620"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "WAMEN",
+      "subtitle": "+ LISA CLAUDIE",
+      "category": "Chanson / Soul",
+      "date_start": "2026-12-02",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/wamen",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-10/wamen_lvda_look05_02.jpg",
+      "offsite_venue": null,
+      "id": "99f50945132d"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Jodyline Gallavardin - François Mardirossian",
+      "subtitle": "Pianos défricheurs",
+      "category": "concert",
+      "date_start": "2026-12-02",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/jodyline-gallavardin-francois-mardirossian",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_12_02_gallavardin_mardirossian_c_william.sundfor_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "26b392cb9891"
+    },
+    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Les corps incorruptibles",
@@ -21324,6 +21744,20 @@
       "image": "https://www.bourse-du-travail.com/img/evenement/marine-leonardi-3.jpg",
       "offsite_venue": null,
       "id": "218d14d25cb0"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Concerts du CNSMD",
+      "subtitle": "Etudiants et étudiantes du CNSMD de Lyon",
+      "category": "concert",
+      "date_start": "2026-12-03",
+      "date_end": null,
+      "time": "12:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/concerts-du-cnsmd-42",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/68bfdcdd/concerts_cnsmd_c_hugosainterose_bi_oct_dec26_1160x1472px.jpg",
+      "offsite_venue": null,
+      "id": "a1de5061cfdc"
     },
     {
       "venue": "Comédie Odéon",
@@ -21604,6 +22038,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "901f11738a4b"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Concerts du CNSMD",
+      "subtitle": "Etudiants et étudiantes du CNSMD de Lyon",
+      "category": "concert",
+      "date_start": "2026-12-04",
+      "date_end": null,
+      "time": "12:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/concerts-du-cnsmd-42",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/68bfdcdd/concerts_cnsmd_c_hugosainterose_bi_oct_dec26_1160x1472px.jpg",
+      "offsite_venue": null,
+      "id": "83d95ba2a9ad"
     },
     {
       "venue": "Musée des Beaux-Arts",
@@ -22698,6 +23146,20 @@
       "id": "75af3e851c28"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Chantez avec la maitrise",
+      "subtitle": "Maîtrise de l’Opéra de Lyon",
+      "category": "spectacle jeune public",
+      "date_start": "2026-12-09",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/en-famille/chantez-avec-la-maitrise",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/4ef6f089/concertmaitrise_c_orianemarie_web_2880x1920.jpg",
+      "offsite_venue": null,
+      "id": "b72c474f6a69"
+    },
+    {
       "venue": "Comédie Odéon",
       "venue_slug": "comedie-odeon",
       "title": "Le Porteur d’Histoire",
@@ -22780,6 +23242,20 @@
       "image": "https://www.croix-rousse.com/wp-content/uploads/2026/05/14.-Radio-live-1080x1080-1.png",
       "offsite_venue": null,
       "id": "c888f83dd68e"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "MARTA + OONAGH HAINES",
+      "subtitle": "S.Festival 2026",
+      "category": "Electro",
+      "date_start": "2026-12-09",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/marta-oonagh-haines",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-09/visuel-sf.png",
+      "offsite_venue": null,
+      "id": "92d6fe8cd89d"
     },
     {
       "venue": "Palais des Sports de Gerland",
@@ -23018,6 +23494,20 @@
       "image": "https://www.les-subs.com/wp-content/uploads/2026/07/ateliershiver2026-a7r6891blandinesoulage-200x200.jpg",
       "offsite_venue": null,
       "id": "705a7d634b3b"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "daoud",
+      "subtitle": "+ MOUSTIK HATERZ",
+      "category": "Jazz",
+      "date_start": "2026-12-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/daoud",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-04/daoudweb2.jpg",
+      "offsite_venue": null,
+      "id": "428b2dbac9fb"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -23748,6 +24238,20 @@
       "id": "00890d8465b0"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "The Very Big Experimental Toubifri Orchestra",
+      "subtitle": "Les 20 ans !",
+      "category": "Jazz / Musique Expé. / Rock",
+      "date_start": "2026-12-12",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/very-big-experimental-toubifri-orchestra-20-ans",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-09/toubifri-web.png",
+      "offsite_venue": null,
+      "id": "06a285b9020a"
+    },
+    {
       "venue": "Salle Victor Hugo",
       "venue_slug": "salle-victor-hugo",
       "title": "Sofia Belabbes",
@@ -24056,6 +24560,34 @@
       "id": "b28441a37698"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Grand Entretien",
+      "subtitle": "La Fille de Madame Angot : entretien avec Richard Brunel, metteur en scène",
+      "category": "conférence",
+      "date_start": "2026-12-14",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/grand-entretien-17",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/07330d92/grdentretien_angot_1.jpg",
+      "offsite_venue": null,
+      "id": "320383adbe77"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "La Fille de Madame Angot",
+      "subtitle": "Charles Lecocq",
+      "category": "opéra",
+      "date_start": "2026-12-14",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/la-fille-de-madame-angot",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/26e3579e/principal_angot.jpg",
+      "offsite_venue": null,
+      "id": "0ec23bd5ffce"
+    },
+    {
       "venue": "Espace Gerson",
       "venue_slug": "espace-gerson",
       "title": "Delphine Delepaut - La valse des cons",
@@ -24152,6 +24684,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/195da00d/projet_nanashi_b.jpg",
       "offsite_venue": null,
       "id": "70136e6b89eb"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Elisabeth Leonskaja",
+      "subtitle": "Piano à Lyon",
+      "category": "concert",
+      "date_start": "2026-12-15",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/elisabeth-leonskaja-2026",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/58e89f03/elisabeth_leonskaja_c_marco_borggreve_2880x1926_v2_.jpg",
+      "offsite_venue": null,
+      "id": "25bb464ce1d5"
     },
     {
       "venue": "Théâtre de la Croix-Rousse",
@@ -24378,6 +24924,34 @@
       "id": "c9ced6668cdd"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "Concert du Labo",
+      "subtitle": "Gratuit",
+      "category": "Concert du Labo",
+      "date_start": "2026-12-16",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/concert-du-labo-0",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-06/concertlabo-defaut.png",
+      "offsite_venue": null,
+      "id": "a9e27d23e658"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "La Fille de Madame Angot",
+      "subtitle": "Charles Lecocq",
+      "category": "opéra",
+      "date_start": "2026-12-16",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/la-fille-de-madame-angot",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/26e3579e/principal_angot.jpg",
+      "offsite_venue": null,
+      "id": "fe18a9cb8e81"
+    },
+    {
       "venue": "Théâtre de la Croix-Rousse",
       "venue_slug": "croix-rousse",
       "title": "Cabaret Les Meneuses",
@@ -24532,6 +25106,20 @@
       "id": "7e047c7d6838"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Le Roi qui n’aimait pas la musique",
+      "subtitle": "Le Roi qui tombait amoureux",
+      "category": "concert",
+      "date_start": "2026-12-17",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/le-roi-qui-naimait-pas-la-musique",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/bf7fa99f/roi_musique_c_oriane_marie_2880x1926_v3_.jpg",
+      "offsite_venue": null,
+      "id": "1fe0cf7e9348"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Le Dindon",
@@ -24628,6 +25216,20 @@
       "image": "https://www.les-subs.com/wp-content/uploads/2026/07/zerep-sturbzep-mc93-ph-lebruman-2026-dsc6413-200x200.jpg",
       "offsite_venue": null,
       "id": "f509680e8309"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Amin Al Aiedy Quartet \"Qamar\"",
+      "subtitle": "Jazz et musiques orientales",
+      "category": "concert",
+      "date_start": "2026-12-17",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/amin-al-aiedy-quartet-qamar",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1a164dc9/amin_al_aiedy_4tet_qamar_photo_par_mikel_muneton_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "0aeed483c721"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -24812,6 +25414,20 @@
       "id": "e3087fb483d4"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Le Roi qui n’aimait pas la musique",
+      "subtitle": "Le Roi qui tombait amoureux",
+      "category": "concert",
+      "date_start": "2026-12-18",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/le-roi-qui-naimait-pas-la-musique",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/bf7fa99f/roi_musique_c_oriane_marie_2880x1926_v3_.jpg",
+      "offsite_venue": null,
+      "id": "0fe8c2485775"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Projet Nanashi",
@@ -24880,6 +25496,34 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/bonne-fete-des-meres.jpg",
       "offsite_venue": null,
       "id": "b6cadfe5c4ed"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "KUMBIA BORUKA",
+      "subtitle": null,
+      "category": "Sono Mondiale",
+      "date_start": "2026-12-18",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/kumbia-boruka",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-07/KumbiaBoruka-2025-MyriamVega-4%20photo%20compress%C3%A9e.jpg",
+      "offsite_venue": null,
+      "id": "597b1df0a219"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Amin Al Aiedy Quartet \"Qamar\"",
+      "subtitle": "Jazz et musiques orientales",
+      "category": "concert",
+      "date_start": "2026-12-18",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/amin-al-aiedy-quartet-qamar",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1a164dc9/amin_al_aiedy_4tet_qamar_photo_par_mikel_muneton_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "14694f9fc096"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -24992,6 +25636,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "72809da00dff"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Le Roi qui n’aimait pas la musique",
+      "subtitle": "Le Roi qui tombait amoureux",
+      "category": "concert",
+      "date_start": "2026-12-19",
+      "date_end": null,
+      "time": "14:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/le-roi-qui-naimait-pas-la-musique",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/bf7fa99f/roi_musique_c_oriane_marie_2880x1926_v3_.jpg",
+      "offsite_venue": null,
+      "id": "a63032bdf732"
     },
     {
       "venue": "Improvidence",
@@ -25202,6 +25860,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/bonne-fete-des-meres.jpg",
       "offsite_venue": null,
       "id": "64f3e5330be4"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "La Fille de Madame Angot",
+      "subtitle": "Charles Lecocq",
+      "category": "opéra",
+      "date_start": "2026-12-19",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/la-fille-de-madame-angot",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/26e3579e/principal_angot.jpg",
+      "offsite_venue": null,
+      "id": "9641c71d74e2"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -25456,6 +26128,20 @@
       "id": "41aa689b6ff3"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "La Fille de Madame Angot",
+      "subtitle": "Charles Lecocq",
+      "category": "opéra",
+      "date_start": "2026-12-21",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/la-fille-de-madame-angot",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/26e3579e/principal_angot.jpg",
+      "offsite_venue": null,
+      "id": "4e3052825298"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "Fabrice Luchini",
@@ -25596,6 +26282,20 @@
       "id": "632aac5a640b"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Souad Massi",
+      "subtitle": "Une voix libre entre deux rives",
+      "category": "concert",
+      "date_start": "2026-12-22",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/souad-massi",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_12_22_souad_massi_c_yann_orhan_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "1970301c642f"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "Fabrice Luchini",
@@ -25734,6 +26434,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/46bb501d/la_vie_en_vrai308_esmeralda_da_costa.jpg",
       "offsite_venue": null,
       "id": "d216964f4153"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "La Fille de Madame Angot",
+      "subtitle": "Charles Lecocq",
+      "category": "opéra",
+      "date_start": "2026-12-23",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/la-fille-de-madame-angot",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/26e3579e/principal_angot.jpg",
+      "offsite_venue": null,
+      "id": "4fb91bc13aab"
     },
     {
       "venue": "Espace Gerson",
@@ -26282,6 +26996,20 @@
       "id": "d676d5be9c87"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "La Fille de Madame Angot",
+      "subtitle": "Charles Lecocq",
+      "category": "opéra",
+      "date_start": "2026-12-29",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/la-fille-de-madame-angot",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/26e3579e/principal_angot.jpg",
+      "offsite_venue": null,
+      "id": "6104e8327ad8"
+    },
+    {
       "venue": "Espace Gerson",
       "venue_slug": "espace-gerson",
       "title": "3 - L'impro FFF",
@@ -26758,6 +27486,20 @@
       "id": "9b4f00f9dcee"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "La Fille de Madame Angot",
+      "subtitle": "Charles Lecocq",
+      "category": "opéra",
+      "date_start": "2026-12-31",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/la-fille-de-madame-angot",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/26e3579e/principal_angot.jpg",
+      "offsite_venue": null,
+      "id": "2e102fc7ad8c"
+    },
+    {
       "venue": "Comédie Odéon",
       "venue_slug": "comedie-odeon",
       "title": "Dernier réveillon avant l’année prochaine",
@@ -26898,6 +27640,20 @@
       "id": "8fb0ccc7f3bb"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Chassol \"Funny How?\"",
+      "subtitle": "Groove choral, sensible et politique",
+      "category": "concert",
+      "date_start": "2027-01-02",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/chassol-funny-how",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/cc6fde37/chassol_c_goldie_williams_vericain_clean_photo_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "41d407ed6ca7"
+    },
+    {
       "venue": "Comédie Odéon",
       "venue_slug": "comedie-odeon",
       "title": "Dernier réveillon avant l’année prochaine",
@@ -26952,6 +27708,20 @@
       "image": "https://www.bourse-du-travail.com/img/evenement/k-pop-shadow-hunters--tournee-3.jpg",
       "offsite_venue": null,
       "id": "8b95150bcb13"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "La Fille de Madame Angot",
+      "subtitle": "Charles Lecocq",
+      "category": "opéra",
+      "date_start": "2027-01-03",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/la-fille-de-madame-angot",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/26e3579e/principal_angot.jpg",
+      "offsite_venue": null,
+      "id": "13199c63ec59"
     },
     {
       "venue": "Comédie Odéon",
@@ -27136,6 +27906,20 @@
       "id": "4ccff357cfc0"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Concerts du CNSMD",
+      "subtitle": "Etudiants et étudiantes du CNSMD de Lyon",
+      "category": "concert",
+      "date_start": "2027-01-06",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/concerts-du-cnsmd-43",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/68bfdcdd/concerts_cnsmd_c_hugosainterose_bi_oct_dec26_1160x1472px.jpg",
+      "offsite_venue": null,
+      "id": "8b36a15588e7"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Mahabharata, une histoire de la violence",
@@ -27260,6 +28044,20 @@
       "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/content/medias/images/2020-02/architecture_rome.jpg?h=b005a5b4&itok=B2Frn4FO",
       "offsite_venue": null,
       "id": "843030582c85"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Concerts du CNSMD",
+      "subtitle": "Etudiants et étudiantes du CNSMD de Lyon",
+      "category": "concert",
+      "date_start": "2027-01-07",
+      "date_end": null,
+      "time": "12:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/concerts-du-cnsmd-43",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/68bfdcdd/concerts_cnsmd_c_hugosainterose_bi_oct_dec26_1160x1472px.jpg",
+      "offsite_venue": null,
+      "id": "a624d1e3975f"
     },
     {
       "venue": "Auditorium de Lyon",
@@ -27962,6 +28760,20 @@
       "id": "9543420b32b7"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "L'histoire du soldat",
+      "subtitle": "Musiciennes et musiciens de l’Orchestre de l’Opéra de Lyon",
+      "category": "spectacle jeune public",
+      "date_start": "2027-01-13",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/en-famille/lhistoire-du-soldat-2",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/a94edd8e/l_histoiredusoldat_c_orianemarie_web_rvb_2880x1920.jpg",
+      "offsite_venue": null,
+      "id": "bdf0e6279ff3"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Mahabharata, une histoire de la violence",
@@ -28478,6 +29290,20 @@
       "image": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-giedre2.jpg",
       "offsite_venue": null,
       "id": "5437cf18e7fb"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "L'histoire du soldat",
+      "subtitle": "Musiciennes et musiciens de l’Orchestre de l’Opéra de Lyon",
+      "category": "spectacle jeune public",
+      "date_start": "2027-01-15",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/en-famille/lhistoire-du-soldat-2",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/a94edd8e/l_histoiredusoldat_c_orianemarie_web_rvb_2880x1920.jpg",
+      "offsite_venue": null,
+      "id": "efb329dfcdce"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -29782,6 +30608,20 @@
       "id": "b434692b63ed"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "JUSTE SHANI",
+      "subtitle": "Complet",
+      "category": "Rap",
+      "date_start": "2027-01-22",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/juste-shani",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-04/juste-shani-cpierre-daschier_extended_feed.jpg",
+      "offsite_venue": null,
+      "id": "00cd7a11e39f"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "LEVI.SCT",
@@ -29920,6 +30760,20 @@
       "image": "https://img.mapado.net/2025/3/20/67dc2098ca8dc-affiche-cellesquirestent.png_thumbs/600-600.png",
       "offsite_venue": null,
       "id": "897b0afaad0f"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Une heure, un concert",
+      "subtitle": "Autour de Edvard Grieg",
+      "category": "concert",
+      "date_start": "2027-01-23",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/une-heure-un-concert-edvard-grieg",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/446f9583/l_opera_par_l_orchestre_principal.jpg",
+      "offsite_venue": "Salle Molière",
+      "id": "b0a573c4f3e6"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -30104,6 +30958,20 @@
       "id": "6ac101ccfeb1"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Une heure, un concert",
+      "subtitle": "Autour de Edvard Grieg",
+      "category": "concert",
+      "date_start": "2027-01-24",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/une-heure-un-concert-edvard-grieg",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/446f9583/l_opera_par_l_orchestre_principal.jpg",
+      "offsite_venue": "Salle Molière",
+      "id": "32cfa839b85b"
+    },
+    {
       "venue": "Matmut Stadium de Gerland",
       "venue_slug": "matmut-stadium-gerland",
       "title": "LOU Rugby féminines - Stade Toulousain Rugby",
@@ -30144,6 +31012,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/24c0d764/empereurs_1.jpg",
       "offsite_venue": null,
       "id": "1470181c2c78"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Peer Gynt",
+      "subtitle": "Edvard Grieg",
+      "category": "opéra",
+      "date_start": "2027-01-24",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/peer-gynt-2027",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/d51f1784/principal_peergynt.jpg",
+      "offsite_venue": null,
+      "id": "520eba5a3eba"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -30216,6 +31098,20 @@
       "id": "e651e80ba7d3"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Festival Donner de la voix",
+      "subtitle": "",
+      "category": "opéra",
+      "date_start": "2027-01-26",
+      "date_end": "2027-04-05",
+      "time": null,
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/festival-donner-de-la-voix",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/6bb8fb94/principal_festival_2280x1926.jpg",
+      "offsite_venue": "·ailleurs",
+      "id": "97639bb548e4"
+    },
+    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Mobile Homes",
@@ -30228,6 +31124,20 @@
       "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/04/1_Mobile_homescTristan_Dubois.jpg",
       "offsite_venue": null,
       "id": "22092683d94f"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "ALGAM",
+      "subtitle": "Gratuit · Dispositif Avant-Scène",
+      "category": "Déjeuner-Concert",
+      "date_start": "2027-01-26",
+      "date_end": null,
+      "time": "12:30",
+      "url": "https://marchegare.fr/agenda/algam",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-07/img_2203.jpg",
+      "offsite_venue": null,
+      "id": "05424f2edbf5"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -30284,6 +31194,34 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/2c8c78c1/amourgloire_et_ciment_.jpg",
       "offsite_venue": null,
       "id": "941972890788"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Peer Gynt",
+      "subtitle": "Edvard Grieg",
+      "category": "opéra",
+      "date_start": "2027-01-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/peer-gynt-2027",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/d51f1784/principal_peergynt.jpg",
+      "offsite_venue": null,
+      "id": "52d500933db5"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Zylan ne chantera plus",
+      "subtitle": "Diana Soh",
+      "category": "opéra",
+      "date_start": "2027-01-26",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/zylan-ne-chantera-plus-2027",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/4c1b2485/zylan_visuel_principal.jpg",
+      "offsite_venue": "Théâtre du Point du Jour",
+      "id": "14118fa5cd21"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -30426,6 +31364,20 @@
       "id": "26c9e8160226"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Peer Gynt",
+      "subtitle": "Edvard Grieg",
+      "category": "opéra",
+      "date_start": "2027-01-27",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/peer-gynt-2027",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/d51f1784/principal_peergynt.jpg",
+      "offsite_venue": null,
+      "id": "2153e1b27f25"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Amour, Gloire et Ciment !",
@@ -30480,6 +31432,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/f07d620b/bunker1_matthieu_bareyre.jpg",
       "offsite_venue": null,
       "id": "6d922a5f10cd"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Zylan ne chantera plus",
+      "subtitle": "Diana Soh",
+      "category": "opéra",
+      "date_start": "2027-01-27",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/zylan-ne-chantera-plus-2027",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/4c1b2485/zylan_visuel_principal.jpg",
+      "offsite_venue": "Théâtre du Point du Jour",
+      "id": "349a781111de"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -30704,6 +31670,20 @@
       "image": "https://agenda.villemorte.fr/media/thumb/d3fe61904ef4753726a26f2e6897ee50.jpg",
       "offsite_venue": null,
       "id": "bb3771bb341b"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Zylan ne chantera plus",
+      "subtitle": "Diana Soh",
+      "category": "opéra",
+      "date_start": "2027-01-28",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/zylan-ne-chantera-plus-2027",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/4c1b2485/zylan_visuel_principal.jpg",
+      "offsite_venue": "Théâtre du Point du Jour",
+      "id": "949969a1fa1e"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -30958,6 +31938,34 @@
       "id": "7b35ce4ca9b0"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Peer Gynt",
+      "subtitle": "Edvard Grieg",
+      "category": "opéra",
+      "date_start": "2027-01-29",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/peer-gynt-2027",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/d51f1784/principal_peergynt.jpg",
+      "offsite_venue": null,
+      "id": "86915d1991b5"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Zylan ne chantera plus",
+      "subtitle": "Diana Soh",
+      "category": "opéra",
+      "date_start": "2027-01-29",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/zylan-ne-chantera-plus-2027",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/4c1b2485/zylan_visuel_principal.jpg",
+      "offsite_venue": "Théâtre du Point du Jour",
+      "id": "d2d2e4c65abf"
+    },
+    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Zone d’Attente",
@@ -31210,6 +32218,20 @@
       "id": "c840c79a26ad"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Peer Gynt",
+      "subtitle": "Edvard Grieg",
+      "category": "opéra",
+      "date_start": "2027-01-30",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/peer-gynt-2027",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/d51f1784/principal_peergynt.jpg",
+      "offsite_venue": null,
+      "id": "3428411915b6"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Amour, Gloire et Ciment !",
@@ -31404,6 +32426,20 @@
       "image": "https://www.halle-tony-garnier.com/storage/145352/conversions/2027-01-31-DISNEY-SUR-GLACE-LE-VOYAGE-ENCHANTE-d36-lyon-1080x108-20260424-161449-square.jpg",
       "offsite_venue": null,
       "id": "b56d26a893dd"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Peer Gynt",
+      "subtitle": "Edvard Grieg",
+      "category": "opéra",
+      "date_start": "2027-01-31",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/peer-gynt-2027",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/d51f1784/principal_peergynt.jpg",
+      "offsite_venue": null,
+      "id": "da93aef4ebad"
     },
     {
       "venue": "TNG",
@@ -31686,6 +32722,20 @@
       "id": "640826201102"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Peer Gynt",
+      "subtitle": "Edvard Grieg",
+      "category": "opéra",
+      "date_start": "2027-02-03",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/peer-gynt-2027",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/d51f1784/principal_peergynt.jpg",
+      "offsite_venue": null,
+      "id": "cc7d293013e4"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Oratorio nomade",
@@ -31936,6 +32986,20 @@
       "image": "https://www.theatredescelestins.com/assets/q75-w600/5fe31a30/oratorio_documentaire.jpg",
       "offsite_venue": null,
       "id": "339be830aebb"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "MONO",
+      "subtitle": null,
+      "category": "Post-Rock",
+      "date_start": "2027-02-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/mono",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-04/mono_snowdrop_promo_photo_1x1_photo_by_carlos_cruz_courtesy_of_kexp.jpg",
+      "offsite_venue": null,
+      "id": "3be29952f109"
     },
     {
       "venue": "Espace Gerson",
@@ -32330,6 +33394,20 @@
       "id": "a7f754241a23"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Bazar circus",
+      "subtitle": "Alizé Léhon",
+      "category": "concert",
+      "date_start": "2027-02-06",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/bazar-circus",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/aed049d5/bazar_circus_c_juliette_barbanegre_2880x1926_v6.jpg",
+      "offsite_venue": "·ailleurs",
+      "id": "fe408dd1eda8"
+    },
+    {
       "venue": "Musée des Beaux-Arts",
       "venue_slug": "musee-des-beaux-arts",
       "title": "Journée des collectionneurs",
@@ -32526,6 +33604,20 @@
       "id": "ebbf2e644d12"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "FLORA HIBBERD",
+      "subtitle": "Gratuit abonné",
+      "category": "Indie Pop",
+      "date_start": "2027-02-06",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/flora-hibberd",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/import_billetterie/419-field_illustration_id-1790687417.jpg",
+      "offsite_venue": null,
+      "id": "a89835e271e8"
+    },
+    {
       "venue": "Musée des Confluences",
       "venue_slug": "musee-des-confluences",
       "title": "Duo Sabîl et Vincent Segal – Tawaf",
@@ -32538,6 +33630,20 @@
       "image": "https://museedesconfluences.fr/sites/default/files/uploads/2026-06/images_siteweb_mdc_1080-1080_sabil-segal.jpg",
       "offsite_venue": null,
       "id": "e3d07b28c8cf"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Abd al Malik \"Gibraltar, identités réconciliées\"",
+      "subtitle": "Flow universel",
+      "category": "concert",
+      "date_start": "2027-02-06",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/abd-al-malik-gibraltar-identites-reconciliees",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2027_02_06_abd_al_malik_fabien_coste_bi_1160x1472.jpg",
+      "offsite_venue": null,
+      "id": "83b73d1c1fce"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -32622,6 +33728,20 @@
       "image": "https://www.bourse-du-travail.com/img/evenement/funky-soul-family.jpg",
       "offsite_venue": null,
       "id": "82a393b0fff9"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Eric Lu",
+      "subtitle": "Piano à Lyon",
+      "category": "concert",
+      "date_start": "2027-02-07",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/eric-lu",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/0de17a76/eric_lu_c_rajchert_lukasz_2880x1926.jpg",
+      "offsite_venue": null,
+      "id": "a981a445bf92"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -33016,6 +34136,20 @@
       "id": "1e43f410343a"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "LES LOUANGES",
+      "subtitle": null,
+      "category": "Indie Pop",
+      "date_start": "2027-02-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/les-louanges",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-05/leslouanges_credit_jean-francoissauve-_934236_web-1762971380.jpg",
+      "offsite_venue": null,
+      "id": "53984f8e25da"
+    },
+    {
       "venue": "Radiant-Bellevue",
       "venue_slug": "radiant-bellevue",
       "title": "CLASH ROCK – DE SCHUBERT A NIRVANA",
@@ -33196,6 +34330,20 @@
       "image": "https://agenda.villemorte.fr/media/thumb/ef57158f178f9a4d1abd2afcf414e47e.jpg",
       "offsite_venue": null,
       "id": "b766c8b291dc"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "THE VELVETEERS",
+      "subtitle": null,
+      "category": "Rock",
+      "date_start": "2027-02-11",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/thevelveteers",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-09/img_8019_1.jpg",
+      "offsite_venue": null,
+      "id": "c7b8178461d0"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -33450,6 +34598,34 @@
       "id": "cdd006710fb9"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "AND ALSO THE TREES",
+      "subtitle": "+ CATHERINE GRAINDORGE",
+      "category": "Indie Rock / Post-Punk",
+      "date_start": "2027-02-12",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/and-also-the-trees",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-06/aatt_2025_01a.jpg",
+      "offsite_venue": null,
+      "id": "21d8016677cf"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Chœur a cappella",
+      "subtitle": "Benedict Kearns",
+      "category": "concert",
+      "date_start": "2027-02-12",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/choeur-a-cappella-2027",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/d38c54f9/choeur_a_cappella.jpg",
+      "offsite_venue": "Basilique Saint-Bonaventure, Lyon 2e",
+      "id": "37db6582c210"
+    },
+    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Tout est calme dans les hauteurs",
@@ -33630,6 +34806,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/justine-le-pottier-540x800.jpg",
       "offsite_venue": null,
       "id": "e41cb48e7213"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Chœur a cappella",
+      "subtitle": "Benedict Kearns",
+      "category": "concert",
+      "date_start": "2027-02-13",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/choeur-a-cappella-2027",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/d38c54f9/choeur_a_cappella.jpg",
+      "offsite_venue": "Basilique Saint-Bonaventure, Lyon 2e",
+      "id": "19b66c76607d"
     },
     {
       "venue": "Gymnase René Baillieu",
@@ -33842,6 +35032,20 @@
       "id": "da7e2df54f29"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Charlot en musique",
+      "subtitle": "Ciné-concert",
+      "category": "concert",
+      "date_start": "2027-02-17",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/charlot-en-musique-2027",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1fa3259c/charlot_c_the_rink_hd_2880x1926.jpg",
+      "offsite_venue": "Théâtre de La Renaissance",
+      "id": "2e08965f4a3d"
+    },
+    {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
       "title": "IMPRO'MINOTS",
@@ -34022,6 +35226,20 @@
       "image": "https://larayonne.org/wp-content/uploads/2026/06/SLEEPING-WITH-SIRENS-EUROPE-2027-PARIS-1080x1080-1-500x500.png",
       "offsite_venue": null,
       "id": "1f8b8f3e14d0"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Buster Keaton",
+      "subtitle": "Ciné-concert",
+      "category": "concert",
+      "date_start": "2027-02-18",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/buster-keaton",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/85ea1e2c/principal_keaton.jpg",
+      "offsite_venue": "Théâtre de La Renaissance",
+      "id": "70631834c3b1"
     },
     {
       "venue": "Auditorium de Lyon",
@@ -35074,6 +36292,20 @@
       "id": "a61d2e0c73be"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Une heure, un concert",
+      "subtitle": "Autour de Richard Strauss",
+      "category": "concert",
+      "date_start": "2027-02-27",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/une-heure-un-concert-richard-strauss",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/446f9583/l_opera_par_l_orchestre_principal.jpg",
+      "offsite_venue": "Salle Molière",
+      "id": "16ddc90ab50e"
+    },
+    {
       "venue": "Comédie Odéon",
       "venue_slug": "comedie-odeon",
       "title": "Jules et Marcel",
@@ -35156,6 +36388,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/complexe-comedy-club-540x800.jpg",
       "offsite_venue": null,
       "id": "62cff4b195bb"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Une heure, un concert",
+      "subtitle": "Autour de Richard Strauss",
+      "category": "concert",
+      "date_start": "2027-02-28",
+      "date_end": null,
+      "time": "11:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/une-heure-un-concert-richard-strauss",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/446f9583/l_opera_par_l_orchestre_principal.jpg",
+      "offsite_venue": "Salle Molière",
+      "id": "9cab1bfdd28a"
     },
     {
       "venue": "Gymnase René Baillieu",
@@ -35368,6 +36614,20 @@
       "id": "b87b3d63ea2c"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Les Intempéries de Sami",
+      "subtitle": "Compagnie ChahUt-BohU",
+      "category": "spectacle jeune public",
+      "date_start": "2027-03-03",
+      "date_end": null,
+      "time": "10:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/en-famille/les-intemperies-de-sami-1",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/a94edd8e/lesintemperiesdesami_c_orianemarie_web_rvb_2880x1920.jpg",
+      "offsite_venue": null,
+      "id": "868932ee2988"
+    },
+    {
       "venue": "La Machinerie - Bizarre !",
       "venue_slug": "la-machinerie-bizarre",
       "title": "Boum Kids",
@@ -35380,6 +36640,20 @@
       "image": "https://agenda.villemorte.fr/media/thumb/dca9b66215f26e43b636f9cfcf0d73ee.jpg",
       "offsite_venue": null,
       "id": "b8dbac2fb8f3"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Les Intempéries de Sami",
+      "subtitle": "Compagnie ChahUt-BohU",
+      "category": "spectacle jeune public",
+      "date_start": "2027-03-03",
+      "date_end": null,
+      "time": "16:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/en-famille/les-intemperies-de-sami-1",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/a94edd8e/lesintemperiesdesami_c_orianemarie_web_rvb_2880x1920.jpg",
+      "offsite_venue": null,
+      "id": "1e1643010418"
     },
     {
       "venue": "Les Subsistances",
@@ -36642,6 +37916,20 @@
       "id": "57f0915a9640"
     },
     {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "GENERAL ELEKTRIKS",
+      "subtitle": null,
+      "category": "Groove",
+      "date_start": "2027-03-10",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/general-elektriks",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-08/dsc08365-retouche-web.png",
+      "offsite_venue": null,
+      "id": "befaed41fdb9"
+    },
+    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Ma maison est noire",
@@ -37130,6 +38418,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/madame-meuf-540x800.jpg",
       "offsite_venue": null,
       "id": "ca57085f63a1"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "HOULE + CAN BARDD + GALIBOT",
+      "subtitle": "Goelophobia Tour",
+      "category": "Metal",
+      "date_start": "2027-03-12",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/houle",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-10/houle.jpeg",
+      "offsite_venue": null,
+      "id": "314749357925"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -38042,6 +39344,20 @@
       "id": "d393e759f3fe"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Grand Entretien",
+      "subtitle": "Salomé : Rencontre avec Calixto Bieito, metteur en scène",
+      "category": "conférence",
+      "date_start": "2027-03-19",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/grand-entretien-16",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/07330d92/grdentretien_salome.jpg",
+      "offsite_venue": null,
+      "id": "195564c16dd6"
+    },
+    {
       "venue": "Auditorium de Lyon",
       "venue_slug": "auditorium-lyon",
       "title": "Là-haut",
@@ -38166,6 +39482,34 @@
       "image": "https://www.les-subs.com/wp-content/uploads/2026/07/strip-credit-tom-grand-mourcel-1-200x200.jpg",
       "offsite_venue": null,
       "id": "c1c066ffdb18"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "HIGH FADE",
+      "subtitle": null,
+      "category": "Funk / Rock",
+      "date_start": "2027-03-19",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/high-fade",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-09/press_photo_2_square.jpg",
+      "offsite_venue": null,
+      "id": "9d59b539c8a0"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Salomé",
+      "subtitle": "Richard Strauss",
+      "category": "opéra",
+      "date_start": "2027-03-19",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/salome",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/a19cf37c/principal_salome.jpg",
+      "offsite_venue": null,
+      "id": "93a978a3a2e0"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -38350,6 +39694,20 @@
       "id": "36a281273e50"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Grand Entretien",
+      "subtitle": "Lucrèce : Rencontre avec Tatjana Gürbaca, metteuse en scène",
+      "category": "conférence",
+      "date_start": "2027-03-20",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/grand-entretien-15",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/7759f91d/grdentretien_lucrece_3.jpg",
+      "offsite_venue": null,
+      "id": "56bb250675dd"
+    },
+    {
       "venue": "Théâtre du Point du Jour",
       "venue_slug": "theatre-du-point-du-jour",
       "title": "Ce que le féminisme m'a fait",
@@ -38418,6 +39776,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/complexe-comedy-club-540x800.jpg",
       "offsite_venue": null,
       "id": "e61f2a9d33a3"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Lucrèce Borgia",
+      "subtitle": "Gaetano Donizetti",
+      "category": "opéra",
+      "date_start": "2027-03-20",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/lucrece-borgia",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/d1f607f3/principal_lucrece.jpg",
+      "offsite_venue": null,
+      "id": "a06b5691345f"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -38588,6 +39960,20 @@
       "id": "49b109746b52"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Lucrèce Borgia",
+      "subtitle": "Gaetano Donizetti",
+      "category": "opéra",
+      "date_start": "2027-03-22",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/lucrece-borgia",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/d1f607f3/principal_lucrece.jpg",
+      "offsite_venue": null,
+      "id": "0bf777a8025f"
+    },
+    {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
       "title": "Tom Boudet \"vous dit quoi\"",
@@ -38672,10 +40058,24 @@
       "id": "2a023873ffbe"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Salomé",
+      "subtitle": "Richard Strauss",
+      "category": "opéra",
+      "date_start": "2027-03-23",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/salome",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/a19cf37c/principal_salome.jpg",
+      "offsite_venue": null,
+      "id": "c3cf64f0329c"
+    },
+    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Le Voyage d’hiver",
-      "subtitle": null,
+      "subtitle": "Franz Schubert",
       "category": "théâtre",
       "date_start": "2027-03-23",
       "date_end": null,
@@ -38868,10 +40268,24 @@
       "id": "245f5ac896f5"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Lucrèce Borgia",
+      "subtitle": "Gaetano Donizetti",
+      "category": "opéra",
+      "date_start": "2027-03-24",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/lucrece-borgia",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/d1f607f3/principal_lucrece.jpg",
+      "offsite_venue": null,
+      "id": "dc97cb28cdd7"
+    },
+    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Le Voyage d’hiver",
-      "subtitle": null,
+      "subtitle": "Franz Schubert",
       "category": "théâtre",
       "date_start": "2027-03-24",
       "date_end": null,
@@ -39106,6 +40520,20 @@
       "id": "23f723c25dcb"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Salomé",
+      "subtitle": "Richard Strauss",
+      "category": "opéra",
+      "date_start": "2027-03-25",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/salome",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/a19cf37c/principal_salome.jpg",
+      "offsite_venue": null,
+      "id": "f94176f3da62"
+    },
+    {
       "venue": "Espace Gerson",
       "venue_slug": "espace-gerson",
       "title": "Cécile Giroud & Selena Hernandez - Font ce qu'elles veulent!",
@@ -39305,7 +40733,7 @@
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Le Voyage d’hiver",
-      "subtitle": null,
+      "subtitle": "Franz Schubert",
       "category": "théâtre",
       "date_start": "2027-03-26",
       "date_end": null,
@@ -39445,7 +40873,7 @@
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Le Voyage d’hiver",
-      "subtitle": null,
+      "subtitle": "Franz Schubert",
       "category": "théâtre",
       "date_start": "2027-03-27",
       "date_end": null,
@@ -39526,6 +40954,20 @@
       "id": "7d013209fb6d"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Salomé",
+      "subtitle": "Richard Strauss",
+      "category": "opéra",
+      "date_start": "2027-03-27",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/salome",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/a19cf37c/principal_salome.jpg",
+      "offsite_venue": null,
+      "id": "508ff8770d67"
+    },
+    {
       "venue": "Gymnase René Baillieu",
       "venue_slug": "gymnase-rene-baillieu",
       "title": "Lyon Croix-Rousse - U.S. Pontet Volley Avenir",
@@ -39596,6 +41038,20 @@
       "id": "13cda3605b89"
     },
     {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Lucrèce Borgia",
+      "subtitle": "Gaetano Donizetti",
+      "category": "opéra",
+      "date_start": "2027-03-28",
+      "date_end": null,
+      "time": "16:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/lucrece-borgia",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/d1f607f3/principal_lucrece.jpg",
+      "offsite_venue": null,
+      "id": "365a58f1e349"
+    },
+    {
       "venue": "Improvidence",
       "venue_slug": "improvidence",
       "title": "Bilisko & Strobel \"Faites-nous confiance !\"",
@@ -39655,7 +41111,7 @@
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Chiens",
-      "subtitle": null,
+      "subtitle": "Lorraine de Sagazan",
       "category": "théâtre",
       "date_start": "2027-03-30",
       "date_end": null,
@@ -39678,6 +41134,20 @@
       "image": "https://www.les-subs.com/wp-content/uploads/2026/07/visuel-subsidiaire-gabriel-laurent-200x200.jpg",
       "offsite_venue": null,
       "id": "4b33c6aa7871"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Lucrèce Borgia",
+      "subtitle": "Gaetano Donizetti",
+      "category": "opéra",
+      "date_start": "2027-03-30",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/lucrece-borgia",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/d1f607f3/principal_lucrece.jpg",
+      "offsite_venue": null,
+      "id": "b3715a52742a"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -39781,7 +41251,7 @@
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Chiens",
-      "subtitle": null,
+      "subtitle": "Lorraine de Sagazan",
       "category": "théâtre",
       "date_start": "2027-03-31",
       "date_end": null,
@@ -39804,6 +41274,20 @@
       "image": "https://www.les-subs.com/wp-content/uploads/2026/07/visuel-subsidiaire-gabriel-laurent-200x200.jpg",
       "offsite_venue": null,
       "id": "0674935e6bef"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Salomé",
+      "subtitle": "Richard Strauss",
+      "category": "opéra",
+      "date_start": "2027-03-31",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/salome",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/a19cf37c/principal_salome.jpg",
+      "offsite_venue": null,
+      "id": "cef13da93ab3"
     },
     {
       "venue": "Théâtre de la Croix-Rousse",
@@ -39946,18 +41430,18 @@
       "id": "1e61c5fd0653"
     },
     {
-      "venue": "Célestins, théâtre de Lyon",
-      "venue_slug": "celestins-theatre-de-lyon",
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
       "title": "Chiens",
-      "subtitle": null,
-      "category": "Théâtre",
+      "subtitle": "Lorraine de Sagazan",
+      "category": "opéra",
       "date_start": "2027-04-01",
       "date_end": null,
       "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319197-chiens.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "78ad27ad3ba9"
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/chiens",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/a9aa89f6/chiens_c_jean_louis_fernandez_2880_x_1926_web.jpg",
+      "offsite_venue": "Célestins, théâtre de Lyon",
+      "id": "d229a9a75a2e"
     },
     {
       "venue": "Théâtre de la Croix-Rousse",
@@ -40028,6 +41512,20 @@
       "image": "https://maisondeladanse.com/sites/default/files/styles/vignette_saison_2016/public/spectacle/saison/bol-s.jpg?itok=WtyMWRAj",
       "offsite_venue": null,
       "id": "392ad7476e6f"
+    },
+    {
+      "venue": "Opéra national de Lyon",
+      "venue_slug": "opera-lyon",
+      "title": "Avant l'aube",
+      "subtitle": "David Dawson / Katerina Andreou",
+      "category": "danse",
+      "date_start": "2027-04-01",
+      "date_end": null,
+      "time": "20:30",
+      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/danse/avant-laube",
+      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/c7b68821/principal_avant_l_aube.jpg",
+      "offsite_venue": "Maison de la Danse",
+      "id": "48006aff5fca"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -40630,6 +42128,20 @@
       "image": "https://www.bourse-du-travail.com/img/evenement/night-fever--a-tribute-to-the-bee-gees-2.jpg",
       "offsite_venue": null,
       "id": "db89db12b64c"
+    },
+    {
+      "venue": "Marché Gare",
+      "venue_slug": "marche-gare",
+      "title": "LAMBRINI GIRLS",
+      "subtitle": null,
+      "category": "Punk-Rock",
+      "date_start": "2027-05-23",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://marchegare.fr/agenda/lambrini-girls-2027",
+      "image": "https://marchegare.fr/sites/marchegare/files/styles/large/public/2026-09/web_res.jpg",
+      "offsite_venue": null,
+      "id": "ec4325e5d504"
     },
     {
       "venue": "Célestins, théâtre de Lyon",

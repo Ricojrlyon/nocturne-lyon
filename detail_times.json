@@ -6187,12 +6187,109 @@
     ],
     "time": null
   },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/barbara-skora": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-29",
+        "18:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/bazar-circus": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Théâtre Théo Argence - Saint-Priest, Radiant-Bellevue, Caluire et Cuire, Théâtre Nouvelle Génération, Lyon 9e",
+    "seances": [
+      [
+        "2027-02-06",
+        "11:00"
+      ],
+      [
+        "2027-02-07",
+        "16:00"
+      ],
+      [
+        "2027-02-10",
+        "15:00"
+      ],
+      [
+        "2027-02-10",
+        "18:00"
+      ],
+      [
+        "2027-02-12",
+        "19:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/beethoven-mahler-schumann": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-21",
+        "20:00"
+      ]
+    ],
+    "time": null
+  },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/beethoven-sibelius": {
     "fetched_at": "2026-09-26",
     "lieu": "Opéra de Lyon",
     "seances": [
       [
         "2026-10-24",
+        "20:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/bertrand-chamayou": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-22",
+        "16:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/buster-keaton": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Théâtre de La Renaissance - Oullins-Pierre-Bénite",
+    "seances": [
+      [
+        "2027-02-18",
+        "19:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/charlot-en-musique-2027": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Théâtre de La Renaissance - Oullins-Pierre-Bénite",
+    "seances": [
+      [
+        "2027-02-17",
+        "15:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/choeur-a-cappella-2027": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Basilique Saint-Bonaventure, Lyon 2e",
+    "seances": [
+      [
+        "2027-02-12",
+        "20:00"
+      ],
+      [
+        "2027-02-13",
         "20:00"
       ]
     ],
@@ -6209,9 +6306,50 @@
     ],
     "time": null
   },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/elisabeth-leonskaja-2026": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2026-12-15",
+        "20:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/eric-lu": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2027-02-07",
+        "16:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/le-roi-qui-naimait-pas-la-musique": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2026-12-17",
+        "19:00"
+      ],
+      [
+        "2026-12-18",
+        "19:00"
+      ],
+      [
+        "2026-12-19",
+        "14:00"
+      ]
+    ],
+    "time": null
+  },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/lopera-par-lorchestre": {
-    "fetched_at": "2026-09-17",
-    "lieu": "Salle Molière, Lyon 5e, Théâtre Théo Argence - Saint-Priest",
+    "fetched_at": "2026-10-03",
+    "lieu": "Théâtre Théo Argence - Saint-Priest",
     "seances": [
       [
         "2026-09-18",
@@ -6235,8 +6373,101 @@
     ],
     "time": null
   },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/roberto-fonseca-vincent-segal": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-19",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/stefan-petkovic": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-08",
+        "18:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/une-heure-un-concert-edvard-grieg": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Salle Molière, Lyon 5e",
+    "seances": [
+      [
+        "2027-01-23",
+        "18:00"
+      ],
+      [
+        "2027-01-24",
+        "11:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/une-heure-un-concert-igor-stravinski": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Salle Molière, Lyon 5e",
+    "seances": [
+      [
+        "2026-11-14",
+        "18:00"
+      ],
+      [
+        "2026-11-15",
+        "11:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/une-heure-un-concert-richard-strauss": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Salle Molière, Lyon 5e",
+    "seances": [
+      [
+        "2027-02-27",
+        "18:00"
+      ],
+      [
+        "2027-02-28",
+        "11:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/une-heure-un-concert-serguei-prokofiev": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Salle Molière, Lyon 5e",
+    "seances": [
+      [
+        "2026-10-17",
+        "18:00"
+      ],
+      [
+        "2026-10-18",
+        "11:00"
+      ]
+    ],
+    "time": null
+  },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/wagner-bruckner": {
     "fetched_at": "2026-09-09",
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/alors-on-danse-7": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Grande salle de l'Opéra",
+    "seances": [
+      [
+        "2026-11-11",
+        "17:00"
+      ]
+    ],
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/go-maestro-24": {
@@ -6250,6 +6481,39 @@
     ],
     "time": null
   },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/grand-entretien-15": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2027-03-20",
+        "18:30"
+      ]
+    ],
+    "time": "18:30"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/grand-entretien-16": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2027-03-19",
+        "18:30"
+      ]
+    ],
+    "time": "18:30"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/grand-entretien-17": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-12-14",
+        "18:30"
+      ]
+    ],
+    "time": "18:30"
+  },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/grand-entretien-18": {
     "fetched_at": "2026-09-17",
     "lieu": "Amphi de l'Opéra de Lyon",
@@ -6260,6 +6524,25 @@
       ]
     ],
     "time": "14:30"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/danse/avant-laube": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Maison de la Danse, Lyon 8e",
+    "seances": [
+      [
+        "2027-04-01",
+        "20:30"
+      ],
+      [
+        "2027-04-02",
+        "20:30"
+      ],
+      [
+        "2027-04-03",
+        "20:30"
+      ]
+    ],
+    "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/danse/icones": {
     "fetched_at": "2026-09-09",
@@ -6312,6 +6595,73 @@
     ],
     "time": null
   },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/en-famille/chantez-avec-la-maitrise": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-12-09",
+        "16:30"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/en-famille/le-roi-des-ours-1": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-04",
+        "16:30"
+      ],
+      [
+        "2026-11-07",
+        "15:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/en-famille/les-intemperies-de-sami-1": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2027-03-03",
+        "10:30"
+      ],
+      [
+        "2027-03-03",
+        "16:30"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/en-famille/lhistoire-du-soldat-2": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2027-01-13",
+        "19:00"
+      ],
+      [
+        "2027-01-15",
+        "19:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/abd-al-malik-gibraltar-identites-reconciliees": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2027-02-06",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/adelaide-ferriere": {
     "fetched_at": "2026-09-19",
     "lieu": "Théâtre de La Renaissance - Oullins-Pierre-Bénite",
@@ -6322,6 +6672,84 @@
       ]
     ],
     "time": "19:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/amin-al-aiedy-quartet-qamar": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-12-17",
+        "20:00"
+      ],
+      [
+        "2026-12-18",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/atelier-la-marelle-decouverte-du-gamelan-avec-jean-pierre-goudard": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-10-27",
+        "14:30"
+      ],
+      [
+        "2026-10-28",
+        "09:30"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/atelier-utis-cloches-tubulaires-par-theo-girard": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-11",
+        "10:30"
+      ]
+    ],
+    "time": "10:30"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/ateliers-chorale-maloya-par-romane-deconfin-et-stephane-hoareau": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-11",
+        "14:00"
+      ],
+      [
+        "2026-11-11",
+        "15:30"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/chassol-funny-how": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2027-01-02",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/compagnie-kotekan-tiga": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-10-28",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/concerts-du-cnsmd-40": {
     "fetched_at": "2026-10-03",
@@ -6338,6 +6766,140 @@
     ],
     "time": null
   },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/concerts-du-cnsmd-41": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-18",
+        "18:30"
+      ],
+      [
+        "2026-11-20",
+        "18:30"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/concerts-du-cnsmd-42": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-12-03",
+        "12:30"
+      ],
+      [
+        "2026-12-04",
+        "12:30"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/concerts-du-cnsmd-43": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2027-01-06",
+        "18:30"
+      ],
+      [
+        "2027-01-07",
+        "12:30"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/crimi-meli": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-10-21",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/discobole-orchestra-invite-christine-salem-dj-sets": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-15",
+        "20:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/eloge-du-peuple-savant": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon, Opéra de Lyon",
+    "seances": [],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/fawzy-amin-al-aiedy-yeni-gayda-merve-salgar": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-10-22",
+        "20:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/giovanna-marini-la-voix-des-invisibles": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-10-19",
+        "18:30"
+      ]
+    ],
+    "time": "18:30"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/hotel-particulier-invite-e-s-dans-ta-poche": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-17",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/jodyline-gallavardin-francois-mardirossian": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-12-02",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/le-disque-du-siecle-29": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Médiathèque du Bachut, Lyon 8e",
+    "seances": [
+      [
+        "2026-11-14",
+        "16:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/le-maloya-en-plein-coeur-et-au-dela": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon, Médiathèque du Bachut, Lyon 8e",
+    "seances": [],
+    "time": null
+  },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/leila-martial-elie-dufour-karma-bazar": {
     "fetched_at": "2026-09-17",
     "lieu": "Amphi de l'Opéra de Lyon",
@@ -6352,6 +6914,39 @@
       ]
     ],
     "time": "20:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/les-marquises-malaterre": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-25",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/maria-chivu": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-10-31",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/mini-concert-conference-le-maloya-par-stephane-hoareau-et-romane-deconfin": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-11",
+        "18:30"
+      ]
+    ],
+    "time": "18:30"
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/quatuor-bela": {
     "fetched_at": "2026-09-17",
@@ -6374,6 +6969,50 @@
       ]
     ],
     "time": "19:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/richard-robert-co-empreintes": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-28",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/sam-wilkes-sam-gendel": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Chapelle de la Trinité",
+    "seances": [
+      [
+        "2026-11-18",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/simon-jeffes-et-le-penguin-cafe-orchestra": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-10-29",
+        "18:30"
+      ]
+    ],
+    "time": "18:30"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/souad-massi": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2026-12-22",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/the-very-big-experimental-toubifri-orchestra-le-lac-1": {
     "fetched_at": "2026-10-03",
@@ -6398,8 +7037,85 @@
     ],
     "time": null
   },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/theo-girard-stephane-hoareau-invite-e-s-les-capsules-discobole": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-10",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/transkabar-ritual-riots": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-13",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/transkabar-shamane": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-12",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/un-americain-en-italie-plongee-dans-la-fabuleuse-collection-sonore-dalan-lomax": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-10-21",
+        "12:30"
+      ]
+    ],
+    "time": "12:30"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/chiens": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Les Célestins, Théâtre de Lyon, Lyon 2e",
+    "seances": [
+      [
+        "2027-03-30",
+        "19:30"
+      ],
+      [
+        "2027-03-31",
+        "20:00"
+      ],
+      [
+        "2027-04-01",
+        "19:30"
+      ],
+      [
+        "2027-04-02",
+        "20:00"
+      ],
+      [
+        "2027-04-03",
+        "19:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/festival-donner-de-la-voix": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Théâtre du Point du Jour, Lyon 5e, Opéra de Lyon, Théâtre National Populaire, Villeurbanne, Les Célestins, Théâtre de Lyon, Lyon 2e",
+    "seances": [],
+    "time": null
+  },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/la-fille-de-madame-angot": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Opéra de Lyon",
     "seances": [
       [
@@ -6471,6 +7187,157 @@
       ],
       [
         "2026-10-20",
+        "20:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/le-voyage-dhiver": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Théâtre National Populaire, Villeurbanne",
+    "seances": [
+      [
+        "2027-03-23",
+        "20:00"
+      ],
+      [
+        "2027-03-24",
+        "20:00"
+      ],
+      [
+        "2027-03-26",
+        "20:00"
+      ],
+      [
+        "2027-03-27",
+        "18:30"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/lucrece-borgia": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2027-03-20",
+        "20:00"
+      ],
+      [
+        "2027-03-22",
+        "20:00"
+      ],
+      [
+        "2027-03-24",
+        "20:00"
+      ],
+      [
+        "2027-03-28",
+        "16:00"
+      ],
+      [
+        "2027-03-30",
+        "20:00"
+      ],
+      [
+        "2027-04-03",
+        "20:00"
+      ],
+      [
+        "2027-04-05",
+        "20:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/peer-gynt-2027": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2027-01-24",
+        "16:00"
+      ],
+      [
+        "2027-01-26",
+        "20:00"
+      ],
+      [
+        "2027-01-27",
+        "19:00"
+      ],
+      [
+        "2027-01-29",
+        "20:00"
+      ],
+      [
+        "2027-01-30",
+        "18:00"
+      ],
+      [
+        "2027-01-31",
+        "16:00"
+      ],
+      [
+        "2027-02-03",
+        "19:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/salome": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Opéra de Lyon",
+    "seances": [
+      [
+        "2027-03-19",
+        "20:00"
+      ],
+      [
+        "2027-03-23",
+        "20:00"
+      ],
+      [
+        "2027-03-25",
+        "20:00"
+      ],
+      [
+        "2027-03-27",
+        "20:00"
+      ],
+      [
+        "2027-03-31",
+        "20:00"
+      ],
+      [
+        "2027-04-02",
+        "20:00"
+      ],
+      [
+        "2027-04-04",
+        "16:00"
+      ]
+    ],
+    "time": null
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/zylan-ne-chantera-plus-2027": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Théâtre du Point du Jour, Lyon 5e",
+    "seances": [
+      [
+        "2027-01-26",
+        "20:00"
+      ],
+      [
+        "2027-01-27",
+        "20:00"
+      ],
+      [
+        "2027-01-28",
+        "20:00"
+      ],
+      [
+        "2027-01-29",
         "20:00"
       ]
     ],
