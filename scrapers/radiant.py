@@ -13,6 +13,7 @@ from collections import defaultdict
 from typing import List, Optional
 from datetime import date as Date, timedelta
 import re
+import sys
 import requests
 from bs4 import BeautifulSoup
 
@@ -58,6 +59,17 @@ def _categorie(text: str) -> Optional[str]:
         if kw in text:
             return kw.lower()
     return None
+
+
+def _scolaire(text: str) -> bool:
+    """Une carte « Scolaires » : un spectacle réservé aux classes (BUG-27).
+
+    Ses séances se réservent au tarif « pour les écoles », comme les
+    scolaires que l'Auditorium et le TNG écartent déjà. Une carte qui
+    serait aussi « Famille » garderait ses dates, faute de savoir lesquelles
+    sont publiques : aucune à l'écriture.
+    """
+    return "Scolaires" in text and "Famille" not in text
 
 
 def _french_month_num(s: str) -> Optional[int]:
@@ -152,6 +164,7 @@ def fetch() -> List[Event]:
     raw_stubs: List[dict] = []
     seen_urls: set = set()
     stub_par_url: dict = {}
+    scolaires: List[str] = []
 
     for a in soup.select('a[href*="/spectacles/"]'):
         href = a.get("href", "")
@@ -166,13 +179,24 @@ def fetch() -> List[Event]:
             # « à la une », SANS genre, puis la liste, avec (« Chanson
             # ETIENNE DAHO … »). La première carte gardée, le genre se
             # perdait, et le concert tombait dans la famille « autres ».
+            # C'est aussi la seconde carte qui dit « Scolaires » (BUG-27).
             stub = stub_par_url.get(href)
-            if stub is not None and stub["category"] is None:
-                stub["category"] = _categorie(_find_card(a).get_text(" ", strip=True))
+            texte = _find_card(a).get_text(" ", strip=True)
+            if stub is not None and _scolaire(texte):
+                raw_stubs.remove(stub)
+                del stub_par_url[href]
+                scolaires.append(stub["title"])
+            elif stub is not None and stub["category"] is None:
+                stub["category"] = _categorie(texte)
             continue
 
         card = _find_card(a)
         text = card.get_text(" ", strip=True)
+        if _scolaire(text):
+            seen_urls.add(href)
+            titre = card.find(["h2", "h3"])
+            scolaires.append(titre.get_text(strip=True) if titre else href)
+            continue
 
         date_starts: List[str] = []
         m_triple = DATE_TRIPLE.search(text)
@@ -232,6 +256,9 @@ def fetch() -> List[Event]:
             "url": href, "image": image,
         })
         stub_par_url[href] = raw_stubs[-1]
+
+    if scolaires:
+        print(f"[Radiant] scolaires écartés : {', '.join(scolaires)}", file=sys.stderr)
 
     # Cap horizon: keep only dates within ~6 months and drop stubs with no
     # remaining date BEFORE the detail-page fetch phase — the homepage lists
