@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T10:50:18.252271+00:00",
+  "generated_at": "2026-10-03T11:36:22.594138+00:00",
   "count": 3044,
   "sources": 37,
   "events": [
@@ -560,7 +560,7 @@
       "time": "16:00",
       "url": "https://www.tnp-villeurbanne.com/spectacle/avant-que-les-mots-ne-retournent-a-lair/",
       "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/09/Knam_theatre.jpg",
-      "offsite_venue": null,
+      "offsite_venue": "·ailleurs",
       "id": "adb9e65fb008"
     },
     {
@@ -888,20 +888,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-10-03",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/complexe-comedy-club-540x800.jpg",
-      "offsite_venue": null,
-      "id": "bf9dd5d9baff"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Audrey Perrin dans \"Je ne simule plus\"",
       "subtitle": null,
       "category": "café-théâtre",
@@ -912,6 +898,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/audrey-perrin-540x800.jpg",
       "offsite_venue": null,
       "id": "a294dc09e8d0"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "bf9dd5d9baff"
     },
     {
       "venue": "Les Subsistances",
@@ -1400,7 +1400,7 @@
       "time": "16:00",
       "url": "https://www.tnp-villeurbanne.com/spectacle/avant-que-les-mots-ne-retournent-a-lair/",
       "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/09/Knam_theatre.jpg",
-      "offsite_venue": null,
+      "offsite_venue": "·ailleurs",
       "id": "2121631b9fa5"
     },
     {
@@ -1722,7 +1722,7 @@
       "time": "16:00",
       "url": "https://www.tnp-villeurbanne.com/spectacle/avant-que-les-mots-ne-retournent-a-lair/",
       "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/09/Knam_theatre.jpg",
-      "offsite_venue": null,
+      "offsite_venue": "·ailleurs",
       "id": "0576466aaf66"
     },
     {
@@ -2086,7 +2086,7 @@
       "time": "16:00",
       "url": "https://www.tnp-villeurbanne.com/spectacle/avant-que-les-mots-ne-retournent-a-lair/",
       "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/09/Knam_theatre.jpg",
-      "offsite_venue": null,
+      "offsite_venue": "·ailleurs",
       "id": "76c88bdfdacc"
     },
     {
@@ -2492,7 +2492,7 @@
       "time": "16:00",
       "url": "https://www.tnp-villeurbanne.com/spectacle/avant-que-les-mots-ne-retournent-a-lair/",
       "image": "https://www.tnp-villeurbanne.com/app/uploads/2026/09/Knam_theatre.jpg",
-      "offsite_venue": null,
+      "offsite_venue": "·ailleurs",
       "id": "dde43877bb09"
     },
     {
@@ -3667,7 +3667,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/week-end-musee-brac",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/la-petite-boite-a-gant-2.jpg?h=e488fe84&itok=ebMmtjPT",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-09/dsc04770.jpg?h=3b4e4bcc&itok=53KZEPKH",
       "offsite_venue": null,
       "id": "6634c900faf5"
     },
@@ -3793,7 +3793,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/spectacle-la-petite-boite-gant",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-09/la-petite-boite-a-gant-2.jpg?h=8beaa2b8&itok=lpl4k-lm",
       "offsite_venue": null,
       "id": "5d557eab2389"
     },
@@ -4479,7 +4479,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/week-end-musee-brac",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/la-petite-boite-a-gant-2.jpg?h=e488fe84&itok=ebMmtjPT",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-09/dsc04770.jpg?h=3b4e4bcc&itok=53KZEPKH",
       "offsite_venue": null,
       "id": "a5df3b3b2bd2"
     },
@@ -5445,7 +5445,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/du-regard-au-crayon",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/nos-corps-desirants.jpg?h=bd174762&itok=u6jfYYvB",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=dfc05d6a&itok=A8TdcjFH",
       "offsite_venue": null,
       "id": "7d4336142937"
     },
@@ -5994,6 +5994,20 @@
       "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/68bfdcdd/concerts_cnsmd_c_hugosainterose_bi_oct_dec26_1160x1472px.jpg",
       "offsite_venue": null,
       "id": "cad964e3f70c"
+    },
+    {
+      "venue": "Musée des Beaux-Arts",
+      "venue_slug": "musee-des-beaux-arts",
+      "title": "Conférence-débat des grands témoins du Congrès FRAME 2026",
+      "subtitle": null,
+      "category": "conférence",
+      "date_start": "2026-10-15",
+      "date_end": null,
+      "time": "15:00",
+      "url": "https://www.mba-lyon.fr/fr/fiche-programmation/conference-debat-des-grands-temoins-du-congres-frame-2026",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-09/biennale-2026-jardin.jpg?h=31f11d32&itok=NP51p9Ue",
+      "offsite_venue": null,
+      "id": "534d516a2d1b"
     },
     {
       "venue": "HEAT",
@@ -6593,7 +6607,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/carte-blanche-elise-chatauret-autrice-et-metteuse-en-scene",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-07/nos-corps-desirants.jpg?h=2e36a1a0&itok=cjOfq52L",
       "offsite_venue": null,
       "id": "60860cfa107d"
     },
@@ -6610,20 +6624,6 @@
       "image": "https://www.croix-rousse.com/wp-content/uploads/2026/05/Visite-Musée-des-Beaux-Arts-1.png",
       "offsite_venue": null,
       "id": "9eb866a484bf"
-    },
-    {
-      "venue": "Musée des Beaux-Arts",
-      "venue_slug": "musee-des-beaux-arts",
-      "title": "Conférence-débat des grands témoins du Congrès FRAME 2026",
-      "subtitle": null,
-      "category": "conférence",
-      "date_start": "2026-10-16",
-      "date_end": null,
-      "time": "15:00",
-      "url": "https://www.mba-lyon.fr/fr/fiche-programmation/conference-debat-des-grands-temoins-du-congres-frame-2026",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/content/medias/images/2020-02/delacroix_femme_caressant_perroquet.jpg?h=955c600a&itok=tav5tzXs",
-      "offsite_venue": null,
-      "id": "a12c79b5ed01"
     },
     {
       "venue": "Bieristan",
@@ -7951,7 +7951,7 @@
       "date_end": null,
       "time": "14:00",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/erasmuseum-les-etudiants-internationaux-vous-accueillent-au-musee",
-      "image": null,
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-10/etudiants-musee.jpg?h=56395051&itok=zxXIWHUM",
       "offsite_venue": null,
       "id": "dd977f3838d4"
     },
@@ -12249,7 +12249,7 @@
       "date_end": null,
       "time": "11:00",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/carte-blanche-dalila-belaza-choregraphe",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-08/carte_blanche_dalila_belaza_cpierre-gondard_-16-2.jpg?h=06de3612&itok=VrTYEqNu",
       "offsite_venue": null,
       "id": "cb611e480d3c"
     },
@@ -13103,7 +13103,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/ingres-par-lui-meme",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/content/medias/images/2020-02/ingres_aretin_sans_crop.jpg?h=63327d95&itok=ql8AXiiq",
       "offsite_venue": null,
       "id": "90d418017a7d"
     },
@@ -17401,7 +17401,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/une-petite-decouverte-du-dessin",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-07/une-petite-decouverte-du-dessin.jpg?h=3d5ce0ed&itok=LmYA_X-I",
       "offsite_venue": null,
       "id": "815cff821464"
     },
@@ -18073,7 +18073,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/rendez-vous-avec-lune-des-commissaires-de-lexposition-musee-sentimental",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-09/sylvie-ramond-musee-sentimental.jpg?h=b3999d69&itok=Q8NQRQyO",
       "offsite_venue": null,
       "id": "317ec53aa2bd"
     },
@@ -18115,7 +18115,7 @@
       "date_end": null,
       "time": "18:45",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/nocturne-la-lampe-de-poche",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2025-02/barocbal.jpg?h=33503f50&itok=ePI_Dp0K",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-09/visiteurs-boltanski_0.jpg?h=78826720&itok=9mjd-icC",
       "offsite_venue": null,
       "id": "966f8486b107"
     },
@@ -18549,7 +18549,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/le-musee-fait-son-cinema-petites-pepites-et-grands-tresors",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-06/mur_breton_0.jpg?h=8bc8744f&itok=50XoIcKE",
       "offsite_venue": null,
       "id": "626a23aee86a"
     },
@@ -20411,7 +20411,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/le-musee-recopie",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-07/musee-recopie.jpg?h=f97b7a5f&itok=ygB_O-Ww",
       "offsite_venue": null,
       "id": "38db8490894e"
     },
@@ -20943,7 +20943,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/le-musee-recopie",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-07/musee-recopie.jpg?h=f97b7a5f&itok=ygB_O-Ww",
       "offsite_venue": null,
       "id": "ce7827f705a0"
     },
@@ -21405,7 +21405,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/breton-fait-lmur",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-09/visiteurs-devant-le-mur-breton-2.jpg?h=43e064ce&itok=JCqtRXL1",
       "offsite_venue": null,
       "id": "19d91caa0fc8"
     },
@@ -22007,7 +22007,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/art-et-sciences-volcans-et-terres-lyonnaises",
-      "image": null,
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/content/medias/images/2021-05/015-paul_flandrin_vallee_pres_de_lacoux.jpg?h=d4cd2f6b&itok=8231hpH4",
       "offsite_venue": null,
       "id": "901f11738a4b"
     },
@@ -22035,7 +22035,7 @@
       "date_end": null,
       "time": "14:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/art-et-sciences-volcans-et-terres-lyonnaises",
-      "image": null,
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/content/medias/images/2021-05/015-paul_flandrin_vallee_pres_de_lacoux.jpg?h=d4cd2f6b&itok=8231hpH4",
       "offsite_venue": null,
       "id": "03d3a3d23925"
     },
@@ -22168,20 +22168,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-04",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/sarah-lele-540x800.jpg",
-      "offsite_venue": null,
-      "id": "5b3b078c675b"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "Guillaume Sentou \"Un mec cool\"",
       "subtitle": null,
       "category": "café-théâtre",
@@ -22192,6 +22178,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/guillaume-sentou-540x800.jpg",
       "offsite_venue": null,
       "id": "cebdb9ac5785"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/la-mauvaise-education-de-sarah-lele/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/sarah-lele-540x800.jpg",
+      "offsite_venue": null,
+      "id": "5b3b078c675b"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -22329,7 +22329,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/week-end-accessibilite",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-07/sac-museocalme.jpg?h=caa6cffa&itok=dyl2kAqK",
       "offsite_venue": null,
       "id": "b50b1c4763ab"
     },
@@ -22791,7 +22791,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/week-end-accessibilite",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-07/sac-museocalme.jpg?h=caa6cffa&itok=dyl2kAqK",
       "offsite_venue": null,
       "id": "dcee446bafa2"
     },
@@ -23911,7 +23911,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/festin-un-week-end-pour-tous-les-gouts",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-09/visiteurs-devant-une-oeuvre-de-spoerri-2.jpg?h=98a7e3e2&itok=2v-W5XMg",
       "offsite_venue": null,
       "id": "a6e13a665dee"
     },
@@ -23939,7 +23939,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/le-musee-fait-son-cinema-table",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/content/medias/images/2020-02/jouvenet_repas.jpg?h=e6fc277c&itok=E17ZWblS",
       "offsite_venue": null,
       "id": "27db520c4969"
     },
@@ -24387,7 +24387,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/festin-un-week-end-pour-tous-les-gouts",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-09/visiteurs-devant-une-oeuvre-de-spoerri-2.jpg?h=98a7e3e2&itok=2v-W5XMg",
       "offsite_venue": null,
       "id": "f9511fb8afd0"
     },
@@ -24793,7 +24793,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/breton-fait-lmur",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-09/visiteurs-devant-le-mur-breton-2.jpg?h=43e064ce&itok=JCqtRXL1",
       "offsite_venue": null,
       "id": "41bfef3d53b7"
     },
@@ -27831,7 +27831,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/une-icone-moderne-le-portrait-de-la-princesse-cantacuzene-par-pierre-puvis-de",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-07/cantacuzene.jpg?h=d83465b5&itok=xMfoTQVW",
       "offsite_venue": null,
       "id": "32acea74925e"
     },
@@ -28013,7 +28013,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/colloque-la-revolution-de-la-couleur-de-delacroix-aux-freres-lumiere",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/content/medias/images/2020-02/architecture_rome.jpg?h=b005a5b4&itok=B2Frn4FO",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/content/medias/images/2020-02/delacroix_femme_caressant_perroquet.jpg?h=10e40b76&itok=GhfipWj7",
       "offsite_venue": null,
       "id": "843030582c85"
     },
@@ -28209,7 +28209,7 @@
       "date_end": null,
       "time": "18:45",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/nocturne-le-bal-du-musee",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/visiteurs-boltanski_0.jpg?h=bd174762&itok=gien0nOQ",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2025-02/barocbal.jpg?h=3385daa7&itok=IkDmoOUC",
       "offsite_venue": null,
       "id": "44ea622d920a"
     },
@@ -29539,7 +29539,7 @@
       "date_end": null,
       "time": "15:00",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/le-musee-fait-son-cinema-amours",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2023-05/amours_dailleurs_hcl_-_29-06-23.jpg?h=a4a0004b&itok=s_ECFjWe",
       "offsite_venue": null,
       "id": "201c7ee1f71e"
     },
@@ -30001,7 +30001,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/lartiste-furieux-lautoportrait-nu-de-jean-baptiste-frenet",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/content/medias/images/2020-01/frenet_autoportrait_nu.jpg?h=da07bdf4&itok=5xTQnqQD",
       "offsite_venue": null,
       "id": "3cfa19333962"
     },
@@ -30421,7 +30421,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/rendez-vous-avec-une-designeuse-circulaire",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-06/mur_breton_0.jpg?h=8bc8744f&itok=50XoIcKE",
       "offsite_venue": null,
       "id": "8d291b781799"
     },
@@ -32017,7 +32017,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/week-end-chante",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-06/mur_breton_0.jpg?h=8bc8744f&itok=50XoIcKE",
       "offsite_venue": null,
       "id": "725af8b0d03d"
     },
@@ -32339,7 +32339,7 @@
       "date_end": null,
       "time": "10:00",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/week-end-chante",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-06/mur_breton_0.jpg?h=8bc8744f&itok=50XoIcKE",
       "offsite_venue": null,
       "id": "7932eca0e0b2"
     },
@@ -32633,7 +32633,7 @@
       "date_end": null,
       "time": "12:30",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/passe-compose-autour-du-musee-des-monuments-francais-dalexandre-lenoir",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-07/monuments-francais-dalexandre-lenoir.jpg?h=75d13161&itok=8w8rYuRf",
       "offsite_venue": null,
       "id": "c3a2812c6827"
     },
@@ -33375,7 +33375,7 @@
       "date_end": null,
       "time": "14:00",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/journee-des-collectionneurs",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-09/portrait-sylvie-selig.jpg?h=f50cf033&itok=FcWnn0kL",
       "offsite_venue": null,
       "id": "8484ab57557c"
     },
@@ -34663,7 +34663,7 @@
       "date_end": null,
       "time": "11:00",
       "url": "https://www.mba-lyon.fr/fr/fiche-programmation/carte-blanche-jean-francois-sivadier",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
+      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-07/tout-est-calme-dans-les-hauteurs.jpg?h=9f27fa25&itok=J7K61Uus",
       "offsite_venue": null,
       "id": "c755f0edb5c8"
     },
@@ -42620,10 +42620,6 @@
       "id": "28db94d2c949"
     }
   ],
-  "reprises": {
-    "Le Petit Salon": "2026-10-03",
-    "Le Complexe café-théâtre": "2026-10-03"
-  },
   "lieux_des_collecteurs": {
     "Le Sucre": [
       "Le Sucre"
