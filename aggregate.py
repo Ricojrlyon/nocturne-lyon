@@ -110,6 +110,7 @@ SCRAPERS: list[tuple[str, Callable[[], List[Event]]]] = [
 # qui la documente ; cette table ne fait que la désigner.
 FILTRES_DE_SALLE: dict[str, Callable[[str], bool]] = {
     "IAC Villeurbanne": iac.exclu,
+    "Marché Gare": marche_gare.exclu,
 }
 
 # Aggregators — priority lower than venue scrapers (lose against them on
