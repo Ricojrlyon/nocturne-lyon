@@ -489,9 +489,21 @@ def fetch() -> List[Event]:
     today_iso, horizon_iso = Date.today().isoformat(), horizon.isoformat()
     sans_seance: List[str] = []
     dehors: List[str] = []
+    cycles: List[str] = []
     for stub in all_stubs:
         fiche = detail_cache.get_details(stub["url"], _lire_fiche,
                                          fields=("seances", "lieu", "time"))
+        seances = fiche.get("seances")
+        # Une fiche LUE sans aucune représentation ([] ; None dit une fiche
+        # jamais lue), sur une plage de plusieurs jours : c'est un cycle,
+        # pas un spectacle. « Eloge du peuple savant » réunit concerts,
+        # conférences et ateliers du 19 au 31 octobre, « Festival Donner de
+        # la voix » soixante-dix jours de collaborations, et chacun de leurs
+        # rendez-vous a sa propre fiche, déjà lue. La plage, elle, peindrait
+        # chacun de ses jours d'une carte où rien ne se joue (BUG-30).
+        if seances == [] and stub["d_end"] and stub["d_end"] != stub["d_start"]:
+            cycles.append(stub["title"])
+            continue
         commun = dict(
             venue=VENUE,
             venue_slug=SLUG,
@@ -504,7 +516,6 @@ def fetch() -> List[Event]:
         )
         if commun["offsite_venue"]:
             dehors.append("%s → %s" % (stub["title"], commun["offsite_venue"]))
-        seances = fiche.get("seances") or []
         if seances:
             for jour_iso, heure in seances:
                 if not (today_iso <= jour_iso <= horizon_iso):
@@ -523,6 +534,9 @@ def fetch() -> List[Event]:
             **commun,
         ))
 
+    if cycles:
+        print("[Opéra] cycles écartés, une plage sans représentation : %s"
+              % ", ".join(cycles), file=sys.stderr)
     if sans_seance:
         print("[Opéra] sans représentation annoncée, repli sur la plage du "
               "listing : %s" % ", ".join(sans_seance), file=sys.stderr)

@@ -106,6 +106,32 @@ class Pages(unittest.TestCase):
                       avant={SAISON + "?page=2": [(500, b"panne", {})]})
 
 
+class Cycles(unittest.TestCase):
+    """Une fiche lue sans aucune représentation, sur une plage de plusieurs
+    jours : un cycle, dont chaque rendez-vous a sa propre fiche (BUG-30)."""
+
+    def test_un_cycle_n_est_pas_publie(self):
+        page = (carte_lien("opera-underground/eloge", "Eloge du peuple savant",
+                           "19 oct. - 31 oct. 2026")
+                + carte_lien("concert/beck", "Arielle Beck", "15 oct. 2026")
+                + carte_lien("danse/sacre", "Le Sacre du printemps - House",
+                             "3 nov. - 14 nov. 2026"))
+        # [] : fiche lue, sans représentation. Une fiche jamais lue n'a
+        # rien (None) : elle garde la plage du listing.
+        fiches = {"eloge": {"seances": []}, "beck": {"seances": []}, "sacre": {}}
+        site = FauxSite({SAISON: "<html><body>%s</body></html>" % page})
+        with mock.patch.object(opera_lyon, "Date", date_figee(date(2026, 10, 1))), \
+                mock.patch("requests.request", site.request), \
+                mock.patch.object(opera_lyon.detail_cache, "get_details",
+                                  lambda url, lire, fields=(): fiches[url.rsplit("/", 1)[-1]]), \
+                contextlib.redirect_stderr(io.StringIO()) as journal:
+            lu = {e.title: (e.date_start, e.date_end) for e in opera_lyon.fetch()}
+        self.assertEqual(lu, {"Arielle Beck": ("2026-10-15", None),
+                              "Le Sacre du printemps - House": ("2026-11-03", "2026-11-14")})
+        self.assertIn("cycles écartés, une plage sans représentation : Eloge du peuple savant",
+                      journal.getvalue())
+
+
 class HorsLesMurs(unittest.TestCase):
     """La salle réelle, lue dans le champ Lieu de la fiche."""
 
