@@ -2059,7 +2059,9 @@ const TYPE_BUCKETS = [
   { key: 'atelier',     label: 'atelier',     match: /atelier|workshop|stage\s+de|masterclass|formation/i },
   // Generic music catch-all (for events tagged just "concert" or "musique"
   // without specifying a subgenre). Comes AFTER the specific genres.
-  { key: 'musique',     label: 'musique',     match: /musique|concert|\bsoul\b|\bfunk\b|\bdisco\b/i },
+  // « groove » : le seul genre d'un concert du Marché Gare (BUG-31), qui
+  // tombait sinon dans « autres ».
+  { key: 'musique',     label: 'musique',     match: /musique|concert|\bsoul\b|\bfunk\b|\bdisco\b|\bgroove\b/i },
   // Le sport. Placé avant le bloc non-musical parce que 'conference'
   // revendique « rencontre », qui est le mot français pour un match :
   // sans cette priorité, une « rencontre de basket » deviendrait une

@@ -13,8 +13,13 @@ catégorie, les mentions utiles passent au sous-titre. Une soirée « Hors les
 murs » a lieu ailleurs (« > à Bizarre! Vénissieux ») et une « Formation »
 est un stage pour musiciens, pas une sortie : les deux sont écartées, comme
 ailleurs dans le fil.
+
+L'agenda ne montre d'abord que 25 dates ; son lien « Afficher plus »
+(?page=1) rend la suite, AVEC les 25 premières. Lue seule, la première page
+arrêtait la salle à fin novembre et perdait 19 concerts (BUG-31).
 """
 from typing import List
+from urllib.parse import urljoin
 import re
 import sys
 import unicodedata
@@ -58,18 +63,42 @@ def exclu(titre: str) -> bool:
     return _cle(titre) in _ECARTES
 
 
+# Garde-fou : deux pages aujourd'hui.
+PAGES_MAX = 10
+
+
+def _pages() -> List[BeautifulSoup]:
+    """Les pages de l'agenda, en suivant « Afficher plus » (BUG-31).
+
+    Une page suivante qui échoue fait échouer la collecte : le garde-fou
+    reprend alors la veille ENTIÈRE, plutôt que de publier en silence la
+    première page seule.
+    """
+    pages: List[BeautifulSoup] = []
+    url, lues = URL, set()
+    while url not in lues and len(pages) < PAGES_MAX:
+        lues.add(url)
+        resp = base_get(url, timeout=20, headers=HEADERS)
+        resp.raise_for_status()
+        pages.append(BeautifulSoup(resp.text, "html.parser"))
+        suite = pages[-1].select_one('[class*="pager"] a[href*="page="]')
+        if suite is None:
+            break
+        url = urljoin(URL, suite["href"])
+    return pages
+
+
 def fetch() -> List[Event]:
     _ECARTES.clear()
-    resp = base_get(URL, timeout=20, headers=HEADERS)
-    resp.raise_for_status()
-    soup = BeautifulSoup(resp.text, "html.parser")
+    pages = _pages()
 
     events: List[Event] = []
     seen = set()
     hors_les_murs: List[str] = []
     formations = 0
 
-    for a in soup.select('a[href*="/agenda/"]'):
+    # Chaque page reprend les cartes des précédentes : `seen` les écarte.
+    for a in (a for soup in pages for a in soup.select('a[href*="/agenda/"]')):
         href = a.get("href", "")
         if not href or href.endswith("/agenda") or href.endswith("/agenda/"):
             continue

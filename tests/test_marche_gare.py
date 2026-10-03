@@ -7,6 +7,8 @@ import unittest
 from datetime import date
 from unittest import mock
 
+import requests
+
 import aggregate
 from scrapers import marche_gare
 from tests.outils import FauxSite, evenement
@@ -89,6 +91,43 @@ class Cartes(unittest.TestCase):
         with contextlib.redirect_stdout(io.StringIO()):
             garde = aggregate._appliquer_les_regles_des_salles(pb)
         self.assertEqual([e.title for e, _ in garde], ["Teenage Fanclub"])
+
+
+class Pages(unittest.TestCase):
+    """L'agenda ne montre que 25 dates ; « Afficher plus » (?page=1) rend la
+    suite, AVEC les premières (BUG-31)."""
+
+    PREMIERE = carte("teenage", "19", "octobre", "20:00", "TEENAGE FANCLUB", genres=["Indie Rock"])
+    SUITE = carte("mono", "04", "février", "20:00", "MONO", genres=["Post-Rock"])
+    PLUS = '<div class="pager"><a href="?page=1">Afficher plus</a></div>'
+
+    def lire(self, pages):
+        self.addCleanup(marche_gare._ECARTES.clear)
+        site = FauxSite(pages)
+        with mock.patch("requests.request", site.request), \
+                contextlib.redirect_stderr(io.StringIO()):
+            titres = sorted(e.title for e in marche_gare.fetch())
+        return titres, site.appels
+
+    def test_la_suite_de_l_agenda_est_lue(self):
+        titres, appels = self.lire({
+            marche_gare.URL: "<html><body>%s%s</body></html>" % (self.PREMIERE, self.PLUS),
+            marche_gare.URL + "?page=1": "<html><body>%s%s</body></html>" % (self.PREMIERE,
+                                                                               self.SUITE)})
+        self.assertEqual(titres, ["MONO", "TEENAGE FANCLUB"])
+        self.assertEqual(appels, [marche_gare.URL, marche_gare.URL + "?page=1"])
+
+    def test_sans_lien_une_seule_page(self):
+        titres, appels = self.lire({marche_gare.URL: "<html><body>%s</body></html>"
+                                    % self.PREMIERE})
+        self.assertEqual((titres, appels), (["TEENAGE FANCLUB"], [marche_gare.URL]))
+
+    def test_une_suite_en_panne_fait_echouer_la_collecte(self):
+        # Mieux vaut la veille entière, reprise par le garde-fou, que la
+        # première page seule, publiée sans un mot.
+        with self.assertRaises(requests.HTTPError):
+            self.lire({marche_gare.URL: "<html><body>%s%s</body></html>"
+                       % (self.PREMIERE, self.PLUS)})
 
 
 if __name__ == "__main__":
