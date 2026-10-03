@@ -36,18 +36,31 @@ def fiche(mois, seances, ecole=""):
 
 class SeancesToutPublic(unittest.TestCase):
 
-    def lire(self, cartes, fiches, jour=date(2026, 10, 1)):
+    def lire(self, cartes, fiches, jour=date(2026, 10, 1), champs=None):
         """fetch() complet, au 1er octobre 2026 : [(date, fin, heure, titre)]."""
         pages = {tng.URL: "<html><body>%s</body></html>" % "".join(cartes)}
         pages.update({FICHE % slug: html for slug, html in fiches.items()})
         site = FauxSite(pages)
+        champs = champs or (lambda e: (e.date_start, e.date_end, e.time, e.title))
         # Le journal du collecteur (son DIAGNOSTIC quand il ne rend rien) ne
         # doit pas se mêler à celui du passage.
         with mock.patch.object(tng, "Date", date_figee(jour)), \
                 mock.patch.object(tng.time, "sleep", lambda s: None), \
                 mock.patch("requests.request", site.request), \
                 contextlib.redirect_stderr(io.StringIO()):
-            return [(e.date_start, e.date_end, e.time, e.title) for e in tng.fetch()]
+            return [champs(e) for e in tng.fetch()]
+
+    def test_un_extrait_coupe_par_le_site_sans_le_losange(self):
+        # BUG-35 : le site coupe l'extrait au milieu de l'apostrophe de
+        # « Pop’Corn », et sa page porte déjà le caractère de remplacement.
+        extrait = "Découverte des spectacles, ateliers créatifs, Pop\ufffd…"
+        cartes = ['<a href="/evenement/popcorn/"><div class="dates"><span>20</span>'
+                  '<span>nov.</span></div><h3>RDV Pop’Corn – Bazar Circus</h3>'
+                  '<p>TNG-Vaise</p><p>%s</p></a>' % extrait]
+        lu = self.lire(cartes, {"popcorn": fiche("novembre", [("ven 20", ["19:00"])])},
+                       champs=lambda e: (e.date_start, e.time, e.subtitle))
+        self.assertEqual(lu, [("2026-11-20", "19:00",
+                               "Découverte des spectacles, ateliers créatifs, Pop…")])
 
     def test_une_date_par_seance_tout_public_sans_les_scolaires(self):
         # « Boule de neige », 2 > 6 octobre : publié jusqu'ici au 6, jour

@@ -215,7 +215,12 @@ def fetch() -> List[Event]:
                 continue
             if len(tn) < 3 or len(tn) > 250:
                 continue
-            subtitle = tn
+            # Le site coupe ses extraits à l'octet, parfois au milieu d'un
+            # caractère : « ateliers créatifs, Pop » suivi du losange de
+            # remplacement (U+FFFD), l'apostrophe de Pop’Corn tranchée en
+            # deux. Le losange est déjà dans sa page ; on le retire plutôt
+            # que de le publier (BUG-35).
+            subtitle = tn.replace("\ufffd", "")
             break
 
         image = img_src(a.find("img"), host=HOST)
