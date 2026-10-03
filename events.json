@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-03T10:36:32.490200+00:00",
-  "count": 3047,
+  "generated_at": "2026-10-03T10:50:18.252271+00:00",
+  "count": 3044,
   "sources": 37,
   "events": [
     {
@@ -8138,20 +8138,6 @@
       "id": "e79e1d7eef84"
     },
     {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-lyon",
-      "title": "Eloge du peuple savant",
-      "subtitle": "Concerts, conférences, projection, ateliers",
-      "category": "concert",
-      "date_start": "2026-10-19",
-      "date_end": "2026-10-31",
-      "time": null,
-      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/eloge-du-peuple-savant",
-      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_10_29_eloge_simonjeffes_bi_1160x1472.jpg",
-      "offsite_venue": null,
-      "id": "c26f6a6f6d05"
-    },
-    {
       "venue": "Au Rikiki",
       "venue_slug": "au-rikiki",
       "title": "Le chant des lucioles",
@@ -14898,20 +14884,6 @@
       "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/09/IMG_20260422_111346_edit_876058255555131-650x437.jpg",
       "offsite_venue": null,
       "id": "aabb34f93fee"
-    },
-    {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-lyon",
-      "title": "Le maloya, en plein cœur et au-delà",
-      "subtitle": "Une semaine avec la Compagnie Discobole",
-      "category": "concert",
-      "date_start": "2026-11-10",
-      "date_end": "2026-11-15",
-      "time": null,
-      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/le-maloya-en-plein-coeur-et-au-dela",
-      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/eb9085b2/2026_11_13_maloya_ritual_riots2_c_cecile_rogue_bi_1160x1472.jpg",
-      "offsite_venue": null,
-      "id": "9c8c3e992ada"
     },
     {
       "venue": "La Rayonne",
@@ -31098,20 +31070,6 @@
       "id": "e651e80ba7d3"
     },
     {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-lyon",
-      "title": "Festival Donner de la voix",
-      "subtitle": "",
-      "category": "opéra",
-      "date_start": "2027-01-26",
-      "date_end": "2027-04-05",
-      "time": null,
-      "url": "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/festival-donner-de-la-voix",
-      "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/6bb8fb94/principal_festival_2280x1926.jpg",
-      "offsite_venue": "·ailleurs",
-      "id": "97639bb548e4"
-    },
-    {
       "venue": "TNP - Théâtre National Populaire",
       "venue_slug": "tnp",
       "title": "Mobile Homes",
@@ -42663,6 +42621,7 @@
     }
   ],
   "reprises": {
+    "Le Petit Salon": "2026-10-03",
     "Le Complexe café-théâtre": "2026-10-03"
   },
   "lieux_des_collecteurs": {
