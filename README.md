@@ -86,7 +86,10 @@ publication du second.
   fragile de régénérer. Le gain est net : le Petit Bulletin publiait
   « La Machine de Turing » comme une plage de 53 jours, relâches
   comprises ; le scraper en rend les 29 vraies dates, dont celle à 19h
-  au lieu de 20h.
+  au lieu de 20h. L'heure vient du résumé de la carte, à défaut de la
+  fiche, qui donne aussi l'horaire d'un jour particulier : « Le 09/10 à
+  19h », ou une date en toutes lettres, « Jeudi 11 mars 2027 à 21h » —
+  sans quoi « Jovany » se jouait ses deux soirs à l'heure du premier.
 - **`scrapers/confluences.py`** — le Musée des Confluences, seul site
   du dépôt à exposer une JSON:API Drupal. Deux taxonomies y donnent
   gratuitement ce qu'il faut deviner ailleurs : `field_activites` porte
@@ -113,6 +116,10 @@ publication du second.
   treize titres portaient des entités qui se seraient affichées telles
   quelles ; et la taxonomie nommée `genre` contient en réalité les noms
   d'ARTISTES, ce sont les termes `event_type` qui portent les genres.
+  Certains n'y sont que des précisions — « heroic fantasy »,
+  « bruitages », « radio » — qui cèdent la place au genre que le
+  spectacle porte aussi, « théâtre » ou « cabaret » ; seule, une
+  précision reste la catégorie.
   Un lien de billetterie par séance permet de distinguer « 14h30 19h30 »
   — deux séances — de « 17h > 17h50 », une seule avec son heure de fin.
 - **`scrapers/iac.py`** — l'IAC de Villeurbanne. Site artisanal de 2013
@@ -154,8 +161,11 @@ publication du second.
   c'est ce qui rend `detail_cache` indispensable : le délai est posé DANS
   le fetcher, donc il ne frappe que les fiches réellement téléchargées —
   216 s au premier passage, 11 s aux suivants. Trois pièges y ont coûté
-  des spectacles entiers, tous silencieux : les séries à cheval sur deux
-  mois portent un titre « NOVEMBRE - DÉCEMBRE » et non un mois unique ;
+  des spectacles entiers, tous silencieux : une série porte le titre de
+  sa période, « NOVEMBRE - DÉCEMBRE », qui peut couvrir trois mois ou
+  plus (« SEPTEMBRE - NOVEMBRE ») et se déplie mois par mois — quand la
+  série saute un mois, le nom du jour, confronté à l'année de la saison
+  écrite dans l'adresse, désigne le bon ;
   un quantième qui se répète un mois plus tard (mercredi 28 octobre puis
   samedi 28 novembre) ne recule pas, seul le nom du jour distingue ce cas
   d'une double séance ; et une fiche sans bloc « Lieu » n'est pas un
@@ -226,6 +236,35 @@ publication du second.
   veille. Il ne redemande plus : sur les refus d'octobre 2026, deux
   nouveaux essais dans le même passage n'en ont rattrapé aucun, et
   coûtaient trois minutes.
+- **`scrapers/halle_tony_garnier.py`** — la Halle Tony Garnier. La
+  catégorie suit le type que la salle donne à chaque date dans la classe
+  de sa carte — concert, spectacle, salon, ciné-concert. Tout était
+  « concert » : les humoristes et les spectacles sur glace manquaient à
+  la scène, et la musique affichait le Salon des vignerons. Le type
+  « évènement » ne dit rien du genre — ce sont les séances du Festival
+  Lumière — et laisse la catégorie vide, à compléter.
+- **`scrapers/marche_gare.py`** — le Marché Gare. La carte d'agenda
+  range à part les mentions (« Gratuit », « Épuisé sur ce point de
+  vente », « Hors les murs », « Annulé »), les genres, le titre et le
+  sous-titre ; lue d'un bloc, elle donnait « Épuisé sur ce point de vente
+  Post-Metal HYPNO5E + HIPPOTRAKTOR ». Le titre est celui de la carte ;
+  les genres font la catégorie, tous ensemble — « Groove » seul ne se
+  range dans aucune famille, « Groove / Jazz » dans le jazz ; les
+  mentions utiles passent au sous-titre, et « Annulé » reste en tête du
+  titre, où le filtre des annulés le lit. Les soirées « Hors les murs »
+  et les formations professionnelles sont écartées, et les agrégateurs
+  ne peuvent pas les republier sur ce lieu : le Petit Bulletin
+  annonçait Ivanoé « au Marché Gare », quand la salle le donne à la MJC
+  du Vieux-Lyon.
+- **`scrapers/radiant.py`** — le Radiant-Bellevue, à Caluire. La page
+  d'accueil porte la saison entière, et un spectacle y paraît parfois
+  deux fois : d'abord sans genre dans le bandeau « à la une », puis dans
+  la liste, où genre et classement « Scolaires » sont lus. Les dates
+  viennent de la carte, l'heure de la fiche, qui liste chaque séance avec
+  la sienne : une heure pour toutes publiait les matinées du dimanche à
+  l'heure du soir. Les séances du matin restent écartées, et un spectacle
+  « Scolaires » — séances en semaine, tarif « pour les écoles » — n'est
+  pas publié.
 - **`scrapers/aggregators/`** — sources multi-lieux : Petit Bulletin et
   Ville Morte (API Gancio). Priorité inférieure aux scrapers venue : en cas
   de doublon, le scraper de la salle gagne l'identité et hérite des champs
@@ -266,7 +305,7 @@ publication du second.
   catégorie de source. Le TITRE d'abord — ces salles y annoncent le genre
   en clair (« Projection Ciné-Club », « [Punk Rock] », « comedy club ») —
   puis un défaut de LIEU, réservé aux salles réellement mono-genre : à
-  Marché Gare les événements sans catégorie comprennent une projection et
+  Marché Gare les événements sans catégorie comprenaient une projection et
   deux formations, au Bieristan des quiz. Ce qui ne se déduit pas reste
   vide, « LP » ou « Face B » ne disant rien. Attention : les étiquettes
   produites doivent être reconnues par `TYPE_BUCKETS` (index.html),
@@ -288,7 +327,9 @@ publication du second.
     garde ses événements de la veille, sept jours au plus (journal
     `reprises` dans `events.json`). Une petite salle, sous dix
     événements, n'est reprise que si son collecteur échoue — erreur,
-    page introuvable —, pas quand elle a simplement moins de dates. Pour
+    page introuvable — ou ne rend plus rien alors qu'elle annonçait la
+    veille des dates encore à venir ; pas quand elle a simplement moins
+    de dates. Pour
     savoir quels lieux reprendre, le fil garde ceux que chaque collecteur
     a rendus (`lieux_des_collecteurs`) : le handball, par exemple, joue
     dans deux gymnases. Une salle reprise écarte aussi les plages
@@ -337,7 +378,8 @@ python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
 - **La logique**, en une minute et demie environ et sans réseau : la
   lecture des dates en français, le dédoublonnage règle par règle, les
   nouveaux essais réseau, la vérification anti-robot du Complexe, les
-  annulés, les garde-fous d'`aggregate.py` — et deux RÉFÉRENCES figées.
+  annulés, l'heure de chaque séance, les catégories, les garde-fous
+  d'`aggregate.py` — et deux RÉFÉRENCES figées.
   La chaîne de publication entière est rejouée sur une collecte réelle
   (celle du 1er octobre 2026, dans `tests/donnees/`) et doit rendre le
   même fil au caractère près ; la page est jouée dans un navigateur sans
@@ -494,8 +536,17 @@ motif.
   événements du jour, et la plage « Un grand cri d'amour » du Petit
   Bulletin, du 2 octobre au 28 décembre, s'affichait alors tous les soirs
   pour un spectacle du lundi.
-- **La Rayonne** : ses formations et ateliers professionnels sont écartés
-  — c'est une programmation parallèle, pas un choix éditorial.
+- **La Rayonne et le Marché Gare** : leurs formations et ateliers
+  professionnels sont écartés — c'est une programmation parallèle, pas
+  un choix éditorial.
+- **Séances scolaires** : écartées, étant réservées aux classes — à
+  l'Auditorium, au TNG, et au Radiant pour les spectacles qu'il classe
+  « Scolaires ».
+- **Ce qu'une salle écarte vaut sur son lieu pour les agrégateurs**
+  (`FILTRES_DE_SALLE`, aggregate.py) : les visites de l'IAC, les soirées
+  hors les murs et les formations du Marché Gare. Sans cela, le Petit
+  Bulletin republiait ce que la salle venait d'écarter — neuf visites de
+  l'IAC, et Ivanoé « au Marché Gare ».
 
 ## Données générées (committées par le bot)
 
