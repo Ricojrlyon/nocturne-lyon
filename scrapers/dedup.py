@@ -51,8 +51,11 @@ VENUE_CANONICAL: dict[str, list[str]] = {
     "La Commune":             ["commune"],
     "Marché Gare":            ["marche gare"],
     "Radiant-Bellevue":       ["radiant", "radiant bellevue"],
+    # Le Petit Bulletin range les concerts de l'Amphi sous « Amphithéâtre
+    # de l'Opéra » : sans l'alias, son « Crimi » restait à côté du
+    # « Crimi "Meli" » de l'Opéra, trop court pour la passe 2 (BUG-30).
     "Opéra national de Lyon": ["opera lyon", "opera national de lyon",
-                               "opera de lyon"],
+                               "opera de lyon", "amphitheatre de l opera"],
     # Le TNG a deux sites, Vaise et Les Ateliers. Le Petit Bulletin
     # nomme le premier « TNG-VAISE » : sans cette entrée il devenait un
     # lieu à part entière, avec un seul événement, alors que la salle
@@ -284,6 +287,10 @@ def _pick_best(cluster: list[tuple[Event, int]]) -> tuple[Event, int]:
         cluster,
         key=lambda x: (
             x[1],                          # priority
+            # À priorité égale, la salle qui reçoit l'emporte sur celle qui
+            # l'annonce hors les murs : « Le Voyage d'hiver » reste au TNP,
+            # dans le filtre du TNP, enrichi de ce qu'en dit l'Opéra (BUG-30).
+            0 if x[0].offsite_venue else 1,
             1 if x[0].time else 0,         # has time
             len(x[0].subtitle or ""),
             len(x[0].category or ""),
@@ -769,6 +776,30 @@ def _unifie_orthographes(events: List[Event]) -> None:
             e.venue = elu
 
 
+def _plusieurs_salles_effacees(events: List[Event]) -> List[Event]:
+    """Une date « dans plusieurs salles » s'efface devant la salle qui la publie.
+
+    L'Opéra annonce des spectacles joués chez d'autres sans dire quelle
+    date est où : « Bazar circus », à Saint-Priest, au Radiant et au TNG,
+    porte OFFSITE_PLUSIEURS. Le Radiant et le TNG publient les leurs, à
+    leur adresse, et rien ne les croisait : la passe 1 range la carte de
+    l'Opéra sous l'Opéra, la passe 2 écarte un titre aussi court (BUG-30).
+
+    Même titre, même jour, même minute : c'est la même représentation, et
+    la salle dit où l'on va. La carte de l'Opéra reste pour les dates que
+    personne d'autre ne publie. Deux cartes « dans plusieurs salles » ne
+    s'effacent jamais l'une devant l'autre : aucune ne nomme de salle.
+    """
+    precises: dict[tuple[str, str], list[Event]] = defaultdict(list)
+    for e in events:
+        if e.time and e.offsite_venue != OFFSITE_PLUSIEURS:
+            precises[(e.date_start, e.time)].append(e)
+    return [e for e in events
+            if not (e.offsite_venue == OFFSITE_PLUSIEURS and e.time
+                    and any(_title_similarity(e.title, p.title) >= 0.85
+                            for p in precises[(e.date_start, e.time)]))]
+
+
 def deduplicate(tagged_events: List[Tuple[Event, int]]) -> List[Event]:
     """Deduplicate events across sources + canonicalize venue display names.
 
@@ -797,11 +828,16 @@ def deduplicate(tagged_events: List[Tuple[Event, int]]) -> List[Event]:
     primary_result = _primary_dedup(tagged_events)
     secondary_result = _secondary_dedup(primary_result)
     tertiary_result = _tertiary_dedup(secondary_result)
-    final = [ev for ev, _ in tertiary_result]
+    final = _plusieurs_salles_effacees([ev for ev, _ in tertiary_result])
     # Canonicalize venue display names so the frontend doesn't render
     # duplicate chips for "sonic" vs "Le Sonic".
     for e in final:
         e.venue = canonical_venue_name(e.venue)
+        # La salle du hors-les-murs aussi : la page en lit l'arrondissement
+        # sous son nom exact. « Théâtre National Populaire » devient le
+        # « TNP - Théâtre National Populaire » qu'elle connaît (BUG-30).
+        if e.offsite_venue and e.offsite_venue != OFFSITE_PLUSIEURS:
+            e.offsite_venue = canonical_venue_name(e.offsite_venue)
     # Puis, pour les lieux que la table ne couvre pas, élire une graphie.
     _unifie_orthographes(final)
     return final

@@ -8,6 +8,10 @@ Strategy:
 
 Le listing se lit par CARTE, pas par lien : il a deux gabarits, et l'un
 d'eux sort le titre et la date du <a>. Voir _scrape_url.
+
+Il s'étale sur plusieurs PAGES : quatorze productions sur la première, la
+suite derrière « En voir plus », qui mène à ?page=2, ?page=3… Lue seule, la
+première page arrêtait l'Opéra mi-novembre sur le site (BUG-30).
 """
 from typing import List, Optional, Tuple
 from datetime import date as Date, timedelta
@@ -74,6 +78,11 @@ URL_CATEGORY_MAP = {
     # nom de la série, « underground », n'est pas un genre que la page
     # sache ranger : ses concerts tombaient dans « autres » (BUG-23).
     "opera-underground": "concert",
+    # Le public, pas le genre : « Le Roi des ours », « L'histoire du
+    # soldat », des spectacles pour enfants. Le nom brut de la rubrique ne
+    # se rangeait nulle part et les envoyait dans « autres » (BUG-30),
+    # comme ceux de la Comédie Odéon avant eux (BUG-23).
+    "en-famille": "spectacle jeune public",
     "conference": "conférence",
     "visites": "visite",
     "festival": "festival",
@@ -260,6 +269,17 @@ _MOT_DE_SALLE = re.compile(
     r"\b(salle|th[eé][aâ]tre|amphi|op[eé]ra|auditorium|studio|chapelle|"
     r"espace|maison|cin[eé]ma|halle|conservatoire)\b", re.IGNORECASE)
 
+# Les virgules qui séparent deux salles, et non celle du NOM des
+# Célestins, « Les Célestins, Théâtre de Lyon ». Coupé là, il n'en restait
+# que « Théâtre de Lyon », que ni la page ni la déduplication ne
+# connaissent (BUG-30).
+_ENTRE_SALLES = re.compile(r",(?!\s*th[eé][aâ]tre de lyon\b)", re.IGNORECASE)
+
+# Une salle de la maison : « Opéra de Lyon », « Amphi de l'Opéra de
+# Lyon », et « Grande salle de l'Opéra », qui, sans « de Lyon », passait
+# pour une salle du dehors (BUG-30). Lu sur le nom sans accents.
+_DANS_LES_MURS = re.compile(r"opera de lyon|\bde l.opera\b")
+
 
 def _hors_les_murs(lieu: Optional[str]) -> Optional[str]:
     """Salle réelle, quand la production ne se joue pas dans les murs.
@@ -275,11 +295,11 @@ def _hors_les_murs(lieu: Optional[str]) -> Optional[str]:
     """
     if not lieu:
         return None
-    salles = [f.strip() for f in lieu.split(",") if _MOT_DE_SALLE.search(f)]
+    salles = [f.strip() for f in _ENTRE_SALLES.split(lieu) if _MOT_DE_SALLE.search(f)]
     if not salles:
         salles = [lieu.strip()]
     dehors = [s for s in salles
-              if "opera de lyon" not in _sans_accents(s)]
+              if not _DANS_LES_MURS.search(_sans_accents(s))]
     if not dehors:
         return None
     if len(dehors) > 1:
@@ -303,11 +323,24 @@ def _lire_fiche(url: str) -> Optional[dict]:
     }
 
 
-def _scrape_url(url: str) -> List[dict]:
+def _scrape_url(url: str, suite: bool = False) -> List[dict]:
+    """Les productions d'une page du listing.
+
+    Une page absente ou en panne ne rend rien : c'est le cas ordinaire de
+    la saison suivante, pas encore publiée. Une page de SUITE (?page=2…)
+    en panne fait au contraire échouer la collecte. Sinon le début de la
+    saison partirait seul, sans un mot, et le garde-fou, qui n'alerte
+    qu'en deçà du quart de la veille, laisserait passer la perte des pages
+    suivantes (BUG-30). Là, seul un 404 vaut fin de liste.
+    """
     try:
         resp = base_get(url, timeout=20, headers=HEADERS)
     except requests.RequestException:
+        if suite:
+            raise
         return []
+    if suite and resp.status_code != 404:
+        resp.raise_for_status()
     if resp.status_code != 200:
         return []
 
@@ -374,6 +407,11 @@ def _scrape_url(url: str) -> List[dict]:
             subtitle = None
 
         category = _category_from_url(href) or "spectacle"
+        # Un atelier de la série Opéra Underground (« Atelier “La
+        # Marelle” : découverte du gamelan ») est rangé, par son adresse,
+        # parmi les concerts : ce n'en est pas un (BUG-30).
+        if re.match(r"\W*ateliers?\b", title, re.IGNORECASE):
+            category = "atelier"
 
         # L'affiche (BUG-14). Quand le titre est lui-même le lien, le bloc
         # trouvé plus haut s'arrête au texte : l'image est à côté, dans un
@@ -410,6 +448,11 @@ def _scrape_url(url: str) -> List[dict]:
     return stubs
 
 
+# Garde-fou, si la règle d'arrêt venait à ne plus jouer : la saison
+# 2026-2027 tient en huit pages.
+PAGES_MAX = 20
+
+
 def fetch() -> List[Event]:
     # Calculées à chaque appel et non au chargement du module : un
     # processus qui vivrait plus longtemps qu'une saison lirait sinon les
@@ -418,8 +461,18 @@ def fetch() -> List[Event]:
     all_stubs: List[dict] = []
     seen_urls: set = set()
     for url in urls:
-        for stub in _scrape_url(url):
-            if stub["url"] not in seen_urls:
+        # Page après page (BUG-30). Chacune répète en tête quelques
+        # productions mises en avant : on s'arrête à la première qui
+        # n'apporte rien de neuf. Une saison pas encore publiée répond 404 :
+        # sa première page est vide, et l'on n'insiste pas.
+        for page in range(1, PAGES_MAX + 1):
+            nouveaux = [s for s in _scrape_url(url if page == 1 else
+                                               "%s?page=%d" % (url, page),
+                                               suite=page > 1)
+                        if s["url"] not in seen_urls]
+            if not nouveaux:
+                break
+            for stub in nouveaux:
                 seen_urls.add(stub["url"])
                 all_stubs.append(stub)
 

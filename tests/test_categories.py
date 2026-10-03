@@ -51,6 +51,23 @@ class Opera(unittest.TestCase):
             opera_lyon.HOST + "/fr/programmation/saison-2026-2027/opera-underground/karma-bazar/"),
             "concert")
 
+    def test_un_spectacle_en_famille_rejoint_la_scene(self):
+        # BUG-30 : « en-famille » dit le public ; brut, il tombait dans « autres ».
+        self.assertEqual(opera_lyon._category_from_url(
+            opera_lyon.HOST + "/fr/programmation/saison-2026-2027/en-famille/le-roi-des-ours-1/"),
+            "spectacle jeune public")
+
+    def test_un_atelier_n_est_pas_un_concert(self):
+        # BUG-30 : rangé sous /opera-underground/, comme les concerts de la série.
+        saison = opera_lyon._saisons(date(2026, 10, 1))[0]
+        page = ('<html><body><div><a href="/fr/programmation/saison-2026-2027/opera-underground/'
+                'marelle"><span class="title_a">Atelier “La Marelle” : découverte du gamelan</span>'
+                '<span class="date_a">27 oct. 2026</span></a></div></body></html>')
+        site = FauxSite({saison: page})
+        with mock.patch.object(opera_lyon, "Date", date_figee(date(2026, 10, 1))), \
+                mock.patch("requests.request", site.request):
+            self.assertEqual([s["category"] for s in opera_lyon._scrape_url(saison)], ["atelier"])
+
 
 class Halle(unittest.TestCase):
 

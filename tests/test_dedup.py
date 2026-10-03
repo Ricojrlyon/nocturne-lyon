@@ -94,6 +94,43 @@ class HorsLesMurs(unittest.TestCase):
         b.offsite_venue = OFFSITE_PLUSIEURS
         self.assertEqual(len(deduplicate([(a, 100), (b, 100)])), 2)
 
+    def test_la_salle_qui_recoit_l_emporte(self):
+        # BUG-30 : « Le Voyage d'hiver », que l'Opéra joue au TNP et que le
+        # TNP publie aussi. À priorité égale, la carte du TNP reste, dans le
+        # filtre du TNP, et prend le sous-titre plus long de l'Opéra.
+        op = self.opera("Le Voyage d’hiver", heure="20:00", salle="Théâtre National Populaire")
+        op.subtitle = "Opéra de chambre d'après Schubert"
+        tnp = evenement("TNP - Théâtre National Populaire", "Le Voyage d’hiver", J)
+        out = deduplicate([(op, 100), (tnp, 100)])
+        self.assertEqual([(e.venue, e.url, e.subtitle) for e in out],
+                         [("TNP - Théâtre National Populaire", tnp.url, op.subtitle)])
+
+    def test_le_nom_de_salle_que_la_page_connait(self):
+        # La page lit l'arrondissement sous le nom exact de la salle (BUG-30).
+        chiens = self.opera("Chiens", salle="Les Célestins, Théâtre de Lyon")
+        voyage = self.opera("Le Voyage d’hiver", salle="Théâtre National Populaire")
+        out = deduplicate([(chiens, 100), (voyage, 100)])
+        self.assertEqual(sorted(e.offsite_venue for e in out),
+                         ["Célestins, théâtre de Lyon", "TNP - Théâtre National Populaire"])
+
+    def test_plusieurs_salles_s_efface_devant_la_salle(self):
+        # BUG-30 : « Bazar circus », que l'Opéra annonce dans trois salles
+        # sans dire laquelle joue quand, et que le Radiant publie à la même
+        # minute. La date que personne d'autre ne publie reste.
+        op = self.opera("Bazar circus", heure="16:00", salle=OFFSITE_PLUSIEURS)
+        seule = self.opera("Bazar circus", heure="11:00", salle=OFFSITE_PLUSIEURS)
+        seule.date_start = (J - timedelta(days=1)).isoformat()
+        radiant = evenement("Radiant-Bellevue", "BAZAR CIRCUS", J, heure="16:00")
+        out = deduplicate([(op, 100), (seule, 100), (radiant, 100)])
+        self.assertEqual(titres(out), [
+            ("Opéra national de Lyon", seule.date_start, "11:00", "Bazar circus"),
+            ("Radiant-Bellevue", J.isoformat(), "16:00", "BAZAR CIRCUS")])
+
+    def test_a_une_autre_minute_les_deux_restent(self):
+        op = self.opera("Bazar circus", heure="15:00", salle=OFFSITE_PLUSIEURS)
+        radiant = evenement("Radiant-Bellevue", "BAZAR CIRCUS", J, heure="16:00")
+        self.assertEqual(len(deduplicate([(op, 100), (radiant, 100)])), 2)
+
 
 class DeuxiemePasse(unittest.TestCase):
     """Même jour, lieux différents, titres très proches (≥ 0,85)."""
@@ -181,6 +218,14 @@ class GraphiesDesLieux(unittest.TestCase):
         evs.append(evenement("Théâtre de la Mouché", "Autre pièce", J, url=PB % 30))
         out = deduplicate([(e, 50) for e in evs[:3]] + [(evs[3], 60)])
         self.assertEqual({e.venue for e in out}, {"Théâtre de la Mouché"})
+
+    def test_l_amphi_de_l_opera(self):
+        # BUG-30 : le Petit Bulletin range les concerts de l'Amphi sous ce
+        # nom, et « Crimi » est trop court pour la passe 2.
+        self.assertEqual(canonical_venue_name("Amphithéâtre de l'Opéra"), "Opéra national de Lyon")
+        op = evenement("Opéra national de Lyon", 'Crimi "Meli"', J)
+        pb = evenement("Amphithéâtre de l'Opéra", "Crimi", J, url=PB % 50)
+        self.assertEqual([e.url for e in deduplicate([(op, 100), (pb, 60)])], [op.url])
 
     def test_bizarre_sous_ses_deux_noms(self):
         # BUG-28 : « Bizarre! » (Petit Bulletin) et « La Machinerie -
