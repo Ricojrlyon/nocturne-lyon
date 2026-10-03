@@ -5,7 +5,7 @@ import unittest
 from datetime import date
 from unittest import mock
 
-from scrapers import comedie_odeon, croix_rousse, opera_lyon, radiant
+from scrapers import comedie_odeon, croix_rousse, halle_tony_garnier, opera_lyon, radiant
 from tests.outils import FauxSite, date_figee
 
 
@@ -50,6 +50,31 @@ class Opera(unittest.TestCase):
         self.assertEqual(opera_lyon._category_from_url(
             opera_lyon.HOST + "/fr/programmation/saison-2026-2027/opera-underground/karma-bazar/"),
             "concert")
+
+
+class Halle(unittest.TestCase):
+
+    def test_le_type_de_la_carte_fait_la_categorie(self):
+        # BUG-29 : tout était « concert », humoristes et Salon des vignerons
+        # compris. Le type est dans la classe de la carte.
+        def carte(classes, slug, titre, jour):
+            return ('<a class="%s" href="%s/fr/programmation/%s"><div class="bloc-square__title">'
+                    '%s</div><div class="bloc-square__date">%s</div>'
+                    '<div class="bloc-square__heure">20h00</div></a>'
+                    % (classes, halle_tony_garnier.HOST, slug, titre, jour))
+        page = "<html><body>%s</body></html>" % "".join([
+            carte("bloc-square types type_concert", "bernard", "BERNARD LAVILLIERS", "17.03.27"),
+            carte("bloc-square types type_spectacle", "malik", "MALIK BENTALHA", "11.11.26"),
+            carte("bloc-square types type_salon", "vins", "SALON DES VIGNERONS", "30.10.26"),
+            carte("bloc-square types type_cine-concert", "rocky", "ROCKY IN CONCERT", "02.05.27"),
+            carte("bloc-square types type_evenement", "tigre", "TIGRE & DRAGON", "11.10.26"),
+            carte("bloc-square", "sans-type", "SANS TYPE", "12.10.26")])
+        site = FauxSite({halle_tony_garnier.URLS[0]: page})
+        with mock.patch("requests.request", site.request), \
+                mock.patch.object(halle_tony_garnier, "Date", date_figee(date(2026, 10, 3))):
+            lu = {e.url.rsplit("/", 1)[-1]: e.category for e in halle_tony_garnier.fetch()}
+        self.assertEqual(lu, {"bernard": "concert", "malik": "spectacle", "vins": "salon",
+                              "rocky": "ciné-concert", "tigre": None, "sans-type": "concert"})
 
 
 class CroixRousse(unittest.TestCase):

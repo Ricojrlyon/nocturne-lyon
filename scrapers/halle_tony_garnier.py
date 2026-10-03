@@ -44,6 +44,29 @@ _RANGE_RE = re.compile(
 # HHhMM  or  HHh
 _TIME_RE = re.compile(r"\b(\d{1,2})h(\d{2})?\b")
 
+# Le type que la Halle donne à chaque date, dans la classe de sa carte
+# (« bloc-square types type_spectacle ») : BUG-29. Tout était « concert »,
+# humoristes, spectacles sur glace et Salon des vignerons compris, si bien
+# qu'ils manquaient à la scène et encombraient la musique. « evenement » ne
+# dit rien du genre — ce sont les séances du Festival Lumière : la catégorie
+# reste vide, à compléter par l'agrégateur ou par categorie.py.
+_TYPES = {
+    "concert": "concert",           # → musique
+    "spectacle": "spectacle",       # → scène
+    "salon": "salon",               # → autres
+    "cine-concert": "ciné-concert",  # → musique
+}
+
+
+def _categorie(a) -> Optional[str]:
+    """La catégorie d'une carte, d'après son type ; « concert » sans type."""
+    types = [c[len("type_"):] for c in a.get("class") or [] if c.startswith("type_")]
+    if not types:
+        # Carte sans type (la page d'accueil, ou le site a changé) : la
+        # lecture d'avant.
+        return "concert"
+    return next((_TYPES[t] for t in types if t in _TYPES), None)
+
 
 def _infer_year(month: int, day: int) -> int:
     """Return the nearest future year for a DD.MM date."""
@@ -172,7 +195,7 @@ def _scrape_url(url: str) -> List[Event]:
             venue_slug=SLUG,
             title=title,
             subtitle=None,
-            category="concert",
+            category=_categorie(a),
             date_start=iso(d_start),
             date_end=iso(d_end) if d_end else None,
             time=time_str,
