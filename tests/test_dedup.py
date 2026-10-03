@@ -182,6 +182,23 @@ class GraphiesDesLieux(unittest.TestCase):
         out = deduplicate([(e, 50) for e in evs[:3]] + [(evs[3], 60)])
         self.assertEqual({e.venue for e in out}, {"Théâtre de la Mouché"})
 
+    def test_bizarre_sous_ses_deux_noms(self):
+        # BUG-28 : « Bizarre! » (Petit Bulletin) et « La Machinerie -
+        # Bizarre ! » (Ville Morte) sont la même salle ; le théâtre de La
+        # Machinerie est un autre lieu.
+        for nom in ("Bizarre!", "Bizarre !", "La Machinerie - Bizarre !"):
+            self.assertEqual(canonical_venue_name(nom), "La Machinerie - Bizarre !")
+        self.assertEqual(canonical_venue_name("La Machinerie - Théâtre de Vénissieux"),
+                         "La Machinerie - Théâtre de Vénissieux")
+
+    def test_un_spectacle_de_bizarre_une_seule_carte(self):
+        pb = evenement("Bizarre!", "Hold Fast", J, url=PB % 40)
+        vm = evenement("La Machinerie - Bizarre !", "Hold Fast - Cie Ma’, Marion Alzieu", J,
+                       url=VM % 41)
+        out = deduplicate([(pb, 60), (vm, 50)])
+        self.assertEqual(titres(out), [("La Machinerie - Bizarre !", J.isoformat(), "20:00",
+                                        "Hold Fast")])
+
 
 if __name__ == "__main__":
     unittest.main()

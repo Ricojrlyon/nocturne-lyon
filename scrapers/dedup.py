@@ -146,6 +146,12 @@ VENUE_CANONICAL: dict[str, list[str]] = {
     # Added in v34.3: Bar Rock'n Eat (PB) === Rock'n Eat (Ville Morte)
     "Bar Rock'n Eat":         ["bar rock n eat", "rock n eat", "rocknreat",
                                "bar rock n'eat", "rock n'eat"],
+    # Le Petit Bulletin écrit « Bizarre! », Ville Morte « La Machinerie -
+    # Bizarre ! » : la même salle de Vénissieux tombait dans deux groupes de
+    # dédup, et Hold Fast ou Zinée paraissaient deux fois (BUG-28). La forme
+    # de Ville Morte est celle que la page connaît (commune). « La
+    # Machinerie - Théâtre de Vénissieux » est un AUTRE lieu.
+    "La Machinerie - Bizarre !": ["bizarre"],
 }
 
 # Build reverse lookup: normalized_form -> canonical_display
