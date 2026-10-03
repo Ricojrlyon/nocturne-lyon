@@ -24,7 +24,7 @@ class Radiant(unittest.TestCase):
                 '</body></html>')
         site = FauxSite({radiant.URL: page})
         with mock.patch("requests.request", site.request), \
-                mock.patch.object(radiant.detail_cache, "get_time", lambda url, f: None), \
+                mock.patch.object(radiant.detail_cache, "get_details", lambda url, f, fields: {}), \
                 mock.patch.object(radiant, "Date", date_figee(date(2026, 10, 1))):
             lu = {(e.title, e.date_start, e.category) for e in radiant.fetch()}
         self.assertEqual(lu, {("ETIENNE DAHO", "2027-01-04", "chanson"),

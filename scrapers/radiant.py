@@ -3,7 +3,13 @@
 Homepage lists upcoming events. Time is on each /spectacles/<slug>/ detail page.
 Strategy: collect stubs from homepage, dedupe by URL, then fetch each detail page
 once for time (in-request dedup avoids hitting the same URL twice for multi-date shows).
+
+La fiche liste aussi chaque séance avec SON heure (div.spectacle-dates :
+« dimanche 04 octobre 2026 », « 16h00 »). Une seule heure pour toutes les
+dates d'un spectacle publiait les matinées du dimanche à l'heure du soir
+(BUG-24) : chaque date prend désormais l'heure de ses séances.
 """
+from collections import defaultdict
 from typing import List, Optional
 from datetime import date as Date, timedelta
 import re
@@ -93,23 +99,46 @@ def _parse_time(text: str) -> Optional[str]:
     return None
 
 
-def _fetch_detail_time(url: str) -> Optional[str]:
-    """Fetch /spectacles/<slug>/ and extract time."""
+def _heure_de_la_fiche(soup: BeautifulSoup) -> Optional[str]:
+    """La première heure de la fiche : celle des dates sans séance lue."""
+    for selector in (
+        "[class*='horaire']", "[class*='time']", "[class*='heure']",
+        "[class*='schedule']", "[class*='seance']", "[class*='date']", "time",
+    ):
+        for el in soup.select(selector)[:4]:
+            t = _parse_time(el.get_text(" ", strip=True))
+            if t:
+                return t
+    visible = soup.get_text(" ", strip=True)
+    return _parse_time(visible[:800])
+
+
+def _seances(soup: BeautifulSoup) -> List[List[str]]:
+    """Les séances de la fiche, [date ISO, heure], toutes heures comprises."""
+    seances: List[List[str]] = []
+    for li in soup.select("div.spectacle-dates li"):
+        texte = li.get_text(" ", strip=True)
+        m = DATE_SINGLE.search(texte)
+        month = _french_month_num(m.group(2)) if m else None
+        if not month:
+            continue
+        try:
+            jour = Date(int(m.group(3)), month, int(m.group(1))).isoformat()
+        except ValueError:
+            continue
+        for h in re.finditer(r"\b(\d{1,2})\s*[h:]\s*(\d{2})?(?!\d)", texte[m.end():]):
+            seances.append([jour, f"{int(h.group(1)):02d}:{h.group(2) or '00'}"])
+    return seances
+
+
+def _lire_fiche(url: str) -> Optional[dict]:
+    """Fetch /spectacles/<slug>/ : son heure et ses séances datées."""
     try:
         r = base_get(url, timeout=10, headers=HEADERS)
         if r.status_code != 200:
             return None
         soup = BeautifulSoup(r.text, "html.parser")
-        for selector in (
-            "[class*='horaire']", "[class*='time']", "[class*='heure']",
-            "[class*='schedule']", "[class*='seance']", "[class*='date']", "time",
-        ):
-            for el in soup.select(selector)[:4]:
-                t = _parse_time(el.get_text(" ", strip=True))
-                if t:
-                    return t
-        visible = soup.get_text(" ", strip=True)
-        return _parse_time(visible[:800])
+        return {"time": _heure_de_la_fiche(soup), "seances": _seances(soup)}
     except requests.RequestException:
         return None
 
@@ -213,34 +242,43 @@ def fetch() -> List[Event]:
         stub["date_starts"] = [ds for ds in stub["date_starts"] if ds <= horizon_iso]
     raw_stubs = [s for s in raw_stubs if s["date_starts"]]
 
-    # Pass 2: fetch each unique URL once for time (cached across runs,
-    # throttled — see scrapers/detail_cache.py)
-    url_to_time: dict = {}
+    # Pass 2: fetch each unique URL once for time and sessions (cached
+    # across runs, throttled — see scrapers/detail_cache.py)
+    url_to_fiche: dict = {}
     for stub in raw_stubs:
-        url_to_time[stub["url"]] = detail_cache.get_time(
-            stub["url"], _fetch_detail_time)
+        url_to_fiche[stub["url"]] = detail_cache.get_details(
+            stub["url"], _lire_fiche, fields=("time", "seances"))
 
-    # Build events (one per date occurrence)
+    # Build events (one per session, or per date when the page lists none)
     events: List[Event] = []
     seen_ids: set = set()
     for stub in raw_stubs:
-        time_str = url_to_time.get(stub["url"])
+        fiche = url_to_fiche.get(stub["url"]) or {}
+        time_str = fiche.get("time")
+        # Les heures de chaque jour, dans la fenêtre de _parse_time (14 h à
+        # 22 h) : une séance du matin reste écartée comme avant. Un jour
+        # sans séance lue garde l'heure de la fiche.
+        heures_du_jour = defaultdict(set)
+        for jour, heure in fiche.get("seances") or []:
+            if 14 <= int(heure[:2]) <= 22:
+                heures_du_jour[jour].add(heure)
         for ds in stub["date_starts"]:
-            ev = Event(
-                venue=VENUE,
-                venue_slug=SLUG,
-                title=stub["title"],
-                subtitle=None,
-                category=stub["category"],
-                date_start=ds,
-                date_end=None,
-                time=time_str,
-                url=stub["url"],
-                image=stub["image"],
-            )
-            if ev.id not in seen_ids:
-                seen_ids.add(ev.id)
-                events.append(ev)
+            for heure in sorted(heures_du_jour.get(ds) or [time_str]):
+                ev = Event(
+                    venue=VENUE,
+                    venue_slug=SLUG,
+                    title=stub["title"],
+                    subtitle=None,
+                    category=stub["category"],
+                    date_start=ds,
+                    date_end=None,
+                    time=heure,
+                    url=stub["url"],
+                    image=stub["image"],
+                )
+                if ev.id not in seen_ids:
+                    seen_ids.add(ev.id)
+                    events.append(ev)
 
     return events
 

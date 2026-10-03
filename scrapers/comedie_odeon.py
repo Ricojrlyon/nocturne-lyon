@@ -46,7 +46,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, get as base_get
+from .base import Event, FR_MONTHS, get as base_get
 
 VENUE = "Comédie Odéon"
 SLUG = "comedie-odeon"
@@ -84,6 +84,14 @@ NON_GENRES = ("coursvenir", "weekcurrent", "jeune-public", "avignon",
 _HEURE = re.compile(r"\b(\d{1,2})\s*h\s*(\d{2})?\b")
 _EXCEPTION = re.compile(r"\ble\s+(\d{1,2})/(\d{1,2})\s*[àa]\s*(\d{1,2})\s*h\s*(\d{2})?",
                         re.I)
+# Une date en toutes lettres avec son heure, « Jeudi 11 mars 2027 à 21h » :
+# l'horaire de CE jour (BUG-24). Sans cela, « Jovany » prenait 20h, l'heure
+# de sa première date, les deux soirs. Le nom du jour est exigé, et une fin
+# de plage écartée (« … au samedi 14 novembre à 21h ») : l'heure de toute
+# la plage n'est pas celle de son dernier jour.
+_DATEE = re.compile(r"(?<!\bau )\b(?:lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)"
+                    r"\s+(\d{1,2})(?:er)?\s+(\w+)(?:\s+\d{4})?\s*[àa]\s*(\d{1,2})\s*h\s*(\d{2})?",
+                    re.I)
 _TITRE_POP = re.compile(
     r'class="titlePop">(.*?)</span>.*?href="([^"]*/spectacle/[^"]+)"', re.S)
 
@@ -122,7 +130,14 @@ def _lire_fiche(url: str) -> Optional[dict]:
     exceptions = {f"{int(m.group(2)):02d}-{int(m.group(1)):02d}":
                   f"{int(m.group(3)):02d}:{m.group(4) or '00'}"
                   for m in _EXCEPTION.finditer(txt)}
-    return {"defaut": _heure(_EXCEPTION.sub(" ", txt)), "exceptions": exceptions}
+    for m in _DATEE.finditer(txt):
+        mois = FR_MONTHS.get(m.group(2).lower())
+        if mois:
+            exceptions[f"{mois:02d}-{int(m.group(1)):02d}"] = \
+                f"{int(m.group(3)):02d}:{m.group(4) or '00'}"
+    reste = _DATEE.sub(lambda m: " " if m.group(2).lower() in FR_MONTHS else m.group(0),
+                       _EXCEPTION.sub(" ", txt))
+    return {"defaut": _heure(reste), "exceptions": exceptions}
 
 
 def _calendrier(soup: BeautifulSoup) -> List[Tuple[str, str]]:
