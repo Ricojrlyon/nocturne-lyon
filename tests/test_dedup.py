@@ -244,6 +244,23 @@ class GraphiesDesLieux(unittest.TestCase):
         self.assertEqual(titres(out), [("La Machinerie - Bizarre !", J.isoformat(), "20:00",
                                         "Hold Fast")])
 
+    def test_jack_jack_et_la_mediane_sous_un_seul_nom(self):
+        # BUG-34 : le Petit Bulletin et Ville Morte les écrivent chacun à sa
+        # façon, et le filtre par lieu coupait chaque salle en deux.
+        for nom in ("Jack Jack - MJC Aragon", "MJC Louis Aragon / Jack Jack"):
+            self.assertEqual(canonical_venue_name(nom), "Jack Jack - MJC Aragon")
+        for nom in ("Café La Médiane", "La Médiane, tiers-lieu féministe"):
+            self.assertEqual(canonical_venue_name(nom), "La Médiane, tiers-lieu féministe")
+
+    def test_un_concert_du_jack_jack_une_seule_carte(self):
+        # « Monolord » est trop court pour la passe 2, entre deux lieux :
+        # seul l'alias réunit les deux annonces.
+        pb = evenement("Jack Jack - MJC Aragon", "Monolord", J, url=PB % 60)
+        vm = evenement("MJC Louis Aragon / Jack Jack", "Monolord + Dopelord", J, url=VM % 61)
+        out = deduplicate([(pb, 60), (vm, 50)])
+        self.assertEqual(titres(out), [("Jack Jack - MJC Aragon", J.isoformat(), "20:00",
+                                        "Monolord")])
+
 
 if __name__ == "__main__":
     unittest.main()

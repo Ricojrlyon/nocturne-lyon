@@ -155,6 +155,15 @@ VENUE_CANONICAL: dict[str, list[str]] = {
     # de Ville Morte est celle que la page connaît (commune). « La
     # Machinerie - Théâtre de Vénissieux » est un AUTRE lieu.
     "La Machinerie - Bizarre !": ["bizarre"],
+    # La même salle de Bron, place Gaillard-Romanet : « Jack Jack - MJC
+    # Aragon » au Petit Bulletin, « MJC Louis Aragon / Jack Jack » à Ville
+    # Morte, que le filtre par lieu coupait en deux (BUG-34). La première
+    # nomme d'abord la salle de concert, celle que l'on cherche.
+    "Jack Jack - MJC Aragon": ["mjc louis aragon jack jack"],
+    # De même pour La Médiane, 255 rue de Créqui : « Café La Médiane » au
+    # Petit Bulletin, « La Médiane, tiers-lieu féministe » à Ville Morte
+    # (BUG-34). La seconde dit ce qu'est le lieu.
+    "La Médiane, tiers-lieu féministe": ["cafe la mediane"],
 }
 
 # Build reverse lookup: normalized_form -> canonical_display
