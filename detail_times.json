@@ -80,13 +80,13 @@
     "time": "18:00"
   },
   "https://i-ac.eu/fr/RDV-satellites_2026/583_vernissage-jeune-creation-internationale-18e-biennale-de-lyon": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "heure": "19:00",
     "image": "https://i-ac.eu/img/thumbs_cache/400x300_bac26_jci_vernissage_1080x1080px.jpg",
     "relaches": []
   },
   "https://i-ac.eu/fr/RDV-satellites_2026/584_visites-du-week-end": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "heure": "16:00",
     "image": "https://i-ac.eu/img/thumbs_cache/400x300_img_9772.jpg",
     "relaches": [
@@ -385,8 +385,8 @@
     "time": "18:00"
   },
   "https://le-sucre.eu/events/s-society-165/": {
-    "fetched_at": "2026-09-25",
-    "time": null
+    "fetched_at": "2026-10-03",
+    "time": "18:00"
   },
   "https://le-sucre.eu/events/s-society-166/": {
     "fetched_at": "2026-09-09",
@@ -593,7 +593,7 @@
     ]
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/ce-que-danser-rend-possible": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Maison de la danse - Restaurant",
     "seances": [
       [
@@ -619,6 +619,30 @@
         14,
         11,
         "19:30"
+      ]
+    ]
+  },
+  "https://maisondeladanse.com/programmation/saison2026-2027/david-dawson-katerina-andreou": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Maison de la danse - Grande salle",
+    "seances": [
+      [
+        "jeudi",
+        1,
+        4,
+        "20:30"
+      ],
+      [
+        "vendredi",
+        2,
+        4,
+        "20:30"
+      ],
+      [
+        "samedi",
+        3,
+        4,
+        "20:30"
       ]
     ]
   },
@@ -1211,87 +1235,245 @@
     ]
   },
   "https://radiant-bellevue.fr/spectacles/4211-km/": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-11",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/adel-fugazi/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-18",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/alan-stivell/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-05",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/alex-ramires/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-10",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/alexis-le-rossignol/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-17",
+        "18:00"
+      ]
+    ],
     "time": "18:00"
   },
   "https://radiant-bellevue.fr/spectacles/alexis-tramoni/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-26",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/amandine-lourdel/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-19",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/anthony-kavanagh-3/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-20",
+        "18:00"
+      ]
+    ],
     "time": "18:00"
   },
   "https://radiant-bellevue.fr/spectacles/bazar-circus/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-07",
+        "16:00"
+      ]
+    ],
     "time": "16:00"
   },
   "https://radiant-bellevue.fr/spectacles/benabar/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-13",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/benjamin-biolay-3/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-09",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/bertrand-belin-2/": {
-    "fetched_at": "2026-09-10",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-09",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/brunch-hip-hop/": {
-    "fetched_at": "2026-10-01",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-04",
+        "11:00"
+      ]
+    ],
     "time": null
   },
   "https://radiant-bellevue.fr/spectacles/camille-chamoux-2/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-16",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/camille-tu-dors/": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-07",
+        "10:00"
+      ],
+      [
+        "2026-12-07",
+        "14:30"
+      ],
+      [
+        "2026-12-08",
+        "10:00"
+      ],
+      [
+        "2026-12-08",
+        "14:30"
+      ]
+    ],
     "time": "14:30"
   },
   "https://radiant-bellevue.fr/spectacles/cat-power/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-24",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/celeste-barber/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-23",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/cheminotes/": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-02",
+        "09:30"
+      ],
+      [
+        "2026-11-02",
+        "10:45"
+      ],
+      [
+        "2026-11-02",
+        "14:30"
+      ],
+      [
+        "2026-11-03",
+        "09:30"
+      ],
+      [
+        "2026-11-03",
+        "10:45"
+      ],
+      [
+        "2026-11-03",
+        "14:30"
+      ]
+    ],
     "time": "14:30"
   },
   "https://radiant-bellevue.fr/spectacles/christelle-chollet/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-31",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/clash-rock-de-schubert-a-nirvana/": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-10",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/cochons-dinde/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-07",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/comme-ca-vous-chante-2/": {
@@ -1299,275 +1481,727 @@
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/cosmos-2/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-19",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/dans-le-couloir/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-29",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/edgar-yves-jr/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-25",
+        "18:00"
+      ]
+    ],
     "time": "18:00"
   },
   "https://radiant-bellevue.fr/spectacles/elie-semoun/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-08",
+        "18:00"
+      ]
+    ],
     "time": "18:00"
   },
   "https://radiant-bellevue.fr/spectacles/emily-loizeau-quatuor-debussy/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-03",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/en-therapie/": {
-    "fetched_at": "2026-09-20",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-19",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/eric-fraticelli/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-19",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/etienne-daho/": {
-    "fetched_at": "2026-09-24",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-04",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/fabrice-luchini-3/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-22",
+        "20:00"
+      ],
+      [
+        "2026-12-21",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/fat-freddys-drop/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-06",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/festival-karavel-20-2/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-03",
+        "20:00"
+      ],
+      [
+        "2026-10-04",
+        "16:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/garou/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-04",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/geoffrey-secco/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-15",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/hatik-3/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-27",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/imagine-que/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-01",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/imany/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-03",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/immo/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-24",
+        "16:00"
+      ]
+    ],
     "time": "16:00"
   },
   "https://radiant-bellevue.fr/spectacles/jean-benoit-diallo/": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-13",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/jeremy-hababou/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-29",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/jesse/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-17",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/joe-jackson/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-13",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/jukebox/": {
-    "fetched_at": "2026-09-07",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-02",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/kyle-eastwood/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-09",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/la-folle-journee-ou-le-mariage-de-figaro/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-04",
+        "20:30"
+      ],
+      [
+        "2027-02-05",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/la-grande-sophie-2/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-02",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/la-jalousie/": {
-    "fetched_at": "2026-09-07",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-06",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/la-magie-dharry-potter/": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-10",
+        "16:00"
+      ]
+    ],
     "time": "16:00"
   },
   "https://radiant-bellevue.fr/spectacles/la-miserable/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-06",
+        "16:00"
+      ]
+    ],
     "time": "16:00"
   },
   "https://radiant-bellevue.fr/spectacles/la-noce-dalfonse/": {
-    "fetched_at": "2026-09-21",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-20",
+        "20:00"
+      ],
+      [
+        "2027-03-21",
+        "16:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/la-salida/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-17",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/la-soeur-de-jesus-christ/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-31",
+        "17:00"
+      ]
+    ],
     "time": "17:00"
   },
   "https://radiant-bellevue.fr/spectacles/laffaire-de-la-rue-de-lourcine/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-06",
+        "20:30"
+      ],
+      [
+        "2027-01-07",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/lalou-qui-na-pas-de-nom-de-spectacle/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-14",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/laura-cahen-caiman/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-08",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/laurent-baffie-3/": {
-    "fetched_at": "2026-09-27",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-26",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/laurent-voulzy-2/": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-13",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/le-bourgeois-gentilhomme/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-10",
+        "20:30"
+      ],
+      [
+        "2026-12-11",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/le-cas-pucine/": {
-    "fetched_at": "2026-09-11",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-10",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/le-cercle-des-poetes-disparus-3/": {
-    "fetched_at": "2026-09-23",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-23",
+        "20:30"
+      ],
+      [
+        "2027-03-22",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/le-chant-des-lions/": {
-    "fetched_at": "2026-09-07",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-03",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/le-fantome-de-lopera/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-28",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/le-jeu-de-lamour-et-du-hasard/": {
-    "fetched_at": "2026-09-13",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-09",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/le-journal-dedouard-baer/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-27",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/le-pere/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-20",
+        "20:30"
+      ],
+      [
+        "2027-01-21",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/le-proces-dune-vie/": {
-    "fetched_at": "2026-09-17",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-16",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/lecoledes-femmes/": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-20",
+        "20:30"
+      ],
+      [
+        "2026-10-21",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/leman-2/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-17",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/leman/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-23",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/leon/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-28",
+        "16:00"
+      ]
+    ],
     "time": "16:00"
   },
   "https://radiant-bellevue.fr/spectacles/les-coquettes-2/": {
-    "fetched_at": "2026-09-07",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-04",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/les-odyssees-de-jules-verne/": {
-    "fetched_at": "2026-09-15",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-14",
+        "17:00"
+      ]
+    ],
     "time": "17:00"
   },
   "https://radiant-bellevue.fr/spectacles/les-peintres-au-charbon/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-21",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/les-tribulations-dun-chef-dorchestre/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-22",
+        "17:00"
+      ]
+    ],
     "time": "17:00"
   },
   "https://radiant-bellevue.fr/spectacles/les-wriggles/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-16",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/lets-twist-again/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-06",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/levi-sct/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-22",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/lexperience-theatrale/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-28",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/lio/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-24",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/locura/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-24",
+        "20:30"
+      ],
+      [
+        "2026-11-25",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/louis-cattelat/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-07",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/lp/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-06",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/lumieres/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-25",
+        "10:00"
+      ],
+      [
+        "2027-01-25",
+        "14:30"
+      ]
+    ],
     "time": "14:30"
   },
   "https://radiant-bellevue.fr/spectacles/made-in-france/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-04",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/maldonne/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-02",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/marathon-de-la-danse-3/": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-05",
+        "09:00"
+      ]
+    ],
     "time": null
   },
   "https://radiant-bellevue.fr/spectacles/marc-lavoine/": {
-    "fetched_at": "2026-09-09",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-08",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/marie-jay-arca-m/": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-16",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/marillion/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-29",
+        "19:00"
+      ]
+    ],
     "time": "19:00"
   },
   "https://radiant-bellevue.fr/spectacles/marion-mezadorian/": {
@@ -1575,27 +2209,81 @@
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/mathieu-stepson/": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-12",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/michel-leeb/": {
-    "fetched_at": "2026-09-13",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-12",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/moguiz-2/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-15",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/moguiz-3/": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-17",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/mpl-2/": {
-    "fetched_at": "2026-10-01",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-30",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/murmuration-level-2/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-12",
+        "20:30"
+      ],
+      [
+        "2026-12-13",
+        "16:00"
+      ],
+      [
+        "2026-12-13",
+        "20:00"
+      ]
+    ],
+    "time": "20:30"
+  },
+  "https://radiant-bellevue.fr/spectacles/music-hall-colette/": {
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-04-01",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/mustang/": {
@@ -1603,31 +2291,73 @@
     "time": "14:30"
   },
   "https://radiant-bellevue.fr/spectacles/nicolas-canteloup/": {
-    "fetched_at": "2026-09-14",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-13",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/oldelaf/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-15",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/orgueil-prejuges-ou-presque/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-16",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/pablo-mira-2/": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-24",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/philippe-lellouche-3/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-18",
+        "18:00"
+      ]
+    ],
     "time": "18:00"
   },
   "https://radiant-bellevue.fr/spectacles/pierre-de-maere/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-12",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/pierre-et-le-loup/": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-14",
+        "17:00"
+      ]
+    ],
     "time": "17:00"
   },
   "https://radiant-bellevue.fr/spectacles/podkatz-tour-avec-juliette-katz/": {
@@ -1635,23 +2365,53 @@
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/polyphia/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-19",
+        "19:00"
+      ]
+    ],
     "time": "19:00"
   },
   "https://radiant-bellevue.fr/spectacles/pomme/": {
-    "fetched_at": "2026-09-22",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-25",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/potiche/": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-14",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/punk-e-s/": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-12",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/quatuor-debussy-4/": {
-    "fetched_at": "2026-09-18",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-09",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/quatuor-leonis/": {
@@ -1659,87 +2419,217 @@
     "time": "16:00"
   },
   "https://radiant-bellevue.fr/spectacles/renan-luce/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-26",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/saint-levant/": {
-    "fetched_at": "2026-09-07",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-01",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/sans-regrets-2/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-15",
+        "16:00"
+      ]
+    ],
     "time": "16:00"
   },
   "https://radiant-bellevue.fr/spectacles/sebastien-tellier/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-05",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/secrets-medical/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-08",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/skip-the-use-2/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-01-30",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/stephan-eicher-2/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-30",
+        "20:30"
+      ],
+      [
+        "2026-10-31",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/thais/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-21",
+        "17:00"
+      ]
+    ],
     "time": "17:00"
   },
   "https://radiant-bellevue.fr/spectacles/the-genesis/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-12-18",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/the-hu-2/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-28",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/the-loop/": {
-    "fetched_at": "2026-09-19",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-18",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/the-witcher-iii/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-18",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/thea/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-03-11",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/thomas-fersen-3/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-10",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/tina-arena/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-22",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/tristan-lopin/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-27",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/un-soir-avec-pierre-arditi/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-09",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/une-heure-a-tattendre/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-20",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/une-histoire-de-france/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-11-27",
+        "20:00"
+      ]
+    ],
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/valentina/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2027-02-03",
+        "18:00"
+      ]
+    ],
     "time": "18:00"
   },
   "https://radiant-bellevue.fr/spectacles/worlds-apart/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-03",
+    "seances": [
+      [
+        "2026-10-11",
+        "17:00"
+      ]
+    ],
     "time": "17:00"
   },
   "https://radiant-bellevue.fr/spectacles/yanns/": {
@@ -1752,7 +2642,7 @@
     "seances": []
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/afterwork/concert-decouverte-1": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -1762,7 +2652,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/afterwork/concert-decouverte-4": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -1772,7 +2662,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/afterwork/concert-decouverte-5": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2690,7 +3580,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/bryant-salome": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2700,7 +3590,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/festival-lumiere-onl": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2710,7 +3600,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/festival-lumiere-orgue": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2720,7 +3610,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/la-haut": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2738,7 +3628,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/mecano-general": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2758,7 +3648,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/vertigo": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2776,7 +3666,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/concert/concert-caritatif": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2796,7 +3686,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/conference/importance-parsifal-wagner-histoire-musique": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -2805,8 +3695,18 @@
       ]
     ]
   },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/conference/johannes-brahms": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
+    "seances": [
+      [
+        "2027-04-06",
+        "18:30"
+      ]
+    ]
+  },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/conference/messie-handel": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -2816,7 +3716,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/conference/musique-tcheque": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -2826,7 +3726,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/conference/odyssee-du-cerveau": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2836,7 +3736,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/conference/tableaux-exposition-moussorgski-orchestration": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -2846,7 +3746,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/famille/azur-asmar": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2877,8 +3777,26 @@
       ]
     ]
   },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/famille/journees-petits": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2027-04-15",
+        "09:30"
+      ],
+      [
+        "2027-04-16",
+        "09:30"
+      ],
+      [
+        "2027-04-17",
+        "09:30"
+      ]
+    ]
+  },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/famille/petite-taupe": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2896,7 +3814,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/famille/quatre-saisons": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -2906,7 +3824,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/famille/trois-brigands-autres-contes": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2916,7 +3834,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/formation-invitee/collegium-1704": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2926,7 +3844,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/formation-invitee/pygmalion": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2935,8 +3853,18 @@
       ]
     ]
   },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/formations-invitees/amazones-guerrieres-femmes-pouvoir": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2027-04-23",
+        "20:00"
+      ]
+    ]
+  },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/formations-invitees/handel-messie": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -2950,7 +3878,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/hors-murs/onl-atrium": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "L'Atrium / Tassin-la-Demi-Lune (69)",
     "seances": [
       [
@@ -2960,7 +3888,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/hors-murs/onl-au-bozar-bruxelles": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Bozar / Bruxelles (Belgique)",
     "seances": [
       [
@@ -2970,7 +3898,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/hors-murs/onl-grange-au-lac": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "La Grange au Lac (Évian)",
     "seances": [
       [
@@ -2980,7 +3908,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/hors-murs/onl-mc2": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "MC2 de Grenoble (38)",
     "seances": [
       [
@@ -2990,7 +3918,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jazz/melody-gardot": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3004,7 +3932,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jazz/orchestre-national-jazz": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3014,7 +3942,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jazz/tigran-hamasyan": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3054,7 +3982,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/berg-webern": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3064,7 +3992,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/brahms-quatuor": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3074,7 +4002,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/brahms-zemlinsky": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3084,7 +4012,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/dvorak-martinu": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3094,7 +4022,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/dvorak-quintette": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3104,7 +4032,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/hummel-martinu": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3114,7 +4042,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/janacek-lettres-intimes": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3123,8 +4051,18 @@
       ]
     ]
   },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/janacek-sonate-kreutzer": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
+    "seances": [
+      [
+        "2027-04-20",
+        "20:00"
+      ]
+    ]
+  },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/martinu": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3133,8 +4071,18 @@
       ]
     ]
   },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/martinu-kramar": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
+    "seances": [
+      [
+        "2027-04-06",
+        "20:00"
+      ]
+    ]
+  },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/mozart-smetana": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3144,7 +4092,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/paris-prague": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3154,7 +4102,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/reicha-janacek": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3164,7 +4112,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/schubert-tchaikovski": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3174,7 +4122,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/so-british": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3184,7 +4132,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/suk-schubert": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3194,7 +4142,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musiques-actuelles/birds-wire": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3204,7 +4152,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musiques-actuelles/chilly-gonzales-la-rumeur": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3214,7 +4162,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musiques-monde/orchestre-arabo-andalou-du-maroc": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3244,16 +4192,16 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orchestre-national-lyon/gautier-capucon-simone-young": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
         "2026-10-01",
-        "20:00"
+        null
       ],
       [
         "2026-10-02",
-        "18:00"
+        null
       ]
     ]
   },
@@ -3272,7 +4220,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orchestre-national-lyon/philippe-katerine-symphonique": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3286,7 +4234,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orgue/alma-bettencourt": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3306,7 +4254,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orgue/concert-decouverte-3": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3316,7 +4264,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orgue/petit-concert-orgue-1": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3326,7 +4274,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orgue/petit-concert-orgue-2": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3335,8 +4283,18 @@
       ]
     ]
   },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/orgue/wayne-marshall": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2027-04-02",
+        "20:00"
+      ]
+    ]
+  },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/pause-dejeuner/concert-decouverte-2": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3345,8 +4303,18 @@
       ]
     ]
   },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/pause-dejeuner/concert-decouverte-6": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2027-04-09",
+        "12:30"
+      ]
+    ]
+  },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/bach-weinberg": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
@@ -3356,7 +4324,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/daniil-trifonov": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3366,7 +4334,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/francesco-piemontesi": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3376,7 +4344,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/giorgi-gigashvili": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3386,7 +4354,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/laureat-du-concours-amateur": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3396,7 +4364,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/lucas-debargue": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3406,7 +4374,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/melodie-michel-alexandra-bidi": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3416,7 +4384,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/nelson-goerner": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3426,7 +4394,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/brahms-berg": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3440,7 +4408,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/brahms-britten": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3454,7 +4422,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/bruckner-walton": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3467,8 +4435,36 @@
       ]
     ]
   },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/chostakovitch-symphonie-4": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2027-04-22",
+        "20:00"
+      ],
+      [
+        "2027-04-24",
+        "18:00"
+      ]
+    ]
+  },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/debussy-bartok": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2027-04-08",
+        "20:00"
+      ],
+      [
+        "2027-04-10",
+        "18:00"
+      ]
+    ]
+  },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/janacek-dvorak": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3481,8 +4477,22 @@
       ]
     ]
   },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/khatchatourian-sibelius": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2027-04-01",
+        "20:00"
+      ],
+      [
+        "2027-04-03",
+        "18:00"
+      ]
+    ]
+  },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/korngold-dvorak": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3495,8 +4505,22 @@
       ]
     ]
   },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/mahler-resurrection": {
+    "fetched_at": "2026-10-03",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2027-04-29",
+        "20:00"
+      ],
+      [
+        "2027-04-30",
+        "18:00"
+      ]
+    ]
+  },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/mozart-chostakovitch": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3510,7 +4534,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/nouvel-an-prague": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3532,7 +4556,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/oiseau-feu": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3546,7 +4570,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/orchestre-du-cnsmd-lyon": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3556,7 +4580,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/rachmaninov-janacek": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3570,7 +4594,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/rachmaninov-sibelius": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3584,7 +4608,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/schumann-beethoven": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3598,7 +4622,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/tableaux-exposition": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3612,7 +4636,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/wagner-mahler": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3626,7 +4650,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/wagner-saint-saens": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -3640,7 +4664,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/visite-guidee": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Auditorium de Lyon",
     "seances": [
       [
@@ -3650,7 +4674,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/visite-guidee-0": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Auditorium de Lyon",
     "seances": [
       [
@@ -3668,6 +4692,14 @@
         null
       ]
     ]
+  },
+  "https://www.comedieodeon.com/spectacle/jovany-le-dernier-saltimbanque/": {
+    "defaut": null,
+    "exceptions": {
+      "01-14": "20:00",
+      "03-11": "21:00"
+    },
+    "fetched_at": "2026-10-03"
   },
   "https://www.comedieodeon.com/spectacle/jules-et-marcel/": {
     "defaut": "19:00",
@@ -4680,7 +5712,7 @@
     ]
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/art-et-sciences-volcans-et-terres-lyonnaises": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "image": null,
     "seances": [
       [
@@ -4695,7 +5727,7 @@
     "titre": "Art et sciences : Volcans et terres lyonnaises"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/breton-fait-lmur": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -4710,7 +5742,7 @@
     "titre": "Breton fait l'mur !"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/carte-blanche-dalila-belaza-choregraphe": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -4721,7 +5753,7 @@
     "titre": "Carte blanche à Dalila Belaza, chorégraphe"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/carte-blanche-elise-chatauret-autrice-et-metteuse-en-scene": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -4798,7 +5830,7 @@
     "titre": "Des ronds, des carrés et... des animaux"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/du-regard-au-crayon": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/nos-corps-desirants.jpg?h=bd174762&itok=u6jfYYvB",
     "seances": [
       [
@@ -4809,7 +5841,7 @@
     "titre": "Du regard au crayon"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/erasmuseum-les-etudiants-internationaux-vous-accueillent-au-musee": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "image": null,
     "seances": [
       [
@@ -4820,7 +5852,7 @@
     "titre": "Erasmuseum : les étudiants internationaux vous accueillent au musée"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/festin-un-week-end-pour-tous-les-gouts": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
     "seances": [
       [
@@ -4835,7 +5867,7 @@
     "titre": "Festin ! Un week-end pour tous les goûts…"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/ingres-par-lui-meme": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -4916,7 +5948,7 @@
     "titre": "Le musée fait son cinéma : Femmes en fleurs"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/le-musee-fait-son-cinema-petites-pepites-et-grands-tresors": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
     "seances": [
       [
@@ -4927,7 +5959,7 @@
     "titre": "Le musée fait son cinéma : Petites pépites et grands trésors"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/le-musee-fait-son-cinema-table": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
     "seances": [
       [
@@ -4938,7 +5970,7 @@
     "titre": "Le musée fait son cinéma : À table !"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/le-musee-recopie": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
     "seances": [
       [
@@ -4964,7 +5996,7 @@
     "titre": "Nocturne étudiante"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/nocturne-la-lampe-de-poche": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2025-02/barocbal.jpg?h=33503f50&itok=ePI_Dp0K",
     "seances": [
       [
@@ -5023,7 +6055,7 @@
     "titre": "Regards croisés : quand le pinceau et le pistil se rencontrent..."
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/rendez-vous-avec-lune-des-commissaires-de-lexposition-musee-sentimental": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -5067,7 +6099,7 @@
     "titre": "Une icône moderne : le portrait de la princesse Cantacuzène par Pierre Puvis de Chavannes"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/une-petite-decouverte-du-dessin": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=bd174762&itok=SeK0_7_t",
     "seances": [
       [
@@ -5100,7 +6132,7 @@
     "titre": "Une petite Histoire du musée, l’abbaye des Dames de Saint Pierre"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/week-end-accessibilite": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/dsc04770.jpg?itok=eYyMZRvK",
     "seances": [
       [
@@ -5167,7 +6199,7 @@
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/clementine-margaine-sarah-margaine": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Opéra de Lyon",
     "seances": [
       [
@@ -5208,7 +6240,7 @@
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/go-maestro-24": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Amphi de l'Opéra de Lyon",
     "seances": [
       [
@@ -5234,7 +6266,7 @@
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/danse/le-sacre-du-printemps-house": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Opéra de Lyon",
     "seances": [
       [
@@ -5292,7 +6324,7 @@
     "time": "19:00"
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/concerts-du-cnsmd-40": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Amphi de l'Opéra de Lyon",
     "seances": [
       [
@@ -5344,7 +6376,7 @@
     "time": "19:00"
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/the-very-big-experimental-toubifri-orchestra-le-lac-1": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Théâtre de La Renaissance - Oullins-Pierre-Bénite",
     "seances": [
       [
@@ -5406,7 +6438,7 @@
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera/lamour-des-trois-oranges": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-10-03",
     "lieu": "Opéra de Lyon",
     "seances": [
       [
@@ -5628,7 +6660,7 @@
     "time": "19:00"
   },
   "https://www.transbordeur.fr/evenement/apparat-anika-10102026/": {
-    "fetched_at": "2026-09-02",
+    "fetched_at": "2026-10-03",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-apparat-1.jpeg",
     "time": "19:00"
   },
@@ -5811,6 +6843,11 @@
     "fetched_at": "2026-09-12",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/07/a-dubecho54.jpg",
     "time": "23:30"
+  },
+  "https://www.transbordeur.fr/evenement/jahneration-01042027/": {
+    "fetched_at": "2026-10-03",
+    "image": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-jahneration.png",
+    "time": "19:00"
   },
   "https://www.transbordeur.fr/evenement/jeanjass-17022027/": {
     "fetched_at": "2026-10-02",
