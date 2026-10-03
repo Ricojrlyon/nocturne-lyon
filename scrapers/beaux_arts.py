@@ -149,12 +149,17 @@ def _lire_fiche(url: str) -> Optional[dict]:
         print(f"[Beaux-Arts] {url}: {exc}", file=sys.stderr)
         return None
     soup = BeautifulSoup(r.text, "html.parser")
-    img = soup.select_one(".field--name-field-pc-main-image img")
+    # L'affiche est l'image du BANDEAU de la fiche. Le champ « main image »,
+    # lu jusque-là, ne vit sur la fiche que dans les cartes du bloc de
+    # suggestions, en bas de page : 34 dates sur 36 portaient l'affiche
+    # d'un autre rendez-vous (BUG-32). Sans bandeau, pas d'affiche,
+    # plutôt que celle d'un voisin.
+    img = soup.select_one(".LAME-banner-img img")
     src = img.get("src") if img else None
     return {
         "seances": _seances(soup),
         "titre": _plat(soup.select_one(".field--name-title")) or None,
-        "image": (BASE + src if src and src.startswith("/") else src),
+        "affiche": (BASE + src if src and src.startswith("/") else src),
     }
 
 
@@ -284,9 +289,12 @@ def fetch() -> List[Event]:
             ecartees += 1
             continue
 
+        # « affiche » et non plus « image » : une clé nouvelle fait relire au
+        # prochain passage les fiches gardées en cache avec l'image d'un
+        # voisin (BUG-32), qui sinon y seraient restées jusqu'à sept jours.
         detail = detail_cache.get_details(
             BASE + lien, _lire_fiche,
-            fields=("seances", "titre", "image")) or {}
+            fields=("seances", "titre", "affiche")) or {}
         seances = detail.get("seances") or []
         if not seances:
             sans_date += 1
@@ -313,7 +321,7 @@ def fetch() -> List[Event]:
                 date_end=None,
                 time=heure,
                 url=BASE + lien,
-                image=detail.get("image"),
+                image=detail.get("affiche"),
             ))
 
     if ecartees:
