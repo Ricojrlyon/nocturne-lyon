@@ -20,13 +20,17 @@ cent vingt-trois — le même spectacle se joue dix à dix-sept fois.
 C'était le manque à combler, le Petit Bulletin remontant cette salle
 sans une seule image.
 
-Pas de piège « hors les murs » ici, contrairement aux Célestins : les
-tournées vivent sur une page séparée (/productions-du-tnp/tournees-
-saison/) que ce scraper ne lit pas. L'agenda ne connaît que les deux
-salles de la maison, Roger-Planchon et Jean-Bouise. Une salle inconnue
-qui apparaîtrait est signalée, sans être écartée : le TNP peut
-légitimement ouvrir un troisième espace, et perdre ses représentations
-en silence serait pire que de les publier.
+Les tournées vivent sur une page séparée (/productions-du-tnp/tournees-
+saison/) que ce scraper ne lit pas. L'agenda connaît les deux salles de
+la maison, Roger-Planchon et Jean-Bouise, et parfois « Hors les murs » :
+« Avant que les mots ne retournent à l'air » est un parcours dans
+l'espace public, dont le point de départ n'est donné qu'à l'inscription.
+Publié tel quel, il envoyait au TNP (BUG-33). Il reste publié, mais
+marqué hors les murs sans salle nommée (OFFSITE_PLUSIEURS) : la page
+l'étiquette « ailleurs ». Une autre salle inconnue qui apparaîtrait est
+signalée, sans être écartée : le TNP peut légitimement ouvrir un
+troisième espace, et perdre ses représentations en silence serait pire
+que de les publier.
 """
 from __future__ import annotations
 
@@ -40,7 +44,7 @@ from typing import Dict, List, Optional
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, get as base_get
+from .base import Event, OFFSITE_PLUSIEURS, get as base_get
 
 # Graphie du Petit Bulletin, qui remonte aussi cette salle : c'est ce qui
 # permet à la dédup de regrouper les deux sources.
@@ -131,6 +135,7 @@ def fetch() -> List[Event]:
 
     lignes = []
     salles_inconnues = set()
+    hors_les_murs = set()
     for bloc in soup.select(".agenda__month-day"):
         jour = _jour_de(bloc)
         if not jour or not (debut <= jour <= fin):
@@ -146,7 +151,11 @@ def fetch() -> List[Event]:
             heure = (t.get("datetime") or "").strip() if t else ""
             p = item.select_one(".manifestation-place")
             salle = p.get_text(" ", strip=True) if p else ""
-            if salle and not any(s in _norm(salle) for s in SALLES):
+            # « Hors les murs » n'est pas une troisième salle (BUG-33).
+            dehors = "hors-les-murs" in _norm(salle)
+            if dehors:
+                hors_les_murs.add(titre)
+            elif salle and not any(s in _norm(salle) for s in SALLES):
                 salles_inconnues.add(salle)
             lignes.append({
                 "jour": jour,
@@ -154,6 +163,7 @@ def fetch() -> List[Event]:
                 "titre": titre,
                 "sous": sous,
                 "url": a["href"],
+                "dehors": dehors,
             })
 
     if not lignes:
@@ -192,10 +202,14 @@ def fetch() -> List[Event]:
             time=l["heure"],
             url=l["url"],
             image=affiches.get(l["url"]),
+            offsite_venue=OFFSITE_PLUSIEURS if l["dehors"] else None,
         )
         for l in lignes
     ]
 
+    if hors_les_murs:
+        print(f"[TNP] hors les murs, marqué(s) « ailleurs » : "
+              f"{', '.join(sorted(hors_les_murs))}", file=sys.stderr)
     if salles_inconnues:
         print(f"[TNP] salle(s) hors des deux habituelles, conservée(s) : "
               f"{', '.join(sorted(salles_inconnues))}", file=sys.stderr)
