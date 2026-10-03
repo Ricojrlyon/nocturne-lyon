@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T07:36:34.604560+00:00",
+  "generated_at": "2026-10-03T09:59:56.784680+00:00",
   "count": 2939,
   "sources": 37,
   "events": [
@@ -888,20 +888,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "Audrey Perrin dans \"Je ne simule plus\"",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-10-03",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/audrey-perrin-dans-je-ne-simule-plus/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/audrey-perrin-540x800.jpg",
-      "offsite_venue": null,
-      "id": "a294dc09e8d0"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
       "subtitle": null,
       "category": "café-théâtre",
@@ -912,6 +898,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/complexe-comedy-club-540x800.jpg",
       "offsite_venue": null,
       "id": "bf9dd5d9baff"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "Audrey Perrin dans \"Je ne simule plus\"",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-10-03",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/audrey-perrin-dans-je-ne-simule-plus/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/audrey-perrin-540x800.jpg",
+      "offsite_venue": null,
+      "id": "a294dc09e8d0"
     },
     {
       "venue": "Les Subsistances",
@@ -21748,20 +21748,6 @@
     {
       "venue": "Le Complexe café-théâtre",
       "venue_slug": "le-complexe",
-      "title": "Guillaume Sentou \"Un mec cool\"",
-      "subtitle": null,
-      "category": "café-théâtre",
-      "date_start": "2026-12-04",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.lecomplexelyon.com/programme/guillaume-sentou-un-mec-cool/",
-      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/guillaume-sentou-540x800.jpg",
-      "offsite_venue": null,
-      "id": "cebdb9ac5785"
-    },
-    {
-      "venue": "Le Complexe café-théâtre",
-      "venue_slug": "le-complexe",
       "title": "\"La Mauvaise Éducation\" de Sarah Lélé",
       "subtitle": null,
       "category": "café-théâtre",
@@ -21772,6 +21758,20 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/sarah-lele-540x800.jpg",
       "offsite_venue": null,
       "id": "5b3b078c675b"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "Guillaume Sentou \"Un mec cool\"",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-04",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/guillaume-sentou-un-mec-cool/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/guillaume-sentou-540x800.jpg",
+      "offsite_venue": null,
+      "id": "cebdb9ac5785"
     },
     {
       "venue": "TNP - Théâtre National Populaire",
@@ -41150,6 +41150,9 @@
       "id": "28db94d2c949"
     }
   ],
+  "reprises": {
+    "Le Complexe café-théâtre": "2026-10-03"
+  },
   "lieux_des_collecteurs": {
     "Le Sucre": [
       "Le Sucre"
