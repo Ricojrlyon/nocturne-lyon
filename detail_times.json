@@ -1658,6 +1658,16 @@
     ],
     "time": "16:00"
   },
+  "https://radiant-bellevue.fr/spectacles/isaac-delusion/": {
+    "fetched_at": "2026-10-04",
+    "seances": [
+      [
+        "2027-04-02",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
   "https://radiant-bellevue.fr/spectacles/jean-benoit-diallo/": {
     "fetched_at": "2026-10-03",
     "seances": [
@@ -3764,7 +3774,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/famille/carnaval-emotions": {
-    "fetched_at": "2026-09-26",
+    "fetched_at": "2026-10-04",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -3952,7 +3962,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/eleves-du-cnsmd-lyon-12-nov-26": {
-    "fetched_at": "2026-09-26",
+    "fetched_at": "2026-10-04",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -3962,7 +3972,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/eleves-du-cnsmd-lyon-15-oct-26": {
-    "fetched_at": "2026-09-26",
+    "fetched_at": "2026-10-04",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -6237,7 +6247,7 @@
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/beethoven-sibelius": {
-    "fetched_at": "2026-09-26",
+    "fetched_at": "2026-10-04",
     "lieu": "Opéra de Lyon",
     "seances": [
       [
