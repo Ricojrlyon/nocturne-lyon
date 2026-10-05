@@ -149,35 +149,60 @@ def _time_from_soup(soup: BeautifulSoup) -> Optional[str]:
     return _parse_hhmm(visible[:800])
 
 
+# Largeur visée pour une affiche : les cartes font 400 px de large au plus,
+# 800 couvre donc les écrans denses.
+LARGEUR_AFFICHE = 800
+
+
+def _taille_proche(img) -> Optional[str]:
+    """Parmi les tailles que la page propose pour cette image (srcset :
+    « url 768w, url 1024w, … »), celle dont la largeur est la plus proche
+    de LARGEUR_AFFICHE. Le src est l'original, qui pesait jusqu'à 3,6 Mo
+    pour une carte de 400 px ; sa taille 768 px, dix fois moins pour une
+    photo. None si la balise n'a pas de srcset."""
+    choix = []
+    for morceau in re.split(r",\s+", (img.get("srcset") or "").strip()):
+        m = re.fullmatch(r"(\S+)\s+(\d+)w", morceau.strip())
+        if not m:
+            continue
+        url = m.group(1)
+        if url.startswith("/") and not url.startswith("//"):
+            url = SITE + url
+        if url.startswith("http"):
+            choix.append((abs(int(m.group(2)) - LARGEUR_AFFICHE), url))
+    return min(choix)[1] if choix else None
+
+
 def _image_from_soup(soup: BeautifulSoup) -> Optional[str]:
     """Affiche de l'événement depuis la page détail.
 
     L'API WP n'expose pas de featured_media (toujours 0) : l'image vit
     dans la section hero (.Single__hero-cover__image), sinon premier
     visuel wp-content de la page (les suivants sont les artistes du
-    line-up).
+    line-up). Dans sa taille la plus proche de 800 px (_taille_proche),
+    l'original faute de mieux.
     """
     hero_img = soup.select_one(".Single__hero-cover__image img")
     if hero_img is not None:
-        url = img_src(hero_img, host=SITE)
+        url = _taille_proche(hero_img) or img_src(hero_img, host=SITE)
         if url:
             return url
     for img in soup.find_all("img"):
-        url = img_src(img, host=SITE)
+        url = _taille_proche(img) or img_src(img, host=SITE)
         if url and "/wp-content/uploads/" in url:
             return url
     return None
 
 
 def _fetch_detail(url: str) -> Optional[dict]:
-    """One GET on the detail page → {"time": …, "image": …} (or None on
+    """One GET on the detail page → {"time": …, "affiche": …} (or None on
     network error, so detail_cache keeps the previous values)."""
     try:
         r = base_get(url, timeout=12, headers=HEADERS)
         if r.status_code != 200:
             return None
         soup = BeautifulSoup(r.text, "html.parser")
-        return {"time": _time_from_soup(soup), "image": _image_from_soup(soup)}
+        return {"time": _time_from_soup(soup), "affiche": _image_from_soup(soup)}
     except requests.RequestException:
         return None
 
@@ -307,10 +332,16 @@ def fetch() -> List[Event]:
 
     # Pass 2: fetch each detail page to extract time (cached across runs,
     # throttled — see scrapers/detail_cache.py)
+    # La clé « affiche » (taille réduite) remplace « image » (l'original) :
+    # une fiche gardée en cache sans elle est relue dès le premier passage.
+    # « image » reste demandée pour que le cache la conserve : si cette
+    # relecture échoue, la carte garde son ancienne affiche plutôt que
+    # de la perdre jusqu'à la suivante, trente jours plus tard.
     events: List[Event] = []
     seen: set = set()
     for stub in stubs:
-        details = detail_cache.get_details(stub["url"], _fetch_detail)
+        details = detail_cache.get_details(stub["url"], _fetch_detail,
+                                           fields=("time", "affiche", "image"))
         time_str = details.get("time")
         ev = Event(
             venue=VENUE,
@@ -322,7 +353,7 @@ def fetch() -> List[Event]:
             date_end=None,
             time=time_str,
             url=stub["url"],
-            image=stub["image"] or details.get("image"),
+            image=stub["image"] or details.get("affiche") or details.get("image"),
         )
         if ev.id not in seen:
             seen.add(ev.id)
