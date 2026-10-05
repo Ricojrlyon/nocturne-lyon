@@ -170,6 +170,32 @@ def _image(noeud: dict, inclus: Dict[str, dict]) -> Optional[str]:
     return None
 
 
+def _taille_carte(session: requests.Session, url: str) -> str:
+    """L'affiche dans la taille « carte » de l'agenda du musée, 800 × 500.
+
+    L'API ne donne que l'original : jusqu'à 9,5 Mo pour une carte de
+    400 px. Pour son agenda, le site en fabrique une version recadrée de
+    800 × 500 (style d'image Drupal card_desktop_2x), quatre fois plus
+    légère en moyenne. Son adresse se déduit de celle de l'original, mais
+    le musée ne la cite qu'avec un jeton (itok) impossible à calculer :
+    elle est donc vérifiée avant d'être prise. À défaut, l'original, comme
+    avant.
+    """
+    racine = BASE + "/sites/default/files/"
+    if not url.startswith(racine):
+        return url
+    carte = racine + "styles/card_desktop_2x/public/" + url[len(racine):]
+    try:
+        r = base_get(carte, session=session, headers=HEADERS, timeout=20,
+                     methode="HEAD")
+    except requests.RequestException:
+        return url
+    if r.status_code == 200 and \
+            (r.headers.get("Content-Type") or "").startswith("image/"):
+        return carte
+    return url
+
+
 def _url(noeud: dict) -> Optional[str]:
     alias = ((noeud.get("attributes") or {}).get("path") or {}).get("alias")
     return BASE + alias if alias else None
@@ -312,6 +338,14 @@ def fetch() -> List[Event]:
 
     events, ailleurs, recurrents = _evenements(session, today, horizon)
     expos, sans_periode = _expositions(session, today, horizon)
+
+    # Une vérification par affiche publiée, pas par séance.
+    cartes: Dict[str, str] = {}
+    for e in events + expos:
+        if e.image:
+            if e.image not in cartes:
+                cartes[e.image] = _taille_carte(session, e.image)
+            e.image = cartes[e.image]
 
     if ailleurs:
         detail = ", ".join(f"{k} ({v})" for k, v in sorted(ailleurs.items()))
