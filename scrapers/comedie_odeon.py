@@ -114,6 +114,31 @@ def _heure(txt: str) -> Optional[str]:
     return f"{int(m.group(1)):02d}:{m.group(2) or '00'}" if m else None
 
 
+# Largeur visée pour une affiche : les cartes font 400 px de large au plus,
+# 800 couvre donc les écrans denses.
+LARGEUR_AFFICHE = 800
+
+
+def _taille_proche(img) -> Optional[str]:
+    """Parmi les tailles que la carte propose pour son affiche (srcset :
+    « url 768w, url 1086w, … »), celle dont la largeur est la plus proche
+    de LARGEUR_AFFICHE. Le src est l'original, jusqu'à 3,1 Mo pour une
+    carte de 400 px ; sa taille 768 px, sept à dix fois moins pour une
+    photo.
+    None si la balise n'a pas de srcset."""
+    choix = []
+    for morceau in re.split(r",\s+", (img.get("srcset") or "").strip()):
+        m = re.fullmatch(r"(\S+)\s+(\d+)w", morceau.strip())
+        if not m:
+            continue
+        url = m.group(1)
+        if url.startswith("/") and not url.startswith("//"):
+            url = BASE + url
+        if url.startswith("http"):
+            choix.append((abs(int(m.group(2)) - LARGEUR_AFFICHE), url))
+    return min(choix)[1] if choix else None
+
+
 def _lire_fiche(url: str) -> Optional[dict]:
     """Horaire par défaut d'un spectacle et ses exceptions datées."""
     try:
@@ -198,7 +223,7 @@ def fetch() -> List[Event]:
         genre = _genre(art.get("data-category"))
         spectacles[a["href"]] = {
             "titre": _html.unescape(h2.get_text(" ", strip=True)),
-            "image": img.get("src") if img else None,
+            "image": (_taille_proche(img) or img.get("src")) if img else None,
             "heure": _heure(resume),
             "genre": genre,
         }
