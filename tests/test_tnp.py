@@ -57,5 +57,50 @@ class HorsLesMurs(unittest.TestCase):
                       journal.getvalue())
 
 
+UP = tnp.BASE + "/app/uploads/2026/04/"
+OG = UP + "1_7minutescFelipe_Dupouy.jpg"
+REDUITE = UP + "1_7minutescFelipe_Dupouy-800x518.v1776848314.jpg"
+
+
+def tailles(nom):
+    """Le srcset de la fiche : les tailles réduites, l'original versionné."""
+    return ", ".join(["%s%s-%s.v1776848314.jpg %sw" % (UP, nom, t, t.split("x")[0])
+                      for t in ("465x301", "800x518", "768x497", "320x207", "1400x906")]
+                     + ["%s%s.v1776848314.jpg 1536w" % (UP, nom)])
+
+
+class Affiche(unittest.TestCase):
+    """L'affiche dans sa taille réduite, pas l'og:image d'origine (audit
+    n° 1) : la fiche montre la même image avec ses tailles dans un srcset."""
+
+    def lire(self, corps, og=OG):
+        page = ('<html><head><meta property="og:image" content="%s"></head><body>%s</body></html>'
+                % (og, corps))
+        site = FauxSite({FICHE % "7-minutes": page})
+        return tnp._affiche(site, FICHE % "7-minutes")
+
+    def test_la_taille_la_plus_proche_de_800_px(self):
+        # 202 Ko au lieu de 1,6 Mo pour la vraie affiche de « 7 minutes ».
+        corps = '<img src="%s" srcset="%s">' % (UP + "x.jpg", tailles("1_7minutescFelipe_Dupouy"))
+        self.assertEqual(self.lire(corps), REDUITE)
+
+    def test_l_image_d_un_autre_spectacle_n_est_pas_prise(self):
+        # Une vignette « à voir aussi », au nom plus long que l'affiche.
+        corps = ('<img srcset="%s"><img srcset="%s">'
+                 % (tailles("Mobile_homes"), tailles("1_7minutescFelipe_Dupouy_bis")))
+        self.assertEqual(self.lire(corps), OG)
+
+    def test_un_srcset_aux_adresses_relatives(self):
+        relatif = tailles("1_7minutescFelipe_Dupouy").replace(tnp.BASE, "")
+        self.assertEqual(self.lire('<img srcset="%s">' % relatif), REDUITE)
+
+    def test_sans_srcset_l_og_image_comme_avant(self):
+        self.assertEqual(self.lire('<img src="%s">' % OG), OG)
+
+    def test_sans_og_image_aucune(self):
+        self.assertIsNone(self.lire('<img srcset="%s">' % tailles("1_7minutescFelipe_Dupouy"),
+                                    og=""))
+
+
 if __name__ == "__main__":
     unittest.main()

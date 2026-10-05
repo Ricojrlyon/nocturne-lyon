@@ -40,6 +40,7 @@ import time
 import unicodedata
 from datetime import date as Date, timedelta
 from typing import Dict, List, Optional
+from urllib.parse import urlsplit
 
 import requests
 from bs4 import BeautifulSoup
@@ -113,14 +114,55 @@ def _titre_et_sous_titre(a) -> tuple:
     return titre, (sous or None)
 
 
+# Largeur visée pour une affiche : les cartes font 400 px de large au plus,
+# 800 couvre donc les écrans denses.
+LARGEUR_AFFICHE = 800
+
+
+def _taille_proche(img) -> Optional[str]:
+    """Parmi les tailles que la page propose pour cette image (srcset :
+    « url 465w, url 800w, … »), celle dont la largeur est la plus proche
+    de LARGEUR_AFFICHE. None si la balise n'a pas de srcset."""
+    choix = []
+    for morceau in re.split(r",\s+", (img.get("srcset") or "").strip()):
+        m = re.fullmatch(r"(\S+)\s+(\d+)w", morceau.strip())
+        if not m:
+            continue
+        url = m.group(1)
+        if url.startswith("/") and not url.startswith("//"):
+            url = BASE + url
+        if url.startswith("http"):
+            choix.append((abs(int(m.group(2)) - LARGEUR_AFFICHE), url))
+    return min(choix)[1] if choix else None
+
+
 def _affiche(session: requests.Session, url: str) -> Optional[str]:
-    """og:image de la fiche spectacle."""
+    """L'affiche de la fiche spectacle : son og:image, dans la taille la
+    plus proche de 800 px que la page propose pour la même image.
+
+    L'og:image est l'original, 1,3 à 1,6 Mo pour une carte de 400 px. La
+    page montre la même image avec ses tailles réduites (srcset :
+    « …-800x518.v1776848314.jpg 800w, … »), retrouvée par le chemin du
+    fichier : 120 à 200 Ko en 800 px. Faute de la retrouver, l'og:image,
+    comme avant.
+    """
     r = base_get(url, session=session, headers=HEADERS, timeout=30)
     r.raise_for_status()
     soup = BeautifulSoup(r.text, "html.parser")
     og = soup.select_one('meta[property="og:image"]')
     src = (og.get("content") or "").strip() if og else ""
-    return src if src.startswith("http") else None
+    if not src.startswith("http"):
+        return None
+    # « /app/uploads/2026/04/1_7minutescFelipe_Dupouy », suivi d'un tiret
+    # (une taille) ou d'un point (l'original versionné) : pas le fichier
+    # d'à côté au nom plus long.
+    racine = re.compile(re.escape(re.sub(r"\.\w+$", "", urlsplit(src).path)) + r"[-.]")
+    for img in soup.find_all("img"):
+        if racine.search(img.get("srcset") or ""):
+            reduite = _taille_proche(img)
+            if reduite:
+                return reduite
+    return src
 
 
 def fetch() -> List[Event]:
