@@ -208,6 +208,38 @@ def _lire_fiche(url: str) -> Optional[dict]:
     return {"seances": seances}
 
 
+def _affiche(session: requests.Session, src) -> Optional[str]:
+    """L'affiche d'un spectacle, dans sa copie WebP de 768 px.
+
+    L'API donne les tailles que WordPress a fabriquées
+    (uagb_featured_image_src : full, medium_large…), toutes en PNG :
+    l'original de 1 080 px pèse 2 à 2,7 Mo, sa taille 768 px encore plus
+    d'un mégaoctet. À côté de chaque fichier, le module d'optimisation du
+    site range une copie WebP (« ….png.webp ») dix fois plus légère : une
+    centaine de Ko en 768 px. Mais ses pages ne la citent pas : chacune
+    est donc vérifiée avant d'être prise. À défaut, l'original, comme avant.
+    """
+    if not isinstance(src, dict):
+        return None
+
+    def taille(nom):
+        v = src.get(nom)
+        u = v[0] if isinstance(v, list) and v else None
+        return u if isinstance(u, str) and u.startswith("http") else None
+
+    pleine = taille("full")
+    for u in dict.fromkeys(x for x in (taille("medium_large"), pleine) if x):
+        try:
+            r = base_get(u + ".webp", session=session, headers=HEADERS,
+                         timeout=15, methode="HEAD")
+        except requests.RequestException:
+            continue
+        if r.status_code == 200 and \
+                (r.headers.get("Content-Type") or "").startswith("image/"):
+            return u + ".webp"
+    return pleine
+
+
 def _categorie(ids: List[int], noms: Dict[int, str]) -> Optional[str]:
     genres = [n for n in (_texte(noms.get(i)) for i in ids or [])
               if n and not any(p in _norm(n) for p in PUBLICS)]
@@ -256,15 +288,17 @@ def fetch() -> List[Event]:
         titre = _texte((sp.get("title") or {}).get("rendered"))
         if not lien or not titre:
             continue
-        src = sp.get("uagb_featured_image_src") or {}
-        pleine = src.get("full") if isinstance(src, dict) else None
-        image = pleine[0] if isinstance(pleine, list) and pleine else None
         categorie = _categorie(sp.get("event_type") or [], genres)
 
         d = detail_cache.get_details(lien, _lire_fiche, fields=("seances",))
-        for jour_iso, heure in (d.get("seances") or []):
-            if not (today.isoformat() <= jour_iso <= horizon.isoformat()):
-                continue
+        seances = [(jour_iso, heure) for jour_iso, heure in (d.get("seances") or [])
+                   if today.isoformat() <= jour_iso <= horizon.isoformat()]
+        if not seances:
+            continue
+        # L'affiche n'est cherchée que pour un spectacle qui a des dates :
+        # une vérification par affiche publiée, pas par spectacle de la saison.
+        image = _affiche(session, sp.get("uagb_featured_image_src"))
+        for jour_iso, heure in seances:
             events.append(Event(
                 venue=VENUE,
                 venue_slug=SLUG,
