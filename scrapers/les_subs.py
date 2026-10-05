@@ -79,6 +79,31 @@ def _smart_year(month: int, day: int) -> int:
     return today.year + 1 if (today - candidate).days > 15 else today.year
 
 
+# Largeur visée pour une affiche : les cartes font 400 px de large au plus,
+# 800 couvre donc les écrans denses.
+LARGEUR_AFFICHE = 800
+
+
+def _taille_proche(img) -> Optional[str]:
+    """Quand la carte montre l'ORIGINAL de son affiche — son src est
+    l'entrée la plus large du srcset —, la taille du srcset la plus
+    proche de LARGEUR_AFFICHE. L'original pesait jusqu'à 8,7 Mo pour une
+    carte de 400 px. La plupart des cartes montrent déjà une vignette de
+    200 px, absente du srcset : None, on n'y touche pas. None aussi sans
+    srcset."""
+    def absolue(u: str) -> str:
+        return HOST + u if u.startswith("/") and not u.startswith("//") else u
+
+    choix = []
+    for morceau in re.split(r",\s+", (img.get("srcset") or "").strip()):
+        m = re.fullmatch(r"(\S+)\s+(\d+)w", morceau.strip())
+        if m and absolue(m.group(1)).startswith("http"):
+            choix.append((int(m.group(2)), absolue(m.group(1))))
+    if not choix or max(choix)[1] != absolue((img.get("src") or "").strip()):
+        return None
+    return min(choix, key=lambda c: abs(c[0] - LARGEUR_AFFICHE))[1]
+
+
 def _slug_to_title(url: str) -> str:
     """Fallback si la carte n'a pas de titre : 'some-slug' -> 'Some Slug'."""
     slug = url.rstrip("/").rsplit("/", 1)[-1]
@@ -126,7 +151,8 @@ def fetch() -> List[Event]:
                 cats = [cat_el.get_text(" ", strip=True)]
             category = " · ".join(c for c in cats if c).lower() or None
 
-        image = img_src(card.find("img"), host=HOST)
+        img = card.find("img")
+        image = (_taille_proche(img) if img else None) or img_src(img, host=HOST)
 
         # Une <li> par date : "ven. 17 Juil | 20:00"
         for li in card.select("ul li"):
