@@ -3491,7 +3491,11 @@ function journeeHtml({ iso, comptes, visibles }) {
   html.push('<section class="day" id="day-' + iso + '">');
   html.push('  <div class="day-bar">');
   html.push('    <span class="db-date">' + dd + '/' + mm + '</span>');
-  html.push('    <span class="db-label">' + FR_DAYS_FULL[d.getDay()] + ' '
+  // Titre de niveau 2 pour les lecteurs d'écran (audit n° 7) : on saute de
+  // journée en journée, entre le titre du site et ceux des cartes. Le rôle
+  // seul, sans balise <h2>, ne touche pas à l'apparence.
+  html.push('    <span class="db-label" role="heading" aria-level="2">'
+               + FR_DAYS_FULL[d.getDay()] + ' '
                + d.getDate() + ' ' + FR_MONTHS[d.getMonth()] + '</span>');
   html.push('    ' + famillesHtml(comptes));
   html.push('    <span class="db-count">' + String(n).padStart(2, '0')
