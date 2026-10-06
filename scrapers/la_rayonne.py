@@ -38,8 +38,8 @@ URL = "https://larayonne.org/agenda/?univers=&type=24&saison=&st="
 HOST = "https://larayonne.org"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                  "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
+                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
