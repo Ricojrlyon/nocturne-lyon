@@ -31,6 +31,10 @@ publication du second.
   Chaque module expose `fetch() -> List[Event]`. Les échecs d'une salle ne
   font pas tomber le run : la salle est signalée en erreur, jusqu'en tête
   de la page du passage sur GitHub, et les autres passent.
+  Chaque robot s'annonce aux sites sous son vrai nom, « nocturne-lyon-events »,
+  avec le lien du projet. Deux exceptions : celui du LOU garde l'identité
+  d'un navigateur, la billetterie du club étant protégée contre les robots,
+  et celui du Complexe a sa propre formule (voir plus bas).
   Les appels réseau passent par `base.get` (exceptions motivées dans
   `scrapers/base.py`), qui réessaie sur une coupure, un délai dépassé ou un
   502/503/504, jamais sur une vraie réponse du site.
@@ -171,13 +175,30 @@ publication du second.
   d'une double séance ; et une fiche sans bloc « Lieu » n'est pas un
   accueil extérieur mais un lieu non précisé : les accueils, eux, le
   renseignent toujours.
+- **`scrapers/opera_lyon.py`** : l'Opéra national de Lyon. Le programme
+  s'étale sur plusieurs pages (« En voir plus ») : le robot les suit, vingt
+  au plus, jusqu'à la première qui n'apporte rien de neuf ; lue seule, la
+  première page arrêtait l'Opéra à la mi-novembre. La catégorie vient de
+  l'adresse de chaque production (« en famille » va au jeune public), et
+  un titre qui commence par « Atelier » reste un atelier, même rangé parmi
+  les concerts. Les visites guidées sont écartées. Un CYCLE, une plage de
+  plusieurs jours dont la fiche n'annonce aucune représentation, l'est
+  aussi : chacun de ses rendez-vous a sa propre fiche, et la plage aurait
+  peint chacun de ses jours d'une carte où rien ne se joue. Hors les murs,
+  l'Amphi et la Grande salle restent des salles de la maison ; une
+  production jouée ailleurs est rangée sous la salle qui la reçoit, et
+  celle qui se joue dans plusieurs salles est marquée « ailleurs ».
 - **`scrapers/tnp.py`** : le TNP, seul scraper à s'être vu REFUSER une
   API qui existe : le site est un WordPress mais son robots.txt interdit
   /wp-json/. On lit donc /agenda/, qui a l'avantage de rendre la saison
   entière en une requête, avec des attributs `datetime` lisibles à la
-  machine. Les affiches viennent de l'`og:image` des fiches spectacle :
-  dix-sept fiches pour cent vingt-trois représentations, le même
-  spectacle se jouant dix à dix-sept fois.
+  machine. Les affiches viennent des fiches spectacle : dix-sept fiches
+  pour cent vingt-trois représentations, le même spectacle se jouant dix
+  à dix-sept fois. La fiche montre l'affiche en treize tailles, et le
+  robot prend celle de 800 px (l'`og:image`, l'original, pèse 1,3 à
+  1,6 Mo). Un parcours « Hors les murs », dont le point de départ n'est
+  donné qu'à l'inscription, est publié marqué « ailleurs » plutôt que
+  placé à Villeurbanne.
 - **`scrapers/tng.py`** : le TNG. Les cartes du programme n'écrivent que
   la plage d'un spectacle (« 02 > 06 oct. », le mois une seule fois),
   relâches et séances scolaires comprises. Le scraper ouvre donc chaque
@@ -187,7 +208,9 @@ publication du second.
   la carte est une erreur de saisie de la fiche et n'est pas retenue ;
   faute de séance, la carte fait foi. La fiche est relue à chaque
   passage, sans le cache des heures : une séance ajoutée ou retirée se
-  voit dès le lendemain.
+  voit dès le lendemain. Le site coupe certains extraits au milieu d'un
+  caractère (« Pop� » pour « Pop’Corn ») : le losange est retiré du
+  sous-titre.
 - **`scrapers/beaux_arts.py`** : le Musée des Beaux-Arts. Drupal sans
   JSON:API, mais très régulier : une liste paginée qui porte le type de
   chaque rendez-vous, et une fiche où chaque séance occupe sa ligne,
@@ -209,7 +232,9 @@ publication du second.
   liste, mais sans aucune date de séance : son champ horaire dit
   « ouverte du mercredi au lundi de 10h à 18h », ce qui est un horaire
   et non une période. C'est pourquoi la première version publiait
-  trente-sept rendez-vous et pas une exposition.
+  trente-sept rendez-vous et pas une exposition. L'affiche est celle du
+  bandeau de la fiche : la première image de la page était la vignette
+  d'un AUTRE rendez-vous, suggéré en bas de page.
 - **`scrapers/celestins.py`** : Les Célestins, seule salle du dépôt à
   offrir une API JSON DOCUMENTÉE : le site tourne sous Roadiz, son
   robots.txt n'interdit que /api/docs, et /api/docs.json rend la
@@ -248,14 +273,17 @@ publication du second.
   vente », « Hors les murs », « Annulé »), les genres, le titre et le
   sous-titre ; lue d'un bloc, elle donnait « Épuisé sur ce point de vente
   Post-Metal HYPNO5E + HIPPOTRAKTOR ». Le titre est celui de la carte ;
-  les genres font la catégorie, tous ensemble : « Groove » seul ne se
-  range dans aucune famille, « Groove / Jazz » dans le jazz ; les
+  les genres font la catégorie, tous ensemble : « Groove » seul se
+  range dans la musique, « Groove / Jazz » dans le jazz ; les
   mentions utiles passent au sous-titre, et « Annulé » reste en tête du
   titre, où le filtre des annulés le lit. Les soirées « Hors les murs »
   et les formations professionnelles sont écartées, et les agrégateurs
   ne peuvent pas les republier sur ce lieu : le Petit Bulletin
   annonçait Ivanoé « au Marché Gare », quand la salle le donne à la MJC
-  du Vieux-Lyon.
+  du Vieux-Lyon. L'agenda n'affiche d'abord qu'une partie du programme :
+  le robot suit les pages « Afficher plus », dix au plus, et une page
+  suivante qui échoue fait échouer la collecte, rattrapée alors en entier
+  par le garde-fou plutôt que publiée à moitié.
 - **`scrapers/radiant.py`** : le Radiant-Bellevue, à Caluire. La page
   d'accueil porte la saison entière, et un spectacle y paraît parfois
   deux fois : d'abord sans genre dans le bandeau « à la une », puis dans
@@ -294,7 +322,11 @@ publication du second.
   Le lieu est celui où l'on va : un hors-les-murs se range sous sa vraie
   salle, et un titre cité vaut le titre long qui le cite (« Le Lac » pour
   « … "Le Lac" »), sans quoi le concert de l'Opéra au Théâtre de La
-  Renaissance et l'annonce du Petit Bulletin restaient deux cartes.
+  Renaissance et l'annonce du Petit Bulletin restaient deux cartes. À
+  priorité égale, la salle qui reçoit l'emporte sur celle qui annonce le
+  spectacle hors les murs ; et une date « dans plusieurs salles », que
+  l'Opéra publie sans dire où elle se joue, s'efface devant la salle qui
+  publie la même représentation (même titre, même jour, même minute).
   Les deux premières passes portent un garde supplémentaire
   (`_seances_distinctes`) : au sein d'une MÊME source, deux horaires
   connus et différents sont deux représentations, jamais un doublon. Sans
@@ -333,8 +365,11 @@ publication du second.
     savoir quels lieux reprendre, le fil garde ceux que chaque collecteur
     a rendus (`lieux_des_collecteurs`) : le handball, par exemple, joue
     dans deux gymnases. Une salle reprise écarte aussi les plages
-    d'agrégateur qu'elle porte, comme un jour où elle répond ;
-  - de même pour le Petit Bulletin et Ville Morte ;
+    d'agrégateur qu'elle porte, comme un jour où elle répond. Ce que la
+    source publie encore ce jour-là n'est pas repris : une exposition
+    déjà ouverte commence, pour sa source, chaque jour « aujourd'hui », et
+    sa copie de la veille s'affichait sinon en double ;
+  - de même pour le Petit Bulletin et Ville Morte, avec la même règle ;
   - un fil qui tombe sous les trois quarts de ce que la veille comptait
     encore à venir n'est pas publié ; passé trois jours sans publication,
     il l'est quand même, avec une alerte ;
@@ -350,6 +385,9 @@ publication du second.
 - **`index.html`** : frontend vanilla JS autonome : filtres par date/lieu/
   arrondissement/type, recherche insensible aux accents (titre, lieu,
   line-up), expansion des événements multi-jours, groupes de lieux.
+  Pour les lecteurs d'écran, le champ de recherche porte un nom, les
+  boutons de filtre disent s'ils sont enfoncés, et chaque journée est un
+  titre de niveau 2.
 - **`logos/`** : marques de salle affichées sur les cartes groupées, une
   par lieu, déclarées dans `VENUE_LOGOS` (index.html). Voir « Logos de
   salle » plus bas.
@@ -493,6 +531,18 @@ motif.
   une carte, il en pèse quatre-vingt-dix. Mesuré à la réintroduction :
   100 événements écartés, dont 68 en galerie et 9 en musée non scrappé,
   soit 1 443 jours cumulés d'accrochage sur l'horizon.
+- **Affiches : la taille réduite que publie la salle.** Une carte fait
+  400 px de large au plus, et l'original d'une affiche pèse parfois
+  plusieurs mégaoctets. Chaque robot prend donc, parmi les tailles que le
+  site publie lui-même, celle qui s'approche le plus de 800 px, assez pour
+  les écrans denses : au Transbordeur, à la Comédie Odéon et au TNP dans
+  les tailles que la page liste, aux Subsistances quand la carte montre
+  l'original, aux Célestins par la transformation d'image du site
+  (600 px). Deux sites fabriquent une version légère sans la citer : la
+  copie WebP de 768 px de la Croix-Rousse (une centaine de Ko au lieu de
+  2 à 2,7 Mo) et la version « carte » de 800 × 500 de l'agenda des
+  Confluences. Le robot la vérifie avant de la prendre. Faute de version
+  réduite, l'original reste.
 - **Familles d'affichage** (`FAMILLES`, index.html) : musique, scène,
   expos, sport, autres. Cinq et non dix-neuf : les buckets restent la
   maille fine, mais autant de sections dans une journée seraient
