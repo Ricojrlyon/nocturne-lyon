@@ -54,9 +54,9 @@ import unicodedata
 
 import requests
 
-from .base import Event, iso, post as base_post
+from .base import Event, HORIZON_JOURS, iso, post as base_post
 
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 
 EXPORT = ("https://www.ffvbbeach.org/ffvbapp/resu/"
           "vbspo_calendrier_export_club.php")

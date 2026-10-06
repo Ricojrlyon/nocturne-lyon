@@ -44,7 +44,7 @@ from typing import Dict, List, Optional
 
 import requests
 
-from .base import Event, get as base_get
+from .base import Event, HORIZON_JOURS, get as base_get
 
 # Graphie du Petit Bulletin, qui remonte aussi cette salle : c'est ce qui
 # permet à la dédup de regrouper les deux sources.
@@ -56,7 +56,7 @@ BASE = "https://www.theatredescelestins.com"
 # 400 px de large au plus, 600 couvre donc les écrans denses.
 IMAGE_BASE = BASE + "/assets/q75-w600/"
 
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 PAGE_SIZE = 50                            # plafond de l'API, pas un choix
 MAX_PAGES = 30                            # garde-fou anti-boucle
 MIN_INTERVAL = 0.3

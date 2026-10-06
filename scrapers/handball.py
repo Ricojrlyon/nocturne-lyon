@@ -45,9 +45,9 @@ import unicodedata
 
 import requests
 
-from .base import Event, iso, get as base_get
+from .base import Event, HORIZON_JOURS, iso, get as base_get
 
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 
 ICS = "https://competition-calendar.ffhandball.fr/c-%s/s-%s.ics"
 

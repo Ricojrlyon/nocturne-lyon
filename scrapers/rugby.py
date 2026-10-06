@@ -45,9 +45,9 @@ import unicodedata
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, iso, get as base_get
+from .base import Event, HORIZON_JOURS, iso, get as base_get
 
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 
 # Le seul stade où le LOU reçoit, hommes comme femmes.
 STADE = "Matmut Stadium de Gerland"

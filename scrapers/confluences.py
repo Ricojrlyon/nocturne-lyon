@@ -49,14 +49,14 @@ from typing import Dict, List, Optional, Tuple
 
 import requests
 
-from .base import Event, get as base_get
+from .base import Event, HORIZON_JOURS, get as base_get
 
 VENUE = "Musée des Confluences"
 SLUG = "musee-des-confluences"
 BASE = "https://museedesconfluences.fr"
 API = BASE + "/jsonapi"
 
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 PAR_PAGE = 50
 PAGES_MAX = 40          # 14 pages à l'écriture ; la marge couvre la croissance
 

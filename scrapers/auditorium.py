@@ -55,13 +55,13 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, get as base_get
+from .base import Event, HORIZON_JOURS, get as base_get
 
 VENUE = "Auditorium de Lyon"
 SLUG = "auditorium-lyon"
 BASE = "https://www.auditorium-lyon.com"
 
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "

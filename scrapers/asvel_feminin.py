@@ -38,11 +38,11 @@ import unicodedata
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, iso, FR_MONTHS, get as base_get
+from .base import Event, HORIZON_JOURS, iso, FR_MONTHS, get as base_get
 
 CLUB = "LDLC ASVEL Féminin"
 URL = "https://ldlcasvelfeminin.com/calendrier/"
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "

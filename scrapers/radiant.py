@@ -18,7 +18,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, img_src, FR_MONTHS, get as base_get
+from .base import Event, HORIZON_JOURS, img_src, FR_MONTHS, get as base_get
 
 VENUE = "Radiant-Bellevue"
 SLUG  = "radiant-bellevue"
@@ -264,7 +264,7 @@ def fetch() -> List[Event]:
     # remaining date BEFORE the detail-page fetch phase - the homepage lists
     # the whole season (150+ events up to 2 years out), which made the daily
     # run slow and the JSON bloated.
-    horizon_iso = (Date.today() + timedelta(days=180)).isoformat()
+    horizon_iso = (Date.today() + timedelta(days=HORIZON_JOURS)).isoformat()
     for stub in raw_stubs:
         stub["date_starts"] = [ds for ds in stub["date_starts"] if ds <= horizon_iso]
     raw_stubs = [s for s in raw_stubs if s["date_starts"]]

@@ -61,6 +61,12 @@ class Event:
 # distingue d'un vrai nom de salle.
 OFFSITE_PLUSIEURS = "·ailleurs"
 
+# L'horizon du fil : un collecteur ne publie que ce qui commence dans ces
+# 180 jours. Une seule valeur pour tous ; la page a la sienne, HORIZON_JOURS
+# d'index.html, et tests/test_coherence.py vérifie qu'elles restent égales,
+# comme OFFSITE_PLUSIEURS et sa copie dans la page.
+HORIZON_JOURS = 180
+
 
 # ---------------------------------------------------------------------------
 # Une requête qui réessaie quand la connexion se coupe

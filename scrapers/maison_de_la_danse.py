@@ -45,14 +45,14 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, get as base_get
+from .base import Event, HORIZON_JOURS, get as base_get
 
 VENUE = "Maison de la Danse"
 SLUG = "maison-de-la-danse"
 BASE = "https://maisondeladanse.com"
 
 CATEGORY = "danse"
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 
 # Demandé par leur robots.txt. Voir le docstring : ce délai ne frappe que
 # les fiches absentes du cache.

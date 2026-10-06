@@ -45,7 +45,7 @@ from urllib.parse import urlsplit
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, OFFSITE_PLUSIEURS, get as base_get
+from .base import Event, HORIZON_JOURS, OFFSITE_PLUSIEURS, get as base_get
 
 # Graphie du Petit Bulletin, qui remonte aussi cette salle : c'est ce qui
 # permet à la dédup de regrouper les deux sources.
@@ -60,7 +60,7 @@ AGENDA = BASE + "/agenda/"
 # restent dans la bonne famille d'affichage.
 CATEGORY = "théâtre"
 
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 MIN_INTERVAL = 0.4
 MAX_FICHES = 60          # garde-fou : 17 aujourd'hui, jamais 60
 

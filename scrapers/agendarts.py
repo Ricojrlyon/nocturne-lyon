@@ -72,14 +72,14 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import categorie
-from .base import Event, get as base_get
+from .base import Event, HORIZON_JOURS, get as base_get
 
 VENUE = "Agend'arts"
 SLUG = "agend-arts"
 SITE = "agendarts.wordpress.com"
 API = f"https://public-api.wordpress.com/wp/v2/sites/{SITE}"
 
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 PAR_PAGE = 100
 PAGES_MAX = 5          # 3 pages à l'écriture ; la marge couvre la croissance
 

@@ -40,7 +40,7 @@ from typing import List, Optional
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, get as base_get
+from .base import Event, HORIZON_JOURS, get as base_get
 
 # Même graphie que le Petit Bulletin, qui remonte aussi cette salle :
 # c'est ce qui permet à la dédup de regrouper les deux sources.
@@ -54,7 +54,7 @@ LISTING = BASE + "/actuellement/"
 # juste pour cette salle.
 CATEGORY = "café-théâtre"
 
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 MIN_INTERVAL = 0.4
 
 # PAS de « Mozilla/5.0 (compatible » ici : voir le docstring, le pare-feu

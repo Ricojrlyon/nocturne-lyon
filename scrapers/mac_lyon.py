@@ -48,7 +48,7 @@ from typing import Dict, List, Optional, Tuple
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, get as base_get
+from .base import Event, HORIZON_JOURS, get as base_get
 
 VENUE = "Musée d'Art Contemporain"
 SLUG = "mac-lyon"
@@ -57,7 +57,7 @@ BASE = "https://www.mac-lyon.com"
 # par précaution au cas où une exposition n'y figurerait pas.
 LISTES = ("/fr/agenda", "/fr/expositions")
 
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "

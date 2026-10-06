@@ -46,14 +46,14 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, FR_MONTHS, get as base_get
+from .base import Event, HORIZON_JOURS, FR_MONTHS, get as base_get
 
 VENUE = "Comédie Odéon"
 SLUG = "comedie-odeon"
 BASE = "https://www.comedieodeon.com"
 LISTING = BASE + "/spectacle/"
 
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "

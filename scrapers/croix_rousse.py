@@ -43,14 +43,14 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, get as base_get
+from .base import Event, HORIZON_JOURS, get as base_get
 
 VENUE = "Théâtre de la Croix-Rousse"
 SLUG = "croix-rousse"
 BASE = "https://www.croix-rousse.com"
 API = BASE + "/wp-json/wp/v2"
 
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 PER_PAGE = 100
 MAX_PAGES = 10
 

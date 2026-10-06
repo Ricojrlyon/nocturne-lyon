@@ -21,7 +21,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, iso, img_src, get as base_get
+from .base import Event, HORIZON_JOURS, iso, img_src, get as base_get
 
 VENUE = "Le Transbordeur"
 SLUG  = "transbordeur"
@@ -327,7 +327,7 @@ def fetch() -> List[Event]:
 
     # Cap horizon: drop events more than ~6 months out BEFORE the
     # detail-page fetch phase - keeps the daily run fast and the JSON lean.
-    horizon = Date.today() + timedelta(days=180)
+    horizon = Date.today() + timedelta(days=HORIZON_JOURS)
     stubs = [s for s in stubs if s["d"] <= horizon]
 
     # Pass 2: fetch each detail page to extract time (cached across runs,

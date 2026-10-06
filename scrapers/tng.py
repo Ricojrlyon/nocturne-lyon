@@ -14,7 +14,7 @@ import time
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, img_src, iso, FR_MONTHS, get as base_get
+from .base import Event, HORIZON_JOURS, img_src, iso, FR_MONTHS, get as base_get
 
 VENUE = "TNG"
 SLUG  = "tng"
@@ -233,7 +233,7 @@ def fetch() -> List[Event]:
 
     # Cap horizon: drop events more than ~6 months out BEFORE the
     # detail-page fetch phase - keeps the daily run fast and the JSON lean.
-    horizon = Date.today() + timedelta(days=180)
+    horizon = Date.today() + timedelta(days=HORIZON_JOURS)
     stubs = [s for s in stubs if s["d_start"] <= horizon]
 
     # Une date par séance tout public de la fiche (BUG-16). La fiche est

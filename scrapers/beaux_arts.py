@@ -55,14 +55,14 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, get as base_get
+from .base import Event, HORIZON_JOURS, get as base_get
 
 VENUE = "Musée des Beaux-Arts"
 SLUG = "musee-des-beaux-arts"
 BASE = "https://www.mba-lyon.fr"
 LISTING = BASE + "/fr/home_programmation"
 
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 PAGES_MAX = 30          # 19 pages à l'écriture ; la marge couvre la croissance
 
 # Les EXPOSITIONS ne sont pas dans la liste des rendez-vous : le musée les

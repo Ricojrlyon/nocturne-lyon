@@ -43,11 +43,11 @@ from typing import Callable, List, Optional
 
 import requests
 
-from .base import Event, get as base_get
+from .base import Event, HORIZON_JOURS, get as base_get
 
 IMG_HOST = "https://img.mapado.net"
 IMG_SIZE = "600-600"            # les cartes font 392 px de large
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 MIN_INTERVAL = 0.4              # secondes entre deux requêtes
 
 HEADERS = {

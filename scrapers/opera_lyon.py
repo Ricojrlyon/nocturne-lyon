@@ -23,7 +23,7 @@ import requests
 from bs4 import BeautifulSoup, Tag
 
 from . import detail_cache
-from .base import Event, iso, FR_MONTHS, OFFSITE_PLUSIEURS, get as base_get
+from .base import Event, HORIZON_JOURS, iso, FR_MONTHS, OFFSITE_PLUSIEURS, get as base_get
 
 VENUE = "Opéra national de Lyon"
 SLUG  = "opera-lyon"
@@ -478,7 +478,7 @@ def fetch() -> List[Event]:
 
     # Cap horizon: drop events more than ~6 months out BEFORE the
     # detail-page fetch phase - keeps the daily run fast and the JSON lean.
-    horizon = Date.today() + timedelta(days=180)
+    horizon = Date.today() + timedelta(days=HORIZON_JOURS)
     all_stubs = [s for s in all_stubs if s["d_start"] <= horizon]
 
     # Une carte par REPRÉSENTATION, pas une plage. Le listing ne donne

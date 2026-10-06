@@ -422,7 +422,9 @@ python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
   lecture des dates en français, le dédoublonnage règle par règle, les
   nouveaux essais réseau, la vérification anti-robot du Complexe, les
   annulés, l'heure de chaque séance, les catégories, les garde-fous
-  d'`aggregate.py`, et deux RÉFÉRENCES figées.
+  d'`aggregate.py`, ce que la page et les collecteurs doivent avoir en
+  commun (l'horizon, le marqueur « ailleurs », la table des lieux que le
+  robot relit dans la page), et deux RÉFÉRENCES figées.
   La chaîne de publication entière est rejouée sur une collecte réelle
   (celle du 1er octobre 2026, dans `tests/donnees/`) et doit rendre le
   même fil au caractère près ; la page est jouée dans un navigateur sans
@@ -577,8 +579,11 @@ motif.
   jusqu'en octobre 2028 fabriquerait six cent soixante-quinze journées.
   Ce qui commence au-delà garde une carte à sa date d'ouverture, pour ne
   pas disparaître.
-- **Horizon** : les événements à plus de 180 jours sont écartés avant la
-  phase de fetch des pages détail (scrapers de salle uniquement).
+- **Horizon** (`HORIZON_JOURS`, scrapers/base.py) : une seule valeur,
+  180 jours, pour tous les collecteurs de salle ; ce qui commence au-delà
+  est écarté avant la lecture des pages détail. La page a la même
+  (`HORIZON_JOURS`, index.html), et un test vérifie qu'elles restent
+  égales.
 - **Plages d'agrégateur sur un lieu scrappé** : écartées. Un agrégateur
   qui voit un spectacle joué plusieurs soirs le publie souvent comme une
   seule plage « du 18 au 28 août ». Le frontend déployant une plage sur

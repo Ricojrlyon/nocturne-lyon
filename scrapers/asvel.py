@@ -61,10 +61,10 @@ import sys
 
 import requests
 
-from .base import Event, iso, get as base_get
+from .base import Event, HORIZON_JOURS, iso, get as base_get
 
 CLUB = "LDLC ASVEL"
-HORIZON_DAYS = 180
+HORIZON_DAYS = HORIZON_JOURS
 PARIS = ZoneInfo("Europe/Paris")
 
 # Le lien des cartes. Le site du club nous refuse, mais il répond très bien
