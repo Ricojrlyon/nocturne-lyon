@@ -401,10 +401,12 @@ publication du second.
   fichiers tels quels, sans les passer par Jekyll, son moteur de modèles.
   Jekyll ne modifiait rien aujourd'hui, mais il aurait pu un jour
   interpréter un fichier, et il écartait ceux dont le nom commence par
-  « _ » ou par un point ; la publication est aussi plus rapide. Ces
-  fichiers-là (`.github/…`, `scrapers/__init__.py`) sont désormais
-  consultables sur le site, comme ils l'étaient déjà sur GitHub, le dépôt
-  étant public.
+  « _ » ou par un point ; la publication est aussi plus rapide (35 s au
+  lieu de 50 environ). Ces fichiers-là (`.gitignore`,
+  `scrapers/__init__.py`) sont désormais consultables sur le site, comme
+  ils l'étaient déjà sur GitHub, le dépôt étant public ; le dossier
+  `.github` reste exclu par GitHub. Vérifié à la mise en place : les
+  autres fichiers servis sont identiques à l'octet près.
 - **`logos/`** : marques de salle affichées sur les cartes groupées, une
   par lieu, déclarées dans `VENUE_LOGOS` (index.html). Voir « Logos de
   salle » plus bas.
