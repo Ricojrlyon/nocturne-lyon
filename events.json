@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-06T08:17:39.312726+00:00",
-  "count": 3027,
+  "generated_at": "2026-10-06T11:26:56.206269+00:00",
+  "count": 3034,
   "sources": 37,
   "events": [
     {
@@ -1070,16 +1070,16 @@
     {
       "venue": "HEAT",
       "venue_slug": "heat",
-      "title": "Vandale Radio",
+      "title": "Club Labo x Vandale Radio",
       "subtitle": null,
-      "category": null,
+      "category": "club-labo",
       "date_start": "2026-10-08",
       "date_end": null,
       "time": "18:00",
       "url": "https://h-eat.eu/events/vandale-radio-2/",
-      "image": "https://h-eat.eu/wp-content/uploads/2026/04/charli-bonsoirmathilda54-1079x720.jpg",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/05/Club-Labo-par-Vandale-RadioLe-jeudi-8-octobre-Vandale-Radio-prend-les-commandes-de-@heat_lyon-pour--555x720.jpg",
       "offsite_venue": null,
-      "id": "a5b48fc83037"
+      "id": "768208c8697b"
     },
     {
       "venue": "Hôtel 71",
@@ -4162,6 +4162,20 @@
       "id": "a8e8451e96c8"
     },
     {
+      "venue": "Les Subsistances",
+      "venue_slug": "les-subs",
+      "title": "SUBS-VISITE",
+      "subtitle": "Visite historique",
+      "category": "visite",
+      "date_start": "2026-10-14",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.les-subs.com/evenement/subs-visites-historiques/",
+      "image": "https://www.les-subs.com/wp-content/uploads/2023/03/subvisiteogregoryrubinstein-collectifdesflousfurieux-15-200x200.jpg",
+      "offsite_venue": null,
+      "id": "7f493ea659b6"
+    },
+    {
       "venue": "Université Lumière Lyon 2 - Bron",
       "venue_slug": "universite-lumiere-lyon-2-bron",
       "title": "¡ Noces !",
@@ -4465,7 +4479,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.croix-rousse.com/au-programme/nos-corps-desirants/",
-      "image": "https://www.croix-rousse.com/wp-content/uploads/2026/06/4.-Nos-corps-déisrants-1140x500-3-768x337.png.webp",
+      "image": "https://www.croix-rousse.com/wp-content/uploads/2026/06/4.-Nos-corps-désirants-1080x1080-2.png",
       "offsite_venue": null,
       "id": "b3d8b185d44a"
     },
@@ -4829,7 +4843,7 @@
       "date_end": null,
       "time": "19:30",
       "url": "https://www.croix-rousse.com/au-programme/nos-corps-desirants/",
-      "image": "https://www.croix-rousse.com/wp-content/uploads/2026/06/4.-Nos-corps-déisrants-1140x500-3-768x337.png.webp",
+      "image": "https://www.croix-rousse.com/wp-content/uploads/2026/06/4.-Nos-corps-désirants-1080x1080-2.png",
       "offsite_venue": null,
       "id": "9b18b5e95fef"
     },
@@ -5655,7 +5669,7 @@
       "date_end": null,
       "time": "20:00",
       "url": "https://www.croix-rousse.com/au-programme/nos-corps-desirants/",
-      "image": "https://www.croix-rousse.com/wp-content/uploads/2026/06/4.-Nos-corps-déisrants-1140x500-3-768x337.png.webp",
+      "image": "https://www.croix-rousse.com/wp-content/uploads/2026/06/4.-Nos-corps-désirants-1080x1080-2.png",
       "offsite_venue": null,
       "id": "b489c8259d4b"
     },
@@ -6852,16 +6866,16 @@
     {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
-      "title": "Concert",
-      "subtitle": "Sofie Royer",
-      "category": "concert",
+      "title": "Sofie Royer",
+      "subtitle": null,
+      "category": "Classique et Lyrique",
       "date_start": "2026-10-19",
       "date_end": null,
       "time": "18:30",
-      "url": "https://le-sucre.eu/events/concert-9/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/06/CARRE-Sofie-Royer-600x600.jpg",
+      "url": "https://www.petit-bulletin.fr/agenda-319445-sofie-royer.html",
+      "image": null,
       "offsite_venue": null,
-      "id": "875b4b80a997"
+      "id": "913340e1a8a7"
     },
     {
       "venue": "Le Transbordeur",
@@ -7902,7 +7916,7 @@
     {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
-      "title": "Concert : Khalil Epi présente TUQUS",
+      "title": "Concert : Khalil Epi présente TUQUS live A/V",
       "subtitle": "Khalil EPI",
       "category": "concert",
       "date_start": "2026-10-22",
@@ -7911,7 +7925,7 @@
       "url": "https://le-sucre.eu/events/concert-15/",
       "image": "https://le-sucre.eu/wp-content/uploads/2026/08/1-480x600.png",
       "offsite_venue": null,
-      "id": "b4f423b1f308"
+      "id": "c44f486cc426"
     },
     {
       "venue": "Boskop",
@@ -8318,6 +8332,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "bc9adf42b016"
+    },
+    {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "House of Briantz",
+      "subtitle": null,
+      "category": "club",
+      "date_start": "2026-10-23",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://h-eat.eu/events/house-of-briantz-2/",
+      "image": "https://h-eat.eu/wp-content/uploads/2026/10/Heat-x-Silk_Celiope-150-480x720.jpg",
+      "offsite_venue": null,
+      "id": "728a16008994"
     },
     {
       "venue": "La Salle de Bains",
@@ -9972,6 +10000,20 @@
       "id": "0c5e40f27c66"
     },
     {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Goûter d’Halloween",
+      "subtitle": "Viens préparer la déco d’Halloween !",
+      "category": "théâtre",
+      "date_start": "2026-10-28",
+      "date_end": null,
+      "time": "15:30",
+      "url": "https://www.tng-lyon.fr/evenement/gouter-dhalloween/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/10/Gouter-halloween.png",
+      "offsite_venue": null,
+      "id": "33dbb91e1c70"
+    },
+    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Chess Bar x HEAT",
@@ -10686,6 +10728,20 @@
       "id": "e8104631b577"
     },
     {
+      "venue": "HEAT",
+      "venue_slug": "heat",
+      "title": "Monochrome",
+      "subtitle": null,
+      "category": null,
+      "date_start": "2026-10-30",
+      "date_end": null,
+      "time": "18:00",
+      "url": "https://h-eat.eu/events/monochrome/",
+      "image": "https://h-eat.eu/wp-content/uploads/2024/06/HEAT_MONOCHROME_2025_@noemielact-75-1080x720.jpg",
+      "offsite_venue": null,
+      "id": "29bc59df55be"
+    },
+    {
       "venue": "Boskop",
       "venue_slug": "boskop",
       "title": "Soirée courts métrages bis & sélection de lost media VHS",
@@ -11132,6 +11188,20 @@
       "image": null,
       "offsite_venue": null,
       "id": "fbad350dd7da"
+    },
+    {
+      "venue": "Matmut Stadium de Gerland",
+      "venue_slug": "matmut-stadium-gerland",
+      "title": "LOU Rugby - RC Vannes",
+      "subtitle": null,
+      "category": "rugby",
+      "date_start": "2026-10-31",
+      "date_end": null,
+      "time": "16:35",
+      "url": "https://billetterie.lourugby.fr/fr/sticker/165",
+      "image": null,
+      "offsite_venue": null,
+      "id": "c5388e25e563"
     },
     {
       "venue": "Comédie Odéon",
@@ -11930,6 +12000,20 @@
       "image": "https://www.transbordeur.fr/wp-content/uploads/2026/07/a-miked2-768x1152.jpeg",
       "offsite_venue": null,
       "id": "6d60d6346aff"
+    },
+    {
+      "venue": "Les Subsistances",
+      "venue_slug": "les-subs",
+      "title": "SUBS-VISITE",
+      "subtitle": "Visite historique",
+      "category": "visite",
+      "date_start": "2026-11-04",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.les-subs.com/evenement/subs-visites-historiques/",
+      "image": "https://www.les-subs.com/wp-content/uploads/2023/03/subvisiteogregoryrubinstein-collectifdesflousfurieux-15-200x200.jpg",
+      "offsite_venue": null,
+      "id": "912eea07b0b2"
     },
     {
       "venue": "Comédie Odéon",
@@ -14690,6 +14774,20 @@
       "id": "a7293ce15b30"
     },
     {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "Ti’kaniki Kabar Maloya + Marmay La Kour",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-13",
+      "date_end": null,
+      "time": null,
+      "url": "https://www.periscope-lyon.com/concerts/tikaniki-kabar-maloya-marmay-la-kour/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/10/MLKxCedricDemaison-Web-1500px-2-650x433.jpg",
+      "offsite_venue": null,
+      "id": "cf05b8804b5e"
+    },
+    {
       "venue": "Chapelle de la Trinité",
       "venue_slug": "chapelle-de-la-trinite",
       "title": "Une expo dans le vent",
@@ -17261,7 +17359,7 @@
       "date_end": null,
       "time": "19:00",
       "url": "https://www.tng-lyon.fr/evenement/rdv-popcorn-labolition-des-privileges/",
-      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/AbolitionPrivilege_PopCorn_460x460.png",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/06/Aboltion-rdv-pop-corn.png",
       "offsite_venue": null,
       "id": "39c75c100675"
     },
@@ -20293,7 +20391,7 @@
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "A week-end with Anetha",
-      "subtitle": "Anetha · & more",
+      "subtitle": "Anetha",
       "category": "club",
       "date_start": "2026-11-29",
       "date_end": null,
@@ -20680,6 +20778,20 @@
       "image": "https://www.auditorium-lyon.com/sites/default/files/styles/vignette_teaser_xl/public/upload/images/Conf%C3%A9renceDSC01205-2_c_Manon_Michot-Gouget_1920.jpg?h=11559880&itok=YW-1vI3O",
       "offsite_venue": null,
       "id": "a43b179eb048"
+    },
+    {
+      "venue": "Les Subsistances",
+      "venue_slug": "les-subs",
+      "title": "SUBS-VISITE",
+      "subtitle": "Visite historique",
+      "category": "visite",
+      "date_start": "2026-12-02",
+      "date_end": null,
+      "time": "18:30",
+      "url": "https://www.les-subs.com/evenement/subs-visites-historiques/",
+      "image": "https://www.les-subs.com/wp-content/uploads/2023/03/subvisiteogregoryrubinstein-collectifdesflousfurieux-15-200x200.jpg",
+      "offsite_venue": null,
+      "id": "eb4e86e5048e"
     },
     {
       "venue": "Comédie Odéon",
@@ -34103,7 +34215,7 @@
       "date_end": null,
       "time": "21:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/teletech-3",
-      "image": "https://www.halle-tony-garnier.com/storage/145555/conversions/2027-02-13-TELETECH-2027-02-13-teletech-lyon-square-20261002-152202-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/145585/conversions/2027-02-13-TELETECH-2027-02-13-teletech-lyon-square-20261002-152202-square.jpg",
       "offsite_venue": null,
       "id": "f188d50f5fa9"
     },
@@ -34125,7 +34237,7 @@
       "venue": "Auditorium de Lyon",
       "venue_slug": "auditorium-lyon",
       "title": "Queen Kelly",
-      "subtitle": "Erich von Stroheim",
+      "subtitle": "Erich von Stroheim / Thierry Escaich",
       "category": "ciné-concert",
       "date_start": "2027-02-14",
       "date_end": null,
@@ -34901,7 +35013,7 @@
       "date_end": null,
       "time": "16:30",
       "url": "https://www.halle-tony-garnier.com/fr/programmation/holiday-on-ice-cinema-of-dreams-5",
-      "image": "https://www.halle-tony-garnier.com/storage/145560/conversions/2027-02-21-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-150434-square.jpg",
+      "image": "https://www.halle-tony-garnier.com/storage/145584/conversions/2027-02-21-HOLIDAY-ON-ICE-CINEMA-OF-DREAMS-02-1080x1080-hoi-cod-lyo-20260311-150434-square.jpg",
       "offsite_venue": null,
       "id": "9333db6e2bca"
     },
@@ -35900,20 +36012,6 @@
       "id": "1e1643010418"
     },
     {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "SUBS-VISITE",
-      "subtitle": "Visite historique",
-      "category": "visite",
-      "date_start": "2027-03-03",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.les-subs.com/evenement/subs-visites-historiques/",
-      "image": "https://www.les-subs.com/wp-content/uploads/2023/03/subvisiteogregoryrubinstein-collectifdesflousfurieux-15-200x200.jpg",
-      "offsite_venue": null,
-      "id": "57203a7357ab"
-    },
-    {
       "venue": "Comédie Odéon",
       "venue_slug": "comedie-odeon",
       "title": "Jules et Marcel",
@@ -36556,6 +36654,20 @@
       "image": "https://www.croix-rousse.com/wp-content/uploads/2026/05/LART-davoir-toujours-raison-1080x1080-1-768x768.png.webp",
       "offsite_venue": null,
       "id": "f47eb2e2d4ae"
+    },
+    {
+      "venue": "TNG",
+      "venue_slug": "tng",
+      "title": "Goûter signes",
+      "subtitle": "autour du spectacle Traversée",
+      "category": "théâtre",
+      "date_start": "2027-03-06",
+      "date_end": null,
+      "time": "15:45",
+      "url": "https://www.tng-lyon.fr/evenement/gouter-signes/",
+      "image": "https://www.tng-lyon.fr/wp-content/uploads/2026/10/Gouter-signes-460x460-1.png",
+      "offsite_venue": null,
+      "id": "6a724ce8a8bd"
     },
     {
       "venue": "TNG",
@@ -41400,20 +41512,6 @@
       "image": "https://www.les-subs.com/wp-content/uploads/2026/07/rolf-arnold-02-copie-200x200.jpg",
       "offsite_venue": null,
       "id": "f4166bc46d6c"
-    },
-    {
-      "venue": "Les Subsistances",
-      "venue_slug": "les-subs",
-      "title": "SUBS-VISITE",
-      "subtitle": "Visite historique",
-      "category": "visite",
-      "date_start": "2027-04-07",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.les-subs.com/evenement/subs-visites-historiques/",
-      "image": "https://www.les-subs.com/wp-content/uploads/2023/03/subvisiteogregoryrubinstein-collectifdesflousfurieux-15-200x200.jpg",
-      "offsite_venue": null,
-      "id": "aaae6722cfeb"
     },
     {
       "venue": "Les Subsistances",
