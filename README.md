@@ -388,6 +388,11 @@ publication du second.
   Pour les lecteurs d'écran, le champ de recherche porte un nom, les
   boutons de filtre disent s'ils sont enfoncés, et chaque journée est un
   titre de niveau 2.
+- **`404.html`** : la page des adresses introuvables, que GitHub Pages sert
+  d'elle-même : « erreur 404 », « page introuvable » et un lien vers la page
+  d'accueil. Son lien et ses polices sont en adresses complètes
+  (`/nocturne-lyon/…`), car elle s'affiche à n'importe quelle profondeur
+  d'adresse ; elle est exclue des moteurs de recherche.
 - **`logos/`** : marques de salle affichées sur les cartes groupées, une
   par lieu, déclarées dans `VENUE_LOGOS` (index.html). Voir « Logos de
   salle » plus bas.
