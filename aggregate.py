@@ -494,6 +494,33 @@ def _alerte(titre: str, message: str) -> None:
         print("::warning title=%s::%s" % (titre, message.replace("\n", "%0A")))
 
 
+# BUG-36 : UNE EXPOSITION REPRISE EN DOUBLE. Le 5 octobre 2026, l'API des
+# Confluences a rendu une erreur sur ses événements, mais pas sur ses
+# expositions : la salle est passée de 56 à 5, et le garde-fou a repris la
+# veille. Or une exposition déjà ouverte commence, pour sa source,
+# AUJOURD'HUI — aux Confluences, aux Beaux-Arts, au MAC, et sur les plages
+# longues du Petit Bulletin. La copie de la veille, ouverte le 4, et celle
+# du jour, ouverte le 5, ne couvraient donc pas les mêmes jours : seule le
+# 4, la copie de la veille l'emportait ce jour-là, et la dédup l'émettait
+# en plus de l'autre. Trois expositions se sont affichées deux fois
+# jusqu'au passage suivant.
+#
+# Ce que la source publie encore aujourd'hui n'est donc pas repris. Le
+# même événement se reconnaît à son lieu, son lien, son titre, sa FIN et
+# son heure — pas à son début, qui glisse.
+def _empreinte(venue, url, title, date_start, date_end, time) -> tuple:
+    """Ce qui fait d'un événement le même d'un jour à l'autre, chez la même
+    source. Sa fin, ou son jour s'il n'en dure qu'un ; jamais son début."""
+    return (canonical_venue_name(venue or ""), url or "", title or "",
+            date_end or date_start or "", time or "")
+
+
+def _deja_dans(unique: List[Event]) -> set:
+    """Les empreintes du fil du jour."""
+    return {_empreinte(e.venue, e.url, e.title, e.date_start, e.date_end,
+                       e.time) for e in unique}
+
+
 def _reprendre(unique: List[Event], chemin: Path,
                effondres: list, today_iso: str) -> tuple:
     """Remet les événements de la veille pour les salles effondrées.
@@ -501,7 +528,7 @@ def _reprendre(unique: List[Event], chemin: Path,
     Ne reprend que les événements DIRECTS de ces salles : ce qu'un
     agrégateur publiait hier, il l'a republié aujourd'hui, et le reprendre
     ferait doublon. Ne reprend que ce qui n'est pas passé, avec la même
-    règle que l'étape 3.
+    règle que l'étape 3, ni ce que le fil du jour publie encore (BUG-36).
 
     Rend (événements repris, journal des reprises, salles abandonnées).
     """
@@ -526,6 +553,7 @@ def _reprendre(unique: List[Event], chemin: Path,
             continue
         journal[lieu] = depuis
 
+    deja = _deja_dans(unique)
     for d in anciens:
         lieu = canonical_venue_name(d.get("venue") or "")
         if lieu not in journal:
@@ -533,6 +561,10 @@ def _reprendre(unique: List[Event], chemin: Path,
         if any(h in (d.get("url") or "") for h in _HOTES_AGREGATEURS):
             continue
         if (d.get("date_end") or d.get("date_start") or "") < today_iso:
+            continue
+        if _empreinte(d.get("venue"), d.get("url"), d.get("title"),
+                      d.get("date_start"), d.get("date_end"),
+                      d.get("time")) in deja:
             continue
         repris.append(_event_depuis_dict(d))
 
@@ -566,13 +598,14 @@ def _effondrements_agregateurs(nouveaux: List[Event], chemin: Path,
     return pertes
 
 
-def _reprendre_agregateurs(chemin: Path, effondres: list,
+def _reprendre_agregateurs(unique: List[Event], chemin: Path, effondres: list,
                            today_iso: str) -> tuple:
     """Remet les événements de la veille des agrégateurs effondrés.
 
     Même bornage que pour les salles : le journal garde le premier jour de
     reprise, et passé REPRISE_JOURS_MAX jours l'agrégateur n'est plus
-    repris. Ne reprend que ce qui n'est pas passé.
+    repris. Ne reprend que ce qui n'est pas passé, ni ce que le fil du jour
+    publie encore (BUG-36).
 
     Rend (événements repris, journal des reprises, agrégateurs abandonnés).
     """
@@ -601,10 +634,14 @@ def _reprendre_agregateurs(chemin: Path, effondres: list,
         journal[cle] = depuis
         hotes.append(hote_de[nom])
 
+    deja = _deja_dans(unique)
     repris = [_event_depuis_dict(d) for d in anciens
               if any(h in (d.get("url") or "") for h in hotes)
               and (d.get("date_end") or d.get("date_start") or "")
-              >= today_iso]
+              >= today_iso
+              and _empreinte(d.get("venue"), d.get("url"), d.get("title"),
+                             d.get("date_start"), d.get("date_end"),
+                             d.get("time")) not in deja]
     return repris, journal, abandons
 
 
@@ -900,7 +937,7 @@ def _garde_fou_des_agregateurs(unique: List[Event], out: Path,
 
     if effondres_agr:
         repris_agr, journal_agr, abandons_agr = _reprendre_agregateurs(
-            out, effondres_agr, today_iso)
+            unique, out, effondres_agr, today_iso)
         reprises.update(journal_agr)
         if repris_agr:
             # Chacun garde SA priorité, relue sur son hôte : un événement

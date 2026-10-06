@@ -284,6 +284,89 @@ class GardeFous(unittest.TestCase):
                    and e["date_start"] == soir.isoformat() and e["time"] == "23:00"]
         self.assertEqual([e["url"] for e in ce_soir], [vu_par_la_salle.url])
 
+    # BUG-36 : une exposition déjà ouverte commence, pour sa source,
+    # aujourd'hui. La veille, elle commençait hier.
+    @staticmethod
+    def exposition(lieu, url, debut):
+        return evenement(lieu, "Une exposition au long cours", debut, heure=None,
+                         fin=J + timedelta(days=60), categorie="exposition", url=url)
+
+    def test_salle_effondree_qui_rend_encore_son_exposition_une_seule_carte(self):
+        # Le 5 octobre 2026, les Confluences n'ont rendu que leurs
+        # expositions : la veille reprise, chacune s'est affichée deux fois.
+        url = "https://heat.exemple.org/expo"
+        hier = self.exposition("HEAT", url, J - timedelta(days=1))
+        with atelier(J) as a:
+            a.veille(VEILLE + [hier])
+            a.lancer(normales(HEAT=copies([self.exposition("HEAT", url, J)])), agregateurs())
+            fil = a.publie()
+            journal = a.journal.getvalue()
+        self.assertEqual([(e["date_start"], e["date_end"]) for e in fil["events"]
+                          if e["url"] == url], [(J.isoformat(), hier.date_end)])
+        # Le reste de la salle est bien repris, sans la copie de la veille.
+        self.assertEqual(sum(1 for e in fil["events"] if e["venue"] == "HEAT"), 31)
+        self.assertIn("HEAT 31→1, 30 repris", journal)
+
+    def test_agregateur_effondre_qui_rend_encore_son_exposition_une_seule_carte(self):
+        url = "https://www.petit-bulletin.fr/agenda-9998"
+        hier = self.exposition("Galerie PB", url, J - timedelta(days=1))
+        with atelier(J) as a:
+            a.veille(VEILLE + [hier])
+            a.lancer(normales(), agregateurs(
+                pb=copies(PB[:9] + [self.exposition("Galerie PB", url, J)])))
+            fil = a.publie()
+        self.assertEqual([e["date_start"] for e in fil["events"] if e["url"] == url],
+                         [J.isoformat()])
+        self.assertEqual(compte(fil, "petit-bulletin"), 61)
+
+    def test_seul_ce_que_la_salle_publie_encore_n_est_pas_repris(self):
+        # Une page commune à plusieurs rendez-vous : une autre exposition au
+        # même lien et à la même fin, une autre séance le même soir. Ni
+        # l'une ni l'autre n'est rendue aujourd'hui : toutes deux reviennent.
+        url, soir = "https://heat.exemple.org/agenda", J + timedelta(days=4)
+        expo_a = self.exposition("HEAT", url, J - timedelta(days=1))
+        expo_b = copy.copy(expo_a)
+        expo_b.title = "Une autre exposition"
+        seance_20h = evenement("HEAT", "Lecture", soir, heure="20:00", url=url)
+        seance_15h = evenement("HEAT", "Lecture", soir, heure="15:00", url=url)
+        with atelier(J) as a:
+            a.veille(VEILLE + [expo_a, expo_b, seance_20h, seance_15h])
+            a.lancer(normales(HEAT=copies([self.exposition("HEAT", url, J), seance_20h])),
+                     agregateurs())
+            fil = a.publie()
+        self.assertEqual(sorted((e["title"], e["date_start"], e["time"]) for e in fil["events"]
+                                if e["url"] == url),
+                         [("Lecture", soir.isoformat(), "15:00"),
+                          ("Lecture", soir.isoformat(), "20:00"),
+                          ("Une autre exposition", (J - timedelta(days=1)).isoformat(), None),
+                          ("Une exposition au long cours", J.isoformat(), None)])
+
+    def test_la_copie_d_un_agregateur_ne_remplace_pas_la_salle_reprise(self):
+        # Le même spectacle, au même lieu, le même soir, mais publié par le
+        # Petit Bulletin : ce n'est pas la SOURCE qui le publie encore. La
+        # copie de la salle est reprise, et c'est elle qui l'emporte.
+        soir = J + timedelta(days=7)
+        de_la_salle = evenement("HEAT", "Nuit Kompakt", soir, heure="23:00",
+                                url="https://heat.exemple.org/kompakt")
+        vu_par_pb = evenement("HEAT", "Nuit Kompakt", soir, heure="23:00",
+                              url="https://www.petit-bulletin.fr/agenda-9997")
+        with atelier(J) as a:
+            a.veille(VEILLE + [de_la_salle])
+            a.lancer(normales(HEAT=lambda: []), agregateurs(pb=copies(PB + [vu_par_pb])))
+            fil = a.publie()
+        self.assertEqual([e["url"] for e in fil["events"] if e["title"] == "Nuit Kompakt"],
+                         [de_la_salle.url])
+
+    def test_salle_tombee_a_zero_garde_son_exposition(self):
+        url = "https://heat.exemple.org/expo"
+        hier = self.exposition("HEAT", url, J - timedelta(days=1))
+        with atelier(J) as a:
+            a.veille(VEILLE + [hier])
+            a.lancer(normales(HEAT=lambda: []), agregateurs())
+            fil = a.publie()
+        self.assertEqual([e["date_end"] for e in fil["events"] if e["url"] == url],
+                         [hier.date_end])
+
     def test_baisse_generale_non_publiee(self):
         moitie = {s: copies(DIRECT[s][:18]) for s in SALLES}       # -40 % partout
         with atelier(J) as a:
