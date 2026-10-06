@@ -1620,11 +1620,11 @@
       <button class="chip drawer-toggle" id="drawerToggle" type="button"
               aria-expanded="false" aria-controls="filterDrawer">+ filtres</button>
       <div class="filter-group" id="filterWhen">
-        <button class="chip active" data-when="all">tout</button>
-        <button class="chip" data-when="weekend">ce weekend</button>
-        <button class="chip" data-when="nextweek">semaine pro</button>
+        <button class="chip active" data-when="all" aria-pressed="true">tout</button>
+        <button class="chip" data-when="weekend" aria-pressed="false">ce weekend</button>
+        <button class="chip" data-when="nextweek" aria-pressed="false">semaine pro</button>
         <span class="datepicker-wrap">
-          <button class="chip" id="dateBtn" type="button">date →</button>
+          <button class="chip" id="dateBtn" type="button" aria-pressed="false">date →</button>
           <div class="datepicker" id="datepicker"></div>
         </span>
       </div>
@@ -3172,6 +3172,18 @@ function buildArrondissementFilters() {
 }
 
 
+/* ---------- état des boutons, pour les lecteurs d'écran ----------
+   « tout », « ce weekend », « semaine pro », « date » et les
+   arrondissements s'allument par la classe active, posée ou ôtée en cinq
+   endroits. Un lecteur d'écran, lui, lit aria-pressed : on le recopie de
+   la classe à chaque rendu, en un seul endroit (audit n° 6). Les puces de
+   famille portent déjà le leur. */
+function etatDesBoutons() {
+  document.querySelectorAll('#filterWhen .chip, #filterArr .chip').forEach(b => {
+    b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false');
+  });
+}
+
 /* ---------- when filter ---------- */
 document.getElementById('filterWhen').addEventListener('click', e => {
   if (!e.target.matches('.chip[data-when]')) return;
@@ -3364,6 +3376,7 @@ function filtered() {
    suffit et reste fluide. */
 let firstRenderDone = false;
 function render() {
+  etatDesBoutons();
   const animate = firstRenderDone
     && typeof document.startViewTransition === 'function'
     // Indispensable : dans un onglet masqué, startViewTransition attend une
