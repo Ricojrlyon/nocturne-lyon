@@ -2,13 +2,17 @@ name: Update events daily
 
 on:
   schedule:
-    # 04:17 UTC : 6 h 17 à Paris l'été, 5 h 17 l'hiver (GitHub compte en
-    # UTC). Programmé à l'heure pile (« 0 6 », 8 h à Paris), le passage
-    # partait chaque jour 4 à 6 heures en retard : sur 154 passages de mai
-    # à octobre 2026, entre 09:43 et 12:29 UTC. GitHub retarde les tâches
-    # programmées en début d'heure, les plus demandées ; une minute creuse,
-    # plus tôt, doit réduire ce retard, sans garantie (CI-2, 2 octobre 2026).
-    - cron: '17 4 * * *'
+    # 2 h 17 à Paris, toute l'année (6 octobre 2026). GitHub compte en UTC,
+    # qui ne change pas d'heure : 2 h 17 à Paris, c'est 00:17 UTC à l'heure
+    # d'été (UTC+2) et 01:17 UTC à l'heure d'hiver (UTC+1). Les deux
+    # créneaux sont programmés, et le job « creneau » ne laisse travailler
+    # que celui de la saison du jour.
+    # GitHub retarde ses passages programmés de plusieurs heures (5 à 7 en
+    # octobre 2026, à 04:17 UTC) : partir la nuit vise un site à jour au
+    # réveil. La minute 17 évite l'heure pile, la plus demandée - minuit
+    # UTC surtout.
+    - cron: '17 0 * * *'
+    - cron: '17 1 * * *'
   workflow_dispatch:
     inputs:
       # OPT-1 : la case d'un lancement à la main (« Run workflow »). Cochée,
@@ -37,7 +41,39 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Le créneau du jour. Des deux passages programmés, seul celui qui tombe
+  # à 2 h 17 à Paris ce jour-là travaille ; l'autre s'arrête en quelques
+  # secondes. Un lancement à la main passe toujours. Le décalage de Paris
+  # est celui de la JOURNÉE, lu à midi, et non au moment du passage, que
+  # GitHub retarde : les jours de changement d'heure aussi, c'est un
+  # passage, et un seul.
+  creneau:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      lancer: ${{ steps.saison.outputs.lancer }}
+    steps:
+      - id: saison
+        env:
+          EVENEMENT: ${{ github.event_name }}
+          CRENEAU: ${{ github.event.schedule }}
+        run: |
+          if [ "$EVENEMENT" != "schedule" ]; then
+            echo "lancer=oui" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          decalage=$(TZ=Europe/Paris date -d 12:00 +%z)    # +0200 l'été, +0100 l'hiver
+          case "$CRENEAU|$decalage" in
+            "17 0 * * *|+0200"|"17 1 * * *|+0100")
+              echo "lancer=oui" >> "$GITHUB_OUTPUT" ;;
+            *)
+              echo "lancer=non" >> "$GITHUB_OUTPUT"
+              echo "Créneau $CRENEAU (Paris $decalage) : le passage du jour est l'autre." ;;
+          esac
+
   update:
+    needs: creneau
+    if: needs.creneau.outputs.lancer == 'oui'
     runs-on: ubuntu-latest
     # Sans limite, GitHub laisse un passage bloqué tourner six heures. Le
     # plus long des 214 passages connus a duré 12 minutes : une heure

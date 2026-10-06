@@ -16,12 +16,16 @@ GitHub Pages :
  Ville Morte)                 └─→ detail_times.json (cache des heures)
 ```
 
-Le pipeline tourne quotidiennement à 04:17 UTC (6 h 17 à Paris l'été,
-5 h 17 l'hiver) via GitHub Actions
+Le pipeline tourne chaque nuit à 2 h 17, heure de Paris, été comme hiver,
+via GitHub Actions
 ([.github/workflows/update.yml](.github/workflows/update.yml)) et committe
-les trois fichiers de données. La minute est choisie creuse : programmé à
-l'heure pile, le passage partait chaque jour quatre à six heures en
-retard, GitHub retardant les tâches du début de l'heure. Un seul passage
+les trois fichiers de données. GitHub ne compte qu'en heure UTC, qui ne
+change pas d'heure : deux créneaux sont programmés, 00:17 et 01:17 UTC, et
+un premier job ne laisse travailler que celui qui tombe à 2 h 17 à Paris
+ce jour-là (le jour du passage à l'heure d'été, où 2 h 17 n'existe pas,
+c'est 1 h 17). GitHub retarde ses passages programmés de plusieurs heures,
+cinq à sept en octobre 2026 : partir la nuit vise un site à jour au
+réveil, et la minute 17 évite l'heure pile, la plus demandée. Un seul passage
 tourne à la fois : lancé à la main pendant le passage programmé, ou
 l'inverse, le second attend la fin du premier, puis repart du fil que
 celui-ci vient de publier. Deux passages simultanés échouaient à la

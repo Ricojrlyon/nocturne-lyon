@@ -3,6 +3,7 @@ collectes : reprise d'une salle ou d'un agrégateur tombé (BUG-1), contrôle
 du volume total (BUG-2), échec complet. Tout s'écrit dans un dossier
 temporaire, à une date figée."""
 import copy
+import re
 import unittest
 from datetime import date, timedelta
 
@@ -405,6 +406,21 @@ class GardeFous(unittest.TestCase):
         self.assertIn("type: boolean", entree)
         self.assertIn("default: false", entree)
         self.assertEqual(wf.count("NOCTURNE_FORCER_ECRITURE: ${{ inputs.forcer && '1' || '' }}"), 1)
+
+    def test_le_passage_programme_part_a_2_h_17_a_paris(self):
+        # GitHub compte en UTC : 2 h 17 à Paris, c'est 00:17 UTC l'été et
+        # 01:17 UTC l'hiver. Les deux créneaux sont programmés, et le job
+        # « creneau » ne laisse travailler que celui du jour, d'après le
+        # décalage de Paris lu à midi ; le collecteur l'attend.
+        wf = (RACINE / ".github" / "workflows" / "update.yml").read_text(encoding="utf-8")
+        horaires = wf.split("schedule:", 1)[1].split("workflow_dispatch:", 1)[0]
+        self.assertEqual(re.findall(r"cron: '([^']+)'", horaires), ["17 0 * * *", "17 1 * * *"])
+        creneau = wf.split("\n  creneau:\n", 1)[1].split("\n  update:\n", 1)[0]
+        self.assertIn("TZ=Europe/Paris date -d 12:00 +%z", creneau)
+        self.assertIn('"17 0 * * *|+0200"|"17 1 * * *|+0100")', creneau)
+        self.assertIn('if [ "$EVENEMENT" != "schedule" ]; then', creneau)
+        collecte = wf.split("\n  update:\n", 1)[1]
+        self.assertIn("    needs: creneau\n    if: needs.creneau.outputs.lancer == 'oui'\n", collecte)
 
     def test_deux_passages_ne_se_chevauchent_pas(self):
         # Le second passage attend la fin du premier, puis repart de la
