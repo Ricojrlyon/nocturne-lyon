@@ -1,8 +1,8 @@
 """Le collecteur de la Comédie Odéon : l'affiche dans sa taille réduite,
 pas l'original (audit n° 1). Page synthétique, qui reprend la structure
 de la vraie : une carte par spectacle (article[data-category]), son
-affiche en img.wp-post-image — le src à l'original, les tailles réduites
-dans le srcset — et le calendrier, un onglet par mois."""
+affiche en img.wp-post-image (le src à l'original, les tailles réduites
+dans le srcset) et le calendrier, un onglet par mois."""
 import calendar
 import contextlib
 import html

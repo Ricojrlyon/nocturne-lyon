@@ -85,8 +85,8 @@ LARGEUR_AFFICHE = 800
 
 
 def _taille_proche(img) -> Optional[str]:
-    """Quand la carte montre l'ORIGINAL de son affiche — son src est
-    l'entrée la plus large du srcset —, la taille du srcset la plus
+    """Quand la carte montre l'ORIGINAL de son affiche (son src est
+    l'entrée la plus large du srcset), la taille du srcset la plus
     proche de LARGEUR_AFFICHE. L'original pesait jusqu'à 8,7 Mo pour une
     carte de 400 px. La plupart des cartes montrent déjà une vignette de
     200 px, absente du srcset : None, on n'y touche pas. None aussi sans

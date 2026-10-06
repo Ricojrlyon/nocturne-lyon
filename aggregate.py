@@ -498,7 +498,7 @@ def _alerte(titre: str, message: str) -> None:
 # Confluences a rendu une erreur sur ses événements, mais pas sur ses
 # expositions : la salle est passée de 56 à 5, et le garde-fou a repris la
 # veille. Or une exposition déjà ouverte commence, pour sa source,
-# AUJOURD'HUI — aux Confluences, aux Beaux-Arts, au MAC, et sur les plages
+# AUJOURD'HUI : aux Confluences, aux Beaux-Arts, au MAC, et sur les plages
 # longues du Petit Bulletin. La copie de la veille, ouverte le 4, et celle
 # du jour, ouverte le 5, ne couvraient donc pas les mêmes jours : seule le
 # 4, la copie de la veille l'emportait ce jour-là, et la dédup l'émettait
@@ -507,7 +507,7 @@ def _alerte(titre: str, message: str) -> None:
 #
 # Ce que la source publie encore aujourd'hui n'est donc pas repris. Le
 # même événement se reconnaît à son lieu, son lien, son titre, sa FIN et
-# son heure — pas à son début, qui glisse.
+# son heure, pas à son début, qui glisse.
 def _empreinte(venue, url, title, date_start, date_end, time) -> tuple:
     """Ce qui fait d'un événement le même d'un jour à l'autre, chez la même
     source. Sa fin, ou son jour s'il n'en dure qu'un ; jamais son début."""
