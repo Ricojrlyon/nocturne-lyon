@@ -4,7 +4,7 @@ Le site espacegerson.com/programmation est un Roadiz CMS thématisé par
 Mapado, rendu serveur : il porte de la microdata schema.org exploitable
 (itemprop startDate, name, url). On lit pourtant la BILLETTERIE Mapado
 plutôt que le site, pour une raison décisive : le site n'indique pas le
-lieu de chaque spectacle autrement que dans le TITRE — « … Bourse du
+lieu de chaque spectacle autrement que dans le TITRE - « … Bourse du
 Travail Lyon 3ème », « … Salle Victor Hugo 69006 ». Filtrer là-dessus
 serait une heuristique fragile.
 
@@ -32,7 +32,7 @@ from . import mapado
 from .base import Event
 
 # Même graphie que le Petit Bulletin et que VENUE_ARRONDISSEMENT : c'est
-# ce qui permet à la dédup de regrouper les deux sources — le Petit
+# ce qui permet à la dédup de regrouper les deux sources - le Petit
 # Bulletin remonte aussi les spectacles de cette salle.
 VENUE = "Espace Gerson"
 SLUG = "espace-gerson"
@@ -45,7 +45,7 @@ VENUE_MAPADO = "espace gerson"
 
 # Catégorie fixe : Mapado n'expose que des regroupements marketing.
 # « café-théâtre » tombe dans le bucket humour du frontend, ce qui est
-# juste pour cette salle — et évite les classements erronés du Petit
+# juste pour cette salle - et évite les classements erronés du Petit
 # Bulletin, qui range une partie de cette programmation en « Théâtre ».
 CATEGORY = "café-théâtre"
 

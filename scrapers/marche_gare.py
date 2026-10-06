@@ -170,7 +170,7 @@ def fetch() -> List[Event]:
         # Image (lazy-load aware; skips base64 spacers)
         image = img_src(a.find("img"), host="https://marchegare.fr")
         # Le listing sert une miniature Drupal de 32px (style auto_32) ;
-        # le style "large" (~480px) est accessible sans token itok —
+        # le style "large" (~480px) est accessible sans token itok -
         # vérifié en direct. Sans cette réécriture, les cartes du
         # frontend afficheraient un timbre-poste flou.
         if image and "/styles/auto_32/" in image:

@@ -2,7 +2,7 @@
 
 aggregate.py vient d'écrire events.json : on vérifie sa FORME avant de le
 laisser partir. Un champ manquant, une date illisible ou un lien douteux
-ne casseraient peut-être rien tout de suite — mais la page les lirait.
+ne casseraient peut-être rien tout de suite - mais la page les lirait.
 
   python -m unittest tests.verif_fil -v
 """
@@ -38,7 +38,7 @@ class FilPublie(unittest.TestCase):
 
     def test_textes_et_dates(self):
         for e in self.evs:
-            quoi = "%s — %s" % (e["venue"], e["title"])
+            quoi = "%s - %s" % (e["venue"], e["title"])
             self.assertTrue(e["title"].strip() and e["venue"].strip(), quoi)
             self.assertRegex(e["date_start"], ISO, quoi)
             date.fromisoformat(e["date_start"])

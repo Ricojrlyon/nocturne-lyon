@@ -1,7 +1,7 @@
 """Comble la catégorie d'un événement quand la source n'en donne aucune.
 
 108 événements sur 1628 arrivaient sans catégorie, et tous depuis des
-scrapers de SALLE — les agrégateurs, eux, en fournissent toujours une.
+scrapers de SALLE - les agrégateurs, eux, en fournissent toujours une.
 Sans catégorie, un événement tombe dans le bucket « autre » du frontend :
 il échappe au filtre par type et, dès qu'on regroupera les journées
 chargées par famille, il irait grossir un tas indistinct.
@@ -9,7 +9,7 @@ chargées par famille, il irait grossir un tas indistinct.
 Deux étages, dans cet ordre :
 
 1. LE TITRE. C'est de loin la meilleure source, parce que ces salles
-   annoncent le genre dans le titre lui-même — « Projection Ciné-Club »,
+   annoncent le genre dans le titre lui-même - « Projection Ciné-Club »,
    « Formation Les métiers des musiques actuelles », « HOTEL PARASITE
    [Punk Rock] », « Blaguistan comedy club », « Vernissage ». 56 des 108
    se règlent ainsi.
@@ -25,13 +25,13 @@ Ce qui ne se laisse pas déduire reste vide, et c'est voulu : « LP »,
 « SAINT LEVANT », « Face B » ou « Ouverture de saison » ne disent rien:
 leur inventer une catégorie serait deviner, pas déduire.
 
-ATTENTION — COUPLAGE AVEC LE FRONTEND. Les étiquettes produites ici
+ATTENTION - COUPLAGE AVEC LE FRONTEND. Les étiquettes produites ici
 doivent être reconnues par TYPE_BUCKETS (index.html), sinon le
 comblement ne sert à rien : l'événement quitte « sans catégorie » pour
 retomber dans « autre ». Deux pièges vérifiés à l'écriture : « ciné » ne
 correspond PAS à sa propre regex, qui exige « cinéma » ou « projection »
-— d'où l'étiquette « projection » ; et « électro » accentué ne
-correspond pas à `\belectro` — d'où l'étiquette « club ». Toute
+- d'où l'étiquette « projection » ; et « électro » accentué ne
+correspond pas à `\belectro` - d'où l'étiquette « club ». Toute
 étiquette ajoutée ici doit être testée contre TYPE_BUCKETS.
 """
 from __future__ import annotations
@@ -71,7 +71,7 @@ INDICES_TITRE = [
 INDICES_TITRE = [(c, re.compile(p, re.I)) for c, p in INDICES_TITRE]
 
 # Repli. N'ajouter ici qu'un lieu dont TOUTE la programmation relève d'un
-# même genre — sinon on étiquette faux au lieu de laisser vide.
+# même genre - sinon on étiquette faux au lieu de laisser vide.
 LIEUX_MONOGENRE = {
     "Grrrnd Zero":      "musique",   # salle de concert associative
     "Trokson":          "musique",   # bar-concert rock

@@ -2,12 +2,12 @@
 irrégulières » (Lyon 2e).
 
 La salle n'avait jusqu'ici que ce que les agrégateurs voulaient bien en
-dire — onze cartes, quand sa saison en compte trente-quatre. Sa
+dire - onze cartes, quand sa saison en compte trente-quatre. Sa
 billetterie est une boutique Mapado, trinitelyon.mapado.com, et toute la
 mécanique de lecture est dans scrapers/mapado.py, partagée avec
 l'Improvidence et l'Espace Gerson.
 
-TOUS LES SPECTACLES DE LA BOUTIQUE SE JOUENT DANS LES MURS — les 34 y
+TOUS LES SPECTACLES DE LA BOUTIQUE SE JOUENT DANS LES MURS - les 34 y
 portent le même Venue, « Chapelle de la Trinité », 29-31 rue de la
 Bourse. Le prédicat de lieu ne sert donc à rien aujourd'hui ; il reste
 parce qu'une boutique n'est pas une salle, et que le jour où la Trinité
@@ -20,7 +20,7 @@ LE TITRE SE COUPE EN DEUX, et c'est nécessaire au dédoublonnage. Mapado
 là où le Petit Bulletin écrit « Prima Donna ». La dédup compare les
 titres à 0,70 de similarité : sans la coupe, la même soirée sortirait
 deux fois, une fois par source. On publie donc le titre court et le
-reste en sous-titre — ce que le champ attend, et ce que les autres
+reste en sous-titre - ce que le champ attend, et ce que les autres
 scrapers de salle font déjà.
 
 LA CATÉGORIE SE DEVINE AU TITRE, faute de mieux : Mapado laisse
@@ -35,8 +35,8 @@ séparer ce qui n'est pas un concert, relevé sur la saison 2026-2027 :
 « Danser sur l'Apocalypse » et « Danser sous l'orage » sont des
 concerts : le motif de la danse exige donc le mot entier, pas son verbe.
 Le défaut est « classique » parce que c'est l'identité de la salle, et
-parce qu'une erreur y range l'événement dans la bonne famille du fil —
-la musique — là où « autre » l'aurait exilé.
+parce qu'une erreur y range l'événement dans la bonne famille du fil -
+la musique - là où « autre » l'aurait exilé.
 """
 from __future__ import annotations
 
@@ -49,7 +49,7 @@ from .base import Event
 
 # Même graphie que le Petit Bulletin et que VENUE_ARRONDISSEMENT : c'est
 # ce qui permet à la dédup de regrouper les deux sources, qui indexe par
-# (lieu canonique, jour) — voir dedup.py.
+# (lieu canonique, jour) - voir dedup.py.
 VENUE = "Chapelle de la Trinité"
 SLUG = "chapelle-de-la-trinite"
 SHOP = "https://trinitelyon.mapado.com"

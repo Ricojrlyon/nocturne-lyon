@@ -25,8 +25,8 @@ class Event:
     url: str                    # Link back to source page
     image: Optional[str]        # URL of cover image
     # Salle réelle quand l'événement se joue AILLEURS que chez le `venue`
-    # qui le programme. `venue` reste celui qui programme — c'est lui qui
-    # groupe les cartes, tient le filtre et donne le logo —, et ce champ
+    # qui le programme. `venue` reste celui qui programme - c'est lui qui
+    # groupe les cartes, tient le filtre et donne le logo -, et ce champ
     # dit où l'on va. None quand l'événement se joue dans les murs, ce qui
     # est le cas de l'écrasante majorité et de tous les scrapers qui
     # n'alimentent pas ce champ.
@@ -72,14 +72,14 @@ OFFSITE_PLUSIEURS = "·ailleurs"
 # garde-fou d'aggregate.py a bloqué la publication de TOUT le fil pour une
 # seule salle.
 #
-# On ne réessaie QUE sur une rupture de transport — connexion coupée,
+# On ne réessaie QUE sur une rupture de transport - connexion coupée,
 # délai dépassé. Une réponse HTTP, elle, est une réponse : répéter une
 # requête qui rend 403 ou 404 ne la changera pas, et ne ferait que
 # tripler le temps du run pour rien.
 #
 # Les appels réseau des scrapers passent par ici. Rattraper une salle
 # à la fois ne menait nulle part : deux runs consécutifs du workflow ont
-# été bloqués par deux salles DIFFÉRENTES — le Périscope (connexion
+# été bloqués par deux salles DIFFÉRENTES - le Périscope (connexion
 # réinitialisée), puis le Transbordeur (délai dépassé). Le runner GitHub
 # a un réseau capricieux vers ces sites, et chaque salle y passera.
 #
@@ -87,8 +87,8 @@ OFFSITE_PLUSIEURS = "·ailleurs"
 # scraper la sienne, cookies et connexions avec. Ces 17 appels-là, dans
 # 13 fichiers, étaient restés en direct jusqu'au 2026-10-01 avec l'export
 # POST du volley, et le Musée des Confluences l'a payé cinq fois en deux
-# semaines : un délai de lecture dépassé, et ses expositions — quatre à
-# six — perdues pour le passage. Le garde-fou ne l'a vu qu'une fois, le
+# semaines : un délai de lecture dépassé, et ses expositions - quatre à
+# six - perdues pour le passage. Le garde-fou ne l'a vu qu'une fois, le
 # jour où le reste de son programme manquait aussi.
 #
 # Restent en direct, et pour des raisons précises :
@@ -112,7 +112,7 @@ CODES_A_REESSAYER = (502, 503, 504)
 # Un hôte qui vient d'épuiser ses essais sur une rupture de transport n'en
 # reçoit plus qu'UN par appel, jusqu'à ce qu'il réponde de nouveau. Sans
 # cela, un site tombé au milieu d'une boucle de pages coûterait trois
-# délais par page au lieu d'un — 74 pages au Complexe, plus d'une heure de
+# délais par page au lieu d'un - 74 pages au Complexe, plus d'une heure de
 # plus. Avec, une panne ne coûte que deux essais de plus qu'au temps où
 # l'on ne réessayait pas.
 _INJOIGNABLES: set = set()
@@ -146,7 +146,7 @@ def get(url: str, *, headers: Optional[dict] = None, timeout: int = 30,
             derniere = exc
             if essai == tentatives:
                 if tentatives > 1:
-                    print("%s%s : injoignable après %d essais — un seul par "
+                    print("%s%s : injoignable après %d essais - un seul par "
                           "appel désormais, jusqu'à ce qu'il réponde"
                           % (prefixe, hote, tentatives), file=sys.stderr)
                 _INJOIGNABLES.add(hote)
@@ -159,7 +159,7 @@ def get(url: str, *, headers: Optional[dict] = None, timeout: int = 30,
 
 
 def post(url: str, **options) -> requests.Response:
-    """get(), en POST. RÉSERVÉ aux requêtes qui ne font que LIRE — un
+    """get(), en POST. RÉSERVÉ aux requêtes qui ne font que LIRE - un
     export, une recherche : rejouer un POST qui écrit le doublerait."""
     return get(url, methode="POST", **options)
 
@@ -233,7 +233,7 @@ def img_src(img_tag, host: Optional[str] = None) -> Optional[str]:
 
     Lazy-loading themes put a placeholder (base64 / svg spacer) in `src`
     and the real file in data-src / data-lazy-src / data-original /
-    (data-)srcset — which is why several scrapers extracted 0 images.
+    (data-)srcset - which is why several scrapers extracted 0 images.
     Returns an absolute http(s) URL (relative paths resolved against
     `host` when given), or None.
     """
@@ -286,5 +286,5 @@ def absolutize_url(url: str, host: str) -> str:
         return "https:" + url
     if url.startswith("/"):
         return host.rstrip("/") + url
-    # Pure relative URL — assume it sits at host root
+    # Pure relative URL - assume it sits at host root
     return host.rstrip("/") + "/" + url

@@ -1,7 +1,7 @@
 """La chaîne de publication ENTIÈRE, rejouée sur une collecte réelle.
 
 tests/donnees/chaine_reference.json.gz garde ce que les 35 collecteurs et
-les 2 agrégateurs ont rendu le 1er octobre 2026 — 3 395 événements bruts —
+les 2 agrégateurs ont rendu le 1er octobre 2026 - 3 395 événements bruts -
 et le fil qu'aggregate.main() en a publié : 2 985 événements. Le test
 rejoue la collecte, à la même date figée, et exige le même fil, au
 caractère près : ordre, fusions du dédoublonnage, catégories comblées,
@@ -55,7 +55,7 @@ def ecarts(attendu, obtenu, n=5):
         lignes.append("  apparu   : %s" % (k,))
     for k in [k for k in a if k in o and a[k] != o[k]][:n]:
         champs = sorted(c for c in a[k] if a[k].get(c) != o[k].get(c))
-        lignes.append("  modifié  : %s — %s" % (k, ", ".join(
+        lignes.append("  modifié  : %s - %s" % (k, ", ".join(
             "%s %r → %r" % (c, a[k].get(c), o[k].get(c)) for c in champs)))
     if len(lignes) == 1:
         lignes.append("  mêmes événements, dans un ORDRE différent")

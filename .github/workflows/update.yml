@@ -15,10 +15,10 @@ on:
       # le passage publie ce qu'il a collecté, tel quel : il ne reprend pas
       # la veille d'une salle tombée et ne bloque pas une baisse de volume
       # (NOCTURNE_FORCER_ECRITURE, voir aggregate.py). Pour une perte RÉELLE
-      # seulement — salle fermée, saison finie : une salle en panne
+      # seulement - salle fermée, saison finie : une salle en panne
       # passagère ce jour-là ne serait pas reprise non plus.
       forcer:
-        description: "Forcer la publication — perte réelle seulement (salle fermée, saison finie)"
+        description: "Forcer la publication - perte réelle seulement (salle fermée, saison finie)"
         type: boolean
         default: false
 
@@ -30,7 +30,7 @@ permissions:
 # temps : sinon il repartait du fil d'AVANT, et sa publication butait sur
 # celle du premier (« git pull --rebase » en conflit sur events.json,
 # passage rouge). GitHub ne garde qu'UN passage en attente : un troisième
-# lancement remplace celui qui attend — annulé, en gris — et fait le même
+# lancement remplace celui qui attend - annulé, en gris - et fait le même
 # travail, un peu plus tard.
 concurrency:
   group: maj-du-fil
@@ -75,7 +75,7 @@ jobs:
         run: python aggregate.py
         env:
           # « 1 » quand la case « Forcer la publication » est cochée, vide
-          # sinon — et toujours vide pour le passage programmé.
+          # sinon - et toujours vide pour le passage programmé.
           NOCTURNE_FORCER_ECRITURE: ${{ inputs.forcer && '1' || '' }}
 
       # Le fil frais, contrôlé avant de partir : sa forme, et la page qui

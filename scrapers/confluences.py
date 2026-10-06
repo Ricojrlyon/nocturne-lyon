@@ -4,21 +4,21 @@ Le seul site du dépôt à exposer une JSON:API Drupal, et la source la
 mieux structurée qu'on ait rencontrée : deux taxonomies y donnent
 gratuitement ce qu'il a fallu deviner ailleurs. `field_activites` porte
 le genre en cinq valeurs, et `field_public` sépare le grand public des
-classes et des groupes — à l'Auditorium, la même distinction se lisait
+classes et des groupes - à l'Auditorium, la même distinction se lisait
 dans une phrase tarifaire.
 
 ON NE PREND PAS TOUT, ET C'EST LE CHOIX CENTRAL DE CE SCRAPER. Le musée
 publie 6 447 séances sur six mois, plus du double du site entier, parce
 qu'il exprime ses visites et ses ateliers récurrents en RRULE : une
 seule visite jouée mercredi, jeudi, samedi et dimanche pendant cinq mois
-pèse quatre-vingt-dix séances. Le type `slot`, lui, est pire encore —
+pèse quatre-vingt-dix séances. Le type `slot`, lui, est pire encore -
 1 200 créneaux pour une seule semaine, dont 583 à neuf heures : c'est
 une grille de réservation de groupes, pas une programmation.
 
 On retient donc les conférences, le cinéma, les spectacles et les
 concerts, pour le grand public seulement. Vérification faite, AUCUNE des
 fiches ainsi retenues ne porte de RRULE : ce sont des dates uniques,
-listées en clair. Le morceau difficile disparaît avec le filtre — mais
+listées en clair. Le morceau difficile disparaît avec le filtre - mais
 si une récurrence apparaissait un jour, elle serait signalée plutôt que
 tronquée en silence à sa première date.
 
@@ -26,17 +26,17 @@ LES EXPOSITIONS TEMPORAIRES viennent d'un second type de nœud. Les
 agrégateurs les publient déjà, mais avec des dates approximatives ; ici
 `field_state` dit « En cours », « À venir » ou « Passées », et la
 période est écrite en toutes lettres. Le scraper l'emporte sur eux par
-sa priorité, et le parcours permanent est écarté — cinq nœuds, qui ne
+sa priorité, et le parcours permanent est écarté - cinq nœuds, qui ne
 sont pas des sorties datées.
 
 HORS LES MURS. Le musée programme au Cinéma Comœdia et au Cinéma Le
-Zola — ce dernier est déjà dans nocturne. `field_place` nomme la salle
+Zola - ce dernier est déjà dans nocturne. `field_place` nomme la salle
 et `field_site` marque explicitement « Hors les murs ». Comme partout
 ailleurs dans le dépôt, on retient une liste blanche de lieux maison et
 l'on signale ce qui n'y figure pas, pour qu'une salle nouvelle se voie
 au lieu de disparaître.
 
-LES TITRES d'exposition portent un suffixe interne — « Corée du Nord
+LES TITRES d'exposition portent un suffixe interne - « Corée du Nord
 _expoFR ». Le vrai titre est dans `field_title`.
 """
 from __future__ import annotations
@@ -67,8 +67,8 @@ HEADERS = {
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
-# Les deux activités qui relèvent d'une sortie. Les trois autres —
-# « Visite », « Atelier ou animation », « Découverte du bâtiment » — sont
+# Les deux activités qui relèvent d'une sortie. Les trois autres -
+# « Visite », « Atelier ou animation », « Découverte du bâtiment » - sont
 # écartées : voir l'en-tête.
 ACTIVITES = {
     "conference ou cinema": "conférence",
@@ -204,7 +204,7 @@ def _url(noeud: dict) -> Optional[str]:
 def _chez_eux(lieux: List[str], sites: List[str]) -> bool:
     if any(_norm(s) == "hors les murs" for s in sites):
         return False
-    # Sans lieu précisé — près de la moitié des fiches — on suppose le
+    # Sans lieu précisé - près de la moitié des fiches - on suppose le
     # musée : c'est le cas par défaut, et l'inverse perdrait des séances.
     return all(any(m in _norm(l) for m in LIEUX_MAISON) for l in lieux)
 
@@ -212,8 +212,8 @@ def _chez_eux(lieux: List[str], sites: List[str]) -> bool:
 def _recurrence_vive(f: dict, today: Date) -> bool:
     """La série récurrente atteint-elle encore aujourd'hui ?
 
-    Les archives du musée en sont pleines — la dernière s'arrête en mai
-    2026 — et leurs dates tombent de toute façon hors de l'horizon. Ne
+    Les archives du musée en sont pleines - la dernière s'arrête en mai
+    2026 - et leurs dates tombent de toute façon hors de l'horizon. Ne
     signaler que les séries encore vivantes évite un avertissement qui
     crierait au loup à chaque passage.
     """
@@ -359,6 +359,6 @@ def fetch() -> List[Event]:
         print(f"[Confluences] {sans_periode} exposition(s) en cours ou à "
               "venir sans période lisible", file=sys.stderr)
     if not events and not expos:
-        print("[Confluences] aucune séance retenue — structure JSON:API "
+        print("[Confluences] aucune séance retenue - structure JSON:API "
               "modifiée ?", file=sys.stderr)
     return events + expos

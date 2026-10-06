@@ -13,15 +13,15 @@ event as an <article class="event-card">:
     </article>
 
 Two passes:
-  1. _scrape_cards   — targeted parse of article.event-card (nominal path).
-  2. _scrape_generic — fallback if the theme changes: generic headings+dates
+  1. _scrape_cards   - targeted parse of article.event-card (nominal path).
+  2. _scrape_generic - fallback if the theme changes: generic headings+dates
      scan, hardened against the false positives of the previous version
      (price sequences like "8/12/14€" parsed as dates, duplicate events
      from nested container elements).
 
 The site runs WordPress but exposes NO usable REST endpoint (checked
 July 2026: /wp/v2/event, /evenement and /concert all 404, /posts returns
-an empty list). The old _try_wp_api pass was removed — its "publish date
+an empty list). The old _try_wp_api pass was removed - its "publish date
 as event date" fallback could turn blog posts into ghost events.
 """
 from typing import List, Optional
@@ -49,17 +49,17 @@ DATE_LONG = re.compile(
     r"(\d{1,2})(?:er)?\s+(\w+)\s+(\d{4})",
     re.IGNORECASE,
 )
-# "13 juil" (short named month, no year — year inferred)
+# "13 juil" (short named month, no year - year inferred)
 DATE_SHORT_FR = re.compile(
     r"(\d{1,2})(?:er)?\s+(janv|f[eé]vr|mars|avr|mai|juin|juil|ao[uû]t|sept|oct|nov|d[eé]c)",
     re.IGNORECASE,
 )
-# "13.07.26" / "13.07.2026" — dotted form REQUIRES a year, otherwise a
+# "13.07.26" / "13.07.2026" - dotted form REQUIRES a year, otherwise a
 # version number like "1.5" would become May 1st.
 DATE_NUM_DOT = re.compile(
     r"(?<!\d)(?<!\.)(\d{1,2})\.(\d{1,2})\.(\d{4}|\d{2})(?!\d)(?!\.\d)"
 )
-# "13/07" / "13/07/2026" — slashed form, year optional but 4-digit only.
+# "13/07" / "13/07/2026" - slashed form, year optional but 4-digit only.
 # The lookarounds reject price sequences ("8/12/14€") that the previous
 # version happily parsed as dates, producing ghost events.
 DATE_NUM_SLASH = re.compile(
@@ -80,7 +80,7 @@ def _smart_year(month: int, day: int) -> int:
         return today.year
     # Grâce de 15 jours (comme tng.py) : une date passée de quelques jours
     # est un listing pas encore purgé de CETTE année, pas l'annonce de
-    # l'année prochaine — sans quoi elle devenait un événement fantôme à +1 an.
+    # l'année prochaine - sans quoi elle devenait un événement fantôme à +1 an.
     return today.year + 1 if (today - candidate).days > 15 else today.year
 
 
@@ -201,7 +201,7 @@ def _scrape_generic(soup: BeautifulSoup, page_url: str) -> List[Event]:
     for el in soup.find_all(["article", "li", "h2", "h3"]):
         # Leaf preference: a container whose descendants include another
         # candidate carrying its own date would produce a duplicate of the
-        # same event with a diverging title — let the inner one handle it.
+        # same event with a diverging title - let the inner one handle it.
         if any(
             _parse_date_in_text(c.get_text(" ", strip=True))
             for c in el.find_all(["article", "li", "h2", "h3"], limit=6)
@@ -265,7 +265,7 @@ def _scrape_generic(soup: BeautifulSoup, page_url: str) -> List[Event]:
 
 def _diagnose(soup: BeautifulSoup) -> None:
     print("=" * 60, file=sys.stderr)
-    print("DIAGNOSTIC: Le Sonic — 0 events", file=sys.stderr)
+    print("DIAGNOSTIC: Le Sonic - 0 events", file=sys.stderr)
     cards = soup.select("article.event-card")
     ev_links = soup.select('a[href*="/evenement/"]')
     h2s = soup.find_all("h2")
@@ -286,7 +286,7 @@ def fetch() -> List[Event]:
     if not events:
         events = _scrape_generic(soup, url)
         if events:
-            print(f"[Sonic] event-cards absent — {len(events)} events via "
+            print(f"[Sonic] event-cards absent - {len(events)} events via "
                   f"generic scan (theme changed?)", file=sys.stderr)
     if not events:
         _diagnose(soup)

@@ -2,8 +2,8 @@
 copie du site, et un navigateur de la famille Chrome la joue sans fenêtre.
 
 Dans la copie servie, index.html reçoit en tête une règle qui interdit
-TOUTE ressource extérieure — les affiches des salles, notamment, qui
-rendraient le test dépendant du réseau — et, au besoin, une date figée ;
+TOUTE ressource extérieure - les affiches des salles, notamment, qui
+rendraient le test dépendant du réseau - et, au besoin, une date figée ;
 en fin de page, le pilote tests/page_essais.js, qui relève l'affichage et
 le renvoie au serveur.
 """
@@ -141,7 +141,7 @@ def jouer(evenements: dict, lieux: dict | None, *, date_figee: bool,
     chez la plupart des visiteurs.
 
     Lève RuntimeError si aucun navigateur n'est disponible, ou s'il n'a rien
-    renvoyé — l'appelant décide alors de sauter ou d'échouer.
+    renvoyé - l'appelant décide alors de sauter ou d'échouer.
     """
     navigateur = trouver()
     if not navigateur:
@@ -171,7 +171,7 @@ def jouer(evenements: dict, lieux: dict | None, *, date_figee: bool,
             # En TEMPS RÉEL, et non sous l'horloge accélérée de Chrome
             # (--virtual-time-budget) : celle-ci fait filer les pauses du
             # pilote en un instant, quand les fondus suivent le temps de
-            # l'écran — un relevé tombait alors avant la fin du dernier
+            # l'écran - un relevé tombait alors avant la fin du dernier
             # fondu. Le navigateur reste ouvert jusqu'au relevé, puis il est
             # fermé.
             options = ["--headless=new", "--disable-gpu", "--no-first-run",

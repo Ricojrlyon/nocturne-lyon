@@ -2,7 +2,7 @@
 
 Page structure (verified July 2026):
 - Each event is an <a href="/fr/programmation/<slug>">.
-- Inner text: "TITLE TITLE DD.MM HHhMM"  (title duplicated — once from img
+- Inner text: "TITLE TITLE DD.MM HHhMM"  (title duplicated - once from img
   alt, once from the visible span; date WITHOUT year; time "HHhMM").
 - Some events span multiple days: "DD.MM au DD.MM" (year also implicit).
 
@@ -35,7 +35,7 @@ HEADERS = {
 
 # DD.MM  or  DD.MM.YY  (year optional)
 _DATE_RE = re.compile(r"\b(\d{2})\.(\d{2})(?:\.(\d{2}))?\b")
-# DD.MM [.YY]  au  DD.MM [.YY]  — la partie "au …" est obligatoire :
+# DD.MM [.YY]  au  DD.MM [.YY]  - la partie "au …" est obligatoire :
 # les dates simples sont gérées par _DATE_RE.
 _RANGE_RE = re.compile(
     r"\b(\d{2})\.(\d{2})(?:\.(\d{2}))?\s+au\s+(\d{2})\.(\d{2})(?:\.(\d{2}))?",
@@ -48,7 +48,7 @@ _TIME_RE = re.compile(r"\b(\d{1,2})h(\d{2})?\b")
 # (« bloc-square types type_spectacle ») : BUG-29. Tout était « concert »,
 # humoristes, spectacles sur glace et Salon des vignerons compris, si bien
 # qu'ils manquaient à la scène et encombraient la musique. « evenement » ne
-# dit rien du genre — ce sont les séances du Festival Lumière : la catégorie
+# dit rien du genre - ce sont les séances du Festival Lumière : la catégorie
 # reste vide, à compléter par l'agrégateur ou par categorie.py.
 _TYPES = {
     "concert": "concert",           # → musique
@@ -224,7 +224,7 @@ def fetch() -> List[Event]:
     if not unique:
         # Diagnostic output to help debug future breakage
         print("=" * 60, file=sys.stderr)
-        print("DIAGNOSTIC: Halle Tony Garnier — 0 events", file=sys.stderr)
+        print("DIAGNOSTIC: Halle Tony Garnier - 0 events", file=sys.stderr)
         for url in URLS:
             try:
                 resp = base_get(url, timeout=15, headers=HEADERS)

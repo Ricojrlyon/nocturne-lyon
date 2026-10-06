@@ -5,20 +5,20 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>*nocturne · lyon</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-16 -16 32 32'><g fill='%23d4a574'><rect x='-2' y='-13' width='4' height='26' rx='2'/><rect x='-2' y='-13' width='4' height='26' rx='2' transform='rotate(60)'/><rect x='-2' y='-13' width='4' height='26' rx='2' transform='rotate(120)'/></g></svg>">
-<meta name="description" content="Guide nocturne — concerts, théâtre, danse, clubs, expos et sport à Lyon.">
+<meta name="description" content="Guide nocturne - concerts, théâtre, danse, clubs, expos et sport à Lyon.">
 <!-- Aperçu au partage (WhatsApp, Messenger, réseaux) : sans ces balises,
      un lien envoyé s'affichait nu, sans titre ni image. L'image reprend
      le bandeau du site ; les adresses doivent être absolues. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="*nocturne · lyon">
 <meta property="og:title" content="*nocturne · lyon">
-<meta property="og:description" content="Guide nocturne — concerts, théâtre, danse, clubs, expos et sport à Lyon.">
+<meta property="og:description" content="Guide nocturne - concerts, théâtre, danse, clubs, expos et sport à Lyon.">
 <meta property="og:url" content="https://ricojrlyon.github.io/nocturne-lyon/">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:image" content="https://ricojrlyon.github.io/nocturne-lyon/apercu.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="*nocturne · lyon — concerts, théâtre, danse, clubs, expos, sport">
+<meta property="og:image:alt" content="*nocturne · lyon - concerts, théâtre, danse, clubs, expos, sport">
 <meta name="twitter:card" content="summary_large_image">
 <!-- Polices hébergées sur le site, et non plus chez Google Fonts, qui
      recevait l'adresse IP de chaque visiteur : voir fonts/polices.css. -->
@@ -34,7 +34,7 @@
        pas avec la page, trop peu pour que la grille se lise comme une
        grille. En descendant à #0d1317 l'écart passe à quatorze points
        dans l'autre sens, et surtout le fond de carte devient le point le
-       plus sombre de l'écran — donc le blanc du titre et le crème de
+       plus sombre de l'écran - donc le blanc du titre et le crème de
        l'heure y gagnent, là où un fond plus clair les aurait rognés.
        C'est la valeur de la maquette, où la carte était noire sur un fond
        gris-bleu.
@@ -43,9 +43,9 @@
        bien rester en relief. */
     --bg-carte:     #0d1317;
     --bg-carte-2:   #18222a;      /* survol : la carte s'allume */
-    --ink:          #e7dfbe;        /* cream — main text */
-    --ink-soft:     #a59f86;        /* faded cream — secondary */
-    --ink-mute:     #5e6973;        /* muted blue-gray — tertiary */
+    --ink:          #e7dfbe;        /* cream - main text */
+    --ink-soft:     #a59f86;        /* faded cream - secondary */
+    --ink-mute:     #5e6973;        /* muted blue-gray - tertiary */
     --rule:         #2a363f;        /* very subtle line */
     --rule-strong:  #3a4853;
     --accent:       #e7dfbe;        /* cream accent (same as ink) */
@@ -53,10 +53,10 @@
     --warm:         #d4a574;        /* warm tan for badges/highlights */
     /* Corail adouci : il ne sert plus au badge de durée, passé en crème
        filaire comme l'étiquette d'arrondissement, mais reste la couleur
-       d'INTERFACE du site — filtre coché, cadre d'un groupe déplié. Son
+       d'INTERFACE du site - filtre coché, cadre d'un groupe déplié. Son
        filet compagnon --hot-line est parti avec le badge. */
-    --hot:          #e08d70;        /* coral adouci — signaux d'interface */
-    /* Angles très légèrement adoucis — validé sur maquette (3 px). */
+    --hot:          #e08d70;        /* coral adouci - signaux d'interface */
+    /* Angles très légèrement adoucis - validé sur maquette (3 px). */
     --radius:       3px;
   }
   * { box-sizing: border-box; }
@@ -96,7 +96,7 @@
   }
   /* Le conteneur garde le padding standard (32 px, 20 px sur mobile) :
      le bord gauche du bloc crème s'aligne ainsi exactement sur le reste
-     du contenu — filtres, bandeau de jours, cartes. */
+     du contenu - filtres, bandeau de jours, cartes. */
   .masthead .container {
     display: flex;
     align-items: stretch;
@@ -153,7 +153,7 @@
     margin-top: 6px;
   }
   /* Rangée principale. Ordre du DOM : recherche, bouton du tiroir, chips
-     de temps — ainsi l'ordre de tabulation suit l'ordre visuel. Sur
+     de temps - ainsi l'ordre de tabulation suit l'ordre visuel. Sur
      téléphone la recherche et le bouton partagent la première ligne et
      les chips occupent la seconde ; le bouton ne se retrouve plus seul
      sur sa propre ligne, décalé du reste. */
@@ -173,7 +173,7 @@
     color: var(--warm);
   }
   /* Listes à cocher : lieux et tags. Une liste plutôt que des puces
-     parce qu'il y a 173 lieux — en puces la rangée ferait dix lignes et
+     parce qu'il y a 173 lieux - en puces la rangée ferait dix lignes et
      on n'y retrouverait rien. Triée alphabétiquement : c'est une liste
      où l'on CHERCHE un nom, pas où l'on découvre. */
   .filter-liste {
@@ -602,8 +602,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  /* Boutons de famille, dans la barre de journée. L'état est GLOBAL —
-     éteindre « expos » l'éteint partout — mais le compte est celui du
+  /* Boutons de famille, dans la barre de journée. L'état est GLOBAL -
+     éteindre « expos » l'éteint partout - mais le compte est celui du
      JOUR : c'est ce qui permet de décider sans faire défiler. Le compte
      est celui des CARTES, grappes comprises, donc exactement ce qui
      apparaîtra. */
@@ -675,7 +675,7 @@
     .day-bar .db-count { order: 2; }
     /* À CINQ, les pastilles ne tiennent plus sur une ligne de téléphone :
        386 px demandés pour 335 disponibles. On récupère la place sur
-       l'INTERLETTRAGE plutôt que sur le corps — 0,12 em à 9,5 px coûtait
+       l'INTERLETTRAGE plutôt que sur le corps - 0,12 em à 9,5 px coûtait
        une dizaine de pixels par pastille, et c'est du confort d'affiche,
        pas de lecture. Le corps, lui, ne bouge pas : il est déjà au seuil
        sous lequel des capitales monospace deviennent pénibles, seuil qui
@@ -683,7 +683,7 @@
        Mesuré : la rangée passe de 386 à 325 px, soit 10 px de marge sur
        la journée la plus chargée.
        Le retour à la ligne reste autorisé en dernier recours : sous
-       340 px de large — un vieux téléphone —, aucun réglage ne les fait
+       340 px de large - un vieux téléphone -, aucun réglage ne les fait
        tenir, et mieux vaut une barre plus haute qu'une pastille qui sort
        de l'écran. */
     .fam-chip { letter-spacing: 0.04em; padding: 4px 6px; gap: 4px; }
@@ -691,7 +691,7 @@
   }
 
   /* ---------- event grid ---------- */
-  /* .group-cards — la grille interne d'un groupe déplié — partage les
+  /* .group-cards - la grille interne d'un groupe déplié - partage les
      pistes de .events dans TOUTES les règles qui suivent, et jamais par
      recopie : elle doit produire les mêmes colonnes que la grille qui
      l'entoure. Dupliquer ces valeurs les aurait laissées diverger au
@@ -726,7 +726,7 @@
        au centre d'une piste élastique ; le texte se retrouvait ainsi au
        milieu de la carte, donc sur la partie la plus forte du visuel.
        Ici les trois rangées prennent la hauteur de leur contenu et
-       align-content les groupe contre le padding bas — le texte occupe
+       align-content les groupe contre le padding bas - le texte occupe
        donc toujours la zone où le visuel s'est éteint en fondu.
        Les `align-self` des enfants (title, list, foot) deviennent sans
        effet, une rangée `auto` valant exactement son contenu ; ils sont
@@ -748,7 +748,7 @@
        tiède qu'aucun autre élément ne portait. */
     border: 1px solid var(--rule-strong);
     border-radius: var(--radius);
-    /* Fond en creux SOUS la page — cf. --bg-carte. */
+    /* Fond en creux SOUS la page - cf. --bg-carte. */
     background: var(--bg-carte);
     text-decoration: none;
     color: inherit;
@@ -764,7 +764,7 @@
   }
 
   /* ---------- couche visuelle en fond de carte ----------
-     Affiche réelle si disponible, enseigne du lieu sinon — dans les
+     Affiche réelle si disponible, enseigne du lieu sinon - dans les
      deux cas la couche s'éteint en fondu vers ~55 % de la hauteur pour
      laisser le texte respirer. L'enseigne est TOUJOURS rendue en
      sous-couche : si l'affiche ne charge pas (hotlink bloqué, 404),
@@ -773,7 +773,7 @@
      sur les 12 premiers pour cent, tient jusqu'aux 42 %, puis s'éteint
      et a disparu à 82 %. Le texte, désormais groupé en bas de carte
      (cf. align-content:end sur .event), tombe donc sur une zone d'où
-     l'affiche s'est retirée — c'est ce partage haut/bas qui fait la
+     l'affiche s'est retirée - c'est ce partage haut/bas qui fait la
      lisibilité de la carte A, et non un voile posé sur l'image.
      Le fondu du haut garde son effet d'origine : la texture s'efface
      juste sous le bord supérieur, où la carte respire.
@@ -794,7 +794,7 @@
   /* L'enseigne porte ses opacités dans son propre balisage, bande par
      bande : aucune opacité de calque ici, sinon elle les diviserait
      toutes. Le 0,58 qui s'appliquait aux anciens motifs est parti avec
-     eux — les valeurs du balisage en tiennent compte. */
+     eux - les valeurs du balisage en tiennent compte. */
   .visual-bg .enseigne {
     position: absolute; inset: 0;
     width: 100%; height: 100%;
@@ -807,7 +807,7 @@
     object-position: center 22%;
     /* Assombrissement de l'affiche, aux valeurs de la maquette : le titre
        passe devant l'image, et les affiches claires le rendaient illisible.
-       La trame sérigraphie qui doublait ce filtre a été retirée — elle
+       La trame sérigraphie qui doublait ce filtre a été retirée - elle
        apportait 25 % d'assombrissement moyen en plus, dont ce chiffre-ci
        tient désormais compte, et elle mangeait le détail des visages et
        des visuels fins. La désaturation légère fait le travail qu'elle
@@ -829,12 +829,12 @@
      Tant qu'ils différaient, la zone où le masque éteint l'affiche
      laissait paraître une marche entre les deux gris.
      C'est ce voile, et non le masque, qui porte la lisibilité. Mesuré sur
-     une affiche entièrement blanche — le pire cas, qui n'existe pas : le
+     une affiche entièrement blanche - le pire cas, qui n'existe pas : le
      blanc du texte tient 15:1 partout, le crème 11:1, et la plus sombre
      des dix-neuf teintes 4,4:1 sur la ligne du lieu d'une carte simple.
      Le cas le plus défavorable du site est la carte groupée à quatre
      lignes, dont le texte remonte jusqu'aux 14 % : 2,9:1 pour cette même
-     teinte sur le cartouche blanc d'un logo — un nom de lieu que le logo
+     teinte sur le cartouche blanc d'un logo - un nom de lieu que le logo
      derrière lui écrit déjà. Aller au-delà demanderait soit d'éteindre
      les logos, soit de délaver quatre des dix-neuf teintes de 20 %, sans
      pour autant atteindre les 4,5:1 qu'un texte de 12 px réclame.
@@ -850,12 +850,12 @@
      Une carte groupée n'a pas d'affiche : elle représente plusieurs
      spectacles à la fois, et tire donc l'enseigne du lieu. Pour les
      salles qui jouent plusieurs fois par soir, la marque du lieu dit
-     mieux de quoi il s'agit — et c'est le même geste que pour une
+     mieux de quoi il s'agit - et c'est le même geste que pour une
      affiche, à un cadrage près : une affiche est en `cover` et remplit
      la carte, un logo est posé à sa taille et déborde un peu.
 
      La hauteur est en pour cent de la carte, la largeur suit d'elle-même
-     le rapport intrinsèque de l'image — d'où `width: auto` sur la balise
+     le rapport intrinsèque de l'image - d'où `width: auto` sur la balise
      plutôt qu'une boîte à `aspect-ratio`, qui aurait obligé à déclarer
      le ratio de chaque fichier et à le maintenir à la main.
 
@@ -866,7 +866,7 @@
      un logo est un aplat, il n'a pas le bruit d'une photographie et
      ressort donc plus fort à luminosité égale. */
   /* Cartouche blanc, sur TOUTE la carte. Sans lui, les logos ajourés
-     — Improvidence, Le Complexe, le médaillon de l'Institut Lumière —
+     - Improvidence, Le Complexe, le médaillon de l'Institut Lumière -
      posaient leurs traits sombres sur un fond sombre et se lisaient
      mal ; Les Subsistances, dont le fichier porte déjà son fond blanc,
      faisaient exception et rompaient l'unité. Le cartouche met les
@@ -876,7 +876,7 @@
      blanc s'éteint aux deux bords comme le reste du visuel.
      C'est LUI qui porte le filtre, et non la marque : un filtre
      s'applique à tout son sous-arbre, si bien que le blanc du cartouche
-     et celui qu'un fichier contient déjà — Les Subsistances — subissent
+     et celui qu'un fichier contient déjà - Les Subsistances - subissent
      rigoureusement le même traitement. Les filtrer séparément aurait
      demandé de pré-calculer la valeur du blanc filtré, et le moindre
      écart aurait dessiné un rectangle visible autour de la marque.
@@ -903,7 +903,7 @@
     object-position: center;
     /* Le filtre des AFFICHES doit être annulé ici, pas seulement omis :
        .visual-bg img porte brightness(0.60), qui s'ajouterait à celui du
-       cartouche et descendrait la marque à 0,30 — deux fois trop sombre.
+       cartouche et descendrait la marque à 0,30 - deux fois trop sombre.
        C'est le cartouche, et lui seul, qui filtre ce sous-arbre. */
     filter: none;
   }
@@ -911,7 +911,7 @@
      Il vit DANS le même cartouche que les logos, et hérite donc du même
      filtre : aucun blanc à recalculer, aucun raccord à ajuster. C'est ce
      qui garantit qu'aucune carte groupée d'un lieu scrappé ne retombe
-     sur l'enseigne nue — y compris pour les salles qu'on scrappera
+     sur l'enseigne nue - y compris pour les salles qu'on scrappera
      demain, sans fichier à fournir.
      Bungee est la fonte d'affiche du site, déjà chargée par le wordmark :
      rien de plus à télécharger. */
@@ -939,7 +939,7 @@
   }
   /* L'enseigne reste dans le DOM sous le logo, mais éteinte : si le
      fichier manque, l'onerror retire la classe et elle reprend sa place.
-     C'est l'invariant du site — la couche de secours est toujours là —
+     C'est l'invariant du site - la couche de secours est toujours là -
      appliqué à un visuel local plutôt qu'à une affiche distante. */
   .visual-bg.has-logo > svg { display: none; }
 
@@ -948,11 +948,11 @@
      NON positionnée se peint sous une boîte qui l'est, quel que soit
      l'ordre du DOM. La liste des cartes groupées passait donc derrière
      le .visual-bg, sur les 275 cartes concernées. Invisible tant que le
-     visuel restait sourd — l'enseigne plafonne à 0,18 d'opacité — mais la
+     visuel restait sourd - l'enseigne plafonne à 0,18 d'opacité - mais la
      ligne restait dessous. */
   .event-head, .event-title, .event-list, .event-foot { position: relative; }
   /* Le nom du lieu et son arrondissement sont la première ligne du bloc
-     de texte, donc les seuls à border encore l'affiche — le titre et le
+     de texte, donc les seuls à border encore l'affiche - le titre et le
      pied sont plus bas, là où le visuel a disparu. Deux ombres plutôt
      qu'une : une courte et opaque qui détache la lettre, une large et
      diffuse qui creuse un halo dans l'image. Voiler l'affiche davantage
@@ -962,13 +962,13 @@
   }
   .event-title { text-shadow: 0 1px 8px rgba(13,19,23,.8); }
 
-  /* Row 1: header (venue + time) — using inline-block layout instead of flex
+  /* Row 1: header (venue + time) - using inline-block layout instead of flex
      to avoid baseline-alignment height bugs in grid cells */
   .event-head {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;       /* center, not baseline — baseline causes height calc bugs */
+    align-items: center;       /* center, not baseline - baseline causes height calc bugs */
     gap: 12px;
     min-width: 0;
     line-height: 1.25;
@@ -980,7 +980,7 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
     /* Teinte de la catégorie, posée par --t sur la carte. Repli en crème
-       si la variable manque — une carte rendue hors du feed, par exemple. */
+       si la variable manque - une carte rendue hors du feed, par exemple. */
     color: var(--ink);
     color: var(--t, var(--ink));
     text-transform: uppercase;
@@ -1007,7 +1007,7 @@
        minuscules, même interlettrage. « villeurbanne » et « autre » se
        lisent donc exactement comme « café-théâtre » deux lignes plus bas,
        et le chiffre de « 1er » y dépasse la hauteur d'x comme un chiffre
-       dans une phrase — c'est la relation normale de la fonte, pas
+       dans une phrase - c'est la relation normale de la fonte, pas
        l'écart de calibre que corrigeait le pied.
        Interligne verrouillé à 14 px : le cadre fait alors 18 px, la
        hauteur exacte de la rangée du lieu. Les étiquettes du pied en font
@@ -1027,7 +1027,7 @@
   }
   /* Crème et sans graisse, comme l'étiquette d'arrondissement : l'heure
      tombe désormais au même pixel sur toutes les cartes et n'a plus
-     besoin d'une couleur pour se faire trouver — la position suffit. Le
+     besoin d'une couleur pour se faire trouver - la position suffit. Le
      tan gras d'avant en faisait le point le plus vif du pied, alors que
      ce qui doit gagner là est le nom de la catégorie, en teinte.
      tabular-nums garde les chiffres sur la même largeur, sans quoi la
@@ -1051,7 +1051,7 @@
   }
 
   /* Row 2: title fills available space, vertically centered.
-     Bricolage Grotesque en variable, poids 300 — validé sur maquette.
+     Bricolage Grotesque en variable, poids 300 - validé sur maquette.
      line-clamp propre avec ellipsis, au lieu de la coupe nette que
      produisait max-height. */
   .event-title {
@@ -1059,7 +1059,7 @@
     /* La graisse doit être portée par les DEUX propriétés : sur une police
        variable, font-variation-settings l'emporte sur font-weight, et ne
        changer que la seconde n'aurait aucun effet visible.
-       opsz suit le corps rendu, c'est le rôle de cet axe — le laisser à 16
+       opsz suit le corps rendu, c'est le rôle de cet axe - le laisser à 16
        pour un texte composé à 21 px appliquerait la compensation optique
        d'un corps plus petit, donc des pleins trop appuyés. */
     font-variation-settings: 'opsz' 22, 'wght' 600;
@@ -1077,7 +1077,7 @@
     text-wrap: balance;
     /* Deux lignes, jamais trois : au-delà, coupe et points de suspension.
        Le clamp les dessine lui-même. Trois lignes tenaient dans la carte
-       — 76 px pour 84 disponibles — mais un titre de trois lignes en
+       - 76 px pour 84 disponibles - mais un titre de trois lignes en
        22 px devenait le seul objet de la carte et écrasait tout le reste ;
        et les rares titres si longs sont des phrases d'agrégateur qu'une
        coupe résume mieux qu'un pavé. */
@@ -1098,7 +1098,7 @@
   /* Row 3: footer.
      flex-end plutôt que space-between : la catégorie est masquée quand elle
      est vide (:empty ci-dessous), et space-between recollait alors le groupe
-     source + durée à GAUCHE — d'où des cartes dont le bas ne s'alignait pas
+     source + durée à GAUCHE - d'où des cartes dont le bas ne s'alignait pas
      sur les autres. Avec flex-end le groupe de droite est ancré à droite en
      toutes circonstances, et la catégorie, quand elle existe, est repoussée
      à gauche par son margin-right auto. */
@@ -1112,7 +1112,7 @@
        des capitales tombe donc exactement au milieu de la boîte, quel
        que soit le corps. Centrer aligne du même coup les CADRES des
        étiquettes, dont la boîte est symétrique autour de leur texte.
-       Mesuré sur un pied portant les quatre éléments — centres d'encre
+       Mesuré sur un pied portant les quatre éléments - centres d'encre
        à 0,75 px près et cadres à 0,25 px du texte, contre 1,5 px pour
        les deux en alignant les bases. Aligner les bases égalise ce que
        l'œil ne lit pas et désaligne ce qu'il lit : les cadres.
@@ -1128,7 +1128,7 @@
     /* Indispensable pour que l'ellipse de .event-cat se déclenche : en tant
        qu'élément de grille, ce pied a un min-width:auto qui l'empêche de
        descendre sous sa largeur min-content. Comme la catégorie est en
-       nowrap, cette min-content vaut son texte entier — le pied débordait
+       nowrap, cette min-content vaut son texte entier - le pied débordait
        donc de la carte au lieu de tronquer (« Art contemporain et
        numérique » à La Salle de bains, 385 px dans une piste de 354). */
     min-width: 0;
@@ -1136,7 +1136,7 @@
        grid .event (auto 1fr auto), align-self end la colle au padding bas. */
     align-self: end;
   }
-  /* Filet de la teinte au-dessus du pied — le trait qui vient de la
+  /* Filet de la teinte au-dessus du pied - le trait qui vient de la
      maquette E. Il est dessiné par un PSEUDO-ÉLÉMENT absolu, posé au
      milieu de la gouttière de 6 px, et non par un border-top sur le pied :
      une bordure et son padding auraient coûté 9 px de hauteur, or la
@@ -1158,13 +1158,13 @@
   /* Dix pixels pour les LETTRES du pied, huit pour ses CHIFFRES : dans
      JetBrains Mono, un chiffre mesure 0,75 em d'encre contre 0,55 em pour
      la hauteur d'x d'une minuscule, soit un rapport de 1,36 à corps égal.
-     Les corps d'origine — 9 px pour la catégorie, 11 px pour l'heure —
+     Les corps d'origine - 9 px pour la catégorie, 11 px pour l'heure -
      portaient l'écart à 1,67 : l'heure faisait une fois deux tiers la
      hauteur de la catégorie, et se lisait comme un autre calibre.
      Dix et huit donnent 5,50 px et 6,00 px d'encre, un rapport de 1,09.
      Composer les chiffres plus petits que les lettres est le seul moyen
      d'obtenir la même taille APPARENTE : la fonte n'offre pas de chiffres
-     elzeviriens, qui l'auraient réglé sans y toucher — vérifié, la
+     elzeviriens, qui l'auraient réglé sans y toucher - vérifié, la
      propriété font-variant-numeric: oldstyle-nums n'y change rien. */
   .event-cat {
     font-family: 'JetBrains Mono', monospace;
@@ -1191,7 +1191,7 @@
      celle de son texte, si bien que l'align-items:baseline du pied aligne
      les quatre éléments sur une seule ligne de base. Un inline-flex de
      hauteur fixe, comme ici avant, définit sa base depuis son propre
-     centrage interne — elle ne dépendait donc plus de la rangée, et les
+     centrage interne - elle ne dépendait donc plus de la rangée, et les
      quatre corps de texte du pied (8, 9, 9,5 et 11 px) posaient leurs
      bases sur 1,8 px d'écart : c'était le décalage visible en bas de
      carte. L'interligne commun de 13 px et le padding symétrique donnent
@@ -1207,7 +1207,7 @@
        l'heure encadrée devait ressembler à l'étiquette d'arrondissement,
        et les trois étiquettes du pied lui ressemblent donc aussi. Un
        pixel de moins de chaque côté qu'avant, soit six par carte rendus
-       à la catégorie — le seul élément du pied qui se tronque. */
+       à la catégorie - le seul élément du pied qui se tronque. */
     padding: 1px 5px;
     /* 15 px : la catégorie, désormais la plus grande du pied avec ses
        10 px, a 13,2 px de hauteur de contenu. À 13 px d'interligne elle
@@ -1220,7 +1220,7 @@
     white-space: nowrap;
   }
   /* Même filet crème que l'étiquette d'arrondissement : l'heure est de la
-     même nature qu'elle — une coordonnée, pas une description. Sélecteur
+     même nature qu'elle - une coordonnée, pas une description. Sélecteur
      à deux classes pour l'emporter sur la boîte commune ci-dessus quel que
      soit l'ordre des règles. */
   .event-foot .event-time { border-color: rgba(231, 223, 190, 0.32); }
@@ -1232,8 +1232,8 @@
   }
   /* « jusqu'au 18/10 » et « dernier » prennent exactement l'habit de
      l'étiquette d'arrondissement : même corps, même crème, même filet,
-     aucune graisse. Ce sont deux annotations de même nature — un cadre
-     où le lieu et le calendrier se situent — et le corail les faisait
+     aucune graisse. Ce sont deux annotations de même nature - un cadre
+     où le lieu et le calendrier se situent - et le corail les faisait
      crier plus fort que le titre qu'elles annotent. */
   .event-run {
     font-size: 8px;
@@ -1252,7 +1252,7 @@
     /* Jamais comprimé par une catégorie longue : c'est elle qui se tronque. */
     flex-shrink: 0;
   }
-  /* VARIANTE A — la catégorie encadrée comme les trois autres étiquettes.
+  /* VARIANTE A - la catégorie encadrée comme les trois autres étiquettes.
      Même rembourrage, même interligne, même rayon, donc le même cadre de
      19 px ; le filet prend la teinte à 45 %, comme celui de la provenance,
      puisque tous deux disent ce QU'EST l'événement là où l'arrondissement
@@ -1261,7 +1261,7 @@
      l'emporter sur le display du bloc d'origine sans le réécrire.
      Le coût mesuré est nul depuis que la provenance est un sigle : deux
      catégories tronquées sur 3104 aux largeurs courantes, quatre au plus
-     étroit du bureau, contre deux — c'était 489 avant le sigle. */
+     étroit du bureau, contre deux - c'était 489 avant le sigle. */
   .event-foot .event-cat {
     display: inline-block;
     box-sizing: border-box;
@@ -1281,8 +1281,8 @@
      couleurs de la carte à ne rien devoir à sa catégorie, et ils
      tiraient l'œil vers l'agrégateur plutôt que vers l'événement.
      Le pied se lit donc maintenant en trois registres : la teinte pour ce
-     qui décrit l'événement — sa catégorie, sa source —, le crème encadré
-     pour ce qui le situe — arrondissement, échéance —, le crème nu pour
+     qui décrit l'événement - sa catégorie, sa source -, le crème encadré
+     pour ce qui le situe - arrondissement, échéance -, le crème nu pour
      l'heure. Le nom de la source reste écrit en clair : la couleur ne
      distingue plus les deux agrégateurs, le mot s'en charge. */
   .event-source {
@@ -1336,7 +1336,7 @@
     /* Rangée verrouillée à 18 px. Deux pièges sinon : sans line-height
        explicite chaque corps de texte impose le sien, et avec un
        align-items:baseline le décalage de ligne de base entre le titre en
-       14 px et l'horaire en 10,5 px ajoutait 2 px par rangée — quatre
+       14 px et l'horaire en 10,5 px ajoutait 2 px par rangée - quatre
        lignes réclamaient alors 89 px pour une piste de 83,6, ce qui
        poussait le pied hors de la carte. */
     line-height: 18px;
@@ -1358,7 +1358,7 @@
   .event-line .t.more { color: var(--ink-mute); }
   /* Colonne des heures d'une carte groupée : en teinte de catégorie, et
      non en corail. Elle est le seul élément coloré à l'intérieur du bloc
-     de titres — c'est ce qui fait tenir la grappe comme un ensemble
+     de titres - c'est ce qui fait tenir la grappe comme un ensemble
      plutôt que comme quatre lignes empilées. */
   .event-line .h {
     font-family: 'JetBrains Mono', monospace;
@@ -1375,19 +1375,19 @@
      d'éléments de grille susceptible de déborder sur deux rangées.
      Conséquence assumée : le groupe démarre sur une nouvelle ligne et
      laisse un vide derrière lui si la rangée précédente n'était pas
-     pleine — ce vide marque d'ailleurs qu'un dépliage a eu lieu.
+     pleine - ce vide marque d'ailleurs qu'un dépliage a eu lieu.
      Le filet est un OUTLINE et non une bordure : il ne prend aucune place
      dans la mise en page et se dessine dans la gouttière, si bien que les
      colonnes du bloc restent alignées au pixel près sur celles de la
      grille autour. Une bordure, avec son remplissage, aurait rétréci les
      cartes contenues par rapport aux autres.
      Le corail plutôt qu'une teinte de catégorie : il sert déjà aux
-     filtres cochés, donc il se lit comme un signal d'interface — et il
+     filtres cochés, donc il se lit comme un signal d'interface - et il
      reste constant, là où une teinte suivrait la catégorie des cartes
      qu'il encadre et se confondrait avec l'une d'elles. */
   /* Le corps d'une journée empile des conteneurs : .events pour les cartes
      ordinaires, .group-block pour un groupe déplié. Le bloc est un FRÈRE
-     de .events et non un élément à l'intérieur — placé dans la grille, il
+     de .events et non un élément à l'intérieur - placé dans la grille, il
      aurait été enfermé dans une rangée de 160 px (grid-auto-rows) et son
      contenu, qui occupe deux rangées dès quatre cartes, aurait débordé.
      Un grid-row:span aurait dépendu du nombre de colonnes, donc du
@@ -1427,7 +1427,7 @@
   /* Le bloc est une pile verticale : la grille des cartes ouvertes, puis
      la barre de repli. Le filet est une BORDURE et non un outline décalé.
      L'outline avait l'avantage de ne prendre aucune place, donc de garder
-     les colonnes du bloc rigoureusement alignées sur celles d'à côté —
+     les colonnes du bloc rigoureusement alignées sur celles d'à côté -
      mais il se dessinait à 7 px À L'EXTÉRIEUR du bloc, lequel occupe
      toute la largeur de la journée. Or .day porte content-visibility:auto,
      qui implique une containment de peinture : tout ce qui déborde de la
@@ -1448,7 +1448,7 @@
   }
 
   /* Bouton de repli : une barre pleine largeur au pied du bloc. Il était
-     auparavant une case de la grille des cartes, donc haut de 160 px —
+     auparavant une case de la grille des cartes, donc haut de 160 px -
      un grand rectangle vide dès que le nombre de cartes ne remplissait
      pas sa dernière rangée. Sorti de cette grille, il reprend la hauteur
      d'un vrai contrôle. Teinté de corail comme le filet du bloc, pour
@@ -1479,7 +1479,7 @@
     outline-offset: 2px;
   }
 
-  /* Subtitle removed from main grid layout — too noisy in compact cards.
+  /* Subtitle removed from main grid layout - too noisy in compact cards.
      Keep style for if we re-enable later. */
   .event-subtitle {
     display: none;
@@ -1562,11 +1562,11 @@
        Elle passait en hauteur libre, empilée en flex : les cartes
        mesuraient alors de 94 à 151 px selon la longueur de leur titre, le
        fil perdait son quadrillage, et la bande d'affiche se réduisait à
-       une lisière sur les cartes courtes — or c'est elle qui porte la
+       une lisière sur les cartes courtes - or c'est elle qui porte la
        carte A. En rendant la rangée fixe, tout le modèle du bureau
        s'applique tel quel : même grille, même align-content:end, mêmes
        marges. Il ne reste ici que ce qui doit VRAIMENT changer avec la
-       taille de l'écran — le rembourrage, le nom du lieu, la cible
+       taille de l'écran - le rembourrage, le nom du lieu, la cible
        tactile du bouton de repli.
        Conséquence assumée : un titre de plus de deux lignes se coupe sur
        téléphone comme sur bureau, là où la hauteur libre le laissait
@@ -1608,7 +1608,7 @@
 
     <!-- Rangée toujours visible : recherche + temps + bouton du tiroir.
          Les filtres secondaires (où / arr. / type) sont repliés par
-         défaut — ils occupaient trois rangées avant même le premier
+         défaut - ils occupaient trois rangées avant même le premier
          événement. -->
     <div class="filter-row primary">
       <div class="filter-search-wrap">
@@ -1666,9 +1666,9 @@
   <div class="container">
     <div class="col">
       <div><span class="ind">§</span> données scrapées sur les sites des lieux</div>
-      <div><span class="ind">§</span> <span id="footerIndex">—</span> événements ·
-           <span id="footerVenues">—</span> lieux · <span id="footerSources">37</span> sources</div>
-      <div><span class="ind">§</span> dernière mise à jour <span id="lastUpdated">—</span></div>
+      <div><span class="ind">§</span> <span id="footerIndex">-</span> événements ·
+           <span id="footerVenues">-</span> lieux · <span id="footerSources">37</span> sources</div>
+      <div><span class="ind">§</span> dernière mise à jour <span id="lastUpdated">-</span></div>
     </div>
     <div class="col col-right">
       <div><a href="https://github.com/Ricojrlyon/nocturne-lyon" target="_blank" rel="noopener">code source ↗</a></div>
@@ -1713,7 +1713,7 @@ const VENUE_GROUPS = [
 /* Lieux épinglés en fin de journée, quel que soit leur groupe.
    Le groupe pilote à la fois le filtre ET l'ordre d'affichage ; ce rang
    les découple. Improvidence joue tous les soirs, jusqu'à trois
-   spectacles, et sortirait sinon à la place de « théâtre & danse » —
+   spectacles, et sortirait sinon à la place de « théâtre & danse » -
    soit avant la plupart des salles, en tête de presque chaque journée.
    La valeur dépasse 999, rang des lieux sans groupe, pour passer aussi
    après les cartes du Petit Bulletin et de Ville Morte. */
@@ -1735,8 +1735,8 @@ const VENUES_PINNED_LAST = new Map([
 
    Chaque fichier est recadré sur la boîte de son dessin. C'est ce qui
    rend ces pourcentages comparables : les originaux portent des marges
-   vides très inégales — 67 % pour Improvidence, 55 % pour Le Complexe,
-   0 % pour Gerson — et sans recadrage une même valeur donnait des
+   vides très inégales - 67 % pour Improvidence, 55 % pour Le Complexe,
+   0 % pour Gerson - et sans recadrage une même valeur donnait des
    dessins de tailles très différentes.
 
    `k` est la hauteur en pour cent de la carte. Les Subsistances sont à
@@ -1755,7 +1755,7 @@ const VENUE_LOGOS = new Map([
      d'aspect : 150 conviendrait à une marque carrée et donnerait deux
      mille pixels de large au bandeau de l'Auditorium, qui fait 435 sur
      48. Ces valeurs sont donc calculées pour que la marque occupe ~90 %
-     de la largeur de carte, plafonnées à 150 pour les marques carrées —
+     de la largeur de carte, plafonnées à 150 pour les marques carrées -
      le réglage validé sur les six premières. */
   ['Comédie Odéon',            { f: 'logos/comedie-odeon.png',      k:  65 }],
   ['TNP - Théâtre National Populaire',
@@ -1779,7 +1779,7 @@ const VENUE_DISPLAY_ORDER = ['soirée', 'concerts', 'spectacles & musiques', 'li
    Unmapped venues default to 'Autre' via eventArrondissement(). */
 const VENUE_ARRONDISSEMENT = {
   // Lyon 1er (Terreaux, Pentes Croix-Rousse)
-  "Amphithéâtre de l'Opéra": '1er', // place de la Comédie — la petite salle de l'Opéra
+  "Amphithéâtre de l'Opéra": '1er', // place de la Comédie - la petite salle de l'Opéra
   'Bar des Capucins': '1er',      // place des Capucins
   'Le Complexe café-théâtre': '1er', // 7 rue des Capucins
   'Opéra national de Lyon': '1er',
@@ -1833,7 +1833,7 @@ const VENUE_ARRONDISSEMENT = {
   'La Cadette - Librairie Vivement Dimanche': '4e', // 16 grande-rue de la Croix-Rousse
   "Agend'arts": '4e',
   'Aquarium ciné-café': '4e',     // 10 rue Dumont
-  'Gymnase René Baillieu': '4e',  // 53 rue Philippe de Lassalle — le Lyon Croix-Rousse Volley y reçoit
+  'Gymnase René Baillieu': '4e',  // 53 rue Philippe de Lassalle - le Lyon Croix-Rousse Volley y reçoit
 
   // Lyon 5e (Vieux Lyon, Fourvière, Saint-Just)
   'MAM - Musée des Arts et de la Marionnette': '5e', // 1 place du Petit Collège (Gadagne)
@@ -1865,22 +1865,22 @@ const VENUE_ARRONDISSEMENT = {
   'Blue Monday': '7e',            // 32 rue Pasteur
   'Parc Blandan': '7e',           // parc militaire réhabilité, av Berthelot
   'Parc de Gerland': '7e',        // 24 allée Pierre de Coubertin
-  'Palais des Sports de Gerland': '7e',  // 350 av. Jean Jaurès — le LDLC ASVEL Féminin y reçoit
-  'Matmut Stadium de Gerland': '7e',     // 353 av. Jean Jaurès — le LOU y reçoit, hommes et femmes
+  'Palais des Sports de Gerland': '7e',  // 350 av. Jean Jaurès - le LDLC ASVEL Féminin y reçoit
+  'Matmut Stadium de Gerland': '7e',     // 353 av. Jean Jaurès - le LOU y reçoit, hommes et femmes
 
   // Lyon 8e (Monplaisir, États-Unis, Bachut)
-  'MJC Laënnec-Mermoz- Salle Genton': '8e', // 21 rue Genton — graphie du Petit Bulletin, sans espace
+  'MJC Laënnec-Mermoz- Salle Genton': '8e', // 21 rue Genton - graphie du Petit Bulletin, sans espace
   'Maison de la Danse': '8e',
   'Théâtre de la Croix-Rousse': '4e', // place Joannès Ambre
   'HEAT': '8e',
   'Institut Lumière': '8e',       // 25 rue du Premier Film
-  'Gymnase Mado Bonnet': '8e',    // 20 av. Paul Santy — l'ASUL Lyon y reçoit
+  'Gymnase Mado Bonnet': '8e',    // 20 av. Paul Santy - l'ASUL Lyon y reçoit
   'Place du 8 mai 1945, Lyon 8e': '8e',
 
   // Lyon 9e (Vaise, La Duchère)
   'MJC Duchère': '9e',            // 237 rue des Érables
   'TNG': '9e',                    // 23 rue de Bourgogne
-  'Gymnase Matthias Favier': '9e', // 2 place Schönberg — le Handball Club de Lyon y reçoit
+  'Gymnase Matthias Favier': '9e', // 2 place Schönberg - le Handball Club de Lyon y reçoit
   "Bar Rock'n Eat": '9e',         // 32 quai d'Arloing
 
   // Villeurbanne
@@ -1891,7 +1891,7 @@ const VENUE_ARRONDISSEMENT = {
   'Toï Toï le Zinc': 'Villeurbanne',
   'Café Nanoum': 'Villeurbanne',  // 16 rue Branly
   'Le Rize': 'Villeurbanne',      // 23 cours de la République
-  'Salle des Gratte-Ciel': 'Villeurbanne', // 98 rue Francis de Pressensé — le VHA y reçoit
+  'Salle des Gratte-Ciel': 'Villeurbanne', // 98 rue Francis de Pressensé - le VHA y reçoit
   'Villeurbanne': 'Villeurbanne', // venue générique VM
   'Villeurbanne ENM': 'Villeurbanne',
 
@@ -1916,19 +1916,19 @@ const ARRONDISSEMENT_ORDER = ['1er', '2e', '3e', '4e', '5e', '6e', '7e', '8e', '
    le géocodeur note quand il trouve la salle mais hors de l'agglomération
    étroite ; les entrées ci-dessous, vérifiées à la main, gagnent.
    Le Théâtre de La Renaissance y est parce que Nominatim ne le connaît
-   pas — ni interrogé sur Lyon, ni sur Villeurbanne, ni sur
+   pas - ni interrogé sur Lyon, ni sur Villeurbanne, ni sur
    Oullins-Pierre-Bénite que sa fiche nomme pourtant. */
-/* Les noms s'écrivent ENTIERS ici — « Oullins-Pierre-Bénite », pas
+/* Les noms s'écrivent ENTIERS ici - « Oullins-Pierre-Bénite », pas
    « Oullins » : c'est villeCourte() qui abrège, et lui seul. Sans
    cette règle, une commune s'affichait de deux façons selon qu'elle
-   vienne de cette table ou du géocodage — « Décines » pour la LDLC
+   vienne de cette table ou du géocodage - « Décines » pour la LDLC
    Arena, « Décines… » pour le Toboggan, à deux rues l'une de l'autre. */
 const VENUE_COMMUNE = {
   'Théâtre de La Renaissance': 'Oullins-Pierre-Bénite', // 7 rue Orsel
 
   // Les salles que VENUE_ARRONDISSEMENT range en « Autre ». Le géocodeur
-  // ne les voit jamais — aggregate.py lui épargne tout lieu déjà codé en
-  // dur —, si bien qu'elles portaient « autre » alors que leur ville
+  // ne les voit jamais - aggregate.py lui épargne tout lieu déjà codé en
+  // dur -, si bien qu'elles portaient « autre » alors que leur ville
   // était écrite en commentaire deux lignes plus haut. Le Radiant à lui
   // seul pesait 143 cartes du fil au 2026-09-28.
   'Radiant-Bellevue': 'Caluire-et-Cuire',   // 1 rue Jean Moulin
@@ -1942,16 +1942,16 @@ const VENUE_COMMUNE = {
   'Bois de Sermenaz à Rillieux-la-Pape': 'Rillieux-la-Pape',
 
   // Salles que Nominatim ne trouve pas, situées à la main sur la fiche
-  // de l'agrégateur qui les publie — c'est de là que viennent les
+  // de l'agrégateur qui les publie - c'est de là que viennent les
   // adresses ci-dessous. L'Atrium valait le détour : il porte le nom
   // d'un hôtel de ville sans dire lequel, et ce n'est pas celui de Lyon.
-  'MJC Louis Aragon / Jack Jack': 'Bron',   // 16 place Gaillard Romanet, 69500 — autre graphie de Jack Jack
+  'MJC Louis Aragon / Jack Jack': 'Bron',   // 16 place Gaillard Romanet, 69500 - autre graphie de Jack Jack
   'La Ferme du Vinatier': 'Bron',           // 95 bd Pinel, 69500, dans l'hôpital
   'Chapelle du Vinatier': 'Bron',           // même hôpital
   "Atrium de l'hôtel de ville": 'Genas',    // place du Général de Gaulle, 69740
   'Théâtre Cinéma Jean Carmet': 'Mornant',  // bd du Pilat, 69440
   'Ô Totem live': 'Rillieux-la-Pape',       // 9 bis av. Général Leclerc, 69140
-  'Théâtre François Ponsard': 'Vienne',     // 4 rue Chantelouve, 38200 — hors Métropole, le Petit Bulletin le publie
+  'Théâtre François Ponsard': 'Vienne',     // 4 rue Chantelouve, 38200 - hors Métropole, le Petit Bulletin le publie
   "Bibliothèque de Saint Didier-au-Mont-d'Or - Maison Meunier": "Saint-Didier-au-Mont-d'Or",
 };
 
@@ -1962,7 +1962,7 @@ const OFFSITE_PLUSIEURS = '·ailleurs';
 
 /* La salle où l'on VA, qui n'est pas toujours celle qui programme :
    l'Opéra donne des concerts Salle Molière et au Théâtre de La
-   Renaissance. `venue` reste celui qui programme — il groupe les cartes,
+   Renaissance. `venue` reste celui qui programme - il groupe les cartes,
    tient le filtre par lieu et donne le logo. */
 function lieuEffectif(e) {
   return (e.offsite_venue && e.offsite_venue !== OFFSITE_PLUSIEURS)
@@ -1973,14 +1973,14 @@ function lieuEffectif(e) {
    l'Opéra donné Salle Molière sort donc quand on filtre le 5e, et non
    quand on filtre le 1er : le filtre répond à « qu'est-ce qui se passe
    dans le 5e ce soir », pas à « qui le programme ».
-   Une production qui tourne dans plusieurs salles tombe dans « Autre » —
+   Une production qui tourne dans plusieurs salles tombe dans « Autre » -
    la seule réponse qui ne soit pas fausse un soir sur deux. */
 function eventArrondissement(e) {
   if (e.offsite_venue === OFFSITE_PLUSIEURS) return 'Autre';
   return VENUE_ARRONDISSEMENT[lieuEffectif(e)] || 'Autre';
 }
 
-/* Le badge est étroit — il se cale à droite de la ligne du lieu, dont
+/* Le badge est étroit - il se cale à droite de la ligne du lieu, dont
    le nom se tronque pour lui laisser la place. Au-delà de treize signes,
    une commune composée mange ce nom : on coupe donc au premier trait
    d'union, « Caluire-et-Cuire » devenant « caluire… ».
@@ -2066,8 +2066,8 @@ const TYPE_BUCKETS = [
   // Le sport. Placé avant le bloc non-musical parce que 'conference'
   // revendique « rencontre », qui est le mot français pour un match :
   // sans cette priorité, une « rencontre de basket » deviendrait une
-  // conférence. Il n'y a aucune autre collision — aucune règle plus haut
-  // ne nomme un sport —, la position est donc libre par ailleurs.
+  // conférence. Il n'y a aucune autre collision - aucune règle plus haut
+  // ne nomme un sport -, la position est donc libre par ailleurs.
   // Le bucket est plus large que ce qu'on scrappe aujourd'hui : l'ASVEL
   // masculin est le premier club du fil, les suivants viendront avec
   // leurs mots à eux.
@@ -2080,14 +2080,14 @@ const TYPE_BUCKETS = [
   { key: 'theatre',     label: 'théâtre',     match: /th[ée][aâ]tre|spectacle\s*musical|com[ée]die\s*musicale|cabaret/i },
   { key: 'danse',       label: 'danse',       match: /danse|ballet|cho[ré]graph/i },
   // Cirque, magie, drag, performance : de la scène qui n'est ni théâtre
-  // ni danse ni humour. Placé APRÈS ces trois-là, plus précis — sinon
+  // ni danse ni humour. Placé APRÈS ces trois-là, plus précis - sinon
   // « spectacle musical » quitterait le théâtre pour venir ici.
   { key: 'spectacle',   label: 'spectacle',   match: /spectacle|cirque|magie|\bdrag\b|performance|marionnette/i },
   // Les disciplines plastiques que la taxonomie du Petit Bulletin nomme
   // sans jamais dire « exposition ». Elles ne remontaient pas avant : le
   // scraper les écartait. Depuis qu'il ne filtre plus, ces cent
   // événements iraient grossir « autres » faute de bucket, et le bouton
-  // « expos » — qui justifie précisément d'avoir levé le filtre —
+  // « expos » - qui justifie précisément d'avoir levé le filtre -
   // resterait vide.
   { key: 'expo',        label: 'expo',        match: /\bexpo|exposition|vernissage|installation|\bvisite|street\s*art|sculpture|art\s*graphique|peinture|dessin|art\s*contemporain|photograph|design|architecture/i },
   { key: 'cine',        label: 'ciné',        match: /cin[ée]ma|projection|s[ée]ance|documentaire|court[\s-]?m[ée]trage/i },
@@ -2116,19 +2116,19 @@ const ALL_BUCKETS = [...TYPE_BUCKETS, { key: 'autre', label: 'autre' }];
    une chroma de 0,02 à 0,14 en OKLab.
    La teinte, en revanche, ne veut RIEN dire : elle n'est choisie que
    pour être distinguable des dix-huit autres et des couleurs de
-   l'interface, et les familles ne s'y regroupent pas — les musiques
+   l'interface, et les familles ne s'y regroupent pas - les musiques
    couvrent à elles seules toute la roue, de 10° à 332°. Il n'y a donc
    pas de code à apprendre : la couleur sert à retrouver du même, pas à
    deviner quoi.
    La couleur ne porte JAMAIS seule une information : la catégorie est
    aussi écrite en mots dans le pied de chaque carte.
-   « conference » — musées, bibliothèques, librairies, sciences, soit la
-   cinquième teinte du fil par le nombre de cartes — était un kaki
+   « conference » - musées, bibliothèques, librairies, sciences, soit la
+   cinquième teinte du fil par le nombre de cartes - était un kaki
    #a89b7c à 0,014 de distance OKLab du crème sourd de l'interface,
    c'est-à-dire la même couleur : elle ne se lisait pas comme une
    catégorie mais comme du texte de site. Elle prend le pétrole #37b7c8,
-   qui occupe le plus grand vide de teinte de la palette — 54° entre le
-   jazz (187°) et la musique (241°) — à 0,060 de son plus proche voisin.
+   qui occupe le plus grand vide de teinte de la palette - 54° entre le
+   jazz (187°) et la musique (241°) - à 0,060 de son plus proche voisin.
    La distance médiane au plus proche voisin passe ainsi de 0,040 à
    0,057 pour l'ensemble des dix-neuf. Le couple le plus serré qui reste
    est ciné / autre, à 0,025. */
@@ -2155,7 +2155,7 @@ function teinteDe(rawCategory) {
 }
 
 /* Quatre familles au-dessus des buckets. Les buckets restent la maille
-   fine — ils portent la catégorie affichée sur la carte — mais dix-huit
+   fine - ils portent la catégorie affichée sur la carte - mais dix-huit
    sections dans une journée seraient illisibles : sur les jours chargés,
    quatre familles donnent 2,8 sections dont 0,5 seulement en dessous de
    trois cartes, là où cinq familles ajoutaient une section maigre par
@@ -2168,7 +2168,7 @@ const FAMILLES = [
     buckets: ['humour', 'theatre', 'danse', 'spectacle'] },
   { key: 'expos',   label: 'expos',   buckets: ['expo'] },
   // Le sport a sa famille. Il y a bien une cinquième section, et elle est
-  // maigre — mesuré sur le fil du 2026-09-19 : 15 journées la portent, et
+  // maigre - mesuré sur le fil du 2026-09-19 : 15 journées la portent, et
   // TOUJOURS avec une seule carte. Mais elle ne coûte presque rien à
   // l'ensemble : 548 sections deviennent 558, et la part des sections de
   // moins de trois cartes passe de 46 % à 47 %. Le fil en compte déjà
@@ -2186,7 +2186,7 @@ for (const f of FAMILLES) for (const b of f.buckets) FAMILLE_DE_BUCKET.set(b, f.
 
 /* Garde-fou : un bucket ajouté à TYPE_BUCKETS sans être rangé dans une
    famille tomberait silencieusement dans « autres ». Le repli est voulu
-   — jamais d'événement perdu — mais il doit se voir. */
+   - jamais d'événement perdu - mais il doit se voir. */
 {
   const orphelins = ALL_BUCKETS.map(b => b.key).filter(k => !FAMILLE_DE_BUCKET.has(k));
   if (orphelins.length) {
@@ -2200,7 +2200,7 @@ function familleOf(category) {
 }
 
 /* Famille d'une CARTE. Une grappe (lieu, jour) est une carte unique et
-   prend la catégorie majoritaire de ses événements — la même que celle
+   prend la catégorie majoritaire de ses événements - la même que celle
    qu'elle affiche en pied, pour que le compte annoncé et l'étiquette
    lue racontent la même chose. */
 function familleDeCarte(evs) {
@@ -2250,7 +2250,7 @@ function famillesHtml(comptes) {
     const inerte = n === 0 && !eteinte;
     return '<button type="button" class="fam-chip" data-famille="' + f.key + '"'
          + ' aria-pressed="' + (!eteinte) + '"' + (inerte ? ' disabled' : '')
-         + ' title="' + escapeHtml(f.label) + ' — ' + n + ' carte'
+         + ' title="' + escapeHtml(f.label) + ' - ' + n + ' carte'
          + (n > 1 ? 's' : '') + (eteinte ? ', masquée' : '') + '">'
          + escapeHtml(f.label) + '<span class="fam-n">' + n + '</span></button>';
   });
@@ -2259,13 +2259,13 @@ function famillesHtml(comptes) {
 
 /* ---------- visuel de carte : l'enseigne du lieu ----------
    Quand aucune affiche n'est disponible, la carte porte le nom de son
-   LIEU, composé en Bungee — la fonte d'affiche du site — répété en bandes
+   LIEU, composé en Bungee - la fonte d'affiche du site - répété en bandes
    qui se chevauchent jusqu'à couvrir la surface. Le fond dit donc quelque
    chose au lieu de décorer : une carte sans affiche montre sa salle. Elles
    sont 425 sur le fil, un peu moins d'une sur six.
 
-   Il remplace trois motifs abstraits — ondes concentriques, rubans
-   vrillés, éventails de hachures — dans trois couleurs fixes. Ces
+   Il remplace trois motifs abstraits - ondes concentriques, rubans
+   vrillés, éventails de hachures - dans trois couleurs fixes. Ces
    couleurs étaient les dernières de la carte à ne rien devoir à sa
    catégorie, et les plus étendues ; leur vocabulaire organique jurait
    avec une carte devenue géométrique et typographique. Le blanc à très
@@ -2273,8 +2273,8 @@ function famillesHtml(comptes) {
    ce qui laisse toute la couleur aux dix-neuf teintes.
 
    Le tirage est déterministe (hash de lieu + titre) : une carte garde son
-   apparence d'un rendu à l'autre — sinon le fond changerait à chaque
-   frappe dans la recherche — et d'un jour à l'autre. Seul le hasard ENTRE
+   apparence d'un rendu à l'autre - sinon le fond changerait à chaque
+   frappe dans la recherche - et d'un jour à l'autre. Seul le hasard ENTRE
    événements est recherché.
 
    Rien n'est partagé entre les cartes : chaque fond est une quinzaine de
@@ -2297,7 +2297,7 @@ function stableHash(s) {
 /* Mélange final 32 bits. stableHash seul ne suffit pas d'amorce : ses bits
    bas restent corrélés sur des chaînes voisines, et deux titres qui ne
    diffèrent que par leur dernier caractère amorçaient des suites presque
-   identiques — donc deux cartes voisines d'une même salle au fond
+   identiques - donc deux cartes voisines d'une même salle au fond
    superposable. */
 function mix32(h) {
   h = (h ^ (h >>> 16)) >>> 0;
@@ -2310,8 +2310,8 @@ function mix32(h) {
 
 /* Générateur reproductible : xorshift32 amorcé par le hash de la graine.
    Il faut une SUITE et non un tirage par clé comme avant : une bande
-   demande son corps, son opacité et son décalage — trois valeurs
-   indépendantes — là où les motifs ne tiraient qu'un rayon par
+   demande son corps, son opacité et son décalage - trois valeurs
+   indépendantes - là où les motifs ne tiraient qu'un rayon par
    coordonnée. */
 function deSuite(seed) {
   let x = mix32(stableHash(seed)) || 1;
@@ -2324,15 +2324,15 @@ function deSuite(seed) {
 }
 
 /* Le mot qui identifie le lieu. Beaucoup de salles lyonnaises commencent
-   par un nom de genre — « Théâtre des Marronniers », « Chapelle de la
-   Trinité », « Espace Albert Camus » — et garder le premier mot donnait
+   par un nom de genre - « Théâtre des Marronniers », « Chapelle de la
+   Trinité », « Espace Albert Camus » - et garder le premier mot donnait
    trois cartes « THÉÂTRE » côte à côte dans la même journée. On jette
    donc le générique de tête et on garde le mot le plus long de ce qui
    reste, qui est presque toujours le nom propre.
    nomDePlaque(), qui sert au cartouche typographique des salles scrappées
    sans fichier de logo, coupe autrement : il garde le DÉBUT du nom pour
    qu'on lise « TNP » ou « Célestins ». Les deux règles diffèrent parce
-   qu'elles ne montrent pas la même chose — une marque là, un mot ici. */
+   qu'elles ne montrent pas la même chose - une marque là, un mot ici. */
 const ENSEIGNE_GENERIQUE = new Set([
   'theatre', 'théâtre', 'espace', 'chapelle', 'salle', 'musee', 'musée',
   'cinema', 'cinéma', 'bibliotheque', 'bibliothèque', 'maison', 'centre',
@@ -2346,8 +2346,8 @@ const ENSEIGNE_GENERIQUE = new Set([
 ]);
 function nomDEnseigne(venue) {
   /* On coupe au séparateur, pas au trait d'union : le tiret ENTOURÉ
-     D'ESPACES sépare deux appellations — « TNP - Théâtre National
-     Populaire » — alors que le trait d'union collé appartient au nom
+     D'ESPACES sépare deux appellations - « TNP - Théâtre National
+     Populaire » - alors que le trait d'union collé appartient au nom
      propre. Les couper donnait BEAUX pour Beaux-Arts, PART pour
      Part-Dieu, CROIX pour Croix-Rousse. Même raison pour l'apostrophe,
      qu'on ne coupe plus : elle rendait AGEND pour Agend'arts. */
@@ -2357,7 +2357,7 @@ function nomDEnseigne(venue) {
     !ENSEIGNE_GENERIQUE.has(m.toLowerCase().replace(/\.$/, '')));
   /* Le mot le plus long de ce qui reste : c'est presque toujours le nom
      propre. Mais si le tri ne laisse RIEN, on prend le premier mot du nom
-     plutôt que le plus long — quand une salle n'est qu'un générique et des
+     plutôt que le plus long - quand une salle n'est qu'un générique et des
      adjectifs, c'est le générique qui la nomme. L'Opéra s'appelle OPÉRA,
      pas NATIONAL. */
   if (utiles.length) {
@@ -2370,7 +2370,7 @@ function nomDEnseigne(venue) {
    sur six noms de salle, de 0,667 à 0,723 selon le mot. 0,71 plus une
    gouttière du quart du corps garantit que deux répétitions d'une même
    bande ne se chevauchent jamais par accident. Le chevauchement doit être
-   voulu, et il l'est entre BANDES — pas au sein d'une bande. */
+   voulu, et il l'est entre BANDES - pas au sein d'une bande. */
 const ENSEIGNE_AVANCE = 0.71;
 const ENSEIGNE_W = 320, ENSEIGNE_H = 160;
 
@@ -2422,7 +2422,7 @@ function nomDePlaque(venue) {
 
 /* Corps du cartouche. Compter les caractères ne suffit pas : Bungee est
    une grasse d'affiche aux chasses très inégales, et c'est la CÉSURE qui
-   décide du rendu — « Théâtre de la Croix-Rousse » et « Maison de la
+   décide du rendu - « Théâtre de la Croix-Rousse » et « Maison de la
    Danse » ont des longueurs voisines et se composent, l'un sur deux
    lignes étriquées, l'autre sur une ligne pleine.
 
@@ -2472,8 +2472,8 @@ function corpsDePlaque(nom) {
     // La sonde reçoit la largeur utile SANS les marges, que la règle
     // exprime en pourcentage : les compter deux fois la rétrécirait.
     // Et elle passe en BLOC à hauteur libre : en flex centré, un texte
-    // qui déborde ne fait pas grandir scrollHeight — il déborde de part
-    // et d'autre — et toute mesure de hauteur y répondait « ça tient ».
+    // qui déborde ne fait pas grandir scrollHeight - il déborde de part
+    // et d'autre - et toute mesure de hauteur y répondait « ça tient ».
     // La césure, elle, ne dépend pas du mode d'affichage.
     _sonde.style.cssText = 'position:static;inset:auto;'
       + 'display:block;padding:0;width:' + CARTE_L + 'px;height:auto';
@@ -2500,13 +2500,13 @@ function plaqueTypo(venue) {
 }
 
 /* Repli d'un logo de salle manquant : le fichier a disparu ou n'a jamais
-   été fourni. On ne retombe PAS sur l'enseigne nue — c'est justement
-   ce qu'on cherche à éviter sur les cartes groupées — mais sur le
+   été fourni. On ne retombe PAS sur l'enseigne nue - c'est justement
+   ce qu'on cherche à éviter sur les cartes groupées - mais sur le
    cartouche typographique, qui occupe la même plaque et hérite du même
    filtre. Le nom se relit sur la carte elle-même. */
 /* Construit l'enseigne d'une couche visuelle qui n'en portait pas, et la
    glisse en PREMIÈRE position pour qu'elle passe sous tout le reste.
-   Idempotent : deux échecs sur la même carte — l'affiche puis le logo —
+   Idempotent : deux échecs sur la même carte - l'affiche puis le logo -
    ne doivent pas empiler deux enseignes. */
 function enseigneDeSecours(couche) {
   if (!couche || couche.querySelector('svg.enseigne')) return;
@@ -2514,7 +2514,7 @@ function enseigneDeSecours(couche) {
     patternSVG(couche.dataset.graine || '', couche.dataset.lieu || ''));
 }
 
-/* L'affiche n'a pas chargé — hotlink bloqué, 404, domaine mort. On masque
+/* L'affiche n'a pas chargé - hotlink bloqué, 404, domaine mort. On masque
    la photo et on construit l'enseigne, qui n'avait pas été émise. */
 function afficheIntrouvable(img) {
   const enveloppe = img.parentElement;
@@ -2541,7 +2541,7 @@ function logoIntrouvable(img) {
 
 /* Couche visuelle d'une carte : affiche si disponible, enseigne sinon.
    L'enseigne n'est PAS émise sous une affiche. C'est une rupture avec
-   l'invariant d'avant — la couche de secours était toujours dans le DOM —
+   l'invariant d'avant - la couche de secours était toujours dans le DOM -
    et elle est justifiée par une mesure : à une vingtaine de <text> par
    carte, émettre l'enseigne partout pesait 4,94 Mo, soit 63 % du document
    et 63 000 nœuds sur 120 000, dont 2 123 enseignes sur 3 179 que rien ne
@@ -2551,13 +2551,13 @@ function logoIntrouvable(img) {
    le lieu voyagent dans des attributs data, et enseigneDeSecours() la
    construit au moment où l'affiche ou le logo échoue. */
 function visualLayerHtml(e, seedOverride) {
-  // Graine des tirages : (lieu + titre) est stable d'un run à l'autre —
+  // Graine des tirages : (lieu + titre) est stable d'un run à l'autre -
   // contrairement à e.id, qui dépend de l'heure et change si la dédup
   // l'enrichit depuis une autre source. Les occurrences d'un même
   // événement multi-jours partagent donc forme et couleur.
   // seedOverride sert aux cartes d'un groupe déplié : elles reçoivent la
   // graine de la CARTE GROUPÉE, donc l'enseigne du lieu. Sans ça le
-  // dépliage défaisait visuellement le groupe qu'il venait d'ouvrir —
+  // dépliage défaisait visuellement le groupe qu'il venait d'ouvrir -
   // quatre cartes d'un même lieu affichaient trois trames et trois
   // teintes différentes.
   const seed = seedOverride || ((e.venue || '') + '|' + (e.title || ''));
@@ -2583,7 +2583,7 @@ const state = {
   arrondissements: new Set(),
   // Listes à cocher. VIDE = tout s'affiche ; dès qu'une case est cochée,
   // SEULES les cases cochées s'affichent. C'est l'inverse des familles,
-  // qui partent toutes allumées et qu'on éteint — l'une sert à isoler,
+  // qui partent toutes allumées et qu'on éteint - l'une sert à isoler,
   // l'autre à dégrossir.
   lieux: new Set(),
   tags: new Set(),
@@ -2784,9 +2784,9 @@ async function load() {
   // venue_arrondissements.json is generated by aggregate.py (scrapers/geo.py).
   // It only contains venues NOT already in the hardcoded VENUE_ARRONDISSEMENT
   // map above. If the file is missing (first run, local dev), we silently
-  // ignore it — the hardcoded map is still fully functional.
+  // ignore it - the hardcoded map is still fully functional.
   // « no-cache » et non « no-store » : le navigateur redemande toujours au
-  // serveur si le fichier a changé — le site reste aussi frais —, mais ne
+  // serveur si le fichier a changé - le site reste aussi frais -, mais ne
   // le retélécharge plus quand il n'a pas bougé. Le serveur répond alors
   // « 304 » en quelques octets, au lieu des 190 Ko du fil à chaque visite.
   const [eventsRes, geoRes] = await Promise.allSettled([
@@ -2820,7 +2820,7 @@ async function load() {
         if (VENUE_ARRONDISSEMENT[venue]) continue;  // hardcoded wins
         if (entry.arr) VENUE_ARRONDISSEMENT[venue] = entry.arr;
       }
-    } catch (_) { /* malformed JSON — ignore */ }
+    } catch (_) { /* malformed JSON - ignore */ }
   }
 
   // Réconciliation des graphies. Le fil écrit « Théâtre de la
@@ -2846,7 +2846,7 @@ async function load() {
   buildVenueHomepages();
 
   // Chiffres et date de mise à jour : en pied de page, pas dans le
-  // masthead — l'information est utile mais n'a pas à occuper le haut.
+  // masthead - l'information est utile mais n'a pas à occuper le haut.
   document.getElementById('footerIndex').textContent = state.events.length;
   document.getElementById('footerVenues').textContent =
     new Set(state.events.map(e => e.venue)).size;
@@ -2884,7 +2884,7 @@ function buildDaystrip() {
     btn.type = 'button';
     btn.className = 'day-pill' + (n === 0 ? ' empty' : '') + (i === 0 ? ' today' : '');
     // Mois affiché uniquement au premier jour de chaque mois, et sur la
-    // première pastille de la bande — sans elle, une fenêtre entièrement
+    // première pastille de la bande - sans elle, une fenêtre entièrement
     // contenue dans un mois n'indiquerait aucun mois du tout.
     const moisVisible = (i === 0 || d.getDate() === 1);
     btn.innerHTML = '<span class="dp-dow">' + FR_DAYS_SHORT[d.getDay()] + '</span>'
@@ -2904,7 +2904,7 @@ function buildDaystrip() {
         if (!target) return;
         remplirJusqua(target.getBoundingClientRect().top + window.scrollY
                       + window.innerHeight);
-        // Une journée lointaine — à plus d'un écran — se rejoint d'un saut.
+        // Une journée lointaine - à plus d'un écran - se rejoint d'un saut.
         // Le défilement en douceur visait la position qu'elle avait au
         // départ ; or les journées à traverser, jamais affichées, n'ont
         // qu'une hauteur estimée (contain-intrinsic-size, 420 px), bien
@@ -2941,7 +2941,7 @@ function buildDaystrip() {
 })();
 
 function formatUpdated(iso) {
-  if (!iso) return '—';
+  if (!iso) return '-';
   const d = new Date(iso);
   return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' })
        + ' · ' + d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
@@ -2965,7 +2965,7 @@ function sourceSortIndex(e) {
 
 function sourceBadgeHtml(e) {
   // If this event happens at a venue we scrape directly, the card links to the
-  // venue's own site (see eventHref) and is shown as a venue card — so we don't
+  // venue's own site (see eventHref) and is shown as a venue card - so we don't
   // tag it "petit bulletin" / "ville morte", even when the data originally came
   // from an aggregator. Only events at venues we DON'T scrape keep their badge.
   if (venueHomepage[e.venue]) return '';
@@ -2973,7 +2973,7 @@ function sourceBadgeHtml(e) {
   /* Abrégé en deux lettres : le nom entier occupait jusqu'à 71 px du pied,
      pris à la catégorie qui est le seul élément à se tronquer. Le titre
      natif rend le nom complet au survol, et il est lu par les lecteurs
-     d'écran — l'information n'est pas perdue, seulement repliée. */
+     d'écran - l'information n'est pas perdue, seulement repliée. */
   if (s === 'pb') return '<span class="event-source pb" title="petit bulletin">PB</span>';
   if (s === 'vm') return '<span class="event-source vm" title="ville morte">VM</span>';
   return '';
@@ -3026,7 +3026,7 @@ function inferGroupForVenue(venueName) {
   return null;
 }
 
-/* Rebuilds VENUE_GROUP_ORDER_INDEX from VENUE_GROUPS — call this after any
+/* Rebuilds VENUE_GROUP_ORDER_INDEX from VENUE_GROUPS - call this after any
    dynamic mutation (auto-promotion or autre population) so card sorting
    picks up the new venues. */
 function rebuildVenueGroupOrderIndex() {
@@ -3044,7 +3044,7 @@ function rebuildVenueGroupOrderIndex() {
 /* Classe chaque lieu dans un VENUE_GROUP, puis rafraîchit l'index de tri.
    Cette fonction dessinait aussi les puces du filtre « où », supprimé ;
    il ne reste que le travail STRUCTUREL, dont dépend le tri de chaque
-   journée — VENUE_GROUPS sert des deux côtés, et c'est pour ça qu'on ne
+   journée - VENUE_GROUPS sert des deux côtés, et c'est pour ça qu'on ne
    peut pas le retirer avec son filtre. */
 function classerLieux() {
   // Step 1: collect all venues currently known (static groups, NOT including 'autre').
@@ -3113,7 +3113,7 @@ function construireListe(idConteneur, entrees, ensemble) {
     nEl.className = 'fl-n';
     nEl.textContent = n;
     label.append(box, nomEl, nEl);
-    label.title = nom + ' — ' + n + ' événement' + (n > 1 ? 's' : '');
+    label.title = nom + ' - ' + n + ' événement' + (n > 1 ? 's' : '');
     c.appendChild(label);
   }
 }
@@ -3299,7 +3299,7 @@ function withinWhen(dateStr) {
 /* ---------- expand multi-day ---------- */
 /* Horizon d'affichage. Il n'en existait pas : inutile tant qu'une plage
    de plus de trente jours ne pesait qu'une carte. Maintenant qu'on les
-   déploie toutes, « Papillons » — ouverte jusqu'au 22 octobre 2028 —
+   déploie toutes, « Papillons » - ouverte jusqu'au 22 octobre 2028 -
    fabriquerait à elle seule six cent soixante-quinze journées. La valeur
    reprend celle des scrapers (HORIZON_DAYS = 180) : c'est déjà l'horizon
    réel du feed, les agrégateurs seuls annonçant plus loin. */
@@ -3325,7 +3325,7 @@ function expandOccurrences(events) {
     // filtré plus loin, et l'au-delà de l'horizon n'a pas de journée.
     const depuis = start < today ? today : start;
     if (depuis > horizon) {
-      // Série entièrement au-delà de l'horizon — un agrégateur annonce
+      // Série entièrement au-delà de l'horizon - un agrégateur annonce
       // parfois à deux ans. Une carte à sa date d'ouverture, pour ne pas
       // la faire disparaître du feed.
       out.push({ ...e, _date: e.date_start, _totalDays: totalDays,
@@ -3357,7 +3357,7 @@ function filtered() {
       const q = state.search;
       const titleMatch = normSearch(occ.title).includes(q);
       const venueMatch = normSearch(occ.venue).includes(q);
-      // subtitle porte les line-ups d'artistes (ex. Le Sucre) — cherchable
+      // subtitle porte les line-ups d'artistes (ex. Le Sucre) - cherchable
       const subtitleMatch = normSearch(occ.subtitle).includes(q);
       if (!titleMatch && !venueMatch && !subtitleMatch) return false;
     }
@@ -3381,15 +3381,15 @@ function render() {
     && typeof document.startViewTransition === 'function'
     // Indispensable : dans un onglet masqué, startViewTransition attend une
     // occasion de rendu qui n'arrive jamais et son callback n'est jamais
-    // appelé — le feed se figerait silencieusement sur l'état précédent.
+    // appelé - le feed se figerait silencieusement sur l'état précédent.
     && document.visibilityState === 'visible'
     && !matchMedia('(prefers-reduced-motion: reduce)').matches;
   firstRenderDone = true;
   if (!animate) { renderFeed(); return; }
   try {
     const fondu = document.startViewTransition(() => renderFeed());
-    // Un fondu interrompu — un nouveau filtre avant qu'il s'achève, un onglet
-    // qui cesse de s'afficher — rejette la promesse « ready », et la console
+    // Un fondu interrompu - un nouveau filtre avant qu'il s'achève, un onglet
+    // qui cesse de s'afficher - rejette la promesse « ready », et la console
     // le notait en erreur. Ce n'en est pas une : la mise à jour a lieu quand
     // même. « finished » est tenue aussi, sans quoi une vraie erreur de
     // renderFeed() serait signalée deux fois ; elle l'est une fois, par
@@ -3464,7 +3464,7 @@ function renderFeed() {
     lastRenderDays.set(iso, visibles);
   }
   // Toutes les familles éteintes : la boucle n'a rien produit, et le
-  // garde-fou du début — qui compte les ÉVÉNEMENTS, avant regroupement —
+  // garde-fou du début - qui compte les ÉVÉNEMENTS, avant regroupement -
   // ne pouvait pas le voir.
   if (!jours.length) {
     // Les boutons vivent dans les barres de journée : sans journée, plus
@@ -3481,7 +3481,7 @@ function renderFeed() {
   construireLeFil(feed, jours, ancre);
 }
 
-/* Une journée du fil : sa barre — date, familles, compte — puis ses cartes. */
+/* Une journée du fil : sa barre - date, familles, compte - puis ses cartes. */
 function journeeHtml({ iso, comptes, visibles }) {
   const d = parseIso(iso);
   const dd = String(d.getDate()).padStart(2, '0');
@@ -3526,7 +3526,7 @@ function journeeHtml({ iso, comptes, visibles }) {
    suivante, et non au pied de page. */
 
 /* Taille du premier morceau, en événements, par journées entières. Il
-   couvre largement un écran, et un fil court — un weekend, une semaine —
+   couvre largement un écran, et un fil court - un weekend, une semaine -
    y tient en entier : il se construit d'un coup, comme avant. La suite
    vient ensuite journée par journée. */
 const MORCEAU_INITIAL = 400;
@@ -3556,7 +3556,7 @@ function construireLeFil(feed, jours, ancre) {
   if (!suiteDuFil) return;
   if (typeof IntersectionObserver !== 'function') { construireTout(); return; }
   // Le guetteur suit la DERNIÈRE journée construite : quand elle arrive à
-  // moins de deux écrans du bas de la fenêtre, on construit la suite —
+  // moins de deux écrans du bas de la fenêtre, on construit la suite -
   // autant de journées qu'en tiennent huit millisecondes, plusieurs sur un
   // PC, une seule sur un téléphone lent : le défilement n'accroche pas.
   suite.guetteur = new IntersectionObserver(entrees => {
@@ -3588,7 +3588,7 @@ function preparerLaBarreDesJours(suite) {
   if (reste()) plusTard(etape);
 }
 
-/* Ajoute au fil les `combien` journées suivantes — toutes, sans nombre. */
+/* Ajoute au fil les `combien` journées suivantes - toutes, sans nombre. */
 function ajouterJournees(combien = Infinity) {
   const suite = suiteDuFil;
   if (!suite) return;
@@ -3623,7 +3623,7 @@ function remplirJusqua(bas) {
   }
 }
 
-/* Construit jusqu'à la journée `iso` — ou jusqu'à la première qui la
+/* Construit jusqu'à la journée `iso` - ou jusqu'à la première qui la
    suit, si le filtre l'a écartée. */
 function construireJusqua(iso) {
   while (suiteDuFil && suiteDuFil.jours[suiteDuFil.prochain - 1].iso < iso) {
@@ -3639,8 +3639,8 @@ function construireTout() {
    tout le fil, et les journées neuves perdent leur hauteur mesurée : à la
    même position de défilement, la page montrait alors des semaines plus
    loin (le 10 octobre menait au 23 novembre, au 16 février sur un
-   téléphone). La journée touchée — ou, si le filtre l'a vidée, la
-   suivante — revient donc où le visiteur la voyait : à la même hauteur si
+   téléphone). La journée touchée - ou, si le filtre l'a vidée, la
+   suivante - revient donc où le visiteur la voyait : à la même hauteur si
    sa barre était à sa place, à son début si la barre était collée en haut
    de l'écran, le visiteur au milieu de cette journée dont les cartes
    viennent de changer. Faux si aucune journée ne convient : le fil garde
@@ -3755,7 +3755,7 @@ function escapeHtml(s) {
 }
 
 /* Groupe les événements d'un jour par lieu, en conservant l'ordre de
-   première apparition — la liste reçue est déjà triée (groupe de lieux,
+   première apparition - la liste reçue est déjà triée (groupe de lieux,
    source, heure) et regrouper ne doit pas la réordonner. */
 function groupByVenue(list) {
   const map = new Map();
@@ -3784,7 +3784,7 @@ function majorityCategory(evs) {
    (12) retranchés des 132 px de contenu ; quatre rangées de 18 px plus
    trois gouttières de 3 en occupent 81. Au-delà, on montre les trois
    premières et une ligne de report. */
-/* Date de fin d'un événement qui dure, en JJ/MM — l'année n'apparaît que
+/* Date de fin d'un événement qui dure, en JJ/MM - l'année n'apparaît que
    si elle diffère de celle de la carte. Les agrégateurs annoncent des
    accrochages à deux ans, et « jusqu'au 22/10 » lu un 9 septembre 2026 se
    comprend comme 2026 quand l'exposition ferme en 2028. Sert au badge des
@@ -3807,12 +3807,12 @@ function groupCard(venue, evs, key) {
   let lines = '';
   for (const e of shown) {
     const t = (e.title && e.title.trim()) ? e.title.trim() : 'titre non précisé';
-    // Une exposition n'a pas d'heure : la colonne affichait « — » et
+    // Une exposition n'a pas d'heure : la colonne affichait « - » et
     // l'échéance, portée par le badge d'une carte simple, disparaissait
     // du groupe. On y met la fin, dans la même convention.
     const droite = e.time
       || (e.date_end && e.date_end !== e.date_start
-          ? (e._isLast ? 'dernière' : '→ ' + finCourte(e)) : '—');
+          ? (e._isLast ? 'dernière' : '→ ' + finCourte(e)) : '-');
     lines += '<span class="event-line"><span class="t">' + escapeHtml(t)
            + '</span><span class="h">' + escapeHtml(droite) + '</span></span>';
   }
@@ -3831,7 +3831,7 @@ function groupCard(venue, evs, key) {
      14 octobre, l'Opéra affiche un concert dans son Amphi et deux au
      Théâtre de La Renaissance. Aucune étiquette n'est alors juste pour
      l'ensemble, et on retombe sur l'arrondissement de la salle qui
-     PROGRAMME — la grappe représente sa soirée. Le détail réapparaît au
+     PROGRAMME - la grappe représente sa soirée. Le détail réapparaît au
      dépliage, chaque carte portant alors la sienne. */
   const etiquettes = new Set(evs.map(etiquetteLieu));
   const arr = etiquettes.size === 1
@@ -3844,7 +3844,7 @@ function groupCard(venue, evs, key) {
   // Un .photo-wrap VIDE accompagnait le cartouche pour que la trame
   // sérigraphie couvre toute la carte ; la trame ayant été retirée, il
   // n'avait plus d'objet et est parti avec elle.
-  // Marque du lieu si on a le fichier, cartouche typographique sinon —
+  // Marque du lieu si on a le fichier, cartouche typographique sinon -
   // mais pour les seules salles qu'on scrappe en direct : elles portent
   // une identité que le site revendique, là où un lieu vu à travers un
   // agrégateur n'est qu'un nom de passage, et garde l'enseigne.
@@ -3866,7 +3866,7 @@ function groupCard(venue, evs, key) {
     '<button type="button" class="event" data-venue-day="' + escapeHtml(key) + '"',
     '        style="--t:' + teinteDe(cat) + '"',
     '        aria-expanded="false" aria-label="' + escapeHtml(venue + ', '
-      + evs.length + ' événements — déplier') + '">',
+      + evs.length + ' événements - déplier') + '">',
     '  ' + visual,
     '  <div class="event-head">',
     '    <span class="event-venue">' + escapeHtml(venue) + '</span>',
@@ -3886,14 +3886,14 @@ function groupCard(venue, evs, key) {
 function eventCard(e, seedOverride) {
   /* Le tiret de l'heure inconnue ne se dessine PAS quand la carte porte
      déjà un badge d'échéance : il n'apprend rien à côté de « jusqu'au
-     18/10 », et il coûte vingt pixels au pied — pris à la catégorie, qui
+     18/10 », et il coûte vingt pixels au pied - pris à la catégorie, qui
      est le seul élément du pied à se tronquer. C'est le cas serré du
      site : une exposition d'agrégateur cumule la source, l'échéance et
      l'heure, et « Art graphique » s'y réduisait à cinq lettres. */
   const dureeConnue = !!(e._totalDays && e._totalDays > 1);
   const time = e.time
     ? '<span class="event-time">' + escapeHtml(e.time) + '</span>'
-    : (dureeConnue ? '' : '<span class="event-time empty">—</span>');
+    : (dureeConnue ? '' : '<span class="event-time empty">-</span>');
 
   // Title fallback: drop discreet placeholder if missing.
   const hasTitle = !!(e.title && e.title.trim());
@@ -3908,7 +3908,7 @@ function eventCard(e, seedOverride) {
   let runBadge = '';
   /* Un événement qui dure porte sa fin, pas son rang : « 12/29 » ne dit
      rien d'utile à qui lit la carte, « → 30/10 » dit s'il reste du temps.
-     Le dernier jour est nommé — « dernière », comme la dernière séance —,
+     Le dernier jour est nommé - « dernière », comme la dernière séance -,
      c'est la seule information qui presse.
      La flèche plutôt que « jusqu'au » : c'est la convention que la colonne
      de droite des cartes groupées emploie déjà, et une carte simple et une
@@ -3936,7 +3936,7 @@ function eventCard(e, seedOverride) {
   const arr = etiquetteLieu(e);
   const arrLabel = '<span class="event-arr">' + escapeHtml(arr) + '</span>';
 
-  // Layout = 3 grid rows: head / title / foot — précédés de la couche
+  // Layout = 3 grid rows: head / title / foot - précédés de la couche
   // visuelle en fond (affiche réelle ou enseigne du lieu, en fondu)
   const visual = visualLayerHtml(e, seedOverride);
 
@@ -3952,7 +3952,7 @@ function eventCard(e, seedOverride) {
     // L'heure a quitté l'en-tête pour le pied : elle y tombe au même
     // pixel sur toutes les cartes, ce qui en fait une colonne que l'œil
     // descend d'un seul balayage. En haut, sa position dépendait de la
-    // longueur du nom du lieu — donc elle se déplaçait d'une carte à
+    // longueur du nom du lieu - donc elle se déplaçait d'une carte à
     // l'autre. Dernière du groupe de droite, elle est contre le bord.
     '  <div class="event-foot">',
     '    ' + cat,
@@ -3973,7 +3973,7 @@ function eventCard(e, seedOverride) {
    chacune une fois rendue. Reconstruire tout le feed détruit ces nœuds,
    donc toutes les hauteurs mémorisées, et le document se ré-estime à
    420 px par journée : la hauteur totale change brutalement et le
-   défilement saute. On ne reconstruit donc que la journée concernée — les
+   défilement saute. On ne reconstruit donc que la journée concernée - les
    autres gardent leur nœud, donc leur mesure.
    L'ancrage sur l'élément cliqué est la ceinture par-dessus les
    bretelles : même si une hauteur bouge malgré tout, la carte reste
@@ -4027,8 +4027,8 @@ document.getElementById('feed').addEventListener('click', ev => {
 });
 
 /* Les cartouches typographiques se dimensionnent en mesurant Bungee. Si
-   la fonte arrive après le premier rendu — cas ordinaire, elle vient de
-   Google Fonts — les corps posés d'après les paliers sont approximatifs.
+   la fonte arrive après le premier rendu - cas ordinaire, elle vient de
+   Google Fonts - les corps posés d'après les paliers sont approximatifs.
    On recompose une fois, quand elle est prête. Sans garde sur le feed
    déjà rempli, ce serait un rendu de trop au chargement à froid. */
 if (document.fonts && document.fonts.ready) {
@@ -4038,8 +4038,8 @@ if (document.fonts && document.fonts.ready) {
 }
 
 /* Le chargement a échoué : le dire en clair, avec de quoi réessayer. Le
-   message d'avant montrait l'erreur brute du navigateur — « TypeError:
-   Failed to fetch » —, n'offrait aucune suite, et l'insérait telle quelle
+   message d'avant montrait l'erreur brute du navigateur - « TypeError:
+   Failed to fetch » -, n'offrait aucune suite, et l'insérait telle quelle
    dans la page : un texte d'erreur qui cite le fichier reçu y aurait été
    lu comme du HTML. Le détail reste, en petit et échappé, pour qui doit
    diagnostiquer. Réessayer recharge la page entière plutôt que de relancer
@@ -4050,7 +4050,7 @@ function erreurDeChargement(err) {
   const feed = document.getElementById('feed');
   feed.innerHTML = '<div class="empty-state erreur-chargement" role="alert">'
     + "<p>le programme n'a pas pu se charger</p>"
-    + '<div class="ec-aide">vérifiez votre connexion, puis réessayez — '
+    + '<div class="ec-aide">vérifiez votre connexion, puis réessayez - '
     + 'ou revenez dans quelques minutes.</div>'
     + '<button type="button" class="chip ec-reessayer">réessayer</button>'
     + (detail ? '<div class="ec-detail">détail technique : '

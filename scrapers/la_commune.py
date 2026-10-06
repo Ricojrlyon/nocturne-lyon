@@ -8,7 +8,7 @@ Page structure (verified):
 - The /programme/ page shows the next ~8 events. For all events we fetch
   /hub-evenements/ which is the full listing.
 
-Time: not published on the website — left None.
+Time: not published on the website - left None.
 """
 from typing import List, Optional
 from datetime import date as Date
@@ -127,7 +127,7 @@ def fetch() -> List[Event]:
 
     if not unique:
         print("=" * 60, file=sys.stderr)
-        print("DIAGNOSTIC: La Commune — 0 events", file=sys.stderr)
+        print("DIAGNOSTIC: La Commune - 0 events", file=sys.stderr)
         for url in URLS:
             try:
                 resp = base_get(url, timeout=15, headers=HEADERS)

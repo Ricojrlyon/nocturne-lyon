@@ -12,13 +12,13 @@ dans une compétition, un calendrier iCalendar :
 
   https://competition-calendar.ffhandball.fr/c-<compétition>/s-<club>.ics
 
-Sept kilo-octets qui donnent tout ce qu'une carte demande — l'heure à
+Sept kilo-octets qui donnent tout ce qu'une carte demande - l'heure à
 l'heure de Paris, les deux équipes, la salle AVEC son adresse, et l'URL
 de la fiche du match. C'est le même fichier que propose le bouton
 « Ajouter les matchs à votre calendrier » sur le site fédéral.
 
 CE QUE L'ICS NE DONNE PAS : la saison entière. Le handball programme au
-fur et à mesure — sur les 22 journées de Nationale 1, neuf rencontres
+fur et à mesure - sur les 22 journées de Nationale 1, neuf rencontres
 seulement ont une date au 20 septembre 2026, les autres n'ont ni horaire
 ni salle dans le système fédéral. Le fil publie donc ce qui est calé et
 ramassera le reste au fil des jours, ce qui tombe bien : il se relit
@@ -107,8 +107,8 @@ _LETTRES = re.compile(r"[A-Za-zÀ-ÿ]+")
 DUEL = re.compile(r"^(.+?)\s+vs\s+(.+)$", re.I)
 
 
-# Les collecteurs sportifs restent autonomes, sans module commun — c'est
-# voulu —, d'où ces copies : chacune signale ses jumelles. Copie identique
+# Les collecteurs sportifs restent autonomes, sans module commun - c'est
+# voulu -, d'où ces copies : chacune signale ses jumelles. Copie identique
 # dans volley.py, rugby.py et asvel_feminin.py : une correction faite ici se
 # reporte là-bas.
 def _norm(t: str) -> str:

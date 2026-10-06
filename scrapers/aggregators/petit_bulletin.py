@@ -11,8 +11,8 @@ déduplication en trois passes (scrapers/dedup.py) qui écarte les doublons
 quand un événement est aussi publié par la salle elle-même.
 
 Historique, parce que la décision a changé deux fois. Deux filtres
-existaient ici — musées et galeries d'un côté, une liste de catégories de
-l'autre — parce que leurs accrochages, courant sur des mois, saturaient le
+existaient ici - musées et galeries d'un côté, une liste de catégories de
+l'autre - parce que leurs accrochages, courant sur des mois, saturaient le
 feed. Ils ont été retirés en août 2026, au motif que le frontend regroupe
 chaque journée en quatre familles qu'on éteint d'un bouton, et que c'est
 au lecteur de dire qu'il ne veut pas d'expositions ce soir.
@@ -101,7 +101,7 @@ CATEGORIES_ECARTEES = frozenset(_normalize(c) for c in (
 ))
 
 
-# Le Petit Bulletin sert son HTML avec les apostrophes ÉCHAPPÉES — la
+# Le Petit Bulletin sert son HTML avec les apostrophes ÉCHAPPÉES - la
 # signature d'un addslashes() PHP appliqué à la sortie plutôt qu'à l'entrée
 # d'une requête. Le texte contient donc littéralement « Théâtre de l\'Élysée »,
 # antislash compris, et get_text() le rend tel quel. Vu le 2026-09-14 sur
@@ -109,13 +109,13 @@ CATEGORIES_ECARTEES = frozenset(_normalize(c) for c in (
 # ne l'en protège, d'où l'application aux deux champs.
 #
 # Conséquence si on ne corrige pas : l'antislash s'affiche sur la carte, et
-# surtout le lieu devient une salle À PART — le frontend indexe l'arrondis-
+# surtout le lieu devient une salle À PART - le frontend indexe l'arrondis-
 # sement et regroupe les cartes sur la chaîne EXACTE. Le Théâtre de l'Élysée
 # comptait ainsi trois entrées pour une salle.
 #
 # On ne retire que l'antislash qui précède une apostrophe ou un guillemet,
-# seul cas produit par addslashes : un antislash isolé dans un titre — rare
-# mais légitime — survit.
+# seul cas produit par addslashes : un antislash isolé dans un titre - rare
+# mais légitime - survit.
 _ANTISLASH_APOSTROPHE = re.compile(r"\\(['’\"])")
 
 
@@ -191,9 +191,9 @@ def _jours_de_jeu(horaires: str) -> Tuple[Optional[set], dict, Optional[str]]:
       « a 20h30 sauf samedi a 21h15 »      tous les jours, samedi à 21h15
       « a 20h45 relache le jeudi »         tous les jours sauf le jeudi
 
-    Devant une tournure inconnue — un jour nommé hors d'un horaire
+    Devant une tournure inconnue - un jour nommé hors d'un horaire
     (« rencontre jeudi », « samedi à midi »), une date (« 7 novembre à
-    15h »), un « sauf le lundi à 20h » sans heure commune —, on n'ôte rien :
+    15h »), un « sauf le lundi à 20h » sans heure commune -, on n'ôte rien :
     mieux vaut une séance de trop qu'une vraie séance perdue.
     """
     rien = (None, {}, None)
@@ -270,7 +270,7 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
         semaine désigne ; sinon la prochaine occurrence.
 
         BUG-17 : « Jeudi 1 octobre », lu le 2, partait au 1er octobre 2027
-        — une soirée fantôme un an plus tard —, toute date passée d'un seul
+        - une soirée fantôme un an plus tard -, toute date passée d'un seul
         jour passant à l'année suivante. Le jour de la semaine tranche : le
         1er octobre 2027 est un vendredi, c'est donc 2026, et la date passée
         est écartée. Sans lui, quinze jours de grâce, comme tng.py.
@@ -298,7 +298,7 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
         if (end - start).days > LONG_RUN_DAYS:
             # Événement long (expo, festival au long cours) : un seul Event
             # à plage. Il n'est plus jeté comme avant, et le frontend sait
-            # l'afficher — avec un badge « en cours » au-delà de 30 jours.
+            # l'afficher - avec un badge « en cours » au-delà de 30 jours.
             eff = max(start, today)
             return [(eff.isoformat(), time_str, end.isoformat())]
         # BUG-18 : chaque jour de la plage devenait une séance, relâche
@@ -346,7 +346,7 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
     # 3) Plage à cheval sur deux mois : "Du 28 mai au 3 juin 2026", ou avec
     #    l'année du début : "Du 16 octobre 2026 au 15 août 2027". BUG-20 :
     #    cette année-là n'était pas attendue, la plage échappait à la
-    #    lecture et devenait son seul premier jour — une exposition de dix
+    #    lecture et devenait son seul premier jour - une exposition de dix
     #    mois annoncée un seul jour.
     m = re.search(r"\bdu\s+(\d{1,2})(?:er)?\s+" + MOIS + r"(?:\s+(\d{4}))?"
                   + r"\s+au\s+(\d{1,2})(?:er)?\s+" + MOIS
@@ -395,7 +395,7 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
             continue
     # Deux jours qui se suivent et un horaire qui passe minuit : « Samedi 24
     # octobre et Dimanche 25 octobre de 22h à 4h30 » est UNE nuit, celle du
-    # samedi — la Halle Tony Garnier l'annonce « le 24 octobre, fin 04h30 » —,
+    # samedi - la Halle Tony Garnier l'annonce « le 24 octobre, fin 04h30 » -,
     # et non deux soirées.
     nuit = re.search(r"\bde\s+(\d{1,2})h(\d{0,2})\s+a\s+(\d{1,2})h(\d{0,2})\b", norm)
     if (nuit and not par_jour and len(dates) == 2
@@ -412,7 +412,7 @@ def _extract_events_from_soup(soup: BeautifulSoup) -> List[Event]:
     today_iso = date.today().isoformat()
     events: List[Event] = []
 
-    # Find every "title link" — an <a> inside an h-tag that points to an
+    # Find every "title link" - an <a> inside an h-tag that points to an
     # /agenda-NNNNNN-slug.html URL. The same URL may appear several times
     # on the page (title, venue, date all link to it); we only want the
     # title occurrence.
@@ -473,13 +473,13 @@ def _extract_events_from_soup(soup: BeautifulSoup) -> List[Event]:
                 if len(lis) >= 2:
                     da = lis[1].find("a")
                     date_str = (da or lis[1]).get_text(strip=True)
-                # don't break — there might be more useful sibs, but
+                # don't break - there might be more useful sibs, but
                 # typically nothing else relevant follows the ul
                 break
 
         # La catégorie est OPTIONNELLE : certains blocs ont un paragraphe de
         # description là où se trouve d'habitude la ligne « (Catégorie) ».
-        # Seuls le lieu et la date sont exigés — ils suffisent à identifier un
+        # Seuls le lieu et la date sont exigés - ils suffisent à identifier un
         # vrai bloc d'événement. Sans cet assouplissement, une quinzaine
         # d'événements par passage restaient invisibles.
         if not venue or not date_str:
@@ -515,7 +515,7 @@ def fetch() -> List[Event]:
     """Parcourt toutes les pages de l'agenda Petit Bulletin.
 
     L'agenda est paginé (`?p=N`, 164 événements sur 9 pages aujourd'hui) et
-    seule la première page était lue : les 8 autres — soit ~85 % du contenu —
+    seule la première page était lue : les 8 autres - soit ~85 % du contenu -
     n'arrivaient jamais dans nocturne. La boucle s'arrête dès qu'une page
     n'apporte plus aucune URL nouvelle, ou au cap de MAX_PAGES.
     """
@@ -531,7 +531,7 @@ def fetch() -> List[Event]:
         except requests.RequestException as exc:
             if page == 1:
                 raise
-            print(f"[Petit Bulletin] page {page} injoignable ({exc}) — arrêt",
+            print(f"[Petit Bulletin] page {page} injoignable ({exc}) - arrêt",
                   file=sys.stderr)
             break
         if r.status_code != 200:

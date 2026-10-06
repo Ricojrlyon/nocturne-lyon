@@ -104,7 +104,7 @@ def fetch() -> List[Event]:
         #   <div class="event-card__image"> <img ...> </div>
         #   <div class="event-card__body">  <time> + <h3> </div>
         # _find_card(h3) s'arrête à event-card__body (premier ancêtre
-        # contenant la date), qui ne contient pas l'<img> — d'où 0 image.
+        # contenant la date), qui ne contient pas l'<img> - d'où 0 image.
         # On cherche sur l'<article> englobant quand il existe.
         img_scope = h3.find_parent("article") or card
         image = img_src(img_scope.find("img"), host=HOST)
@@ -141,7 +141,7 @@ def fetch() -> List[Event]:
 
     if not events:
         print("=" * 60, file=sys.stderr)
-        print("DIAGNOSTIC: Bourse du Travail — 0 events", file=sys.stderr)
+        print("DIAGNOSTIC: Bourse du Travail - 0 events", file=sys.stderr)
         try:
             resp2 = base_get(URL, timeout=15, headers=HEADERS)
             print(f"  {URL} -> {resp2.status_code} ({len(resp2.text)} bytes)",

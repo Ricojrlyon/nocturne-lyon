@@ -1,7 +1,7 @@
 /* Le pilote des tests de page, injecté à la fin de la page servie.
 
    Il attend le premier rendu, puis joue des SCÉNARIOS comme le ferait un
-   visiteur — clics sur les puces, frappe dans la recherche, cases cochées —
+   visiteur - clics sur les puces, frappe dans la recherche, cases cochées -
    et relève, après chacun, chaque journée affichée et chaque carte : sa
    balise, son lien, et son texte hors visuel (l'affiche ou le motif, qui
    dépendent du réseau, sont exclus). Le relevé part au serveur de test.

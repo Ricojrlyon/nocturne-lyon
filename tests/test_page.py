@@ -1,13 +1,13 @@
 """La page, jouée dans un vrai navigateur sur des données et une date FIGÉES.
 
 Le fil est celui de la collecte de référence (chaine_reference.json.gz),
-la date le 1er octobre 2026 à 10 h. Neuf scénarios de visiteur — tout,
+la date le 1er octobre 2026 à 10 h. Neuf scénarios de visiteur - tout,
 ce weekend, semaine pro, une recherche, une famille éteinte, un lieu, un
-tag, un arrondissement, un groupe déplié — et après chacun, chaque
+tag, un arrondissement, un groupe déplié - et après chacun, chaque
 journée et chaque carte affichées, comparées à page_reference.json.gz.
 
 C'est le filet de toute retouche d'index.html qui ne doit RIEN changer à
-ce que voit le visiteur — l'affichage par morceaux de PERF-1 au premier
+ce que voit le visiteur - l'affichage par morceaux de PERF-1 au premier
 chef. Si un changement d'affichage est voulu : python -m tests.regenerer
 
 Sans navigateur de la famille Chrome, le test est sauté, et le dit.
@@ -73,7 +73,7 @@ class PageFigee(unittest.TestCase):
         obtenu = {k: v for k, v in self.releve.items() if k != "erreurs"}
         attendu = {k: v for k, v in attendu.items() if k != "erreurs"}
         if obtenu != attendu:
-            self.fail("l'affichage a changé — " + premier_ecart(attendu, obtenu))
+            self.fail("l'affichage a changé - " + premier_ecart(attendu, obtenu))
 
 
 class PageAvecFondus(unittest.TestCase):
@@ -161,7 +161,7 @@ class PastillesAvecFondus(unittest.TestCase):
     """BUG-7 : avec les fondus, la pastille d'un jour proche fait défiler la
     page en douceur, celle d'un jour lointain la fait sauter, par-dessus des
     journées jamais affichées. Dans les deux cas, la page doit s'arrêter sur
-    SA journée — le défilement en douceur s'arrêtait quelques jours plus
+    SA journée - le défilement en douceur s'arrêtait quelques jours plus
     tôt."""
 
     @classmethod

@@ -1,28 +1,28 @@
 """Scraper for Le Complexe café-théâtre (Lyon 1er, 7 rue des Capucins).
 
 ATTENTION AU USER-AGENT. Le pare-feu du site renvoie 403 à toute chaîne
-contenant « Mozilla/5.0 (compatible » — une règle classique contre les
+contenant « Mozilla/5.0 (compatible » - une règle classique contre les
 robots qui se déguisent en navigateur. L'UA franc utilisé ici passe en
 200, et `curl/8.0` aussi : le site ne refuse pas les robots, il refuse le
 déguisement. Son robots.txt autorise d'ailleurs tout. Ne pas remplacer
 cet UA par celui des autres scrapers, qui casserait la salle.
 
 Le site est un WordPress. The Events Calendar y est installé mais
-INUTILISÉ — tous ses endpoints REST rendent 0 (événements comme lieux) —
+INUTILISÉ - tous ses endpoints REST rendent 0 (événements comme lieux) -
 et il n'existe pas d'API publique côté billetterie (Slidebooker). On lit
 donc le HTML, qui a l'avantage de porter des classes sémantiques stables
 préfixées « tly_ », et non des hachages regénérés à chaque déploiement.
 
 Deux étapes :
   1. /actuellement/ porte DEUX choses. Un accordéon des sept prochains
-     jours, et — hors accordéon — le catalogue complet des spectacles.
+     jours, et - hors accordéon - le catalogue complet des spectacles.
      C'est le catalogue qu'on lit : chaque entrée donne l'URL, le titre,
      l'affiche et la plage de dates AVEC les années.
   2. chaque page spectacle porte la table de ses représentations :
      .tly_day (date française SANS année), .tly_hour, et la salle.
 
 L'année est déduite de la plage du catalogue, puis roulée dès que le mois
-recule d'une séance à la suivante — ou d'entrée, quand la première séance
+recule d'une séance à la suivante - ou d'entrée, quand la première séance
 est déjà passée de loin (voir _passee_de_loin). Le nom du JOUR DE LA
 SEMAINE sert de contrôle : si la date calculée ne tombe pas ce jour-là, la
 déduction est fausse et la séance est écartée plutôt que publiée de
@@ -66,11 +66,11 @@ HEADERS = {
 }
 
 # LA VÉRIFICATION ANTI-ROBOT DE L'HÉBERGEUR. Le site est chez SiteGround
-# — l'en-tête Host-Header de ses serveurs le signe —, dont le bouclier
+# - l'en-tête Host-Header de ses serveurs le signe -, dont le bouclier
 # sert parfois, à la place de la page, une vérification destinée aux
 # navigateurs : un code 202 et quelques lignes qui renvoient vers
-# /.well-known/sgcaptcha/. Ce n'est pas une erreur HTTP —
-# raise_for_status() la laisse passer —, et le collecteur la lisait comme
+# /.well-known/sgcaptcha/. Ce n'est pas une erreur HTTP -
+# raise_for_status() la laisse passer -, et le collecteur la lisait comme
 # un catalogue vide, en accusant à tort la structure du site. Sa forme
 # exacte n'a pas pu être observée d'ici, le site ne la sert jamais en
 # local : d'où la parade de _page sur le contenu attendu.
@@ -90,7 +90,7 @@ HEADERS = {
 # PLUS D'ATTENTE (SUIVI-1, 2 octobre 2026). On redemandait après 60 puis
 # 120 s, sur un budget commun à tout le passage. Mesuré sur les passages
 # des 1er et 2 octobre : 4 refus, et chaque fois les deux nouveaux essais
-# refusés aussi — aucun sauvetage, trois minutes de passage perdues par
+# refusés aussi - aucun sauvetage, trois minutes de passage perdues par
 # refus. Un refus tient donc au moins trois minutes sur la machine qui le
 # reçoit ; ce sont les passages suivants, sur d'autres machines, qui sont
 # servis. Le budget est vide : _page renonce au premier refus. La
@@ -142,7 +142,7 @@ def _verification(r: requests.Response) -> bool:
     """La réponse est-elle la vérification de SiteGround, et non la page ?
 
     Trois signes, dont aucun ne paraît sur les 75 vraies pages relevées à
-    l'écriture — toutes en 200, de 240 à 580 Ko : le code 202, l'en-tête
+    l'écriture - toutes en 200, de 240 à 580 Ko : le code 202, l'en-tête
     sg-captcha, le chemin sgcaptcha dans le corps.
     """
     return (r.status_code == 202 or "sg-captcha" in r.headers
@@ -155,7 +155,7 @@ def _page(session: requests.Session, url: str, attentes: list,
     permet, redemande plus tard.
 
     Chaque nouvel essai consomme une attente du budget `attentes`, partagé
-    par tout le passage — vide depuis SUIVI-1 (voir ATTENTES_VERIFICATION) :
+    par tout le passage - vide depuis SUIVI-1 (voir ATTENTES_VERIFICATION) :
     pas de nouvel essai. Une page privée de `attendu`, quand on le donne,
     est redemandée de même : c'est la parade si la vérification changeait
     de forme. Budget épuisé, la vérification lève VerificationAntiRobot ;
@@ -213,7 +213,7 @@ def _catalogue(session: requests.Session, attentes: list) -> List[dict]:
         })
 
     # Un même spectacle figure PLUSIEURS fois au catalogue, une entrée par
-    # saison — « IMPRO'MINOTS » y apparaît trois fois — mais toutes
+    # saison - « IMPRO'MINOTS » y apparaît trois fois - mais toutes
     # pointent vers la MÊME page, dont la table contient déjà l'intégralité
     # des séances. Sans cette déduplication on récupérait la page autant de
     # fois qu'elle a d'entrées, et la passe partie de l'année la plus
@@ -234,7 +234,7 @@ def _passee_de_loin(annee: int, mois: int, jj: int) -> bool:
 
     La page d'un spectacle ne garde que les séances à venir. Quand il n'en
     reste qu'après le Nouvel An, l'année de début de la plage ne vaut plus
-    — « du 23/09/2026 au 20/01/2027 » donnait 2026 — et aucun mois ne
+    - « du 23/09/2026 au 20/01/2027 » donnait 2026 - et aucun mois ne
     recule pour la faire rouler : le 20 janvier de Jules Robin tombait en
     2026, et le contrôle du jour l'écartait à chaque passage. Une PREMIÈRE
     séance déjà passée de loin est donc celle de l'année suivante. Les
@@ -292,7 +292,7 @@ def _seances(session: requests.Session, url: str,
 
     if ecartees:
         print(f"[{tag}] {ecartees} séance(s) écartée(s), jour de la semaine "
-              f"incohérent — {url}", file=sys.stderr)
+              f"incohérent - {url}", file=sys.stderr)
     return out
 
 
@@ -308,7 +308,7 @@ def fetch() -> List[Event]:
         # Page lisible mais catalogue vide : la structure a changé. On le
         # signale, plutôt que de rendre une liste vide silencieuse
         # qu'aggregate.py ne distinguerait pas d'une panne.
-        print("[Le Complexe] catalogue vide sur /actuellement/ — structure "
+        print("[Le Complexe] catalogue vide sur /actuellement/ - structure "
               "du site modifiée ?", file=sys.stderr)
         return []
 

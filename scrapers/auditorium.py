@@ -6,16 +6,16 @@ Drupal, lu en deux temps, et c'est le choix central de ce scraper :
                       genre, titre, sous-titre, affiche, lien
   la fiche            l'encadré « Dates » et « Lieu »
 
-LA CARTE NE SUFFIT PAS. Elle date le spectacle « jeu. 1 oct » — sans
+LA CARTE NE SUFFIT PAS. Elle date le spectacle « jeu. 1 oct » - sans
 année, et sans heure. La fiche, elle, écrit « Jeu. 1 oct 2026 à 20h Ven.
 2 oct 2026 à 18h » : le millésime y est, et surtout une heure PAR
-SÉANCE. Les deux dates d'un même concert n'ont pas le même horaire — 20h
-le jeudi, 18h le vendredi — et publier la première pour les deux serait
+SÉANCE. Les deux dates d'un même concert n'ont pas le même horaire - 20h
+le jeudi, 18h le vendredi - et publier la première pour les deux serait
 faux un soir sur deux. On ouvre donc chaque fiche, ce que detail_cache
 rend supportable : cent cinquante requêtes au premier passage, aucune
 ensuite tant que le cache est frais.
 
-LES CARTES SONT EN DOUBLE dans le HTML — 199 balises <article> pour 148
+LES CARTES SONT EN DOUBLE dans le HTML - 199 balises <article> pour 148
 spectacles réels sur la saison. Le dédoublonnage se fait sur le lien.
 Sans lui on annoncerait un tiers d'événements de trop.
 
@@ -24,19 +24,19 @@ HORS LES MURS. L'orchestre joue à la Salle Molière, à Tassin, à Grenoble,
 publier sous « Auditorium de Lyon » créerait des doublons que le dedup ne
 peut pas voir, puisqu'il groupe PAR lieu. Le champ « Lieu » de la fiche
 tranche, et l'on retient une liste blanche de salles maison plutôt qu'une
-liste noire : les lieux extérieurs sont un ensemble ouvert — n'importe
-quelle ville — là où les salles du bâtiment sont une liste courte et
+liste noire : les lieux extérieurs sont un ensemble ouvert - n'importe
+quelle ville - là où les salles du bâtiment sont une liste courte et
 fermée. Toute mention inconnue est signalée, pour qu'une nouvelle salle
 maison se voie au lieu de disparaître en silence.
 
 DEUX GENRES SONT ÉCARTÉS, pour des raisons différentes.
 
 Les SÉANCES SCOLAIRES ne sont pas des sorties : « 8 € par élève, gratuit
-pour l'enseignant et deux accompagnateurs par classe » — elles sont
+pour l'enseignant et deux accompagnateurs par classe » - elles sont
 réservées aux groupes scolaires. L'URL les nomme (/scolaires/) et le
 genre aussi.
 
-Les ATELIERS, eux, sont bien publics — éveil musical, atelier en
+Les ATELIERS, eux, sont bien publics - éveil musical, atelier en
 famille, sur inscription. Ils sont écartés pour une raison de mesure :
 ils pesaient 104 des 186 événements du lieu, davantage que toute sa
 programmation de concerts, et une même séance se répète à 9h, 10h et 11h
@@ -74,7 +74,7 @@ MOIS_CANON = ("janvier", "fevrier", "mars", "avril", "mai", "juin",
               "decembre")
 
 # Salles du bâtiment. Tout ce qui n'est pas là est tenu pour hors les
-# murs — et signalé, afin qu'une salle maison nouvelle ne soit pas
+# murs - et signalé, afin qu'une salle maison nouvelle ne soit pas
 # silencieusement perdue.
 SALLES_MAISON = ("grande salle", "espace decouverte", "auditorium de lyon",
                  "salle proton-de-la-chapelle", "studio")
@@ -105,7 +105,7 @@ GENRES = {
     "en famille":            "concert",
 }
 
-# Genres écartés — voir l'en-tête. Le test porte sur le genre normalisé,
+# Genres écartés - voir l'en-tête. Le test porte sur le genre normalisé,
 # ce qui couvre « Atelier enfants », « Atelier sonore », « Concert
 # scolaire » et « Ciné-concert scolaire » sans les énumérer.
 GENRES_ECARTES = ("atelier", "scolaire")
@@ -127,7 +127,7 @@ def _plat(el) -> str:
 def _mois(jeton: str) -> Optional[int]:
     """Numéro du mois d'après une abréviation, si elle est sans ambiguïté.
 
-    Le site abrège librement — sep, fév, déc, juil. On résout par préfixe
+    Le site abrège librement - sep, fév, déc, juil. On résout par préfixe
     unique, ce qui accepte toutes ces formes sans les énumérer.
     """
     j = _norm(jeton).rstrip(".")
@@ -140,7 +140,7 @@ def _seances(txt: str) -> List[Tuple[str, Optional[str]]]:
 
     Trois formes coexistent : « Jeu. 1 oct 2026 à 20h », « Jeu. 18 fév
     2027 de 9h30 à 12h », et « Ven. 4 déc 2026 Horaire communiqué
-    ultérieurement » — sans heure. L'heure est cherchée entre une date et
+    ultérieurement » - sans heure. L'heure est cherchée entre une date et
     la suivante, jamais au-delà : sinon la seconde séance hériterait de
     l'horaire de la première.
     """
@@ -233,7 +233,7 @@ def fetch() -> List[Event]:
 
     if not cartes:
         print(f"[Auditorium] aucune carte lue sur {BASE}/fr/agenda "
-              "— structure modifiée ?", file=sys.stderr)
+              "- structure modifiée ?", file=sys.stderr)
         return []
 
     events: List[Event] = []
@@ -302,5 +302,5 @@ def fetch() -> List[Event]:
               file=sys.stderr)
     if not events:
         print(f"[Auditorium] {len(cartes)} carte(s) lues, aucune séance "
-              "retenue — structure modifiée ?", file=sys.stderr)
+              "retenue - structure modifiée ?", file=sys.stderr)
     return events

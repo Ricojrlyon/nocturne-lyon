@@ -1,5 +1,5 @@
 """Le collecteur du Petit Salon (BUG-10) : sa programmation depuis la refonte
-du site, le 2 octobre 2026 — une carte par soirée, datée « ven 02 Oct ».
+du site, le 2 octobre 2026 - une carte par soirée, datée « ven 02 Oct ».
 Pages synthétiques, qui reprennent la structure du vrai site (classes
 « card-event »)."""
 import unittest

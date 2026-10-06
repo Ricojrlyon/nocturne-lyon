@@ -4,7 +4,7 @@ The agenda page is a JS-rendered SPA. Diagnostic confirmed the WordPress
 REST API exposes /wp/v2/evenement (singular, French). This scraper hits
 that endpoint to get dates, titles and images.
 
-Time extraction: the time is NOT in the WP REST API response — it lives
+Time extraction: the time is NOT in the WP REST API response - it lives
 in the WordPress theme template. Strategy: fetch each event's detail page
 and parse the time from the rendered HTML.
 
@@ -226,7 +226,7 @@ def _extract_image(post: dict) -> Optional[str]:
 
 def _diagnose_first_post():
     print("=" * 60, file=sys.stderr)
-    print("DIAGNOSTIC: Le Transbordeur — inspecting first post", file=sys.stderr)
+    print("DIAGNOSTIC: Le Transbordeur - inspecting first post", file=sys.stderr)
     try:
         resp = base_get(SITE + "/wp-json/wp/v2/evenement?per_page=1&_embed=1",
                             timeout=20, headers=HEADERS)
@@ -326,12 +326,12 @@ def fetch() -> List[Event]:
         return []
 
     # Cap horizon: drop events more than ~6 months out BEFORE the
-    # detail-page fetch phase — keeps the daily run fast and the JSON lean.
+    # detail-page fetch phase - keeps the daily run fast and the JSON lean.
     horizon = Date.today() + timedelta(days=180)
     stubs = [s for s in stubs if s["d"] <= horizon]
 
     # Pass 2: fetch each detail page to extract time (cached across runs,
-    # throttled — see scrapers/detail_cache.py)
+    # throttled - see scrapers/detail_cache.py)
     # La clé « affiche » (taille réduite) remplace « image » (l'original) :
     # une fiche gardée en cache sans elle est relue dès le premier passage.
     # « image » reste demandée pour que le cache la conserve : si cette

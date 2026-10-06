@@ -13,14 +13,14 @@ Cache format (venue_arrondissements.json):
   }
 
 Confidence levels:
-  "high"    — postcode matched a Lyon/Villeurbanne arrondissement exactly
-  "low"     — city matched but postcode outside Lyon/Villeurbanne
-  "failed"  — no usable result from Nominatim (retried after 30 days)
-  "skip"    — venue is too generic to geocode (e.g. "Lyon", "Centre-ville")
+  "high"    - postcode matched a Lyon/Villeurbanne arrondissement exactly
+  "low"     - city matched but postcode outside Lyon/Villeurbanne
+  "failed"  - no usable result from Nominatim (retried after 30 days)
+  "skip"    - venue is too generic to geocode (e.g. "Lyon", "Centre-ville")
 
 Dates:
-  "checked_at" — when Nominatim was last queried for this venue
-  "seen_at"    — last run where the venue still had events (refreshed at
+  "checked_at" - when Nominatim was last queried for this venue
+  "seen_at"    - last run where the venue still had events (refreshed at
                  most weekly to keep the committed diff quiet). Entries
                  unseen for 180 days are pruned: venues coming and going
                  with the aggregators shouldn't pile up forever.
@@ -49,7 +49,7 @@ _POSTCODE_ARR: dict[str, str] = {
     "69100": "Villeurbanne",
 }
 
-# Venue names that are too generic to geocode reliably — skip them.
+# Venue names that are too generic to geocode reliably - skip them.
 _SKIP_NAMES = frozenset({
     "lyon", "villeurbanne", "france", "centre-ville",
     "divers", "various", "online", "en ligne",
@@ -137,7 +137,7 @@ def _match_lyon(results: list) -> Optional[dict]:
         if city == "villeurbanne":
             return {"arr": "Villeurbanne", "confidence": "high"}
 
-        # City matched but postcode not a Lyon/Villeurbanne one — nearby suburb
+        # City matched but postcode not a Lyon/Villeurbanne one - nearby suburb
         commune = addr.get("city") or addr.get("town") or "Autre"
         return {"arr": "Autre", "confidence": "low", "commune": commune}
     return None
@@ -146,7 +146,7 @@ def _match_lyon(results: list) -> Optional[dict]:
 def _geocode_one(name: str) -> Optional[dict]:
     """Query Nominatim for a single venue.
 
-    Returns a cache entry dict, or None on a transient network error —
+    Returns a cache entry dict, or None on a transient network error -
     in that case the caller must NOT cache the result, so the venue is
     retried on the next run. ("failed" is reserved for a definitive
     no-result answer from Nominatim.)
@@ -157,7 +157,7 @@ def _geocode_one(name: str) -> Optional[dict]:
 
     results = _search(f"{name}, Lyon, France")
     if results is None:
-        return None  # transient network error — not cacheable
+        return None  # transient network error - not cacheable
 
     entry = _match_lyon(results)
     if entry:
@@ -165,7 +165,7 @@ def _geocode_one(name: str) -> Optional[dict]:
 
     # La requête « …, Lyon, France » biaise Nominatim contre les lieux de
     # Villeurbanne : seconde tentative avant de conclure à l'échec.
-    # (Pause 1,1 s — politique Nominatim 1 req/s.)
+    # (Pause 1,1 s - politique Nominatim 1 req/s.)
     time.sleep(1.1)
     results_v = _search(f"{name}, Villeurbanne, France")
     if results_v:
@@ -173,7 +173,7 @@ def _geocode_one(name: str) -> Optional[dict]:
         if entry:
             return entry
 
-    # No Lyon/Villeurbanne result found — mark as failed so we don't retry
+    # No Lyon/Villeurbanne result found - mark as failed so we don't retry
     # every run, but store commune if we got anything at all
     if results:
         addr = results[0].get("address", {})
@@ -199,7 +199,7 @@ def resolve_new_venues(
         venues: all unique venue names seen in the current run.
         known_venues: optional set of venues already hardcoded in the
             frontend (VENUE_ARRONDISSEMENT). These are skipped even if
-            absent from the cache — no point re-resolving them.
+            absent from the cache - no point re-resolving them.
         verbose: print progress to stdout.
 
     Returns:
@@ -252,7 +252,7 @@ def resolve_new_venues(
 
     if not to_resolve:
         if verbose:
-            print(f"[geo] all {len(venues)} venues already resolved — no requests needed")
+            print(f"[geo] all {len(venues)} venues already resolved - no requests needed")
         if dirty:
             _save_cache(cache)
         return cache
@@ -266,9 +266,9 @@ def resolve_new_venues(
 
         entry = _geocode_one(venue)
         if entry is None:
-            # Transient network error — do not cache, retry next run.
+            # Transient network error - do not cache, retry next run.
             if verbose:
-                print("network error — not cached")
+                print("network error - not cached")
         else:
             entry["checked_at"] = today
             entry["seen_at"] = today

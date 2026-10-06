@@ -5,7 +5,7 @@ le seul club lyonnais au sommet absolu de sa discipline des deux côtés :
 Top 14 pour les hommes, Élite 1 pour les femmes. Ils reçoivent au même
 endroit, 353 avenue Jean Jaurès, Lyon 7e.
 
-LES HOMMES PAR LA BILLETTERIE. Le site du club ne date pas ses matchs —
+LES HOMMES PAR LA BILLETTERIE. Le site du club ne date pas ses matchs -
 sa page « matchs » donne la journée, l'heure et le stade, jamais le jour.
 La billetterie, elle, doit bien dire quand on vient : elle liste les
 treize réceptions de la saison, Top 14 ET coupe d'Europe, chacune avec
@@ -21,8 +21,8 @@ son lien d'achat.
 
 LES FEMMES PAR LA FÉDÉRATION. L'Élite 1 est calée d'un bloc dès l'été :
 les neuf réceptions de la saison ont leur date et leur heure. On passe
-par l'URL STABLE de la FFR — competitions.ffr.fr, qui redirige vers la
-saison en cours — pour en tirer l'identifiant de phase, puis on lit le
+par l'URL STABLE de la FFR - competitions.ffr.fr, qui redirige vers la
+saison en cours - pour en tirer l'identifiant de phase, puis on lit le
 calendrier complet de la poule. Rien à mettre à jour d'une saison sur
 l'autre.
 
@@ -105,8 +105,8 @@ _LETTRES = re.compile(r"[A-Za-zÀ-ÿ]+")
 PUSH = re.compile(r'self\.__next_f\.push\(\[1,\s*"((?:[^"\\]|\\.)*)"\]\)')
 
 
-# Les collecteurs sportifs restent autonomes, sans module commun — c'est
-# voulu —, d'où ces copies : chacune signale ses jumelles. Copie identique
+# Les collecteurs sportifs restent autonomes, sans module commun - c'est
+# voulu -, d'où ces copies : chacune signale ses jumelles. Copie identique
 # dans volley.py, handball.py et asvel_feminin.py : une correction faite ici
 # se reporte là-bas.
 def _norm(t: str) -> str:
@@ -165,7 +165,7 @@ def _hommes(today: Date, horizon: Date) -> List[Event]:
         cartes.append((brut, li))
 
     if not cartes:
-        _alerte("aucune carte sur la billetterie du LOU — la page a changé "
+        _alerte("aucune carte sur la billetterie du LOU - la page a changé "
                 "de forme, il faut rouvrir %s" % BILLETTERIE)
         return []
 

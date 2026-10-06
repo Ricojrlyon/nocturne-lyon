@@ -1,6 +1,6 @@
 """La page avec le fil FRAIS, après la collecte et avant la publication.
 
-Pas de référence ici — les données changent chaque jour — mais ce qui doit
+Pas de référence ici - les données changent chaque jour - mais ce qui doit
 tenir quelles qu'elles soient : la page se charge sans erreur, affiche des
 cartes, et ses compteurs disent le nombre d'événements du fil.
 

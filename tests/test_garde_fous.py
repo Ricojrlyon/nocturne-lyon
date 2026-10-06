@@ -66,7 +66,7 @@ class GardeFous(unittest.TestCase):
 
     def test_le_fil_dit_combien_de_sources_le_site_lit(self):
         # BUG-9 : le pied de page affiche ce nombre. Il suit les listes de
-        # collecteurs — 5 salles et 2 agendas ici —, et compte aussi une
+        # collecteurs - 5 salles et 2 agendas ici -, et compte aussi une
         # salle tombée ce jour-là : le site la lit toujours.
         for salles in (normales(), normales(HEAT=panne)):
             with atelier(J) as a:
@@ -162,7 +162,7 @@ class GardeFous(unittest.TestCase):
             a.lancer(normales(HEAT=panne), agregateurs(vm=panne), github=True)
             journal = a.journal.getvalue()
         for nom in ("HEAT", "Ville Morte"):
-            self.assertIn("::warning title=source en échec::[source en échec] %s — "
+            self.assertIn("::warning title=source en échec::[source en échec] %s - "
                           "RuntimeError: 502 Proxy Error" % nom, journal)
         self.assertIn("EFFONDREMENT : HEAT", journal)
         self.assertNotIn("PANNE", journal)

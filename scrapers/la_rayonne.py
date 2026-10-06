@@ -1,6 +1,6 @@
 """Scraper for La Rayonne / CCO (larayonne.org/agenda).
 
-The site uses client-side JavaScript to filter events by type — the
+The site uses client-side JavaScript to filter events by type - the
 `type=24` URL parameter is NOT processed server-side, so a plain HTTP
 request always returns ALL event types (concerts, formations, ateliers…).
 
@@ -62,7 +62,7 @@ _SKIP_CARD_TYPES = (
     "mémoires vives",
 )
 
-# ── Filter 2: time range embedded in title — definitive formation signal ──
+# ── Filter 2: time range embedded in title - definitive formation signal ──
 # La Rayonne formats formation titles as "Topic [start]h > [end]h".
 # Concerts never embed a HH h > HH h range inside their title.
 _TITLE_TIME_RANGE_RE = re.compile(r"\d{1,2}h\d*\s*(?:>|à|->)\s*\d{1,2}h", re.IGNORECASE)
@@ -102,7 +102,7 @@ def _norm(s: str) -> str:
 
 def _is_formation(title: str, card_text: str) -> bool:
     """Return True if this event is a professional formation / atelier."""
-    # 1. Time range in title (e.g. "18h30 > 20h30") — definitive
+    # 1. Time range in title (e.g. "18h30 > 20h30") - definitive
     if _TITLE_TIME_RANGE_RE.search(title):
         return True
     # 2. Professional keywords in normalised title
@@ -174,7 +174,7 @@ def fetch() -> List[Event]:
             if d_end:
                 date_end_iso = iso(d_end)
 
-        # Extract time — but never from the title (formation titles embed
+        # Extract time - but never from the title (formation titles embed
         # their hours, e.g. "… 18h30 > 20h30", which would pollute the
         # time field). Previous approach card_text.replace(title, "", 1)
         # failed silently when whitespace normalization differed between

@@ -5,8 +5,8 @@ DEUX SOURCES, PARCE QU'UNE SEULE NE PASSE PAS.
   EuroLeague   api-live.euroleague.net, en direct, 19 matchs à domicile
   Betclic      asvel_betclic.json, relevé à la main, 15 matchs
 
-Les deux ensembles sont disjoints par construction — une rencontre
-appartient à une compétition et à une seule — et leur somme fait les 34
+Les deux ensembles sont disjoints par construction - une rencontre
+appartient à une compétition et à une seule - et leur somme fait les 34
 matchs à domicile que le site du club annonce.
 
 POURQUOI LA BETCLIC EST FIGÉE. Les trois chemins qui la portent en ligne
@@ -20,13 +20,13 @@ protection délibérée, pas du scraping.
   Alors on lit le calendrier du club UNE FOIS, à la main, depuis Lyon, et
   on écrit ce qu'on a lu dans asvel_betclic.json. Le fil le publie ensuite
   tous les jours sans rien demander à personne. Le relevé se refait avec
-  « python -m scrapers.asvel_releve » — voir ce module pour le détail.
+  « python -m scrapers.asvel_releve » - voir ce module pour le détail.
 
 LA SALLE, MAINTENANT DONNÉE. L'ASVEL reçoit à l'Astroballe (Villeurbanne)
 et à la LDLC Arena (Décines). L'EuroLeague la donne par match. La LNB, qui
 a bien un champ venue_name, le laisse VIDE sur les 242 rencontres de la
 saison : tant qu'elle servait de source, les matchs de Betclic étaient
-placés à l'Astroballe par soustraction — 20 matchs annoncés à l'Astroballe
+placés à l'Astroballe par soustraction - 20 matchs annoncés à l'Astroballe
 et 14 à la LDLC Arena, dont l'EuroLeague revendiquait 5 et 14, restaient
 15 et 0. Le relevé lit la salle sur la page du club, match par match, et
 confirme la soustraction. La faiblesse est levée : un match délocalisé à
@@ -35,14 +35,14 @@ la LDLC Arena se verra au prochain relevé.
 L'HEURE. L'EuroLeague donne localDate, déjà à l'heure de Paris. Le relevé
 porte l'heure telle que le club l'affiche, elle aussi locale. Reste _lnb(),
 que le relevé appelle pour se comparer : la LNB donne match_time_utc, qu'il
-FAUT convertir — 15:30 UTC le 25 octobre 2026 vaut 16:30 à Lyon, et 17:00
+FAUT convertir - 15:30 UTC le 25 octobre 2026 vaut 16:30 à Lyon, et 17:00
 UTC le 11 octobre vaut 19:00, le changement d'heure tombant entre les deux.
 zoneinfo s'en charge.
 
 LE LIEN DE LA CARTE. Les cartes ouvrent le calendrier du club, qui refuse
 le runner mais répond très bien au navigateur du lecteur. Quand le relevé
-a trouvé une billetterie pour un match — les ventes n'ouvrent qu'à
-l'approche de la rencontre —, la carte mène directement à elle.
+a trouvé une billetterie pour un match - les ventes n'ouvrent qu'à
+l'approche de la rencontre -, la carte mène directement à elle.
 
 LA PÉREMPTION, SURVEILLÉE. Un calendrier figé vieillit : des dates bougent
 en cours de saison, et au 1er septembre suivant le fichier entier est
@@ -68,7 +68,7 @@ HORIZON_DAYS = 180
 PARIS = ZoneInfo("Europe/Paris")
 
 # Le lien des cartes. Le site du club nous refuse, mais il répond très bien
-# au navigateur du lecteur — c'est la page qu'il veut voir.
+# au navigateur du lecteur - c'est la page qu'il veut voir.
 LIEN = "https://ldlcasvel.com/calendrier/"
 
 HEADERS = {
@@ -89,7 +89,7 @@ SALLES = {
 }
 SLUGS = {"Astroballe": "astroballe", "LDLC Arena": "ldlc-arena"}
 
-# Faute de salle par match, la LNB place la Betclic à l'Astroballe — voir
+# Faute de salle par match, la LNB place la Betclic à l'Astroballe - voir
 # le chapeau du module pour la soustraction qui l'établit. Ne sert plus
 # qu'à _lnb(), que seul le relevé appelle : le fichier figé, lui, porte la
 # salle de chaque match.
@@ -105,7 +105,7 @@ RELEVE_PERIME_JOURS = 120
 
 EUROLEAGUE = ("https://api-live.euroleague.net/v2/competitions/E"
               "/seasons/E%d/games?teamCode=ASV")
-# lnb.fr, le site, rend un 403 nginx au runner GitHub — un blocage
+# lnb.fr, le site, rend un 403 nginx au runner GitHub - un blocage
 # d'adresses de centre de données, comme celui du club. Sa page de
 # calendrier demande d'abord un jeton à lnb.fr/api/token, et la première
 # version passait par là : elle échouait donc au premier appel.
@@ -124,8 +124,8 @@ LNB_CLUB = "Lyon-Villeurbanne"
 MOIS_BASCULE = 8
 
 
-# Les collecteurs sportifs restent autonomes, sans module commun — c'est
-# voulu —, d'où ces copies : chacune signale ses jumelles. Même calcul dans
+# Les collecteurs sportifs restent autonomes, sans module commun - c'est
+# voulu -, d'où ces copies : chacune signale ses jumelles. Même calcul dans
 # volley.py, qui rend la saison entière (2026/2027) plutôt que l'année de
 # début. MOIS_BASCULE y vaut aussi 8. Une correction de la bascule se
 # reporte dans les deux.
@@ -249,7 +249,7 @@ def _json_ou_bruit(r, etape: str) -> dict:
 def _lnb(saison: int) -> List[dict]:
     """Matchs à domicile de Betclic ÉLITE vus par la LIGUE : date et heure.
 
-    Le fil ne passe plus par ici — api-prod.lnb.fr rend 403 au runner. Seul
+    Le fil ne passe plus par ici - api-prod.lnb.fr rend 403 au runner. Seul
     scrapers/asvel_releve.py appelle cette fonction, pour comparer ce que
     dit la ligue à ce qu'affiche le club et consigner les écarts.
     """

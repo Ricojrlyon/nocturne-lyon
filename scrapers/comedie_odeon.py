@@ -1,7 +1,7 @@
 """Scraper for the Comédie Odéon (2e, 6 rue Grôlée).
 
 WordPress dont le type « spectacle » n'est PAS exposé à l'API REST : la
-lecture se fait en HTML, sur /spectacle/ — une seule requête, qui porte
+lecture se fait en HTML, sur /spectacle/ - une seule requête, qui porte
 tout ce qu'il faut.
 
   article[data-category]   une carte par spectacle : titre, affiche,
@@ -13,8 +13,8 @@ tout ce qu'il faut.
 
 C'EST LE CALENDRIER QUI FAIT FOI pour les dates, et c'est le choix
 central de ce scraper. La fiche d'un spectacle décrit son rythme en
-français — « Du mercredi au samedi à 20h », « Relâches : 15/10 + 16/10 »
-— et régénérer des dates depuis une telle règle serait fragile. Le
+français - « Du mercredi au samedi à 20h », « Relâches : 15/10 + 16/10 »
+- et régénérer des dates depuis une telle règle serait fragile. Le
 calendrier, lui, contient les jours que le théâtre a lui-même calculés.
 
 Sans lui on n'aurait que la plage : le Petit Bulletin publiait « La
@@ -22,7 +22,7 @@ Machine de Turing » du 2 septembre au 30 octobre, soit une carte par
 jour pendant 53 jours, relâches comprises. C'est précisément la fausse
 continuité que ce scraper corrige.
 
-L'HEURE vient du résumé de la carte — « à 21h », « Les sam. 17h » — qui
+L'HEURE vient du résumé de la carte - « à 21h », « Les sam. 17h » - qui
 la donne pour 17 des 19 spectacles. Pour les autres seulement, on ouvre
 la fiche et l'on y lit l'horaire par défaut, ainsi que les exceptions
 datées de la forme « Le 09/10 à 19h », qui sans cela publieraient une
@@ -64,7 +64,7 @@ HEADERS = {
 # Genres du site → étiquettes que TYPE_BUCKETS (index.html) reconnaît.
 # La traduction est nécessaire, pas décorative : « comédie dramatique »
 # et « seul en scène » ne correspondent à aucun motif et tomberaient dans
-# « autre », donc dans la famille « autres » — alors que ce sont de la
+# « autre », donc dans la famille « autres » - alors que ce sont de la
 # scène. Chaque étiquette ci-dessous a été vérifiée contre le bucket réel.
 GENRES = {
     "one-man-show": "one-man-show",         # → humour
@@ -168,7 +168,7 @@ def _lire_fiche(url: str) -> Optional[dict]:
 def _calendrier(soup: BeautifulSoup) -> List[Tuple[str, str]]:
     """(date ISO, lien du spectacle) pour chaque jour joué.
 
-    Les onglets portent des cellules de DÉBORDEMENT en fin de mois — la
+    Les onglets portent des cellules de DÉBORDEMENT en fin de mois - la
     grille se termine sur les premiers jours du mois suivant. Le
     quantième redescend alors, ce qui signale la bascule.
     """
@@ -234,7 +234,7 @@ def fetch() -> List[Event]:
         # plutôt que de rendre une liste vide qu'aggregate.py ne
         # distinguerait pas d'une panne.
         print(f"[Comédie Odéon] {len(spectacles)} spectacle(s) et "
-              f"{len(jours)} date(s) lus sur {LISTING} — structure modifiée ?",
+              f"{len(jours)} date(s) lus sur {LISTING} - structure modifiée ?",
               file=sys.stderr)
         return []
 
@@ -274,8 +274,8 @@ def fetch() -> List[Event]:
 
     if inconnus:
         # Le calendrier nomme un spectacle absent des cartes : sa série
-        # est sans doute passée. Signalé, car l'inverse — des cartes sans
-        # dates — indiquerait un calendrier mal lu.
+        # est sans doute passée. Signalé, car l'inverse - des cartes sans
+        # dates - indiquerait un calendrier mal lu.
         print(f"[Comédie Odéon] {len(inconnus)} spectacle(s) du calendrier "
               f"sans carte correspondante", file=sys.stderr)
     return events

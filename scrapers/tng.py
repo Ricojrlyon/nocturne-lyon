@@ -4,7 +4,7 @@ Listing page: <a href="/evenement/<slug>/"> wraps all card data.
 Dates et heures : sur la fiche de chaque spectacle, qui liste ses séances
 tout public (voir _seances_publiques).
 Strategy: collect stubs from listing, then fetch each detail page for its
-public sessions — one Event per session.
+public sessions - one Event per session.
 """
 from typing import List, Optional, Tuple
 from datetime import date as Date, timedelta
@@ -232,7 +232,7 @@ def fetch() -> List[Event]:
         })
 
     # Cap horizon: drop events more than ~6 months out BEFORE the
-    # detail-page fetch phase — keeps the daily run fast and the JSON lean.
+    # detail-page fetch phase - keeps the daily run fast and the JSON lean.
     horizon = Date.today() + timedelta(days=180)
     stubs = [s for s in stubs if s["d_start"] <= horizon]
 
@@ -250,7 +250,7 @@ def fetch() -> List[Event]:
                    if debut - MARGE_SEANCES <= d <= fin + MARGE_SEANCES]
         if proches:
             # Celles qui restent à venir ; aucune si le public a vu sa
-            # dernière séance, même quand la carte court encore — ses
+            # dernière séance, même quand la carte court encore - ses
             # derniers jours ne sont plus que des séances scolaires.
             dates = [(d, None, h) for d, h in proches if today <= d <= horizon]
         else:
@@ -274,7 +274,7 @@ def fetch() -> List[Event]:
 
     if not events:
         print("=" * 60, file=sys.stderr)
-        print("DIAGNOSTIC: TNG — 0 events", file=sys.stderr)
+        print("DIAGNOSTIC: TNG - 0 events", file=sys.stderr)
         try:
             resp2 = base_get(URL, timeout=15, headers=HEADERS)
             soup2 = BeautifulSoup(resp2.text, "html.parser")

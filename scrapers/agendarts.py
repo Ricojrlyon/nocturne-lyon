@@ -2,12 +2,12 @@
 
 Le lieu n'a pas de domaine propre : il publie sur un blog WordPress.com,
 un billet par spectacle. L'API publique de WordPress.com le sert sans
-clé, cent billets par page, deux cent vingt en tout — quatre requêtes
+clé, cent billets par page, deux cent vingt en tout - quatre requêtes
 pour toute la programmation.
 
 LA DATE DE PUBLICATION N'EST PAS LA DATE DE L'ÉVÉNEMENT : un billet écrit
 en juin annonce un concert de décembre. La date se lit dans la première
-phrase du billet, en français — « Samedi 28 novembre à 20h ».
+phrase du billet, en français - « Samedi 28 novembre à 20h ».
 
 Cette phrase est lue par DEUX SOURCES INDÉPENDANTES, et c'est le choix
 central de ce scraper :
@@ -15,24 +15,24 @@ central de ce scraper :
   la prose             « samedi 5 septembre à 20h et dimanche 6 à 18h »
   les liens HelloAsso  .../lucas-rocher-samedi-5-septembre-2026-20h
 
-La billetterie porte la date complète — millésime compris — dans son
+La billetterie porte la date complète - millésime compris - dans son
 slug, mais pas toujours : certains liens omettent l'année, abrègent le
 jour de la semaine, ou sont tronqués par la longueur du slug. Elle ne
 peut donc pas remplacer la prose, seulement la corroborer. Sur les 325
 couples jour+mois qu'elle nomme, 324 sont confirmés par la prose ; le
-325e — « samedi 30 à 20h et dimanche 31 mai » — est un cas que la prose
+325e - « samedi 30 à 20h et dimanche 31 mai » - est un cas que la prose
 seule ne peut pas voir, le 30 n'ayant pas de mois collé. On garde donc
 l'union des deux lectures.
 
 LA SUITE COLLÉE AU MOIS. Dans la prose, seule la suite de quantièmes qui
 précède immédiatement un nom de mois compte. Sans cette règle « Les 3
-becs — samedi 19 septembre » produirait un faux 3 septembre : les titres
+becs - samedi 19 septembre » produirait un faux 3 septembre : les titres
 sont pleins de nombres qui ne sont pas des dates.
 
 L'ANNÉE n'est presque jamais écrite. Quatre sources, dans l'ordre, et
 jamais de supposition : le slug HelloAsso, la catégorie du billet (elles
 sont de la forme « novembre 2026 »), un millésime écrit dans le texte,
-enfin la concordance du jour de la semaine — « samedi 28 novembre » ne
+enfin la concordance du jour de la semaine - « samedi 28 novembre » ne
 tombe un samedi qu'une année sur sept. Faute de quoi la date est
 abandonnée plutôt que projetée sur l'année en cours.
 
@@ -47,17 +47,17 @@ L'HEURE est propre à chaque séance : la salle joue le samedi à 20h et le
 dimanche à 18h, et les deux figurent dans la même phrase. On lit donc
 l'heure qui suit CHAQUE mention de mois, pas la première du billet.
 
-LES ANNULATIONS sont annoncées dans la phrase des dates — « la carte
+LES ANNULATIONS sont annoncées dans la phrase des dates - « la carte
 blanche est annulée les 27, 28 et 29 mars mais… ». Une suite introduite
 par une annulation est écartée : publier une séance annulée est une
 faute plus lourde que d'en manquer une.
 
-LE GENRE est en gras en tête de description — « Rap », « Chanson folk,
+LE GENRE est en gras en tête de description - « Rap », « Chanson folk,
 humour », « Quartet jazz ». C'est du texte libre, ramené à une étiquette
 courte par la table de scrapers.categorie, qui sert déjà à cela ; ce
 qu'elle ne reconnaît pas est laissé vide plutôt que deviné. On examine
 les deux premiers <strong>, pas seulement le premier, qui est parfois
-« Evénement ! » ou une grille tarifaire — et pas davantage, les suivants
+« Evénement ! » ou une grille tarifaire - et pas davantage, les suivants
 étant des bios d'artistes.
 """
 from __future__ import annotations
@@ -201,7 +201,7 @@ def _annee(jour: int, mois: int, txt: str, annees_cat: Set[int],
         return int(m.group(1))
     # Concordance du jour de la semaine : « samedi 28 novembre » ne tombe
     # un samedi qu'une année sur sept. Il faut le jour de semaine PROPRE à
-    # ce quantième — celui du 12 dans « samedi 11 et dimanche 12 janvier ».
+    # ce quantième - celui du 12 dans « samedi 11 et dimanche 12 janvier ».
     #
     # Les millésimes candidats partent de l'année de PUBLICATION, non de
     # l'année courante : une salle annonce avant de jouer. Un billet de
@@ -321,5 +321,5 @@ def fetch() -> List[Event]:
               file=sys.stderr)
     if not events:
         print(f"[agend'Arts] {len(billets)} billet(s) lus, aucune date à venir "
-              f"— structure modifiée ?", file=sys.stderr)
+              f"- structure modifiée ?", file=sys.stderr)
     return events

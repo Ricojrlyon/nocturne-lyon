@@ -5,7 +5,7 @@ aggregate.py : il sert à fabriquer asvel_betclic.json, le calendrier figé
 que asvel.py publie ensuite tous les jours sans rien demander à personne.
 
 POURQUOI UN RELEVÉ FIGÉ. ldlcasvel.com et lnb.fr rendent tous deux 403 au
-runner GitHub — un blocage d'adresses de centre de données. L'EuroLeague,
+runner GitHub - un blocage d'adresses de centre de données. L'EuroLeague,
 elle, répond en clair : ses 19 matchs à domicile arrivent donc en direct,
 et seuls les 15 de Betclic manquaient au fil. Une lecture faite à la main
 depuis une adresse lyonnaise, écrite dans un fichier du dépôt, les rend.
@@ -17,7 +17,7 @@ grille JetEngine dont le texte, mis à plat, donne :
 
 La compétition ne s'y lit pas : elle est dans le LOGO de l'item,
 /uploads/2024/09/Betclic-Elite-White-logo-web.png. On la lit là, et on
-écarte tout item dont le logo ne dit rien de connu — mieux vaut un match
+écarte tout item dont le logo ne dit rien de connu - mieux vaut un match
 manquant qu'un match rangé dans la mauvaise compétition.
 
 LA SALLE, ENFIN DONNÉE. La LNB a un champ venue_name, vide sur les 242
@@ -27,10 +27,10 @@ le relevé confirme les 15 à l'Astroballe, et le jour où l'un sera
 délocalisé à la LDLC Arena, le relevé suivant le dira.
 
 LE DÉSACCORD AVEC LA LNB, CONSIGNÉ. Le 2026-09-19, sur 15 matchs, six
-tombent à des dates différentes selon la source — la LNB les place le
+tombent à des dates différentes selon la source - la LNB les place le
 samedi à 20:00, le club le dimanche à 19:00 ou 16:30. On suit le CLUB :
 c'est son propre calendrier à domicile, c'est lui qui loue la salle et
-vend les billets, et c'est sa page que la carte du fil ouvre — un lecteur
+vend les billets, et c'est sa page que la carte du fil ouvre - un lecteur
 qui clique doit y retrouver la date qu'on lui a annoncée. L'écart est
 écrit dans le fichier, match par match, pour qu'on sache lequel des deux
 a bougé la prochaine fois.
@@ -78,7 +78,7 @@ MOIS = {"janvier": 1, "février": 2, "fevrier": 2, "mars": 3, "avril": 4,
         "juil": 7, "aoû": 8, "aou": 8, "sep": 9, "oct": 10, "nov": 11,
         "déc": 12, "dec": 12}
 
-# « dim. 11 Oct. 2026 » — le jour de la semaine est facultatif, la page
+# « dim. 11 Oct. 2026 » - le jour de la semaine est facultatif, la page
 # l'omet dans le bloc « prochain match » qui répète la rencontre à venir.
 DATE = re.compile(r"^(?:[A-Za-zÀ-ÿ]{3,8}\.?\s+)?"
                   r"(\d{1,2})\s+([A-Za-zÀ-ÿ]+)\.?\s+(\d{4})$")
@@ -149,7 +149,7 @@ def releve(voir: bool = False) -> dict:
     r.raise_for_status()
     tout = _rencontres(BeautifulSoup(r.text, "html.parser"))
     if not tout:
-        raise SystemExit("[relevé] aucune rencontre lue — la page a changé "
+        raise SystemExit("[relevé] aucune rencontre lue - la page a changé "
                          "de forme, il faut rouvrir %s" % LIEN)
 
     domicile = [m for m in tout
@@ -167,7 +167,7 @@ def releve(voir: bool = False) -> dict:
 
     betclic = [m for m in domicile if m["competition"] == COMPETITION]
 
-    # La LNB, quand on peut la joindre, pour CONSIGNER les écarts — pas
+    # La LNB, quand on peut la joindre, pour CONSIGNER les écarts - pas
     # pour les corriger. Appariement par adversaire : chaque club ne vient
     # qu'une fois par saison à l'Astroballe.
     saison = _saison()

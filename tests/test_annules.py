@@ -30,7 +30,7 @@ class ReperageDesAnnules(unittest.TestCase):
         self.assertTrue(annule("Soirée annulée"))
 
     def test_ce_qui_n_est_pas_une_annulation(self):
-        # Une soirée qui a bien lieu, avec une autre artiste — même quand
+        # Une soirée qui a bien lieu, avec une autre artiste - même quand
         # l'annonce du remplacement emprunte la forme d'une annulation.
         self.assertFalse(annule("Almond Butyl - annulé / remplacé par Viviane Cavale"))
         self.assertFalse(annule("Almond Butyl (annulé) - remplacé par Viviane Cavale"))

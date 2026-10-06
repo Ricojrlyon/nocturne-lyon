@@ -21,7 +21,7 @@ from .base import Event
 
 # Même graphie que le Petit Bulletin et que VENUE_ARRONDISSEMENT : c'est
 # ce qui permet à la dédup de regrouper les deux sources, qui indexe par
-# (lieu canonique, jour) — voir dedup.py.
+# (lieu canonique, jour) - voir dedup.py.
 VENUE = "Improvidence"
 SLUG = "improvidence"
 SHOP = "https://improvidence.mapado.com"
@@ -32,7 +32,7 @@ CITY = "Lyon"                   # Improvidence exploite aussi Bordeaux
 # catégories du Petit Bulletin classent MAL ces spectacles : « impro »
 # tombe dans le bucket jazz du frontend (son motif contient \bimpro\b) et
 # « classique et lyrique » dans classique. « café-théâtre » tombe dans
-# humour, ce qui est juste — et ne contient pas « impro » comme mot isolé,
+# humour, ce qui est juste - et ne contient pas « impro » comme mot isolé,
 # donc n'est pas capté au passage par le bucket jazz.
 CATEGORY = "café-théâtre"
 

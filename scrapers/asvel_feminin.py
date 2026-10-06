@@ -11,18 +11,18 @@ serveur, et chaque rencontre y tient sur une ligne de la même forme :
 
 DEUX MARQUEURS DU DOMICILE, ET ON EXIGE LES DEUX. Le club reçoit quand il
 est écrit à GAUCHE du « VS », et la page ne nomme alors la SALLE que dans
-ce cas — un déplacement n'en porte aucune. On vérifie donc les deux :
+ce cas - un déplacement n'en porte aucune. On vérifie donc les deux :
 faute de quoi une refonte qui inverserait l'ordre des équipes publierait
 onze déplacements comme des matchs lyonnais.
 
 UNE SEULE SALLE, mais pas celle des hommes : le Palais des Sports de
-Gerland, 350 avenue Jean Jaurès, Lyon 7e — et non l'Astroballe. La page
+Gerland, 350 avenue Jean Jaurès, Lyon 7e - et non l'Astroballe. La page
 l'abrège en « Palais des Sports », qui ne désigne rien tout seul : chaque
 ville en a un. On le réécrit donc en toutes lettres.
 
 PAS DE COUPE D'EUROPE cette saison dans cette page : les 22 rencontres
 annoncées sont toutes de La Boulangère Wonderligue, 11 à domicile et 11
-au dehors. Si une coupe s'y ajoutait, elle passerait par le même chemin —
+au dehors. Si une coupe s'y ajoutait, elle passerait par le même chemin -
 le sous-titre porte le nom de la compétition, lu sur la ligne.
 
 Le site est derrière Cloudflare, comme celui des hommes qui, lui, rend
@@ -57,7 +57,7 @@ SALLES = {"palais des sports": "Palais des Sports de Gerland"}
 SLUGS = {"Palais des Sports de Gerland": "palais-des-sports-gerland"}
 
 # Les compétitions qu'on sait nommer. Le reste de la queue de ligne est du
-# bruit — numéro de journée, et sur le bloc « prochain match » un compte à
+# bruit - numéro de journée, et sur le bloc « prochain match » un compte à
 # rebours en toutes lettres.
 COMPETITIONS = (
     ("wonderligue", "La Boulangère Wonderligue"),
@@ -76,8 +76,8 @@ LIGNE = re.compile(
     r"(.*)$")
 
 
-# Les collecteurs sportifs restent autonomes, sans module commun — c'est
-# voulu —, d'où ces copies : chacune signale ses jumelles. Copie identique
+# Les collecteurs sportifs restent autonomes, sans module commun - c'est
+# voulu -, d'où ces copies : chacune signale ses jumelles. Copie identique
 # dans volley.py, handball.py et rugby.py : une correction faite ici se
 # reporte là-bas.
 def _norm(t: str) -> str:
@@ -98,7 +98,7 @@ def _lignes(soup: BeautifulSoup) -> List[str]:
 
     On retient le plus PETIT élément dont le texte a la forme voulue : la
     page imbrique ses conteneurs, et un ancêtre colle aussi bien que son
-    enfant. C'est la donnée qui sert de repère, pas les classes — elles
+    enfant. C'est la donnée qui sert de repère, pas les classes - elles
     sont celles d'un thème WordPress et changeront sans prévenir.
     """
     out, vus = [], []
@@ -128,7 +128,7 @@ def fetch() -> List[Event]:
 
     lignes = _lignes(BeautifulSoup(r.text, "html.parser"))
     if not lignes:
-        print("[ASVEL F] aucune ligne de match reconnue sur %s — la page a "
+        print("[ASVEL F] aucune ligne de match reconnue sur %s - la page a "
               "probablement changé de forme" % URL, file=sys.stderr)
         return []
 

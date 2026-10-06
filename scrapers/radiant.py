@@ -175,7 +175,7 @@ def fetch() -> List[Event]:
         if "/spectacles/" not in href or href.endswith("/spectacles/"):
             continue
         if href in seen_urls:
-            # BUG-23 : la page montre un spectacle deux fois — le bandeau
+            # BUG-23 : la page montre un spectacle deux fois - le bandeau
             # « à la une », SANS genre, puis la liste, avec (« Chanson
             # ETIENNE DAHO … »). La première carte gardée, le genre se
             # perdait, et le concert tombait dans la famille « autres ».
@@ -261,7 +261,7 @@ def fetch() -> List[Event]:
         print(f"[Radiant] scolaires écartés : {', '.join(scolaires)}", file=sys.stderr)
 
     # Cap horizon: keep only dates within ~6 months and drop stubs with no
-    # remaining date BEFORE the detail-page fetch phase — the homepage lists
+    # remaining date BEFORE the detail-page fetch phase - the homepage lists
     # the whole season (150+ events up to 2 years out), which made the daily
     # run slow and the JSON bloated.
     horizon_iso = (Date.today() + timedelta(days=180)).isoformat()
@@ -270,7 +270,7 @@ def fetch() -> List[Event]:
     raw_stubs = [s for s in raw_stubs if s["date_starts"]]
 
     # Pass 2: fetch each unique URL once for time and sessions (cached
-    # across runs, throttled — see scrapers/detail_cache.py)
+    # across runs, throttled - see scrapers/detail_cache.py)
     url_to_fiche: dict = {}
     for stub in raw_stubs:
         url_to_fiche[stub["url"]] = detail_cache.get_details(

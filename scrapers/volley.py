@@ -11,7 +11,7 @@ Nationale 2, et trois équipes y tiennent le haut du pavé lyonnais :
 Onze réceptions chacune sur la saison, soit trente-trois matchs.
 
 UNE SEULE SOURCE, ET C'EST LA FÉDÉRATION. Le site de l'ASUL ne publie pas
-son calendrier — sa page « programme » n'offre qu'un fichier à
+son calendrier - sa page « programme » n'offre qu'un fichier à
 télécharger. La FFVB, elle, exporte le calendrier COMPLET d'un club en
 CSV, saison entière, sur une seule requête :
 
@@ -23,7 +23,7 @@ CSV, saison entière, sur une seule requête :
         0696380;AS CALUIRE ET CUIRE;;;;GYMNASE MADO BONNET;...
 
 Dates ISO, heures locales, salle par match, et le NUMÉRO du club qui
-reçoit — EQA_no — qui dit le domicile sans qu'on ait à lire les noms.
+reçoit - EQA_no - qui dit le domicile sans qu'on ait à lire les noms.
 
 PAR CLUB, PAS PAR POULE. On aurait pu lire les poules (2MA, 3FC) : elles
 donnent les mêmes lignes. Mais un code de poule change chaque saison, et
@@ -31,7 +31,7 @@ une montée ou une descente le change du tout au tout ; le numéro de club,
 lui, ne bouge jamais. Deux requêtes suffisent, une par club, et le
 scraper survivra à une promotion en Élite comme à une descente.
 
-L'ENTITÉ FAIT LE TRI. L'export donne TOUTES les équipes du club — 84
+L'ENTITÉ FAIT LE TRI. L'export donne TOUTES les équipes du club - 84
 rencontres pour l'ASUL, dont les jeunes, la régionale et la
 départementale. La colonne Entité les sépare : ABCCS est l'organisateur
 des championnats de France, LIRA la ligue Auvergne-Rhône-Alpes, ADPVA le
@@ -39,7 +39,7 @@ département. On ne garde qu'ABCCS, c'est-à-dire le niveau national.
 
 LES SALLES SONT UNE LISTE FERMÉE. Un match national délocalisé ailleurs
 serait écarté avec un mot sur stderr plutôt que publié sous un nom qu'on
-n'a pas vérifié — même règle que pour l'ASVEL. Les départementales de
+n'a pas vérifié - même règle que pour l'ASVEL. Les départementales de
 l'ASUL tournent d'ailleurs dans huit gymnases de la ville, tous écartés
 par la règle de l'entité bien avant d'arriver ici.
 """
@@ -125,8 +125,8 @@ DEVELOPPEMENTS = {"ASS": "Association"}
 _LETTRES = re.compile(r"[A-Za-zÀ-ÿ]+")
 
 
-# Les collecteurs sportifs restent autonomes, sans module commun — c'est
-# voulu —, d'où ces copies : chacune signale ses jumelles. Copie identique
+# Les collecteurs sportifs restent autonomes, sans module commun - c'est
+# voulu -, d'où ces copies : chacune signale ses jumelles. Copie identique
 # dans handball.py, rugby.py et asvel_feminin.py : une correction faite ici
 # se reporte là-bas.
 def _norm(t: str) -> str:
@@ -142,7 +142,7 @@ def _joli(nom: str) -> str:
     """« AS CALUIRE ET CUIRE » → « AS Caluire et Cuire ».
 
     La fédération écrit tout en capitales. On rabaisse, en gardant les
-    sigles debout et les particules en minuscules — sauf en tête, où
+    sigles debout et les particules en minuscules - sauf en tête, où
     « Le Mans » doit rester « Le Mans ».
     """
     mots = re.split(r"(\s+)", (nom or "").strip())
@@ -223,7 +223,7 @@ def fetch() -> List[Event]:
         total_national += len(domicile)
         if not domicile:
             _alerte("%s n'a aucun match national en %s : descendu en "
-                    "régionale, ou numéro de club changé — vérifier sur "
+                    "régionale, ou numéro de club changé - vérifier sur "
                     "ffvbbeach.org" % (club, saison))
             continue
 

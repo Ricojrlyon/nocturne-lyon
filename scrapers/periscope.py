@@ -1,10 +1,10 @@
 """Scraper for Le Périscope (periscope-lyon.com/concerts/).
 
-Page structure (re-verified July 2026 — the site did NOT switch to JS
+Page structure (re-verified July 2026 - the site did NOT switch to JS
 rendering, contrary to what a broken run suggested):
 - A list of event cards, each wrapped in an <a href="/concerts/<slug>/">.
 - Inside each card: <h3> title, optional <h4> subtitle, <h5> with date
-  ("Mercredi 15 juill" — note the double-L "juill" abbreviation), then a
+  ("Mercredi 15 juill" - note the double-L "juill" abbreviation), then a
   venue line (div .tsmall.tb600: "Le Périscope"/"Grande Scène", or the
   real off-site venue for summer shows, e.g. "Jardin Envie Partagée quai
   Rambaud - à côté du square Delfosse").
@@ -38,7 +38,7 @@ HEADERS = {
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
-# "Mercredi 06 mai" / "Mercredi 15 juill" — captures day_num, month name
+# "Mercredi 06 mai" / "Mercredi 15 juill" - captures day_num, month name
 DATE_RE = re.compile(
     r"(?:lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)\s+"
     r"(\d{1,2})\s+(\w+)",
@@ -66,7 +66,7 @@ def _smart_year(month: int, day: int) -> int:
         return today.year
     # Grâce de 15 jours (comme tng.py) : une date passée de quelques jours
     # est un listing pas encore purgé de CETTE année, pas l'annonce de
-    # l'année prochaine — sans quoi elle devenait un événement fantôme à +1 an.
+    # l'année prochaine - sans quoi elle devenait un événement fantôme à +1 an.
     return today.year + 1 if (today - candidate).days > 15 else today.year
 
 
@@ -80,7 +80,7 @@ def _scrape_page(soup: BeautifulSoup, seen_urls: set) -> List[Event]:
             href = HOST + href
         if not href.startswith("http"):
             continue
-        # Pages liste, pagination, flux RSS et variantes anglaises — pas
+        # Pages liste, pagination, flux RSS et variantes anglaises - pas
         # des cartes d'événement.
         if href.rstrip("/") in (
                 HOST + "/concerts",
@@ -207,7 +207,7 @@ def fetch() -> List[Event]:
 
     if not events and first_soup is not None:
         print("=" * 60, file=sys.stderr)
-        print("DIAGNOSTIC: Le Périscope — 0 events", file=sys.stderr)
+        print("DIAGNOSTIC: Le Périscope - 0 events", file=sys.stderr)
         links = first_soup.select('a[href*="/concerts/"]')
         print(f"  /concerts/ links: {len(links)}", file=sys.stderr)
         for a in links[:5]:

@@ -83,7 +83,7 @@ class LectureDuSite(unittest.TestCase):
     def test_seances_apres_le_nouvel_an_seulement(self):
         # BUG-12 : la page ne garde que les séances à venir. Plage « du
         # 23/09/2026 au 20/01/2027 », année 2026 : il ne restait à Jules
-        # Robin que « mercredi 20 janvier », écartée à chaque passage — et
+        # Robin que « mercredi 20 janvier », écartée à chaque passage - et
         # au 1er janvier, tous les spectacles à cheval sur deux ans
         # perdaient ainsi leurs séances de l'année neuve.
         cas = [
@@ -144,7 +144,7 @@ class VerificationAntiRobot(unittest.TestCase):
 
     def test_refuse_on_renonce_aussitot_en_le_disant(self):
         # SUIVI-1 : plus d'attente. Le refus n'est pas redemandé, même quand
-        # un nouvel essai aurait été servi — mesuré, il ne l'était jamais
+        # un nouvel essai aurait été servi - mesuré, il ne l'était jamais
         # dans le même passage.
         site = FauxSite({LISTING: CATALOGUE, A: PAGE_A, B: PAGE_B}, {LISTING: [VERIF]})
         with self.assertRaisesRegex(complexe.VerificationAntiRobot, "1 essai"):

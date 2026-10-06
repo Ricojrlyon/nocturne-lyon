@@ -12,7 +12,7 @@ Each event is a card <div class="js-events-month-item ..."> containing:
     </ul>
 
 Dates en mois ABRÉGÉS capitalisés (Juil, Sep, Déc, Jan, Fév…) sans
-année — la saison court sur l'année suivante, d'où l'inférence d'année
+année - la saison court sur l'année suivante, d'où l'inférence d'année
 avec grâce de 15 jours. L'ancienne version (regex sur HTML brut, mois
 complets, titres reconstruits depuis les slugs) est remplacée par un
 parcours BeautifulSoup des cartes : titres réels, artiste en subtitle,
@@ -38,7 +38,7 @@ HEADERS = {
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
-# "ven. 17 Juil | 20:00" — jour numérique puis token mois (abrégé ou complet)
+# "ven. 17 Juil | 20:00" - jour numérique puis token mois (abrégé ou complet)
 DATE_LI_RE = re.compile(r"\b(\d{1,2})\s+([A-Za-zÀ-ÿ]{3,10})")
 TIME_RE = re.compile(r"\b(\d{1,2}):(\d{2})\b")
 
@@ -196,7 +196,7 @@ def fetch() -> List[Event]:
 
     if not events:
         print("=" * 60, file=sys.stderr)
-        print("DIAGNOSTIC: Les Subs — 0 events", file=sys.stderr)
+        print("DIAGNOSTIC: Les Subs - 0 events", file=sys.stderr)
         print(f"  cartes js-events-month-item: {len(cards)}", file=sys.stderr)
         lis = soup.select("div.js-events-month-item ul li")
         print(f"  li de dates: {len(lis)}", file=sys.stderr)
@@ -212,5 +212,5 @@ def fetch() -> List[Event]:
 
 if __name__ == "__main__":
     for e in fetch():
-        print(e.date_start, e.time or "  -  ", "·", e.title, "—",
+        print(e.date_start, e.time or "  -  ", "·", e.title, "-",
               e.subtitle or "", "·", e.category or "", "·", e.url)

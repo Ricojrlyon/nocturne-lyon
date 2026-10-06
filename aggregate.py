@@ -1,13 +1,13 @@
 """Aggregator: run all venue scrapers and write a unified events.json.
 
 Each scraper returns a list of Event objects. Failures in one venue do NOT
-abort the run — the bad venue is skipped, the others succeed. This is
+abort the run - the bad venue is skipped, the others succeed. This is
 critical: in a daily cron job, if one venue's HTML changes you don't want
 the whole pipeline to break.
 
 v34 changes:
   - Removed Célestins, TNP, Croix-Rousse, Comédie Odéon (theatres dropped)
-    — REVENU DEPUIS : Célestins, TNP, Maison de la Danse et Croix-Rousse
+    - REVENU DEPUIS : Célestins, TNP, Maison de la Danse et Croix-Rousse
     la Comédie Odéon sont de nouveau scrappés en direct (sept. 2026). C'étaient les
     quatre plus gros écarts entre ce qu'une salle programme et ce que
     le feed en montrait, chacune remontée sans une seule affiche par le
@@ -65,7 +65,7 @@ from scrapers.dedup import deduplicate, canonical_venue_name
 from scrapers.detail_cache import save_if_dirty as save_detail_cache
 from scrapers.geo import resolve_new_venues
 
-# Venue-specific scrapers — priority 100 (authoritative for their venue).
+# Venue-specific scrapers - priority 100 (authoritative for their venue).
 # Each entry is (display_name, callable returning List[Event]).
 SCRAPERS: list[tuple[str, Callable[[], List[Event]]]] = [
     ("Le Sucre",                le_sucre.fetch),
@@ -113,7 +113,7 @@ FILTRES_DE_SALLE: dict[str, Callable[[str], bool]] = {
     "Marché Gare": marche_gare.exclu,
 }
 
-# Aggregators — priority lower than venue scrapers (lose against them on
+# Aggregators - priority lower than venue scrapers (lose against them on
 # duplicates). Among themselves, higher priority wins.
 # Each entry is (display_name, callable, priority).
 AGGREGATORS: list[tuple[str, Callable[[], List[Event]], int]] = [
@@ -133,7 +133,7 @@ _VENUE_MAP_BLOCK_RE = re.compile(
     re.DOTALL,
 )
 # Une entrée par ligne : 'Nom du lieu': '1er',  // commentaire optionnel
-# Les clés utilisent ' ou " (backreference \1) — les apostrophes dans les
+# Les clés utilisent ' ou " (backreference \1) - les apostrophes dans les
 # noms ("Bar Rock'n Eat") sont entre guillemets doubles dans index.html.
 _VENUE_MAP_ENTRY_RE = re.compile(
     r"""^\s*(['"])(?P<venue>.+?)\1\s*:\s*(['"])(?P<arr>.+?)\3\s*,""",
@@ -145,7 +145,7 @@ def frontend_hardcoded_venues() -> set:
     """Noms de lieux hardcodés dans VENUE_ARRONDISSEMENT (index.html).
 
     En cas d'échec de lecture ou de parsing (refonte d'index.html),
-    retourne un set vide : ces lieux seront géocodés inutilement —
+    retourne un set vide : ces lieux seront géocodés inutilement -
     dégradation sans danger, le frontend ignore le cache pour ses
     entrées en dur.
     """
@@ -153,12 +153,12 @@ def frontend_hardcoded_venues() -> set:
     try:
         html = html_path.read_text(encoding="utf-8")
     except OSError as exc:
-        print(f"[geo] index.html unreadable ({exc}) — no hardcoded venues",
+        print(f"[geo] index.html unreadable ({exc}) - no hardcoded venues",
               file=sys.stderr)
         return set()
     m = _VENUE_MAP_BLOCK_RE.search(html)
     if not m:
-        print("[geo] VENUE_ARRONDISSEMENT not found in index.html — "
+        print("[geo] VENUE_ARRONDISSEMENT not found in index.html - "
               "no hardcoded venues", file=sys.stderr)
         return set()
     venues = {e.group("venue")
@@ -166,7 +166,7 @@ def frontend_hardcoded_venues() -> set:
     if len(venues) < 20:
         # La map réelle compte ~77 entrées : un si petit nombre signale
         # un parser cassé par une refonte d'index.html.
-        print(f"[geo] only {len(venues)} venue(s) parsed from index.html — "
+        print(f"[geo] only {len(venues)} venue(s) parsed from index.html - "
               "parser probably broken, check _VENUE_MAP_*_RE",
               file=sys.stderr)
     return venues
@@ -182,7 +182,7 @@ def frontend_hardcoded_venues() -> set:
 #
 # Ce n'est pas une crainte de principe. Rejoué sur les 106 versions
 # d'events.json de l'historique, le cas s'est produit HUIT fois, réparties
-# sur SEPT runs — le 7 septembre en a perdu deux d'un coup —, et chaque
+# sur SEPT runs - le 7 septembre en a perdu deux d'un coup -, et chaque
 # fois la version a été commitée :
 #
 #   Le Complexe café-théâtre  324 → 0   2026-09-08
@@ -195,7 +195,7 @@ def frontend_hardcoded_venues() -> set:
 #   Le Sucre                   47 → 0   2026-09-07
 #
 # Le Complexe échoue sur le cron et jamais en local, environ un run sur
-# quatre — ce qui ressemble à un blocage du site contre les runners
+# quatre - ce qui ressemble à un blocage du site contre les runners
 # GitHub plutôt qu'à un bug de lecture.
 #
 # LE SEUIL VIENT DE CETTE MESURE. Sur les 105 couples de versions
@@ -203,7 +203,7 @@ def frontend_hardcoded_venues() -> set:
 # aucun autre. Les baisses légitimes les plus fortes de l'historique sont
 # à 33 % (TNG, run de validation local) et 44 % (Auditorium, le jour où
 # ses ateliers ont été filtrés) : un seuil à 40 % ou 50 % les prendrait
-# pour des pannes. Le plancher, lui, n'a jamais rien changé — les huit
+# pour des pannes. Le plancher, lui, n'a jamais rien changé - les huit
 # pannes sont toutes des chutes à zéro depuis un grand nombre ; il est là
 # pour qu'une petite salle à 6 événements qui en perd 5 ne réveille
 # personne.
@@ -229,7 +229,7 @@ EFFONDREMENT_PLANCHER = 10
 # avec un avertissement plus dur.
 #
 # NOCTURNE_FORCER_ECRITURE=1 publie ce qui a ete reellement scrappe, sans
-# rien reprendre : c'est la sortie quand la perte est vraie — salle
+# rien reprendre : c'est la sortie quand la perte est vraie - salle
 # fermee, saison finie. Sur GitHub, c'est la case « Forcer la
 # publication » d'un lancement a la main (OPT-1, voir update.yml).
 
@@ -245,7 +245,7 @@ REPRISE_JOURS_MAX = 7
 # sans un mot avant d'être publié.
 #
 # On refuse donc de publier un fil qui tombe sous les TROIS QUARTS de ce que
-# la veille comptait encore à venir — les événements de la veille passés
+# la veille comptait encore à venir - les événements de la veille passés
 # entre-temps ne sont pas une perte. Rejoué sur les 131 couples de
 # publications consécutives de l'historique (juillet à septembre 2026), la
 # plus forte baisse légitime est de 15 %, le 12 juillet, 631 → 539 ; aucune
@@ -258,11 +258,11 @@ REPRISE_JOURS_MAX = 7
 #
 # Ce garde-fou ne peut qu'EMPÊCHER une publication, jamais modifier le fil.
 # Au pire, le site garde les données de la veille un jour de trop. Le run
-# sort alors en 1 — rouge, avec un courriel —, parce que le site n'a pas été
+# sort alors en 1 - rouge, avec un courriel -, parce que le site n'a pas été
 # mis à jour et qu'il faut qu'un humain regarde.
 #
-# UN BLOCAGE N'EST PAS ÉTERNEL. Une baisse RÉELLE — une source retirée
-# exprès, une fin de saison — ferait sonner le garde-fou chaque matin, le
+# UN BLOCAGE N'EST PAS ÉTERNEL. Une baisse RÉELLE - une source retirée
+# exprès, une fin de saison - ferait sonner le garde-fou chaque matin, le
 # fichier de la veille ne changeant plus : le site resterait figé pour de
 # bon. Passé VOLUME_FIGE_JOURS_MAX jours sans publication, on publie donc
 # quand même, avec une alerte. NOCTURNE_FORCER_ECRITURE=1 publie tout de
@@ -273,14 +273,14 @@ VOLUME_FIGE_JOURS_MAX = 3
 # Une source directe se reconnaît à son HÔTE : tout ce qui n'est ni le
 # Petit Bulletin ni Ville Morte vient du site d'une salle. Les boutiques
 # Mapado (improvidence.mapado.com, espacegerson.mapado.com) en font
-# partie — ce sont les billetteries des salles, pas un agrégateur.
+# partie - ce sont les billetteries des salles, pas un agrégateur.
 _HOTES_AGREGATEURS = ("petit-bulletin.fr", "villemorte.fr")
 
 # LES AGRÉGATEURS AUSSI. Le garde-fou par salle ne compte que les
 # événements DIRECTS, et c'est voulu : un agrégateur qui remonte encore
 # trois dates ne doit pas masquer la chute d'une salle. Mais la même panne
-# frappe un agrégateur, et ce qu'il publie SEUL — les lieux qu'aucun
-# scraper ne couvre — disparaissait alors du site jusqu'au passage
+# frappe un agrégateur, et ce qu'il publie SEUL - les lieux qu'aucun
+# scraper ne couvre - disparaissait alors du site jusqu'au passage
 # suivant : 324 événements pour le Petit Bulletin et 158 pour Ville Morte
 # au 2026-09-30, seize pour cent du fil.
 #
@@ -292,7 +292,7 @@ _HOTES_AGREGATEURS = ("petit-bulletin.fr", "villemorte.fr")
 #   Ville Morte   159 → 0   2026-09-19   502 Proxy Error
 #
 # Les plus fortes baisses normales sont à −21 %, chez l'un comme chez
-# l'autre. Le seuil des salles — moins du quart — attrape donc les deux
+# l'autre. Le seuil des salles - moins du quart - attrape donc les deux
 # pannes et rien d'autre : on reprend la même règle, le même plancher, le
 # même délai de reprise, le même journal et le même forçage. Seule la
 # priorité change à la reprise : un événement repris d'un agrégateur garde
@@ -327,7 +327,7 @@ def _effondrements(nouveaux: List[Event],
     tri, un agrégateur qui remonte encore trois dates masquerait la
     disparition des trois cents autres.
 
-    Sans fichier précédent — première exécution, fichier illisible — il
+    Sans fichier précédent - première exécution, fichier illisible - il
     n'y a pas de point de comparaison et on ne bloque rien.
     """
     try:
@@ -349,8 +349,8 @@ def _effondrements(nouveaux: List[Event],
 
 # LES PETITES SALLES (SUIVI-2). Sous EFFONDREMENT_PLANCHER, le garde-fou
 # ci-dessus ne regarde pas : une salle à six dates qui en perd cinq peut
-# être une vraie fin de programme. Mais quand son COLLECTEUR LÈVE — page
-# introuvable, site en panne —, il n'y a pas de doute : le 2 octobre 2026,
+# être une vraie fin de programme. Mais quand son COLLECTEUR LÈVE - page
+# introuvable, site en panne -, il n'y a pas de doute : le 2 octobre 2026,
 # l'agenda du Petit Salon a répondu 404, et la salle est passée de cinq
 # soirées à deux sur le site, sans reprise ni alerte. Une petite salle dont
 # le collecteur lève reprend donc la veille comme une grande, avec le même
@@ -369,7 +369,7 @@ def _effondrements(nouveaux: List[Event],
 # handball joue dans deux gymnases, le volley dans deux autres. Le fil
 # garde donc les lieux que chaque collecteur a rendus, sous la clé
 # « lieux_des_collecteurs », et un collecteur en échec garde ceux de la
-# veille. Sans cette trace — au premier passage —, son lieu est son nom,
+# veille. Sans cette trace - au premier passage -, son lieu est son nom,
 # ce qui vaut pour toutes les salles.
 def _lieux_des_collecteurs(lieux: dict, chemin: Path,
                            today_iso: str) -> tuple[dict, dict]:
@@ -431,7 +431,7 @@ def _chute_de_volume(n_nouveau: int, chemin: Path,
     """(encore à venir dans le fil précédent, son âge en jours), si le
     nouveau fil tombe sous VOLUME_PART_MIN de ce nombre.
 
-    None quand tout va bien — ou quand il n'y a pas de point de
+    None quand tout va bien - ou quand il n'y a pas de point de
     comparaison, première exécution ou fichier illisible : on ne bloque
     rien sur une référence qu'on n'a pas.
     """
@@ -453,7 +453,7 @@ def _chute_de_volume(n_nouveau: int, chemin: Path,
 def _priorite(url: str) -> int:
     """Priorité de dédup d'un événement déjà publié, relue sur son hôte.
 
-    Les priorités ne survivent pas à events.json — seuls les événements y
+    Les priorités ne survivent pas à events.json - seuls les événements y
     sont écrits. On les reconstruit donc de la même façon que _compte_direct
     reconnaît une source directe.
     """
@@ -485,7 +485,7 @@ def _event_depuis_dict(d: dict) -> Event:
 def _alerte(titre: str, message: str) -> None:
     """Un avertissement qui se voit.
 
-    Sur GitHub Actions, l'annotation remonte en tête de la page du run —
+    Sur GitHub Actions, l'annotation remonte en tête de la page du run -
     sans quoi un run VERT porterait la panne enfouie dans mille lignes de
     journal, et personne ne la verrait jamais. Ailleurs, stderr suffit.
     """
@@ -650,7 +650,7 @@ def _collecter() -> tuple[list[tuple[Event, int]], list, dict]:
 
     Rend les événements, chacun étiqueté de la priorité de sa source, le
     compte rendu (nom, nombre d'événements, erreur) de chaque source, et
-    les lieux que chaque collecteur de salle a rendus — None s'il a levé.
+    les lieux que chaque collecteur de salle a rendus - None s'il a levé.
     Une source qui lève est notée en échec sans arrêter les autres, et
     signalée en tête du passage (SUIVI-2) : enfouie dans le journal d'un
     run vert, la panne du Petit Salon n'aurait été vue de personne.
@@ -675,7 +675,7 @@ def _collecter() -> tuple[list[tuple[Event, int]], list, dict]:
             lieux[name] = None
             print(f"[FAIL] {name}: {tb}", file=sys.stderr)
             _alerte("source en échec",
-                    f"[source en échec] {name} — {type(e).__name__}: {e}")
+                    f"[source en échec] {name} - {type(e).__name__}: {e}")
 
     # 2) Aggregators (multi-venue sources)
     for name, fn, prio in AGGREGATORS:
@@ -689,7 +689,7 @@ def _collecter() -> tuple[list[tuple[Event, int]], list, dict]:
             report.append((name, 0, f"{type(e).__name__}: {e}"))
             print(f"[FAIL aggregator] {name}: {tb}", file=sys.stderr)
             _alerte("source en échec",
-                    f"[source en échec] {name} — {type(e).__name__}: {e}")
+                    f"[source en échec] {name} - {type(e).__name__}: {e}")
     return all_tagged, report, lieux
 
 
@@ -705,9 +705,9 @@ def _ecarter_les_plages_d_agregateur(all_tagged: list[tuple[Event, int]]
     # soirs où le spectacle ne joue pas.
     #
     # La dédup ne peut pas rattraper ça : elle indexe bien la plage sur
-    # tous ses jours, mais il suffit qu'elle gagne UN seul jour — typique-
+    # tous ses jours, mais il suffit qu'elle gagne UN seul jour - typique-
     # ment aujourd'hui, quand la billetterie a déjà retiré la séance en
-    # cours — pour être émise, et elle repeint ensuite toute sa durée.
+    # cours - pour être émise, et elle repeint ensuite toute sa durée.
     #
     # Mesuré à l'introduction de la règle : 2 plages, toutes deux à
     # Improvidence, 22 jours affichés dont 14 en collision directe.
@@ -742,8 +742,8 @@ def _appliquer_les_regles_des_salles(all_tagged: list[tuple[Event, int]]
     aux agrégateurs sur son lieu."""
     # 2.4b) Appliquer aux agrégateurs les exclusions qu'un scraper de
     # salle décide. Un scraper qui écarte volontairement une partie de la
-    # programmation — les visites guidées de l'IAC, hors celles du
-    # week-end — n'obtient rien si l'agrégateur la republie derrière lui.
+    # programmation - les visites guidées de l'IAC, hors celles du
+    # week-end - n'obtient rien si l'agrégateur la republie derrière lui.
     # Mesuré à l'introduction de la règle : neuf visites revenues par le
     # Petit Bulletin sur les vingt-deux entrées du scraper de l'IAC.
     #
@@ -768,7 +768,7 @@ def _a_venir(all_tagged: list[tuple[Event, int]],
     """Étape 3 : sans les événements terminés."""
     # 3) Drop past events. An event is upcoming as long as it hasn't ENDED:
     # keep ongoing runs (date_start in the past but date_end today or later,
-    # e.g. multi-day shows) — several scrapers preserve those on purpose and
+    # e.g. multi-day shows) - several scrapers preserve those on purpose and
     # the frontend knows how to render them.
     return [
         (e, p) for e, p in all_tagged
@@ -780,7 +780,7 @@ def _effacer_les_liens_non_absolus(upcoming_tagged: list[tuple[Event, int]]
                                    ) -> None:
     """Étape 4 : un lien qui n'est pas absolu est vidé, l'événement gardé."""
     # 4) Sanity-check URLs. Any event whose URL is not absolute (http/https)
-    # gets logged and replaced with the empty string — which the frontend
+    # gets logged and replaced with the empty string - which the frontend
     # treats as "no link" rather than rendering a relative href that would
     # 404 on GitHub Pages. We do NOT drop such events; their info is still
     # useful even without a clickable source link.
@@ -788,12 +788,12 @@ def _effacer_les_liens_non_absolus(upcoming_tagged: list[tuple[Event, int]]
     for e, _ in upcoming_tagged:
         if not e.url or not (e.url.startswith("http://")
                              or e.url.startswith("https://")):
-            print(f"[URL!] {e.venue} — non-absolute url for {e.title!r}: "
+            print(f"[URL!] {e.venue} - non-absolute url for {e.title!r}: "
                   f"{e.url!r}", file=sys.stderr)
             e.url = ""
             bad_urls += 1
     if bad_urls:
-        print(f"[URL!] {bad_urls} event(s) had non-absolute URLs — cleared.",
+        print(f"[URL!] {bad_urls} event(s) had non-absolute URLs - cleared.",
               file=sys.stderr)
 
 
@@ -806,14 +806,14 @@ def _sans_titre_vide(upcoming_tagged: list[tuple[Event, int]]
     clean_tagged = []
     for e, p in upcoming_tagged:
         if not e.title or not e.title.strip():
-            print(f"[TITLE!] {e.venue} — empty title for event on {e.date_start} "
-                  f"(url: {e.url!r}) — dropping",
+            print(f"[TITLE!] {e.venue} - empty title for event on {e.date_start} "
+                  f"(url: {e.url!r}) - dropping",
                   file=sys.stderr)
             bad_titles += 1
             continue
         clean_tagged.append((e, p))
     if bad_titles:
-        print(f"[TITLE!] {bad_titles} event(s) had empty titles — dropped.",
+        print(f"[TITLE!] {bad_titles} event(s) had empty titles - dropped.",
               file=sys.stderr)
     return clean_tagged
 
@@ -891,8 +891,8 @@ def _garde_fou_des_salles(unique: List[Event], out: Path, today_iso: str,
                     "Une salle ne perd pas les trois quarts de son programme "
                     "en une nuit : son\n"
                     "scraper a rendu une liste courte sans lever. Si la "
-                    "perte est RÉELLE — salle\n"
-                    "fermée, saison finie —, relancer à la main en cochant "
+                    "perte est RÉELLE - salle\n"
+                    "fermée, saison finie -, relancer à la main en cochant "
                     "« Forcer la publication »\n"
                     "(NOCTURNE_FORCER_ECRITURE=1).")
             if pannes:
@@ -974,7 +974,7 @@ def _garde_fou_des_agregateurs(unique: List[Event], out: Path,
 
 
 # BUG-19 : un événement que sa source dit annulé était publié comme les
-# autres — « (annulé) Electric Doom Synthesis… » (Grrrnd Zero, par Ville
+# autres - « (annulé) Electric Doom Synthesis… » (Grrrnd Zero, par Ville
 # Morte), « [annulé] AG de la RiV » (Biéristan), « Annulé Formation… »
 # (Marché Gare, par la salle). Formes relevées sur 84 jours de fils publiés,
 # de juillet à octobre 2026 : le mot en tête du titre (« Annulé … »,
@@ -1018,7 +1018,7 @@ def _sans_les_annules(unique: List[Event]) -> List[Event]:
     for e in unique:
         if _est_annule(e):
             # Nommé dans le journal : une lecture fautive doit se voir.
-            print(f"[annulés] écarté : {e.venue}, {e.date_start} — {e.title!r}")
+            print(f"[annulés] écarté : {e.venue}, {e.date_start} - {e.title!r}")
             continue
         gardes.append(e)
     return gardes
@@ -1027,7 +1027,7 @@ def _sans_les_annules(unique: List[Event]) -> List[Event]:
 def _geocoder_les_nouveaux_lieux(unique: List[Event]) -> None:
     """Étape 8 : l'arrondissement des lieux que la page ne connaît pas."""
     # 8) Geocode any new venues not already in the frontend's hardcoded
-    #    VENUE_ARRONDISSEMENT map (parsée en direct depuis index.html —
+    #    VENUE_ARRONDISSEMENT map (parsée en direct depuis index.html -
     #    source de vérité unique, voir frontend_hardcoded_venues).
     #    Results are cached in venue_arrondissements.json. Only truly new
     #    venues trigger HTTP requests (1 req/sec). The frontend merges this
@@ -1057,7 +1057,7 @@ def _contenu_du_fil(unique: List[Event], reprises: dict,
         "count": len(unique),
         # Le nombre de sources que lit le site, salles et agendas, pour le
         # pied de page : il suit ainsi les deux listes du haut de ce
-        # fichier, sans chiffre à tenir à la main — la page affichait
+        # fichier, sans chiffre à tenir à la main - la page affichait
         # encore « 17 sources » quand le site en lisait 37.
         "sources": len(SCRAPERS) + len(AGGREGATORS),
         "events": [e.to_dict() for e in unique],
@@ -1088,7 +1088,7 @@ def _publier(payload: dict, report: list, out: Path, today_iso: str) -> bool:
     # A scraper that returns 0 events WITHOUT raising counts as a failure
     # here too: every registered source is a real implementation, so an
     # empty result almost certainly means the site changed layout or the
-    # scraper swallowed a network error internally — several of them catch
+    # scraper swallowed a network error internally - several of them catch
     # their own RequestException and return [] instead of raising.
     all_failed = bool(report) and all(
         err is not None or n == 0 for _, n, err in report
@@ -1098,7 +1098,7 @@ def _publier(payload: dict, report: list, out: Path, today_iso: str) -> bool:
     # l'étape 6b, par reprise du fil précédent. Ne reste ici que le filet
     # d'origine, qui demande que TOUT ait échoué.
     if all_failed and out.exists():
-        print("\n[!] All implemented scrapers failed — keeping previous events.json.",
+        print("\n[!] All implemented scrapers failed - keeping previous events.json.",
               file=sys.stderr)
         wrote = False
     else:
@@ -1143,13 +1143,13 @@ def _resumer(report: list, wrote: bool, nombre: int, out: Path) -> None:
     if wrote:
         print(f"\nWrote {nombre} upcoming events to {out}")
     else:
-        print(f"\nKept previous events.json ({out}) — not overwritten this run.")
+        print(f"\nKept previous events.json ({out}) - not overwritten this run.")
     print("\nPer-venue report:")
     for name, n, err in report:
         if err:
             print(f"  ✗ {name:30s}  ERROR: {err}")
         elif n == 0:
-            print(f"  ! {name:30s}  0 events — possible silent failure "
+            print(f"  ! {name:30s}  0 events - possible silent failure "
                   f"(site changed? request swallowed?)")
         else:
             print(f"  ✓ {name:30s}  {n} events")

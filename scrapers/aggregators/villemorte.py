@@ -1,4 +1,4 @@
-"""Scraper for Ville Morte (agenda.villemorte.fr) — uses Gancio API.
+"""Scraper for Ville Morte (agenda.villemorte.fr) - uses Gancio API.
 
 Ville Morte runs on Gancio, an open-source decentralized event calendar.
 The Gancio API exposes /api/events which returns upcoming events as JSON.
@@ -20,7 +20,7 @@ from ..base import Event, get as base_get
 API_URL = "https://agenda.villemorte.fr/api/events"
 
 # Gancio timestamps are absolute (Unix seconds); render them in the
-# venue's local time, NOT the runner's — GitHub Actions runs in UTC,
+# venue's local time, NOT the runner's - GitHub Actions runs in UTC,
 # which shifted every displayed time by 1-2 hours.
 _TZ = ZoneInfo("Europe/Paris")
 
@@ -79,7 +79,7 @@ def fetch() -> List[Event]:
     Each item has:
       - title (str)
       - slug (str)
-      - start_datetime (int — Unix timestamp in seconds)
+      - start_datetime (int - Unix timestamp in seconds)
       - end_datetime (int, optional)
       - place: { name, address, ... }
       - tags: [str]
@@ -127,7 +127,7 @@ def fetch() -> List[Event]:
         time_str = dt.strftime("%H:%M")
 
         # Multi-day end. A party ending at 02:00 has its end_datetime on the
-        # next calendar day but is NOT a 2-day event — only treat the event
+        # next calendar day but is NOT a 2-day event - only treat the event
         # as multi-day if it actually spans more than ~20 hours.
         date_end = None
         end_ts = item.get("end_datetime")

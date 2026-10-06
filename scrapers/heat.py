@@ -53,7 +53,7 @@ def _smart_year(month: int, day: int) -> int:
         return today.year
     # Grâce de 15 jours (comme tng.py) : une date passée de quelques jours
     # est un listing pas encore purgé de CETTE année, pas l'annonce de
-    # l'année prochaine — sans quoi elle devenait un événement fantôme à +1 an.
+    # l'année prochaine - sans quoi elle devenait un événement fantôme à +1 an.
     return today.year + 1 if (today - candidate).days > 15 else today.year
 
 
@@ -66,10 +66,10 @@ def _normalize_month(s: str) -> Optional[int]:
 def _parse_time(text: str) -> Optional[str]:
     """Extract event time from arbitrary text.
 
-    HEAT shows times like "19:00 — 20:00" or "19h00" near the title.
+    HEAT shows times like "19:00 - 20:00" or "19h00" near the title.
     Accepts evening/night hours only (16h-03h).
     """
-    # "HH:MM" or "HHhMM" — prefer the first one in the plausible range
+    # "HH:MM" or "HHhMM" - prefer the first one in the plausible range
     for m in re.finditer(r"\b(\d{1,2})[h:](\d{2})\b", text):
         hh, mm = int(m.group(1)), int(m.group(2))
         if (16 <= hh <= 23) or (hh <= 3):
@@ -93,8 +93,8 @@ def _fetch_detail_time(url: str) -> Optional[str]:
         # site, « Afterwork : Happy Hour de 17:30 à 20:00 », est hors de
         # lui, et passait pour l'heure de chaque événement relu.
         zone = soup.find("article") or soup
-        # L'heure de DÉBUT a sa balise : « 11:00 — 00:00 » s'écrit
-        # span.hour-start, span.hour-end. Elle vaut à toute heure — un
+        # L'heure de DÉBUT a sa balise : « 11:00 - 00:00 » s'écrit
+        # span.hour-start, span.hour-end. Elle vaut à toute heure - un
         # marché de 11:00 à 19:00 était publié à 19:00, son heure de fin,
         # _parse_time n'acceptant que le soir.
         debut = zone.select_one(".hour-start")
@@ -190,11 +190,11 @@ def fetch() -> List[Event]:
                        "category": category, "image": image})
 
     # Cap horizon: drop events more than ~6 months out BEFORE the
-    # detail-page fetch phase — keeps the daily run fast and the JSON lean.
+    # detail-page fetch phase - keeps the daily run fast and the JSON lean.
     horizon = Date.today() + timedelta(days=180)
     stubs = [s for s in stubs if s["date"] <= horizon]
 
-    # Fetch detail pages for time (cached across runs, throttled — see
+    # Fetch detail pages for time (cached across runs, throttled - see
     # scrapers/detail_cache.py)
     events: List[Event] = []
     for stub in stubs:
@@ -214,7 +214,7 @@ def fetch() -> List[Event]:
 
     if not events:
         print("=" * 60, file=sys.stderr)
-        print("DIAGNOSTIC: HEAT — 0 events", file=sys.stderr)
+        print("DIAGNOSTIC: HEAT - 0 events", file=sys.stderr)
         links = soup.select('a[href*="/events/"]')
         print(f"  /events/ links: {len(links)}", file=sys.stderr)
         for a in links[:5]:

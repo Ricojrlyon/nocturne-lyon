@@ -3,7 +3,7 @@
 Le site tourne sous Roadiz, dont l'API Platform est PUBLIQUE : son
 robots.txt interdit /api/docs mais pas /api, et /api/docs.json rend la
 spécification OpenAPI complète. On lit donc une API JSON documentée
-plutôt que du HTML — le cas le plus confortable du dépôt.
+plutôt que du HTML - le cas le plus confortable du dépôt.
 
   /api/event_dates  une ligne par REPRÉSENTATION, avec l'horaire exact,
                     le spectacle et le lieu complet (nom, slug, adresse)
@@ -11,12 +11,12 @@ plutôt que du HTML — le cas le plus confortable du dépôt.
 
 Les deux appels sont nécessaires : la sérialisation des event_dates
 n'embarque ni les documents ni les tags du spectacle. C'est justement ce
-que le Petit Bulletin ne donnait pas — il remontait cette salle sans une
+que le Petit Bulletin ne donnait pas - il remontait cette salle sans une
 seule image, alors que l'API en a une pour chacun de ses spectacles.
 
 ATTENTION AU LIEU. Les Célestins programment HORS LES MURS : sur les 228
 représentations des six prochains mois, 17 se jouent au TNP, au TNG et
-au Théâtre de la Croix-Rousse — dont une salle que nocturne scrappe
+au Théâtre de la Croix-Rousse - dont une salle que nocturne scrappe
 déjà. Les publier sous « Célestins » créerait des doublons attribués au
 mauvais lieu, que la déduplication ne rattraperait pas puisqu'elle
 regroupe justement PAR lieu. D'où `_chez_eux`, appliqué au lieu que
@@ -30,7 +30,7 @@ Mesuré à l'écriture : 211 représentations gardées sur 228, et les 17
 écartées sont exactement les trois salles extérieures.
 
 Pagination : l'API plafonne à 50 éléments par page quoi qu'on demande
-dans itemsPerPage — une demande de 400 en rend 50. Il faut donc paginer,
+dans itemsPerPage - une demande de 400 en rend 50. Il faut donc paginer,
 sans quoi on ne verrait qu'un mois de programmation.
 """
 from __future__ import annotations
@@ -77,15 +77,15 @@ TYPES = {
 }
 
 # Le type « other » est ÉCARTÉ. Il ne porte pas des spectacles mais les à-côtés
-# d'une journée portes ouvertes — « Bar et restauration », une station d'écoute
+# d'une journée portes ouvertes - « Bar et restauration », une station d'écoute
 # de podcast dans le hall. Publier une carte « Bar et restauration » n'aurait
 # pas de sens, et c'est la même ligne que pour les formations professionnelles
 # de La Rayonne : une programmation parallèle, pas un choix éditorial.
 TYPES_ECARTES = {"other"}
 
 # Tags de genre qui l'emportent sur le type. Le vocabulaire des tags est
-# surtout fait de noms de salle et de tranches d'âge — « Grande salle »,
-# « dès 15 ans » — d'où cette liste courte plutôt qu'une lecture générale.
+# surtout fait de noms de salle et de tranches d'âge - « Grande salle »,
+# « dès 15 ans » - d'où cette liste courte plutôt qu'une lecture générale.
 TAGS_GENRE = {
     "danse": "danse",
     "musique": "musique",
@@ -128,7 +128,7 @@ def _pages(session: requests.Session, chemin: str, params: dict) -> List[dict]:
         if len(lot) < PAGE_SIZE:
             break
     else:
-        print(f"[Célestins] {MAX_PAGES} pages atteintes sur {chemin} — "
+        print(f"[Célestins] {MAX_PAGES} pages atteintes sur {chemin} - "
               f"pagination probablement tronquée", file=sys.stderr)
     return out
 

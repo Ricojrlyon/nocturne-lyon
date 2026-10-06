@@ -85,7 +85,7 @@ VENUE_CANONICAL: dict[str, list[str]] = {
     "Comédie Odéon":          ["comedie odeon", "la comedie odeon",
                                "theatre comedie odeon"],
     # PAS d'alias « croix rousse » nu : c'est un QUARTIER de Lyon avant
-    # d'être une salle, et il capturerait tout lieu ainsi nommé — un
+    # d'être une salle, et il capturerait tout lieu ainsi nommé - un
     # marché, un bar. Seules les formes qui désignent le théâtre.
     "Théâtre de la Croix-Rousse": ["theatre de la croix rousse",
                                    "theatre croix rousse", "txr"],
@@ -107,7 +107,7 @@ VENUE_CANONICAL: dict[str, list[str]] = {
     "Grrrnd Zero":            ["grrrnd zero", "grrnd zero", "grrrnd-zero",
                                "grrrnd zero fort"],
     "L'Épicerie Moderne":     ["epicerie moderne"],
-    # Added in v34.2 — venues seen in Ville Morte we want in specific groups
+    # Added in v34.2 - venues seen in Ville Morte we want in specific groups
     "A Thou Bout d'Chant":    ["a thou bout d chant", "thou bout d chant",
                                "a thoubout d chant"],
     "Boskop":                 ["boskop"],
@@ -129,7 +129,7 @@ VENUE_CANONICAL: dict[str, list[str]] = {
     "Musée des Beaux-Arts":   ["musee des beaux arts", "musee des beaux-arts",
                                "musee des beaux arts de lyon", "mba lyon",
                                "musee beaux arts"],
-    # Le Petit Bulletin publie ce lieu sous deux noms — « IAC
+    # Le Petit Bulletin publie ce lieu sous deux noms - « IAC
     # Villeurbanne » et « Institut d'Art Contemporain », ce dernier avec
     # une apostrophe échappée restée dans la donnée. Sans cette entrée,
     # le dédoublonnage y voyait deux salles, et le regroupement par jour
@@ -209,7 +209,7 @@ def canonical_venue_name(venue_str: str) -> str:
 
 
 def _venue_key(venue: str) -> str:
-    """Canonical key for grouping — same canonical form, normalized.
+    """Canonical key for grouping - same canonical form, normalized.
 
     Two venues that share a canonical display name get the same key here,
     which is what makes events from different sources cluster together.
@@ -247,7 +247,7 @@ def _title_similarity(a: str, b: str) -> float:
             return 1.0
     # Un titre qui n'est autre que le titre CITÉ de l'autre (BUG-15) :
     # l'Opéra écrit « The Very Big Experimental Toubifri Orchestra "Le
-    # Lac" », le Petit Bulletin « Le Lac » — réduit à « lac », sous les
+    # Lac" », le Petit Bulletin « Le Lac » - réduit à « lac », sous les
     # quatre lettres du test d'inclusion.
     for long_, court in ((a, nb), (b, na)):
         if any(_normalize_text(m.group(1)) == court
@@ -260,9 +260,9 @@ def _title_similarity(a: str, b: str) -> float:
 _TITRE_CITE = re.compile(r'["«“]\s*([^"»”]+?)\s*["»”]')
 
 
-# Titles that legitimately recur at several venues on the same day —
+# Titles that legitimately recur at several venues on the same day -
 # the cross-venue (secondary) pass must NEVER merge them. Compared on
-# normalized form (lowercase, accents stripped — see _normalize_text).
+# normalized form (lowercase, accents stripped - see _normalize_text).
 GENERIC_TITLES = frozenset({
     "fete de la musique", "concert", "karaoke", "jam session", "atelier",
     "soiree", "projection", "exposition", "vernissage",
@@ -348,7 +348,7 @@ def _seances_distinctes(a: Event, prio_a: int, b: Event, prio_b: int) -> bool:
     """Deux séances distinctes du même spectacle, plutôt qu'un doublon ?
 
     Le critère est la SOURCE, pas l'écart d'horaire. Au sein d'une même
-    source — même priorité, donc même scraper ou même agrégateur — deux
+    source - même priorité, donc même scraper ou même agrégateur - deux
     horaires connus et différents sont toujours deux représentations : une
     source ne publie pas deux fois la même séance. Entre deux sources en
     revanche, un écart d'horaire est banal (20:00 chez la salle, 20:30 au
@@ -389,7 +389,7 @@ def _plage_et_seance(a: Event, prio_a: int, b: Event, prio_b: int) -> bool:
 
     Un accrochage de six mois et une conférence d'une heure ne sont pas le
     même événement, même si le titre concorde et même s'ils tombent le même
-    jour — c'est au contraire le cas ORDINAIRE, le vernissage ou la
+    jour - c'est au contraire le cas ORDINAIRE, le vernissage ou la
     conférence inaugurale portant le nom de l'exposition qu'ils ouvrent.
 
     Mesuré aux Beaux-Arts : « Musée sentimental », du 11 septembre au 14
@@ -401,7 +401,7 @@ def _plage_et_seance(a: Event, prio_a: int, b: Event, prio_b: int) -> bool:
     d'une même priorité, une plage longue et une date unique sont deux
     publications volontairement distinctes. Entre deux sources, un
     agrégateur qui résume une série en plage doit continuer de fusionner
-    avec les dates que la salle publie — c'est tout l'objet de la dédup.
+    avec les dates que la salle publie - c'est tout l'objet de la dédup.
     """
     if prio_a != prio_b:
         return False
@@ -485,7 +485,7 @@ def _secondary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Ev
         for ev, prio in group:
             placed = False
             # Short or generic titles ("Concert", "Fête de la musique"…)
-            # legitimately recur at several venues the same day — isolate
+            # legitimately recur at several venues the same day - isolate
             # them in their own cluster, never merge across venues.
             if _is_unmergeable_across_venues(ev.title):
                 clusters.append([(ev, prio)])
@@ -529,10 +529,10 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
       * Si AUCUN scraper de salle ne publie ce jour-là, les agrégateurs se
         départagent entre eux, à leur propre priorité (Petit Bulletin 60
         contre Ville Morte 50). Sans cette bascule, la passe se retirait
-        purement et simplement sur tout lieu qu'on ne scrappe pas — 123
+        purement et simplement sur tout lieu qu'on ne scrappe pas - 123
         salles sur 152 et 394 événements sur 2 717 au 2026-09-14, soit
         quatre salles sur cinq mais un événement sur sept, les salles
-        scrappées étant les grosses — et deux agrégateurs y publiaient le
+        scrappées étant les grosses - et deux agrégateurs y publiaient le
         même spectacle côte à côte. Mesuré sur ce fil : 4 cas,
         dont « Grand-merde » et « GRAND-ME(R)DE / CIE Bleuir Le Cœur » au
         Théâtre de l'Élysée, similarité de titre 0,51 quand les passes 1
@@ -540,7 +540,7 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
         Ce n'est pas un relâchement : les garde-fous ci-dessous ne
         changent pas, et ce sont eux qui font tout le travail. Sur ce même
         fil, les 4 appariements ajoutés sont 4 vrais doublons, et il reste
-        6 collisions non appariées qui n'en sont pas — une visite du
+        6 collisions non appariées qui n'en sont pas - une visite du
         patrimoine contre une biennale, une exposition contre un concert.
         Cinq tiennent à l'égalité des effectifs, la sixième au fait que la
         passe range sur date_start : une plage d'octobre à décembre ne
@@ -559,7 +559,7 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
         Mesuré sur le fil du 2026-09-20 : la Chapelle de la Trinité, le
         15 novembre, où la salle annonce « Ovni baroque » 17:00 et
         « Gaspard » 19:00 quand le Petit Bulletin dit « Ovni Sonore »
-        17:00 et « Fanny Meteier » 19:00 — deux soirées, quatre titres,
+        17:00 et « Fanny Meteier » 19:00 - deux soirées, quatre titres,
         aucune similarité suffisante. La règle des effectifs refusait de
         les toucher, à raison : un atelier de yoga à 10:00 sans
         contrepartie et une visite d'expo à 18:00 sans contrepartie
@@ -574,7 +574,7 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
           - L'événement de priorité basse est écarté.
         Time-safety: if ANY aligned pair has two known times more than
         4 hours apart, the pairing is unreliable (e.g. afternoon kids
-        show vs evening rock concert) — leave the whole group alone.
+        show vs evening rock concert) - leave the whole group alone.
       * If counts differ: ambiguous, leave alone.
 
     Real-world examples this catches in production:
@@ -586,7 +586,7 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
         vs "Extra Bal, un karaoké de la danse" (PB) on each of 3 nights.
       * Toï Toï le Zinc 2026-09-19 : « Zermatt + Marguterie + Don't kill
         the cow » (PB 20:30) vs « Zermatt - EP Release Show » (Ville Morte
-        20:30) — un lieu qu'aucun scraper ne couvre.
+        20:30) - un lieu qu'aucun scraper ne couvre.
     """
     by_venue_date: dict[tuple[str, str], list[tuple[Event, int]]] = defaultdict(list)
     for ev, prio in events_with_prio:
@@ -600,7 +600,7 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
 
 def _apparier_lieu_jour(group: List[Tuple[Event, int]]) -> List[Tuple[Event, int]]:
     """La passe 3 sur UN lieu et UN jour (voir _tertiary_dedup) : ce qu'il
-    en reste, dans l'ordre où elle le rend — les paires à la minute près,
+    en reste, dans l'ordre où elle le rend - les paires à la minute près,
     puis celles de l'alignement, ou à leur place le reste tel quel."""
     if len(group) < 2:
         return group
@@ -623,7 +623,7 @@ def _apparier_lieu_jour(group: List[Tuple[Event, int]]) -> List[Tuple[Event, int
 
 
 def _camps_a_apparier(group: List[Tuple[Event, int]]) -> tuple | None:
-    """Les deux camps d'un lieu et d'un jour, (hauts, bas) — None quand une
+    """Les deux camps d'un lieu et d'un jour, (hauts, bas) - None quand une
     seule source parle, ou que les agrégateurs n'ont pas exactement deux
     niveaux de priorité."""
     SCRAPER_PRIO_MIN = 100  # priorities >= this are venue scrapers
@@ -635,7 +635,7 @@ def _camps_a_apparier(group: List[Tuple[Event, int]]) -> tuple | None:
     if aggs and not scrapers:
         # Lieu qu'aucun scraper ne couvre : les agrégateurs se
         # départagent à leur propre priorité. Exactement DEUX niveaux,
-        # sinon l'alignement n'a pas de sens — et trois agrégateurs au
+        # sinon l'alignement n'a pas de sens - et trois agrégateurs au
         # même endroit le même jour disent rarement la même chose.
         niveaux = sorted({p for _, p in aggs}, reverse=True)
         if len(niveaux) != 2:
@@ -680,7 +680,7 @@ def _paires_a_la_minute(hauts: List[Tuple[Event, int]], bas: List[Tuple[Event, i
 def _alignement_par_effectifs(hauts: List[Tuple[Event, int]],
                               bas: List[Tuple[Event, int]]):
     """Les paires (haut, bas) alignées par ordre de tri, quand les deux
-    camps ont le même effectif — None sinon, ou quand une paire a deux
+    camps ont le même effectif - None sinon, ou quand une paire a deux
     heures connues à plus de 4 h l'une de l'autre."""
     # Counts must match for a deterministic pairing.
     if len(hauts) != len(bas):
@@ -694,7 +694,7 @@ def _alignement_par_effectifs(hauts: List[Tuple[Event, int]],
     # Time-safety check on EVERY aligned pair (previously only N == 1):
     # if any pair has two known times more than 4 hours apart, they're
     # probably distinct events (e.g. afternoon kids show vs evening
-    # rock concert) and the whole alignment is suspect — leave the
+    # rock concert) and the whole alignment is suspect - leave the
     # group alone rather than merge blindly.
     time_mismatch = any(
         h_ev.time and b_ev.time
@@ -751,7 +751,7 @@ def _unifie_orthographes(events: List[Event]) -> None:
     de l'Élysée en avait trois, dont une due à l'antislash du Petit
     Bulletin corrigé à la source juste avant ; il en reste deux, qui ne
     diffèrent que par la forme de l'apostrophe et l'accent de l'É. C'est
-    dire que corriger les sources une à une ne suffit pas — deux graphies
+    dire que corriger les sources une à une ne suffit pas - deux graphies
     également correctes suffisent à scinder une salle.
 
     L'élection se fait d'abord sur les ACCENTS, avant la fréquence. Une
@@ -764,7 +764,7 @@ def _unifie_orthographes(events: List[Event]) -> None:
     run à l'autre.
 
     Ce n'est qu'un filet : la table VENUE_CANONICAL reste le moyen de
-    fixer un nom d'affichage à la main, et elle passe AVANT — un lieu
+    fixer un nom d'affichage à la main, et elle passe AVANT - un lieu
     qu'elle couvre arrive ici avec une seule graphie, et l'élection ne
     trouve rien à faire.
     """
@@ -813,16 +813,16 @@ def deduplicate(tagged_events: List[Tuple[Event, int]]) -> List[Event]:
     """Deduplicate events across sources + canonicalize venue display names.
 
     Three-pass strategy:
-      1. PRIMARY — group by (canonical_venue, date_start), fuzzy-cluster
+      1. PRIMARY - group by (canonical_venue, date_start), fuzzy-cluster
          titles >= 0.7. Catches same-venue duplicates from multiple sources
          when their titles are similar enough.
-      2. SECONDARY — group by date_start only, fuzzy-cluster titles >= 0.85.
+      2. SECONDARY - group by date_start only, fuzzy-cluster titles >= 0.85.
          Catches cross-venue duplicates (e.g. FeFan reported at Toï Toï by
          one source and at "Dans toute la ville" by another).
-      3. TERTIARY — at each (venue, date), if N venue-scraper events ==
+      3. TERTIARY - at each (venue, date), if N venue-scraper events ==
          N aggregator events, pair by sort order. Catches duplicates where
          the venue scraper has a lineup-style title ("ARTIST1 + ARTIST2 + ...")
-         and the aggregator has an event-name title ("Festival X") — too
+         and the aggregator has an event-name title ("Festival X") - too
          different for fuzzy matching. Sur un lieu qu'aucun scraper ne
          couvre, ce sont les deux agrégateurs qui s'apparient entre eux.
 

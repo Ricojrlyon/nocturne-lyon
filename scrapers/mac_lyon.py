@@ -1,13 +1,13 @@
-"""Scraper for the macLYON — Musée d'art contemporain (6e, Cité internationale).
+"""Scraper for the macLYON - Musée d'art contemporain (6e, Cité internationale).
 
 Drupal sans JSON:API, mais dont la LISTE suffit, et c'est le choix
 central de ce scraper : elle porte le titre, le sous-titre, la période,
-l'affiche ET le type de chaque entrée. Aucune fiche à ouvrir — deux
+l'affiche ET le type de chaque entrée. Aucune fiche à ouvrir - deux
 requêtes pour toute la programmation.
 
 Elle est même plus complète que les fiches. Le concert de musique de
-chambre n'a AUCUN champ de date sur la sienne — ni « Date », ni
-« Informations horaires » — et sa date, « Samedi 17 octobre 2026 », n'est
+chambre n'a AUCUN champ de date sur la sienne - ni « Date », ni
+« Informations horaires » - et sa date, « Samedi 17 octobre 2026 », n'est
 écrite que sur la liste. Lire les fiches ferait donc perdre un
 événement, pas en gagner un.
 
@@ -22,13 +22,13 @@ titre que « Exposition » ou « Concert ». Les deux entrées ainsi marquées,
 
 soit précisément les deux expositions que nocturne scrappe déjà chez leur
 véritable hôte. Sans ce filtre elles seraient publiées deux fois, sous
-deux lieux différents — et la déduplication ne pourrait rien y voir,
+deux lieux différents - et la déduplication ne pourrait rien y voir,
 puisqu'elle groupe PAR lieu.
 
 Le champ « Lieu » des fiches dit la même chose, mais en prose (« Au Musée
 des Beaux-Arts de Lyon. », « À l'Institut d'art contemporain de
 Villeurbanne - IAC »), et l'un de ses libellés maison mentionne « Musée
-d'art contemporain » — un mot que porte aussi l'Institut d'art
+d'art contemporain » - un mot que porte aussi l'Institut d'art
 contemporain. Le marqueur de la liste est plus sûr parce qu'il est
 catégoriel et non descriptif.
 
@@ -77,7 +77,7 @@ TYPES = {
     "exposition": "exposition",
     "concert":    "concert",           # → musique
     "visite":     "visite",            # → expo
-    # Une nocturne de musée est une ouverture du soir — exposition, DJ
+    # Une nocturne de musée est une ouverture du soir - exposition, DJ
     # sets, open air. Rangée en « expos » comme celles des Beaux-Arts,
     # faute de bucket plus juste pour du musée après la tombée du jour.
     "nocturne":   "exposition",
@@ -86,10 +86,10 @@ TYPES = {
     "invitation": "exposition",
 }
 
-# « Du 11 septembre au 14 mars 2027 » — l'année du début est facultative.
+# « Du 11 septembre au 14 mars 2027 » - l'année du début est facultative.
 _PERIODE = re.compile(r"du\s+(\d{1,2})\s+([a-z]+)(?:\s+(20\d{2}))?\s+"
                       r"au\s+(\d{1,2})\s+([a-z]+)\s+(20\d{2})")
-# « Samedi 17 octobre 2026 » — le jour de la semaine est optionnel.
+# « Samedi 17 octobre 2026 » - le jour de la semaine est optionnel.
 _JOUR = re.compile(r"(?:\w+\s+)?(\d{1,2})\s+([a-z]+)\s+(20\d{2})")
 
 
@@ -114,7 +114,7 @@ def _bornes(txt: str) -> Optional[Tuple[Date, Date]]:
         try:
             an_f = int(af)
             # Année de début sous-entendue : celle de la fin, sauf si le
-            # mois de début lui est postérieur — la période franchit alors
+            # mois de début lui est postérieur - la période franchit alors
             # le nouvel an.
             an_d = int(ad) if ad else (an_f - 1 if MOIS[md] > MOIS[mf] else an_f)
             return Date(an_d, MOIS[md], int(d)), Date(an_f, MOIS[mf], int(f))
@@ -169,7 +169,7 @@ def fetch() -> List[Event]:
     cartes = _cartes(session)
     if not cartes:
         print(f"[macLYON] aucune carte lue sur {BASE}{LISTES[0]} "
-              "— structure modifiée ?", file=sys.stderr)
+              "- structure modifiée ?", file=sys.stderr)
         return []
 
     events: List[Event] = []
@@ -222,5 +222,5 @@ def fetch() -> List[Event]:
               file=sys.stderr)
     if not events:
         print(f"[macLYON] {len(cartes)} carte(s) lues, aucune retenue "
-              "— structure modifiée ?", file=sys.stderr)
+              "- structure modifiée ?", file=sys.stderr)
     return events

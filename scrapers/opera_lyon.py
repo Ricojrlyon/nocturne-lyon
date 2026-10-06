@@ -37,7 +37,7 @@ HEADERS = {
 
 # L'Opéra range sa programmation par SAISON, une page par saison, nommée
 # « saison-2026-2027 ». Une saison court de septembre à juillet, et la page
-# de la saison écoulée est retirée du site — vérifié au 2026-09-17, où
+# de la saison écoulée est retirée du site - vérifié au 2026-09-17, où
 # saison-2025-2026 répondait déjà 404.
 #
 # Les adresses étaient écrites en dur, et c'était un piège à retardement :
@@ -56,7 +56,7 @@ def _saisons(aujourdhui: Optional[Date] = None) -> List[str]:
     """Adresses des listings à lire : la saison en cours et la suivante.
 
     La suivante est lue TOUTE L'ANNÉE. Elle répond 404 la plupart du temps
-    — _scrape_url rend alors [] sans bruit — et le jour où l'Opéra la
+    - _scrape_url rend alors [] sans bruit - et le jour où l'Opéra la
     publie, au printemps, elle est reprise sans qu'on ait rien à faire.
     C'est nécessaire et pas seulement prudent : l'horizon de six mois du
     scraper dépasse la fin de saison dès le mois de février.
@@ -74,7 +74,7 @@ URL_CATEGORY_MAP = {
     "danse": "danse",
     "concert": "concert",
     "evenement": "événement",
-    # Une série de concerts — Quatuor Béla, Leïla Martial, le CNSMD. Le
+    # Une série de concerts - Quatuor Béla, Leïla Martial, le CNSMD. Le
     # nom de la série, « underground », n'est pas un genre que la page
     # sache ranger : ses concerts tombaient dans « autres » (BUG-23).
     "opera-underground": "concert",
@@ -140,8 +140,8 @@ def _extract_dates(text: str) -> Tuple[Optional[Date], Optional[Date]]:
 def _par_prefixe(racine, prefixe: str) -> List[Tag]:
     """Éléments dont une classe COMMENCE par le préfixe.
 
-    Le site est un Nuxt : ses classes portent un hash de build —
-    title_VhuBc, date_frXXU, subtitle_ZAgnv — qui change à chaque
+    Le site est un Nuxt : ses classes portent un hash de build -
+    title_VhuBc, date_frXXU, subtitle_ZAgnv - qui change à chaque
     déploiement. Le préfixe, lui, vient du nom de classe source et tient.
 
     Le début compte : « title_ » cherché en sous-chaîne attrape aussi
@@ -157,7 +157,7 @@ def _premier(racine, prefixe: str) -> Optional[Tag]:
 
 
 # Les visites guidées de la maison, écartées comme partout ailleurs dans
-# le fil — les Beaux-Arts en écartent 53, l'Auditorium 56 ateliers, l'IAC
+# le fil - les Beaux-Arts en écartent 53, l'Auditorium 56 ateliers, l'IAC
 # les siennes, le macLYON aussi. Ce ne sont pas des spectacles, elles
 # reviennent plusieurs fois par semaine toute la saison, et elles
 # noieraient la programmation : « Visites découverte commentées » annonce
@@ -191,7 +191,7 @@ def _sans_accents(t: str) -> str:
 def _champ_fiche(soup: BeautifulSoup, nom: str) -> Optional[str]:
     """Valeur d'un champ de la colonne d'informations de la fiche.
 
-    La fiche range ses métadonnées en paires étiquette/valeur — Dates,
+    La fiche range ses métadonnées en paires étiquette/valeur - Dates,
     Tarifs, Lieu, Durée, Âge, Début. On lit l'étiquette et on prend son
     frère suivant, ce qui vaut mieux que de chercher l'information dans
     le texte de la page : « 13h30 » et « 16h30 » y traînent en toutes
@@ -236,7 +236,7 @@ def _seances_jsonld(soup: BeautifulSoup) -> List[list]:
     deux dates, le 18 septembre et le 28 novembre. Mesuré sur les cinq
     productions que le site publiait au 2026-09-17 : 103 jours peints pour
     29 représentations réelles. L'erreur va d'ailleurs dans les deux sens
-    — « La Fille de Madame Angot » ne peignait qu'UN jour pour huit
+    - « La Fille de Madame Angot » ne peignait qu'UN jour pour huit
     représentations, sa plage à cheval sur deux années n'ayant pas été
     reconnue.
 
@@ -284,8 +284,8 @@ _DANS_LES_MURS = re.compile(r"opera de lyon|\bde l.opera\b")
 def _hors_les_murs(lieu: Optional[str]) -> Optional[str]:
     """Salle réelle, quand la production ne se joue pas dans les murs.
 
-    Rend None pour une production jouée à l'Opéra — l'Amphi compris, qui
-    est une salle de la maison —, le nom de la salle quand la fiche n'en
+    Rend None pour une production jouée à l'Opéra - l'Amphi compris, qui
+    est une salle de la maison -, le nom de la salle quand la fiche n'en
     nomme qu'une, et OFFSITE_PLUSIEURS quand elle en nomme plusieurs.
 
     Le suffixe de commune est retiré : « Théâtre Théo Argence -
@@ -354,7 +354,7 @@ def _scrape_url(url: str, suite: bool = False) -> List[dict]:
     # carte : le premier met titre, date et sous-titre DANS le <a>, le
     # second les met à côté, le <a> ne portant plus que l'image et une
     # pastille de genre. Lire le lien ne voyait donc que le premier
-    # gabarit — 5 productions sur 14 au 2026-09-17, les 9 autres, dont
+    # gabarit - 5 productions sur 14 au 2026-09-17, les 9 autres, dont
     # Quatuor Béla et les Concerts du CNSMD, n'ayant jamais existé pour
     # le site.
     #
@@ -415,7 +415,7 @@ def _scrape_url(url: str, suite: bool = False) -> List[dict]:
 
         # L'affiche (BUG-14). Quand le titre est lui-même le lien, le bloc
         # trouvé plus haut s'arrête au texte : l'image est à côté, dans un
-        # autre lien vers la même fiche — les concerts « Opéra Underground »
+        # autre lien vers la même fiche - les concerts « Opéra Underground »
         # n'avaient ainsi jamais d'affiche. On remonte jusqu'au bloc qui la
         # porte, tant qu'il ne porte qu'un titre : jamais celle d'un voisin.
         bloc = carte
@@ -477,7 +477,7 @@ def fetch() -> List[Event]:
                 all_stubs.append(stub)
 
     # Cap horizon: drop events more than ~6 months out BEFORE the
-    # detail-page fetch phase — keeps the daily run fast and the JSON lean.
+    # detail-page fetch phase - keeps the daily run fast and the JSON lean.
     horizon = Date.today() + timedelta(days=180)
     all_stubs = [s for s in all_stubs if s["d_start"] <= horizon]
 
@@ -523,7 +523,7 @@ def fetch() -> List[Event]:
                 events.append(Event(date_start=jour_iso, date_end=None,
                                     time=heure, **commun))
             continue
-        # Pas de représentation annoncée — cela arrive sur les fiches
+        # Pas de représentation annoncée - cela arrive sur les fiches
         # gratuites et sur certains concerts : on retombe sur la plage du
         # listing, et sur l'heure du champ « Début » quand il existe.
         sans_seance.append(stub["title"])
@@ -546,7 +546,7 @@ def fetch() -> List[Event]:
 
     if not events:
         print("=" * 60, file=sys.stderr)
-        print("DIAGNOSTIC: Opéra de Lyon — 0 events", file=sys.stderr)
+        print("DIAGNOSTIC: Opéra de Lyon - 0 events", file=sys.stderr)
         for url in urls:
             try:
                 resp = base_get(url, timeout=15, headers=HEADERS)

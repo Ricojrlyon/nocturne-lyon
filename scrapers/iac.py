@@ -1,6 +1,6 @@
-"""Scraper for the IAC — Institut d'art contemporain (Villeurbanne).
+"""Scraper for the IAC - Institut d'art contemporain (Villeurbanne).
 
-Site artisanal de 2013 — jQuery 1.8.2, scripts datés du 29 mai 2013 —
+Site artisanal de 2013 - jQuery 1.8.2, scripts datés du 29 mai 2013 -
 mais qui a une qualité inattendue : ses dates sont balisées en
 microdonnées. C'est ce qui rend ce scraper possible, car la prose des
 fiches, elle, est un piège : celle du vernissage annonce « jeudi 17
@@ -21,13 +21,13 @@ L'ATTRIBUT itemprop DIT LA FORME de la date, et il faut le lire :
 
 Et cet intervalle n'est PAS une série continue : « Visites en famille »
 va du 11 octobre au 22 novembre, mais ne se joue que ces deux
-dimanches-là. Seul le texte le dit. C'est sans conséquence ici — toutes
+dimanches-là. Seul le texte le dit. C'est sans conséquence ici - toutes
 les fiches à intervalle sont des visites, et la seule qu'on garde est
 celle du week-end, dont le rythme est dans son nom.
 
 CE QU'ON GARDE. Tout, sauf les visites ; et parmi les visites, celles du
-week-end seulement. Le reste — visites sur le pouce, en famille, en LSF,
-visites-ateliers, PASS'Région Senior — est de la médiation en journée.
+week-end seulement. Le reste - visites sur le pouce, en famille, en LSF,
+visites-ateliers, PASS'Région Senior - est de la médiation en journée.
 Les expositions en cours et à venir sont publiées comme des plages.
 
 LES RELÂCHES DE LA VISITE DU WEEK-END sont annoncées dans sa fiche, en
@@ -83,7 +83,7 @@ MOIS = {"janvier": 1, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
         "novembre": 11, "decembre": 12}
 _MOIS_RE = re.compile("|".join(MOIS))
 _RELACHE = re.compile(r"pas\s+de\s+visite")
-# La suite de quantièmes collée au nom du mois — même règle que pour
+# La suite de quantièmes collée au nom du mois - même règle que pour
 # agend'Arts : « les 21 et 22 novembre » donne le 21 et le 22.
 _SUITE = re.compile(r"((?:(?:lundis?|mardis?|mercredis?|jeudis?|vendredis?"
                     r"|samedis?|dimanches?)\s+)?\d{1,2}(?:er)?\s*"
@@ -235,7 +235,7 @@ def fetch() -> List[Event]:
     liens = _fiches_expo(session)
     if not liens:
         print(f"[IAC] aucune exposition lue sur {BASE}{INDEX[0]} "
-              "— structure modifiée ?", file=sys.stderr)
+              "- structure modifiée ?", file=sys.stderr)
         return []
 
     events: List[Event] = []
@@ -320,5 +320,5 @@ def fetch() -> List[Event]:
               file=sys.stderr)
     if not events:
         print(f"[IAC] {len(liens)} exposition(s) lues, aucune date retenue "
-              "— structure modifiée ?", file=sys.stderr)
+              "- structure modifiée ?", file=sys.stderr)
     return events

@@ -1,5 +1,5 @@
 """Les nouveaux essais réseau de base.get (BUG-4) : quand on réessaie,
-combien de fois, et quand on cesse — y compris pour un hôte tombé."""
+combien de fois, et quand on cesse - y compris pour un hôte tombé."""
 import contextlib
 import io
 import unittest

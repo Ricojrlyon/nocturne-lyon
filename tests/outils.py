@@ -132,7 +132,7 @@ class Atelier:
 
     def veille(self, evenements, *, age_jours: int = 1,
                reprises: dict | None = None, lieux: dict | None = None) -> None:
-        """Écrit le fil publié « hier » — ou il y a `age_jours` jours.
+        """Écrit le fil publié « hier » - ou il y a `age_jours` jours.
 
         `lieux` : la trace des lieux de chaque collecteur, absente sinon.
         """

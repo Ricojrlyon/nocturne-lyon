@@ -192,7 +192,7 @@ class TroisiemePasse(unittest.TestCase):
 
     def test_un_reste_inegal_n_est_pas_duplique(self):
         # Le défaut corrigé le 2026-09-20 : après les paires à la minute,
-        # le repli rendait le groupe ENTIER, paires comprises — doublons.
+        # le repli rendait le groupe ENTIER, paires comprises - doublons.
         lieu = "HEAT"
         salle = [evenement(lieu, "Afterwork", J, heure="17:00"),
                  evenement(lieu, "Live set", J, heure="19:00"),

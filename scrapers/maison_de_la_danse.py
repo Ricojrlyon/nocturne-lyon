@@ -7,7 +7,7 @@ niveaux de HTML.
                             affiche, plage de dates, lien
   la fiche de chaque        le LIEU et les dates exactes avec horaires
 
-CRAWL-DELAY. Leur robots.txt demande 10 secondes entre deux requêtes —
+CRAWL-DELAY. Leur robots.txt demande 10 secondes entre deux requêtes -
 aucun autre site du dépôt ne le fait, les autres scrapers tournent à
 0,4 s. C'est respecté ici, et c'est ce qui rend le cache indispensable :
 sans lui, 24 fiches coûteraient quatre minutes À CHAQUE run horaire du
@@ -21,13 +21,13 @@ hors les murs : « SHOUT TWICE » se joue aux Subsistances, salle que
 nocturne scrappe déjà. Publier ces représentations sous « Maison de la
 Danse » créerait des doublons attribués au mauvais lieu, que la dédup ne
 rattraperait pas puisqu'elle regroupe justement PAR lieu. La fiche donne
-le lieu en clair — « Maison de la danse - Grande salle » ou « Les SUBS »
-— et seul le premier est retenu.
+le lieu en clair - « Maison de la danse - Grande salle » ou « Les SUBS »
+- et seul le premier est retenu.
 
 L'ANNÉE ne figure pas dans la table des représentations : on y lit
 « Mercredi 23 » sous un titre « SEPTEMBRE ». Plutôt que d'analyser la
 plage affichée en tête, on essaie les années candidates et on garde
-celle dont le jour de la semaine tombe juste — un 23 septembre n'est un
+celle dont le jour de la semaine tombe juste - un 23 septembre n'est un
 mercredi qu'une année sur cinq ou six, la réponse est donc unique sur
 une fenêtre de trois ans. La date se valide ainsi elle-même, sans
 dépendre d'un second format de date à parser.
@@ -65,11 +65,11 @@ HEADERS = {
 }
 
 # La fiche écrit les mois en toutes lettres, la page de saison les
-# abrège — et pas toujours de la même longueur : « sept. », « fév. »,
+# abrège - et pas toujours de la même longueur : « sept. », « fév. »,
 # « janv. ». Plutôt que d'énumérer les formes, on résout par PRÉFIXE
 # UNIQUE : « fev » ne peut être que février, « sept » que septembre.
 # Une seule paire est ambiguë, juin et juillet, d'où le refus explicite
-# d'un préfixe qui désignerait plusieurs mois — « juil » et « juin »
+# d'un préfixe qui désignerait plusieurs mois - « juil » et « juin »
 # tranchent, « jui » non.
 MOIS_CANON = ("janvier", "fevrier", "mars", "avril", "mai", "juin",
               "juillet", "aout", "septembre", "octobre", "novembre",
@@ -166,7 +166,7 @@ _SAISON = re.compile(r"saison(\d{4})-(\d{4})")
 def _concorde(jour_nom: str, jj: int, mois: int, url: str) -> bool:
     """Le jour de la semaine tombe-t-il juste ce mois-là ? L'année est celle
     de la saison que porte l'adresse de la fiche (« saison2026-2027 »)
-    — d'août à décembre la première, de janvier à juillet la seconde. Sans
+    - d'août à décembre la première, de janvier à juillet la seconde. Sans
     saison lisible, on ne sait pas : la réponse est oui."""
     s = _SAISON.search(url or "")
     if not s:
@@ -202,7 +202,7 @@ def _lire_fiche(url: str) -> Optional[dict]:
             lieu = next((d for d in divs if d), "")
             continue
         # Le titre porte UN mois pour une série courte, mais DEUX pour une
-        # série à cheval — « NOVEMBRE - DÉCEMBRE ». On lit donc une liste,
+        # série à cheval - « NOVEMBRE - DÉCEMBRE ». On lit donc une liste,
         # et l'on avance au mois suivant dès que le quantième recule.
         # Sans ça, les longues séries ne rendaient aucune séance : trois
         # spectacles perdus en silence, dont Slava's Snowshow.
@@ -222,7 +222,7 @@ def _lire_fiche(url: str) -> Optional[dict]:
             if not mj:
                 continue
             jj = int(mj.group(2))
-            # Bascule au mois suivant quand le quantième RECULE — mais
+            # Bascule au mois suivant quand le quantième RECULE - mais
             # aussi quand il se RÉPÈTE sous un autre jour de la semaine :
             # « SACRE » se joue le mercredi 28 octobre puis le samedi
             # 28 novembre, et une comparaison strictement décroissante
@@ -233,7 +233,7 @@ def _lire_fiche(url: str) -> Optional[dict]:
                     and (jj < precedent
                          or (jj == precedent and jour_nom != jour_precedent))):
                 rang += 1
-            # Une série peut aussi SAUTER un mois de sa période — « OCTOBRE -
+            # Une série peut aussi SAUTER un mois de sa période - « OCTOBRE -
             # DÉCEMBRE » sans séance en novembre. Le jour de la semaine
             # désigne alors le bon parmi les suivants, sans jamais revenir
             # en arrière : un samedi 5 est en décembre 2026, pas en novembre.
@@ -287,7 +287,7 @@ def fetch() -> List[Event]:
     if not cartes:
         # Page lisible mais aucune carte : structure changée, ou l'URL de
         # saison déduite ne pointe plus au bon endroit. On le signale.
-        print(f"[Maison de la Danse] aucun spectacle lu sur {url_saison} — "
+        print(f"[Maison de la Danse] aucun spectacle lu sur {url_saison} - "
               f"structure du site ou schéma d'URL modifié ?", file=sys.stderr)
         return []
 
@@ -300,7 +300,7 @@ def fetch() -> List[Event]:
         lieu = _norm(d.get("lieu"))
         if not lieu:
             # Aucun bloc « Lieu » sur la fiche. Les spectacles hors les
-            # murs, eux, le renseignent TOUJOURS — « Les SUBS ». Un bloc
+            # murs, eux, le renseignent TOUJOURS - « Les SUBS ». Un bloc
             # absent veut donc dire « non précisé », et sur la page de
             # saison de la maison le défaut raisonnable est la maison.
             # Journalisé : si un jour ils cessent de renseigner le lieu

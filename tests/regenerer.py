@@ -6,7 +6,7 @@
 
 La collecte figée elle-même n'est pas touchée : seuls les RÉSULTATS
 attendus sont recalculés, avec le code d'aujourd'hui. Relire ensuite le
-diff — git diff --stat tests/donnees — et vérifier que ce qui a changé est
+diff - git diff --stat tests/donnees - et vérifier que ce qui a changé est
 bien ce que l'on voulait changer.
 """
 import sys

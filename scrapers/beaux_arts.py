@@ -1,6 +1,6 @@
 """Scraper for the Musée des Beaux-Arts de Lyon (1er, place des Terreaux).
 
-Drupal sans JSON:API — à la différence du Confluences — mais très
+Drupal sans JSON:API - à la différence du Confluences - mais très
 régulier : une liste paginée, et une fiche par rendez-vous où chaque
 séance occupe sa propre ligne, datée et horodatée.
 
@@ -8,7 +8,7 @@ ON ÉCARTE LES VISITES, ET C'EST LE CHOIX CENTRAL DE CE SCRAPER. Le musée
 programme 321 séances sur six mois, dont 283 sont des visites guidées :
 dans les collections, dans les expositions, d'histoire de l'art, en
 famille, en LSF, du bout des doigts. Trois séances seulement commencent
-à 18h ou plus tard — c'est un programme de journée, de médiation
+à 18h ou plus tard - c'est un programme de journée, de médiation
 scolaire et familiale. Restent une trentaine de rendez-vous qui sont de
 vraies sorties : les nocturnes, les conférences et colloques, « Le musée
 fait son cinéma », les cartes blanches de midi à des chorégraphes et des
@@ -16,21 +16,21 @@ autrices, et les week-ends thématiques.
 
 LE FILTRE PORTE SUR LE TYPE ET SUR LE TITRE, pas sur le seul type. La
 liste range en effet trois séries de visites sous un type qui nomme le
-PUBLIC et non l'activité — « LSF Sourds malentendants », « DBDD Aveugles
-malvoyants », « Activités dans l'exposition » — et neuf visites
+PUBLIC et non l'activité - « LSF Sourds malentendants », « DBDD Aveugles
+malvoyants », « Activités dans l'exposition » - et neuf visites
 passaient. Leur titre, lui, dit « Visite LSF », « Visite du bout des
 doigts », « Visite commentée ». Aucun des rendez-vous gardés ne porte ce
 mot.
 
 LE TYPE VIENT DE LA LISTE, qui le donne sur chaque carte. C'est ce qui
-permet de n'ouvrir que les fiches retenues — une trentaine au lieu de
+permet de n'ouvrir que les fiches retenues - une trentaine au lieu de
 quatre-vingt-treize. La liste ne donne en revanche qu'UNE date par
 rendez-vous, la prochaine ; les séances suivantes ne sont que sur la
 fiche, d'où sa lecture.
 
 LES EXPOSITIONS VIENNENT D'AILLEURS. Le musée les tient hors de sa liste
 de rendez-vous, sur un article. Leur fiche de programmation existe, et
-figure même dans la liste — mais elle ne porte AUCUNE date de séance :
+figure même dans la liste - mais elle ne porte AUCUNE date de séance :
 son champ horaire dit « ouverte du mercredi au lundi de 10h à 18h », ce
 qui est un horaire, pas une période. C'est pourquoi la première version
 de ce scraper publiait trente-sept rendez-vous et pas une exposition.
@@ -67,7 +67,7 @@ PAGES_MAX = 30          # 19 pages à l'écriture ; la marge couvre la croissanc
 
 # Les EXPOSITIONS ne sont pas dans la liste des rendez-vous : le musée les
 # tient à part, sur un article. Leur fiche de programmation existe bien,
-# mais sans aucune date de séance — son champ horaire dit seulement
+# mais sans aucune date de séance - son champ horaire dit seulement
 # « ouverte du mercredi au lundi de 10h à 18h ». La période, elle, n'est
 # écrite que là. Une seule page couvre l'en-cours et l'à-venir.
 EXPOSITIONS = "/fr/article/exposition-venir"
@@ -93,7 +93,7 @@ TYPES = {
     # bal du musée, la lampe de poche, la nocturne étudiante. C'est du
     # musée, donc la famille « expos », faute de bucket plus juste.
     "nocturnes":               "exposition",
-    # « Événement » ne dit rien du genre — Festin, Journée des
+    # « Événement » ne dit rien du genre - Festin, Journée des
     # collectionneurs, Week-end chanté n'ont rien en commun. Laissé vide.
 }
 # « Le musée fait son cinéma » est rangé sous « Événement » ; le titre,
@@ -182,7 +182,7 @@ def _expositions(session: requests.Session, today: Date,
         "[class*=field--name-field-sp-content] .field__item")
     if bloc is None:
         print(f"[Beaux-Arts] {EXPOSITIONS} : bloc de contenu introuvable "
-              "— structure modifiée ?", file=sys.stderr)
+              "- structure modifiée ?", file=sys.stderr)
         return [], 0
 
     events: List[Event] = []
@@ -213,7 +213,7 @@ def _expositions(session: requests.Session, today: Date,
             illisibles += 1
             continue
         try:
-            # L'année du début, quand elle manque, est celle de la fin —
+            # L'année du début, quand elle manque, est celle de la fin -
             # sauf si le mois de début est postérieur, l'exposition
             # franchissant alors le nouvel an.
             an_f = int(af)
@@ -275,7 +275,7 @@ def fetch() -> List[Event]:
     cartes = _cartes(session)
     if not cartes:
         print(f"[Beaux-Arts] aucune carte lue sur {LISTING} "
-              "— structure modifiée ?", file=sys.stderr)
+              "- structure modifiée ?", file=sys.stderr)
         return []
 
     events: List[Event] = []
@@ -344,5 +344,5 @@ def fetch() -> List[Event]:
               file=sys.stderr)
     if not events:
         print(f"[Beaux-Arts] {len(cartes)} carte(s) lues, aucune séance "
-              "retenue — structure modifiée ?", file=sys.stderr)
+              "retenue - structure modifiée ?", file=sys.stderr)
     return events + expos

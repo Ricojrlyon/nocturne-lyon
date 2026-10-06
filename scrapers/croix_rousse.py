@@ -1,6 +1,6 @@
 """Scraper for the Théâtre de la Croix-Rousse (4e, place Joannès Ambre).
 
-WordPress dont l'API REST est OUVERTE — leur robots.txt n'interdit que
+WordPress dont l'API REST est OUVERTE - leur robots.txt n'interdit que
 /wp-admin/, à la différence du TNP où le blocage Yoast de /wp-json/
 imposait la lecture du HTML. On s'en sert donc pour la liste :
 
@@ -14,7 +14,7 @@ tous les enregistrements. Elles vivent dans le HTML de chaque fiche, où
 la structure est heureusement nette et sans ambiguïté.
 
   .seances-dates-horaires   un bloc par série, son <h4> portant le mois
-                            et l'ANNÉE — pas d'inférence à faire
+                            et l'ANNÉE - pas d'inférence à faire
   .mobile-seances           une ligne par jour : « jeu 24 › … »
   .mobile-horaires          UN LIEN PAR SÉANCE, chacun vers sa billetterie
 
@@ -23,7 +23,7 @@ sur la même ligne sont deux séances, deux liens distincts ; « 17h > 17h50 »
 est une séance unique affichée avec son heure de fin, dans un lien
 unique. Compter les liens tranche, lire le texte non.
 
-Le <h4> peut couvrir deux mois — « 30 septembre → 1 octobre 2026 ». On
+Le <h4> peut couvrir deux mois - « 30 septembre → 1 octobre 2026 ». On
 essaie donc les combinaisons mois × année qu'il propose et l'on garde
 celle dont le jour de la semaine annoncé tombe juste. Une combinaison
 sans concordance fait écarter la séance plutôt que publier une date
@@ -68,7 +68,7 @@ PUBLICS = ("pour les", "en famille", "jeune public", "tout public")
 # Termes qui précisent une forme sans dire le genre, et que la page ne sait
 # pas ranger. Pris en premier, ils envoyaient « Nelvar » (« heroic
 # fantasy », « théâtre ») dans la famille « autres » (BUG-23). Ils cèdent
-# la place au genre que la fiche porte aussi — sur la saison 2026-2027,
+# la place au genre que la fiche porte aussi - sur la saison 2026-2027,
 # chacun de ces spectacles porte « théâtre » ou « cabaret ».
 PRECISIONS = ("bruitages", "confidences", "heroic fantasy", "masque", "radio",
               "revue")
@@ -100,7 +100,7 @@ def _norm(s: Optional[str]) -> str:
 
 
 def _mois(jeton: str) -> Optional[int]:
-    """Numéro du mois, par préfixe unique — « sept » ne peut être que
+    """Numéro du mois, par préfixe unique - « sept » ne peut être que
     septembre. Un préfixe ambigu (« jui ») est refusé."""
     if len(jeton) < 3:
         return None
@@ -129,7 +129,7 @@ def _resoudre_seance(jour_court: str, jj: int, mois: List[int],
     Le jour de la semaine sert à DÉPARTAGER, pas à opposer un veto. Quand
     le <h4> ne propose qu'une seule combinaison mois-année, la date est
     entièrement déterminée par la page et le nom du jour n'est qu'une
-    étiquette redondante — qui peut porter une coquille : le site annonce
+    étiquette redondante - qui peut porter une coquille : le site annonce
     « mar 26 » pour le 26 mai 2027, un mercredi. Rejeter la date sur cette
     foi perdrait une vraie représentation.
 
@@ -185,7 +185,7 @@ def _lire_fiche(url: str) -> Optional[dict]:
             if not concorde:
                 discordantes.append(f"{mj.group(1)} {mj.group(2)} -> {d}")
             # UN LIEN PAR SÉANCE. Lire le texte confondrait « 17h > 17h50 »
-            # — une séance et son heure de fin — avec « 14h30 19h30 », qui
+            # - une séance et son heure de fin - avec « 14h30 19h30 », qui
             # en est deux.
             liens = ligne.select(".mobile-horaires a")
             textes = [a.get_text(" ", strip=True) for a in liens] or \
@@ -197,14 +197,14 @@ def _lire_fiche(url: str) -> Optional[dict]:
                          if mh else None)
                 seances.append([d.isoformat(), heure])
     if incoherentes:
-        print(f"[Croix-Rousse] {incoherentes} date(s) indéterminable(s) — "
+        print(f"[Croix-Rousse] {incoherentes} date(s) indéterminable(s) - "
               f"{url}", file=sys.stderr)
     if discordantes:
         # Date retenue quand même : voir _resoudre_seance. Signalé pour
-        # qu'une discordance SYSTÉMATIQUE — signe d'un parseur qui dérive —
+        # qu'une discordance SYSTÉMATIQUE - signe d'un parseur qui dérive -
         # se distingue d'une coquille isolée du site.
         print(f"[Croix-Rousse] jour de la semaine discordant, date retenue : "
-              f"{', '.join(discordantes)} — {url}", file=sys.stderr)
+              f"{', '.join(discordantes)} - {url}", file=sys.stderr)
     return {"seances": seances}
 
 

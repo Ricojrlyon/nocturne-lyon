@@ -1,5 +1,5 @@
 """Le collecteur de HEAT : l'heure de début d'un événement (BUG-13). Pages
-synthétiques, qui reprennent la structure du vrai site — span.hour-start et
+synthétiques, qui reprennent la structure du vrai site - span.hour-start et
 span.hour-end dans l'article de l'événement, et hors de lui le bandeau
 « Happy Hour » commun à toutes les pages."""
 import unittest
@@ -37,7 +37,7 @@ class HeureDeDebut(unittest.TestCase):
         self.assertEqual(self.lire(page("18:00", "04:00")), "18:00")
 
     def test_sans_balise_d_heure_le_bandeau_ne_compte_pas(self):
-        # Sans span.hour-start, l'heure se cherche encore — dans l'article
+        # Sans span.hour-start, l'heure se cherche encore - dans l'article
         # seulement : le « 17:30 » du bandeau n'est l'heure de personne.
         self.assertEqual(self.lire(page(texte="Ouverture des portes à 19h00")), "19:00")
         self.assertIsNone(self.lire(page(texte="Programme à venir")))

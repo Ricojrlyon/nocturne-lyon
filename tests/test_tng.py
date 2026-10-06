@@ -98,7 +98,7 @@ class SeancesToutPublic(unittest.TestCase):
         self.assertEqual(lu, [])
 
     def test_fiche_sans_seances_la_plage_de_la_carte_entiere(self):
-        # Fiche introuvable : la plage « 02 > 06 oct. », lue en entier — et
+        # Fiche introuvable : la plage « 02 > 06 oct. », lue en entier - et
         # non plus sa seule date de fin.
         lu = self.lire([carte("boule", "Boule de neige", "02 > 06 oct.")], {})
         self.assertEqual(lu, [("2026-10-02", "2026-10-06", None, "Boule de neige")])

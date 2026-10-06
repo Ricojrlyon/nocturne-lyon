@@ -1,8 +1,8 @@
-"""Scraper for the TNP — Théâtre National Populaire (Villeurbanne).
+"""Scraper for the TNP - Théâtre National Populaire (Villeurbanne).
 
 Le site est un WordPress, mais son robots.txt INTERDIT /wp-json/ : l'API
 REST est donc hors limites, et on lit le HTML. C'est le seul scraper du
-dépôt à s'être vu refuser une API qui existait — le blocage vient du
+dépôt à s'être vu refuser une API qui existait - le blocage vient du
 réglage Yoast par défaut, pas d'une hostilité aux robots, mais un
 robots.txt se respecte tel qu'il est écrit.
 
@@ -16,7 +16,7 @@ requête suffit donc pour tout le calendrier.
 
 Les affiches ne sont pas dans l'agenda : elles viennent de l'`og:image`
 de chaque fiche spectacle. Dix-sept fiches à charger dans l'horizon, pas
-cent vingt-trois — le même spectacle se joue dix à dix-sept fois.
+cent vingt-trois - le même spectacle se joue dix à dix-sept fois.
 C'était le manque à combler, le Petit Bulletin remontant cette salle
 sans une seule image.
 
@@ -54,7 +54,7 @@ SLUG = "tnp"
 BASE = "https://www.tnp-villeurbanne.com"
 AGENDA = BASE + "/agenda/"
 
-# Le site n'expose aucune taxonomie de genre — ni classe de body, ni
+# Le site n'expose aucune taxonomie de genre - ni classe de body, ni
 # libellé sur la fiche. « théâtre » est le défaut juste pour un théâtre
 # national ; les rares pièces dansées y perdent leur nuance, mais elles
 # restent dans la bonne famille d'affichage.
@@ -212,7 +212,7 @@ def fetch() -> List[Event]:
         # Page lisible mais agenda vide : la structure a changé. On le
         # signale plutôt que de rendre une liste vide qu'aggregate.py ne
         # distinguerait pas d'une panne.
-        print("[TNP] aucune représentation lue sur /agenda/ — structure "
+        print("[TNP] aucune représentation lue sur /agenda/ - structure "
               "du site modifiée ?", file=sys.stderr)
         return []
 

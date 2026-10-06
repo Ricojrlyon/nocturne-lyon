@@ -164,12 +164,12 @@ class DatesDuPetitBulletin(unittest.TestCase):
 
     def test_le_jour_de_la_semaine_designe_l_annee(self):
         # BUG-17. Un mardi 15 septembre n'existe pas en 2027 : c'est celui
-        # de 2026, déjà passé — et non une soirée fantôme l'an prochain.
+        # de 2026, déjà passé - et non une soirée fantôme l'an prochain.
         self.assertEqual(self.lire("Mardi 15 septembre à 20h"), [])
 
     def test_sans_jour_de_la_semaine_quinze_jours_de_grace(self):
-        # Passée d'un jour seulement, une date reste de cette année — et
-        # elle est écartée —, au lieu de partir à l'an prochain.
+        # Passée d'un jour seulement, une date reste de cette année - et
+        # elle est écartée -, au lieu de partir à l'an prochain.
         self.assertEqual(self.lire("30 septembre à 19h"), [])
 
     def test_deux_dates_dont_la_premiere_est_passee(self):

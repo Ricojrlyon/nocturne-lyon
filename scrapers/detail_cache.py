@@ -2,7 +2,7 @@
 
 Several venue scrapers (Le Sucre, Radiant, HEAT, Opéra, Transbordeur…)
 must fetch one detail page per event just to extract the
-show time. Night after night those pages are the same — this cache
+show time. Night after night those pages are the same - this cache
 persists url → time in detail_times.json (committed by the workflow,
 same pattern as venue_arrondissements.json) and eliminates ~90% of the
 detail requests.
@@ -18,7 +18,7 @@ TTLs:
     URLs stop being requested, so they age out naturally)
 
 Rate limiting lives here too: at least 0.4 s between two REAL fetches.
-Cache hits don't sleep at all — which is the whole point.
+Cache hits don't sleep at all - which is the whole point.
 """
 from __future__ import annotations
 
@@ -78,7 +78,7 @@ def _throttle() -> None:
 
 
 def get_time(url: str, fetcher: Callable[[str], Optional[str]]) -> Optional[str]:
-    """Return the cached time for url, or fetcher(url) — cached, throttled."""
+    """Return the cached time for url, or fetcher(url) - cached, throttled."""
     global _dirty
     cache = _load()
     entry = cache.get(url)
@@ -88,7 +88,7 @@ def get_time(url: str, fetcher: Callable[[str], Optional[str]]) -> Optional[str]
     t = fetcher(url)
     # Don't overwrite a known time with a one-off miss: the fetcher
     # returns None both on "no time on the page" and on transient network
-    # errors — keep the old value and just refresh its date.
+    # errors - keep the old value and just refresh its date.
     if t is None and isinstance(entry, dict) and entry.get("time"):
         t = entry["time"]
     cache[url] = {"time": t, "fetched_at": date.today().isoformat()}
@@ -103,7 +103,7 @@ def get_details(url: str, fetcher: Callable[[str], Optional[dict]],
     The fetcher returns a dict of fields (or None on network error).
     An entry is only considered complete when every requested field KEY
     exists (a null value means "checked, not found" and is not re-fetched
-    before its TTL) — so entries written by get_time are transparently
+    before its TTL) - so entries written by get_time are transparently
     upgraded on the next run. Known values are never overwritten by a
     one-off miss.
     """

@@ -55,7 +55,7 @@ def _smart_year(month: int, day: int) -> int:
         return today.year
     # Grâce de 15 jours (comme tng.py) : une date passée de quelques jours
     # est un listing pas encore purgé de CETTE année, pas l'annonce de
-    # l'année prochaine — sans quoi elle devenait un événement fantôme à +1 an.
+    # l'année prochaine - sans quoi elle devenait un événement fantôme à +1 an.
     return today.year + 1 if (today - candidate).days > 15 else today.year
 
 
@@ -168,7 +168,7 @@ def fetch() -> List[Event]:
             category="club",
             date_start=iso(d),
             date_end=None,
-            # LPS ne publie pas d'heure sur la page listing — ne pas
+            # LPS ne publie pas d'heure sur la page listing - ne pas
             # fabriquer une valeur qui serait affichée comme réelle.
             time=None,
             url=href,
@@ -177,7 +177,7 @@ def fetch() -> List[Event]:
 
     if not events:
         print("=" * 60, file=sys.stderr)
-        print("DIAGNOSTIC: Le Petit Salon — 0 events", file=sys.stderr)
+        print("DIAGNOSTIC: Le Petit Salon - 0 events", file=sys.stderr)
         print(f"  h2 count: {len(h2_list)}", file=sys.stderr)
         for h2 in h2_list[:5]:
             block = _find_event_block(h2)

@@ -14,23 +14,23 @@ n'est pas contractuel non plus, d'où le parcours en profondeur de
 `collect` plutôt qu'un accès par chemin.
 
 Deux étapes, une seule requête pour la première :
-  1. la boutique liste les spectacles — objets Ticketing, portant titre,
+  1. la boutique liste les spectacles - objets Ticketing, portant titre,
      slug, visuel, type et LIEU ;
-  2. chaque page spectacle porte ses séances — objets EventDate.
+  2. chaque page spectacle porte ses séances - objets EventDate.
 
 Le filtrage par lieu ne repose sur aucune heuristique : chaque Ticketing
 porte son Venue avec nom, adresse, code postal et ville en clair. C'est
 indispensable, une boutique n'étant PAS synonyme d'une salle :
   * Improvidence exploite aussi une salle à Bordeaux ;
   * Espace Gerson programme aussi à la Salle Victor Hugo, à la Salle Paul
-    Garcin et à la Bourse du Travail — cette dernière étant déjà scrappée
+    Garcin et à la Bourse du Travail - cette dernière étant déjà scrappée
     en direct par nocturne, l'attribuer à Gerson créerait des doublons au
     mauvais lieu.
 Chaque scraper fournit donc son propre prédicat `garder`.
 
 Pas de detail_cache : son TTL de 30 jours convient à une heure de début,
 qui ne bouge pas, mais pas à une LISTE de séances, qui s'enrichit au fil
-des semaines — on sous-déclarerait les dates ajoutées récemment.
+des semaines - on sous-déclarerait les dates ajoutées récemment.
 """
 from __future__ import annotations
 
@@ -167,7 +167,7 @@ def fetch_venue(shop: str, venue: str, slug: str, category: Optional[str],
         # probablement changé, ou le prédicat de lieu ne correspond plus.
         # On le signale, plutôt que de renvoyer une liste vide silencieuse
         # qu'aggregate.py ne distinguerait pas d'une panne.
-        print(f"[{tag}] aucun spectacle daté retenu dans la boutique — "
+        print(f"[{tag}] aucun spectacle daté retenu dans la boutique - "
               "structure Mapado ou nom de lieu modifié ?", file=sys.stderr)
         return []
 
@@ -191,7 +191,7 @@ def fetch_venue(shop: str, venue: str, slug: str, category: Optional[str],
         url = f"{shop}/event/{sl}"
         image = image_url(show)
         for start in starts:
-            # « 2026-08-19T19:30:00+02:00 » — on ne garde que le jour et
+            # « 2026-08-19T19:30:00+02:00 » - on ne garde que le jour et
             # l'heure locale, le fuseau étant toujours celui de la salle.
             day, _, reste = start.partition("T")
             if day < today_iso or day > horizon_iso:
