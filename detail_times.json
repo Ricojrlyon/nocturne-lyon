@@ -43,6 +43,10 @@
     "fetched_at": "2026-10-02",
     "time": "19:00"
   },
+  "https://h-eat.eu/events/le-dome/": {
+    "fetched_at": "2026-10-07",
+    "time": "18:00"
+  },
   "https://h-eat.eu/events/le-grand-souk/": {
     "fetched_at": "2026-10-02",
     "time": "11:00"
@@ -1145,7 +1149,7 @@
     ]
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/soiree-18-30-ans": {
-    "fetched_at": "2026-09-29",
+    "fetched_at": "2026-10-07",
     "lieu": "Maison de la Danse",
     "seances": [
       [
@@ -2480,6 +2484,16 @@
     ],
     "time": "20:00"
   },
+  "https://radiant-bellevue.fr/spectacles/rodrigo-y-gabriela-2/": {
+    "fetched_at": "2026-10-07",
+    "seances": [
+      [
+        "2027-04-05",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
   "https://radiant-bellevue.fr/spectacles/saint-levant/": {
     "fetched_at": "2026-10-03",
     "seances": [
@@ -3728,7 +3742,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/concert/soiree-agnes-jaoui": {
-    "fetched_at": "2026-09-29",
+    "fetched_at": "2026-10-07",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -6229,7 +6243,7 @@
     "titre": "Week-end Musée-à-brac"
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/arielle-beck": {
-    "fetched_at": "2026-09-29",
+    "fetched_at": "2026-10-07",
     "lieu": "Opéra de Lyon",
     "seances": [
       [
@@ -6415,7 +6429,7 @@
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/raul-refree-maria-mazzotta-quatuor-lomax-davide-ambrogio": {
-    "fetched_at": "2026-09-29",
+    "fetched_at": "2026-10-07",
     "lieu": "Opéra de Lyon",
     "seances": [
       [
@@ -7751,6 +7765,12 @@
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/04/sq-ghinzu-Grande-768x768.jpeg",
     "fetched_at": "2026-10-05",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/04/sq-ghinzu-Grande.jpeg",
+    "time": "18:30"
+  },
+  "https://www.transbordeur.fr/evenement/ghinzu-foncedalle-19102026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/04/sq-ghinzu-Grande-768x768.jpeg",
+    "fetched_at": "2026-10-07",
+    "image": null,
     "time": "18:30"
   },
   "https://www.transbordeur.fr/evenement/giedre-15012027/": {

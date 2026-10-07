@@ -3,7 +3,7 @@
     "arr": "2e",
     "checked_at": "2026-09-09",
     "confidence": "high",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Alliance Française de Lyon (Lyon 3e) ·  Salle des Rancy (Lyon 3e) ·  Le Marché Gare (Lyon 2e)": {
     "arr": null,
@@ -27,13 +27,13 @@
     "arr": null,
     "checked_at": "2026-09-09",
     "confidence": "failed",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Archives départementales et métropolitaines": {
     "arr": "3e",
     "checked_at": "2026-09-09",
     "confidence": "high",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Archives municipales de Lyon": {
     "arr": "2e",
@@ -88,6 +88,12 @@
     "checked_at": "2026-10-03",
     "confidence": "high",
     "seen_at": "2026-10-03"
+  },
+  "Bibliothèque Diderot de Lyon": {
+    "arr": "7e",
+    "checked_at": "2026-10-07",
+    "confidence": "high",
+    "seen_at": "2026-10-07"
   },
   "Bibliothèque de Saint Didier-au-Mont-d'Or - Maison Meunier": {
     "arr": null,
@@ -203,14 +209,14 @@
     "checked_at": "2026-09-23",
     "commune": "Écully",
     "confidence": "low",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Centre culturel Charlie Chaplin": {
     "arr": "Autre",
     "checked_at": "2026-09-09",
     "commune": "Vaulx-en-Velin",
     "confidence": "low",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Centre d'échanges de Perrache": {
     "arr": "2e",
@@ -303,14 +309,14 @@
     "checked_at": "2026-09-09",
     "commune": "Craponne",
     "confidence": "low",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Espace Jean Poperen": {
     "arr": "Autre",
     "checked_at": "2026-09-09",
     "commune": "Meyzieu",
     "confidence": "low",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Esplanade du Gros caillou": {
     "arr": "4e",
@@ -394,7 +400,7 @@
     "arr": null,
     "checked_at": "2026-09-30",
     "confidence": "failed",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Gare de Perrache": {
     "arr": "2e",
@@ -467,6 +473,13 @@
     "confidence": "failed",
     "seen_at": "2026-09-22"
   },
+  "L'Arbre à Souhaits": {
+    "arr": "Autre",
+    "checked_at": "2026-10-07",
+    "commune": "Saint-Martin-en-Haut",
+    "confidence": "low",
+    "seen_at": "2026-10-07"
+  },
   "L'Aînée - Librairie Vivement Dimanche": {
     "arr": null,
     "checked_at": "2026-09-08",
@@ -478,7 +491,7 @@
     "checked_at": "2026-09-09",
     "commune": "Rillieux-la-Pape",
     "confidence": "low",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "L'Ellipse": {
     "arr": "Autre",
@@ -491,7 +504,7 @@
     "arr": "2e",
     "checked_at": "2026-09-09",
     "confidence": "high",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "L'attrape-couleurs": {
     "arr": null,
@@ -505,6 +518,12 @@
     "commune": "Sainte-Foy-lès-Lyon",
     "confidence": "low",
     "seen_at": "2026-09-09"
+  },
+  "La Benjamine - Librairie Vivement Dimanche": {
+    "arr": null,
+    "checked_at": "2026-10-07",
+    "confidence": "failed",
+    "seen_at": "2026-10-07"
   },
   "La Cadette - Librairie Vivement Dimanche": {
     "arr": null,
@@ -600,7 +619,7 @@
     "arr": "7e",
     "checked_at": "2026-09-09",
     "confidence": "high",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Le Faitout": {
     "arr": "Autre",
@@ -651,25 +670,31 @@
     "checked_at": "2026-09-23",
     "commune": "Fontaines-sur-Saône",
     "confidence": "low",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Librairie Adrienne": {
     "arr": "2e",
     "checked_at": "2026-08-27",
     "confidence": "high",
-    "seen_at": "2026-09-08"
+    "seen_at": "2026-10-07"
   },
   "Librairie Esperluette": {
     "arr": "5e",
     "checked_at": "2026-09-08",
     "confidence": "high",
-    "seen_at": "2026-09-15"
+    "seen_at": "2026-10-07"
   },
   "Librairie Expérience": {
     "arr": "2e",
     "checked_at": "2026-08-27",
     "confidence": "high",
-    "seen_at": "2026-09-08"
+    "seen_at": "2026-10-07"
+  },
+  "Librairie L'Esprit Livre": {
+    "arr": "3e",
+    "checked_at": "2026-10-07",
+    "confidence": "high",
+    "seen_at": "2026-10-07"
   },
   "Librairie L'œil cacodylate": {
     "arr": "2e",
@@ -677,12 +702,19 @@
     "confidence": "high",
     "seen_at": "2026-10-06"
   },
+  "Librairie La BD": {
+    "arr": "Autre",
+    "checked_at": "2026-10-07",
+    "commune": "Saint-Symphorien-sur-Coise",
+    "confidence": "low",
+    "seen_at": "2026-10-07"
+  },
   "Librairie La Bonne Étoile": {
     "arr": "Autre",
     "checked_at": "2026-08-27",
     "commune": "Irigny",
     "confidence": "low",
-    "seen_at": "2026-09-08"
+    "seen_at": "2026-10-07"
   },
   "Librairie La Boussole": {
     "arr": null,
@@ -690,11 +722,17 @@
     "confidence": "failed",
     "seen_at": "2026-10-06"
   },
+  "Librairie La Gryffe": {
+    "arr": "7e",
+    "checked_at": "2026-10-07",
+    "confidence": "high",
+    "seen_at": "2026-10-07"
+  },
   "Librairie La Tanière": {
     "arr": "8e",
     "checked_at": "2026-09-23",
     "confidence": "high",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Librairie Momie": {
     "arr": "2e",
@@ -720,6 +758,12 @@
     "confidence": "high",
     "seen_at": "2026-09-30"
   },
+  "Librairie du Contrevent": {
+    "arr": "Villeurbanne",
+    "checked_at": "2026-10-07",
+    "confidence": "high",
+    "seen_at": "2026-10-07"
+  },
   "Librairie à soi.e": {
     "arr": "1er",
     "checked_at": "2026-08-27",
@@ -737,7 +781,7 @@
     "checked_at": "2026-09-09",
     "commune": "Écully",
     "confidence": "low",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Lyon": {
     "arr": null,
@@ -760,13 +804,13 @@
     "arr": null,
     "checked_at": "2026-09-09",
     "confidence": "failed",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "MJC Laënnec-Mermoz- Salle Genton": {
     "arr": null,
     "checked_at": "2026-09-09",
     "confidence": "failed",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "MJC Louis Aragon / Jack Jack": {
     "arr": null,
@@ -901,7 +945,7 @@
     "arr": "5e",
     "checked_at": "2026-09-23",
     "confidence": "high",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Parc Chabrières": {
     "arr": "Autre",
@@ -983,7 +1027,7 @@
     "arr": "3e",
     "checked_at": "2026-09-30",
     "confidence": "high",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Place de la Croix-Rousse": {
     "arr": "4e",
@@ -1082,7 +1126,7 @@
     "arr": null,
     "checked_at": "2026-09-30",
     "confidence": "failed",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Studio Nafas": {
     "arr": null,
@@ -1106,19 +1150,19 @@
     "arr": "Villeurbanne",
     "checked_at": "2026-09-09",
     "confidence": "high",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Théâtre Cinéma Jean Carmet": {
     "arr": null,
     "checked_at": "2026-09-09",
     "confidence": "failed",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Théâtre François Ponsard": {
     "arr": null,
     "checked_at": "2026-09-09",
     "confidence": "failed",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Théâtre La Mouche": {
     "arr": "7e",
@@ -1243,7 +1287,7 @@
     "arr": "2e",
     "checked_at": "2026-09-09",
     "confidence": "high",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "URDLA": {
     "arr": "Villeurbanne",
@@ -1256,7 +1300,7 @@
     "checked_at": "2026-09-09",
     "commune": "Bron",
     "confidence": "low",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   },
   "Warmaudio": {
     "arr": "Autre",
@@ -1306,6 +1350,6 @@
     "arr": null,
     "checked_at": "2026-09-16",
     "confidence": "failed",
-    "seen_at": "2026-09-30"
+    "seen_at": "2026-10-07"
   }
 }
