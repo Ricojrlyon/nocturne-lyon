@@ -1538,6 +1538,9 @@
   }
   .empty-state p::before { content: "( "; color: var(--ink-mute); }
   .empty-state p::after { content: " )"; color: var(--ink-mute); }
+  /* « tout effacer » sous un filtre sans résultat (audit n° 20). */
+  .empty-state .vide-effacer { margin-top: 26px; }
+  .vide-effacer:focus-visible { outline: 2px solid var(--warm); outline-offset: 2px; }
   /* Chargement échoué. L'aide et le détail ne sont pas des <p>, qui
      prendraient les parenthèses du titre. */
   .erreur-chargement .ec-aide {
@@ -3244,6 +3247,35 @@ function etatDesBoutons() {
   document.querySelectorAll('#filterWhen .chip, #filterArr .chip').forEach(b => {
     b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false');
   });
+  libelleDuBoutonDate();
+}
+
+/* Le bouton « date » dit la période choisie (audit n° 20) : « 12 → 18
+   oct. », « 28 oct. → 1 nov. », ou « 15 oct. » pour un seul jour ; sans
+   période, il redevient « date → ». Un lecteur d'écran l'entend en toutes
+   lettres. Recopié de l'état à chaque rendu, comme aria-pressed : les
+   endroits qui changent la période n'ont rien à faire de plus. */
+const MOIS_COURTS = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin',
+                     'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
+function libelleDuBoutonDate() {
+  const btn = document.getElementById('dateBtn');
+  const p = state.when === 'custom' ? state.customRange : null;
+  if (!p) {
+    btn.textContent = 'date →';
+    btn.removeAttribute('aria-label');
+    return;
+  }
+  const s = parseIso(p.start), e = parseIso(p.end);
+  const court = d => d.getDate() + ' ' + MOIS_COURTS[d.getMonth()];
+  const long = d => (d.getDate() === 1 ? '1er' : d.getDate()) + ' ' + FR_MONTHS[d.getMonth()];
+  if (p.start === p.end) {
+    btn.textContent = court(s);
+    btn.setAttribute('aria-label', 'date choisie : le ' + long(s));
+  } else {
+    const memeMois = s.getMonth() === e.getMonth() && s.getFullYear() === e.getFullYear();
+    btn.textContent = (memeMois ? s.getDate() : court(s)) + ' → ' + court(e);
+    btn.setAttribute('aria-label', 'dates choisies : du ' + long(s) + ' au ' + long(e));
+  }
 }
 
 /* ---------- when filter ---------- */
@@ -3473,7 +3505,13 @@ function renderFeed() {
   ancreDuRendu = null;
 
   if (events.length === 0) {
-    feed.innerHTML = '<div class="empty-state"><p>rien dans ce filtre</p></div>';
+    // Aucun événement ne passe les filtres : le dire, et offrir d'en
+    // sortir d'un clic (audit n° 20) - « tout effacer » vit dans le tiroir
+    // des filtres, souvent replié.
+    feed.innerHTML = '<div class="empty-state"><p>aucun événement pour ces filtres</p>'
+                   + '<button type="button" class="chip vide-effacer">tout effacer</button></div>';
+    feed.querySelector('.vide-effacer')
+        .addEventListener('click', () => document.getElementById('clearFilters').click());
     return;
   }
 

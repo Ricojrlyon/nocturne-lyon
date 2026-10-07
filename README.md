@@ -396,6 +396,12 @@ la recopier, version comprise.
 - **`index.html`** : frontend vanilla JS autonome : filtres par date/lieu/
   arrondissement/type, recherche insensible aux accents (titre, lieu,
   line-up), expansion des événements multi-jours, groupes de lieux.
+  Le bouton « date » affiche la période choisie (« 12 → 18 oct. »,
+  « 15 oct. » pour un jour) et redevient « date → » quand on l'efface ;
+  un filtre sans résultat le dit (« aucun événement pour ces filtres »)
+  et offre un bouton « tout effacer », sans passer par le tiroir des
+  filtres. Sur téléphone, une période choisie fait passer le bouton sur
+  une troisième ligne de filtres.
   Pour les lecteurs d'écran, le champ de recherche porte un nom, les
   boutons de filtre disent s'ils sont enfoncés, chaque journée est un
   titre de niveau 2, et le jour courant est signalé (`aria-current`)

@@ -151,6 +151,19 @@ class PageNavigation(unittest.TestCase):
         self.assertEqual(self.releve["apres_echap"], [False, "dateBtn"])
         self.assertEqual(self.releve["boutons_de_famille"], [24])
 
+    def test_le_bouton_date_dit_la_periode_et_le_filtre_vide_en_sort(self):
+        # Audit n° 20 : la période choisie, en court à l'écran et en toutes
+        # lettres pour un lecteur d'écran, puis « date → » une fois
+        # effacée ; un filtre sans résultat le dit, et son bouton « tout
+        # effacer » ramène tout le fil.
+        self.assertEqual(self.releve["bouton_date"], [
+            ["12 → 18 oct.", "dates choisies : du 12 octobre au 18 octobre"],
+            ["28 oct. → 1 nov.", "dates choisies : du 28 octobre au 1er novembre"],
+            ["15 oct.", "date choisie : le 15 octobre"],
+            ["date →", None]])
+        self.assertEqual(self.releve["filtre_vide"], ["aucun événement pour ces filtres", "tout effacer"])
+        self.assertEqual(self.releve["apres_tout_effacer"], [True, ""])
+
     def test_chaque_police_prechargee_n_est_telechargee_qu_une_fois(self):
         # Audit n° 17 : une fois, et par le préchargement. Un « crossorigin »
         # oublié la ferait télécharger une seconde fois, par polices.css.

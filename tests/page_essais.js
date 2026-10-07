@@ -210,6 +210,34 @@
                          document.activeElement ? document.activeElement.id : null];
       res.boutons_de_famille = [...new Set([...document.querySelectorAll('.fam-chip')]
         .map(c => Math.round(c.getBoundingClientRect().height)))];
+      // Audit n° 20 : le bouton « date » dit la période choisie, puis
+      // redevient « date → » ; un filtre sans résultat le dit, et son
+      // « tout effacer » ramène tout le fil.
+      const bouton = document.getElementById('dateBtn');
+      const choisir = async (a, b) => {
+        bouton.click();
+        await pause(200);
+        document.querySelector('#datepicker [data-day="' + a + '"]').click();
+        await pause(100);
+        document.querySelector('#datepicker [data-day="' + b + '"]').click();
+        await pause(600);
+        return [norme(bouton.textContent), bouton.getAttribute('aria-label')];
+      };
+      res.bouton_date = [await choisir('2026-10-12', '2026-10-18'),
+                         await choisir('2026-10-28', '2026-11-01'),
+                         await choisir('2026-10-15', '2026-10-15')];
+      await effacer();
+      res.bouton_date.push([norme(bouton.textContent), bouton.getAttribute('aria-label')]);
+      const champ = document.getElementById('filterSearch');
+      champ.value = 'aucun événement ne porte ce titre';
+      champ.dispatchEvent(new Event('input', { bubbles: true }));
+      await pause(700);
+      const vide = document.querySelector('#feed .empty-state');
+      res.filtre_vide = vide ? [norme((vide.querySelector('p') || {}).textContent),
+                                norme((vide.querySelector('button') || {}).textContent)] : null;
+      if (vide) vide.querySelector('.vide-effacer').click();
+      await pause(700);
+      res.apres_tout_effacer = [document.querySelectorAll('#feed .event').length > 0, champ.value];
     } else if (SCENARIOS === 'pastilles_fondues') {
       // Avec les fondus : la pastille d'un jour proche fait défiler la page
       // en douceur, celle d'un jour lointain la fait sauter, par-dessus des
