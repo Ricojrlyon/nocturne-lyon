@@ -84,16 +84,22 @@ jobs:
       # v7, et non plus v4 et v5 : ces versions visaient Node.js 20, que
       # GitHub abandonne et ne faisait plus tourner que de force, avec un
       # avertissement à chaque passage.
+      # Chaque brique est désignée par l'EMPREINTE de son code, sa version
+      # en commentaire (audit n° 16) : une étiquette comme « v7 » peut être
+      # déplacée vers un autre code, une empreinte non. Pour passer à une
+      # version plus récente, relever son empreinte - par exemple
+      # git ls-remote --tags https://github.com/actions/checkout - et la
+      # recopier ici, version comprise.
       # La branche telle qu'elle est au DÉPART du passage, et non telle
       # qu'elle était quand il a été demandé : un passage qui a attendu la
       # fin d'un autre (voir concurrency) repart du fil que celui-ci vient
       # de publier.
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ github.ref }}
 
       - name: Setup Python
-        uses: actions/setup-python@v7
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: '3.12'
           cache: 'pip'

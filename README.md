@@ -29,7 +29,14 @@ réveil, et la minute 17 évite l'heure pile, la plus demandée. Un seul passage
 tourne à la fois : lancé à la main pendant le passage programmé, ou
 l'inverse, le second attend la fin du premier, puis repart du fil que
 celui-ci vient de publier. Deux passages simultanés échouaient à la
-publication du second.
+publication du second. Les deux briques de GitHub qu'il emploie
+(`actions/checkout`, `actions/setup-python`) sont désignées par
+l'empreinte exacte de leur code, et non par leur étiquette (`v7`), qui
+peut être déplacée vers un autre code ; leur version est notée en
+commentaire, et un test vérifie qu'aucune n'est désignée autrement. Les
+mises à jour se font donc à la main : relever l'empreinte de la nouvelle
+version (`git ls-remote --tags https://github.com/actions/checkout`) et
+la recopier, version comprise.
 
 - **`scrapers/*.py`** : un module par salle (`requests` + BeautifulSoup).
   Chaque module expose `fetch() -> List[Event]`. Les échecs d'une salle ne

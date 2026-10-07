@@ -428,8 +428,22 @@ class GardeFous(unittest.TestCase):
         wf = (RACINE / ".github" / "workflows" / "update.yml").read_text(encoding="utf-8")
         self.assertIn("\nconcurrency:\n  group: maj-du-fil\n  cancel-in-progress: false\n",
                       wf.split("jobs:", 1)[0])
-        self.assertIn("- uses: actions/checkout@v7\n        with:\n          ref: ${{ github.ref }}\n",
-                      wf)
+        self.assertRegex(wf, r"- uses: actions/checkout@[0-9a-f]{40} # v[\d.]+\n"
+                             r"        with:\n          ref: \$\{\{ github\.ref \}\}\n")
+
+    def test_les_briques_github_sont_designees_par_leur_empreinte(self):
+        # Audit n° 16 : une étiquette comme « v7 » peut être déplacée vers
+        # un autre code, une empreinte non. Chaque « uses: » porte donc les
+        # 40 signes de l'empreinte, et sa version en commentaire, pour qui
+        # la relit ou la met à jour.
+        briques = []
+        for wf in sorted((RACINE / ".github" / "workflows").glob("*.y*ml")):
+            briques += re.findall(r"^\s*(?:- )?uses:\s*(\S+)(.*)$",
+                                  wf.read_text(encoding="utf-8"), re.M)
+        self.assertGreaterEqual(len(briques), 2)
+        for brique, reste in briques:
+            self.assertRegex(brique, r"^[\w.-]+/[\w.-]+@[0-9a-f]{40}$")
+            self.assertRegex(reste, r"^ # v\d+\.\d+\.\d+$", brique)
 
     def test_les_alertes_disent_comment_forcer(self):
         # Les trois alertes qui conseillent de forcer nomment la case.
