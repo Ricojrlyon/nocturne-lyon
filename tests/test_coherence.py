@@ -49,6 +49,19 @@ class Coherence(unittest.TestCase):
             if hasattr(module, "HORIZON_DAYS"):
                 self.assertEqual(module.HORIZON_DAYS, base.HORIZON_JOURS, info.name)
 
+    def test_les_polices_prechargees_sont_celles_de_polices_css(self):
+        # Audit n° 17. Une police préchargée qui n'existerait plus, ou que
+        # polices.css n'emploierait plus, serait une requête perdue à
+        # chaque visite.
+        css = (RACINE / "fonts" / "polices.css").read_text(encoding="utf-8")
+        balises = re.findall(r'<link rel="preload"[^>]*>', PAGE)
+        self.assertGreater(len(balises), 0)
+        for b in balises:
+            police = re.search(r'href="fonts/([^"]+)"', b).group(1)
+            self.assertTrue((RACINE / "fonts" / police).exists(), police)
+            self.assertIn("url(%s)" % police, css)
+            self.assertIn(' as="font" type="font/woff2" crossorigin>', b)
+
     def test_le_robot_lit_toute_la_table_des_lieux_de_la_page(self):
         # Les autres tests remplacent cette lecture par un ensemble vide :
         # ici, elle lit le vrai index.html. Chaque ligne d'entrée de

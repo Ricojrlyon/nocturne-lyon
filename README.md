@@ -407,6 +407,13 @@ la recopier, version comprise.
   cadre. Limite : le code et les styles étant écrits dans la page, la
   règle doit tolérer ce qui y est écrit (« unsafe-inline ») ;
   l'échappement des textes venus des sites reste la première protection.
+  Les quatre polices du premier écran (alphabet latin de base) sont
+  demandées dès l'ouverture (`<link rel="preload">`) : à une première
+  visite sur un réseau de téléphone (simulée, 100 ms par aller-retour),
+  elles sont là à 0,56 s au lieu de 1,26 s, avant le premier affichage,
+  et le texte ne change plus de police sous les yeux du visiteur. Les
+  polices elles-mêmes sont sur le site (`fonts/`), décrites par
+  `fonts/polices.css`.
 - **`404.html`** : la page des adresses introuvables, que GitHub Pages sert
   d'elle-même : « erreur 404 », « page introuvable » et un lien vers la page
   d'accueil. Son lien et ses polices sont en adresses complètes

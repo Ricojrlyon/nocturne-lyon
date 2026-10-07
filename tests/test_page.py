@@ -12,10 +12,11 @@ chef. Si un changement d'affichage est voulu : python -m tests.regenerer
 
 Sans navigateur de la famille Chrome, le test est sauté, et le dit.
 """
+import re
 import unittest
 
 from tests import navigateur
-from tests.outils import lire_gz
+from tests.outils import RACINE, lire_gz
 
 GENERE_LE = "2026-10-01T09:00:00+00:00"
 
@@ -140,6 +141,16 @@ class PageNavigation(unittest.TestCase):
 
     def test_une_famille_eteinte_au_milieu_garde_sa_journee(self):
         verifier_famille_au_milieu(self, self.releve["familles_suivies"])
+
+    def test_chaque_police_prechargee_n_est_telechargee_qu_une_fois(self):
+        # Audit n° 17 : une fois, et par le préchargement. Un « crossorigin »
+        # oublié la ferait télécharger une seconde fois, par polices.css.
+        page = (RACINE / "index.html").read_text(encoding="utf-8")
+        prechargees = re.findall(r'<link rel="preload" href="fonts/([^"]+)"', page)
+        self.assertGreater(len(prechargees), 0)
+        for police in prechargees:
+            self.assertEqual([qui for nom, qui in self.releve["polices_chargees"] if nom == police],
+                             ["link"], police)
 
 
 def verifier_famille_au_milieu(cas, suivi):

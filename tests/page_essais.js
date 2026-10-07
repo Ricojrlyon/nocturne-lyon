@@ -166,6 +166,11 @@
       await pause(2500);
       res.scenarios.apres_rafale = await releve();
     } else if (SCENARIOS === 'navigation') {
+      // Les polices téléchargées depuis l'ouverture, et par quoi : le
+      // préchargement (« link ») ou la feuille de style (« css »).
+      res.polices_chargees = performance.getEntriesByType('resource')
+        .filter(r => r.name.endsWith('.woff2'))
+        .map(r => [r.name.split('/').pop(), r.initiatorType]);
       // La barre des 14 jours, touchée juste après un rendu : la journée
       // n'est pas encore construite (affichage par morceaux), et doit
       // pourtant arriver en haut de l'écran. On relève celle qui y est.
