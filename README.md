@@ -402,6 +402,12 @@ la recopier, version comprise.
   dans la frise des jours comme dans le calendrier. Au clavier, Échap
   ferme le calendrier et rend la main au bouton « date ». Les boutons de
   famille font 24 px de haut, la plus petite cible recommandée.
+  La page donne aux moteurs de recherche son adresse officielle
+  (`rel="canonical"`, la même que celle de l'aperçu au partage), à
+  l'iPhone son icône d'écran d'accueil (`apple-touch-icon.png`,
+  l'astérisque ocre sur fond nuit, 180 px de côté), et, à qui a coupé
+  JavaScript, un message (« le programme a besoin de JavaScript ») au
+  lieu d'un fil vide.
   Sa politique de sécurité (`Content-Security-Policy`, en tête de page)
   ne lui permet de charger que ses propres fichiers (scripts, styles,
   polices, fil, logos) et des images en `https` (les affiches des

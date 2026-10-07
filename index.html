@@ -19,6 +19,14 @@
 <title>*nocturne · lyon</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-16 -16 32 32'><g fill='%23d4a574'><rect x='-2' y='-13' width='4' height='26' rx='2'/><rect x='-2' y='-13' width='4' height='26' rx='2' transform='rotate(60)'/><rect x='-2' y='-13' width='4' height='26' rx='2' transform='rotate(120)'/></g></svg>">
 <meta name="description" content="Guide nocturne - concerts, théâtre, danse, clubs, expos et sport à Lyon.">
+<!-- L'adresse officielle du site, pour les moteurs de recherche (audit
+     n° 19) : la même page, atteinte par une autre adresse (un « ?… » en
+     fin de lien, par exemple), n'en fait pas une autre. -->
+<link rel="canonical" href="https://ricojrlyon.github.io/nocturne-lyon/">
+<!-- L'icône de l'écran d'accueil de l'iPhone : l'astérisque de l'onglet,
+     ocre sur le fond nuit du site, en PNG de 180 px de côté, le format
+     qu'il attend. -->
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <!-- Aperçu au partage (WhatsApp, Messenger, réseaux) : sans ces balises,
      un lien envoyé s'affichait nu, sans titre ni image. L'image reprend
      le bandeau du site ; les adresses doivent être absolues. -->
@@ -1691,6 +1699,14 @@
 
 <main class="feed">
   <div class="container" id="feed"></div>
+  <!-- Sans JavaScript, la page ne peut pas construire le programme : elle
+       le dit, au lieu de rester vide (audit n° 19). -->
+  <noscript>
+    <div class="container"><div class="empty-state erreur-chargement">
+      <p>le programme a besoin de JavaScript</p>
+      <div class="ec-aide">activez-le dans votre navigateur, puis rechargez la page.</div>
+    </div></div>
+  </noscript>
 </main>
 
 <footer>

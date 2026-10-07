@@ -62,6 +62,26 @@ class Coherence(unittest.TestCase):
             self.assertIn("url(%s)" % police, css)
             self.assertIn(' as="font" type="font/woff2" crossorigin>', b)
 
+    def test_l_adresse_officielle_et_l_icone_de_l_iphone(self):
+        # Audit n° 19. L'adresse officielle est celle de l'aperçu au
+        # partage ; l'icône de l'écran d'accueil existe, en PNG carré de
+        # 180 px, le format qu'attend l'iPhone.
+        canonique = re.search(r'<link rel="canonical" href="([^"]+)">', PAGE).group(1)
+        partage = re.search(r'<meta property="og:url" content="([^"]+)">', PAGE).group(1)
+        self.assertEqual(canonique, partage)
+        icone = re.search(r'<link rel="apple-touch-icon" href="([^"]+)">', PAGE).group(1)
+        png = (RACINE / icone).read_bytes()
+        self.assertEqual(png[1:4] + png[12:16], b"PNGIHDR")
+        self.assertEqual((int.from_bytes(png[16:20], "big"), int.from_bytes(png[20:24], "big")),
+                         (180, 180))
+
+    def test_un_message_pour_qui_n_a_pas_javascript(self):
+        # Audit n° 19 : sans JavaScript, la page le dit au lieu de rester
+        # vide.
+        bloc = re.search(r"<noscript>(.*?)</noscript>", PAGE, re.S)
+        self.assertIsNotNone(bloc)
+        self.assertIn("le programme a besoin de JavaScript", bloc.group(1))
+
     def test_le_robot_lit_toute_la_table_des_lieux_de_la_page(self):
         # Les autres tests remplacent cette lecture par un ensemble vide :
         # ici, elle lit le vrai index.html. Chaque ligne d'entrée de
