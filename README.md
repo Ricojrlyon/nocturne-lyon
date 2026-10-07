@@ -392,6 +392,14 @@ publication du second.
   Pour les lecteurs d'écran, le champ de recherche porte un nom, les
   boutons de filtre disent s'ils sont enfoncés, et chaque journée est un
   titre de niveau 2.
+  Sa politique de sécurité (`Content-Security-Policy`, en tête de page)
+  ne lui permet de charger que ses propres fichiers (scripts, styles,
+  polices, fil, logos) et des images en `https` (les affiches des
+  salles) ; elle ne peut rien envoyer ailleurs que vers le site, ni
+  charger un script d'un autre site, ni contenir formulaire, objet ou
+  cadre. Limite : le code et les styles étant écrits dans la page, la
+  règle doit tolérer ce qui y est écrit (« unsafe-inline ») ;
+  l'échappement des textes venus des sites reste la première protection.
 - **`404.html`** : la page des adresses introuvables, que GitHub Pages sert
   d'elle-même : « erreur 404 », « page introuvable » et un lien vers la page
   d'accueil. Son lien et ses polices sont en adresses complètes
@@ -438,12 +446,14 @@ python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
   annulés, l'heure de chaque séance, les catégories, les garde-fous
   d'`aggregate.py`, ce que la page et les collecteurs doivent avoir en
   commun (l'horizon, le marqueur « ailleurs », la table des lieux que le
-  robot relit dans la page), et deux RÉFÉRENCES figées.
+  robot relit dans la page), ce que la politique de sécurité de la page
+  interdit, et deux RÉFÉRENCES figées.
   La chaîne de publication entière est rejouée sur une collecte réelle
   (celle du 1er octobre 2026, dans `tests/donnees/`) et doit rendre le
   même fil au caractère près ; la page est jouée dans un navigateur sans
   fenêtre, sur ces données et à cette date, et ses neuf scénarios de
-  visiteur doivent afficher les mêmes cartes.
+  visiteur doivent afficher les mêmes cartes, sans erreur et sans rien
+  que sa politique de sécurité bloque.
 - **Le fil du jour**, après la collecte : la forme d'`events.json`, et la
   page qui s'affiche avec, sans erreur et avec les bons compteurs.
 

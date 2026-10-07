@@ -18,6 +18,7 @@ import subprocess
 import tempfile
 import threading
 import time
+import urllib.parse
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
@@ -44,11 +45,29 @@ DATE_FIGEE_JS = """<script>(() => {
   window.Date = DateFigee;
 })();</script>"""
 
-TETE = """<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: blob:">
+REGLE_DU_BANC = "default-src 'self' 'unsafe-inline' data: blob:"
+
+# La page a sa propre politique de sécurité (audit n° 15), qui s'ajoute à
+# celle du banc. Ce qu'ELLE bloque est une erreur : la page se priverait
+# d'un de ses fichiers, d'un script, d'un style. Ce que bloque la règle
+# du banc - les affiches des salles - est voulu, et n'est pas relevé.
+# Un script bloqué, c'est aussi le pilote ; un envoi bloqué, c'est son
+# relevé. L'échec part alors tout de suite, par une navigation, que la
+# règle ne peut pas bloquer (le serveur répond 204 : la page reste) ;
+# sans cela, le test se croirait privé de navigateur et serait sauté,
+# quand c'est la page qui ne marche plus.
+TETE = """<meta http-equiv="Content-Security-Policy" content="%s">
 <script>window.__erreurs = [];
 addEventListener('error', e => { if (e instanceof ErrorEvent) __erreurs.push('erreur : ' + e.message); });
 addEventListener('unhandledrejection', e => __erreurs.push('promesse rejetée : ' + String(e.reason)));
-</script>"""
+addEventListener('securitypolicyviolation', e => {
+  if (e.originalPolicy === %s) return;
+  const quoi = 'bloqué par la page : ' + e.effectiveDirective + ' ' + e.blockedURI;
+  __erreurs.push(quoi);
+  if (/^(script|connect)-src/.test(e.effectiveDirective))
+    location.href = '/__echec?' + encodeURIComponent(quoi);
+});
+</script>""" % (REGLE_DU_BANC, json.dumps(REGLE_DU_BANC))
 
 
 def trouver() -> str | None:
@@ -129,6 +148,16 @@ class _Gestionnaire(http.server.SimpleHTTPRequestHandler):
             self.server.resultats.append(json.loads(corps.decode("utf-8")))
         self.send_response(204)
         self.end_headers()
+
+    def do_GET(self):
+        # Un échec signalé par navigation (voir TETE) : noté comme un relevé.
+        if self.path.startswith("/__echec?"):
+            quoi = urllib.parse.unquote(self.path.split("?", 1)[1])
+            self.server.resultats.append({"echec": quoi, "erreurs": [quoi]})
+            self.send_response(204)
+            self.end_headers()
+            return
+        super().do_GET()
 
 
 def jouer(evenements: dict, lieux: dict | None, *, date_figee: bool,
