@@ -646,7 +646,11 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     display: inline-flex;
-    align-items: baseline;
+    /* 24 px de haut au moins, la plus petite cible qu'on recommande de
+       toucher ou de cliquer (audit n° 18) : ils en faisaient 23. Le texte
+       reste centré dans le pixel gagné. */
+    min-height: 24px;
+    align-items: center;
     gap: 6px;
     padding: 4px 8px;
     border: 1px solid var(--rule-strong);
@@ -2703,7 +2707,9 @@ function renderDatepicker() {
     }
     const iso = isoOf(cell.d);
     const dis = cell.disabled ? 'disabled' : '';
-    html += '<button class="' + cls.join(' ') + '" data-day="' + iso + '" ' + dis + '>'
+    // Le jour courant, dit aux lecteurs d'écran (audit n° 18).
+    const courant = cell.d.getTime() === today.getTime() ? ' aria-current="date"' : '';
+    html += '<button class="' + cls.join(' ') + '" data-day="' + iso + '" ' + dis + courant + '>'
           + cell.d.getDate() + '</button>';
   }
   html += '</div>';
@@ -2803,6 +2809,16 @@ document.addEventListener('click', e => {
   if (!isDatepickerOpen()) return;
   if (e.target.closest('#dateBtn') || e.target.closest('#datepicker')) return;
   closeDatepicker();
+});
+
+/* Échap ferme le calendrier (audit n° 18). La main revient au bouton
+   « date » si elle était dans le calendrier : sans cela, elle tomberait
+   en tête de page, avec la case du jour qui disparaît. */
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape' || !isDatepickerOpen()) return;
+  const dedans = document.getElementById('datepicker').contains(document.activeElement);
+  closeDatepicker();
+  if (dedans) document.getElementById('dateBtn').focus();
 });
 
 /* ---------- main load ---------- */
@@ -2910,6 +2926,9 @@ function buildDaystrip() {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'day-pill' + (n === 0 ? ' empty' : '') + (i === 0 ? ' today' : '');
+    // Le jour courant, dit aux lecteurs d'écran (audit n° 18) ; à l'écran,
+    // c'est la bordure ocre de .today.
+    if (i === 0) btn.setAttribute('aria-current', 'date');
     // Mois affiché uniquement au premier jour de chaque mois, et sur la
     // première pastille de la bande - sans elle, une fenêtre entièrement
     // contenue dans un mois n'indiquerait aucun mois du tout.

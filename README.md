@@ -397,8 +397,11 @@ la recopier, version comprise.
   arrondissement/type, recherche insensible aux accents (titre, lieu,
   line-up), expansion des événements multi-jours, groupes de lieux.
   Pour les lecteurs d'écran, le champ de recherche porte un nom, les
-  boutons de filtre disent s'ils sont enfoncés, et chaque journée est un
-  titre de niveau 2.
+  boutons de filtre disent s'ils sont enfoncés, chaque journée est un
+  titre de niveau 2, et le jour courant est signalé (`aria-current`)
+  dans la frise des jours comme dans le calendrier. Au clavier, Échap
+  ferme le calendrier et rend la main au bouton « date ». Les boutons de
+  famille font 24 px de haut, la plus petite cible recommandée.
   Sa politique de sécurité (`Content-Security-Policy`, en tête de page)
   ne lui permet de charger que ses propres fichiers (scripts, styles,
   polices, fil, logos) et des images en `https` (les affiches des

@@ -192,6 +192,24 @@
       document.body.dispatchEvent(new KeyboardEvent('keydown', { key: 'f', ctrlKey: true, bubbles: true }));
       res.journees_apres_ctrl_f = document.querySelectorAll('#feed section.day').length;
       res.familles_suivies = await familleAuMilieu();
+      // Audit n° 18 : le jour courant signalé aux lecteurs d'écran ; Échap
+      // qui ferme le calendrier et rend la main au bouton « date » ; la
+      // hauteur des boutons de famille.
+      await effacer();
+      window.scrollTo(0, 0);
+      document.getElementById('dateBtn').click();
+      await pause(200);
+      const pastilles = [...document.querySelectorAll('.day-pill')];
+      res.aujourd_hui = [...document.querySelectorAll('[aria-current="date"]')]
+        .map(b => b.dataset.day || 'pastille ' + pastilles.indexOf(b));
+      const caseDuJour = document.querySelector('#datepicker [data-day]:not([disabled])');
+      caseDuJour.focus();
+      caseDuJour.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+      await pause(200);
+      res.apres_echap = [document.getElementById('datepicker').classList.contains('open'),
+                         document.activeElement ? document.activeElement.id : null];
+      res.boutons_de_famille = [...new Set([...document.querySelectorAll('.fam-chip')]
+        .map(c => Math.round(c.getBoundingClientRect().height)))];
     } else if (SCENARIOS === 'pastilles_fondues') {
       // Avec les fondus : la pastille d'un jour proche fait défiler la page
       // en douceur, celle d'un jour lointain la fait sauter, par-dessus des

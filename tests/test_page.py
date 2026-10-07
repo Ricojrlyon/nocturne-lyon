@@ -142,6 +142,15 @@ class PageNavigation(unittest.TestCase):
     def test_une_famille_eteinte_au_milieu_garde_sa_journee(self):
         verifier_famille_au_milieu(self, self.releve["familles_suivies"])
 
+    def test_aujourd_hui_signale_echap_et_boutons_de_24_px(self):
+        # Audit n° 18, à la date figée du 1er octobre 2026 : la case du
+        # calendrier et la première pastille portent aria-current="date" ;
+        # Échap ferme le calendrier et rend la main au bouton « date » ;
+        # les boutons de famille font 24 px de haut.
+        self.assertEqual(self.releve["aujourd_hui"], ["2026-10-01", "pastille 0"])
+        self.assertEqual(self.releve["apres_echap"], [False, "dateBtn"])
+        self.assertEqual(self.releve["boutons_de_famille"], [24])
+
     def test_chaque_police_prechargee_n_est_telechargee_qu_une_fois(self):
         # Audit n° 17 : une fois, et par le préchargement. Un « crossorigin »
         # oublié la ferait télécharger une seconde fois, par polices.css.
