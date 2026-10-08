@@ -166,7 +166,7 @@
   "Bulle de son": {
     "arr": "9e",
     "confidence": "high",
-    "seen_at": "2026-10-01"
+    "seen_at": "2026-10-08"
   },
   "Bussières": {
     "arr": null,
@@ -266,6 +266,12 @@
     "confidence": "high",
     "seen_at": "2026-08-26"
   },
+  "Collège Jean Charcot": {
+    "arr": "5e",
+    "checked_at": "2026-10-08",
+    "confidence": "high",
+    "seen_at": "2026-10-08"
+  },
   "Collège Supérieur Lyon": {
     "arr": "7e",
     "checked_at": "2026-09-01",
@@ -328,7 +334,7 @@
     "arr": null,
     "checked_at": "2026-09-26",
     "confidence": "failed",
-    "seen_at": "2026-09-26"
+    "seen_at": "2026-10-08"
   },
   "Factatory": {
     "arr": null,
@@ -412,7 +418,7 @@
     "arr": "2e",
     "checked_at": "2026-08-18",
     "confidence": "high",
-    "seen_at": "2026-10-01"
+    "seen_at": "2026-10-08"
   },
   "Groom": {
     "arr": "1er",
@@ -571,7 +577,7 @@
     "arr": "1er",
     "checked_at": "2026-09-01",
     "confidence": "high",
-    "seen_at": "2026-09-22"
+    "seen_at": "2026-10-08"
   },
   "La Relève": {
     "arr": "5e",
@@ -776,6 +782,12 @@
     "confidence": "failed",
     "seen_at": "2026-07-28"
   },
+  "Lycée Branly": {
+    "arr": "5e",
+    "checked_at": "2026-10-08",
+    "confidence": "high",
+    "seen_at": "2026-10-08"
+  },
   "Lycée François Cevert": {
     "arr": "Autre",
     "checked_at": "2026-09-09",
@@ -829,7 +841,7 @@
     "arr": "5e",
     "checked_at": "2026-09-24",
     "confidence": "high",
-    "seen_at": "2026-10-01"
+    "seen_at": "2026-10-08"
   },
   "Maison Ravier": {
     "arr": "7e",
@@ -1089,13 +1101,13 @@
     "arr": "5e",
     "checked_at": "2026-09-17",
     "confidence": "high",
-    "seen_at": "2026-10-01"
+    "seen_at": "2026-10-08"
   },
   "Salle Paul Garcin": {
     "arr": "1er",
     "checked_at": "2026-10-01",
     "confidence": "high",
-    "seen_at": "2026-10-01"
+    "seen_at": "2026-10-08"
   },
   "Salle Victor Hugo": {
     "arr": "Autre",
@@ -1181,7 +1193,7 @@
     "arr": null,
     "checked_at": "2026-09-17",
     "confidence": "failed",
-    "seen_at": "2026-10-01"
+    "seen_at": "2026-10-08"
   },
   "Théâtre de l'Iris": {
     "arr": "Villeurbanne",
@@ -1229,6 +1241,12 @@
     "checked_at": "2026-09-01",
     "confidence": "high",
     "seen_at": "2026-10-06"
+  },
+  "Théâtre du Gai savoir": {
+    "arr": "6e",
+    "checked_at": "2026-10-08",
+    "confidence": "high",
+    "seen_at": "2026-10-08"
   },
   "Théâtre du Point du Jour": {
     "arr": "5e",
@@ -1319,7 +1337,7 @@
     "arr": "Villeurbanne",
     "checked_at": "2026-09-24",
     "confidence": "high",
-    "seen_at": "2026-10-01"
+    "seen_at": "2026-10-08"
   },
   "médiathèque de Meyzieu": {
     "arr": "Autre",
@@ -1342,9 +1360,9 @@
   },
   "Ô Totem live": {
     "arr": null,
-    "checked_at": "2026-09-07",
+    "checked_at": "2026-10-08",
     "confidence": "failed",
-    "seen_at": "2026-10-05"
+    "seen_at": "2026-10-08"
   },
   "Ô boudoir": {
     "arr": null,
