@@ -91,6 +91,10 @@
     "fetched_at": "2026-10-02",
     "time": "12:00"
   },
+  "https://h-eat.eu/events/tango-tnt/": {
+    "fetched_at": "2026-10-09",
+    "time": "18:00"
+  },
   "https://h-eat.eu/events/vandale-radio-2/": {
     "fetched_at": "2026-10-02",
     "time": "18:00"
@@ -257,7 +261,7 @@
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-16/": {
-    "fetched_at": "2026-09-08",
+    "fetched_at": "2026-10-09",
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-17/": {
@@ -1487,6 +1491,16 @@
     "seances": [
       [
         "2027-02-10",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
+  },
+  "https://radiant-bellevue.fr/spectacles/clash-world-le-bolero-a-bamako/": {
+    "fetched_at": "2026-10-09",
+    "seances": [
+      [
+        "2027-04-07",
         "20:00"
       ]
     ],
@@ -3704,7 +3718,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/queen-kelly": {
-    "fetched_at": "2026-10-01",
+    "fetched_at": "2026-10-09",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -7652,6 +7666,12 @@
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/07/a-boyharsher.jpg",
     "time": "18:30"
   },
+  "https://www.transbordeur.fr/evenement/charlie-oz-10022027/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2025/03/a-charlieoz2-768x1151.jpg",
+    "fetched_at": "2026-10-09",
+    "image": null,
+    "time": "19:00"
+  },
   "https://www.transbordeur.fr/evenement/colours-in-the-street-17112026/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-cits-768x1152.jpg",
     "fetched_at": "2026-10-05",
@@ -8019,6 +8039,12 @@
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/05/a-onlythepoets2.png",
     "time": "19:00"
   },
+  "https://www.transbordeur.fr/evenement/oria-07042027/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/09/a-oria-768x1024.jpg",
+    "fetched_at": "2026-10-09",
+    "image": null,
+    "time": "19:00"
+  },
   "https://www.transbordeur.fr/evenement/peter-hook-the-light-04042027/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-peterhook-768x512.jpg",
     "fetched_at": "2026-10-06",
@@ -8187,6 +8213,12 @@
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-zedyunpavarotti3-768x1159.jpeg",
     "fetched_at": "2026-10-05",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-zedyunpavarotti3.jpeg",
+    "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/zed-yun-pavarotti-ibou-20102026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-zedyunpavarotti3-768x1159.jpeg",
+    "fetched_at": "2026-10-09",
+    "image": null,
     "time": "19:00"
   },
   "https://www.transbordeur.fr/evenement/zoufris-maracas-30102026/": {

@@ -9,7 +9,7 @@
     "arr": null,
     "checked_at": "2026-10-02",
     "confidence": "failed",
-    "seen_at": "2026-10-02"
+    "seen_at": "2026-10-09"
   },
   "Amphithéâtre - Salle 3000": {
     "arr": "6e",
@@ -296,6 +296,12 @@
     "confidence": "high",
     "seen_at": "2026-09-07"
   },
+  "Départ déambulation au city stade dans le quartier villeurbanne st jean": {
+    "arr": null,
+    "checked_at": "2026-10-09",
+    "confidence": "failed",
+    "seen_at": "2026-10-09"
+  },
   "Ecocentre du Lyonnais à La Tour-de-Salvagny": {
     "arr": "Autre",
     "checked_at": "2026-09-01",
@@ -488,9 +494,9 @@
   },
   "L'Aînée - Librairie Vivement Dimanche": {
     "arr": null,
-    "checked_at": "2026-09-08",
+    "checked_at": "2026-10-09",
     "confidence": "failed",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-09"
   },
   "L'Echappée": {
     "arr": "Autre",
@@ -547,7 +553,7 @@
     "arr": null,
     "checked_at": "2026-09-18",
     "confidence": "failed",
-    "seen_at": "2026-10-02"
+    "seen_at": "2026-10-09"
   },
   "La Galerue": {
     "arr": "4e",
@@ -609,6 +615,12 @@
     "confidence": "high",
     "seen_at": "2026-10-05"
   },
+  "Le Bar Bu": {
+    "arr": "5e",
+    "checked_at": "2026-10-09",
+    "confidence": "high",
+    "seen_at": "2026-10-09"
+  },
   "Le Boui Boui": {
     "arr": "5e",
     "checked_at": "2026-09-01",
@@ -662,14 +674,14 @@
   "Les Clameurs": {
     "arr": "7e",
     "confidence": "high",
-    "seen_at": "2026-10-02"
+    "seen_at": "2026-10-09"
   },
   "Les Grandes Voisines": {
     "arr": "Autre",
     "checked_at": "2026-08-12",
     "commune": "Francheville",
     "confidence": "low",
-    "seen_at": "2026-09-15"
+    "seen_at": "2026-10-09"
   },
   "Les mots bleus": {
     "arr": "Autre",
@@ -940,6 +952,12 @@
     "commune": "Saint-Symphorien-sur-Coise",
     "confidence": "low",
     "seen_at": "2026-09-01"
+  },
+  "Olmé": {
+    "arr": "7e",
+    "checked_at": "2026-10-09",
+    "confidence": "high",
+    "seen_at": "2026-10-09"
   },
   "Orangerie du Parc de la Tête d\\'Or": {
     "arr": null,
@@ -1223,7 +1241,7 @@
     "arr": null,
     "checked_at": "2026-10-02",
     "confidence": "failed",
-    "seen_at": "2026-10-02"
+    "seen_at": "2026-10-09"
   },
   "Théâtre de l’Elysée": {
     "arr": "7e",
@@ -1275,7 +1293,7 @@
     "arr": null,
     "checked_at": "2026-09-10",
     "confidence": "failed",
-    "seen_at": "2026-10-02"
+    "seen_at": "2026-10-09"
   },
   "Tram 33": {
     "arr": "2e",
