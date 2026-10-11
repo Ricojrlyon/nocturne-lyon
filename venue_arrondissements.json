@@ -1246,7 +1246,7 @@
   "Théâtre de l’Elysée": {
     "arr": "7e",
     "confidence": "high",
-    "seen_at": "2026-10-04"
+    "seen_at": "2026-10-11"
   },
   "Théâtre des Clochards Célestes": {
     "arr": "1er",
@@ -1291,9 +1291,9 @@
   },
   "Touten kaos": {
     "arr": null,
-    "checked_at": "2026-09-10",
+    "checked_at": "2026-10-11",
     "confidence": "failed",
-    "seen_at": "2026-10-09"
+    "seen_at": "2026-10-11"
   },
   "Tram 33": {
     "arr": "2e",
@@ -1337,6 +1337,12 @@
     "commune": "Bron",
     "confidence": "low",
     "seen_at": "2026-10-07"
+  },
+  "Vaulx en velin": {
+    "arr": "Villeurbanne",
+    "checked_at": "2026-10-11",
+    "confidence": "high",
+    "seen_at": "2026-10-11"
   },
   "Warmaudio": {
     "arr": "Autre",
