@@ -115,10 +115,6 @@
       "11-22"
     ]
   },
-  "https://le-sucre.eu/events/1-year-of-silk/": {
-    "fetched_at": "2026-08-12",
-    "time": "23:00"
-  },
   "https://le-sucre.eu/events/a-week-end-with-anetha-2/": {
     "fetched_at": "2026-09-30",
     "time": "23:00"
@@ -155,20 +151,8 @@
     "fetched_at": "2026-09-12",
     "time": "23:00"
   },
-  "https://le-sucre.eu/events/club-51/": {
-    "fetched_at": "2026-08-12",
-    "time": "23:00"
-  },
   "https://le-sucre.eu/events/club-53/": {
     "fetched_at": "2026-09-12",
-    "time": "23:00"
-  },
-  "https://le-sucre.eu/events/club-60/": {
-    "fetched_at": "2026-08-12",
-    "time": "23:00"
-  },
-  "https://le-sucre.eu/events/club-61/": {
-    "fetched_at": "2026-08-12",
     "time": "23:00"
   },
   "https://le-sucre.eu/events/club-62/": {
@@ -211,10 +195,6 @@
     "fetched_at": "2026-09-12",
     "time": "23:00"
   },
-  "https://le-sucre.eu/events/club-millos-kaiser-marina-trench-l-mar/": {
-    "fetched_at": "2026-08-12",
-    "time": "23:00"
-  },
   "https://le-sucre.eu/events/club-tbm/": {
     "fetched_at": "2026-09-12",
     "time": "23:00"
@@ -225,18 +205,6 @@
   },
   "https://le-sucre.eu/events/club-x-encore/": {
     "fetched_at": "2026-09-11",
-    "time": "23:00"
-  },
-  "https://le-sucre.eu/events/club-x-hidden-garden/": {
-    "fetched_at": "2026-08-12",
-    "time": "23:00"
-  },
-  "https://le-sucre.eu/events/club-x-physical-tool/": {
-    "fetched_at": "2026-08-12",
-    "time": "23:00"
-  },
-  "https://le-sucre.eu/events/club-x-stand-with-lebanon/": {
-    "fetched_at": "2026-08-12",
     "time": "23:00"
   },
   "https://le-sucre.eu/events/concert-10/": {
@@ -319,14 +287,6 @@
     "fetched_at": "2026-09-12",
     "time": "23:00"
   },
-  "https://le-sucre.eu/events/magic-mardi-22-2/": {
-    "fetched_at": "2026-08-12",
-    "time": "18:00"
-  },
-  "https://le-sucre.eu/events/magic-mardi-23-2/": {
-    "fetched_at": "2026-08-12",
-    "time": "18:00"
-  },
   "https://le-sucre.eu/events/magic-mardi-24-2/": {
     "fetched_at": "2026-09-12",
     "time": "18:00"
@@ -347,14 +307,6 @@
     "fetched_at": "2026-10-02",
     "time": "18:00"
   },
-  "https://le-sucre.eu/events/magic-mardi-90/": {
-    "fetched_at": "2026-08-12",
-    "time": "18:00"
-  },
-  "https://le-sucre.eu/events/magic-mardi-91/": {
-    "fetched_at": "2026-08-12",
-    "time": "18:00"
-  },
   "https://le-sucre.eu/events/magic-mardi-92/": {
     "fetched_at": "2026-09-03",
     "time": "18:00"
@@ -370,18 +322,6 @@
   "https://le-sucre.eu/events/s-festival/": {
     "fetched_at": "2026-09-29",
     "time": "23:00"
-  },
-  "https://le-sucre.eu/events/s-society-153/": {
-    "fetched_at": "2026-08-12",
-    "time": "18:00"
-  },
-  "https://le-sucre.eu/events/s-society-158/": {
-    "fetched_at": "2026-08-12",
-    "time": "18:00"
-  },
-  "https://le-sucre.eu/events/s-society-159/": {
-    "fetched_at": "2026-08-12",
-    "time": "18:00"
   },
   "https://le-sucre.eu/events/s-society-160/": {
     "fetched_at": "2026-09-12",
@@ -423,10 +363,6 @@
     "fetched_at": "2026-09-29",
     "time": "18:00"
   },
-  "https://le-sucre.eu/events/s-society-caravel-peaksou-carla-schmitt/": {
-    "fetched_at": "2026-08-12",
-    "time": "18:00"
-  },
   "https://le-sucre.eu/events/s-society-primal-instinct/": {
     "fetched_at": "2026-09-01",
     "time": "18:00"
@@ -437,10 +373,6 @@
   },
   "https://le-sucre.eu/events/soeurs-malsaines/": {
     "fetched_at": "2026-10-05",
-    "time": "23:00"
-  },
-  "https://le-sucre.eu/events/stack-x-oshumare/": {
-    "fetched_at": "2026-08-12",
     "time": "23:00"
   },
   "https://le-sucre.eu/events/sublime-club/": {
@@ -1354,6 +1286,20 @@
       ]
     ],
     "time": "18:00"
+  },
+  "https://radiant-bellevue.fr/spectacles/art-2/": {
+    "fetched_at": "2026-10-12",
+    "seances": [
+      [
+        "2027-04-10",
+        "20:30"
+      ],
+      [
+        "2027-04-11",
+        "16:00"
+      ]
+    ],
+    "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/bazar-circus/": {
     "fetched_at": "2026-10-03",
@@ -3875,7 +3821,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/famille/carnaval-emotions": {
-    "fetched_at": "2026-10-04",
+    "fetched_at": "2026-10-12",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -4063,7 +4009,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/eleves-du-cnsmd-lyon-12-nov-26": {
-    "fetched_at": "2026-10-04",
+    "fetched_at": "2026-10-12",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -4073,7 +4019,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/eleves-du-cnsmd-lyon-15-oct-26": {
-    "fetched_at": "2026-10-04",
+    "fetched_at": "2026-10-12",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -6348,7 +6294,7 @@
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/beethoven-sibelius": {
-    "fetched_at": "2026-10-04",
+    "fetched_at": "2026-10-12",
     "lieu": "Opéra de Lyon",
     "seances": [
       [
@@ -7605,6 +7551,12 @@
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/06/@tamslay1.png",
     "time": "19:00"
   },
+  "https://www.transbordeur.fr/evenement/a6el-bouki-22102026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/06/@tamslay1-768x1024.png",
+    "fetched_at": "2026-10-12",
+    "image": null,
+    "time": "19:00"
+  },
   "https://www.transbordeur.fr/evenement/accept-dynazty-tailgunner-25112026/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-accept2-768x512.jpg",
     "fetched_at": "2026-10-05",
@@ -8009,6 +7961,12 @@
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-luther-768x768.png",
     "fetched_at": "2026-10-05",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-luther.png",
+    "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/madame-arthur-10042027/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/06/a-madamearthur-768x1152.jpg",
+    "fetched_at": "2026-10-12",
+    "image": null,
     "time": "19:00"
   },
   "https://www.transbordeur.fr/evenement/marcus-gad-18112026/": {
