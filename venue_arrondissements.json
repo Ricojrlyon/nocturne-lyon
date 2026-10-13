@@ -39,13 +39,13 @@
     "arr": "2e",
     "checked_at": "2026-09-01",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Atrium de l'hôtel de ville": {
     "arr": null,
     "checked_at": "2026-09-15",
     "confidence": "failed",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Atrium de l\\'hôtel de ville": {
     "arr": null,
@@ -57,7 +57,7 @@
     "arr": "1er",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Au bonheur des ogres": {
     "arr": "9e",
@@ -117,7 +117,7 @@
     "arr": "7e",
     "checked_at": "2026-09-01",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Bieristan": {
     "arr": "Villeurbanne",
@@ -276,7 +276,7 @@
     "arr": "7e",
     "checked_at": "2026-09-01",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Comoedia": {
     "arr": "7e",
@@ -288,7 +288,7 @@
     "arr": "2e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Dr Yeast": {
     "arr": "4e",
@@ -346,7 +346,7 @@
     "arr": null,
     "checked_at": "2026-09-08",
     "confidence": "failed",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Fnac Part-Dieu": {
     "arr": "3e",
@@ -429,7 +429,7 @@
   "Groom": {
     "arr": "1er",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Gros Caillou": {
     "arr": "4e",
@@ -446,7 +446,7 @@
     "arr": "2e",
     "checked_at": "2026-08-26",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Hôtel Carlton": {
     "arr": "2e",
@@ -547,7 +547,7 @@
     "arr": "9e",
     "checked_at": "2026-10-06",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "La Ferme du Vinatier": {
     "arr": null,
@@ -565,7 +565,7 @@
     "arr": "Autre",
     "commune": "Vénissieux",
     "confidence": "low",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "La Madeleine": {
     "arr": "7e",
@@ -577,7 +577,7 @@
     "arr": null,
     "checked_at": "2026-09-01",
     "confidence": "failed",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "La Pente": {
     "arr": "1er",
@@ -631,7 +631,7 @@
     "arr": null,
     "checked_at": "2026-08-12",
     "confidence": "failed",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Le Croiseur": {
     "arr": "7e",
@@ -644,7 +644,7 @@
     "checked_at": "2026-09-01",
     "commune": "La Mulatière",
     "confidence": "low",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Le Flâneur": {
     "arr": "7e",
@@ -652,18 +652,30 @@
     "confidence": "high",
     "seen_at": "2026-09-15"
   },
+  "Le Sémaphore - Théâtre d'Irigny": {
+    "arr": null,
+    "checked_at": "2026-10-13",
+    "confidence": "failed",
+    "seen_at": "2026-10-13"
+  },
   "Le Toboggan": {
     "arr": "Autre",
     "checked_at": "2026-08-12",
     "commune": "Décines-Charpieu",
     "confidence": "low",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Le Trokson": {
     "arr": "1er",
     "checked_at": "2026-09-07",
     "confidence": "high",
     "seen_at": "2026-09-14"
+  },
+  "Le bistrO d'à côté": {
+    "arr": "1er",
+    "checked_at": "2026-10-13",
+    "confidence": "high",
+    "seen_at": "2026-10-13"
   },
   "Le livre en pente": {
     "arr": "4e",
@@ -718,7 +730,7 @@
     "arr": "2e",
     "checked_at": "2026-08-27",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Librairie La BD": {
     "arr": "Autre",
@@ -738,7 +750,7 @@
     "arr": null,
     "checked_at": "2026-10-06",
     "confidence": "failed",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Librairie La Gryffe": {
     "arr": "7e",
@@ -756,13 +768,13 @@
     "arr": "2e",
     "checked_at": "2026-09-08",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Librairie Passages": {
     "arr": "2e",
     "checked_at": "2026-08-27",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Librairie Terre des livres": {
     "arr": "7e",
@@ -816,7 +828,7 @@
     "arr": "7e",
     "checked_at": "2026-09-01",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "MAM - Musée des Arts et de la Marionnette": {
     "arr": null,
@@ -865,7 +877,7 @@
     "arr": "7e",
     "checked_at": "2026-09-01",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Maison du Livre, de l'Image et du Son": {
     "arr": null,
@@ -896,7 +908,7 @@
     "arr": null,
     "checked_at": "2026-09-08",
     "confidence": "failed",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Musée Jean Couty": {
     "arr": "9e",
@@ -914,7 +926,7 @@
     "arr": "8e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Musée de Fourvière": {
     "arr": "5e",
@@ -1033,7 +1045,7 @@
     "arr": "Villeurbanne",
     "checked_at": "2026-09-01",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Place Ambroise Courtois": {
     "arr": "8e",
@@ -1132,7 +1144,7 @@
     "checked_at": "2026-09-01",
     "commune": "Sathonay-Camp",
     "confidence": "low",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Showroom galerie 7": {
     "arr": null,
@@ -1144,7 +1156,7 @@
     "arr": "1er",
     "checked_at": "2026-08-18",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Square Delestraint": {
     "arr": "3e",
@@ -1174,7 +1186,7 @@
     "arr": "Villeurbanne",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Théâtre Astrée": {
     "arr": "Villeurbanne",
@@ -1198,14 +1210,14 @@
     "arr": "7e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Théâtre Théo Argence": {
     "arr": "Autre",
     "checked_at": "2026-08-12",
     "commune": "Saint-Priest",
     "confidence": "low",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Théâtre de La Renaissance": {
     "arr": null,
@@ -1217,7 +1229,7 @@
     "arr": "Villeurbanne",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Théâtre de l'Élysée": {
     "arr": "7e",
@@ -1235,7 +1247,7 @@
     "arr": "4e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Théâtre de la Renaissance": {
     "arr": null,
@@ -1252,13 +1264,13 @@
     "arr": "1er",
     "checked_at": "2026-09-01",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Théâtre des Marronniers": {
     "arr": "2e",
     "checked_at": "2026-09-01",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Théâtre du Gai savoir": {
     "arr": "6e",
@@ -1270,7 +1282,7 @@
     "arr": "5e",
     "checked_at": "2026-08-12",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "Théâtre à l'Ouest": {
     "arr": "Autre",
@@ -1305,7 +1317,7 @@
     "arr": "1er",
     "checked_at": "2026-09-01",
     "confidence": "high",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "UC4 Bron-Parilly": {
     "arr": null,
@@ -1349,7 +1361,7 @@
     "checked_at": "2026-09-15",
     "commune": "Décines-Charpieu",
     "confidence": "low",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "café galerie": {
     "arr": null,
@@ -1374,7 +1386,7 @@
     "checked_at": "2026-09-01",
     "commune": "Meyzieu",
     "confidence": "low",
-    "seen_at": "2026-10-06"
+    "seen_at": "2026-10-13"
   },
   "théâtre du Gai Savoir": {
     "arr": "6e",

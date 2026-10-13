@@ -43,6 +43,10 @@
     "fetched_at": "2026-10-02",
     "time": "19:00"
   },
+  "https://h-eat.eu/events/la-drama-queer/": {
+    "fetched_at": "2026-10-13",
+    "time": "19:00"
+  },
   "https://h-eat.eu/events/le-dome/": {
     "fetched_at": "2026-10-07",
     "time": "18:00"
@@ -99,6 +103,10 @@
     "fetched_at": "2026-10-02",
     "time": "18:00"
   },
+  "https://h-eat.eu/events/velour-heat-the-bass/": {
+    "fetched_at": "2026-10-13",
+    "time": "18:00"
+  },
   "https://i-ac.eu/fr/RDV-satellites_2026/583_vernissage-jeune-creation-internationale-18e-biennale-de-lyon": {
     "fetched_at": "2026-10-11",
     "heure": "19:00",
@@ -152,7 +160,7 @@
     "time": "23:00"
   },
   "https://le-sucre.eu/events/club-53/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-13",
     "time": "23:00"
   },
   "https://le-sucre.eu/events/club-62/": {
@@ -208,11 +216,11 @@
     "time": "23:00"
   },
   "https://le-sucre.eu/events/concert-10/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-13",
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-12/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-13",
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-13/": {
@@ -236,7 +244,7 @@
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-4/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-13",
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-5/": {
@@ -244,15 +252,15 @@
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-6/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-13",
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-7/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-13",
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-8/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-13",
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-9/": {
@@ -272,7 +280,7 @@
     "time": "23:00"
   },
   "https://le-sucre.eu/events/high-lo-presente-12/": {
-    "fetched_at": "2026-09-12",
+    "fetched_at": "2026-10-13",
     "time": "18:30"
   },
   "https://le-sucre.eu/events/le-sucre-24-heures-3/": {
@@ -1108,7 +1116,7 @@
     ]
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/strip": {
-    "fetched_at": "2026-10-05",
+    "fetched_at": "2026-10-13",
     "lieu": "Les SUBS",
     "seances": [
       [
@@ -2695,6 +2703,11 @@
   },
   "https://www.auditorium-lyon.com/fr/jep-2026": {
     "fetched_at": "2026-09-25",
+    "lieu": null,
+    "seances": []
+  },
+  "https://www.auditorium-lyon.com/fr/programmation-salle-proton": {
+    "fetched_at": "2026-10-13",
     "lieu": null,
     "seances": []
   },
@@ -6363,6 +6376,17 @@
     ],
     "time": null
   },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/deborah-salazar": {
+    "fetched_at": "2026-10-13",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2027-04-11",
+        "18:00"
+      ]
+    ],
+    "time": null
+  },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/elisabeth-leonskaja-2026": {
     "fetched_at": "2026-10-11",
     "lieu": "Opéra de Lyon",
@@ -8139,6 +8163,12 @@
     "fetched_at": "2026-10-05",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2024/04/SHOOT_TUNIS_AKE-241-Modifier.jpg",
     "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/tania-wyss-frederic-fromet-14012027/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/10/a-tanya-768x576.jpg",
+    "fetched_at": "2026-10-13",
+    "image": null,
+    "time": "18:30"
   },
   "https://www.transbordeur.fr/evenement/teddybear-20032027/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/09/a-teddybear-1-768x509.jpg",
