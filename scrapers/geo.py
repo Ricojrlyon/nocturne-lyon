@@ -197,8 +197,8 @@ def resolve_new_venues(
 
     Args:
         venues: all unique venue names seen in the current run.
-        known_venues: optional set of venues already hardcoded in the
-            frontend (VENUE_ARRONDISSEMENT). These are skipped even if
+        known_venues: optional set of venues already placed by hand in
+            lieux.json, which the frontend reads. These are skipped even if
             absent from the cache - no point re-resolving them.
         verbose: print progress to stdout.
 

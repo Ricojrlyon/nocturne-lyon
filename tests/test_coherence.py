@@ -1,13 +1,15 @@
 """Ce que la page et les collecteurs doivent avoir en commun (audit n° 10).
 
-Trois valeurs vivent des deux côtés, en Python et dans index.html, sans
+Deux valeurs vivent des deux côtés, en Python et dans index.html, sans
 que rien ne les relie : le marqueur « ailleurs » d'un spectacle joué dans
-plusieurs salles, l'horizon de 180 jours, et la table des lieux que
-aggregate.py relit dans la page pour ne pas les géocoder. Modifiée d'un
-seul côté, l'une d'elles décalerait le site en silence. Ici, elle bloque
-la publication.
+plusieurs salles, et l'horizon de 180 jours. Modifiée d'un seul côté,
+l'une d'elles décalerait le site en silence. Ici, elle bloque la
+publication. La table des lieux, elle, n'existe plus qu'en un endroit,
+lieux.json, que la page et le robot lisent tous deux (audit n° 21) : on
+vérifie qu'ils le lisent bien, et qu'il est bien formé.
 """
 import importlib
+import json
 import pkgutil
 import re
 import unittest
@@ -82,20 +84,34 @@ class Coherence(unittest.TestCase):
         self.assertIsNotNone(bloc)
         self.assertIn("le programme a besoin de JavaScript", bloc.group(1))
 
-    def test_le_robot_lit_toute_la_table_des_lieux_de_la_page(self):
-        # Les autres tests remplacent cette lecture par un ensemble vide :
-        # ici, elle lit le vrai index.html. Chaque ligne d'entrée de
-        # VENUE_ARRONDISSEMENT doit être lue ; une entrée écrite autrement
-        # serait sinon géocodée chaque nuit pour rien, sans un mot.
-        # Les entrées sont comptées une à une, commentaires ôtés : deux
-        # lieux écrits sur une même ligne n'en feraient pas un seul.
-        bloc = PAGE.split("const VENUE_ARRONDISSEMENT = {", 1)[1].split("\n};", 1)[0]
-        entrees = [cle for l in bloc.split("\n")
-                   for _, cle in re.findall(r"""(['"])((?:(?!\1).)+)\1\s*:\s*['"]""",
-                                            l.split("//", 1)[0])]
-        lus = aggregate.frontend_hardcoded_venues()
-        self.assertGreater(len(entrees), 100)
-        self.assertEqual(sorted(lus), sorted(set(entrees)))
+    def test_la_page_et_le_robot_lisent_le_meme_fichier_de_lieux(self):
+        # La page ne garde plus de table de lieux : elle lit lieux.json au
+        # chargement. Le robot lit le même fichier ; les autres tests
+        # remplacent sa lecture par un ensemble vide, ici elle lit le vrai.
+        self.assertIn("const VENUE_ARRONDISSEMENT = {};", PAGE)
+        self.assertIn("const VENUE_COMMUNE = {};", PAGE)
+        self.assertIn("fetch('lieux.json'", PAGE)
+        lieux = json.loads((RACINE / "lieux.json").read_text(encoding="utf-8"))["lieux"]
+        self.assertEqual(aggregate.frontend_hardcoded_venues(),
+                         {l["nom"] for l in lieux if "arr" in l})
+
+    def test_le_fichier_des_lieux_est_bien_forme(self):
+        # Une ligne par lieu : un nom, unique ; un arrondissement de la liste
+        # de la page, une commune écrite en entier, ou les deux ; une note
+        # libre. Une faute ici ferait échouer le chargement de la page.
+        ordre = json.loads(constante_de_la_page("ARRONDISSEMENT_ORDER").replace("'", '"'))
+        lieux = json.loads((RACINE / "lieux.json").read_text(encoding="utf-8"))["lieux"]
+        self.assertGreater(len(lieux), 100)
+        noms = [l["nom"] for l in lieux]
+        self.assertEqual(len(noms), len(set(noms)))
+        for l in lieux:
+            self.assertLessEqual(set(l), {"nom", "arr", "commune", "note"}, l)
+            self.assertTrue(l["nom"].strip(), l)
+            self.assertTrue("arr" in l or "commune" in l, l)
+            if "arr" in l:
+                self.assertIn(l["arr"], ordre, l)
+            if "commune" in l:
+                self.assertNotIn("…", l["commune"], l)
 
 
 if __name__ == "__main__":

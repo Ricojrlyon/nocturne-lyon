@@ -127,6 +127,8 @@ def preparer_site(dossier: Path, evenements: dict, lieux: dict | None,
     for d in ("fonts", "logos"):
         if (RACINE / d).exists():
             shutil.copytree(RACINE / d, dossier / d)
+    # Les lieux, que la page lit au chargement comme le fil (audit n° 21).
+    shutil.copy(RACINE / "lieux.json", dossier / "lieux.json")
     (dossier / "events.json").write_text(json.dumps(evenements, ensure_ascii=False),
                                          encoding="utf-8")
     if lieux is not None:

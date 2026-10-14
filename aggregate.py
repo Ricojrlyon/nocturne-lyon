@@ -121,55 +121,30 @@ AGGREGATORS: list[tuple[str, Callable[[], List[Event]], int]] = [
     ("Ville Morte",             villemorte.fetch,     50),
 ]
 
-# --- Frontend venue map -----------------------------------------------------
-# index.html est la source de vérité de la carte lieu → arrondissement
-# (VENUE_ARRONDISSEMENT, entrées vérifiées à la main avec adresses en
-# commentaire). On la parse à chaque run au lieu d'en maintenir une copie
-# Python : l'ancienne copie (FRONTEND_HARDCODED) avait dérivé de ~24 lieux,
-# re-géocodés chaque nuit pour rien.
-
-_VENUE_MAP_BLOCK_RE = re.compile(
-    r"const\s+VENUE_ARRONDISSEMENT\s*=\s*\{(.*?)\n\s*\}\s*;",
-    re.DOTALL,
-)
-# Une entrée par ligne : 'Nom du lieu': '1er',  // commentaire optionnel
-# Les clés utilisent ' ou " (backreference \1) - les apostrophes dans les
-# noms ("Bar Rock'n Eat") sont entre guillemets doubles dans index.html.
-_VENUE_MAP_ENTRY_RE = re.compile(
-    r"""^\s*(['"])(?P<venue>.+?)\1\s*:\s*(['"])(?P<arr>.+?)\3\s*,""",
-    re.MULTILINE,
-)
+# --- Les lieux connus d'avance ----------------------------------------------
+# lieux.json dit où est chaque lieu, vérifié à la main (l'adresse en note).
+# La page le lit au chargement, le robot ici : un seul fichier pour les
+# deux (audit n° 21). Avant lui, le robot relisait la table dans
+# index.html ; avant encore, il en gardait une copie Python, qui avait
+# dérivé de ~24 lieux, re-géocodés chaque nuit pour rien.
 
 
 def frontend_hardcoded_venues() -> set:
-    """Noms de lieux hardcodés dans VENUE_ARRONDISSEMENT (index.html).
+    """Les lieux dont lieux.json donne l'arrondissement : le géocodage
+    les saute, la page les situant déjà.
 
-    En cas d'échec de lecture ou de parsing (refonte d'index.html),
-    retourne un set vide : ces lieux seront géocodés inutilement -
-    dégradation sans danger, le frontend ignore le cache pour ses
-    entrées en dur.
+    Fichier illisible ou mal formé : un ensemble vide, et le journal le
+    dit. Ces lieux seraient alors géocodés pour rien - sans danger, la
+    page préférant lieux.json au géocodage.
     """
-    html_path = Path(__file__).parent / "index.html"
+    chemin = Path(__file__).parent / "lieux.json"
     try:
-        html = html_path.read_text(encoding="utf-8")
-    except OSError as exc:
-        print(f"[geo] index.html unreadable ({exc}) - no hardcoded venues",
+        lieux = json.loads(chemin.read_text(encoding="utf-8"))["lieux"]
+        return {l["nom"] for l in lieux if l.get("arr")}
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        print(f"[geo] lieux.json illisible ({exc!r}) - aucun lieu connu d'avance",
               file=sys.stderr)
         return set()
-    m = _VENUE_MAP_BLOCK_RE.search(html)
-    if not m:
-        print("[geo] VENUE_ARRONDISSEMENT not found in index.html - "
-              "no hardcoded venues", file=sys.stderr)
-        return set()
-    venues = {e.group("venue")
-              for e in _VENUE_MAP_ENTRY_RE.finditer(m.group(1))}
-    if len(venues) < 20:
-        # La map réelle compte ~77 entrées : un si petit nombre signale
-        # un parser cassé par une refonte d'index.html.
-        print(f"[geo] only {len(venues)} venue(s) parsed from index.html - "
-              "parser probably broken, check _VENUE_MAP_*_RE",
-              file=sys.stderr)
-    return venues
 
 
 # ---------------------------------------------------------------------------
@@ -1026,13 +1001,11 @@ def _sans_les_annules(unique: List[Event]) -> List[Event]:
 
 def _geocoder_les_nouveaux_lieux(unique: List[Event]) -> None:
     """Étape 8 : l'arrondissement des lieux que la page ne connaît pas."""
-    # 8) Geocode any new venues not already in the frontend's hardcoded
-    #    VENUE_ARRONDISSEMENT map (parsée en direct depuis index.html -
-    #    source de vérité unique, voir frontend_hardcoded_venues).
+    # 8) Geocode any new venues not already in lieux.json (lu par la page
+    #    comme par le robot, voir frontend_hardcoded_venues).
     #    Results are cached in venue_arrondissements.json. Only truly new
     #    venues trigger HTTP requests (1 req/sec). The frontend merges this
-    #    file with its hardcoded map at load time (hardcoded entries win
-    #    on conflict).
+    #    file with lieux.json at load time (lieux.json wins on conflict).
     #    Les salles HORS LES MURS y passent aussi : la carte d'un concert
     #    donne l'arrondissement de la salle où il se joue, pas de celle
     #    qui le programme, et c'est donc cette salle-là qu'il faut

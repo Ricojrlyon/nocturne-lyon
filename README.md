@@ -356,8 +356,7 @@ la recopier, version comprise.
   correspond pas à sa propre regex et « électro » accentué non plus.
 - **`scrapers/geo.py`** : géocodage Nominatim des lieux inconnus →
   arrondissement, mis en cache dans `venue_arrondissements.json`. Les lieux
-  déjà hardcodés dans `VENUE_ARRONDISSEMENT` (index.html, source de vérité,
-  parsée au run par aggregate.py) ne sont jamais interrogés.
+  auxquels `lieux.json` donne un arrondissement ne sont jamais interrogés.
 - **`scrapers/detail_cache.py`** : cache persistant `url → heure` pour les
   12 modules qui ouvrent des pages détail (TTL 30 j si heure trouvée,
   7 j sinon, purge à 60 j). Divise le temps de run par ~8 dès le 2ᵉ passage.
@@ -429,6 +428,15 @@ la recopier, version comprise.
   et le texte ne change plus de police sous les yeux du visiteur. Les
   polices elles-mêmes sont sur le site (`fonts/`), décrites par
   `fonts/polices.css`.
+- **`lieux.json`** : où est chaque lieu, une ligne par lieu : son nom tel
+  que l'écrivent les sources, son arrondissement (1er à 9e, Villeurbanne
+  ou Autre), sa commune quand il est hors de Lyon et de Villeurbanne
+  (écrite en entier, la page l'abrège), et une note (l'adresse). La page
+  le lit au chargement, et le robot aussi : il ne cherche pas sur la
+  carte un lieu qui y a un arrondissement. Ces deux tables étaient
+  écrites dans index.html, que le robot devait fouiller ; elles sont
+  maintenant à un seul endroit. La page en a besoin comme du fil : s'il
+  manque, elle affiche « le programme n'a pas pu se charger ».
 - **`404.html`** : la page des adresses introuvables, que GitHub Pages sert
   d'elle-même : « erreur 404 », « page introuvable » et un lien vers la page
   d'accueil. Son lien et ses polices sont en adresses complètes
@@ -474,8 +482,8 @@ python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
   nouveaux essais réseau, la vérification anti-robot du Complexe, les
   annulés, l'heure de chaque séance, les catégories, les garde-fous
   d'`aggregate.py`, ce que la page et les collecteurs doivent avoir en
-  commun (l'horizon, le marqueur « ailleurs », la table des lieux que le
-  robot relit dans la page), ce que la politique de sécurité de la page
+  commun (l'horizon, le marqueur « ailleurs », le fichier des lieux que
+  tous deux lisent, bien formé), ce que la politique de sécurité de la page
   interdit, et deux RÉFÉRENCES figées.
   La chaîne de publication entière est rejouée sur une collecte réelle
   (celle du 1er octobre 2026, dans `tests/donnees/`) et doit rendre le
@@ -508,9 +516,9 @@ diff de `tests/donnees/`.
    une API WP REST paginée). Utiliser `detail_cache.get_time()` si les
    heures nécessitent des pages détail.
 2. L'enregistrer dans `SCRAPERS` (aggregate.py).
-3. Ajouter le lieu dans `VENUE_ARRONDISSEMENT` et `VENUE_GROUPS`
-   (index.html) : la liste des lieux connus du géocodage en découle
-   automatiquement.
+3. Ajouter le lieu dans `lieux.json` (une ligne : nom, arrondissement,
+   commune s'il est hors de Lyon et de Villeurbanne, adresse en note) et
+   dans `VENUE_GROUPS` (index.html) : le géocodage ne le cherchera pas.
 4. Si les agrégateurs orthographient le lieu autrement, ajouter les
    variantes dans `VENUE_CANONICAL` (scrapers/dedup.py). C'est ce qui
    permet à la dédup de regrouper les deux sources : sans l'entrée, elles

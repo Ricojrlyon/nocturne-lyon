@@ -1824,186 +1824,26 @@ const VENUE_LOGOS = new Map([
 
 const VENUE_DISPLAY_ORDER = ['soirée', 'concerts', 'spectacles & musiques', 'lieux hybrides', 'théâtre & danse', 'classique', 'musées & galeries', 'autre'];
 
-/* venue -> arrondissement mapping. Researched against Wikipedia, the
-   official Lyon city directory, Petit Bulletin, and venue websites.
-   Unmapped venues default to 'Autre' via eventArrondissement(). */
-const VENUE_ARRONDISSEMENT = {
-  // Lyon 1er (Terreaux, Pentes Croix-Rousse)
-  "Amphithéâtre de l'Opéra": '1er', // place de la Comédie - la petite salle de l'Opéra
-  'Bar des Capucins': '1er',      // place des Capucins
-  'Le Complexe café-théâtre': '1er', // 7 rue des Capucins
-  'Opéra national de Lyon': '1er',
-  'Célestins, théâtre de Lyon': '2e', // place des Célestins
-  'Les Subsistances': '1er',
-  'Musée des Beaux-Arts': '1er',
-  "A Thou Bout d'Chant": '1er',
-  "Maison de l'écologie": '1er',
-  'La Salle de Bains': '1er',     // 1 rue Louis Vitet
-  'La Salle de bains': '1er',     // case variant
-  "L'Alternatibar": '1er',        // case variant
-  'Alternatibar': '1er',          // 126 montée Grande-Côte
-  'Kraspek Myzik': '1er',         // 20 montée Saint-Sébastien
-  'Le Bec de Jazz': '1er',        // 19 rue Burdeau
-  'Hot Club': '1er',              // 26 rue Lanterne
-  'Salle Rameau': '1er',          // 29 rue de la Martinière
-  'La BF15': '1er',               // quai de la Pêcherie
-  'Le Bleu du Ciel': '1er',       // 12 rue des Fantasques
-  'Péristyle Opéra': '1er',       // place de la Comédie, devant l'Opéra
-
-  // Lyon 2e (Presqu'île, Confluence)
-  'Momie Romance': '2e',          // 31 rue Franklin
-  'Ô boudoir': '2e',              // 15 rue de Condé
-  'Le Sucre': '2e',
-  'Marché Gare': '2e',
-  'Le Périscope': '2e',
-  'Chapelle de la Trinité': '2e',
-  'Musée des Confluences': '2e',
-  'Goethe-Institut': '2e',
-  'Galerie Henri Chartier': '2e',
-  'Comédie Odéon': '2e',          // 6 rue Grôlée
-  'Fnac Bellecour': '2e',
-  'Jardin Envie Partagée quai Rambaud': '2e', // Confluence, à côté du square Delfosse
-  'Escale Solidaire du 2': '2e',  // 25 rue Delandine
-
-  // Lyon 3e (Part-Dieu, Guillotière)
-  'Café La Médiane': '3e',        // 255 rue de Créqui
-  'La Médiane, tiers-lieu féministe': '3e', // même adresse, autre graphie
-  'Studio Nafas': '3e',           // 10 rue Marignan
-  'Bourse du Travail': '3e',
-  'Auditorium de Lyon': '3e',
-  'La Marquise': '3e',            // péniche 20 quai Victor Augagneur
-  'Palais de la Mutualité - Salle Édouard Herriot': '3e', // 1 place Antonin Jutard
-  'Palais de la Mutualité Salle Edouard Herriot': '3e',   // variante sans tiret/accent
-  'Salle Des Rancy': '3e',        // 249 rue Vendôme
-  'Lieu Privé à Montchat 69003': '3e',
-  'Improvidence': '3e',           // 6 rue Chaponnay (source : billetterie Mapado)
-  'Friche Artistique Lamartine | La Robinetterie': '3e', // rue Lamartine
-
-  // Lyon 4e (Croix-Rousse plateau)
-  'La Cadette - Librairie Vivement Dimanche': '4e', // 16 grande-rue de la Croix-Rousse
-  "Agend'arts": '4e',
-  'Aquarium ciné-café': '4e',     // 10 rue Dumont
-  'Gymnase René Baillieu': '4e',  // 53 rue Philippe de Lassalle - le Lyon Croix-Rousse Volley y reçoit
-
-  // Lyon 5e (Vieux Lyon, Fourvière, Saint-Just)
-  'MAM - Musée des Arts et de la Marionnette': '5e', // 1 place du Petit Collège (Gadagne)
-  'Cloître du Fourvière Hôtel': '5e', // 23 rue Roger Radisson
-  'Musées Gadagne': '5e',
-  'Salle Molière': '5e',          // 18 quai de Bondy
-  'Le Sonic': '5e',               // péniche 4 quai des Étroits
-  'Big White': '5e',              // 22 rue Lainerie
-  'Espace Gerson': '5e',          // 1 place Gerson
-  'Maison des Passages': '5e',    // 44 rue Saint-Georges
-
-  // Lyon 6e (Brotteaux, Tête d'Or, Cité Internationale)
-  'Amphithéâtre du Centre de Congrès': '6e', // 10 quai Charles de Gaulle
-  "Musée d'Art Contemporain": '6e',
-
-  // Lyon 7e (Gerland, Guillotière, Jean Macé)
-  'Fabuleuse Cantine Lyon 7': '7e', // 107 rue de Marseille
-  'Factatory': '7e',              // 15 rue Paul Massimi
-  'La Halle Tony Garnier': '7e',
-  'La Commune': '7e',             // 3 rue Pré-Gaudry
-  'Le Petit Salon': '7e',         // 3 rue de Cronstadt
-  'Boskop': '7e',                 // 60 rue Sébastien Gryphe
-  'Galerie Roger Tator': '7e',    // 36 rue d'Anvers
-  'La Boulangerie du Prado': '7e',// 69 rue Sébastien Gryphe
-  'Le Ninkasi': '7e',             // 267 rue Marcel Mérieux
-  'Le 6e Continent': '7e',        // 51 rue Saint-Michel
-  'Gamut': '7e',                  // 7 rue Prosper Chappet
-  'La Luttine': '7e',             // 91 rue Montesquieu
-  'Blue Monday': '7e',            // 32 rue Pasteur
-  'Parc Blandan': '7e',           // parc militaire réhabilité, av Berthelot
-  'Parc de Gerland': '7e',        // 24 allée Pierre de Coubertin
-  'Palais des Sports de Gerland': '7e',  // 350 av. Jean Jaurès - le LDLC ASVEL Féminin y reçoit
-  'Matmut Stadium de Gerland': '7e',     // 353 av. Jean Jaurès - le LOU y reçoit, hommes et femmes
-
-  // Lyon 8e (Monplaisir, États-Unis, Bachut)
-  'MJC Laënnec-Mermoz- Salle Genton': '8e', // 21 rue Genton - graphie du Petit Bulletin, sans espace
-  'Maison de la Danse': '8e',
-  'Théâtre de la Croix-Rousse': '4e', // place Joannès Ambre
-  'HEAT': '8e',
-  'Institut Lumière': '8e',       // 25 rue du Premier Film
-  'Gymnase Mado Bonnet': '8e',    // 20 av. Paul Santy - l'ASUL Lyon y reçoit
-  'Place du 8 mai 1945, Lyon 8e': '8e',
-
-  // Lyon 9e (Vaise, La Duchère)
-  'MJC Duchère': '9e',            // 237 rue des Érables
-  'TNG': '9e',                    // 23 rue de Bourgogne
-  'Gymnase Matthias Favier': '9e', // 2 place Schönberg - le Handball Club de Lyon y reçoit
-  "Bar Rock'n Eat": '9e',         // 32 quai d'Arloing
-
-  // Villeurbanne
-  "Maison du livre, de l'image et du son": 'Villeurbanne', // 247 cours Émile Zola (MLIS)
-  'Le Transbordeur': 'Villeurbanne',
-  'TNP - Théâtre National Populaire': 'Villeurbanne', // 8 place Lazare-Goujon
-  'La Rayonne': 'Villeurbanne',
-  'Toï Toï le Zinc': 'Villeurbanne',
-  'Café Nanoum': 'Villeurbanne',  // 16 rue Branly
-  'Le Rize': 'Villeurbanne',      // 23 cours de la République
-  'Salle des Gratte-Ciel': 'Villeurbanne', // 98 rue Francis de Pressensé - le VHA y reçoit
-  'Villeurbanne': 'Villeurbanne', // venue générique VM
-  'Villeurbanne ENM': 'Villeurbanne',
-
-  // Autre (banlieue, Métropole)
-  'Radiant-Bellevue': 'Autre',    // Caluire-et-Cuire
-  'LDLC Arena': 'Autre',          // Décines
-  'Astroballe': 'Villeurbanne',   // 44 av. Marcel Cerdan, Villeurbanne
-  "L'Épicerie Moderne": 'Autre',  // Feyzin
-  'Grrrnd Zero': 'Autre',         // Vaulx-en-Velin
-  'La Machinerie - Bizarre !': 'Autre', // Vénissieux
-  'Domaine de Lacroix-Laval': 'Autre',  // Marcy-l'Étoile
-  "L'Aqueduc": 'Autre',           // Dardilly
-  'Jack Jack - MJC Aragon': 'Autre', // Bron
-  'Bois de Sermenaz à Rillieux-la-Pape': 'Autre',
-};
+/* Lieu → arrondissement, et lieu → commune pour ceux qui sont hors de
+   Lyon et de Villeurbanne. Les deux tables viennent de lieux.json, lu au
+   chargement (voir load()) : le robot lit le même fichier, pour ne pas
+   chercher sur la carte un lieu qu'on y situe déjà (audit n° 21).
+   venue_arrondissements.json, le géocodage du robot, y verse ensuite les
+   lieux qu'elles ne connaissent pas ; lieux.json, vérifié à la main,
+   gagne. Un lieu sans arrondissement tombe dans « Autre »
+   (eventArrondissement). */
+const VENUE_ARRONDISSEMENT = {};
 
 const ARRONDISSEMENT_ORDER = ['1er', '2e', '3e', '4e', '5e', '6e', '7e', '8e', '9e', 'Villeurbanne', 'Autre'];
 
-/* Communes hors Lyon et Villeurbanne. Sert à écrire « oullins » sur
-   l'étiquette d'un événement joué là-bas, plutôt que « ailleurs ».
-   venue_arrondissements.json en verse d'autres au chargement, celles que
-   le géocodeur note quand il trouve la salle mais hors de l'agglomération
-   étroite ; les entrées ci-dessous, vérifiées à la main, gagnent.
-   Le Théâtre de La Renaissance y est parce que Nominatim ne le connaît
-   pas - ni interrogé sur Lyon, ni sur Villeurbanne, ni sur
-   Oullins-Pierre-Bénite que sa fiche nomme pourtant. */
-/* Les noms s'écrivent ENTIERS ici - « Oullins-Pierre-Bénite », pas
-   « Oullins » : c'est villeCourte() qui abrège, et lui seul. Sans
-   cette règle, une commune s'affichait de deux façons selon qu'elle
-   vienne de cette table ou du géocodage - « Décines » pour la LDLC
-   Arena, « Décines… » pour le Toboggan, à deux rues l'une de l'autre. */
-const VENUE_COMMUNE = {
-  'Théâtre de La Renaissance': 'Oullins-Pierre-Bénite', // 7 rue Orsel
-
-  // Les salles que VENUE_ARRONDISSEMENT range en « Autre ». Le géocodeur
-  // ne les voit jamais - aggregate.py lui épargne tout lieu déjà codé en
-  // dur -, si bien qu'elles portaient « autre » alors que leur ville
-  // était écrite en commentaire deux lignes plus haut. Le Radiant à lui
-  // seul pesait 143 cartes du fil au 2026-09-28.
-  'Radiant-Bellevue': 'Caluire-et-Cuire',   // 1 rue Jean Moulin
-  'LDLC Arena': 'Décines-Charpieu',         // 350 av. Jean Jaurès
-  "L'Épicerie Moderne": 'Feyzin',           // place René Lescot
-  'Grrrnd Zero': 'Vaulx-en-Velin',          // 60 av. de Bohlen
-  'La Machinerie - Bizarre !': 'Vénissieux',
-  'Domaine de Lacroix-Laval': "Marcy-l'Étoile",
-  "L'Aqueduc": 'Dardilly',                  // 1 rue Jean Moulin
-  'Jack Jack - MJC Aragon': 'Bron',         // 2 rue Salvador Allende
-  'Bois de Sermenaz à Rillieux-la-Pape': 'Rillieux-la-Pape',
-
-  // Salles que Nominatim ne trouve pas, situées à la main sur la fiche
-  // de l'agrégateur qui les publie - c'est de là que viennent les
-  // adresses ci-dessous. L'Atrium valait le détour : il porte le nom
-  // d'un hôtel de ville sans dire lequel, et ce n'est pas celui de Lyon.
-  'MJC Louis Aragon / Jack Jack': 'Bron',   // 16 place Gaillard Romanet, 69500 - autre graphie de Jack Jack
-  'La Ferme du Vinatier': 'Bron',           // 95 bd Pinel, 69500, dans l'hôpital
-  'Chapelle du Vinatier': 'Bron',           // même hôpital
-  "Atrium de l'hôtel de ville": 'Genas',    // place du Général de Gaulle, 69740
-  'Théâtre Cinéma Jean Carmet': 'Mornant',  // bd du Pilat, 69440
-  'Ô Totem live': 'Rillieux-la-Pape',       // 9 bis av. Général Leclerc, 69140
-  'Théâtre François Ponsard': 'Vienne',     // 4 rue Chantelouve, 38200 - hors Métropole, le Petit Bulletin le publie
-  "Bibliothèque de Saint Didier-au-Mont-d'Or - Maison Meunier": "Saint-Didier-au-Mont-d'Or",
-};
+/* La commune sert à écrire « oullins » sur l'étiquette d'un événement
+   joué là-bas, plutôt que « ailleurs ». Les noms s'y écrivent ENTIERS -
+   « Oullins-Pierre-Bénite », pas « Oullins » : c'est villeCourte() qui
+   abrège, et lui seul. Sans cette règle, une commune s'affichait de deux
+   façons selon qu'elle vienne de la table ou du géocodage - « Décines »
+   pour la LDLC Arena, « Décines… » pour le Toboggan, à deux rues l'une
+   de l'autre. Remplie au chargement, comme VENUE_ARRONDISSEMENT. */
+const VENUE_COMMUNE = {};
 
 /* Valeur d'offsite_venue quand la production tourne dans PLUSIEURS salles
    sans qu'on sache laquelle accueille quelle date. Doit rester identique
@@ -2842,33 +2682,41 @@ document.addEventListener('keydown', e => {
 
 /* ---------- main load ---------- */
 async function load() {
-  // Fetch events and auto-geocoded arrondissements in parallel.
-  // venue_arrondissements.json is generated by aggregate.py (scrapers/geo.py).
-  // It only contains venues NOT already in the hardcoded VENUE_ARRONDISSEMENT
-  // map above. If the file is missing (first run, local dev), we silently
-  // ignore it - the hardcoded map is still fully functional.
+  // Le fil, les lieux (lieux.json) et le géocodage du robot, en parallèle.
+  // venue_arrondissements.json est écrit par aggregate.py (scrapers/geo.py)
+  // et ne contient que des lieux ABSENTS de lieux.json. S'il manque
+  // (premier passage, essai local), on s'en passe : lieux.json suffit.
   // « no-cache » et non « no-store » : le navigateur redemande toujours au
   // serveur si le fichier a changé - le site reste aussi frais -, mais ne
   // le retélécharge plus quand il n'a pas bougé. Le serveur répond alors
   // « 304 » en quelques octets, au lieu des 190 Ko du fil à chaque visite.
-  const [eventsRes, geoRes] = await Promise.allSettled([
+  const [eventsRes, geoRes, lieuxRes] = await Promise.allSettled([
     fetch('events.json', { cache: 'no-cache' }),
     fetch('venue_arrondissements.json', { cache: 'no-cache' }),
+    fetch('lieux.json', { cache: 'no-cache' }),
   ]);
 
   if (eventsRes.status === 'rejected') throw eventsRes.reason;
   // Une page d'erreur du serveur (404, 503…) n'est pas un fil : la lire
   // comme du JSON donnait une erreur de syntaxe sans rapport avec la panne.
   if (!eventsRes.value.ok) throw new Error('HTTP ' + eventsRes.value.status);
+  // lieux.json est indispensable, comme le fil : sans lui, presque tous
+  // les lieux tomberaient dans « Autre », sans que rien ne le dise.
+  if (lieuxRes.status === 'rejected') throw lieuxRes.reason;
+  if (!lieuxRes.value.ok) throw new Error('lieux.json : HTTP ' + lieuxRes.value.status);
   const data = await eventsRes.value.json();
+  for (const l of (await lieuxRes.value.json()).lieux) {
+    if (l.arr) VENUE_ARRONDISSEMENT[l.nom] = l.arr;
+    if (l.commune) VENUE_COMMUNE[l.nom] = l.commune;
+  }
   state.events = data.events || [];
   // Les occurrences ne dépendent que de state.events : calculées une seule
   // fois ici au lieu d'être recalculées à chaque render() (chaque frappe,
   // chaque clic de chip).
   state.occurrences = expandOccurrences(state.events);
 
-  // Merge geocoded arrondissements into VENUE_ARRONDISSEMENT.
-  // Hardcoded entries win on conflict (they've been manually verified).
+  // Le géocodage du robot complète les deux tables ; lieux.json, vérifié
+  // à la main, gagne en cas de désaccord.
   if (geoRes.status === 'fulfilled' && geoRes.value.ok) {
     try {
       const geo = await geoRes.value.json();
@@ -2879,7 +2727,7 @@ async function load() {
         if (entry.commune && !VENUE_COMMUNE[venue]) {
           VENUE_COMMUNE[venue] = entry.commune;
         }
-        if (VENUE_ARRONDISSEMENT[venue]) continue;  // hardcoded wins
+        if (VENUE_ARRONDISSEMENT[venue]) continue;  // lieux.json gagne
         if (entry.arr) VENUE_ARRONDISSEMENT[venue] = entry.arr;
       }
     } catch (_) { /* malformed JSON - ignore */ }

@@ -19,7 +19,7 @@ from typing import List
 from . import mapado
 from .base import Event
 
-# Même graphie que le Petit Bulletin et que VENUE_ARRONDISSEMENT : c'est
+# Même graphie que le Petit Bulletin et que lieux.json : c'est
 # ce qui permet à la dédup de regrouper les deux sources, qui indexe par
 # (lieu canonique, jour) - voir dedup.py.
 VENUE = "Improvidence"
