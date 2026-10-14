@@ -438,7 +438,7 @@
     ]
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/apres-moi-le-deluge": {
-    "fetched_at": "2026-10-06",
+    "fetched_at": "2026-10-14",
     "lieu": "Maison de la danse - Grande salle",
     "seances": [
       [
@@ -1390,6 +1390,16 @@
       ]
     ],
     "time": "14:30"
+  },
+  "https://radiant-bellevue.fr/spectacles/camp-claude-kill-me-dont-panic/": {
+    "fetched_at": "2026-10-14",
+    "seances": [
+      [
+        "2027-04-12",
+        "20:00"
+      ]
+    ],
+    "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/cat-power/": {
     "fetched_at": "2026-10-03",
@@ -7684,6 +7694,12 @@
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/07/a-boyharsher.jpg",
     "time": "18:30"
   },
+  "https://www.transbordeur.fr/evenement/boy-harsher-kontravoid-14112026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/07/a-boyharsher-768x509.jpg",
+    "fetched_at": "2026-10-14",
+    "image": null,
+    "time": "18:30"
+  },
   "https://www.transbordeur.fr/evenement/charlie-oz-10022027/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2025/03/a-charlieoz2-768x1151.jpg",
     "fetched_at": "2026-10-09",
@@ -8210,6 +8226,12 @@
     "fetched_at": "2026-10-05",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/06/PHOTO-DE-PRESSE-_-credit-_-Loubet_.jpg",
     "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/tif-uva-18102026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/06/PHOTO-DE-PRESSE-_-credit-_-Loubet_-768x961.jpg",
+    "fetched_at": "2026-10-14",
+    "image": null,
+    "time": "18:30"
   },
   "https://www.transbordeur.fr/evenement/ugly-kid-joe-12022027/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/06/a-uglykidjoe-768x522.jpeg",
