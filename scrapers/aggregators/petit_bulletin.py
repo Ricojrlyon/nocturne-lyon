@@ -5,8 +5,10 @@ list of upcoming events. The page structure is regular: each event has a
 title in an h-tag with a stable URL (/agenda-NNNNNN-slug.html), a category
 in parens on the next sibling line, then a list with venue and date.
 
-UN SEUL filtre éditorial : quatre catégories d'arts plastiques (voir
-CATEGORIES_ECARTEES). Pour le reste tout l'agenda remonte, et c'est la
+UN SEUL filtre éditorial : des catégories écartées (voir
+CATEGORIES_ECARTEES), toutes les expositions et visites, et depuis le
+14 octobre 2026 les rencontres, conférences et lectures. Pour le reste
+tout l'agenda remonte, et c'est la
 déduplication en trois passes (scrapers/dedup.py) qui écarte les doublons
 quand un événement est aussi publié par la salle elle-même.
 
@@ -90,14 +92,34 @@ def _normalize(s: str) -> str:
 # événements, dont 68 en galerie et 9 en musée non scrappé, et 1 443 jours
 # cumulés d'accrochage sur l'horizon.
 #
+# Le 14 octobre 2026, à la demande, le filtre s'étend : les autres
+# catégories que le site range en « expos » (visites, street art, art
+# graphique, sculpture), et les rendez-vous de parole, que le site range
+# en « conférence » (rencontres et dédicaces, conférences, sciences et
+# histoire, lecture et conte) - en librairie pour la plupart. Mesuré ce
+# jour-là sur l'agenda : 89 événements de plus, dont 70 parvenaient
+# jusqu'au site. Les salles que le robot lit directement gardent leurs
+# expositions et leurs rencontres : seul le Petit Bulletin est filtré.
+#
 # Les libellés sont comparés normalisés (casse, accents et ponctuation
 # écrasés) : « Design & Architecture » et « design et architecture »
 # tombent donc pareil.
 CATEGORIES_ECARTEES = frozenset(_normalize(c) for c in (
+    # arts plastiques, depuis septembre 2026
     "Peinture & Dessin",
     "Art contemporain et numérique",
     "Photographie",
     "Design & Architecture",
+    # le reste des expos, depuis le 14 octobre 2026
+    "Visites",
+    "Street Art",
+    "Art graphique",
+    "Sculpture",
+    # les rendez-vous de parole, depuis le 14 octobre 2026
+    "Rencontres et Dédicaces",
+    "Conférences",
+    "Sciences et Histoire",
+    "Lecture et conte",
 ))
 
 
@@ -557,6 +579,6 @@ def fetch() -> List[Event]:
             time.sleep(0.4)            # on ne martèle pas le serveur
 
     if ecartes:
-        print(f"[Petit Bulletin] {ecartes} événement(s) d'arts plastiques "
-              f"écarté(s) ({', '.join(sorted(CATEGORIES_ECARTEES))})")
+        print(f"[Petit Bulletin] {ecartes} événement(s) écarté(s) par "
+              f"catégorie ({', '.join(sorted(CATEGORIES_ECARTEES))})")
     return events

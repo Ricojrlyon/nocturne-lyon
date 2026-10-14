@@ -601,10 +601,21 @@ motif.
 - **Ville Morte : aucun filtre propre**, tout son agenda remonte, hors
   annulés. C'est la déduplication qui écarte les doublons quand un
   événement est aussi publié par la salle elle-même.
-- **Petit Bulletin : un seul filtre propre**, quatre catégories d'arts
-  plastiques : Peinture & Dessin, Art contemporain et numérique,
-  Photographie, Design & Architecture (`CATEGORIES_ECARTEES`). La
-  décision a changé deux fois, et pour des raisons différentes. Deux
+- **Petit Bulletin : un seul filtre propre, par catégorie**
+  (`CATEGORIES_ECARTEES`, scrapers/aggregators/petit_bulletin.py), douze
+  des trente catégories de son agenda :
+  - toutes celles que le site range en « expos » : Peinture & Dessin, Art
+    contemporain et numérique, Photographie, Design & Architecture
+    (depuis septembre 2026), Visites, Street Art, Art graphique,
+    Sculpture (depuis le 14 octobre 2026) ;
+  - les rendez-vous de parole, depuis le 14 octobre 2026 : Rencontres et
+    Dédicaces, Conférences, Sciences et Histoire, Lecture et conte, en
+    librairie pour la plupart.
+  Mesuré le 14 octobre : 149 des 751 événements de l'agenda écartés, dont
+  70 qui parvenaient jusqu'au site. Seul le Petit Bulletin est filtré :
+  les salles que le robot lit directement gardent leurs expositions et
+  leurs rencontres.
+  La décision a changé plusieurs fois, et pour des raisons différentes. Deux
   filtres existaient à l'origine (musées et galeries d'un côté, une
   liste de catégories de l'autre) parce que les accrochages saturaient
   le feed ; ils ont été levés en août 2026, au motif que le lecteur peut
