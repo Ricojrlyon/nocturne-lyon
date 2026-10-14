@@ -164,6 +164,13 @@ class PageNavigation(unittest.TestCase):
         self.assertEqual(self.releve["filtre_vide"], ["aucun événement pour ces filtres", "tout effacer"])
         self.assertEqual(self.releve["apres_tout_effacer"], [True, ""])
 
+    def test_l_impro_est_du_theatre(self):
+        # « Impro », catégorie du Petit Bulletin pour le théâtre
+        # d'improvisation, était rangée en jazz, donc en musique.
+        self.assertEqual(self.releve["rangement"],
+                         [["Impro", "theatre", "scene"], ["Jazz", "jazz", "musique"],
+                          ["Théâtre", "theatre", "scene"]])
+
     def test_chaque_police_prechargee_n_est_telechargee_qu_une_fois(self):
         # Audit n° 17 : une fois, et par le préchargement. Un « crossorigin »
         # oublié la ferait télécharger une seconde fois, par polices.css.

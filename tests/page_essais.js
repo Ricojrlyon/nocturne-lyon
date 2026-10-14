@@ -171,6 +171,9 @@
       res.polices_chargees = performance.getEntriesByType('resource')
         .filter(r => r.name.endsWith('.woff2'))
         .map(r => [r.name.split('/').pop(), r.initiatorType]);
+      // Le rangement de quelques catégories : rubrique et famille.
+      res.rangement = ['Impro', 'Jazz', 'Théâtre']
+        .map(c => [c, bucketOf(c), FAMILLE_DE_BUCKET.get(bucketOf(c))]);
       // La barre des 14 jours, touchée juste après un rendu : la journée
       // n'est pas encore construite (affichage par morceaux), et doit
       // pourtant arriver en haut de l'écran. On relève celle qui y est.

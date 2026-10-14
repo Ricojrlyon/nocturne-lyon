@@ -637,6 +637,9 @@ motif.
   cinq cartes. Tout bucket non rangé dans une
   famille tombe dans « autres », et une alerte console le signale : le
   repli évite de perdre un événement, il ne doit pas masquer un oubli.
+  « Impro », la catégorie du Petit Bulletin pour le théâtre
+  d'improvisation, est rangée en théâtre (famille scène) ; elle tombait
+  en jazz, donc en musique, jusqu'au 14 octobre 2026.
 - **Événements longs** (expos, festivals au long cours) : conservés sous
   forme de plage `date_start`..`date_end`, et affichés sur CHACUN de leurs
   jours. Un seuil `LONG_RUN_THRESHOLD` repliait les séries de plus de

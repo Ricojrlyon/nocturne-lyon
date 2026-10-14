@@ -1935,7 +1935,7 @@ const TYPE_BUCKETS = [
   // The previous single "musique" bucket was too broad; with aggregators
   // bringing in 100+ events per scrape, having sub-genres is essential.
   { key: 'club',        label: 'club',        match: /\belectro|techno|house|trance|drum.?n.?bass|\bdnb\b|\bdj\b|soir[ée]e|club\b|clubbing|after/i },
-  { key: 'jazz',        label: 'jazz',        match: /\bjazz|\bblues|\bswing\b|\bimpro\b/i },
+  { key: 'jazz',        label: 'jazz',        match: /\bjazz|\bblues|\bswing\b/i },
   { key: 'rock',        label: 'rock & pop',  match: /\brock\b|\bpop\b|m[ée]tal|punk\b|indie|garage\b|hardcore/i },
   // 'rap' BEFORE 'chanson' so "Hip Hop / Rap" doesn't get caught by chanson's
   // \brap\b leftover (which has now been removed). Trap is rare but distinct.
@@ -1967,7 +1967,11 @@ const TYPE_BUCKETS = [
   // Note: 'théâtre' has circumflex â, so the regex uses [aâ]tre to match
   // both "theatre" (no accent) and "théâtre" (with accent) variants.
   { key: 'humour',      label: 'humour',      match: /humour|stand[\s-]?up|one[\s-]?man|comedy|caf[ée][\s-]*th[ée][aâ]tre/i },
-  { key: 'theatre',     label: 'théâtre',     match: /th[ée][aâ]tre|spectacle\s*musical|com[ée]die\s*musicale|cabaret/i },
+  // « Impro » est du THÉÂTRE d'improvisation : c'est la catégorie du Petit
+  // Bulletin pour Improvidence, l'Espace Gerson, les matchs d'impro. Elle
+  // était rangée en jazz, donc en musique (corrigé le 2026-10-14) ; aucune
+  // source n'écrit « impro » pour de la musique improvisée.
+  { key: 'theatre',     label: 'théâtre',     match: /th[ée][aâ]tre|spectacle\s*musical|com[ée]die\s*musicale|cabaret|\bimpro\b/i },
   { key: 'danse',       label: 'danse',       match: /danse|ballet|cho[ré]graph/i },
   // Cirque, magie, drag, performance : de la scène qui n'est ni théâtre
   // ni danse ni humour. Placé APRÈS ces trois-là, plus précis - sinon
