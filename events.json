@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-14T09:30:10.938488+00:00",
-  "count": 2941,
+  "generated_at": "2026-10-14T12:16:40.346775+00:00",
+  "count": 2871,
   "sources": 37,
   "events": [
     {
@@ -44,20 +44,6 @@
       "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-288fd9b/lacommune.co/wp-content/uploads/2026/04/1080x1350_OCTOBRE-1-768x960.jpg",
       "offsite_venue": null,
       "id": "569090da6367"
-    },
-    {
-      "venue": "Musée Urbain Tony Garnier",
-      "venue_slug": "musee-urbain-tony-garnier",
-      "title": "Voyages en cité, 1973-1990 : vivre dans les quartiers populaires",
-      "subtitle": null,
-      "category": "Sciences et Histoire",
-      "date_start": "2026-10-14",
-      "date_end": "2027-12-18",
-      "time": null,
-      "url": "https://www.petit-bulletin.fr/agenda-316752-voyages-en-cit-1973-1990-vivre-dans-les-quartiers-populaires.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "831efdda7ca2"
     },
     {
       "venue": "Musée des Beaux-Arts",
@@ -116,34 +102,6 @@
       "id": "7c411ee186e5"
     },
     {
-      "venue": "Musées Gadagne",
-      "venue_slug": "musees-gadagne",
-      "title": "Journée d'étude - De la fouille au musée : la place de l'archéologie dans le récit de territoire",
-      "subtitle": null,
-      "category": "Conférences",
-      "date_start": "2026-10-14",
-      "date_end": null,
-      "time": "09:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319558-journ-e-d-tude-c-de-la-fouille-au-mus-e-la-place-de-learch-ologie-dans-le-r-cit-de-territoire.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "75281e601171"
-    },
-    {
-      "venue": "Galerie Michel Estades",
-      "venue_slug": "galerie-michel-estades",
-      "title": "Chantal Porras et Marc Dailly",
-      "subtitle": null,
-      "category": "Sculpture",
-      "date_start": "2026-10-14",
-      "date_end": "2026-11-14",
-      "time": "10:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319731-chantal-porras-et-marc-dailly.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "46bb368a58bc"
-    },
-    {
       "venue": "Place de la Croix-Rousse",
       "venue_slug": "place-de-la-croix-rousse",
       "title": "Vogue des marrons",
@@ -172,20 +130,6 @@
       "id": "585e71b3a4bb"
     },
     {
-      "venue": "MAM - Musée des Arts et de la Marionnette",
-      "venue_slug": "mam-musee-des-arts-et-de-la-marionnette",
-      "title": "Carte blanche à La Compagnie à - Le rire, l'intime, le politique",
-      "subtitle": null,
-      "category": "Art graphique",
-      "date_start": "2026-10-14",
-      "date_end": "2027-03-31",
-      "time": "10:30",
-      "url": "https://www.petit-bulletin.fr/agenda-314275-carte-blanche-la-compagnie-le-rire-l-intime-le-politique.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "eb06a6447211"
-    },
-    {
       "venue": "Théâtre des Clochards Célestes",
       "venue_slug": "theatre-des-clochards-celestes",
       "title": "2m² de forêt",
@@ -200,20 +144,6 @@
       "id": "366469503770"
     },
     {
-      "venue": "Musée des Beaux-Arts",
-      "venue_slug": "musee-des-beaux-arts",
-      "title": "Du regard au crayon",
-      "subtitle": null,
-      "category": "rencontre",
-      "date_start": "2026-10-14",
-      "date_end": null,
-      "time": "12:30",
-      "url": "https://www.mba-lyon.fr/fr/fiche-programmation/du-regard-au-crayon",
-      "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-07/du-regard-au-crayon.jpg?h=dfc05d6a&itok=A8TdcjFH",
-      "offsite_venue": null,
-      "id": "7d4336142937"
-    },
-    {
       "venue": "Opéra national de Lyon",
       "venue_slug": "opera-lyon",
       "title": "Concerts du CNSMD",
@@ -226,76 +156,6 @@
       "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/68bfdcdd/concerts_cnsmd_c_hugosainterose_bi_oct_dec26_1160x1472px.jpg",
       "offsite_venue": null,
       "id": "4f902d27f470"
-    },
-    {
-      "venue": "Archives municipales de Lyon",
-      "venue_slug": "archives-municipales-de-lyon",
-      "title": "Natalie Zemon Davis",
-      "subtitle": null,
-      "category": "Sciences et Histoire",
-      "date_start": "2026-10-14",
-      "date_end": "2026-12-12",
-      "time": "13:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319056-natalie-zemon-davis.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "a4e77156d0b8"
-    },
-    {
-      "venue": "Archives municipales de Lyon",
-      "venue_slug": "archives-municipales-de-lyon",
-      "title": "Arch'ivres en Turakie",
-      "subtitle": null,
-      "category": "Sciences et Histoire",
-      "date_start": "2026-10-14",
-      "date_end": "2027-01-30",
-      "time": "13:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319054-arch-ivres-en-turakie.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "c17764acd28c"
-    },
-    {
-      "venue": "Maison du Livre, de l'Image et du Son",
-      "venue_slug": "maison-du-livre-de-l-image-et-du-son",
-      "title": "Rock'n'roll guérilla",
-      "subtitle": null,
-      "category": "Art graphique",
-      "date_start": "2026-10-14",
-      "date_end": "2026-12-12",
-      "time": "13:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319223-rock-n-roll-gu-rilla.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "ccdeafcf0e7e"
-    },
-    {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-de-lyon",
-      "title": "Visites découverte commentées",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-10-14",
-      "date_end": null,
-      "time": "13:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "bd2f0a2fc742"
-    },
-    {
-      "venue": "Spacejunk",
-      "venue_slug": "spacejunk",
-      "title": "Cobie",
-      "subtitle": null,
-      "category": "Street Art",
-      "date_start": "2026-10-14",
-      "date_end": "2026-11-07",
-      "time": "14:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319040-cobie.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "cc3c1df6e541"
     },
     {
       "venue": "TNG",
@@ -366,20 +226,6 @@
       "image": "https://www.les-subs.com/wp-content/uploads/2023/03/subvisiteogregoryrubinstein-collectifdesflousfurieux-15-200x200.jpg",
       "offsite_venue": null,
       "id": "7f493ea659b6"
-    },
-    {
-      "venue": "Librairie La Boussole",
-      "venue_slug": "librairie-la-boussole",
-      "title": "Hemley Boum",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-14",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318202-hemley-boum.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "192ae0ec425b"
     },
     {
       "venue": "Alliance Française de Lyon (Lyon 3e) ·  Salle des Rancy (Lyon 3e) ·  Le Marché Gare (Lyon 2e)",
@@ -464,48 +310,6 @@
       "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_10_14_quatuor_bela_generation_spedicam_c_juliecherki3_bi_1160x1472.jpg",
       "offsite_venue": "Théâtre de La Renaissance",
       "id": "507aa58d0736"
-    },
-    {
-      "venue": "L'Aînée - Librairie Vivement Dimanche",
-      "venue_slug": "l-ainee-librairie-vivement-dimanche",
-      "title": "Margot Gallimard",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-14",
-      "date_end": null,
-      "time": "19:15",
-      "url": "https://www.petit-bulletin.fr/agenda-317484-margot-gallimard.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "0273360727e2"
-    },
-    {
-      "venue": "Librairie L'œil cacodylate",
-      "venue_slug": "librairie-l-il-cacodylate",
-      "title": "Anne Godard",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-14",
-      "date_end": null,
-      "time": "19:15",
-      "url": "https://www.petit-bulletin.fr/agenda-319579-anne-godard.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "bbc0a74b5428"
-    },
-    {
-      "venue": "Collège Supérieur Lyon",
-      "venue_slug": "college-superieur-lyon",
-      "title": "Voir le monde autrement",
-      "subtitle": null,
-      "category": "Conférences",
-      "date_start": "2026-10-14",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319630-voir-le-monde-autrement.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "4b118213efb3"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -674,20 +478,6 @@
       "image": "https://www.croix-rousse.com/wp-content/uploads/2026/06/4.-Nos-corps-désirants-1080x1080-2.png.webp",
       "offsite_venue": null,
       "id": "b3d8b185d44a"
-    },
-    {
-      "venue": "Théâtre du Point du Jour",
-      "venue_slug": "theatre-du-point-du-jour",
-      "title": "Grand reporterre #12 : Rebelles en exil",
-      "subtitle": null,
-      "category": "Conférences",
-      "date_start": "2026-10-14",
-      "date_end": "2026-10-14",
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319567-grand-reporterre-12-rebelles-en-exil.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "8b0ee06f512b"
     },
     {
       "venue": "Ô boudoir",
@@ -872,20 +662,6 @@
       "id": "534d516a2d1b"
     },
     {
-      "venue": "Librairie L'Esprit Livre",
-      "venue_slug": "librairie-l-esprit-livre",
-      "title": "Cyril Pedrosa",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-15",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319776-cyril-pedrosa.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "d346924de867"
-    },
-    {
       "venue": "HEAT",
       "venue_slug": "heat",
       "title": "Afterwork : Food, Drink & Happy Hour !",
@@ -898,62 +674,6 @@
       "image": "https://h-eat.eu/wp-content/uploads/2026/05/marceau-bergeroux98-1080x720.jpg",
       "offsite_venue": null,
       "id": "0cf90fc4d051"
-    },
-    {
-      "venue": "Librairie Expérience",
-      "venue_slug": "librairie-experience",
-      "title": "Paul Pope",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-15",
-      "date_end": null,
-      "time": "17:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319789-paul-pope.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "e31365ecf8b7"
-    },
-    {
-      "venue": "Bibliothèque Diderot de Lyon",
-      "venue_slug": "bibliotheque-diderot-de-lyon",
-      "title": "Parlez-nous de... Les voix du temps",
-      "subtitle": null,
-      "category": "Conférences",
-      "date_start": "2026-10-15",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319794-parlez-nous-de-les-voix-du-temps.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "4b99f741e309"
-    },
-    {
-      "venue": "Hôtel 71",
-      "venue_slug": "hotel-71",
-      "title": "Les visiteurs du jeudi : Clémentine Labrosse",
-      "subtitle": null,
-      "category": "Conférences",
-      "date_start": "2026-10-15",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319560-les-visiteurs-du-jeudi-cl-mentine-labrosse.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "d9bc676b8865"
-    },
-    {
-      "venue": "Librairie du Contrevent",
-      "venue_slug": "librairie-du-contrevent",
-      "title": "Camille Drouet-Chades et Manon Mugnier",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-15",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319774-camille-drouet-chades-et-manon-mugnier.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "3a5f0cb1a561"
     },
     {
       "venue": "Maison de la Danse",
@@ -1012,34 +732,6 @@
       "id": "ed5ee0f0c6a9"
     },
     {
-      "venue": "Librairie Adrienne",
-      "venue_slug": "librairie-adrienne",
-      "title": "Balafre : rencontre avec Maëlle Le Corre",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-15",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319793-balafre-rencontre-avec-ma-lle-le-corre.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "67b69b3e8bad"
-    },
-    {
-      "venue": "Librairie Passages",
-      "venue_slug": "librairie-passages",
-      "title": "Tiffany Tavernier",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-15",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.petit-bulletin.fr/agenda-310159-tiffany-tavernier.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "931ad13f6d55"
-    },
-    {
       "venue": "Opéra national de Lyon",
       "venue_slug": "opera-lyon",
       "title": "Adélaïde Ferrière",
@@ -1052,34 +744,6 @@
       "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_10_15_adelaide_ferriere_generation_spedicam_c_venera_red_photography_8_bi_1160x1472.jpg",
       "offsite_venue": "Théâtre de La Renaissance",
       "id": "c8b83ed365f0"
-    },
-    {
-      "venue": "Librairie L'œil cacodylate",
-      "venue_slug": "librairie-l-il-cacodylate",
-      "title": "Monica Martinat et Michel Jourde",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-15",
-      "date_end": null,
-      "time": "19:15",
-      "url": "https://www.petit-bulletin.fr/agenda-319580-monica-martinat-et-michel-jourde.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "44ed6a960dea"
-    },
-    {
-      "venue": "Collège Supérieur Lyon",
-      "venue_slug": "college-superieur-lyon",
-      "title": "Pourquoi Spinoza nomme-t-il le principe Dieu ?",
-      "subtitle": null,
-      "category": "Conférences",
-      "date_start": "2026-10-15",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319631-pourquoi-spinoza-nomme-t-il-le-principe-dieu.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "9bc96213e556"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -1514,48 +1178,6 @@
       "image": "https://www.croix-rousse.com/wp-content/uploads/2026/05/Visite-Musée-des-Beaux-Arts-1-768x768.png.webp",
       "offsite_venue": null,
       "id": "9eb866a484bf"
-    },
-    {
-      "venue": "Librairie Expérience",
-      "venue_slug": "librairie-experience",
-      "title": "Nicolas Pothier et Nicolas Ryser",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-16",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319790-nicolas-pothier-et-nicolas-ryser.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "4ae49c9ebc30"
-    },
-    {
-      "venue": "Librairie du Contrevent",
-      "venue_slug": "librairie-du-contrevent",
-      "title": "Ombeline Desjonquères",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-16",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319777-ombeline-desjonqu-res.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "06e4d3443060"
-    },
-    {
-      "venue": "Fnac Bellecour",
-      "venue_slug": "fnac-bellecour",
-      "title": "Hoshi",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-16",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319786-hoshi.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "282f6ba0c22f"
     },
     {
       "venue": "HEAT",
@@ -2216,20 +1838,6 @@
       "id": "dda7fac3d441"
     },
     {
-      "venue": "MAM - Musée des Arts et de la Marionnette",
-      "venue_slug": "mam-musee-des-arts-et-de-la-marionnette",
-      "title": "Les arts de la marionnette en Afrique",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-10-17",
-      "date_end": null,
-      "time": "10:45",
-      "url": "https://www.petit-bulletin.fr/agenda-319795-les-arts-de-la-marionnette-en-afrique.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "07e38c2dc03c"
-    },
-    {
       "venue": "Matmut Stadium de Gerland",
       "venue_slug": "matmut-stadium-gerland",
       "title": "LOU Rugby - Hollywoodbets Sharks",
@@ -2258,20 +1866,6 @@
       "id": "69ecb8f35ff2"
     },
     {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-de-lyon",
-      "title": "Visites découverte commentées",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-10-17",
-      "date_end": null,
-      "time": "13:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "54028c73519a"
-    },
-    {
       "venue": "Les Subsistances",
       "venue_slug": "les-subs",
       "title": "Minipousses cirque",
@@ -2286,48 +1880,6 @@
       "id": "9b15f19ba5a2"
     },
     {
-      "venue": "Fnac Bellecour",
-      "venue_slug": "fnac-bellecour",
-      "title": "MinaLima",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-17",
-      "date_end": null,
-      "time": "15:00",
-      "url": "https://www.petit-bulletin.fr/agenda-316022-minalima.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "c68cb2c92559"
-    },
-    {
-      "venue": "Goethe-Institut",
-      "venue_slug": "goethe-institut",
-      "title": "Lyon se souvient",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-10-17",
-      "date_end": null,
-      "time": "15:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319633-lyon-se-souvient.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "ad27cd8b416f"
-    },
-    {
-      "venue": "Momie Romance",
-      "venue_slug": "momie-romance",
-      "title": "Ema Dinkel",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-17",
-      "date_end": null,
-      "time": "15:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319638-ema-dinkel.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "c7ad0b9eb68a"
-    },
-    {
       "venue": "IAC Villeurbanne",
       "venue_slug": "iac-villeurbanne",
       "title": "Visites du week-end",
@@ -2340,20 +1892,6 @@
       "image": "https://i-ac.eu/img/thumbs_cache/400x300_img_9772.jpg",
       "offsite_venue": null,
       "id": "ecd42c8c998b"
-    },
-    {
-      "venue": "Librairie Expérience",
-      "venue_slug": "librairie-experience",
-      "title": "Papayou",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-17",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319791-papayou.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "7bdf6e03f432"
     },
     {
       "venue": "Improvidence",
@@ -3000,20 +2538,6 @@
       "id": "d1ace2df2686"
     },
     {
-      "venue": "Librairie Momie",
-      "venue_slug": "librairie-momie",
-      "title": "Laurie Gilmore",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-18",
-      "date_end": null,
-      "time": "15:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319639-laurie-gilmore.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "a8d64688949e"
-    },
-    {
       "venue": "IAC Villeurbanne",
       "venue_slug": "iac-villeurbanne",
       "title": "Visites du week-end",
@@ -3138,20 +2662,6 @@
       "image": null,
       "offsite_venue": null,
       "id": "e79e1d7eef84"
-    },
-    {
-      "venue": "Au Rikiki",
-      "venue_slug": "au-rikiki",
-      "title": "Le chant des lucioles",
-      "subtitle": null,
-      "category": "Lecture et conte",
-      "date_start": "2026-10-19",
-      "date_end": null,
-      "time": "10:30",
-      "url": "https://www.petit-bulletin.fr/agenda-304802-le-chant-des-lucioles.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "f3f48e571058"
     },
     {
       "venue": "Au Rikiki",
@@ -3380,20 +2890,6 @@
     {
       "venue": "Au Rikiki",
       "venue_slug": "au-rikiki",
-      "title": "Le chant des lucioles",
-      "subtitle": null,
-      "category": "Lecture et conte",
-      "date_start": "2026-10-20",
-      "date_end": null,
-      "time": "10:30",
-      "url": "https://www.petit-bulletin.fr/agenda-304802-le-chant-des-lucioles.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "754b4c150a3e"
-    },
-    {
-      "venue": "Au Rikiki",
-      "venue_slug": "au-rikiki",
       "title": "Le loup en slip",
       "subtitle": null,
       "category": "Théâtre",
@@ -3490,20 +2986,6 @@
       "id": "5cb5cb73b58f"
     },
     {
-      "venue": "Librairie L'œil cacodylate",
-      "venue_slug": "librairie-l-il-cacodylate",
-      "title": "Robin Josserand",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-20",
-      "date_end": null,
-      "time": "19:15",
-      "url": "https://www.petit-bulletin.fr/agenda-319581-robin-josserand.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "046ea58d4c4a"
-    },
-    {
       "venue": "Théâtre Astrée",
       "venue_slug": "theatre-astree",
       "title": "Tfou aalik, le château de mon père",
@@ -3586,20 +3068,6 @@
       "image": "https://sonic-lyon.fr/wp-content/uploads/2026/06/THE_HOMESICK_presspic3_2026CDanny_Griffioen-1.jpg",
       "offsite_venue": null,
       "id": "e5cd71040a5a"
-    },
-    {
-      "venue": "Librairie La Tanière",
-      "venue_slug": "librairie-la-taniere",
-      "title": "Emma Étienne",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-20",
-      "date_end": null,
-      "time": "20:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319629-emma-tienne.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "319c731a4482"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -3742,20 +3210,6 @@
       "id": "e3c8ce69ffe3"
     },
     {
-      "venue": "Au Rikiki",
-      "venue_slug": "au-rikiki",
-      "title": "Le chant des lucioles",
-      "subtitle": null,
-      "category": "Lecture et conte",
-      "date_start": "2026-10-21",
-      "date_end": null,
-      "time": "10:30",
-      "url": "https://www.petit-bulletin.fr/agenda-304802-le-chant-des-lucioles.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "be2bcec8e9e8"
-    },
-    {
       "venue": "Musée des Confluences",
       "venue_slug": "musee-des-confluences",
       "title": "Théâtre kamishibaï - Bama et l'antilope cheval",
@@ -3782,34 +3236,6 @@
       "image": "https://api.opera-lyon.com/assets/q80-w634-c330x393/1c704297/2026_10_27et28_atelier_la_marelle_bi_1160x1472.jpg",
       "offsite_venue": null,
       "id": "70d468d25395"
-    },
-    {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-de-lyon",
-      "title": "Visites découverte commentées",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-10-21",
-      "date_end": null,
-      "time": "13:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "2712622c913c"
-    },
-    {
-      "venue": "Fnac Bellecour",
-      "venue_slug": "fnac-bellecour",
-      "title": "Christophe Cazenove",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-21",
-      "date_end": null,
-      "time": "13:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319788-christophe-cazenove.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "a8ab4bd17d50"
     },
     {
       "venue": "La Comète",
@@ -3894,20 +3320,6 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/improminots.jpg",
       "offsite_venue": null,
       "id": "afe70f734962"
-    },
-    {
-      "venue": "MAM - Musée des Arts et de la Marionnette",
-      "venue_slug": "mam-musee-des-arts-et-de-la-marionnette",
-      "title": "Au Musée !",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-10-21",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319551-au-mus-e.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "95428e70a40d"
     },
     {
       "venue": "Théâtre La Mouche",
@@ -4022,20 +3434,6 @@
       "id": "83f2c31dd25e"
     },
     {
-      "venue": "Librairie Passages",
-      "venue_slug": "librairie-passages",
-      "title": "Adèle Haenel",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-21",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319778-ad-le-haenel.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "f84c520e7ad1"
-    },
-    {
       "venue": "Toï Toï le Zinc",
       "venue_slug": "toi-toi-le-zinc",
       "title": "Initiation & Bal Swing au Toï Toï",
@@ -4048,20 +3446,6 @@
       "image": "https://agenda.villemorte.fr/media/thumb/a16a7a7d648d35702badbde69f13b293.jpg",
       "offsite_venue": null,
       "id": "7b3436ff1540"
-    },
-    {
-      "venue": "Librairie L'œil cacodylate",
-      "venue_slug": "librairie-l-il-cacodylate",
-      "title": "Laetitia Bianchi",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-21",
-      "date_end": null,
-      "time": "19:15",
-      "url": "https://www.petit-bulletin.fr/agenda-319582-laetitia-bianchi.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "89a8a9385e63"
     },
     {
       "venue": "Improvidence",
@@ -4302,20 +3686,6 @@
       "id": "80c3b7b72501"
     },
     {
-      "venue": "Au Rikiki",
-      "venue_slug": "au-rikiki",
-      "title": "Le chant des lucioles",
-      "subtitle": null,
-      "category": "Lecture et conte",
-      "date_start": "2026-10-22",
-      "date_end": null,
-      "time": "10:30",
-      "url": "https://www.petit-bulletin.fr/agenda-304802-le-chant-des-lucioles.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "3f3882ba6c71"
-    },
-    {
       "venue": "Auditorium de Lyon",
       "venue_slug": "auditorium-lyon",
       "title": "Concert découverte #2",
@@ -4386,48 +3756,6 @@
       "id": "981c851cb03d"
     },
     {
-      "venue": "Palais de justice historique",
-      "venue_slug": "palais-de-justice-historique",
-      "title": "Dialogues in situ, l'art contemporain au cœur de Lyon",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-10-22",
-      "date_end": null,
-      "time": "16:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319569-dialogues-in-situ-leart-contemporain-au-c-ur-de-lyon.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "fa4af55f40da"
-    },
-    {
-      "venue": "Fnac Bellecour",
-      "venue_slug": "fnac-bellecour",
-      "title": "Laurent Gounelle",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-22",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.petit-bulletin.fr/agenda-289452-laurent-gounelle.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "2a7c1a0b7d6e"
-    },
-    {
-      "venue": "Hôtel 71",
-      "venue_slug": "hotel-71",
-      "title": "Les visiteurs du jeudi : Claude Mouriéras",
-      "subtitle": null,
-      "category": "Conférences",
-      "date_start": "2026-10-22",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319561-les-visiteurs-du-jeudi-claude-mouri-ras.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "28ade1fb0a5a"
-    },
-    {
       "venue": "Le Sucre",
       "venue_slug": "le-sucre",
       "title": "Concert : Khalil Epi présente TUQUS live A/V",
@@ -4484,20 +3812,6 @@
       "id": "4ced580b8ce0"
     },
     {
-      "venue": "Librairie Passages",
-      "venue_slug": "librairie-passages",
-      "title": "Rencontres Hétéroclites #3 - Serge Hefez",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-22",
-      "date_end": null,
-      "time": "19:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319779-rencontres-h-t-roclites-3-serge-hefez.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "945daa473397"
-    },
-    {
       "venue": "L’Amicale Du Futur",
       "venue_slug": "l-amicale-du-futur",
       "title": "Team Work + Leo Hermitt",
@@ -4510,20 +3824,6 @@
       "image": null,
       "offsite_venue": null,
       "id": "989462d2a006"
-    },
-    {
-      "venue": "Librairie L'œil cacodylate",
-      "venue_slug": "librairie-l-il-cacodylate",
-      "title": "La littérature de Djuna Barnes",
-      "subtitle": null,
-      "category": "Conférences",
-      "date_start": "2026-10-22",
-      "date_end": null,
-      "time": "19:15",
-      "url": "https://www.petit-bulletin.fr/agenda-319627-la-litt-rature-de-djuna-barnes.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "b6752c08c1db"
     },
     {
       "venue": "Théâtre Astrée",
@@ -4566,20 +3866,6 @@
       "image": null,
       "offsite_venue": null,
       "id": "685ae1c32e01"
-    },
-    {
-      "venue": "Librairie Esperluette",
-      "venue_slug": "librairie-esperluette",
-      "title": "Rencontre sur la non-violence",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-22",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319780-rencontre-sur-la-non-violence.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "765ce97278b1"
     },
     {
       "venue": "Théâtre des Marronniers",
@@ -4792,20 +4078,6 @@
       "id": "a2ecac5b8faf"
     },
     {
-      "venue": "Au Rikiki",
-      "venue_slug": "au-rikiki",
-      "title": "Le chant des lucioles",
-      "subtitle": null,
-      "category": "Lecture et conte",
-      "date_start": "2026-10-23",
-      "date_end": null,
-      "time": "10:30",
-      "url": "https://www.petit-bulletin.fr/agenda-304802-le-chant-des-lucioles.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "a19bd6f3768a"
-    },
-    {
       "venue": "Musée des Confluences",
       "venue_slug": "musee-des-confluences",
       "title": "Ciné-Science · Kirikou et les bêtes sauvages",
@@ -4860,20 +4132,6 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/improminots.jpg",
       "offsite_venue": null,
       "id": "3afb631e21ce"
-    },
-    {
-      "venue": "Librairie Expérience",
-      "venue_slug": "librairie-experience",
-      "title": "Amélie Causse",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-23",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://www.petit-bulletin.fr/agenda-299541-am-lie-causse.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "22c4c751d857"
     },
     {
       "venue": "Musée des Confluences",
@@ -5000,34 +4258,6 @@
       "image": "https://www.transbordeur.fr/wp-content/uploads/2026/01/a-nes-768x960.png",
       "offsite_venue": null,
       "id": "35581083eafe"
-    },
-    {
-      "venue": "Librairie L'œil cacodylate",
-      "venue_slug": "librairie-l-il-cacodylate",
-      "title": "Natalia Ginzburg",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-23",
-      "date_end": null,
-      "time": "19:15",
-      "url": "https://www.petit-bulletin.fr/agenda-319783-natalia-ginzburg.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "02d6f4cfa28a"
-    },
-    {
-      "venue": "Librairie à soi.e",
-      "venue_slug": "librairie-a-soi-e",
-      "title": "Clarence Edgar Rosa",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-23",
-      "date_end": null,
-      "time": "19:15",
-      "url": "https://www.petit-bulletin.fr/agenda-319785-clarence-edgar-rosa.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "d9b19f4c38da"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -5352,34 +4582,6 @@
       "id": "f602f293d57a"
     },
     {
-      "venue": "Au Rikiki",
-      "venue_slug": "au-rikiki",
-      "title": "Le chant des lucioles",
-      "subtitle": null,
-      "category": "Lecture et conte",
-      "date_start": "2026-10-24",
-      "date_end": null,
-      "time": "10:30",
-      "url": "https://www.petit-bulletin.fr/agenda-304802-le-chant-des-lucioles.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "f4953e0fff77"
-    },
-    {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-de-lyon",
-      "title": "Visites découverte commentées",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-10-24",
-      "date_end": null,
-      "time": "13:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "24d5750e1a68"
-    },
-    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "LWP Bday Party",
@@ -5450,20 +4652,6 @@
       "id": "b132cd580d29"
     },
     {
-      "venue": "Librairie Expérience",
-      "venue_slug": "librairie-experience",
-      "title": "Lucile Thibaudier et Adeline Avril",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-24",
-      "date_end": null,
-      "time": "15:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319792-lucile-thibaudier-et-adeline-avril.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "8bbd7a854f62"
-    },
-    {
       "venue": "IAC Villeurbanne",
       "venue_slug": "iac-villeurbanne",
       "title": "Visites du week-end",
@@ -5490,20 +4678,6 @@
       "image": "https://larayonne.org/wp-content/uploads/2026/09/SHOTGUN_2_iqrosk-500x281.jpeg",
       "offsite_venue": null,
       "id": "7b7031d076c2"
-    },
-    {
-      "venue": "Librairie du Contrevent",
-      "venue_slug": "librairie-du-contrevent",
-      "title": "Fanny Vella",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-24",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319782-fanny-vella.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "48a8ef45776e"
     },
     {
       "venue": "Improvidence",
@@ -5912,20 +5086,6 @@
       "id": "7b4559db3b9f"
     },
     {
-      "venue": "Au Rikiki",
-      "venue_slug": "au-rikiki",
-      "title": "Le chant des lucioles",
-      "subtitle": null,
-      "category": "Lecture et conte",
-      "date_start": "2026-10-25",
-      "date_end": null,
-      "time": "10:30",
-      "url": "https://www.petit-bulletin.fr/agenda-304802-le-chant-des-lucioles.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "f3333b3ee04e"
-    },
-    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Puces & Love – Spécial automne",
@@ -6103,7 +5263,7 @@
       "date_end": null,
       "time": "18:00",
       "url": "https://le-sucre.eu/events/s-society-167/",
-      "image": "https://le-sucre.eu/wp-content/uploads/2026/09/25_10-450x600.png",
+      "image": "https://le-sucre.eu/wp-content/uploads/2026/09/jeff_mills_complet-450x600.png",
       "offsite_venue": null,
       "id": "ac102a7c2718"
     },
@@ -6696,20 +5856,6 @@
       "id": "1d5fa51c23f8"
     },
     {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-de-lyon",
-      "title": "Visites découverte commentées",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-10-28",
-      "date_end": null,
-      "time": "13:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "10f72283df48"
-    },
-    {
       "venue": "La Comète",
       "venue_slug": "la-comete",
       "title": "Le café de la comète - En mixité sans mec cis hétéro",
@@ -6836,20 +5982,6 @@
       "id": "614cfb9c91fe"
     },
     {
-      "venue": "Librairie à soi.e",
-      "venue_slug": "librairie-a-soi-e",
-      "title": "L. Bigòrra",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-28",
-      "date_end": null,
-      "time": "19:15",
-      "url": "https://www.petit-bulletin.fr/agenda-319640-l-big-rra.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "5a9ce303552c"
-    },
-    {
       "venue": "Théâtre des Clochards Célestes",
       "venue_slug": "theatre-des-clochards-celestes",
       "title": "Vania / Laboratoire",
@@ -6866,16 +5998,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Linh",
+      "title": "Linh - La Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-10-28",
       "date_end": null,
       "time": "20:00",
-      "url": "https://www.bourse-du-travail.com/linh-358175.html",
+      "url": "https://www.bourse-du-travail.com/linh-la-tournee-358175.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/linh-3.jpg",
       "offsite_venue": null,
-      "id": "57f2cbbac320"
+      "id": "f704dd2023f4"
     },
     {
       "venue": "Comédie Odéon",
@@ -7074,20 +6206,6 @@
       "id": "286ec6f1c705"
     },
     {
-      "venue": "Factatory",
-      "venue_slug": "factatory",
-      "title": "Open Studio",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-10-29",
-      "date_end": null,
-      "time": "14:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319321-open-studio.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "31796b5ad40d"
-    },
-    {
       "venue": "Au Rikiki",
       "venue_slug": "au-rikiki",
       "title": "Lucie et la potion pourrite",
@@ -7186,20 +6304,6 @@
       "id": "f0ae6e46c5fe"
     },
     {
-      "venue": "Hôtel 71",
-      "venue_slug": "hotel-71",
-      "title": "Les visiteurs du jeudi : Fabrice Arfi",
-      "subtitle": null,
-      "category": "Conférences",
-      "date_start": "2026-10-29",
-      "date_end": null,
-      "time": "18:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319562-les-visiteurs-du-jeudi-fabrice-arfi.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "8a04cd1d71e8"
-    },
-    {
       "venue": "Opéra national de Lyon",
       "venue_slug": "opera-lyon",
       "title": "Simon Jeffes et le Penguin Cafe Orchestra",
@@ -7254,20 +6358,6 @@
       "image": "https://larayonne.org/wp-content/uploads/2026/09/VISUELS-SITE-26-27-500x282.png",
       "offsite_venue": null,
       "id": "eaebf4855934"
-    },
-    {
-      "venue": "Librairie L'œil cacodylate",
-      "venue_slug": "librairie-l-il-cacodylate",
-      "title": "Sylvain Bourmeau",
-      "subtitle": null,
-      "category": "Rencontres et Dédicaces",
-      "date_start": "2026-10-29",
-      "date_end": null,
-      "time": "19:15",
-      "url": "https://www.petit-bulletin.fr/agenda-319628-sylvain-bourmeau.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "890efa78fcea"
     },
     {
       "venue": "Grrrnd Zero",
@@ -7622,16 +6712,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Toute L'histoire De La Peinture En Moins De Deux Heures",
+      "title": "Toute L'histoire De La Peinture En Moins De Deux Heures, Par Hector Obalk - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-10-30",
       "date_end": null,
       "time": "20:00",
-      "url": "https://www.bourse-du-travail.com/toute-l-histoire-de-la-peinture-en-moins-de-deux-heures-321077.html",
+      "url": "https://www.bourse-du-travail.com/toute-l-histoire-de-la-peinture-en-moins-de-deux-heures-par-hector-obalk-tournee-321077.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/toute-lhistoire-de-la-peinture-en-moins-de-deux-heures-par-hector-obalk--tournee-2.jpg",
       "offsite_venue": null,
-      "id": "40c612ca86f5"
+      "id": "0475dc939cfe"
     },
     {
       "venue": "Comédie Odéon",
@@ -7900,20 +6990,6 @@
       "id": "cb611e480d3c"
     },
     {
-      "venue": "Opéra national de Lyon",
-      "venue_slug": "opera-de-lyon",
-      "title": "Visites découverte commentées",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-10-31",
-      "date_end": null,
-      "time": "13:00",
-      "url": "https://www.petit-bulletin.fr/agenda-318984-visites-d-couverte-comment-es.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "3f30509241ac"
-    },
-    {
       "venue": "Au Rikiki",
       "venue_slug": "au-rikiki",
       "title": "Lucie et la potion pourrite",
@@ -7926,20 +7002,6 @@
       "image": null,
       "offsite_venue": null,
       "id": "fbae0cdbd208"
-    },
-    {
-      "venue": "Musées Gadagne",
-      "venue_slug": "musees-gadagne",
-      "title": "Découverte du cuir médiéval",
-      "subtitle": null,
-      "category": "Conférences",
-      "date_start": "2026-10-31",
-      "date_end": null,
-      "time": "14:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319557-d-couverte-du-cuir-m-di-val.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "bc3f9341771a"
     },
     {
       "venue": "Comédie Odéon",
@@ -9617,7 +8679,7 @@
       "date_end": null,
       "time": "19:00",
       "url": "https://larayonne.org/evenement/zelie/",
-      "image": "https://larayonne.org/wp-content/uploads/2026/02/FACEBO1-500x281.jpg",
+      "image": "https://larayonne.org/wp-content/uploads/2026/02/bann-zelie-coomplet-500x281.jpg",
       "offsite_venue": null,
       "id": "98a1cb2e5d72"
     },
@@ -10338,16 +9400,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Naim",
+      "title": "Naïm - Chapitre 3 - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-11-07",
       "date_end": null,
       "time": "19:30",
-      "url": "https://www.bourse-du-travail.com/naim-365669.html",
+      "url": "https://www.bourse-du-travail.com/naim-chapitre-3-tournee-365669.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/naim-6.jpg",
       "offsite_venue": null,
-      "id": "3a0ae4764d5a"
+      "id": "89c3d268a249"
     },
     {
       "venue": "Théâtre de la Croix-Rousse",
@@ -11605,7 +10667,7 @@
       "date_end": null,
       "time": "19:00",
       "url": "https://www.les-subs.com/evenement/nuit-du-cirque-2026-ne-me-faites-pas-entendre-ce-que-je-nai-pas-dit-victor-hollebecq-david-perreard/",
-      "image": "https://www.les-subs.com/wp-content/uploads/2026/07/ne-me-faites-pas-entendre-ce-que-j-ai-pas-dit-e1783335171190-200x200.jpg",
+      "image": "https://www.les-subs.com/wp-content/uploads/2026/07/ne-me-faites-pas-entendre-halle-roublot-1-200x200.jpg",
       "offsite_venue": null,
       "id": "60a4506e3d8f"
     },
@@ -11696,16 +10758,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Thomas Wiesel",
+      "title": "Thomas Wiesel - Société Ecrans (Tournée)",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-11-12",
       "date_end": null,
       "time": "20:00",
-      "url": "https://www.bourse-du-travail.com/thomas-wiesel-338820.html",
+      "url": "https://www.bourse-du-travail.com/thomas-wiesel-societe-ecrans-tournee-338820.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/thomas-wiesel-dans-societe-ecrans-4.jpg",
       "offsite_venue": null,
-      "id": "d6c2953ae1f9"
+      "id": "3d7ea3f3e985"
     },
     {
       "venue": "Chapelle de la Trinité",
@@ -12053,7 +11115,7 @@
       "date_end": null,
       "time": "19:00",
       "url": "https://www.les-subs.com/evenement/nuit-du-cirque-2026-ne-me-faites-pas-entendre-ce-que-je-nai-pas-dit-victor-hollebecq-david-perreard/",
-      "image": "https://www.les-subs.com/wp-content/uploads/2026/07/ne-me-faites-pas-entendre-ce-que-j-ai-pas-dit-e1783335171190-200x200.jpg",
+      "image": "https://www.les-subs.com/wp-content/uploads/2026/07/ne-me-faites-pas-entendre-halle-roublot-1-200x200.jpg",
       "offsite_venue": null,
       "id": "a79b0d504a62"
     },
@@ -12464,20 +11526,6 @@
       "id": "a60c922d1e79"
     },
     {
-      "venue": "Place de Francfort",
-      "venue_slug": "place-de-francfort",
-      "title": "La Part-Dieu, un territoire pour l'art des Trente Glorieuses à aujourd'hui",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-11-14",
-      "date_end": null,
-      "time": "10:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319742-la-part-dieu-un-territoire-pour-leart-des-trente-glorieuses-aujourdehui.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "fe1e1c384aa8"
-    },
-    {
       "venue": "Chapelle de la Trinité",
       "venue_slug": "chapelle-de-la-trinite",
       "title": "Une expo dans le vent",
@@ -12669,7 +11717,7 @@
       "date_end": null,
       "time": "17:30",
       "url": "https://www.les-subs.com/evenement/nuit-du-cirque-2026-ne-me-faites-pas-entendre-ce-que-je-nai-pas-dit-victor-hollebecq-david-perreard/",
-      "image": "https://www.les-subs.com/wp-content/uploads/2026/07/ne-me-faites-pas-entendre-ce-que-j-ai-pas-dit-e1783335171190-200x200.jpg",
+      "image": "https://www.les-subs.com/wp-content/uploads/2026/07/ne-me-faites-pas-entendre-halle-roublot-1-200x200.jpg",
       "offsite_venue": null,
       "id": "40c5c4955f2f"
     },
@@ -13110,7 +12158,7 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Rémi Comptines : Totomobile En Fête",
+      "title": "Rémi Comptines - Totomobile En Fête",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-11-15",
@@ -13119,7 +12167,7 @@
       "url": "https://www.bourse-du-travail.com/remi-comptines-totomobile-en-fete-459939.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/remi-comptines--totomobile-en-fete-4.jpg",
       "offsite_venue": null,
-      "id": "56df0796c0be"
+      "id": "dc3d19b73433"
     },
     {
       "venue": "Chapelle de la Trinité",
@@ -13250,16 +12298,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "L'arnaqueuse",
+      "title": "L'arnaqueuse - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-11-15",
       "date_end": null,
       "time": "17:00",
-      "url": "https://www.bourse-du-travail.com/l-arnaqueuse-280993.html",
+      "url": "https://www.bourse-du-travail.com/l-arnaqueuse-tournee-280993.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/larnaqueuse-13.jpg",
       "offsite_venue": null,
-      "id": "05d063887253"
+      "id": "ba7c5e8b55a1"
     },
     {
       "venue": "Chapelle de la Trinité",
@@ -13302,20 +12350,6 @@
       "image": "https://agendarts.wordpress.com/wp-content/uploads/2026/06/lehache-ph-christine-pascal-2.jpg?w=819",
       "offsite_venue": null,
       "id": "7f3008ead260"
-    },
-    {
-      "venue": "Chapelle de la Trinité",
-      "venue_slug": "chapelle-de-la-trinite",
-      "title": "Une expo dans le vent",
-      "subtitle": null,
-      "category": "Sciences et Histoire",
-      "date_start": "2026-11-15",
-      "date_end": null,
-      "time": "18:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319405-une-expo-dans-le-vent.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "436679de1f34"
     },
     {
       "venue": "Le Sucre",
@@ -13498,20 +12532,6 @@
       "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/un-grand-cri-damour-540x800.jpg",
       "offsite_venue": null,
       "id": "c47b5e305f4b"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "MAAAR",
-      "subtitle": "Release Party · En partenariat avec La Compagnie 4000",
-      "category": "musique",
-      "date_start": "2026-11-17",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/maaar/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/09/MAAAR-@Pierre-Campistron5-650x520.jpg",
-      "offsite_venue": null,
-      "id": "54e2fa4861e8"
     },
     {
       "venue": "Théâtre de l’Elysée",
@@ -13738,6 +12758,20 @@
       "id": "d482a62649d8"
     },
     {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "MAAAR",
+      "subtitle": "Release Party · En partenariat avec La Compagnie 4000",
+      "category": "musique",
+      "date_start": "2026-11-17",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.periscope-lyon.com/concerts/maaar/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/09/MAAAR-@Pierre-Campistron5-650x520.jpg",
+      "offsite_venue": null,
+      "id": "b409c8ee110b"
+    },
+    {
       "venue": "La Commune",
       "venue_slug": "la-commune",
       "title": "Salsa et Bachata",
@@ -13750,20 +12784,6 @@
       "image": "https://cdn-ilchkjh.nitrocdn.com/gohSAQIvPXRxVnCrOMzXdhxFQyClcfyS/assets/images/optimized/rev-288fd9b/lacommune.co/wp-content/uploads/2025/11/18-1-768x960.jpg",
       "offsite_venue": null,
       "id": "18f9abd74678"
-    },
-    {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Etran de l’Aïr",
-      "subtitle": "En partenariat avec Génération Spontanée",
-      "category": "musique",
-      "date_start": "2026-11-18",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/etran-de-lair/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/09/etran_2023_d_photo_by_larry_hirshowitz-e1790323019586-650x434.jpeg",
-      "offsite_venue": null,
-      "id": "7e61e38af8a8"
     },
     {
       "venue": "Théâtre des Clochards Célestes",
@@ -14170,6 +13190,20 @@
       "image": "https://img.mapado.net/2024/9/2/66d5820012170-canape-site-improvidence-2024.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "ac4cdbf86ca7"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "Etran de l’Aïr",
+      "subtitle": "En partenariat avec Génération Spontanée",
+      "category": "musique",
+      "date_start": "2026-11-18",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.periscope-lyon.com/concerts/etran-de-lair/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/09/etran_2023_d_photo_by_larry_hirshowitz-e1790323019586-650x434.jpeg",
+      "offsite_venue": null,
+      "id": "7a8410fc3353"
     },
     {
       "venue": "Agend'arts",
@@ -15978,20 +15012,6 @@
       "id": "22ea5e67edaa"
     },
     {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Charles Dubois",
-      "subtitle": "I'm free · Concert gratuit",
-      "category": "musique",
-      "date_start": "2026-11-24",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/charles-dubois/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/09/JulietteValero_01-1-650x433.jpg",
-      "offsite_venue": null,
-      "id": "e8256795c224"
-    },
-    {
       "venue": "Marché Gare",
       "venue_slug": "marche-gare",
       "title": "Déjeuner-Concert",
@@ -16018,6 +15038,20 @@
       "image": "https://larayonne.org/wp-content/uploads/2026/04/Robert-Finley-May-26-Later--500x334.jpeg",
       "offsite_venue": null,
       "id": "ef2e4e5676ce"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "Charles Dubois",
+      "subtitle": "I'm free · Concert gratuit",
+      "category": "musique",
+      "date_start": "2026-11-24",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://www.periscope-lyon.com/concerts/charles-dubois/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/09/JulietteValero_01-1-650x433.jpg",
+      "offsite_venue": null,
+      "id": "a8662d4aab54"
     },
     {
       "venue": "Le Transbordeur",
@@ -16804,20 +15838,6 @@
       "id": "62ed2d9d083c"
     },
     {
-      "venue": "Le Périscope",
-      "venue_slug": "periscope",
-      "title": "Geordie Greep",
-      "subtitle": null,
-      "category": "musique",
-      "date_start": "2026-11-27",
-      "date_end": null,
-      "time": null,
-      "url": "https://www.periscope-lyon.com/concerts/geordie-greep/",
-      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/07/RenderedImage-650x833.jpg",
-      "offsite_venue": null,
-      "id": "443e739311e2"
-    },
-    {
       "venue": "Théâtre de la Croix-Rousse",
       "venue_slug": "croix-rousse",
       "title": "À l’envers, à l’endroit",
@@ -17152,6 +16172,20 @@
       "image": "https://img.mapado.net/2023/11/16/6556217687939-affiche-scene-s-de-crime-rvb.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "298457e1cc12"
+    },
+    {
+      "venue": "Le Périscope",
+      "venue_slug": "periscope",
+      "title": "Geordie Greep",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2026-11-27",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.periscope-lyon.com/concerts/geordie-greep/",
+      "image": "https://www.periscope-lyon.com/wp-content/uploads/2026/07/RenderedImage-650x833.jpg",
+      "offsite_venue": null,
+      "id": "870479482fa8"
     },
     {
       "venue": "Théâtre de la Croix-Rousse",
@@ -17938,20 +16972,6 @@
       "id": "a3e49574ee44"
     },
     {
-      "venue": "Le Toboggan",
-      "venue_slug": "le-toboggan",
-      "title": "L'expérience théâtrale",
-      "subtitle": null,
-      "category": "Théâtre",
-      "date_start": "2026-11-29",
-      "date_end": null,
-      "time": "17:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319824-l-exp-rience-th-trale.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "fffd16ca4971"
-    },
-    {
       "venue": "Agend'arts",
       "venue_slug": "agend-arts",
       "title": "Une fille comme les autres – Quinzaine “Paroles de femmes”",
@@ -17968,16 +16988,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Gus Illusionniste",
+      "title": "Gus Illusionniste - Givré - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-11-29",
       "date_end": null,
       "time": "18:00",
-      "url": "https://www.bourse-du-travail.com/gus-illusionniste-283870.html",
+      "url": "https://www.bourse-du-travail.com/gus-illusionniste-givre-tournee-283870.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/gus-illusionniste-dans-givre-4.jpg",
       "offsite_venue": null,
-      "id": "9cf4bed12352"
+      "id": "4267b93114a2"
     },
     {
       "venue": "Le Sucre",
@@ -18164,16 +17184,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Marine Leonardi",
+      "title": "Marine Leonardi - Mauvaise Graine - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-12-01",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/marine-leonardi-359462.html",
+      "url": "https://www.bourse-du-travail.com/marine-leonardi-mauvaise-graine-tournee-359462.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/marine-leonardi-dans-mauvaise-graine-7.jpg",
       "offsite_venue": null,
-      "id": "ee616746e6d6"
+      "id": "3353a8440cc9"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -18332,16 +17352,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Marine Leonardi",
+      "title": "Marine Leonardi - Mauvaise Graine - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-12-02",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/marine-leonardi-338745.html",
+      "url": "https://www.bourse-du-travail.com/marine-leonardi-mauvaise-graine-tournee-338745.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/marine-leonardi--6.jpg",
       "offsite_venue": null,
-      "id": "addf6a8c474c"
+      "id": "dfb9135634ea"
     },
     {
       "venue": "Le Périscope",
@@ -18710,16 +17730,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Marine Leonardi",
+      "title": "Marine Leonardi - Mauvaise Graine - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-12-03",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/marine-leonardi-280253.html",
+      "url": "https://www.bourse-du-travail.com/marine-leonardi-mauvaise-graine-tournee-280253.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/marine-leonardi-3.jpg",
       "offsite_venue": null,
-      "id": "218d14d25cb0"
+      "id": "6b3e3ab60510"
     },
     {
       "venue": "Le Périscope",
@@ -19350,6 +18370,20 @@
       "image": "https://img.mapado.net/2025/10/22/68f8d4dc2597f-affiche-flemme-superette.jpeg_thumbs/600-600.jpeg",
       "offsite_venue": null,
       "id": "916c2d39b9d1"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-04",
+      "date_end": null,
+      "time": "22:00",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "c7b86a590e78"
     },
     {
       "venue": "Le Sucre",
@@ -20404,16 +19438,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Samuel Bambi",
+      "title": "Samuel Bambi - Machine ! - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-12-10",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/samuel-bambi-357727.html",
+      "url": "https://www.bourse-du-travail.com/samuel-bambi-machine-tournee-357727.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/samuel-bambi-10.jpg",
       "offsite_venue": null,
-      "id": "e2d84f309c62"
+      "id": "dab5c131060d"
     },
     {
       "venue": "Le Périscope",
@@ -22462,16 +21496,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "D'jal",
+      "title": "D'jal - En Pleine Conscience - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2026-12-18",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/d-jal-278014.html",
+      "url": "https://www.bourse-du-travail.com/d-jal-en-pleine-conscience-tournee-278014.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/djal-dans-en-pleine-conscience-4.jpg",
       "offsite_venue": null,
-      "id": "01a6fd019302"
+      "id": "a28bdf8c69ed"
     },
     {
       "venue": "Musée des Confluences",
@@ -22598,6 +21632,20 @@
       "image": "https://www.halle-tony-garnier.com/storage/146048/conversions/2026-12-18-DISNEY-EN-CONCERT-SUIVEZ-VOS-REVES-disney-carre-lyo-20251104-163638-square.jpg",
       "offsite_venue": null,
       "id": "4c46d99b7e0b"
+    },
+    {
+      "venue": "Le Complexe café-théâtre",
+      "venue_slug": "le-complexe",
+      "title": "LE COMPLEXE COMEDY CLUB - Un plateau d'humoristes !",
+      "subtitle": null,
+      "category": "café-théâtre",
+      "date_start": "2026-12-18",
+      "date_end": null,
+      "time": "20:00",
+      "url": "https://www.lecomplexelyon.com/programme/le-complexe-comedy-club-4-humoristes/",
+      "image": "https://www.lecomplexelyon.com/wp-content/uploads/2026/10/complexe-comedy-club-540x800.jpg",
+      "offsite_venue": null,
+      "id": "de13560f5305"
     },
     {
       "venue": "Le Complexe café-théâtre",
@@ -22738,20 +21786,6 @@
       "image": "https://www.bourse-du-travail.com/img/evenement/bernard-werber-dans-voyage-interieur-experimental-4.jpg",
       "offsite_venue": null,
       "id": "f3238785c2e0"
-    },
-    {
-      "venue": "Célestins, théâtre de Lyon",
-      "venue_slug": "celestins-theatre-de-lyon",
-      "title": "Visite guidée",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2026-12-19",
-      "date_end": null,
-      "time": "10:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319744-visite-guid-e.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "72809da00dff"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -25164,7 +24198,7 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Jonathan Dassin Chante Joe Dassin",
+      "title": "Jonathan Dassin - Chante Joe Dassin",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-01-07",
@@ -25173,7 +24207,7 @@
       "url": "https://www.bourse-du-travail.com/jonathan-dassin-chante-joe-dassin-316708.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/jonathan-dassin-chante-joe-dassin-3.jpg",
       "offsite_venue": null,
-      "id": "00cabaf9a371"
+      "id": "81e1e425c0f4"
     },
     {
       "venue": "Musée des Beaux-Arts",
@@ -25514,16 +24548,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Thomas Marty",
+      "title": "Thomas Marty - Nouveau Spectacle - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-01-09",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/thomas-marty-363200.html",
+      "url": "https://www.bourse-du-travail.com/thomas-marty-nouveau-spectacle-tournee-363200.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/thomas-marty-149.jpg",
       "offsite_venue": null,
-      "id": "17769ffabe2d"
+      "id": "b885cd233be9"
     },
     {
       "venue": "Maison de la Danse",
@@ -27362,16 +26396,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Meryem Benoua",
+      "title": "Meryem Benoua, Reflet - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-01-21",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/meryem-benoua-343413.html",
+      "url": "https://www.bourse-du-travail.com/meryem-benoua-reflet-tournee-343413.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/meryem-benoua-dans-reflet-4.jpg",
       "offsite_venue": null,
-      "id": "cf86898367c9"
+      "id": "c00c2706f7d8"
     },
     {
       "venue": "Comédie Odéon",
@@ -30498,16 +29532,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Jeremy Charbonnel Dans Seul Tout",
+      "title": "Jérémy Charbonnel - Seul Tout - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-02-06",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/jeremy-charbonnel-dans-seul-tout-353046.html",
+      "url": "https://www.bourse-du-travail.com/jeremy-charbonnel-seul-tout-tournee-353046.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/jeremy-charbonnel-dans-seul-tout-5.jpg",
       "offsite_venue": null,
-      "id": "a7f754241a23"
+      "id": "501d81367d17"
     },
     {
       "venue": "Opéra national de Lyon",
@@ -33466,16 +32500,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Dany Boon",
+      "title": "Dany Boon -  Clown N'est Pas Un Métier !!  - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-02-27",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/dany-boon-355761.html",
+      "url": "https://www.bourse-du-travail.com/dany-boon-clown-n-est-pas-un-metier-tournee-355761.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/dany-boon-dans-clown-nest-pas-un-metier--4.jpg",
       "offsite_venue": null,
-      "id": "c41e55b04b46"
+      "id": "72c5cc6046e8"
     },
     {
       "venue": "Comédie Odéon",
@@ -34290,6 +33324,20 @@
       "id": "d2742d8de253"
     },
     {
+      "venue": "La Rayonne",
+      "venue_slug": "la-rayonne",
+      "title": "FLORA FISHBACH",
+      "subtitle": null,
+      "category": "musique",
+      "date_start": "2027-03-05",
+      "date_end": null,
+      "time": "19:00",
+      "url": "https://larayonne.org/evenement/flora-fishbach/",
+      "image": "https://larayonne.org/wp-content/uploads/2026/10/FLORA-FISHBACH-500x282.jpg",
+      "offsite_venue": null,
+      "id": "c8df64aff1ad"
+    },
+    {
       "venue": "Célestins, théâtre de Lyon",
       "venue_slug": "celestins",
       "title": "Collatéral – Le Projet Ma Sœur",
@@ -34684,16 +33732,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Arnaud Tsamere",
+      "title": "Arnaud Tsamère - Tous Contraints - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-03-06",
       "date_end": null,
       "time": "20:00",
-      "url": "https://www.bourse-du-travail.com/arnaud-tsamere-362579.html",
+      "url": "https://www.bourse-du-travail.com/arnaud-tsamere-tous-contraints-tournee-362579.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/arnaud-tsamere-97.jpg",
       "offsite_venue": null,
-      "id": "efdc4437e370"
+      "id": "a4c052dc0a19"
     },
     {
       "venue": "La Halle Tony Garnier",
@@ -35384,16 +34432,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Blandine Lehout",
+      "title": "Blandine Lehout - La Vie De Ta Mère - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-03-11",
       "date_end": null,
       "time": "20:00",
-      "url": "https://www.bourse-du-travail.com/blandine-lehout-359464.html",
+      "url": "https://www.bourse-du-travail.com/blandine-lehout-la-vie-de-ta-mere-tournee-359464.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/blandine-lehout-dans-la-vie-de-ta-mere-4.jpg",
       "offsite_venue": null,
-      "id": "eb8d81b366c7"
+      "id": "b7c25e9e2b1e"
     },
     {
       "venue": "Célestins, théâtre de Lyon",
@@ -40214,16 +39262,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Rodrigue",
+      "title": "Rodrigue - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-04-11",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/rodrigue-353415.html",
+      "url": "https://www.bourse-du-travail.com/rodrigue-tournee-353415.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/rodrigue-6.jpg",
       "offsite_venue": null,
-      "id": "edf06199435a"
+      "id": "1a749f3e6fae"
     },
     {
       "venue": "Radiant-Bellevue",
@@ -40310,20 +39358,6 @@
       "id": "37c4b2711353"
     },
     {
-      "venue": "TNG",
-      "venue_slug": "tng-vaise",
-      "title": "Bienvenue aux répétitions !",
-      "subtitle": null,
-      "category": "Visites",
-      "date_start": "2027-04-16",
-      "date_end": null,
-      "time": "16:00",
-      "url": "https://www.petit-bulletin.fr/agenda-319552-bienvenue-aux-r-p-titions.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "59dd682192bb"
-    },
-    {
       "venue": "La Halle Tony Garnier",
       "venue_slug": "halle-tony-garnier",
       "title": "Mosimann",
@@ -40378,20 +39412,6 @@
       "image": null,
       "offsite_venue": null,
       "id": "86f2e30e4445"
-    },
-    {
-      "venue": "Espace Gerson",
-      "venue_slug": "espace-gerson",
-      "title": "L'impro FFF",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2027-04-27",
-      "date_end": null,
-      "time": "20:30",
-      "url": "https://www.petit-bulletin.fr/agenda-319345-l-impro-fff.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "ab7b3eea00be"
     },
     {
       "venue": "Théâtre de la Croix-Rousse",
@@ -40732,16 +39752,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Edgar-Yves Jr.",
+      "title": "Edgar-Yves Jr. - Vigilance - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-06-05",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/edgar-yves-jr-359465.html",
+      "url": "https://www.bourse-du-travail.com/edgar-yves-jr-vigilance-tournee-359465.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/edgar-yves-jr-6.jpg",
       "offsite_venue": null,
-      "id": "7b844a4908b3"
+      "id": "c2473468b3e8"
     },
     {
       "venue": "Piscine des Gratte-Ciel",
@@ -40788,16 +39808,16 @@
     {
       "venue": "Bourse du Travail",
       "venue_slug": "bourse-du-travail",
-      "title": "Julien Santini",
+      "title": "Julien Santini - Tournée",
       "subtitle": null,
       "category": "humour",
       "date_start": "2027-06-12",
       "date_end": null,
       "time": null,
-      "url": "https://www.bourse-du-travail.com/julien-santini-358214.html",
+      "url": "https://www.bourse-du-travail.com/julien-santini-tournee-358214.html",
       "image": "https://www.bourse-du-travail.com/img/evenement/julien-santini-16.jpg",
       "offsite_venue": null,
-      "id": "e808eda4bc91"
+      "id": "0c3f99395062"
     },
     {
       "venue": "Bourse du Travail",
@@ -40826,6 +39846,20 @@
       "image": "https://www.bourse-du-travail.com/img/evenement/sofia-belabbes-5.jpg",
       "offsite_venue": null,
       "id": "9f9897666f7c"
+    },
+    {
+      "venue": "Improvidence",
+      "venue_slug": "improvidence",
+      "title": "Ça handi long",
+      "subtitle": null,
+      "category": "Impro",
+      "date_start": "2027-08-26",
+      "date_end": null,
+      "time": "21:00",
+      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
+      "image": null,
+      "offsite_venue": null,
+      "id": "b0f3cc037624"
     },
     {
       "venue": "La Rayonne",
@@ -41064,20 +40098,6 @@
       "image": "https://www.bourse-du-travail.com/img/evenement/k-pop-live-2.jpg",
       "offsite_venue": null,
       "id": "80f58e220a27"
-    },
-    {
-      "venue": "Improvidence",
-      "venue_slug": "improvidence",
-      "title": "Ça handi long",
-      "subtitle": null,
-      "category": "Impro",
-      "date_start": "2027-12-22",
-      "date_end": null,
-      "time": "19:30",
-      "url": "https://www.petit-bulletin.fr/agenda-318692-a-handi-long.html",
-      "image": null,
-      "offsite_venue": null,
-      "id": "46d73ae64d2d"
     },
     {
       "venue": "La Halle Tony Garnier",
