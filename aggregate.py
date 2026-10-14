@@ -42,6 +42,8 @@ import os
 import re
 import sys
 import traceback
+import unicodedata
+from collections import Counter
 from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Callable, List
@@ -127,6 +129,21 @@ AGGREGATORS: list[tuple[str, Callable[[], List[Event]], int]] = [
 # deux (audit n° 21). Avant lui, le robot relisait la table dans
 # index.html ; avant encore, il en gardait une copie Python, qui avait
 # dérivé de ~24 lieux, re-géocodés chaque nuit pour rien.
+#
+# Le chemin est fixé au chargement du module : les tests déplacent
+# __file__ vers un dossier de travail pour y écrire events.json, mais les
+# lieux restent ceux du dépôt.
+FICHIER_DES_LIEUX = Path(__file__).resolve().parent / "lieux.json"
+
+
+def _lire_les_lieux(etiquette: str) -> list:
+    """Les lignes de lieux.json ; une liste vide, dite dans le journal,
+    si le fichier est illisible ou mal formé."""
+    try:
+        return list(json.loads(FICHIER_DES_LIEUX.read_text(encoding="utf-8"))["lieux"])
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        print(f"[{etiquette}] lieux.json illisible ({exc!r})", file=sys.stderr)
+        return []
 
 
 def frontend_hardcoded_venues() -> set:
@@ -137,14 +154,89 @@ def frontend_hardcoded_venues() -> set:
     dit. Ces lieux seraient alors géocodés pour rien - sans danger, la
     page préférant lieux.json au géocodage.
     """
-    chemin = Path(__file__).parent / "lieux.json"
     try:
-        lieux = json.loads(chemin.read_text(encoding="utf-8"))["lieux"]
-        return {l["nom"] for l in lieux if l.get("arr")}
-    except (OSError, ValueError, KeyError, TypeError) as exc:
-        print(f"[geo] lieux.json illisible ({exc!r}) - aucun lieu connu d'avance",
-              file=sys.stderr)
+        return {l["nom"] for l in _lire_les_lieux("geo") if l.get("arr")}
+    except (KeyError, TypeError, AttributeError):
         return set()
+
+
+# --- Le périmètre : Lyon, Villeurbanne et cinq communes voisines ------------
+# Le site couvre ce qu'on rejoint facilement depuis Lyon en transports en
+# commun (décision du 2026-10-14) : Lyon, Villeurbanne, Caluire-et-Cuire,
+# Oullins-Pierre-Bénite, Vaulx-en-Velin, Décines-Charpieu et La Mulatière.
+# Les agendas publient bien au-delà - Vienne, Saint-Symphorien-sur-Coise,
+# Feyzin : ce jour-là, 84 événements sur 3 018, du Petit Bulletin et de
+# Ville Morte pour l'essentiel. Ils sont écartés avant publication.
+#
+# Un lieu que rien ne situe - géocodage échoué, ou jamais tenté - est
+# GARDÉ : la plupart sont en réalité dans Lyon (deux librairies de la
+# Croix-Rousse, l'Alliance Française). Une production jouée dans
+# plusieurs salles aussi (OFFSITE_PLUSIEURS) : on ne sait pas où.
+#
+# Où est un lieu : comme la page l'établit, lieux.json d'abord, le
+# géocodage pour ce qu'il ne dit pas, et les noms comparés sans casse ni
+# accents - « Théâtre de la Renaissance » est celui de lieux.json. Le lieu
+# est celui où l'on VA (offsite_venue) : un concert de l'Opéra donné à
+# Saint-Priest est écarté, l'Opéra lui-même reste.
+# Oullins et Pierre-Bénite, fusionnées en 2024, restent reconnues sous
+# leur ancien nom ; « Lyon » sert au géocodage qui trouve la commune sans
+# l'arrondissement (le parc de la Tête-d'Or).
+COMMUNES_GARDEES = ("Lyon", "Villeurbanne", "Caluire-et-Cuire",
+                    "Oullins-Pierre-Bénite", "Oullins", "Pierre-Bénite",
+                    "Vaulx-en-Velin", "Décines-Charpieu", "La Mulatière")
+_LYON_ET_VILLEURBANNE = {"1er", "2e", "3e", "4e", "5e", "6e", "7e", "8e", "9e",
+                         "Villeurbanne"}
+
+
+def _sans_casse(nom) -> str:
+    """Le nom sans accents, en minuscules, espaces réduites : la clé avec
+    laquelle la page rapproche deux graphies d'un même lieu."""
+    n = unicodedata.normalize("NFD", nom or "")
+    n = "".join(c for c in n if not 0x300 <= ord(c) <= 0x36F).lower()
+    return " ".join(n.split())
+
+
+def _ou_sont_les_lieux(geo: dict | None) -> dict:
+    """Clé sans casse du lieu → (arrondissement, commune) : lieux.json
+    d'abord, le géocodage pour ce qu'il ne dit pas."""
+    situes = {}
+    for nom, entree in (geo or {}).items():
+        if isinstance(entree, dict):
+            situes[_sans_casse(nom)] = (entree.get("arr"), entree.get("commune"))
+    for l in _lire_les_lieux("périmètre"):
+        if not isinstance(l, dict):
+            continue
+        cle = _sans_casse(l.get("nom"))
+        arr, commune = situes.get(cle, (None, None))
+        situes[cle] = (l.get("arr") or arr, l.get("commune") or commune)
+    return situes
+
+
+def _dans_le_perimetre(unique: List[Event], geo: dict | None) -> List[Event]:
+    """Étape 8b : écarte ce qui se joue dans une commune hors du
+    périmètre, et le dit dans le journal, commune par commune."""
+    situes = _ou_sont_les_lieux(geo)
+    gardees = {_sans_casse(c) for c in COMMUNES_GARDEES}
+    gardes, ecartes = [], Counter()
+    for e in unique:
+        # OFFSITE_PLUSIEURS n'est le nom d'aucun lieu : non situé, gardé.
+        lieu = e.offsite_venue or e.venue
+        arr, commune = situes.get(_sans_casse(lieu), (None, None))
+        if (arr in _LYON_ET_VILLEURBANNE or not commune
+                or _sans_casse(commune) in gardees):
+            gardes.append(e)
+        else:
+            ecartes[(commune, lieu)] += 1
+    if ecartes:
+        par_commune = Counter()
+        for (commune, _), n in ecartes.items():
+            par_commune[commune] += n
+        print(f"[périmètre] {sum(ecartes.values())} événement(s) écarté(s), "
+              f"hors de Lyon, Villeurbanne et des communes gardées :")
+        for commune, n in par_commune.most_common():
+            print(f"[périmètre]   {commune} {n} : " + ", ".join(
+                f"{lieu} {k}" for (c, lieu), k in ecartes.most_common() if c == commune))
+    return gardes
 
 
 # ---------------------------------------------------------------------------
@@ -999,8 +1091,10 @@ def _sans_les_annules(unique: List[Event]) -> List[Event]:
     return gardes
 
 
-def _geocoder_les_nouveaux_lieux(unique: List[Event]) -> None:
-    """Étape 8 : l'arrondissement des lieux que la page ne connaît pas."""
+def _geocoder_les_nouveaux_lieux(unique: List[Event]) -> dict | None:
+    """Étape 8 : l'arrondissement des lieux que la page ne connaît pas.
+    Rend le géocodage entier (venue_arrondissements.json), dont le
+    périmètre se sert ensuite."""
     # 8) Geocode any new venues not already in lieux.json (lu par la page
     #    comme par le robot, voir frontend_hardcoded_venues).
     #    Results are cached in venue_arrondissements.json. Only truly new
@@ -1016,9 +1110,9 @@ def _geocoder_les_nouveaux_lieux(unique: List[Event]) -> None:
         | {e.offsite_venue for e in unique
            if e.offsite_venue and e.offsite_venue != OFFSITE_PLUSIEURS}
     )
-    resolve_new_venues(all_venues,
-                       known_venues=frontend_hardcoded_venues(),
-                       verbose=True)
+    return resolve_new_venues(all_venues,
+                              known_venues=frontend_hardcoded_venues(),
+                              verbose=True)
 
 
 def _contenu_du_fil(unique: List[Event], reprises: dict,
@@ -1172,7 +1266,10 @@ def main() -> int:
     print(f"[catégories] {comble} comblée(s) par déduction, "
           f"{sans_cat} restée(s) sans catégorie")
 
-    _geocoder_les_nouveaux_lieux(unique)
+    geo = _geocoder_les_nouveaux_lieux(unique)
+    # 8b) Le périmètre : Lyon, Villeurbanne et cinq communes voisines. Après
+    #     le géocodage, pour situer aussi les lieux découverts ce jour-là.
+    unique = _dans_le_perimetre(unique, geo)
     wrote = _publier(_contenu_du_fil(unique, reprises, lieux), report, out,
                      today_iso)
     _resumer(report, wrote, len(unique), out)

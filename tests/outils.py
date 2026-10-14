@@ -146,11 +146,13 @@ class Atelier:
         self.fichier.write_text(json.dumps(d, ensure_ascii=False), encoding="utf-8")
 
     def lancer(self, salles, agregateurs=(), forcer: bool = False,
-               github: bool = False) -> int:
+               github: bool = False, geo: dict | None = None) -> int:
         """salles : [(nom, fonction)] ; agregateurs : [(nom, fonction, priorité)].
 
         `github` : comme sur GitHub Actions, les alertes s'écrivent aussi en
         annotations (« ::warning »), capturées dans le journal.
+        `geo` : ce que rendrait le géocodage (venue_arrondissements.json),
+        rien sinon ; le périmètre s'en sert, avec lieux.json.
         """
         env = {k: v for k, v in os.environ.items()
                if k not in ("NOCTURNE_FORCER_ECRITURE", "GITHUB_ACTIONS")}
@@ -161,7 +163,7 @@ class Atelier:
         with mock.patch.object(aggregate, "__file__", str(self.dossier / "aggregate.py")), \
                 mock.patch.object(aggregate, "date", date_figee(self.jour)), \
                 mock.patch.object(aggregate, "save_detail_cache", lambda *a, **k: None), \
-                mock.patch.object(aggregate, "resolve_new_venues", lambda *a, **k: None), \
+                mock.patch.object(aggregate, "resolve_new_venues", lambda *a, **k: geo), \
                 mock.patch.object(aggregate, "frontend_hardcoded_venues", lambda: set()), \
                 mock.patch.object(aggregate, "SCRAPERS", list(salles)), \
                 mock.patch.object(aggregate, "AGGREGATORS", list(agregateurs)), \

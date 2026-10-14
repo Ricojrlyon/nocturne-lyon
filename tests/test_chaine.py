@@ -37,10 +37,15 @@ def collecte_figee(reference):
 
 
 def rejouer(reference):
-    """(code de sortie, fil publié) d'aggregate.main() sur la référence."""
+    """(code de sortie, fil publié) d'aggregate.main() sur la référence.
+
+    Le géocodage est celui du même jour (page_lieux.json.gz, le
+    venue_arrondissements.json du 1er octobre) : le périmètre s'en sert,
+    et le fil ne doit pas changer au gré des lieux géocodés depuis.
+    """
     salles, agregateurs = collecte_figee(reference)
     with atelier(date.fromisoformat(reference["date"])) as a:
-        code = a.lancer(salles, agregateurs)
+        code = a.lancer(salles, agregateurs, geo=lire_gz("page_lieux.json.gz"))
         return code, a.publie()["events"]
 
 

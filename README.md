@@ -480,7 +480,8 @@ python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
 - **La logique**, en une minute et demie environ et sans réseau : la
   lecture des dates en français, le dédoublonnage règle par règle, les
   nouveaux essais réseau, la vérification anti-robot du Complexe, les
-  annulés, l'heure de chaque séance, les catégories, les garde-fous
+  annulés, l'heure de chaque séance, les catégories, le périmètre (ce
+  qui est gardé, ce qui est écarté), les garde-fous
   d'`aggregate.py`, ce que la page et les collecteurs doivent avoir en
   commun (l'horizon, le marqueur « ailleurs », le fichier des lieux que
   tous deux lisent, bien formé), ce que la politique de sécurité de la page
@@ -571,6 +572,20 @@ motif.
 
 ## Politique éditoriale
 
+- **Périmètre : Lyon, Villeurbanne et cinq communes voisines**
+  (`COMMUNES_GARDEES`, aggregate.py) : Caluire-et-Cuire,
+  Oullins-Pierre-Bénite, Vaulx-en-Velin, Décines-Charpieu et La
+  Mulatière, celles qu'on rejoint facilement en transports en commun
+  (choix du 14 octobre 2026). Un événement qui se joue dans une autre
+  commune est écarté avant publication, et le journal du passage le dit,
+  commune par commune. Ce jour-là : 84 sur 3 018, dont 55 du Petit
+  Bulletin, 28 de Ville Morte et un concert de l'Opéra à Saint-Priest.
+  Le lieu compte est celui où l'on va (un concert de l'Opéra donné à
+  Oullins reste), situé par `lieux.json` puis par le géocodage, les noms
+  comparés sans casse ni accents. Un lieu que rien ne situe est GARDÉ :
+  la plupart sont en réalité dans Lyon. Pour élargir ou resserrer le
+  périmètre, modifier `COMMUNES_GARDEES` ; pour situer à la main un lieu
+  que la carte ne trouve pas, lui donner une commune dans `lieux.json`.
 - **Événements annulés : écartés, quelle que soit la source.** Le mot
   doit être placé là où une source l'écrit pour annuler : en tête du
   titre (« Annulé … », « ANNULE // … », « (Annulé) … »), seul entre
