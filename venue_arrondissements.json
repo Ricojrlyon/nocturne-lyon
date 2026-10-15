@@ -166,7 +166,7 @@
   "Bulle de son": {
     "arr": "9e",
     "confidence": "high",
-    "seen_at": "2026-10-08"
+    "seen_at": "2026-10-15"
   },
   "Bussières": {
     "arr": null,
@@ -270,7 +270,7 @@
     "arr": "5e",
     "checked_at": "2026-10-08",
     "confidence": "high",
-    "seen_at": "2026-10-08"
+    "seen_at": "2026-10-15"
   },
   "Collège Supérieur Lyon": {
     "arr": "7e",
@@ -340,7 +340,7 @@
     "arr": null,
     "checked_at": "2026-09-26",
     "confidence": "failed",
-    "seen_at": "2026-10-08"
+    "seen_at": "2026-10-15"
   },
   "Factatory": {
     "arr": null,
@@ -583,7 +583,7 @@
     "arr": "1er",
     "checked_at": "2026-09-01",
     "confidence": "high",
-    "seen_at": "2026-10-08"
+    "seen_at": "2026-10-15"
   },
   "La Relève": {
     "arr": "5e",
@@ -810,7 +810,7 @@
     "arr": "5e",
     "checked_at": "2026-10-08",
     "confidence": "high",
-    "seen_at": "2026-10-08"
+    "seen_at": "2026-10-15"
   },
   "Lycée François Cevert": {
     "arr": "Autre",
@@ -865,7 +865,7 @@
     "arr": "5e",
     "checked_at": "2026-09-24",
     "confidence": "high",
-    "seen_at": "2026-10-08"
+    "seen_at": "2026-10-15"
   },
   "Maison Ravier": {
     "arr": "7e",
@@ -1127,17 +1127,23 @@
     "confidence": "low",
     "seen_at": "2026-09-08"
   },
+  "Salle Barbara – MJC Montchat": {
+    "arr": null,
+    "checked_at": "2026-10-15",
+    "confidence": "failed",
+    "seen_at": "2026-10-15"
+  },
   "Salle Molière": {
     "arr": "5e",
     "checked_at": "2026-09-17",
     "confidence": "high",
-    "seen_at": "2026-10-08"
+    "seen_at": "2026-10-15"
   },
   "Salle Paul Garcin": {
     "arr": "1er",
     "checked_at": "2026-10-01",
     "confidence": "high",
-    "seen_at": "2026-10-08"
+    "seen_at": "2026-10-15"
   },
   "Salle Victor Hugo": {
     "arr": "Autre",
@@ -1223,7 +1229,7 @@
     "arr": null,
     "checked_at": "2026-09-17",
     "confidence": "failed",
-    "seen_at": "2026-10-08"
+    "seen_at": "2026-10-15"
   },
   "Théâtre de l'Iris": {
     "arr": "Villeurbanne",
@@ -1276,7 +1282,7 @@
     "arr": "6e",
     "checked_at": "2026-10-08",
     "confidence": "high",
-    "seen_at": "2026-10-08"
+    "seen_at": "2026-10-15"
   },
   "Théâtre du Point du Jour": {
     "arr": "5e",
@@ -1404,7 +1410,7 @@
     "arr": null,
     "checked_at": "2026-10-08",
     "confidence": "failed",
-    "seen_at": "2026-10-08"
+    "seen_at": "2026-10-15"
   },
   "Ô boudoir": {
     "arr": null,

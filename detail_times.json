@@ -368,7 +368,7 @@
     "time": "18:00"
   },
   "https://le-sucre.eu/events/s-society-168/": {
-    "fetched_at": "2026-09-14",
+    "fetched_at": "2026-10-15",
     "time": "18:00"
   },
   "https://le-sucre.eu/events/s-society-169/": {
@@ -396,7 +396,7 @@
     "time": "23:00"
   },
   "https://le-sucre.eu/events/vitess-to-grand-v-all-live-long/": {
-    "fetched_at": "2026-09-14",
+    "fetched_at": "2026-10-15",
     "time": "23:00"
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/abonnez-vous": {
@@ -1108,7 +1108,7 @@
     ]
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/soiree-18-30-ans": {
-    "fetched_at": "2026-10-07",
+    "fetched_at": "2026-10-15",
     "lieu": "Maison de la Danse",
     "seances": [
       [
@@ -3760,12 +3760,12 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/concert/soiree-agnes-jaoui": {
-    "fetched_at": "2026-10-07",
+    "fetched_at": "2026-10-15",
     "lieu": "Grande Salle",
     "seances": [
       [
         "2026-10-12",
-        "19:30"
+        null
       ]
     ]
   },
@@ -6261,7 +6261,7 @@
     "titre": "Week-end Musée-à-brac"
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/arielle-beck": {
-    "fetched_at": "2026-10-07",
+    "fetched_at": "2026-10-15",
     "lieu": "Opéra de Lyon",
     "seances": [
       [
@@ -6458,7 +6458,7 @@
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/raul-refree-maria-mazzotta-quatuor-lomax-davide-ambrogio": {
-    "fetched_at": "2026-10-07",
+    "fetched_at": "2026-10-15",
     "lieu": "Opéra de Lyon",
     "seances": [
       [
@@ -7755,6 +7755,12 @@
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/03/nb-djkrush-Grande.jpeg",
     "time": "19:00"
   },
+  "https://www.transbordeur.fr/evenement/dragonforce-visions-of-atlantis-wings-of-steel-13042027/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/09/a-dragonforce2-768x576.jpg",
+    "fetched_at": "2026-10-15",
+    "image": null,
+    "time": "19:00"
+  },
   "https://www.transbordeur.fr/evenement/duno-limak-xo-mau_v-17102026/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/01/a-xo-768x1024.jpg",
     "fetched_at": "2026-10-05",
@@ -8093,6 +8099,12 @@
   "https://www.transbordeur.fr/evenement/oria-07042027/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/09/a-oria-768x1024.jpg",
     "fetched_at": "2026-10-09",
+    "image": null,
+    "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/paolo-27022027/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/10/a-paolo-768x1024.jpg",
+    "fetched_at": "2026-10-15",
     "image": null,
     "time": "19:00"
   },
