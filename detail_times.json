@@ -2575,6 +2575,16 @@
     ],
     "time": "20:30"
   },
+  "https://radiant-bellevue.fr/spectacles/serge-papagalli/": {
+    "fetched_at": "2026-10-20",
+    "seances": [
+      [
+        "2027-04-18",
+        "17:00"
+      ]
+    ],
+    "time": "17:00"
+  },
   "https://radiant-bellevue.fr/spectacles/skip-the-use-2/": {
     "fetched_at": "2026-10-03",
     "seances": [
@@ -3876,9 +3886,13 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/famille/carnaval-emotions": {
-    "fetched_at": "2026-10-12",
+    "fetched_at": "2026-10-20",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
+      [
+        "2026-10-22",
+        "09:30"
+      ],
       [
         "2026-10-23",
         "09:30"
@@ -4064,7 +4078,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/eleves-du-cnsmd-lyon-12-nov-26": {
-    "fetched_at": "2026-10-12",
+    "fetched_at": "2026-10-20",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -4074,12 +4088,12 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/eleves-du-cnsmd-lyon-15-oct-26": {
-    "fetched_at": "2026-10-12",
+    "fetched_at": "2026-10-20",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
         "2026-10-15",
-        "12:30"
+        null
       ]
     ]
   },
@@ -6349,7 +6363,7 @@
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/beethoven-sibelius": {
-    "fetched_at": "2026-10-12",
+    "fetched_at": "2026-10-20",
     "lieu": "Opéra de Lyon",
     "seances": [
       [
@@ -7619,6 +7633,12 @@
     "image": null,
     "time": "19:00"
   },
+  "https://www.transbordeur.fr/evenement/accept-dynazty-enforcer-25112026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-accept2-768x512.jpg",
+    "fetched_at": "2026-10-20",
+    "image": null,
+    "time": "18:00"
+  },
   "https://www.transbordeur.fr/evenement/accept-dynazty-tailgunner-25112026/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-accept2-768x512.jpg",
     "fetched_at": "2026-10-05",
@@ -7752,6 +7772,12 @@
     "fetched_at": "2026-10-05",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/06/a-danyl2.jpg",
     "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/deby-philemon-mystraw-25102026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/10/a-karavel-768x576.jpg",
+    "fetched_at": "2026-10-20",
+    "image": null,
+    "time": "18:30"
   },
   "https://www.transbordeur.fr/evenement/dj-dida-dj-kawest-dj-douly-30102026/": {
     "fetched_at": "2026-09-18",
@@ -7928,6 +7954,12 @@
     "fetched_at": "2026-10-05",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/09/a-jersey2.jpg",
     "time": "18:30"
+  },
+  "https://www.transbordeur.fr/evenement/jetlag-18122026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/06/JETLAGxTRx_eloeyes__.ELOISEVILLARET-7303138-Grande.jpg",
+    "fetched_at": "2026-10-20",
+    "image": null,
+    "time": "23:30"
   },
   "https://www.transbordeur.fr/evenement/jf-pauze-02022027/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/03/a-jfpauze2-768x576.jpg",
