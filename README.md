@@ -434,9 +434,9 @@ la recopier, version comprise.
   application. Sur Android, Chrome le propose de lui-même (« Installer
   l'application ») ; sur iPhone, Safari : Partager, puis « Sur l'écran
   d'accueil », ce que le pied de page rappelle sur les écrans tactiles.
-  L'icône « *N » est le bandeau du site en carré : fond crème, N couleur
-  nuit, astérisque ocre, en Bungee, dans la zone que ni Android ni
-  l'iPhone ne rognent. `manifest.webmanifest` donne le nom, les couleurs
+  L'icône « *N » reprend le bandeau du site, couleurs inversées : fond
+  nuit, N crème, astérisque ocre, en Bungee, dans la zone que ni Android
+  ni l'iPhone ne rognent. `manifest.webmanifest` donne le nom, les couleurs
   et les icônes ; `sw.js` garde sur le téléphone la page, ses polices et
   le dernier programme chargé, pour qu'elle s'ouvre sans réseau (la date
   de mise à jour, en pied de page, dit de quand il date). En ligne, la

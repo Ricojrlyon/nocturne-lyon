@@ -11,7 +11,8 @@
 
    Changer la liste AU_DEPART ou la logique ci-dessous : changer aussi le
    nom CACHE, pour que l'ancienne réserve soit vidée. */
-const CACHE = 'nocturne-1';
+// nocturne-2 : l'icône redessinée (fond nuit, N crème), à reprendre tout de suite.
+const CACHE = 'nocturne-2';
 const AU_DEPART = [
   './',
   'fonts/polices.css',
