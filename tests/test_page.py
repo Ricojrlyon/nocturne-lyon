@@ -164,6 +164,10 @@ class PageNavigation(unittest.TestCase):
         self.assertEqual(self.releve["filtre_vide"], ["aucun événement pour ces filtres", "tout effacer"])
         self.assertEqual(self.releve["apres_tout_effacer"], [True, ""])
 
+    def test_le_service_hors_ligne_s_installe(self):
+        # L'application installable : sw.js s'active, et couvre tout le site.
+        self.assertEqual(self.releve["service_hors_ligne"], ["activated", "/"])
+
     def test_l_impro_est_du_theatre(self):
         # « Impro », catégorie du Petit Bulletin pour le théâtre
         # d'improvisation, était rangée en jazz, donc en musique.
@@ -180,6 +184,30 @@ class PageNavigation(unittest.TestCase):
         for police in prechargees:
             self.assertEqual([qui for nom, qui in self.releve["polices_chargees"] if nom == police],
                              ["link"], police)
+
+
+class PageHorsLigne(unittest.TestCase):
+    """L'application installée s'ouvre sans réseau : la page, ses polices
+    et le dernier programme viennent du téléphone, et l'affichage est le
+    même qu'en ligne, carte pour carte."""
+
+    @classmethod
+    def setUpClass(cls):
+        evenements, lieux = donnees_figees()
+        cls.releve, cls.probleme = navigateur.releve_ou_probleme(
+            evenements=evenements, lieux=lieux, date_figee=True, scenarios="hors_ligne",
+            delai=120)
+
+    def setUp(self):
+        navigateur.sauter_si_indisponible(self, self.probleme)
+        self.assertNotIn("echec", self.releve, self.releve.get("echec"))
+
+    def test_le_programme_s_affiche_sans_reseau(self):
+        self.assertEqual(self.releve["hors_ligne"], {"servie_par_le_telephone": True})
+        self.assertEqual(self.releve["erreurs_fin"], [])
+        attendu = lire_gz("page_reference.json.gz")
+        self.assertEqual(self.releve["evenements"], attendu["evenements"])
+        self.assertEqual(self.releve["scenarios"]["tout"], attendu["scenarios"]["tout"])
 
 
 def verifier_famille_au_milieu(cas, suivi):

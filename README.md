@@ -409,8 +409,8 @@ la recopier, version comprise.
   famille font 24 px de haut, la plus petite cible recommandée.
   La page donne aux moteurs de recherche son adresse officielle
   (`rel="canonical"`, la même que celle de l'aperçu au partage), à
-  l'iPhone son icône d'écran d'accueil (`apple-touch-icon.png`,
-  l'astérisque ocre sur fond nuit, 180 px de côté), et, à qui a coupé
+  l'iPhone son icône d'écran d'accueil (`apple-touch-icon.png`, « *N »,
+  180 px de côté), et, à qui a coupé
   JavaScript, un message (« le programme a besoin de JavaScript ») au
   lieu d'un fil vide.
   Sa politique de sécurité (`Content-Security-Policy`, en tête de page)
@@ -428,6 +428,21 @@ la recopier, version comprise.
   et le texte ne change plus de police sous les yeux du visiteur. Les
   polices elles-mêmes sont sur le site (`fonts/`), décrites par
   `fonts/polices.css`.
+- **L'application installable** (`manifest.webmanifest`, `sw.js`,
+  `icone-192.png`, `icone-512.png`) : le site s'ajoute à l'écran d'accueil
+  d'un téléphone et s'ouvre ensuite en plein écran, comme une
+  application. Sur Android, Chrome le propose de lui-même (« Installer
+  l'application ») ; sur iPhone, Safari : Partager, puis « Sur l'écran
+  d'accueil », ce que le pied de page rappelle sur les écrans tactiles.
+  L'icône « *N » est le bandeau du site en carré : fond crème, N couleur
+  nuit, astérisque ocre, en Bungee, dans la zone que ni Android ni
+  l'iPhone ne rognent. `manifest.webmanifest` donne le nom, les couleurs
+  et les icônes ; `sw.js` garde sur le téléphone la page, ses polices et
+  le dernier programme chargé, pour qu'elle s'ouvre sans réseau (la date
+  de mise à jour, en pied de page, dit de quand il date). En ligne, la
+  page et le programme viennent toujours du site : rien de périmé n'est
+  servi tant qu'il répond. Les affiches ne sont pas gardées. Modifier la
+  liste `AU_DEPART` de `sw.js` : changer aussi le nom `CACHE`.
 - **`lieux.json`** : où est chaque lieu, une ligne par lieu : son nom tel
   que l'écrivent les sources, son arrondissement (1er à 9e, Villeurbanne
   ou Autre), sa commune quand il est hors de Lyon et de Villeurbanne
@@ -491,7 +506,10 @@ python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
   même fil au caractère près ; la page est jouée dans un navigateur sans
   fenêtre, sur ces données et à cette date, et ses neuf scénarios de
   visiteur doivent afficher les mêmes cartes, sans erreur et sans rien
-  que sa politique de sécurité bloque.
+  que sa politique de sécurité bloque. L'application, elle, doit
+  s'ouvrir sans réseau : le banc laisse le service hors ligne
+  s'installer, coupe toutes ses connexions, recharge la page, et exige
+  les mêmes cartes qu'en ligne.
 - **Le fil du jour**, après la collecte : la forme d'`events.json`, et la
   page qui s'affiche avec, sans erreur et avec les bons compteurs.
 

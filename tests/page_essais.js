@@ -13,6 +13,10 @@
   const pause = ms => new Promise(r => setTimeout(r, ms));
   const norme = s => (s || '').replace(/\s+/g, ' ').trim();
   const envoyer = corps => fetch('/__resultats', { method: 'POST', body: JSON.stringify(corps) });
+  // Le service hors ligne prêt, ou null au bout de dix secondes : sans
+  // limite, un service qui ne s'installe jamais ferait attendre le pilote
+  // jusqu'à ce que le test se croie sans navigateur, et soit sauté.
+  const servicePret = () => Promise.race([navigator.serviceWorker.ready, pause(10000).then(() => null)]);
   const SCENARIOS = window.__SCENARIOS || 'tous';
 
   const carte = el => {
@@ -165,6 +169,19 @@
       }
       await pause(2500);
       res.scenarios.apres_rafale = await releve();
+    } else if (SCENARIOS === 'hors_ligne') {
+      // L'application sans réseau. Premier passage : le service hors ligne
+      // s'installe, le réseau est coupé, la page est rechargée. Second
+      // passage : elle vient du téléphone, et son relevé « tout » part au
+      // serveur, qui reçoit encore les envois.
+      if (sessionStorage.getItem('hors_ligne') !== 'coupe') {
+        if (!(await servicePret())) throw new Error("le service hors ligne ne s'est pas installé");
+        sessionStorage.setItem('hors_ligne', 'coupe');
+        await fetch('/__couper', { method: 'POST' });
+        location.reload();
+        return;
+      }
+      res.hors_ligne = { servie_par_le_telephone: !!navigator.serviceWorker.controller };
     } else if (SCENARIOS === 'navigation') {
       // Les polices téléchargées depuis l'ouverture, et par quoi : le
       // préchargement (« link ») ou la feuille de style (« css »).
@@ -174,6 +191,10 @@
       // Le rangement de quelques catégories : rubrique et famille.
       res.rangement = ['Impro', 'Jazz', 'Théâtre']
         .map(c => [c, bucketOf(c), FAMILLE_DE_BUCKET.get(bucketOf(c))]);
+      // L'application installable : son service hors ligne s'est installé.
+      const service = await servicePret();
+      res.service_hors_ligne = service && [service.active && service.active.state,
+                                           new URL(service.scope).pathname];
       // La barre des 14 jours, touchée juste après un rendu : la journée
       // n'est pas encore construite (affichage par morceaux), et doit
       // pourtant arriver en haut de l'écran. On relève celle qui y est.

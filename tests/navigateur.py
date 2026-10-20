@@ -127,8 +127,11 @@ def preparer_site(dossier: Path, evenements: dict, lieux: dict | None,
     for d in ("fonts", "logos"):
         if (RACINE / d).exists():
             shutil.copytree(RACINE / d, dossier / d)
-    # Les lieux, que la page lit au chargement comme le fil (audit n° 21).
-    shutil.copy(RACINE / "lieux.json", dossier / "lieux.json")
+    # Les lieux, que la page lit au chargement comme le fil (audit n° 21),
+    # et l'application installable : sa description, ses icônes et son
+    # service hors ligne, qui s'installe pendant les essais.
+    for f in ("lieux.json", "manifest.webmanifest", "sw.js", "icone-192.png", "icone-512.png"):
+        shutil.copy(RACINE / f, dossier / f)
     (dossier / "events.json").write_text(json.dumps(evenements, ensure_ascii=False),
                                          encoding="utf-8")
     if lieux is not None:
@@ -148,6 +151,9 @@ class _Gestionnaire(http.server.SimpleHTTPRequestHandler):
         if self.path == "/__resultats":
             corps = self.rfile.read(int(self.headers.get("Content-Length", 0)))
             self.server.resultats.append(json.loads(corps.decode("utf-8")))
+        elif self.path == "/__couper":
+            # Le scénario « hors_ligne » coupe le réseau : voir do_GET.
+            self.server.coupe = True
         self.send_response(204)
         self.end_headers()
 
@@ -158,6 +164,12 @@ class _Gestionnaire(http.server.SimpleHTTPRequestHandler):
             self.server.resultats.append({"echec": quoi, "erreurs": [quoi]})
             self.send_response(204)
             self.end_headers()
+            return
+        if getattr(self.server, "coupe", False):
+            # Réseau coupé : la connexion se ferme sans un mot, comme sur
+            # un téléphone sans réseau - le navigateur y voit une panne, et
+            # non une page d'erreur du serveur.
+            self.close_connection = True
             return
         super().do_GET()
 
@@ -189,6 +201,7 @@ def jouer(evenements: dict, lieux: dict | None, *, date_figee: bool,
 
         serveur = _Serveur(("127.0.0.1", 0), gestionnaire)
         serveur.resultats = []
+        serveur.coupe = False
         fil = threading.Thread(target=serveur.serve_forever, daemon=True)
         fil.start()
         try:
@@ -231,6 +244,12 @@ def jouer(evenements: dict, lieux: dict | None, *, date_figee: bool,
         finally:
             serveur.shutdown()
             serveur.server_close()
+        if not serveur.resultats and serveur.coupe:
+            # Le réseau a été coupé (scénario « hors_ligne ») et la page n'a
+            # plus rien envoyé : elle ne s'est pas rouverte sans réseau. C'est
+            # la page qui manque, pas le navigateur : un échec, pas un saut.
+            return {"echec": "réseau coupé : la page ne s'est pas rouverte depuis le téléphone",
+                    "erreurs": []}
         if not serveur.resultats:
             raise RuntimeError("le navigateur n'a renvoyé aucun relevé (%s)"
                                % Path(navigateur).name)

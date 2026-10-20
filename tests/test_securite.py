@@ -38,10 +38,13 @@ class Securite(unittest.TestCase):
         self.assertEqual(r["img-src"], ["'self'", "https:", "data:"])
         self.assertEqual(r["font-src"], ["'self'"])
         self.assertEqual(r["connect-src"], ["'self'"])
+        self.assertEqual(r["manifest-src"], ["'self'"])
+        self.assertEqual(r["worker-src"], ["'self'"])
         self.assertEqual(r["base-uri"], ["'none'"])
         self.assertEqual(r["form-action"], ["'none'"])
         self.assertEqual(sorted(r), sorted(["default-src", "script-src", "style-src", "img-src",
-                                            "font-src", "connect-src", "base-uri", "form-action"]))
+                                            "font-src", "connect-src", "manifest-src",
+                                            "worker-src", "base-uri", "form-action"]))
 
 
 if __name__ == "__main__":

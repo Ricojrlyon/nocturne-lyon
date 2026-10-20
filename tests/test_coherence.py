@@ -77,6 +77,31 @@ class Coherence(unittest.TestCase):
         self.assertEqual((int.from_bytes(png[16:20], "big"), int.from_bytes(png[20:24], "big")),
                          (180, 180))
 
+    def test_l_application_installable(self):
+        # Sa description est lue par la page, ses icônes existent à leur
+        # taille, et tout ce que le service hors ligne garde au départ
+        # existe dans le dépôt : un seul fichier manquant, et il ne
+        # s'installerait pas.
+        self.assertIn('<link rel="manifest" href="manifest.webmanifest">', PAGE)
+        m = json.loads((RACINE / "manifest.webmanifest").read_text(encoding="utf-8"))
+        self.assertEqual((m["start_url"], m["scope"], m["display"]), ("./", "./", "standalone"))
+        self.assertTrue(m["name"] and m["short_name"])
+        tailles = set()
+        for icone in m["icons"]:
+            png = (RACINE / icone["src"]).read_bytes()
+            self.assertEqual(png[1:4] + png[12:16], b"PNGIHDR", icone["src"])
+            cote = int.from_bytes(png[16:20], "big"), int.from_bytes(png[20:24], "big")
+            self.assertEqual("%dx%d" % cote, icone["sizes"], icone["src"])
+            tailles.add((icone["sizes"], icone["purpose"]))
+        self.assertLessEqual({("192x192", "any"), ("512x512", "any"), ("512x512", "maskable")},
+                             tailles)
+        sw = (RACINE / "sw.js").read_text(encoding="utf-8")
+        au_depart = re.findall(r"'([^']+)'", sw.split("const AU_DEPART = [", 1)[1].split("];", 1)[0])
+        self.assertIn("./", au_depart)
+        for f in au_depart:
+            self.assertTrue((RACINE / ("index.html" if f == "./" else f)).exists(), f)
+        self.assertIn("navigator.serviceWorker.register('sw.js')", PAGE)
+
     def test_un_message_pour_qui_n_a_pas_javascript(self):
         # Audit n° 19 : sans JavaScript, la page le dit au lieu de rester
         # vide.
