@@ -21,7 +21,9 @@
 
   const carte = el => {
     const c = el.cloneNode(true);
-    c.querySelectorAll('.visual-bg').forEach(x => x.remove());
+    // Hors relevé : l'image de fond et les boutons de carte (« + agenda »…),
+    // qui ne disent rien de l'événement.
+    c.querySelectorAll('.visual-bg, .carte-bouton').forEach(x => x.remove());
     return [el.tagName.toLowerCase(), el.getAttribute('href') || '', norme(c.textContent)];
   };
 
@@ -253,6 +255,36 @@
                      norme(message.textContent).startsWith('lien copié · 127.0.0.1')];
       await effacer();
       res.adresses.push(location.search);
+      // « + agenda » : le fichier de la première carte simple, sans ouvrir
+      // son lien. Le téléchargement est intercepté.
+      window.scrollTo(0, 0);
+      const carteSimple = document.querySelector('#feed a.event');
+      const capture = {};
+      const vraiCreer = URL.createObjectURL, vraiClic = HTMLAnchorElement.prototype.click;
+      URL.createObjectURL = b => { capture.blob = b; return 'blob:essai'; };
+      HTMLAnchorElement.prototype.click = function () {
+        if (this.download) capture.nom = this.download; else vraiClic.call(this);
+      };
+      let lienOuvert = null;
+      document.addEventListener('click', e => { lienOuvert = !e.defaultPrevented; }, { once: true });
+      carteSimple.querySelector('.carte-bouton[data-action="agenda"]').click();
+      await pause(200);
+      URL.createObjectURL = vraiCreer;
+      HTMLAnchorElement.prototype.click = vraiClic;
+      const SAUT = String.fromCharCode(13, 10);
+      const texte = capture.blob ? await capture.blob.text() : '';
+      const lignes = texte.split(SAUT + ' ').join('').split(SAUT).filter(Boolean);
+      const titre = norme(carteSimple.querySelector('.event-title').textContent);
+      const BARRE = String.fromCharCode(92);
+      res.agenda = {
+        nom: capture.nom, type: capture.blob && capture.blob.type, lien_ouvert: lienOuvert,
+        premiere: lignes[0], derniere: lignes[lignes.length - 1],
+        debut: lignes.find(l => l.startsWith('DTSTART;')),
+        titre_juste: lignes.includes('SUMMARY:' + texteAgenda(titre)),
+        lien_juste: lignes.includes('URL:' + carteSimple.getAttribute('href')),
+        lignes_courtes: texte.split(SAUT).every(l => l.length <= 61),
+        echappement: texteAgenda('Rock, pop; jazz') === 'Rock' + BARRE + ', pop' + BARRE + '; jazz',
+      };
       // Audit n° 20 : le bouton « date » dit la période choisie, puis
       // redevient « date → » ; un filtre sans résultat le dit, et son
       // « tout effacer » ramène tout le fil.

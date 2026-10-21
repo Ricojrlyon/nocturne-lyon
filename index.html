@@ -1267,6 +1267,26 @@
     min-width: 0;
   }
   .event-cat:empty { display: none; }
+  /* Les boutons d'une carte (« + agenda »…) : la boîte des étiquettes du
+     pied, un filet visible, et la main au survol. Ils sont DANS le lien de
+     la carte : un clic sur eux n'ouvre pas la page de l'événement. */
+  .carte-bouton {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 1px 5px;
+    line-height: 15px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 2px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    flex-shrink: 0;
+    color: var(--ink-soft);
+    cursor: pointer;
+  }
+  .carte-bouton:hover { color: var(--ink); border-color: var(--ink-soft); }
+  .carte-bouton:focus-visible { outline: 2px solid var(--warm); outline-offset: 2px; }
   /* Boîte commune aux deux étiquettes du pied.
      `inline-block` et non `inline-flex` : la base d'une boîte en ligne est
      celle de son texte, si bien que l'align-items:baseline du pied aligne
@@ -4029,6 +4049,13 @@ function eventCard(e, seedOverride) {
 
   const sourceBadge = sourceBadgeHtml(e);
 
+  // « + agenda » (nouveauté n° 2) : la carte est rangée sous sa clé, que
+  // le bouton porte, pour retrouver l'événement au clic.
+  const cle = cleEvenement(e) + '|' + e._date;
+  CARTES.set(cle, e);
+  const agenda = '<span class="carte-bouton" role="button" tabindex="0" data-action="agenda"'
+    + ' data-cle="' + escapeHtml(cle) + '" title="ajouter à mon agenda">+ agenda</span>';
+
   const href = eventHref(e);
   const isHttpUrl = typeof href === 'string'
     && (href.startsWith('http://') || href.startsWith('https://'));
@@ -4063,11 +4090,117 @@ function eventCard(e, seedOverride) {
     '    <div class="event-foot-right">',
     '      ' + sourceBadge,
     '      ' + runBadge,
+    '      ' + agenda,
     '      ' + time,
     '    </div>',
     '  </div>',
     '</' + tag + '>'
   ].join('\n');
+}
+
+/* ---------- les boutons des cartes ---------- */
+/* La clé d'un événement, stable d'un passage à l'autre : la salle, le
+   titre et le premier jour. Ni l'heure, que le robot complète parfois
+   après coup, ni l'id du fil, qui en dépend. */
+function cleEvenement(e) {
+  return [e.venue, e.title || '', e.date_start].join('|');
+}
+// Les cartes affichées, sous la clé que portent leurs boutons.
+const CARTES = new Map();
+
+/* Au clavier aussi : Entrée ou Espace sur un bouton de carte. */
+document.getElementById('feed').addEventListener('keydown', ev => {
+  if ((ev.key === 'Enter' || ev.key === ' ') && ev.target.matches('.carte-bouton')) {
+    ev.preventDefault();
+    agirSurCarte(ev.target);
+  }
+});
+
+function agirSurCarte(bouton) {
+  const e = CARTES.get(bouton.dataset.cle);
+  if (!e) return;
+  if (bouton.dataset.action === 'agenda') ajouterALAgenda(e);
+}
+
+/* « + agenda » (nouveauté n° 2) : un fichier .ics, le format que lisent
+   les agendas d'Android, de l'iPhone et des ordinateurs. La soirée de la
+   carte, à son heure de Paris, avec la salle et le lien ; sans heure
+   connue, la journée entière. Écrit sur place et téléchargé : rien ne
+   part vers un serveur. */
+const SAUT_AGENDA = String.fromCharCode(13, 10);
+const BARRE = String.fromCharCode(92);
+
+// Le texte d'une ligne d'agenda : virgule, point-virgule, barre et saut
+// de ligne y sont précédés d'une barre, comme le veut le format.
+function texteAgenda(s) {
+  return String(s || '').split(BARRE).join(BARRE + BARRE).split(';').join(BARRE + ';')
+    .split(',').join(BARRE + ',').split(String.fromCharCode(10)).join(BARRE + 'n');
+}
+
+// Une ligne trop longue se replie : la suite commence par une espace.
+function ligneAgenda(ligne) {
+  const morceaux = [];
+  while (ligne.length > 60) {
+    morceaux.push(ligne.slice(0, 60));
+    ligne = ' ' + ligne.slice(60);
+  }
+  morceaux.push(ligne);
+  return morceaux.join(SAUT_AGENDA);
+}
+
+// L'heure de Paris, été comme hiver, décrite dans le fichier.
+const FUSEAU_DE_PARIS = ['BEGIN:VTIMEZONE', 'TZID:Europe/Paris',
+  'BEGIN:DAYLIGHT', 'TZOFFSETFROM:+0100', 'TZOFFSETTO:+0200', 'TZNAME:CEST',
+  'DTSTART:19700329T020000', 'RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU', 'END:DAYLIGHT',
+  'BEGIN:STANDARD', 'TZOFFSETFROM:+0200', 'TZOFFSETTO:+0100', 'TZNAME:CET',
+  'DTSTART:19701025T030000', 'RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU', 'END:STANDARD',
+  'END:VTIMEZONE'];
+
+function fichierAgenda(e) {
+  const jour = e._date.split('-').join('');
+  const lieu = lieuEffectif(e);
+  const arr = eventArrondissement(e);
+  const ville = /^[0-9]/.test(arr) ? 'Lyon ' + arr
+    : (arr === 'Villeurbanne' ? 'Villeurbanne' : (VENUE_COMMUNE[lieu] || ''));
+  const horaire = /^[0-9]{1,2}:[0-9]{2}$/.test(e.time || '');
+  let debut, fin;
+  if (horaire) {
+    debut = 'DTSTART;TZID=Europe/Paris:' + jour + 'T' + e.time.padStart(5, '0').replace(':', '') + '00';
+    fin = 'DURATION:PT2H';
+  } else {
+    const lendemain = parseIso(e._date);
+    lendemain.setDate(lendemain.getDate() + 1);
+    debut = 'DTSTART;VALUE=DATE:' + jour;
+    fin = 'DTEND;VALUE=DATE:' + isoOf(lendemain).split('-').join('');
+  }
+  const maintenant = new Date().toISOString().split('-').join('').split(':').join('').slice(0, 15) + 'Z';
+  const lignes = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//nocturne//lyon//FR',
+    'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', ...(horaire ? FUSEAU_DE_PARIS : []),
+    'BEGIN:VEVENT',
+    'UID:' + stableHash(cleEvenement(e)).toString(16) + '-' + jour + '@nocturne-lyon',
+    'DTSTAMP:' + maintenant, debut, fin,
+    'SUMMARY:' + texteAgenda((e.title || '').trim() || 'soirée'),
+    'LOCATION:' + texteAgenda(lieu + (ville ? ', ' + ville : ''))];
+  const lien = eventHref(e);
+  if (typeof lien === 'string' && /^https?:/.test(lien)) {
+    lignes.push('URL:' + lien, 'DESCRIPTION:' + texteAgenda(lien));
+  }
+  lignes.push('END:VEVENT', 'END:VCALENDAR');
+  return lignes.map(ligneAgenda).join(SAUT_AGENDA) + SAUT_AGENDA;
+}
+
+function ajouterALAgenda(e) {
+  const nom = 'nocturne-' + (normSearch(e.title).replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '').slice(0, 40) || 'soiree') + '.ics';
+  const fichier = new Blob([fichierAgenda(e)], { type: 'text/calendar;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(fichier);
+  a.download = nom;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 30000);
+  afficherMessage('agenda : ouvre « ' + nom + ' » pour l\'y ajouter');
 }
 
 /* Dépliage des grappes.
@@ -4113,6 +4246,12 @@ function toggleGroup(key, deplier) {
 }
 
 document.getElementById('feed').addEventListener('click', ev => {
+  const bouton = ev.target.closest('.carte-bouton');
+  if (bouton) {
+    ev.preventDefault();               // la carte est un lien : on ne l'ouvre pas
+    agirSurCarte(bouton);
+    return;
+  }
   const fam = ev.target.closest('.fam-chip');
   if (fam) {
     const k = fam.dataset.famille;

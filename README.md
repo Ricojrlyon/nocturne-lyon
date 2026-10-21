@@ -408,6 +408,13 @@ la recopier, version comprise.
   bout de la ligne du titre, ouvre le menu de partage d'un téléphone et
   copie le lien sur un ordinateur. Les favoris n'y figurent pas : ils
   sont à chacun.
+  Chaque carte porte « + agenda » : la page écrit sur place un fichier
+  `.ics`, que lisent les agendas d'Android, de l'iPhone et des
+  ordinateurs, avec la soirée à son heure de Paris (fuseau décrit dans le
+  fichier), une durée de deux heures, la salle et sa ville, et le lien ;
+  sans heure connue, la journée entière. Rien ne part vers un serveur.
+  Ces boutons sont dans le lien de la carte : les toucher n'ouvre pas la
+  page de l'événement.
   Pour les lecteurs d'écran, le champ de recherche porte un nom, les
   boutons de filtre disent s'ils sont enfoncés, chaque journée est un
   titre de niveau 2, et le jour courant est signalé (`aria-current`)

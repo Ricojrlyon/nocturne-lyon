@@ -173,6 +173,17 @@ class PageNavigation(unittest.TestCase):
                          ["", "?quand=weekend", "?quand=weekend&arr=7e", ""])
         self.assertEqual(self.releve["partage"], [True, True, True])
 
+    def test_plus_agenda_donne_le_fichier_de_la_soiree(self):
+        # Nouveauté n° 2, à la date figée du 1er octobre 2026.
+        a = self.releve["agenda"]
+        self.assertRegex(a["nom"], r"^nocturne-[a-z0-9-]+[.]ics$")
+        self.assertEqual(a["type"], "text/calendar;charset=utf-8")
+        self.assertEqual((a["premiere"], a["derniere"]), ("BEGIN:VCALENDAR", "END:VCALENDAR"))
+        self.assertRegex(a["debut"], r"^DTSTART(;TZID=Europe/Paris:20261001T[0-9]{6}|;VALUE=DATE:20261001)$")
+        self.assertEqual([a["titre_juste"], a["lien_juste"], a["lignes_courtes"], a["echappement"]],
+                         [True, True, True, True])
+        self.assertIs(a["lien_ouvert"], False)
+
     def test_l_impro_est_du_theatre(self):
         # « Impro », catégorie du Petit Bulletin pour le théâtre
         # d'improvisation, était rangée en jazz, donc en musique.
