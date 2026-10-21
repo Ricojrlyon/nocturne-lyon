@@ -1120,7 +1120,7 @@
     ]
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/strip": {
-    "fetched_at": "2026-10-13",
+    "fetched_at": "2026-10-21",
     "lieu": "Les SUBS",
     "seances": [
       [
@@ -2759,7 +2759,7 @@
     "seances": []
   },
   "https://www.auditorium-lyon.com/fr/programmation-salle-proton": {
-    "fetched_at": "2026-10-13",
+    "fetched_at": "2026-10-21",
     "lieu": null,
     "seances": []
   },
@@ -5007,6 +5007,24 @@
       ]
     ]
   },
+  "https://www.croix-rousse.com/au-programme/atelier-realiser-un-podcast/": {
+    "fetched_at": "2026-10-21",
+    "seances": [
+      [
+        "2026-11-27",
+        "18:00"
+      ]
+    ]
+  },
+  "https://www.croix-rousse.com/au-programme/autodefense-feministe/": {
+    "fetched_at": "2026-10-21",
+    "seances": [
+      [
+        "2026-11-25",
+        "14:00"
+      ]
+    ]
+  },
   "https://www.croix-rousse.com/au-programme/back-to-reality/": {
     "fetched_at": "2026-10-18",
     "seances": [
@@ -5043,6 +5061,15 @@
       [
         "2027-03-13",
         "10:00"
+      ]
+    ]
+  },
+  "https://www.croix-rousse.com/au-programme/balade-urbaine-la-ville-a-t-elle-un-genre/": {
+    "fetched_at": "2026-10-21",
+    "seances": [
+      [
+        "2026-11-21",
+        "11:00"
       ]
     ]
   },
@@ -5220,6 +5247,15 @@
       ]
     ]
   },
+  "https://www.croix-rousse.com/au-programme/flash-tattoo2/": {
+    "fetched_at": "2026-10-21",
+    "seances": [
+      [
+        "2026-11-13",
+        "21:45"
+      ]
+    ]
+  },
   "https://www.croix-rousse.com/au-programme/folies-furieuses/": {
     "fetched_at": "2026-10-18",
     "seances": [
@@ -5241,6 +5277,15 @@
       ]
     ]
   },
+  "https://www.croix-rousse.com/au-programme/fresques-feministes-hf/": {
+    "fetched_at": "2026-10-21",
+    "seances": [
+      [
+        "2026-11-21",
+        "15:30"
+      ]
+    ]
+  },
   "https://www.croix-rousse.com/au-programme/furies-folies/": {
     "fetched_at": "2026-10-18",
     "seances": [
@@ -5259,12 +5304,47 @@
       ]
     ]
   },
+  "https://www.croix-rousse.com/au-programme/gender-games/": {
+    "fetched_at": "2026-10-21",
+    "seances": [
+      [
+        "2026-11-21",
+        "17:30"
+      ]
+    ]
+  },
+  "https://www.croix-rousse.com/au-programme/giv-me-fiv/": {
+    "fetched_at": "2026-10-21",
+    "seances": [
+      [
+        "2026-11-15",
+        "10:45"
+      ]
+    ]
+  },
   "https://www.croix-rousse.com/au-programme/gouter-philo-avec-muriel-imbach/": {
     "fetched_at": "2026-10-18",
     "seances": [
       [
         "2026-11-28",
         "17:00"
+      ]
+    ]
+  },
+  "https://www.croix-rousse.com/au-programme/groupe-de-parole-les-fantomes-de-lhysterie/": {
+    "fetched_at": "2026-10-21",
+    "seances": [
+      [
+        "2026-11-13",
+        "18:00"
+      ],
+      [
+        "2027-11-16",
+        "18:00"
+      ],
+      [
+        "2027-04-14",
+        "18:00"
       ]
     ]
   },
@@ -5494,6 +5574,15 @@
       ]
     ]
   },
+  "https://www.croix-rousse.com/au-programme/mobilisation-contre-les-vhss/": {
+    "fetched_at": "2026-10-21",
+    "seances": [
+      [
+        "2026-11-28",
+        "15:00"
+      ]
+    ]
+  },
   "https://www.croix-rousse.com/au-programme/nelvar-le-royaume-sans-peuple/": {
     "fetched_at": "2026-10-18",
     "seances": [
@@ -5550,6 +5639,15 @@
       [
         "2026-11-14",
         "18:00"
+      ]
+    ]
+  },
+  "https://www.croix-rousse.com/au-programme/projection-fantasy-de-kukla/": {
+    "fetched_at": "2026-10-21",
+    "seances": [
+      [
+        "2026-11-16",
+        "20:30"
       ]
     ]
   },
@@ -5620,6 +5718,15 @@
       ],
       [
         "2026-12-10",
+        "19:30"
+      ]
+    ]
+  },
+  "https://www.croix-rousse.com/au-programme/rencontre-dessinee-la-vida-loca-dartistes/": {
+    "fetched_at": "2026-10-21",
+    "seances": [
+      [
+        "2026-11-24",
         "19:30"
       ]
     ]
@@ -5700,6 +5807,15 @@
       ]
     ]
   },
+  "https://www.croix-rousse.com/au-programme/soiree-de-cloture-de-festiv%c2%b7iel/": {
+    "fetched_at": "2026-10-21",
+    "seances": [
+      [
+        "2026-11-28",
+        "20:30"
+      ]
+    ]
+  },
   "https://www.croix-rousse.com/au-programme/soiree-halloween/": {
     "fetched_at": "2026-10-18",
     "seances": [
@@ -5715,6 +5831,15 @@
       [
         "2027-01-19",
         "19:00"
+      ]
+    ]
+  },
+  "https://www.croix-rousse.com/au-programme/table-ronde-masculinismes-de-quoi-parle-t-on/": {
+    "fetched_at": "2026-10-21",
+    "seances": [
+      [
+        "2026-11-25",
+        "12:15"
       ]
     ]
   },
@@ -6433,7 +6558,7 @@
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/deborah-salazar": {
-    "fetched_at": "2026-10-13",
+    "fetched_at": "2026-10-21",
     "lieu": "Amphi de l'Opéra de Lyon",
     "seances": [
       [
