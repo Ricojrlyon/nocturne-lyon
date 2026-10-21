@@ -412,11 +412,17 @@ la recopier, version comprise.
   copie le lien sur un ordinateur. Les favoris n'y figurent pas : ils
   sont à chacun.
   Chaque carte porte une icône d'agenda, au bout du pied, à droite de
-  l'heure : la page écrit sur place un fichier
-  `.ics`, que lisent les agendas d'Android, de l'iPhone et des
-  ordinateurs, avec la soirée à son heure de Paris (fuseau décrit dans le
-  fichier), une durée de deux heures, la salle et sa ville, et le lien ;
-  sans heure connue, la journée entière. Rien ne part vers un serveur.
+  l'heure. Elle ouvre un petit menu (Échap, un clic ailleurs ou un
+  défilement le ferment ; flèches au clavier) : « Google Agenda » et
+  « Outlook.com » ouvrent l'agenda en ligne dans un autre onglet, la
+  soirée déjà remplie (sur un téléphone, l'application prend souvent le
+  relais) ; « iPhone et autres » fait écrire sur place par la page un
+  fichier `.ics`, que lisent l'agenda de l'iPhone, Outlook et les autres.
+  Dans les trois cas : la soirée à son heure de Paris (fuseau décrit dans
+  le fichier, `ctz=Europe/Paris` chez Google, décalage d'été ou d'hiver
+  chez Outlook), une durée de deux heures, la salle et sa ville, et le
+  lien ; sans heure connue, la journée entière. Le fichier ne part vers
+  aucun serveur ; Google et Outlook reçoivent, eux, la soirée choisie.
   Les cartes de musique, et elles seules, portent aussi le logo de
   YouTube, entre l'heure et l'agenda, de la couleur des autres boutons :
   une recherche YouTube sur le titre de la soirée, dans un autre onglet.

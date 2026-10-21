@@ -288,8 +288,9 @@
                      norme(message.textContent).startsWith('lien copié · 127.0.0.1')];
       await effacer();
       res.adresses.push(location.search);
-      // « + agenda » : le fichier de la première carte simple, sans ouvrir
-      // son lien. Le téléchargement est intercepté.
+      // L'agenda : un menu de trois choix ; « iPhone et autres » donne le
+      // fichier de la première carte simple, sans ouvrir son lien. Le
+      // téléchargement est intercepté.
       window.scrollTo(0, 0);
       const carteSimple = document.querySelector('#feed a.event');
       const capture = {};
@@ -300,10 +301,58 @@
       };
       let lienOuvert = null;
       document.addEventListener('click', e => { lienOuvert = !e.defaultPrevented; }, { once: true });
-      carteSimple.querySelector('.carte-bouton[data-action="agenda"]').click();
+      const boutonAgenda = carteSimple.querySelector('.carte-bouton[data-action="agenda"]');
+      const menu = document.getElementById('menuAgenda');
+      boutonAgenda.click();
       await pause(200);
+      res.menu_agenda = [!menu.hidden, boutonAgenda.getAttribute('aria-expanded'),
+                         [...menu.querySelectorAll('[data-agenda]')].map(b => b.dataset.agenda),
+                         document.activeElement === menu.querySelector('[data-agenda="google"]')];
+      menu.querySelector('[data-agenda="ics"]').click();
+      await pause(200);
+      res.menu_agenda.push(menu.hidden, boutonAgenda.getAttribute('aria-expanded'));
       URL.createObjectURL = vraiCreer;
       HTMLAnchorElement.prototype.click = vraiClic;
+      // Google Agenda et Outlook.com : une adresse, ouverte dans un autre
+      // onglet, la soirée remplie.
+      const evAgenda = CARTES.get(boutonAgenda.dataset.cle);
+      const ouvertesAgenda = [];
+      const vraiOpenAgenda = window.open;
+      window.open = (url, cible) => { ouvertesAgenda.push([url, cible]); return null; };
+      for (const service of ['google', 'outlook']) {
+        boutonAgenda.click();
+        await pause(150);
+        menu.querySelector('[data-agenda="' + service + '"]').click();
+        await pause(150);
+      }
+      window.open = vraiOpenAgenda;
+      const g = new URL(ouvertesAgenda[0][0]), o = new URL(ouvertesAgenda[1][0]);
+      const titreAgenda = (evAgenda.title || '').trim(), lieuAgenda = adresseAgenda(evAgenda);
+      const lienCarte = carteSimple.getAttribute('href');
+      res.agenda_en_ligne = {
+        date: evAgenda._date, heure: evAgenda.time || '',
+        google: [g.origin + g.pathname, g.searchParams.get('action'), g.searchParams.get('text') === titreAgenda,
+                 g.searchParams.get('dates'), g.searchParams.get('ctz'),
+                 g.searchParams.get('location') === lieuAgenda && lieuAgenda.startsWith(evAgenda.venue),
+                 g.searchParams.get('details') === lienCarte, ouvertesAgenda[0][1]],
+        outlook: [o.origin + o.pathname, o.searchParams.get('subject') === titreAgenda,
+                  o.searchParams.get('startdt'), o.searchParams.get('enddt'),
+                  o.searchParams.get('location') === lieuAgenda, o.searchParams.get('body') === lienCarte,
+                  ouvertesAgenda[1][1]],
+      };
+      res.decalages = ['2026-03-28', '2026-03-29', '2026-07-01', '2026-10-24', '2026-10-25', '2026-12-01']
+        .map(decalageDeParis);
+      // Échap ferme le menu et rend la main à l'icône ; un clic ailleurs le ferme.
+      boutonAgenda.click();
+      await pause(150);
+      menu.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+      await pause(100);
+      res.menu_agenda.push(menu.hidden, document.activeElement === boutonAgenda);
+      boutonAgenda.click();
+      await pause(150);
+      document.querySelector('.masthead').click();
+      await pause(100);
+      res.menu_agenda.push(menu.hidden);
       const SAUT = String.fromCharCode(13, 10);
       const texte = capture.blob ? await capture.blob.text() : '';
       const lignes = texte.split(SAUT + ' ').join('').split(SAUT).filter(Boolean);

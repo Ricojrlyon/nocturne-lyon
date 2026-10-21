@@ -107,7 +107,8 @@ class Coherence(unittest.TestCase):
         # voile gris du toucher, et le « survol » qui restait sur la carte.
         # La carte ne s'allume plus qu'à la souris ; l'étoile, elle,
         # s'allume au survol et grossit au toucher.
-        self.assertIn("-webkit-tap-highlight-color: transparent;", PAGE)
+        carte = re.search(r"\n  \.event \{(.*?)\n  \}", PAGE, re.S).group(1)
+        self.assertIn("-webkit-tap-highlight-color: transparent;", carte)
         self.assertRegex(PAGE, r"@media \(hover: hover\) \{\s+\.event:hover \{")
         self.assertNotRegex(PAGE, r"\n  \.event:hover \{")
         self.assertRegex(PAGE, r"\.carte-etoile:hover \{ color: var\(--warm\); transform: scale")

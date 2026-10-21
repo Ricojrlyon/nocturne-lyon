@@ -15,6 +15,7 @@ Sans navigateur de la famille Chrome, le test est sauté, et le dit.
 import math
 import re
 import unittest
+from datetime import datetime, timedelta
 
 from tests import navigateur
 from tests.outils import RACINE, lire_gz
@@ -184,6 +185,36 @@ class PageNavigation(unittest.TestCase):
         self.assertEqual([a["titre_juste"], a["lien_juste"], a["lignes_courtes"], a["echappement"]],
                          [True, True, True, True])
         self.assertIs(a["lien_ouvert"], False)
+
+    def test_le_menu_de_l_agenda(self):
+        # Trois choix ; le premier prend la main ; « .ics » ferme le menu.
+        # Échap le ferme et rend la main à l'icône ; un clic ailleurs aussi.
+        self.assertEqual(self.releve["menu_agenda"],
+                         [True, "true", ["google", "outlook", "ics"], True, True, "false",
+                          True, True, True])
+
+    def test_google_agenda_et_outlook_s_ouvrent_la_soiree_remplie(self):
+        a = self.releve["agenda_en_ligne"]
+        jour = a["date"].replace("-", "")
+        if a["heure"]:
+            debut = datetime.strptime(a["date"] + " " + a["heure"], "%Y-%m-%d %H:%M")
+            fin = debut + timedelta(hours=2)
+            dates = debut.strftime("%Y%m%dT%H%M%S") + "/" + fin.strftime("%Y%m%dT%H%M%S")
+            ctz = "Europe/Paris"
+            debut_o = debut.strftime("%Y-%m-%dT%H:%M:%S") + "+02:00"
+            fin_o = fin.strftime("%Y-%m-%dT%H:%M:%S") + "+02:00"
+        else:
+            dates, ctz = jour + "/" + jour[:6] + "02", None
+            debut_o, fin_o = a["date"], "2026-10-02"
+        self.assertEqual(a["google"], ["https://calendar.google.com/calendar/render", "TEMPLATE", True,
+                                       dates, ctz, True, True, "_blank"])
+        self.assertEqual(a["outlook"], ["https://outlook.live.com/calendar/0/action/compose", True,
+                                        debut_o, fin_o, True, True, "_blank"])
+
+    def test_l_heure_d_ete_de_paris(self):
+        # Dernier dimanche de mars (29) et d'octobre (25), en 2026.
+        self.assertEqual(self.releve["decalages"],
+                         ["+01:00", "+02:00", "+02:00", "+02:00", "+01:00", "+01:00"])
 
     def test_ecouter_ouvre_youtube_pour_la_musique(self):
         # Nouveauté n° 5.
