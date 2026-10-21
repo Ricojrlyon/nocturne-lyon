@@ -190,6 +190,11 @@ class PageNavigation(unittest.TestCase):
         self.assertEqual(self.releve["ecouter"],
                          {"juste": True, "carte_ouverte": False, "seulement_musique": True})
 
+    def test_les_boutons_de_carte_sont_des_icones_a_droite_de_l_heure(self):
+        self.assertEqual(self.releve["boutons_de_carte"],
+                         ["", "", True, True, "ajouter à mon agenda", "écouter sur YouTube",
+                          True, True, True])
+
     def test_favoris_et_mes_salles(self):
         # Nouveauté n° 3 : l'étoile garde l'événement sans ouvrir la carte ;
         # « ★ favoris » ne montre plus que lui, puis aussi la salle suivie,

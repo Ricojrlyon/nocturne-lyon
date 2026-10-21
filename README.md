@@ -411,17 +411,22 @@ la recopier, version comprise.
   bout de la ligne du titre, ouvre le menu de partage d'un téléphone et
   copie le lien sur un ordinateur. Les favoris n'y figurent pas : ils
   sont à chacun.
-  Chaque carte porte « + agenda » : la page écrit sur place un fichier
+  Chaque carte porte une icône d'agenda, au bout du pied, à droite de
+  l'heure : la page écrit sur place un fichier
   `.ics`, que lisent les agendas d'Android, de l'iPhone et des
   ordinateurs, avec la soirée à son heure de Paris (fuseau décrit dans le
   fichier), une durée de deux heures, la salle et sa ville, et le lien ;
   sans heure connue, la journée entière. Rien ne part vers un serveur.
-  Les cartes de musique, et elles seules, portent aussi « ▶ écouter » :
+  Les cartes de musique, et elles seules, portent aussi le logo de
+  YouTube, entre l'heure et l'agenda, de la couleur des autres boutons :
   une recherche YouTube sur le titre de la soirée, dans un autre onglet.
-  Ces boutons sont dans le lien de la carte : les toucher n'ouvre pas la
-  page de l'événement.
+  Les deux icônes portent leur nom pour les lecteurs d'écran et au
+  survol. Ces boutons sont dans le lien de la carte : les toucher n'ouvre
+  pas la page de l'événement, et sur un téléphone seul le bouton touché
+  réagit (la carte ne s'allume qu'à la souris).
   Les favoris, sans compte : l'étoile ☆, tout en haut à droite d'une
-  carte, garde l'événement (★ ocre, sur toutes ses cartes) ; l'étoile à
+  carte (elle s'allume et grossit au survol), garde l'événement (★ ocre,
+  sur toutes ses cartes) ; l'étoile à
   côté d'une salle, dans la liste des lieux, la suit, et la remonte en
   tête de liste. Le bouton « ★ favoris » ne montre plus que les
   événements gardés et les soirées des salles suivies ; il reste allumé

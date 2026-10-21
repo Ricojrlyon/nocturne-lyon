@@ -102,6 +102,17 @@ class Coherence(unittest.TestCase):
             self.assertTrue((RACINE / ("index.html" if f == "./" else f)).exists(), f)
         self.assertIn("navigator.serviceWorker.register('sw.js')", PAGE)
 
+    def test_au_doigt_seul_le_bouton_touche_reagit(self):
+        # Sur un téléphone, toucher l'étoile allumait toute la carte : le
+        # voile gris du toucher, et le « survol » qui restait sur la carte.
+        # La carte ne s'allume plus qu'à la souris ; l'étoile, elle,
+        # s'allume au survol et grossit au toucher.
+        self.assertIn("-webkit-tap-highlight-color: transparent;", PAGE)
+        self.assertRegex(PAGE, r"@media \(hover: hover\) \{\s+\.event:hover \{")
+        self.assertNotRegex(PAGE, r"\n  \.event:hover \{")
+        self.assertRegex(PAGE, r"\.carte-etoile:hover \{ color: var\(--warm\); transform: scale")
+        self.assertIn(".event:active:not(:has(.carte-bouton:active))", PAGE)
+
     def test_un_message_pour_qui_n_a_pas_javascript(self):
         # Audit n° 19 : sans JavaScript, la page le dit au lieu de rester
         # vide.

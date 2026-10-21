@@ -838,10 +838,25 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+    /* Pas de voile gris sur toute la carte au toucher : sur un téléphone,
+       toucher l'étoile donnait l'impression d'ouvrir la carte. */
+    -webkit-tap-highlight-color: transparent;
   }
-  .event:hover {
-    border-color: var(--warm);
-    background: var(--bg-carte-2);
+  /* La carte s'allume sous la souris, et non au doigt : un téléphone garde
+     le « survol » de la dernière carte touchée, étoile comprise. Au doigt,
+     elle s'allume le temps du toucher, sauf si c'est un de ses boutons
+     qu'on touche. */
+  @media (hover: hover) {
+    .event:hover {
+      border-color: var(--warm);
+      background: var(--bg-carte-2);
+    }
+  }
+  @media (hover: none) {
+    .event:active:not(:has(.carte-bouton:active)) {
+      border-color: var(--warm);
+      background: var(--bg-carte-2);
+    }
   }
 
   /* ---------- couche visuelle en fond de carte ----------
@@ -1284,8 +1299,22 @@
     flex-shrink: 0;
     color: var(--ink-soft);
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
   }
-  .carte-bouton:hover { color: var(--ink); border-color: var(--ink-soft); }
+  @media (hover: hover) {
+    .carte-bouton:hover { color: var(--ink); border-color: var(--ink-soft); }
+  }
+  .carte-bouton:active { transform: scale(0.9); }
+  /* Agenda et YouTube : une icône, dans la même boîte de 19 px que les
+     étiquettes du pied, de la couleur des autres boutons. */
+  .carte-bouton.icone {
+    display: inline-flex;
+    align-items: center;
+    height: 19px;
+    padding: 0 4px;
+  }
+  .carte-bouton.icone svg { display: block; }
   /* L'étoile des favoris : tout en haut à droite de la carte, sur
      l'affiche, sans cadre. Ocre quand l'événement est gardé. */
   .carte-bouton.carte-etoile {
@@ -1301,6 +1330,12 @@
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.85);
   }
   .carte-bouton.carte-etoile[aria-pressed="true"] { color: var(--warm); }
+  /* Au survol, l'étoile s'allume et grossit : c'est elle qu'on va toucher,
+     pas la carte. Au doigt, elle grossit le temps du toucher. */
+  @media (hover: hover) {
+    .carte-bouton.carte-etoile:hover { color: var(--warm); transform: scale(1.25); }
+  }
+  .carte-bouton.carte-etoile:active { transform: scale(1.35); }
   /* « nouveau » depuis ta dernière visite : un point ocre et un mot
      minuscule, en haut à gauche de la carte, sans fond. */
   .nouveau {
@@ -4858,17 +4893,21 @@ function eventCard(e, seedOverride) {
 
   const sourceBadge = sourceBadgeHtml(e);
 
-  // « + agenda » (nouveauté n° 2) : la carte est rangée sous sa clé, que
-  // le bouton porte, pour retrouver l'événement au clic.
+  // L'agenda (nouveauté n° 2) : la carte est rangée sous sa clé, que le
+  // bouton porte, pour retrouver l'événement au clic. Une icône seule ;
+  // son nom est dit aux lecteurs d'écran et au survol.
   const cle = cleEvenement(e) + '|' + e._date;
   CARTES.set(cle, e);
-  const agenda = '<span class="carte-bouton" role="button" tabindex="0" data-action="agenda"'
-    + ' data-cle="' + escapeHtml(cle) + '" title="ajouter à mon agenda">+ agenda</span>';
-  // « ▶ écouter » (nouveauté n° 5), sur les seules cartes de musique : une
-  // recherche YouTube sur le titre, dans un autre onglet.
+  const agenda = '<span class="carte-bouton icone" role="button" tabindex="0" data-action="agenda"'
+    + ' data-cle="' + escapeHtml(cle) + '" title="ajouter à mon agenda" aria-label="ajouter à mon agenda">'
+    + ICONE_AGENDA + '</span>';
+  // Écouter (nouveauté n° 5), sur les seules cartes de musique : une
+  // recherche YouTube sur le titre, dans un autre onglet. Le logo de
+  // YouTube, de la couleur des autres boutons.
   const ecouter = familleOf(e.category) === 'musique'
-    ? '<span class="carte-bouton" role="link" tabindex="0" data-action="ecouter"'
-      + ' data-cle="' + escapeHtml(cle) + '" title="écouter sur YouTube">▶ écouter</span>'
+    ? '<span class="carte-bouton icone" role="link" tabindex="0" data-action="ecouter"'
+      + ' data-cle="' + escapeHtml(cle) + '" title="écouter sur YouTube" aria-label="écouter sur YouTube">'
+      + ICONE_YOUTUBE + '</span>'
     : '';
   // L'étoile des favoris (nouveauté n° 3), tout en haut à droite.
   const garde = state.favoris.has(cleEvenement(e));
@@ -4903,19 +4942,16 @@ function eventCard(e, seedOverride) {
     '    ' + arrLabel,
     '  </div>',
     '  ' + titleHtml,
-    // L'heure a quitté l'en-tête pour le pied : elle y tombe au même
-    // pixel sur toutes les cartes, ce qui en fait une colonne que l'œil
-    // descend d'un seul balayage. En haut, sa position dépendait de la
-    // longueur du nom du lieu - donc elle se déplaçait d'une carte à
-    // l'autre. Dernière du groupe de droite, elle est contre le bord.
+    // L'heure a quitté l'en-tête pour le pied, dans le groupe de droite ;
+    // les boutons YouTube et agenda la suivent, contre le bord.
     '  <div class="event-foot">',
     '    ' + cat,
     '    <div class="event-foot-right">',
     '      ' + sourceBadge,
     '      ' + runBadge,
+    '      ' + time,
     '      ' + ecouter,
     '      ' + agenda,
-    '      ' + time,
     '    </div>',
     '  </div>',
     '</' + tag + '>'
@@ -4923,6 +4959,9 @@ function eventCard(e, seedOverride) {
 }
 
 /* ---------- les boutons des cartes ---------- */
+const ICONE_AGENDA = '<svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" focusable="false"><rect x="1.75" y="2.75" width="12.5" height="11.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M1.75 6.25h12.5M5 1v3.5M11 1v3.5M8 8.25v4M6 10.25h4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
+const ICONE_YOUTUBE = '<svg viewBox="0 0 24 17" width="15" height="11" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M23.5 2.65A3 3 0 0 0 21.4.53C19.5 0 12 0 12 0S4.5 0 2.6.53A3 3 0 0 0 .5 2.65C0 4.55 0 8.5 0 8.5s0 3.95.5 5.85a3 3 0 0 0 2.1 2.12C4.5 17 12 17 12 17s7.5 0 9.4-.53a3 3 0 0 0 2.1-2.12c.5-1.9.5-5.85.5-5.85s0-3.95-.5-5.85zM9.6 12.13V4.87L15.85 8.5 9.6 12.13z"/></svg>';
+
 /* La clé d'un événement, stable d'un passage à l'autre : la salle, le
    titre et le premier jour. Ni l'heure, que le robot complète parfois
    après coup, ni l'id du fil, qui en dépend. */

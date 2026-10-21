@@ -340,6 +340,17 @@
           !!c.querySelector('[data-action="ecouter"]')
           === (familleOf(c.querySelector('.event-cat').textContent) === 'musique')),
       };
+      // Les boutons d'une carte de musique : deux icônes sans texte, nommées
+      // pour les lecteurs d'écran, à droite de l'heure, l'agenda au bord.
+      const avecHeure = cartesSimples.find(c => c.querySelector('[data-action="ecouter"]')
+                                              && c.querySelector('.event-time'));
+      const droite = avecHeure.querySelector('.event-foot-right');
+      const ag = droite.querySelector('[data-action="agenda"]'), yt = droite.querySelector('[data-action="ecouter"]');
+      const avant = (a, b) => !!(a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING);
+      res.boutons_de_carte = [norme(ag.textContent), norme(yt.textContent), !!ag.querySelector('svg'),
+                              !!yt.querySelector('svg'), ag.getAttribute('aria-label'), yt.getAttribute('aria-label'),
+                              avant(droite.querySelector('.event-time'), yt), avant(yt, ag),
+                              droite.lastElementChild === ag];
       // ★ favoris et mes salles (nouveauté n° 3).
       await effacer();
       window.scrollTo(0, 0);
