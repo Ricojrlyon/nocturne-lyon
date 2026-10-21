@@ -1649,6 +1649,206 @@
   }
 
   /* ---------- empty state ---------- */
+  /* ---------- vue carte (nouveauté n° 6) ----------
+     L'interrupteur « liste | carte » : deux boutons accolés. */
+  .vue-switch { display: inline-flex; }
+  .vue-switch .vue-choix:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+  .vue-switch .vue-choix:last-child { border-radius: 0 var(--radius) var(--radius) 0; margin-left: -1px; }
+  .day-pill.choisi { border-color: var(--warm); background: var(--bg-elev-2); }
+  .carte-vue { padding: 18px 0 40px; }
+  .carte-tete {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .carte-tete .ct-jour { color: var(--ink); font-weight: 700; }
+  .carte-tete .ct-compte { flex-basis: 100%; }
+  .carte-saut {
+    background: none;
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius);
+    color: var(--ink-soft);
+    font: 12px/1 'JetBrains Mono', monospace;
+    padding: 5px 8px;
+    cursor: pointer;
+  }
+  .carte-saut:hover:not(:disabled) { border-color: var(--ink); color: var(--ink); }
+  .carte-saut:disabled { opacity: 0.35; cursor: default; }
+  .carte-saut:focus-visible { outline: 2px solid var(--warm); outline-offset: 2px; }
+  .carte-vue .db-familles { margin-bottom: 12px; }
+  .carte-boite {
+    position: relative;
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #10181d;
+  }
+  /* « touch-action: none » : sur le plan, le doigt déplace le plan, et non
+     la page. Le plan ne prend donc jamais tout l'écran : il reste de quoi
+     faire défiler la page au-dessus et au-dessous. */
+  .carte-cadre {
+    position: relative;
+    height: min(64vh, 560px);
+    min-height: 300px;
+    overflow: hidden;
+    touch-action: none;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .carte-cadre.glisse { cursor: grabbing; }
+  .carte-cadre:focus-visible { outline: 2px solid var(--warm); outline-offset: -2px; }
+  .carte-tuiles, .carte-calque { position: absolute; left: 0; top: 0; }
+  /* Le plan d'OpenStreetMap, clair, passé en nuit : couleurs inversées,
+     teintes remises à l'endroit, puis assourdi. */
+  .carte-tuiles img {
+    position: absolute;
+    max-width: none;
+    filter: invert(1) hue-rotate(180deg) brightness(0.78) contrast(0.88) saturate(0.35);
+  }
+  .carte-pin {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    min-width: 24px;
+    height: 24px;
+    padding: 0 5px;
+    border-radius: 12px;
+    border: 2px solid var(--bg);
+    background: var(--warm);
+    color: var(--bg);
+    font: 700 11px/20px 'JetBrains Mono', monospace;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  }
+  .carte-pin.groupe { box-shadow: 0 0 0 4px rgba(212, 165, 116, 0.35), 0 1px 4px rgba(0, 0, 0, 0.6); }
+  .carte-pin.choisi { background: var(--ink); }
+  .carte-pin:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .carte-nom {
+    position: absolute;
+    white-space: nowrap;
+    font: 700 9.5px/14px 'JetBrains Mono', monospace;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-shadow: 0 0 3px #000, 0 0 6px #000;
+    pointer-events: none;
+  }
+  .carte-zoom {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .carte-zoom button {
+    width: 32px;
+    height: 32px;
+    background: var(--bg-elev);
+    color: var(--ink);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius);
+    font: 16px/1 'JetBrains Mono', monospace;
+    cursor: pointer;
+  }
+  .carte-zoom button:disabled { opacity: 0.4; cursor: default; }
+  .carte-zoom button:focus-visible { outline: 2px solid var(--warm); outline-offset: 2px; }
+  .carte-credit {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 2px 6px;
+    background: rgba(13, 19, 23, 0.82);
+    color: var(--ink-soft);
+    font: 9.5px/1.4 'JetBrains Mono', monospace;
+    text-decoration: none;
+  }
+  .carte-credit:hover { color: var(--ink); }
+  /* La fiche d'un lieu, posée sur le bas du plan. */
+  .carte-fiche {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 24px;
+    max-height: 55%;
+    overflow-y: auto;
+    background: var(--bg-elev);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius);
+    padding: 10px 14px 6px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
+  }
+  .fiche-fermer {
+    float: right;
+    background: none;
+    border: none;
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1;
+    padding: 4px 2px 4px 10px;
+    cursor: pointer;
+  }
+  .fiche-fermer:hover { color: var(--ink); }
+  .fiche-lieu {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 4px 0 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--warm);
+  }
+  .fiche-lieu:focus { outline: none; }
+  .fiche-lieu .fl-n { color: var(--ink-mute); white-space: nowrap; }
+  .fiche-evts { list-style: none; margin: 0 0 8px; padding: 0; }
+  .fiche-evts a, .fiche-evts .fe-sans-lien {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 5px 0;
+    border-top: 1px solid var(--rule);
+    color: var(--ink);
+    text-decoration: none;
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+  .fiche-evts a:hover .fe-titre { text-decoration: underline; }
+  .fiche-evts .fe-heure {
+    flex: 0 0 auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+  }
+  .carte-ailleurs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .carte-ailleurs .ca-titre {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-right: 4px;
+  }
+  .carte-ailleurs .chip { text-transform: none; }
+  .carte-vide { padding: 60px 24px; }
+
   .empty-state {
     text-align: center;
     padding: 100px 24px;
@@ -1802,6 +2002,10 @@
           <div class="datepicker" id="datepicker"></div>
         </span>
         <button class="chip" id="voirFavoris" type="button" aria-pressed="false">★ favoris</button>
+        <span class="vue-switch" id="vueSwitch" role="group" aria-label="affichage">
+          <button class="chip vue-choix active" type="button" data-vue="liste" aria-pressed="true">liste</button>
+          <button class="chip vue-choix" type="button" data-vue="carte" aria-pressed="false">carte</button>
+        </span>
       </div>
     </div>
 
@@ -2639,6 +2843,10 @@ const state = {
   favoris: new Set(lireMemoire('nocturne:favoris') || []),
   salles: new Set(lireMemoire('nocturne:salles') || []),
   voirFavoris: false,
+  // La vue carte (nouveauté n° 6) et la journée qu'elle montre (null : la
+  // première qui passe les filtres).
+  vue: 'liste',
+  jourCarte: null,
 };
 
 /* La mémoire du téléphone (localStorage). Navigation privée, stockage
@@ -2867,6 +3075,7 @@ async function load() {
   for (const l of (await lieuxRes.value.json()).lieux) {
     if (l.arr) VENUE_ARRONDISSEMENT[l.nom] = l.arr;
     if (l.commune) VENUE_COMMUNE[l.nom] = l.commune;
+    if (l.pos) VENUE_POSITION[l.nom] = l.pos;
   }
   state.events = data.events || [];
   // Les occurrences ne dépendent que de state.events : calculées une seule
@@ -2886,6 +3095,7 @@ async function load() {
         if (entry.commune && !VENUE_COMMUNE[venue]) {
           VENUE_COMMUNE[venue] = entry.commune;
         }
+        if (entry.pos && !VENUE_POSITION[venue]) VENUE_POSITION[venue] = entry.pos;
         if (VENUE_ARRONDISSEMENT[venue]) continue;  // lieux.json gagne
         if (entry.arr) VENUE_ARRONDISSEMENT[venue] = entry.arr;
       }
@@ -2901,7 +3111,8 @@ async function load() {
   const sansCasse = nom => (nom || '').normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
   for (const [table, valeurs] of [[VENUE_ARRONDISSEMENT, VENUE_ARRONDISSEMENT],
-                                  [VENUE_COMMUNE, VENUE_COMMUNE]]) {
+                                  [VENUE_COMMUNE, VENUE_COMMUNE],
+                                  [VENUE_POSITION, VENUE_POSITION]]) {
     const parNorm = new Map(Object.keys(table).map(k => [sansCasse(k), k]));
     for (const e of state.events) {
       for (const nom of [e.venue, e.offsite_venue]) {
@@ -2954,6 +3165,7 @@ function buildDaystrip() {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'day-pill' + (n === 0 ? ' empty' : '') + (i === 0 ? ' today' : '');
+    btn.dataset.jour = iso;
     // Le jour courant, dit aux lecteurs d'écran (audit n° 18) ; à l'écran,
     // c'est la bordure ocre de .today.
     if (i === 0) btn.setAttribute('aria-current', 'date');
@@ -2970,6 +3182,8 @@ function buildDaystrip() {
     if (n) {
       btn.title = n + (n > 1 ? ' événements' : ' événement');
       btn.addEventListener('click', () => {
+        // En vue carte, la pastille choisit la journée du plan.
+        if (state.vue === 'carte') { state.jourCarte = iso; render(); return; }
         // Le jour n'est peut-être pas encore construit (voir « affichage
         // par morceaux ») : on construit jusqu'à lui, puis de quoi remplir
         // l'écran sous lui, pour qu'il vienne en haut comme avant.
@@ -3281,6 +3495,8 @@ function etatDesBoutons() {
   // se recopie de l'état, comme aria-pressed, sans quoi toucher « ce
   // weekend » l'éteignait à l'écran alors que le filtre restait actif.
   document.getElementById('voirFavoris').classList.toggle('active', state.voirFavoris);
+  document.querySelectorAll('#vueSwitch [data-vue]')
+    .forEach(b => b.classList.toggle('active', b.dataset.vue === state.vue));
   document.querySelectorAll('#filterWhen .chip, #filterArr .chip').forEach(b => {
     b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false');
   });
@@ -3337,6 +3553,10 @@ function adresseDesFiltres() {
   for (const f of state.famillesOff) p.append('sans', f);
   const q = document.getElementById('filterSearch').value.trim();
   if (q) p.set('q', q);
+  if (state.vue === 'carte') {
+    p.set('vue', 'carte');
+    if (state.jourCarte) p.set('jour', state.jourCarte);
+  }
   const s = p.toString();
   return location.pathname + (s ? '?' + s : '');
 }
@@ -3367,6 +3587,8 @@ function lireLAdresse() {
   for (const l of p.getAll('lieu')) if (lieux.has(l)) state.lieux.add(l);
   for (const t of p.getAll('tag')) if (ALL_BUCKETS.some(b => b.key === t)) state.tags.add(t);
   for (const f of p.getAll('sans')) if (FAMILLES.some(x => x.key === f)) state.famillesOff.add(f);
+  if (p.get('vue') === 'carte') state.vue = 'carte';
+  if (jour.test(p.get('jour') || '')) state.jourCarte = p.get('jour');
   const q = (p.get('q') || '').trim();
   if (q) {
     document.getElementById('filterSearch').value = q;
@@ -3594,6 +3816,476 @@ function filtered() {
   });
 }
 
+/* ---------- vue carte (nouveauté n° 6) ----------
+   « Qu'est-ce qu'il y a ce soir, et où ? » Les lieux d'UNE journée sur un
+   plan de Lyon : une pastille par lieu, qui porte son nombre
+   d'événements ; touchée, elle ouvre la liste de ses soirées, avec leurs
+   liens. Les filtres s'appliquent comme à la liste ; la barre des 14
+   jours, et les flèches de l'en-tête, choisissent la journée.
+   Le fond vient d'OpenStreetMap, en tuiles de 256 px (des images),
+   assombri par un filtre pour aller avec la page. Aucune bibliothèque :
+   le plan se résume à poser des images et des boutons au bon endroit.
+   Les positions viennent de lieux.json et du géocodage du robot ; un lieu
+   sans position est nommé sous le plan, dans « pas sur la carte ».
+   Le doigt fait glisser le plan, deux doigts le zooment ; à la souris, on
+   glisse, et Ctrl + molette zoome (la molette seule fait défiler la
+   page) ; au clavier, les flèches déplacent, + et − zooment, Échap ferme
+   la fiche. Les boutons + et − font de même pour tous. */
+const TUILE = 256;
+// Le zoom n'est pas forcément entier : le plan se cadre au plus juste, et
+// affiche alors les tuiles du zoom entier SUPÉRIEUR, réduites (plus nettes
+// que celles du zoom inférieur, agrandies).
+const ZOOM_MIN = 11, ZOOM_MAX = 17;
+const ZOOM_CADRAGE_MAX = 15;   // un lieu seul : de quoi voir le quartier
+const TUILES_OSM = 'https://tile.openstreetmap.org/';
+// Deux pastilles plus proches que cela, en pixels, n'en font qu'une, qui
+// les compte toutes et zoome quand on la touche.
+const ECART_PASTILLES = 26;
+const RAYON_PASTILLE = 12;
+// Le plan ne s'éloigne pas de la métropole : on ne s'y perd pas.
+const BORNES_CARTE = [[45.95, 4.65], [45.55, 5.15]];
+const CENTRE_DE_LYON = [45.7597, 4.8422];
+const VENUE_POSITION = {};   // nom → [latitude, longitude], rempli au chargement
+let carte = null;            // le plan affiché : sa vue, ses lieux, ses éléments
+
+/* Latitude, longitude → pixels du plan du monde au zoom z (la projection
+   de Mercator, celle des cartes du web). */
+function versLePlan(lat, lon, z) {
+  const n = TUILE * Math.pow(2, z);
+  const s = Math.sin(lat * Math.PI / 180);
+  return [(lon + 180) / 360 * n, (0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI)) * n];
+}
+
+function nomDuJour(iso) {
+  const d = parseIso(iso);
+  const aujourdhui = new Date(); aujourdhui.setHours(0, 0, 0, 0);
+  const ecart = Math.round((d - aujourdhui) / 86400000);
+  const date = FR_DAYS_FULL[d.getDay()] + ' ' + d.getDate() + ' ' + FR_MONTHS[d.getMonth()];
+  return (ecart === 0 ? 'ce soir · ' : ecart === 1 ? 'demain · ' : '') + date;
+}
+
+/* La pastille du jour montré, dans la barre des 14 jours ; aucune en liste. */
+function marquerLeJourDeLaCarte(iso) {
+  document.querySelectorAll('.day-pill')
+    .forEach(p => p.classList.toggle('choisi', p.dataset.jour === iso));
+}
+
+function renderCarte(feed, events) {
+  const jours = [...new Set(events.map(e => e._date))].sort();
+  // Le jour demandé ; s'il n'a rien pour ces filtres, le suivant qui a
+  // quelque chose, sinon le dernier.
+  const voulu = state.jourCarte;
+  const jour = voulu ? (jours.find(j => j >= voulu) || jours[jours.length - 1]) : jours[0];
+  marquerLeJourDeLaCarte(jour);
+  const duJour = events.filter(e => e._date === jour);
+  const comptes = comptesParFamille(duJour);
+  const visibles = filtrerParFamille(duJour);
+
+  // Les événements par salle où l'on va (et non par salle qui programme).
+  const lieux = new Map();
+  for (const e of visibles) {
+    const plusieurs = e.offsite_venue === OFFSITE_PLUSIEURS;
+    const nom = plusieurs ? e.venue : lieuEffectif(e);
+    const cle = (plusieurs ? '·' : '') + nom;
+    if (!lieux.has(cle)) {
+      lieux.set(cle, { nom: plusieurs ? nom + ' (ailleurs)' : nom, cle,
+                       pos: plusieurs ? null : (VENUE_POSITION[nom] || null), evs: [] });
+    }
+    lieux.get(cle).evs.push(e);
+  }
+  const places = [...lieux.values()];
+  for (const p of places) {
+    p.evs.sort((a, b) => (a.time || '99:99').localeCompare(b.time || '99:99')
+                         || (a.title || '').localeCompare(b.title || ''));
+  }
+  const ailleurs = places.filter(p => !p.pos).sort((a, b) => a.nom.localeCompare(b.nom));
+
+  const i = jours.indexOf(jour);
+  const n = visibles.length;
+  const html = ['<section class="carte-vue">',
+    '<div class="carte-tete">',
+    '<button type="button" class="carte-saut" data-saut="-1" aria-label="journée précédente"'
+      + (i > 0 ? '' : ' disabled') + '>←</button>',
+    '<span class="ct-jour" role="heading" aria-level="2">' + nomDuJour(jour) + '</span>',
+    '<button type="button" class="carte-saut" data-saut="1" aria-label="journée suivante"'
+      + (i < jours.length - 1 ? '' : ' disabled') + '>→</button>',
+    '<span class="ct-compte">' + n + ' événement' + (n > 1 ? 's' : '') + ' · '
+      + places.length + ' lieu' + (places.length > 1 ? 'x' : '') + '</span>',
+    '</div>',
+    famillesHtml(comptes)];
+  if (!n) {
+    html.push('<div class="empty-state carte-vide"><p>toutes les familles sont masquées</p></div>');
+  } else {
+    html.push('<div class="carte-boite">',
+      '<div class="carte-cadre" tabindex="0" role="group" aria-roledescription="plan"'
+        + ' aria-label="plan des lieux : flèches pour le déplacer, + et − pour zoomer">',
+      '<div class="carte-tuiles" aria-hidden="true"></div>',
+      '<div class="carte-calque"></div>',
+      '</div>',
+      '<div class="carte-zoom"><button type="button" data-zoom="1" aria-label="zoomer">+</button>'
+        + '<button type="button" data-zoom="-1" aria-label="dézoomer">−</button></div>',
+      '<a class="carte-credit" href="https://www.openstreetmap.org/copyright" target="_blank"'
+        + ' rel="noopener">© OpenStreetMap</a>',
+      '<div class="carte-fiche" role="region" aria-label="soirées du lieu" hidden></div>',
+      '</div>');
+    if (ailleurs.length) {
+      html.push('<div class="carte-ailleurs"><span class="ca-titre">pas sur la carte</span>'
+        + ailleurs.map((p, k) => '<button type="button" class="chip" data-ailleurs="' + k + '">'
+          + escapeHtml(p.nom) + ' · ' + p.evs.length + '</button>').join('')
+        + '</div>');
+    }
+  }
+  html.push('</section>');
+  feed.innerHTML = html.join('');
+
+  const racine = feed.querySelector('.carte-vue');
+  racine.addEventListener('click', ev => {
+    const saut = ev.target.closest('[data-saut]');
+    if (saut) {
+      state.jourCarte = jours[i + Number(saut.dataset.saut)];
+      render();
+      return;
+    }
+    const zoom = ev.target.closest('[data-zoom]');
+    if (zoom) { zoomer(Number(zoom.dataset.zoom)); return; }
+    if (ev.target.closest('.fiche-fermer')) { fermerFiche(); return; }
+    const autre = ev.target.closest('[data-ailleurs]');
+    if (autre) ouvrirFiche([ailleurs[Number(autre.dataset.ailleurs)]], autre);
+  });
+  if (n) monterLaCarte(racine, places.filter(p => p.pos), jour);
+  else carte = null;
+}
+
+/* Le plan : sa vue (zoom, centre) est gardée d'un rendu à l'autre tant
+   que les mêmes lieux y figurent ; sinon il se recadre sur eux. */
+function monterLaCarte(racine, places, jour) {
+  const signature = jour + '|' + places.map(p => p.cle).sort().join('|');
+  const garde = carte && carte.signature === signature
+    ? { z: carte.z, cx: carte.cx, cy: carte.cy } : null;
+  carte = {
+    racine, signature, jour, places,
+    cadre: racine.querySelector('.carte-cadre'),
+    tuiles: racine.querySelector('.carte-tuiles'),
+    calque: racine.querySelector('.carte-calque'),
+    fiche: racine.querySelector('.carte-fiche'),
+    z: ZOOM_MIN, cx: 0, cy: 0, ox: 0, oy: 0,
+    images: new Map(), pastilles: [], choisis: new Set(), retour: null,
+    glisse: false, molette: 0,
+  };
+  if (garde) Object.assign(carte, garde); else cadrer(places);
+  borner();
+  disposer();
+  dessiner();
+  brancherLaCarte(carte);
+}
+
+function tailleDuCadre() {
+  return [carte.cadre.clientWidth || 360, carte.cadre.clientHeight || 400];
+}
+
+/* Le plus grand zoom où tous les lieux tiennent, marge comprise, au
+   quart de cran près. */
+function cadrer(places) {
+  const [W, H] = tailleDuCadre();
+  const points = places.length ? places.map(p => p.pos) : [CENTRE_DE_LYON];
+  const marge = 2 * (RAYON_PASTILLE + 8);
+  const pl = points.map(p => versLePlan(p[0], p[1], 0));
+  const xs = pl.map(p => p[0]), ys = pl.map(p => p[1]);
+  const lx = Math.max(...xs) - Math.min(...xs), ly = Math.max(...ys) - Math.min(...ys);
+  let z = Math.min(ZOOM_CADRAGE_MAX,
+                   lx ? Math.log2((W - marge) / lx) : Infinity,
+                   ly ? Math.log2((H - marge) / ly) : Infinity);
+  z = Math.max(ZOOM_MIN, Math.floor(z * 4) / 4);
+  const f = Math.pow(2, z);
+  carte.z = z;
+  carte.cx = (Math.min(...xs) + Math.max(...xs)) / 2 * f;
+  carte.cy = (Math.min(...ys) + Math.max(...ys)) / 2 * f;
+}
+
+function borner() {
+  const [x0, y0] = versLePlan(BORNES_CARTE[0][0], BORNES_CARTE[0][1], carte.z);
+  const [x1, y1] = versLePlan(BORNES_CARTE[1][0], BORNES_CARTE[1][1], carte.z);
+  carte.cx = Math.min(x1, Math.max(x0, carte.cx));
+  carte.cy = Math.min(y1, Math.max(y0, carte.cy));
+}
+
+/* Pastilles et noms, pour le zoom courant. Les lieux les plus fournis
+   passent d'abord : ils gardent leur pastille et leur nom ; un voisin
+   trop proche rejoint leur pastille. Un nom se pose à droite, à gauche,
+   dessous ou dessus, là où il ne couvre ni un autre nom ni une
+   pastille ; s'il n'y a de place nulle part, il ne s'affiche pas (la
+   pastille, elle, reste, et dit son nom quand on la touche). */
+function disposer() {
+  carte.ox = Math.round(carte.cx);
+  carte.oy = Math.round(carte.cy);
+  const points = carte.places.map(p => {
+    const [x, y] = versLePlan(p.pos[0], p.pos[1], carte.z);
+    return { p, x: x - carte.ox, y: y - carte.oy };
+  }).sort((a, b) => b.p.evs.length - a.p.evs.length || a.p.nom.localeCompare(b.p.nom));
+  const pastilles = [];
+  for (const q of points) {
+    const proche = pastilles.find(g => Math.hypot(g.x - q.x, g.y - q.y) < ECART_PASTILLES);
+    if (proche) proche.membres.push(q.p);
+    else pastilles.push({ x: q.x, y: q.y, membres: [q.p] });
+  }
+  carte.pastilles = pastilles;
+  const html = [];
+  pastilles.forEach((g, k) => {
+    const n = g.membres.reduce((s, p) => s + p.evs.length, 0);
+    const seul = g.membres.length === 1;
+    const nom = seul ? g.membres[0].nom : g.membres.length + ' lieux proches';
+    const choisi = g.membres.some(p => carte.choisis.has(p.cle));
+    html.push('<button type="button" class="carte-pin' + (seul ? '' : ' groupe')
+      + (choisi ? ' choisi' : '') + '" data-pin="' + k + '" style="left:' + g.x + 'px;top:' + g.y
+      + 'px" aria-label="' + escapeHtml(nom + ' : ' + n + ' événement' + (n > 1 ? 's' : '')) + '">'
+      + n + '</button>');
+    if (seul) html.push('<span class="carte-nom" data-nom="' + k + '">' + escapeHtml(g.membres[0].nom) + '</span>');
+  });
+  carte.calque.innerHTML = html.join('');
+  const R = RAYON_PASTILLE;
+  // La demi-largeur de chaque pastille : « 128 » l'élargit.
+  const L = [...carte.calque.querySelectorAll('.carte-pin')].map(b => Math.max(R, b.offsetWidth / 2));
+  const occupe = pastilles.map((g, k) => [g.x - L[k], g.y - R, g.x + L[k], g.y + R]);
+  const chevauche = (a, b) => a[0] < b[2] && b[0] < a[2] && a[1] < b[3] && b[1] < a[3];
+  const noms = [...carte.calque.querySelectorAll('.carte-nom')];
+  const tailles = noms.map(el => [el.offsetWidth, el.offsetHeight]);
+  // Le cadre visible, dans les coordonnées du calque : un nom s'y pose de
+  // préférence, plutôt que de déborder du bord.
+  const [W, H] = tailleDuCadre();
+  const vu = [carte.cx - carte.ox - W / 2, carte.cy - carte.oy - H / 2,
+              carte.cx - carte.ox + W / 2, carte.cy - carte.oy + H / 2];
+  const dedans = r => r[0] >= vu[0] && r[1] >= vu[1] && r[2] <= vu[2] && r[3] <= vu[3];
+  noms.forEach((el, k) => {
+    const g = pastilles[Number(el.dataset.nom)], l = L[Number(el.dataset.nom)];
+    const [w, h] = tailles[k];
+    const libres = [[g.x + l + 3, g.y - h / 2], [g.x - l - 3 - w, g.y - h / 2],
+                    [g.x - w / 2, g.y + R + 2], [g.x - w / 2, g.y - R - 2 - h]]
+      .map(([x, y]) => [x, y, x + w, y + h])
+      .filter(r => !occupe.some(o => chevauche(r, o)));
+    const place = libres.find(dedans) || libres[0];
+    if (!place) { el.hidden = true; return; }
+    el.style.left = place[0] + 'px';
+    el.style.top = place[1] + 'px';
+    occupe.push(place);
+  });
+  const boutons = carte.racine.querySelectorAll('.carte-zoom button');
+  boutons[0].disabled = carte.z >= ZOOM_MAX;
+  boutons[1].disabled = carte.z <= ZOOM_MIN;
+  // Les tuiles d'avant n'ont plus la bonne taille : on les retire toutes.
+  carte.images.forEach(img => img.remove());
+  carte.images.clear();
+}
+
+/* Le plan suit le centre : le calque glisse, les tuiles qui entrent dans
+   le cadre sont demandées, celles qui en sortent sont retirées. */
+function dessiner() {
+  const [W, H] = tailleDuCadre();
+  const t = 'translate(' + Math.round(W / 2 - (carte.cx - carte.ox)) + 'px,'
+          + Math.round(H / 2 - (carte.cy - carte.oy)) + 'px)';
+  carte.tuiles.style.transform = t;
+  carte.calque.style.transform = t;
+  const zt = Math.ceil(carte.z - 1e-9);           // le zoom des tuiles
+  const s = TUILE * Math.pow(2, carte.z - zt);    // leur taille à l'écran
+  const max = Math.pow(2, zt) - 1;
+  const x0 = Math.floor((carte.cx - W / 2) / s), x1 = Math.floor((carte.cx + W / 2) / s);
+  const y0 = Math.max(0, Math.floor((carte.cy - H / 2) / s));
+  const y1 = Math.min(max, Math.floor((carte.cy + H / 2) / s));
+  const voulues = new Set();
+  for (let x = x0; x <= x1; x++) {
+    for (let y = y0; y <= y1; y++) {
+      const cle = zt + '/' + x + '/' + y;
+      voulues.add(cle);
+      if (carte.images.has(cle)) continue;
+      const img = document.createElement('img');
+      img.alt = '';
+      img.draggable = false;
+      img.decoding = 'async';
+      // Au pixel entier, et un pixel de plus : pas de fente entre deux tuiles.
+      img.style.left = Math.floor(x * s - carte.ox) + 'px';
+      img.style.top = Math.floor(y * s - carte.oy) + 'px';
+      img.style.width = img.style.height = (Math.ceil(s) + 1) + 'px';
+      img.src = TUILES_OSM + cle + '.png';
+      carte.tuiles.appendChild(img);
+      carte.images.set(cle, img);
+    }
+  }
+  for (const [cle, img] of carte.images) {
+    if (!voulues.has(cle)) { img.remove(); carte.images.delete(cle); }
+  }
+}
+
+function deplacer(dx, dy) {
+  carte.cx -= dx;
+  carte.cy -= dy;
+  borner();
+  dessiner();
+}
+
+/* Zoom d'un cran ou plus, autour d'un point du cadre (le centre, par
+   défaut) : ce qui est sous le doigt y reste. */
+function zoomer(dz, px, py) {
+  if (!carte) return;
+  const z = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, carte.z + dz));
+  if (z === carte.z) return;
+  const [W, H] = tailleDuCadre();
+  if (px === undefined) { px = W / 2; py = H / 2; }
+  const f = Math.pow(2, z - carte.z);
+  carte.cx = (carte.cx + px - W / 2) * f - (px - W / 2);
+  carte.cy = (carte.cy + py - H / 2) * f - (py - H / 2);
+  carte.z = z;
+  borner();
+  disposer();
+  dessiner();
+}
+
+function ouvrirFiche(places, depuis) {
+  const aujourdhui = isoOf(new Date());
+  const html = ['<button type="button" class="fiche-fermer" aria-label="fermer">✕</button>'];
+  for (const p of places) {
+    const n = p.evs.length;
+    const ou = p.pos ? etiquetteDuLieu(p.nom) : '';
+    html.push('<div class="fiche-lieu" tabindex="-1"><span class="fl-nom">' + escapeHtml(p.nom)
+      + (ou && ou !== 'Autre' ? ' · ' + escapeHtml(ou) : '') + '</span><span class="fl-n">' + n
+      + (carte && carte.jour === aujourdhui ? ' ce soir' : ' évt' + (n > 1 ? 's' : '')) + '</span></div>');
+    html.push('<ul class="fiche-evts">' + p.evs.map(e => {
+      const href = eventHref(e);
+      const lien = typeof href === 'string' && /^https?:/.test(href);
+      const corps = '<span class="fe-titre">' + escapeHtml((e.title || '').trim() || 'titre non précisé')
+        + '</span><span class="fe-heure">' + escapeHtml(e.time || '') + '</span>';
+      return '<li>' + (lien ? '<a href="' + escapeHtml(href) + '" target="_blank" rel="noopener">'
+        + corps + '</a>' : '<span class="fe-sans-lien">' + corps + '</span>') + '</li>';
+    }).join('') + '</ul>');
+  }
+  const f = carte.fiche;
+  f.innerHTML = html.join('');
+  f.hidden = false;
+  carte.retour = depuis;
+  carte.choisis = new Set(places.map(p => p.cle));
+  carte.calque.querySelectorAll('.carte-pin').forEach(b => {
+    const g = carte.pastilles[Number(b.dataset.pin)];
+    b.classList.toggle('choisi', g.membres.some(p => carte.choisis.has(p.cle)));
+  });
+  f.querySelector('.fiche-lieu').focus({ preventScroll: true });
+  f.scrollTop = 0;
+}
+
+function fermerFiche() {
+  if (!carte || carte.fiche.hidden) return;
+  carte.fiche.hidden = true;
+  carte.choisis = new Set();
+  carte.calque.querySelectorAll('.carte-pin.choisi').forEach(b => b.classList.remove('choisi'));
+  if (carte.retour && carte.retour.isConnected) carte.retour.focus({ preventScroll: true });
+}
+
+/* Une pastille touchée : un lieu, sa fiche ; plusieurs lieux proches, on
+   zoome sur eux - sauf s'ils restent confondus même au plus près, et
+   alors la fiche les montre tous. */
+function toucherPastille(bouton) {
+  const g = carte.pastilles[Number(bouton.dataset.pin)];
+  if (g.membres.length > 1 && carte.z < ZOOM_MAX) {
+    const pl = g.membres.map(p => versLePlan(p.pos[0], p.pos[1], ZOOM_MAX));
+    const separes = pl.some(a => pl.some(b => Math.hypot(a[0] - b[0], a[1] - b[1]) >= ECART_PASTILLES));
+    if (separes) {
+      const r = carte.cadre.getBoundingClientRect(), b = bouton.getBoundingClientRect();
+      zoomer(2, b.left + b.width / 2 - r.left, b.top + b.height / 2 - r.top);
+      return;
+    }
+  }
+  ouvrirFiche(g.membres, bouton);
+}
+
+function brancherLaCarte(c) {
+  const cadre = c.cadre;
+  const doigts = new Map();
+  let pince = 0;
+  const ecartDesDoigts = () => {
+    const [a, b] = [...doigts.values()];
+    return Math.hypot(a[0] - b[0], a[1] - b[1]);
+  };
+  cadre.addEventListener('pointerdown', ev => {
+    if (ev.pointerType === 'mouse' && ev.button !== 0) return;
+    doigts.set(ev.pointerId, [ev.clientX, ev.clientY]);
+    c.glisse = false;
+    if (doigts.size === 2) pince = ecartDesDoigts();
+  });
+  cadre.addEventListener('pointermove', ev => {
+    const avant = doigts.get(ev.pointerId);
+    if (!avant || carte !== c) return;
+    const dx = ev.clientX - avant[0], dy = ev.clientY - avant[1];
+    if (doigts.size === 1) {
+      // Moins de 5 px : c'est encore un toucher, pas un glissé - la
+      // pastille sous le doigt doit pouvoir recevoir son clic.
+      if (!c.glisse && Math.hypot(dx, dy) < 5) return;
+      if (!c.glisse) {
+        c.glisse = true;
+        cadre.classList.add('glisse');
+        try { cadre.setPointerCapture(ev.pointerId); } catch (_) { /* pointeur déjà levé */ }
+      }
+      doigts.set(ev.pointerId, [ev.clientX, ev.clientY]);
+      deplacer(dx, dy);
+    } else if (doigts.size === 2) {
+      doigts.set(ev.pointerId, [ev.clientX, ev.clientY]);
+      c.glisse = true;
+      const e2 = ecartDesDoigts();
+      const dz = e2 > pince * 1.5 ? 1 : e2 < pince / 1.5 ? -1 : 0;
+      if (dz) {
+        const [a, b] = [...doigts.values()];
+        const r = cadre.getBoundingClientRect();
+        zoomer(dz, (a[0] + b[0]) / 2 - r.left, (a[1] + b[1]) / 2 - r.top);
+        pince = e2;
+      }
+    }
+  });
+  const lever = ev => {
+    doigts.delete(ev.pointerId);
+    if (!doigts.size) cadre.classList.remove('glisse');
+  };
+  cadre.addEventListener('pointerup', lever);
+  cadre.addEventListener('pointercancel', lever);
+  cadre.addEventListener('click', ev => {
+    // La fin d'un glissé n'est pas un clic. Entrée ou Espace sur une
+    // pastille (detail 0) en est toujours un.
+    if (c.glisse && ev.detail) return;
+    const pin = ev.target.closest('.carte-pin');
+    if (pin) toucherPastille(pin);
+  });
+  cadre.addEventListener('dblclick', ev => {
+    if (ev.target.closest('.carte-pin')) return;
+    const r = cadre.getBoundingClientRect();
+    zoomer(1, ev.clientX - r.left, ev.clientY - r.top);
+  });
+  cadre.addEventListener('wheel', ev => {
+    if (!ev.ctrlKey && !ev.metaKey) return;   // la molette seule fait défiler la page
+    ev.preventDefault();
+    // Un pavé tactile envoie beaucoup de petits pas : on les cumule.
+    c.molette += ev.deltaY;
+    if (Math.abs(c.molette) < 50) return;
+    const r = cadre.getBoundingClientRect();
+    zoomer(c.molette < 0 ? 1 : -1, ev.clientX - r.left, ev.clientY - r.top);
+    c.molette = 0;
+  }, { passive: false });
+  c.racine.addEventListener('keydown', ev => {
+    if (ev.key === 'Escape') { fermerFiche(); return; }
+    if (!cadre.contains(ev.target)) return;
+    const pas = { ArrowLeft: [80, 0], ArrowRight: [-80, 0], ArrowUp: [0, 80], ArrowDown: [0, -80] }[ev.key];
+    if (pas) { ev.preventDefault(); deplacer(pas[0], pas[1]); return; }
+    if (ev.key === '+' || ev.key === '=') { ev.preventDefault(); zoomer(1); }
+    if (ev.key === '-' || ev.key === '_') { ev.preventDefault(); zoomer(-1); }
+  });
+}
+
+window.addEventListener('resize', () => {
+  if (carte && carte.cadre.isConnected) dessiner();
+});
+
+/* L'interrupteur « liste | carte ». */
+document.getElementById('vueSwitch').addEventListener('click', ev => {
+  const b = ev.target.closest('[data-vue]');
+  if (!b || b.dataset.vue === state.vue) return;
+  state.vue = b.dataset.vue;
+  render();
+});
+
 /* ---------- render ----------
    render() enrobe renderFeed() dans une View Transition : au changement
    de filtre, l'ancienne et la nouvelle liste se fondent l'une dans
@@ -3639,6 +4331,8 @@ function renderFeed() {
   arreterLaSuite();
   const ancre = ancreDuRendu;           // voir revenirALaJournee
   ancreDuRendu = null;
+  marquerLeJourDeLaCarte(null);
+  if (state.vue !== 'carte') carte = null;
 
   if (events.length === 0) {
     // Aucun événement ne passe les filtres : le dire, et offrir d'en
@@ -3648,8 +4342,10 @@ function renderFeed() {
                    + '<button type="button" class="chip vide-effacer">tout effacer</button></div>';
     feed.querySelector('.vide-effacer')
         .addEventListener('click', () => document.getElementById('clearFilters').click());
+    carte = null;
     return;
   }
+  if (state.vue === 'carte') { renderCarte(feed, events); return; }
 
   const groups = new Map();
   for (const e of events) {

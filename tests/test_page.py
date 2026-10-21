@@ -12,6 +12,7 @@ chef. Si un changement d'affichage est voulu : python -m tests.regenerer
 
 Sans navigateur de la famille Chrome, le test est sauté, et le dit.
 """
+import math
 import re
 import unittest
 
@@ -268,6 +269,89 @@ class PageNouveau(unittest.TestCase):
         self.assertEqual(n["marquees"], n["attendues"])
         self.assertEqual(n["apres_rechargement"], n["attendues"])
         self.assertEqual(self.releve["erreurs_fin"], [])
+
+
+class PageCarte(unittest.TestCase):
+    """La vue carte (nouveauté n° 6) : les lieux d'une journée sur un plan,
+    chacun avec son nombre d'événements, et exactement ceux de la liste ;
+    sa fiche, ses gestes, la barre des jours, et le lien qui la rouvre."""
+
+    @classmethod
+    def setUpClass(cls):
+        evenements, lieux = donnees_figees()
+        cls.releve, cls.probleme = navigateur.releve_ou_probleme(
+            evenements=evenements, lieux=lieux, date_figee=True, scenarios="carte")
+
+    def setUp(self):
+        navigateur.sauter_si_indisponible(self, self.probleme)
+        self.assertNotIn("echec", self.releve, self.releve.get("echec"))
+        self.c = self.releve["carte"]
+
+    def test_sans_erreur(self):
+        self.assertEqual(self.releve["erreurs_premier_passage"], [])
+        self.assertEqual(self.releve["erreurs_fin"], [])
+
+    def test_l_interrupteur_et_l_adresse(self):
+        self.assertEqual(self.c["adresse"], "?vue=carte")
+        self.assertEqual(self.c["interrupteur"], ["false", "true"])
+        self.assertEqual(self.c["journees"], 0)
+        self.assertTrue(self.c["apres_effacer"])
+        self.assertEqual(self.c["retour"], ["", True, 0, False])
+
+    def test_les_evenements_du_soir_sont_ceux_de_la_liste(self):
+        # Pastilles et « pas sur la carte » comptent, à eux tous, les
+        # événements de la journée affichée par la liste.
+        n = self.c["compte_de_la_liste"]
+        self.assertGreater(n, 10)
+        self.assertEqual(self.c["total"], n)
+        self.assertEqual(self.c["titre"], "ce soir · jeudi 1 octobre")
+        self.assertRegex(self.c["compte"], r"^%d événements · [0-9]+ lieux$" % n)
+        self.assertGreater(self.c["pastilles"], 5)
+
+    def test_le_plan_cadre_les_lieux_et_les_noms_ne_se_chevauchent_pas(self):
+        self.assertTrue(self.c["dans_le_cadre"])
+        self.assertGreater(self.c["noms"], 3)
+        self.assertTrue(self.c["sans_chevauchement"])
+
+    def test_les_tuiles_d_openstreetmap_couvrent_le_cadre(self):
+        self.assertEqual(self.c["tuiles"], [True, True, True])
+        # La projection de Mercator, refaite ici : la place Bellecour au
+        # zoom 12 tombe dans la tuile 2102 / 1461.
+        lat, lon, n = 45.7578, 4.832, 256 * 2 ** 12
+        s = math.sin(math.radians(lat))
+        attendu = [math.floor((lon + 180) / 360 * n),
+                   math.floor((0.5 - math.log((1 + s) / (1 - s)) / (4 * math.pi)) * n)]
+        self.assertEqual(self.c["projection"], attendu)
+        self.assertEqual([attendu[0] // 256, attendu[1] // 256], [2102, 1461])
+
+    def test_la_fiche_d_un_lieu(self):
+        self.assertEqual(self.c["fiche"], [True] * 6)
+        self.assertEqual(self.c["apres_echap"], [True, True, False])
+
+    def test_les_gestes(self):
+        self.assertEqual(self.c["boutons_de_zoom"], [1, 0])
+        sans_ctrl, avec_ctrl, ecart = self.c["molette"]
+        self.assertEqual((sans_ctrl, avec_ctrl), (0, 1))
+        self.assertLessEqual(ecart, 1)
+        self.assertEqual(self.c["glisse"], [[0, 0], [60, 30]])
+        self.assertTrue(self.c["clavier_apres_glisse"])
+        self.assertEqual(self.c["fleche"], 80)
+        self.assertIsNotNone(self.c["groupe"])
+        self.assertEqual(self.c["groupe"], [2, True])
+
+    def test_une_famille_eteinte_sur_le_plan(self):
+        self.assertEqual(self.c["famille"], ["false", True, True])
+
+    def test_la_barre_des_jours_et_les_fleches(self):
+        self.assertEqual(self.c["pastille"], ["samedi 3 octobre", "?vue=carte&jour=2026-10-03",
+                                              ["2026-10-03"]])
+        self.assertEqual(self.c["suivant"], "dimanche 4 octobre")
+        self.assertEqual(self.c["precedent"], "samedi 3 octobre")
+
+    def test_un_lien_rouvre_la_carte_du_jour(self):
+        self.assertEqual(self.releve["carte_par_lien"],
+                         {"adresse": "?vue=carte&jour=2026-10-03", "titre": "samedi 3 octobre",
+                          "journees": 0, "interrupteur": ["false", "true"]})
 
 
 class PageHorsLigne(unittest.TestCase):

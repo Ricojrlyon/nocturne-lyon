@@ -404,7 +404,8 @@ la recopier, version comprise.
   filtres. Sur téléphone, une période choisie fait passer le bouton sur
   une troisième ligne de filtres.
   L'adresse de la page garde les filtres (`?quand=weekend&arr=7e&q=jazz`,
-  et `du`, `au`, `lieu`, `tag`, `sans`) : elle suit chaque clic, sans
+  et `du`, `au`, `lieu`, `tag`, `sans`, et `vue=carte` et `jour` pour la
+  vue carte) : elle suit chaque clic, sans
   encombrer l'historique, et se relit à l'ouverture, si bien qu'un lien
   envoyé montre exactement la même chose. Le bouton « partager ↗ », au
   bout de la ligne du titre, ouvre le menu de partage d'un téléphone et
@@ -435,6 +436,26 @@ la recopier, version comprise.
   comprise, et la toute première visite n'en montre aucun. Un événement
   est reconnu à sa salle, son titre et son premier jour : une heure
   ajoutée après coup ne le fait pas passer pour nouveau.
+  La vue carte : l'interrupteur « liste | carte », à côté de « ★
+  favoris », remplace les journées par un plan de Lyon où sont posés les
+  lieux d'UNE soirée (« ce soir », par défaut), chacun avec son nombre
+  d'événements, et son nom quand il y a la place (les noms ne se
+  chevauchent jamais). Toucher un lieu ouvre sa fiche, posée sur le bas
+  du plan : ses soirées, avec leur heure et leur lien. Des lieux trop
+  proches ne font qu'une pastille, cerclée, qui zoome sur eux. La barre
+  des 14 jours et les flèches de l'en-tête choisissent la soirée ; les
+  filtres et les familles s'appliquent comme à la liste, et le plan
+  compte exactement les événements de la journée de la liste. Un lieu
+  sans position (voir `lieux.json`) est nommé sous le plan, dans « pas
+  sur la carte ». Le doigt fait glisser le plan, deux doigts le zooment ;
+  à la souris, Ctrl + molette zoome (la molette seule fait défiler la
+  page) ; au clavier, les flèches le déplacent, + et − zooment, Échap
+  ferme la fiche ; les boutons + et − sont là pour tous. Le fond est
+  celui d'OpenStreetMap, en tuiles, assombri pour aller avec la page,
+  avec la mention « © OpenStreetMap » ; aucune bibliothèque, le plan se
+  résume à poser des images et des boutons. Le zoom se règle au quart de
+  cran près : les tuiles du cran supérieur sont alors affichées un peu
+  réduites.
   Pour les lecteurs d'écran, le champ de recherche porte un nom, les
   boutons de filtre disent s'ils sont enfoncés, chaque journée est un
   titre de niveau 2, et le jour courant est signalé (`aria-current`)
@@ -450,7 +471,10 @@ la recopier, version comprise.
   Sa politique de sécurité (`Content-Security-Policy`, en tête de page)
   ne lui permet de charger que ses propres fichiers (scripts, styles,
   polices, fil, logos) et des images en `https` (les affiches des
-  salles) ; elle ne peut rien envoyer ailleurs que vers le site, ni
+  salles, les tuiles du plan d'OpenStreetMap : en vue carte, le
+  navigateur les demande aux serveurs d'OpenStreetMap, qui voient donc
+  passer l'adresse du visiteur, comme pour une affiche) ; elle ne peut
+  rien envoyer ailleurs que vers le site, ni
   charger un script d'un autre site, ni contenir formulaire, objet ou
   cadre. Limite : le code et les styles étant écrits dans la page, la
   règle doit tolérer ce qui y est écrit (« unsafe-inline ») ;
@@ -544,7 +568,10 @@ python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
   La chaîne de publication entière est rejouée sur une collecte réelle
   (celle du 1er octobre 2026, dans `tests/donnees/`) et doit rendre le
   même fil au caractère près ; la page est jouée dans un navigateur sans
-  fenêtre, sur ces données et à cette date, et ses neuf scénarios de
+  fenêtre, sur ces données et à cette date (la vue carte comprise : le
+  plan doit compter les événements de la liste, et ses gestes, sa fiche,
+  la barre des jours et le lien qui le rouvre sont essayés), et ses neuf
+  scénarios de
   visiteur doivent afficher les mêmes cartes, sans erreur et sans rien
   que sa politique de sécurité bloque. L'application, elle, doit
   s'ouvrir sans réseau : le banc laisse le service hors ligne

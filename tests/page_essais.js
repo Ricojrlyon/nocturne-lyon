@@ -19,7 +19,8 @@
   const servicePret = () => Promise.race([navigator.serviceWorker.ready, pause(10000).then(() => null)]);
   const SCENARIOS = window.__SCENARIOS || 'tous';
 
-  const carte = el => {
+  // « laCarte » et non « carte » : ce nom-là est celui du plan de la page.
+  const laCarte = el => {
     const c = el.cloneNode(true);
     // Hors relevé : l'image de fond et les boutons de carte (« + agenda »…),
     // qui ne disent rien de l'événement.
@@ -50,7 +51,7 @@
       jours: [...document.querySelectorAll('#feed section.day')].map(s => [
         s.id,
         norme((s.querySelector('.day-bar') || {}).textContent),
-        [...s.querySelectorAll('.event')].map(carte),
+        [...s.querySelectorAll('.event')].map(laCarte),
       ]),
     };
   };
@@ -412,6 +413,165 @@
       if (vide) vide.querySelector('.vide-effacer').click();
       await pause(700);
       res.apres_tout_effacer = [document.querySelectorAll('#feed .event').length > 0, champ.value];
+    } else if (SCENARIOS === 'carte') {
+      // La vue carte (nouveauté n° 6). Premier passage : l'interrupteur, le
+      // plan du 1er octobre, sa fiche, ses gestes, la barre des jours, le
+      // retour à la liste. Second passage : la page rouverte par un lien.
+      const etape = sessionStorage.getItem('essai-carte');
+      if (etape) {
+        const avant = JSON.parse(etape);
+        res.carte = avant.carte;
+        res.erreurs_premier_passage = avant.erreurs;
+        res.carte_par_lien = {
+          adresse: location.search,
+          titre: norme((document.querySelector('.carte-vue .ct-jour') || {}).textContent),
+          journees: document.querySelectorAll('#feed section.day').length,
+          interrupteur: [...document.querySelectorAll('#vueSwitch [data-vue]')].map(b => b.getAttribute('aria-pressed')),
+        };
+      } else {
+        const c = {};
+        const jourDeListe = document.getElementById('day-2026-10-01');
+        c.compte_de_la_liste = parseInt(jourDeListe.querySelector('.db-count').textContent, 10);
+        document.querySelector('#vueSwitch [data-vue="carte"]').click();
+        await pause(800);
+        c.adresse = location.search;
+        c.interrupteur = [...document.querySelectorAll('#vueSwitch [data-vue]')].map(b => b.getAttribute('aria-pressed'));
+        c.titre = norme(document.querySelector('.carte-vue .ct-jour').textContent);
+        c.compte = norme(document.querySelector('.carte-vue .ct-compte').textContent);
+        c.journees = document.querySelectorAll('#feed section.day').length;
+        const cadre = document.querySelector('.carte-cadre');
+        const fiche = document.querySelector('.carte-fiche');
+        const pins = () => [...document.querySelectorAll('.carte-pin')];
+        const nombre = b => Number(b.textContent.split(' · ').pop());
+        const total = () => pins().reduce((s, p) => s + Number(p.textContent), 0)
+          + [...document.querySelectorAll('[data-ailleurs]')].reduce((s, b) => s + nombre(b), 0);
+        c.total = total();
+        c.pastilles = pins().length;
+        const rc = cadre.getBoundingClientRect();
+        c.dans_le_cadre = pins().every(p => {
+          const r = p.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
+          return x >= rc.left && x <= rc.right && y >= rc.top && y <= rc.bottom;
+        });
+        const noms = [...document.querySelectorAll('.carte-nom:not([hidden])')].map(n => n.getBoundingClientRect());
+        const boites = noms.concat(pins().map(p => p.getBoundingClientRect()));
+        const couvre = (a, b) => a.left < b.right - 0.5 && b.left < a.right - 0.5
+                              && a.top < b.bottom - 0.5 && b.top < a.bottom - 0.5;
+        c.noms = noms.length;
+        c.sans_chevauchement = boites.every((a, i) => boites.every((b, j) =>
+          i === j || (i >= noms.length && j >= noms.length) || !couvre(a, b)));
+        // Les tuiles : leurs adresses, et le cadre couvert jusqu'aux coins.
+        const tuiles = [...document.querySelectorAll('.carte-tuiles img')];
+        const rt = tuiles.map(i => i.getBoundingClientRect());
+        const point = (x, y) => rt.some(r => x >= r.left && x <= r.right && y >= r.top && y <= r.bottom);
+        c.tuiles = [tuiles.length > 0,
+                    tuiles.every(i => /^https:[/][/]tile[.]openstreetmap[.]org[/]1[1-7][/][0-9]+[/][0-9]+[.]png$/.test(i.src)),
+                    [[rc.left + 1, rc.top + 1], [rc.right - 1, rc.top + 1], [rc.left + 1, rc.bottom - 1],
+                     [rc.right - 1, rc.bottom - 1]].every(([x, y]) => point(x, y))];
+        c.projection = versLePlan(45.7578, 4.832, 12).map(Math.floor);
+        // La fiche d'un lieu : ses soirées, des liens ; Échap la ferme et
+        // rend la main à la pastille.
+        const seul = pins().find(p => !p.classList.contains('groupe'));
+        seul.click();
+        await pause(300);
+        const nomDuLieu = seul.getAttribute('aria-label').split(' : ')[0];
+        c.fiche = [!fiche.hidden,
+                   fiche.querySelectorAll('.fiche-evts li').length === Number(seul.textContent),
+                   norme(fiche.querySelector('.fl-nom').textContent).startsWith(nomDuLieu),
+                   seul.classList.contains('choisi'),
+                   document.activeElement === fiche.querySelector('.fiche-lieu'),
+                   [...fiche.querySelectorAll('.fiche-evts a')].every(a => a.target === '_blank' && /^https?:/.test(a.href))];
+        fiche.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+        await pause(200);
+        c.apres_echap = [fiche.hidden, document.activeElement === seul, seul.classList.contains('choisi')];
+        // Les boutons + et −.
+        const z0 = carte.z;
+        document.querySelector('.carte-zoom [data-zoom="1"]').click();
+        await pause(200);
+        const z1 = carte.z;
+        document.querySelector('.carte-zoom [data-zoom="-1"]').click();
+        await pause(200);
+        c.boutons_de_zoom = [z1 - z0, carte.z - z0];
+        // Ctrl + molette zoome autour du pointeur : le lieu qui y était y
+        // reste ; la molette seule ne zoome pas.
+        const p0 = carte.places[0];
+        const ecran = () => {
+          const [x, y] = versLePlan(p0.pos[0], p0.pos[1], carte.z), r = cadre.getBoundingClientRect();
+          return [r.left + cadre.clientWidth / 2 + x - carte.cx, r.top + cadre.clientHeight / 2 + y - carte.cy];
+        };
+        const [ax, ay] = ecran();
+        const molette = ctrlKey => cadre.dispatchEvent(new WheelEvent('wheel',
+          { deltaY: -100, ctrlKey, clientX: ax, clientY: ay, bubbles: true, cancelable: true }));
+        const zm = carte.z;
+        molette(false);
+        await pause(100);
+        const sansCtrl = carte.z - zm;
+        molette(true);
+        await pause(200);
+        const [bx, by] = ecran();
+        c.molette = [sansCtrl, carte.z - zm, Math.round(Math.hypot(bx - ax, by - ay))];
+        // Le doigt (ou la souris) fait glisser le plan ; un tremblé de moins
+        // de 5 px n'est pas un glissé.
+        const [cx0, cy0] = [carte.cx, carte.cy];
+        const doigt = (type, x, y) => cadre.dispatchEvent(new PointerEvent(type,
+          { pointerId: 7, pointerType: 'touch', isPrimary: true, clientX: x, clientY: y, bubbles: true }));
+        doigt('pointerdown', 400, 300);
+        doigt('pointermove', 403, 301);
+        const tremble = [carte.cx - cx0, carte.cy - cy0];
+        doigt('pointermove', 340, 270);
+        doigt('pointerup', 340, 270);
+        await pause(100);
+        c.glisse = [tremble, [Math.round(carte.cx - cx0), Math.round(carte.cy - cy0)]];
+        // Une pastille touchée au clavier après un glissé ouvre sa fiche.
+        const encore = pins().find(p => !p.classList.contains('groupe'));
+        encore.click();
+        await pause(200);
+        c.clavier_apres_glisse = !fiche.hidden;
+        document.querySelector('.fiche-fermer').click();
+        await pause(200);
+        // Les flèches du clavier déplacent le plan.
+        cadre.focus();
+        const cx1 = carte.cx;
+        cadre.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true, cancelable: true }));
+        c.fleche = Math.round(carte.cx - cx1);
+        // Une pastille de plusieurs lieux proches zoome sur eux.
+        const groupe = pins().find(p => p.classList.contains('groupe'));
+        const zg = carte.z;
+        if (groupe) groupe.click();
+        await pause(300);
+        c.groupe = groupe ? [carte.z - zg, fiche.hidden] : null;
+        // Une famille éteinte dans l'en-tête du plan : ses lieux s'en vont.
+        const fam = document.querySelector('.carte-vue .fam-chip:not([disabled])');
+        const cle = fam.dataset.famille, avantFamille = total();
+        fam.click();
+        await pause(500);
+        c.famille = [document.querySelector('.carte-vue .fam-chip[data-famille="' + cle + '"]').getAttribute('aria-pressed'),
+                     total() < avantFamille];
+        document.querySelector('.carte-vue .fam-chip[data-famille="' + cle + '"]').click();
+        await pause(500);
+        c.famille.push(total() === avantFamille);
+        // La barre des 14 jours choisit la journée du plan ; les flèches de
+        // l'en-tête passent à la suivante et reviennent.
+        document.querySelectorAll('.day-pill')[2].click();
+        await pause(500);
+        c.pastille = [norme(document.querySelector('.ct-jour').textContent), location.search,
+                      [...document.querySelectorAll('.day-pill.choisi')].map(p => p.dataset.jour)];
+        document.querySelector('.carte-saut[data-saut="1"]').click();
+        await pause(500);
+        c.suivant = norme(document.querySelector('.ct-jour').textContent);
+        document.querySelector('.carte-saut[data-saut="-1"]').click();
+        await pause(500);
+        c.precedent = norme(document.querySelector('.ct-jour').textContent);
+        // « tout effacer » garde la carte ; « liste » ramène les journées.
+        await effacer();
+        c.apres_effacer = !!document.querySelector('.carte-vue');
+        document.querySelector('#vueSwitch [data-vue="liste"]').click();
+        await pause(800);
+        c.retour = [location.search, document.querySelectorAll('#feed section.day').length > 0,
+                    document.querySelectorAll('.day-pill.choisi').length, !!document.querySelector('.carte-vue')];
+        sessionStorage.setItem('essai-carte', JSON.stringify({ carte: c, erreurs: window.__erreurs }));
+        location.href = location.pathname + '?vue=carte&jour=2026-10-03';
+        return;
+      }
     } else if (SCENARIOS === 'pastilles_fondues') {
       // Avec les fondus : la pastille d'un jour proche fait défiler la page
       // en douceur, celle d'un jour lointain la fait sauter, par-dessus des
