@@ -285,6 +285,45 @@
         lignes_courtes: texte.split(SAUT).every(l => l.length <= 61),
         echappement: texteAgenda('Rock, pop; jazz') === 'Rock' + BARRE + ', pop' + BARRE + '; jazz',
       };
+      // ★ favoris et mes salles (nouveauté n° 3).
+      await effacer();
+      window.scrollTo(0, 0);
+      const garde = document.querySelector('#feed a.event');
+      const etoile = garde.querySelector('.carte-etoile');
+      let ouvert = null;
+      document.addEventListener('click', e => { ouvert = !e.defaultPrevented; }, { once: true });
+      etoile.click();
+      await pause(200);
+      const memoire = cle => JSON.parse(localStorage.getItem(cle) || '[]');
+      const cleGardee = etoile.dataset.evenement;
+      res.favoris = { presse: etoile.getAttribute('aria-pressed'), lien_ouvert: ouvert,
+                      memoire: memoire('nocturne:favoris').length };
+      document.getElementById('voirFavoris').click();
+      await pause(500);
+      const visibles = () => [...document.querySelectorAll('#feed .event')];
+      res.favoris.seul = visibles().length > 0
+        && visibles().every(c => (c.querySelector('.carte-etoile') || {}).dataset?.evenement === cleGardee);
+      if (document.getElementById('filterDrawer').hidden) document.getElementById('drawerToggle').click();
+      const sucre = [...document.querySelectorAll('#filterLieux label')]
+        .find(l => norme(l.querySelector('.fl-nom').textContent) === 'Le Sucre');
+      sucre.querySelector('.salle-etoile').click();
+      await pause(500);
+      res.favoris.salles = memoire('nocturne:salles');
+      res.favoris.case_cochee = [...document.querySelectorAll('#filterLieux label')]
+        .find(l => norme(l.querySelector('.fl-nom').textContent) === 'Le Sucre').querySelector('input').checked
+        || state.lieux.size > 0;
+      res.favoris.en_tete = norme(document.querySelector('#filterLieux label .fl-nom').textContent);
+      res.favoris.ligne = norme(document.getElementById('mesSalles').textContent);
+      res.favoris.avec_la_salle = visibles().length > 1 && visibles().every(c =>
+        norme((c.querySelector('.event-venue') || {}).textContent) === 'Le Sucre'
+        || (c.querySelector('.carte-etoile') || {}).dataset?.evenement === cleGardee);
+      document.querySelector('#filterLieux .salle-etoile').click();
+      await pause(300);
+      etoile.isConnected || (await pause(100));
+      await effacer();
+      res.favoris.apres_effacer = [document.getElementById('voirFavoris').getAttribute('aria-pressed'),
+                                   visibles().length > 1];
+      document.getElementById('drawerToggle').click();
       // Audit n° 20 : le bouton « date » dit la période choisie, puis
       // redevient « date → » ; un filtre sans résultat le dit, et son
       // « tout effacer » ramène tout le fil.

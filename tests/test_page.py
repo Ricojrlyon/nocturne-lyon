@@ -184,6 +184,20 @@ class PageNavigation(unittest.TestCase):
                          [True, True, True, True])
         self.assertIs(a["lien_ouvert"], False)
 
+    def test_favoris_et_mes_salles(self):
+        # Nouveauté n° 3 : l'étoile garde l'événement sans ouvrir la carte ;
+        # « ★ favoris » ne montre plus que lui, puis aussi la salle suivie,
+        # remontée en tête de liste ; « tout effacer » éteint le bouton.
+        f = self.releve["favoris"]
+        self.assertEqual((f["presse"], f["lien_ouvert"], f["memoire"]), ("true", False, 1))
+        self.assertTrue(f["seul"])
+        self.assertEqual(f["salles"], ["Le Sucre"])
+        self.assertIs(f["case_cochee"], False)
+        self.assertEqual(f["en_tete"], "Le Sucre")
+        self.assertEqual(f["ligne"], "★ mes salles : 1 · gardées sur ce téléphone")
+        self.assertTrue(f["avec_la_salle"])
+        self.assertEqual(f["apres_effacer"], ["false", True])
+
     def test_l_impro_est_du_theatre(self):
         # « Impro », catégorie du Petit Bulletin pour le théâtre
         # d'improvisation, était rangée en jazz, donc en musique.

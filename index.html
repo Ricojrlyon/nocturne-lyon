@@ -1286,6 +1286,43 @@
     cursor: pointer;
   }
   .carte-bouton:hover { color: var(--ink); border-color: var(--ink-soft); }
+  /* L'étoile des favoris : tout en haut à droite de la carte, sur
+     l'affiche, sans cadre. Ocre quand l'événement est gardé. */
+  .carte-bouton.carte-etoile {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    z-index: 3;
+    border: none;
+    padding: 2px 4px;
+    font-size: 16px;
+    line-height: 1;
+    color: var(--ink-soft);
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.85);
+  }
+  .carte-bouton.carte-etoile[aria-pressed="true"] { color: var(--warm); }
+  /* L'étoile d'une salle, dans la liste des lieux : les salles suivies
+     remontent en tête. */
+  .salle-etoile {
+    flex: 0 0 auto;
+    color: var(--ink-mute);
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .salle-etoile[aria-pressed="true"] { color: var(--warm); }
+  .salle-etoile:focus-visible { outline: 2px solid var(--warm); outline-offset: 2px; }
+  /* La liste des lieux et sa ligne « mes salles » : le bloc prend la
+     place que prenait la liste seule. */
+  .filter-lieux { flex: 1 1 100%; min-width: 0; }
+  .mes-salles {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 2px 0 8px;
+  }
+  .mes-salles .etoile { color: var(--warm); }
   .carte-bouton:focus-visible { outline: 2px solid var(--warm); outline-offset: 2px; }
   /* Boîte commune aux deux étiquettes du pied.
      `inline-block` et non `inline-flex` : la base d'une boîte en ligne est
@@ -1739,6 +1776,7 @@
           <button class="chip" id="dateBtn" type="button" aria-pressed="false">date →</button>
           <div class="datepicker" id="datepicker"></div>
         </span>
+        <button class="chip" id="voirFavoris" type="button" aria-pressed="false">★ favoris</button>
       </div>
     </div>
 
@@ -1750,7 +1788,10 @@
       </div>
       <div class="filter-row">
         <span class="filter-label">lieux</span>
-        <div class="filter-liste" id="filterLieux"></div>
+        <div class="filter-lieux">
+          <div class="mes-salles" id="mesSalles" hidden></div>
+          <div class="filter-liste" id="filterLieux"></div>
+        </div>
       </div>
       <div class="filter-row">
         <span class="filter-label">tags</span>
@@ -2567,7 +2608,22 @@ const state = {
   // une manipulation directe du DOM serait effacée. Les clés qui ne
   // correspondent plus à rien après un changement de filtre sont ignorées.
   expanded: new Set(),
+  // Favoris (nouveauté n° 3), gardés sur ce téléphone : les événements
+  // étoilés (clé cleEvenement), les salles suivies, et le bouton
+  // « ★ favoris » qui ne montre plus qu'eux.
+  favoris: new Set(lireMemoire('nocturne:favoris') || []),
+  salles: new Set(lireMemoire('nocturne:salles') || []),
+  voirFavoris: false,
 };
+
+/* La mémoire du téléphone (localStorage). Navigation privée, stockage
+   bloqué : la page marche quand même, sans se souvenir. */
+function lireMemoire(cle) {
+  try { return JSON.parse(localStorage.getItem(cle) || 'null'); } catch (_) { return null; }
+}
+function ecrireMemoire(cle, valeur) {
+  try { localStorage.setItem(cle, JSON.stringify(valeur)); } catch (_) { /* rien à faire */ }
+}
 
 /* Listes d'événements par journée, telles que triées au dernier rendu.
    Le dépliage ne reconstruit qu'une journée : il n'a donc ni à refiltrer
@@ -3086,7 +3142,7 @@ function classerLieux() {
 /* Liste à cocher générique. Construite UNE fois au chargement : cocher
    une case ne touche que l'état et relance le rendu, sans reconstruire
    les 173 lignes. */
-function construireListe(idConteneur, entrees, ensemble) {
+function construireListe(idConteneur, entrees, ensemble, etoiles = false) {
   const c = document.getElementById(idConteneur);
   c.innerHTML = '';
   for (const { cle, nom, n } of entrees) {
@@ -3105,6 +3161,22 @@ function construireListe(idConteneur, entrees, ensemble) {
     nEl.className = 'fl-n';
     nEl.textContent = n;
     label.append(box, nomEl, nEl);
+    if (etoiles) {
+      const suivie = state.salles.has(cle);
+      const et = document.createElement('span');
+      et.className = 'salle-etoile';
+      et.setAttribute('role', 'button');
+      et.tabIndex = 0;
+      et.setAttribute('aria-pressed', String(suivie));
+      et.setAttribute('aria-label', 'suivre ' + nom);
+      et.textContent = suivie ? '★' : '☆';
+      // Dans un <label> : sans preventDefault, le clic cocherait la case.
+      et.addEventListener('click', ev => { ev.preventDefault(); basculerSalle(cle); });
+      et.addEventListener('keydown', ev => {
+        if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); basculerSalle(cle); }
+      });
+      label.append(et);
+    }
     label.title = nom + ' - ' + n + ' événement' + (n > 1 ? 's' : '');
     c.appendChild(label);
   }
@@ -3116,10 +3188,17 @@ function buildLieuxFilters() {
     if (!e.venue) continue;
     n.set(e.venue, (n.get(e.venue) || 0) + 1);
   }
+  // Les salles suivies d'abord, puis l'ordre alphabétique.
   const entrees = [...n.entries()]
-    .sort((a, b) => a[0].localeCompare(b[0], 'fr'))
+    .sort((a, b) => (state.salles.has(b[0]) - state.salles.has(a[0]))
+                    || a[0].localeCompare(b[0], 'fr'))
     .map(([v, c]) => ({ cle: v, nom: v, n: c }));
-  construireListe('filterLieux', entrees, state.lieux);
+  construireListe('filterLieux', entrees, state.lieux, true);
+  const suivies = entrees.filter(x => state.salles.has(x.cle)).length;
+  const ligne = document.getElementById('mesSalles');
+  ligne.hidden = !suivies;
+  ligne.innerHTML = '<span class="etoile">★</span> mes salles : ' + suivies
+    + ' · gardées sur ce téléphone';
 }
 
 function buildTagsFilters() {
@@ -3322,6 +3401,7 @@ document.getElementById('clearFilters').addEventListener('click', () => {
   document.querySelectorAll('.filter-liste input:checked')
           .forEach(b => { b.checked = false; });
   state.famillesOff.clear();
+  state.voirFavoris = false;
   state.search = '';
   const searchEl = document.getElementById('filterSearch');
   if (searchEl) searchEl.value = '';
@@ -3470,6 +3550,8 @@ function filtered() {
     if (state.arrondissements.size && !state.arrondissements.has(eventArrondissement(occ))) return false;
     if (state.lieux.size && !state.lieux.has(occ.venue)) return false;
     if (state.tags.size && !state.tags.has(bucketOf(occ.category))) return false;
+    if (state.voirFavoris && !state.favoris.has(cleEvenement(occ))
+        && !state.salles.has(occ.venue)) return false;
     if (state.search) {
       const q = state.search;
       const titleMatch = normSearch(occ.title).includes(q);
@@ -4055,6 +4137,12 @@ function eventCard(e, seedOverride) {
   CARTES.set(cle, e);
   const agenda = '<span class="carte-bouton" role="button" tabindex="0" data-action="agenda"'
     + ' data-cle="' + escapeHtml(cle) + '" title="ajouter à mon agenda">+ agenda</span>';
+  // L'étoile des favoris (nouveauté n° 3), tout en haut à droite.
+  const garde = state.favoris.has(cleEvenement(e));
+  const etoile = '<span class="carte-bouton carte-etoile" role="button" tabindex="0"'
+    + ' data-action="favori" data-cle="' + escapeHtml(cle) + '"'
+    + ' data-evenement="' + escapeHtml(cleEvenement(e)) + '" aria-pressed="' + garde + '"'
+    + ' aria-label="garder en favori" title="garder en favori">' + (garde ? '★' : '☆') + '</span>';
 
   const href = eventHref(e);
   const isHttpUrl = typeof href === 'string'
@@ -4075,6 +4163,7 @@ function eventCard(e, seedOverride) {
     '<' + tag + ' class="event" style="--t:' + teinteDe(e.category) + '"'
       + linkAttrs + '>',
     '  ' + visual,
+    '  ' + etoile,
     '  <div class="event-head">',
     '    <span class="event-venue">' + escapeHtml(e.venue) + '</span>',
     '    ' + arrLabel,
@@ -4120,7 +4209,40 @@ function agirSurCarte(bouton) {
   const e = CARTES.get(bouton.dataset.cle);
   if (!e) return;
   if (bouton.dataset.action === 'agenda') ajouterALAgenda(e);
+  if (bouton.dataset.action === 'favori') basculerFavori(e);
 }
+
+/* ★ sur une carte : l'événement est gardé (ou ne l'est plus), sur toutes
+   ses cartes à la fois - une pièce jouée cinq soirs en a cinq. */
+function basculerFavori(e) {
+  const cle = cleEvenement(e);
+  if (state.favoris.has(cle)) state.favoris.delete(cle); else state.favoris.add(cle);
+  ecrireMemoire('nocturne:favoris', [...state.favoris]);
+  const garde = state.favoris.has(cle);
+  document.querySelectorAll('.carte-etoile').forEach(b => {
+    if (b.dataset.evenement !== cle) return;
+    b.setAttribute('aria-pressed', String(garde));
+    b.textContent = garde ? '★' : '☆';
+  });
+  if (state.voirFavoris) render();
+}
+
+/* ★ à côté d'une salle : elle est suivie, ses soirées font partie des
+   favoris, et elle remonte en tête de la liste des lieux. */
+function basculerSalle(nom) {
+  if (state.salles.has(nom)) state.salles.delete(nom); else state.salles.add(nom);
+  ecrireMemoire('nocturne:salles', [...state.salles]);
+  buildLieuxFilters();
+  if (state.voirFavoris) render();
+}
+
+/* « ★ favoris » : ne montrer que les événements gardés et les soirées
+   des salles suivies. */
+document.getElementById('voirFavoris').addEventListener('click', () => {
+  state.voirFavoris = !state.voirFavoris;
+  document.getElementById('voirFavoris').classList.toggle('active', state.voirFavoris);
+  render();
+});
 
 /* « + agenda » (nouveauté n° 2) : un fichier .ics, le format que lisent
    les agendas d'Android, de l'iPhone et des ordinateurs. La soirée de la

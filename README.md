@@ -415,6 +415,14 @@ la recopier, version comprise.
   sans heure connue, la journée entière. Rien ne part vers un serveur.
   Ces boutons sont dans le lien de la carte : les toucher n'ouvre pas la
   page de l'événement.
+  Les favoris, sans compte : l'étoile ☆, tout en haut à droite d'une
+  carte, garde l'événement (★ ocre, sur toutes ses cartes) ; l'étoile à
+  côté d'une salle, dans la liste des lieux, la suit, et la remonte en
+  tête de liste. Le bouton « ★ favoris » ne montre plus que les
+  événements gardés et les soirées des salles suivies ; « tout effacer »
+  l'éteint. Tout est gardé dans la mémoire du navigateur
+  (`localStorage`, clés `nocturne:favoris` et `nocturne:salles`), sur ce
+  téléphone seulement, et rien n'en sort.
   Pour les lecteurs d'écran, le champ de recherche porte un nom, les
   boutons de filtre disent s'ils sont enfoncés, chaque journée est un
   titre de niveau 2, et le jour courant est signalé (`aria-current`)
