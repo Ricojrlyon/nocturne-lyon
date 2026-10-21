@@ -783,6 +783,45 @@
     margin-left: auto;
     white-space: nowrap;
   }
+  /* Le bouton des filtres, au bout de la ligne de chaque date : il épingle
+     le haut de la page (filtres et barre des jours) en haut de l'écran,
+     ou le rend à sa place. Plein, crème, quand ils sont épinglés. */
+  .db-filtres {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 24px;
+    padding: 0;
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--ink-soft);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .db-filtres svg { display: block; }
+  .db-filtres[aria-expanded="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .db-filtres:focus-visible { outline: 2px solid var(--warm); outline-offset: 2px; }
+  @media (hover: hover) {
+    .db-filtres:hover { border-color: var(--ink-soft); color: var(--ink); }
+    .db-filtres[aria-expanded="true"]:hover { color: var(--bg); }
+  }
+  /* Épinglé, le haut de la page colle en haut de l'écran ; la barre de la
+     journée se cale juste dessous, et une journée rejointe par la barre des
+     jours aussi. --haut-filtres est sa hauteur, mesurée par la page. */
+  body.filtres-epingles .haut-filtres {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--bg);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  body.filtres-epingles .day-bar { top: var(--haut-filtres, 0px); }
+  body.filtres-epingles .day { scroll-margin-top: calc(8px + var(--haut-filtres, 0px)); }
   @media (max-width: 560px) {
     .day-bar { gap: 9px; flex-wrap: wrap; }
     .day-bar .db-label { font-size: 9.5px; letter-spacing: 0.12em; }
@@ -790,6 +829,7 @@
        de la date écraserait le libellé du jour. */
     .day-bar .db-familles { flex: 1 0 100%; order: 3; }
     .day-bar .db-count { order: 2; }
+    .day-bar .db-filtres { order: 2; }
     /* À CINQ, les pastilles ne tiennent plus sur une ligne de téléphone :
        386 px demandés pour 335 disponibles. On récupère la place sur
        l'INTERLETTRAGE plutôt que sur le corps - 0,12 em à 9,5 px coûtait
@@ -2037,6 +2077,9 @@
   </div>
 </header>
 
+<!-- Le haut de la page, que le bouton des filtres d'une journée épingle
+     en haut de l'écran. -->
+<div class="haut-filtres" id="hautFiltres">
 <nav class="filters" id="filters">
   <div class="container">
 
@@ -2099,6 +2142,7 @@
     <div class="daystrip" id="daystrip"></div>
   </div>
 </nav>
+</div>
 
 <main class="feed">
   <div class="container" id="feed"></div>
@@ -4637,6 +4681,11 @@ function journeeHtml({ iso, comptes, visibles }) {
   html.push('    ' + famillesHtml(comptes));
   html.push('    <span class="db-count">' + String(n).padStart(2, '0')
                + ' évt' + (n > 1 ? 's' : '') + '</span>');
+  const epingles = filtresEpingles();
+  html.push('    <button type="button" class="db-filtres" aria-controls="hautFiltres"'
+               + ' aria-expanded="' + epingles + '" aria-label="filtres en haut de l\'écran"'
+               + ' title="' + (epingles ? 'remettre les filtres à leur place' : 'garder les filtres en haut de l\'écran')
+               + '">' + ICONE_FILTRES + '</button>');
   html.push('  </div>');
   html.push('  <div class="day-body">');
   html.push(dayCardsHtml(iso, visibles));
@@ -5448,7 +5497,34 @@ function toggleGroup(key, deplier) {
   if (apresEl) apresEl.focus({ preventScroll: true });
 }
 
+/* Le bouton des filtres d'une journée : épingle le haut de la page en
+   haut de l'écran, ou le rend à sa place. Rien ne bouge sous le doigt :
+   un élément « collant » reste à sa place dans la page. */
+const ICONE_FILTRES = '<svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" focusable="false"><path d="M2 3h12l-4.5 5.5V13l-3 1.5V8.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>';
+function filtresEpingles() {
+  return document.body.classList.contains('filtres-epingles');
+}
+function mesurerLeHautDesFiltres() {
+  const h = filtresEpingles()
+    ? Math.ceil(document.getElementById('hautFiltres').getBoundingClientRect().height) : 0;
+  document.documentElement.style.setProperty('--haut-filtres', h + 'px');
+}
+function epinglerLesFiltres(oui) {
+  document.body.classList.toggle('filtres-epingles', oui);
+  document.querySelectorAll('.db-filtres').forEach(b => {
+    b.setAttribute('aria-expanded', String(oui));
+    b.title = oui ? 'remettre les filtres à leur place' : 'garder les filtres en haut de l\'écran';
+  });
+  mesurerLeHautDesFiltres();
+}
+// Le tiroir des filtres s'ouvre, une période s'écrit : la hauteur change.
+if (typeof ResizeObserver === 'function') {
+  new ResizeObserver(mesurerLeHautDesFiltres).observe(document.getElementById('hautFiltres'));
+}
+
 document.getElementById('feed').addEventListener('click', ev => {
+  const epingle = ev.target.closest('.db-filtres');
+  if (epingle) { epinglerLesFiltres(!filtresEpingles()); return; }
   const bouton = ev.target.closest('.carte-bouton');
   if (bouton) {
     ev.preventDefault();               // la carte est un lien : on ne l'ouvre pas

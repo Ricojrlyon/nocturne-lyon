@@ -221,6 +221,10 @@ class PageNavigation(unittest.TestCase):
         self.assertEqual(self.releve["ecouter"],
                          {"juste": True, "carte_ouverte": False, "seulement_musique": True})
 
+    def test_le_bouton_des_filtres_d_une_journee(self):
+        self.assertEqual(self.releve["filtres_epingles"],
+                         [True, "true", 0, True, True, 8, "false", False, "0px", True, "static"])
+
     def test_les_boutons_de_carte_sont_des_icones_a_droite_de_l_heure(self):
         self.assertEqual(self.releve["boutons_de_carte"],
                          ["", "", True, True, "ajouter à mon agenda", "écouter sur YouTube",

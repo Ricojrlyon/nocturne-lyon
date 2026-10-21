@@ -473,6 +473,39 @@
       if (vide) vide.querySelector('.vide-effacer').click();
       await pause(700);
       res.apres_tout_effacer = [document.querySelectorAll('#feed .event').length > 0, champ.value];
+      // Le bouton des filtres d'une journée : au milieu de la page, il
+      // épingle le haut (filtres et barre des jours) en haut de l'écran sans
+      // rien faire bouger ; la barre de la journée se cale dessous, une
+      // journée rejointe par la barre des jours aussi ; un second clic le
+      // rend à sa place.
+      window.scrollTo(0, 0);
+      await pause(200);
+      const jourLoin = document.querySelectorAll('#feed section.day')[2];
+      jourLoin.scrollIntoView();
+      await pause(300);
+      const hautF = document.getElementById('hautFiltres');
+      const boutonF = jourLoin.querySelector('.db-filtres');
+      const cache = hautF.getBoundingClientRect().bottom <= 0;
+      const yAvant = window.scrollY;
+      boutonF.click();
+      await pause(300);
+      const barreF = jourLoin.querySelector('.day-bar');
+      const epingle = [cache, boutonF.getAttribute('aria-expanded'), Math.round(hautF.getBoundingClientRect().top),
+                       Math.abs(barreF.getBoundingClientRect().top - hautF.getBoundingClientRect().bottom) <= 1,
+                       window.scrollY === yAvant];
+      document.querySelectorAll('.day-pill')[6].click();
+      await pause(700);
+      epingle.push(Math.round(document.getElementById('day-2026-10-07').getBoundingClientRect().top
+                              - hautF.getBoundingClientRect().bottom));
+      const boutonF2 = document.querySelector('#day-2026-10-07 .db-filtres');
+      const y2 = window.scrollY;
+      boutonF2.click();
+      await pause(300);
+      epingle.push(boutonF2.getAttribute('aria-expanded'), document.body.classList.contains('filtres-epingles'),
+                   getComputedStyle(document.documentElement).getPropertyValue('--haut-filtres').trim(),
+                   window.scrollY === y2, getComputedStyle(hautF).position);
+      res.filtres_epingles = epingle;
+      window.scrollTo(0, 0);
     } else if (SCENARIOS === 'carte') {
       // La vue carte (nouveauté n° 6). Premier passage : l'interrupteur, le
       // plan du 1er octobre, sa fiche, ses gestes, la barre des jours, le

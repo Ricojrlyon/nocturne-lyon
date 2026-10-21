@@ -447,6 +447,12 @@ la recopier, version comprise.
   comprise, et la toute première visite n'en montre aucun. Un événement
   est reconnu à sa salle, son titre et son premier jour : une heure
   ajoutée après coup ne le fait pas passer pour nouveau.
+  Au bout de la ligne de chaque date, un petit bouton (un entonnoir)
+  épingle le haut de la page, filtres et barre des jours, en haut de
+  l'écran pendant qu'on fait défiler la liste ; un second toucher le rend
+  à sa place, et rien ne bouge sous le doigt. La barre de la journée se
+  cale alors juste dessous, une journée rejointe par la barre des jours
+  aussi ; le bouton est plein, crème, tant qu'ils sont épinglés.
   La vue carte : l'interrupteur « liste | carte », à côté de « ★
   favoris », remplace les journées par un plan de Lyon où sont posés les
   lieux d'UNE soirée (« ce soir », par défaut), chacun avec son nombre
