@@ -3277,6 +3277,10 @@ function buildArrondissementFilters() {
    la classe à chaque rendu, en un seul endroit (audit n° 6). Les puces de
    famille portent déjà le leur. */
 function etatDesBoutons() {
+  // « ★ favoris » vit dans la même rangée que les périodes : son allumage
+  // se recopie de l'état, comme aria-pressed, sans quoi toucher « ce
+  // weekend » l'éteignait à l'écran alors que le filtre restait actif.
+  document.getElementById('voirFavoris').classList.toggle('active', state.voirFavoris);
   document.querySelectorAll('#filterWhen .chip, #filterArr .chip').forEach(b => {
     b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false');
   });
@@ -3409,7 +3413,7 @@ document.getElementById('partager').addEventListener('click', async () => {
 /* ---------- when filter ---------- */
 document.getElementById('filterWhen').addEventListener('click', e => {
   if (!e.target.matches('.chip[data-when]')) return;
-  document.querySelectorAll('#filterWhen .chip').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('#filterWhen .chip[data-when]').forEach(c => c.classList.remove('active'));
   document.getElementById('dateBtn').classList.remove('active');
   e.target.classList.add('active');
   state.when = e.target.dataset.when;

@@ -196,6 +196,7 @@ class PageNavigation(unittest.TestCase):
         f = self.releve["favoris"]
         self.assertEqual((f["presse"], f["lien_ouvert"], f["memoire"]), ("true", False, 1))
         self.assertTrue(f["seul"])
+        self.assertEqual(f["apres_une_periode"], "true")
         self.assertEqual(f["salles"], ["Le Sucre"])
         self.assertIs(f["case_cochee"], False)
         self.assertEqual(f["en_tete"], "Le Sucre")

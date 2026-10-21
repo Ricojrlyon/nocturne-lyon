@@ -421,8 +421,8 @@ la recopier, version comprise.
   carte, garde l'événement (★ ocre, sur toutes ses cartes) ; l'étoile à
   côté d'une salle, dans la liste des lieux, la suit, et la remonte en
   tête de liste. Le bouton « ★ favoris » ne montre plus que les
-  événements gardés et les soirées des salles suivies ; « tout effacer »
-  l'éteint. Tout est gardé dans la mémoire du navigateur
+  événements gardés et les soirées des salles suivies ; il reste allumé
+  quand on change de période, et « tout effacer » l'éteint. Tout est gardé dans la mémoire du navigateur
   (`localStorage`, clés `nocturne:favoris` et `nocturne:salles`), sur ce
   téléphone seulement, et rien n'en sort.
   « nouveau », depuis ta dernière visite : un point ocre et le mot en

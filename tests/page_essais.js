@@ -357,6 +357,12 @@
       const visibles = () => [...document.querySelectorAll('#feed .event')];
       res.favoris.seul = visibles().length > 0
         && visibles().every(c => (c.querySelector('.carte-etoile') || {}).dataset?.evenement === cleGardee);
+      // Une période touchée ne l'éteint pas : le filtre reste actif.
+      document.querySelector('#filterWhen .chip[data-when="weekend"]').click();
+      await pause(300);
+      res.favoris.apres_une_periode = document.getElementById('voirFavoris').getAttribute('aria-pressed');
+      document.querySelector('#filterWhen .chip[data-when="all"]').click();
+      await pause(300);
       if (document.getElementById('filterDrawer').hidden) document.getElementById('drawerToggle').click();
       const sucre = [...document.querySelectorAll('#filterLieux label')]
         .find(l => norme(l.querySelector('.fl-nom').textContent) === 'Le Sucre');
