@@ -23,7 +23,7 @@
     const c = el.cloneNode(true);
     // Hors relevé : l'image de fond et les boutons de carte (« + agenda »…),
     // qui ne disent rien de l'événement.
-    c.querySelectorAll('.visual-bg, .carte-bouton').forEach(x => x.remove());
+    c.querySelectorAll('.visual-bg, .carte-bouton, .nouveau').forEach(x => x.remove());
     return [el.tagName.toLowerCase(), el.getAttribute('href') || '', norme(c.textContent)];
   };
 
@@ -171,6 +171,38 @@
       }
       await pause(2500);
       res.scenarios.apres_rafale = await releve();
+    } else if (SCENARIOS === 'nouveau') {
+      // « nouveau » depuis ta dernière visite. Première visite : aucun
+      // repère. On retire alors de la mémoire deux événements, comme s'ils
+      // venaient d'être annoncés, et on revient : eux seuls sont marqués.
+      const etape = sessionStorage.getItem('essai-nouveau');
+      if (!etape) {
+        const premiere = document.querySelectorAll('#feed .nouveau').length;
+        const cles = [...new Set([...document.querySelectorAll('#feed a.event .carte-etoile')]
+          .slice(0, 2).map(b => b.dataset.evenement))];
+        const retirer = new Set(cles.map(c => stableHash(c).toString(36)));
+        const vus = JSON.parse(localStorage.getItem('nocturne:vus') || '[]');
+        localStorage.setItem('nocturne:vus', JSON.stringify(vus.filter(v => !retirer.has(v))));
+        sessionStorage.removeItem('nocturne:vus-avant');
+        sessionStorage.setItem('essai-nouveau', JSON.stringify({ cles, premiere, total: vus.length }));
+        location.reload();
+        return;
+      }
+      const avant = JSON.parse(etape);
+      const marquees = [...new Set([...document.querySelectorAll('#feed a.event')]
+        .filter(c => c.querySelector('.nouveau'))
+        .map(c => c.querySelector('.carte-etoile').dataset.evenement))].sort();
+      if (!avant.marquees) {
+        // Deuxième visite : on note les repères, puis on recharge la page
+        // pendant la même visite - ils doivent rester.
+        avant.marquees = marquees;
+        sessionStorage.setItem('essai-nouveau', JSON.stringify(avant));
+        location.reload();
+        return;
+      }
+      res.nouveau = { premiere_visite: avant.premiere, total_vus: avant.total,
+                      marquees: avant.marquees, apres_rechargement: marquees,
+                      attendues: avant.cles.slice().sort() };
     } else if (SCENARIOS === 'hors_ligne') {
       // L'application sans réseau. Premier passage : le service hors ligne
       // s'installe, le réseau est coupé, la page est rechargée. Second

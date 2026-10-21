@@ -1301,6 +1301,31 @@
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.85);
   }
   .carte-bouton.carte-etoile[aria-pressed="true"] { color: var(--warm); }
+  /* « nouveau » depuis ta dernière visite : un point ocre et un mot
+     minuscule, en haut à gauche de la carte, sans fond. */
+  .nouveau {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--warm);
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.85);
+    pointer-events: none;
+  }
+  .nouveau::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--warm);
+  }
   /* L'étoile d'une salle, dans la liste des lieux : les salles suivies
      remontent en tête. */
   .salle-etoile {
@@ -2899,6 +2924,7 @@ async function load() {
   // un fil plus ancien, sans ce nombre, laisse celui qu'écrit la page.
   if (data.sources > 0) document.getElementById('footerSources').textContent = data.sources;
 
+  noterLesVus();
   lireLAdresse();
   classerLieux();
   buildArrondissementFilters();
@@ -4074,6 +4100,7 @@ function groupCard(venue, evs, key) {
     '        aria-expanded="false" aria-label="' + escapeHtml(venue + ', '
       + evs.length + ' événements - déplier') + '">',
     '  ' + visual,
+    '  ' + (evs.some(estNouveau) ? '<span class="nouveau">nouveau</span>' : ''),
     '  <div class="event-head">',
     '    <span class="event-venue">' + escapeHtml(venue) + '</span>',
     '    <span class="event-arr">' + escapeHtml(arr) + '</span>',
@@ -4164,6 +4191,7 @@ function eventCard(e, seedOverride) {
       + linkAttrs + '>',
     '  ' + visual,
     '  ' + etoile,
+    '  ' + (estNouveau(e) ? '<span class="nouveau">nouveau</span>' : ''),
     '  <div class="event-head">',
     '    <span class="event-venue">' + escapeHtml(e.venue) + '</span>',
     '    ' + arrLabel,
@@ -4196,6 +4224,32 @@ function cleEvenement(e) {
 }
 // Les cartes affichées, sous la clé que portent leurs boutons.
 const CARTES = new Map();
+
+/* « nouveau » depuis ta dernière visite (nouveauté n° 4). À chaque
+   ouverture, la page note sur le téléphone une empreinte courte de chaque
+   événement du fil. La fois suivante, ce qui n'y était pas porte
+   « nouveau ». Le repère tient toute la visite - la page rechargée le
+   garde - et la toute première visite n'en montre aucun.
+   Mémoire : localStorage « nocturne:vus », les empreintes de la dernière
+   ouverture ; sessionStorage « nocturne:vus-avant », celles de la visite
+   précédente, le temps de la visite. */
+let DEJA_VUS = null;              // null : rien à comparer, rien de nouveau
+function empreinte(e) {
+  return stableHash(cleEvenement(e)).toString(36);
+}
+function noterLesVus() {
+  let avant = null;
+  try { avant = JSON.parse(sessionStorage.getItem('nocturne:vus-avant') || 'null'); } catch (_) { /* rien */ }
+  if (!avant) {
+    avant = lireMemoire('nocturne:vus') || [];
+    try { sessionStorage.setItem('nocturne:vus-avant', JSON.stringify(avant)); } catch (_) { /* rien */ }
+  }
+  DEJA_VUS = avant.length ? new Set(avant) : null;
+  ecrireMemoire('nocturne:vus', [...new Set(state.events.map(empreinte))]);
+}
+function estNouveau(e) {
+  return DEJA_VUS !== null && !DEJA_VUS.has(empreinte(e));
+}
 
 /* Au clavier aussi : Entrée ou Espace sur un bouton de carte. */
 document.getElementById('feed').addEventListener('keydown', ev => {

@@ -423,6 +423,14 @@ la recopier, version comprise.
   l'éteint. Tout est gardé dans la mémoire du navigateur
   (`localStorage`, clés `nocturne:favoris` et `nocturne:salles`), sur ce
   téléphone seulement, et rien n'en sort.
+  « nouveau », depuis ta dernière visite : un point ocre et le mot en
+  petit, en haut à gauche des cartes (et des cartes groupées qui en
+  contiennent). À chaque ouverture, la page note une empreinte courte de
+  chaque événement (`nocturne:vus`) ; la fois suivante, ce qui n'y était
+  pas est marqué. Le repère tient toute la visite, page rechargée
+  comprise, et la toute première visite n'en montre aucun. Un événement
+  est reconnu à sa salle, son titre et son premier jour : une heure
+  ajoutée après coup ne le fait pas passer pour nouveau.
   Pour les lecteurs d'écran, le champ de recherche porte un nom, les
   boutons de filtre disent s'ils sont enfoncés, chaque journée est un
   titre de niveau 2, et le jour courant est signalé (`aria-current`)

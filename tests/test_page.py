@@ -239,6 +239,31 @@ class PageDepuisUnLien(unittest.TestCase):
             self.assertEqual(releve["scenarios"]["tout"], attendu["scenarios"][nom], nom)
 
 
+class PageNouveau(unittest.TestCase):
+    """« nouveau » depuis ta dernière visite (nouveauté n° 4) : aucun
+    repère à la première visite ; à la suivante, exactement les
+    événements qui n'avaient pas été vus."""
+
+    @classmethod
+    def setUpClass(cls):
+        evenements, lieux = donnees_figees()
+        cls.releve, cls.probleme = navigateur.releve_ou_probleme(
+            evenements=evenements, lieux=lieux, date_figee=True, scenarios="nouveau")
+
+    def setUp(self):
+        navigateur.sauter_si_indisponible(self, self.probleme)
+        self.assertNotIn("echec", self.releve, self.releve.get("echec"))
+
+    def test_seul_ce_qui_n_avait_pas_ete_vu_est_nouveau(self):
+        n = self.releve["nouveau"]
+        self.assertEqual(n["premiere_visite"], 0)
+        self.assertGreater(n["total_vus"], 2000)
+        self.assertGreaterEqual(len(n["attendues"]), 1)
+        self.assertEqual(n["marquees"], n["attendues"])
+        self.assertEqual(n["apres_rechargement"], n["attendues"])
+        self.assertEqual(self.releve["erreurs_fin"], [])
+
+
 class PageHorsLigne(unittest.TestCase):
     """L'application installée s'ouvre sans réseau : la page, ses polices
     et le dernier programme viennent du téléphone, et l'affichage est le
