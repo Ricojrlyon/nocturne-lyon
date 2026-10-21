@@ -374,6 +374,10 @@ class PageCarte(unittest.TestCase):
         self.assertEqual((sans_ctrl, avec_ctrl), (0, 1))
         self.assertLessEqual(ecart, 1)
         self.assertEqual(self.c["glisse"], [[0, 0], [60, 30]])
+        self.assertTrue(self.c["clavier_apres_glisse"])
+        self.assertEqual(self.c["fleche"], 80)
+        self.assertIsNotNone(self.c["groupe"])
+        self.assertEqual(self.c["groupe"], [2, True])
 
     def test_le_zoom_est_fluide(self):
         # Ctrl + molette et deux doigts : le plan suit le geste, agrandi tel
@@ -384,10 +388,6 @@ class PageCarte(unittest.TestCase):
         self.assertEqual(apres, [1, 400, 200, False])
         self.assertEqual(self.c["fondu"], [[True, True], 1, False])
         self.assertEqual(self.c["ancien_fond"], [2, 1])
-        self.assertTrue(self.c["clavier_apres_glisse"])
-        self.assertEqual(self.c["fleche"], 80)
-        self.assertIsNotNone(self.c["groupe"])
-        self.assertEqual(self.c["groupe"], [2, True])
 
     def test_une_famille_eteinte_sur_le_plan(self):
         self.assertEqual(self.c["famille"], ["false", True, True])
