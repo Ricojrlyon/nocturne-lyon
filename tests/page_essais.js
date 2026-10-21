@@ -534,12 +534,15 @@
         seul.click();
         await pause(300);
         const nomDuLieu = seul.getAttribute('aria-label').split(' : ')[0];
+        // Les vraies cartes, sous le plan, avec leurs boutons.
         c.fiche = [!fiche.hidden,
-                   fiche.querySelectorAll('.fiche-evts li').length === Number(seul.textContent),
+                   fiche.querySelectorAll('.event').length === Number(seul.textContent),
                    norme(fiche.querySelector('.fl-nom').textContent).startsWith(nomDuLieu),
                    seul.classList.contains('choisi'),
                    document.activeElement === fiche.querySelector('.fiche-lieu'),
-                   [...fiche.querySelectorAll('.fiche-evts a')].every(a => a.target === '_blank' && /^https?:/.test(a.href))];
+                   [...fiche.querySelectorAll('a.event')].every(a => a.target === '_blank' && /^https?:/.test(a.href)),
+                   !!fiche.querySelector('.event .carte-etoile'),
+                   fiche.getBoundingClientRect().top >= document.querySelector('.carte-boite').getBoundingClientRect().bottom];
         fiche.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
         await pause(200);
         c.apres_echap = [fiche.hidden, document.activeElement === seul, seul.classList.contains('choisi')];
@@ -566,9 +569,55 @@
         await pause(100);
         const sansCtrl = carte.z - zm;
         molette(true);
-        await pause(200);
+        const pendantMolette = [carte.z === zm, cadre.classList.contains('zoom-en-cours')];
+        await pause(500);
         const [bx, by] = ecran();
         c.molette = [sansCtrl, carte.z - zm, Math.round(Math.hypot(bx - ax, by - ay))];
+        c.molette_en_continu = [pendantMolette, cadre.classList.contains('zoom-en-cours')];
+        document.querySelector('.carte-zoom [data-zoom="-1"]').click();
+        await pause(200);
+        // Deux doigts écartés du simple au double : le plan suit sans être
+        // reconstruit (zoom inchangé, agrandi tel quel) ; au lever, il est
+        // reconstruit un cran plus près, et le point qui était sous le
+        // milieu des doigts au début est sous leur milieu à la fin.
+        const rp = cadre.getBoundingClientRect();
+        const Wp = cadre.clientWidth, Hp = cadre.clientHeight, zp = carte.z;
+        const monde = [carte.cx + 350 - Wp / 2, carte.cy + 200 - Hp / 2];
+        const touche = (type, id, x, y) => cadre.dispatchEvent(new PointerEvent(type,
+          { pointerId: id, pointerType: 'touch', isPrimary: id === 21, clientX: rp.left + x, clientY: rp.top + y, bubbles: true }));
+        const unePastille = document.querySelector('.carte-pin'), unNom = document.querySelector('.carte-nom:not([hidden])');
+        const largeur0 = unePastille.getBoundingClientRect().width;
+        touche('pointerdown', 21, 300, 200);
+        touche('pointerdown', 22, 400, 200);
+        touche('pointermove', 22, 500, 200);
+        const pendantPince = [carte.z === zp, cadre.classList.contains('zoom-en-cours'),
+                              /scale[(](1[.]99|2)/.test(carte.calque.style.transform),
+                              Math.abs(unePastille.getBoundingClientRect().width - largeur0) <= 1,
+                              getComputedStyle(unNom).opacity === '0'];
+        touche('pointerup', 22, 500, 200);
+        touche('pointerup', 21, 300, 200);
+        await pause(100);
+        c.pince = [pendantPince, [Math.round(carte.z - zp), Math.round(Wp / 2 + monde[0] * 2 - carte.cx),
+                                  Math.round(Hp / 2 + monde[1] * 2 - carte.cy), cadre.classList.contains('zoom-en-cours')]];
+        // Au zoom, l'ancien fond reste dessous le temps que les nouvelles
+        // tuiles arrivent (ici, bloquées par le banc : très vite).
+        document.querySelector('.carte-zoom [data-zoom="-1"]').click();
+        const fondsJusteApres = document.querySelectorAll('.carte-tuiles').length;
+        await pause(600);
+        c.ancien_fond = [fondsJusteApres, document.querySelectorAll('.carte-tuiles').length];
+        // Le fondu d'un bouton, pour qui ne demande pas moins d'animations :
+        // le plan s'agrandit d'abord tel quel, puis est reconstruit.
+        const vraiMatchMedia = window.matchMedia;
+        window.matchMedia = q => ({ matches: false, media: q, addEventListener() {}, removeEventListener() {} });
+        const zf = carte.z;
+        document.querySelector('.carte-zoom [data-zoom="1"]').click();
+        await pause(80);
+        const pendantFondu = [carte.z === zf, cadre.classList.contains('zoom-en-cours')];
+        await pause(500);
+        window.matchMedia = vraiMatchMedia;
+        c.fondu = [pendantFondu, carte.z - zf, cadre.classList.contains('zoom-en-cours')];
+        document.querySelector('.carte-zoom [data-zoom="-1"]').click();
+        await pause(200);
         // Le doigt (ou la souris) fait glisser le plan ; un tremblé de moins
         // de 5 px n'est pas un glissé.
         const [cx0, cy0] = [carte.cx, carte.cy];
@@ -615,6 +664,9 @@
         await pause(500);
         c.pastille = [norme(document.querySelector('.ct-jour').textContent), location.search,
                       [...document.querySelectorAll('.day-pill.choisi')].map(p => p.dataset.jour)];
+        // Le jour montré, plein ; aujourd'hui garde son fond ocre léger.
+        c.couleurs_des_jours = [getComputedStyle(document.querySelector('.day-pill.choisi')).backgroundColor,
+                                getComputedStyle(document.querySelector('.day-pill.today')).backgroundColor];
         document.querySelector('.carte-saut[data-saut="1"]').click();
         await pause(500);
         c.suivant = norme(document.querySelector('.ct-jour').textContent);

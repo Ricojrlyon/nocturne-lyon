@@ -1725,7 +1725,13 @@
   .vue-switch { display: inline-flex; }
   .vue-switch .vue-choix:first-child { border-radius: var(--radius) 0 0 var(--radius); }
   .vue-switch .vue-choix:last-child { border-radius: 0 var(--radius) var(--radius) 0; margin-left: -1px; }
-  .day-pill.choisi { border-color: var(--warm); background: var(--bg-elev-2); }
+  /* La journée montrée par le plan : pleine, crème, comme un filtre
+     enfoncé, pour ne pas se confondre avec aujourd'hui (cadre ocre), qui
+     garde son cadre quand c'est lui qu'on montre. */
+  .day-pill.choisi { background: var(--ink); border-color: var(--ink); }
+  .day-pill.choisi.today { border-color: var(--warm); box-shadow: inset 0 0 0 1px var(--warm); }
+  .day-pill.choisi .dp-dow, .day-pill.choisi .dp-num,
+  .day-pill.choisi .dp-mon, .day-pill.choisi .dp-count { color: var(--bg); }
   .carte-vue { padding: 18px 0 40px; }
   .carte-tete {
     display: flex;
@@ -1776,7 +1782,18 @@
   }
   .carte-cadre.glisse { cursor: grabbing; }
   .carte-cadre:focus-visible { outline: 2px solid var(--warm); outline-offset: -2px; }
-  .carte-tuiles, .carte-calque { position: absolute; left: 0; top: 0; }
+  .carte-tuiles, .carte-calque {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: 0 0;
+    will-change: transform;
+  }
+  /* Pendant un zoom, le plan est agrandi tel quel : les pastilles gardent
+     leur taille (--contre annule l'agrandissement), les noms s'effacent
+     et reviennent, replacés, à la fin du geste. */
+  .carte-cadre.zoom-en-cours .carte-pin { transform: translate(-50%, -50%) scale(var(--contre, 1)); }
+  .carte-cadre.zoom-en-cours .carte-nom { opacity: 0; }
   /* Le plan d'OpenStreetMap, clair, passé en nuit : couleurs inversées,
      teintes remises à l'endroit, puis assourdi. */
   .carte-tuiles img {
@@ -1843,65 +1860,37 @@
     text-decoration: none;
   }
   .carte-credit:hover { color: var(--ink); }
-  /* La fiche d'un lieu, posée sur le bas du plan. */
-  .carte-fiche {
-    position: absolute;
-    left: 10px;
-    right: 10px;
-    bottom: 24px;
-    max-height: 55%;
-    overflow-y: auto;
-    background: var(--bg-elev);
-    border: 1px solid var(--rule-strong);
-    border-radius: var(--radius);
-    padding: 10px 14px 6px;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
-  }
-  .fiche-fermer {
-    float: right;
-    background: none;
-    border: none;
-    color: var(--ink-soft);
-    font-size: 14px;
-    line-height: 1;
-    padding: 4px 2px 4px 10px;
-    cursor: pointer;
-  }
-  .fiche-fermer:hover { color: var(--ink); }
+  /* La fiche d'un lieu, sous le plan : ses soirées en cartes, celles de
+     la liste, avec leurs boutons. */
+  .carte-fiche { margin-top: 16px; }
   .fiche-lieu {
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin: 4px 0 6px;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 10px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5px;
+    font-size: 11px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--warm);
   }
   .fiche-lieu:focus { outline: none; }
-  .fiche-lieu .fl-n { color: var(--ink-mute); white-space: nowrap; }
-  .fiche-evts { list-style: none; margin: 0 0 8px; padding: 0; }
-  .fiche-evts a, .fiche-evts .fe-sans-lien {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
-    padding: 5px 0;
-    border-top: 1px solid var(--rule);
-    color: var(--ink);
-    text-decoration: none;
-    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
-    font-size: 14px;
-    line-height: 1.3;
-  }
-  .fiche-evts a:hover .fe-titre { text-decoration: underline; }
-  .fiche-evts .fe-heure {
+  .fiche-lieu .fl-nom { font-weight: 700; }
+  .fiche-lieu .fl-n { color: var(--ink-mute); white-space: nowrap; margin-right: auto; }
+  .carte-fiche .events + .fiche-lieu { margin-top: 18px; }
+  .fiche-fermer {
     flex: 0 0 auto;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
+    background: none;
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius);
     color: var(--ink-soft);
+    font-size: 12px;
+    line-height: 1;
+    padding: 5px 8px;
+    cursor: pointer;
   }
+  .fiche-fermer:hover { color: var(--ink); border-color: var(--ink); }
+  .fiche-fermer:focus-visible { outline: 2px solid var(--warm); outline-offset: 2px; }
   .carte-ailleurs {
     display: flex;
     flex-wrap: wrap;
@@ -4003,8 +3992,8 @@ function renderCarte(feed, events) {
         + '<button type="button" data-zoom="-1" aria-label="dézoomer">−</button></div>',
       '<a class="carte-credit" href="https://www.openstreetmap.org/copyright" target="_blank"'
         + ' rel="noopener">© OpenStreetMap</a>',
-      '<div class="carte-fiche" role="region" aria-label="soirées du lieu" hidden></div>',
-      '</div>');
+      '</div>',
+      '<div class="carte-fiche" role="region" aria-label="soirées du lieu" hidden></div>');
     if (ailleurs.length) {
       html.push('<div class="carte-ailleurs"><span class="ca-titre">pas sur la carte</span>'
         + ailleurs.map((p, k) => '<button type="button" class="chip" data-ailleurs="' + k + '">'
@@ -4024,7 +4013,7 @@ function renderCarte(feed, events) {
       return;
     }
     const zoom = ev.target.closest('[data-zoom]');
-    if (zoom) { zoomer(Number(zoom.dataset.zoom)); return; }
+    if (zoom) { zoomerEnDouceur(Number(zoom.dataset.zoom)); return; }
     if (ev.target.closest('.fiche-fermer')) { fermerFiche(); return; }
     const autre = ev.target.closest('[data-ailleurs]');
     if (autre) ouvrirFiche([ailleurs[Number(autre.dataset.ailleurs)]], autre);
@@ -4047,7 +4036,7 @@ function monterLaCarte(racine, places, jour) {
     fiche: racine.querySelector('.carte-fiche'),
     z: ZOOM_MIN, cx: 0, cy: 0, ox: 0, oy: 0,
     images: new Map(), pastilles: [], choisis: new Set(), retour: null,
-    glisse: false, molette: 0,
+    glisse: false, molette: null, anime: null, ancien: null,
   };
   if (garde) Object.assign(carte, garde); else cadrer(places);
   borner();
@@ -4148,19 +4137,25 @@ function disposer() {
   const boutons = carte.racine.querySelectorAll('.carte-zoom button');
   boutons[0].disabled = carte.z >= ZOOM_MAX;
   boutons[1].disabled = carte.z <= ZOOM_MIN;
-  // Les tuiles d'avant n'ont plus la bonne taille : on les retire toutes.
-  carte.images.forEach(img => img.remove());
-  carte.images.clear();
 }
 
 /* Le plan suit le centre : le calque glisse, les tuiles qui entrent dans
    le cadre sont demandées, celles qui en sortent sont retirées. */
+function poser(el, x, y, f) {
+  el.style.transform = 'translate(' + x + 'px,' + y + 'px)' + (f === 1 ? '' : ' scale(' + f + ')');
+}
+
+// Où le calque est posé dans le cadre, au pixel entier.
+function decalage() {
+  const [W, H] = tailleDuCadre();
+  return [Math.round(W / 2 - (carte.cx - carte.ox)), Math.round(H / 2 - (carte.cy - carte.oy))];
+}
+
 function dessiner() {
   const [W, H] = tailleDuCadre();
-  const t = 'translate(' + Math.round(W / 2 - (carte.cx - carte.ox)) + 'px,'
-          + Math.round(H / 2 - (carte.cy - carte.oy)) + 'px)';
-  carte.tuiles.style.transform = t;
-  carte.calque.style.transform = t;
+  const [tx, ty] = decalage();
+  poser(carte.tuiles, tx, ty, 1);
+  poser(carte.calque, tx, ty, 1);
   const zt = Math.ceil(carte.z - 1e-9);           // le zoom des tuiles
   const s = TUILE * Math.pow(2, carte.z - zt);    // leur taille à l'écran
   const max = Math.pow(2, zt) - 1;
@@ -4181,6 +4176,7 @@ function dessiner() {
       img.style.left = Math.floor(x * s - carte.ox) + 'px';
       img.style.top = Math.floor(y * s - carte.oy) + 'px';
       img.style.width = img.style.height = (Math.ceil(s) + 1) + 'px';
+      img.onload = img.onerror = verifierLAncienFond;
       img.src = TUILES_OSM + cle + '.png';
       carte.tuiles.appendChild(img);
       carte.images.set(cle, img);
@@ -4189,53 +4185,162 @@ function dessiner() {
   for (const [cle, img] of carte.images) {
     if (!voulues.has(cle)) { img.remove(); carte.images.delete(cle); }
   }
+  verifierLAncienFond();
+}
+
+/* Le fond d'avant un zoom reste sous le nouveau, agrandi à sa place,
+   jusqu'à ce que les nouvelles tuiles soient toutes arrivées (ou deux
+   secondes et demie au plus) : le plan ne passe jamais par le noir. */
+function tuilesArrivees() {
+  return carte.images.size > 0 && [...carte.images.values()].every(i => i.complete);
+}
+function verifierLAncienFond() {
+  if (carte && carte.ancien && tuilesArrivees()) retirerLAncienFond();
+}
+function retirerLAncienFond() {
+  if (!carte.ancien) return;
+  clearTimeout(carte.ancien.minuteur);
+  carte.ancien.el.remove();
+  carte.ancien = null;
 }
 
 function deplacer(dx, dy) {
+  const [ax, ay] = [carte.cx, carte.cy];
   carte.cx -= dx;
   carte.cy -= dy;
   borner();
+  const A = carte.ancien;
+  if (A) {
+    A.x += ax - carte.cx;
+    A.y += ay - carte.cy;
+    poser(A.el, A.x, A.y, A.f);
+  }
   dessiner();
 }
 
-/* Zoom d'un cran ou plus, autour d'un point du cadre (le centre, par
-   défaut) : ce qui est sous le doigt y reste. */
+/* Pendant un zoom (deux doigts, molette, fondu d'un bouton) : le plan est
+   agrandi f fois tel quel, le point a0 du cadre venu en a, sans rien
+   reconstruire. */
+function apercu(f, a0, a) {
+  const [tx, ty] = decalage();
+  const x = a[0] + (tx - a0[0]) * f, y = a[1] + (ty - a0[1]) * f;
+  poser(carte.tuiles, x, y, f);
+  poser(carte.calque, x, y, f);
+  const A = carte.ancien;
+  if (A) poser(A.el, a[0] + (A.x - a0[0]) * f, a[1] + (A.y - a0[1]) * f, A.f * f);
+  carte.calque.style.setProperty('--contre', String(1 / f));
+  carte.cadre.classList.add('zoom-en-cours');
+}
+function finirLApercu() {
+  carte.cadre.classList.remove('zoom-en-cours');
+  carte.calque.style.removeProperty('--contre');
+  const A = carte.ancien;
+  if (A) poser(A.el, A.x, A.y, A.f);
+  dessiner();
+}
+
+/* Zoom, d'un cran ou d'une fraction, autour d'un point du cadre (le
+   centre, par défaut) : ce qui est sous le doigt y reste. Le plan est
+   reconstruit au nouveau zoom ; le fond d'avant reste dessous, agrandi,
+   le temps que les nouvelles tuiles arrivent. */
 function zoomer(dz, px, py) {
   if (!carte) return;
   const z = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, carte.z + dz));
-  if (z === carte.z) return;
   const [W, H] = tailleDuCadre();
   if (px === undefined) { px = W / 2; py = H / 2; }
+  if (Math.abs(z - carte.z) < 1e-6) { finirLApercu(); return; }
   const f = Math.pow(2, z - carte.z);
+  const [tx, ty] = decalage();
+  if (carte.ancien && !tuilesArrivees()) {
+    // Le fond le plus récent n'était pas encore là : on garde le précédent.
+    const A = carte.ancien;
+    A.x = px + (A.x - px) * f;
+    A.y = py + (A.y - py) * f;
+    A.f *= f;
+    carte.tuiles.remove();
+  } else {
+    if (carte.ancien) retirerLAncienFond();
+    carte.ancien = { el: carte.tuiles, x: px + (tx - px) * f, y: py + (ty - py) * f, f };
+    carte.ancien.el.classList.add('ancien');
+  }
+  const A = carte.ancien;
+  poser(A.el, A.x, A.y, A.f);
+  clearTimeout(A.minuteur);
+  A.minuteur = setTimeout(() => { if (carte && carte.ancien === A) retirerLAncienFond(); }, 2500);
+  const neuf = document.createElement('div');
+  neuf.className = 'carte-tuiles';
+  neuf.setAttribute('aria-hidden', 'true');
+  carte.calque.before(neuf);
+  carte.tuiles = neuf;
+  carte.images = new Map();
   carte.cx = (carte.cx + px - W / 2) * f - (px - W / 2);
   carte.cy = (carte.cy + py - H / 2) * f - (py - H / 2);
   carte.z = z;
   borner();
+  carte.cadre.classList.remove('zoom-en-cours');
+  carte.calque.style.removeProperty('--contre');
   disposer();
   dessiner();
 }
 
+/* Le même zoom, en un fondu de 220 ms (boutons, double clic, clavier,
+   pastille de plusieurs lieux) ; d'un coup pour qui demande moins
+   d'animations. Un geste qui commence achève le fondu en cours. */
+function zoomerEnDouceur(dz, px, py) {
+  if (!carte) return;
+  if (carte.anime) carte.anime.finir();
+  const [W, H] = tailleDuCadre();
+  if (px === undefined) { px = W / 2; py = H / 2; }
+  const cible = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, carte.z + dz)) - carte.z;
+  if (!cible) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { zoomer(cible, px, py); return; }
+  const c = carte, t0 = performance.now(), DUREE = 220;
+  let id = 0, fini = false;
+  const finir = () => {
+    if (fini) return;
+    fini = true;
+    cancelAnimationFrame(id);
+    clearTimeout(secours);
+    c.anime = null;
+    if (carte === c) zoomer(cible, px, py);
+  };
+  const pas = t => {
+    if (fini || carte !== c) return;
+    const u = Math.min(1, (t - t0) / DUREE);
+    if (u >= 1) { finir(); return; }
+    apercu(Math.pow(2, cible * (1 - Math.pow(1 - u, 3))), [px, py], [px, py]);
+    id = requestAnimationFrame(pas);
+  };
+  // Un onglet caché ne dessine plus : le zoom s'achève quand même.
+  const secours = setTimeout(finir, DUREE + 150);
+  c.anime = { finir };
+  id = requestAnimationFrame(pas);
+}
+
+/* La fiche d'un lieu, sous le plan : son nom, son nombre de soirées, et
+   leurs cartes, les mêmes que dans la liste (étoile, YouTube, agenda
+   compris). Si elle commence trop bas, la page défile jusqu'à elle. */
 function ouvrirFiche(places, depuis) {
   const aujourdhui = isoOf(new Date());
-  const html = ['<button type="button" class="fiche-fermer" aria-label="fermer">✕</button>'];
-  for (const p of places) {
+  const html = [];
+  places.forEach((p, k) => {
     const n = p.evs.length;
     const ou = p.pos ? etiquetteDuLieu(p.nom) : '';
     html.push('<div class="fiche-lieu" tabindex="-1"><span class="fl-nom">' + escapeHtml(p.nom)
       + (ou && ou !== 'Autre' ? ' · ' + escapeHtml(ou) : '') + '</span><span class="fl-n">' + n
-      + (carte && carte.jour === aujourdhui ? ' ce soir' : ' évt' + (n > 1 ? 's' : '')) + '</span></div>');
-    html.push('<ul class="fiche-evts">' + p.evs.map(e => {
-      const href = eventHref(e);
-      const lien = typeof href === 'string' && /^https?:/.test(href);
-      const corps = '<span class="fe-titre">' + escapeHtml((e.title || '').trim() || 'titre non précisé')
-        + '</span><span class="fe-heure">' + escapeHtml(e.time || '') + '</span>';
-      return '<li>' + (lien ? '<a href="' + escapeHtml(href) + '" target="_blank" rel="noopener">'
-        + corps + '</a>' : '<span class="fe-sans-lien">' + corps + '</span>') + '</li>';
-    }).join('') + '</ul>');
-  }
+      + (carte && carte.jour === aujourdhui ? ' ce soir' : ' évt' + (n > 1 ? 's' : '')) + '</span>'
+      + (k === 0 ? '<button type="button" class="fiche-fermer" aria-label="fermer">✕</button>' : '')
+      + '</div>');
+    html.push('<div class="events">' + p.evs.map(e => eventCard(e)).join('\n') + '</div>');
+  });
   const f = carte.fiche;
   f.innerHTML = html.join('');
   f.hidden = false;
+  const haut = f.getBoundingClientRect().top;
+  if (haut > innerHeight - 120) {
+    const doux = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollBy({ top: haut - innerHeight * 0.45, behavior: doux ? 'smooth' : 'auto' });
+  }
   carte.retour = depuis;
   carte.choisis = new Set(places.map(p => p.cle));
   carte.calque.querySelectorAll('.carte-pin').forEach(b => {
@@ -4243,7 +4348,6 @@ function ouvrirFiche(places, depuis) {
     b.classList.toggle('choisi', g.membres.some(p => carte.choisis.has(p.cle)));
   });
   f.querySelector('.fiche-lieu').focus({ preventScroll: true });
-  f.scrollTop = 0;
 }
 
 function fermerFiche() {
@@ -4264,7 +4368,7 @@ function toucherPastille(bouton) {
     const separes = pl.some(a => pl.some(b => Math.hypot(a[0] - b[0], a[1] - b[1]) >= ECART_PASTILLES));
     if (separes) {
       const r = carte.cadre.getBoundingClientRect(), b = bouton.getBoundingClientRect();
-      zoomer(2, b.left + b.width / 2 - r.left, b.top + b.height / 2 - r.top);
+      zoomerEnDouceur(2, b.left + b.width / 2 - r.left, b.top + b.height / 2 - r.top);
       return;
     }
   }
@@ -4274,16 +4378,25 @@ function toucherPastille(bouton) {
 function brancherLaCarte(c) {
   const cadre = c.cadre;
   const doigts = new Map();
-  let pince = 0;
+  // Deux doigts : l'écart et le milieu du début du geste, puis le facteur
+  // et le milieu courants. Le plan suit en continu (apercu) ; il est
+  // reconstruit quand un doigt se lève.
+  let pince = null;
   const ecartDesDoigts = () => {
     const [a, b] = [...doigts.values()];
     return Math.hypot(a[0] - b[0], a[1] - b[1]);
   };
+  const milieu = () => {
+    const [a, b] = [...doigts.values()];
+    const r = cadre.getBoundingClientRect();
+    return [(a[0] + b[0]) / 2 - r.left, (a[1] + b[1]) / 2 - r.top];
+  };
   cadre.addEventListener('pointerdown', ev => {
     if (ev.pointerType === 'mouse' && ev.button !== 0) return;
+    if (c.anime) c.anime.finir();
     doigts.set(ev.pointerId, [ev.clientX, ev.clientY]);
     c.glisse = false;
-    if (doigts.size === 2) pince = ecartDesDoigts();
+    if (doigts.size === 2) pince = { d0: ecartDesDoigts(), a0: milieu(), f: 1, a: milieu() };
   });
   cadre.addEventListener('pointermove', ev => {
     const avant = doigts.get(ev.pointerId);
@@ -4300,21 +4413,27 @@ function brancherLaCarte(c) {
       }
       doigts.set(ev.pointerId, [ev.clientX, ev.clientY]);
       deplacer(dx, dy);
-    } else if (doigts.size === 2) {
+    } else if (doigts.size === 2 && pince) {
       doigts.set(ev.pointerId, [ev.clientX, ev.clientY]);
       c.glisse = true;
-      const e2 = ecartDesDoigts();
-      const dz = e2 > pince * 1.5 ? 1 : e2 < pince / 1.5 ? -1 : 0;
-      if (dz) {
-        const [a, b] = [...doigts.values()];
-        const r = cadre.getBoundingClientRect();
-        zoomer(dz, (a[0] + b[0]) / 2 - r.left, (a[1] + b[1]) / 2 - r.top);
-        pince = e2;
-      }
+      const dz = Math.log2(ecartDesDoigts() / pince.d0);
+      pince.f = Math.pow(2, Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, carte.z + dz)) - carte.z);
+      pince.a = milieu();
+      apercu(pince.f, pince.a0, pince.a);
     }
   });
   const lever = ev => {
     doigts.delete(ev.pointerId);
+    if (pince && doigts.size < 2) {
+      // Le point qui était sous les doigts au début du geste est sous
+      // leur milieu à la fin : zoom autour du premier, puis glissement.
+      const { f, a0, a } = pince;
+      pince = null;
+      if (carte === c) {
+        zoomer(Math.log2(f), a0[0], a0[1]);
+        deplacer(a[0] - a0[0], a[1] - a0[1]);
+      }
+    }
     if (!doigts.size) cadre.classList.remove('glisse');
   };
   cadre.addEventListener('pointerup', lever);
@@ -4329,25 +4448,34 @@ function brancherLaCarte(c) {
   cadre.addEventListener('dblclick', ev => {
     if (ev.target.closest('.carte-pin')) return;
     const r = cadre.getBoundingClientRect();
-    zoomer(1, ev.clientX - r.left, ev.clientY - r.top);
+    zoomerEnDouceur(1, ev.clientX - r.left, ev.clientY - r.top);
   });
   cadre.addEventListener('wheel', ev => {
     if (!ev.ctrlKey && !ev.metaKey) return;   // la molette seule fait défiler la page
     ev.preventDefault();
-    // Un pavé tactile envoie beaucoup de petits pas : on les cumule.
-    c.molette += ev.deltaY;
-    if (Math.abs(c.molette) < 50) return;
+    if (c.anime) c.anime.finir();
+    // Un cran de molette (100 px) vaut un cran de zoom ; un pavé tactile,
+    // qui envoie beaucoup de petits pas, zoome en continu. Le plan suit à
+    // chaque pas, et se reconstruit 180 ms après le dernier.
     const r = cadre.getBoundingClientRect();
-    zoomer(c.molette < 0 ? 1 : -1, ev.clientX - r.left, ev.clientY - r.top);
-    c.molette = 0;
+    if (!c.molette) c.molette = { a: [ev.clientX - r.left, ev.clientY - r.top], dz: 0, minuteur: 0 };
+    const m = c.molette;
+    const pas = ev.deltaMode === 1 ? ev.deltaY * 33 : ev.deltaMode === 2 ? ev.deltaY * 100 : ev.deltaY;
+    m.dz = Math.min(ZOOM_MAX - carte.z, Math.max(ZOOM_MIN - carte.z, m.dz - pas / 100));
+    apercu(Math.pow(2, m.dz), m.a, m.a);
+    clearTimeout(m.minuteur);
+    m.minuteur = setTimeout(() => {
+      c.molette = null;
+      if (carte === c) zoomer(m.dz, m.a[0], m.a[1]);
+    }, 180);
   }, { passive: false });
   c.racine.addEventListener('keydown', ev => {
     if (ev.key === 'Escape') { fermerFiche(); return; }
     if (!cadre.contains(ev.target)) return;
     const pas = { ArrowLeft: [80, 0], ArrowRight: [-80, 0], ArrowUp: [0, 80], ArrowDown: [0, -80] }[ev.key];
     if (pas) { ev.preventDefault(); deplacer(pas[0], pas[1]); return; }
-    if (ev.key === '+' || ev.key === '=') { ev.preventDefault(); zoomer(1); }
-    if (ev.key === '-' || ev.key === '_') { ev.preventDefault(); zoomer(-1); }
+    if (ev.key === '+' || ev.key === '=') { ev.preventDefault(); zoomerEnDouceur(1); }
+    if (ev.key === '-' || ev.key === '_') { ev.preventDefault(); zoomerEnDouceur(-1); }
   });
 }
 

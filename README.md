@@ -451,10 +451,14 @@ la recopier, version comprise.
   favoris », remplace les journées par un plan de Lyon où sont posés les
   lieux d'UNE soirée (« ce soir », par défaut), chacun avec son nombre
   d'événements, et son nom quand il y a la place (les noms ne se
-  chevauchent jamais). Toucher un lieu ouvre sa fiche, posée sur le bas
-  du plan : ses soirées, avec leur heure et leur lien. Des lieux trop
+  chevauchent jamais). Toucher un lieu ouvre sa fiche, sous le plan : les
+  cartes de ses soirées, les mêmes que dans la liste (étoile, YouTube,
+  agenda compris) ; si elle commence trop bas, la page défile jusqu'à
+  elle. Des lieux trop
   proches ne font qu'une pastille, cerclée, qui zoome sur eux. La barre
-  des 14 jours et les flèches de l'en-tête choisissent la soirée ; les
+  des 14 jours et les flèches de l'en-tête choisissent la soirée (la
+  pastille du jour montré est pleine, crème ; aujourd'hui garde son cadre
+  ocre) ; les
   filtres et les familles s'appliquent comme à la liste, et le plan
   compte exactement les événements de la journée de la liste. Un lieu
   sans position (voir `lieux.json`) est nommé sous le plan, dans « pas
@@ -464,9 +468,15 @@ la recopier, version comprise.
   ferme la fiche ; les boutons + et − sont là pour tous. Le fond est
   celui d'OpenStreetMap, en tuiles, assombri pour aller avec la page,
   avec la mention « © OpenStreetMap » ; aucune bibliothèque, le plan se
-  résume à poser des images et des boutons. Le zoom se règle au quart de
-  cran près : les tuiles du cran supérieur sont alors affichées un peu
-  réduites.
+  résume à poser des images et des boutons. Le zoom n'est pas forcément
+  entier : les tuiles du cran supérieur sont alors affichées un peu
+  réduites. Il est fluide : deux doigts et Ctrl + molette agrandissent le
+  plan sous le geste, tel quel (les pastilles gardent leur taille, les
+  noms s'effacent), et il est reconstruit à la fin du geste ; les boutons
+  + et −, le double clic et le clavier zooment en un fondu de 220 ms
+  (d'un coup pour qui demande moins d'animations). Le fond d'avant reste
+  dessous, agrandi, tant que les nouvelles tuiles ne sont pas arrivées :
+  le plan ne passe jamais par le noir.
   Pour les lecteurs d'écran, le champ de recherche porte un nom, les
   boutons de filtre disent s'ils sont enfoncés, chaque journée est un
   titre de niveau 2, et le jour courant est signalé (`aria-current`)

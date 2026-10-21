@@ -361,7 +361,7 @@ class PageCarte(unittest.TestCase):
         self.assertEqual([attendu[0] // 256, attendu[1] // 256], [2102, 1461])
 
     def test_la_fiche_d_un_lieu(self):
-        self.assertEqual(self.c["fiche"], [True] * 6)
+        self.assertEqual(self.c["fiche"], [True] * 8)
         self.assertEqual(self.c["apres_echap"], [True, True, False])
 
     def test_les_gestes(self):
@@ -370,6 +370,16 @@ class PageCarte(unittest.TestCase):
         self.assertEqual((sans_ctrl, avec_ctrl), (0, 1))
         self.assertLessEqual(ecart, 1)
         self.assertEqual(self.c["glisse"], [[0, 0], [60, 30]])
+
+    def test_le_zoom_est_fluide(self):
+        # Ctrl + molette et deux doigts : le plan suit le geste, agrandi tel
+        # quel, puis est reconstruit ; le fondu d'un bouton aussi.
+        self.assertEqual(self.c["molette_en_continu"], [[True, True], False])
+        pendant, apres = self.c["pince"]
+        self.assertEqual(pendant, [True] * 5)
+        self.assertEqual(apres, [1, 400, 200, False])
+        self.assertEqual(self.c["fondu"], [[True, True], 1, False])
+        self.assertEqual(self.c["ancien_fond"], [2, 1])
         self.assertTrue(self.c["clavier_apres_glisse"])
         self.assertEqual(self.c["fleche"], 80)
         self.assertIsNotNone(self.c["groupe"])
@@ -382,6 +392,7 @@ class PageCarte(unittest.TestCase):
         self.assertEqual(self.c["pastille"], ["samedi 3 octobre", "?vue=carte&jour=2026-10-03",
                                               ["2026-10-03"]])
         self.assertEqual(self.c["suivant"], "dimanche 4 octobre")
+        self.assertEqual(self.c["couleurs_des_jours"], ["rgb(231, 223, 190)", "rgba(212, 165, 116, 0.09)"])
         self.assertEqual(self.c["precedent"], "samedi 3 octobre")
 
     def test_un_lien_rouvre_la_carte_du_jour(self):
