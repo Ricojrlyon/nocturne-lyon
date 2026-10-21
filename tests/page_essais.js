@@ -234,6 +234,25 @@
                          document.activeElement ? document.activeElement.id : null];
       res.boutons_de_famille = [...new Set([...document.querySelectorAll('.fam-chip')]
         .map(c => Math.round(c.getBoundingClientRect().height)))];
+      // Le lien suit les filtres, et « partager » le copie (sans écran
+      // tactile, pas de menu de partage).
+      await effacer();
+      res.adresses = [location.search];
+      document.querySelector('#filterWhen .chip[data-when="weekend"]').click();
+      await pause(300);
+      res.adresses.push(location.search);
+      document.querySelector('#filterArr .chip[data-arr="7e"]').click();
+      await pause(300);
+      res.adresses.push(location.search);
+      Object.defineProperty(navigator, 'clipboard', { configurable: true,
+        value: { writeText: async t => { window.__copie = t; } } });
+      document.getElementById('partager').click();
+      await pause(200);
+      const message = document.getElementById('toast');
+      res.partage = [window.__copie === location.href, !message.hidden,
+                     norme(message.textContent).startsWith('lien copié · 127.0.0.1')];
+      await effacer();
+      res.adresses.push(location.search);
       // Audit n° 20 : le bouton « date » dit la période choisie, puis
       // redevient « date → » ; un filtre sans résultat le dit, et son
       // « tout effacer » ramène tout le fil.

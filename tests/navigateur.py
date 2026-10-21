@@ -176,7 +176,7 @@ class _Gestionnaire(http.server.SimpleHTTPRequestHandler):
 
 def jouer(evenements: dict, lieux: dict | None, *, date_figee: bool,
           scenarios: str = "tous", animations: bool = False,
-          delai: int = 240) -> dict:
+          delai: int = 240, requete: str = "") -> dict:
     """Joue la page et rend le relevé du pilote.
 
     `animations` : sans lui, le navigateur demande « moins d'animations » et
@@ -205,7 +205,9 @@ def jouer(evenements: dict, lieux: dict | None, *, date_figee: bool,
         fil = threading.Thread(target=serveur.serve_forever, daemon=True)
         fil.start()
         try:
-            url = "http://127.0.0.1:%d/index.html" % serveur.server_address[1]
+            # `requete` : ce qui suit l'adresse, « ?quand=weekend » - un
+            # lien partagé.
+            url = "http://127.0.0.1:%d/index.html%s" % (serveur.server_address[1], requete)
             env = dict(os.environ, TZ="Europe/Paris", LANG="fr_FR.UTF-8")
             # « Moins d'animations » : la page se met alors à jour d'un coup,
             # sans fondu (voir render() dans index.html). Avec le fondu, la

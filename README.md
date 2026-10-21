@@ -401,6 +401,13 @@ la recopier, version comprise.
   et offre un bouton « tout effacer », sans passer par le tiroir des
   filtres. Sur téléphone, une période choisie fait passer le bouton sur
   une troisième ligne de filtres.
+  L'adresse de la page garde les filtres (`?quand=weekend&arr=7e&q=jazz`,
+  et `du`, `au`, `lieu`, `tag`, `sans`) : elle suit chaque clic, sans
+  encombrer l'historique, et se relit à l'ouverture, si bien qu'un lien
+  envoyé montre exactement la même chose. Le bouton « partager ↗ », au
+  bout de la ligne du titre, ouvre le menu de partage d'un téléphone et
+  copie le lien sur un ordinateur. Les favoris n'y figurent pas : ils
+  sont à chacun.
   Pour les lecteurs d'écran, le champ de recherche porte un nom, les
   boutons de filtre disent s'ils sont enfoncés, chaque journée est un
   titre de niveau 2, et le jour courant est signalé (`aria-current`)
@@ -509,7 +516,9 @@ python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
   que sa politique de sécurité bloque. L'application, elle, doit
   s'ouvrir sans réseau : le banc laisse le service hors ligne
   s'installer, coupe toutes ses connexions, recharge la page, et exige
-  les mêmes cartes qu'en ligne.
+  les mêmes cartes qu'en ligne. Un lien partagé aussi : la page ouverte
+  avec `?quand=weekend`, `?q=comedy`, `?lieu=Le+Sucre` ou `?tag=theatre`
+  doit montrer les cartes du scénario correspondant.
 - **Le fil du jour**, après la collecte : la forme d'`events.json`, et la
   page qui s'affiche avec, sans erreur et avec les bons compteurs.
 

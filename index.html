@@ -144,6 +144,40 @@
     display: flex;
     align-items: stretch;
   }
+  /* « partager » : au bout de la ligne du titre, centré en hauteur. */
+  .partager {
+    margin: auto 0 auto auto;
+    background: none;
+    border: 1px solid var(--rule-strong);
+    color: var(--ink-soft);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    padding: 6px 11px;
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+  .partager:hover { border-color: var(--ink-soft); color: var(--ink); }
+  .partager:focus-visible { outline: 2px solid var(--warm); outline-offset: 2px; }
+  /* Le message bref du bas de l'écran (« lien copié · … »). */
+  .toast {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    z-index: 50;
+    width: max-content;
+    max-width: calc(100vw - 32px);
+    background: var(--ink);
+    color: var(--bg);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    line-height: 1.45;
+    padding: 10px 14px;
+    border-radius: var(--radius);
+    overflow-wrap: anywhere;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55);
+  }
   .wordmark {
     margin: 0;
     background: var(--ink);
@@ -1657,6 +1691,7 @@
 <header class="masthead">
   <div class="container">
     <h1 class="wordmark"><span class="ast">*</span>nocturne</h1>
+    <button class="partager" id="partager" type="button">partager ↗</button>
   </div>
 </header>
 
@@ -1743,6 +1778,8 @@
     </div>
   </div>
 </footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
 <script>
 const FR_DAYS_FULL = ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
@@ -2786,6 +2823,7 @@ async function load() {
   // un fil plus ancien, sans ce nombre, laisse celui qu'écrit la page.
   if (data.sources > 0) document.getElementById('footerSources').textContent = data.sources;
 
+  lireLAdresse();
   classerLieux();
   buildArrondissementFilters();
   buildLieuxFilters();
@@ -3091,6 +3129,7 @@ function buildArrondissementFilters() {
     btn.className = 'chip';
     btn.textContent = arr;
     btn.dataset.arr = arr;
+    if (state.arrondissements.has(arr)) btn.classList.add('active');
     btn.addEventListener('click', () => {
       if (state.arrondissements.has(arr)) {
         state.arrondissements.delete(arr);
@@ -3146,6 +3185,101 @@ function libelleDuBoutonDate() {
     btn.setAttribute('aria-label', 'dates choisies : du ' + long(s) + ' au ' + long(e));
   }
 }
+
+/* ---------- le lien qui garde les filtres ----------
+   L'adresse de la page dit ce qu'on regarde : « ?quand=weekend&arr=7e ».
+   Elle est réécrite à chaque rendu, sans ajouter de page à l'historique
+   (le bouton « retour » ne rejoue pas chaque clic), et relue à
+   l'ouverture : un lien envoyé à un ami lui montre la même chose.
+   Les favoris n'y figurent pas : ils sont à chacun. */
+const QUAND_DANS_L_ADRESSE = { weekend: 'weekend', nextweek: 'semaine-pro' };
+
+function adresseDesFiltres() {
+  const p = new URLSearchParams();
+  if (state.when === 'custom' && state.customRange) {
+    p.set('du', state.customRange.start);
+    p.set('au', state.customRange.end);
+  } else if (QUAND_DANS_L_ADRESSE[state.when]) {
+    p.set('quand', QUAND_DANS_L_ADRESSE[state.when]);
+  }
+  for (const a of state.arrondissements) p.append('arr', a.toLowerCase());
+  for (const l of state.lieux) p.append('lieu', l);
+  for (const t of state.tags) p.append('tag', t);
+  for (const f of state.famillesOff) p.append('sans', f);
+  const q = document.getElementById('filterSearch').value.trim();
+  if (q) p.set('q', q);
+  const s = p.toString();
+  return location.pathname + (s ? '?' + s : '');
+}
+
+function ecrireLAdresse() {
+  const a = adresseDesFiltres();
+  if (a !== location.pathname + location.search) history.replaceState(null, '', a);
+}
+
+/* Ce qu'une adresse inconnue ou abîmée contient est ignoré : un lieu qui
+   n'a plus d'événement, une date mal écrite, une famille qui n'existe pas. */
+function lireLAdresse() {
+  const p = new URLSearchParams(location.search);
+  const jour = /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/;
+  const du = p.get('du'), au = p.get('au');
+  if (du && au && jour.test(du) && jour.test(au)) {
+    state.when = 'custom';
+    state.customRange = du <= au ? { start: du, end: au } : { start: au, end: du };
+  } else {
+    const w = Object.keys(QUAND_DANS_L_ADRESSE).find(k => QUAND_DANS_L_ADRESSE[k] === p.get('quand'));
+    if (w) state.when = w;
+  }
+  for (const a of p.getAll('arr')) {
+    const vrai = ARRONDISSEMENT_ORDER.find(x => x.toLowerCase() === a.toLowerCase());
+    if (vrai) state.arrondissements.add(vrai);
+  }
+  const lieux = new Set(state.events.map(e => e.venue));
+  for (const l of p.getAll('lieu')) if (lieux.has(l)) state.lieux.add(l);
+  for (const t of p.getAll('tag')) if (ALL_BUCKETS.some(b => b.key === t)) state.tags.add(t);
+  for (const f of p.getAll('sans')) if (FAMILLES.some(x => x.key === f)) state.famillesOff.add(f);
+  const q = (p.get('q') || '').trim();
+  if (q) {
+    document.getElementById('filterSearch').value = q;
+    document.getElementById('filterSearchClear').style.display = '';
+    state.search = normSearch(q);
+  }
+  document.querySelectorAll('#filterWhen .chip[data-when]')
+    .forEach(c => c.classList.toggle('active', c.dataset.when === state.when));
+  document.getElementById('dateBtn').classList.toggle('active', state.when === 'custom');
+  // Un filtre du tiroir est rangé dans le tiroir : on l'ouvre, pour qu'on
+  // voie pourquoi la liste est réduite.
+  if (state.arrondissements.size || state.lieux.size || state.tags.size) {
+    if (document.getElementById('filterDrawer').hidden) document.getElementById('drawerToggle').click();
+  }
+}
+
+/* Un message bref en bas de l'écran. */
+function afficherMessage(texte) {
+  const t = document.getElementById('toast');
+  t.textContent = texte;
+  t.hidden = false;
+  clearTimeout(afficherMessage.minuteur);
+  afficherMessage.minuteur = setTimeout(() => { t.hidden = true; }, 3500);
+}
+
+/* « partager » : sur un téléphone, le menu de partage du système
+   (WhatsApp, SMS…) ; ailleurs, le lien est copié, et le message le montre.
+   Le lien est l'adresse de la page, qui garde déjà les filtres. */
+document.getElementById('partager').addEventListener('click', async () => {
+  const lien = location.href;
+  if (navigator.share && matchMedia('(pointer: coarse)').matches) {
+    try { await navigator.share({ title: document.title, url: lien }); } catch (_) { /* partage annulé */ }
+    return;
+  }
+  const court = lien.replace('https://', '').replace('http://', '');
+  try {
+    await navigator.clipboard.writeText(lien);
+    afficherMessage('lien copié · ' + court);
+  } catch (_) {
+    afficherMessage(court);
+  }
+});
 
 /* ---------- when filter ---------- */
 document.getElementById('filterWhen').addEventListener('click', e => {
@@ -3340,6 +3474,7 @@ function filtered() {
 let firstRenderDone = false;
 function render() {
   etatDesBoutons();
+  ecrireLAdresse();
   const animate = firstRenderDone
     && typeof document.startViewTransition === 'function'
     // Indispensable : dans un onglet masqué, startViewTransition attend une

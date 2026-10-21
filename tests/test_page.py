@@ -168,6 +168,11 @@ class PageNavigation(unittest.TestCase):
         # L'application installable : sw.js s'active, et couvre tout le site.
         self.assertEqual(self.releve["service_hors_ligne"], ["activated", "/"])
 
+    def test_l_adresse_suit_les_filtres_et_partager_la_copie(self):
+        self.assertEqual(self.releve["adresses"],
+                         ["", "?quand=weekend", "?quand=weekend&arr=7e", ""])
+        self.assertEqual(self.releve["partage"], [True, True, True])
+
     def test_l_impro_est_du_theatre(self):
         # « Impro », catégorie du Petit Bulletin pour le théâtre
         # d'improvisation, était rangée en jazz, donc en musique.
@@ -184,6 +189,29 @@ class PageNavigation(unittest.TestCase):
         for police in prechargees:
             self.assertEqual([qui for nom, qui in self.releve["polices_chargees"] if nom == police],
                              ["link"], police)
+
+
+class PageDepuisUnLien(unittest.TestCase):
+    """Un lien partagé rouvre la même vue : la page ouverte avec
+    « ?quand=weekend » montre exactement les cartes qu'on obtient en
+    touchant « ce weekend », et ainsi de suite."""
+    CAS = {"ce_weekend": "?quand=weekend", "recherche_comedy": "?q=comedy",
+           "lieu_le_sucre": "?lieu=Le+Sucre", "tag_theatre": "?tag=theatre"}
+
+    @classmethod
+    def setUpClass(cls):
+        evenements, lieux = donnees_figees()
+        cls.releves = {nom: navigateur.releve_ou_probleme(
+            evenements=evenements, lieux=lieux, date_figee=True, scenarios="tout", requete=requete)
+            for nom, requete in cls.CAS.items()}
+
+    def test_chaque_lien_rouvre_la_meme_vue(self):
+        attendu = lire_gz("page_reference.json.gz")
+        for nom, (releve, probleme) in self.releves.items():
+            navigateur.sauter_si_indisponible(self, probleme)
+            self.assertNotIn("echec", releve, nom)
+            self.assertEqual(releve["erreurs_fin"], [], nom)
+            self.assertEqual(releve["scenarios"]["tout"], attendu["scenarios"][nom], nom)
 
 
 class PageHorsLigne(unittest.TestCase):
