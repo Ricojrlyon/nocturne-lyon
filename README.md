@@ -413,6 +413,8 @@ la recopier, version comprise.
   ordinateurs, avec la soirée à son heure de Paris (fuseau décrit dans le
   fichier), une durée de deux heures, la salle et sa ville, et le lien ;
   sans heure connue, la journée entière. Rien ne part vers un serveur.
+  Les cartes de musique, et elles seules, portent aussi « ▶ écouter » :
+  une recherche YouTube sur le titre de la soirée, dans un autre onglet.
   Ces boutons sont dans le lien de la carte : les toucher n'ouvre pas la
   page de l'événement.
   Les favoris, sans compte : l'étoile ☆, tout en haut à droite d'une

@@ -4164,6 +4164,12 @@ function eventCard(e, seedOverride) {
   CARTES.set(cle, e);
   const agenda = '<span class="carte-bouton" role="button" tabindex="0" data-action="agenda"'
     + ' data-cle="' + escapeHtml(cle) + '" title="ajouter à mon agenda">+ agenda</span>';
+  // « ▶ écouter » (nouveauté n° 5), sur les seules cartes de musique : une
+  // recherche YouTube sur le titre, dans un autre onglet.
+  const ecouter = familleOf(e.category) === 'musique'
+    ? '<span class="carte-bouton" role="link" tabindex="0" data-action="ecouter"'
+      + ' data-cle="' + escapeHtml(cle) + '" title="écouter sur YouTube">▶ écouter</span>'
+    : '';
   // L'étoile des favoris (nouveauté n° 3), tout en haut à droite.
   const garde = state.favoris.has(cleEvenement(e));
   const etoile = '<span class="carte-bouton carte-etoile" role="button" tabindex="0"'
@@ -4207,6 +4213,7 @@ function eventCard(e, seedOverride) {
     '    <div class="event-foot-right">',
     '      ' + sourceBadge,
     '      ' + runBadge,
+    '      ' + ecouter,
     '      ' + agenda,
     '      ' + time,
     '    </div>',
@@ -4264,6 +4271,10 @@ function agirSurCarte(bouton) {
   if (!e) return;
   if (bouton.dataset.action === 'agenda') ajouterALAgenda(e);
   if (bouton.dataset.action === 'favori') basculerFavori(e);
+  if (bouton.dataset.action === 'ecouter') {
+    window.open('https://www.youtube.com/results?search_query='
+                + encodeURIComponent((e.title || '').trim()), '_blank', 'noopener');
+  }
 }
 
 /* ★ sur une carte : l'événement est gardé (ou ne l'est plus), sur toutes

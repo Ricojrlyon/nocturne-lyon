@@ -317,6 +317,28 @@
         lignes_courtes: texte.split(SAUT).every(l => l.length <= 61),
         echappement: texteAgenda('Rock, pop; jazz') === 'Rock' + BARRE + ', pop' + BARRE + '; jazz',
       };
+      // « ▶ écouter » (nouveauté n° 5) : sur les cartes de musique, et
+      // elles seules ; une recherche YouTube sur le titre, la carte fermée.
+      const ouvertes = [];
+      const vraiOpen = window.open;
+      window.open = (url, cible, options) => { ouvertes.push([url, cible, options]); return null; };
+      const cartesSimples = [...document.querySelectorAll('#feed a.event')];
+      const musicale = cartesSimples.find(c => c.querySelector('[data-action="ecouter"]'));
+      let carteOuverte = null;
+      document.addEventListener('click', e => { carteOuverte = !e.defaultPrevented; }, { once: true });
+      musicale.querySelector('[data-action="ecouter"]').click();
+      await pause(100);
+      window.open = vraiOpen;
+      const titreMusical = norme(musicale.querySelector('.event-title').textContent);
+      res.ecouter = {
+        juste: ouvertes.length === 1
+          && ouvertes[0][0] === 'https://www.youtube.com/results?search_query=' + encodeURIComponent(titreMusical)
+          && ouvertes[0][1] === '_blank',
+        carte_ouverte: carteOuverte,
+        seulement_musique: cartesSimples.length > 10 && cartesSimples.every(c =>
+          !!c.querySelector('[data-action="ecouter"]')
+          === (familleOf(c.querySelector('.event-cat').textContent) === 'musique')),
+      };
       // ★ favoris et mes salles (nouveauté n° 3).
       await effacer();
       window.scrollTo(0, 0);

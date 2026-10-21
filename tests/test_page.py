@@ -184,6 +184,11 @@ class PageNavigation(unittest.TestCase):
                          [True, True, True, True])
         self.assertIs(a["lien_ouvert"], False)
 
+    def test_ecouter_ouvre_youtube_pour_la_musique(self):
+        # Nouveauté n° 5.
+        self.assertEqual(self.releve["ecouter"],
+                         {"juste": True, "carte_ouverte": False, "seulement_musique": True})
+
     def test_favoris_et_mes_salles(self):
         # Nouveauté n° 3 : l'étoile garde l'événement sans ouvrir la carte ;
         # « ★ favoris » ne montre plus que lui, puis aussi la salle suivie,
