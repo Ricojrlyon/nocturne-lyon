@@ -355,8 +355,10 @@ la recopier, version comprise.
   sinon le comblement ne sert à rien. Deux pièges vérifiés : « ciné » ne
   correspond pas à sa propre regex et « électro » accentué non plus.
 - **`scrapers/geo.py`** : géocodage Nominatim des lieux inconnus →
-  arrondissement, mis en cache dans `venue_arrondissements.json`. Les lieux
-  auxquels `lieux.json` donne un arrondissement ne sont jamais interrogés.
+  arrondissement et position (`pos`, latitude et longitude arrondies au
+  mètre, pour la vue carte de la page), mis en cache dans
+  `venue_arrondissements.json`. Les lieux auxquels `lieux.json` donne un
+  arrondissement ne sont jamais interrogés.
 - **`scrapers/detail_cache.py`** : cache persistant `url → heure` pour les
   12 modules qui ouvrent des pages détail (TTL 30 j si heure trouvée,
   7 j sinon, purge à 60 j). Divise le temps de run par ~8 dès le 2ᵉ passage.
@@ -478,7 +480,12 @@ la recopier, version comprise.
 - **`lieux.json`** : où est chaque lieu, une ligne par lieu : son nom tel
   que l'écrivent les sources, son arrondissement (1er à 9e, Villeurbanne
   ou Autre), sa commune quand il est hors de Lyon et de Villeurbanne
-  (écrite en entier, la page l'abrège), et une note (l'adresse). La page
+  (écrite en entier, la page l'abrège), sa position (`pos`, latitude et
+  longitude, pour la vue carte : trouvée une fois à l'adresse du lieu,
+  avec le même service que le robot, Nominatim, et contrôlée par le code
+  postal de l'arrondissement ou par la commune ; un lieu sans position
+  est nommé sous le plan, dans « pas sur la carte »), et une note
+  (l'adresse). La page
   le lit au chargement, et le robot aussi : il ne cherche pas sur la
   carte un lieu qui y a un arrondissement. Ces deux tables étaient
   écrites dans index.html, que le robot devait fouiller ; elles sont
@@ -531,7 +538,8 @@ python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
   qui est gardé, ce qui est écarté), les garde-fous
   d'`aggregate.py`, ce que la page et les collecteurs doivent avoir en
   commun (l'horizon, le marqueur « ailleurs », le fichier des lieux que
-  tous deux lisent, bien formé), ce que la politique de sécurité de la page
+  tous deux lisent, bien formé, positions comprises), ce que le géocodage
+  garde d'une réponse de Nominatim, ce que la politique de sécurité de la page
   interdit, et deux RÉFÉRENCES figées.
   La chaîne de publication entière est rejouée sur une collecte réelle
   (celle du 1er octobre 2026, dans `tests/donnees/`) et doit rendre le
@@ -570,7 +578,8 @@ diff de `tests/donnees/`.
    heures nécessitent des pages détail.
 2. L'enregistrer dans `SCRAPERS` (aggregate.py).
 3. Ajouter le lieu dans `lieux.json` (une ligne : nom, arrondissement,
-   commune s'il est hors de Lyon et de Villeurbanne, adresse en note) et
+   commune s'il est hors de Lyon et de Villeurbanne, position `pos`
+   [latitude, longitude] pour la vue carte, adresse en note) et
    dans `VENUE_GROUPS` (index.html) : le géocodage ne le cherchera pas.
 4. Si les agrégateurs orthographient le lieu autrement, ajouter les
    variantes dans `VENUE_CANONICAL` (scrapers/dedup.py). C'est ce qui
@@ -755,5 +764,5 @@ motif.
 | Fichier | Contenu |
 |---|---|
 | `events.json` | les événements agrégés, consommés par index.html |
-| `venue_arrondissements.json` | cache géocodage lieu → arrondissement |
+| `venue_arrondissements.json` | cache géocodage lieu → arrondissement et position |
 | `detail_times.json` | cache url → heure des pages détail |

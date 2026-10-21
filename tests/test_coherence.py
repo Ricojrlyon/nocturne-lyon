@@ -130,13 +130,25 @@ class Coherence(unittest.TestCase):
         noms = [l["nom"] for l in lieux]
         self.assertEqual(len(noms), len(set(noms)))
         for l in lieux:
-            self.assertLessEqual(set(l), {"nom", "arr", "commune", "note"}, l)
+            self.assertLessEqual(set(l), {"nom", "arr", "commune", "pos", "note"}, l)
             self.assertTrue(l["nom"].strip(), l)
             self.assertTrue("arr" in l or "commune" in l, l)
             if "arr" in l:
                 self.assertIn(l["arr"], ordre, l)
             if "commune" in l:
                 self.assertNotIn("…", l["commune"], l)
+            if "pos" in l:
+                # La vue carte (nouveauté n° 6) : [latitude, longitude], dans
+                # la grande région lyonnaise. Inversées, elles tomberaient
+                # dans l'océan Indien : le test le verrait.
+                lat, lon = l["pos"]
+                self.assertTrue(45.4 < lat < 46.0 and 4.4 < lon < 5.2, l)
+
+    def test_presque_tous_les_lieux_ont_une_position(self):
+        # Sans position, un lieu va dans la liste « non placés » de la carte.
+        lieux = json.loads((RACINE / "lieux.json").read_text(encoding="utf-8"))["lieux"]
+        places = [l for l in lieux if "pos" in l]
+        self.assertGreater(len(places), 0.8 * len(lieux))
 
 
 if __name__ == "__main__":

@@ -12,6 +12,10 @@ Cache format (venue_arrondissements.json):
     "La Luttine":      {"arr": "Autre", "confidence": "low", ...}
   }
 
+Chaque lieu trouvé garde aussi sa position, "pos": [latitude, longitude],
+arrondie au mètre près : la vue carte de la page s'en sert (nouveauté
+n° 6, octobre 2026).
+
 Confidence levels:
   "high"    - postcode matched a Lyon/Villeurbanne arrondissement exactly
   "low"     - city matched but postcode outside Lyon/Villeurbanne
@@ -112,6 +116,22 @@ def _search(query: str) -> Optional[list]:
         return None
 
 
+def _position(r: dict) -> Optional[list]:
+    """[latitude, longitude] d'un résultat Nominatim, arrondies à 5
+    décimales (un mètre environ), ou None s'il n'en porte pas."""
+    try:
+        return [round(float(r["lat"]), 5), round(float(r["lon"]), 5)]
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
+def _avec_position(entry: dict, r: dict) -> dict:
+    pos = _position(r)
+    if pos:
+        entry["pos"] = pos
+    return entry
+
+
 def _match_lyon(results: list) -> Optional[dict]:
     """Scan results for a Lyon/Villeurbanne match → cache entry, else None."""
     for r in results:
@@ -132,14 +152,14 @@ def _match_lyon(results: list) -> Optional[dict]:
 
         arr = _POSTCODE_ARR.get(postcode)
         if arr:
-            return {"arr": arr, "confidence": "high"}
+            return _avec_position({"arr": arr, "confidence": "high"}, r)
 
         if city == "villeurbanne":
-            return {"arr": "Villeurbanne", "confidence": "high"}
+            return _avec_position({"arr": "Villeurbanne", "confidence": "high"}, r)
 
         # City matched but postcode not a Lyon/Villeurbanne one - nearby suburb
         commune = addr.get("city") or addr.get("town") or "Autre"
-        return {"arr": "Autre", "confidence": "low", "commune": commune}
+        return _avec_position({"arr": "Autre", "confidence": "low", "commune": commune}, r)
     return None
 
 
@@ -182,7 +202,8 @@ def _geocode_one(name: str) -> Optional[dict]:
         )
         if commune and commune.lower() not in ("lyon", "villeurbanne"):
             # It's a real venue but outside Lyon metro
-            return {"arr": "Autre", "confidence": "low", "commune": commune}
+            return _avec_position({"arr": "Autre", "confidence": "low", "commune": commune},
+                                  results[0])
 
     return {"arr": None, "confidence": "failed"}
 
