@@ -173,6 +173,28 @@ class Coherence(unittest.TestCase):
         self.assertIn("Content-Security-Policy", mentions)
         self.assertNotIn("<script", mentions)
 
+    def test_le_bouton_retour_suit_ce_qui_s_ouvre(self):
+        # « Retour » referme ce qui s'est ouvert par-dessus la page : chaque
+        # ouverture ajoute son étape, chaque fermeture la retire, et
+        # « retour » sait refermer chacun. Les filtres réécrivent l'adresse
+        # en gardant l'étape en cours (sinon « retour » perdrait le compte).
+        def corps(nom):
+            m = re.search(r"\nfunction %s\(.*?\n\}" % nom, PAGE, re.S)
+            self.assertIsNotNone(m, nom)
+            return m.group(0)
+        self.assertIn("coucheOuverte('calendrier')", corps("openDatepicker"))
+        self.assertIn("coucheFermee('calendrier')", corps("closeDatepicker"))
+        self.assertIn("coucheOuverte('fiche')", corps("ouvrirFiche"))
+        self.assertIn("coucheFermee('fiche')", corps("fermerFiche"))
+        self.assertIn("coucheOuverte('menu')", corps("ouvrirMenuAgenda"))
+        self.assertIn("coucheFermee('menu')", corps("fermerMenuAgenda"))
+        self.assertIn("coucheOuverte('carte')", PAGE)
+        retour = corps("fermerCouche")
+        for nom in ("calendrier", "menu", "fiche", "carte"):
+            self.assertIn("'%s'" % nom, retour)
+        self.assertIn("addEventListener('popstate'", PAGE)
+        self.assertIn("history.replaceState(history.state, '', a)", corps("ecrireLAdresse"))
+
     def test_presque_tous_les_lieux_ont_une_position(self):
         # Sans position, un lieu va dans la liste « non placés » de la carte.
         lieux = json.loads((RACINE / "lieux.json").read_text(encoding="utf-8"))["lieux"]

@@ -3092,14 +3092,68 @@ function renderDatepicker() {
   dp.innerHTML = html;
 }
 
+/* ---------- le bouton « retour » ----------
+   Ce qui s'ouvre par-dessus la page ajoute une étape à l'historique du
+   navigateur : le calendrier, le menu « ajouter à », la vue carte et la
+   fiche d'un lieu. « Retour » (bouton du navigateur, geste ou touche
+   retour du téléphone) referme le dernier ouvert, comme la croix ou
+   Échap ; à la page de départ, il quitte le site comme avant. Fermé
+   autrement (croix, Échap, clic à côté, nouveau rendu), un élément retire
+   son étape, pour que « retour » ne tombe jamais sur un élément déjà
+   fermé. Chaque étape retient combien d'éléments sont ouverts (n) :
+   l'historique et la page restent d'accord même quand deux éléments
+   s'ouvrent et se ferment d'un même clic. Les filtres, eux, n'ajoutent
+   toujours pas d'étape (voir ecrireLAdresse). Le tiroir des filtres
+   s'ouvre dans la page, pas par-dessus : il n'en ajoute pas non plus. */
+// Tant qu'un élément est ouvert, « retour » ne fait pas défiler la page
+// (scrollRestoration) : refermer le menu en faisant défiler ne ramène pas
+// la page en arrière sous le doigt. Revenue à l'étape de départ, la page
+// retrouve le comportement habituel (au rechargement, par exemple).
+const couches = [];            // éléments ouverts, du plus ancien au dernier
+let aReculer = 0;              // étapes à retirer, regroupées en un seul recul
+function coucheOuverte(nom) {
+  if (couches.includes(nom)) return;
+  couches.push(nom);
+  try {
+    history.scrollRestoration = 'manual';
+    history.pushState({ n: couches.length }, '', location.href);
+  } catch (_) {}
+}
+function coucheFermee(nom) {
+  const i = couches.lastIndexOf(nom);
+  if (i < 0) return;           // déjà refermé par « retour »
+  couches.splice(i, 1);
+  if (!aReculer++) queueMicrotask(() => { const k = aReculer; aReculer = 0; history.go(-k); });
+}
+// « Retour » : refermer ce qui dépasse l'étape atteinte
+function fermerCouche(nom) {
+  if (nom === 'calendrier') closeDatepicker();
+  else if (nom === 'menu') fermerMenuAgenda(true);
+  else if (nom === 'fiche') fermerFiche();
+  else if (nom === 'carte') { state.vue = 'liste'; render(); }
+}
+window.addEventListener('popstate', ev => {
+  const n = (ev.state && ev.state.n) || 0;
+  while (couches.length > n) fermerCouche(couches.pop());
+  // Une étape garde l'adresse de son ouverture : la remettre aux filtres du moment
+  ecrireLAdresse();
+  if (!n) setTimeout(() => { try { history.scrollRestoration = 'auto'; } catch (_) {} }, 0);
+});
+// Rechargée sur une étape, la page n'a rien d'ouvert : repartir de zéro
+if (history.state && history.state.n) {
+  try { history.replaceState({ n: 0 }, '', location.href); } catch (_) {}
+}
+
 function openDatepicker() {
   document.getElementById('datepicker').classList.add('open');
   dpRangeAnchor = null;
   renderDatepicker();
+  coucheOuverte('calendrier');
 }
 function closeDatepicker() {
   document.getElementById('datepicker').classList.remove('open');
   dpRangeAnchor = null;
+  coucheFermee('calendrier');
 }
 function isDatepickerOpen() {
   return document.getElementById('datepicker').classList.contains('open');
@@ -3692,7 +3746,7 @@ function adresseDesFiltres() {
 
 function ecrireLAdresse() {
   const a = adresseDesFiltres();
-  if (a !== location.pathname + location.search) history.replaceState(null, '', a);
+  if (a !== location.pathname + location.search) history.replaceState(history.state, '', a);
 }
 
 /* Ce qu'une adresse inconnue ou abîmée contient est ignoré : un lieu qui
@@ -4412,6 +4466,7 @@ function ouvrirFiche(places, depuis) {
     window.scrollBy({ top: haut - innerHeight * 0.45, behavior: doux ? 'smooth' : 'auto' });
   }
   carte.retour = depuis;
+  coucheOuverte('fiche');
   carte.choisis = new Set(places.map(p => p.cle));
   carte.calque.querySelectorAll('.carte-pin').forEach(b => {
     const g = carte.pastilles[Number(b.dataset.pin)];
@@ -4421,6 +4476,7 @@ function ouvrirFiche(places, depuis) {
 }
 
 function fermerFiche() {
+  coucheFermee('fiche');
   if (!carte || carte.fiche.hidden) return;
   carte.fiche.hidden = true;
   carte.choisis = new Set();
@@ -4558,6 +4614,8 @@ document.getElementById('vueSwitch').addEventListener('click', ev => {
   const b = ev.target.closest('[data-vue]');
   if (!b || b.dataset.vue === state.vue) return;
   state.vue = b.dataset.vue;
+  if (state.vue === 'carte') coucheOuverte('carte');
+  else { coucheFermee('fiche'); coucheFermee('carte'); }
   render();
 });
 
@@ -4608,6 +4666,7 @@ function renderFeed() {
   ancreDuRendu = null;
   marquerLeJourDeLaCarte(null);
   if (state.vue !== 'carte') carte = null;
+  coucheFermee('fiche');
 
   if (events.length === 0) {
     // Aucun événement ne passe les filtres : le dire, et offrir d'en
@@ -5424,8 +5483,9 @@ let agendaOuvert = null;   // { e, bouton }
 function ouvrirMenuAgenda(e, bouton) {
   const m = document.getElementById('menuAgenda');
   if (agendaOuvert && agendaOuvert.bouton === bouton) { fermerMenuAgenda(true); return; }
-  fermerMenuAgenda(false);
+  fermerMenuAgenda(false, true);
   agendaOuvert = { e, bouton };
+  coucheOuverte('menu');
   m.hidden = false;
   const r = bouton.getBoundingClientRect();
   const w = m.offsetWidth, h = m.offsetHeight;
@@ -5436,8 +5496,10 @@ function ouvrirMenuAgenda(e, bouton) {
   bouton.setAttribute('aria-expanded', 'true');
   m.querySelector('button').focus({ preventScroll: true });
 }
-function fermerMenuAgenda(rendreLaMain) {
+// garderLEtape : un autre menu s'ouvre aussitôt à sa place
+function fermerMenuAgenda(rendreLaMain, garderLEtape) {
   if (!agendaOuvert) return;
+  if (!garderLEtape) coucheFermee('menu');
   const { bouton } = agendaOuvert;
   agendaOuvert = null;
   document.getElementById('menuAgenda').hidden = true;

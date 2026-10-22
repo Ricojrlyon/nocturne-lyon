@@ -506,6 +506,20 @@ la recopier, version comprise.
   cadre. Limite : le code et les styles étant écrits dans la page, la
   règle doit tolérer ce qui y est écrit (« unsafe-inline ») ;
   l'échappement des textes venus des sites reste la première protection.
+  Le bouton « retour » (du navigateur, ou le geste et la touche retour
+  du téléphone) referme ce qui s'est ouvert par-dessus la page, le
+  dernier d'abord, comme la croix ou Échap : le calendrier, le menu
+  « ajouter à », la vue carte (retour à la liste) et la fiche d'un lieu.
+  Chaque ouverture ajoute une étape à l'historique, qui retient combien
+  d'éléments sont ouverts ; fermé autrement (croix, Échap, clic à côté,
+  défilement pour le menu, nouveau rendu pour la fiche), un élément
+  retire son étape, si bien que « retour » ne tombe jamais sur un
+  élément déjà fermé. À la page de départ, « retour » quitte le site
+  comme avant. Les filtres n'ajoutent toujours pas d'étape, et le tiroir
+  des filtres non plus (il s'ouvre dans la page) ; l'adresse revient aux
+  filtres du moment à chaque retour. Tant qu'un élément est ouvert,
+  « retour » ne fait pas défiler la page. Sur iPhone, l'application
+  installée n'a pas de geste retour : la croix reste le moyen de fermer.
   Le pied de page, mis en page comme celui de *films (lignes centrées,
   séparées par « · ») : « *nocturne · mentions légales · données &
   confidentialité » (les deux liens mènent à `mentions-legales.html`, le
