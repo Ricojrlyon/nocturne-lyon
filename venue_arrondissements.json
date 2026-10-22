@@ -145,7 +145,7 @@
       45.76044,
       4.85733
     ],
-    "seen_at": "2026-09-08"
+    "seen_at": "2026-10-22"
   },
   "Bibliothèque du 3e Lacassagne": {
     "arr": "3e",
@@ -156,6 +156,16 @@
       4.87712
     ],
     "seen_at": "2026-09-08"
+  },
+  "Bibliothèque du 6e": {
+    "arr": "6e",
+    "checked_at": "2026-10-22",
+    "confidence": "high",
+    "pos": [
+      45.76786,
+      4.84999
+    ],
+    "seen_at": "2026-10-22"
   },
   "Bibliothèque du 7e Gerland Hannah Arendt": {
     "arr": "7e",
@@ -394,7 +404,7 @@
       45.75316,
       4.80593
     ],
-    "seen_at": "2026-10-15"
+    "seen_at": "2026-10-22"
   },
   "Collège Supérieur Lyon": {
     "arr": "7e",
@@ -500,7 +510,7 @@
     "arr": null,
     "checked_at": "2026-09-26",
     "confidence": "failed",
-    "seen_at": "2026-10-15"
+    "seen_at": "2026-10-22"
   },
   "Factatory": {
     "arr": null,
@@ -654,7 +664,7 @@
       45.73689,
       4.82008
     ],
-    "seen_at": "2026-10-13"
+    "seen_at": "2026-10-22"
   },
   "Hôtel Carlton": {
     "arr": "2e",
@@ -851,7 +861,7 @@
       45.77146,
       4.82794
     ],
-    "seen_at": "2026-10-15"
+    "seen_at": "2026-10-22"
   },
   "La Relève": {
     "arr": "5e",
@@ -986,6 +996,16 @@
       4.83159
     ],
     "seen_at": "2026-09-14"
+  },
+  "Le Zola": {
+    "arr": "Villeurbanne",
+    "checked_at": "2026-10-22",
+    "confidence": "high",
+    "pos": [
+      45.77072,
+      4.87436
+    ],
+    "seen_at": "2026-10-22"
   },
   "Le bistrO d'à côté": {
     "arr": "1er",
@@ -1210,7 +1230,7 @@
       45.75315,
       4.79162
     ],
-    "seen_at": "2026-10-15"
+    "seen_at": "2026-10-22"
   },
   "Lycée François Cevert": {
     "arr": "Autre",
@@ -1281,7 +1301,7 @@
       45.75756,
       4.8125
     ],
-    "seen_at": "2026-10-15"
+    "seen_at": "2026-10-22"
   },
   "Maison Ravier": {
     "arr": "7e",
@@ -1679,7 +1699,7 @@
     "arr": null,
     "checked_at": "2026-10-15",
     "confidence": "failed",
-    "seen_at": "2026-10-15"
+    "seen_at": "2026-10-22"
   },
   "Salle Molière": {
     "arr": "5e",
@@ -1689,7 +1709,7 @@
       45.76572,
       4.82863
     ],
-    "seen_at": "2026-10-15"
+    "seen_at": "2026-10-22"
   },
   "Salle Paul Garcin": {
     "arr": "1er",
@@ -1699,7 +1719,7 @@
       45.7706,
       4.8248
     ],
-    "seen_at": "2026-10-15"
+    "seen_at": "2026-10-22"
   },
   "Salle Victor Hugo": {
     "arr": "Autre",
@@ -1833,7 +1853,7 @@
       45.7551,
       4.84206
     ],
-    "seen_at": "2026-09-24"
+    "seen_at": "2026-10-22"
   },
   "Théâtre de l\\'Élysée": {
     "arr": "7e",
@@ -1898,7 +1918,7 @@
       45.76585,
       4.867
     ],
-    "seen_at": "2026-10-15"
+    "seen_at": "2026-10-22"
   },
   "Théâtre du Point du Jour": {
     "arr": "5e",
@@ -2086,7 +2106,7 @@
     "arr": null,
     "checked_at": "2026-10-08",
     "confidence": "failed",
-    "seen_at": "2026-10-15"
+    "seen_at": "2026-10-22"
   },
   "Ô boudoir": {
     "arr": null,

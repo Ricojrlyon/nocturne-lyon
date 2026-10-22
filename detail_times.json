@@ -442,7 +442,7 @@
     ]
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/apres-moi-le-deluge": {
-    "fetched_at": "2026-10-14",
+    "fetched_at": "2026-10-22",
     "lieu": "Maison de la danse - Grande salle",
     "seances": [
       [
@@ -1312,6 +1312,16 @@
       ]
     ],
     "time": "20:30"
+  },
+  "https://radiant-bellevue.fr/spectacles/avis-dauditions/": {
+    "fetched_at": "2026-10-22",
+    "seances": [
+      [
+        "2027-01-26",
+        "17:00"
+      ]
+    ],
+    "time": "17:00"
   },
   "https://radiant-bellevue.fr/spectacles/bazar-circus/": {
     "fetched_at": "2026-10-03",
@@ -8037,6 +8047,12 @@
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-ibeyi-Grande-768x1152.jpeg",
     "fetched_at": "2026-10-05",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-ibeyi-Grande.jpeg",
+    "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/ibeyi-parsa-sabet-20112026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-ibeyi-Grande-768x1152.jpeg",
+    "fetched_at": "2026-10-22",
+    "image": null,
     "time": "19:00"
   },
   "https://www.transbordeur.fr/evenement/ino-casablanca-24022027/": {
