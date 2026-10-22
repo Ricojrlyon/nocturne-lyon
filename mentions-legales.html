@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Politique de sécurité : cette page n'a besoin que de ses styles et des
+     polices du site ; aucun script, rien d'autre à charger. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<title>Mentions légales · *nocturne</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-16 -16 32 32'><g fill='%23d4a574'><rect x='-2' y='-13' width='4' height='26' rx='2'/><rect x='-2' y='-13' width='4' height='26' rx='2' transform='rotate(60)'/><rect x='-2' y='-13' width='4' height='26' rx='2' transform='rotate(120)'/></g></svg>">
+<meta name="theme-color" content="#161f25">
+<!-- Mentions légales et données personnelles, une page à part : le pied de
+     page d'index.html y mène (« mentions légales », et « données &
+     confidentialité » directement à la partie #donnees). -->
+<link href="fonts/polices.css" rel="stylesheet">
+<style>
+  :root {
+    --bg: #161f25;
+    --ink: #e7dfbe;
+    --ink-soft: #a59f86;
+    --ink-mute: #5e6973;
+    --rule: #2a363f;
+    --rule-strong: #3a4853;
+    --warm: #d4a574;
+    --radius: 3px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter Tight', -apple-system, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+  @media (max-width: 720px) { .container { padding: 0 20px; } }
+  header { border-bottom: 1px solid var(--rule-strong); }
+  .wordmark {
+    display: inline-flex;
+    align-items: center;
+    background: var(--ink);
+    color: var(--bg);
+    font-family: 'Bungee', system-ui, sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    padding: 13px 22px 12px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .wordmark .ast { color: var(--warm); }
+  @media (max-width: 720px) { .wordmark { font-size: 17px; padding: 11px 18px 10px; } }
+  main.container { padding-top: 40px; padding-bottom: 24px; }
+  h1 {
+    margin: 0 0 8px;
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  h2 {
+    margin: 40px 0 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm);
+    scroll-margin-top: 24px; /* « données & confidentialité » : un peu d'air au-dessus */
+  }
+  h3 { margin: 24px 0 6px; font-size: 15px; font-weight: 600; }
+  p, li { font-size: 15px; color: var(--ink-soft); }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--ink); text-decoration-color: var(--rule-strong); text-underline-offset: 3px; overflow-wrap: anywhere; }
+  a:hover { text-decoration-color: var(--ink); }
+  a:focus-visible { outline: 2px solid var(--warm); outline-offset: 2px; }
+  .retour {
+    display: inline-block;
+    margin-top: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  .retour:hover { color: var(--ink); }
+  footer {
+    border-top: 1px solid var(--rule);
+    margin-top: 40px;
+    padding: 24px 0 48px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    text-align: center;
+  }
+  footer .ast { color: var(--warm); }
+  footer a { color: var(--ink-soft); text-decoration: none; }
+  footer a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <a class="wordmark" href="./"><span class="ast">*</span>nocturne</a>
+  </div>
+</header>
+
+<main class="container">
+  <h1>mentions légales</h1>
+
+  <h2>éditeur</h2>
+  <p>*nocturne · lyon est un site personnel, gratuit et sans publicité, édité à titre non professionnel par un particulier.</p>
+
+  <h2>hébergeur</h2>
+  <p>GitHub, Inc. (service GitHub Pages)<br>
+    88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis</p>
+
+  <h2>d'où viennent les informations</h2>
+  <p>Le programme est collecté automatiquement, chaque nuit, sur les sites publics des salles, musées, clubs et lieux lyonnais, et sur deux agendas&nbsp;: le Petit Bulletin et Ville Morte. Le site n'en reprend que des informations pratiques&nbsp;: titre, sous-titre, date, heure, lieu, catégorie, et le lien vers la page d'origine, vers laquelle chaque événement renvoie.</p>
+  <p>Ces informations sont données à titre indicatif&nbsp;: une date, une heure ou une annulation peut changer ou être mal relevée. Vérifier auprès du lieu avant de se déplacer.</p>
+
+  <h2>propriété intellectuelle</h2>
+  <p>Les affiches s'affichent directement depuis les sites des lieux&nbsp;: elles ne sont pas copiées ici et restent la propriété de leurs auteurs. Les noms, logos et marques des lieux appartiennent à leurs titulaires et servent uniquement à identifier le lieu. YouTube, Google Agenda et Outlook.com sont des marques de leurs propriétaires&nbsp;; *nocturne n'est lié à aucun d'eux.</p>
+  <p>Le code du site est public&nbsp;: <a href="https://github.com/Ricojrlyon/nocturne-lyon" target="_blank" rel="noopener">github.com/Ricojrlyon/nocturne-lyon ↗</a></p>
+
+  <h2 id="donnees">données et confidentialité</h2>
+
+  <h3>Ce que le site ne fait pas</h3>
+  <p>Pas de compte, pas de formulaire, pas de cookie, pas de mesure d'audience, pas de publicité. Le site ne recueille lui-même aucune donnée sur toi.</p>
+
+  <h3>Ce qui reste sur ton appareil, et n'en sort pas</h3>
+  <ul>
+    <li>tes favoris et les salles que tu suis, quand tu touches une étoile&nbsp;;</li>
+    <li>le repère «&nbsp;nouveau&nbsp;»&nbsp;: à chaque visite, la page garde une empreinte courte des événements affichés, pour te signaler la fois suivante ceux qui sont apparus&nbsp;;</li>
+    <li>l'application hors ligne&nbsp;: la page, ses polices et le dernier programme, pour que le site s'ouvre sans réseau.</li>
+  </ul>
+  <p>Rien de tout cela n'est envoyé à qui que ce soit. Pour tout effacer, supprime les données du site dans les réglages de ton navigateur.</p>
+
+  <h3>Ce que d'autres voient pendant ta visite</h3>
+  <ul>
+    <li>GitHub, l'hébergeur, enregistre l'adresse IP de chaque visiteur pour la sécurité de son service. GitHub est une entreprise américaine&nbsp;; elle indique adhérer au cadre de protection des données UE–États-Unis (<a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">sa déclaration de confidentialité ↗</a>).</li>
+    <li>Les affiches sont chargées depuis les sites des lieux&nbsp;: leurs serveurs reçoivent ton adresse IP, mais pas l'adresse de la page que tu consultes.</li>
+    <li>En vue carte, le fond de carte vient des serveurs d'OpenStreetMap, qui reçoivent ton adresse IP et l'adresse de la page.</li>
+    <li>Les boutons Google Agenda, Outlook.com et YouTube ne font rien tant que tu ne les touches pas. Au clic, ils ouvrent le service avec le titre, le lieu et le lien de l'événement&nbsp;; ce service applique alors ses propres règles.</li>
+    <li>Le fichier agenda «&nbsp;iPhone et autres&nbsp;» est fabriqué sur ton appareil&nbsp;: rien n'est envoyé.</li>
+  </ul>
+
+  <h3>Personnes citées dans le programme</h3>
+  <p>Les noms d'artistes ou d'intervenants qui figurent dans les titres viennent des annonces publiques des lieux. Ils sont publiés pour informer le public des sorties culturelles (intérêt légitime, article 6, 1, f, du RGPD). Les événements passés disparaissent du site&nbsp;; les versions précédentes du fichier de programme restent dans l'historique public du dépôt GitHub.</p>
+  <p>Pour une question ou une demande (accès, rectification, opposition)&nbsp;: <a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr ↗</a></p>
+
+  <h2>crédits</h2>
+  <p>Fond de carte&nbsp;: © les contributeurs d'OpenStreetMap, données sous licence ODbL (<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">openstreetmap.org/copyright ↗</a>). Localisation des lieux&nbsp;: Nominatim (OpenStreetMap).</p>
+  <p>Polices&nbsp;: Bricolage Grotesque, Bungee, Inter Tight et JetBrains Mono, sous licence SIL Open Font License 1.1.</p>
+
+  <a class="retour" href="./">← retour au programme</a>
+</main>
+
+<footer>
+  <div class="container"><span class="ast">*</span>nocturne · lyon</div>
+</footer>
+</body>
+</html>

@@ -506,6 +506,15 @@ la recopier, version comprise.
   cadre. Limite : le code et les styles étant écrits dans la page, la
   règle doit tolérer ce qui y est écrit (« unsafe-inline ») ;
   l'échappement des textes venus des sites reste la première protection.
+  Le pied de page, mis en page comme celui de *films (lignes centrées,
+  séparées par « · ») : « *nocturne · mentions légales · données &
+  confidentialité » (les deux liens mènent à `mentions-legales.html`, le
+  second directement à sa partie `#donnees`), puis « code source ↗ ·
+  haut de page » (un bouton à flèche qui remonte en douceur, d'un coup
+  pour qui demande moins d'animations), puis, comme avant, la source des
+  données, le nombre d'événements, de lieux et de sources, la date de
+  dernière mise à jour, l'astuce d'installation sur écran tactile et
+  « lyon · mmxxvi ».
   Les quatre polices du premier écran (alphabet latin de base) sont
   demandées dès l'ouverture (`<link rel="preload">`) : à une première
   visite sur un réseau de téléphone (simulée, 100 ms par aller-retour),
@@ -547,6 +556,17 @@ la recopier, version comprise.
   d'accueil. Son lien et ses polices sont en adresses complètes
   (`/nocturne-lyon/…`), car elle s'affiche à n'importe quelle profondeur
   d'adresse ; elle est exclue des moteurs de recherche.
+- **`mentions-legales.html`** : mentions légales et données personnelles,
+  une page à part, aux couleurs et polices du site, sans aucun script
+  (sa règle de sécurité n'autorise que ses styles et les polices du site).
+  Éditeur (un particulier, site personnel et gratuit), hébergeur
+  (GitHub), d'où viennent les informations, propriété intellectuelle,
+  données et confidentialité (`#donnees` : ce que le site ne fait pas, ce
+  qui reste sur l'appareil, ce que GitHub, les sites des lieux,
+  OpenStreetMap et les services d'agenda voient, les personnes citées
+  dans le programme), crédits (OpenStreetMap, Nominatim, polices). Le nom
+  du site, en haut, et « ← retour au programme », en bas, ramènent à la
+  page. À reprendre si le site change ce qu'il garde ou ce qu'il contacte.
 - **`.nojekyll`** : fichier vide qui demande à GitHub Pages de publier les
   fichiers tels quels, sans les passer par Jekyll, son moteur de modèles.
   Jekyll ne modifiait rien aujourd'hui, mais il aurait pu un jour

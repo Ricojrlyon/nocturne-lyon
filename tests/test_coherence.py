@@ -156,6 +156,23 @@ class Coherence(unittest.TestCase):
                 lat, lon = l["pos"]
                 self.assertTrue(45.4 < lat < 46.0 and 4.4 < lon < 5.2, l)
 
+    def test_le_pied_de_page_mene_aux_mentions_legales(self):
+        # Le pied de page (mis en page comme celui de *films) mène à la page
+        # des mentions légales, et à sa partie « données » ; la page existe,
+        # porte sa règle de sécurité, et le bouton « haut de page » est branché.
+        pied = re.search(r"<footer>(.*?)</footer>", PAGE, re.S).group(1)
+        self.assertIn('href="mentions-legales.html"', pied)
+        self.assertIn('href="mentions-legales.html#donnees"', pied)
+        self.assertIn('id="hautDePage"', pied)
+        self.assertIn("getElementById('hautDePage').addEventListener", PAGE)
+        # Les chiffres et la date du programme restent au pied de page
+        for ident in ("footerIndex", "footerVenues", "footerSources", "lastUpdated"):
+            self.assertIn('id="%s"' % ident, pied)
+        mentions = (RACINE / "mentions-legales.html").read_text(encoding="utf-8")
+        self.assertIn('id="donnees"', mentions)
+        self.assertIn("Content-Security-Policy", mentions)
+        self.assertNotIn("<script", mentions)
+
     def test_presque_tous_les_lieux_ont_une_position(self):
         # Sans position, un lieu va dans la liste « non placés » de la carte.
         lieux = json.loads((RACINE / "lieux.json").read_text(encoding="utf-8"))["lieux"]

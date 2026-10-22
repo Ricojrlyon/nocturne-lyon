@@ -1991,20 +1991,29 @@
     text-transform: uppercase;
     letter-spacing: 0.12em;
   }
-  footer .container {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 16px;
-    align-items: end;
-  }
-  footer .col { line-height: 1.7; }
-  footer .col-right { text-align: right; }
+  /* Comme le pied de page de *films : lignes centrées, liens en premier,
+     chiffres du programme dessous. */
+  footer .container { text-align: center; }
+  footer .pied-liens { line-height: 1.7; }
+  footer .pied-liens + .pied-liens { margin-top: 4px; }
+  footer .pied-infos { margin-top: 20px; line-height: 1.7; }
+  footer .ast { color: var(--warm); }
   footer a { color: var(--ink-soft); text-decoration: none; }
   footer a:hover { color: var(--ink); }
-  footer .ind {
-    color: var(--warm);
-    margin-right: 4px;
+  /* « haut de page » : un bouton, habillé comme les liens voisins. */
+  .haut-de-page {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    color: var(--ink-soft);
+    cursor: pointer;
   }
+  .haut-de-page:hover { color: var(--ink); }
+  .haut-de-page svg { width: 11px; height: 11px; vertical-align: -1px; margin-right: 5px; }
+  footer a:focus-visible, .haut-de-page:focus-visible { outline: 2px solid var(--warm); outline-offset: 2px; }
   /* Comment installer l'application : seulement sur un écran tactile, et
      plus une fois l'application installée (elle s'ouvre alors « en
      application », display-mode: standalone). Android le propose aussi de
@@ -2156,18 +2165,28 @@
   </noscript>
 </main>
 
+<!-- Pied de page, mis en page comme celui de *films : des lignes centrées,
+     séparées par « · ». D'abord les liens (mentions légales et données
+     personnelles sur une page à part, mentions-legales.html), puis les
+     chiffres du programme et sa date de mise à jour. -->
 <footer>
   <div class="container">
-    <div class="col">
-      <div><span class="ind">§</span> données scrapées sur les sites des lieux</div>
-      <div><span class="ind">§</span> <span id="footerIndex">-</span> événements ·
-           <span id="footerVenues">-</span> lieux · <span id="footerSources">37</span> sources</div>
-      <div><span class="ind">§</span> dernière mise à jour <span id="lastUpdated">-</span></div>
-      <div class="astuce-appli"><span class="ind">§</span> en application : « installer » dans le menu
-           du navigateur ; sur iphone, partager puis « sur l'écran d'accueil »</div>
+    <div class="pied-liens">
+      <span><span class="ast">*</span>nocturne</span> ·
+      <a href="mentions-legales.html">mentions légales</a> ·
+      <a href="mentions-legales.html#donnees">données &amp; confidentialité</a>
     </div>
-    <div class="col col-right">
-      <div><a href="https://github.com/Ricojrlyon/nocturne-lyon" target="_blank" rel="noopener">code source ↗</a></div>
+    <div class="pied-liens">
+      <a href="https://github.com/Ricojrlyon/nocturne-lyon" target="_blank" rel="noopener">code source ↗</a> ·
+      <button type="button" class="haut-de-page" id="hautDePage"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>haut de page</button>
+    </div>
+    <div class="pied-infos">
+      <div>données scrapées sur les sites des lieux</div>
+      <div><span id="footerIndex">-</span> événements ·
+           <span id="footerVenues">-</span> lieux · <span id="footerSources">37</span> sources</div>
+      <div>dernière mise à jour <span id="lastUpdated">-</span></div>
+      <div class="astuce-appli">en application : « installer » dans le menu
+           du navigateur ; sur iphone, partager puis « sur l'écran d'accueil »</div>
       <div>lyon · mmxxvi</div>
     </div>
   </div>
@@ -3727,6 +3746,13 @@ function afficherMessage(texte) {
 /* « partager » : sur un téléphone, le menu de partage du système
    (WhatsApp, SMS…) ; ailleurs, le lien est copié, et le message le montre.
    Le lien est l'adresse de la page, qui garde déjà les filtres. */
+// « haut de page », au pied de la page : remonte en douceur, d'un coup pour
+// qui demande moins d'animations.
+document.getElementById('hautDePage').addEventListener('click', () => {
+  const doux = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({ top: 0, behavior: doux ? 'smooth' : 'auto' });
+});
+
 document.getElementById('partager').addEventListener('click', async () => {
   const lien = location.href;
   if (navigator.share && matchMedia('(pointer: coarse)').matches) {
