@@ -222,8 +222,14 @@ class PageNavigation(unittest.TestCase):
                          {"juste": True, "carte_ouverte": False, "seulement_musique": True})
 
     def test_le_bouton_des_filtres_d_une_journee(self):
-        self.assertEqual(self.releve["filtres_epingles"],
-                         [True, "true", 0, True, True, 8, "false", False, "0px", True, "static"])
+        f = list(self.releve["filtres_epingles"])
+        # La ligne de la journée passe d'un ou deux pixels SOUS les filtres
+        # épinglés (selon l'arrondi de leur hauteur) : jamais d'écart.
+        self.assertIn(f.pop(3), (-2, -1))
+        self.assertEqual(f, [True, "true", 0, True, 8, "false", False, "0px", True, "static"])
+
+    def test_la_ligne_de_la_date_colle_sans_laisser_de_fil(self):
+        self.assertEqual(self.releve["ligne_collee"], -2)
 
     def test_les_boutons_de_carte_sont_des_icones_a_droite_de_l_heure(self):
         self.assertEqual(self.releve["boutons_de_carte"],

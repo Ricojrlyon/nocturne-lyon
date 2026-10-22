@@ -685,7 +685,13 @@
 
   .day-bar {
     position: sticky;
-    top: 0;
+    /* Deux pixels AU-DESSUS du bord de l'écran, et non pile au bord :
+       pendant le défilement, le navigateur arrondit la position de la
+       barre et celle de la page chacune de son côté, et sur certains
+       écrans un fil d'un ou deux pixels laissait voir les cartes au-dessus
+       d'elle. Seuls deux pixels de son rembourrage passent sous le bord ;
+       en place dans la page, elle ne bouge pas. */
+    top: -2px;
     z-index: 4;
     display: flex;
     align-items: center;
@@ -820,7 +826,7 @@
     max-height: 80vh;
     overflow-y: auto;
   }
-  body.filtres-epingles .day-bar { top: var(--haut-filtres, 0px); }
+  body.filtres-epingles .day-bar { top: calc(var(--haut-filtres, 0px) - 2px); }
   body.filtres-epingles .day { scroll-margin-top: calc(8px + var(--haut-filtres, 0px)); }
   @media (max-width: 560px) {
     .day-bar { gap: 9px; flex-wrap: wrap; }
@@ -2187,7 +2193,6 @@
       <div>dernière mise à jour <span id="lastUpdated">-</span></div>
       <div class="astuce-appli">en application : « installer » dans le menu
            du navigateur ; sur iphone, partager puis « sur l'écran d'accueil »</div>
-      <div>lyon · mmxxvi</div>
     </div>
   </div>
 </footer>

@@ -527,8 +527,11 @@ la recopier, version comprise.
   haut de page » (un bouton à flèche qui remonte en douceur, d'un coup
   pour qui demande moins d'animations), puis, comme avant, la source des
   données, le nombre d'événements, de lieux et de sources, la date de
-  dernière mise à jour, l'astuce d'installation sur écran tactile et
-  « lyon · mmxxvi ».
+  dernière mise à jour et l'astuce d'installation sur écran tactile.
+  La ligne de chaque date colle en haut de l'écran pendant qu'on fait
+  défiler sa journée, deux pixels au-dessus du bord : sans cela, sur
+  certains écrans, un fil d'un ou deux pixels laissait voir les cartes
+  au-dessus d'elle.
   Les quatre polices du premier écran (alphabet latin de base) sont
   demandées dès l'ouverture (`<link rel="preload">`) : à une première
   visite sur un réseau de téléphone (simulée, 100 ms par aller-retour),

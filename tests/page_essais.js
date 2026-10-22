@@ -481,6 +481,13 @@
       window.scrollTo(0, 0);
       await pause(200);
       const jourLoin = document.querySelectorAll('#feed section.day')[2];
+      // Au milieu d'une journée, sa ligne colle deux pixels au-dessus du
+      // bord de l'écran : pas de fil de cartes au-dessus d'elle.
+      jourLoin.scrollIntoView();
+      await pause(200);
+      window.scrollBy(0, 120);
+      await pause(200);
+      res.ligne_collee = Math.round(jourLoin.querySelector('.day-bar').getBoundingClientRect().top * 10) / 10;
       jourLoin.scrollIntoView();
       await pause(300);
       const hautF = document.getElementById('hautFiltres');
@@ -491,7 +498,7 @@
       await pause(300);
       const barreF = jourLoin.querySelector('.day-bar');
       const epingle = [cache, boutonF.getAttribute('aria-expanded'), Math.round(hautF.getBoundingClientRect().top),
-                       Math.abs(barreF.getBoundingClientRect().top - hautF.getBoundingClientRect().bottom) <= 1,
+                       Math.round(barreF.getBoundingClientRect().top - hautF.getBoundingClientRect().bottom),
                        window.scrollY === yAvant];
       document.querySelectorAll('.day-pill')[6].click();
       await pause(700);

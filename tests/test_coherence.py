@@ -166,6 +166,7 @@ class Coherence(unittest.TestCase):
         self.assertIn('id="hautDePage"', pied)
         self.assertIn("getElementById('hautDePage').addEventListener", PAGE)
         # Les chiffres et la date du programme restent au pied de page
+        self.assertNotIn("mmxxvi", PAGE)
         for ident in ("footerIndex", "footerVenues", "footerSources", "lastUpdated"):
             self.assertIn('id="%s"' % ident, pied)
         mentions = (RACINE / "mentions-legales.html").read_text(encoding="utf-8")
