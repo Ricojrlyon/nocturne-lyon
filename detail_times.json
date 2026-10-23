@@ -1108,7 +1108,7 @@
     ]
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/soiree-18-30-ans": {
-    "fetched_at": "2026-10-15",
+    "fetched_at": "2026-10-23",
     "lieu": "Maison de la Danse",
     "seances": [
       [
@@ -3808,7 +3808,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/concert/soiree-agnes-jaoui": {
-    "fetched_at": "2026-10-15",
+    "fetched_at": "2026-10-23",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -6631,7 +6631,7 @@
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/raul-refree-maria-mazzotta-quatuor-lomax-davide-ambrogio": {
-    "fetched_at": "2026-10-15",
+    "fetched_at": "2026-10-23",
     "lieu": "Opéra de Lyon",
     "seances": [
       [
@@ -8256,6 +8256,12 @@
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/01/a-nes-768x960.png",
     "fetched_at": "2026-10-05",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/01/a-nes.png",
+    "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/nes-gabb-23102026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/01/a-nes-768x960.png",
+    "fetched_at": "2026-10-23",
+    "image": null,
     "time": "19:00"
   },
   "https://www.transbordeur.fr/evenement/nto-28012027/": {
