@@ -6693,6 +6693,21 @@
     ],
     "time": null
   },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/une-heure-un-concert-nokolai-rimski-korsakov": {
+    "fetched_at": "2026-10-24",
+    "lieu": "Salle Molière, Lyon 5e",
+    "seances": [
+      [
+        "2027-04-22",
+        "20:00"
+      ],
+      [
+        "2027-04-25",
+        "11:00"
+      ]
+    ],
+    "time": null
+  },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/concert/une-heure-un-concert-richard-strauss": {
     "fetched_at": "2026-10-19",
     "lieu": "Salle Molière, Lyon 5e",
@@ -8149,6 +8164,12 @@
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/03/a-laptitefumee.jpeg",
     "time": "18:30"
   },
+  "https://www.transbordeur.fr/evenement/la-ptite-fumee-total-makak-06112026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/03/a-laptitefumee-768x768.jpeg",
+    "fetched_at": "2026-10-24",
+    "image": null,
+    "time": "18:30"
+  },
   "https://www.transbordeur.fr/evenement/la-rvfleuze-06122026/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/05/a-larvfleuze-768x1012.jpg",
     "fetched_at": "2026-10-05",
@@ -8461,6 +8482,12 @@
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/10/Worakls_Overture_sanstxt-768x960.jpg",
     "fetched_at": "2026-10-05",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/09/a-worakls.jpg",
+    "time": "23:30"
+  },
+  "https://www.transbordeur.fr/evenement/zaatar-leroy-se-meurt-mile-dietrich-nzm-99-14112026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/10/a-zaatar-768x960.jpg",
+    "fetched_at": "2026-10-24",
+    "image": null,
     "time": "23:30"
   },
   "https://www.transbordeur.fr/evenement/zaoui-21012027/": {
