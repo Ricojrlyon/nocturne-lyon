@@ -199,8 +199,14 @@ def _lire_satellite(url: str) -> Optional[dict]:
 
 
 def _fiches_expo(session: requests.Session) -> List[str]:
-    """Liens des expositions in situ, en cours comme à venir."""
+    """Liens des expositions in situ, en cours comme à venir.
+
+    Si AUCUNE des deux pages ne répond, le site est en panne (octobre
+    2026 : i-ac.eu ne répondait plus du tout) : l'erreur remonte, pour que
+    le passage dise « source en échec » et pourquoi, au lieu de constater
+    seulement que la salle est tombée à zéro."""
     out: List[str] = []
+    erreurs: List[requests.RequestException] = []
     for chemin in INDEX:
         try:
             r = base_get(BASE + chemin, session=session, headers=HEADERS,
@@ -208,6 +214,9 @@ def _fiches_expo(session: requests.Session) -> List[str]:
             r.raise_for_status()
         except requests.RequestException as exc:
             print(f"[IAC] {chemin}: {exc}", file=sys.stderr)
+            erreurs.append(exc)
+            if len(erreurs) == len(INDEX):
+                raise
             continue
         for a in BeautifulSoup(r.text, "html.parser").find_all("a", href=True):
             if _FICHE_EXPO.match(a["href"]) and a["href"] not in out:

@@ -47,6 +47,17 @@ class DateFrancaise(unittest.TestCase):
     def test_aujourdhui_reste_dans_l_annee(self):
         self.assertEqual(self.lire("1er oct."), date(2026, 10, 1))
 
+    def test_plage_lue_le_lendemain_de_son_premier_jour(self):
+        # Sans année, le début d'hier part en l'an prochain, après la fin
+        # d'aujourd'hui (La Rayonne, 25 octobre 2026) : il revient d'un an.
+        debut, fin = self.lire("mer. 30 sept."), self.lire("jeu. 1er oct.")
+        self.assertEqual((debut, fin), (date(2027, 9, 30), date(2026, 10, 1)))
+        self.assertEqual(base.debut_de_plage(debut, fin), date(2026, 9, 30))
+
+    def test_plage_a_l_endroit_inchangee(self):
+        self.assertEqual(base.debut_de_plage(date(2026, 10, 3), date(2026, 10, 4)), date(2026, 10, 3))
+        self.assertEqual(base.debut_de_plage(date(2026, 10, 3), None), date(2026, 10, 3))
+
 
 class DatesDuPetitBulletin(unittest.TestCase):
     """petit_bulletin._parse_date_str : séances, plages, « jusqu'au »."""

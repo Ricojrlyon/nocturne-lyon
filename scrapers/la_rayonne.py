@@ -27,7 +27,7 @@ import re
 import unicodedata
 from bs4 import BeautifulSoup
 
-from .base import Event, img_src, parse_french_date, iso, get as base_get
+from .base import Event, img_src, parse_french_date, iso, debut_de_plage, get as base_get
 
 VENUE = "La Rayonne"
 SLUG = "la-rayonne"
@@ -173,6 +173,10 @@ def fetch() -> List[Event]:
             d_end = parse_french_date(f"{m_end.group(2)} {m_end.group(3)}")
             if d_end:
                 date_end_iso = iso(d_end)
+                # Le site n'écrit pas l'année : le lendemain du premier
+                # jour, le début partait en l'an prochain, après la fin
+                # (le 25 octobre 2026, ce qui a bloqué la publication).
+                d = debut_de_plage(d, d_end)
 
         # Extract time - but never from the title (formation titles embed
         # their hours, e.g. "… 18h30 > 20h30", which would pollute the

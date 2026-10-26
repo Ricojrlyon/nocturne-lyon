@@ -230,6 +230,22 @@ def parse_french_date(text: str, default_year: Optional[int] = None) -> Optional
         return None
 
 
+def debut_de_plage(debut: date, fin: Optional[date]) -> date:
+    """Le début d'une plage dont les deux dates sont écrites SANS année.
+
+    parse_french_date met une date déjà passée à l'année suivante. Le
+    lendemain du premier jour d'une plage encore en cours (« sam. 24 oct.
+    au dim. 25 oct. », lu le 25), le début part donc un an trop tard et
+    tombe après la fin. Il revient alors un an en arrière.
+    """
+    if fin is not None and debut > fin:
+        try:
+            return debut.replace(year=debut.year - 1)
+        except ValueError:          # un 29 février
+            return debut.replace(year=debut.year - 1, day=28)
+    return debut
+
+
 def iso(d: Optional[date]) -> Optional[str]:
     return d.isoformat() if d else None
 
