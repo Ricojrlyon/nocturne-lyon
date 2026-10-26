@@ -49,7 +49,7 @@ from pathlib import Path
 from typing import Callable, List
 
 from scrapers import Event
-from scrapers.base import OFFSITE_PLUSIEURS
+from scrapers.base import OFFSITE_PLUSIEURS, debut_de_plage
 from scrapers import (
     le_sucre, les_subs, marche_gare, radiant, la_rayonne, transbordeur,
     petit_salon, sonic, periscope, la_commune,
@@ -830,6 +830,37 @@ def _appliquer_les_regles_des_salles(all_tagged: list[tuple[Event, int]]
     return all_tagged
 
 
+def _plages_a_l_endroit(all_tagged: list[tuple[Event, int]]
+                        ) -> list[tuple[Event, int]]:
+    """Étape 2.6 : une plage dont la fin précède le début est redressée.
+
+    Le contrôle du fil refuse de publier une telle plage, et c'est tout le
+    site qui restait alors à la veille, pour UNE soirée mal datée (La
+    Rayonne, 25 octobre 2026). Le cas connu : une source qui n'écrit pas
+    l'année, lue le lendemain du premier jour d'une plage, met le début un
+    an trop tard (voir base.debut_de_plage) ; il revient alors un an en
+    arrière. Une autre inversion, de quelques jours, est une coquille : on
+    garde le début, comme une date unique. Chaque correction est signalée.
+    """
+    corrigees = []
+    for e, _ in all_tagged:
+        if not (e.date_start and e.date_end and e.date_end < e.date_start):
+            continue
+        avant = "%s → %s" % (e.date_start, e.date_end)
+        debut, fin = date.fromisoformat(e.date_start), date.fromisoformat(e.date_end)
+        if (debut - fin).days >= 300:
+            e.date_start = debut_de_plage(debut, fin).isoformat()
+        else:
+            e.date_end = None
+        corrigees.append("%s - %s : %s devient %s → %s" % (
+            e.venue, e.title, avant, e.date_start, e.date_end or e.date_start))
+    if corrigees:
+        _alerte("plage à l'envers redressée",
+                "[plage à l'envers] %d redressée(s) avant publication :\n%s"
+                % (len(corrigees), "\n".join(corrigees)))
+    return all_tagged
+
+
 def _a_venir(all_tagged: list[tuple[Event, int]],
              today_iso: str) -> list[tuple[Event, int]]:
     """Étape 3 : sans les événements terminés."""
@@ -1236,6 +1267,7 @@ def main() -> int:
     save_detail_cache()
 
     today_iso = date.today().isoformat()
+    all_tagged = _plages_a_l_endroit(all_tagged)
     upcoming_tagged = _a_venir(all_tagged, today_iso)
     _effacer_les_liens_non_absolus(upcoming_tagged)
     upcoming_tagged = _sans_titre_vide(upcoming_tagged)

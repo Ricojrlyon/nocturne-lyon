@@ -152,7 +152,11 @@ la recopier, version comprise.
   et parmi elles celles du week-end seulement, dont le rythme est dans le
   nom ; leurs relâches sont lues dans la fiche (« Pas de visite les
   dimanches 4 et 11 octobre »). Tout est in situ par construction : les
-  expositions ex situ et les galeries nomades se tiennent ailleurs.
+  expositions ex situ et les galeries nomades se tiennent ailleurs. Si
+  aucune des deux pages d'index ne répond (le site injoignable, fin
+  octobre 2026), le collecteur lève au lieu de rendre une liste vide : le
+  passage dit alors « source en échec » et pourquoi, et le garde-fou
+  reprend la veille.
 - **`scrapers/mac_lyon.py`** : le macLYON, musée d'art contemporain.
   Drupal sans JSON:API, mais dont la LISTE suffit : elle porte le titre,
   le sous-titre, la période, l'affiche et le type. Aucune fiche à ouvrir,
@@ -363,7 +367,14 @@ la recopier, version comprise.
   12 modules qui ouvrent des pages détail (TTL 30 j si heure trouvée,
   7 j sinon, purge à 60 j). Divise le temps de run par ~8 dès le 2ᵉ passage.
   Le TNG n'y passe plus : ses fiches portent les séances, qui changent.
-- **`aggregate.py`** : orchestre le tout, filtre le passé (les événements
+- **`aggregate.py`** : orchestre le tout, redresse les plages à l'envers
+  (une fin avant le début : le contrôle du fil refuserait de publier, et
+  tout le site resterait à la veille pour UNE soirée mal datée ; le cas
+  connu est une source qui n'écrit pas l'année, lue le lendemain du
+  premier jour d'une plage, dont le début part un an trop tard et revient
+  donc d'un an ; une autre inversion, de quelques jours, garde son début
+  comme une date unique ; chaque correction remonte en annotation
+  « plage à l'envers redressée »), filtre le passé (les événements
   en cours sont conservés jusqu'à leur `date_end`), écarte les événements
   que leur source dit annulés (voir « Politique éditoriale »), écrit
   `events.json`. Quatre garde-fous, du plus local au plus large :
@@ -624,7 +635,9 @@ python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
   nouveaux essais réseau, la vérification anti-robot du Complexe, les
   annulés, l'heure de chaque séance, les catégories, le périmètre (ce
   qui est gardé, ce qui est écarté), les garde-fous
-  d'`aggregate.py`, ce que la page et les collecteurs doivent avoir en
+  d'`aggregate.py` (plages à l'envers redressées comprises), les dates
+  sans année de La Rayonne, l'IAC injoignable qui le dit, ce que la page
+  et les collecteurs doivent avoir en
   commun (l'horizon, le marqueur « ailleurs », le fichier des lieux que
   tous deux lisent, bien formé, positions comprises), ce que le géocodage
   garde d'une réponse de Nominatim, ce que la politique de sécurité de la page

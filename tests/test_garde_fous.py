@@ -205,6 +205,28 @@ class GardeFous(unittest.TestCase):
         # La trace d'hier est gardée, pour le lendemain.
         self.assertEqual(fil["lieux_des_collecteurs"][PETITE], [PETITE])
 
+    def test_une_plage_a_l_envers_est_redressee_et_publiee(self):
+        # Le 25 octobre 2026, une plage de La Rayonne lue le lendemain de
+        # son premier jour avait son début en 2027 et sa fin en 2026 : le
+        # contrôle du fil refusait de publier, et le site restait à la
+        # veille. Elle est redressée avant ; une coquille de quelques jours
+        # garde son début, comme une date unique. Les deux sont signalées.
+        envers = [evenement("Le Sucre", "Day club", date(2027, 9, 30), fin=J),
+                  evenement("Le Sucre", "Coquille", J + timedelta(days=4),
+                            fin=J + timedelta(days=2))]
+        with atelier(J) as a:
+            a.veille(VEILLE)
+            a.lancer(normales(**{"Le Sucre": copies(DIRECT["Le Sucre"] + envers)}),
+                     agregateurs(), github=True)
+            fil = a.publie()
+            journal = a.journal.getvalue()
+        dates = {e["title"]: (e["date_start"], e["date_end"])
+                 for e in fil["events"] if e["venue"] == "Le Sucre"}
+        self.assertEqual(dates["Day club"], ("2026-09-30", "2026-10-01"))
+        self.assertEqual(dates["Coquille"], ("2026-10-05", None))
+        self.assertIn("::warning title=plage à l'envers redressée::[plage à l'envers] "
+                      "2 redressée(s) avant publication", journal)
+
     def test_la_soiree_du_jour_meme_est_encore_a_venir(self):
         # C'est elle que BUG-25 faisait disparaître : la soirée du soir.
         with atelier(J) as a:
