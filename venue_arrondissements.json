@@ -738,7 +738,7 @@
     "arr": null,
     "checked_at": "2026-10-09",
     "confidence": "failed",
-    "seen_at": "2026-10-21"
+    "seen_at": "2026-10-28"
   },
   "L'Echappée": {
     "arr": "Autre",
@@ -1096,7 +1096,7 @@
       45.75243,
       4.86853
     ],
-    "seen_at": "2026-10-21"
+    "seen_at": "2026-10-28"
   },
   "Librairie L'œil cacodylate": {
     "arr": "2e",
@@ -1144,7 +1144,7 @@
       45.75358,
       4.8459
     ],
-    "seen_at": "2026-10-21"
+    "seen_at": "2026-10-28"
   },
   "Librairie La Tanière": {
     "arr": "8e",
@@ -1263,6 +1263,17 @@
     "checked_at": "2026-09-12",
     "confidence": "failed",
     "seen_at": "2026-10-10"
+  },
+  "MJC Bron": {
+    "arr": "Autre",
+    "checked_at": "2026-10-28",
+    "commune": "Bron",
+    "confidence": "low",
+    "pos": [
+      45.74227,
+      4.90856
+    ],
+    "seen_at": "2026-10-28"
   },
   "MJC Duchère": {
     "arr": null,
@@ -1732,6 +1743,12 @@
     ],
     "seen_at": "2026-10-27"
   },
+  "Salle pastorale": {
+    "arr": null,
+    "checked_at": "2026-10-28",
+    "confidence": "failed",
+    "seen_at": "2026-10-28"
+  },
   "Showroom galerie 7": {
     "arr": null,
     "checked_at": "2026-09-08",
@@ -2112,6 +2129,6 @@
     "arr": null,
     "checked_at": "2026-09-16",
     "confidence": "failed",
-    "seen_at": "2026-10-21"
+    "seen_at": "2026-10-28"
   }
 }
