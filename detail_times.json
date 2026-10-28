@@ -3932,20 +3932,20 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/famille/carnaval-emotions": {
-    "fetched_at": "2026-10-20",
+    "fetched_at": "2026-10-28",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
         "2026-10-22",
-        "09:30"
+        null
       ],
       [
         "2026-10-23",
-        "09:30"
+        null
       ],
       [
         "2026-10-24",
-        "09:30"
+        null
       ]
     ]
   },
@@ -4124,7 +4124,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/eleves-du-cnsmd-lyon-12-nov-26": {
-    "fetched_at": "2026-10-20",
+    "fetched_at": "2026-10-28",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -4134,7 +4134,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/eleves-du-cnsmd-lyon-15-oct-26": {
-    "fetched_at": "2026-10-20",
+    "fetched_at": "2026-10-28",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -8555,5 +8555,11 @@
     "fetched_at": "2026-10-05",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-zoufrismaracas.jpg",
     "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/zoufris-maracas-calle-hermandad-30102026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-zoufrismaracas-768x783.jpg",
+    "fetched_at": "2026-10-28",
+    "image": null,
+    "time": "18:30"
   }
 }
