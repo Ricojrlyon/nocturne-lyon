@@ -1044,7 +1044,7 @@
       45.75382,
       4.84218
     ],
-    "seen_at": "2026-10-23"
+    "seen_at": "2026-10-30"
   },
   "Les Grandes Voisines": {
     "arr": "Autre",
@@ -1055,7 +1055,7 @@
       45.74889,
       4.75203
     ],
-    "seen_at": "2026-10-23"
+    "seen_at": "2026-10-30"
   },
   "Les mots bleus": {
     "arr": "Autre",
@@ -1277,6 +1277,16 @@
       4.84416
     ],
     "seen_at": "2026-10-27"
+  },
+  "MAISON DES ASSOCIATIONS 69004": {
+    "arr": "3e",
+    "checked_at": "2026-10-30",
+    "confidence": "high",
+    "pos": [
+      45.75372,
+      4.86725
+    ],
+    "seen_at": "2026-10-30"
   },
   "MAM - Musée des Arts et de la Marionnette": {
     "arr": null,
@@ -1916,7 +1926,7 @@
     "arr": null,
     "checked_at": "2026-10-02",
     "confidence": "failed",
-    "seen_at": "2026-10-23"
+    "seen_at": "2026-10-30"
   },
   "Théâtre de l’Elysée": {
     "arr": "7e",
