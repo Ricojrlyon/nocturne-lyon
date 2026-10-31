@@ -132,11 +132,11 @@
     ]
   },
   "https://le-sucre.eu/events/a-week-end-with-anetha-2/": {
-    "fetched_at": "2026-09-30",
+    "fetched_at": "2026-10-31",
     "time": "23:00"
   },
   "https://le-sucre.eu/events/a-week-end-with-anetha/": {
-    "fetched_at": "2026-09-30",
+    "fetched_at": "2026-10-31",
     "time": "23:00"
   },
   "https://le-sucre.eu/events/a-week-end-with-jen-cardini-2/": {
@@ -156,7 +156,7 @@
     "time": "23:00"
   },
   "https://le-sucre.eu/events/algorave/": {
-    "fetched_at": "2026-09-30",
+    "fetched_at": "2026-10-31",
     "time": "18:30"
   },
   "https://le-sucre.eu/events/blob-party/": {
@@ -192,11 +192,11 @@
     "time": "23:00"
   },
   "https://le-sucre.eu/events/club-67/": {
-    "fetched_at": "2026-09-30",
+    "fetched_at": "2026-10-31",
     "time": "23:00"
   },
   "https://le-sucre.eu/events/club-68/": {
-    "fetched_at": "2026-09-30",
+    "fetched_at": "2026-10-31",
     "time": "23:00"
   },
   "https://le-sucre.eu/events/club-69/": {
@@ -232,7 +232,7 @@
     "time": "23:00"
   },
   "https://le-sucre.eu/events/club-tm-lab/": {
-    "fetched_at": "2026-09-30",
+    "fetched_at": "2026-10-31",
     "time": "23:00"
   },
   "https://le-sucre.eu/events/club-x-encore/": {
@@ -410,6 +410,10 @@
   "https://le-sucre.eu/events/s-society-xclub-dj-aya/": {
     "fetched_at": "2026-09-15",
     "time": "18:00"
+  },
+  "https://le-sucre.eu/events/skream-opent-to-close/": {
+    "fetched_at": "2026-10-31",
+    "time": "23:00"
   },
   "https://le-sucre.eu/events/soeurs-malsaines/": {
     "fetched_at": "2026-10-05",
@@ -1158,7 +1162,7 @@
     ]
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/soiree-18-30-ans": {
-    "fetched_at": "2026-10-23",
+    "fetched_at": "2026-10-31",
     "lieu": "Maison de la Danse",
     "seances": [
       [
@@ -1557,6 +1561,16 @@
   },
   "https://radiant-bellevue.fr/spectacles/comme-ca-vous-chante-2/": {
     "fetched_at": "2026-09-12",
+    "time": "20:30"
+  },
+  "https://radiant-bellevue.fr/spectacles/constance-5/": {
+    "fetched_at": "2026-10-31",
+    "seances": [
+      [
+        "2027-04-29",
+        "20:30"
+      ]
+    ],
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/cosmos-2/": {
@@ -3916,7 +3930,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/concert/soiree-agnes-jaoui": {
-    "fetched_at": "2026-10-23",
+    "fetched_at": "2026-10-31",
     "lieu": "Grande Salle",
     "seances": [
       [
@@ -5433,6 +5447,15 @@
   },
   "https://www.croix-rousse.com/au-programme/giv-me-fiv/": {
     "fetched_at": "2026-10-29",
+    "seances": [
+      [
+        "2026-11-15",
+        "10:45"
+      ]
+    ]
+  },
+  "https://www.croix-rousse.com/au-programme/give-me-fiv/": {
+    "fetched_at": "2026-10-31",
     "seances": [
       [
         "2026-11-15",
@@ -8334,6 +8357,12 @@
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/07/a-lessss2.jpg",
     "time": "23:30"
   },
+  "https://www.transbordeur.fr/evenement/lila-may-21022027/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/10/a-lilamay-768x1152.jpg",
+    "fetched_at": "2026-10-31",
+    "image": null,
+    "time": "19:00"
+  },
   "https://www.transbordeur.fr/evenement/ludivine-issambourg-electrophazz-16102026/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/09/a-ludivineissambourg-768x512.jpg",
     "fetched_at": "2026-10-05",
@@ -8529,6 +8558,12 @@
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-slift2-768x432.jpg",
     "fetched_at": "2026-10-05",
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-slift2.jpg",
+    "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/slift-yoo-doo-right-02122026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-slift2-768x432.jpg",
+    "fetched_at": "2026-10-31",
+    "image": null,
     "time": "19:00"
   },
   "https://www.transbordeur.fr/evenement/sniper-12112026/": {
