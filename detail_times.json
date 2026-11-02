@@ -80,7 +80,7 @@
     "time": "19:00"
   },
   "https://h-eat.eu/events/oyster-sunday-x-cochon-iode-x-s-festival/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-11-02",
     "time": "11:00"
   },
   "https://h-eat.eu/events/oyster-sunday-x-cochon-iode-x-satriales-family/": {
@@ -88,19 +88,19 @@
     "time": "11:00"
   },
   "https://h-eat.eu/events/oyster-sunday-x-cochon-iode/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-11-02",
     "time": "11:00"
   },
   "https://h-eat.eu/events/s-festival-christmas-market/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-11-02",
     "time": "12:00"
   },
   "https://h-eat.eu/events/s-festival-le-circuit/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-11-02",
     "time": "18:00"
   },
   "https://h-eat.eu/events/s-festival-s-christmas-market/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-11-02",
     "time": "12:00"
   },
   "https://h-eat.eu/events/tango-tnt/": {
@@ -172,7 +172,7 @@
     "time": "23:00"
   },
   "https://le-sucre.eu/events/club-62/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-11-02",
     "time": "23:00"
   },
   "https://le-sucre.eu/events/club-63/": {
@@ -256,7 +256,7 @@
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-14/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-11-02",
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-15/": {
@@ -412,7 +412,7 @@
     "time": "23:00"
   },
   "https://le-sucre.eu/events/sublime-club/": {
-    "fetched_at": "2026-10-02",
+    "fetched_at": "2026-11-02",
     "time": "23:00"
   },
   "https://le-sucre.eu/events/type-beat-x-blob-party/": {
@@ -2887,6 +2887,11 @@
     "fetched_at": "2026-09-12",
     "time": "20:00"
   },
+  "https://www.auditorium-lyon.com/fr/ca-joue-auditorium": {
+    "fetched_at": "2026-11-02",
+    "lieu": null,
+    "seances": []
+  },
   "https://www.auditorium-lyon.com/fr/jep-2026": {
     "fetched_at": "2026-09-25",
     "lieu": null,
@@ -3865,6 +3870,24 @@
       ]
     ]
   },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/interstellar-live": {
+    "fetched_at": "2026-11-02",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2027-05-13",
+        "20:00"
+      ],
+      [
+        "2027-05-14",
+        "19:00"
+      ],
+      [
+        "2027-05-15",
+        "18:00"
+      ]
+    ]
+  },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/la-haut": {
     "fetched_at": "2026-10-27",
     "lieu": "Grande Salle",
@@ -3899,6 +3922,16 @@
     "seances": [
       [
         "2027-02-14",
+        "16:00"
+      ]
+    ]
+  },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/cine-concert/rue-sans-joie": {
+    "fetched_at": "2026-11-02",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2027-05-23",
         "16:00"
       ]
     ]
@@ -4083,6 +4116,20 @@
       ]
     ]
   },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/famille/scheherazade": {
+    "fetched_at": "2026-11-02",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2027-05-28",
+        "19:00"
+      ],
+      [
+        "2027-05-29",
+        "11:00"
+      ]
+    ]
+  },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/famille/trois-brigands-autres-contes": {
     "fetched_at": "2026-10-27",
     "lieu": "Grande Salle",
@@ -4231,12 +4278,42 @@
       ]
     ]
   },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/petar-pejcic": {
+    "fetched_at": "2026-11-02",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2027-05-22",
+        "11:00"
+      ]
+    ]
+  },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/quatuor-javus": {
+    "fetched_at": "2026-11-02",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2027-05-22",
+        "18:00"
+      ]
+    ]
+  },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/trio-amelio": {
+    "fetched_at": "2026-11-02",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2027-05-22",
+        "15:00"
+      ]
+    ]
+  },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/beethoven-archiduc": {
-    "fetched_at": "2026-09-25",
+    "fetched_at": "2026-11-02",
     "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
     "seances": [
       [
-        "2026-09-29",
+        "2027-05-18",
         "20:00"
       ]
     ]
@@ -4337,6 +4414,26 @@
     "seances": [
       [
         "2027-04-06",
+        "20:00"
+      ]
+    ]
+  },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/martinu-ravel": {
+    "fetched_at": "2026-11-02",
+    "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
+    "seances": [
+      [
+        "2027-05-11",
+        "20:00"
+      ]
+    ]
+  },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/musique-chambre/mozart-beethoven": {
+    "fetched_at": "2026-11-02",
+    "lieu": "Salle Molière (20 quai de Bondy 69005 Lyon)",
+    "seances": [
+      [
+        "2027-05-25",
         "20:00"
       ]
     ]
@@ -4613,6 +4710,16 @@
       ]
     ]
   },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/grigory-sokolov": {
+    "fetched_at": "2026-11-02",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2027-05-17",
+        "20:00"
+      ]
+    ]
+  },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/recital/laureat-du-concours-amateur": {
     "fetched_at": "2026-10-27",
     "lieu": "Grande Salle",
@@ -4650,6 +4757,30 @@
       [
         "2026-10-24",
         null
+      ]
+    ]
+  },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/rencontre-eleonore-euler-cabantous-harpe-solo-onl": {
+    "fetched_at": "2026-11-02",
+    "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
+    "seances": [
+      [
+        "2027-05-18",
+        "18:30"
+      ]
+    ]
+  },
+  "https://www.auditorium-lyon.com/fr/saison-2026-27/symphonique/beethoven-brahms": {
+    "fetched_at": "2026-11-02",
+    "lieu": "Grande Salle",
+    "seances": [
+      [
+        "2027-05-20",
+        "20:00"
+      ],
+      [
+        "2027-05-21",
+        "18:00"
       ]
     ]
   },
