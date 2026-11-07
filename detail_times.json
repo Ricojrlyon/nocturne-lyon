@@ -454,7 +454,7 @@
     ]
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/apres-moi-le-deluge": {
-    "fetched_at": "2026-10-30",
+    "fetched_at": "2026-11-07",
     "lieu": "Maison de la danse - Grande salle",
     "seances": [
       [
@@ -760,7 +760,7 @@
     ]
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/matieres-premieres": {
-    "fetched_at": "2026-10-30",
+    "fetched_at": "2026-11-07",
     "lieu": "Maison de la danse - Grande salle",
     "seances": [
       [
@@ -2644,7 +2644,7 @@
     "time": "20:00"
   },
   "https://radiant-bellevue.fr/spectacles/rodrigo-y-gabriela-2/": {
-    "fetched_at": "2026-10-07",
+    "fetched_at": "2026-11-07",
     "seances": [
       [
         "2027-04-05",
@@ -7181,7 +7181,7 @@
     "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/en-famille/la-lampe-dapres-aladdin-1": {
-    "fetched_at": "2026-10-30",
+    "fetched_at": "2026-11-07",
     "lieu": "Amphi de l'Opéra de Lyon",
     "seances": [
       [
@@ -8555,6 +8555,12 @@
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-marcusgad.jpeg",
     "time": "19:00"
   },
+  "https://www.transbordeur.fr/evenement/marcus-gad-mahakwe-18112026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-marcusgad-768x960.jpeg",
+    "fetched_at": "2026-11-07",
+    "image": null,
+    "time": "19:00"
+  },
   "https://www.transbordeur.fr/evenement/marguerite-11122026/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-marguerite-768x515.jpg",
     "fetched_at": "2026-11-05",
@@ -8695,6 +8701,12 @@
   "https://www.transbordeur.fr/evenement/schlass-19122026/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/10/a-schlass-768x960.jpg",
     "fetched_at": "2026-10-30",
+    "image": null,
+    "time": "23:30"
+  },
+  "https://www.transbordeur.fr/evenement/schlass-crusherz-malaa-rabteu-lolytha-escuro-19122026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/10/a-schlass-768x960.jpg",
+    "fetched_at": "2026-11-07",
     "image": null,
     "time": "23:30"
   },
