@@ -292,10 +292,10 @@ class PageDepuisUnLien(unittest.TestCase):
             self.assertEqual(releve["scenarios"]["tout"], attendu["scenarios"][nom], nom)
 
 
-class PageNouveau(unittest.TestCase):
-    """« nouveau » depuis ta dernière visite (nouveauté n° 4) : aucun
-    repère à la première visite ; à la suivante, exactement les
-    événements qui n'avaient pas été vus."""
+class PageSansNouveau(unittest.TestCase):
+    """Le repère « nouveau » (nouveauté n° 4) est retiré, en novembre 2026 :
+    plus aucune carte ne le porte, et ce qu'il gardait sur le téléphone est
+    effacé à l'ouverture."""
 
     @classmethod
     def setUpClass(cls):
@@ -307,13 +307,8 @@ class PageNouveau(unittest.TestCase):
         navigateur.sauter_si_indisponible(self, self.probleme)
         self.assertNotIn("echec", self.releve, self.releve.get("echec"))
 
-    def test_seul_ce_qui_n_avait_pas_ete_vu_est_nouveau(self):
-        n = self.releve["nouveau"]
-        self.assertEqual(n["premiere_visite"], 0)
-        self.assertGreater(n["total_vus"], 2000)
-        self.assertGreaterEqual(len(n["attendues"]), 1)
-        self.assertEqual(n["marquees"], n["attendues"])
-        self.assertEqual(n["apres_rechargement"], n["attendues"])
+    def test_plus_de_repere_et_la_memoire_est_effacee(self):
+        self.assertEqual(self.releve["nouveau"], [True, 0, None, None])
         self.assertEqual(self.releve["erreurs_fin"], [])
 
 
