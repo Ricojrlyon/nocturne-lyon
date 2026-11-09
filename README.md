@@ -450,14 +450,9 @@ la recopier, version comprise.
   quand on change de période, et « tout effacer » l'éteint. Tout est gardé dans la mémoire du navigateur
   (`localStorage`, clés `nocturne:favoris` et `nocturne:salles`), sur ce
   téléphone seulement, et rien n'en sort.
-  « nouveau », depuis ta dernière visite : un point ocre et le mot en
-  petit, en haut à gauche des cartes (et des cartes groupées qui en
-  contiennent). À chaque ouverture, la page note une empreinte courte de
-  chaque événement (`nocturne:vus`) ; la fois suivante, ce qui n'y était
-  pas est marqué. Le repère tient toute la visite, page rechargée
-  comprise, et la toute première visite n'en montre aucun. Un événement
-  est reconnu à sa salle, son titre et son premier jour : une heure
-  ajoutée après coup ne le fait pas passer pour nouveau.
+  Le repère « nouveau » depuis la dernière visite a été retiré (novembre
+  2026) ; ce qu'il gardait dans le navigateur (`nocturne:vus`,
+  `nocturne:vus-avant`) est effacé à l'ouverture.
   Au bout de la ligne de chaque date, un petit bouton (un entonnoir)
   épingle le haut de la page, filtres et barre des jours, en haut de
   l'écran pendant qu'on fait défiler la liste ; un second toucher le rend
