@@ -694,7 +694,7 @@
       45.76254,
       4.87276
     ],
-    "seen_at": "2026-10-26"
+    "seen_at": "2026-11-09"
   },
   "Ile Egalité": {
     "arr": "Villeurbanne",
@@ -746,9 +746,9 @@
   },
   "L'Aînée - Librairie Vivement Dimanche": {
     "arr": null,
-    "checked_at": "2026-10-09",
+    "checked_at": "2026-11-09",
     "confidence": "failed",
-    "seen_at": "2026-11-04"
+    "seen_at": "2026-11-09"
   },
   "L'Echappée": {
     "arr": "Autre",
@@ -921,7 +921,7 @@
       45.77358,
       4.82251
     ],
-    "seen_at": "2026-11-02"
+    "seen_at": "2026-11-09"
   },
   "La Trinité": {
     "arr": "8e",
@@ -931,7 +931,7 @@
       45.7329,
       4.88325
     ],
-    "seen_at": "2026-11-02"
+    "seen_at": "2026-11-09"
   },
   "Le Bar Bu": {
     "arr": "5e",
@@ -1354,6 +1354,16 @@
     ],
     "seen_at": "2026-11-05"
   },
+  "Maison Pour Tous - Salle des Rancy": {
+    "arr": "3e",
+    "checked_at": "2026-11-09",
+    "confidence": "high",
+    "pos": [
+      45.7559,
+      4.84777
+    ],
+    "seen_at": "2026-11-09"
+  },
   "Maison Ravier": {
     "arr": "7e",
     "checked_at": "2026-08-12",
@@ -1668,7 +1678,7 @@
       45.77489,
       4.83208
     ],
-    "seen_at": "2026-11-02"
+    "seen_at": "2026-11-09"
   },
   "Place de la Paix": {
     "arr": "Villeurbanne",
@@ -1718,7 +1728,7 @@
       45.76871,
       4.82956
     ],
-    "seen_at": "2026-11-02"
+    "seen_at": "2026-11-09"
   },
   "Rita-Plage": {
     "arr": "Villeurbanne",
@@ -1728,7 +1738,7 @@
       45.76313,
       4.87613
     ],
-    "seen_at": "2026-11-02"
+    "seen_at": "2026-11-09"
   },
   "Rontalon": {
     "arr": "Autre",
@@ -1841,7 +1851,7 @@
     "arr": null,
     "checked_at": "2026-09-21",
     "confidence": "failed",
-    "seen_at": "2026-11-02"
+    "seen_at": "2026-11-09"
   },
   "Studio de danse du CCNR": {
     "arr": null,
@@ -1906,7 +1916,7 @@
     "arr": null,
     "checked_at": "2026-10-18",
     "confidence": "failed",
-    "seen_at": "2026-11-02"
+    "seen_at": "2026-11-09"
   },
   "Théâtre de l'Iris": {
     "arr": "Villeurbanne",
@@ -1952,7 +1962,7 @@
     "arr": null,
     "checked_at": "2026-11-02",
     "confidence": "failed",
-    "seen_at": "2026-11-02"
+    "seen_at": "2026-11-09"
   },
   "Théâtre de l’Elysée": {
     "arr": "7e",
@@ -2153,6 +2163,16 @@
       4.84668
     ],
     "seen_at": "2026-10-19"
+  },
+  "librairie la madeleine": {
+    "arr": "7e",
+    "checked_at": "2026-11-09",
+    "confidence": "high",
+    "pos": [
+      45.74956,
+      4.84776
+    ],
+    "seen_at": "2026-11-09"
   },
   "médiathèque de Meyzieu": {
     "arr": "Autre",
