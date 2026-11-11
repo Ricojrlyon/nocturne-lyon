@@ -61,7 +61,7 @@
       45.74791,
       4.82428
     ],
-    "seen_at": "2026-11-04"
+    "seen_at": "2026-11-11"
   },
   "Atrium de l'hôtel de ville": {
     "arr": null,
@@ -300,6 +300,17 @@
     ],
     "seen_at": "2026-11-05"
   },
+  "Café 1000 vies": {
+    "arr": "Autre",
+    "checked_at": "2026-11-11",
+    "commune": "Saint-Genis-Laval",
+    "confidence": "low",
+    "pos": [
+      45.69407,
+      4.79113
+    ],
+    "seen_at": "2026-11-11"
+  },
   "Café La Médiane": {
     "arr": null,
     "checked_at": "2026-09-23",
@@ -332,6 +343,12 @@
       4.77903
     ],
     "seen_at": "2026-10-07"
+  },
+  "Centre National de la Danse": {
+    "arr": null,
+    "checked_at": "2026-11-11",
+    "confidence": "failed",
+    "seen_at": "2026-11-11"
   },
   "Centre culturel Charlie Chaplin": {
     "arr": "Autre",
@@ -769,7 +786,7 @@
       45.8188,
       4.90537
     ],
-    "seen_at": "2026-11-04"
+    "seen_at": "2026-11-11"
   },
   "L'Ellipse": {
     "arr": "Autre",
@@ -1136,7 +1153,7 @@
       45.75337,
       4.83049
     ],
-    "seen_at": "2026-11-04"
+    "seen_at": "2026-11-11"
   },
   "Librairie La BD": {
     "arr": "Autre",
@@ -1174,7 +1191,7 @@
       45.75358,
       4.8459
     ],
-    "seen_at": "2026-11-04"
+    "seen_at": "2026-11-11"
   },
   "Librairie La Tanière": {
     "arr": "8e",
@@ -1323,7 +1340,7 @@
       45.74227,
       4.90856
     ],
-    "seen_at": "2026-11-04"
+    "seen_at": "2026-11-11"
   },
   "MJC Duchère": {
     "arr": null,
@@ -1813,7 +1830,7 @@
     "arr": null,
     "checked_at": "2026-10-28",
     "confidence": "failed",
-    "seen_at": "2026-11-04"
+    "seen_at": "2026-11-11"
   },
   "Sciences Po Lyon": {
     "arr": "7e",
@@ -1878,6 +1895,16 @@
       4.87964
     ],
     "seen_at": "2026-11-10"
+  },
+  "Théâtre Acte 2": {
+    "arr": "9e",
+    "checked_at": "2026-11-11",
+    "confidence": "high",
+    "pos": [
+      45.77099,
+      4.81155
+    ],
+    "seen_at": "2026-11-11"
   },
   "Théâtre Astrée": {
     "arr": "Villeurbanne",
@@ -2231,6 +2258,6 @@
     "arr": null,
     "checked_at": "2026-09-16",
     "confidence": "failed",
-    "seen_at": "2026-11-04"
+    "seen_at": "2026-11-11"
   }
 }
