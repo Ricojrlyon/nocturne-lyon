@@ -298,7 +298,7 @@
       45.76761,
       4.88765
     ],
-    "seen_at": "2026-11-05"
+    "seen_at": "2026-11-12"
   },
   "Café 1000 vies": {
     "arr": "Autre",
@@ -441,7 +441,7 @@
       45.75316,
       4.80593
     ],
-    "seen_at": "2026-11-05"
+    "seen_at": "2026-11-12"
   },
   "Collège Supérieur Lyon": {
     "arr": "7e",
@@ -701,7 +701,7 @@
       45.73689,
       4.82008
     ],
-    "seen_at": "2026-11-05"
+    "seen_at": "2026-11-12"
   },
   "Hôtel Carlton": {
     "arr": "2e",
@@ -908,7 +908,7 @@
       45.77146,
       4.82794
     ],
-    "seen_at": "2026-11-05"
+    "seen_at": "2026-11-12"
   },
   "La Relève": {
     "arr": "5e",
@@ -1017,6 +1017,16 @@
     ],
     "seen_at": "2026-09-15"
   },
+  "Le Mouton Masqué": {
+    "arr": "4e",
+    "checked_at": "2026-11-12",
+    "confidence": "high",
+    "pos": [
+      45.78017,
+      4.83463
+    ],
+    "seen_at": "2026-11-12"
+  },
   "Le Sémaphore - Théâtre d'Irigny": {
     "arr": null,
     "checked_at": "2026-10-13",
@@ -1052,7 +1062,7 @@
       45.77072,
       4.87436
     ],
-    "seen_at": "2026-11-05"
+    "seen_at": "2026-11-12"
   },
   "Le bistrO d'à côté": {
     "arr": "1er",
@@ -1261,7 +1271,7 @@
       45.76009,
       4.84861
     ],
-    "seen_at": "2026-11-05"
+    "seen_at": "2026-11-12"
   },
   "Librairie à soi.e": {
     "arr": "1er",
@@ -1287,7 +1297,7 @@
       45.75315,
       4.79162
     ],
-    "seen_at": "2026-11-05"
+    "seen_at": "2026-11-12"
   },
   "Lycée François Cevert": {
     "arr": "Autre",
@@ -1379,7 +1389,7 @@
       45.75756,
       4.8125
     ],
-    "seen_at": "2026-11-05"
+    "seen_at": "2026-11-12"
   },
   "Maison Pour Tous - Salle des Rancy": {
     "arr": "3e",
@@ -1793,7 +1803,7 @@
     "arr": null,
     "checked_at": "2026-10-15",
     "confidence": "failed",
-    "seen_at": "2026-11-05"
+    "seen_at": "2026-11-12"
   },
   "Salle Molière": {
     "arr": "5e",
@@ -1803,7 +1813,7 @@
       45.76572,
       4.82863
     ],
-    "seen_at": "2026-11-05"
+    "seen_at": "2026-11-12"
   },
   "Salle Paul Garcin": {
     "arr": "1er",
@@ -1813,7 +1823,7 @@
       45.7706,
       4.8248
     ],
-    "seen_at": "2026-11-05"
+    "seen_at": "2026-11-12"
   },
   "Salle Victor Hugo": {
     "arr": "Autre",
@@ -2038,7 +2048,7 @@
       45.76585,
       4.867
     ],
-    "seen_at": "2026-11-05"
+    "seen_at": "2026-11-12"
   },
   "Théâtre du Point du Jour": {
     "arr": "5e",
