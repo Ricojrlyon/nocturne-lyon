@@ -106,6 +106,32 @@ class Pages(unittest.TestCase):
                       avant={SAISON + "?page=2": [(500, b"panne", {})]})
 
 
+class PlageAChevalSurDeuxAnnees(unittest.TestCase):
+    """« 14 déc. 2026 - 3 janv. 2027 » : l'année est écrite après chaque
+    mois. Seul le début était lu ; dès le 15 décembre, la carte était jugée
+    passée et ses représentations des fêtes disparaissaient (audit A-01)."""
+
+    def test_le_debut_et_la_fin(self):
+        self.assertEqual(opera_lyon._extract_dates("14 déc. 2026 - 3 janv. 2027"),
+                         (date(2026, 12, 14), date(2027, 1, 3)))
+
+    def test_les_autres_formes_ne_bougent_pas(self):
+        self.assertEqual(opera_lyon._extract_dates("4 oct. - 20 oct. 2026"),
+                         (date(2026, 10, 4), date(2026, 10, 20)))
+        self.assertEqual(opera_lyon._extract_dates("28 déc. - 3 janv. 2027"),
+                         (date(2026, 12, 28), date(2027, 1, 3)))
+        self.assertEqual(opera_lyon._extract_dates("9 oct. 2026"), (date(2026, 10, 9), None))
+
+    def test_la_carte_reste_apres_la_premiere_representation(self):
+        site = FauxSite({SAISON: '<html><body><div class="carousel">%s</div></body></html>'
+                                 % carte_lien("opera/la-fille", "La Fille de Madame Angot",
+                                              "14 déc. 2026 - 3 janv. 2027")})
+        with mock.patch.object(opera_lyon, "Date", date_figee(date(2026, 12, 20))), \
+                mock.patch("requests.request", site.request):
+            lu = [(s["title"], s["d_start"], s["d_end"]) for s in opera_lyon._scrape_url(SAISON)]
+        self.assertEqual(lu, [("La Fille de Madame Angot", date(2026, 12, 14), date(2027, 1, 3))])
+
+
 class Cycles(unittest.TestCase):
     """Une fiche lue sans aucune représentation, sur une plage de plusieurs
     jours : un cycle, dont chaque rendez-vous a sa propre fiche (BUG-30)."""

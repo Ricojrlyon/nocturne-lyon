@@ -98,8 +98,14 @@ DATE_SINGLE = re.compile(
     r"\b(\d{1,2})\s+([\wéèêôû]+\.?)\s+(\d{4})\b",
     re.IGNORECASE,
 )
+# Une plage : « 4 oct. - 20 oct. 2026 », ou, à cheval sur deux années,
+# « 14 déc. 2026 - 3 janv. 2027 », l'année écrite après chaque mois. Sans
+# l'année facultative du début, cette seconde forme n'était pas reconnue :
+# seul « 14 déc. 2026 » était lu, la plage perdait sa fin, et dès le
+# lendemain de la première date la carte était jugée passée - La Fille de
+# Madame Angot aurait perdu ses sept représentations des fêtes (audit A-01).
 DATE_RANGE_SAME = re.compile(
-    r"\b(\d{1,2})\s+([\wéèêôû]+\.?)\s*[-–]\s*(\d{1,2})\s+([\wéèêôû]+\.?)\s+(\d{4})\b",
+    r"\b(\d{1,2})\s+([\wéèêôû]+\.?)(?:\s+(\d{4}))?\s*[-–]\s*(\d{1,2})\s+([\wéèêôû]+\.?)\s+(\d{4})\b",
     re.IGNORECASE,
 )
 
@@ -116,12 +122,15 @@ def _normalize_month(s: str) -> Optional[int]:
 def _extract_dates(text: str) -> Tuple[Optional[Date], Optional[Date]]:
     m = DATE_RANGE_SAME.search(text)
     if m:
-        d1, mo1, d2, mo2, yr = m.groups()
+        d1, mo1, yr1, d2, mo2, yr = m.groups()
         month1, month2 = _normalize_month(mo1), _normalize_month(mo2)
         year = int(yr)
         if month1 and month2:
             try:
-                start_year = year - 1 if month1 > month2 else year
+                if yr1:
+                    start_year = int(yr1)
+                else:
+                    start_year = year - 1 if month1 > month2 else year
                 return Date(start_year, month1, int(d1)), Date(year, month2, int(d2))
             except ValueError:
                 pass
