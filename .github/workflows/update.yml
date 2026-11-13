@@ -80,6 +80,11 @@ jobs:
     # absorbe les nouveaux essais réseau et un cache de pages à refaire, et
     # arrête un passage bloqué cinq heures plus tôt.
     timeout-minutes: 60
+    # Écrire le fil (contents) et tenir les issues des salles en panne
+    # (issues, voir la dernière étape).
+    permissions:
+      contents: write
+      issues: write
     steps:
       # v7, et non plus v4 et v5 : ces versions visaient Node.js 20, que
       # GitHub abandonne et ne faisait plus tourner que de force, avec un
@@ -114,11 +119,15 @@ jobs:
         run: python -m unittest discover -s tests -t . -v
 
       - name: Run aggregator
+        id: collecte
         run: python aggregate.py
         env:
           # « 1 » quand la case « Forcer la publication » est cochée, vide
           # sinon - et toujours vide pour le passage programmé.
           NOCTURNE_FORCER_ECRITURE: ${{ inputs.forcer && '1' || '' }}
+          # L'état des sources du passage, pour l'alerte des salles en
+          # panne : hors du dépôt, jamais publié.
+          NOCTURNE_ETAT: ${{ runner.temp }}/etat_des_sources.json
 
       # Le fil frais, contrôlé avant de partir : sa forme, et la page qui
       # s'affiche avec. Même règle : un échec, et rien n'est publié.
@@ -140,3 +149,17 @@ jobs:
             git pull --rebase
             git push
           fi
+
+      # L'alerte des salles en panne (audit A-02). Un passage vert n'envoie
+      # aucun e-mail : l'IAC, injoignable du 23 octobre au 9 novembre 2026,
+      # a quitté le site au 7e jour sans que personne le sache. alertes.py
+      # tient une issue GitHub par salle en panne depuis plus d'une nuit
+      # (l'issue envoie l'e-mail), et la ferme quand la salle revient. Même
+      # si le contrôle du fil a échoué, dès que la collecte a tourné ; elle
+      # ne fait jamais échouer le passage.
+      - name: Alerte des salles en panne
+        if: always() && steps.collecte.outcome != 'skipped'
+        run: python alertes.py
+        env:
+          NOCTURNE_ETAT: ${{ runner.temp }}/etat_des_sources.json
+          GITHUB_TOKEN: ${{ github.token }}

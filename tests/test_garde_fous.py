@@ -3,9 +3,14 @@ collectes : reprise d'une salle ou d'un agrégateur tombé (BUG-1), contrôle
 du volume total (BUG-2), échec complet. Tout s'écrit dans un dossier
 temporaire, à une date figée."""
 import copy
+import json
+import os
 import re
+import tempfile
 import unittest
 from datetime import date, timedelta
+from pathlib import Path
+from unittest import mock
 
 from tests.outils import RACINE, atelier, evenement
 
@@ -466,6 +471,53 @@ class GardeFous(unittest.TestCase):
         for brique, reste in briques:
             self.assertRegex(brique, r"^[\w.-]+/[\w.-]+@[0-9a-f]{40}$")
             self.assertRegex(reste, r"^ # v\d+\.\d+\.\d+$", brique)
+
+    def test_l_etat_des_sources_pour_l_alerte(self):
+        # Audit A-02 : chaque passage écrit, là où NOCTURNE_ETAT l'indique,
+        # l'état de ses sources ; alertes.py en tire les issues des salles
+        # en panne. Sources en échec et leurs lieux, reprises et abandons.
+        with tempfile.TemporaryDirectory() as tmp:
+            chemin = Path(tmp) / "etat.json"
+            with mock.patch.dict(os.environ, {"NOCTURNE_ETAT": str(chemin)}):
+                with atelier(J) as a:
+                    a.veille(VEILLE, reprises={"TNG": (J - timedelta(days=7)).isoformat()})
+                    a.lancer(normales(HEAT=panne, TNG=lambda: []), agregateurs())
+            e = json.loads(chemin.read_text(encoding="utf-8"))
+        self.assertEqual(e["date"], J.isoformat())
+        self.assertEqual(e["en_echec"]["HEAT"], {"raison": "RuntimeError: 502 Proxy Error",
+                                                 "lieux": ["HEAT"]})
+        self.assertEqual(e["reprises"], {"HEAT": J.isoformat()})
+        self.assertEqual(e["abandons"], [["TNG", (J - timedelta(days=7)).isoformat(), 7]])
+        self.assertIn(["Le Sucre", 30, None], e["rapport"])
+
+    def test_sans_nocturne_etat_rien_n_est_ecrit(self):
+        with atelier(J) as a:
+            a.veille(VEILLE)
+            with mock.patch.dict(os.environ, {}, clear=False):
+                os.environ.pop("NOCTURNE_ETAT", None)
+                a.lancer(normales(HEAT=panne), agregateurs())
+            self.assertEqual(sorted(p.name for p in a.dossier.iterdir()), ["events.json"])
+
+    def test_l_alerte_et_les_tests_sont_branches_dans_les_workflows(self):
+        # A-02 : l'alerte tourne après la collecte, même si le contrôle a
+        # échoué, avec le droit de tenir les issues. A-03 : les deux suites
+        # tournent à chaque envoi de code, pas à chaque envoi du robot.
+        wf = (RACINE / ".github" / "workflows" / "update.yml").read_text(encoding="utf-8")
+        collecte = wf.split("\n  update:\n", 1)[1]
+        self.assertIn("    permissions:\n      contents: write\n      issues: write\n", collecte)
+        self.assertIn("        id: collecte\n        run: python aggregate.py\n", collecte)
+        alerte = collecte.split("- name: Alerte des salles en panne\n", 1)[1]
+        self.assertIn("if: always() && steps.collecte.outcome != 'skipped'", alerte)
+        self.assertIn("run: python alertes.py", alerte)
+        self.assertEqual(wf.count("NOCTURNE_ETAT: ${{ runner.temp }}/etat_des_sources.json"), 2)
+        tests = (RACINE / ".github" / "workflows" / "tests.yml").read_text(encoding="utf-8")
+        declencheurs = tests.split("on:", 1)[1].split("permissions:", 1)[0]
+        self.assertIn("push:\n    branches: [main]", declencheurs)
+        for fichier in ("events.json", "venue_arrondissements.json", "detail_times.json"):
+            self.assertIn("      - %s\n" % fichier, declencheurs)
+        self.assertIn("python -m unittest discover -s tests -t . -v", tests)
+        self.assertIn("python -m unittest tests.verif_fil tests.verif_page -v", tests)
+        self.assertIn("permissions:\n  contents: read\n", tests)
 
     def test_les_alertes_disent_comment_forcer(self):
         # Les trois alertes qui conseillent de forcer nomment la case.

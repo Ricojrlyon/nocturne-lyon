@@ -1,0 +1,51 @@
+name: Tests à chaque envoi
+
+# Audit A-03 : GitHub Pages met en ligne chaque envoi sur main dans les
+# secondes qui suivent, sans aucun test, et le passage de nuit ne voyait une
+# erreur que le lendemain - le programme du jour n'était alors pas publié
+# non plus. Ce workflow joue les deux suites de tests à chaque envoi de
+# code : une erreur fait passer l'envoi au rouge, et GitHub envoie un e-mail
+# en quelques minutes. Il ne bloque pas la mise en ligne : il prévient.
+# Les envois du robot (ses trois fichiers, poussés par le passage de nuit)
+# ne le déclenchent pas.
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - events.json
+      - venue_arrondissements.json
+      - detail_times.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Deux envois rapprochés : seul le dernier est testé.
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      # Mêmes briques, désignées par leur empreinte, que update.yml.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Tests de la logique
+        run: python -m unittest discover -s tests -t . -v
+
+      - name: Contrôle du fil et de la page
+        run: python -m unittest tests.verif_fil tests.verif_page -v

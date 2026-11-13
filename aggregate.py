@@ -305,6 +305,11 @@ EFFONDREMENT_PLANCHER = 10
 # un scraper mort peupler le fil de fantômes pendant des mois.
 REPRISE_JOURS_MAX = 7
 
+# Les salles et agrégateurs ABANDONNÉS pendant ce passage - en panne depuis
+# REPRISE_JOURS_MAX jours, ils ne sont plus repris. Noté pour l'état des
+# sources (_ecrire_l_etat), que lit l'alerte des salles en panne.
+_ABANDONS: list = []
+
 # LE VOLUME TOTAL, en dernier recours. Le garde-fou ci-dessus regarde
 # chaque salle, et ne voit donc pas une perte RÉPARTIE : un bug de code qui
 # retirerait trois cartes sur dix partout, une dédup devenue trop gourmande,
@@ -1004,6 +1009,7 @@ def _garde_fou_des_salles(unique: List[Event], out: Path, today_iso: str,
             print("[garde-fou] %d + %d repris → %d après dédup"
                   % (avant_reprise, len(repris), len(unique)))
         for lieu, depuis, jours in abandons:
+            _ABANDONS.append([lieu, depuis, jours])
             _alerte(
                 "salle abandonnée après %d jours" % jours,
                 "[garde-fou] %s s'effondre depuis le %s, soit %d jours. "
@@ -1061,6 +1067,7 @@ def _garde_fou_des_agregateurs(unique: List[Event], out: Path,
             print("[garde-fou] %d + %d repris → %d après dédup"
                   % (avant_reprise, len(repris_agr), len(unique)))
         for nom, depuis, jours in abandons_agr:
+            _ABANDONS.append([nom, depuis, jours])
             _alerte(
                 "agrégateur abandonné après %d jours" % jours,
                 "[garde-fou] %s s'effondre depuis le %s, soit %d jours. "
@@ -1235,6 +1242,44 @@ def _publier(payload: dict, report: list, out: Path, today_iso: str) -> bool:
     return wrote
 
 
+def _ecrire_l_etat(report: list, en_panne: dict, reprises: dict,
+                   today_iso: str) -> None:
+    """L'état des sources du passage, pour l'alerte des salles en panne.
+
+    Audit A-02 : une salle en panne ne produisait que des annotations sur
+    un passage VERT, et GitHub n'envoie d'e-mail que pour un passage rouge.
+    L'IAC a été injoignable du 23 octobre au 9 novembre 2026 ; abandonnée
+    au 7e jour, elle a quitté le site une dizaine de jours sans que personne
+    le sache. alertes.py lit ce fichier et tient une issue GitHub par salle
+    en panne, ce qui envoie l'e-mail.
+
+    Écrit dans le fichier que désigne NOCTURNE_ETAT (le workflow le pose,
+    hors du dépôt) ; rien sans elle. Ne fait jamais échouer le passage.
+    """
+    chemin = os.environ.get("NOCTURNE_ETAT")
+    if not chemin:
+        return
+    erreurs = {nom: err for nom, _, err in report if err}
+    en_echec = {}
+    for nom in sorted(set(erreurs) | set(en_panne)):
+        en_echec[nom] = {
+            "raison": erreurs.get(nom) or "n'a rien rendu",
+            "lieux": sorted(en_panne.get(nom) or [canonical_venue_name(nom)]),
+        }
+    etat = {
+        "date": today_iso,
+        "rapport": [[nom, n, err] for nom, n, err in report],
+        "en_echec": en_echec,
+        "reprises": dict(sorted(reprises.items())),
+        "abandons": sorted(_ABANDONS),
+    }
+    try:
+        Path(chemin).write_text(json.dumps(etat, ensure_ascii=False, indent=1),
+                                encoding="utf-8")
+    except OSError as exc:
+        print(f"[état] non écrit ({chemin}) : {exc}", file=sys.stderr)
+
+
 def _resumer(report: list, wrote: bool, nombre: int, out: Path) -> None:
     """Le compte rendu du passage, source par source."""
     # Pretty CLI summary
@@ -1257,6 +1302,7 @@ def main() -> int:
     """Un passage complet, étape par étape : collecte, nettoyage,
     dédoublonnage, garde-fous, puis publication d'events.json. Rend 0, ou
     1 quand le fil n'a pas été écrit."""
+    _ABANDONS.clear()
     all_tagged, report, lieux = _collecter()
     all_tagged = _ecarter_les_plages_d_agregateur(all_tagged)
     all_tagged = _appliquer_les_regles_des_salles(all_tagged)
@@ -1284,6 +1330,7 @@ def main() -> int:
     lieux, en_panne = _lieux_des_collecteurs(lieux, out, today_iso)
     unique, reprises = _garde_fou_des_salles(unique, out, today_iso, en_panne)
     unique = _garde_fou_des_agregateurs(unique, out, today_iso, reprises)
+    _ecrire_l_etat(report, en_panne, reprises, today_iso)
     unique = _sans_les_annules(unique)
 
     # 7) Sort by date then time then venue.
