@@ -577,6 +577,60 @@ class GardeFous(unittest.TestCase):
             self.assertEqual(code, 1)
             self.assertEqual(a.fichier.read_bytes(), avant)
 
+    # Audit A-34 : la veille illisible, les soirées passées, l'ordre du journal.
+
+    def test_une_veille_illisible_le_dit(self):
+        # Tous les garde-fous se taisaient, sans un mot : une salle en panne
+        # ce jour-là serait partie du site sans reprise ni alerte.
+        with atelier(J) as a:
+            a.fichier.write_text('{"events": [tronqué', encoding="utf-8")
+            self.assertEqual(a.lancer(normales(), agregateurs(), github=True), 0)
+            self.assertIn("::warning title=garde-fous à l'arrêt::", a.journal.getvalue())
+        # Le premier passage, sans fil précédent, n'a rien à dire.
+        with atelier(J) as a:
+            a.lancer(normales(), agregateurs(), github=True)
+            self.assertNotIn("garde-fous à l'arrêt", a.journal.getvalue())
+
+    def test_les_soirees_passees_de_la_veille_ne_comptent_pas(self):
+        # HEAT jouait trente soirées hier, et annonce aujourd'hui dix de
+        # ses douze dates à venir. Hier compté en entier (42), c'était un
+        # effondrement, et les deux dates retirées revenaient sur le site.
+        hier = [evenement("HEAT", "Hier n°%d" % i, J - timedelta(days=1),
+                          url="https://heat.exemple.org/h/%d" % i) for i in range(30)]
+        a_venir = programme("HEAT", n=12)
+        autres = [e for s in SALLES if s != "HEAT" for e in DIRECT[s]]
+        with atelier(J) as a:
+            a.veille(autres + hier + a_venir + PB + VM)
+            self.assertEqual(a.lancer(normales(HEAT=copies(a_venir[:10])), agregateurs()), 0)
+            fil = a.publie()
+        self.assertEqual(sum(1 for e in fil["events"] if e["venue"] == "HEAT"), 10)
+        self.assertNotIn("reprises", fil)
+
+    def test_une_salle_passee_sous_le_plancher_reste_reprise_quand_elle_leve(self):
+        # Douze hier, dont quatre passés : huit à venir, une petite salle.
+        # Les deux règles comptent pareil, sans quoi elle tombait entre les
+        # deux : trop grande pour l'une, trop petite pour l'autre.
+        hier = [evenement("HEAT", "Hier n°%d" % i, J - timedelta(days=1),
+                          url="https://heat.exemple.org/h/%d" % i) for i in range(4)]
+        a_venir = programme("HEAT", n=8)
+        autres = [e for s in SALLES if s != "HEAT" for e in DIRECT[s]]
+        with atelier(J) as a:
+            a.veille(autres + hier + a_venir + PB + VM)
+            self.assertEqual(a.lancer(normales(HEAT=panne), agregateurs()), 0)
+            fil = a.publie()
+        self.assertEqual(sum(1 for e in fil["events"] if e["venue"] == "HEAT"), 8)
+        self.assertEqual(fil["reprises"], {"HEAT": J.isoformat()})
+
+    def test_le_journal_des_reprises_est_dans_l_ordre_alphabetique(self):
+        # Il suivait l'ordre d'un ensemble, qui change d'un passage à
+        # l'autre : le fichier bougeait sans que rien n'ait changé.
+        with atelier(J) as a:
+            a.veille(VEILLE)
+            a.lancer([(s, panne) for s in SALLES], agregateurs())
+            reprises = list(a.publie()["reprises"])
+        self.assertEqual(len(reprises), len(SALLES))
+        self.assertEqual(reprises, sorted(reprises))
+
 
 if __name__ == "__main__":
     unittest.main()

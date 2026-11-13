@@ -55,7 +55,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, HORIZON_JOURS, get as base_get
+from .base import Event, HORIZON_JOURS, introuvable, get as base_get
 
 VENUE = "Musée des Beaux-Arts"
 SLUG = "musee-des-beaux-arts"
@@ -170,14 +170,14 @@ def _expositions(session: requests.Session, today: Date,
     Un bloc par exposition, et il est régulier : un <h1> pour le titre,
     le <p> qui suit pour les artistes, un <h3> pour la période, un lien
     vers la fiche, une image. On lit donc de <h1> en <h1>.
+
+    L'article qui tombe fait lever le collecteur (audit A-09) : les
+    expositions disparaissaient sinon du site pour la nuit, sans alerte,
+    à côté d'une liste de rendez-vous complète.
     """
-    try:
-        r = base_get(BASE + EXPOSITIONS, session=session, headers=HEADERS,
-                     timeout=30)
-        r.raise_for_status()
-    except requests.RequestException as exc:
-        print(f"[Beaux-Arts] {EXPOSITIONS}: {exc}", file=sys.stderr)
-        return [], 0
+    r = base_get(BASE + EXPOSITIONS, session=session, headers=HEADERS,
+                 timeout=30)
+    r.raise_for_status()
     bloc = BeautifulSoup(r.text, "html.parser").select_one(
         "[class*=field--name-field-sp-content] .field__item")
     if bloc is None:
@@ -238,16 +238,19 @@ def _expositions(session: requests.Session, today: Date,
 
 
 def _cartes(session: requests.Session) -> Dict[str, Tuple[str, str]]:
-    """lien -> (type, titre) pour chaque carte de la liste paginée."""
+    """lien -> (type, titre) pour chaque carte de la liste paginée.
+
+    Une page qui tombe fait lever le collecteur (audit A-09) : le
+    garde-fou reprend la veille, plutôt qu'une liste coupée à cette page.
+    Une page introuvable (404) vaut fin de la liste.
+    """
     out: Dict[str, Tuple[str, str]] = {}
     for page in range(PAGES_MAX):
         url = LISTING + (f"?page={page}" if page else "")
-        try:
-            r = base_get(url, session=session, headers=HEADERS, timeout=30)
-            r.raise_for_status()
-        except requests.RequestException as exc:
-            print(f"[Beaux-Arts] {url}: {exc}", file=sys.stderr)
+        r = base_get(url, session=session, headers=HEADERS, timeout=30)
+        if page and introuvable(r):
             break
+        r.raise_for_status()
         avant = len(out)
         for t in BeautifulSoup(r.text, "html.parser").select(
                 ".field--name-field-pc-appointment-type"):

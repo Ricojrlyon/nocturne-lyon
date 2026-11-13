@@ -42,7 +42,6 @@ import re
 import sys
 import unicodedata
 
-import requests
 from bs4 import BeautifulSoup
 
 from .base import Event, HORIZON_JOURS, iso, get as base_get
@@ -264,22 +263,20 @@ def _objets(texte: str, cle: str) -> List[dict]:
 
 
 def _femmes(today: Date, horizon: Date) -> List[Event]:
-    try:
-        r = base_get(FFR_STABLE, headers=HEADERS, timeout=40,
-                     etiquette="[RUGBY]")
-        r.raise_for_status()
-        phase = re.search(r"qualification-(\d+)", r.text)
-        if not phase:
-            _alerte("la FFR ne dit plus quelle est la phase en cours sur %s : "
-                    "aucune rencontre féminine au fil" % FFR_STABLE)
-            return []
-
-        r = base_get(FFR_CALENDRIER % phase.group(1), headers=HEADERS,
-                     timeout=60, etiquette="[RUGBY]")
-        r.raise_for_status()
-    except (requests.RequestException, ValueError) as exc:
-        print("[RUGBY] FFR : %s" % exc, file=sys.stderr)
+    # Une panne de la FFR fait lever le collecteur (audit A-09) : sept
+    # matchs sur dix quittaient sinon le site pour la nuit, sans reprise.
+    r = base_get(FFR_STABLE, headers=HEADERS, timeout=40,
+                 etiquette="[RUGBY]")
+    r.raise_for_status()
+    phase = re.search(r"qualification-(\d+)", r.text)
+    if not phase:
+        _alerte("la FFR ne dit plus quelle est la phase en cours sur %s : "
+                "aucune rencontre féminine au fil" % FFR_STABLE)
         return []
+
+    r = base_get(FFR_CALENDRIER % phase.group(1), headers=HEADERS,
+                 timeout=60, etiquette="[RUGBY]")
+    r.raise_for_status()
 
     matchs, vus = [], set()
     for o in _objets(_flight(r.text), "dateEffective"):
@@ -337,12 +334,11 @@ def fetch() -> List[Event]:
     today = Date.today()
     horizon = today + timedelta(days=HORIZON_DAYS)
 
+    # Les deux sources doivent répondre : l'une en panne fait lever le
+    # collecteur, et le garde-fou reprend la veille des deux (audit A-09).
     events: List[Event] = []
-    for nom, source in (("hommes", _hommes), ("femmes", _femmes)):
-        try:
-            events.extend(source(today, horizon))
-        except (requests.RequestException, ValueError) as exc:
-            print("[RUGBY] %s : %s" % (nom, exc), file=sys.stderr)
+    for source in (_hommes, _femmes):
+        events.extend(source(today, horizon))
 
     events.sort(key=lambda e: (e.date_start, e.time or ""))
     return events

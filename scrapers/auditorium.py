@@ -55,7 +55,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, HORIZON_JOURS, get as base_get
+from .base import Event, HORIZON_JOURS, introuvable, get as base_get
 
 VENUE = "Auditorium de Lyon"
 SLUG = "auditorium-lyon"
@@ -208,12 +208,15 @@ def fetch() -> List[Event]:
     cartes: Dict[str, dict] = {}
     for ym in _mois_horizon(today, horizon):
         url = f"{BASE}/fr/agenda/{ym}"
-        try:
-            r = base_get(url, session=session, headers=HEADERS, timeout=30)
-            r.raise_for_status()
-        except requests.RequestException as exc:
-            print(f"[Auditorium] {url}: {exc}", file=sys.stderr)
+        # Un mois qui tombe fait lever le collecteur : le garde-fou reprend
+        # la veille, plutôt qu'un programme troué d'un mois (audit A-09).
+        # Un mois introuvable (404) est un mois sans page, pas une panne.
+        r = base_get(url, session=session, headers=HEADERS, timeout=30)
+        if introuvable(r):
+            print(f"[Auditorium] {url} : pas de page pour ce mois",
+                  file=sys.stderr)
             continue
+        r.raise_for_status()
         for art in BeautifulSoup(r.text, "html.parser").select("article"):
             a = art.find("a", href=True)
             titre = art.select_one(".event-title")

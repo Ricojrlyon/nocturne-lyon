@@ -148,7 +148,11 @@ def get(url: str, *, headers: Optional[dict] = None, timeout: int = 30,
             if r.status_code not in CODES_A_REESSAYER or essai == tentatives:
                 return r
             raison = "%d" % r.status_code
-        except (requests.ConnectionError, requests.Timeout) as exc:
+        # Une connexion coupée PENDANT la lecture de la réponse lève
+        # ChunkedEncodingError, qui n'est ni l'une ni l'autre des deux
+        # premières : c'est pourtant la même coupure (audit A-23).
+        except (requests.ConnectionError, requests.Timeout,
+                requests.exceptions.ChunkedEncodingError) as exc:
             derniere = exc
             if essai == tentatives:
                 if tentatives > 1:
@@ -162,6 +166,29 @@ def get(url: str, *, headers: Optional[dict] = None, timeout: int = 30,
               % (prefixe, url, raison, essai, tentatives), file=sys.stderr)
         time.sleep(ATTENTE * essai)
     raise derniere
+
+
+# UNE PAGE QUI MANQUE N'EST PAS UNE PANNE (audit A-09). Un collecteur qui
+# lit plusieurs pages, ou plusieurs sources, rendait ce qu'il avait déjà lu
+# quand l'une d'elles tombait : le Petit Bulletin coupé à la page 3
+# publiait 160 cartes sur 277, La Commune 8 sur 28, sur un passage vert,
+# et aucun garde-fou ne pouvait le voir. Une erreur réseau ou serveur sur
+# une page suivante ou une sous-source fait donc LEVER le collecteur : le
+# garde-fou reprend la veille entière, et l'alerte le dit. Seule exception,
+# la page qui n'existe pas (404, 410) : la fin d'un agenda, un spectacle
+# retiré. La fin d'un agenda paginé se lit d'ordinaire à une page qui
+# n'apporte rien de neuf : le Petit Bulletin, le Périscope et les
+# Beaux-Arts répondent 200 au-delà de leur dernière page (relevé du
+# 13/11/2026).
+CODES_INTROUVABLE = (404, 410)
+
+
+def introuvable(reponse_ou_erreur) -> bool:
+    """Vrai pour une page qui n'existe pas (404, 410), qu'on tienne la
+    réponse ou l'erreur levée par raise_for_status ; faux pour toute autre
+    panne, une coupure comprise."""
+    r = getattr(reponse_ou_erreur, "response", reponse_ou_erreur)
+    return getattr(r, "status_code", None) in CODES_INTROUVABLE
 
 
 def post(url: str, **options) -> requests.Response:

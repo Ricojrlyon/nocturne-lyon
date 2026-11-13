@@ -52,8 +52,6 @@ import re
 import sys
 import unicodedata
 
-import requests
-
 from .base import Event, HORIZON_JOURS, iso, post as base_post
 
 HORIZON_DAYS = HORIZON_JOURS
@@ -210,11 +208,11 @@ def fetch() -> List[Event]:
     total_national = 0
 
     for numero, club, lien in CLUBS:
-        try:
-            lignes = _lignes(numero, saison)
-        except (requests.RequestException, ValueError, UnicodeError) as exc:
-            print("[VOLLEY] %s : %s" % (club, exc), file=sys.stderr)
-            continue
+        # L'export d'un club qui tombe fait lever le collecteur (audit
+        # A-09) : le garde-fou reprend la veille des deux clubs. Sans cela,
+        # les matchs du gymnase Mado Bonnet quittaient le site pour la nuit,
+        # sans reprise ni alerte.
+        lignes = _lignes(numero, saison)
 
         domicile = [l for l in lignes
                     if (l.get("Entité") or l.get("Entit�") or "").strip()

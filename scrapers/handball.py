@@ -43,8 +43,6 @@ import re
 import sys
 import unicodedata
 
-import requests
-
 from .base import Event, HORIZON_JOURS, iso, get as base_get
 
 HORIZON_DAYS = HORIZON_JOURS
@@ -225,11 +223,10 @@ def fetch() -> List[Event]:
     programmes = 0
 
     for competition, club, nom_federal, affiche in EQUIPES:
-        try:
-            evs = _calendrier(competition, club)
-        except (requests.RequestException, ValueError) as exc:
-            print("[HAND] %s : %s" % (affiche, exc), file=sys.stderr)
-            continue
+        # Un calendrier qui tombe fait lever le collecteur (audit A-09) :
+        # le garde-fou reprend la veille, au lieu de publier les matchs des
+        # autres équipes comme s'ils étaient tout le programme.
+        evs = _calendrier(competition, club)
 
         if not evs:
             _alerte("le calendrier de %s est vide : identifiants de "

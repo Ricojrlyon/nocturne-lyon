@@ -188,6 +188,11 @@ def _geocode_one(name: str) -> Optional[dict]:
     # (Pause 1,1 s - politique Nominatim 1 req/s.)
     time.sleep(1.1)
     results_v = _search(f"{name}, Villeurbanne, France")
+    if results_v is None:
+        # Panne sur la seconde requête : comme sur la première, rien n'est
+        # mis en cache. Le lieu était sinon noté « failed » pour trente
+        # jours sans avoir été cherché à Villeurbanne (audit A-35).
+        return None
     if results_v:
         entry = _match_lyon(results_v)
         if entry:
@@ -239,6 +244,14 @@ def resolve_new_venues(
             continue
         age = _age_days(entry.get("seen_at"))
         if age is None or age >= _RESTAMP_DAYS:
+            entry["seen_at"] = today
+            dirty = True
+    # Une entrée sans date lisible, que ce passage n'a pas vue, est datée
+    # d'aujourd'hui : elle comptait pour zéro jour, et ne pouvait donc
+    # jamais être purgée (audit A-35 : le Groupama Stadium et les Théâtres
+    # romains de Fourvière, sans date depuis juillet 2026).
+    for entry in cache.values():
+        if isinstance(entry, dict) and _age_days(entry.get("seen_at")) is None:
             entry["seen_at"] = today
             dirty = True
 

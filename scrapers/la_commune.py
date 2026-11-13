@@ -45,13 +45,8 @@ def _french_month_num(s: str) -> Optional[int]:
 
 
 def _scrape_page(url: str) -> List[Event]:
-    try:
-        resp = base_get(url, timeout=20, headers=HEADERS)
-    except requests.RequestException:
-        return []
-    if resp.status_code != 200:
-        return []
-
+    resp = base_get(url, timeout=20, headers=HEADERS)
+    resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
     events: List[Event] = []
     seen_urls: set = set()
@@ -115,9 +110,17 @@ def _scrape_page(url: str) -> List[Event]:
 
 
 def fetch() -> List[Event]:
-    all_events: List[Event] = []
-    for url in URLS:
-        all_events.extend(_scrape_page(url))
+    # Le hub porte TOUT le programme : s'il tombe, le collecteur lève, et
+    # le garde-fou reprend la veille (audit A-09). Le 500 du hub laissait
+    # sinon les huit cartes de /programme/ seules, sur vingt-huit, sans
+    # alerte. /programme/ n'en est qu'un extrait : sa panne ne coûte rien
+    # tant que le hub répond, elle est seulement dite.
+    all_events: List[Event] = list(_scrape_page(URLS[0]))
+    for url in URLS[1:]:
+        try:
+            all_events.extend(_scrape_page(url))
+        except requests.RequestException as exc:
+            print(f"[La Commune] {url} : {exc} - le hub suffit", file=sys.stderr)
 
     seen, unique = set(), []
     for e in all_events:

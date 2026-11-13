@@ -391,9 +391,41 @@ def _compte_direct(paires) -> dict[str, int]:
     return n
 
 
-def _effondrements(nouveaux: List[Event],
-                   chemin: Path) -> list[tuple[str, int, int]]:
-    """Lieux qui publient moins du quart de ce qu'ils publiaient hier.
+def _directs_encore_a_venir(anciens: list, today_iso: str) -> dict[str, int]:
+    """_compte_direct du fil de la veille, sans ce qui est passé depuis.
+
+    Même règle qu'à l'étape 3 : un événement vit jusqu'à sa fin. Les
+    soirées d'hier ne sont pas une perte (audit A-34) : comptées, elles
+    grossissaient la veille, et une salle qui jouait beaucoup hier
+    semblait s'effondrer aujourd'hui.
+    """
+    return _compte_direct(
+        (e.get("venue"), e.get("url")) for e in anciens
+        if isinstance(e, dict)
+        and (e.get("date_end") or e.get("date_start") or "") >= today_iso)
+
+
+# UNE VEILLE ILLISIBLE (audit A-34). Tous les garde-fous comparent ce
+# passage au fil publié la veille ; s'il ne se lit pas, ils se taisent, et
+# rien ne le disait : une salle en panne ce jour-là partait du site sans
+# reprise ni alerte. Le premier passage, sans fichier, n'est pas concerné.
+def _veille_illisible(chemin: Path) -> str | None:
+    """La raison pour laquelle le fil précédent ne se lit pas, ou None."""
+    if not chemin.exists():
+        return None
+    try:
+        precedent = json.loads(chemin.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:
+        return f"{type(exc).__name__}: {exc}"
+    if not isinstance(precedent, dict) or not isinstance(precedent.get("events"), list):
+        return "pas de liste « events »"
+    return None
+
+
+def _effondrements(nouveaux: List[Event], chemin: Path,
+                   today_iso: str) -> list[tuple[str, int, int]]:
+    """Lieux qui publient moins du quart de ce que la veille comptait
+    encore à venir.
 
     La comparaison porte sur les événements DIRECTS seulement : sans ce
     tri, un agrégateur qui remonte encore trois dates masquerait la
@@ -406,7 +438,7 @@ def _effondrements(nouveaux: List[Event],
         anciens = json.loads(chemin.read_text(encoding="utf-8"))["events"]
     except (OSError, ValueError, KeyError, TypeError):
         return []
-    avant = _compte_direct((e.get("venue"), e.get("url")) for e in anciens)
+    avant = _directs_encore_a_venir(anciens, today_iso)
     apres = _compte_direct((e.venue, e.url) for e in nouveaux)
     pertes = []
     for lieu, n_avant in avant.items():
@@ -478,12 +510,15 @@ def _lieux_des_collecteurs(lieux: dict, chemin: Path,
 
 
 def _petites_salles_en_panne(nouveaux: List[Event], chemin: Path,
-                             en_panne: dict) -> list[tuple[str, int, int]]:
+                             en_panne: dict,
+                             today_iso: str) -> list[tuple[str, int, int]]:
     """Petites salles dont le collecteur a levé, ou n'a rien rendu (BUG-25) :
     (lieu, hier, aujourd'hui).
 
-    Petite : moins de EFFONDREMENT_PLANCHER événements directs dans le fil
-    précédent. `en_panne` donne les lieux de chaque collecteur en échec.
+    Petite : moins de EFFONDREMENT_PLANCHER événements directs encore à
+    venir dans le fil précédent - le même compte que _effondrements, pour
+    qu'aucune salle ne tombe entre les deux règles. `en_panne` donne les
+    lieux de chaque collecteur en échec.
     """
     if not en_panne:
         return []
@@ -491,7 +526,7 @@ def _petites_salles_en_panne(nouveaux: List[Event], chemin: Path,
         anciens = json.loads(chemin.read_text(encoding="utf-8"))["events"]
     except (OSError, ValueError, KeyError, TypeError):
         return []
-    avant = _compte_direct((e.get("venue"), e.get("url")) for e in anciens)
+    avant = _directs_encore_a_venir(anciens, today_iso)
     apres = _compte_direct((e.venue, e.url) for e in nouveaux)
     lieux = {lieu for rendus in en_panne.values() for lieu in rendus}
     return sorted((lieu, avant[lieu], apres.get(lieu, 0)) for lieu in lieux
@@ -613,7 +648,10 @@ def _reprendre(unique: List[Event], chemin: Path,
 
     lieux = {lieu for lieu, _, _ in effondres}
     journal, abandons, repris = {}, [], []
-    for lieu in lieux:
+    # Dans l'ordre alphabétique : parcouru tel quel, l'ensemble rangeait
+    # le journal « reprises » d'events.json dans un ordre qui changeait
+    # d'un passage à l'autre (audit A-34).
+    for lieu in sorted(lieux):
         depuis = journal_avant.get(lieu, today_iso)
         try:
             jours = (date.fromisoformat(today_iso)
@@ -992,10 +1030,10 @@ def _garde_fou_des_salles(unique: List[Event], out: Path, today_iso: str,
     #     c'est sous cette forme que le fil précédent est écrit : comparer
     #     un décompte d'avant-dédup à un décompte d'après ne voudrait rien
     #     dire.
-    effondres = _effondrements(unique, out) if out.exists() else []
+    effondres = _effondrements(unique, out, today_iso) if out.exists() else []
     # Les petites salles dont le collecteur a levé, ou n'a rien rendu : voir
     # le chapeau de _lieux_des_collecteurs.
-    pannes = (_petites_salles_en_panne(unique, out, en_panne)
+    pannes = (_petites_salles_en_panne(unique, out, en_panne, today_iso)
               if out.exists() else [])
     reprises: dict = {}
     forcer = os.environ.get("NOCTURNE_FORCER_ECRITURE") == "1"
@@ -1384,6 +1422,13 @@ def main() -> int:
           f"(-{before - len(unique)})")
 
     out = Path(__file__).parent / "events.json"
+    raison = _veille_illisible(out)
+    if raison:
+        _alerte("garde-fous à l'arrêt",
+                "[garde-fou] le fil précédent (events.json) ne se lit pas "
+                "(%s) : aucun garde-fou ne peut comparer ce passage à la "
+                "veille, et une salle en panne aujourd'hui ne serait pas "
+                "reprise." % raison)
     lieux, en_panne = _lieux_des_collecteurs(lieux, out, today_iso)
     unique, reprises = _garde_fou_des_salles(unique, out, today_iso, en_panne)
     unique = _garde_fou_des_agregateurs(unique, out, today_iso, reprises)

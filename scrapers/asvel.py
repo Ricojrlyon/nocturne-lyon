@@ -139,15 +139,16 @@ def _salle(nom: str) -> Optional[str]:
 
 
 def _euroleague(saison: int, inconnues: list) -> List[dict]:
-    """Matchs à domicile de l'EuroLeague : date, heure et SALLE."""
-    try:
-        r = base_get(EUROLEAGUE % saison, headers=HEADERS, timeout=30,
-                     etiquette="[ASVEL]")
-        r.raise_for_status()
-        parties = r.json().get("data") or []
-    except (requests.RequestException, ValueError) as exc:
-        print("[ASVEL] EuroLeague : %s" % exc, file=sys.stderr)
-        return []
+    """Matchs à domicile de l'EuroLeague : date, heure et SALLE.
+
+    Une panne de l'API fait lever le collecteur (audit A-09) : ses matchs
+    quittaient sinon le site pour la nuit, sans reprise ni alerte, à côté
+    des matchs Betclic, lus dans le relevé.
+    """
+    r = base_get(EUROLEAGUE % saison, headers=HEADERS, timeout=30,
+                 etiquette="[ASVEL]")
+    r.raise_for_status()
+    parties = r.json().get("data") or []
 
     out = []
     for p in parties:

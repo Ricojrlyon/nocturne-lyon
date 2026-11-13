@@ -48,7 +48,22 @@ la recopier, version comprise.
   et celui du Complexe a sa propre formule (voir plus bas).
   Les appels réseau passent par `base.get` (exceptions motivées dans
   `scrapers/base.py`), qui réessaie sur une coupure, un délai dépassé ou un
-  502/503/504, jamais sur une vraie réponse du site.
+  502/503/504, jamais sur une vraie réponse du site. La coupure compte
+  aussi quand elle survient pendant la lecture de la réponse (audit A-23).
+  Une PANNE PARTIELLE fait lever le collecteur (audit A-09) : une page
+  suivante, un mois, une sous-source (le calendrier d'une équipe, la FFR,
+  l'API EuroLeague, le hub de La Commune, l'article des expositions des
+  Beaux-Arts, les catégories d'Agend'arts) ou la page d'un spectacle qui
+  tombe. Le collecteur rendait jusque-là ce qu'il avait déjà lu, comme si
+  c'était tout : le Petit Bulletin coupé à la page 3 publiait 160 cartes
+  sur 277, sur un passage vert, et une petite salle n'était reprise que si
+  son collecteur levait. Désormais le garde-fou reprend la veille entière,
+  et l'alerte le dit. Seule une page introuvable (404, 410) n'est pas une
+  panne : c'est la fin d'un agenda paginé, un mois sans page ou un
+  spectacle retiré, que `base.introuvable` reconnaît. La fin d'un agenda se
+  lit d'ordinaire à une page qui n'apporte rien de neuf : le Petit
+  Bulletin, le Périscope et les Beaux-Arts répondent 200 au-delà de leur
+  dernière page (relevé du 13 novembre 2026).
   Une date écrite sans année prend celle de `base.annee_probable` : la
   prochaine fois que ce jour revient, avec quinze jours de grâce pour un
   jour passé de peu, qu'un site affiche encore (un concert d'hier, une
@@ -400,11 +415,21 @@ la recopier, version comprise.
   arrondissement et position (`pos`, latitude et longitude arrondies au
   mètre, pour la vue carte de la page), mis en cache dans
   `venue_arrondissements.json`. Les lieux auxquels `lieux.json` donne un
-  arrondissement ne sont jamais interrogés.
+  arrondissement ne sont jamais interrogés. Une panne de Nominatim n'est
+  jamais mise en cache, sur la seconde requête (« …, Villeurbanne ») comme
+  sur la première : le lieu était sinon noté introuvable pour trente
+  jours. Une entrée sans date de dernier passage en reçoit une, sans quoi
+  elle n'était jamais purgée (audit A-35).
 - **`scrapers/detail_cache.py`** : cache persistant `url → heure` pour les
   12 modules qui ouvrent des pages détail (TTL 30 j si heure trouvée,
   7 j sinon, purge à 60 j). Divise le temps de run par ~8 dès le 2ᵉ passage.
   Le TNG n'y passe plus : ses fiches portent les séances, qui changent.
+  Une liste de séances est relue après trois jours, quoi que porte la
+  fiche ; une date ajoutée ou annulée restait sinon invisible sept ou
+  trente jours, selon que la fiche donnait une heure. Une lecture qui
+  échoue n'écrit rien : une fiche nouvelle en panne passagère était notée
+  vide pour sept jours, et le spectacle n'apparaissait qu'une semaine plus
+  tard, ou sans son heure (audit A-30).
 - **`aggregate.py`** : orchestre le tout, redresse les plages à l'envers
   (une fin avant le début : le contrôle du fil refuserait de publier, et
   tout le site resterait à la veille pour UNE soirée mal datée ; le cas
@@ -421,13 +446,16 @@ la recopier, version comprise.
   au-delà de l'horizon de 180 jours, écarte les événements
   que leur source dit annulés (voir « Politique éditoriale »), écrit
   `events.json`. Quatre garde-fous, du plus local au plus large :
-  - une salle scrappée en direct qui tombe sous le quart de la veille
-    garde ses événements de la veille, sept jours au plus (journal
-    `reprises` dans `events.json`). Une petite salle, sous dix
-    événements, n'est reprise que si son collecteur échoue (erreur,
-    page introuvable) ou ne rend plus rien alors qu'elle annonçait la
-    veille des dates encore à venir ; pas quand elle a simplement moins
-    de dates. Pour
+  - une salle scrappée en direct qui tombe sous le quart de ce que la
+    veille comptait encore à venir garde ses événements de la veille, sept
+    jours au plus (journal `reprises` dans `events.json`, rangé dans
+    l'ordre alphabétique). Les soirées de la veille, passées depuis, ne
+    comptent pas : une salle qui jouait beaucoup hier semblait sinon
+    s'effondrer (audit A-34). Une petite salle, sous dix
+    événements à venir, n'est reprise que si son collecteur échoue (erreur,
+    page introuvable, panne partielle) ou ne rend plus rien alors qu'elle
+    annonçait la veille des dates encore à venir ; pas quand elle a
+    simplement moins de dates. Pour
     savoir quels lieux reprendre, le fil garde ceux que chaque collecteur
     a rendus (`lieux_des_collecteurs`) : le handball, par exemple, joue
     dans deux gymnases. Une salle reprise écarte aussi les plages
@@ -441,6 +469,11 @@ la recopier, version comprise.
     il l'est quand même, avec une alerte ;
   - si toutes les sources échouent, le `events.json` précédent n'est pas
     écrasé.
+
+  Tous comparent le passage au fil de la veille : quand ce fichier ne se
+  lit pas, une alerte « garde-fous à l'arrêt » le dit (audit A-34). Ils se
+  taisaient jusque-là sans un mot, et une salle en panne ce jour-là
+  serait partie du site sans reprise.
 
   `NOCTURNE_FORCER_ECRITURE=1` publie ce qui a été réellement scrappé,
   pour une perte réelle : salle fermée, saison finie. Sur GitHub, c'est la
@@ -685,7 +718,9 @@ python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
 
 - **La logique**, en une minute et demie environ et sans réseau : la
   lecture des dates en français, le dédoublonnage règle par règle, les
-  nouveaux essais réseau, la vérification anti-robot du Complexe, les
+  nouveaux essais réseau, les pannes partielles de chaque collecteur
+  (une page suivante qui tombe fait lever), le cache des fiches, la
+  vérification anti-robot du Complexe, les
   annulés, l'heure de chaque séance, les catégories, le périmètre (ce
   qui est gardé, ce qui est écarté), les garde-fous
   d'`aggregate.py` (plages à l'envers redressées comprises), les dates

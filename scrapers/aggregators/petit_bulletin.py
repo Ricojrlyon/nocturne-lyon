@@ -37,16 +37,14 @@ jours, avec un badge de progression.
 """
 from __future__ import annotations
 import re
-import sys
 import time
 import unicodedata
 from datetime import date, timedelta
 from typing import List, Optional, Tuple
 
-import requests
 from bs4 import BeautifulSoup
 
-from ..base import Event, annee_probable, get as base_get
+from ..base import Event, annee_probable, introuvable, get as base_get
 
 URL = "https://www.petit-bulletin.fr/agenda-recherche.html"
 BASE = "https://www.petit-bulletin.fr"
@@ -540,6 +538,12 @@ def fetch() -> List[Event]:
     seule la première page était lue : les 8 autres - soit ~85 % du contenu -
     n'arrivaient jamais dans nocturne. La boucle s'arrête dès qu'une page
     n'apporte plus aucune URL nouvelle, ou au cap de MAX_PAGES.
+
+    Une page suivante qui tombe (réseau, 429, 500) fait lever le
+    collecteur, comme la première (audit A-09) : coupé à la page 3, il
+    publiait 160 cartes sur 277 sans rien dire, et le garde-fou ne voyait
+    pas une baisse de 42 %. Le garde-fou reprend alors la veille entière.
+    Seule une page introuvable (404) vaut fin de l'agenda.
     """
     headers = {"User-Agent": USER_AGENT}
     events: List[Event] = []
@@ -548,18 +552,10 @@ def fetch() -> List[Event]:
 
     for page in range(1, MAX_PAGES + 1):
         url = URL if page == 1 else f"{URL}?p={page}"
-        try:
-            r = base_get(url, headers=headers, timeout=30)
-        except requests.RequestException as exc:
-            if page == 1:
-                raise
-            print(f"[Petit Bulletin] page {page} injoignable ({exc}) - arrêt",
-                  file=sys.stderr)
+        r = base_get(url, headers=headers, timeout=30)
+        if page > 1 and introuvable(r):
             break
-        if r.status_code != 200:
-            if page == 1:
-                r.raise_for_status()
-            break
+        r.raise_for_status()
 
         page_events = _extract_events_from_soup(BeautifulSoup(r.text, "html.parser"))
         fresh = [e for e in page_events if e.url not in seen_urls]

@@ -40,7 +40,7 @@ from typing import List, Optional
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, HORIZON_JOURS, get as base_get
+from .base import Event, HORIZON_JOURS, introuvable, get as base_get
 
 # Même graphie que le Petit Bulletin, qui remonte aussi cette salle :
 # c'est ce qui permet à la dédup de regrouper les deux sources.
@@ -320,12 +320,15 @@ def fetch() -> List[Event]:
         try:
             seances = _seances(session, show["url"], show["annee"],
                                "Le Complexe", attentes)
-        except requests.RequestException as exc:
-            # Une page qui tombe ne doit pas emporter les autres. La
-            # vérification anti-robot, elle, n'est pas attrapée ici :
-            # installée, elle refuserait aussi toutes les suivantes. Elle
-            # remonte, et le programme de la veille est repris EN ENTIER
-            # plutôt qu'un programme troué publié comme complet.
+        except requests.HTTPError as exc:
+            # Un spectacle retiré du site (404) ne coûte que lui. Toute
+            # autre panne remonte, comme la vérification anti-robot : le
+            # programme de la veille est repris EN ENTIER plutôt qu'un
+            # programme troué publié comme complet (audit A-09). Les dates
+            # d'un spectacle ne sont que sur sa page : la perdre, c'était
+            # perdre le spectacle.
+            if not introuvable(exc):
+                raise
             print(f"[Le Complexe] {show['url']}: {exc}", file=sys.stderr)
             illisibles += 1
             continue
@@ -347,6 +350,6 @@ def fetch() -> List[Event]:
             ))
 
     if illisibles:
-        print(f"[Le Complexe] {illisibles} page(s) spectacle illisible(s)",
+        print(f"[Le Complexe] {illisibles} page(s) spectacle introuvable(s)",
               file=sys.stderr)
     return events

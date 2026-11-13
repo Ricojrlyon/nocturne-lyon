@@ -54,7 +54,10 @@ class Affiche(unittest.TestCase):
         cache = {FICHE: {"fetched_at": date.today().isoformat(),
                          "seances": [["2026-10-15", "18:30"]],
                          "titre": "Ingres par lui-même", "image": beaux_arts.BASE + VOISIN}}
-        site = FauxSite({beaux_arts.LISTING: LISTE, FICHE: fiche()})
+        # L'article des expositions doit répondre : en panne, il fait lever
+        # le collecteur (audit A-09). Ici, il répond sans exposition.
+        site = FauxSite({beaux_arts.LISTING: LISTE, FICHE: fiche(),
+                         beaux_arts.BASE + beaux_arts.EXPOSITIONS: "<html></html>"})
         with mock.patch.object(beaux_arts, "Date", date_figee(date(2026, 10, 1))), \
                 mock.patch.object(beaux_arts.requests, "Session", lambda: site), \
                 mock.patch("requests.request", site.request), \
