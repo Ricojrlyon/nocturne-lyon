@@ -114,6 +114,10 @@ class PlageAChevalSurDeuxAnnees(unittest.TestCase):
     def test_le_debut_et_la_fin(self):
         self.assertEqual(opera_lyon._extract_dates("14 déc. 2026 - 3 janv. 2027"),
                          (date(2026, 12, 14), date(2027, 1, 3)))
+        # L'année écrite du début fait foi, même là où la déduire du mois
+        # se tromperait : une plage de plus d'un an.
+        self.assertEqual(opera_lyon._extract_dates("3 oct. 2026 - 20 oct. 2027"),
+                         (date(2026, 10, 3), date(2027, 10, 20)))
 
     def test_les_autres_formes_ne_bougent_pas(self):
         self.assertEqual(opera_lyon._extract_dates("4 oct. - 20 oct. 2026"),
