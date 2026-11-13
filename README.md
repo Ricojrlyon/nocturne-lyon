@@ -409,6 +409,21 @@ la recopier, version comprise.
   Update events daily → Run workflow). Elle coupe tous les garde-fous du
   passage : une salle en panne passagère ce jour-là ne serait pas reprise
   non plus.
+
+  Sur GitHub, chaque passage écrit aussi l'état de ses sources (en
+  échec, reprises, abandonnées) dans un fichier hors du dépôt
+  (`NOCTURNE_ETAT`), que lit l'alerte ci-dessous.
+- **`alertes.py`** : l'alerte des salles en panne, à la fin du passage de
+  nuit. Un passage VERT n'envoie aucun e-mail : l'IAC, injoignable du 23
+  octobre au 9 novembre 2026, a quitté le site au 7e jour sans que
+  personne le sache (audit A-02). Le script tient une issue GitHub par
+  salle en panne, « [salle en panne] <salle> » : il l'ouvre au 2e jour de
+  reprise de la veille (une nuit de panne ne dérange personne) ou le jour
+  de l'abandon, récrit son texte tant que dure la panne, la commente le
+  jour où la salle cesse d'être reprise, et la ferme quand elle est
+  revenue dans le fil. L'issue mentionne le propriétaire du dépôt, et
+  GitHub lui envoie l'e-mail. Le passage affiche aussi un tableau des
+  sources sur sa page. L'alerte ne fait jamais échouer le passage.
 - **`index.html`** : frontend vanilla JS autonome : filtres par date/lieu/
   arrondissement/type, recherche insensible aux accents (titre, lieu,
   line-up), expansion des événements multi-jours, groupes de lieux.
@@ -661,6 +676,15 @@ python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
 Le workflow lance les premiers AVANT de collecter et les seconds AVANT de
 publier : un échec arrête le passage, qui passe au rouge, et le site garde
 sa version de la veille plutôt que d'en publier une cassée.
+
+Les deux suites tournent aussi à chaque envoi de code sur `main`
+([.github/workflows/tests.yml](.github/workflows/tests.yml), audit
+A-03) : GitHub Pages met un envoi en ligne dans les secondes qui suivent,
+sans test, et une erreur n'était vue que par le passage de la nuit,
+qui ne publiait alors rien non plus. Un envoi fautif passe au rouge, et
+GitHub envoie un e-mail en quelques minutes. Ce workflow prévient, il ne
+bloque pas la mise en ligne. Les envois du robot (`events.json`,
+`venue_arrondissements.json`, `detail_times.json`) ne le déclenchent pas.
 
 Les tests de page demandent un navigateur de la famille Chrome (Chrome,
 Chromium ou Edge) ; sans lui, ils sont sautés et le disent. Ils le sont
