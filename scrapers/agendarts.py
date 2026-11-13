@@ -72,7 +72,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import categorie
-from .base import Event, HORIZON_JOURS, get as base_get
+from .base import Event, HORIZON_JOURS, introuvable, get as base_get
 
 VENUE = "Agend'arts"
 SLUG = "agend-arts"
@@ -243,11 +243,11 @@ def fetch() -> List[Event]:
     horizon = today + timedelta(days=HORIZON_DAYS)
     session = requests.Session()
 
-    try:
-        cats = _get(session, "categories", per_page=100, _fields="id,name")
-    except requests.RequestException as exc:
-        print(f"[agend'Arts] catégories : {exc}", file=sys.stderr)
-        cats = []
+    # Les catégories et chaque page de billets : une panne fait lever le
+    # collecteur, et le garde-fou reprend la veille (audit A-09). Sans les
+    # catégories, l'année d'une partie des séances ne se lisait plus, et
+    # elles étaient abandonnées sans un mot.
+    cats = _get(session, "categories", per_page=100, _fields="id,name")
     # Les catégories sont des mois : « novembre 2026 » donne le millésime.
     mois_cat: Dict[int, Tuple[int, int]] = {}
     for c in cats:
@@ -261,9 +261,15 @@ def fetch() -> List[Event]:
             lot = _get(session, "posts", per_page=PAR_PAGE, page=page,
                        orderby="date", order="desc",
                        _fields="id,date,link,title,content,categories")
-        except requests.RequestException as exc:
-            print(f"[agend'Arts] page {page} : {exc}", file=sys.stderr)
-            break
+        except requests.HTTPError as exc:
+            # Au-delà de la dernière page, WordPress répond 400
+            # (rest_post_invalid_page_number) : la fin, pas une panne. Le
+            # cas se présente quand le nombre de billets tombe juste sur
+            # un multiple de PAR_PAGE.
+            if page > 1 and (introuvable(exc) or exc.response is not None
+                             and exc.response.status_code == 400):
+                break
+            raise
         billets.extend(lot)
         if len(lot) < PAR_PAGE:
             break

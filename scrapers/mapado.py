@@ -43,7 +43,7 @@ from typing import Callable, List, Optional
 
 import requests
 
-from .base import Event, HORIZON_JOURS, get as base_get
+from .base import Event, HORIZON_JOURS, introuvable, get as base_get
 
 IMG_HOST = "https://img.mapado.net"
 IMG_SIZE = "600-600"            # les cartes font 392 px de large
@@ -182,8 +182,13 @@ def fetch_venue(shop: str, venue: str, slug: str, category: Optional[str],
             time.sleep(MIN_INTERVAL)
         try:
             starts = sessions(session, shop, sl)
-        except requests.RequestException as exc:
-            # Une page qui tombe ne doit pas emporter les autres.
+        except requests.HTTPError as exc:
+            # Un spectacle retiré (404) ne coûte que lui. Toute autre panne
+            # fait lever le collecteur, et le garde-fou reprend la veille :
+            # les séances ne sont que sur la page du spectacle, la perdre
+            # c'était le perdre, sur un passage vert (audit A-09).
+            if not introuvable(exc):
+                raise
             print(f"[{tag}] {sl}: {exc}", file=sys.stderr)
             illisibles += 1
             continue
@@ -210,6 +215,6 @@ def fetch_venue(shop: str, venue: str, slug: str, category: Optional[str],
             ))
 
     if illisibles:
-        print(f"[{tag}] {illisibles} page(s) spectacle illisible(s)",
+        print(f"[{tag}] {illisibles} page(s) spectacle introuvable(s)",
               file=sys.stderr)
     return events

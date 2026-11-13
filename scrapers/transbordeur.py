@@ -259,35 +259,22 @@ def fetch() -> List[Event]:
     # The WP REST API caps per_page at 100: follow the next pages up to
     # X-WP-TotalPages (safety cap at 5 pages / 500 events) so nothing is
     # silently dropped once the venue publishes more than 100 events.
+    # Une page qui tombe, ou qui ne rend pas une liste JSON, fait lever le
+    # collecteur, la première comme les suivantes : l'API annonce son
+    # nombre de pages, une page manquante est donc une panne, et le
+    # garde-fou reprend la veille plutôt qu'un programme coupé (audit A-09).
     base_url = SITE + "/wp-json/wp/v2/evenement?per_page=100&_embed=1"
     data: list = []
     total_pages = 1
     page = 1
     while page <= min(total_pages, 5):
-        try:
-            resp = base_get(f"{base_url}&page={page}", timeout=30,
-                            headers=HEADERS, etiquette="[Transbordeur]")
-        except requests.RequestException as e:
-            print(f"[Transbordeur] request failed (page {page}): {e}",
-                  file=sys.stderr)
-            break
-
-        if resp.status_code != 200:
-            print(f"[Transbordeur] /wp/v2/evenement page {page} returned "
-                  f"{resp.status_code}", file=sys.stderr)
-            break
-
-        try:
-            chunk = resp.json()
-        except ValueError:
-            print(f"[Transbordeur] non-JSON response (page {page})",
-                  file=sys.stderr)
-            break
-
+        resp = base_get(f"{base_url}&page={page}", timeout=30,
+                        headers=HEADERS, etiquette="[Transbordeur]")
+        resp.raise_for_status()
+        chunk = resp.json()
         if not isinstance(chunk, list):
-            print(f"[Transbordeur] unexpected JSON type: "
-                  f"{type(chunk).__name__} (page {page})", file=sys.stderr)
-            break
+            raise ValueError(f"/wp/v2/evenement page {page} : "
+                             f"{type(chunk).__name__} au lieu d'une liste")
 
         data.extend(chunk)
         try:

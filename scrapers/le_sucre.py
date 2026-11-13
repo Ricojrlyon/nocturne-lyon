@@ -6,11 +6,10 @@ Le Sucre is a club - expect late-night times like "23:00" or "22:00".
 from datetime import date, timedelta
 from typing import List, Optional
 import re
-import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, HORIZON_JOURS, parse_french_date, iso, get as base_get
+from .base import Event, HORIZON_JOURS, introuvable, parse_french_date, iso, get as base_get
 
 VENUE = "Le Sucre"
 SLUG  = "le-sucre"
@@ -56,25 +55,26 @@ def _parse_time(text: str) -> Optional[str]:
 
 def _fetch_detail_time(url: str) -> Optional[str]:
     """Fetch event detail page and extract time."""
-    try:
-        r = base_get(url, timeout=10, headers=HEADERS)
-        if r.status_code != 200:
-            return None
-        soup = BeautifulSoup(r.text, "html.parser")
-        # Dedicated time elements
-        for selector in (
-            "[class*='time']", "[class*='horaire']", "[class*='heure']",
-            "[class*='schedule']", "[class*='opening']", "time",
-        ):
-            for el in soup.select(selector)[:4]:
-                t = _parse_time(el.get_text(" ", strip=True))
-                if t:
-                    return t
-        # Scan first 600 chars of page text (header/summary region)
-        visible = soup.get_text(" ", strip=True)
-        return _parse_time(visible[:600])
-    except requests.RequestException:
+    r = base_get(url, timeout=10, headers=HEADERS)
+    # Une page introuvable n'a pas d'heure. Toute autre panne remonte
+    # au cache, qui n'écrit rien et relira la fiche au passage suivant
+    # (audit A-30) : notée « sans heure », elle l'était sept jours.
+    if introuvable(r):
         return None
+    r.raise_for_status()
+    soup = BeautifulSoup(r.text, "html.parser")
+    # Dedicated time elements
+    for selector in (
+        "[class*='time']", "[class*='horaire']", "[class*='heure']",
+        "[class*='schedule']", "[class*='opening']", "time",
+    ):
+        for el in soup.select(selector)[:4]:
+            t = _parse_time(el.get_text(" ", strip=True))
+            if t:
+                return t
+    # Scan first 600 chars of page text (header/summary region)
+    visible = soup.get_text(" ", strip=True)
+    return _parse_time(visible[:600])
 
 
 def fetch() -> List[Event]:

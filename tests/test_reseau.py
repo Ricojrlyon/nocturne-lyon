@@ -40,6 +40,13 @@ class NouveauxEssais(unittest.TestCase):
         self.assertEqual(base.get(A, session=s).status_code, 200)
         self.assertEqual(self.attentes, [2.0, 4.0])
 
+    def test_coupure_pendant_la_lecture_puis_succes(self):
+        # Audit A-23 : la connexion coupée au milieu de la réponse lève
+        # ChunkedEncodingError, qui n'était pas réessayée.
+        s = FausseSession(requests.exceptions.ChunkedEncodingError("coupée en lecture"), "ok")
+        self.assertEqual(base.get(A, session=s).status_code, 200)
+        self.assertEqual((len(s.appels), self.attentes), (2, [2.0]))
+
     def test_502_puis_succes(self):
         s = FausseSession(502, "ok")
         self.assertEqual(base.get(A, session=s).status_code, 200)

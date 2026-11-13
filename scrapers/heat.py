@@ -9,11 +9,10 @@ from typing import List, Optional
 from datetime import date as Date, timedelta
 import re
 import sys
-import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import annee_probable, Event, HORIZON_JOURS, iso, get as base_get
+from .base import annee_probable, Event, HORIZON_JOURS, introuvable, iso, get as base_get
 
 VENUE = "HEAT"
 SLUG  = "heat"
@@ -72,50 +71,51 @@ def _parse_time(text: str) -> Optional[str]:
 
 def _fetch_detail_time(url: str) -> Optional[str]:
     """Fetch an event detail page and extract the time."""
-    try:
-        r = base_get(url, timeout=10, headers=HEADERS)
-        if r.status_code != 200:
-            return None
-        soup = BeautifulSoup(r.text, "html.parser")
-        # On ne lit que l'article de l'événement (BUG-13) : le bandeau du
-        # site, « Afterwork : Happy Hour de 17:30 à 20:00 », est hors de
-        # lui, et passait pour l'heure de chaque événement relu.
-        zone = soup.find("article") or soup
-        # L'heure de DÉBUT a sa balise : « 11:00 - 00:00 » s'écrit
-        # span.hour-start, span.hour-end. Elle vaut à toute heure - un
-        # marché de 11:00 à 19:00 était publié à 19:00, son heure de fin,
-        # _parse_time n'acceptant que le soir.
-        debut = zone.select_one(".hour-start")
-        m = re.fullmatch(r"\s*([01]?\d|2[0-3])[h:]([0-5]\d)\s*",
-                         debut.get_text()) if debut else None
-        if m:
-            return f"{int(m.group(1)):02d}:{m.group(2)}"
-        # Try dedicated time elements first
-        for selector in (
-            "[class*='time']", "[class*='horaire']", "[class*='heure']",
-            "[class*='schedule']", "time", "[class*='date']",
-        ):
-            for el in zone.select(selector)[:3]:
-                t = _parse_time(el.get_text(" ", strip=True))
-                if t:
-                    return t
-        # Try the first 400 chars of visible text (header area)
-        visible = zone.get_text(" ", strip=True)
-        # Contextual search
-        m = re.search(
-            r"(?:ouverture|portes?|début|debut|horaire|heure|à partir|opening|start)"
-            r"\s*[:\-]?\s*(\d{1,2})[h:](\d{0,2})",
-            visible[:600], re.IGNORECASE,
-        )
-        if m:
-            hh = int(m.group(1))
-            mm_s = m.group(2)
-            mm = int(mm_s) if mm_s else 0
-            if (16 <= hh <= 23) or (hh <= 3):
-                return f"{hh:02d}:{mm:02d}"
-        return _parse_time(visible[:600])
-    except requests.RequestException:
+    r = base_get(url, timeout=10, headers=HEADERS)
+    # Une page introuvable n'a pas d'heure. Toute autre panne remonte
+    # au cache, qui n'écrit rien et relira la fiche au passage suivant
+    # (audit A-30) : notée « sans heure », elle l'était sept jours.
+    if introuvable(r):
         return None
+    r.raise_for_status()
+    soup = BeautifulSoup(r.text, "html.parser")
+    # On ne lit que l'article de l'événement (BUG-13) : le bandeau du
+    # site, « Afterwork : Happy Hour de 17:30 à 20:00 », est hors de
+    # lui, et passait pour l'heure de chaque événement relu.
+    zone = soup.find("article") or soup
+    # L'heure de DÉBUT a sa balise : « 11:00 - 00:00 » s'écrit
+    # span.hour-start, span.hour-end. Elle vaut à toute heure - un
+    # marché de 11:00 à 19:00 était publié à 19:00, son heure de fin,
+    # _parse_time n'acceptant que le soir.
+    debut = zone.select_one(".hour-start")
+    m = re.fullmatch(r"\s*([01]?\d|2[0-3])[h:]([0-5]\d)\s*",
+                     debut.get_text()) if debut else None
+    if m:
+        return f"{int(m.group(1)):02d}:{m.group(2)}"
+    # Try dedicated time elements first
+    for selector in (
+        "[class*='time']", "[class*='horaire']", "[class*='heure']",
+        "[class*='schedule']", "time", "[class*='date']",
+    ):
+        for el in zone.select(selector)[:3]:
+            t = _parse_time(el.get_text(" ", strip=True))
+            if t:
+                return t
+    # Try the first 400 chars of visible text (header area)
+    visible = zone.get_text(" ", strip=True)
+    # Contextual search
+    m = re.search(
+        r"(?:ouverture|portes?|début|debut|horaire|heure|à partir|opening|start)"
+        r"\s*[:\-]?\s*(\d{1,2})[h:](\d{0,2})",
+        visible[:600], re.IGNORECASE,
+    )
+    if m:
+        hh = int(m.group(1))
+        mm_s = m.group(2)
+        mm = int(mm_s) if mm_s else 0
+        if (16 <= hh <= 23) or (hh <= 3):
+            return f"{hh:02d}:{mm:02d}"
+    return _parse_time(visible[:600])
 
 
 def fetch() -> List[Event]:

@@ -120,17 +120,18 @@ def _tout(session: requests.Session, type_noeud: str,
     inclus: Dict[str, dict] = {}
     url: Optional[str] = f"{API}/node/{type_noeud}"
     params: Optional[dict] = {"page[limit]": PAR_PAGE, "include": include}
+    # Une page qui tombe fait lever le collecteur, la première comme les
+    # suivantes (audit A-09) : le lien « next » dit qu'elle existe, son
+    # absence est une panne. Le 500 de l'API sur ses événements laissait
+    # sinon les seules expositions, et le garde-fou ne reprenait la veille
+    # que parce que la chute dépassait les trois quarts.
     for _ in range(PAGES_MAX):
         if not url:
             break
-        try:
-            r = base_get(url, session=session, params=params,
-                         headers=HEADERS, timeout=40)
-            r.raise_for_status()
-            j = r.json()
-        except (requests.RequestException, ValueError) as exc:
-            print(f"[Confluences] {type_noeud}: {exc}", file=sys.stderr)
-            break
+        r = base_get(url, session=session, params=params,
+                     headers=HEADERS, timeout=40)
+        r.raise_for_status()
+        j = r.json()
         noeuds.extend(j.get("data") or [])
         for i in j.get("included") or []:
             inclus[i["id"]] = i

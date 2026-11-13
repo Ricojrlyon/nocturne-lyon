@@ -22,10 +22,9 @@ from datetime import date as Date
 import re
 import sys
 import unicodedata
-import requests
 from bs4 import BeautifulSoup
 
-from .base import annee_probable, Event, iso, FR_MONTHS, get as base_get
+from .base import annee_probable, Event, iso, FR_MONTHS, introuvable, get as base_get
 
 VENUE = "Le Périscope"
 SLUG = "periscope"
@@ -171,20 +170,17 @@ def fetch() -> List[Event]:
     # Le listing est paginé. On s'arrête quand une page n'apporte aucun
     # NOUVEL événement : le site renvoie parfois le même contenu sous
     # plusieurs numéros de page, un test 404 ne suffit donc pas.
-    # Cap de sécurité à 6 pages.
+    # Cap de sécurité à 6 pages. Une page suivante qui tombe fait lever le
+    # collecteur, comme la première : le garde-fou reprend alors la veille
+    # plutôt qu'un programme coupé à la page 1 (audit A-09). Une page
+    # introuvable (404) vaut fin de l'agenda.
     for page in range(1, 7):
         page_url = URL if page == 1 else f"{URL}page/{page}/"
-        try:
-            resp = base_get(page_url, timeout=20, headers=HEADERS,
-                            etiquette="[Périscope]")
-        except requests.RequestException:
-            if page == 1:
-                raise
+        resp = base_get(page_url, timeout=20, headers=HEADERS,
+                        etiquette="[Périscope]")
+        if page > 1 and introuvable(resp):
             break
-        if resp.status_code != 200:
-            if page == 1:
-                resp.raise_for_status()
-            break
+        resp.raise_for_status()
         soup = BeautifulSoup(resp.text, "html.parser")
         if first_soup is None:
             first_soup = soup
