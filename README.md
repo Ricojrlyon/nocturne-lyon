@@ -202,7 +202,11 @@ la recopier, version comprise.
   peint chacun de ses jours d'une carte où rien ne se joue. Hors les murs,
   l'Amphi et la Grande salle restent des salles de la maison ; une
   production jouée ailleurs est rangée sous la salle qui la reçoit, et
-  celle qui se joue dans plusieurs salles est marquée « ailleurs ».
+  celle qui se joue dans plusieurs salles est marquée « ailleurs ». Une
+  plage à cheval sur deux années s'écrit « 14 déc. 2026 - 3 janv. 2027 »,
+  l'année après chaque mois : les deux années sont lues. Faute de quoi la
+  plage perdait sa fin et, dès le lendemain de la première date, la carte
+  passait pour finie (audit A-01, La Fille de Madame Angot).
 - **`scrapers/tnp.py`** : le TNP, seul scraper à s'être vu REFUSER une
   API qui existe : le site est un WordPress mais son robots.txt interdit
   /wp-json/. On lit donc /agenda/, qui a l'avantage de rendre la saison
