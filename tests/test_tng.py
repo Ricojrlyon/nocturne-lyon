@@ -34,6 +34,31 @@ def fiche(mois, seances, ecole=""):
             % (mois, lignes, ecole))
 
 
+class AnneeDesPlages(unittest.TestCase):
+    """Audit A-29 : l'année d'une plage se lit sur sa FIN. Lue sur son
+    début, une plage ouverte depuis plus de quinze jours, ou qui passe le
+    Nouvel An, partait un an trop tard et le spectacle disparaissait."""
+
+    def lire(self, texte, jour):
+        with mock.patch.object(tng, "Date", date_figee(jour)):
+            return tng._extract_dates(texte)
+
+    def test_plage_ouverte_depuis_plus_de_quinze_jours(self):
+        self.assertEqual(self.lire("28 oct. > 30 nov.", date(2026, 11, 20)),
+                         (date(2026, 10, 28), date(2026, 11, 30)))
+        self.assertEqual(self.lire("02 > 30 nov.", date(2026, 11, 18)),
+                         (date(2026, 11, 2), date(2026, 11, 30)))
+
+    def test_plage_qui_passe_le_nouvel_an_lue_en_janvier(self):
+        self.assertEqual(self.lire("28 déc. > 10 janv.", date(2027, 1, 5)),
+                         (date(2026, 12, 28), date(2027, 1, 10)))
+
+    def test_abreviation_courte_du_mois(self):
+        # Audit A-38 : « sam. 16 jan. » n'était pas lu.
+        self.assertEqual(self.lire("sam. 16 jan. 17h", date(2026, 10, 1)),
+                         (date(2027, 1, 16), None))
+
+
 class SeancesToutPublic(unittest.TestCase):
 
     def lire(self, cartes, fiches, jour=date(2026, 10, 1), champs=None):

@@ -25,7 +25,7 @@ import sys
 import unicodedata
 from bs4 import BeautifulSoup
 
-from .base import Event, iso, img_src, get as base_get
+from .base import annee_probable, Event, iso, img_src, get as base_get
 
 VENUE = "Les Subsistances"
 SLUG = "les-subs"
@@ -64,19 +64,6 @@ def _month_num(token: str) -> Optional[int]:
     t = "".join(c for c in unicodedata.normalize("NFD", token.lower())
                 if unicodedata.category(c) != "Mn").rstrip(".")
     return _MONTHS.get(t)
-
-
-def _smart_year(month: int, day: int) -> int:
-    today = Date.today()
-    try:
-        candidate = Date(today.year, month, day)
-    except ValueError:
-        return today.year
-    # Grâce de 15 jours (comme tng.py) : une date passée de quelques jours
-    # est un listing pas encore purgé de CETTE année, pas l'annonce de
-    # l'année prochaine. La saison des Subs court jusqu'en avril suivant :
-    # « 14 Jan » vu en juillet doit bien donner l'année +1.
-    return today.year + 1 if (today - candidate).days > 15 else today.year
 
 
 # Largeur visée pour une affiche : les cartes font 400 px de large au plus,
@@ -165,7 +152,7 @@ def fetch() -> List[Event]:
                 continue
             day = int(m.group(1))
             try:
-                d = Date(_smart_year(month, day), month, day)
+                d = Date(annee_probable(month, day, Date.today()), month, day)
             except ValueError:
                 continue
 

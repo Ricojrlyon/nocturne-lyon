@@ -86,11 +86,16 @@ TYPES = {
     "invitation": "exposition",
 }
 
-# « Du 11 septembre au 14 mars 2027 » - l'année du début est facultative.
-_PERIODE = re.compile(r"du\s+(\d{1,2})\s+([a-z]+)(?:\s+(20\d{2}))?\s+"
-                      r"au\s+(\d{1,2})\s+([a-z]+)\s+(20\d{2})")
+# « Du 11 septembre au 14 mars 2027 » - l'année du début est facultative,
+# le jour de la semaine aussi, et le premier du mois s'écrit « 1er » : sans
+# lui, « Du 1er octobre au 14 mars 2027 » n'était pas reconnu, et la 18e
+# Biennale de Lyon était publiée sur son seul jour de fermeture (audit A-21).
+_PERIODE = re.compile(r"du\s+(?:[a-z]+\s+)?(\d{1,2})(?:er)?\s+([a-z]+)(?:\s+(20\d{2}))?\s+"
+                      r"au\s+(?:[a-z]+\s+)?(\d{1,2})(?:er)?\s+([a-z]+)\s+(20\d{2})")
+# « Jusqu'au 14 mars 2027 » : déjà ouverte, elle commence pour nous aujourd'hui.
+_JUSQU_AU = re.compile(r"jusqu\W{0,2}au\s+(?:[a-z]+\s+)?(\d{1,2})(?:er)?\s+([a-z]+)\s+(20\d{2})")
 # « Samedi 17 octobre 2026 » - le jour de la semaine est optionnel.
-_JOUR = re.compile(r"(?:\w+\s+)?(\d{1,2})\s+([a-z]+)\s+(20\d{2})")
+_JOUR = re.compile(r"(?:\w+\s+)?(\d{1,2})(?:er)?\s+([a-z]+)\s+(20\d{2})")
 
 
 def _norm(s: str) -> str:
@@ -120,6 +125,18 @@ def _bornes(txt: str) -> Optional[Tuple[Date, Date]]:
             return Date(an_d, MOIS[md], int(d)), Date(an_f, MOIS[mf], int(f))
         except ValueError:
             return None
+    m = _JUSQU_AU.search(t)
+    if m and m.group(2) in MOIS:
+        try:
+            fin = Date(int(m.group(3)), MOIS[m.group(2)], int(m.group(1)))
+        except ValueError:
+            return None
+        return Date.min, fin            # fetch() la fait commencer aujourd'hui
+    # Une période « du … au … » qu'on n'a pas su lire n'est pas un jour :
+    # elle compte parmi les cartes sans période lisible, au lieu d'être
+    # réduite à sa date de fermeture.
+    if re.search(r"\bdu\b.*\bau\b", t):
+        return None
     m = _JOUR.search(t)
     if m and m.group(2) in MOIS:
         try:

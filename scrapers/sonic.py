@@ -31,7 +31,7 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, parse_french_date, iso, FR_MONTHS
+from .base import annee_probable, Event, parse_french_date, iso, FR_MONTHS
 
 VENUE = "Le Sonic"
 SLUG = "sonic"
@@ -72,18 +72,6 @@ def _french_month_num(s: str) -> Optional[int]:
     return FR_MONTHS.get(s.lower())
 
 
-def _smart_year(month: int, day: int) -> int:
-    today = Date.today()
-    try:
-        candidate = Date(today.year, month, day)
-    except ValueError:
-        return today.year
-    # Grâce de 15 jours (comme tng.py) : une date passée de quelques jours
-    # est un listing pas encore purgé de CETTE année, pas l'annonce de
-    # l'année prochaine - sans quoi elle devenait un événement fantôme à +1 an.
-    return today.year + 1 if (today - candidate).days > 15 else today.year
-
-
 def _parse_date_in_text(text: str) -> Optional[Date]:
     m = DATE_LONG.search(text)
     if m:
@@ -116,7 +104,7 @@ def _parse_date_in_text(text: str) -> Optional[Date]:
             d_i, mo_i = int(d_s), int(mo_s)
             if y_s:
                 return Date(int(y_s), mo_i, d_i)
-            return Date(_smart_year(mo_i, d_i), mo_i, d_i)
+            return Date(annee_probable(mo_i, d_i, Date.today()), mo_i, d_i)
         except ValueError:
             pass
     return None

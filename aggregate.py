@@ -44,12 +44,12 @@ import sys
 import traceback
 import unicodedata
 from collections import Counter
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Callable, List
 
 from scrapers import Event
-from scrapers.base import OFFSITE_PLUSIEURS, debut_de_plage
+from scrapers.base import HORIZON_JOURS, OFFSITE_PLUSIEURS, debut_de_plage
 from scrapers import (
     le_sucre, les_subs, marche_gare, radiant, la_rayonne, transbordeur,
     petit_salon, sonic, periscope, la_commune,
@@ -835,6 +835,52 @@ def _appliquer_les_regles_des_salles(all_tagged: list[tuple[Event, int]]
     return all_tagged
 
 
+_DATE_ISO = re.compile(r"\d{4}-\d{2}-\d{2}")
+_HEURE = re.compile(r"([01]\d|2[0-3]):[0-5]\d")
+
+
+def _date_lisible(valeur) -> bool:
+    if not (isinstance(valeur, str) and _DATE_ISO.fullmatch(valeur)):
+        return False
+    try:
+        date.fromisoformat(valeur)
+    except ValueError:
+        return False
+    return True
+
+
+def _dates_lisibles(all_tagged: list[tuple[Event, int]]
+                    ) -> list[tuple[Event, int]]:
+    """Étape 2.55 : sans les dates illisibles, et sans les heures fausses.
+
+    Audit A-11. Une seule date mal formée venue d'une seule source (« 2026-
+    10-5 ») faisait planter tout le passage à l'étape 2.6, ou bien était
+    publiée puis refusée par le contrôle du fil : tout le site restait à la
+    veille. L'événement est écarté, avec une alerte ; une heure qui n'est
+    pas HH:MM est seulement effacée - l'événement reste, sans heure.
+    """
+    gardes, ecartes, heures = [], [], []
+    for e, p in all_tagged:
+        if not _date_lisible(e.date_start) or (e.date_end is not None
+                                               and not _date_lisible(e.date_end)):
+            ecartes.append("%s - %s : %r → %r" % (e.venue, e.title,
+                                                   e.date_start, e.date_end))
+            continue
+        if e.time is not None and not (isinstance(e.time, str)
+                                       and _HEURE.fullmatch(e.time)):
+            heures.append("%s - %s : %r" % (e.venue, e.title, e.time))
+            e.time = None
+        gardes.append((e, p))
+    if ecartes:
+        _alerte("date illisible écartée",
+                "[date illisible] %d événement(s) écarté(s) :\n%s"
+                % (len(ecartes), "\n".join(ecartes)))
+    if heures:
+        print("[heure illisible] %d heure(s) effacée(s) : %s"
+              % (len(heures), " | ".join(heures)), file=sys.stderr)
+    return gardes
+
+
 def _plages_a_l_endroit(all_tagged: list[tuple[Event, int]]
                         ) -> list[tuple[Event, int]]:
     """Étape 2.6 : une plage dont la fin précède le début est redressée.
@@ -868,14 +914,24 @@ def _plages_a_l_endroit(all_tagged: list[tuple[Event, int]]
 
 def _a_venir(all_tagged: list[tuple[Event, int]],
              today_iso: str) -> list[tuple[Event, int]]:
-    """Étape 3 : sans les événements terminés."""
+    """Étape 3 : sans les événements terminés, ni ceux qui commencent
+    au-delà de l'horizon."""
     # 3) Drop past events. An event is upcoming as long as it hasn't ENDED:
     # keep ongoing runs (date_start in the past but date_end today or later,
     # e.g. multi-day shows) - several scrapers preserve those on purpose and
     # the frontend knows how to render them.
+    #
+    # L'horizon de 180 jours (base.HORIZON_JOURS), appliqué ICI à toutes les
+    # sources (audit A-04). Seule une partie des collecteurs l'appliquait :
+    # la Halle, la Bourse et les deux agrégateurs publiaient jusqu'en 2028,
+    # et une date d'hier poussée d'un an par une source sans année (« The
+    # Pineapple Thief », La Rayonne, septembre 2026) passait au travers.
+    horizon_iso = (date.fromisoformat(today_iso)
+                   + timedelta(days=HORIZON_JOURS)).isoformat()
     return [
         (e, p) for e, p in all_tagged
         if e.date_start and (e.date_end or e.date_start) >= today_iso
+        and e.date_start <= horizon_iso
     ]
 
 
@@ -1313,6 +1369,7 @@ def main() -> int:
     save_detail_cache()
 
     today_iso = date.today().isoformat()
+    all_tagged = _dates_lisibles(all_tagged)
     all_tagged = _plages_a_l_endroit(all_tagged)
     upcoming_tagged = _a_venir(all_tagged, today_iso)
     _effacer_les_liens_non_absolus(upcoming_tagged)

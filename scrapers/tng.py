@@ -14,7 +14,8 @@ import time
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, HORIZON_JOURS, img_src, iso, FR_MONTHS, get as base_get
+from .base import (Event, HORIZON_JOURS, img_src, iso, FR_MONTHS, FR_MOIS_COURTS,
+                   annee_probable, get as base_get)
 
 VENUE = "TNG"
 SLUG  = "tng"
@@ -52,20 +53,13 @@ def _normalize_month(s: str) -> Optional[int]:
            .replace("ô","o").replace("û","u"))
     if s in FR_MONTHS:
         return FR_MONTHS[s]
+    if s in FR_MOIS_COURTS:          # « sam. 16 jan. 17h » (audit A-38)
+        return FR_MOIS_COURTS[s]
     return SHORT_MONTHS.get(s)
 
 
 def _slug_from_href(href: str) -> str:
     return href.split("?")[0].split("#")[0].rstrip("/").lower() if href else ""
-
-
-def _smart_year(month: int, day: int, ref: Date) -> int:
-    grace = 15
-    try:
-        candidate = Date(ref.year, month, day)
-    except ValueError:
-        return ref.year
-    return ref.year + 1 if (ref - candidate).days > grace else ref.year
 
 
 def _extract_dates(text: str) -> Tuple[Optional[Date], Optional[Date]]:
@@ -79,13 +73,14 @@ def _extract_dates(text: str) -> Tuple[Optional[Date], Optional[Date]]:
             try:
                 day1, day2 = int(d1), int(d2)
                 if 1 <= day1 <= 31 and 1 <= day2 <= 31:
-                    if month1 == month2:
-                        year = _smart_year(month1, day1, today)
-                        return Date(year, month1, day1), Date(year, month2, day2)
-                    else:
-                        start_year = _smart_year(month1, day1, today)
-                        end_year = start_year + 1 if month1 > month2 else start_year
-                        return Date(start_year, month1, day1), Date(end_year, month2, day2)
+                    # L'année d'une plage se lit sur sa FIN (audit A-29) :
+                    # lue sur son début, une plage ouverte depuis plus de
+                    # quinze jours, ou qui passe le Nouvel An, partait un an
+                    # trop tard, au-delà de l'horizon, et le spectacle
+                    # disparaissait avant même la lecture de sa fiche.
+                    end_year = annee_probable(month2, day2, today)
+                    start_year = end_year - 1 if month1 > month2 else end_year
+                    return Date(start_year, month1, day1), Date(end_year, month2, day2)
             except ValueError:
                 pass
     for m2 in DATE_SINGLE.finditer(text):
@@ -95,7 +90,7 @@ def _extract_dates(text: str) -> Tuple[Optional[Date], Optional[Date]]:
             try:
                 day = int(d)
                 if 1 <= day <= 31:
-                    year = _smart_year(month, day, today)
+                    year = annee_probable(month, day, today)
                     return Date(year, month, day), None
             except ValueError:
                 continue
@@ -149,7 +144,7 @@ def _seances_publiques(url: str) -> List[Tuple[Date, Optional[str]]]:
         if not m:
             continue
         try:
-            d = Date(_smart_year(mois, int(m.group(2)), today), mois, int(m.group(2)))
+            d = Date(annee_probable(mois, int(m.group(2)), today), mois, int(m.group(2)))
         except ValueError:
             continue
         if JOURS[d.weekday()] != m.group(1):

@@ -472,6 +472,43 @@ class GardeFous(unittest.TestCase):
             self.assertRegex(brique, r"^[\w.-]+/[\w.-]+@[0-9a-f]{40}$")
             self.assertRegex(reste, r"^ # v\d+\.\d+\.\d+$", brique)
 
+    def test_une_date_illisible_est_ecartee_sans_bloquer_le_passage(self):
+        # Audit A-11 : « 2026-10-5 » faisait planter tout le passage à
+        # l'étape 2.6. L'événement est écarté avec une alerte ; une heure
+        # fausse est seulement effacée.
+        illisibles = [evenement("Le Sucre", "Mal datée", J + timedelta(days=4)),
+                      evenement("Le Sucre", "Heure fausse", J + timedelta(days=5), heure="24:00")]
+        illisibles[0].date_start, illisibles[0].date_end = "2026-10-5", "2026-10-12"
+        with atelier(J) as a:
+            a.veille(VEILLE)
+            code = a.lancer(normales(**{"Le Sucre": copies(DIRECT["Le Sucre"] + illisibles)}),
+                            agregateurs(), github=True)
+            fil = a.publie()
+            journal = a.journal.getvalue()
+        self.assertEqual(code, 0)
+        titres = {e["title"]: e for e in fil["events"]}
+        self.assertNotIn("Mal datée", titres)
+        self.assertIsNone(titres["Heure fausse"]["time"])
+        self.assertIn("::warning title=date illisible écartée::[date illisible] 1 événement(s) "
+                      "écarté(s) :%0ALe Sucre - Mal datée : '2026-10-5' → '2026-10-12'", journal)
+
+    def test_l_horizon_de_180_jours_vaut_pour_toutes_les_sources(self):
+        # Audit A-04 : la Halle, la Bourse et les agrégateurs publiaient
+        # jusqu'en 2028 ; une date d'hier poussée d'un an passait au travers.
+        loin = [evenement("Le Sucre", "Dans 180 jours", J + timedelta(days=180)),
+                evenement("Le Sucre", "Dans 181 jours", J + timedelta(days=181)),
+                evenement("Le Sucre", "Hier, un an plus tard", J + timedelta(days=364))]
+        pb_loin = [evenement("Salle PB 1", "Agrégateur lointain", J + timedelta(days=200),
+                             url="https://www.petit-bulletin.fr/agenda-loin")]
+        with atelier(J) as a:
+            a.veille(VEILLE)
+            a.lancer(normales(**{"Le Sucre": copies(DIRECT["Le Sucre"] + loin)}),
+                     agregateurs(pb=copies(PB + pb_loin)))
+            titres = {e["title"] for e in a.publie()["events"]}
+        self.assertIn("Dans 180 jours", titres)
+        for titre in ("Dans 181 jours", "Hier, un an plus tard", "Agrégateur lointain"):
+            self.assertNotIn(titre, titres)
+
     def test_l_etat_des_sources_pour_l_alerte(self):
         # Audit A-02 : chaque passage écrit, là où NOCTURNE_ETAT l'indique,
         # l'état de ses sources ; alertes.py en tire les issues des salles
