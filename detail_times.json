@@ -31,6 +31,10 @@
     "fetched_at": "2026-10-02",
     "time": "17:30"
   },
+  "https://h-eat.eu/events/france-italie/": {
+    "fetched_at": "2026-11-13",
+    "time": "20:45"
+  },
   "https://h-eat.eu/events/house-of-briantz-2/": {
     "fetched_at": "2026-10-06",
     "time": "18:00"
@@ -89,6 +93,10 @@
   },
   "https://h-eat.eu/events/oyster-sunday-x-cochon-iode/": {
     "fetched_at": "2026-11-02",
+    "time": "11:00"
+  },
+  "https://h-eat.eu/events/podcast-hotel-atelier-accord-mets-et-pains-par-machon-pas-les-mots/": {
+    "fetched_at": "2026-11-13",
     "time": "11:00"
   },
   "https://h-eat.eu/events/s-festival-christmas-market/": {
@@ -178,7 +186,7 @@
     "time": "18:30"
   },
   "https://le-sucre.eu/events/club-53/": {
-    "fetched_at": "2026-10-13",
+    "fetched_at": "2026-11-13",
     "time": "23:00"
   },
   "https://le-sucre.eu/events/club-62/": {
@@ -234,7 +242,7 @@
     "time": "23:00"
   },
   "https://le-sucre.eu/events/concert-10/": {
-    "fetched_at": "2026-10-13",
+    "fetched_at": "2026-11-13",
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-12/": {
@@ -262,7 +270,7 @@
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-4/": {
-    "fetched_at": "2026-10-13",
+    "fetched_at": "2026-11-13",
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-6/": {
@@ -270,11 +278,11 @@
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-7/": {
-    "fetched_at": "2026-10-13",
+    "fetched_at": "2026-11-13",
     "time": "18:30"
   },
   "https://le-sucre.eu/events/concert-8/": {
-    "fetched_at": "2026-10-13",
+    "fetched_at": "2026-11-13",
     "time": "18:30"
   },
   "https://le-sucre.eu/events/ext-12-9/": {
@@ -739,6 +747,24 @@
         "jeudi",
         29,
         4,
+        "20:30"
+      ]
+    ]
+  },
+  "https://maisondeladanse.com/programmation/saison2026-2027/mermaids-sweat-your-prayers": {
+    "fetched_at": "2026-11-13",
+    "lieu": "Maison de la danse - Grande salle",
+    "seances": [
+      [
+        "mercredi",
+        12,
+        5,
+        "19:30"
+      ],
+      [
+        "jeudi",
+        13,
+        5,
         "20:30"
       ]
     ]
@@ -1384,6 +1410,16 @@
     "seances": [
       [
         "2027-01-16",
+        "20:30"
+      ]
+    ],
+    "time": "20:30"
+  },
+  "https://radiant-bellevue.fr/spectacles/camille-tissot/": {
+    "fetched_at": "2026-11-13",
+    "seances": [
+      [
+        "2027-05-12",
         "20:30"
       ]
     ],
@@ -3301,12 +3337,12 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/eleves-du-cnsmd-lyon-12-nov-26": {
-    "fetched_at": "2026-11-05",
+    "fetched_at": "2026-11-13",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
         "2026-11-12",
-        "12:30"
+        null
       ]
     ]
   },
@@ -7531,6 +7567,12 @@
     "image": "https://www.transbordeur.fr/wp-content/uploads/2025/11/40_60.jpg",
     "time": "19:00"
   },
+  "https://www.transbordeur.fr/evenement/lb-aka-labat-benwal-thelma-laze-27022027/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-lbakalabat-768x1024.jpg",
+    "fetched_at": "2026-11-13",
+    "image": null,
+    "time": "23:30"
+  },
   "https://www.transbordeur.fr/evenement/lee-fields-09022027/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-leefields2-1-768x1100.jpg",
     "fetched_at": "2026-11-10",
@@ -7572,6 +7614,12 @@
     "fetched_at": "2026-11-12",
     "image": null,
     "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/makala-04032027/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-makala-768x993.jpg",
+    "fetched_at": "2026-11-13",
+    "image": null,
+    "time": "18:30"
   },
   "https://www.transbordeur.fr/evenement/marcus-gad-18112026/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-marcusgad-768x960.jpeg",
@@ -7780,7 +7828,7 @@
   },
   "https://www.transbordeur.fr/evenement/tania-wyss-frederic-fromet-14012027/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/10/a-tanya-768x576.jpg",
-    "fetched_at": "2026-10-13",
+    "fetched_at": "2026-11-13",
     "image": null,
     "time": "18:30"
   },
