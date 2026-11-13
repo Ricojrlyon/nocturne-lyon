@@ -46,6 +46,38 @@ class PremierePasse(unittest.TestCase):
                          J, heure="15:00", categorie="conference")
         self.assertEqual(len(deduplicate([(expo, 100), (conf, 100)])), 2)
 
+    def test_le_spectacle_n_est_pas_absorbe_par_son_atelier(self):
+        # Audit A-31 : au TNG, « Liah et moi » disparaissait dans « Atelier
+        # intergénérationnel - Liah et moi », titre qui le contient. Deux
+        # fiches du même site, deux événements.
+        spectacle = evenement("TNG", "Liah et moi", J, heure=None,
+                              url="https://www.tng-lyon.fr/evenement/liah-et-moi/")
+        atelier = evenement("TNG", "Atelier intergénérationnel – Liah et moi", J, heure=None,
+                            url="https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs/")
+        self.assertEqual(len(deduplicate([(spectacle, 100), (atelier, 100)])), 2)
+
+    def test_une_saisie_en_double_chez_la_source_fusionne(self):
+        a = evenement("Le Périscope", "Soirée Funk", J, url=PB % 40)
+        b = evenement("Le Périscope", "Soirée Funk", J, url=PB % 41)
+        self.assertEqual(len(deduplicate([(a, 60), (b, 60)])), 1)
+
+    def test_une_meme_fiche_sous_deux_titres_fusionne(self):
+        # Un seul lien : c'est la même fiche, quel que soit le titre.
+        a = evenement("Opéra national de Lyon", "Carmen", J, heure=None, url=PB % 47)
+        b = evenement("Opéra national de Lyon", "Carmen - opéra en quatre actes", J,
+                      heure=None, url=PB % 47)
+        self.assertEqual(len(deduplicate([(a, 60), (b, 60)])), 1)
+
+    def test_une_exposition_n_herite_pas_de_l_heure_d_une_visite(self):
+        # Audit A-07 : « Animal culte », exposition des Confluences, publiée
+        # « 10:30 » chaque jour, l'heure d'une visite du Petit Bulletin.
+        expo = evenement("Musée des Confluences", "Animal culte", J, heure=None,
+                         fin=J + timedelta(days=300), categorie="exposition")
+        visite = evenement("Musée des Confluences", "Animal culte", J, heure="10:30",
+                           url=PB % 42, categorie="visite")
+        out = deduplicate([(expo, 100), (visite, 60)])
+        self.assertEqual([(e.url, e.time) for e in out], [(expo.url, None)])
+
     def test_une_plage_croise_les_dates_de_chacun_de_ses_jours(self):
         plage = evenement("La Commune", "Festival Jazz à la Commune", J,
                           heure=None, fin=J + timedelta(days=4))
@@ -146,6 +178,36 @@ class DeuxiemePasse(unittest.TestCase):
         b = evenement("Salle B", "Concert", J, url=PB % 5)
         self.assertEqual(len(deduplicate([(a, 100), (b, 60)])), 2)
 
+    def test_un_festival_n_est_pas_absorbe_par_une_soiree_d_ailleurs(self):
+        # Audit A-06 : « Festival Lumière » (Petit Bulletin, Institut
+        # Lumière, du 10 au 18 octobre) disparaissait dans « Soirée
+        # d'ouverture Festival Lumière », une date à la Halle Tony Garnier.
+        festival = evenement("Institut Lumière", "Festival Lumière", J, heure=None,
+                             fin=J + timedelta(days=8), url=PB % 43)
+        ouverture = evenement("Halle Tony Garnier", "Soirée d'ouverture Festival Lumière",
+                              J, heure="19:00")
+        self.assertEqual(len(deduplicate([(festival, 60), (ouverture, 100)])), 2)
+
+    def test_le_meme_agregateur_dans_deux_lieux_annonce_deux_evenements(self):
+        # Audit A-08 : une source ne publie pas deux fois le même concert,
+        # dans deux églises, sous deux liens.
+        a = evenement("Église Saint-Bruno", "Concert de Noël des petits chanteurs", J,
+                      heure=None, url=PB % 44)
+        b = evenement("Église Saint-Nizier", "Concert de Noël des petits chanteurs", J,
+                      heure=None, url=PB % 45)
+        self.assertEqual(len(deduplicate([(a, 60), (b, 60)])), 2)
+
+    def test_une_coproduction_annoncee_par_deux_salles_fusionne(self):
+        # La règle large de l'audit (A-08 : deux lieux à même priorité ne
+        # fusionnent jamais), mesurée, faisait trois doublons de ce cas :
+        # un même spectacle, mêmes soirs, même heure, sur deux sites.
+        subs = evenement("Les Subsistances", "HISTOIRES DÉCOLONIALES #PORTRAITS CROISÉS", J,
+                         heure="19:30", url="https://www.les-subs.com/evenement/histoires/")
+        tcr = evenement("Théâtre de la Croix-Rousse",
+                        "Histoire(s) décoloniale(s) #Portraits croisés", J, heure="19:30",
+                        url="https://www.croix-rousse.com/au-programme/histoires/")
+        self.assertEqual(len(deduplicate([(subs, 100), (tcr, 100)])), 1)
+
 
 class TroisiemePasse(unittest.TestCase):
     """Même lieu, même jour, titres trop éloignés pour le flou."""
@@ -180,6 +242,25 @@ class TroisiemePasse(unittest.TestCase):
         lieu = "Radiant-Bellevue"
         salle = evenement(lieu, "Spectacle jeune public", J, heure="15:00")
         pb = evenement(lieu, "Rock en scène", J, heure="21:00", url=PB % 11)
+        self.assertEqual(len(deduplicate([(salle, 100), (pb, 60)])), 2)
+
+    def test_l_appariement_ne_donne_pas_l_heure_d_un_jour_a_une_plage(self):
+        # Audit A-07, en passe 3 : la plage de la salle gagne, mais l'heure
+        # d'une date unique ne vaut pas pour chacun de ses jours.
+        lieu = "La Rayonne"
+        festival = evenement(lieu, "Les Nuits de la Rayonne", J, heure=None,
+                             fin=J + timedelta(days=3))
+        jour1 = evenement(lieu, "Ouverture : DJ set en plein air", J, heure="14:00",
+                          url=PB % 48)
+        out = deduplicate([(festival, 100), (jour1, 60)])
+        self.assertEqual([(e.url, e.time) for e in out], [(festival.url, None)])
+
+    def test_00_30_et_23_30_le_meme_jour_ne_s_apparient_pas(self):
+        # Audit A-32 : l'écart se calculait « en cercle », une heure entre
+        # 00:30 et 23:30 ; le même jour, elles sont à vingt-trois heures.
+        lieu = "Le Sucre"
+        salle = evenement(lieu, "Warm-up matinal", J, heure="00:30")
+        pb = evenement(lieu, "Closing party", J, heure="23:30", url=PB % 46)
         self.assertEqual(len(deduplicate([(salle, 100), (pb, 60)])), 2)
 
     def test_deux_agregateurs_sur_un_lieu_non_scrappe(self):

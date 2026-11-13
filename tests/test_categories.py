@@ -6,6 +6,7 @@ from datetime import date
 from unittest import mock
 
 from scrapers import comedie_odeon, croix_rousse, halle_tony_garnier, opera_lyon, radiant
+from scrapers.categorie import deduire
 from tests.outils import FauxSite, date_figee
 
 
@@ -106,6 +107,29 @@ class CroixRousse(unittest.TestCase):
     def test_une_precision_seule_reste_la_categorie(self):
         self.assertEqual(croix_rousse._categorie([6], self.NOMS), "radio")
         self.assertIsNone(croix_rousse._categorie([2], self.NOMS))
+
+
+class DeductionParLeTitre(unittest.TestCase):
+    """scrapers/categorie.py, quand la source ne donne rien (audit A-33)."""
+
+    def test_la_boxe_et_le_yoga_ne_sont_pas_du_club(self):
+        self.assertIsNone(deduire("Gala de boxe populaire de l'ile égal boxing club !",
+                                  "ile égalité"))
+        self.assertIsNone(deduire("House Yoga Club", "HEAT"))
+        # Pas même le défaut du lieu : le titre dit ce que ce n'est pas.
+        self.assertIsNone(deduire("Cours de yoga", "Marché Gare"))
+        # Un indice plus haut dans la liste l'emporte toujours.
+        self.assertEqual(deduire("Atelier yoga", None), "atelier")
+
+    def test_le_rap_avant_le_rock(self):
+        self.assertEqual(deduire("Hors les murs Rap Urban Pop ZINÉE", "Marché Gare"), "rap")
+
+    def test_la_choregraphe(self):
+        self.assertEqual(deduire("Carte blanche à une chorégraphe", None), "danse")
+
+    def test_noise_est_un_mot(self):
+        self.assertIsNone(deduire("Soirée chinoise", None))
+        self.assertEqual(deduire("ZAPP GALURA (noise rock, dada-punk)", None), "rock")
 
 
 if __name__ == "__main__":
