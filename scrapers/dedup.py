@@ -20,6 +20,7 @@ from collections import defaultdict
 from datetime import date, timedelta
 from difflib import SequenceMatcher
 from typing import List, Tuple
+from urllib.parse import urlsplit
 
 from .base import Event, OFFSITE_PLUSIEURS
 
@@ -313,11 +314,21 @@ def _pick_best(cluster: list[tuple[Event, int]]) -> tuple[Event, int]:
             for ev, _ in cluster:
                 if ev is winner_event:
                     continue
+                if field == "time" and not _heure_transmissible(winner_event, ev):
+                    continue
                 val = getattr(ev, field, None)
                 if val:
                     setattr(winner_event, field, val)
                     break
     return best
+
+
+def _heure_transmissible(gagnant: Event, donneur: Event) -> bool:
+    """L'heure d'un événement d'un jour ne passe pas à un gagnant de
+    plusieurs jours (audit A-07). « Animal culte », l'exposition des
+    Confluences du 16 octobre au 15 août, s'affichait sinon « 10:30 »
+    chaque jour : l'heure d'une visite du Petit Bulletin."""
+    return not (_duree(gagnant) > 1 and _duree(donneur) == 1)
 
 
 def _days_covered(ev: Event, max_days: int = 30) -> List[str]:
@@ -367,6 +378,36 @@ def _seances_distinctes(a: Event, prio_a: int, b: Event, prio_b: int) -> bool:
             and a.time != b.time)
 
 
+def _deux_fiches_d_une_source(a: Event, prio_a: int, b: Event, prio_b: int) -> bool:
+    """Deux fiches distinctes d'une même source, plutôt qu'un doublon ?
+
+    Une source ne publie pas deux fois le même événement sous deux liens :
+    deux liens différents du même site (même priorité, même hôte) sont
+    deux événements, dès que le titre OU le lieu diffère.
+
+    - Même lieu, titres différents (audit A-31) : au TNG, six spectacles
+      sans heure étaient absorbés par leur atelier, « X » étant contenu
+      dans « Atelier X », d'une similarité de 1,0.
+    - Lieux différents (audit A-08) : le même agrégateur annonce deux
+      « Concert de Noël » dans deux églises, deux concerts. Entre deux
+      SITES différents, la fusion reste permise : deux salles annoncent la
+      même coproduction (« Histoire(s) décoloniale(s) », aux Subsistances
+      et à la Croix-Rousse, mêmes soirs, même heure), et c'est un seul
+      spectacle. Mesuré sur la collecte du 1er octobre 2026 : la règle
+      large, « deux lieux à même priorité ne fusionnent jamais », y
+      ajoutait quatre cartes, dont trois doublons de cette coproduction.
+
+    Mêmes titre et lieu sous deux liens, c'est une saisie en double chez
+    la source : la fusion reste de mise.
+    """
+    if prio_a != prio_b or not a.url or not b.url or a.url == b.url:
+        return False
+    if urlsplit(a.url).netloc != urlsplit(b.url).netloc:
+        return False
+    return (_normalize_text(a.title) != _normalize_text(b.title)
+            or _venue_key(_salle_reelle(a)) != _venue_key(_salle_reelle(b)))
+
+
 # Au-delà de ce nombre de jours, une plage ne décrit plus une série de
 # représentations mais un accrochage ou un festival au long cours. La
 # valeur reprend le seuil que le frontend utilisait pour la même
@@ -407,6 +448,24 @@ def _plage_et_seance(a: Event, prio_a: int, b: Event, prio_b: int) -> bool:
         return False
     da, db = _duree(a), _duree(b)
     return (da == 1) != (db == 1) and max(da, db) > SEUIL_PLAGE
+
+
+def _plage_et_date_d_ailleurs(a: Event, b: Event) -> bool:
+    """Une plage de plus de deux jours et une date unique, dans deux lieux
+    différents : deux événements, jamais un doublon (audit A-06).
+
+    La passe 2 range par date de début seule, et un titre contenu dans
+    l'autre y vaut une similarité de 1,0. « Festival Lumière », que le
+    Petit Bulletin annonce à l'Institut Lumière du 10 au 18 octobre, y
+    était absorbé par « Soirée d'ouverture Festival Lumière », une date
+    unique à la Halle Tony Garnier : le festival disparaissait du site.
+    Une plage qui résume une série dans le même lieu, elle, passe par la
+    passe 1, où ce garde ne joue pas.
+    """
+    if _venue_key(_salle_reelle(a)) == _venue_key(_salle_reelle(b)):
+        return False
+    da, db = _duree(a), _duree(b)
+    return min(da, db) == 1 and max(da, db) > 2
 
 
 
@@ -450,6 +509,7 @@ def _primary_dedup(tagged_events: List[Tuple[Event, int]]) -> List[Tuple[Event, 
                 # arbitraire.
                 if any(_seances_distinctes(ev, prio, m_ev, m_prio)
                        or _plage_et_seance(ev, prio, m_ev, m_prio)
+                       or _deux_fiches_d_une_source(ev, prio, m_ev, m_prio)
                        for m_ev, m_prio in cluster):
                     continue
                 cluster.append((ev, prio))
@@ -503,6 +563,8 @@ def _secondary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Ev
                 # celui de 15h se retrouvaient fusionnés un cran plus loin.
                 if any(_seances_distinctes(ev, prio, m_ev, m_prio)
                        or _plage_et_seance(ev, prio, m_ev, m_prio)
+                       or _plage_et_date_d_ailleurs(ev, m_ev)
+                       or _deux_fiches_d_une_source(ev, prio, m_ev, m_prio)
                        for m_ev, m_prio in cluster):
                     continue
                 cluster.append((ev, prio))
@@ -590,6 +652,13 @@ def _tertiary_dedup(events_with_prio: List[Tuple[Event, int]]) -> List[Tuple[Eve
     """
     by_venue_date: dict[tuple[str, str], list[tuple[Event, int]]] = defaultdict(list)
     for ev, prio in events_with_prio:
+        # Sous la salle qui PROGRAMME, et non sous la salle réelle comme en
+        # passe 1. L'audit le proposait (A-32), sans cas réel ; mesuré sur
+        # la collecte du 1er octobre 2026, le seul effet était faux : ôtés
+        # du groupe de l'Opéra ses deux hors-les-murs du 14 octobre, la
+        # visite du Petit Bulletin à 13:00 y restait seule face au concert
+        # du CNSMD à 12:30, et l'appariement par effectifs les fusionnait.
+        # Les hors-les-murs ont déjà croisé leur salle réelle en passe 1.
         by_venue_date[(_venue_key(ev.venue), ev.date_start)].append((ev, prio))
 
     result: List[Tuple[Event, int]] = []
@@ -709,6 +778,8 @@ def _alignement_par_effectifs(hauts: List[Tuple[Event, int]],
 def _fusionne(h_ev: Event, b_ev: Event) -> None:
     """Le gagnant hérite des champs qui lui manquent."""
     for field in ("time", "category", "subtitle", "image"):
+        if field == "time" and not _heure_transmissible(h_ev, b_ev):
+            continue
         if not getattr(h_ev, field, None):
             val = getattr(b_ev, field, None)
             if val:
@@ -716,8 +787,11 @@ def _fusionne(h_ev: Event, b_ev: Event) -> None:
 
 
 def _time_diff_minutes(t1: str, t2: str) -> int:
-    """Difference between 'HH:MM' time strings in minutes (circular,
-    handles midnight wraparound so 23:30 and 00:30 are 60 minutes apart).
+    """Écart en minutes entre deux heures 'HH:MM' d'un MÊME jour, en ligne
+    droite (audit A-32). Le calcul « en cercle » donnait une heure entre
+    00:30 et 23:30, quand les deux heures d'une même date sont à près de
+    vingt-trois heures l'une de l'autre : la passe 3 groupe par jour, et
+    une nuit qui passe minuit change de date.
     """
     try:
         h1, m1 = t1.split(':')
@@ -726,8 +800,7 @@ def _time_diff_minutes(t1: str, t2: str) -> int:
         mins2 = int(h2) * 60 + int(m2)
     except (ValueError, AttributeError):
         return 99999  # invalid time string treated as very distant
-    diff = abs(mins1 - mins2)
-    return min(diff, 1440 - diff)
+    return abs(mins1 - mins2)
 
 
 def _accents(s: str) -> int:

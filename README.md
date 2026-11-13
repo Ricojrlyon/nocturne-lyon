@@ -399,7 +399,30 @@ la recopier, version comprise.
   (`_seances_distinctes`) : au sein d'une MÊME source, deux horaires
   connus et différents sont deux représentations, jamais un doublon. Sans
   lui, une matinée et sa soirée fusionnaient : 44 couples de séances
-  réelles perdus sur sept salles avant correction.
+  réelles perdus sur sept salles avant correction. Trois autres gardes,
+  ajoutés après l'audit de novembre 2026 et mesurés sur la collecte du
+  1er octobre :
+  - deux liens différents d'un MÊME site sont deux événements dès que le
+    titre ou le lieu diffère (`_deux_fiches_d_une_source`, audit A-31 et
+    A-08) : au TNG, six spectacles disparaissaient dans leur atelier ou
+    leur visite tactile (« Liah et moi » dans « Visite tactile - Liah et
+    moi »). Entre deux sites, la fusion reste permise : une coproduction
+    annoncée par deux salles, mêmes soirs, même heure, est un seul
+    spectacle. La règle plus large que l'audit proposait, « deux lieux à
+    même priorité ne fusionnent jamais », a été mesurée et écartée : elle
+    ajoutait trois doublons de cette sorte pour une carte peut-être juste ;
+  - en passe 2, une plage de plus de deux jours et une date unique d'un
+    autre lieu ne fusionnent pas (audit A-06) : le Festival Lumière, à
+    l'Institut Lumière, disparaissait dans la soirée d'ouverture de la
+    Halle Tony Garnier ;
+  - l'heure d'un événement d'un jour ne passe pas à un gagnant de
+    plusieurs jours (audit A-07) : l'exposition « Animal culte »
+    s'affichait « 10:30 » chaque jour, l'heure d'une visite.
+  La passe 3 compte l'écart d'horaire en ligne droite : 00:30 et 23:30 du
+  même jour sont à vingt-trois heures, non à une (audit A-32). Elle range
+  toujours par salle qui programme, et non par salle réelle comme la
+  passe 1 : l'audit le proposait, mais le seul effet mesuré était faux (la
+  visite de l'Opéra du 14 octobre fusionnée avec un concert du CNSMD).
 - **`scrapers/categorie.py`** : comble la catégorie quand la source n'en
   donne aucune, après la déduplication et sans jamais écraser une
   catégorie de source. Le TITRE d'abord, où ces salles annoncent le genre
@@ -411,6 +434,11 @@ la recopier, version comprise.
   produites doivent être reconnues par `TYPE_BUCKETS` (index.html),
   sinon le comblement ne sert à rien. Deux pièges vérifiés : « ciné » ne
   correspond pas à sa propre regex et « électro » accentué non plus.
+  Un titre peut aussi porter un indice CONTRAIRE : la boxe et le yoga
+  ne déduisent rien, pas même le défaut du lieu (« Gala de boxe… boxing
+  club » et « House Yoga Club » partaient en club). Le rap passe avant le
+  rock (« Rap Urban Pop »), « noise » est un mot entier (il se lisait
+  dans « chinoise »), et « chorégraphe » est enfin reconnu (audit A-33).
 - **`scrapers/geo.py`** : géocodage Nominatim des lieux inconnus →
   arrondissement et position (`pos`, latitude et longitude arrondies au
   mètre, pour la vue carte de la page), mis en cache dans

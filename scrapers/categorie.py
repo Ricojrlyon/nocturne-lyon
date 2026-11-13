@@ -42,7 +42,13 @@ from typing import Iterable, Optional
 # Ordre = priorité, première correspondance gagnante. « chanson » passe
 # avant « rock » pour que « Chanson Pop DINAA » ne parte pas en rock sur
 # son \bpop\b ; « humour » avant « théâtre » pour que « café-théâtre »
-# n'aille pas en théâtre.
+# n'aille pas en théâtre ; « rap » avant « rock » pour que « Rap Urban
+# Pop » reste du rap (audit A-33).
+#
+# Une étiquette None est un indice CONTRAIRE : le titre dit ce que
+# l'événement n'est pas, et rien n'est déduit, pas même du lieu (audit
+# A-33). « Gala de boxe populaire de l'ile égal boxing club » partait en
+# club sur « club », « House Yoga Club » aussi.
 INDICES_TITRE = [
     ("atelier",    r"\bformation\b|\batelier\b|\bworkshop\b|masterclass"),
     ("projection", r"\bprojection\b|cin[ée]-?club|court[s]?[\s-]m[ée]trage"
@@ -53,16 +59,21 @@ INDICES_TITRE = [
                    r"|blagu|caf[ée][\s-]*th[ée][aâ]tre"),
     ("conférence", r"conf[ée]rence|table\s*ronde|\bd[ée]bat\b|\bcolloque\b"),
     ("théâtre",    r"\bth[ée][aâ]tre\b|\bcabaret\b"),
-    ("danse",      r"\bdanse\b|\bballet\b|cho[ré]graph"),
+    # « chor[ée]graph » : écrit « cho[ré]graph », le motif ne reconnaissait
+    # jamais « chorégraphe » (audit A-33).
+    ("danse",      r"\bdanse\b|\bballet\b|chor[ée]graph"),
     # « jeux » n'a volontairement pas de bucket dans le frontend : quiz,
     # blind test et karaoké ne sont ni musique ni scène, ils appartiennent
     # au reste. L'étiquette existe déjà dans les données du Petit Bulletin.
     ("jeux",       r"\bquiz+\b|blind\s*test|\bkaraok[ée]\b|\bbingo\b|\bloto\b"
                    r"|\b[ée]checs?\b|\bchess\b|loup\s*garou"),
     ("chanson",    r"\bchanson\b|\bfolk\b|\bslam\b|\bpo[ée]sie\b"),
-    ("rock",       r"\bpunk\b|\brock\b|\bpop\b|\bgarage\b|\bgrunge\b|\bkraut\b"
-                   r"|\bm[ée]tal\b|hardcore|noise"),
     ("rap",        r"\br\.?a\.?p\.?\b|hip[\s-]?hop|\btrap\b"),
+    # « \bnoise\b » : sans bornes, « noise » se lisait dans « chinoise »
+    # ou « danoise » (audit A-33).
+    ("rock",       r"\bpunk\b|\brock\b|\bpop\b|\bgarage\b|\bgrunge\b|\bkraut\b"
+                   r"|\bm[ée]tal\b|hardcore|\bnoise\b"),
+    (None,         r"\bboxe\b|\bboxing\b|\byoga\b"),
     ("club",       r"\btechno\b|\belectro|\bhouse\b|\bdj\b|\bdub\b|\bclub\b"),
     ("jazz",       r"\bjazz\b|\bblues\b|\bjam\b|\bswing\b"),
     ("musique",    r"\bconcert\b|\bmusique[s]?\b|\bfanfare\b|\bchorale\b"
@@ -85,7 +96,7 @@ def deduire(titre: Optional[str], lieu: Optional[str]) -> Optional[str]:
     """Catégorie déduite, ou None si rien de sûr ne s'en dégage."""
     for cat, rx in INDICES_TITRE:
         if rx.search(titre or ""):
-            return cat
+            return cat                  # None : un indice contraire
     return LIEUX_MONOGENRE.get(lieu or "")
 
 
