@@ -47,12 +47,34 @@ class DateFrancaise(unittest.TestCase):
     def test_aujourdhui_reste_dans_l_annee(self):
         self.assertEqual(self.lire("1er oct."), date(2026, 10, 1))
 
-    def test_plage_lue_le_lendemain_de_son_premier_jour(self):
-        # Sans année, le début d'hier part en l'an prochain, après la fin
-        # d'aujourd'hui (La Rayonne, 25 octobre 2026) : il revient d'un an.
-        debut, fin = self.lire("mer. 30 sept."), self.lire("jeu. 1er oct.")
-        self.assertEqual((debut, fin), (date(2027, 9, 30), date(2026, 10, 1)))
-        self.assertEqual(base.debut_de_plage(debut, fin), date(2026, 9, 30))
+    def test_une_date_passee_de_quelques_jours_reste_dans_l_annee(self):
+        # Audit A-04 : « The Pineapple Thief » (La Rayonne, 8 septembre),
+        # encore affiché après le concert, partait au 8 septembre 2027. Une
+        # date passée de 15 jours au plus reste dans l'année, et l'étape 3
+        # du robot l'écarte comme passée.
+        self.assertEqual(self.lire("mer. 30 sept."), date(2026, 9, 30))
+        self.assertEqual(self.lire("mer. 16 sept."), date(2026, 9, 16))
+
+    def test_en_janvier_decembre_est_celui_d_il_y_a_quelques_jours(self):
+        with mock.patch.object(base, "date", date_figee(date(2027, 1, 2))):
+            self.assertEqual(base.parse_french_date("mer. 30 déc."), date(2026, 12, 30))
+        with mock.patch.object(base, "date", date_figee(date(2026, 12, 28))):
+            self.assertEqual(base.parse_french_date("mar. 5 janv."), date(2027, 1, 5))
+
+    def test_les_abreviations_courtes_collees_au_jour(self):
+        # Audit A-38 : le TNG écrit « sam. 16 jan. ». « Jan » seul, prénom
+        # d'un titre, ne passe pas pour un mois.
+        self.assertEqual(self.lire("sam. 16 jan. 17h"), date(2027, 1, 16))
+        self.assertEqual(self.lire("jeu. 12 fév."), date(2027, 2, 12))
+        self.assertEqual(self.lire("sam. 5 sep."), date(2027, 9, 5))
+        self.assertEqual(self.lire("Jan Garbarek, 12 mars"), date(2027, 3, 12))
+
+    def test_plage_ouverte_depuis_plus_de_quinze_jours(self):
+        # Au-delà de la grâce, le début d'une plage encore en cours part en
+        # l'an prochain, après sa fin : il revient d'un an.
+        debut, fin = self.lire("mer. 9 sept."), self.lire("jeu. 1er oct.")
+        self.assertEqual((debut, fin), (date(2027, 9, 9), date(2026, 10, 1)))
+        self.assertEqual(base.debut_de_plage(debut, fin), date(2026, 9, 9))
 
     def test_plage_a_l_endroit_inchangee(self):
         self.assertEqual(base.debut_de_plage(date(2026, 10, 3), date(2026, 10, 4)), date(2026, 10, 3))
@@ -69,6 +91,12 @@ class DatesDuPetitBulletin(unittest.TestCase):
     def test_date_unique_avec_heure(self):
         self.assertEqual(self.lire("Mardi 13 octobre 2026 à 20h"),
                          [("2026-10-13", "20:00", None)])
+
+    def test_plage_avec_l_annee_du_debut_et_un_jusqu_a(self):
+        # Audit A-38 : « jusqu'à 18h » faisait prendre la plage pour un
+        # « Jusqu'au », et l'événement était perdu.
+        lu = self.lire("Du 16 octobre 2026 au 15 août 2027, tous les jours jusqu'à 18h")
+        self.assertEqual([(debut, fin) for debut, _, fin in lu], [("2026-10-16", "2027-08-15")])
 
     def test_heure_avec_minutes(self):
         self.assertEqual(self.lire("Samedi 3 octobre à 20h30"),

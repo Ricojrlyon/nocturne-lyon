@@ -49,6 +49,17 @@ la recopier, version comprise.
   Les appels réseau passent par `base.get` (exceptions motivées dans
   `scrapers/base.py`), qui réessaie sur une coupure, un délai dépassé ou un
   502/503/504, jamais sur une vraie réponse du site.
+  Une date écrite sans année prend celle de `base.annee_probable` : la
+  prochaine fois que ce jour revient, avec quinze jours de grâce pour un
+  jour passé de peu, qu'un site affiche encore (un concert d'hier, une
+  plage en cours). Cette règle existait en plusieurs exemplaires, l'un
+  dans `base.py`, les autres copiés dans les collecteurs, aux règles
+  divergentes : sans grâce, « sam. 24 oct. » lu le 25 partait en
+  octobre de l'année suivante (« The Pineapple Thief », publié un an trop
+  tard pendant vingt-quatre jours en septembre 2026) ; et en janvier,
+  « 30 déc. » désignait décembre suivant au lieu de celui d'il y a
+  quelques jours. Il n'en reste qu'une (audit A-04). `parse_french_date`
+  lit aussi les mois courts « jan », « fév » et « sep » (audit A-38).
 - **`scrapers/mapado.py`** : lecture commune des billetteries Mapado,
   utilisée par `improvidence.py`, `espace_gerson.py` et
   `chapelle_trinite.py`. Ces boutiques sont
@@ -70,7 +81,11 @@ la recopier, version comprise.
   est un cas que la prose seule ne peut pas voir. L'année, elle, n'est
   presque jamais écrite : quatre sources y répondent dans l'ordre, et à
   défaut la date est abandonnée plutôt que projetée sur l'année en
-  cours. Deux règles évitent des dates fausses : seule la suite de
+  cours. Parmi elles, les catégories du blog, qui sont des mois
+  (« décembre 2026 », « janvier 2027 ») : c'est celle du mois de la
+  séance qui donne l'année. Leur seule année ne suffisait pas : un billet
+  classé dans ces deux mois datait sa séance de janvier en 2026, dans le
+  passé (audit A-38). Deux règles évitent des dates fausses : seule la suite de
   quantièmes COLLÉE au nom du mois compte, sans quoi « Les 3 becs »
   produirait un 3 septembre ; et une suite introduite par une
   annulation est écartée, publier une séance annulée étant plus grave
@@ -175,6 +190,12 @@ la recopier, version comprise.
   en prose, et l'un de ses libellés maison contient « Musée d'art
   contemporain », un mot que porte aussi l'Institut d'art contemporain :
   le marqueur de la liste est plus sûr parce qu'il est catégoriel.
+  La période s'écrit en prose : « Du 11 septembre au 14 mars 2027 », « Du
+  mercredi 1er octobre au … », « Jusqu'au 14 mars 2027 ». Le « 1er » n'était
+  pas lu, et la 18e Biennale de Lyon était publiée sur son seul jour de
+  fermeture au lieu d'une exposition en cours. Une période « du … au … »
+  que le robot ne sait pas lire n'est plus réduite à un jour : la carte
+  compte parmi celles sans période lisible (audit A-21).
 - **`scrapers/maison_de_la_danse.py`** : la Maison de la Danse, seul
   site du dépôt à demander un `Crawl-delay` (10 s). Il est respecté, et
   c'est ce qui rend `detail_cache` indispensable : le délai est posé DANS
@@ -229,7 +250,12 @@ la recopier, version comprise.
   passage, sans le cache des heures : une séance ajoutée ou retirée se
   voit dès le lendemain. Le site coupe certains extraits au milieu d'un
   caractère (« Pop� » pour « Pop’Corn ») : le losange est retiré du
-  sous-titre.
+  sous-titre. Les dates n'ont pas d'année : celle d'une plage se lit sur
+  sa FIN, et le début recule d'un an quand son mois vient après celui de
+  la fin (« 28 déc. > 03 jan. »). Lue sur le début, une plage ouverte
+  depuis plus de quinze jours partait un an trop tard, au-delà de
+  l'horizon, et le spectacle disparaissait (audit A-29). Les mois courts
+  « jan. », « fév. », « sep. » sont lus (audit A-38).
 - **`scrapers/beaux_arts.py`** : le Musée des Beaux-Arts. Drupal sans
   JSON:API, mais très régulier : une liste paginée qui porte le type de
   chaque rendez-vous, et une fiche où chaque séance occupe sa ligne,
@@ -286,7 +312,13 @@ la recopier, version comprise.
   « concert » : les humoristes et les spectacles sur glace manquaient à
   la scène, et la musique affichait le Salon des vignerons. Le type
   « évènement » ne dit rien du genre (ce sont les séances du Festival
-  Lumière) et laisse la catégorie vide, à compléter.
+  Lumière) et laisse la catégorie vide, à compléter. Le site est lu à sa
+  nouvelle adresse, www.htg.fr (l'ancienne ne fait plus que rediriger).
+  Ses dates s'écrivent « 06.11 », sans année : elle vient de la règle
+  commune, et une plage en cours recule son début d'un an quand il le
+  faut. Sa copie maison n'avait pas de grâce : « 06.11 au 15.11 » lu le
+  12 novembre sortait à l'envers, de 2027 à 2026, et un concert de la
+  veille encore affiché partait un an plus tard (audit A-22).
 - **`scrapers/marche_gare.py`** : le Marché Gare. La carte d'agenda
   range à part les mentions (« Gratuit », « Épuisé sur ce point de
   vente », « Hors les murs », « Annulé »), les genres, le titre et le
@@ -332,7 +364,9 @@ la recopier, version comprise.
     à 4h30 ») ne font qu'une nuit ;
   - l'année du début d'une longue plage (« Du 16 octobre 2026 au 15 août
     2027 ») est lue elle aussi : sans elle, la plage devenait son seul
-    premier jour.
+    premier jour ; et cette forme reste une plage quand un « jusqu'à
+    18h » suit : on la prenait pour un « Jusqu'au », et l'événement était
+    perdu (audit A-38).
 - **`scrapers/dedup.py`** : canonicalisation des noms de lieux
   (`VENUE_CANONICAL`) + déduplication en 3 passes : (lieu, jour) avec
   fuzzy-match des titres ≥ 0,7 (les plages multi-jours sont indexées sur
@@ -378,8 +412,13 @@ la recopier, version comprise.
   premier jour d'une plage, dont le début part un an trop tard et revient
   donc d'un an ; une autre inversion, de quelques jours, garde son début
   comme une date unique ; chaque correction remonte en annotation
-  « plage à l'envers redressée »), filtre le passé (les événements
-  en cours sont conservés jusqu'à leur `date_end`), écarte les événements
+  « plage à l'envers redressée »), écarte avant cela un événement dont
+  une date n'est pas au format AAAA-MM-JJ (annotation « date illisible
+  écartée ») et efface une heure qui n'est pas HH:MM (audit A-11 : une
+  seule date mal formée, venue de n'importe quelle source, faisait
+  planter tout le passage), filtre le passé (les événements
+  en cours sont conservés jusqu'à leur `date_end`) et ce qui commence
+  au-delà de l'horizon de 180 jours, écarte les événements
   que leur source dit annulés (voir « Politique éditoriale »), écrit
   `events.json`. Quatre garde-fous, du plus local au plus large :
   - une salle scrappée en direct qui tombe sous le quart de la veille
@@ -856,12 +895,20 @@ motif.
   longue plage ne pesait qu'une carte ; sans lui, une exposition annoncée
   jusqu'en octobre 2028 fabriquerait six cent soixante-quinze journées.
   Ce qui commence au-delà garde une carte à sa date d'ouverture, pour ne
-  pas disparaître.
+  pas disparaître ; depuis que le robot applique le même horizon (voir
+  ci-dessous), le cas ne se présente plus, mais la page reste sûre si
+  le fil en contenait un.
 - **Horizon** (`HORIZON_JOURS`, scrapers/base.py) : une seule valeur,
-  180 jours, pour tous les collecteurs de salle ; ce qui commence au-delà
-  est écarté avant la lecture des pages détail. La page a la même
-  (`HORIZON_JOURS`, index.html), et un test vérifie qu'elles restent
-  égales.
+  180 jours, appliquée par le robot à TOUTES les sources au moment
+  d'écrire le fil : ce qui commence au-delà n'est pas publié, et le sera
+  quand il entrera dans les six mois. Certains collecteurs s'en servent en
+  plus pour ne pas ouvrir les fiches lointaines. Jusqu'en novembre 2026
+  seule une partie d'entre eux coupait, et le Petit Bulletin, la Bourse
+  du Travail, la Halle, les Subsistances ou La Rayonne publiaient jusqu'à
+  dix-sept mois à l'avance (85 événements sur la collecte de référence du
+  1er octobre) ; une date passée lue avec un an de trop y restait aussi
+  (audit A-04). La page a la même valeur (`HORIZON_JOURS`, index.html),
+  et un test vérifie qu'elles restent égales.
 - **Plages d'agrégateur sur un lieu scrappé** : écartées. Un agrégateur
   qui voit un spectacle joué plusieurs soirs le publie souvent comme une
   seule plage « du 18 au 28 août ». Le frontend déployant une plage sur

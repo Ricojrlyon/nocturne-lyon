@@ -13,7 +13,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, HORIZON_JOURS, iso, get as base_get
+from .base import annee_probable, Event, HORIZON_JOURS, iso, get as base_get
 
 VENUE = "HEAT"
 SLUG  = "heat"
@@ -43,18 +43,6 @@ CATEGORIES = (
     "comedy lab", "danse", "dj set", "festival", "jeux", "market",
     "open air", "sport",
 )
-
-
-def _smart_year(month: int, day: int) -> int:
-    today = Date.today()
-    try:
-        candidate = Date(today.year, month, day)
-    except ValueError:
-        return today.year
-    # Grâce de 15 jours (comme tng.py) : une date passée de quelques jours
-    # est un listing pas encore purgé de CETTE année, pas l'annonce de
-    # l'année prochaine - sans quoi elle devenait un événement fantôme à +1 an.
-    return today.year + 1 if (today - candidate).days > 15 else today.year
 
 
 def _normalize_month(s: str) -> Optional[int]:
@@ -159,7 +147,7 @@ def fetch() -> List[Event]:
         if not month:
             continue
         try:
-            year = _smart_year(month, day)
+            year = annee_probable(month, day, Date.today())
             d = Date(year, month, day)
         except ValueError:
             continue

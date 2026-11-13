@@ -16,7 +16,7 @@ import re
 import sys
 from bs4 import BeautifulSoup, Tag
 
-from .base import Event, iso, FR_MONTHS, get as base_get
+from .base import annee_probable, Event, iso, FR_MONTHS, get as base_get
 
 VENUE = "Le Petit Salon"
 SLUG = "petit-salon"
@@ -45,18 +45,6 @@ def _mois(mot: str) -> Optional[int]:
     mot = mot.lower()
     return FR_MONTHS.get(mot) or next(
         (n for cle, n in FR_MONTHS.items() if cle.startswith(mot)), None)
-
-
-def _smart_year(month: int, day: int) -> int:
-    today = Date.today()
-    try:
-        candidate = Date(today.year, month, day)
-    except ValueError:
-        return today.year
-    # Grâce de 15 jours (comme tng.py) : une date passée de quelques jours
-    # est un listing pas encore purgé de CETTE année, pas l'annonce de
-    # l'année prochaine - sans quoi elle devenait un événement fantôme à +1 an.
-    return today.year + 1 if (today - candidate).days > 15 else today.year
 
 
 def _find_event_block(h2: Tag, max_levels: int = 6) -> Optional[Tag]:
@@ -127,7 +115,7 @@ def fetch() -> List[Event]:
         if not (month and 1 <= day <= 31):
             continue
         try:
-            year = _smart_year(month, day)
+            year = annee_probable(month, day, Date.today())
             d = Date(year, month, day)
         except ValueError:
             continue

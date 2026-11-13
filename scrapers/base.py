@@ -1,6 +1,6 @@
 """Common types and helpers for venue scrapers."""
 from dataclasses import dataclass, asdict
-from datetime import date
+from datetime import date, timedelta
 from typing import Optional
 from urllib.parse import urlsplit
 import hashlib
@@ -186,6 +186,39 @@ FR_MONTHS = {
     "dec": 12, "déc": 12, "decembre": 12, "décembre": 12,
 }
 
+# Abréviations courtes qu'emploient certaines salles (« sam. 16 jan. 17h »
+# au TNG). Trop courtes pour être cherchées n'importe où dans un texte -
+# « Jan » est aussi un prénom -, elles ne sont reconnues que collées à un
+# quantième, ou lues seules comme mot entier (audit A-38).
+FR_MOIS_COURTS = {"jan": 1, "fev": 2, "fév": 2, "sep": 9}
+
+# Une date passée de moins de GRACE_JOURS est encore de cette année : un
+# listing pas encore purgé, que l'étape 3 d'aggregate.py écarte comme passé.
+GRACE_JOURS = 15
+
+
+def annee_probable(mois: int, jour: int, ref: Optional[date] = None,
+                   grace: int = GRACE_JOURS) -> int:
+    """L'année d'une date écrite SANS année : la plus proche qui ne soit pas
+    passée de plus de `grace` jours.
+
+    Audit A-04. La règle d'avant mettait toute date passée à l'année
+    suivante : « The Pineapple Thief », concert de La Rayonne du 8 septembre
+    2026 encore affiché par le site, a été publié au 8 septembre 2027
+    pendant 24 jours. Et ses six copies, qui avaient bien la grâce, se
+    trompaient en janvier : « 30 déc. » lu le 2 janvier est celui d'il y a
+    trois jours, pas celui de dans un an.
+    """
+    ref = ref or date.today()
+    seuil = ref - timedelta(days=grace)
+    for annee in range(ref.year - 1, ref.year + 5):
+        try:
+            if date(annee, mois, jour) >= seuil:
+                return annee
+        except ValueError:          # un 29 février d'une année ordinaire
+            continue
+    return ref.year + 1
+
 
 def parse_french_date(text: str, default_year: Optional[int] = None) -> Optional[date]:
     """Parse messy French date strings like 'jeu. 30 avr.' or '5 mai 2026'.
@@ -210,7 +243,11 @@ def parse_french_date(text: str, default_year: Optional[int] = None) -> Optional
             month = num
             break
     if not month:
-        return None
+        # « 12 fév. », « 16 jan. » : l'abréviation courte, collée au jour.
+        m_court = re.search(r"\b(\d{1,2})(?:er)?\s+(jan|f[ée]v|sep)\b", txt)
+        if not m_court:
+            return None
+        day, month = int(m_court.group(1)), FR_MOIS_COURTS[m_court.group(2)]
     # Find year, fall back to default
     m_year = re.search(r"\b(20\d{2})\b", txt)
     if m_year:
@@ -218,12 +255,7 @@ def parse_french_date(text: str, default_year: Optional[int] = None) -> Optional
     elif default_year is not None:
         year = default_year
     else:
-        # Guess: if month is in the past relative to today, use next year.
-        today = date.today()
-        if month < today.month or (month == today.month and day < today.day):
-            year = today.year + 1
-        else:
-            year = today.year
+        year = annee_probable(month, day, date.today())
     try:
         return date(year, month, day)
     except ValueError:

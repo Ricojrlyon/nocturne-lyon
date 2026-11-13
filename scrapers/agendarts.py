@@ -184,13 +184,26 @@ def _dates_helloasso(brut: str) -> Dict[Tuple[int, int],
     return out
 
 
-def _annee(jour: int, mois: int, txt: str, annees_cat: Set[int],
+def _annee(jour: int, mois: int, txt: str, mois_cat: Set[Tuple[int, int]],
            an_ha: Optional[int], jsem: Optional[str],
            an_pub: int) -> Optional[int]:
-    """Millésime de la date, ou None si aucune source ne le donne."""
+    """Millésime de la date, ou None si aucune source ne le donne.
+
+    `mois_cat` : les (mois, année) des catégories du billet (« novembre
+    2026 »). La catégorie du MOIS de la séance donne son année : un billet
+    classé « décembre 2026 » et « janvier 2027 » datait sa séance de
+    janvier en 2026, dans le passé, et elle disparaissait (audit A-38).
+    """
     if an_ha:
         return an_ha
-    for an in sorted(annees_cat):
+    for m_cat, an in sorted(mois_cat):
+        if m_cat == mois:
+            try:
+                Date(an, mois, jour)
+            except ValueError:
+                continue
+            return an
+    for an in sorted({an for _, an in mois_cat}):
         try:
             Date(an, mois, jour)
         except ValueError:
@@ -272,8 +285,8 @@ def fetch() -> List[Event]:
 
         ha = _dates_helloasso(brut)
         an_pub = int((b.get("date") or "")[:4] or Date.today().year)
-        annees_cat = {mois_cat[c][1] for c in (b.get("categories") or [])
-                      if c in mois_cat}
+        cats_du_billet = {mois_cat[c] for c in (b.get("categories") or [])
+                          if c in mois_cat}
 
         # Union des deux lectures : la prose donne le jour et l'heure, la
         # billetterie complète ce que la phrase ne peut pas exprimer.
@@ -293,7 +306,7 @@ def fetch() -> List[Event]:
 
         for (jj, mois), (heure, jsem) in sorted(vues.items()):
             an_ha, heure_ha = ha.get((jj, mois), (None, None))
-            an = _annee(jj, mois, phrase, annees_cat, an_ha, jsem, an_pub)
+            an = _annee(jj, mois, phrase, cats_du_billet, an_ha, jsem, an_pub)
             if an is None:
                 sans_annee += 1
                 continue

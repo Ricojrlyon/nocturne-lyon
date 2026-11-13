@@ -1,4 +1,4 @@
-"""Scraper for La Halle Tony Garnier (halle-tony-garnier.com).
+"""Scraper for La Halle Tony Garnier (www.htg.fr, ex halle-tony-garnier.com).
 
 Page structure (verified July 2026):
 - Each event is an <a href="/fr/programmation/<slug>">.
@@ -20,11 +20,13 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 
-from .base import Event, img_src, iso, get as base_get
+from .base import Event, img_src, iso, annee_probable, debut_de_plage, get as base_get
 
 VENUE = "La Halle Tony Garnier"
 SLUG = "halle-tony-garnier"
-HOST = "https://www.halle-tony-garnier.com"
+# Le site est passé sur www.htg.fr (novembre 2026) ; l'ancienne adresse
+# n'y renvoyait plus que par une redirection (audit A-22).
+HOST = "https://www.htg.fr"
 URLS = [HOST + "/fr/programmation", HOST + "/"]
 
 HEADERS = {
@@ -68,20 +70,12 @@ def _categorie(a) -> Optional[str]:
     return next((_TYPES[t] for t in types if t in _TYPES), None)
 
 
-def _infer_year(month: int, day: int) -> int:
-    """Return the nearest future year for a DD.MM date."""
-    today = Date.today()
-    year = today.year
-    try:
-        d = Date(year, month, day)
-        return year if d >= today else year + 1
-    except ValueError:
-        return year + 1
-
-
 def _parse_date(dd: str, mm: str, yy: Optional[str]) -> Optional[Date]:
     m, d = int(mm), int(dd)
-    year = (2000 + int(yy)) if yy else _infer_year(m, d)
+    # Sans année : la règle commune (audit A-22). La copie d'ici n'avait
+    # pas de grâce : un concert de la veille encore affiché partait à
+    # l'année suivante, et une plage en cours sortait à l'envers.
+    year = (2000 + int(yy)) if yy else annee_probable(m, d, Date.today())
     try:
         return Date(year, m, d)
     except ValueError:
@@ -157,6 +151,8 @@ def _scrape_url(url: str) -> List[Event]:
             d1, m1, y1, d2, m2, y2 = m_range.groups()
             d_start = _parse_date(d1, m1, y1 or y2)
             d_end   = _parse_date(d2, m2, y2)
+            if d_start and d_end and not y1:
+                d_start = debut_de_plage(d_start, d_end)
         else:
             m_single = _DATE_RE.search(raw_text)
             if m_single:

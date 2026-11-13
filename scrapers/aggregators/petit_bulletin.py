@@ -46,7 +46,7 @@ from typing import List, Optional, Tuple
 import requests
 from bs4 import BeautifulSoup
 
-from ..base import Event, get as base_get
+from ..base import Event, annee_probable, get as base_get
 
 URL = "https://www.petit-bulletin.fr/agenda-recherche.html"
 BASE = "https://www.petit-bulletin.fr"
@@ -304,13 +304,9 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
                           if _jour_de(y, month, day) == jour_semaine]
             if len(candidates) == 1:
                 return candidates[0]
-        y = today.year
-        try:
-            if (today - date(y, month, day)).days > 15:
-                y += 1
-        except ValueError:
-            pass
-        return y
+        # La règle commune (audit A-04), qui sait aussi qu'en janvier,
+        # « 30 décembre » est celui d'il y a quelques jours.
+        return annee_probable(month, day, today)
 
     def _expand(start: date, end: date,
                 horaires: str = "") -> List[Tuple[str, Optional[str], Optional[str]]]:
@@ -336,8 +332,12 @@ def _parse_date_str(s: str) -> List[Tuple[str, Optional[str], Optional[str]]]:
                 for d in plage
                 if d.isoformat() >= today_iso and (jours is None or d.weekday() in jours)]
 
+    # « Du 16 octobre au 15 août 2027 », mais aussi « Du 16 octobre 2026 au
+    # 15 août 2027 », l'année écrite après le début (audit A-38) : sans elle,
+    # un « jusqu'à 18h » plus loin faisait prendre la plage pour un
+    # « Jusqu'au », et l'événement était perdu.
     has_du_range = bool(re.search(
-        r"\bdu\s+\d+(?:er)?\s+(?:\w+\s+)?au\s+\d+(?:er)?\s", norm))
+        r"\bdu\s+\d+(?:er)?\s+(?:\w+\s+)?(?:\d{4}\s+)?au\s+\d+(?:er)?\s", norm))
 
     # 1) "Jusqu'au X" sans "Du" : événement en cours, sans début connu.
     if "jusqu" in norm and not has_du_range:
