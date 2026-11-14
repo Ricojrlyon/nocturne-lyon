@@ -976,6 +976,41 @@ essai, puis le navigateur joue une page témoin, la plus simple qui soit
   il échoue : sauté, il laissait partir la publication sans aucun
   contrôle de la page.
 
+**Les pages enregistrées** (audit A-28). Dix-huit sources sur
+trente-sept n'avaient aucun test de lecture, et les autres n'étaient
+essayées que sur de petits bouts de HTML écrits à la main autour d'un bug
+ancien. Une retouche du code qui changeait la lecture d'une salle ne se
+voyait qu'en production. Désormais, les vraies pages d'une salle sont
+enregistrées une fois :
+
+```bash
+python -m tests.enregistrer la_commune   # une source, par le nom de son module
+python -m tests.enregistrer --liste      # les sources, enregistrées ou non
+```
+
+L'outil lance le collecteur comme le passage de nuit, une seule fois, et
+garde dans `tests/pages/<source>.json.xz` chaque réponse reçue, les fiches
+que le cache connaissait déjà (il ne les redemande pas), les fichiers du
+dépôt qu'il lit, le jour, et les événements qu'il en a tirés. Avant chaque
+site, il lit le robots.txt, refuse ce qu'il interdit et respecte son
+délai ; il n'écrit jamais les fichiers du robot. Il refuse d'écrire un
+enregistrement que le rejeu ne redonne pas à l'identique. Trois sources
+ne seront jamais enregistrées : le LOU (sa billetterie ne doit jamais être
+sollicitée), le Sonic (son robots.txt interdit tout robot) et le Complexe
+(son hébergeur filtre les robots).
+
+Le test (`tests/test_pages_enregistrees.py`) rejoue chaque enregistrement
+sans réseau, à sa date, et exige les mêmes événements au caractère près ;
+une page que le collecteur demande et qui n'a pas été enregistrée est une
+erreur. Il ne couvre que ce que les pages montraient ce jour-là : un cas
+qu'elles ne contiennent pas (une date de janvier enregistrée en novembre,
+une heure donnée en UTC) reste l'affaire des tests écrits à la main. Il
+ne voit pas non plus la refonte du site d'une salle : c'est le rôle des
+garde-fous du passage et de l'alerte des salles en panne. Quand la lecture
+d'une salle change VOLONTAIREMENT, réenregistrer la source et relire le
+diff des événements. Les enregistrements sont des copies de pages
+publiques, compressées, qui ne servent qu'aux tests.
+
 Les tests essaient aussi le passage lui-même (`tests/test_passage.py`) :
 le créneau sur deux ans de dates, changements d'heure compris, et la
 publication contre de vrais dépôts git créés pour l'occasion, avec
@@ -1009,6 +1044,8 @@ diff de `tests/donnees/`.
 5. Facultatif : si la salle joue plusieurs fois par soir, lui donner un
    logo (voir « Logos de salle »). Sans entrée, ses cartes groupées
    gardent le motif, comme la majorité des lieux.
+6. Enregistrer ses pages pour les tests : `python -m tests.enregistrer
+   ma_salle` (voir « Tests »), après avoir lu son robots.txt.
 
 ## Logos de salle
 

@@ -155,7 +155,7 @@ class Coherence(unittest.TestCase):
         # poste Windows compris ; les fichiers binaires ne sont pas touchés.
         regles = (RACINE / ".gitattributes").read_text(encoding="utf-8").splitlines()
         self.assertIn("* text=auto eol=lf", regles)
-        for motif in ("*.png", "*.woff2", "*.gz"):
+        for motif in ("*.png", "*.woff2", "*.gz", "*.xz"):
             self.assertIn("%s binary" % motif, regles)
 
     def test_au_doigt_seul_le_bouton_touche_reagit(self):
