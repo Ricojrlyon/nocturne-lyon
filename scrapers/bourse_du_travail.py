@@ -122,8 +122,10 @@ def fetch() -> List[Event]:
             category = "festival"
         elif any(kw in title_lower for kw in ("musical","comédie musicale","le tribute")):
             category = "spectacle musical"
-        else:
-            category = "humour"
+        # Sinon, rien (audit A-20) : « humour » par défaut rangeait 98
+        # événements sur 105 en humour, Gauvain Sers et Medine compris. La
+        # fusion avec le Petit Bulletin, puis la déduction par le titre
+        # (scrapers/categorie.py), décident ; ce qui reste va en « autres ».
 
         seen_slugs.add(slug)
         events.append(Event(

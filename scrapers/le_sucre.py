@@ -16,6 +16,10 @@ SLUG  = "le-sucre"
 URL   = "https://le-sucre.eu/agenda/"
 HOST  = "https://le-sucre.eu"
 
+# Les titres qui ne nomment personne (audit A-41), en minuscules.
+TITRES_GENERIQUES = frozenset({"concert", "club", "s.society"})
+_PAS_ENCORE = re.compile(r"line-?up soon|à venir|\btba\b", re.I)
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
                   "+https://github.com/Ricojrlyon/nocturne-lyon)",
@@ -97,6 +101,14 @@ def fetch() -> List[Event]:
 
         h3s = a.find_all("h3")
         subtitle = " · ".join(h.get_text(strip=True) for h in h3s) if h3s else None
+        # Un titre générique ne dit pas qui joue (audit A-41) : 17 cartes
+        # sur 31 s'intitulaient « Concert », « club » ou « S.society », le
+        # nom d'une série, quand les artistes sont dans le sous-titre. Ils
+        # passent en titre, et l'ancien titre en sous-titre ; sauf quand le
+        # sous-titre n'annonce encore personne (« Line-up soon ! »).
+        if (title.strip().lower() in TITRES_GENERIQUES and subtitle
+                and not _PAS_ENCORE.search(subtitle)):
+            title, subtitle = subtitle, title
 
         text = a.get_text(" ", strip=True)
         head = text[:50]

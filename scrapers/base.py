@@ -115,6 +115,15 @@ ATTENTE = 2.0
 # changera pas et ne ferait que tripler la durée du run.
 CODES_A_REESSAYER = (502, 503, 504)
 
+# Les sites qui demandent un délai entre deux requêtes (Crawl-delay de leur
+# robots.txt). Un nouvel essai les attend aussi (audit A-37) : la Maison de
+# la Danse était redemandée deux puis quatre secondes après un échec, pour
+# dix demandées. Les collecteurs respectent déjà ce délai entre leurs pages.
+ATTENTE_MIN_PAR_HOTE = {
+    "maisondeladanse.com": 10.0,
+    "larayonne.org": 10.0,
+}
+
 # Un hôte qui vient d'épuiser ses essais sur une rupture de transport n'en
 # reçoit plus qu'UN par appel, jusqu'à ce qu'il réponde de nouveau. Sans
 # cela, un site tombé au milieu d'une boucle de pages coûterait trois
@@ -164,7 +173,8 @@ def get(url: str, *, headers: Optional[dict] = None, timeout: int = 30,
             raison = "connexion coupée"
         print("%s%s : %s (essai %d/%d), on réessaie"
               % (prefixe, url, raison, essai, tentatives), file=sys.stderr)
-        time.sleep(ATTENTE * essai)
+        time.sleep(max(ATTENTE * essai,
+                       ATTENTE_MIN_PAR_HOTE.get(hote.removeprefix("www."), 0.0)))
     raise derniere
 
 
@@ -221,6 +231,20 @@ FR_MOIS_COURTS = {"jan": 1, "fev": 2, "fév": 2, "sep": 9}
 
 # Une date passée de moins de GRACE_JOURS est encore de cette année : un
 # listing pas encore purgé, que l'étape 3 d'aggregate.py écarte comme passé.
+def saisons_a_lire(today: Optional[date] = None) -> list:
+    """Les saisons d'une salle à lire ce jour-là, par leur année de début.
+
+    Une saison court de septembre à juin. De mai à août, la suivante est
+    déjà annoncée et en vente : on lit les deux (audit A-24). Sans cela, en
+    juillet et en août, la Croix-Rousse et la Maison de la Danse relisaient
+    la saison finie, et les spectacles de la rentrée manquaient jusqu'au
+    1er septembre.
+    """
+    today = today or date.today()
+    debut = today.year if today.month >= 9 else today.year - 1
+    return [debut, debut + 1] if 5 <= today.month <= 8 else [debut]
+
+
 GRACE_JOURS = 15
 
 

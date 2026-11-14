@@ -43,7 +43,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, HORIZON_JOURS, get as base_get
+from .base import Event, HORIZON_JOURS, saisons_a_lire, get as base_get
 
 VENUE = "Théâtre de la Croix-Rousse"
 SLUG = "croix-rousse"
@@ -108,9 +108,8 @@ def _mois(jeton: str) -> Optional[int]:
     return t[0] if len(t) == 1 else None
 
 
-def _saison_attendue(today: Date) -> str:
-    """La saison court de septembre à juin : « saison 26.27 »."""
-    debut = today.year if today.month >= 9 else today.year - 1
+def _nom_de_saison(debut: int) -> str:
+    """« saison 26.27 » pour la saison qui commence en septembre 2026."""
     return f"saison {debut % 100:02d}.{(debut + 1) % 100:02d}"
 
 
@@ -228,16 +227,29 @@ def _affiche(session: requests.Session, src) -> Optional[str]:
         return u if isinstance(u, str) and u.startswith("http") else None
 
     pleine = taille("full")
-    for u in dict.fromkeys(x for x in (taille("medium_large"), pleine) if x):
-        try:
-            r = base_get(u + ".webp", session=session, headers=HEADERS,
-                         timeout=15, methode="HEAD")
-        except requests.RequestException:
-            continue
-        if r.status_code == 200 and \
-                (r.headers.get("Content-Type") or "").startswith("image/"):
-            return u + ".webp"
-    return pleine
+    candidates = list(dict.fromkeys(x for x in (taille("medium_large"), pleine) if x))
+    if not candidates:
+        return pleine
+
+    def verifier(_cle: str) -> Optional[dict]:
+        panne = False
+        for u in candidates:
+            try:
+                r = base_get(u + ".webp", session=session, headers=HEADERS,
+                             timeout=15, methode="HEAD")
+            except requests.RequestException:
+                panne = True
+                continue
+            if r.status_code == 200 and \
+                    (r.headers.get("Content-Type") or "").startswith("image/"):
+                return {"affiche": u + ".webp"}
+        # Une vérification coupée n'est pas notée : elle sera refaite.
+        return None if panne else {"affiche": pleine}
+
+    # En cache, une semaine (audit A-37) : 55 à 110 requêtes HEAD partaient
+    # chaque nuit pour les mêmes affiches.
+    return detail_cache.get_details(candidates[0], verifier,
+                                    fields=("affiche",)).get("affiche") or pleine
 
 
 def _categorie(ids: List[int], noms: Dict[int, str]) -> Optional[str]:
@@ -256,7 +268,8 @@ def fetch() -> List[Event]:
               _api(session, "event_type", per_page=PER_PAGE)}
 
     saisons = _api(session, "saison", per_page=PER_PAGE)
-    attendue = _saison_attendue(today)
+    en_cours, *suivantes = saisons_a_lire(today)
+    attendue = _nom_de_saison(en_cours)
     saison = next((s for s in saisons if _norm(s["name"]) == attendue), None)
     if saison is None:
         # Le nom a changé de forme : on retombe sur la saison la mieux
@@ -269,13 +282,19 @@ def fetch() -> List[Event]:
         print(f"[Croix-Rousse] saison « {attendue} » introuvable, repli sur "
               f"« {saison['name']} »", file=sys.stderr)
 
+    # De mai à août, la saison suivante aussi, quand l'API l'expose déjà
+    # (audit A-24) ; absente, elle n'est pas encore annoncée.
+    a_lire = [saison] + [s for s in saisons
+                         if _norm(s["name"]) in {_nom_de_saison(a) for a in suivantes}
+                         and s is not saison]
     spectacles = []
-    for page in range(1, MAX_PAGES + 1):
-        lot = _api(session, "programmation", saison=saison["id"],
-                   per_page=PER_PAGE, page=page)
-        spectacles.extend(lot)
-        if len(lot) < PER_PAGE:
-            break
+    for s in a_lire:
+        for page in range(1, MAX_PAGES + 1):
+            lot = _api(session, "programmation", saison=s["id"],
+                       per_page=PER_PAGE, page=page)
+            spectacles.extend(lot)
+            if len(lot) < PER_PAGE:
+                break
 
     if not spectacles:
         print(f"[Croix-Rousse] la saison « {saison['name']} » ne contient "

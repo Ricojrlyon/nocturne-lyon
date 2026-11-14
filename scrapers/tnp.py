@@ -36,7 +36,6 @@ from __future__ import annotations
 
 import re
 import sys
-import time
 import unicodedata
 from datetime import date as Date, timedelta
 from typing import Dict, List, Optional
@@ -45,6 +44,7 @@ from urllib.parse import urlsplit
 import requests
 from bs4 import BeautifulSoup
 
+from . import detail_cache
 from .base import Event, HORIZON_JOURS, OFFSITE_PLUSIEURS, get as base_get
 
 # Graphie du Petit Bulletin, qui remonte aussi cette salle : c'est ce qui
@@ -61,7 +61,6 @@ AGENDA = BASE + "/agenda/"
 CATEGORY = "théâtre"
 
 HORIZON_DAYS = HORIZON_JOURS
-MIN_INTERVAL = 0.4
 MAX_FICHES = 60          # garde-fou : 17 aujourd'hui, jamais 60
 
 HEADERS = {
@@ -217,20 +216,27 @@ def fetch() -> List[Event]:
         return []
 
     # Une fiche par SPECTACLE, pas par représentation : dix-sept contre
-    # cent vingt-trois.
+    # cent vingt-trois. Et gardée en cache (audit A-37) : les dix-neuf
+    # fiches étaient relues chaque nuit pour la même affiche ; elles le sont
+    # une fois par semaine. Une fiche qui tombe ne doit pas emporter les
+    # autres : la représentation reste publiable sans son affiche, et la
+    # fiche sera relue au passage suivant.
     affiches: Dict[str, Optional[str]] = {}
     urls = list(dict.fromkeys(l["url"] for l in lignes))[:MAX_FICHES]
     illisibles = 0
-    for i, u in enumerate(urls):
-        if i:
-            time.sleep(MIN_INTERVAL)
+
+    def lire(u: str) -> Optional[dict]:
         try:
-            affiches[u] = _affiche(session, u)
+            return {"affiche": _affiche(session, u)}
         except requests.RequestException as exc:
-            # Une fiche qui tombe ne doit pas emporter les autres : la
-            # représentation reste publiable sans son affiche.
             print(f"[TNP] {u}: {exc}", file=sys.stderr)
+            return None
+
+    for u in urls:
+        fiche = detail_cache.get_details(u, lire, fields=("affiche",))
+        if not fiche:
             illisibles += 1
+        affiches[u] = fiche.get("affiche")
 
     events = [
         Event(

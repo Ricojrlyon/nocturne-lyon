@@ -39,7 +39,7 @@ import re
 import sys
 import time
 from datetime import date as Date, timedelta
-from typing import Callable, List, Optional
+from typing import Callable, List, Optional, Tuple
 
 import requests
 
@@ -131,20 +131,49 @@ def shows(session: requests.Session, shop: str,
     return retenus
 
 
-def sessions(session: requests.Session, shop: str, slug: str) -> List[str]:
-    """Dates de début des séances d'un spectacle, en ISO avec fuseau."""
+def seances_annoncees(data) -> Optional[int]:
+    """Le nombre de séances à venir que la page ANNONCE (audit A-05).
+
+    La page d'un spectacle n'embarque que ses sept prochaines séances
+    (itemsPerPage=7) : « La fin justifie les moyens » en annonçait 33 le
+    14/11/2026. La suite ne se lit que par l'API de Mapado, que son
+    robots.txt interdit, sur ticketing.mapado.net (« Disallow: / ») comme
+    sous /api/ de la boutique. On ne peut donc que la compter : le total
+    est celui de la collection paginée des EventDate.
+    """
+    totaux = []
+
+    def parcours(n):
+        if isinstance(n, dict):
+            if (n.get("@type") == "hydra:PagedCollection"
+                    and str(n.get("@context", "")).endswith("/EventDate")
+                    and isinstance(n.get("hydra:totalItems"), int)):
+                totaux.append(n["hydra:totalItems"])
+            for v in n.values():
+                parcours(v)
+        elif isinstance(n, list):
+            for v in n:
+                parcours(v)
+    parcours(data)
+    return max(totaux) if totaux else None
+
+
+def sessions(session: requests.Session, shop: str,
+             slug: str) -> Tuple[List[str], Optional[int]]:
+    """Dates de début des séances d'un spectacle, en ISO avec fuseau, et le
+    nombre de séances que la page annonce (voir seances_annoncees)."""
     r = base_get(f"{shop}/event/{slug}", session=session, headers=HEADERS,
                  timeout=25)
     r.raise_for_status()
     data = next_data(r.text)
     if data is None:
-        return []
+        return [], None
     out = set()
     for ed in collect(data, "EventDate", []):
         start = ed.get("startDate")
         if isinstance(start, str) and start:
             out.add(start)
-    return sorted(out)
+    return sorted(out), seances_annoncees(data)
 
 
 def fetch_venue(shop: str, venue: str, slug: str, category: Optional[str],
@@ -173,6 +202,7 @@ def fetch_venue(shop: str, venue: str, slug: str, category: Optional[str],
 
     events: List[Event] = []
     illisibles = 0
+    tronques: List[str] = []
     for i, show in enumerate(retenus):
         sl = show["slug"]
         title = (show.get("title") or "").strip()
@@ -181,7 +211,7 @@ def fetch_venue(shop: str, venue: str, slug: str, category: Optional[str],
         if i:
             time.sleep(MIN_INTERVAL)
         try:
-            starts = sessions(session, shop, sl)
+            starts, annoncees = sessions(session, shop, sl)
         except requests.HTTPError as exc:
             # Un spectacle retiré (404) ne coûte que lui. Toute autre panne
             # fait lever le collecteur, et le garde-fou reprend la veille :
@@ -192,6 +222,9 @@ def fetch_venue(shop: str, venue: str, slug: str, category: Optional[str],
             print(f"[{tag}] {sl}: {exc}", file=sys.stderr)
             illisibles += 1
             continue
+
+        if annoncees and annoncees > len(starts):
+            tronques.append(f"« {title} » {len(starts)}/{annoncees}")
 
         url = f"{shop}/event/{sl}"
         image = image_url(show)
@@ -217,4 +250,12 @@ def fetch_venue(shop: str, venue: str, slug: str, category: Optional[str],
     if illisibles:
         print(f"[{tag}] {illisibles} page(s) spectacle introuvable(s)",
               file=sys.stderr)
+    if tronques:
+        # Dit à chaque passage, sans annotation : rien ne peut y être fait
+        # sans lire l'API que Mapado interdit (audit A-05). Les séances
+        # suivantes paraissent au fil des semaines, à mesure qu'elles
+        # entrent dans les sept prochaines.
+        print(f"[{tag}] {len(tronques)} spectacle(s) dont la page ne montre "
+              f"que les prochaines séances (lues/annoncées) : "
+              f"{', '.join(tronques)}", file=sys.stderr)
     return events

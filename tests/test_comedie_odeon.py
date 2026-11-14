@@ -58,5 +58,26 @@ class Affiche(unittest.TestCase):
         self.assertEqual(self.lire(programme(srcset=relatif)), [("2026-10-15", "20:00", REDUITE)])
 
 
+class HeuresEtMois(unittest.TestCase):
+    """Audit A-36, deux défauts latents : aucun cas réel le 14/11/2026."""
+
+    def test_un_resume_a_deux_horaires_ne_donne_pas_d_heure(self):
+        self.assertEqual(comedie_odeon._heure_du_resume("Du mercredi au samedi à 20h"), "20:00")
+        self.assertEqual(comedie_odeon._heure_du_resume("20h30, et 20 h 30 le jeudi"), "20:30")
+        # La fiche dira quelle heure vaut quel jour.
+        self.assertIsNone(comedie_odeon._heure_du_resume("20h, sauf le 09/10 à 19h"))
+
+    def test_l_onglet_d_un_minuit_de_paris_garde_son_mois(self):
+        # Le 1er novembre à minuit, heure de Paris : 31 octobre, 23 h UTC.
+        minuit_paris = calendar.timegm((2026, 10, 31, 23, 0, 0))
+        page = ('<html><body><div class="tab-pane" id="%d"><a class="TMdate" data-content="%s">'
+                '5</a></div></body></html>'
+                % (minuit_paris, html.escape('<span class="titlePop">X</span>'
+                                             '<a href="%s">voir</a>' % LIEN)))
+        from bs4 import BeautifulSoup
+        self.assertEqual(comedie_odeon._calendrier(BeautifulSoup(page, "html.parser")),
+                         [("2026-11-05", LIEN)])
+
+
 if __name__ == "__main__":
     unittest.main()

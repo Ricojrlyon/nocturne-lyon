@@ -207,37 +207,28 @@ class BeauxArts(Silencieux):
 
 
 class Agendarts(Silencieux):
+    """Lu dans le flux RSS du blog depuis le lot 5 (audit A-10)."""
 
-    BILLET = {"id": 1, "date": "2026-10-01T10:00:00", "link": "https://exemple.org/b",
-              "title": {"rendered": "Concert"}, "content": {"rendered": "<p>Rien</p>"},
-              "categories": []}
+    PAGE1 = ('<?xml version="1.0"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/">'
+             '<channel><item><title>Concert</title><link>https://exemple.org/b</link>'
+             '<pubDate>Thu, 12 Nov 2026 10:00:00 +0000</pubDate>'
+             '<content:encoded><![CDATA[<p>Rien</p>]]></content:encoded></item>'
+             '</channel></rss>').encode("utf-8")
 
-    def collecter(self, categories, page2):
-        def faux(session, chemin, **params):
-            if chemin == "categories":
-                if isinstance(categories, BaseException):
-                    raise categories
-                return categories
-            if params.get("page") == 1:
-                return [self.BILLET]
-            raise page2
-        with mock.patch.object(agendarts, "_get", faux), \
-                mock.patch.object(agendarts, "PAR_PAGE", 1), \
+    def collecter(self, page2):
+        def faux_get(url, params=None, **options):
+            return reponse(200, self.PAGE1) if not params else reponse(page2)
+        with mock.patch.object(agendarts, "base_get", faux_get), \
+                mock.patch.object(agendarts.time, "sleep", lambda s: None), \
                 mock.patch.object(agendarts, "Date", date_figee(J)):
             return agendarts.fetch()
 
-    def test_les_categories_en_panne_font_lever(self):
-        # Elles donnent l'année d'une partie des séances : sans elles,
-        # ces séances étaient abandonnées sans un mot.
-        with self.assertRaises(requests.HTTPError):
-            self.collecter(erreur(500), erreur(400))
-
     def test_une_page_suivante_en_panne_fait_lever(self):
         with self.assertRaises(requests.HTTPError):
-            self.collecter([], erreur(500))
+            self.collecter(500)
 
-    def test_au_dela_de_la_derniere_page_wordpress_repond_400(self):
-        self.assertEqual(self.collecter([], erreur(400)), [])
+    def test_une_page_introuvable_est_la_fin_du_flux(self):
+        self.assertEqual(self.collecter(404), [])
 
 
 class Sports(Silencieux):
