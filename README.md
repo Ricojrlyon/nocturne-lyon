@@ -588,6 +588,24 @@ la recopier, version comprise.
 - **`index.html`** : frontend vanilla JS autonome : filtres par date/lieu/
   arrondissement/type, recherche insensible aux accents (titre, lieu,
   line-up), expansion des événements multi-jours, groupes de lieux.
+  La page construit son programme par morceaux : la première journée,
+  puis de quoi couvrir deux hauteurs d'écran (`ECRANS_INITIAUX`), la
+  suite au fil du défilement, et tout d'un coup là où la page entière est
+  attendue (Ctrl+F, la touche Fin, l'impression). Le premier morceau
+  valait 400 événements quel que soit l'écran : chaque clic de filtre en
+  reconstruisait au moins autant, quand un téléphone en montre trois ou
+  quatre (audit A-15). Le texte que cherche la recherche est mis en
+  minuscules sans accents une fois, au chargement, et le jour de Paris et
+  la période choisie sont calculés une fois par filtrage, et non pour
+  chacune des 4 500 occurrences. L'enseigne d'une carte sans affiche (le
+  nom du lieu répété en filigrane) est déclarée une fois par lieu, en
+  quatre dessins, dans une planche cachée (`<symbol>`), et chaque carte
+  n'y fait plus qu'une référence (`<use>`) : ses vingt et quelques textes
+  faisaient 45 % des éléments de la page. Mesuré sur un PC, le 14
+  novembre 2026 : 85 cartes au premier rendu au lieu de 264, 1 842
+  éléments au lieu de 6 971, un rendu en 32 ms au lieu de 60, une
+  recherche en 17 ms au lieu de 61, le filtrage seul en 0,3 ms au lieu de
+  20.
   « Aujourd'hui » est le jour de PARIS, où que soit le téléphone
   (`aujourdhui()`, audit A-16) : calculé à l'heure du téléphone, un
   visiteur à Tokyo voyait dès 17 h, heure de Paris, « ce soir » au
@@ -640,9 +658,16 @@ la recopier, version comprise.
   YouTube, entre l'heure et l'agenda, de la couleur des autres boutons :
   une recherche YouTube sur le titre de la soirée, dans un autre onglet.
   Les deux icônes portent leur nom pour les lecteurs d'écran et au
-  survol. Ces boutons sont dans le lien de la carte : les toucher n'ouvre
-  pas la page de l'événement, et sur un téléphone seul le bouton touché
-  réagit (la carte ne s'allume qu'à la souris).
+  survol. Une carte n'est plus un lien entier (audit A-19) : le lien
+  porte sur son TITRE, et couvre toute la carte par une boîte invisible
+  (`.event-lien::after`), si bien qu'un clic n'importe où l'ouvre comme
+  avant ; l'étoile, l'agenda et YouTube sont de vrais boutons posés
+  au-dessus, hors du lien. Un lecteur d'écran lisait la carte d'un bloc,
+  boutons compris, et ne pouvait atteindre ni l'étoile ni l'agenda (938
+  boutons dans 415 liens). Toucher un bouton n'ouvre pas la page de
+  l'événement, et sur un téléphone seul le bouton touché réagit (la carte
+  ne s'allume qu'à la souris). La couche visuelle (affiche ou enseigne)
+  passe sous le texte de la carte, qui l'isole (`isolation: isolate`).
   Les favoris, sans compte : l'étoile ☆, tout en haut à droite d'une
   carte (elle s'allume et grossit au survol), garde l'événement (★ ocre,
   sur toutes ses cartes) ; l'étoile à
@@ -701,7 +726,11 @@ la recopier, version comprise.
   titre de niveau 2, et le jour courant est signalé (`aria-current`)
   dans la frise des jours comme dans le calendrier. Au clavier, Échap
   ferme le calendrier et rend la main au bouton « date ». Les boutons de
-  famille font 24 px de haut, la plus petite cible recommandée.
+  famille font 24 px de haut, la plus petite cible recommandée. Après
+  chaque filtre, une zone invisible (`#annonce`, `role="status"`) dit le
+  nombre de résultats, « aucun événement pour ces filtres » ou « toutes
+  les familles sont masquées » (audit A-19) : seul le message « lien
+  copié » était annoncé.
   La page donne aux moteurs de recherche son adresse officielle
   (`rel="canonical"`, la même que celle de l'aperçu au partage), à
   l'iPhone son icône d'écran d'accueil (`apple-touch-icon.png`, « *N »,
@@ -876,6 +905,9 @@ python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
   les mêmes cartes qu'en ligne. Un lien partagé aussi : la page ouverte
   avec `?quand=weekend`, `?q=comedy`, `?lieu=Le+Sucre` ou `?tag=theatre`
   doit montrer les cartes du scénario correspondant.
+  Le premier morceau du fil doit couvrir deux écrans sans plus, les
+  enseignes être déclarées une fois, la recherche ne rien normaliser à
+  chaque frappe, et aucun bouton n'être enfermé dans un lien.
   Le service hors ligne est essayé en trois temps : il ne vide que ses
   propres réserves, sert la copie du téléphone quand le site met plus de
   trois secondes, et rend les mentions légales sans réseau. Un fil abîmé
