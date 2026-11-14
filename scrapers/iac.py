@@ -43,7 +43,6 @@ from __future__ import annotations
 
 import re
 import sys
-import unicodedata
 from datetime import date as Date, timedelta
 from typing import Dict, List, Optional, Set, Tuple
 
@@ -52,6 +51,7 @@ from bs4 import BeautifulSoup
 
 from . import detail_cache
 from .base import Event, HORIZON_JOURS, get as base_get
+from .base import UA, sans_accents, MOIS
 
 VENUE = "IAC Villeurbanne"
 SLUG = "iac-villeurbanne"
@@ -63,8 +63,7 @@ INDEX = ("/fr/expositions/24_in-situ", "/fr/expositions/24_in-situ/a-venir")
 HORIZON_DAYS = HORIZON_JOURS
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
@@ -78,9 +77,6 @@ _WEEKEND = re.compile(r"week[\s-]?end", re.I)
 # Jours de la semaine que « week-end » désigne : samedi et dimanche.
 JOURS_WEEKEND = (5, 6)
 
-MOIS = {"janvier": 1, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
-        "juin": 6, "juillet": 7, "aout": 8, "septembre": 9, "octobre": 10,
-        "novembre": 11, "decembre": 12}
 _MOIS_RE = re.compile("|".join(MOIS))
 _RELACHE = re.compile(r"pas\s+de\s+visite")
 # La suite de quantièmes collée au nom du mois - même règle que pour
@@ -111,12 +107,6 @@ def exclu(titre: str) -> bool:
     """
     t = titre or ""
     return bool(_VISITE.search(t)) and not bool(_WEEKEND.search(t))
-
-
-def _norm(s: str) -> str:
-    s = (s or "").lower()
-    return "".join(c for c in unicodedata.normalize("NFD", s)
-                   if unicodedata.category(c) != "Mn")
 
 
 def _plat(el) -> str:
@@ -153,7 +143,7 @@ def _relaches(txt: str) -> Set[str]:
     novembre » : on ne lit que la suite de quantièmes collée à chaque nom
     de mois, et seulement après la mention d'annulation.
     """
-    t = _norm(txt)
+    t = sans_accents(txt)
     m = _RELACHE.search(t)
     if not m:
         return set()

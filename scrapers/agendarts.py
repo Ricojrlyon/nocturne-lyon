@@ -63,7 +63,6 @@ from __future__ import annotations
 import re
 import sys
 import time
-import unicodedata
 import xml.etree.ElementTree as ET
 from datetime import date as Date, timedelta
 from email.utils import parsedate_to_datetime
@@ -74,6 +73,7 @@ from bs4 import BeautifulSoup
 
 from . import categorie
 from .base import Event, HORIZON_JOURS, introuvable, get as base_get
+from .base import UA, sans_accents, MOIS
 
 VENUE = "Agend'arts"
 SLUG = "agend-arts"
@@ -96,14 +96,10 @@ PAUSE = 1.0            # secondes entre deux pages du flux
 HORIZON_DAYS = HORIZON_JOURS
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
-MOIS = {"janvier": 1, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
-        "juin": 6, "juillet": 7, "aout": 8, "septembre": 9, "octobre": 10,
-        "novembre": 11, "decembre": 12}
 JOURS_SEM = ("lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi",
              "dimanche")
 
@@ -133,12 +129,6 @@ ANNEES_CANDIDATES = 3
 # dix soirées « Scène découverte 4 artistes / 4 styles » hériteraient du
 # genre d'un seul des quatre.
 STRONGS_GENRE = 2
-
-
-def _norm(s: str) -> str:
-    s = (s or "").lower()
-    return "".join(c for c in unicodedata.normalize("NFD", s)
-                   if unicodedata.category(c) != "Mn")
 
 
 def _plat(el) -> str:
@@ -185,7 +175,7 @@ def _dates_helloasso(brut: str) -> Dict[Tuple[int, int],
     """
     out: Dict[Tuple[int, int], Tuple[Optional[int], Optional[str]]] = {}
     for lien in set(_LIEN_HA.findall(brut)):
-        trouves = list(_DATE_HA.finditer(_norm(lien)))
+        trouves = list(_DATE_HA.finditer(sans_accents(lien)))
         if not trouves:
             continue
         g = trouves[-1]
@@ -293,7 +283,7 @@ def fetch() -> List[Event]:
     mois_cat: Dict[str, Tuple[int, int]] = {}
     for b in billets:
         for nom in b["categories"]:
-            m = re.match(r"([a-z]+)\s+(20\d{2})", _norm(nom))
+            m = re.match(r"([a-z]+)\s+(20\d{2})", sans_accents(nom))
             if m and m.group(1) in MOIS:
                 mois_cat[nom] = (MOIS[m.group(1)], int(m.group(2)))
 
@@ -310,7 +300,7 @@ def fetch() -> List[Event]:
         # La phrase de dates est le premier paragraphe ; s'en tenir à lui
         # évite de lire les dates citées plus bas dans la description.
         p = soup.find("p")
-        phrase = _norm(_plat(p) if p else _plat(soup)[:OUVERTURE])
+        phrase = sans_accents(_plat(p) if p else _plat(soup)[:OUVERTURE])
 
         ha = _dates_helloasso(brut)
         an_pub = int((b.get("date") or "")[:4] or Date.today().year)

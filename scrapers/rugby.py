@@ -40,11 +40,11 @@ import json
 import os
 import re
 import sys
-import unicodedata
 
 from bs4 import BeautifulSoup
 
 from .base import Event, HORIZON_JOURS, iso, get as base_get
+from .base import sans_accents
 
 HORIZON_DAYS = HORIZON_JOURS
 
@@ -119,8 +119,7 @@ PUSH = re.compile(r'self\.__next_f\.push\(\[1,\s*"((?:[^"\\]|\\.)*)"\]\)')
 # dans volley.py, handball.py et asvel_feminin.py : une correction faite ici
 # se reporte là-bas.
 def _norm(t: str) -> str:
-    return "".join(c for c in unicodedata.normalize("NFD", (t or "").lower())
-                   if unicodedata.category(c) != "Mn").strip()
+    return sans_accents(t).strip()
 
 
 # Même outil dans handball.py et volley.py, qui développe en plus les

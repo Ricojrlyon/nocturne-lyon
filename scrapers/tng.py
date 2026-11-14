@@ -16,6 +16,7 @@ from bs4 import BeautifulSoup
 
 from .base import (Event, HORIZON_JOURS, img_src, iso, FR_MONTHS, FR_MOIS_COURTS,
                    annee_probable, get as base_get)
+from .base import UA
 
 VENUE = "TNG"
 SLUG  = "tng"
@@ -23,15 +24,8 @@ HOST  = "https://www.tng-lyon.fr"
 URL   = HOST + "/programme/"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
-}
-
-SHORT_MONTHS = {
-    "janv": 1, "fevr": 2, "févr": 2, "mars": 3, "avr": 4, "mai": 5,
-    "juin": 6, "juil": 7, "juill": 7, "aout": 8, "août": 8, "sept": 9,
-    "oct": 10, "nov": 11, "dec": 12, "déc": 12,
 }
 
 # « 02 oct. > 06 oct. », mais aussi « 02 > 06 oct. », le mois écrit une
@@ -53,9 +47,10 @@ def _normalize_month(s: str) -> Optional[int]:
            .replace("ô","o").replace("û","u"))
     if s in FR_MONTHS:
         return FR_MONTHS[s]
-    if s in FR_MOIS_COURTS:          # « sam. 16 jan. 17h » (audit A-38)
-        return FR_MOIS_COURTS[s]
-    return SHORT_MONTHS.get(s)
+    # Une table SHORT_MONTHS suivait : ses formes sans accent étaient déjà
+    # toutes dans FR_MONTHS, et les autres (« févr », « août ») ne
+    # pouvaient plus arriver, les accents étant ôtés plus haut (audit A-43).
+    return FR_MOIS_COURTS.get(s)       # « sam. 16 jan. 17h » (audit A-38)
 
 
 def _slug_from_href(href: str) -> str:

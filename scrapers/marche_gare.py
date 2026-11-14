@@ -26,14 +26,14 @@ import unicodedata
 from bs4 import BeautifulSoup
 
 from .base import Event, img_src, parse_french_date, iso, get as base_get
+from .base import UA
 
 VENUE = "Marché Gare"
 SLUG = "marche-gare"
 URL = "https://marchegare.fr/agenda"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 

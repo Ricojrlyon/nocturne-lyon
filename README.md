@@ -27,9 +27,11 @@ quelques secondes si le programme publié est déjà du jour, à Paris
 avait le droit de travailler : si GitHub l'abandonnait, ce que sa
 documentation prévoit en cas de forte charge, rien n'était publié ce
 jour-là. Désormais, un passage abandonné ou tombé au rouge est rattrapé par
-le suivant. GitHub retarde ses passages programmés de plusieurs heures,
-cinq à sept en octobre 2026 : partir la nuit vise un site à jour au
-réveil, et la minute 17 évite l'heure pile, la plus demandée. Un seul passage
+le suivant. GitHub retarde ses passages programmés de plusieurs heures :
+partir la nuit vise un site à jour au réveil, et la minute 17 évite
+l'heure pile, la plus demandée. En pratique, le programme du jour est
+publié entre 6 h 30 et 9 h 40 à Paris, vers 8 h 20 en médiane (30
+passages, du 15 octobre au 14 novembre 2026). Un seul passage
 tourne à la fois : lancé à la main pendant le passage programmé, ou
 l'inverse, le second attend la fin du premier, puis repart du fil que
 celui-ci vient de publier. Deux passages simultanés échouaient à la
@@ -111,6 +113,14 @@ Un test vérifie chacun de ces points.
   « 30 déc. » désignait décembre suivant au lieu de celui d'il y a
   quelques jours. Il n'en reste qu'une (audit A-04). `parse_french_date`
   lit aussi les mois courts « jan », « fév » et « sep » (audit A-38).
+  Trois autres pièces communes vivent aussi dans `base.py`, au lieu d'être
+  recopiées dans chaque collecteur (audit A-43) : l'identité du robot
+  (`UA`, 31 copies), la mise en minuscules sans accents des textes
+  comparés (`sans_accents`, 20 copies, dont chacun garde ce qui lui est
+  propre : espaces, ponctuation) et la table des mois sans accents
+  (`MOIS`, `MOIS_CANON`, 9 copies). Le ménage a été vérifié texte par
+  texte : les 8 801 textes de la collecte de référence donnent le même
+  résultat avant et après.
 - **`scrapers/mapado.py`** : lecture commune des billetteries Mapado,
   utilisée par `improvidence.py`, `espace_gerson.py` et
   `chapelle_trinite.py`. Ces boutiques sont
@@ -276,8 +286,8 @@ Un test vérifie chacun de ces points.
   fermeture au lieu d'une exposition en cours. Une période « du … au … »
   que le robot ne sait pas lire n'est plus réduite à un jour : la carte
   compte parmi celles sans période lisible (audit A-21).
-- **`scrapers/maison_de_la_danse.py`** : la Maison de la Danse, seul
-  site du dépôt à demander un `Crawl-delay` (10 s). Il est respecté, et
+- **`scrapers/maison_de_la_danse.py`** : la Maison de la Danse, qui
+  demande, comme La Rayonne, un `Crawl-delay` (10 s). Il est respecté, et
   c'est ce qui rend `detail_cache` indispensable : le délai est posé DANS
   le fetcher, donc il ne frappe que les fiches réellement téléchargées :
   216 s au premier passage, 11 s aux suivants. Trois pièges y ont coûté
@@ -901,8 +911,10 @@ python -m scrapers.le_sucre       # tester un scraper isolément
 ```
 
 Premier run : nettement plus long, le temps de remplir le cache des heures.
-Runs suivants : 7 à 8 minutes ; plusieurs salles imposent un délai entre deux
-pages (mesuré sur GitHub en octobre 2026).
+Runs suivants : une dizaine de minutes ; plusieurs salles imposent un délai
+entre deux pages. Sur GitHub, un passage entier, tests compris, a duré de
+8 à 23 minutes, 13 en médiane (30 passages, du 15 octobre au 14 novembre
+2026).
 
 ## Tests
 
@@ -1035,8 +1047,9 @@ diff de `tests/donnees/`.
 2. L'enregistrer dans `SCRAPERS` (aggregate.py).
 3. Ajouter le lieu dans `lieux.json` (une ligne : nom, arrondissement,
    commune s'il est hors de Lyon et de Villeurbanne, position `pos`
-   [latitude, longitude] pour la vue carte, adresse en note) et
-   dans `VENUE_GROUPS` (index.html) : le géocodage ne le cherchera pas.
+   [latitude, longitude] pour la vue carte, adresse en note) : le
+   géocodage ne le cherchera pas. Le ranger aussi dans `VENUE_GROUPS`
+   (index.html), qui ne sert plus qu'au filtre des lieux de la page.
 4. Si les agrégateurs orthographient le lieu autrement, ajouter les
    variantes dans `VENUE_CANONICAL` (scrapers/dedup.py). C'est ce qui
    permet à la dédup de regrouper les deux sources : sans l'entrée, elles
@@ -1054,8 +1067,8 @@ jour. N'ayant pas d'affiche à montrer, elle tirait un motif de secours.
 Les salles qui jouent plusieurs fois par soir y portent désormais leur
 marque : dix-sept lieux, 653 des 837 cartes groupées au 1er octobre 2026.
 
-Le logo est traité comme une affiche (`brightness(0.50) contrast(1.06)`,
-trame sérigraphie et voile du haut par-dessus), à deux détails près.
+Le logo est traité comme une affiche (assombri, avec le voile qui monte
+vers le bas de la carte, sous le texte), à deux détails près.
 
 - **Un cartouche blanc sur toute la carte.** Les logos ajourés posaient
   sinon leurs traits sombres sur un fond sombre ; le cartouche leur rend
@@ -1063,9 +1076,12 @@ trame sérigraphie et voile du haut par-dessus), à deux détails près.
   filtre, pas la marque : un filtre s'appliquant à tout son sous-arbre,
   son blanc et celui qu'un fichier contient déjà subissent le même
   traitement, sans quoi un rectangle se dessinerait autour de la marque.
-- **`brightness` à 0,50** et non 0,60 comme les affiches : un aplat n'a
-  pas le bruit d'une photographie et ressort plus fort à luminosité
-  égale.
+- **`brightness(0.40) contrast(1.06)`**, un cran sous les affiches
+  (`brightness(0.42) saturate(0.85) contrast(1.08)`) : un aplat n'a pas
+  le bruit d'une photographie et ressort plus fort à luminosité égale.
+  La trame sérigraphie qui doublait ces filtres a été retirée : elle
+  mangeait le détail des visages, et les valeurs ont été baissées
+  d'autant.
 
 Deux règles à respecter en ajoutant un logo :
 
@@ -1176,10 +1192,10 @@ motif.
   trente jours en une carte unique datée d'aujourd'hui : une exposition
   de cinq mois n'apparaissait qu'une fois puis disparaissait du site. Il
   est supprimé (septembre 2026). La carte porte alors sa fin plutôt que
-  son rang (« jusqu'au 30/10 », et « dernier » le dernier jour), car
+  son rang (« → 30/10 », et « dernière » le dernier jour), car
   « 12/29 » ne renseigne pas le lecteur. L'année s'ajoute quand elle
   diffère de celle de la carte : un agrégateur annonce des accrochages à
-  deux ans, et « jusqu'au 22/10 » lu en 2026 se comprendrait mal pour une
+  deux ans, et « → 22/10 » lu en 2026 se comprendrait mal pour une
   fermeture en 2028. Les cartes groupées portent la même échéance dans
   leur colonne de droite, là où l'heure manque.
 - **Horizon d'affichage** (`HORIZON_JOURS`, index.html) : 180 jours, la

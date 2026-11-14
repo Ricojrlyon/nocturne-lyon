@@ -44,6 +44,7 @@ from typing import Callable, List, Optional, Tuple
 import requests
 
 from .base import Event, HORIZON_JOURS, introuvable, get as base_get
+from .base import UA
 
 IMG_HOST = "https://img.mapado.net"
 IMG_SIZE = "600-600"            # les cartes font 392 px de large
@@ -51,8 +52,7 @@ HORIZON_DAYS = HORIZON_JOURS
 MIN_INTERVAL = 0.4              # secondes entre deux requêtes
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 

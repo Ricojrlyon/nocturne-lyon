@@ -24,10 +24,10 @@ We therefore apply our own filtering in Python:
 from __future__ import annotations
 from typing import List, Optional
 import re
-import unicodedata
 from bs4 import BeautifulSoup
 
 from .base import Event, img_src, parse_french_date, iso, debut_de_plage, get as base_get
+from .base import UA, sans_accents
 
 VENUE = "La Rayonne"
 SLUG = "la-rayonne"
@@ -38,8 +38,7 @@ URL = "https://larayonne.org/agenda/?univers=&type=24&saison=&st="
 HOST = "https://larayonne.org"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
@@ -92,21 +91,13 @@ _SKIP_TITLES = (
 )
 
 
-def _norm(s: str) -> str:
-    """Lowercase + strip accents for keyword matching."""
-    return "".join(
-        c for c in unicodedata.normalize("NFD", s.lower())
-        if unicodedata.category(c) != "Mn"
-    )
-
-
 def _is_formation(title: str, card_text: str) -> bool:
     """Return True if this event is a professional formation / atelier."""
     # 1. Time range in title (e.g. "18h30 > 20h30") - definitive
     if _TITLE_TIME_RANGE_RE.search(title):
         return True
     # 2. Professional keywords in normalised title
-    nt = _norm(title)
+    nt = sans_accents(title)
     if any(kw in nt for kw in _FORMATION_KEYWORDS):
         return True
     # 3. Explicit section label in card text

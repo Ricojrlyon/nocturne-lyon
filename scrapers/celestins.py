@@ -37,7 +37,6 @@ from __future__ import annotations
 
 import sys
 import time
-import unicodedata
 import urllib.parse
 from datetime import date as Date, timedelta
 from typing import Dict, List, Optional
@@ -45,6 +44,7 @@ from typing import Dict, List, Optional
 import requests
 
 from .base import Event, HORIZON_JOURS, get as base_get
+from .base import UA, sans_accents
 
 # Graphie du Petit Bulletin, qui remonte aussi cette salle : c'est ce qui
 # permet à la dédup de regrouper les deux sources.
@@ -62,8 +62,7 @@ MAX_PAGES = 30                            # garde-fou anti-boucle
 MIN_INTERVAL = 0.3
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept": "application/json",
 }
 
@@ -95,20 +94,14 @@ TAGS_GENRE = {
 }
 
 
-def _norm(s: Optional[str]) -> str:
-    s = (s or "").lower()
-    return "".join(c for c in unicodedata.normalize("NFD", s)
-                   if unicodedata.category(c) != "Mn")
-
-
 def _chez_eux(place: dict) -> bool:
     """La représentation se joue-t-elle bien AUX Célestins ?"""
     if not place:
         return False
-    if "celestin" in _norm(place.get("slug")):
+    if "celestin" in sans_accents(place.get("slug")):
         return True
     rue = (place.get("address") or {}).get("streetAddress")
-    return "celestins" in _norm(rue)
+    return "celestins" in sans_accents(rue)
 
 
 def _pages(session: requests.Session, chemin: str, params: dict) -> List[dict]:
@@ -155,7 +148,7 @@ def _spectacles(session: requests.Session, apres: str) -> Dict[str, dict]:
 
 def _categorie(ev: dict, tags: List[str]) -> Optional[str]:
     for t in tags:
-        genre = TAGS_GENRE.get(_norm(t))
+        genre = TAGS_GENRE.get(sans_accents(t))
         if genre:
             return genre
     return TYPES.get(ev.get("type"))

@@ -7,6 +7,7 @@ import hashlib
 import re
 import sys
 import time
+import unicodedata
 
 import requests
 
@@ -66,6 +67,32 @@ OFFSITE_PLUSIEURS = "·ailleurs"
 # d'index.html, et tests/test_coherence.py vérifie qu'elles restent égales,
 # comme OFFSITE_PLUSIEURS et sa copie dans la page.
 HORIZON_JOURS = 180
+
+# L'identité du robot auprès des sites : elle nomme le projet et son
+# adresse. Elle était recopiée dans 31 collecteurs (audit A-43). Gardent
+# la leur : le Sonic (son collecteur reste tel quel), la FFR et Ville
+# Morte (une forme courte, audit A-37), le géocodage (geo.py) et le
+# Complexe (voir complexe.py).
+UA = ("Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
+      "+https://github.com/Ricojrlyon/nocturne-lyon)")
+
+
+def sans_accents(texte: Optional[str]) -> str:
+    """Le texte en minuscules et sans accents (« Été » → « ete ») ; une
+    valeur absente donne une chaîne vide. La base des comparaisons de
+    texte des collecteurs, qui la recopiaient vingt fois (audit A-43) ;
+    chacun y ajoute ce qui lui est propre (espaces, ponctuation)."""
+    return "".join(c for c in unicodedata.normalize("NFD", (texte or "").lower())
+                   if unicodedata.category(c) != "Mn")
+
+
+# Les noms des mois tels que sans_accents les rend (« fevrier »,
+# « aout »), pour les collecteurs qui comparent un texte normalisé. La
+# table était recopiée dans neuf d'entre eux (audit A-43). FR_MONTHS,
+# plus bas, lit aussi les formes accentuées et abrégées.
+MOIS_CANON = ("janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet",
+              "aout", "septembre", "octobre", "novembre", "decembre")
+MOIS = {m: i for i, m in enumerate(MOIS_CANON, 1)}
 
 
 # ---------------------------------------------------------------------------

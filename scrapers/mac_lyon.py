@@ -41,7 +41,6 @@ from __future__ import annotations
 
 import re
 import sys
-import unicodedata
 from datetime import date as Date, timedelta
 from typing import Dict, List, Optional, Tuple
 
@@ -49,6 +48,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from .base import Event, HORIZON_JOURS, get as base_get
+from .base import UA, sans_accents, MOIS
 
 VENUE = "Musée d'Art Contemporain"
 SLUG = "mac-lyon"
@@ -60,14 +60,10 @@ LISTES = ("/fr/agenda", "/fr/expositions")
 HORIZON_DAYS = HORIZON_JOURS
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
-MOIS = {"janvier": 1, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
-        "juin": 6, "juillet": 7, "aout": 8, "septembre": 9, "octobre": 10,
-        "novembre": 11, "decembre": 12}
 
 # Le marqueur qui écarte une entrée : voir l'en-tête.
 HORS_LES_MURS = "hors les murs"
@@ -98,19 +94,13 @@ _JUSQU_AU = re.compile(r"jusqu\W{0,2}au\s+(?:[a-z]+\s+)?(\d{1,2})(?:er)?\s+([a-z
 _JOUR = re.compile(r"(?:\w+\s+)?(\d{1,2})(?:er)?\s+([a-z]+)\s+(20\d{2})")
 
 
-def _norm(s: str) -> str:
-    s = (s or "").lower()
-    return "".join(c for c in unicodedata.normalize("NFD", s)
-                   if unicodedata.category(c) != "Mn")
-
-
 def _plat(el) -> str:
     return re.sub(r"\s+", " ", el.get_text(" ", strip=True)) if el else ""
 
 
 def _bornes(txt: str) -> Optional[Tuple[Date, Date]]:
     """(début, fin) d'après le libellé de la liste, ou None."""
-    t = _norm(txt)
+    t = sans_accents(txt)
     m = _PERIODE.search(t)
     if m:
         d, md, ad, f, mf, af = m.groups()
@@ -195,7 +185,7 @@ def fetch() -> List[Event]:
     sans_date = 0
 
     for lien, c in cartes.items():
-        type_norm = _norm(c["type"])
+        type_norm = sans_accents(c["type"])
         if HORS_LES_MURS in type_norm:
             ailleurs.append(c["titre"])
             continue

@@ -47,7 +47,6 @@ from __future__ import annotations
 
 import re
 import sys
-import unicodedata
 from datetime import date as Date, timedelta
 from typing import Dict, List, Optional, Tuple
 
@@ -56,6 +55,7 @@ from bs4 import BeautifulSoup
 
 from . import detail_cache
 from .base import Event, HORIZON_JOURS, introuvable, get as base_get
+from .base import UA, sans_accents, MOIS_CANON
 
 VENUE = "Auditorium de Lyon"
 SLUG = "auditorium-lyon"
@@ -64,14 +64,10 @@ BASE = "https://www.auditorium-lyon.com"
 HORIZON_DAYS = HORIZON_JOURS
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
-MOIS_CANON = ("janvier", "fevrier", "mars", "avril", "mai", "juin",
-              "juillet", "aout", "septembre", "octobre", "novembre",
-              "decembre")
 
 # Salles du bâtiment. Tout ce qui n'est pas là est tenu pour hors les
 # murs - et signalé, afin qu'une salle maison nouvelle ne soit pas
@@ -114,12 +110,6 @@ _JOUR = re.compile(r"(\d{1,2})\s+([A-Za-zÀ-ÿ]{3,9})\.?\s+(20\d{2})")
 _HEURE = re.compile(r"(?:à|a|de)\s*(\d{1,2})\s*h\s*(\d{2})?")
 
 
-def _norm(s: str) -> str:
-    s = (s or "").lower()
-    return "".join(c for c in unicodedata.normalize("NFD", s)
-                   if unicodedata.category(c) != "Mn")
-
-
 def _plat(el) -> str:
     return re.sub(r"\s+", " ", el.get_text(" ", strip=True)) if el else ""
 
@@ -130,7 +120,7 @@ def _mois(jeton: str) -> Optional[int]:
     Le site abrège librement - sep, fév, déc, juil. On résout par préfixe
     unique, ce qui accepte toutes ces formes sans les énumérer.
     """
-    j = _norm(jeton).rstrip(".")
+    j = sans_accents(jeton).rstrip(".")
     cands = [i for i, m in enumerate(MOIS_CANON, 1) if m.startswith(j)]
     return cands[0] if len(cands) == 1 else None
 
@@ -172,7 +162,7 @@ def _lire_fiche(url: str) -> Optional[dict]:
     soup = BeautifulSoup(r.text, "html.parser")
     bloc: Dict[str, str] = {}
     for dt in soup.select("aside dl dt"):
-        label = _norm(_plat(dt)).strip()
+        label = sans_accents(_plat(dt)).strip()
         vals = []
         for sib in dt.find_next_siblings():
             if sib.name == "dt":
@@ -186,7 +176,7 @@ def _lire_fiche(url: str) -> Optional[dict]:
 
 
 def _chez_eux(lieu: Optional[str]) -> bool:
-    return any(s in _norm(lieu) for s in SALLES_MAISON)
+    return any(s in sans_accents(lieu) for s in SALLES_MAISON)
 
 
 def _mois_horizon(today: Date, horizon: Date) -> List[str]:
@@ -246,7 +236,7 @@ def fetch() -> List[Event]:
     sans_date = 0
 
     for lien, c in cartes.items():
-        genre_norm = _norm(c["genre"])
+        genre_norm = sans_accents(c["genre"])
         # Le genre suffit presque toujours ; l'URL rattrape la carte dont
         # le genre est vide, ce qui arrive sur les pages de saison.
         motif = next((m for m in GENRES_ECARTES if m in genre_norm), None)

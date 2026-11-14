@@ -21,10 +21,10 @@ from typing import List, Optional
 from datetime import date as Date
 import re
 import sys
-import unicodedata
 from bs4 import BeautifulSoup
 
 from .base import annee_probable, Event, iso, FR_MONTHS, introuvable, get as base_get
+from .base import UA, sans_accents
 
 VENUE = "Le Périscope"
 SLUG = "periscope"
@@ -32,8 +32,7 @@ URL = "https://www.periscope-lyon.com/concerts/"
 HOST = "https://www.periscope-lyon.com"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
@@ -47,14 +46,6 @@ DATE_RE = re.compile(
 # La ligne lieu des cartes référence soit le Périscope lui-même (dont ses
 # scènes), soit un vrai lieu hors les murs à garder tel quel.
 _PERISCOPE_MARKERS = ("peri", "grande scene", "petite scene")
-
-
-def _norm(s: str) -> str:
-    """Lowercase + strip accents (détection des lieux hors les murs)."""
-    return "".join(
-        c for c in unicodedata.normalize("NFD", (s or "").lower())
-        if unicodedata.category(c) != "Mn"
-    )
 
 
 def _scrape_page(soup: BeautifulSoup, seen_urls: set) -> List[Event]:
@@ -126,7 +117,7 @@ def _scrape_page(soup: BeautifulSoup, seen_urls: set) -> List[Event]:
         venue_el = card.select_one(".tsmall.tb600")
         if venue_el:
             place = venue_el.get_text(" ", strip=True).split(" - ")[0].strip()
-            if place and not any(k in _norm(place)
+            if place and not any(k in sans_accents(place)
                                  for k in _PERISCOPE_MARKERS):
                 venue = place
                 # Garder l'événement retrouvable en cherchant « périscope »

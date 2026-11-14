@@ -33,7 +33,6 @@ from __future__ import annotations
 import re
 import sys
 import time
-import unicodedata
 from datetime import date as Date, timedelta
 from typing import List, Optional
 
@@ -41,6 +40,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from .base import Event, HORIZON_JOURS, introuvable, get as base_get
+from .base import sans_accents, MOIS
 
 # Même graphie que le Petit Bulletin, qui remonte aussi cette salle :
 # c'est ce qui permet à la dédup de regrouper les deux sources.
@@ -97,9 +97,6 @@ HEADERS = {
 # mécanique reste, pour le jour où une attente servirait.
 ATTENTES_VERIFICATION = ()
 
-MOIS = {"janvier": 1, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
-        "juin": 6, "juillet": 7, "aout": 8, "septembre": 9,
-        "octobre": 10, "novembre": 11, "decembre": 12}
 JOURS = ("lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi",
          "dimanche")
 
@@ -112,10 +109,7 @@ _URL_CSS_RE = re.compile(r"url\((.*?)\)")
 
 
 def _norm(s: str) -> str:
-    s = (s or "").lower().strip()
-    s = "".join(c for c in unicodedata.normalize("NFD", s)
-                if unicodedata.category(c) != "Mn")
-    return re.sub(r"\s+", " ", s)
+    return re.sub(r"\s+", " ", sans_accents((s or "").strip()))
 
 
 def _image(item) -> Optional[str]:

@@ -41,11 +41,11 @@ la musique - là où « autre » l'aurait exilé.
 from __future__ import annotations
 
 import re
-import unicodedata
 from typing import List, Optional, Tuple
 
 from . import mapado
 from .base import Event
+from .base import sans_accents
 
 # Même graphie que le Petit Bulletin et que lieux.json : c'est
 # ce qui permet à la dédup de regrouper les deux sources, qui indexe par
@@ -73,9 +73,7 @@ COUPE = " - "
 
 
 def _norm(t: str) -> str:
-    sans = "".join(c for c in unicodedata.normalize("NFD", (t or "").lower())
-                   if unicodedata.category(c) != "Mn")
-    return " ".join(sans.split())
+    return " ".join(sans_accents(t).split())
 
 
 def _est_la_trinite(venue: dict) -> bool:

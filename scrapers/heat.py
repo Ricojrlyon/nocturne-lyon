@@ -13,6 +13,7 @@ from bs4 import BeautifulSoup
 
 from . import detail_cache
 from .base import annee_probable, Event, HORIZON_JOURS, introuvable, iso, get as base_get
+from .base import UA
 
 VENUE = "HEAT"
 SLUG  = "heat"
@@ -20,8 +21,7 @@ URL   = "https://h-eat.eu/events/"
 HOST  = "https://h-eat.eu"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
