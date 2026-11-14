@@ -70,6 +70,21 @@ addEventListener('securitypolicyviolation', e => {
 </script>""" % (REGLE_DU_BANC, json.dumps(REGLE_DU_BANC))
 
 
+# Le relais des mentions légales (scénario « service », voir page_essais.js).
+RELAIS_MENTIONS = """<script>(async () => {
+  const etape = sessionStorage.getItem('service');
+  if (etape === '0b') {
+    sessionStorage.setItem('service', 'u');
+    location.href = 'index.html';
+  } else if (etape === '3') {
+    const res = JSON.parse(sessionStorage.getItem('releve') || '{}');
+    res.service.mentions_sans_reseau = document.title;
+    await fetch('/__resultats', { method: 'POST', body: JSON.stringify(res) });
+  }
+})();</script>
+"""
+
+
 def trouver() -> str | None:
     """Le chemin d'un navigateur de la famille Chrome, ou None."""
     choix = os.environ.get("NOCTURNE_NAVIGATEUR")
@@ -130,6 +145,17 @@ def preparer_site(dossier: Path, evenements: dict, lieux: dict | None,
     # Les lieux, que la page lit au chargement comme le fil (audit n° 21),
     # et l'application installable : sa description, ses icônes et son
     # service hors ligne, qui s'installe pendant les essais.
+    # Les mentions légales, avec un relais pour le scénario « service » :
+    # la page y passe, puis y revient sans réseau, et c'est elle qui
+    # rapporte ce qui s'est affiché (sa règle de sécurité est celle du
+    # banc, pour laisser passer ce relais).
+    mentions = (RACINE / "mentions-legales.html").read_text(encoding="utf-8")
+    debut = mentions.index('<meta http-equiv="Content-Security-Policy"')
+    fin = mentions.index(">", debut) + 1
+    mentions = (mentions[:debut] + '<meta http-equiv="Content-Security-Policy" content="%s">'
+                % REGLE_DU_BANC + mentions[fin:])
+    (dossier / "mentions-legales.html").write_text(
+        mentions.replace("</body>", RELAIS_MENTIONS + "</body>", 1), encoding="utf-8")
     for f in ("lieux.json", "manifest.webmanifest", "sw.js", "icone-192.png", "icone-512.png"):
         shutil.copy(RACINE / f, dossier / f)
     (dossier / "events.json").write_text(json.dumps(evenements, ensure_ascii=False),
@@ -154,6 +180,9 @@ class _Gestionnaire(http.server.SimpleHTTPRequestHandler):
         elif self.path == "/__couper":
             # Le scénario « hors_ligne » coupe le réseau : voir do_GET.
             self.server.coupe = True
+        elif self.path == "/__lent":
+            # Le scénario « service » ralentit le réseau : voir do_GET.
+            self.server.lent = True
         self.send_response(204)
         self.end_headers()
 
@@ -165,6 +194,10 @@ class _Gestionnaire(http.server.SimpleHTTPRequestHandler):
             self.send_response(204)
             self.end_headers()
             return
+        if getattr(self.server, "lent", False) and not getattr(self.server, "coupe", False):
+            # Réseau lent : six secondes avant chaque réponse, plus que les
+            # trois que le service hors ligne accorde au site.
+            time.sleep(6)
         if getattr(self.server, "coupe", False):
             # Réseau coupé : la connexion se ferme sans un mot, comme sur
             # un téléphone sans réseau - le navigateur y voit une panne, et
@@ -176,12 +209,16 @@ class _Gestionnaire(http.server.SimpleHTTPRequestHandler):
 
 def jouer(evenements: dict, lieux: dict | None, *, date_figee: bool,
           scenarios: str = "tous", animations: bool = False,
-          delai: int = 240, requete: str = "") -> dict:
+          delai: int = 240, requete: str = "", fuseau: str = "Europe/Paris") -> dict:
     """Joue la page et rend le relevé du pilote.
 
     `animations` : sans lui, le navigateur demande « moins d'animations » et
     la page se met à jour d'un coup ; avec lui, elle joue ses fondus, comme
     chez la plupart des visiteurs.
+
+    `fuseau` : le fuseau horaire du « téléphone » (variable TZ). Le relevé
+    dit celui que le navigateur a réellement pris (`fuseau`) : sous
+    Windows, il peut garder celui du système.
 
     Lève RuntimeError si aucun navigateur n'est disponible, ou s'il n'a rien
     renvoyé - l'appelant décide alors de sauter ou d'échouer.
@@ -202,13 +239,14 @@ def jouer(evenements: dict, lieux: dict | None, *, date_figee: bool,
         serveur = _Serveur(("127.0.0.1", 0), gestionnaire)
         serveur.resultats = []
         serveur.coupe = False
+        serveur.lent = False
         fil = threading.Thread(target=serveur.serve_forever, daemon=True)
         fil.start()
         try:
             # `requete` : ce qui suit l'adresse, « ?quand=weekend » - un
             # lien partagé.
             url = "http://127.0.0.1:%d/index.html%s" % (serveur.server_address[1], requete)
-            env = dict(os.environ, TZ="Europe/Paris", LANG="fr_FR.UTF-8")
+            env = dict(os.environ, TZ=fuseau, LANG="fr_FR.UTF-8")
             # « Moins d'animations » : la page se met alors à jour d'un coup,
             # sans fondu (voir render() dans index.html). Avec le fondu, la
             # mise à jour arrive une image plus tard, et un relevé pouvait

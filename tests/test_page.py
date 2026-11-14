@@ -72,9 +72,12 @@ class PageFigee(unittest.TestCase):
         self.assertEqual(self.releve.get("erreurs_fin", self.releve.get("erreurs")), [])
 
     def test_meme_affichage_qu_a_la_reference(self):
+        # Hors comparaison : les erreurs (vérifiées à part) et le fuseau du
+        # navigateur, qui dit la machine et non l'affichage.
+        hors = ("erreurs", "fuseau")
         attendu = lire_gz("page_reference.json.gz")
-        obtenu = {k: v for k, v in self.releve.items() if k != "erreurs"}
-        attendu = {k: v for k, v in attendu.items() if k != "erreurs"}
+        obtenu = {k: v for k, v in self.releve.items() if k not in hors}
+        attendu = {k: v for k, v in attendu.items() if k not in hors}
         if obtenu != attendu:
             self.fail("l'affichage a changé - " + premier_ecart(attendu, obtenu))
 
@@ -273,8 +276,11 @@ class PageDepuisUnLien(unittest.TestCase):
     """Un lien partagé rouvre la même vue : la page ouverte avec
     « ?quand=weekend » montre exactement les cartes qu'on obtient en
     touchant « ce weekend », et ainsi de suite."""
+    # Une date impossible dans l'adresse est ignorée (audit A-40) : la page
+    # montre alors tout, et non « NaN undefined ».
     CAS = {"ce_weekend": "?quand=weekend", "recherche_comedy": "?q=comedy",
-           "lieu_le_sucre": "?lieu=Le+Sucre", "tag_theatre": "?tag=theatre"}
+           "lieu_le_sucre": "?lieu=Le+Sucre", "tag_theatre": "?tag=theatre",
+           "tout": "?du=2026-13-45&au=2026-13-50"}
 
     @classmethod
     def setUpClass(cls):
@@ -290,6 +296,144 @@ class PageDepuisUnLien(unittest.TestCase):
             self.assertNotIn("echec", releve, nom)
             self.assertEqual(releve["erreurs_fin"], [], nom)
             self.assertEqual(releve["scenarios"]["tout"], attendu["scenarios"][nom], nom)
+
+
+class PageLot6(unittest.TestCase):
+    """Audit, lot 6 : la logique et la conformité de la page, jouées dans
+    le vrai navigateur, à la date figée."""
+
+    @classmethod
+    def setUpClass(cls):
+        evenements, lieux = donnees_figees()
+        cls.releve, cls.probleme = navigateur.releve_ou_probleme(
+            evenements=evenements, lieux=lieux, date_figee=True, scenarios="lot6")
+
+    def setUp(self):
+        navigateur.sauter_si_indisponible(self, self.probleme)
+        self.assertNotIn("echec", self.releve, self.releve.get("echec"))
+        self.assertEqual(self.releve["erreurs_fin"], [])
+
+    def test_l_agenda_de_chaque_seance_a_son_heure(self):
+        # A-17 : deux séances du même titre le même soir partageaient la
+        # clé de leur bouton, et l'agenda de l'une recevait l'heure de
+        # l'autre (« COMEDY CLUB » au Complexe, 20:00 et 22:00).
+        a = self.releve["agenda_par_seance"]
+        self.assertGreater(a["soirs_a_deux_seances"], 0)
+        self.assertEqual(a["heures_fausses"], 0)
+
+    def test_contraste_et_zones_de_toucher(self):
+        # A-18 : #8c97a1, 4,5:1 au moins sur les quatre fonds ; 24 px au
+        # moins pour toucher l'étoile, l'agenda et YouTube.
+        self.assertEqual(self.releve["encre_discrete"], "#8c97a1")
+        self.assertGreaterEqual(self.releve["zones_de_toucher"], 24)
+
+    def test_un_evenement_abime_n_emporte_pas_la_page(self):
+        # A-11 : une date qui n'existe pas écarte l'événement ; un champ
+        # non texte devient du texte ; une heure illisible est oubliée.
+        self.assertEqual(self.releve["evenements_lisibles"],
+                         [["42", "7", None], ["Juste", "Le Sucre", None]])
+
+    def test_le_fichier_d_agenda(self):
+        # A-39 : 75 octets par ligne sans couper un caractère ; « 24:00 »
+        # n'est pas une heure ; un lien sans saut de ligne ; le décalage de
+        # Paris à l'instant même, la nuit d'un changement d'heure comprise.
+        self.assertEqual(self.releve["pliage"], [True, True, True])
+        self.assertEqual(self.releve["heures_agenda"], [True, True, True, False, False, False])
+        self.assertEqual(self.releve["lien_propre"], [False, True, ""])
+        self.assertEqual(self.releve["decalages_a_l_instant"],
+                         ["+01:00", "+02:00", "+02:00", "+01:00", "+02:00", "+01:00"])
+
+    def test_les_dates_d_adresse_et_les_vieux_favoris(self):
+        # A-40 : une date impossible n'est pas une date ; un favori dont
+        # l'événement n'est plus au programme et a commencé il y a plus de
+        # trente jours quitte la mémoire.
+        self.assertEqual(self.releve["dates_valides"],
+                         [True, False, True, False, False, False, False])
+        self.assertEqual(self.releve["favoris_elagues"],
+                         ["Ancienne salle|Hier encore|2026-09-20", "présent"])
+        # Et au chargement de la page, sans rien toucher.
+        self.assertEqual(self.releve["favori_ancien_au_chargement"], [])
+
+    def test_la_place_du_programme_est_reservee(self):
+        # A-14 : la page sautait au chargement, le pied de page repoussé
+        # par le programme.
+        self.assertIs(self.releve["place_reservee"], True)
+
+
+class PageServiceHorsLigne(unittest.TestCase):
+    """Le service hors ligne (sw.js) : il ne vide que ses propres réserves
+    (A-12), il n'attend pas un réseau lent plus de trois secondes, et une
+    autre page du site n'est pas remplacée par l'accueil sans réseau
+    (A-40)."""
+
+    @classmethod
+    def setUpClass(cls):
+        evenements, lieux = donnees_figees()
+        cls.releve, cls.probleme = navigateur.releve_ou_probleme(
+            evenements=evenements, lieux=lieux, date_figee=True, scenarios="service",
+            delai=180)
+
+    def setUp(self):
+        navigateur.sauter_si_indisponible(self, self.probleme)
+        self.assertNotIn("echec", self.releve, self.releve.get("echec"))
+
+    def test_seules_nos_vieilles_reserves_partent(self):
+        reserves = self.releve["service"]["reserves"]
+        self.assertIn("autre-projet-1", reserves)
+        self.assertNotIn("nocturne-1", reserves)
+
+    def test_un_reseau_lent_ne_fait_pas_attendre(self):
+        self.assertIs(self.releve["service"]["controlee"], True)
+        self.assertIs(self.releve["service"]["page_en_moins_de_5_s"], True)
+
+    def test_les_mentions_legales_sans_reseau(self):
+        self.assertEqual(self.releve["service"]["mentions_sans_reseau"],
+                         "Mentions légales · *nocturne")
+
+
+class PageDonneesAbimees(unittest.TestCase):
+    """A-11, en entier : un fil où un événement porte une heure en nombre
+    et un autre une date mal écrite s'affiche quand même, sans erreur ;
+    celui à la date mal écrite est seul écarté."""
+
+    @classmethod
+    def setUpClass(cls):
+        evenements, lieux = donnees_figees()
+        abime = dict(evenements, events=evenements["events"] + [
+            dict(evenements["events"][0], title="Heure en nombre", time=2030),
+            dict(evenements["events"][0], title="Date mal écrite", date_start="2026-10-5")])
+        cls.n = len(evenements["events"])
+        cls.releve, cls.probleme = navigateur.releve_ou_probleme(
+            evenements=abime, lieux=lieux, date_figee=True, scenarios="tout")
+
+    def test_la_page_s_affiche(self):
+        navigateur.sauter_si_indisponible(self, self.probleme)
+        self.assertNotIn("echec", self.releve, self.releve.get("echec"))
+        self.assertEqual(self.releve["erreurs"], [])
+        self.assertEqual(self.releve["evenements"], self.n + 1)
+        self.assertTrue(self.releve["scenarios"]["tout"]["jours"])
+
+
+class PageAilleurs(unittest.TestCase):
+    """A-16 : « aujourd'hui » est le jour de Paris, où que soit le
+    téléphone. À Honolulu, à 10 h à Paris le 1er octobre, il est 22 h le 30
+    septembre : la page doit montrer le même programme qu'à Paris."""
+
+    @classmethod
+    def setUpClass(cls):
+        evenements, lieux = donnees_figees()
+        cls.releve, cls.probleme = navigateur.releve_ou_probleme(
+            evenements=evenements, lieux=lieux, date_figee=True, scenarios="tout",
+            fuseau="Pacific/Honolulu")
+
+    def test_le_programme_est_celui_de_paris(self):
+        navigateur.sauter_si_indisponible(self, self.probleme)
+        self.assertNotIn("echec", self.releve, self.releve.get("echec"))
+        if self.releve.get("fuseau") != "Pacific/Honolulu":
+            self.skipTest("le navigateur garde le fuseau du système (%s)" % self.releve.get("fuseau"))
+        attendu = lire_gz("page_reference.json.gz")
+        self.assertEqual(self.releve["pastilles"], attendu["pastilles"])
+        self.assertEqual(self.releve["scenarios"]["tout"], attendu["scenarios"]["tout"])
 
 
 class PageSansNouveau(unittest.TestCase):

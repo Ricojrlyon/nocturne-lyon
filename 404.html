@@ -2,6 +2,9 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
+<!-- La règle de sécurité des mentions légales (audit A-40) : une page sans
+     script, ses styles, ses polices et son icône, et rien d'autre. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Page introuvable · *nocturne</title>
@@ -15,7 +18,7 @@
   :root {
     --bg: #161f25;
     --ink: #e7dfbe;
-    --ink-mute: #5e6973;
+    --ink-mute: #8c97a1;
     --warm: #d4a574;
     --radius: 3px;
   }

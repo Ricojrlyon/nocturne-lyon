@@ -173,6 +173,11 @@ class Coherence(unittest.TestCase):
         self.assertIn('id="donnees"', mentions)
         self.assertIn("Content-Security-Policy", mentions)
         self.assertNotIn("<script", mentions)
+        # Audit A-13 : les droits s'exercent auprès de l'éditeur ; la CNIL
+        # ne reçoit que les réclamations (RGPD, art. 12 à 14 et 77).
+        self.assertIn("s'exercent auprès de l'éditeur du site", mentions)
+        self.assertIn('href="https://www.cnil.fr/fr/plaintes"', mentions)
+        self.assertNotIn("Pour une question ou une demande (accès, rectification, opposition)", mentions)
 
     def test_le_bouton_retour_suit_ce_qui_s_ouvre(self):
         # « Retour » referme ce qui s'est ouvert par-dessus la page : chaque
