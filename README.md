@@ -588,6 +588,19 @@ la recopier, version comprise.
 - **`index.html`** : frontend vanilla JS autonome : filtres par date/lieu/
   arrondissement/type, recherche insensible aux accents (titre, lieu,
   line-up), expansion des événements multi-jours, groupes de lieux.
+  « Aujourd'hui » est le jour de PARIS, où que soit le téléphone
+  (`aujourdhui()`, audit A-16) : calculé à l'heure du téléphone, un
+  visiteur à Tokyo voyait dès 17 h, heure de Paris, « ce soir » au
+  lendemain, et à New York la veille jusqu'au matin. Au chargement, la
+  page écarte un événement dont une date n'existe pas, met en texte les
+  autres champs et oublie une heure illisible (`evenementsLisibles`,
+  audit A-11) : un seul champ abîmé faisait tomber toute la page. La
+  place du programme est réservée tant qu'il n'est pas arrivé : la page
+  ne saute plus au chargement, quand le pied de page s'affichait sous les
+  filtres puis était repoussé (décalage mesuré à 0,95, audit A-14). Les
+  textes de troisième rang (`--ink-mute`) atteignent 4,5:1 de contraste
+  au moins, et l'étoile, l'agenda et YouTube se touchent sur 24 × 24 px
+  au moins, sans changer leur dessin (audit A-18).
   Le bouton « date » affiche la période choisie (« 12 → 18 oct. »,
   « 15 oct. » pour un jour) et redevient « date → » quand on l'efface ;
   un filtre sans résultat le dit (« aucun événement pour ces filtres »)
@@ -598,7 +611,9 @@ la recopier, version comprise.
   et `du`, `au`, `lieu`, `tag`, `sans`, et `vue=carte` et `jour` pour la
   vue carte) : elle suit chaque clic, sans
   encombrer l'historique, et se relit à l'ouverture, si bien qu'un lien
-  envoyé montre exactement la même chose. Le bouton « partager ↗ », au
+  envoyé montre exactement la même chose ; une date impossible
+  (`?du=2026-13-45`) y est ignorée, au lieu d'afficher « NaN undefined »
+  (audit A-40). Le bouton « partager ↗ », au
   bout de la ligne du titre, ouvre le menu de partage d'un téléphone et
   copie le lien sur un ordinateur. Les favoris n'y figurent pas : ils
   sont à chacun.
@@ -614,6 +629,13 @@ la recopier, version comprise.
   chez Outlook), une durée de deux heures, la salle et sa ville, et le
   lien ; sans heure connue, la journée entière. Le fichier ne part vers
   aucun serveur ; Google et Outlook reçoivent, eux, la soirée choisie.
+  Chaque bouton retrouve SA séance, heure comprise : deux séances du même
+  titre le même soir (« COMEDY CLUB » à 20:00 et à 22:00) partageaient sa
+  clé, et l'agenda de l'une recevait l'heure de l'autre (audit A-17). Le
+  fichier plie ses lignes à 75 octets sans couper un caractère, un lien
+  y passe nettoyé de tout saut de ligne, « 24:00 » n'est pas une heure,
+  et le décalage donné à Outlook est celui de l'instant même, la nuit
+  d'un changement d'heure comprise (audit A-39).
   Les cartes de musique, et elles seules, portent aussi le logo de
   YouTube, entre l'heure et l'agenda, de la couleur des autres boutons :
   une recherche YouTube sur le titre de la soirée, dans un autre onglet.
@@ -629,7 +651,12 @@ la recopier, version comprise.
   événements gardés et les soirées des salles suivies ; il reste allumé
   quand on change de période, et « tout effacer » l'éteint. Tout est gardé dans la mémoire du navigateur
   (`localStorage`, clés `nocturne:favoris` et `nocturne:salles`), sur ce
-  téléphone seulement, et rien n'en sort.
+  téléphone seulement, et rien n'en sort. Une étoile vaut pour le soir :
+  deux séances du même titre le même soir s'allument ensemble (choix du
+  14 novembre 2026). Un favori dont l'événement n'est plus au programme et
+  a commencé il y a plus de trente jours quitte la mémoire au chargement
+  (audit A-40) ; une exposition encore ouverte reste au programme, donc
+  en favori.
   Le repère « nouveau » depuis la dernière visite a été retiré (novembre
   2026) ; ce qu'il gardait dans le navigateur (`nocturne:vus`,
   `nocturne:vus-avant`) est effacé à l'ouverture.
@@ -737,9 +764,18 @@ la recopier, version comprise.
   et les icônes ; `sw.js` garde sur le téléphone la page, ses polices et
   le dernier programme chargé, pour qu'elle s'ouvre sans réseau (la date
   de mise à jour, en pied de page, dit de quand il date). En ligne, la
-  page et le programme viennent toujours du site : rien de périmé n'est
-  servi tant qu'il répond. Les affiches ne sont pas gardées. Modifier la
-  liste `AU_DEPART` de `sw.js` : changer aussi le nom `CACHE`.
+  page et le programme viennent du site : rien de périmé n'est servi tant
+  qu'il répond en moins de trois secondes ; au-delà (le métro, une barre
+  de réseau), la copie du téléphone prend le relais, et la réponse du
+  site, quand elle vient, la remplace pour la fois suivante (audit A-40 :
+  on attendait le réseau sans fin). Les mentions légales se gardent et se
+  servent sous leur propre adresse : sans réseau, l'accueil les
+  remplaçait. Le ménage d'une nouvelle version ne vide que les réserves
+  de nocturne (`nocturne-…`) : il vidait aussi celles des autres projets
+  de l'adresse ricojrlyon.github.io, *films compris (audit A-12). Les
+  affiches ne sont pas gardées. Modifier la liste `AU_DEPART` ou la
+  logique de `sw.js` : changer aussi le nom `CACHE` (`nocturne-3` depuis
+  novembre 2026).
 - **`lieux.json`** : où est chaque lieu, une ligne par lieu : son nom tel
   que l'écrivent les sources, son arrondissement (1er à 9e, Villeurbanne
   ou Autre), sa commune quand il est hors de Lyon et de Villeurbanne
@@ -758,7 +794,9 @@ la recopier, version comprise.
   d'elle-même : « erreur 404 », « page introuvable » et un lien vers la page
   d'accueil. Son lien et ses polices sont en adresses complètes
   (`/nocturne-lyon/…`), car elle s'affiche à n'importe quelle profondeur
-  d'adresse ; elle est exclue des moteurs de recherche.
+  d'adresse ; elle est exclue des moteurs de recherche. Elle porte la
+  règle de sécurité des mentions légales (audit A-40) : elle n'en avait
+  aucune.
 - **`mentions-legales.html`** : mentions légales et données personnelles,
   une page à part, aux couleurs et polices du site, sans aucun script
   (sa règle de sécurité n'autorise que ses styles et les polices du site).
@@ -770,6 +808,11 @@ la recopier, version comprise.
   dans le programme), crédits (OpenStreetMap, Nominatim, polices). Le nom
   du site, en haut, et « ← retour au programme », en bas, ramènent à la
   page. À reprendre si le site change ce qu'il garde ou ce qu'il contacte.
+  Les droits sur les données (accès, rectification, opposition)
+  s'exercent auprès de l'éditeur, et la CNIL reçoit les réclamations : la
+  page envoyait à la CNIL pour exercer ces droits (audit A-13). Aucun
+  contact de l'éditeur n'est publié pour l'instant (choix du 14 novembre
+  2026) : à ajouter le jour où il y en aura un.
 - **`.nojekyll`** : fichier vide qui demande à GitHub Pages de publier les
   fichiers tels quels, sans les passer par Jekyll, son moteur de modèles.
   Jekyll ne modifiait rien aujourd'hui, mais il aurait pu un jour
@@ -833,6 +876,13 @@ python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
   les mêmes cartes qu'en ligne. Un lien partagé aussi : la page ouverte
   avec `?quand=weekend`, `?q=comedy`, `?lieu=Le+Sucre` ou `?tag=theatre`
   doit montrer les cartes du scénario correspondant.
+  Le service hors ligne est essayé en trois temps : il ne vide que ses
+  propres réserves, sert la copie du téléphone quand le site met plus de
+  trois secondes, et rend les mentions légales sans réseau. Un fil abîmé
+  (une heure en nombre, une date mal écrite) doit s'afficher sans erreur,
+  et un téléphone à Honolulu voir le programme de Paris ; ce dernier
+  essai demande un navigateur qui suive la variable TZ, ce que fait celui
+  de GitHub, pas celui de Windows : il est alors sauté, et le dit.
 - **Le fil du jour**, après la collecte : la forme d'`events.json`, et la
   page qui s'affiche avec, sans erreur et avec les bons compteurs.
 

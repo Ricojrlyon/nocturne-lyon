@@ -88,7 +88,11 @@
     --bg-carte-2:   #18222a;      /* survol : la carte s'allume */
     --ink:          #e7dfbe;        /* cream - main text */
     --ink-soft:     #a59f86;        /* faded cream - secondary */
-    --ink-mute:     #5e6973;        /* muted blue-gray - tertiary */
+    /* Gris-bleu des textes de troisième rang (jours de la barre, comptes,
+       pied de page). #5e6973 n'atteignait que 2,4 à 3,3:1 sur les fonds
+       de la page, pour des textes de 8 à 10 px ; #8c97a1 atteint 4,5 à
+       6,3:1 sur les quatre, le minimum demandé étant 4,5 (audit A-18). */
+    --ink-mute:     #8c97a1;        /* muted blue-gray - tertiary */
     --rule:         #2a363f;        /* very subtle line */
     --rule-strong:  #3a4853;
     --accent:       #e7dfbe;        /* cream accent (same as ink) */
@@ -655,6 +659,14 @@
   }
 
   main.feed { padding: 34px 0 80px; }
+  /* La place du programme, réservée tant qu'il n'est pas arrivé (audit
+     A-14) : le pied de page s'affichait sous les filtres, puis le
+     programme le repoussait d'un coup. Toute la page sautait, un
+     décalage mesuré à 0,95 quand Google juge « mauvais » au-delà de 0,25.
+     Sans JavaScript, le programme ne vient jamais : rien n'est réservé, et
+     le message qui le dit reste en vue. */
+  #feed:empty { min-height: 100vh; }
+  @media (scripting: none) { #feed:empty { min-height: 0; } }
 
   /* ---------- journées ----------
      La colonne de date de 200 px (soit 232 px des 1280 du conteneur pour
@@ -1388,6 +1400,20 @@
     .carte-bouton:hover { color: var(--ink); border-color: var(--ink-soft); }
   }
   .carte-bouton:active { transform: scale(0.9); }
+  /* La zone de toucher fait au moins 24 × 24 px, sans changer le dessin
+     (audit A-18) : l'étoile, l'agenda et YouTube n'en faisaient que 22 × 19,
+     sous le minimum. Une boîte invisible, centrée sur le bouton, reçoit le
+     doigt pour lui. */
+  .carte-bouton { position: relative; }
+  .carte-bouton::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: max(100%, 24px);
+    height: max(100%, 24px);
+    transform: translate(-50%, -50%);
+  }
   /* Agenda et YouTube : une icône, dans la même boîte de 19 px que les
      étiquettes du pied, de la couleur des autres boutons. */
   .carte-bouton.icone {
@@ -2979,9 +3005,28 @@ function isoOf(d) {
   return y + '-' + m + '-' + dd;
 }
 function parseIso(s) { return new Date(s + 'T00:00:00'); }
+// Une date qui existe, « 2026-02-30 » et « 2026-13-45 » non (audit A-40).
+function dateValide(s) {
+  return typeof s === 'string' && /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(s)
+    && isoOf(parseIso(s)) === s;
+}
+
+/* Le jour qu'il est À PARIS, à minuit, en date du téléphone (audit A-16).
+   Le programme est lyonnais : « ce soir » est le soir de Lyon. Calculé à
+   l'heure du téléphone, un visiteur à Tokyo voyait dès 17 h, heure de
+   Paris, « ce soir » au lendemain, et les sorties du soir lyonnais
+   disparaissaient ; à New York, « ce soir » montrait la veille jusqu'à
+   6 h, heure de Paris. Tous les calculs de jours partent d'ici. */
+const JOUR_A_PARIS = new Intl.DateTimeFormat('en-US', {
+  timeZone: 'Europe/Paris', year: 'numeric', month: '2-digit', day: '2-digit' });
+function aujourdhui() {
+  const p = {};
+  for (const x of JOUR_A_PARIS.formatToParts(new Date())) p[x.type] = x.value;
+  return parseIso(p.year + '-' + p.month + '-' + p.day);
+}
 
 /* ---------- date picker ---------- */
-let dpMonth = (() => { const d = new Date(); d.setDate(1); return d; })();
+let dpMonth = (() => { const d = aujourdhui(); d.setDate(1); return d; })();
 let dpRangeAnchor = null;
 
 function renderDatepicker() {
@@ -2989,7 +3034,7 @@ function renderDatepicker() {
   const ref = new Date(dpMonth);
   const year = ref.getFullYear();
   const month = ref.getMonth();
-  const today = new Date(); today.setHours(0,0,0,0);
+  const today = aujourdhui();
 
   const monthName = FR_MONTHS[month] + ' ' + year;
   const firstWeekday = (new Date(year, month, 1).getDay() + 6) % 7;
@@ -3210,6 +3255,51 @@ document.addEventListener('keydown', e => {
   if (dedans) document.getElementById('dateBtn').focus();
 });
 
+/* Les événements que la page sait lire (audit A-11). Un seul champ non
+   texte - une heure en nombre, « "time": 2030 » - faisait tomber toute la
+   page (« le programme n'a pas pu se charger ») : la page écarte un
+   événement dont une date n'existe pas, met en texte les autres champs,
+   et oublie une heure qui n'est pas HH:MM. Le robot fait le même tri
+   avant de publier (étape 2.55 d'aggregate.py) ; ceci est le filet d'un
+   fil abîmé en chemin. */
+const CHAMPS_TEXTE = ['id', 'venue', 'venue_slug', 'title', 'subtitle', 'category',
+                      'url', 'image', 'offsite_venue'];
+function evenementsLisibles(liste) {
+  if (!Array.isArray(liste)) return [];
+  const out = [];
+  for (const brut of liste) {
+    if (!brut || typeof brut !== 'object') continue;
+    if (!dateValide(brut.date_start)) continue;
+    if (brut.date_end != null && !dateValide(brut.date_end)) continue;
+    const e = { ...brut };
+    for (const c of CHAMPS_TEXTE) if (e[c] != null && typeof e[c] !== 'string') e[c] = String(e[c]);
+    e.time = typeof e.time === 'string' && /^([01][0-9]|2[0-3]):[0-5][0-9]$/.test(e.time) ? e.time : null;
+    out.push(e);
+  }
+  return out;
+}
+
+/* Les favoris d'événements passés quittent la mémoire du téléphone
+   (audit A-40) : ils s'y accumulaient pour toujours. Un favori part quand
+   son événement n'est plus au programme ET a commencé il y a plus de
+   trente jours ; une exposition encore ouverte, commencée il y a des
+   mois, reste au programme, et donc en favori. */
+function elaguerLesFavoris() {
+  const presents = new Set(state.events.map(cleEvenement));
+  const limite = aujourdhui();
+  limite.setDate(limite.getDate() - 30);
+  const avant = isoOf(limite);
+  let retire = false;
+  for (const cle of [...state.favoris]) {
+    const debut = cle.slice(cle.lastIndexOf('|') + 1);
+    if (!presents.has(cle) && dateValide(debut) && debut < avant) {
+      state.favoris.delete(cle);
+      retire = true;
+    }
+  }
+  if (retire) ecrireMemoire('nocturne:favoris', [...state.favoris]);
+}
+
 /* ---------- main load ---------- */
 async function load() {
   // Le fil, les lieux (lieux.json) et le géocodage du robot, en parallèle.
@@ -3240,11 +3330,12 @@ async function load() {
     if (l.commune) VENUE_COMMUNE[l.nom] = l.commune;
     if (l.pos) VENUE_POSITION[l.nom] = l.pos;
   }
-  state.events = data.events || [];
+  state.events = evenementsLisibles(data.events);
   // Les occurrences ne dépendent que de state.events : calculées une seule
   // fois ici au lieu d'être recalculées à chaque render() (chaque frappe,
   // chaque clic de chip).
   state.occurrences = expandOccurrences(state.events);
+  elaguerLesFavoris();
 
   // Le géocodage du robot complète les deux tables ; lieux.json, vérifié
   // à la main, gagne en cas de désaccord.
@@ -3319,7 +3410,7 @@ function buildDaystrip() {
   for (const occ of state.occurrences) {
     counts.set(occ._date, (counts.get(occ._date) || 0) + 1);
   }
-  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const today = aujourdhui();
   for (let i = 0; i < 14; i++) {
     const d = new Date(today);
     d.setDate(today.getDate() + i);
@@ -3733,9 +3824,10 @@ function ecrireLAdresse() {
    n'a plus d'événement, une date mal écrite, une famille qui n'existe pas. */
 function lireLAdresse() {
   const p = new URLSearchParams(location.search);
-  const jour = /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/;
   const du = p.get('du'), au = p.get('au');
-  if (du && au && jour.test(du) && jour.test(au)) {
+  // Une date qui n'existe pas (« 2026-13-45 ») est ignorée : elle
+  // affichait « NaN undefined » (audit A-40).
+  if (dateValide(du) && dateValide(au)) {
     state.when = 'custom';
     state.customRange = du <= au ? { start: du, end: au } : { start: au, end: du };
   } else {
@@ -3751,7 +3843,7 @@ function lireLAdresse() {
   for (const t of p.getAll('tag')) if (ALL_BUCKETS.some(b => b.key === t)) state.tags.add(t);
   for (const f of p.getAll('sans')) if (FAMILLES.some(x => x.key === f)) state.famillesOff.add(f);
   if (p.get('vue') === 'carte') state.vue = 'carte';
-  if (jour.test(p.get('jour') || '')) state.jourCarte = p.get('jour');
+  if (dateValide(p.get('jour'))) state.jourCarte = p.get('jour');
   const q = (p.get('q') || '').trim();
   if (q) {
     document.getElementById('filterSearch').value = q;
@@ -3881,7 +3973,7 @@ function normSearch(s) {
 /* ---------- when matching ---------- */
 function withinWhen(dateStr) {
   const d = parseIso(dateStr);
-  const now = new Date(); now.setHours(0,0,0,0);
+  const now = aujourdhui();
   if (state.when === 'all') return true;
 
   if (state.when === 'weekend') {
@@ -3933,7 +4025,7 @@ const HORIZON_JOURS = 180;
 function expandOccurrences(events) {
   const out = [];
   const dayMs = 86400000;
-  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const today = aujourdhui();
   const horizon = new Date(today.getTime() + HORIZON_JOURS * dayMs);
   const horizonIso = isoOf(horizon);
   for (const e of events) {
@@ -3962,7 +4054,7 @@ function expandOccurrences(events) {
 }
 
 function filtered() {
-  const now = new Date(); now.setHours(0,0,0,0);
+  const now = aujourdhui();
   // state.occurrences est pré-calculé au load ; les occurrences passées
   // sont écartées par le check occDate < now ci-dessous.
   return state.occurrences.filter(occ => {
@@ -4028,8 +4120,7 @@ function versLePlan(lat, lon, z) {
 
 function nomDuJour(iso) {
   const d = parseIso(iso);
-  const aujourdhui = new Date(); aujourdhui.setHours(0, 0, 0, 0);
-  const ecart = Math.round((d - aujourdhui) / 86400000);
+  const ecart = Math.round((d - aujourdhui()) / 86400000);
   const date = FR_DAYS_FULL[d.getDay()] + ' ' + d.getDate() + ' ' + FR_MONTHS[d.getMonth()];
   return (ecart === 0 ? 'ce soir · ' : ecart === 1 ? 'demain · ' : '') + date;
 }
@@ -4425,14 +4516,14 @@ function zoomerEnDouceur(dz, px, py) {
    leurs cartes, les mêmes que dans la liste (étoile, YouTube, agenda
    compris). Si elle commence trop bas, la page défile jusqu'à elle. */
 function ouvrirFiche(places, depuis) {
-  const aujourdhui = isoOf(new Date());
+  const ceJour = isoOf(aujourdhui());
   const html = [];
   places.forEach((p, k) => {
     const n = p.evs.length;
     const ou = p.pos ? etiquetteDuLieu(p.nom) : '';
     html.push('<div class="fiche-lieu" tabindex="-1"><span class="fl-nom">' + escapeHtml(p.nom)
       + (ou && ou !== 'Autre' ? ' · ' + escapeHtml(ou) : '') + '</span><span class="fl-n">' + n
-      + (carte && carte.jour === aujourdhui ? ' ce soir' : ' évt' + (n > 1 ? 's' : '')) + '</span>'
+      + (carte && carte.jour === ceJour ? ' ce soir' : ' évt' + (n > 1 ? 's' : '')) + '</span>'
       + (k === 0 ? '<button type="button" class="fiche-fermer" aria-label="fermer">✕</button>' : '')
       + '</div>');
     html.push('<div class="events">' + p.evs.map(e => eventCard(e)).join('\n') + '</div>');
@@ -4667,7 +4758,7 @@ function renderFeed() {
     groups.get(e._date).push(e);
   }
   const sortedDates = Array.from(groups.keys()).sort();
-  const today = new Date(); today.setHours(0,0,0,0);
+  const today = aujourdhui();
   const jours = [];
   lastRenderDays.clear();
 
@@ -4823,7 +4914,7 @@ function construireLeFil(feed, jours, ancre) {
 /* Les quatorze jours de la barre de dates, construits dans la foulée,
    journée par journée, quand la page n'a rien d'autre à faire. */
 function preparerLaBarreDesJours(suite) {
-  const fin = new Date(); fin.setHours(0, 0, 0, 0); fin.setDate(fin.getDate() + 13);
+  const fin = aujourdhui(); fin.setDate(fin.getDate() + 13);
   const horizon = isoOf(fin);
   const reste = () => suiteDuFil === suite && suite.jours[suite.prochain - 1].iso < horizon;
   const plusTard = window.requestIdleCallback
@@ -5178,8 +5269,12 @@ function eventCard(e, seedOverride) {
 
   // L'agenda (nouveauté n° 2) : la carte est rangée sous sa clé, que le
   // bouton porte, pour retrouver l'événement au clic. Une icône seule ;
-  // son nom est dit aux lecteurs d'écran et au survol.
-  const cle = cleEvenement(e) + '|' + e._date;
+  // son nom est dit aux lecteurs d'écran et au survol. L'heure fait partie
+  // de la clé (audit A-17) : deux séances du même titre le même soir
+  // (« COMEDY CLUB » à 20:00 et à 22:00) la partageaient, et l'agenda de
+  // l'une recevait l'heure de l'autre. L'étoile, elle, vaut pour le soir
+  // (choix du 14/11/2026) : cleEvenement n'a pas d'heure.
+  const cle = cleEvenement(e) + '|' + e._date + '|' + (e.time || '');
   CARTES.set(cle, e);
   const agenda = '<span class="carte-bouton icone" role="button" tabindex="0" data-action="agenda"'
     + ' aria-haspopup="menu" aria-expanded="false"'
@@ -5331,15 +5426,38 @@ function texteAgenda(s) {
     .split(',').join(BARRE + ',').split(String.fromCharCode(10)).join(BARRE + 'n');
 }
 
-// Une ligne trop longue se replie : la suite commence par une espace.
+// Une ligne trop longue se replie : la suite commence par une espace. La
+// norme compte 75 OCTETS par ligne, et un caractère ne se coupe jamais en
+// deux (audit A-39) : plié à 60 caractères, un émoji ou une lettre
+// accentuée à la frontière pouvait devenir « �� ».
+const OCTETS = new TextEncoder();
 function ligneAgenda(ligne) {
   const morceaux = [];
-  while (ligne.length > 60) {
-    morceaux.push(ligne.slice(0, 60));
-    ligne = ' ' + ligne.slice(60);
+  let courant = '', octets = 0;
+  for (const c of ligne) {                 // caractère entier, émoji compris
+    const n = OCTETS.encode(c).length;
+    if (octets + n > 75) {
+      morceaux.push(courant);
+      courant = ' ';
+      octets = 1;
+    }
+    courant += c;
+    octets += n;
   }
-  morceaux.push(ligne);
+  morceaux.push(courant);
   return morceaux.join(SAUT_AGENDA);
+}
+
+// Une heure de séance : de 00:00 à 23:59, « 24:00 » n'en est pas une.
+const HEURE_AGENDA = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/;
+
+// Le lien d'une carte, tel que le lit un agenda : une adresse http(s)
+// mise au propre par le navigateur, qui en retire tout saut de ligne
+// (audit A-39 : il aurait ajouté une ligne au fichier). '' sinon.
+function lienPropre(e) {
+  const href = eventHref(e);
+  if (typeof href !== 'string' || !/^https?:/.test(href)) return '';
+  try { return new URL(href).href; } catch (_) { return ''; }
 }
 
 // L'heure de Paris, été comme hiver, décrite dans le fichier.
@@ -5361,7 +5479,7 @@ function adresseAgenda(e) {
 
 function fichierAgenda(e) {
   const jour = e._date.split('-').join('');
-  const horaire = /^[0-9]{1,2}:[0-9]{2}$/.test(e.time || '');
+  const horaire = HEURE_AGENDA.test(e.time || '');
   let debut, fin;
   if (horaire) {
     debut = 'DTSTART;TZID=Europe/Paris:' + jour + 'T' + e.time.padStart(5, '0').replace(':', '') + '00';
@@ -5380,8 +5498,8 @@ function fichierAgenda(e) {
     'DTSTAMP:' + maintenant, debut, fin,
     'SUMMARY:' + texteAgenda((e.title || '').trim() || 'soirée'),
     'LOCATION:' + texteAgenda(adresseAgenda(e))];
-  const lien = eventHref(e);
-  if (typeof lien === 'string' && /^https?:/.test(lien)) {
+  const lien = lienPropre(e);
+  if (lien) {
     lignes.push('URL:' + lien, 'DESCRIPTION:' + texteAgenda(lien));
   }
   lignes.push('END:VEVENT', 'END:VCALENDAR');
@@ -5395,9 +5513,8 @@ function fichierAgenda(e) {
 function lienAgenda(e, service) {
   const titre = (e.title || '').trim() || 'soirée';
   const lieu = adresseAgenda(e);
-  const href = eventHref(e);
-  const lien = typeof href === 'string' && /^https?:/.test(href) ? href : '';
-  const horaire = /^[0-9]{1,2}:[0-9]{2}$/.test(e.time || '');
+  const lien = lienPropre(e);
+  const horaire = HEURE_AGENDA.test(e.time || '');
   const [y, mo, d] = e._date.split('-').map(Number);
   const lendemain = isoOf(new Date(y, mo - 1, d + 1));
   // L'heure du mur, comptée comme si elle était universelle : ajouter deux
@@ -5416,7 +5533,10 @@ function lienAgenda(e, service) {
   }
   const p = new URLSearchParams({ rru: 'addevent', subject: titre, location: lieu });
   if (horaire) {
-    const local = x => x.toISOString().slice(0, 19) + decalageDeParis(e._date);
+    // Le décalage de CET instant-là (audit A-39) : la nuit d'un changement
+    // d'heure, 1 h 30 n'a pas le décalage de 21 h.
+    const local = x => x.toISOString().slice(0, 19)
+      + decalageDeParis(x.toISOString().slice(0, 10), x.toISOString().slice(11, 16));
     p.set('startdt', local(debut));
     p.set('enddt', local(fin));
   } else {
@@ -5428,16 +5548,30 @@ function lienAgenda(e, service) {
   return 'https://outlook.live.com/calendar/0/action/compose?' + p;
 }
 
-/* L'écart de Paris à l'heure universelle, ce jour-là : l'heure d'été court
-   du dernier dimanche de mars au dernier dimanche d'octobre (le soir d'un
-   jour de changement est déjà à la nouvelle heure). */
-function decalageDeParis(iso) {
-  const an = Number(iso.slice(0, 4));
-  const dernierDimanche = mois => {
-    const d = new Date(an, mois + 1, 0);
-    return isoOf(new Date(an, mois, d.getDate() - d.getDay()));
-  };
-  return iso >= dernierDimanche(2) && iso < dernierDimanche(9) ? '+02:00' : '+01:00';
+/* L'écart de Paris à l'heure universelle, à l'heure dite de ce jour-là
+   (midi par défaut). Demandé au navigateur, qui connaît le fuseau de
+   Paris : la règle « du dernier dimanche de mars au dernier dimanche
+   d'octobre » donnait la nouvelle heure à TOUTE la journée du changement,
+   1 h 30 du matin comprise (audit A-39). */
+const DECALAGE_A_PARIS = new Intl.DateTimeFormat('en-US', {
+  timeZone: 'Europe/Paris', timeZoneName: 'longOffset' });
+function decalageA(instant) {
+  const nom = DECALAGE_A_PARIS.formatToParts(new Date(instant))
+    .find(x => x.type === 'timeZoneName');
+  const m = /GMT([+-][0-9]{2}):?([0-9]{2})?/.exec(nom ? nom.value : '');
+  return m ? m[1] + ':' + (m[2] || '00') : '+01:00';
+}
+function decalageDeParis(iso, heure) {
+  const [y, mo, d] = iso.split('-').map(Number);
+  const [h, mi] = (typeof heure === 'string' && heure ? heure : '12:00').split(':').map(Number);
+  const mur = Date.UTC(y, mo - 1, d, h, mi);
+  // L'instant qui affiche cette heure-là à Paris : l'heure d'hiver ou
+  // celle d'été. 2 h 30 le jour du passage à l'été n'existe pas : on garde
+  // alors l'heure d'hiver, que l'agenda avancera d'une heure.
+  for (const essai of ['+01:00', '+02:00']) {
+    if (decalageA(mur - Number(essai.slice(1, 3)) * 3600000) === essai) return essai;
+  }
+  return '+01:00';
 }
 
 /* Le menu : trois choix, posé sous l'icône (au-dessus, s'il n'y a pas la

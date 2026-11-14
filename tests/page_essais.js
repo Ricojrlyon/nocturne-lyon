@@ -103,6 +103,8 @@
 
     const res = {
       erreurs: window.__erreurs,
+      // Le fuseau que le navigateur a réellement pris (voir navigateur.jouer).
+      fuseau: Intl.DateTimeFormat().resolvedOptions().timeZone,
       // « state » est déclaré en const par la page : il n'est pas attaché à
       // window, mais reste lisible par son nom depuis un autre script.
       evenements: (typeof state !== 'undefined' && state.events) ? state.events.length : null,
@@ -347,7 +349,8 @@
         debut: lignes.find(l => l.startsWith('DTSTART;')),
         titre_juste: lignes.includes('SUMMARY:' + texteAgenda(titre)),
         lien_juste: lignes.includes('URL:' + carteSimple.getAttribute('href')),
-        lignes_courtes: texte.split(SAUT).every(l => l.length <= 61),
+        // 75 octets par ligne au plus, la limite de la norme (audit A-39).
+        lignes_courtes: texte.split(SAUT).every(l => new TextEncoder().encode(l).length <= 75),
         echappement: texteAgenda('Rock, pop; jazz') === 'Rock' + BARRE + ', pop' + BARRE + '; jazz',
       };
       // « ▶ écouter » (nouveauté n° 5) : sur les cartes de musique, et
@@ -496,6 +499,158 @@
                    window.scrollY === y2, getComputedStyle(hautF).position);
       res.filtres_epingles = epingle;
       window.scrollTo(0, 0);
+    } else if (SCENARIOS === 'service') {
+      // Le service hors ligne (audit A-12, A-40), en trois temps.
+      const actif = async () => {
+        const reg = await servicePret();
+        for (let i = 0; reg && reg.active && reg.active.state !== 'activated' && i < 100; i++) await pause(100);
+        return reg;
+      };
+      // Les mentions légales sont VISITÉES (un cadre serait bloqué par la
+      // règle de sécurité de la page) ; leur copie de test porte un relais
+      // (RELAIS_MENTIONS, tests/navigateur.py) qui ramène ici, ou rapporte.
+      const etape = sessionStorage.getItem('service') || '0';
+      if (etape === '0') {
+        // En ligne : le service s'installe ; une réserve d'un AUTRE projet
+        // du même site, et une vieille réserve de nocturne ; puis les
+        // mentions légales sont visitées, et le relais revient ici.
+        if (!(await actif())) throw new Error("le service hors ligne ne s'est pas installé");
+        await (await caches.open('autre-projet-1')).put('/autre', new Response('autre'));
+        await (await caches.open('nocturne-1')).put('/vieux', new Response('vieux'));
+        sessionStorage.setItem('service', '0b');
+        location.href = 'mentions-legales.html';
+        return;
+      }
+      if (etape === 'u') {
+        // Le service est désinstallé : il se réinstallera au chargement.
+        for (const r of await navigator.serviceWorker.getRegistrations()) await r.unregister();
+        sessionStorage.setItem('service', '1');
+        location.reload();
+        return;
+      }
+      if (etape === '3') {
+        // Les mentions légales demandées sans réseau, et c'est l'accueil
+        // qui est venu : le relevé le dit.
+        const r = JSON.parse(sessionStorage.getItem('releve') || '{}');
+        r.service.mentions_sans_reseau = document.title;
+        await envoyer(r);
+        return;
+      }
+      if (etape === '1') {
+        // Le service se réinstalle, et fait son ménage en s'activant.
+        if (!(await actif())) throw new Error("le service hors ligne ne s'est pas réinstallé");
+        await pause(300);
+        sessionStorage.setItem('reserves', JSON.stringify((await caches.keys()).sort()));
+        await fetch('/__lent', { method: 'POST' });
+        sessionStorage.setItem('service', '2');
+        location.reload();
+        return;
+      }
+      // Le site met six secondes à répondre : la page vient du téléphone
+      // au bout de trois. Puis le réseau coupé : les mentions légales
+      // s'ouvrent, et non l'accueil.
+      const navigation = performance.getEntriesByType('navigation')[0];
+      res.service = {
+        reserves: JSON.parse(sessionStorage.getItem('reserves') || '[]'),
+        page_en_moins_de_5_s: !!navigation && navigation.responseEnd < 5000,
+        controlee: !!navigator.serviceWorker.controller,
+      };
+      res.erreurs_fin = window.__erreurs;
+      sessionStorage.setItem('releve', JSON.stringify(res));
+      await fetch('/__couper', { method: 'POST' });
+      sessionStorage.setItem('service', '3');
+      location.href = 'mentions-legales.html';
+      return;
+    } else if (SCENARIOS === 'lot6') {
+      // Audit, lot 6 : la page, sa logique et sa conformité.
+      if (!sessionStorage.getItem('lot6')) {
+        // A-40 : un vieux favori gardé AVANT l'ouverture quitte la mémoire
+        // au chargement suivant.
+        localStorage.setItem('nocturne:favoris', JSON.stringify(['Ancienne salle|Spectacle fini|2026-07-01']));
+        sessionStorage.setItem('lot6', '1');
+        location.reload();
+        return;
+      }
+      res.favori_ancien_au_chargement = JSON.parse(localStorage.getItem('nocturne:favoris') || '[]');
+      await effacer();
+      window.scrollTo(0, 0);
+      await pause(300);
+      // A-17 : le bouton agenda d'une carte retrouve SA séance, heure
+      // comprise, même quand le même titre se joue deux fois le même soir.
+      // Le 3 octobre, « COMEDY CLUB » au Complexe, à 20:00 et à 22:00 : la
+      // journée est amenée à l'écran, le groupe du Complexe déplié.
+      document.querySelectorAll('.day-pill')[2].click();
+      await pause(700);
+      const groupeComplexe = [...document.querySelectorAll('#feed button.event[data-venue-day]')]
+        .find(b => b.dataset.venueDay.includes('2026-10-03') && b.dataset.venueDay.includes('Complexe'));
+      if (groupeComplexe) {
+        groupeComplexe.click();
+        await pause(500);
+      }
+      const cartes = [...document.querySelectorAll('#feed .event')];
+      const vues = cartes.map(c => {
+        const b = c.querySelector('[data-action="agenda"]');
+        const e = b && CARTES.get(b.dataset.cle);
+        return { e, heure: norme((c.querySelector('.event-time:not(.empty)') || {}).textContent) };
+      }).filter(v => v.e);
+      const soirs = new Map();
+      for (const v of vues) {
+        const k = cleEvenement(v.e) + '|' + v.e._date;
+        soirs.set(k, (soirs.get(k) || new Set()).add(v.heure));
+      }
+      res.agenda_par_seance = {
+        soirs_a_deux_seances: [...soirs.values()].filter(h => h.size > 1).length,
+        heures_fausses: vues.filter(v => (v.e.time || '') !== v.heure).length,
+      };
+      // A-18 : la zone de toucher de l'étoile, de l'agenda et de YouTube.
+      const zone = b => {
+        const s = getComputedStyle(b, '::before');
+        return Math.min(parseFloat(s.width), parseFloat(s.height));
+      };
+      res.zones_de_toucher = Math.min(...[...document.querySelectorAll('#feed .carte-bouton')]
+        .slice(0, 60).map(zone));
+      res.encre_discrete = getComputedStyle(document.documentElement).getPropertyValue('--ink-mute').trim();
+      // A-11 : des événements abîmés ne font pas tomber la page.
+      const lus = evenementsLisibles([
+        { date_start: '2026-10-5', title: 'date mal écrite' },
+        { date_start: '2026-02-30', title: 'date impossible' },
+        { date_start: '2026-10-05', date_end: 'demain', title: 'fin illisible' },
+        { date_start: '2026-10-05', title: 42, venue: 7, time: 2030 },
+        { date_start: '2026-10-05', title: 'Juste', venue: 'Le Sucre', time: '24:00' },
+        null, 'texte']);
+      res.evenements_lisibles = lus.map(e => [e.title, e.venue, e.time]);
+      // A-39 : le fichier d'agenda.
+      const SAUT = String.fromCharCode(13, 10);
+      const longue = 'SUMMARY:' + 'Soirée électro 🎛️ à la Croix-Rousse, ébène & été '.repeat(5);
+      const pliee = ligneAgenda(longue);
+      res.pliage = [pliee.split(SAUT + ' ').join('') === longue,
+                    pliee.split(SAUT).every(l => new TextEncoder().encode(l).length <= 75),
+                    pliee.split(SAUT).length > 1];
+      res.heures_agenda = ['00:00', '9:30', '23:59', '24:00', '25:10', '20:60'].map(h => HEURE_AGENDA.test(h));
+      const lienAbime = lienPropre({ venue: 'Salle inconnue', url: 'https://exemple.org/soir' + String.fromCharCode(10) + 'ee' });
+      res.lien_propre = [lienAbime.includes(String.fromCharCode(10)), lienAbime.startsWith('https://exemple.org/'),
+                         lienPropre({ venue: 'Salle inconnue', url: 'javascript:alert(1)' })];
+      res.decalages_a_l_instant = [['2026-03-29', '01:30'], ['2026-03-29', '03:30'], ['2026-10-25', '01:30'],
+                                   ['2026-10-25', '04:00'], ['2026-07-01', '21:00'], ['2026-12-01', '21:00']]
+        .map(([j, h]) => decalageDeParis(j, h));
+      // A-40 : une date d'adresse impossible ; les favoris d'événements passés.
+      res.dates_valides = ['2026-10-01', '2026-02-29', '2028-02-29', '2026-13-45', '2026-10-5', '', null]
+        .map(dateValide);
+      const present = state.events[0];
+      const avant = new Set(state.favoris);
+      state.favoris = new Set(['Ancienne salle|Spectacle fini|2026-07-01',
+                               'Ancienne salle|Hier encore|2026-09-20',
+                               cleEvenement(present)]);
+      elaguerLesFavoris();
+      res.favoris_elagues = [...state.favoris].map(c => c === cleEvenement(present) ? 'présent' : c);
+      state.favoris = avant;
+      ecrireMemoire('nocturne:favoris', [...avant]);
+      // A-14 : la place du programme est réservée tant qu'il est vide.
+      const feed = document.getElementById('feed');
+      const garde = [...feed.childNodes];
+      feed.replaceChildren();
+      res.place_reservee = Math.round(feed.getBoundingClientRect().height) >= window.innerHeight;
+      feed.replaceChildren(...garde);
     } else if (SCENARIOS === 'carte') {
       // La vue carte (nouveauté n° 6). Premier passage : l'interrupteur, le
       // plan du 1er octobre, sa fiche, ses gestes, la barre des jours, le

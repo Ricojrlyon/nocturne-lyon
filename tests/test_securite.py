@@ -47,5 +47,22 @@ class Securite(unittest.TestCase):
                                             "worker-src", "base-uri", "form-action"]))
 
 
+class PagesAnnexes(unittest.TestCase):
+    """La page 404 porte la règle des mentions légales (audit A-40) : elle
+    n'en avait aucune. Posée avant tout chargement, et sans script."""
+
+    def test_la_page_404_a_sa_regle(self):
+        page = (RACINE / "404.html").read_text(encoding="utf-8")
+        tete = page.split("</head>", 1)[0]
+        m = BALISE.search(tete)
+        self.assertIsNotNone(m)
+        premier = min(tete.find(b) for b in ("<link", "<style", "<script") if b in tete)
+        self.assertLess(m.start(), premier)
+        mentions = (RACINE / "mentions-legales.html").read_text(encoding="utf-8")
+        self.assertEqual(m.group(1), BALISE.search(mentions).group(1))
+        self.assertIn("default-src 'none'", m.group(1))
+        self.assertNotIn("<script", page)
+
+
 if __name__ == "__main__":
     unittest.main()

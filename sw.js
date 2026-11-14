@@ -2,9 +2,13 @@
    téléphone la page, ses polices et le dernier programme chargé, pour que
    l'application s'ouvre même sans réseau - dans le métro, par exemple.
 
-   En ligne, la page et le programme viennent TOUJOURS du site (le réseau
-   d'abord) : rien de périmé n'est servi tant que le site répond, et la mise
-   à jour de la nuit arrive comme avant. Le reste - polices, logos, icônes,
+   En ligne, la page et le programme viennent du site (le réseau d'abord) :
+   rien de périmé n'est servi tant que le site répond, et la mise à jour de
+   la nuit arrive comme avant. Un réseau qui ne répond pas en
+   ATTENTE_RESEAU millisecondes (le métro, une barre de réseau) cède la
+   place à la copie du téléphone, quand il en a une ; la réponse du site,
+   si elle finit par venir, la remplace pour la fois suivante (audit
+   A-40 : sans délai, on attendait le réseau sans fin). Le reste - polices, logos, icônes,
    qui ne changent pas - est servi du téléphone, puis rafraîchi en douce.
    Les affiches, venues des sites des salles, ne sont pas gardées : sans
    réseau, la carte montre son motif.
@@ -12,7 +16,13 @@
    Changer la liste AU_DEPART ou la logique ci-dessous : changer aussi le
    nom CACHE, pour que l'ancienne réserve soit vidée. */
 // nocturne-2 : l'icône redessinée (fond nuit, N crème), à reprendre tout de suite.
-const CACHE = 'nocturne-2';
+// nocturne-3 : le ménage ne touche plus que les réserves de nocturne, le
+// réseau a trois secondes, et une page autre que l'accueil n'est plus
+// servie par l'accueil (audit A-12, A-40).
+const CACHE = 'nocturne-3';
+// Le préfixe de nos réserves : le ménage ne touche qu'à elles.
+const PREFIXE = 'nocturne-';
+const ATTENTE_RESEAU = 3000;
 const AU_DEPART = [
   './',
   'fonts/polices.css',
@@ -44,9 +54,13 @@ self.addEventListener('install', e => {
   })());
 });
 
+// Seules NOS anciennes réserves partent (audit A-12) : toutes celles de
+// l'adresse ricojrlyon.github.io étaient vidées, celles des autres projets
+// du compte (*films) comprises.
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(noms =>
-    Promise.all(noms.filter(n => n !== CACHE).map(n => caches.delete(n)))));
+    Promise.all(noms.filter(n => n.startsWith(PREFIXE) && n !== CACHE)
+                    .map(n => caches.delete(n)))));
 });
 
 self.addEventListener('fetch', e => {
@@ -54,8 +68,13 @@ self.addEventListener('fetch', e => {
   if (r.method !== 'GET') return;
   const url = new URL(r.url);
   if (url.origin !== self.location.origin) return;     // affiches : le navigateur s'en charge
-  if (r.mode === 'navigate') e.respondWith(reseauDAbord(r, estLaPage(url) ? PAGE : null, PAGE));
-  else if (url.pathname.endsWith('.json')) e.respondWith(reseauDAbord(r, r, r));
+  // Une autre page du site (les mentions légales) se garde et se sert
+  // sous sa propre adresse : sans réseau, elle était remplacée par
+  // l'accueil (audit A-40).
+  if (r.mode === 'navigate') {
+    e.respondWith(estLaPage(url) ? reseauDAbord(e, r, PAGE, PAGE) : reseauDAbord(e, r, r, r));
+  }
+  else if (url.pathname.endsWith('.json')) e.respondWith(reseauDAbord(e, r, r, r));
   else e.respondWith(reserveDAbord(e, r));
 });
 
@@ -63,18 +82,25 @@ function estLaPage(url) {
   return url.pathname === CHEMIN || url.pathname === CHEMIN + 'index.html';
 }
 
-/* Le réseau d'abord ; la réserve si le réseau manque. `garder` : sous quelle
-   clé ranger une réponse réussie (null : ne rien ranger) ; `secours` : ce
-   qu'on sert sans réseau. */
-async function reseauDAbord(r, garder, secours) {
+/* Le réseau d'abord ; la réserve si le réseau manque, ou s'il tarde plus
+   d'ATTENTE_RESEAU. `garder` : sous quelle clé ranger une réponse réussie ;
+   `secours` : ce qu'on sert sans réseau. */
+async function reseauDAbord(e, r, garder, secours) {
   const reserve = await caches.open(CACHE);
-  try {
-    const reponse = await fetch(r);
+  const reseau = fetch(r).then(async reponse => {
     if (reponse.ok && garder) await reserve.put(garder, reponse.clone());
     return reponse;
+  });
+  // La réponse du site, même tardive, range sa copie pour la fois suivante.
+  e.waitUntil(reseau.catch(() => {}));
+  const garde = () => reserve.match(secours, { ignoreSearch: true });
+  const delai = new Promise(ok => setTimeout(ok, ATTENTE_RESEAU))
+    .then(async () => (await garde()) || reseau);
+  try {
+    return await Promise.race([reseau, delai]);
   } catch (panne) {
-    const garde = await reserve.match(secours, { ignoreSearch: true });
-    if (garde) return garde;
+    const copie = await garde();
+    if (copie) return copie;
     throw panne;
   }
 }
