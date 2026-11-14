@@ -360,6 +360,58 @@ class PageLot6(unittest.TestCase):
         self.assertIs(self.releve["place_reservee"], True)
 
 
+class PageLot7(unittest.TestCase):
+    """Audit, lot 7 : la performance profonde (A-15) et l'accessibilité des
+    cartes (A-19), jouées dans le vrai navigateur, à la date figée."""
+
+    @classmethod
+    def setUpClass(cls):
+        evenements, lieux = donnees_figees()
+        cls.releve, cls.probleme = navigateur.releve_ou_probleme(
+            evenements=evenements, lieux=lieux, date_figee=True, scenarios="lot7")
+
+    def setUp(self):
+        navigateur.sauter_si_indisponible(self, self.probleme)
+        self.assertNotIn("echec", self.releve, self.releve.get("echec"))
+        self.assertEqual(self.releve["erreurs_fin"], [])
+
+    def test_le_premier_morceau_couvre_deux_ecrans(self):
+        # Il reconstruisait au moins 400 événements à chaque rendu (264
+        # cartes à l'écran du PC le 14/11/2026) : on s'arrête à la journée
+        # qui dépasse deux hauteurs d'écran.
+        m = self.releve["premier_morceau"]
+        self.assertTrue(m["derniere_commence_avant_deux_ecrans"], m)
+        self.assertTrue(m["couvre_deux_ecrans"], m)
+        self.assertLess(m["cartes"], 150, m)
+
+    def test_les_enseignes_sont_declarees_une_fois(self):
+        e = self.releve["enseignes"]
+        self.assertGreater(e["cartes"], 0)
+        self.assertEqual(e["textes_dans_les_cartes"], 0)
+        self.assertTrue(e["toutes_citent"])
+        self.assertTrue(e["dessinee"])
+        self.assertLess(e["symboles"], e["cartes"])
+
+    def test_la_recherche_ne_normalise_plus_a_chaque_frappe(self):
+        self.assertEqual(self.releve["recherche"],
+                         {"trouves_plus_de_cent": True, "normalisations": 0, "jours": 1})
+
+    def test_les_boutons_ne_sont_plus_dans_le_lien(self):
+        c = self.releve["cartes_accessibles"]
+        self.assertEqual(c["dans_un_lien"], 0)
+        self.assertEqual(c["boutons"], ["BUTTON"])
+        self.assertTrue(c["lieu_ouvre_le_lien"])
+        self.assertTrue(c["coin_ouvre_le_lien"])
+        self.assertTrue(c["agenda_est_un_bouton"])
+        self.assertEqual(self.releve["calques"], ["-1", "isolate"])
+
+    def test_les_resultats_sont_annonces(self):
+        a = self.releve["annonces"]
+        self.assertEqual(a["role"], "status")
+        self.assertEqual(a["vide"], "aucun événement pour ces filtres")
+        self.assertRegex(a["plein"], r"^[0-9]+ événements$")
+
+
 class PageServiceHorsLigne(unittest.TestCase):
     """Le service hors ligne (sw.js) : il ne vide que ses propres réserves
     (A-12), il n'attend pas un réseau lent plus de trois secondes, et une

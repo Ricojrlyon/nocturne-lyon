@@ -25,8 +25,17 @@
     // Hors relevé : l'image de fond et les boutons de carte (« + agenda »…),
     // qui ne disent rien de l'événement.
     c.querySelectorAll('.visual-bg, .carte-bouton').forEach(x => x.remove());
-    return [el.tagName.toLowerCase(), el.getAttribute('href') || '', norme(c.textContent)];
+    // Une carte simple est un <article> dont le titre porte le lien (audit
+    // A-19) : relevée comme avant, « a » et son lien quand elle en a un,
+    // « div » sinon. La référence dit ce que voit et suit le visiteur.
+    const lien = el.querySelector('.event-lien');
+    const balise = el.tagName === 'ARTICLE' ? (lien ? 'a' : 'div') : el.tagName.toLowerCase();
+    return [balise, lien ? lien.getAttribute('href') : (el.getAttribute('href') || ''),
+            norme(c.textContent)];
   };
+  // Les cartes simples qui portent un lien, et ce lien.
+  const CARTE_A_LIEN = '#feed article.event:has(.event-lien)';
+  const lienDe = carte => carte.querySelector('.event-lien').getAttribute('href');
 
   // On ne conclut que sur trois relevés de suite sans journée nouvelle : une
   // image de retard du navigateur ne doit pas passer pour la fin du fil.
@@ -277,7 +286,7 @@
       // fichier de la première carte simple, sans ouvrir son lien. Le
       // téléchargement est intercepté.
       window.scrollTo(0, 0);
-      const carteSimple = document.querySelector('#feed a.event');
+      const carteSimple = document.querySelector(CARTE_A_LIEN);
       const capture = {};
       const vraiCreer = URL.createObjectURL, vraiClic = HTMLAnchorElement.prototype.click;
       URL.createObjectURL = b => { capture.blob = b; return 'blob:essai'; };
@@ -313,7 +322,7 @@
       window.open = vraiOpenAgenda;
       const g = new URL(ouvertesAgenda[0][0]), o = new URL(ouvertesAgenda[1][0]);
       const titreAgenda = (evAgenda.title || '').trim(), lieuAgenda = adresseAgenda(evAgenda);
-      const lienCarte = carteSimple.getAttribute('href');
+      const lienCarte = new URL(lienDe(carteSimple)).href;   // nettoyé (audit A-39)
       res.agenda_en_ligne = {
         date: evAgenda._date, heure: evAgenda.time || '',
         google: [g.origin + g.pathname, g.searchParams.get('action'), g.searchParams.get('text') === titreAgenda,
@@ -348,7 +357,7 @@
         premiere: lignes[0], derniere: lignes[lignes.length - 1],
         debut: lignes.find(l => l.startsWith('DTSTART;')),
         titre_juste: lignes.includes('SUMMARY:' + texteAgenda(titre)),
-        lien_juste: lignes.includes('URL:' + carteSimple.getAttribute('href')),
+        lien_juste: lignes.includes('URL:' + new URL(lienDe(carteSimple)).href),
         // 75 octets par ligne au plus, la limite de la norme (audit A-39).
         lignes_courtes: texte.split(SAUT).every(l => new TextEncoder().encode(l).length <= 75),
         echappement: texteAgenda('Rock, pop; jazz') === 'Rock' + BARRE + ', pop' + BARRE + '; jazz',
@@ -358,7 +367,7 @@
       const ouvertes = [];
       const vraiOpen = window.open;
       window.open = (url, cible, options) => { ouvertes.push([url, cible, options]); return null; };
-      const cartesSimples = [...document.querySelectorAll('#feed a.event')];
+      const cartesSimples = [...document.querySelectorAll(CARTE_A_LIEN)];
       const musicale = cartesSimples.find(c => c.querySelector('[data-action="ecouter"]'));
       let carteOuverte = null;
       document.addEventListener('click', e => { carteOuverte = !e.defaultPrevented; }, { once: true });
@@ -389,7 +398,7 @@
       // ★ favoris et mes salles (nouveauté n° 3).
       await effacer();
       window.scrollTo(0, 0);
-      const garde = document.querySelector('#feed a.event');
+      const garde = document.querySelector(CARTE_A_LIEN);
       const etoile = garde.querySelector('.carte-etoile');
       let ouvert = null;
       document.addEventListener('click', e => { ouvert = !e.defaultPrevented; }, { once: true });
@@ -561,6 +570,88 @@
       sessionStorage.setItem('service', '3');
       location.href = 'mentions-legales.html';
       return;
+    } else if (SCENARIOS === 'lot7') {
+      // Audit, lot 7 : la performance profonde et l'accessibilité.
+      await effacer();
+      window.scrollTo(0, 0);
+      await pause(300);
+      // A-15 : le premier morceau couvre deux écrans, pas 400 événements.
+      // Mesuré juste après le rendu, avant que la page ne construise la
+      // suite pendant ses moments libres.
+      renderFeed();
+      const journees = [...document.querySelectorAll('#feed section.day')];
+      const derniere = journees[journees.length - 1];
+      res.premier_morceau = {
+        journees: journees.length,
+        cartes: document.querySelectorAll('#feed .event').length,
+        derniere_commence_avant_deux_ecrans: derniere.getBoundingClientRect().top < 2 * window.innerHeight,
+        couvre_deux_ecrans: derniere.getBoundingClientRect().bottom >= 2 * window.innerHeight,
+      };
+      await pause(800);
+      // A-15 : les enseignes, déclarées une fois, citées par les cartes.
+      const enseignes = [...document.querySelectorAll('#feed svg.enseigne')];
+      const symboles = document.querySelectorAll('.planche-enseignes symbol');
+      const premiere = enseignes[0] && enseignes[0].querySelector('use');
+      res.enseignes = {
+        cartes: enseignes.length,
+        textes_dans_les_cartes: document.querySelectorAll('#feed svg.enseigne text').length,
+        toutes_citent: enseignes.every(s => {
+          const u = s.querySelector('use');
+          return u && document.getElementById(u.getAttribute('href').slice(1)) !== null;
+        }),
+        symboles: symboles.length,
+        dessinee: !!premiere && premiere.getBBox().width > 0,
+      };
+      // A-15 : la recherche ne normalise plus rien à chaque frappe, et le
+      // jour de Paris n'est demandé qu'une fois par filtrage.
+      const vraiNorm = window.normSearch, vraiJour = window.aujourdhui;
+      let normalisations = 0, jours = 0;
+      window.normSearch = s => { normalisations++; return vraiNorm(s); };
+      window.aujourdhui = () => { jours++; return vraiJour(); };
+      state.search = 'le';
+      const trouves = filtered().length;
+      state.search = '';
+      window.normSearch = vraiNorm;
+      window.aujourdhui = vraiJour;
+      res.recherche = { trouves_plus_de_cent: trouves > 100, normalisations, jours };
+      // A-19 : plus rien de cliquable DANS un lien ; de vrais boutons ; le
+      // lien du titre couvre la carte, les boutons passent dessus.
+      // (l'ancienne carte, un lien entier, si la page n'a pas encore la nouvelle)
+      const carte = document.querySelector('#feed article.event:has(.event-lien)')
+        || document.querySelector('#feed a.event');
+      const r = carte.getBoundingClientRect();
+      const lieu = carte.querySelector('.event-venue').getBoundingClientRect();
+      const agenda = carte.querySelector('[data-action="agenda"]').getBoundingClientRect();
+      const sous = (x, y) => document.elementFromPoint(x, y);
+      carte.scrollIntoView({ block: 'center' });
+      await pause(200);
+      const r2 = carte.getBoundingClientRect();
+      const dy = r2.top - r.top;
+      // La couche visuelle passe sous le texte (z-index -1) dans une carte
+      // isolée : sans cela, le titre, qui n'est plus positionné, passerait
+      // dessous, ou la couche sous le fond de la carte.
+      const fond = carte.querySelector('.visual-bg');
+      res.calques = [fond ? getComputedStyle(fond).zIndex : null, getComputedStyle(carte).isolation];
+      res.cartes_accessibles = {
+        dans_un_lien: document.querySelectorAll('#feed a button, #feed a [role="button"], #feed a [tabindex], #feed a a').length,
+        boutons: [...new Set([...document.querySelectorAll('#feed .carte-bouton')].map(b => b.tagName))],
+        lieu_ouvre_le_lien: !!(sous(lieu.left + 2, lieu.top + dy + lieu.height / 2) || { closest: () => null }).closest('.event-lien'),
+        agenda_est_un_bouton: (sous(agenda.left + agenda.width / 2, agenda.top + dy + agenda.height / 2) || {}).dataset?.action === 'agenda',
+        coin_ouvre_le_lien: !!(sous(r2.left + 6, r2.top + r2.height / 2) || { closest: () => null }).closest('.event-lien'),
+      };
+      // A-19 : le nombre de résultats et « aucun événement » sont annoncés.
+      const annonce = document.getElementById('annonce')
+        || { getAttribute: () => null, textContent: '' };   // page sans annonce
+      const champ = document.getElementById('filterSearch');
+      champ.value = 'aucun événement ne porte ce titre';
+      champ.dispatchEvent(new Event('input', { bubbles: true }));
+      await pause(700);
+      const vide = norme(annonce.textContent);
+      await effacer();
+      champ.value = '';
+      champ.dispatchEvent(new Event('input', { bubbles: true }));
+      await pause(700);
+      res.annonces = { role: annonce.getAttribute('role'), vide, plein: norme(annonce.textContent) };
     } else if (SCENARIOS === 'lot6') {
       // Audit, lot 6 : la page, sa logique et sa conformité.
       if (!sessionStorage.getItem('lot6')) {
@@ -718,7 +809,7 @@
                    norme(fiche.querySelector('.fl-nom').textContent).startsWith(nomDuLieu),
                    seul.classList.contains('choisi'),
                    document.activeElement === fiche.querySelector('.fiche-lieu'),
-                   [...fiche.querySelectorAll('a.event')].every(a => a.target === '_blank' && /^https?:/.test(a.href)),
+                   [...fiche.querySelectorAll('.event-lien')].every(a => a.target === '_blank' && /^https?:/.test(a.href)),
                    !!fiche.querySelector('.event .carte-etoile'),
                    fiche.getBoundingClientRect().top >= document.querySelector('.carte-boite').getBoundingClientRect().bottom];
         fiche.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));

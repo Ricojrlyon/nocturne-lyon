@@ -666,6 +666,16 @@
      Sans JavaScript, le programme ne vient jamais : rien n'est réservé, et
      le message qui le dit reste en vue. */
   #feed:empty { min-height: 100vh; }
+  /* Pour les lecteurs d'écran seulement : présent, lu, invisible. */
+  .pour-lecteurs {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
   @media (scripting: none) { #feed:empty { min-height: 0; } }
 
   /* ---------- journées ----------
@@ -935,6 +945,9 @@
     /* Pas de voile gris sur toute la carte au toucher : sur un téléphone,
        toucher l'étoile donnait l'impression d'ouvrir la carte. */
     -webkit-tap-highlight-color: transparent;
+    /* Une carte est un monde à part : sa couche visuelle (z-index -1)
+       passe sous son texte sans passer sous son fond. */
+    isolation: isolate;
   }
   /* La carte s'allume sous la souris, et non au doigt : un téléphone garde
      le « survol » de la dernière carte touchée, étoile comprise. Au doigt,
@@ -973,6 +986,10 @@
   .visual-bg {
     position: absolute;
     inset: 0;
+    /* Sous tout le texte de la carte, qui l'isole (voir .event) : le titre
+       n'a ainsi plus besoin d'être positionné pour passer devant, et le
+       lien qu'il porte peut couvrir la carte entière (audit A-19). */
+    z-index: -1;
     pointer-events: none;
     -webkit-mask-image: linear-gradient(to bottom,
         transparent 0%, rgba(0,0,0,.62) 5%, rgba(0,0,0,1) 12%,
@@ -988,6 +1005,15 @@
   .visual-bg .enseigne {
     position: absolute; inset: 0;
     width: 100%; height: 100%;
+  }
+  /* La planche des enseignes : invisible, elle ne fait que les déclarer
+     (voir patternSVG). Pas de display:none, qui empêcherait certains
+     navigateurs de les dessiner là où elles sont citées. */
+  .planche-enseignes {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
   }
   .visual-bg .photo-wrap { position: absolute; inset: 0; }
   .visual-bg img {
@@ -1141,6 +1167,26 @@
      visuel restait sourd - l'enseigne plafonne à 0,18 d'opacité - mais la
      ligne restait dessous. */
   .event-head, .event-title, .event-list, .event-foot { position: relative; }
+  /* LE LIEN DE LA CARTE (audit A-19) : il porte sur le titre, et couvre
+     toute la carte par une boîte invisible. La carte était un lien entier,
+     boutons compris : un lecteur d'écran la lisait d'un bloc, et ne
+     pouvait atteindre ni l'étoile ni l'agenda. Les boutons passent
+     au-dessus du lien. Le titre qui le porte n'est pas positionné, pour
+     que la boîte se cale sur la carte et non sur lui. */
+  .event-title:has(> .event-lien) { position: static; }
+  .event-lien { color: inherit; text-decoration: none; }
+  .event-lien::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+  .event-lien:focus-visible { outline: none; }
+  .event-lien:focus-visible::after {
+    outline: 2px solid var(--ink-soft);
+    outline-offset: -3px;
+    border-radius: var(--radius);
+  }
   /* Le nom du lieu et son arrondissement sont la première ligne du bloc
      de texte, donc les seuls à border encore l'affiche - le titre et le
      pied sont plus bas, là où le visuel a disparu. Deux ombres plutôt
@@ -1404,7 +1450,16 @@
      (audit A-18) : l'étoile, l'agenda et YouTube n'en faisaient que 22 × 19,
      sous le minimum. Une boîte invisible, centrée sur le bouton, reçoit le
      doigt pour lui. */
-  .carte-bouton { position: relative; }
+  /* Au-dessus du lien qui couvre la carte (audit A-19). De vrais boutons :
+     on leur retire le fond et les marges que le navigateur leur donne. */
+  .carte-bouton {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    margin: 0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
   .carte-bouton::before {
     content: '';
     position: absolute;
@@ -2161,6 +2216,9 @@
 </div>
 
 <main class="feed">
+  <!-- Ce que les filtres donnent, dit aux lecteurs d'écran (audit A-19) :
+       le nombre de résultats, ou qu'il n'y en a aucun. Rien ne s'affiche. -->
+  <p class="pour-lecteurs" id="annonce" role="status" aria-live="polite"></p>
   <div class="container" id="feed"></div>
   <!-- Sans JavaScript, la page ne peut pas construire le programme : elle
        le dit, au lieu de rester vide (audit n° 19). -->
@@ -2747,10 +2805,49 @@ function nomDEnseigne(venue) {
 const ENSEIGNE_AVANCE = 0.71;
 const ENSEIGNE_W = 320, ENSEIGNE_H = 160;
 
+/* UNE ENSEIGNE PAR LIEU, déclarée une fois (audit A-15). Les vingt et
+   quelques <text> d'une enseigne étaient écrits dans chaque carte sans
+   affiche : 45 % des éléments de la page. Chaque lieu a désormais
+   ENSEIGNE_VARIANTES dessins, déclarés une seule fois dans une planche
+   cachée (<symbol>), et une carte n'y fait plus qu'une référence
+   (<use>), trois éléments au lieu d'une vingtaine. La graine de la carte
+   choisit le dessin : les jours d'un même événement gardent le leur, et
+   deux soirées d'un même lieu n'ont pas forcément le même. */
+const ENSEIGNE_VARIANTES = 4;
+const _enseignes = new Map();     // « nom|variante » → id du <symbol>
+let _planche = null;
+
+function planche() {
+  if (!_planche) {
+    _planche = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    _planche.setAttribute('class', 'planche-enseignes');
+    _planche.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(_planche);
+  }
+  return _planche;
+}
+
 function patternSVG(seed, venue) {
+  const n = nomDEnseigne(venue);
+  const cle = n + '|' + (stableHash(seed) % ENSEIGNE_VARIANTES);
+  let id = _enseignes.get(cle);
+  if (!id) {
+    id = 'enseigne-' + _enseignes.size;
+    _enseignes.set(cle, id);
+    const s = document.createElementNS('http://www.w3.org/2000/svg', 'symbol');
+    s.setAttribute('id', id);
+    s.setAttribute('viewBox', '0 0 ' + ENSEIGNE_W + ' ' + ENSEIGNE_H);
+    s.innerHTML = textesDEnseigne(cle, n);
+    planche().appendChild(s);
+  }
+  return '<svg class="enseigne" viewBox="0 0 ' + ENSEIGNE_W + ' ' + ENSEIGNE_H
+       + '" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#'
+       + id + '"/></svg>';
+}
+
+function textesDEnseigne(seed, n) {
   const de = deSuite(seed + '|enseigne');
   const entre = (a, b) => a + (b - a) * de();
-  const n = nomDEnseigne(venue);
   let t = '';
   let y = entre(14, 22);
   while (y < ENSEIGNE_H * 1.1) {
@@ -2778,10 +2875,7 @@ function patternSVG(seed, venue) {
        matière, et non le nombre d'occurrences. */
     y += corps * entre(0.58, 0.70);
   }
-  return '<svg class="enseigne" viewBox="0 0 ' + ENSEIGNE_W + ' ' + ENSEIGNE_H
-       + '" preserveAspectRatio="xMidYMid slice" aria-hidden="true">'
-       + '<g font-family="Bungee, system-ui" fill="#fff" letter-spacing="-1">'
-       + t + '</g></svg>';
+  return '<g font-family="Bungee, system-ui" fill="#fff" letter-spacing="-1">' + t + '</g>';
 }
 
 /* Nom composé sur le cartouche typographique. On coupe à la première
@@ -3971,10 +4065,12 @@ function normSearch(s) {
 })();
 
 /* ---------- when matching ---------- */
-function withinWhen(dateStr) {
-  const d = parseIso(dateStr);
-  const now = aujourdhui();
-  if (state.when === 'all') return true;
+/* La période choisie, en dates ISO [du, au], ou null pour « tout ».
+   Calculée UNE fois par filtrage (audit A-15) : elle l'était pour chacune
+   des 4 500 occurrences, à chaque frappe et à chaque clic. */
+function periodeChoisie(ceJour) {
+  if (state.when === 'all') return null;
+  const now = parseIso(ceJour);
 
   if (state.when === 'weekend') {
     // Le weekend court du VENDREDI au dimanche. Le vendredi de ce
@@ -3987,7 +4083,7 @@ function withinWhen(dateStr) {
     else if (day === 6) fri.setDate(now.getDate() - 1);
     else                fri.setDate(now.getDate() + (5 - day));
     const sun = new Date(fri); sun.setDate(fri.getDate() + 2);
-    return d >= fri && d <= sun;
+    return [isoOf(fri), isoOf(sun)];
   }
 
   if (state.when === 'nextweek') {
@@ -3996,15 +4092,13 @@ function withinWhen(dateStr) {
     const offset = (8 - day) % 7 || 7;        // lundi → +7, dimanche → +1
     const mon = new Date(now); mon.setDate(now.getDate() + offset);
     const sun = new Date(mon); sun.setDate(mon.getDate() + 6);
-    return d >= mon && d <= sun;
+    return [isoOf(mon), isoOf(sun)];
   }
 
   if (state.when === 'custom' && state.customRange) {
-    const start = parseIso(state.customRange.start);
-    const end = parseIso(state.customRange.end);
-    return d >= start && d <= end;
+    return [state.customRange.start, state.customRange.end];
   }
-  return true;
+  return null;
 }
 
 /* ---------- expand multi-day ---------- */
@@ -4029,6 +4123,11 @@ function expandOccurrences(events) {
   const horizon = new Date(today.getTime() + HORIZON_JOURS * dayMs);
   const horizonIso = isoOf(horizon);
   for (const e of events) {
+    // Le texte que la recherche parcourt, normalisé une seule fois (audit
+    // A-15) : il l'était à chaque frappe, pour chaque occurrence. Un saut
+    // de ligne sépare les champs : une recherche ne déborde pas de l'un
+    // sur l'autre.
+    const _texte = [e.title, e.venue, e.subtitle].map(normSearch).join('\n');
     const start = parseIso(e.date_start);
     const end = e.date_end ? parseIso(e.date_end) : start;
     const totalDays = Math.round((end - start) / dayMs) + 1;
@@ -4039,14 +4138,14 @@ function expandOccurrences(events) {
       // Série entièrement au-delà de l'horizon - un agrégateur annonce
       // parfois à deux ans. Une carte à sa date d'ouverture, pour ne pas
       // la faire disparaître du feed.
-      out.push({ ...e, _date: e.date_start, _totalDays: totalDays,
+      out.push({ ...e, _texte, _date: e.date_start, _totalDays: totalDays,
                  _isLast: totalDays === 1 });
       continue;
     }
     for (let d = new Date(depuis); d <= end && isoOf(d) <= horizonIso;
          d.setDate(d.getDate() + 1)) {
       const iso = isoOf(d);
-      out.push({ ...e, _date: iso, _totalDays: totalDays,
+      out.push({ ...e, _texte, _date: iso, _totalDays: totalDays,
                  _isLast: iso === (e.date_end || e.date_start) });
     }
   }
@@ -4054,26 +4153,24 @@ function expandOccurrences(events) {
 }
 
 function filtered() {
-  const now = aujourdhui();
+  // Le jour, la période et la recherche, une fois pour toutes (audit
+  // A-15) ; chaque occurrence ne fait plus que des comparaisons de textes.
   // state.occurrences est pré-calculé au load ; les occurrences passées
-  // sont écartées par le check occDate < now ci-dessous.
+  // sont écartées ici.
+  const ceJour = isoOf(aujourdhui());
+  const periode = periodeChoisie(ceJour);
+  const q = state.search;
   return state.occurrences.filter(occ => {
-    const occDate = parseIso(occ._date);
-    if (occDate < now) return false;
-    if (!withinWhen(occ._date)) return false;
+    if (occ._date < ceJour) return false;
+    if (periode && (occ._date < periode[0] || occ._date > periode[1])) return false;
     if (state.arrondissements.size && !state.arrondissements.has(eventArrondissement(occ))) return false;
     if (state.lieux.size && !state.lieux.has(occ.venue)) return false;
     if (state.tags.size && !state.tags.has(bucketOf(occ.category))) return false;
     if (state.voirFavoris && !state.favoris.has(cleEvenement(occ))
         && !state.salles.has(occ.venue)) return false;
-    if (state.search) {
-      const q = state.search;
-      const titleMatch = normSearch(occ.title).includes(q);
-      const venueMatch = normSearch(occ.venue).includes(q);
-      // subtitle porte les line-ups d'artistes (ex. Le Sucre) - cherchable
-      const subtitleMatch = normSearch(occ.subtitle).includes(q);
-      if (!titleMatch && !venueMatch && !subtitleMatch) return false;
-    }
+    // Titre, lieu et sous-titre (les line-ups d'artistes, ex. Le Sucre),
+    // normalisés au chargement (_texte, voir expandOccurrences).
+    if (q && !occ._texte.includes(q)) return false;
     return true;
   });
 }
@@ -4743,6 +4840,7 @@ function renderFeed() {
     // Aucun événement ne passe les filtres : le dire, et offrir d'en
     // sortir d'un clic (audit n° 20) - « tout effacer » vit dans le tiroir
     // des filtres, souvent replié.
+    annoncer('aucun événement pour ces filtres');
     feed.innerHTML = '<div class="empty-state"><p>aucun événement pour ces filtres</p>'
                    + '<button type="button" class="chip vide-effacer">tout effacer</button></div>';
     feed.querySelector('.vide-effacer')
@@ -4750,7 +4848,11 @@ function renderFeed() {
     carte = null;
     return;
   }
-  if (state.vue === 'carte') { renderCarte(feed, events); return; }
+  if (state.vue === 'carte') {
+    annoncer(evenementsAnnonces(events.length));
+    renderCarte(feed, events);
+    return;
+  }
 
   const groups = new Map();
   for (const e of events) {
@@ -4809,13 +4911,25 @@ function renderFeed() {
     // porte donc ses propres boutons, avec les comptes de TOUTE la
     // période plutôt que d'un jour.
     const total = comptesParFamille(events);
+    annoncer('toutes les familles sont masquées');
     feed.innerHTML = '<div class="empty-state">'
                    + '<p>toutes les familles sont masquées</p>'
                    + '<div class="empty-familles">' + famillesHtml(total) + '</div>'
                    + '</div>';
     return;
   }
+  annoncer(evenementsAnnonces(jours.reduce((n, j) => n + j.visibles.length, 0)));
   construireLeFil(feed, jours, ancre);
+}
+
+/* La zone d'annonce (#annonce, audit A-19) : elle ne parle que si son
+   texte change. */
+function annoncer(texte) {
+  const zone = document.getElementById('annonce');
+  if (zone && zone.textContent !== texte) zone.textContent = texte;
+}
+function evenementsAnnonces(n) {
+  return n + ' événement' + (n > 1 ? 's' : '');
 }
 
 /* Une journée du fil : sa barre - date, familles, compte - puis ses cartes. */
@@ -4867,11 +4981,14 @@ function journeeHtml({ iso, comptes, visibles }) {
    clavier, la tabulation passe de la dernière journée construite à la
    suivante, et non au pied de page. */
 
-/* Taille du premier morceau, en événements, par journées entières. Il
-   couvre largement un écran, et un fil court - un weekend, une semaine -
-   y tient en entier : il se construit d'un coup, comme avant. La suite
-   vient ensuite journée par journée. */
-const MORCEAU_INITIAL = 400;
+/* Le premier morceau : la première journée, puis autant de journées
+   qu'il en faut pour couvrir DEUX hauteurs d'écran (ECRANS_INITIAUX),
+   mesurées. Il valait 400 événements quel que soit l'écran : chaque
+   rendu, chaque clic de filtre, reconstruisait au moins 400 événements
+   quand un téléphone en montre trois ou quatre (audit A-15 : jusqu'à
+   452 ms par clic sur un téléphone simulé). La suite vient journée par
+   journée, au défilement. */
+const ECRANS_INITIAUX = 2;
 let suiteDuFil = null;   // { jours, prochain, guetteur }, tant qu'il en reste
 let ancreDuRendu = null; // { iso, haut } : la journée à garder sous le doigt
 
@@ -4880,19 +4997,12 @@ function construireLeFil(feed, jours, ancre) {
   // comme quand tout se construisait d'un coup : on note où il en est.
   const y = window.scrollY;
   const suite = { jours, prochain: 0, guetteur: null };
-  const html = [];
-  let n = 0;
-  while (suite.prochain < jours.length && n < MORCEAU_INITIAL) {
-    const jour = jours[suite.prochain++];
-    html.push(journeeHtml(jour));
-    n += jour.visibles.length;
-  }
-  feed.innerHTML = html.join('\n');
+  feed.innerHTML = journeeHtml(jours[suite.prochain++]);
   if (suite.prochain < jours.length) suiteDuFil = suite;
   if (!(ancre && revenirALaJournee(ancre)) && suiteDuFil) {
-    // Son écran doit être couvert tout de suite, et non à l'image
-    // suivante : le fil ne doit pas raccourcir sous lui.
-    remplirJusqua(y + window.innerHeight);
+    // Son écran, et le suivant, doivent être couverts tout de suite, et
+    // non à l'image suivante : le fil ne doit pas raccourcir sous lui.
+    remplirJusqua(y + ECRANS_INITIAUX * window.innerHeight);
     if (window.scrollY !== y) window.scrollTo(window.scrollX, y);
   }
   if (!suiteDuFil) return;
@@ -5238,10 +5348,21 @@ function eventCard(e, seedOverride) {
     : (dureeConnue ? '' : '<span class="event-time empty">-</span>');
 
   // Title fallback: drop discreet placeholder if missing.
+  // LE LIEN EST SUR LE TITRE, et il couvre toute la carte (audit A-19 :
+  // voir .event-lien). La carte entière était un lien, ses boutons
+  // dedans : un lecteur d'écran lisait tout d'un bloc, et les boutons
+  // n'étaient pas atteignables chacun à leur tour.
   const hasTitle = !!(e.title && e.title.trim());
-  const titleHtml = hasTitle
-    ? '<h3 class="event-title">' + escapeHtml(e.title.trim()) + '</h3>'
-    : '<h3 class="event-title placeholder">titre non précisé</h3>';
+  const href = eventHref(e);
+  const isHttpUrl = typeof href === 'string'
+    && (href.startsWith('http://') || href.startsWith('https://'));
+  const texteDuTitre = hasTitle ? escapeHtml(e.title.trim()) : 'titre non précisé';
+  const titleHtml = '<h3 class="event-title' + (hasTitle ? '' : ' placeholder') + '">'
+    + (isHttpUrl
+      ? '<a class="event-lien" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">'
+        + texteDuTitre + '</a>'
+      : texteDuTitre)
+    + '</h3>';
 
   const cat = e.category
     ? '<span class="event-cat">' + escapeHtml(e.category) + '</span>'
@@ -5276,32 +5397,26 @@ function eventCard(e, seedOverride) {
   // (choix du 14/11/2026) : cleEvenement n'a pas d'heure.
   const cle = cleEvenement(e) + '|' + e._date + '|' + (e.time || '');
   CARTES.set(cle, e);
-  const agenda = '<span class="carte-bouton icone" role="button" tabindex="0" data-action="agenda"'
+  // De vrais boutons (audit A-19), hors du lien : chacun se trouve au
+  // clavier et se lit à son tour.
+  const agenda = '<button type="button" class="carte-bouton icone" data-action="agenda"'
     + ' aria-haspopup="menu" aria-expanded="false"'
     + ' data-cle="' + escapeHtml(cle) + '" title="ajouter à mon agenda" aria-label="ajouter à mon agenda">'
-    + ICONE_AGENDA + '</span>';
+    + ICONE_AGENDA + '</button>';
   // Écouter (nouveauté n° 5), sur les seules cartes de musique : une
   // recherche YouTube sur le titre, dans un autre onglet. Le logo de
   // YouTube, de la couleur des autres boutons.
   const ecouter = familleOf(e.category) === 'musique'
-    ? '<span class="carte-bouton icone" role="link" tabindex="0" data-action="ecouter"'
+    ? '<button type="button" class="carte-bouton icone" data-action="ecouter"'
       + ' data-cle="' + escapeHtml(cle) + '" title="écouter sur YouTube" aria-label="écouter sur YouTube">'
-      + ICONE_YOUTUBE + '</span>'
+      + ICONE_YOUTUBE + '</button>'
     : '';
   // L'étoile des favoris (nouveauté n° 3), tout en haut à droite.
   const garde = state.favoris.has(cleEvenement(e));
-  const etoile = '<span class="carte-bouton carte-etoile" role="button" tabindex="0"'
+  const etoile = '<button type="button" class="carte-bouton carte-etoile"'
     + ' data-action="favori" data-cle="' + escapeHtml(cle) + '"'
     + ' data-evenement="' + escapeHtml(cleEvenement(e)) + '" aria-pressed="' + garde + '"'
-    + ' aria-label="garder en favori" title="garder en favori">' + (garde ? '★' : '☆') + '</span>';
-
-  const href = eventHref(e);
-  const isHttpUrl = typeof href === 'string'
-    && (href.startsWith('http://') || href.startsWith('https://'));
-  const tag = isHttpUrl ? 'a' : 'div';
-  const linkAttrs = isHttpUrl
-    ? ' href="' + escapeHtml(href) + '" target="_blank" rel="noopener"'
-    : '';
+    + ' aria-label="garder en favori" title="garder en favori">' + (garde ? '★' : '☆') + '</button>';
 
   const arr = etiquetteLieu(e);
   const arrLabel = '<span class="event-arr">' + escapeHtml(arr) + '</span>';
@@ -5311,8 +5426,7 @@ function eventCard(e, seedOverride) {
   const visual = visualLayerHtml(e, seedOverride);
 
   return [
-    '<' + tag + ' class="event" style="--t:' + teinteDe(e.category) + '"'
-      + linkAttrs + '>',
+    '<article class="event" style="--t:' + teinteDe(e.category) + '">',
     '  ' + visual,
     '  ' + etoile,
     '  <div class="event-head">',
@@ -5332,7 +5446,7 @@ function eventCard(e, seedOverride) {
     '      ' + agenda,
     '    </div>',
     '  </div>',
-    '</' + tag + '>'
+    '</article>'
   ].join('\n');
 }
 
@@ -5360,13 +5474,8 @@ function oublierLesVus() {
   } catch (_) { /* stockage bloqué : rien à effacer */ }
 }
 
-/* Au clavier aussi : Entrée ou Espace sur un bouton de carte. */
-document.getElementById('feed').addEventListener('keydown', ev => {
-  if ((ev.key === 'Enter' || ev.key === ' ') && ev.target.matches('.carte-bouton')) {
-    ev.preventDefault();
-    agirSurCarte(ev.target);
-  }
-});
+/* Au clavier, Entrée ou Espace : ce sont de vrais boutons (audit A-19),
+   le navigateur en fait un clic, que reçoit le gestionnaire du fil. */
 
 function agirSurCarte(bouton) {
   const e = CARTES.get(bouton.dataset.cle);
@@ -5712,7 +5821,7 @@ document.getElementById('feed').addEventListener('click', ev => {
   if (epingle) { epinglerLesFiltres(!filtresEpingles()); return; }
   const bouton = ev.target.closest('.carte-bouton');
   if (bouton) {
-    ev.preventDefault();               // la carte est un lien : on ne l'ouvre pas
+    ev.preventDefault();               // rien d'autre ne réagit au bouton
     agirSurCarte(bouton);
     return;
   }
