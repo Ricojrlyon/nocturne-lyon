@@ -8,6 +8,7 @@ publication. La table des lieux, elle, n'existe plus qu'en un endroit,
 lieux.json, que la page et le robot lisent tous deux (audit n° 21) : on
 vérifie qu'ils le lisent bien, et qu'il est bien formé.
 """
+import hashlib
 import importlib
 import json
 import pkgutil
@@ -20,6 +21,36 @@ from scrapers import base
 from tests.outils import RACINE
 
 PAGE = (RACINE / "index.html").read_text(encoding="utf-8")
+
+# L'empreinte du service hors ligne sous chaque nom de réserve (CACHE de
+# sw.js), du plus ancien au plus récent (audit, lot 8). sw.js garde dès
+# l'installation les fichiers d'AU_DEPART, puis les sert du téléphone :
+# l'un d'eux changé sans changer CACHE n'arrive chez le visiteur qu'une
+# visite plus tard, et une logique changée laisse l'ancienne réserve en
+# place. Après un changement voulu : passer CACHE au nom suivant, puis
+# ajouter ici la ligne que le test donne.
+EMPREINTES_DU_SERVICE = {
+    "nocturne-3": "6cf657e26e2ca481",
+}
+
+
+def empreinte_du_service() -> tuple:
+    """(le nom CACHE de sw.js, l'empreinte de sw.js et des fichiers qu'il
+    garde dès l'installation, ces fichiers). La page elle-même (« ./ ») et
+    le programme, servis du réseau d'abord, n'en sont pas. Les fins de
+    ligne sont ramenées à celles de Linux, pour la même empreinte sur un
+    poste Windows et sur GitHub."""
+    sw = (RACINE / "sw.js").read_text(encoding="utf-8")
+    cache = re.search(r"^const CACHE = '([^']+)';$", sw, re.M).group(1)
+    liste = sw.split("const AU_DEPART = [", 1)[1].split("];", 1)[0]
+    fichiers = [f for f in re.findall(r"'([^']+)'", liste) if f != "./"]
+    h = hashlib.sha256()
+    for nom in ["sw.js"] + fichiers:
+        contenu = (RACINE / nom).read_bytes()
+        if not nom.endswith((".png", ".woff2")):
+            contenu = contenu.replace(b"\r\n", b"\n")
+        h.update(nom.encode("utf-8") + b"\0" + contenu + b"\0")
+    return cache, h.hexdigest()[:16], fichiers
 
 
 def constante_de_la_page(nom: str) -> str:
@@ -101,6 +132,31 @@ class Coherence(unittest.TestCase):
         for f in au_depart:
             self.assertTrue((RACINE / ("index.html" if f == "./" else f)).exists(), f)
         self.assertIn("navigator.serviceWorker.register('sw.js')", PAGE)
+
+    def test_un_service_hors_ligne_modifie_change_de_nom_de_reserve(self):
+        cache, empreinte, fichiers = empreinte_du_service()
+        noms = list(EMPREINTES_DU_SERVICE)
+        self.assertEqual(
+            cache, noms[-1],
+            "CACHE vaut %r dans sw.js : ajouter à EMPREINTES_DU_SERVICE "
+            "(tests/test_coherence.py) la ligne  \"%s\": \"%s\"," % (cache, cache, empreinte))
+        self.assertEqual(
+            EMPREINTES_DU_SERVICE[cache], empreinte,
+            "sw.js ou un fichier qu'il garde dès l'installation (%s) a changé, et CACHE "
+            "vaut toujours %r : passer CACHE au nom suivant dans sw.js, pour que les "
+            "téléphones reprennent tout de suite les nouveaux fichiers et vident "
+            "l'ancienne réserve." % (", ".join(fichiers), cache))
+        numeros = [int(n.rsplit("-", 1)[1]) for n in noms]
+        self.assertEqual(numeros, sorted(set(numeros)))
+
+    def test_les_fins_de_ligne_sont_celles_de_linux_partout(self):
+        # .gitattributes (audit, lot 8) : un fichier texte est rangé et
+        # rendu avec des fins de ligne Linux sur toutes les machines, un
+        # poste Windows compris ; les fichiers binaires ne sont pas touchés.
+        regles = (RACINE / ".gitattributes").read_text(encoding="utf-8").splitlines()
+        self.assertIn("* text=auto eol=lf", regles)
+        for motif in ("*.png", "*.woff2", "*.gz"):
+            self.assertIn("%s binary" % motif, regles)
 
     def test_au_doigt_seul_le_bouton_touche_reagit(self):
         # Sur un téléphone, toucher l'étoile allumait toute la carte : le

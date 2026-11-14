@@ -1,0 +1,12 @@
+# Les fins de ligne (audit, lot 8). Un fichier texte est rangé, et rendu
+# sur chaque machine, avec les fins de ligne de Linux (LF), un poste
+# Windows compris : sans cette règle, Windows récrivait chaque fichier avec
+# les siennes (CRLF), et un même fichier n'avait pas les mêmes octets sur
+# le poste et sur GitHub. Git reconnaît seul le texte du binaire ; les
+# fichiers binaires du dépôt sont nommés en plus, pour qu'il n'y touche
+# jamais.
+* text=auto eol=lf
+
+*.png binary
+*.woff2 binary
+*.gz binary

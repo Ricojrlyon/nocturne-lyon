@@ -16,27 +16,52 @@ GitHub Pages :
  Ville Morte)                 └─→ detail_times.json (cache des heures)
 ```
 
-Le pipeline tourne chaque nuit à 2 h 17, heure de Paris, été comme hiver,
-via GitHub Actions
+Le pipeline tourne chaque nuit via GitHub Actions
 ([.github/workflows/update.yml](.github/workflows/update.yml)) et committe
-les trois fichiers de données. GitHub ne compte qu'en heure UTC, qui ne
-change pas d'heure : deux créneaux sont programmés, 00:17 et 01:17 UTC, et
-un premier job ne laisse travailler que celui qui tombe à 2 h 17 à Paris
-ce jour-là (le jour du passage à l'heure d'été, où 2 h 17 n'existe pas,
-c'est 1 h 17). GitHub retarde ses passages programmés de plusieurs heures,
+les trois fichiers de données. GitHub ne compte qu'en heure UTC. Trois
+passages sont programmés chaque jour : 00:17 et 01:17 UTC la nuit (2 h 17
+à Paris l'été pour le premier, l'hiver pour le second), et 09:17 UTC en
+rattrapage. Le premier arrivé travaille ; les suivants s'arrêtent en
+quelques secondes si le programme publié est déjà du jour, à Paris
+(`passage.py`, audit A-25). Avant, un seul des deux passages de la nuit
+avait le droit de travailler : si GitHub l'abandonnait, ce que sa
+documentation prévoit en cas de forte charge, rien n'était publié ce
+jour-là. Désormais, un passage abandonné ou tombé au rouge est rattrapé par
+le suivant. GitHub retarde ses passages programmés de plusieurs heures,
 cinq à sept en octobre 2026 : partir la nuit vise un site à jour au
 réveil, et la minute 17 évite l'heure pile, la plus demandée. Un seul passage
 tourne à la fois : lancé à la main pendant le passage programmé, ou
 l'inverse, le second attend la fin du premier, puis repart du fil que
 celui-ci vient de publier. Deux passages simultanés échouaient à la
-publication du second. Les deux briques de GitHub qu'il emploie
-(`actions/checkout`, `actions/setup-python`) sont désignées par
-l'empreinte exacte de leur code, et non par leur étiquette (`v7`), qui
-peut être déplacée vers un autre code ; leur version est notée en
-commentaire, et un test vérifie qu'aucune n'est désignée autrement. Les
-mises à jour se font donc à la main : relever l'empreinte de la nouvelle
-version (`git ls-remote --tags https://github.com/actions/checkout`) et
-la recopier, version comprise.
+publication du second.
+
+La publication fait trois essais (audit A-27) : un envoi pendant le
+passage (une retouche du code, un fichier téléversé à la main) la faisait
+échouer, et rien n'était publié. Sur les trois fichiers du robot, c'est
+la version du robot qui l'emporte. Le droit d'écrire dans le dépôt n'est
+donné qu'au job qui publie, et le jeton n'arrive qu'à l'étape de
+publication : il était rangé dans le dépôt pendant tout le passage, où les
+tests et les paquets installés pouvaient le lire (audit A-42).
+
+Rien ne change sans qu'on le décide (audit A-42) :
+- le système est écrit en clair, `ubuntu-26.04`, dans les deux workflows :
+  `ubuntu-latest` était passé de la 24.04 à la 26.04 le 4 novembre 2026
+  sans prévenir ;
+- les huit paquets Python, ceux du projet et ceux dont ils dépendent, sont
+  figés dans `requirements.txt` avec l'empreinte de leur fichier : un
+  fichier différent de celui qui a été éprouvé est refusé, même sous le
+  même numéro. Pour monter une version : changer le numéro, relever les
+  empreintes sur PyPI, lancer un passage, comparer le rapport par salle ;
+- les deux briques de GitHub (`actions/checkout`,
+  `actions/setup-python`) sont désignées par l'empreinte exacte de leur
+  code, et non par leur étiquette (`v7`), qui peut être déplacée vers un
+  autre code ; leur version est notée en commentaire, et un test vérifie
+  qu'aucune n'est désignée autrement. Pour les mettre à jour : relever
+  l'empreinte de la nouvelle version
+  (`git ls-remote --tags https://github.com/actions/checkout`) et la
+  recopier, version comprise.
+
+Un test vérifie chacun de ces points.
 
 - **`scrapers/*.py`** : un module par salle (`requests` + BeautifulSoup).
   Chaque module expose `fetch() -> List[Event]`. Les échecs d'une salle ne
@@ -585,6 +610,12 @@ la recopier, version comprise.
   revenue dans le fil. L'issue mentionne le propriétaire du dépôt, et
   GitHub lui envoie l'e-mail. Le passage affiche aussi un tableau des
   sources sur sa page. L'alerte ne fait jamais échouer le passage.
+- **`passage.py`** : deux étapes du passage de nuit, écrites en Python
+  pour être essayées par les tests (audit, lot 8). `creneau` : le passage
+  programmé travaille-t-il ? Oui s'il est le premier du jour à Paris
+  (voir plus haut). `publier` : envoie le commit du robot en trois
+  essais ; chaque essai raté est défait, et le dépôt n'est jamais laissé
+  au milieu d'une opération.
 - **`index.html`** : frontend vanilla JS autonome : filtres par date/lieu/
   arrondissement/type, recherche insensible aux accents (titre, lieu,
   line-up), expansion des événements multi-jours, groupes de lieux.
@@ -802,9 +833,12 @@ la recopier, version comprise.
   remplaçait. Le ménage d'une nouvelle version ne vide que les réserves
   de nocturne (`nocturne-…`) : il vidait aussi celles des autres projets
   de l'adresse ricojrlyon.github.io, *films compris (audit A-12). Les
-  affiches ne sont pas gardées. Modifier la liste `AU_DEPART` ou la
-  logique de `sw.js` : changer aussi le nom `CACHE` (`nocturne-3` depuis
-  novembre 2026).
+  affiches ne sont pas gardées. Modifier `sw.js` ou l'un des fichiers
+  qu'il garde dès l'installation (`AU_DEPART`, la page exceptée) : changer
+  aussi le nom `CACHE` (`nocturne-3` depuis novembre 2026). Sinon, le
+  nouveau fichier n'arrive chez le visiteur qu'une visite plus tard, et
+  l'ancienne réserve n'est pas vidée. Un test l'exige (audit, lot 8) : il
+  garde l'empreinte de ces fichiers sous chaque nom, et dit quoi faire.
 - **`lieux.json`** : où est chaque lieu, une ligne par lieu : son nom tel
   que l'écrivent les sources, son arrondissement (1er à 9e, Villeurbanne
   ou Autre), sa commune quand il est hors de Lyon et de Villeurbanne
@@ -859,7 +893,7 @@ la recopier, version comprise.
 ## Lancer localement
 
 ```bash
-pip install -r requirements.txt   # requests + beautifulsoup4
+pip install -r requirements.txt   # requests + beautifulsoup4, versions figées
 pip install tzdata                # Windows uniquement (zoneinfo)
 
 python aggregate.py               # run complet → events.json + caches
@@ -877,7 +911,7 @@ python -m unittest discover -s tests -t . -v      # la logique, sans réseau
 python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
 ```
 
-- **La logique**, en une minute et demie environ et sans réseau : la
+- **La logique**, en quatre minutes environ et sans réseau : la
   lecture des dates en français, le dédoublonnage règle par règle, les
   nouveaux essais réseau, les pannes partielles de chaque collecteur
   (une page suivante qui tombe fait lever), le cache des fiches, la
@@ -932,10 +966,25 @@ bloque pas la mise en ligne. Les envois du robot (`events.json`,
 `venue_arrondissements.json`, `detail_times.json`) ne le déclenchent pas.
 
 Les tests de page demandent un navigateur de la famille Chrome (Chrome,
-Chromium ou Edge) ; sans lui, ils sont sautés et le disent. Ils le sont
-aussi, avec une alerte, quand le navigateur ne rend rien : c'est alors la
-machine qui fait défaut, pas le site, et cela ne doit pas bloquer la
-publication.
+Chromium ou Edge). Quand la page ne rend rien, elle a droit à un nouvel
+essai, puis le navigateur joue une page témoin, la plus simple qui soit
+(audit A-26) :
+- s'il la rend, il marche, et c'est la page du site qui ne rend rien : le
+  test échoue ;
+- s'il ne la rend pas, ou s'il n'y a pas de navigateur, c'est la machine
+  qui fait défaut. Sur un poste, le test est sauté et le dit. Sur GitHub,
+  il échoue : sauté, il laissait partir la publication sans aucun
+  contrôle de la page.
+
+Les tests essaient aussi le passage lui-même (`tests/test_passage.py`) :
+le créneau sur deux ans de dates, changements d'heure compris, et la
+publication contre de vrais dépôts git créés pour l'occasion, avec
+quelqu'un qui pousse pendant le passage.
+
+Les fins de ligne sont celles de Linux sur toutes les machines
+(`.gitattributes`, audit, lot 8) : Windows récrivait chaque fichier avec
+les siennes, et un même fichier n'avait pas les mêmes octets sur un poste
+et sur GitHub.
 
 Quand un changement est VOULU (une règle de dédoublonnage, le dessin
 d'une carte), les références se recalculent avec

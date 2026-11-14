@@ -102,30 +102,72 @@ def trouver() -> str | None:
 
 
 def sauter_si_indisponible(cas, probleme: str | None) -> None:
-    """Saute le test quand c'est la MACHINE qui fait défaut, pas le site.
+    """Saute le test quand c'est la MACHINE qui fait défaut, pas le site ;
+    sur GitHub, le fait échouer.
 
-    Pas de navigateur, ou un navigateur qui ne rend rien du tout : le test
-    n'a rien pu observer, et bloquer la publication pour cela figerait le
-    site sans raison. Il est sauté, avec une alerte visible sur GitHub. Un
-    relevé obtenu, lui, est comparé strictement.
+    Pas de navigateur, ou un navigateur qui ne rend rien, pas même la page
+    témoin (voir releve_ou_probleme) : le test n'a rien pu observer. Sur
+    un poste, il est sauté et le dit. Sur GitHub, il échoue (audit A-26) :
+    sauté, il laissait partir la publication sans aucun contrôle de la
+    page. Un relevé obtenu, lui, est comparé strictement.
     """
     if not trouver():
         probleme = "aucun navigateur de la famille Chrome"
     if not probleme:
         return
     if os.environ.get("GITHUB_ACTIONS") == "true":
-        print("::warning title=test de page sauté::%s" % probleme)
+        cas.fail("navigateur indisponible sur GitHub, la page n'a pas pu être contrôlée : %s"
+                 % probleme)
     cas.skipTest(probleme)
 
 
+# Ce que jouer() lève quand le navigateur n'a rien renvoyé.
+RIEN_RENDU = (RuntimeError, OSError, subprocess.TimeoutExpired)
+
+# La page témoin : la plus simple qui soit, elle ne fait que répondre.
+TEMOIN = """<!doctype html><meta charset="utf-8"><title>témoin</title>
+<script>fetch('/__resultats', { method: 'POST', body: '{"temoin": true}' });</script>
+"""
+
+
 def releve_ou_probleme(**options) -> tuple:
-    """(relevé, None) ou (None, la raison pour laquelle on n'a rien observé)."""
+    """(relevé, None) ou (None, la raison pour laquelle on n'a rien observé).
+
+    Audit A-26. La page qui ne rend rien a droit à un nouvel essai (un
+    navigateur peut caler une fois). Rien encore : le navigateur joue la
+    page témoin. S'il la rend, il marche, et c'est la page du site qui ne
+    rend rien : un relevé « echec », que les tests refusent. S'il ne la
+    rend pas, c'est la machine qui fait défaut (voir
+    sauter_si_indisponible).
+    """
     if not trouver():
         return None, "aucun navigateur de la famille Chrome"
-    try:
-        return jouer(**options), None
-    except (RuntimeError, OSError, subprocess.TimeoutExpired) as exc:
-        return None, "le navigateur n'a rien rendu : %s" % exc
+    for _essai in range(2):
+        try:
+            return jouer(**options), None
+        except RIEN_RENDU as exc:
+            derniere = exc
+    if temoin():
+        quoi = ("la page n'a rien rendu en deux essais, quand le navigateur rend la page "
+                "témoin : %s" % derniere)
+        return {"echec": quoi, "erreurs": [quoi]}, None
+    return None, "le navigateur n'a rien rendu, pas même la page témoin : %s" % derniere
+
+
+def temoin(delai: int = 60) -> bool:
+    """Le navigateur rend-il la page témoin ? Une page sans rien du site."""
+    navigateur = trouver()
+    if not navigateur:
+        return False
+    with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp:
+        site, profil = Path(tmp) / "site", Path(tmp) / "profil"
+        site.mkdir()
+        (site / "temoin.html").write_text(TEMOIN, encoding="utf-8")
+        try:
+            serveur = _ouvrir(navigateur, site, profil, "temoin.html", delai=delai)
+        except RIEN_RENDU:
+            return False
+        return serveur.resultats == [{"temoin": True}]
 
 
 def preparer_site(dossier: Path, evenements: dict, lieux: dict | None,
@@ -232,58 +274,10 @@ def jouer(evenements: dict, lieux: dict | None, *, date_figee: bool,
         site, profil = Path(tmp) / "site", Path(tmp) / "profil"
         site.mkdir()
         preparer_site(site, evenements, lieux, date_figee, scenarios)
-
-        def gestionnaire(*a, **k):
-            return _Gestionnaire(*a, directory=str(site), **k)
-
-        serveur = _Serveur(("127.0.0.1", 0), gestionnaire)
-        serveur.resultats = []
-        serveur.coupe = False
-        serveur.lent = False
-        fil = threading.Thread(target=serveur.serve_forever, daemon=True)
-        fil.start()
-        try:
-            # `requete` : ce qui suit l'adresse, « ?quand=weekend » - un
-            # lien partagé.
-            url = "http://127.0.0.1:%d/index.html%s" % (serveur.server_address[1], requete)
-            env = dict(os.environ, TZ=fuseau, LANG="fr_FR.UTF-8")
-            # « Moins d'animations » : la page se met alors à jour d'un coup,
-            # sans fondu (voir render() dans index.html). Avec le fondu, la
-            # mise à jour arrive une image plus tard, et un relevé pouvait
-            # saisir l'affichage d'AVANT selon le chronométrage.
-            #
-            # En TEMPS RÉEL, et non sous l'horloge accélérée de Chrome
-            # (--virtual-time-budget) : celle-ci fait filer les pauses du
-            # pilote en un instant, quand les fondus suivent le temps de
-            # l'écran - un relevé tombait alors avant la fin du dernier
-            # fondu. Le navigateur reste ouvert jusqu'au relevé, puis il est
-            # fermé.
-            options = ["--headless=new", "--disable-gpu", "--no-first-run",
-                       "--no-default-browser-check", "--disable-extensions",
-                       "--force-prefers-reduced-motion", "--remote-debugging-port=0",
-                       "--user-data-dir=%s" % profil, "--lang=fr-FR",
-                       "--window-size=1280,900", url]
-            if animations:
-                options.remove("--force-prefers-reduced-motion")
-            if platform.system() == "Linux":
-                options.insert(1, "--no-sandbox")
-            proc = subprocess.Popen([navigateur] + options, env=env,
-                                    stdout=subprocess.DEVNULL,
-                                    stderr=subprocess.DEVNULL)
-            try:
-                fin = time.monotonic() + delai
-                while (not serveur.resultats and proc.poll() is None
-                       and time.monotonic() < fin):
-                    time.sleep(0.2)
-            finally:
-                proc.terminate()
-                try:
-                    proc.wait(timeout=15)
-                except subprocess.TimeoutExpired:
-                    proc.kill()
-        finally:
-            serveur.shutdown()
-            serveur.server_close()
+        # `requete` : ce qui suit l'adresse, « ?quand=weekend » - un lien
+        # partagé.
+        serveur = _ouvrir(navigateur, site, profil, "index.html" + requete, delai=delai,
+                          animations=animations, fuseau=fuseau)
         if not serveur.resultats and serveur.coupe:
             # Le réseau a été coupé (scénario « hors_ligne ») et la page n'a
             # plus rien envoyé : elle ne s'est pas rouverte sans réseau. C'est
@@ -294,3 +288,60 @@ def jouer(evenements: dict, lieux: dict | None, *, date_figee: bool,
             raise RuntimeError("le navigateur n'a renvoyé aucun relevé (%s)"
                                % Path(navigateur).name)
         return serveur.resultats[-1]
+
+
+def _ouvrir(navigateur: str, site: Path, profil: Path, page: str, *, delai: int,
+            animations: bool = False, fuseau: str = "Europe/Paris") -> _Serveur:
+    """Sert le dossier `site`, y ouvre `page` dans le navigateur, et attend
+    le premier relevé, la fin du navigateur ou celle du délai. Rend le
+    serveur, avec ce qu'il a reçu."""
+    def gestionnaire(*a, **k):
+        return _Gestionnaire(*a, directory=str(site), **k)
+
+    serveur = _Serveur(("127.0.0.1", 0), gestionnaire)
+    serveur.resultats = []
+    serveur.coupe = False
+    serveur.lent = False
+    fil = threading.Thread(target=serveur.serve_forever, daemon=True)
+    fil.start()
+    try:
+        url = "http://127.0.0.1:%d/%s" % (serveur.server_address[1], page)
+        env = dict(os.environ, TZ=fuseau, LANG="fr_FR.UTF-8")
+        # « Moins d'animations » : la page se met alors à jour d'un coup,
+        # sans fondu (voir render() dans index.html). Avec le fondu, la
+        # mise à jour arrive une image plus tard, et un relevé pouvait
+        # saisir l'affichage d'AVANT selon le chronométrage.
+        #
+        # En TEMPS RÉEL, et non sous l'horloge accélérée de Chrome
+        # (--virtual-time-budget) : celle-ci fait filer les pauses du
+        # pilote en un instant, quand les fondus suivent le temps de
+        # l'écran - un relevé tombait alors avant la fin du dernier
+        # fondu. Le navigateur reste ouvert jusqu'au relevé, puis il est
+        # fermé.
+        options = ["--headless=new", "--disable-gpu", "--no-first-run",
+                   "--no-default-browser-check", "--disable-extensions",
+                   "--force-prefers-reduced-motion", "--remote-debugging-port=0",
+                   "--user-data-dir=%s" % profil, "--lang=fr-FR",
+                   "--window-size=1280,900", url]
+        if animations:
+            options.remove("--force-prefers-reduced-motion")
+        if platform.system() == "Linux":
+            options.insert(1, "--no-sandbox")
+        proc = subprocess.Popen([navigateur] + options, env=env,
+                                stdout=subprocess.DEVNULL,
+                                stderr=subprocess.DEVNULL)
+        try:
+            fin = time.monotonic() + delai
+            while (not serveur.resultats and proc.poll() is None
+                   and time.monotonic() < fin):
+                time.sleep(0.2)
+        finally:
+            proc.terminate()
+            try:
+                proc.wait(timeout=15)
+            except subprocess.TimeoutExpired:
+                proc.kill()
+    finally:
+        serveur.shutdown()
+        serveur.server_close()
+    return serveur

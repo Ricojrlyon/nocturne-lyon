@@ -27,7 +27,8 @@ concurrency:
 
 jobs:
   tests:
-    runs-on: ubuntu-latest
+    # Même système, écrit en clair, que update.yml (audit A-42).
+    runs-on: ubuntu-26.04
     timeout-minutes: 20
     steps:
       # Mêmes briques, désignées par leur empreinte, que update.yml.
@@ -42,7 +43,7 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install --require-hashes -r requirements.txt
 
       - name: Tests de la logique
         run: python -m unittest discover -s tests -t . -v

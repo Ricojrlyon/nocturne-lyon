@@ -1,11 +1,38 @@
-# Versions FIGÉES. Avec « au moins la version X », chaque passage
-# installait la dernière parue : une version majeure nouvelle pouvait
-# changer la lecture des pages sans qu'une ligne du projet ait bougé.
-# Ce sont celles que le workflow installait au 2026-10-01, éprouvées en
-# production. Les monter est un geste voulu : changer le numéro, lancer un
-# passage, comparer le rapport par salle.
-requests==2.34.2
-beautifulsoup4==4.15.0
-# Le moteur des sélecteurs CSS de BeautifulSoup (soup.select), dont il
-# n'impose aucun plafond ; requests plafonne déjà urllib3 sous la 3.
-soupsieve>=2.8,<3
+# Versions FIGÉES, chacune avec l'EMPREINTE de son fichier (audit A-42,
+# novembre 2026). Avec « au moins la version X », chaque passage
+# installait la dernière parue : une version nouvelle pouvait changer la
+# lecture des pages sans qu'une ligne du projet ait bougé. Les paquets dont
+# ceux-ci dépendent (urllib3, certifi...) n'étaient pas figés du tout ;
+# ils le sont tous, et l'empreinte refuse un fichier différent de celui
+# qui a été éprouvé, même sous le même numéro.
+#
+# Ce sont les versions que GitHub installait le 14 novembre 2026, éprouvées
+# en production. Les empreintes viennent de PyPI. Le fichier « py3-none-any »
+# sert partout ; charset-normalizer a en plus celui que GitHub installe
+# (Linux, Python 3.12), plus rapide.
+#
+# Monter une version est un geste voulu : changer le numéro, relever les
+# empreintes sur https://pypi.org/project/<paquet>/<version>/#files,
+# lancer un passage, comparer le rapport par salle. Un paquet dont dépend
+# une nouvelle version doit être ajouté ici : sans lui, l'installation
+# s'arrête (« --require-hashes »).
+requests==2.34.2 \
+    --hash=sha256:2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0
+beautifulsoup4==4.15.0 \
+    --hash=sha256:d6f88de62e1d4e38ecb1077eb9724cd0eff29d2a08ca16a401e9b9e93f117cf9
+# Le moteur des sélecteurs CSS de BeautifulSoup (soup.select).
+soupsieve==2.10 \
+    --hash=sha256:8596eb8967d744174820280fa62b4542a2e955bfaccca73ed8a13c6eb8e9b502
+# Ce dont requests a besoin.
+urllib3==2.8.0 \
+    --hash=sha256:0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3
+certifi==2026.10.23 \
+    --hash=sha256:e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1
+charset-normalizer==3.5.2 \
+    --hash=sha256:b6b751274acb69d77b3323d6b7dbaa3c7fdfc1eb829b7eb61d262f32e1af9685 \
+    --hash=sha256:3d31298449090ab8d47b7b1b2a555ff73cac7ed438a08b7ac160980c7ebed649
+idna==3.20 \
+    --hash=sha256:ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c
+# Ce dont BeautifulSoup a besoin.
+typing-extensions==4.16.0 \
+    --hash=sha256:481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8
