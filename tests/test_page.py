@@ -13,9 +13,11 @@ chef. Si un changement d'affichage est voulu : python -m tests.regenerer
 Sans navigateur de la famille Chrome, le test est sauté, et le dit.
 """
 import math
+import os
 import re
 import unittest
 from datetime import datetime, timedelta
+from unittest import mock
 
 from tests import navigateur
 from tests.outils import RACINE, lire_gz
@@ -669,6 +671,76 @@ class PastillesAvecFondus(unittest.TestCase):
 
     def test_une_famille_eteinte_au_milieu_garde_sa_journee(self):
         verifier_famille_au_milieu(self, self.releve["familles_suivies"])
+
+
+class BancDEssai(unittest.TestCase):
+    """Audit A-26 : quand le navigateur ne rend rien, qui est en cause ?
+
+    Avant, les tests de page étaient alors sautés, sur GitHub aussi, avec
+    un simple avertissement : la publication partait sans contrôle de la
+    page. Désormais la page a un nouvel essai, puis le navigateur joue une
+    page témoin : s'il la rend, c'est la page du site qui ne rend rien, et
+    c'est un échec ; s'il ne la rend pas, c'est la machine, et sur GitHub
+    c'est un échec aussi."""
+
+    def test_le_navigateur_rend_la_page_temoin(self):
+        navigateur.sauter_si_indisponible(self, None)
+        self.assertTrue(navigateur.temoin())
+
+    def releve(self, rendus, temoin):
+        """releve_ou_probleme quand jouer() rend, l'un après l'autre,
+        `rendus` (une exception : rien de rendu)."""
+        def jouer(**_options):
+            r = rendus.pop(0)
+            if isinstance(r, Exception):
+                raise r
+            return r
+        with mock.patch.object(navigateur, "trouver", return_value="chrome"), \
+                mock.patch.object(navigateur, "jouer", side_effect=jouer) as joue, \
+                mock.patch.object(navigateur, "temoin", return_value=temoin) as temoigne:
+            resultat = navigateur.releve_ou_probleme(scenarios="tous")
+        return resultat, joue.call_count, temoigne.call_count
+
+    def test_la_page_a_droit_a_un_nouvel_essai(self):
+        (releve, probleme), joues, temoins = self.releve(
+            [RuntimeError("le navigateur a calé"), {"evenements": 3}], temoin=True)
+        self.assertEqual((releve, probleme, joues, temoins), ({"evenements": 3}, None, 2, 0))
+
+    def test_une_page_muette_quand_le_temoin_passe_est_un_echec(self):
+        (releve, probleme), joues, temoins = self.releve(
+            [RuntimeError("aucun relevé"), RuntimeError("aucun relevé")], temoin=True)
+        self.assertIsNone(probleme)
+        self.assertIn("la page n'a rien rendu en deux essais", releve["echec"])
+        self.assertEqual((joues, temoins), (2, 1))
+
+    def test_sans_temoin_c_est_la_machine(self):
+        (releve, probleme), _, temoins = self.releve(
+            [OSError("navigateur introuvable"), OSError("navigateur introuvable")],
+            temoin=False)
+        self.assertIsNone(releve)
+        self.assertIn("pas même la page témoin", probleme)
+        self.assertEqual(temoins, 1)
+
+    def verdict(self, sur_github: bool, probleme, navigateur_trouve="chrome") -> str:
+        """« échec », « saut » ou « rien » : ce que fait sauter_si_indisponible."""
+        cas = unittest.TestCase()
+        with mock.patch.object(navigateur, "trouver", return_value=navigateur_trouve), \
+                mock.patch.dict(os.environ, {"GITHUB_ACTIONS": "true" if sur_github else ""}):
+            try:
+                navigateur.sauter_si_indisponible(cas, probleme)
+            except unittest.SkipTest:
+                return "saut"
+            except cas.failureException as e:
+                self.assertIn("navigateur indisponible sur GitHub", str(e))
+                return "échec"
+        return "rien"
+
+    def test_sur_github_la_machine_en_defaut_fait_echouer(self):
+        self.assertEqual(self.verdict(True, "pas même la page témoin"), "échec")
+        self.assertEqual(self.verdict(True, None, navigateur_trouve=None), "échec")
+        self.assertEqual(self.verdict(False, "pas même la page témoin"), "saut")
+        self.assertEqual(self.verdict(False, None, navigateur_trouve=None), "saut")
+        self.assertEqual(self.verdict(True, None), "rien")
 
 
 if __name__ == "__main__":

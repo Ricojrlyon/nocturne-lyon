@@ -2,17 +2,20 @@ name: Update events daily
 
 on:
   schedule:
-    # 2 h 17 à Paris, toute l'année (6 octobre 2026). GitHub compte en UTC,
-    # qui ne change pas d'heure : 2 h 17 à Paris, c'est 00:17 UTC à l'heure
-    # d'été (UTC+2) et 01:17 UTC à l'heure d'hiver (UTC+1). Les deux
-    # créneaux sont programmés, et le job « creneau » ne laisse travailler
-    # que celui de la saison du jour.
+    # Trois passages par jour (audit A-25, novembre 2026) : le PREMIER
+    # arrivé travaille, les suivants s'arrêtent si le programme du jour
+    # est déjà publié (job « creneau », passage.py). GitHub compte en UTC :
+    # 00:17 UTC, c'est 2 h 17 à Paris l'été et 1 h 17 l'hiver ; 01:17 UTC,
+    # 3 h 17 ou 2 h 17. Le troisième, 09:17 UTC (11 h 17 ou 10 h 17 à
+    # Paris), rattrape un jour où GitHub aurait abandonné les deux passages
+    # de la nuit, ou un passage tombé au rouge.
     # GitHub retarde ses passages programmés de plusieurs heures (5 à 7 en
     # octobre 2026, à 04:17 UTC) : partir la nuit vise un site à jour au
     # réveil. La minute 17 évite l'heure pile, la plus demandée - minuit
     # UTC surtout.
     - cron: '17 0 * * *'
     - cron: '17 1 * * *'
+    - cron: '17 9 * * *'
   workflow_dispatch:
     inputs:
       # OPT-1 : la case d'un lancement à la main (« Run workflow »). Cochée,
@@ -26,8 +29,10 @@ on:
         type: boolean
         default: false
 
+# Lire, sans plus (audit A-42) : seul le job « update » reçoit le droit
+# d'écrire, plus bas. Le job « creneau » n'a pas à pouvoir modifier le dépôt.
 permissions:
-  contents: write
+  contents: read
 
 # Un passage à la fois. Lancé à la main pendant le passage programmé, ou
 # l'inverse, le second attend la fin du premier au lieu de tourner en même
@@ -41,40 +46,39 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Le créneau du jour. Des deux passages programmés, seul celui qui tombe
-  # à 2 h 17 à Paris ce jour-là travaille ; l'autre s'arrête en quelques
-  # secondes. Un lancement à la main passe toujours. Le décalage de Paris
-  # est celui de la JOURNÉE, lu à midi, et non au moment du passage, que
-  # GitHub retarde : les jours de changement d'heure aussi, c'est un
-  # passage, et un seul.
+  # Le créneau du jour (passage.py, audit A-25). Le premier passage
+  # programmé arrivé travaille ; les suivants s'arrêtent en quelques
+  # secondes si le programme publié est déjà du jour, à Paris. Un passage
+  # abandonné par GitHub, ou tombé au rouge, est rattrapé par le suivant.
+  # Un lancement à la main passe toujours. Le fil lu est celui de la
+  # branche au départ de ce job : un passage qui a attendu la fin d'un
+  # autre (voir concurrency) voit le programme que celui-ci a publié.
   creneau:
-    runs-on: ubuntu-latest
+    # Le système écrit en clair (audit A-42) : « ubuntu-latest » est passé
+    # de la 24.04 à la 26.04 le 4 novembre 2026 sans prévenir. Changer de
+    # système est un geste voulu : changer le numéro ici et dans le job
+    # suivant (et dans tests.yml), puis regarder un passage.
+    runs-on: ubuntu-26.04
     timeout-minutes: 5
     outputs:
-      lancer: ${{ steps.saison.outputs.lancer }}
+      lancer: ${{ steps.creneau.outputs.lancer }}
     steps:
-      - id: saison
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.ref }}
+          persist-credentials: false
+
+      # Le Python du système suffit : passage.py n'emploie que la
+      # bibliothèque standard.
+      - id: creneau
         env:
           EVENEMENT: ${{ github.event_name }}
-          CRENEAU: ${{ github.event.schedule }}
-        run: |
-          if [ "$EVENEMENT" != "schedule" ]; then
-            echo "lancer=oui" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          decalage=$(TZ=Europe/Paris date -d 12:00 +%z)    # +0200 l'été, +0100 l'hiver
-          case "$CRENEAU|$decalage" in
-            "17 0 * * *|+0200"|"17 1 * * *|+0100")
-              echo "lancer=oui" >> "$GITHUB_OUTPUT" ;;
-            *)
-              echo "lancer=non" >> "$GITHUB_OUTPUT"
-              echo "Créneau $CRENEAU (Paris $decalage) : le passage du jour est l'autre." ;;
-          esac
+        run: python3 passage.py creneau
 
   update:
     needs: creneau
     if: needs.creneau.outputs.lancer == 'oui'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     # Sans limite, GitHub laisse un passage bloqué tourner six heures. Le
     # plus long des 214 passages connus a duré 12 minutes : une heure
     # absorbe les nouveaux essais réseau et un cache de pages à refaire, et
@@ -99,9 +103,13 @@ jobs:
       # qu'elle était quand il a été demandé : un passage qui a attendu la
       # fin d'un autre (voir concurrency) repart du fil que celui-ci vient
       # de publier.
+      # Sans ranger le jeton dans le dépôt (audit A-42) : les tests, la
+      # collecte et les paquets installés pouvaient le lire. Il n'arrive
+      # qu'à l'étape de publication.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ github.ref }}
+          persist-credentials: false
 
       - name: Setup Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
@@ -109,8 +117,11 @@ jobs:
           python-version: '3.12'
           cache: 'pip'
 
+      # Chaque paquet à sa version et à son empreinte (requirements.txt,
+      # audit A-42) : un paquet différent de celui qui a été éprouvé, même
+      # sous le même numéro, est refusé.
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install --require-hashes -r requirements.txt
 
       # Les tests de la logique, AVANT de collecter (voir tests/__init__.py).
       # Un échec arrête le passage : rien n'est publié, et le site garde sa
@@ -135,6 +146,9 @@ jobs:
         run: python -m unittest tests.verif_fil tests.verif_page -v
 
       - name: Commit updated events.json
+        env:
+          # Le droit d'écrire, pour cette étape seule (voir le checkout).
+          JETON: ${{ github.token }}
         run: |
           git config user.name "lyon-events-bot"
           git config user.email "actions@github.com"
@@ -143,11 +157,12 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update events ($(date -u +'%Y-%m-%d %H:%M UTC'))"
-            # Un commit poussé entre le checkout et le push (une retouche du
-            # code) ferait échouer le push. Deux passages, eux, ne se
-            # croisent plus : voir concurrency.
-            git pull --rebase
-            git push
+            # Un commit poussé entre le checkout et l'envoi (une retouche
+            # du code, un fichier téléversé à la main) faisait échouer
+            # l'envoi. Trois essais, et la version du robot l'emporte sur
+            # ses trois fichiers (passage.py, audit A-27). Deux passages,
+            # eux, ne se croisent plus : voir concurrency.
+            python passage.py publier
           fi
 
       # L'alerte des salles en panne (audit A-02). Un passage vert n'envoie

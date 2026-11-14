@@ -434,29 +434,84 @@ class GardeFous(unittest.TestCase):
         self.assertIn("default: false", entree)
         self.assertEqual(wf.count("NOCTURNE_FORCER_ECRITURE: ${{ inputs.forcer && '1' || '' }}"), 1)
 
-    def test_le_passage_programme_part_a_2_h_17_a_paris(self):
-        # GitHub compte en UTC : 2 h 17 à Paris, c'est 00:17 UTC l'été et
-        # 01:17 UTC l'hiver. Les deux créneaux sont programmés, et le job
-        # « creneau » ne laisse travailler que celui du jour, d'après le
-        # décalage de Paris lu à midi ; le collecteur l'attend.
+    def test_trois_passages_programmes_le_premier_arrive_travaille(self):
+        # Audit A-25 : deux passages la nuit, 00:17 et 01:17 UTC (2 h 17 à
+        # Paris l'été, l'hiver), et un rattrapage à 09:17 UTC. Le job
+        # « creneau » laisse travailler le premier arrivé (passage.py,
+        # essayé dans tests/test_passage.py) ; avant, un seul des deux de
+        # la nuit en avait le droit, sans rattrapage.
         wf = (RACINE / ".github" / "workflows" / "update.yml").read_text(encoding="utf-8")
         horaires = wf.split("schedule:", 1)[1].split("workflow_dispatch:", 1)[0]
-        self.assertEqual(re.findall(r"cron: '([^']+)'", horaires), ["17 0 * * *", "17 1 * * *"])
+        self.assertEqual(re.findall(r"cron: '([^']+)'", horaires),
+                         ["17 0 * * *", "17 1 * * *", "17 9 * * *"])
         creneau = wf.split("\n  creneau:\n", 1)[1].split("\n  update:\n", 1)[0]
-        self.assertIn("TZ=Europe/Paris date -d 12:00 +%z", creneau)
-        self.assertIn('"17 0 * * *|+0200"|"17 1 * * *|+0100")', creneau)
-        self.assertIn('if [ "$EVENEMENT" != "schedule" ]; then', creneau)
+        self.assertIn("      lancer: ${{ steps.creneau.outputs.lancer }}\n", creneau)
+        self.assertIn("      - id: creneau\n        env:\n"
+                      "          EVENEMENT: ${{ github.event_name }}\n"
+                      "        run: python3 passage.py creneau\n", creneau)
+        self.assertNotIn(" date ", creneau)
         collecte = wf.split("\n  update:\n", 1)[1]
         self.assertIn("    needs: creneau\n    if: needs.creneau.outputs.lancer == 'oui'\n", collecte)
 
     def test_deux_passages_ne_se_chevauchent_pas(self):
         # Le second passage attend la fin du premier, puis repart de la
-        # branche telle qu'elle est alors, fil du premier compris.
+        # branche telle qu'elle est alors, fil du premier compris : le
+        # créneau le lit pour décider, la collecte en repart.
         wf = (RACINE / ".github" / "workflows" / "update.yml").read_text(encoding="utf-8")
         self.assertIn("\nconcurrency:\n  group: maj-du-fil\n  cancel-in-progress: false\n",
                       wf.split("jobs:", 1)[0])
-        self.assertRegex(wf, r"- uses: actions/checkout@[0-9a-f]{40} # v[\d.]+\n"
-                             r"        with:\n          ref: \$\{\{ github\.ref \}\}\n")
+        self.assertEqual(len(re.findall(r"- uses: actions/checkout@[0-9a-f]{40} # v[\d.]+\n"
+                                        r"        with:\n          ref: \$\{\{ github\.ref \}\}\n",
+                                        wf)), 2)
+
+    def test_la_publication_reessaie_et_le_robot_l_emporte(self):
+        # Audit A-27 : « git pull --rebase » puis « git push », sans nouvel
+        # essai ; un envoi pendant le passage le faisait tomber au rouge.
+        wf = (RACINE / ".github" / "workflows" / "update.yml").read_text(encoding="utf-8")
+        etape = wf.split("- name: Commit updated events.json\n", 1)[1].split("\n      - name:", 1)[0]
+        self.assertIn("        env:\n          # Le droit d'écrire, pour cette étape seule "
+                      "(voir le checkout).\n          JETON: ${{ github.token }}\n", etape)
+        self.assertIn("            python passage.py publier\n", etape)
+        self.assertNotIn("git push", etape)
+        self.assertNotIn("git pull", etape)
+
+    def test_le_droit_d_ecrire_ne_va_qu_a_la_publication(self):
+        # Audit A-42 : le droit d'écrire était donné à tout le workflow, job
+        # « creneau » compris, et le jeton restait rangé dans le dépôt, où
+        # les tests et les paquets installés pouvaient le lire.
+        wf = (RACINE / ".github" / "workflows" / "update.yml").read_text(encoding="utf-8")
+        self.assertIn("\npermissions:\n  contents: read\n", wf.split("jobs:", 1)[0])
+        creneau = wf.split("\n  creneau:\n", 1)[1].split("\n  update:\n", 1)[0]
+        self.assertNotIn("permissions:", creneau)
+        self.assertNotIn("write", creneau)
+        self.assertEqual(wf.count("contents: write"), 1)
+        for nom in ("update.yml", "tests.yml"):
+            texte = (RACINE / ".github" / "workflows" / nom).read_text(encoding="utf-8")
+            checkouts = re.findall(r"- uses: actions/checkout@.*\n(?:        .*\n)*", texte)
+            self.assertTrue(checkouts, nom)
+            for c in checkouts:
+                self.assertIn("          persist-credentials: false\n", c, nom)
+        # Le jeton n'arrive qu'à deux étapes : la publication et l'alerte.
+        self.assertEqual(wf.count("${{ github.token }}"), 2)
+
+    def test_le_systeme_et_les_paquets_sont_figes(self):
+        # Audit A-42 : « ubuntu-latest » a changé de système le 4 novembre
+        # 2026 sans prévenir, et six paquets sur huit n'étaient pas figés.
+        for nom in ("update.yml", "tests.yml"):
+            texte = (RACINE / ".github" / "workflows" / nom).read_text(encoding="utf-8")
+            systemes = re.findall(r"runs-on: (\S+)", texte)
+            self.assertTrue(systemes, nom)
+            self.assertEqual(set(systemes), {"ubuntu-26.04"}, nom)
+            self.assertIn("run: pip install --require-hashes -r requirements.txt\n", texte)
+        lignes = (RACINE / "requirements.txt").read_text(encoding="utf-8")
+        paquets = re.findall(r"^([A-Za-z0-9_.-]+)==([\w.]+) \\\n((?:    --hash=sha256:[0-9a-f]{64}"
+                             r"(?: \\)?\n)+)", lignes, re.M)
+        self.assertEqual({p[0] for p in paquets},
+                         {"requests", "beautifulsoup4", "soupsieve", "urllib3", "certifi",
+                          "charset-normalizer", "idna", "typing-extensions"})
+        sans_commentaires = [l for l in lignes.splitlines() if l and not l.startswith("#")]
+        self.assertEqual(len(sans_commentaires),
+                         len(paquets) + sum(p[2].count("--hash") for p in paquets))
 
     def test_les_briques_github_sont_designees_par_leur_empreinte(self):
         # Audit n° 16 : une étiquette comme « v7 » peut être déplacée vers
