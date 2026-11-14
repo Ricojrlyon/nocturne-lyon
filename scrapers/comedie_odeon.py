@@ -114,6 +114,16 @@ def _heure(txt: str) -> Optional[str]:
     return f"{int(m.group(1)):02d}:{m.group(2) or '00'}" if m else None
 
 
+def _heure_du_resume(resume: str) -> Optional[str]:
+    """L'heure du résumé de la carte, quand il n'en donne qu'UNE (audit
+    A-36). « 20h, sauf le 09/10 à 19h » en donne deux : la première aurait
+    valu pour tous les jours. None fait alors ouvrir la fiche, qui sait
+    quelle heure vaut quel jour. Aucun résumé n'en portait deux le
+    14/11/2026."""
+    heures = {f"{int(h):02d}:{m or '00'}" for h, m in _HEURE.findall(resume or "")}
+    return heures.pop() if len(heures) == 1 else None
+
+
 # Largeur visée pour une affiche : les cartes font 400 px de large au plus,
 # 800 couvre donc les écrans denses.
 LARGEUR_AFFICHE = 800
@@ -177,9 +187,13 @@ def _calendrier(soup: BeautifulSoup) -> List[Tuple[str, str]]:
         cellules = pane.select("a.TMdate")
         if not cellules:
             continue
+        # L'onglet porte l'horodatage du 1er du mois : minuit UTC aujourd'hui
+        # (relevé du 14/11/2026). Douze heures de plus avant d'en prendre la
+        # date (audit A-36) : un minuit de Paris, 22 h ou 23 h UTC la veille,
+        # aurait sinon donné le mois précédent, et décalé tout le calendrier.
         try:
-            premier = _dt.datetime.fromtimestamp(
-                int(pane["id"]), _dt.timezone.utc).date().replace(day=1)
+            premier = (_dt.datetime.fromtimestamp(int(pane["id"]), _dt.timezone.utc)
+                       + _dt.timedelta(hours=12)).date().replace(day=1)
         except (ValueError, KeyError, OverflowError, OSError):
             continue
         an, mois, precedent = premier.year, premier.month, 0
@@ -224,7 +238,7 @@ def fetch() -> List[Event]:
         spectacles[a["href"]] = {
             "titre": _html.unescape(h2.get_text(" ", strip=True)),
             "image": (_taille_proche(img) or img.get("src")) if img else None,
-            "heure": _heure(resume),
+            "heure": _heure_du_resume(resume),
             "genre": genre,
         }
 

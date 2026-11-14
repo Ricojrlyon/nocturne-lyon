@@ -1,9 +1,7 @@
 """Scraper for agend'Arts (4e), petite salle associative de la Croix-Rousse.
 
 Le lieu n'a pas de domaine propre : il publie sur un blog WordPress.com,
-un billet par spectacle. L'API publique de WordPress.com le sert sans
-clé, cent billets par page, deux cent vingt en tout - quatre requêtes
-pour toute la programmation.
+un billet par spectacle, qu'on lit dans le flux RSS du blog (voir FLUX).
 
 LA DATE DE PUBLICATION N'EST PAS LA DATE DE L'ÉVÉNEMENT : un billet écrit
 en juin annonce un concert de décembre. La date se lit dans la première
@@ -64,8 +62,11 @@ from __future__ import annotations
 
 import re
 import sys
+import time
 import unicodedata
+import xml.etree.ElementTree as ET
 from datetime import date as Date, timedelta
+from email.utils import parsedate_to_datetime
 from typing import Dict, List, Optional, Set, Tuple
 
 import requests
@@ -77,11 +78,22 @@ from .base import Event, HORIZON_JOURS, introuvable, get as base_get
 VENUE = "Agend'arts"
 SLUG = "agend-arts"
 SITE = "agendarts.wordpress.com"
-API = f"https://public-api.wordpress.com/wp/v2/sites/{SITE}"
+# LE FLUX RSS du blog, et non plus l'API (audit A-10). L'API d'un blog
+# WordPress.com ne se sert que par la passerelle public-api.wordpress.com,
+# dont le robots.txt interdit tout (« Disallow: / ») ; le blog lui-même ne
+# répond pas sur /wp-json/ (404, relevé du 14/11/2026). Le flux, que le
+# robots.txt du blog autorise, porte tout ce qu'on lisait : le texte entier
+# du billet, ses catégories (par leur nom, « décembre 2026 »), sa date et
+# son lien. Dix billets par page, d'où la limite d'ancienneté : au-delà
+# d'ANCIENNETE_JOURS, un billet n'annonce plus rien d'à venir (ceux du fil
+# du 14/11 dataient de juin), et la lecture s'arrête à la première page
+# qui n'en contient plus aucun de plus récent.
+FLUX = f"https://{SITE}/feed/"
+ANCIENNETE_JOURS = 400
+PAGES_MAX = 40         # dix billets par page
+PAUSE = 1.0            # secondes entre deux pages du flux
 
 HORIZON_DAYS = HORIZON_JOURS
-PAR_PAGE = 100
-PAGES_MAX = 5          # 3 pages à l'écriture ; la marge couvre la croissance
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
@@ -231,11 +243,44 @@ def _annee(jour: int, mois: int, txt: str, mois_cat: Set[Tuple[int, int]],
     return None
 
 
-def _get(session: requests.Session, chemin: str, **params) -> list:
-    r = base_get(f"{API}/{chemin}", session=session, params=params,
-                 headers=HEADERS, timeout=30)
-    r.raise_for_status()
-    return r.json()
+_CONTENU = "{http://purl.org/rss/1.0/modules/content/}encoded"
+
+
+def _billet(item: ET.Element) -> dict:
+    """Un billet du flux, sous la forme que lisait l'API : le reste du
+    collecteur n'a pas à savoir d'où il vient."""
+    publie = parsedate_to_datetime(item.findtext("pubDate") or "")
+    contenu = item.findtext(_CONTENU) or item.findtext("description") or ""
+    # WordPress.com ajoute au texte du flux un pixel de statistiques, une
+    # image d'un pixel : ce n'est pas l'affiche du spectacle.
+    contenu = re.sub(r'<img[^>]+src="https?://pixel\.wp\.com/[^"]*"[^>]*>', "", contenu)
+    return {"date": publie.date().isoformat(),
+            "link": (item.findtext("link") or "").strip(),
+            "title": {"rendered": item.findtext("title") or ""},
+            "content": {"rendered": contenu},
+            "categories": [c.text or "" for c in item.findall("category")]}
+
+
+def _billets(session: requests.Session, today: Date) -> list:
+    """Les billets du flux, page par page, jusqu'au premier tout entier
+    plus vieux qu'ANCIENNETE_JOURS. Une page qui tombe fait lever le
+    collecteur, et le garde-fou reprend la veille (audit A-09) ; une page
+    introuvable (404) est la fin du flux."""
+    limite = today - timedelta(days=ANCIENNETE_JOURS)
+    billets: list = []
+    for page in range(1, PAGES_MAX + 1):
+        if page > 1:
+            time.sleep(PAUSE)
+        r = base_get(FLUX, session=session, headers=HEADERS, timeout=30,
+                     params={"paged": page} if page > 1 else None)
+        if page > 1 and introuvable(r):
+            break
+        r.raise_for_status()
+        lot = [_billet(it) for it in ET.fromstring(r.content).iter("item")]
+        billets.extend(lot)
+        if not any(b["date"] >= limite.isoformat() for b in lot):
+            break
+    return billets
 
 
 def fetch() -> List[Event]:
@@ -243,36 +288,14 @@ def fetch() -> List[Event]:
     horizon = today + timedelta(days=HORIZON_DAYS)
     session = requests.Session()
 
-    # Les catégories et chaque page de billets : une panne fait lever le
-    # collecteur, et le garde-fou reprend la veille (audit A-09). Sans les
-    # catégories, l'année d'une partie des séances ne se lisait plus, et
-    # elles étaient abandonnées sans un mot.
-    cats = _get(session, "categories", per_page=100, _fields="id,name")
+    billets = _billets(session, today)
     # Les catégories sont des mois : « novembre 2026 » donne le millésime.
-    mois_cat: Dict[int, Tuple[int, int]] = {}
-    for c in cats:
-        m = re.match(r"([a-z]+)\s+(20\d{2})", _norm(c.get("name")))
-        if m and m.group(1) in MOIS:
-            mois_cat[c["id"]] = (MOIS[m.group(1)], int(m.group(2)))
-
-    billets: list = []
-    for page in range(1, PAGES_MAX + 1):
-        try:
-            lot = _get(session, "posts", per_page=PAR_PAGE, page=page,
-                       orderby="date", order="desc",
-                       _fields="id,date,link,title,content,categories")
-        except requests.HTTPError as exc:
-            # Au-delà de la dernière page, WordPress répond 400
-            # (rest_post_invalid_page_number) : la fin, pas une panne. Le
-            # cas se présente quand le nombre de billets tombe juste sur
-            # un multiple de PAR_PAGE.
-            if page > 1 and (introuvable(exc) or exc.response is not None
-                             and exc.response.status_code == 400):
-                break
-            raise
-        billets.extend(lot)
-        if len(lot) < PAR_PAGE:
-            break
+    mois_cat: Dict[str, Tuple[int, int]] = {}
+    for b in billets:
+        for nom in b["categories"]:
+            m = re.match(r"([a-z]+)\s+(20\d{2})", _norm(nom))
+            if m and m.group(1) in MOIS:
+                mois_cat[nom] = (MOIS[m.group(1)], int(m.group(2)))
 
     if not billets:
         print(f"[agend'Arts] aucun billet lu sur {SITE}", file=sys.stderr)

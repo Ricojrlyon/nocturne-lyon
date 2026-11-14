@@ -49,6 +49,7 @@ from typing import Dict, List, Optional, Tuple
 
 import requests
 
+from . import detail_cache
 from .base import Event, HORIZON_JOURS, get as base_get
 
 VENUE = "Musée des Confluences"
@@ -113,13 +114,31 @@ def _texte(v) -> str:
     return re.sub(r"\s+", " ", str(v or "")).strip()
 
 
-def _tout(session: requests.Session, type_noeud: str,
-          include: str) -> Tuple[list, Dict[str, dict]]:
+def _filtre_a_venir(today: Date) -> dict:
+    """Les événements qui ont une date à venir, OU une récurrence (audit
+    A-37). Sans filtre, l'API rendait toutes les archives du musée chaque
+    nuit : 15 pages pour 670 événements, dont 67 à venir (relevé du
+    14/11/2026) ; avec, 5 pages, les mêmes 67. Les séries récurrentes
+    restent lues, commencées ou non, pour que _recurrence_vive puisse
+    toujours signaler une série encore vive."""
+    return {"filter[ou][group][conjunction]": "OR",
+            "filter[av][condition][path]": "field_date_recu.value",
+            "filter[av][condition][operator]": ">=",
+            "filter[av][condition][value]": today.isoformat(),
+            "filter[av][condition][memberOf]": "ou",
+            "filter[rr][condition][path]": "field_date_recu.rrule",
+            "filter[rr][condition][operator]": "IS NOT NULL",
+            "filter[rr][condition][memberOf]": "ou"}
+
+
+def _tout(session: requests.Session, type_noeud: str, include: str,
+          filtre: Optional[dict] = None) -> Tuple[list, Dict[str, dict]]:
     """Tous les nœuds d'un type, avec l'index des ressources incluses."""
     noeuds: list = []
     inclus: Dict[str, dict] = {}
     url: Optional[str] = f"{API}/node/{type_noeud}"
-    params: Optional[dict] = {"page[limit]": PAR_PAGE, "include": include}
+    params: Optional[dict] = {"page[limit]": PAR_PAGE, "include": include,
+                              **(filtre or {})}
     # Une page qui tombe fait lever le collecteur, la première comme les
     # suivantes (audit A-09) : le lien « next » dit qu'elle existe, son
     # absence est une panne. Le 500 de l'API sur ses événements laissait
@@ -182,19 +201,32 @@ def _taille_carte(session: requests.Session, url: str) -> str:
     elle est donc vérifiée avant d'être prise. À défaut, l'original, comme
     avant.
     """
+    return (_verifier_carte(session, url) or {}).get("carte", url)
+
+
+def _verifier_carte(session: requests.Session, url: str) -> Optional[dict]:
+    """{"carte": l'adresse à publier} ; None quand la vérification a été
+    coupée, pour que le cache ne la note pas (voir _carte_en_cache)."""
     racine = BASE + "/sites/default/files/"
     if not url.startswith(racine):
-        return url
+        return {"carte": url}
     carte = racine + "styles/card_desktop_2x/public/" + url[len(racine):]
     try:
         r = base_get(carte, session=session, headers=HEADERS, timeout=20,
                      methode="HEAD")
     except requests.RequestException:
-        return url
+        return None
     if r.status_code == 200 and \
             (r.headers.get("Content-Type") or "").startswith("image/"):
-        return carte
-    return url
+        return {"carte": carte}
+    return {"carte": url}
+
+
+def _carte_en_cache(session: requests.Session, url: str) -> str:
+    """_taille_carte, gardée une semaine dans le cache des fiches (audit
+    A-37) : chaque affiche était revérifiée chaque nuit."""
+    return detail_cache.get_details(
+        url, lambda u: _verifier_carte(session, u), fields=("carte",)).get("carte") or url
 
 
 def _url(noeud: dict) -> Optional[str]:
@@ -244,7 +276,7 @@ def _evenements(session: requests.Session, today: Date,
     noeuds, inclus = _tout(
         session, "event",
         "field_activites,field_public,field_place,field_site,"
-        "field_media.field_media_image")
+        "field_media.field_media_image", _filtre_a_venir(today))
     events: List[Event] = []
     ailleurs: Dict[str, int] = {}
     recurrents = 0
@@ -345,7 +377,7 @@ def fetch() -> List[Event]:
     for e in events + expos:
         if e.image:
             if e.image not in cartes:
-                cartes[e.image] = _taille_carte(session, e.image)
+                cartes[e.image] = _carte_en_cache(session, e.image)
             e.image = cartes[e.image]
 
     if ailleurs:

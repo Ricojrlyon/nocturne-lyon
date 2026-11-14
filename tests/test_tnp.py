@@ -8,7 +8,7 @@ import unittest
 from datetime import date
 from unittest import mock
 
-from scrapers import tnp
+from scrapers import detail_cache, tnp
 from scrapers.base import OFFSITE_PLUSIEURS
 from tests.outils import FauxSite, date_figee
 
@@ -43,7 +43,9 @@ class HorsLesMurs(unittest.TestCase):
                          **{FICHE % s: fiche(s) for s in ("parcours", "affaire", "studio")}})
         with mock.patch.object(tnp, "Date", date_figee(date(2026, 10, 1))), \
                 mock.patch.object(tnp.requests, "Session", lambda: site), \
-                mock.patch.object(tnp.time, "sleep", lambda s: None), \
+                mock.patch.object(detail_cache, "_cache", {}), \
+                mock.patch.object(detail_cache, "_dirty", False), \
+                mock.patch.object(detail_cache, "_throttle", lambda: None), \
                 contextlib.redirect_stderr(io.StringIO()) as journal:
             lu = {e.title: (e.venue, e.offsite_venue, e.time) for e in tnp.fetch()}
         self.assertEqual(lu, {

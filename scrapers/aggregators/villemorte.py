@@ -85,8 +85,10 @@ def fetch() -> List[Event]:
       - tags: [str]
       - description (str, HTML)
     """
+    # Sous le vrai nom du projet, comme partout (audit A-37) : il
+    # s'annonçait « lyon-events-aggregator ».
     headers = {
-        "User-Agent": "lyon-events-aggregator/1.0 (+https://github.com/Ricojrlyon/nocturne-lyon)",
+        "User-Agent": "nocturne-lyon-events/1.0 (+https://github.com/Ricojrlyon/nocturne-lyon)",
         "Accept": "application/json",
     }
     resp = base_get(API_URL, headers=headers, timeout=20)

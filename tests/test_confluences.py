@@ -11,7 +11,7 @@ from unittest import mock
 
 import requests
 
-from scrapers import base, confluences
+from scrapers import base, confluences, detail_cache
 from tests.outils import FauxSite, date_figee, evenement
 
 FICHIERS = confluences.BASE + "/sites/default/files/"
@@ -71,6 +71,9 @@ class Fetch(unittest.TestCase):
         site = FauxSite({}, avant={CARTE: [IMAGE], EXPO_CARTE: [(403, b"", {})]})
         with mock.patch.object(confluences, "Date", date_figee(date(2026, 10, 1))), \
                 mock.patch.object(confluences.requests, "Session", lambda: site), \
+                mock.patch.object(detail_cache, "_cache", {}), \
+                mock.patch.object(detail_cache, "_dirty", False), \
+                mock.patch.object(detail_cache, "_throttle", lambda: None), \
                 mock.patch.object(confluences, "_evenements", lambda s, t, h: (seances, {}, 0)), \
                 mock.patch.object(confluences, "_expositions", lambda s, t, h: (expos, 0)):
             lu = [(e.title, e.date_start, e.image) for e in confluences.fetch()]

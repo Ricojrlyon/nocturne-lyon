@@ -91,13 +91,24 @@ LIEUX_MONOGENRE = {
     "IAC Villeurbanne": "expo",      # centre d'art, expositions seules
 }
 
+# Un cran plus bas : un lieu dont la programmation est MAJORITAIREMENT d'un
+# genre, mesuré. Son défaut ne vient qu'en dernier, quand ni la source, ni
+# la fusion avec un agrégateur, ni le titre n'ont rien dit (audit A-20).
+# La Bourse du Travail mettait « humour » d'office à 98 événements sur 105,
+# Medine et Gauvain Sers compris ; sans défaut du tout, 53 cartes sur 72
+# partaient dans « autres », humoristes compris (collecte du 1er octobre).
+LIEUX_MAJORITAIRES = {
+    "Bourse du Travail": "humour",
+}
+
 
 def deduire(titre: Optional[str], lieu: Optional[str]) -> Optional[str]:
     """Catégorie déduite, ou None si rien de sûr ne s'en dégage."""
     for cat, rx in INDICES_TITRE:
         if rx.search(titre or ""):
             return cat                  # None : un indice contraire
-    return LIEUX_MONOGENRE.get(lieu or "")
+    return (LIEUX_MONOGENRE.get(lieu or "")
+            or LIEUX_MAJORITAIRES.get(lieu or ""))
 
 
 def combler(events: Iterable) -> tuple:

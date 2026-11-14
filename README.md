@@ -44,8 +44,19 @@ la recopier, version comprise.
   de la page du passage sur GitHub, et les autres passent.
   Chaque robot s'annonce aux sites sous son vrai nom, « nocturne-lyon-events »,
   avec le lien du projet. Deux exceptions : celui du LOU garde l'identité
-  d'un navigateur, la billetterie du club étant protégée contre les robots,
-  et celui du Complexe a sa propre formule (voir plus bas).
+  d'un navigateur, la billetterie du club étant protégée contre les robots
+  (pour elle seule : la FFR, où il lit les matchs féminins, reçoit le vrai
+  nom depuis novembre 2026, comme Ville Morte, qui recevait « lyon-events-
+  aggregator », audit A-37), et celui du Complexe a sa propre formule
+  (voir plus bas).
+  Un site qui demande un délai entre deux requêtes (`Crawl-delay` : la
+  Maison de la Danse et La Rayonne, dix secondes) l'obtient aussi avant un
+  nouvel essai, que `base.get` faisait à deux puis quatre secondes
+  (`ATTENTE_MIN_PAR_HOTE`, audit A-37). Une saison de salle court de
+  septembre à juin ; de mai à août, la suivante est lue aussi
+  (`base.saisons_a_lire`, audit A-24) : en juillet et en août, la
+  Croix-Rousse et la Maison de la Danse relisaient la saison finie, et la
+  rentrée manquait jusqu'au 1er septembre.
   Les appels réseau passent par `base.get` (exceptions motivées dans
   `scrapers/base.py`), qui réessaie sur une coupure, un délai dépassé ou un
   502/503/504, jamais sur une vraie réponse du site. La coupure compte
@@ -84,10 +95,25 @@ la recopier, version comprise.
   boutique n'est PAS une salle : Improvidence programme aussi à Bordeaux,
   l'Espace Gerson à la Salle Victor Hugo et à la Bourse du Travail (que
   nocturne scrappe déjà). Chaque scraper fournit donc son prédicat de
-  lieu, appliqué sur le Venue que Mapado expose en clair.
+  lieu, appliqué sur le Venue que Mapado expose en clair. LIMITE CONNUE
+  (audit A-05) : la page d'un spectacle n'embarque que ses SEPT prochaines
+  séances ; « La fin justifie les moyens » en annonçait 33 le 14 novembre
+  2026. La suite ne se lit que par l'API de Mapado, que son robots.txt
+  interdit (`ticketing.mapado.net` : « Disallow: / », et `/api/` des
+  boutiques) : on ne la lit pas. Le collecteur compte ce qui manque, d'après
+  le total que la page annonce, et le dit à chaque passage (« lues/
+  annoncées ») ; les séances suivantes paraissent au fil des semaines, à
+  mesure qu'elles entrent dans les sept prochaines.
 - **`scrapers/agendarts.py`** : agend'Arts, qui n'a pas de site à soi :
   la salle publie sur un blog WordPress.com, un billet par spectacle,
-  servi sans clé par l'API publique. La date de publication n'est pas
+  lu dans le flux RSS du blog, dix billets par page, jusqu'à la première
+  page dont aucun billet n'a moins de 400 jours (onze requêtes à une
+  seconde d'écart le 14 novembre 2026). L'API publique, lue jusque-là, ne
+  passe que par public-api.wordpress.com, que son robots.txt interdit, et
+  le blog ne sert pas /wp-json/ lui-même (audit A-10) ; le flux porte le
+  même texte, les catégories et le lien, et la comparaison des deux
+  lectures a donné les mêmes séances. Le pixel de statistiques que
+  WordPress.com glisse dans le flux n'est pas pris pour une affiche. La date de publication n'est pas
   celle du spectacle (un billet de juin annonce un concert de décembre),
   et la vraie date s'écrit en toutes lettres dans la première phrase.
   Elle est lue par deux sources indépendantes : la prose, et les liens
@@ -134,7 +160,12 @@ la recopier, version comprise.
   au lieu de 20h. L'heure vient du résumé de la carte, à défaut de la
   fiche, qui donne aussi l'horaire d'un jour particulier : « Le 09/10 à
   19h », ou une date en toutes lettres, « Jeudi 11 mars 2027 à 21h » ;
-  sans quoi « Jovany » se jouait ses deux soirs à l'heure du premier.
+  sans quoi « Jovany » se jouait ses deux soirs à l'heure du premier. Un
+  résumé qui donne DEUX horaires fait aussi ouvrir la fiche, au lieu de
+  donner le premier à tous les jours ; et le mois de chaque onglet du
+  calendrier se lit douze heures après son horodatage, qu'un minuit de
+  Paris ne bascule pas au mois précédent (audit A-36, deux défauts sans
+  cas réel le 14 novembre 2026).
 - **`scrapers/confluences.py`** : le Musée des Confluences, seul site
   du dépôt à exposer une JSON:API Drupal. Deux taxonomies y donnent
   gratuitement ce qu'il faut deviner ailleurs : `field_activites` porte
@@ -152,7 +183,12 @@ la recopier, version comprise.
   lettres, là où les agrégateurs n'en donnaient qu'une approximation.
   Aucune des fiches retenues ne porte de récurrence encore vive ; si
   cela changeait, elle serait signalée plutôt que tronquée en silence à
-  sa première date.
+  sa première date. L'API ne rend que les événements qui ont une date à
+  venir, ou une récurrence (audit A-37) : sans ce filtre, toutes les
+  archives du musée étaient relues chaque nuit, 15 pages pour 670
+  événements dont 67 à venir ; avec, 5 pages et les mêmes 67 (relevé du
+  14 novembre 2026). La vérification de la taille « carte » de chaque
+  affiche est gardée une semaine dans le cache des fiches.
 - **`scrapers/croix_rousse.py`** : le Théâtre de la Croix-Rousse.
   WordPress dont l'API REST est OUVERTE, à la différence du TNP : elle
   donne la liste de la saison avec titres, affiches et genres. Les dates
@@ -167,6 +203,10 @@ la recopier, version comprise.
   précision reste la catégorie.
   Un lien de billetterie par séance permet de distinguer « 14h30 19h30 »
   (deux séances) de « 17h > 17h50 », une seule avec son heure de fin.
+  La vérification de la copie WebP de chaque affiche (une requête HEAD)
+  est gardée une semaine dans le cache des fiches : 55 à 110 partaient
+  chaque nuit pour les mêmes images (audit A-37) ; une vérification
+  coupée n'est pas notée, elle est refaite au passage suivant.
 - **`scrapers/iac.py`** : l'IAC de Villeurbanne. Site artisanal de 2013
   (jQuery 1.8.2), mais dont les dates sont balisées en microdonnées, ce
   qui sauve tout : la prose, elle, est un piège. La fiche du vernissage
@@ -251,7 +291,9 @@ la recopier, version comprise.
   pour cent vingt-trois représentations, le même spectacle se jouant dix
   à dix-sept fois. La fiche montre l'affiche en treize tailles, et le
   robot prend celle de 800 px (l'`og:image`, l'original, pèse 1,3 à
-  1,6 Mo). Un parcours « Hors les murs », dont le point de départ n'est
+  1,6 Mo). La fiche est gardée une semaine dans le cache des fiches : les
+  dix-neuf étaient relues chaque nuit pour la même affiche (audit A-37).
+  Un parcours « Hors les murs », dont le point de départ n'est
   donné qu'à l'inscription, est publié marqué « ailleurs » plutôt que
   placé à Villeurbanne.
 - **`scrapers/tng.py`** : le TNG. Les cartes du programme n'écrivent que
@@ -439,6 +481,22 @@ la recopier, version comprise.
   club » et « House Yoga Club » partaient en club). Le rap passe avant le
   rock (« Rap Urban Pop »), « noise » est un mot entier (il se lisait
   dans « chinoise »), et « chorégraphe » est enfin reconnu (audit A-33).
+  Un cran sous les salles mono-genre, `LIEUX_MAJORITAIRES` donne le
+  défaut d'un lieu MAJORITAIREMENT d'un genre, en tout dernier recours.
+  La Bourse du Travail y figure, en humour : son collecteur mettait
+  « humour » d'office à 98 événements sur 105, Medine et Gauvain Sers
+  compris, et la catégorie du Petit Bulletin ne pouvait plus rien y
+  changer. Sans défaut du tout, 53 cartes sur 72 partaient dans « autres »,
+  humoristes compris. Désormais le collecteur ne dit rien quand le titre
+  ne dit rien, la fusion avec le Petit Bulletin et le titre décident, et
+  le défaut ne vient qu'après : six cartes de la collecte du 1er octobre
+  changent de famille (Medine en rap, Julien Lieb en chanson…), aucune
+  n'est moins bien rangée (audit A-20).
+- **`scrapers/le_sucre.py`** : Le Sucre. Un titre qui ne nomme personne,
+  « Concert », « club » ou « S.society » (le nom d'une série), cède la
+  place aux artistes du sous-titre, et passe lui-même en sous-titre :
+  17 cartes sur 31 s'intitulaient ainsi (audit A-41). Un sous-titre qui
+  n'annonce encore personne (« Line-up soon ! ») laisse le titre tel quel.
 - **`scrapers/geo.py`** : géocodage Nominatim des lieux inconnus →
   arrondissement et position (`pos`, latitude et longitude arrondies au
   mètre, pour la vue carte de la page), mis en cache dans
@@ -457,7 +515,10 @@ la recopier, version comprise.
   trente jours, selon que la fiche donnait une heure. Une lecture qui
   échoue n'écrit rien : une fiche nouvelle en panne passagère était notée
   vide pour sept jours, et le spectacle n'apparaissait qu'une semaine plus
-  tard, ou sans son heure (audit A-30).
+  tard, ou sans son heure (audit A-30). Il garde aussi, une semaine, ce
+  qui servait à choisir une affiche et ne change pas d'une nuit à l'autre :
+  les fiches du TNP, les vérifications d'images de la Croix-Rousse et des
+  Confluences (audit A-37).
 - **`aggregate.py`** : orchestre le tout, redresse les plages à l'envers
   (une fin avant le début : le contrôle du fil refuserait de publier, et
   tout le site resterait à la veille pour UNE soirée mal datée ; le cas

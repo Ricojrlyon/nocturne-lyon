@@ -80,6 +80,16 @@ HEADERS = {
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
+# La fédération, elle, n'a pas de protection contre les robots : on s'y
+# annonce sous le vrai nom du projet (audit A-37). L'identité de navigateur
+# ci-dessus ne sert qu'à la billetterie du LOU ; elle partait aussi vers la
+# FFR, qui répond à notre nom (relevé du 14/11/2026).
+HEADERS_FFR = {
+    "User-Agent": "nocturne-lyon-events/1.0 "
+                  "(+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "Accept-Language": "fr-FR,fr;q=0.9",
+}
+
 MOIS = {"janvier": 1, "février": 2, "fevrier": 2, "mars": 3, "avril": 4,
         "mai": 5, "juin": 6, "juillet": 7, "août": 8, "aout": 8,
         "septembre": 9, "octobre": 10, "novembre": 11, "décembre": 12,
@@ -265,7 +275,7 @@ def _objets(texte: str, cle: str) -> List[dict]:
 def _femmes(today: Date, horizon: Date) -> List[Event]:
     # Une panne de la FFR fait lever le collecteur (audit A-09) : sept
     # matchs sur dix quittaient sinon le site pour la nuit, sans reprise.
-    r = base_get(FFR_STABLE, headers=HEADERS, timeout=40,
+    r = base_get(FFR_STABLE, headers=HEADERS_FFR, timeout=40,
                  etiquette="[RUGBY]")
     r.raise_for_status()
     phase = re.search(r"qualification-(\d+)", r.text)
@@ -274,7 +284,7 @@ def _femmes(today: Date, horizon: Date) -> List[Event]:
                 "aucune rencontre féminine au fil" % FFR_STABLE)
         return []
 
-    r = base_get(FFR_CALENDRIER % phase.group(1), headers=HEADERS,
+    r = base_get(FFR_CALENDRIER % phase.group(1), headers=HEADERS_FFR,
                  timeout=60, etiquette="[RUGBY]")
     r.raise_for_status()
 

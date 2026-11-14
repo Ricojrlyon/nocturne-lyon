@@ -45,7 +45,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import detail_cache
-from .base import Event, HORIZON_JOURS, get as base_get
+from .base import Event, HORIZON_JOURS, introuvable, saisons_a_lire, get as base_get
 
 VENUE = "Maison de la Danse"
 SLUG = "maison-de-la-danse"
@@ -99,9 +99,8 @@ def _norm(s: Optional[str]) -> str:
     return re.sub(r"\s+", " ", s)
 
 
-def _url_saison(today: Date) -> str:
-    """La saison court de septembre à juin : /programmation-2026-27."""
-    debut = today.year if today.month >= 9 else today.year - 1
+def _url_saison(debut: int) -> str:
+    """/programmation-2026-27 pour la saison qui commence en septembre 2026."""
     return f"{BASE}/programmation-{debut}-{(debut + 1) % 100:02d}"
 
 
@@ -257,13 +256,22 @@ def fetch() -> List[Event]:
     candidates = [today.year, today.year + 1, today.year - 1]
 
     session = requests.Session()
-    url_saison = _url_saison(today)
-    r = base_get(url_saison, session=session, headers=HEADERS, timeout=30)
-    r.raise_for_status()
-    soup = BeautifulSoup(r.text, "html.parser")
+    # De mai à août, la saison suivante aussi (audit A-24). Sa page peut
+    # ne pas exister encore : un 404 n'est alors pas une panne.
+    soupes = []
+    for rang, debut_saison in enumerate(saisons_a_lire(today)):
+        url_saison = _url_saison(debut_saison)
+        if rang:
+            time.sleep(CRAWL_DELAY)
+        r = base_get(url_saison, session=session, headers=HEADERS, timeout=30)
+        if rang and introuvable(r):
+            continue
+        r.raise_for_status()
+        soupes.append(BeautifulSoup(r.text, "html.parser"))
+    url_saison = _url_saison(saisons_a_lire(today)[0])
 
     cartes = []
-    for c in soup.select(".CrossContent--saison"):
+    for c in (c for soup in soupes for c in soup.select(".CrossContent--saison")):
         a = c.select_one("a[href]")
         titre = c.select_one(".s-hookCross")
         sous = c.select_one(".s-titleCross")
