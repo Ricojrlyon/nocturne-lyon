@@ -36,7 +36,6 @@ from __future__ import annotations
 
 import re
 import sys
-import unicodedata
 from datetime import date as Date, timedelta
 from typing import Dict, List, Optional
 from urllib.parse import urlsplit
@@ -46,6 +45,7 @@ from bs4 import BeautifulSoup
 
 from . import detail_cache
 from .base import Event, HORIZON_JOURS, OFFSITE_PLUSIEURS, get as base_get
+from .base import UA, sans_accents
 
 # Graphie du Petit Bulletin, qui remonte aussi cette salle : c'est ce qui
 # permet à la dédup de regrouper les deux sources.
@@ -64,8 +64,7 @@ HORIZON_DAYS = HORIZON_JOURS
 MAX_FICHES = 60          # garde-fou : 17 aujourd'hui, jamais 60
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
@@ -78,10 +77,7 @@ _HEURE = re.compile(r"^\d{1,2}:\d{2}$")
 
 
 def _norm(s: Optional[str]) -> str:
-    s = (s or "").lower()
-    s = "".join(c for c in unicodedata.normalize("NFD", s)
-                if unicodedata.category(c) != "Mn")
-    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+    return re.sub(r"[^a-z0-9]+", "-", sans_accents(s)).strip("-")
 
 
 def _jour_de(bloc) -> Optional[str]:

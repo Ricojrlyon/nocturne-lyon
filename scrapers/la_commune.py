@@ -18,6 +18,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from .base import Event, img_src, iso, FR_MONTHS, get as base_get
+from .base import UA
 
 VENUE = "La Commune"
 SLUG  = "la-commune"
@@ -28,8 +29,7 @@ URLS  = [
 ]
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 

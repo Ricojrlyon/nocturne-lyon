@@ -37,7 +37,6 @@ from __future__ import annotations
 import re
 import sys
 import time
-import unicodedata
 from datetime import date as Date, timedelta
 from typing import List, Optional
 
@@ -46,6 +45,7 @@ from bs4 import BeautifulSoup
 
 from . import detail_cache
 from .base import Event, HORIZON_JOURS, introuvable, saisons_a_lire, get as base_get
+from .base import UA, sans_accents, MOIS_CANON
 
 VENUE = "Maison de la Danse"
 SLUG = "maison-de-la-danse"
@@ -59,8 +59,7 @@ HORIZON_DAYS = HORIZON_JOURS
 CRAWL_DELAY = 10.0
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
@@ -71,9 +70,6 @@ HEADERS = {
 # Une seule paire est ambiguë, juin et juillet, d'où le refus explicite
 # d'un préfixe qui désignerait plusieurs mois - « juil » et « juin »
 # tranchent, « jui » non.
-MOIS_CANON = ("janvier", "fevrier", "mars", "avril", "mai", "juin",
-              "juillet", "aout", "septembre", "octobre", "novembre",
-              "decembre")
 
 
 def _mois(jeton: str) -> Optional[int]:
@@ -93,10 +89,7 @@ _HEURE = re.compile(r"\b(\d{1,2})[:h](\d{2})\b")
 
 
 def _norm(s: Optional[str]) -> str:
-    s = (s or "").lower().strip()
-    s = "".join(c for c in unicodedata.normalize("NFD", s)
-                if unicodedata.category(c) != "Mn")
-    return re.sub(r"\s+", " ", s)
+    return re.sub(r"\s+", " ", sans_accents((s or "").strip()))
 
 
 def _url_saison(debut: int) -> str:

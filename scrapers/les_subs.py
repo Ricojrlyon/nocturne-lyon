@@ -26,6 +26,7 @@ import unicodedata
 from bs4 import BeautifulSoup
 
 from .base import annee_probable, Event, iso, img_src, get as base_get
+from .base import UA
 
 VENUE = "Les Subsistances"
 SLUG = "les-subs"
@@ -33,8 +34,7 @@ URL = "https://www.les-subs.com/agenda/"
 HOST = "https://www.les-subs.com"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 

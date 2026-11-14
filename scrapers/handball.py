@@ -41,17 +41,16 @@ from datetime import date as Date, datetime, timedelta
 import os
 import re
 import sys
-import unicodedata
 
 from .base import Event, HORIZON_JOURS, iso, get as base_get
+from .base import UA, sans_accents
 
 HORIZON_DAYS = HORIZON_JOURS
 
 ICS = "https://competition-calendar.ffhandball.fr/c-%s/s-%s.ics"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
@@ -110,8 +109,7 @@ DUEL = re.compile(r"^(.+?)\s+vs\s+(.+)$", re.I)
 # dans volley.py, rugby.py et asvel_feminin.py : une correction faite ici se
 # reporte là-bas.
 def _norm(t: str) -> str:
-    return "".join(c for c in unicodedata.normalize("NFD", (t or "").lower())
-                   if unicodedata.category(c) != "Mn").strip()
+    return sans_accents(t).strip()
 
 
 # Même outil dans volley.py, qui développe en plus les abréviations, et

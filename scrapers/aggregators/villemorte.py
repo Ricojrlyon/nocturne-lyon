@@ -16,6 +16,7 @@ from zoneinfo import ZoneInfo
 import re
 
 from ..base import Event, get as base_get
+from ..base import sans_accents
 
 API_URL = "https://agenda.villemorte.fr/api/events"
 
@@ -31,9 +32,7 @@ def _norm_tag(t: str) -> str:
     consecutive whitespace. So "Rita-Plage" and "Rita Plage" both become
     "rita plage" and a single pattern matches both.
     """
-    import unicodedata
-    s = (t or "").lower().strip()
-    s = "".join(c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn")
+    s = sans_accents((t or "").strip())
     s = re.sub(r"[^\w\s]", " ", s)
     s = re.sub(r"\s+", " ", s).strip()
     return s

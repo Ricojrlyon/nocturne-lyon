@@ -17,6 +17,7 @@ import sys
 from bs4 import BeautifulSoup, Tag
 
 from .base import annee_probable, Event, iso, FR_MONTHS, get as base_get
+from .base import UA
 
 VENUE = "Le Petit Salon"
 SLUG = "petit-salon"
@@ -24,8 +25,7 @@ URL = "https://www.lpslyon.fr/programmation/"
 HOST = "https://www.lpslyon.fr"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 

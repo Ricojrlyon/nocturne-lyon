@@ -410,8 +410,8 @@ def _deux_fiches_d_une_source(a: Event, prio_a: int, b: Event, prio_b: int) -> b
 
 # Au-delà de ce nombre de jours, une plage ne décrit plus une série de
 # représentations mais un accrochage ou un festival au long cours. La
-# valeur reprend le seuil que le frontend utilisait pour la même
-# distinction (LONG_RUN_THRESHOLD, index.html).
+# valeur reprend le seuil que la page employait pour la même distinction
+# (LONG_RUN_THRESHOLD, supprimé de index.html en septembre 2026).
 SEUIL_PLAGE = 30
 
 

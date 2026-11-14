@@ -35,7 +35,6 @@ import html as _html
 import itertools
 import re
 import sys
-import unicodedata
 from datetime import date as Date, timedelta
 from typing import Dict, List, Optional
 
@@ -44,6 +43,7 @@ from bs4 import BeautifulSoup
 
 from . import detail_cache
 from .base import Event, HORIZON_JOURS, saisons_a_lire, get as base_get
+from .base import UA, sans_accents, MOIS_CANON
 
 VENUE = "Théâtre de la Croix-Rousse"
 SLUG = "croix-rousse"
@@ -55,8 +55,7 @@ PER_PAGE = 100
 MAX_PAGES = 10
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
@@ -73,9 +72,6 @@ PUBLICS = ("pour les", "en famille", "jeune public", "tout public")
 PRECISIONS = ("bruitages", "confidences", "heroic fantasy", "masque", "radio",
               "revue")
 
-MOIS_CANON = ("janvier", "fevrier", "mars", "avril", "mai", "juin",
-              "juillet", "aout", "septembre", "octobre", "novembre",
-              "decembre")
 JOURS_COURTS = ("lun", "mar", "mer", "jeu", "ven", "sam", "dim")
 
 _ANNEE = re.compile(r"\b(20\d{2})\b")
@@ -93,10 +89,7 @@ def _texte(s: Optional[str]) -> str:
 
 
 def _norm(s: Optional[str]) -> str:
-    s = (s or "").lower().strip()
-    s = "".join(c for c in unicodedata.normalize("NFD", s)
-                if unicodedata.category(c) != "Mn")
-    return re.sub(r"\s+", " ", s)
+    return re.sub(r"\s+", " ", sans_accents((s or "").strip()))
 
 
 def _mois(jeton: str) -> Optional[int]:

@@ -47,7 +47,6 @@ from __future__ import annotations
 
 import re
 import sys
-import unicodedata
 from datetime import date as Date, timedelta
 from typing import Dict, List, Optional, Tuple
 
@@ -56,6 +55,7 @@ from bs4 import BeautifulSoup
 
 from . import detail_cache
 from .base import Event, HORIZON_JOURS, introuvable, get as base_get
+from .base import UA, sans_accents, MOIS
 
 VENUE = "Musée des Beaux-Arts"
 SLUG = "musee-des-beaux-arts"
@@ -73,14 +73,10 @@ PAGES_MAX = 30          # 19 pages à l'écriture ; la marge couvre la croissanc
 EXPOSITIONS = "/fr/article/exposition-venir"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
-MOIS = {"janvier": 1, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
-        "juin": 6, "juillet": 7, "aout": 8, "septembre": 9, "octobre": 10,
-        "novembre": 11, "decembre": 12}
 
 # Types de la liste → étiquettes que TYPE_BUCKETS (index.html) reconnaît.
 # Un type absent d'ici laisse la fiche sans catégorie : categorie.py
@@ -111,12 +107,6 @@ _PERIODE = re.compile(r"(\d{1,2})\s+([a-z]+)(?:\s+(20\d{2}))?\s*"
                       r"[-–—]\s*(\d{1,2})\s+([a-z]+)\s+(20\d{2})")
 
 
-def _norm(s: str) -> str:
-    s = (s or "").lower()
-    return "".join(c for c in unicodedata.normalize("NFD", s)
-                   if unicodedata.category(c) != "Mn")
-
-
 def _plat(el) -> str:
     return re.sub(r"\s+", " ", el.get_text(" ", strip=True)) if el else ""
 
@@ -125,7 +115,7 @@ def _seances(soup: BeautifulSoup) -> List[Tuple[str, Optional[str]]]:
     """(date ISO, heure) pour chaque séance de la fiche."""
     out: List[Tuple[str, Optional[str]]] = []
     for el in soup.select(".modal-date-programmation"):
-        m = _SEANCE.search(_norm(_plat(el)))
+        m = _SEANCE.search(sans_accents(_plat(el)))
         if not m or m.group(2) not in MOIS:
             continue
         try:
@@ -194,7 +184,7 @@ def _expositions(session: requests.Session, today: Date,
             if el.name == "h1":
                 break                       # exposition suivante
             if el.name == "h3" and periode is None:
-                periode = _PERIODE.search(_norm(_plat(el)))
+                periode = _PERIODE.search(sans_accents(_plat(el)))
             elif el.name == "p" and sous is None and not el.find("a"):
                 sous = _plat(el)
             if lien is None:
@@ -287,8 +277,8 @@ def fetch() -> List[Event]:
     sans_date = 0
 
     for lien, (type_brut, titre_liste) in cartes.items():
-        type_norm = _norm(type_brut)
-        if ECARTE in type_norm or ECARTE in _norm(titre_liste):
+        type_norm = sans_accents(type_brut)
+        if ECARTE in type_norm or ECARTE in sans_accents(titre_liste):
             ecartees += 1
             continue
 

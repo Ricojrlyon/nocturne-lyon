@@ -5,17 +5,12 @@ abort the run - the bad venue is skipped, the others succeed. This is
 critical: in a daily cron job, if one venue's HTML changes you don't want
 the whole pipeline to break.
 
-v34 changes:
-  - Removed Célestins, TNP, Croix-Rousse, Comédie Odéon (theatres dropped)
-    - REVENU DEPUIS : Célestins, TNP, Maison de la Danse et Croix-Rousse
-    la Comédie Odéon sont de nouveau scrappés en direct (sept. 2026). C'étaient les
-    quatre plus gros écarts entre ce qu'une salle programme et ce que
-    le feed en montrait, chacune remontée sans une seule affiche par le
-    seul Petit Bulletin.
-  - Added Ville Morte as an aggregator (cross-venue source)
-  - Cross-source deduplication: when the same event is reported by both a
-    venue scraper and an aggregator, the venue scraper wins (it's
-    authoritative). See scrapers/dedup.py.
+Les sources : les collecteurs de salle (SCRAPERS) et deux agrégateurs, le
+Petit Bulletin et Ville Morte (AGGREGATORS). Quand un même événement vient
+d'une salle et d'un agrégateur, la salle l'emporte : voir scrapers/dedup.py.
+(Cet en-tête disait « v34 » : les théâtres retirés à cette version - les
+Célestins, le TNP, la Croix-Rousse, la Comédie Odéon - sont revenus en
+septembre 2026 avec la Maison de la Danse ; audit A-43.)
 
 Politique éditoriale (septembre 2026) :
   - Ville Morte remonte l'intégralité de son agenda, sans aucun filtre.
@@ -1455,8 +1450,9 @@ def main() -> int:
                      today_iso)
     _resumer(report, wrote, len(unique), out)
     # Un effondrement ne fait plus échouer le run : le fil est publié, la
-    # salle tombée reprise, et l'alerte remonte en annotation GitHub. Seul
-    # l'échec de TOUS les scrapers sort en 1.
+    # salle tombée reprise, et l'alerte remonte en annotation GitHub. Il
+    # sort en 1 quand rien n'est publié : TOUS les scrapers en échec, ou
+    # une baisse de volume que le garde-fou retient (voir _publier).
     return 0 if wrote else 1
 
 if __name__ == "__main__":

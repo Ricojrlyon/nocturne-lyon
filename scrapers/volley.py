@@ -50,9 +50,9 @@ import io
 import os
 import re
 import sys
-import unicodedata
 
 from .base import Event, HORIZON_JOURS, iso, post as base_post
+from .base import UA, sans_accents
 
 HORIZON_DAYS = HORIZON_JOURS
 
@@ -60,8 +60,7 @@ EXPORT = ("https://www.ffvbbeach.org/ffvbapp/resu/"
           "vbspo_calendrier_export_club.php")
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
@@ -128,8 +127,7 @@ _LETTRES = re.compile(r"[A-Za-zÀ-ÿ]+")
 # dans handball.py, rugby.py et asvel_feminin.py : une correction faite ici
 # se reporte là-bas.
 def _norm(t: str) -> str:
-    return "".join(c for c in unicodedata.normalize("NFD", (t or "").lower())
-                   if unicodedata.category(c) != "Mn").strip()
+    return sans_accents(t).strip()
 
 
 # Même outil dans handball.py et rugby.py ; celui-ci développe en plus les

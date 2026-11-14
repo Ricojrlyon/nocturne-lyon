@@ -8,6 +8,7 @@ import io
 import json
 import unittest
 from datetime import date
+from pathlib import Path
 from unittest import mock
 
 import requests
@@ -81,6 +82,41 @@ class VraiNom(unittest.TestCase):
         with mock.patch.object(villemorte, "base_get", faux_get):
             villemorte.fetch()
         self.assertTrue(entetes[0].startswith(NOM), entetes)
+
+    def test_l_identite_du_robot_est_ecrite_une_fois(self):
+        # Audit A-43 : elle était recopiée dans 31 collecteurs. Elle vit
+        # dans base.UA ; seuls gardent la leur, pour une raison écrite dans
+        # leur fichier, le Sonic (tel quel), la FFR (rugby.py), Ville Morte,
+        # le géocodage et le Complexe.
+        self.assertEqual(base.UA, "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
+                                  "+https://github.com/Ricojrlyon/nocturne-lyon)")
+        racine = Path(base.__file__).resolve().parent
+        copies = sorted(p.relative_to(racine).as_posix() for p in racine.rglob("*.py")
+                        if NOM in p.read_text(encoding="utf-8"))
+        self.assertEqual(copies, ["aggregators/villemorte.py", "base.py", "complexe.py",
+                                  "geo.py", "rugby.py", "sonic.py"])
+        for module in (confluences, croix_rousse, tnp):
+            self.assertEqual(module.HEADERS["User-Agent"], base.UA)
+
+
+class Normalisation(unittest.TestCase):
+    """Audit A-43 : la même mise en minuscules sans accents était recopiée
+    vingt fois ; elle vit dans base.sans_accents, et la table des mois
+    qu'elle permet de lire dans base.MOIS."""
+
+    def test_sans_accents(self):
+        self.assertEqual(base.sans_accents("  Fête à l'ÉTÉ, Noël  "), "  fete a l'ete, noel  ")
+        self.assertEqual(base.sans_accents(None), "")
+        self.assertEqual(base.sans_accents("Œuvre ç"), "œuvre c")
+
+    def test_les_mois_normalises(self):
+        self.assertEqual([base.MOIS[m] for m in (
+            "janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout",
+            "septembre", "octobre", "novembre", "decembre")], list(range(1, 13)))
+        self.assertEqual(list(base.MOIS), list(base.MOIS_CANON))
+        self.assertEqual(len(base.MOIS), 12)
+        for mois in base.MOIS:
+            self.assertEqual(base.sans_accents(mois), mois)
 
 
 class AffichesEnCache(CacheVide):

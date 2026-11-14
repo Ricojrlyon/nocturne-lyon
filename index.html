@@ -127,12 +127,6 @@
     .container { padding: 0 20px; }
   }
 
-  /* ---------- type primitives ---------- */
-  .mono {
-    font-family: 'JetBrains Mono', monospace;
-    font-feature-settings: 'ss03' on;
-  }
-
   /* ---------- masthead : bloc plein ----------
      Le wordmark vit dans un bloc crème, texte en négatif (device
      emprunté à Aspen Search / State of AI). Rien à côté : le relevé de
@@ -417,48 +411,6 @@
     color: var(--bg);
     border-color: var(--ink);
   }
-  .chip.partial {
-    border-color: var(--warm);
-    color: var(--warm);
-    background: transparent;
-  }
-  .chip-group {
-    font-weight: 700;
-    text-transform: lowercase;
-  }
-  .chip-group::after {
-    content: "↘";
-    margin-left: 6px;
-    font-size: 10px;
-    display: inline-block;
-    transition: transform 0.18s ease;
-    opacity: 0.6;
-  }
-  .venue-group.expanded .chip-group::after {
-    transform: rotate(45deg);
-    opacity: 1;
-  }
-  .chip-sub { font-size: 10px; padding: 4px 10px; font-weight: 400; }
-
-  /* venue groups */
-  .venue-groups {
-    display: flex; flex-wrap: wrap; gap: 5px;
-    flex: 1;
-  }
-  .venue-group { display: contents; }
-  .venue-sublist {
-    display: none;
-    flex-wrap: wrap;
-    gap: 4px;
-    padding: 9px 12px;
-    background: var(--bg-elev);
-    border: 1px solid var(--rule);
-    border-radius: var(--radius);
-    width: 100%;
-    margin: 4px 0 2px;
-  }
-  .venue-group.expanded .venue-sublist { display: flex; }
-
   /* date picker */
   .datepicker-wrap { position: relative; display: inline-block; }
   .datepicker {
@@ -1078,7 +1030,7 @@
      Le débordement haut et bas est voulu : le fondu de .visual-bg le
      reprend et le logo s'efface aux deux bords comme le reste.
 
-     brightness un cran plus bas que les affiches (0,50 contre 0,60) :
+     brightness un cran plus bas que les affiches (0,40 contre 0,42) :
      un logo est un aplat, il n'a pas le bruit d'une photographie et
      ressort donc plus fort à luminosité égale. */
   /* Cartouche blanc, sur TOUTE la carte. Sans lui, les logos ajourés
@@ -1118,8 +1070,8 @@
     object-fit: contain;
     object-position: center;
     /* Le filtre des AFFICHES doit être annulé ici, pas seulement omis :
-       .visual-bg img porte brightness(0.60), qui s'ajouterait à celui du
-       cartouche et descendrait la marque à 0,30 - deux fois trop sombre.
+       .visual-bg img porte brightness(0.42), qui s'ajouterait à celui du
+       cartouche et descendrait la marque à 0,17 - deux fois trop sombre.
        C'est le cartouche, et lui seul, qui filtre ce sous-arbre. */
     filter: none;
   }
@@ -1566,7 +1518,7 @@
     padding-left: 0;
     padding-right: 0;
   }
-  /* « jusqu'au 18/10 » et « dernier » prennent exactement l'habit de
+  /* « → 18/10 » et « dernière » prennent exactement l'habit de
      l'étiquette d'arrondissement : même corps, même crème, même filet,
      aucune graisse. Ce sont deux annotations de même nature - un cadre
      où le lieu et le calendrier se situent - et le corail les faisait
@@ -1813,12 +1765,6 @@
   .collapse-card:focus-visible {
     outline: 2px solid var(--ink-soft);
     outline-offset: 2px;
-  }
-
-  /* Subtitle removed from main grid layout - too noisy in compact cards.
-     Keep style for if we re-enable later. */
-  .event-subtitle {
-    display: none;
   }
 
   /* ---------- empty state ---------- */
@@ -2283,14 +2229,14 @@ const VENUE_GROUPS = [
   { name: 'classique',             venues: ['Auditorium de Lyon', 'Chapelle de la Trinité', 'Salle Molière'] },
   /* 'musées & galeries' is dynamically populated by inferGroupForVenue
      (anything containing musée / galerie / institut). */
-  { name: 'musées & galeries',     venues: [], dynamic: true },
+  { name: 'musées & galeries',     venues: [] },
   /* 'autre' is dynamically populated at runtime with venues that appear
      in events but aren't listed in any group above (e.g. from aggregators).
      Note: many venues do have arrondissement mappings in VENUE_ARRONDISSEMENT
      for the arr. filter and card label, but intentionally stay in 'autre'
      for the venue group filter (e.g. La Salle de Bains, Café Nanoum,
      Kraspek Myzik, Boulangerie du Prado, etc.). */
-  { name: 'autre',                 venues: [], dynamic: true },
+  { name: 'autre',                 venues: [] },
 ];
 
 /* Display order within a day:
@@ -2457,14 +2403,7 @@ function etiquetteLieu(e) {
   return t === 'Autre' ? 'ailleurs' : t;
 }
 const VENUE_GROUP_ORDER_INDEX = new Map();
-VENUE_DISPLAY_ORDER.forEach((groupName, idx) => {
-  const group = VENUE_GROUPS.find(g => g.name === groupName);
-  if (group) {
-    for (const venue of group.venues) {
-      VENUE_GROUP_ORDER_INDEX.set(venue, idx);
-    }
-  }
-});
+rebuildVenueGroupOrderIndex();
 
 /* ---------- type buckets ---------- */
 const TYPE_BUCKETS = [
@@ -3662,9 +3601,10 @@ function inferGroupForVenue(venueName) {
   return null;
 }
 
-/* Rebuilds VENUE_GROUP_ORDER_INDEX from VENUE_GROUPS - call this after any
-   dynamic mutation (auto-promotion or autre population) so card sorting
-   picks up the new venues. */
+/* Rebuilds VENUE_GROUP_ORDER_INDEX from VENUE_GROUPS - au chargement, puis
+   after any dynamic mutation (auto-promotion or autre population) so card
+   sorting picks up the new venues. Une seule boucle pour les deux : elle
+   était recopiée au chargement (audit A-43). */
 function rebuildVenueGroupOrderIndex() {
   VENUE_GROUP_ORDER_INDEX.clear();
   VENUE_DISPLAY_ORDER.forEach((groupName, idx) => {
@@ -4014,8 +3954,8 @@ document.getElementById('clearFilters').addEventListener('click', () => {
   const searchEl = document.getElementById('filterSearch');
   if (searchEl) searchEl.value = '';
   document.getElementById('filterSearchClear').style.display = 'none';
-  document.querySelectorAll('.chip.active, .chip.partial').forEach(c => {
-    c.classList.remove('active', 'partial');
+  document.querySelectorAll('.chip.active').forEach(c => {
+    c.classList.remove('active');
   });
   document.querySelector('#filterWhen .chip[data-when="all"]').classList.add('active');
   document.getElementById('dateBtn').classList.remove('active');

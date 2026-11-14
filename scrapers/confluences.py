@@ -43,7 +43,6 @@ from __future__ import annotations
 
 import re
 import sys
-import unicodedata
 from datetime import date as Date, timedelta
 from typing import Dict, List, Optional, Tuple
 
@@ -51,6 +50,7 @@ import requests
 
 from . import detail_cache
 from .base import Event, HORIZON_JOURS, get as base_get
+from .base import UA, sans_accents, MOIS
 
 VENUE = "Musée des Confluences"
 SLUG = "musee-des-confluences"
@@ -62,8 +62,7 @@ PAR_PAGE = 50
 PAGES_MAX = 40          # 14 pages à l'écriture ; la marge couvre la croissance
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept": "application/vnd.api+json",
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
@@ -85,9 +84,6 @@ LIEUX_MAISON = ("grand auditorium", "petit auditorium", "au musee",
 
 ETATS_EXPO = ("en cours", "a venir")
 
-MOIS = {"janvier": 1, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
-        "juin": 6, "juillet": 7, "aout": 8, "septembre": 9, "octobre": 10,
-        "novembre": 11, "decembre": 12}
 
 # « Du 03 avril 2026 au 07 février 2027 »
 _PERIODE = re.compile(r"du\s+(\d{1,2})\s+([a-z]+)\s+(20\d{2})\s+au\s+"
@@ -102,9 +98,7 @@ _SOUS_TITRE_DATE = re.compile(r"^\s*(?:à partir du|du)\s+\d", re.I)
 
 
 def _norm(s: str) -> str:
-    s = (s or "").lower().strip()
-    return "".join(c for c in unicodedata.normalize("NFD", s)
-                   if unicodedata.category(c) != "Mn")
+    return sans_accents((s or "").strip())
 
 
 def _texte(v) -> str:

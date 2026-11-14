@@ -33,20 +33,19 @@ from typing import List, Optional
 from datetime import date as Date, timedelta
 import re
 import sys
-import unicodedata
 
 import requests
 from bs4 import BeautifulSoup
 
 from .base import Event, HORIZON_JOURS, iso, FR_MONTHS, get as base_get
+from .base import UA, sans_accents
 
 CLUB = "LDLC ASVEL Féminin"
 URL = "https://ldlcasvelfeminin.com/calendrier/"
 HORIZON_DAYS = HORIZON_JOURS
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-                  "+https://github.com/Ricojrlyon/nocturne-lyon)",
+    "User-Agent": UA,
     "Accept-Language": "fr-FR,fr;q=0.9",
 }
 
@@ -81,8 +80,7 @@ LIGNE = re.compile(
 # dans volley.py, handball.py et rugby.py : une correction faite ici se
 # reporte là-bas.
 def _norm(t: str) -> str:
-    return "".join(c for c in unicodedata.normalize("NFD", (t or "").lower())
-                   if unicodedata.category(c) != "Mn").strip()
+    return sans_accents(t).strip()
 
 
 def _competition(queue: str) -> Optional[str]:

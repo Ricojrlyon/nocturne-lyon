@@ -45,13 +45,13 @@ from typing import List, Optional, Tuple
 from bs4 import BeautifulSoup
 
 from ..base import Event, annee_probable, introuvable, get as base_get
+from ..base import UA, sans_accents
 
 URL = "https://www.petit-bulletin.fr/agenda-recherche.html"
 BASE = "https://www.petit-bulletin.fr"
 
 USER_AGENT = (
-    "Mozilla/5.0 (compatible; nocturne-lyon-events/1.0; "
-    "+https://github.com/Ricojrlyon/nocturne-lyon)"
+    UA
 )
 
 # Garde-fou anti-boucle, PAS une limite de lecture : fetch() s'arrête de
@@ -75,9 +75,7 @@ MONTHS_FR = {
 
 def _normalize(s: str) -> str:
     """Lowercase, strip accents, punctuation → space, collapse whitespace."""
-    s = (s or "").lower().strip()
-    s = "".join(c for c in unicodedata.normalize("NFD", s)
-                if unicodedata.category(c) != "Mn")
+    s = sans_accents((s or "").strip())
     s = re.sub(r"[^\w\s]", " ", s)
     s = re.sub(r"\s+", " ", s).strip()
     return s
