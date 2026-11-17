@@ -12,12 +12,12 @@
     "time": "18:00"
   },
   "https://h-eat.eu/events/chess-bar-x-heat-10/": {
-    "fetched_at": "2026-10-02",
-    "time": "18:00"
+    "fetched_at": "2026-11-17",
+    "time": "17:00"
   },
   "https://h-eat.eu/events/chess-bar-x-heat-11/": {
-    "fetched_at": "2026-10-02",
-    "time": "18:00"
+    "fetched_at": "2026-11-17",
+    "time": "17:00"
   },
   "https://h-eat.eu/events/chess-bar-x-heat-6/": {
     "fetched_at": "2026-10-02",
@@ -747,7 +747,7 @@
     ]
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/mermaids-sweat-your-prayers": {
-    "fetched_at": "2026-11-13",
+    "fetched_at": "2026-11-17",
     "lieu": "Maison de la danse - Grande salle",
     "seances": [
       [
@@ -1571,7 +1571,7 @@
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/camille-tissot/": {
-    "fetched_at": "2026-11-13",
+    "fetched_at": "2026-11-17",
     "seances": [
       [
         "2027-05-12",
@@ -3502,7 +3502,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/eleves-du-cnsmd-lyon-12-nov-26": {
-    "fetched_at": "2026-11-13",
+    "fetched_at": "2026-11-17",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -5803,6 +5803,17 @@
     ],
     "titre": "Conférence-débat des grands témoins du Congrès FRAME 2026"
   },
+  "https://www.mba-lyon.fr/fr/fiche-programmation/conference-le-roi-du-festin-le-chocolat": {
+    "affiche": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-11/grand-traite-du-chocolat.jpg?h=0313f242&itok=Pxlswfvw",
+    "fetched_at": "2026-11-17",
+    "seances": [
+      [
+        "2026-12-12",
+        "16:00"
+      ]
+    ],
+    "titre": "Conférence : Le roi du festin - le chocolat !"
+  },
   "https://www.mba-lyon.fr/fr/fiche-programmation/conference-limaginaire-de-la-couleur-en-france-au-xixe-siecle": {
     "affiche": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/content/medias/images/2020-02/visiteurs-devant-monet-charingcross_2.jpg?h=a3a26a28&itok=LbAgqa18",
     "fetched_at": "2026-11-15",
@@ -5905,21 +5916,6 @@
       ]
     ],
     "titre": "Journée d'études : Les Leçons de Rome – 11e édition"
-  },
-  "https://www.mba-lyon.fr/fr/fiche-programmation/journees-europeennes-du-patrimoine": {
-    "fetched_at": "2026-09-17",
-    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2026-09/cecile-lartigau_ondes-martenot_petra-hajska.jpg?h=bd174762&itok=ta5VQzRd",
-    "seances": [
-      [
-        "2026-09-19",
-        "10:00"
-      ],
-      [
-        "2026-09-20",
-        "10:00"
-      ]
-    ],
-    "titre": "Journées Européennes du Patrimoine"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/lartiste-furieux-lautoportrait-nu-de-jean-baptiste-frenet": {
     "affiche": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/content/medias/images/2020-01/frenet_autoportrait_nu.jpg?h=da07bdf4&itok=5xTQnqQD",
@@ -6035,17 +6031,6 @@
     ],
     "titre": "Passé composé : autour du musée des monuments français d’Alexandre Lenoir"
   },
-  "https://www.mba-lyon.fr/fr/fiche-programmation/presentation-des-ondes-martenot-par-cecile-lartigau": {
-    "fetched_at": "2026-09-17",
-    "image": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_900_560/public/medias/images/2025-08/chapelle_ou_visite_groupe.jpg?h=3244e854&itok=9vjIoalP",
-    "seances": [
-      [
-        "2026-09-18",
-        "12:30"
-      ]
-    ],
-    "titre": "Présentation des ondes Martenot par Cécile Lartigau"
-  },
   "https://www.mba-lyon.fr/fr/fiche-programmation/regards-croises-quand-le-pinceau-et-le-pistil-se-rencontrent": {
     "affiche": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2025-10/antoine-berjon-fruits-et-fleurs-dans-une-corbeille-dosier-1810.jpg?h=1ee1672f&itok=X0_fkGj6",
     "fetched_at": "2026-11-14",
@@ -6082,6 +6067,21 @@
       ]
     ],
     "titre": "Rendez-vous avec une designeuse circulaire"
+  },
+  "https://www.mba-lyon.fr/fr/fiche-programmation/spectacle-la-cuisine-musicale": {
+    "affiche": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-11/la-cuisine-musicale.jpg?h=ec063885&itok=JP7kTJ0o",
+    "fetched_at": "2026-11-17",
+    "seances": [
+      [
+        "2026-12-13",
+        "15:00"
+      ],
+      [
+        "2026-12-13",
+        "16:30"
+      ]
+    ],
+    "titre": "Spectacle : La Cuisine Musicale"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/spectacle-la-petite-boite-gant": {
     "affiche": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-09/la-petite-boite-a-gant-2.jpg?h=8beaa2b8&itok=lpl4k-lm",
@@ -6167,6 +6167,21 @@
       ]
     ],
     "titre": "Week-end chanté"
+  },
+  "https://www.mba-lyon.fr/fr/fiche-programmation/week-end-festin": {
+    "affiche": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-09/daniel-spoerri-visiteur.jpg?h=0adfcc7c&itok=dIjuPsem",
+    "fetched_at": "2026-11-17",
+    "seances": [
+      [
+        "2026-12-12",
+        "10:00"
+      ],
+      [
+        "2026-12-13",
+        "10:00"
+      ]
+    ],
+    "titre": "Week-end Festin !"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/week-end-musee-brac": {
     "affiche": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-10/dsc05558.jpg?h=1620c5f9&itok=yH3wXSDg",
@@ -6561,17 +6576,6 @@
     ],
     "time": "18:30"
   },
-  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/grand-entretien-18": {
-    "fetched_at": "2026-09-17",
-    "lieu": "Amphi de l'Opéra de Lyon",
-    "seances": [
-      [
-        "2026-10-04",
-        "14:30"
-      ]
-    ],
-    "time": "14:30"
-  },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/danse/avant-laube": {
     "fetched_at": "2026-11-16",
     "lieu": "Maison de la Danse, Lyon 8e",
@@ -6869,6 +6873,17 @@
     ],
     "time": null
   },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/concerts-du-cnsmd-44": {
+    "fetched_at": "2026-11-17",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2026-11-20",
+        "18:30"
+      ]
+    ],
+    "time": null
+  },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/crimi-meli": {
     "fetched_at": "2026-10-03",
     "lieu": "Amphi de l'Opéra de Lyon",
@@ -6958,21 +6973,6 @@
     "seances": [],
     "time": null
   },
-  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/leila-martial-elie-dufour-karma-bazar": {
-    "fetched_at": "2026-09-17",
-    "lieu": "Amphi de l'Opéra de Lyon",
-    "seances": [
-      [
-        "2026-10-09",
-        "20:00"
-      ],
-      [
-        "2026-10-10",
-        "20:00"
-      ]
-    ],
-    "time": "20:00"
-  },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/les-marquises-malaterre": {
     "fetched_at": "2026-11-14",
     "lieu": "Amphi de l'Opéra de Lyon",
@@ -7005,17 +7005,6 @@
       ]
     ],
     "time": "18:30"
-  },
-  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/quatuor-bela": {
-    "fetched_at": "2026-09-17",
-    "lieu": "Théâtre de La Renaissance - Oullins-Pierre-Bénite",
-    "seances": [
-      [
-        "2026-10-14",
-        "19:00"
-      ]
-    ],
-    "time": "19:00"
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/opera-underground/rebecca-roger-cruz-1": {
     "fetched_at": "2026-09-27",
@@ -7467,10 +7456,6 @@
     "fetched_at": "2026-09-25",
     "time": null
   },
-  "https://www.tng-lyon.fr/evenement/decouverte-du-tng-en-lsf-2/": {
-    "fetched_at": "2026-09-17",
-    "time": null
-  },
   "https://www.tng-lyon.fr/evenement/evidences-inconnues/": {
     "fetched_at": "2026-09-28",
     "time": null
@@ -7481,10 +7466,6 @@
   },
   "https://www.tng-lyon.fr/evenement/grandeur-nature/": {
     "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/journees-europeennes-du-patrimoine/": {
-    "fetched_at": "2026-09-17",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-boule-de-neige/": {
@@ -7751,7 +7732,7 @@
   },
   "https://www.transbordeur.fr/evenement/colours-in-the-street-hugo-barriol-17112026/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-cits-768x1152.jpg",
-    "fetched_at": "2026-10-17",
+    "fetched_at": "2026-11-17",
     "image": null,
     "time": "19:00"
   },
@@ -8216,6 +8197,12 @@
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-revnoir.jpg",
     "time": "19:00"
   },
+  "https://www.transbordeur.fr/evenement/revnoir-ice-sealed-eyes-mirage-04022027/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-revnoir-768x1076.jpg",
+    "fetched_at": "2026-11-17",
+    "image": null,
+    "time": "19:00"
+  },
   "https://www.transbordeur.fr/evenement/rounhaa-05122026/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-rounhaa-1-768x768.png",
     "fetched_at": "2026-11-05",
@@ -8378,7 +8365,7 @@
   },
   "https://www.transbordeur.fr/evenement/warhaus-15042027/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/09/a-Warhaus-768x1024.jpeg",
-    "fetched_at": "2026-10-17",
+    "fetched_at": "2026-11-17",
     "image": null,
     "time": "19:00"
   },
