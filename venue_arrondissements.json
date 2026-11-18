@@ -61,7 +61,7 @@
       45.74791,
       4.82428
     ],
-    "seen_at": "2026-11-11"
+    "seen_at": "2026-11-18"
   },
   "Atrium de l'hôtel de ville": {
     "arr": null,
@@ -309,7 +309,7 @@
       45.69407,
       4.79113
     ],
-    "seen_at": "2026-11-11"
+    "seen_at": "2026-11-18"
   },
   "Café La Médiane": {
     "arr": null,
@@ -348,7 +348,7 @@
     "arr": null,
     "checked_at": "2026-11-11",
     "confidence": "failed",
-    "seen_at": "2026-11-11"
+    "seen_at": "2026-11-18"
   },
   "Centre culturel Charlie Chaplin": {
     "arr": "Autre",
@@ -665,6 +665,16 @@
     ],
     "seen_at": "2026-10-08"
   },
+  "Grande Salle": {
+    "arr": "Villeurbanne",
+    "checked_at": "2026-11-18",
+    "confidence": "high",
+    "pos": [
+      45.76553,
+      4.87965
+    ],
+    "seen_at": "2026-11-18"
+  },
   "Groom": {
     "arr": "1er",
     "confidence": "high",
@@ -754,6 +764,17 @@
       4.82169
     ],
     "seen_at": "2026-09-22"
+  },
+  "Jack Jack": {
+    "arr": "Autre",
+    "checked_at": "2026-11-18",
+    "commune": "Bron",
+    "confidence": "low",
+    "pos": [
+      45.74237,
+      4.90885
+    ],
+    "seen_at": "2026-11-18"
   },
   "Jardin Gilibert (géré par la MJC Confluence)": {
     "arr": null,
@@ -1170,7 +1191,7 @@
       45.75337,
       4.83049
     ],
-    "seen_at": "2026-11-11"
+    "seen_at": "2026-11-18"
   },
   "Librairie La BD": {
     "arr": "Autre",
@@ -1357,7 +1378,7 @@
       45.74227,
       4.90856
     ],
-    "seen_at": "2026-11-11"
+    "seen_at": "2026-11-18"
   },
   "MJC Duchère": {
     "arr": null,
@@ -1921,7 +1942,7 @@
       45.77099,
       4.81155
     ],
-    "seen_at": "2026-11-11"
+    "seen_at": "2026-11-18"
   },
   "Théâtre Astrée": {
     "arr": "Villeurbanne",
@@ -1968,9 +1989,9 @@
   },
   "Théâtre de La Renaissance": {
     "arr": null,
-    "checked_at": "2026-10-18",
+    "checked_at": "2026-11-18",
     "confidence": "failed",
-    "seen_at": "2026-11-16"
+    "seen_at": "2026-11-18"
   },
   "Théâtre de l'Iris": {
     "arr": "Villeurbanne",
@@ -2286,6 +2307,6 @@
     "arr": null,
     "checked_at": "2026-09-16",
     "confidence": "failed",
-    "seen_at": "2026-11-11"
+    "seen_at": "2026-11-18"
   }
 }
