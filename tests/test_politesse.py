@@ -160,20 +160,24 @@ class AffichesEnCache(CacheVide):
 
 class ArchivesDesConfluences(unittest.TestCase):
 
-    def test_seuls_les_evenements_a_venir_ou_recurrents_sont_demandes(self):
-        # 15 pages pour 670 événements, dont 67 à venir ; 5 avec le filtre.
+    def test_seuls_les_evenements_a_venir_sont_demandes(self):
+        # 15 pages pour 670 événements, dont 67 à venir, sans filtre. Les
+        # séries récurrentes ne sont plus demandées : depuis le 17/11/2026,
+        # le serveur du musée tombe sur la requête qui les ajoutait par un
+        # OU (33 s, puis une erreur 500), deux nuits de suite.
         demandes = []
 
         def faux_tout(session, type_noeud, include, filtre=None):
             demandes.append((type_noeud, filtre))
             return [], {}
         with mock.patch.object(confluences, "_tout", faux_tout):
-            confluences._evenements(None, date(2026, 11, 14), date(2027, 5, 13))
+            confluences._evenements(None, date(2026, 11, 18), date(2027, 5, 17))
         (type_noeud, filtre), = demandes
         self.assertEqual(type_noeud, "event")
-        self.assertEqual(filtre["filter[ou][group][conjunction]"], "OR")
-        self.assertEqual(filtre["filter[av][condition][value]"], "2026-11-14")
-        self.assertEqual(filtre["filter[rr][condition][operator]"], "IS NOT NULL")
+        self.assertEqual(filtre, {"filter[av][condition][path]": "field_date_recu.value",
+                                  "filter[av][condition][operator]": ">=",
+                                  "filter[av][condition][value]": "2026-11-18"})
+        self.assertFalse(any("rrule" in str(v) or v == "OR" for v in filtre.values()))
 
     def test_le_filtre_part_avec_la_premiere_page(self):
         page = json.dumps({"data": [], "links": {}})

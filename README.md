@@ -219,10 +219,19 @@ Un test vérifie chacun de ces points.
   Aucune des fiches retenues ne porte de récurrence encore vive ; si
   cela changeait, elle serait signalée plutôt que tronquée en silence à
   sa première date. L'API ne rend que les événements qui ont une date à
-  venir, ou une récurrence (audit A-37) : sans ce filtre, toutes les
-  archives du musée étaient relues chaque nuit, 15 pages pour 670
-  événements dont 67 à venir ; avec, 5 pages et les mêmes 67 (relevé du
-  14 novembre 2026). La vérification de la taille « carte » de chaque
+  venir (audit A-37) : sans ce filtre, toutes les archives du musée
+  étaient relues chaque nuit, 15 pages pour 670 événements dont 67 à
+  venir (relevé du 14 novembre 2026). Le filtre demandait aussi, par un
+  « ou », les séries récurrentes, pour l'avertissement ci-dessus : le
+  17 novembre 2026, le serveur du musée a cessé de tenir cette requête
+  (33 secondes, puis une erreur 500 et sa page « Site en maintenance »),
+  et le musée est sorti du fil deux nuits de suite, repris de la veille
+  par le garde-fou. Les séries seules y prennent 22 secondes par page,
+  pour des visites scolaires de 2021 ; la date seule, une seconde. Or
+  seules les dates à venir sont publiées : le filtre ne garde plus que
+  la date, et l'avertissement ne porte plus que sur les séries qui ont
+  aussi une date à venir. Mêmes 45 événements qu'avant la panne (relevé
+  du 18 novembre 2026). La vérification de la taille « carte » de chaque
   affiche est gardée une semaine dans le cache des fiches.
 - **`scrapers/croix_rousse.py`** : le Théâtre de la Croix-Rousse.
   WordPress dont l'API REST est OUVERTE, à la différence du TNP : elle

@@ -109,20 +109,22 @@ def _texte(v) -> str:
 
 
 def _filtre_a_venir(today: Date) -> dict:
-    """Les événements qui ont une date à venir, OU une récurrence (audit
-    A-37). Sans filtre, l'API rendait toutes les archives du musée chaque
-    nuit : 15 pages pour 670 événements, dont 67 à venir (relevé du
-    14/11/2026) ; avec, 5 pages, les mêmes 67. Les séries récurrentes
-    restent lues, commencées ou non, pour que _recurrence_vive puisse
-    toujours signaler une série encore vive."""
-    return {"filter[ou][group][conjunction]": "OR",
-            "filter[av][condition][path]": "field_date_recu.value",
+    """Les événements qui ont une date à venir (audit A-37). Sans filtre,
+    l'API rendait toutes les archives du musée chaque nuit : 15 pages pour
+    670 événements, dont 67 à venir (relevé du 14/11/2026).
+
+    Le filtre demandait aussi, par un OU, les séries récurrentes,
+    commencées ou non, pour que _recurrence_vive puisse en signaler une
+    encore vive. Le 17/11/2026, le serveur du musée a cessé de tenir cette
+    requête : 33 s, puis une erreur 500 (sa page « Site en maintenance »),
+    deux nuits de suite. Les séries seules y prennent 22 s par page, pour
+    des visites scolaires de 2021 ; la date seule, 1 s. Or seules les
+    dates à venir sont publiées (_evenements) : les séries ne servaient
+    qu'à l'avertissement. Il ne porte plus que sur les séries qui ont
+    aussi une date à venir."""
+    return {"filter[av][condition][path]": "field_date_recu.value",
             "filter[av][condition][operator]": ">=",
-            "filter[av][condition][value]": today.isoformat(),
-            "filter[av][condition][memberOf]": "ou",
-            "filter[rr][condition][path]": "field_date_recu.rrule",
-            "filter[rr][condition][operator]": "IS NOT NULL",
-            "filter[rr][condition][memberOf]": "ou"}
+            "filter[av][condition][value]": today.isoformat()}
 
 
 def _tout(session: requests.Session, type_noeud: str, include: str,
