@@ -129,7 +129,7 @@
       45.76305,
       4.83696
     ],
-    "seen_at": "2026-11-14"
+    "seen_at": "2026-11-21"
   },
   "Bibliothèque Diderot de Lyon": {
     "arr": "7e",
@@ -195,7 +195,7 @@
       45.76791,
       4.88354
     ],
-    "seen_at": "2026-11-14"
+    "seen_at": "2026-11-21"
   },
   "Bizarre!": {
     "arr": "Autre",
@@ -253,7 +253,7 @@
       45.77408,
       4.79786
     ],
-    "seen_at": "2026-11-14"
+    "seen_at": "2026-11-21"
   },
   "Bulle de son": {
     "arr": "9e",
@@ -743,6 +743,12 @@
       4.90525
     ],
     "seen_at": "2026-09-15"
+  },
+  "In-Sted": {
+    "arr": null,
+    "checked_at": "2026-11-21",
+    "confidence": "failed",
+    "seen_at": "2026-11-21"
   },
   "Institut d\\'Art Contemporain": {
     "arr": "Villeurbanne",

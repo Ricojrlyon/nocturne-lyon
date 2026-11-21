@@ -224,6 +224,10 @@
     "fetched_at": "2026-10-30",
     "time": "23:00"
   },
+  "https://le-sucre.eu/events/club-72/": {
+    "fetched_at": "2026-11-21",
+    "time": "23:00"
+  },
   "https://le-sucre.eu/events/club-noel-secours-populaire/": {
     "fetched_at": "2026-10-30",
     "time": "23:00"
@@ -747,7 +751,7 @@
     ]
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/mermaids-sweat-your-prayers": {
-    "fetched_at": "2026-11-17",
+    "fetched_at": "2026-11-21",
     "lieu": "Maison de la danse - Grande salle",
     "seances": [
       [
@@ -1613,7 +1617,7 @@
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/camille-tissot/": {
-    "fetched_at": "2026-11-17",
+    "fetched_at": "2026-11-21",
     "seances": [
       [
         "2027-05-12",
@@ -3550,7 +3554,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/eleves-du-cnsmd-lyon-12-nov-26": {
-    "fetched_at": "2026-11-17",
+    "fetched_at": "2026-11-21",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -5861,7 +5865,7 @@
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/conference-le-roi-du-festin-le-chocolat": {
     "affiche": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-11/grand-traite-du-chocolat.jpg?h=0313f242&itok=Pxlswfvw",
-    "fetched_at": "2026-11-17",
+    "fetched_at": "2026-11-21",
     "seances": [
       [
         "2026-12-12",
@@ -6137,7 +6141,7 @@
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/spectacle-la-cuisine-musicale": {
     "affiche": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-11/la-cuisine-musicale.jpg?h=ec063885&itok=JP7kTJ0o",
-    "fetched_at": "2026-11-17",
+    "fetched_at": "2026-11-21",
     "seances": [
       [
         "2026-12-13",
@@ -6237,7 +6241,7 @@
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/week-end-festin": {
     "affiche": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-09/daniel-spoerri-visiteur.jpg?h=0adfcc7c&itok=dIjuPsem",
-    "fetched_at": "2026-11-17",
+    "fetched_at": "2026-11-21",
     "seances": [
       [
         "2026-12-12",
@@ -6642,6 +6646,17 @@
       ]
     ],
     "time": "18:30"
+  },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/peer-gynt-reflet-dune-adolescence": {
+    "fetched_at": "2026-11-21",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2027-01-26",
+        "18:30"
+      ]
+    ],
+    "time": null
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/danse/avant-laube": {
     "fetched_at": "2026-11-20",
@@ -8297,6 +8312,12 @@
     "image": "https://www.transbordeur.fr/wp-content/uploads/2026/04/a-gogopenguin2.jpeg",
     "time": "19:00"
   },
+  "https://www.transbordeur.fr/evenement/groundation-20052027/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/12/Groundation-Shoot-2024-4-©Eyeree-768x370.jpg",
+    "fetched_at": "2026-11-21",
+    "image": null,
+    "time": "18:30"
+  },
   "https://www.transbordeur.fr/evenement/guy2bezbar-09102026/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/02/a-guy2bezbar-768x960.png",
     "fetched_at": "2026-10-05",
@@ -8570,6 +8591,12 @@
     "fetched_at": "2026-10-23",
     "image": null,
     "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/niro-14042027/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-niro-768x512.jpg",
+    "fetched_at": "2026-11-21",
+    "image": null,
+    "time": "18:30"
   },
   "https://www.transbordeur.fr/evenement/nto-28012027/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/06/a-nto.png",
