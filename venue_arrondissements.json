@@ -61,7 +61,7 @@
       45.74791,
       4.82428
     ],
-    "seen_at": "2026-11-18"
+    "seen_at": "2026-11-25"
   },
   "Atrium de l'hôtel de ville": {
     "arr": null,
@@ -309,7 +309,7 @@
       45.69407,
       4.79113
     ],
-    "seen_at": "2026-11-18"
+    "seen_at": "2026-11-25"
   },
   "Café La Médiane": {
     "arr": null,
@@ -348,7 +348,7 @@
     "arr": null,
     "checked_at": "2026-11-11",
     "confidence": "failed",
-    "seen_at": "2026-11-18"
+    "seen_at": "2026-11-25"
   },
   "Centre culturel Charlie Chaplin": {
     "arr": "Autre",
@@ -415,7 +415,7 @@
       45.77072,
       4.87436
     ],
-    "seen_at": "2026-09-15"
+    "seen_at": "2026-11-25"
   },
   "Cloître du Fourvière Hôtel": {
     "arr": null,
@@ -673,7 +673,7 @@
       45.76553,
       4.87965
     ],
-    "seen_at": "2026-11-18"
+    "seen_at": "2026-11-25"
   },
   "Groom": {
     "arr": "1er",
@@ -780,7 +780,7 @@
       45.74237,
       4.90885
     ],
-    "seen_at": "2026-11-18"
+    "seen_at": "2026-11-25"
   },
   "Jardin Gilibert (géré par la MJC Confluence)": {
     "arr": null,
@@ -1384,7 +1384,7 @@
       45.74227,
       4.90856
     ],
-    "seen_at": "2026-11-18"
+    "seen_at": "2026-11-25"
   },
   "MJC Duchère": {
     "arr": null,
@@ -1403,6 +1403,16 @@
     "checked_at": "2026-09-12",
     "confidence": "failed",
     "seen_at": "2026-10-03"
+  },
+  "MJC Montchat": {
+    "arr": "3e",
+    "checked_at": "2026-11-25",
+    "confidence": "high",
+    "pos": [
+      45.74977,
+      4.88849
+    ],
+    "seen_at": "2026-11-25"
   },
   "MJC Oullins": {
     "arr": "Autre",
@@ -2007,7 +2017,7 @@
     "arr": null,
     "checked_at": "2026-11-18",
     "confidence": "failed",
-    "seen_at": "2026-11-18"
+    "seen_at": "2026-11-25"
   },
   "Théâtre de l'Iris": {
     "arr": "Villeurbanne",
@@ -2264,7 +2274,7 @@
       45.75038,
       4.84668
     ],
-    "seen_at": "2026-10-19"
+    "seen_at": "2026-11-25"
   },
   "librairie la madeleine": {
     "arr": "7e",
@@ -2323,6 +2333,6 @@
     "arr": null,
     "checked_at": "2026-09-16",
     "confidence": "failed",
-    "seen_at": "2026-11-18"
+    "seen_at": "2026-11-25"
   }
 }

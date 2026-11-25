@@ -747,7 +747,7 @@
     ]
   },
   "https://maisondeladanse.com/programmation/saison2026-2027/mermaids-sweat-your-prayers": {
-    "fetched_at": "2026-11-21",
+    "fetched_at": "2026-11-25",
     "lieu": "Maison de la danse - Grande salle",
     "seances": [
       [
@@ -1613,7 +1613,7 @@
     "time": "20:30"
   },
   "https://radiant-bellevue.fr/spectacles/camille-tissot/": {
-    "fetched_at": "2026-11-21",
+    "fetched_at": "2026-11-25",
     "seances": [
       [
         "2027-05-12",
@@ -3111,11 +3111,6 @@
     "lieu": null,
     "seances": []
   },
-  "https://www.auditorium-lyon.com/fr/jep-2026": {
-    "fetched_at": "2026-09-25",
-    "lieu": null,
-    "seances": []
-  },
   "https://www.auditorium-lyon.com/fr/programmation-salle-proton": {
     "fetched_at": "2026-10-29",
     "lieu": null,
@@ -3570,7 +3565,7 @@
     ]
   },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/jeunes-talents/eleves-du-cnsmd-lyon-12-nov-26": {
-    "fetched_at": "2026-11-21",
+    "fetched_at": "2026-11-25",
     "lieu": "Auditorium de Lyon / Salle Proton-de-la-Chapelle",
     "seances": [
       [
@@ -3839,26 +3834,6 @@
       ]
     ]
   },
-  "https://www.auditorium-lyon.com/fr/saison-2026-27/orchestre-national-lyon/concert-etudiants": {
-    "fetched_at": "2026-09-25",
-    "lieu": "Grande Salle",
-    "seances": [
-      [
-        "2026-09-24",
-        null
-      ]
-    ]
-  },
-  "https://www.auditorium-lyon.com/fr/saison-2026-27/orchestre-national-lyon/concert-ouverture": {
-    "fetched_at": "2026-09-25",
-    "lieu": "Grande Salle",
-    "seances": [
-      [
-        "2026-09-17",
-        null
-      ]
-    ]
-  },
   "https://www.auditorium-lyon.com/fr/saison-2026-27/orchestre-national-lyon/gautier-capucon-simone-young": {
     "fetched_at": "2026-10-27",
     "lieu": "Grande Salle",
@@ -3870,20 +3845,6 @@
       [
         "2026-10-02",
         null
-      ]
-    ]
-  },
-  "https://www.auditorium-lyon.com/fr/saison-2026-27/orchestre-national-lyon/mahler-symphonie-5": {
-    "fetched_at": "2026-09-25",
-    "lieu": "Grande Salle",
-    "seances": [
-      [
-        "2026-09-25",
-        "20:00"
-      ],
-      [
-        "2026-09-26",
-        "18:00"
       ]
     ]
   },
@@ -3908,16 +3869,6 @@
       [
         "2026-12-18",
         "18:00"
-      ]
-    ]
-  },
-  "https://www.auditorium-lyon.com/fr/saison-2026-27/orgue/au-coeur-orgue": {
-    "fetched_at": "2026-09-25",
-    "lieu": "Grande Salle",
-    "seances": [
-      [
-        "2026-09-19",
-        null
       ]
     ]
   },
@@ -4382,16 +4333,6 @@
       [
         "2027-03-13",
         "14:00"
-      ]
-    ]
-  },
-  "https://www.auditorium-lyon.com/fr/saison-2026-27/visites-guidees-jep-2026": {
-    "fetched_at": "2026-09-25",
-    "lieu": null,
-    "seances": [
-      [
-        "2026-09-19",
-        null
       ]
     ]
   },
@@ -5881,7 +5822,7 @@
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/conference-le-roi-du-festin-le-chocolat": {
     "affiche": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-11/grand-traite-du-chocolat.jpg?h=0313f242&itok=Pxlswfvw",
-    "fetched_at": "2026-11-21",
+    "fetched_at": "2026-11-25",
     "seances": [
       [
         "2026-12-12",
@@ -5959,6 +5900,29 @@
       ]
     ],
     "titre": "Festival Mode d'Emploi"
+  },
+  "https://www.mba-lyon.fr/fr/fiche-programmation/fete-des-lumieres": {
+    "affiche": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-11/fdl-2026.jpg?h=a4e82a0f&itok=Si4qqvq8",
+    "fetched_at": "2026-11-25",
+    "seances": [
+      [
+        "2026-12-05",
+        "10:00"
+      ],
+      [
+        "2026-12-06",
+        "10:00"
+      ],
+      [
+        "2026-12-07",
+        "10:00"
+      ],
+      [
+        "2026-12-08",
+        "10:00"
+      ]
+    ],
+    "titre": "Fête des Lumières"
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/ingres-par-lui-meme": {
     "affiche": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/content/medias/images/2020-02/ingres_aretin_sans_crop.jpg?h=63327d95&itok=ql8AXiiq",
@@ -6157,7 +6121,7 @@
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/spectacle-la-cuisine-musicale": {
     "affiche": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-11/la-cuisine-musicale.jpg?h=ec063885&itok=JP7kTJ0o",
-    "fetched_at": "2026-11-21",
+    "fetched_at": "2026-11-25",
     "seances": [
       [
         "2026-12-13",
@@ -6257,7 +6221,7 @@
   },
   "https://www.mba-lyon.fr/fr/fiche-programmation/week-end-festin": {
     "affiche": "https://www.mba-lyon.fr/sites/mba/files/styles/crop_1920_530/public/medias/images/2026-09/daniel-spoerri-visiteur.jpg?h=0adfcc7c&itok=dIjuPsem",
-    "fetched_at": "2026-11-21",
+    "fetched_at": "2026-11-25",
     "seances": [
       [
         "2026-12-12",
@@ -6656,6 +6620,17 @@
     ],
     "time": null
   },
+  "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/go-maestro-26": {
+    "fetched_at": "2026-11-25",
+    "lieu": "Amphi de l'Opéra de Lyon",
+    "seances": [
+      [
+        "2027-03-23",
+        "18:30"
+      ]
+    ],
+    "time": null
+  },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/grand-entretien-15": {
     "fetched_at": "2026-11-22",
     "lieu": "Amphi de l'Opéra de Lyon",
@@ -6690,7 +6665,7 @@
     "time": "18:30"
   },
   "https://www.opera-lyon.com/fr/programmation/saison-2026-2027/conference/peer-gynt-reflet-dune-adolescence": {
-    "fetched_at": "2026-11-21",
+    "fetched_at": "2026-11-25",
     "lieu": "Amphi de l'Opéra de Lyon",
     "seances": [
       [
@@ -7937,26 +7912,6 @@
     "fetched_at": "2026-10-01",
     "time": null
   },
-  "https://www.tng-lyon.fr/evenement/atelier-decriture-pour-les-adolescent%c2%b7es-de-15-ans/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/bazar-circus/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/bienvenue-aux-repetitions/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/boule-de-neige/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/dautres-familles-que-la-mienne/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
   "https://www.tng-lyon.fr/evenement/evidences-inconnues/": {
     "fetched_at": "2026-09-28",
     "time": null
@@ -7965,92 +7920,20 @@
     "fetched_at": "2026-10-01",
     "time": null
   },
-  "https://www.tng-lyon.fr/evenement/grandeur-nature/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-boule-de-neige/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-le-chat-sur-la-photo/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
   "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-lenfant-ocean/": {
     "fetched_at": "2026-09-29",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/la-fabrique-des-souvenirs-liah-et-moi/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/labolition-des-privileges/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/le-chat-sur-la-photo-2/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/le-chat-sur-la-photo/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/le-voyage-de-kristoffer/": {
-    "fetched_at": "2026-09-25",
     "time": null
   },
   "https://www.tng-lyon.fr/evenement/lenfant-ocean/": {
     "fetched_at": "2026-09-29",
     "time": null
   },
-  "https://www.tng-lyon.fr/evenement/liah-et-moi/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/parcours-immersif-et-pedagogique/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/rdv-popcorn-bazar-circus/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
   "https://www.tng-lyon.fr/evenement/rdv-popcorn-evidences-inconnues/": {
     "fetched_at": "2026-09-29",
     "time": null
   },
-  "https://www.tng-lyon.fr/evenement/rdv-popcorn-labolition-des-privileges/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/rdv-popcorn-le-chat-sur-la-photo/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/rdv-popcorn-superstrat/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/spunk/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/superstrat/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
   "https://www.tng-lyon.fr/evenement/traversee/": {
     "fetched_at": "2026-10-01",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/visite-tactile-dautres-familles-que-la-mienne/": {
-    "fetched_at": "2026-09-25",
-    "time": null
-  },
-  "https://www.tng-lyon.fr/evenement/visite-tactile-liah-et-moi/": {
-    "fetched_at": "2026-09-25",
     "time": null
   },
   "https://www.tnp-villeurbanne.com/spectacle/7-minutes/": {
@@ -8194,6 +8077,12 @@
   "https://www.transbordeur.fr/evenement/arkeya-artemis-awoga-nnawa-charlie-p-dj-kunta-dubtendo-allstars-marina-p-the-radiators-modus-myori-ne-yam-neon-vapor-okapi-patafora-rakoon-tromo-27032027/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/11/reperku2-768x1151.jpg",
     "fetched_at": "2026-11-18",
+    "image": null,
+    "time": "21:00"
+  },
+  "https://www.transbordeur.fr/evenement/arkeya-eryia-artemis-awoga-nnawa-charlie-p-dj-kunta-dubtendo-allstars-marina-p-the-radiators-modus-myori-ne-yam-neon-vapor-okapi-patafora-rakoon-tromo-27032027/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/11/reperku2-768x1151.jpg",
+    "fetched_at": "2026-11-25",
     "image": null,
     "time": "21:00"
   },
@@ -8526,6 +8415,24 @@
     "fetched_at": "2026-11-19",
     "image": null,
     "time": "19:00"
+  },
+  "https://www.transbordeur.fr/evenement/la-lily-21032027/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/10/a-lilyvsquebec.png",
+    "fetched_at": "2026-11-25",
+    "image": null,
+    "time": "16:00"
+  },
+  "https://www.transbordeur.fr/evenement/la-lily-29112026/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/04/a-lily24.png",
+    "fetched_at": "2026-11-25",
+    "image": null,
+    "time": "16:00"
+  },
+  "https://www.transbordeur.fr/evenement/la-lily-31012027/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2024/07/a-lily_02.jpg",
+    "fetched_at": "2026-11-25",
+    "image": null,
+    "time": "16:00"
   },
   "https://www.transbordeur.fr/evenement/la-ptite-fumee-06112026/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/03/a-laptitefumee-768x768.jpeg",
@@ -8890,6 +8797,12 @@
     "fetched_at": "2026-11-19",
     "image": null,
     "time": "18:30"
+  },
+  "https://www.transbordeur.fr/evenement/vorteks-23012027/": {
+    "affiche": "https://www.transbordeur.fr/wp-content/uploads/2025/09/Vortek_s-EPK1--768x1151.jpeg",
+    "fetched_at": "2026-11-25",
+    "image": null,
+    "time": "23:00"
   },
   "https://www.transbordeur.fr/evenement/wallace-cleaver-henri-bleu-28102026/": {
     "affiche": "https://www.transbordeur.fr/wp-content/uploads/2026/03/a-wallacecleaver1-e1774624267890-768x729.jpeg",
