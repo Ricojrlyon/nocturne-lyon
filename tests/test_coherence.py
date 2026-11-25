@@ -32,6 +32,7 @@ PAGE = (RACINE / "index.html").read_text(encoding="utf-8")
 EMPREINTES_DU_SERVICE = {
     "nocturne-3": "6cf657e26e2ca481",
     "nocturne-4": "591b4467f3923caf",     # icônes « signal », 25/11/2026
+    "nocturne-5": "075d4b6625818b3f",     # réserve renouvelée, 25/11/2026
 }
 
 

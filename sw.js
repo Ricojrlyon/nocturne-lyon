@@ -21,7 +21,8 @@
 // servie par l'accueil (audit A-12, A-40).
 // nocturne-4 : les icônes en style « signal » (*N vert acide, 25/11/2026),
 // à reprendre tout de suite.
-const CACHE = 'nocturne-4';
+// nocturne-5 : la réserve renouvelée (25/11/2026).
+const CACHE = 'nocturne-5';
 // Le préfixe de nos réserves : le ménage ne touche qu'à elles.
 const PREFIXE = 'nocturne-';
 const ATTENTE_RESEAU = 3000;

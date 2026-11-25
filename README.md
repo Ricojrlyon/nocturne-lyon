@@ -1,1290 +1,146 @@
 # *nocturne · lyon
 
-Agrégateur d'événements culturels lyonnais (concerts, clubs, danse, expos,
-sport, lieux hybrides), scrappés chaque matin sur les sites de trente-cinq
-salles, musées et clubs, et affichés sur une page statique hébergée par
-GitHub Pages :
-<https://ricojrlyon.github.io/nocturne-lyon/>
+Le programme culturel de Lyon (concerts, clubs, théâtre, danse, expos,
+sport), relevé chaque nuit sur les sites de 35 salles, musées et clubs et
+de deux agendas, et affiché sur une page statique hébergée par GitHub
+Pages : <https://ricojrlyon.github.io/nocturne-lyon/>
 
 ## Fonctionnement
 
 ```
-35 scrapers venue ──┐
-                    ├─→ dédup 3 passes ─→ events.json ─→ index.html (GitHub Pages)
-2 agrégateurs ──────┘         │
-(Petit Bulletin,              ├─→ venue_arrondissements.json (géocodage Nominatim)
- Ville Morte)                 └─→ detail_times.json (cache des heures)
+35 collecteurs de salle ──┐
+                          ├─→ dédoublonnage ─→ events.json ─→ index.html
+2 agrégateurs ────────────┘        │
+(Petit Bulletin, Ville Morte)      ├─→ venue_arrondissements.json (géocodage)
+                                   └─→ detail_times.json (cache des fiches)
 ```
 
-Le pipeline tourne chaque nuit via GitHub Actions
-([.github/workflows/update.yml](.github/workflows/update.yml)) et committe
-les trois fichiers de données. GitHub ne compte qu'en heure UTC. Trois
-passages sont programmés chaque jour : 00:17 et 01:17 UTC la nuit (2 h 17
-à Paris l'été pour le premier, l'hiver pour le second), et 09:17 UTC en
-rattrapage. Le premier arrivé travaille ; les suivants s'arrêtent en
-quelques secondes si le programme publié est déjà du jour, à Paris
-(`passage.py`, audit A-25). Avant, un seul des deux passages de la nuit
-avait le droit de travailler : si GitHub l'abandonnait, ce que sa
-documentation prévoit en cas de forte charge, rien n'était publié ce
-jour-là. Désormais, un passage abandonné ou tombé au rouge est rattrapé par
-le suivant. GitHub retarde ses passages programmés de plusieurs heures :
-partir la nuit vise un site à jour au réveil, et la minute 17 évite
-l'heure pile, la plus demandée. En pratique, le programme du jour est
-publié entre 6 h 30 et 9 h 40 à Paris, vers 8 h 20 en médiane (30
-passages, du 15 octobre au 14 novembre 2026). Un seul passage
-tourne à la fois : lancé à la main pendant le passage programmé, ou
-l'inverse, le second attend la fin du premier, puis repart du fil que
-celui-ci vient de publier. Deux passages simultanés échouaient à la
-publication du second.
+Chaque nuit, GitHub Actions ([update.yml](.github/workflows/update.yml))
+lance `aggregate.py`, qui :
 
-La publication fait trois essais (audit A-27) : un envoi pendant le
-passage (une retouche du code, un fichier téléversé à la main) la faisait
-échouer, et rien n'était publié. Sur les trois fichiers du robot, c'est
-la version du robot qui l'emporte. Le droit d'écrire dans le dépôt n'est
-donné qu'au job qui publie, et le jeton n'arrive qu'à l'étape de
-publication : il était rangé dans le dépôt pendant tout le passage, où les
-tests et les paquets installés pouvaient le lire (audit A-42).
+1. interroge chaque source (un module par salle dans `scrapers/`) ;
+2. écarte ce qui est passé, ce qui commence au-delà de 180 jours, les
+   événements annulés et ceux qui se jouent hors de Lyon, Villeurbanne et
+   cinq communes voisines (Caluire-et-Cuire, Oullins-Pierre-Bénite,
+   Vaulx-en-Velin, Décines-Charpieu, La Mulatière) ;
+3. fusionne les doublons entre sources (`scrapers/dedup.py`) : la salle
+   l'emporte sur les agrégateurs ;
+4. comble les catégories manquantes, situe les nouveaux lieux
+   (Nominatim) ;
+5. écrit `events.json`, que la page lit.
 
-Rien ne change sans qu'on le décide (audit A-42) :
-- le système est écrit en clair, `ubuntu-26.04`, dans les deux workflows :
-  `ubuntu-latest` était passé de la 24.04 à la 26.04 le 4 novembre 2026
-  sans prévenir ;
-- les huit paquets Python, ceux du projet et ceux dont ils dépendent, sont
-  figés dans `requirements.txt` avec l'empreinte de leur fichier : un
-  fichier différent de celui qui a été éprouvé est refusé, même sous le
-  même numéro. Pour monter une version : changer le numéro, relever les
-  empreintes sur PyPI, lancer un passage, comparer le rapport par salle ;
-- les deux briques de GitHub (`actions/checkout`,
-  `actions/setup-python`) sont désignées par l'empreinte exacte de leur
-  code, et non par leur étiquette (`v7`), qui peut être déplacée vers un
-  autre code ; leur version est notée en commentaire, et un test vérifie
-  qu'aucune n'est désignée autrement. Pour les mettre à jour : relever
-  l'empreinte de la nouvelle version
-  (`git ls-remote --tags https://github.com/actions/checkout`) et la
-  recopier, version comprise.
+**Garde-fous.** Une salle qui tombe sous le quart de ce qu'elle annonçait
+la veille garde son programme de la veille, sept jours au plus ; un fil
+qui perd plus d'un quart de ses événements n'est pas publié (trois jours
+au plus) ; si tout échoue, le fichier précédent reste en place. Pour une
+perte réelle (salle fermée), la case « Forcer la publication » d'un
+lancement à la main publie ce qui a été relevé.
 
-Un test vérifie chacun de ces points.
+**Alertes.** Une salle en panne depuis plus d'une nuit ouvre une issue
+GitHub (`alertes.py`), qui envoie un e-mail et se ferme quand la salle
+revient.
 
-- **`scrapers/*.py`** : un module par salle (`requests` + BeautifulSoup).
-  Chaque module expose `fetch() -> List[Event]`. Les échecs d'une salle ne
-  font pas tomber le run : la salle est signalée en erreur, jusqu'en tête
-  de la page du passage sur GitHub, et les autres passent.
-  Chaque robot s'annonce aux sites sous son vrai nom, « nocturne-lyon-events »,
-  avec le lien du projet. Deux exceptions : celui du LOU garde l'identité
-  d'un navigateur, la billetterie du club étant protégée contre les robots
-  (pour elle seule : la FFR, où il lit les matchs féminins, reçoit le vrai
-  nom depuis novembre 2026, comme Ville Morte, qui recevait « lyon-events-
-  aggregator », audit A-37), et celui du Complexe a sa propre formule
-  (voir plus bas).
-  Un site qui demande un délai entre deux requêtes (`Crawl-delay` : la
-  Maison de la Danse et La Rayonne, dix secondes) l'obtient aussi avant un
-  nouvel essai, que `base.get` faisait à deux puis quatre secondes
-  (`ATTENTE_MIN_PAR_HOTE`, audit A-37). Une saison de salle court de
-  septembre à juin ; de mai à août, la suivante est lue aussi
-  (`base.saisons_a_lire`, audit A-24) : en juillet et en août, la
-  Croix-Rousse et la Maison de la Danse relisaient la saison finie, et la
-  rentrée manquait jusqu'au 1er septembre.
-  Les appels réseau passent par `base.get` (exceptions motivées dans
-  `scrapers/base.py`), qui réessaie sur une coupure, un délai dépassé ou un
-  502/503/504, jamais sur une vraie réponse du site. La coupure compte
-  aussi quand elle survient pendant la lecture de la réponse (audit A-23).
-  Une PANNE PARTIELLE fait lever le collecteur (audit A-09) : une page
-  suivante, un mois, une sous-source (le calendrier d'une équipe, la FFR,
-  l'API EuroLeague, le hub de La Commune, l'article des expositions des
-  Beaux-Arts, les catégories d'Agend'arts) ou la page d'un spectacle qui
-  tombe. Le collecteur rendait jusque-là ce qu'il avait déjà lu, comme si
-  c'était tout : le Petit Bulletin coupé à la page 3 publiait 160 cartes
-  sur 277, sur un passage vert, et une petite salle n'était reprise que si
-  son collecteur levait. Désormais le garde-fou reprend la veille entière,
-  et l'alerte le dit. Seule une page introuvable (404, 410) n'est pas une
-  panne : c'est la fin d'un agenda paginé, un mois sans page ou un
-  spectacle retiré, que `base.introuvable` reconnaît. La fin d'un agenda se
-  lit d'ordinaire à une page qui n'apporte rien de neuf : le Petit
-  Bulletin, le Périscope et les Beaux-Arts répondent 200 au-delà de leur
-  dernière page (relevé du 13 novembre 2026).
-  Une date écrite sans année prend celle de `base.annee_probable` : la
-  prochaine fois que ce jour revient, avec quinze jours de grâce pour un
-  jour passé de peu, qu'un site affiche encore (un concert d'hier, une
-  plage en cours). Cette règle existait en plusieurs exemplaires, l'un
-  dans `base.py`, les autres copiés dans les collecteurs, aux règles
-  divergentes : sans grâce, « sam. 24 oct. » lu le 25 partait en
-  octobre de l'année suivante (« The Pineapple Thief », publié un an trop
-  tard pendant vingt-quatre jours en septembre 2026) ; et en janvier,
-  « 30 déc. » désignait décembre suivant au lieu de celui d'il y a
-  quelques jours. Il n'en reste qu'une (audit A-04). `parse_french_date`
-  lit aussi les mois courts « jan », « fév » et « sep » (audit A-38).
-  Trois autres pièces communes vivent aussi dans `base.py`, au lieu d'être
-  recopiées dans chaque collecteur (audit A-43) : l'identité du robot
-  (`UA`, 31 copies), la mise en minuscules sans accents des textes
-  comparés (`sans_accents`, 20 copies, dont chacun garde ce qui lui est
-  propre : espaces, ponctuation) et la table des mois sans accents
-  (`MOIS`, `MOIS_CANON`, 9 copies). Le ménage a été vérifié texte par
-  texte : les 8 801 textes de la collecte de référence donnent le même
-  résultat avant et après.
-- **`scrapers/mapado.py`** : lecture commune des billetteries Mapado,
-  utilisée par `improvidence.py`, `espace_gerson.py` et
-  `chapelle_trinite.py`. Ces boutiques sont
-  des Next.js dont chaque page embarque son état d'hydratation en JSON :
-  on lit ce JSON, pas le HTML, les classes CSS de Mapado étant des
-  hachages regénérés à chaque déploiement. Point d'attention : une
-  boutique n'est PAS une salle : Improvidence programme aussi à Bordeaux,
-  l'Espace Gerson à la Salle Victor Hugo et à la Bourse du Travail (que
-  nocturne scrappe déjà). Chaque scraper fournit donc son prédicat de
-  lieu, appliqué sur le Venue que Mapado expose en clair. LIMITE CONNUE
-  (audit A-05) : la page d'un spectacle n'embarque que ses SEPT prochaines
-  séances ; « La fin justifie les moyens » en annonçait 33 le 14 novembre
-  2026. La suite ne se lit que par l'API de Mapado, que son robots.txt
-  interdit (`ticketing.mapado.net` : « Disallow: / », et `/api/` des
-  boutiques) : on ne la lit pas. Le collecteur compte ce qui manque, d'après
-  le total que la page annonce, et le dit à chaque passage (« lues/
-  annoncées ») ; les séances suivantes paraissent au fil des semaines, à
-  mesure qu'elles entrent dans les sept prochaines.
-- **`scrapers/agendarts.py`** : agend'Arts, qui n'a pas de site à soi :
-  la salle publie sur un blog WordPress.com, un billet par spectacle,
-  lu dans le flux RSS du blog, dix billets par page, jusqu'à la première
-  page dont aucun billet n'a moins de 400 jours (onze requêtes à une
-  seconde d'écart le 14 novembre 2026). L'API publique, lue jusque-là, ne
-  passe que par public-api.wordpress.com, que son robots.txt interdit, et
-  le blog ne sert pas /wp-json/ lui-même (audit A-10) ; le flux porte le
-  même texte, les catégories et le lien, et la comparaison des deux
-  lectures a donné les mêmes séances. Le pixel de statistiques que
-  WordPress.com glisse dans le flux n'est pas pris pour une affiche. La date de publication n'est pas
-  celle du spectacle (un billet de juin annonce un concert de décembre),
-  et la vraie date s'écrit en toutes lettres dans la première phrase.
-  Elle est lue par deux sources indépendantes : la prose, et les liens
-  de billetterie HelloAsso dont le slug porte la date complète. Sur 325
-  couples jour+mois, elles concordent 324 fois ; le désaccord restant
-  est un cas que la prose seule ne peut pas voir. L'année, elle, n'est
-  presque jamais écrite : quatre sources y répondent dans l'ordre, et à
-  défaut la date est abandonnée plutôt que projetée sur l'année en
-  cours. Parmi elles, les catégories du blog, qui sont des mois
-  (« décembre 2026 », « janvier 2027 ») : c'est celle du mois de la
-  séance qui donne l'année. Leur seule année ne suffisait pas : un billet
-  classé dans ces deux mois datait sa séance de janvier en 2026, dans le
-  passé (audit A-38). Deux règles évitent des dates fausses : seule la suite de
-  quantièmes COLLÉE au nom du mois compte, sans quoi « Les 3 becs »
-  produirait un 3 septembre ; et une suite introduite par une
-  annulation est écartée, publier une séance annulée étant plus grave
-  que d'en manquer une.
-- **`scrapers/auditorium.py`** : l'Auditorium-Orchestre national de
-  Lyon. Drupal, lu en deux temps : une page d'agenda par mois donne les
-  cartes, la fiche donne les dates. La carte ne suffit pas : elle écrit
-  « jeu. 1 oct », sans millésime ni horaire, là où la fiche écrit « Jeu.
-  1 oct 2026 à 20h Ven. 2 oct 2026 à 18h ». L'heure change d'une séance à
-  l'autre du même concert, 20h le jeudi et 18h le vendredi : publier la
-  première pour les deux serait faux un soir sur deux. Trois pièges :
-  le HTML sert les cartes en double (199 balises pour 148 spectacles) ;
-  l'orchestre joue hors les murs jusqu'à Bruxelles, et la Salle Molière
-  est déjà dans nocturne, d'où une liste BLANCHE de salles maison, les
-  lieux extérieurs étant un ensemble ouvert quand les salles du bâtiment
-  sont une liste fermée ; enfin deux genres sont écartés : les séances
-  scolaires, facturées « 8 € par élève » et réservées aux classes, donc
-  pas des sorties ; et les ateliers, publics ceux-là, mais qui pesaient
-  104 des 186 événements du lieu, davantage que toute sa programmation
-  de concerts, une même séance se répétant à 9h, 10h et 11h le même
-  matin.
-- **`scrapers/comedie_odeon.py`** : la Comédie Odéon. Le type
-  « spectacle » n'est pas exposé à l'API REST, mais /spectacle/ porte
-  TOUT en une requête : les cartes et un calendrier mensuel dont chaque
-  cellule nomme les spectacles du jour. C'est le calendrier qui fait foi
-  pour les dates : la fiche ne décrit qu'un rythme en français (« Du
-  mercredi au samedi à 20h », « Relâches : 15/10 + 16/10 ») qu'il serait
-  fragile de régénérer. Le gain est net : le Petit Bulletin publiait
-  « La Machine de Turing » comme une plage de 53 jours, relâches
-  comprises ; le scraper en rend les 29 vraies dates, dont celle à 19h
-  au lieu de 20h. L'heure vient du résumé de la carte, à défaut de la
-  fiche, qui donne aussi l'horaire d'un jour particulier : « Le 09/10 à
-  19h », ou une date en toutes lettres, « Jeudi 11 mars 2027 à 21h » ;
-  sans quoi « Jovany » se jouait ses deux soirs à l'heure du premier. Un
-  résumé qui donne DEUX horaires fait aussi ouvrir la fiche, au lieu de
-  donner le premier à tous les jours ; et le mois de chaque onglet du
-  calendrier se lit douze heures après son horodatage, qu'un minuit de
-  Paris ne bascule pas au mois précédent (audit A-36, deux défauts sans
-  cas réel le 14 novembre 2026).
-- **`scrapers/confluences.py`** : le Musée des Confluences, seul site
-  du dépôt à exposer une JSON:API Drupal. Deux taxonomies y donnent
-  gratuitement ce qu'il faut deviner ailleurs : `field_activites` porte
-  le genre, `field_public` sépare le grand public des classes et des
-  groupes. Le choix central est de NE PAS tout prendre : le musée
-  publie 6 447 séances sur six mois (plus du double du site entier)
-  parce qu'il exprime ses visites et ses ateliers récurrents en RRULE,
-  une seule visite jouée quatre jours par semaine pendant cinq mois
-  pesant quatre-vingt-dix séances. Le type `slot` est pire : 1 200
-  créneaux pour une seule semaine, dont 583 à neuf heures, soit une
-  grille de réservation de groupes. On retient donc conférences,
-  cinéma, spectacles et concerts pour le grand public, plus les
-  expositions temporaires, dont `field_state` dit « En cours », « À
-  venir » ou « Passées », et dont la période est écrite en toutes
-  lettres, là où les agrégateurs n'en donnaient qu'une approximation.
-  Aucune des fiches retenues ne porte de récurrence encore vive ; si
-  cela changeait, elle serait signalée plutôt que tronquée en silence à
-  sa première date. L'API ne rend que les événements qui ont une date à
-  venir (audit A-37) : sans ce filtre, toutes les archives du musée
-  étaient relues chaque nuit, 15 pages pour 670 événements dont 67 à
-  venir (relevé du 14 novembre 2026). Le filtre demandait aussi, par un
-  « ou », les séries récurrentes, pour l'avertissement ci-dessus : le
-  17 novembre 2026, le serveur du musée a cessé de tenir cette requête
-  (33 secondes, puis une erreur 500 et sa page « Site en maintenance »),
-  et le musée est sorti du fil deux nuits de suite, repris de la veille
-  par le garde-fou. Les séries seules y prennent 22 secondes par page,
-  pour des visites scolaires de 2021 ; la date seule, une seconde. Or
-  seules les dates à venir sont publiées : le filtre ne garde plus que
-  la date, et l'avertissement ne porte plus que sur les séries qui ont
-  aussi une date à venir. Mêmes 45 événements qu'avant la panne (relevé
-  du 18 novembre 2026). La vérification de la taille « carte » de chaque
-  affiche est gardée une semaine dans le cache des fiches.
-- **`scrapers/croix_rousse.py`** : le Théâtre de la Croix-Rousse.
-  WordPress dont l'API REST est OUVERTE, à la différence du TNP : elle
-  donne la liste de la saison avec titres, affiches et genres. Les dates
-  n'y sont pas (l'ACF est vide partout) et viennent du HTML des
-  fiches. Deux pièges : `title.rendered` est du HTML, pas du texte, et
-  treize titres portaient des entités qui se seraient affichées telles
-  quelles ; et la taxonomie nommée `genre` contient en réalité les noms
-  d'ARTISTES, ce sont les termes `event_type` qui portent les genres.
-  Certains n'y sont que des précisions (« heroic fantasy »,
-  « bruitages », « radio »), qui cèdent la place au genre que le
-  spectacle porte aussi, « théâtre » ou « cabaret » ; seule, une
-  précision reste la catégorie.
-  Un lien de billetterie par séance permet de distinguer « 14h30 19h30 »
-  (deux séances) de « 17h > 17h50 », une seule avec son heure de fin.
-  La vérification de la copie WebP de chaque affiche (une requête HEAD)
-  est gardée une semaine dans le cache des fiches : 55 à 110 partaient
-  chaque nuit pour les mêmes images (audit A-37) ; une vérification
-  coupée n'est pas notée, elle est refaite au passage suivant.
-- **`scrapers/iac.py`** : l'IAC de Villeurbanne. Site artisanal de 2013
-  (jQuery 1.8.2), mais dont les dates sont balisées en microdonnées, ce
-  qui sauve tout : la prose, elle, est un piège. La fiche du vernissage
-  annonce « jeudi 17 septembre 2024 » alors qu'elle est classée en 2026,
-  où le 17 septembre est bien un jeudi. On part donc de l'EXPOSITION, qui
-  porte à la fois sa période et la liste de ses rendez-vous satellites,
-  chacun avec son `<time datetime>`. Une requête donne l'exposition et
-  toute sa programmation. L'attribut `itemprop` dit la forme de la date
-  et il faut le lire : `startDate endDate` sur un seul `<time>` est une
-  date unique, deux `<time>` distincts un intervalle, qui n'est PAS une
-  série continue, « Visites en famille » allant du 11 octobre au 22
-  novembre pour deux dimanches seulement. On garde tout sauf les visites,
-  et parmi elles celles du week-end seulement, dont le rythme est dans le
-  nom ; leurs relâches sont lues dans la fiche (« Pas de visite les
-  dimanches 4 et 11 octobre »). Tout est in situ par construction : les
-  expositions ex situ et les galeries nomades se tiennent ailleurs. Si
-  aucune des deux pages d'index ne répond (le site injoignable, fin
-  octobre 2026), le collecteur lève au lieu de rendre une liste vide : le
-  passage dit alors « source en échec » et pourquoi, et le garde-fou
-  reprend la veille.
-- **`scrapers/mac_lyon.py`** : le macLYON, musée d'art contemporain.
-  Drupal sans JSON:API, mais dont la LISTE suffit : elle porte le titre,
-  le sous-titre, la période, l'affiche et le type. Aucune fiche à ouvrir,
-  et c'est heureux : la liste est plus complète qu'elles. Le concert de
-  musique de chambre n'a aucun champ de date sur sa fiche, ni « Date » ni
-  « Informations horaires » ; sa date n'existe que sur la liste. HORS LES
-  MURS est le piège de ce musée : il répertorie sous son agenda des
-  expositions qui se tiennent ailleurs, et son champ de type le dit en
-  clair : « Hors les murs » y figure au même titre que « Exposition » ou
-  « Concert ». Les deux entrées ainsi marquées sont *Jeune création
-  internationale*, à l'IAC, et *Musée sentimental*, au Musée des
-  Beaux-Arts : précisément les deux expositions que nocturne scrappe déjà
-  chez leur véritable hôte. Sans ce filtre elles paraîtraient deux fois
-  sous deux lieux, ce que la déduplication ne peut pas voir puisqu'elle
-  groupe PAR lieu. Le champ « Lieu » des fiches dit la même chose, mais
-  en prose, et l'un de ses libellés maison contient « Musée d'art
-  contemporain », un mot que porte aussi l'Institut d'art contemporain :
-  le marqueur de la liste est plus sûr parce qu'il est catégoriel.
-  La période s'écrit en prose : « Du 11 septembre au 14 mars 2027 », « Du
-  mercredi 1er octobre au … », « Jusqu'au 14 mars 2027 ». Le « 1er » n'était
-  pas lu, et la 18e Biennale de Lyon était publiée sur son seul jour de
-  fermeture au lieu d'une exposition en cours. Une période « du … au … »
-  que le robot ne sait pas lire n'est plus réduite à un jour : la carte
-  compte parmi celles sans période lisible (audit A-21).
-- **`scrapers/maison_de_la_danse.py`** : la Maison de la Danse, qui
-  demande, comme La Rayonne, un `Crawl-delay` (10 s). Il est respecté, et
-  c'est ce qui rend `detail_cache` indispensable : le délai est posé DANS
-  le fetcher, donc il ne frappe que les fiches réellement téléchargées :
-  216 s au premier passage, 11 s aux suivants. Trois pièges y ont coûté
-  des spectacles entiers, tous silencieux : une série porte le titre de
-  sa période, « NOVEMBRE - DÉCEMBRE », qui peut couvrir trois mois ou
-  plus (« SEPTEMBRE - NOVEMBRE ») et se déplie mois par mois ; quand la
-  série saute un mois, le nom du jour, confronté à l'année de la saison
-  écrite dans l'adresse, désigne le bon ;
-  un quantième qui se répète un mois plus tard (mercredi 28 octobre puis
-  samedi 28 novembre) ne recule pas, seul le nom du jour distingue ce cas
-  d'une double séance ; et une fiche sans bloc « Lieu » n'est pas un
-  accueil extérieur mais un lieu non précisé : les accueils, eux, le
-  renseignent toujours.
-- **`scrapers/opera_lyon.py`** : l'Opéra national de Lyon. Le programme
-  s'étale sur plusieurs pages (« En voir plus ») : le robot les suit, vingt
-  au plus, jusqu'à la première qui n'apporte rien de neuf ; lue seule, la
-  première page arrêtait l'Opéra à la mi-novembre. La catégorie vient de
-  l'adresse de chaque production (« en famille » va au jeune public), et
-  un titre qui commence par « Atelier » reste un atelier, même rangé parmi
-  les concerts. Les visites guidées sont écartées. Un CYCLE, une plage de
-  plusieurs jours dont la fiche n'annonce aucune représentation, l'est
-  aussi : chacun de ses rendez-vous a sa propre fiche, et la plage aurait
-  peint chacun de ses jours d'une carte où rien ne se joue. Hors les murs,
-  l'Amphi et la Grande salle restent des salles de la maison ; une
-  production jouée ailleurs est rangée sous la salle qui la reçoit, et
-  celle qui se joue dans plusieurs salles est marquée « ailleurs ». Une
-  plage à cheval sur deux années s'écrit « 14 déc. 2026 - 3 janv. 2027 »,
-  l'année après chaque mois : les deux années sont lues. Faute de quoi la
-  plage perdait sa fin et, dès le lendemain de la première date, la carte
-  passait pour finie (audit A-01, La Fille de Madame Angot).
-- **`scrapers/tnp.py`** : le TNP, seul scraper à s'être vu REFUSER une
-  API qui existe : le site est un WordPress mais son robots.txt interdit
-  /wp-json/. On lit donc /agenda/, qui a l'avantage de rendre la saison
-  entière en une requête, avec des attributs `datetime` lisibles à la
-  machine. Les affiches viennent des fiches spectacle : dix-sept fiches
-  pour cent vingt-trois représentations, le même spectacle se jouant dix
-  à dix-sept fois. La fiche montre l'affiche en treize tailles, et le
-  robot prend celle de 800 px (l'`og:image`, l'original, pèse 1,3 à
-  1,6 Mo). La fiche est gardée une semaine dans le cache des fiches : les
-  dix-neuf étaient relues chaque nuit pour la même affiche (audit A-37).
-  Un parcours « Hors les murs », dont le point de départ n'est
-  donné qu'à l'inscription, est publié marqué « ailleurs » plutôt que
-  placé à Villeurbanne.
-- **`scrapers/tng.py`** : le TNG. Les cartes du programme n'écrivent que
-  la plage d'un spectacle (« 02 > 06 oct. », le mois une seule fois),
-  relâches et séances scolaires comprises. Le scraper ouvre donc chaque
-  fiche et publie une date par séance TOUT PUBLIC : la liste scolaire,
-  réservée aux classes, est écartée comme à l'Auditorium, et le nom du
-  jour contrôle chaque date. Une séance à plus d'une semaine des dates de
-  la carte est une erreur de saisie de la fiche et n'est pas retenue ;
-  faute de séance, la carte fait foi. La fiche est relue à chaque
-  passage, sans le cache des heures : une séance ajoutée ou retirée se
-  voit dès le lendemain. Le site coupe certains extraits au milieu d'un
-  caractère (« Pop� » pour « Pop’Corn ») : le losange est retiré du
-  sous-titre. Les dates n'ont pas d'année : celle d'une plage se lit sur
-  sa FIN, et le début recule d'un an quand son mois vient après celui de
-  la fin (« 28 déc. > 03 jan. »). Lue sur le début, une plage ouverte
-  depuis plus de quinze jours partait un an trop tard, au-delà de
-  l'horizon, et le spectacle disparaissait (audit A-29). Les mois courts
-  « jan. », « fév. », « sep. » sont lus (audit A-38).
-- **`scrapers/beaux_arts.py`** : le Musée des Beaux-Arts. Drupal sans
-  JSON:API, mais très régulier : une liste paginée qui porte le type de
-  chaque rendez-vous, et une fiche où chaque séance occupe sa ligne,
-  datée et horodatée. Le choix central est d'ÉCARTER LES VISITES : sur
-  les 321 séances que le musée programme en six mois, 283 sont des
-  visites guidées, et trois seulement commencent à 18h ou plus tard :
-  c'est un programme de journée. Restent une trentaine de vraies
-  sorties : nocturnes, conférences, « Le musée fait son cinéma »,
-  cartes blanches de midi à des chorégraphes et des autrices,
-  week-ends thématiques. Le filtre porte sur le type ET sur le titre :
-  trois séries de visites sont rangées sous un type qui nomme le PUBLIC
-  et non l'activité (« LSF Sourds malentendants », « DBDD Aveugles
-  malvoyants »), et neuf visites passaient. Lire le type sur la liste
-  permet de n'ouvrir qu'une trentaine de fiches au lieu de
-  quatre-vingt-treize ; la liste ne donne en revanche qu'une date par
-  rendez-vous, d'où la lecture des fiches retenues. Les EXPOSITIONS
-  viennent d'ailleurs : le musée les tient hors de sa liste de
-  rendez-vous, sur un article. Leur fiche existe et figure même dans la
-  liste, mais sans aucune date de séance : son champ horaire dit
-  « ouverte du mercredi au lundi de 10h à 18h », ce qui est un horaire
-  et non une période. C'est pourquoi la première version publiait
-  trente-sept rendez-vous et pas une exposition. L'affiche est celle du
-  bandeau de la fiche : la première image de la page était la vignette
-  d'un AUTRE rendez-vous, suggéré en bas de page.
-- **`scrapers/celestins.py`** : Les Célestins, seule salle du dépôt à
-  offrir une API JSON DOCUMENTÉE : le site tourne sous Roadiz, son
-  robots.txt n'interdit que /api/docs, et /api/docs.json rend la
-  spécification OpenAPI complète. Deux appels sont nécessaires,
-  /api/event_dates pour les représentations et /api/events pour les
-  affiches, que la première sérialisation n'embarque pas. Or c'est
-  précisément l'image qui manquait, le Petit Bulletin remontant cette
-  salle sans une seule. Point d'attention : les Célestins programment
-  HORS LES MURS, 17 représentations sur 228 au TNP, au TNG et à la
-  Croix-Rousse. Sans filtre de lieu elles seraient publiées sous
-  « Célestins », et la dédup ne pourrait rien y faire puisqu'elle
-  regroupe justement par lieu.
-- **`scrapers/complexe.py`** : Le Complexe café-théâtre, seul scraper à
-  exiger un User-Agent PARTICULIER : le pare-feu du site renvoie 403 à
-  toute chaîne contenant « Mozilla/5.0 (compatible », donc l'UA y est
-  franc, sans déguisement en navigateur. Ne pas l'aligner sur les autres.
-  Autre particularité : les dates des séances n'y portent pas d'année,
-  déduite de la plage du catalogue puis roulée quand le mois recule, et
-  validée par le nom du jour de la semaine, qui écarte toute déduction
-  fausse plutôt que de publier une date erronée. Enfin, son hébergeur
-  (SiteGround) sert parfois aux machines de GitHub une vérification
-  anti-robot à la place de la page : le scraper la reconnaît et renonce
-  aussitôt en le disant, et le garde-fou reprend le programme de la
-  veille. Il ne redemande plus : sur les refus d'octobre 2026, deux
-  nouveaux essais dans le même passage n'en ont rattrapé aucun, et
-  coûtaient trois minutes.
-- **`scrapers/halle_tony_garnier.py`** : la Halle Tony Garnier. La
-  catégorie suit le type que la salle donne à chaque date dans la classe
-  de sa carte : concert, spectacle, salon, ciné-concert. Tout était
-  « concert » : les humoristes et les spectacles sur glace manquaient à
-  la scène, et la musique affichait le Salon des vignerons. Le type
-  « évènement » ne dit rien du genre (ce sont les séances du Festival
-  Lumière) et laisse la catégorie vide, à compléter. Le site est lu à sa
-  nouvelle adresse, www.htg.fr (l'ancienne ne fait plus que rediriger).
-  Ses dates s'écrivent « 06.11 », sans année : elle vient de la règle
-  commune, et une plage en cours recule son début d'un an quand il le
-  faut. Sa copie maison n'avait pas de grâce : « 06.11 au 15.11 » lu le
-  12 novembre sortait à l'envers, de 2027 à 2026, et un concert de la
-  veille encore affiché partait un an plus tard (audit A-22).
-- **`scrapers/marche_gare.py`** : le Marché Gare. La carte d'agenda
-  range à part les mentions (« Gratuit », « Épuisé sur ce point de
-  vente », « Hors les murs », « Annulé »), les genres, le titre et le
-  sous-titre ; lue d'un bloc, elle donnait « Épuisé sur ce point de vente
-  Post-Metal HYPNO5E + HIPPOTRAKTOR ». Le titre est celui de la carte ;
-  les genres font la catégorie, tous ensemble : « Groove » seul se
-  range dans la musique, « Groove / Jazz » dans le jazz ; les
-  mentions utiles passent au sous-titre, et « Annulé » reste en tête du
-  titre, où le filtre des annulés le lit. Les soirées « Hors les murs »
-  et les formations professionnelles sont écartées, et les agrégateurs
-  ne peuvent pas les republier sur ce lieu : le Petit Bulletin
-  annonçait Ivanoé « au Marché Gare », quand la salle le donne à la MJC
-  du Vieux-Lyon. L'agenda n'affiche d'abord qu'une partie du programme :
-  le robot suit les pages « Afficher plus », dix au plus, et une page
-  suivante qui échoue fait échouer la collecte, rattrapée alors en entier
-  par le garde-fou plutôt que publiée à moitié.
-- **`scrapers/radiant.py`** : le Radiant-Bellevue, à Caluire. La page
-  d'accueil porte la saison entière, et un spectacle y paraît parfois
-  deux fois : d'abord sans genre dans le bandeau « à la une », puis dans
-  la liste, où genre et classement « Scolaires » sont lus. Les dates
-  viennent de la carte, l'heure de la fiche, qui liste chaque séance avec
-  la sienne : une heure pour toutes publiait les matinées du dimanche à
-  l'heure du soir. Les séances du matin restent écartées, et un spectacle
-  « Scolaires » (séances en semaine, tarif « pour les écoles ») n'est
-  pas publié.
-- **`scrapers/aggregators/`** : sources multi-lieux : Petit Bulletin et
-  Ville Morte (API Gancio). Priorité inférieure aux scrapers venue : en cas
-  de doublon, le scraper de la salle gagne l'identité et hérite des champs
-  manquants (heure, catégorie…).
-  Le Petit Bulletin écrit ses dates en toutes lettres, et leur lecture a
-  ses règles, chacune payée d'une erreur publiée :
-  - toutes les dates d'une annonce comptent (« Jeudi 1 octobre et
-    Vendredi 2 octobre »), chacune à l'heure de son jour quand le texte
-    en donne une (« jeudi à 20h, vendredi à 18h ») ;
-  - le jour de la semaine fixe l'année ; sans lui, une date passée de
-    moins de quinze jours reste dans l'année en cours : « jeudi 1
-    octobre », lu le 2, devenait une soirée fantôme un an plus tard ;
-  - une plage courte ne garde que les jours de jeu qu'elle nomme (« du
-    mardi au vendredi à 19h30, samedi à 19h », « relâche le jeudi »),
-    chacun à son heure ; devant une tournure inconnue, rien n'est ôté :
-    mieux vaut une séance de trop qu'une vraie séance perdue ;
-  - deux jours qui se suivent sous un horaire qui passe minuit (« de 22h
-    à 4h30 ») ne font qu'une nuit ;
-  - l'année du début d'une longue plage (« Du 16 octobre 2026 au 15 août
-    2027 ») est lue elle aussi : sans elle, la plage devenait son seul
-    premier jour ; et cette forme reste une plage quand un « jusqu'à
-    18h » suit : on la prenait pour un « Jusqu'au », et l'événement était
-    perdu (audit A-38).
-- **`scrapers/dedup.py`** : canonicalisation des noms de lieux
-  (`VENUE_CANONICAL`) + déduplication en 3 passes : (lieu, jour) avec
-  fuzzy-match des titres ≥ 0,7 (les plages multi-jours sont indexées sur
-  chaque jour couvert), cross-venue ≥ 0,85 (titres génériques exclus),
-  puis pairing scraper/agrégateur à effectifs égaux avec garde temporel 4 h.
-  Le lieu est celui où l'on va : un hors-les-murs se range sous sa vraie
-  salle, et un titre cité vaut le titre long qui le cite (« Le Lac » pour
-  « … "Le Lac" »), sans quoi le concert de l'Opéra au Théâtre de La
-  Renaissance et l'annonce du Petit Bulletin restaient deux cartes. À
-  priorité égale, la salle qui reçoit l'emporte sur celle qui annonce le
-  spectacle hors les murs ; et une date « dans plusieurs salles », que
-  l'Opéra publie sans dire où elle se joue, s'efface devant la salle qui
-  publie la même représentation (même titre, même jour, même minute).
-  Les deux premières passes portent un garde supplémentaire
-  (`_seances_distinctes`) : au sein d'une MÊME source, deux horaires
-  connus et différents sont deux représentations, jamais un doublon. Sans
-  lui, une matinée et sa soirée fusionnaient : 44 couples de séances
-  réelles perdus sur sept salles avant correction. Trois autres gardes,
-  ajoutés après l'audit de novembre 2026 et mesurés sur la collecte du
-  1er octobre :
-  - deux liens différents d'un MÊME site sont deux événements dès que le
-    titre ou le lieu diffère (`_deux_fiches_d_une_source`, audit A-31 et
-    A-08) : au TNG, six spectacles disparaissaient dans leur atelier ou
-    leur visite tactile (« Liah et moi » dans « Visite tactile - Liah et
-    moi »). Entre deux sites, la fusion reste permise : une coproduction
-    annoncée par deux salles, mêmes soirs, même heure, est un seul
-    spectacle. La règle plus large que l'audit proposait, « deux lieux à
-    même priorité ne fusionnent jamais », a été mesurée et écartée : elle
-    ajoutait trois doublons de cette sorte pour une carte peut-être juste ;
-  - en passe 2, une plage de plus de deux jours et une date unique d'un
-    autre lieu ne fusionnent pas (audit A-06) : le Festival Lumière, à
-    l'Institut Lumière, disparaissait dans la soirée d'ouverture de la
-    Halle Tony Garnier ;
-  - l'heure d'un événement d'un jour ne passe pas à un gagnant de
-    plusieurs jours (audit A-07) : l'exposition « Animal culte »
-    s'affichait « 10:30 » chaque jour, l'heure d'une visite.
-  La passe 3 compte l'écart d'horaire en ligne droite : 00:30 et 23:30 du
-  même jour sont à vingt-trois heures, non à une (audit A-32). Elle range
-  toujours par salle qui programme, et non par salle réelle comme la
-  passe 1 : l'audit le proposait, mais le seul effet mesuré était faux (la
-  visite de l'Opéra du 14 octobre fusionnée avec un concert du CNSMD).
-- **`scrapers/categorie.py`** : comble la catégorie quand la source n'en
-  donne aucune, après la déduplication et sans jamais écraser une
-  catégorie de source. Le TITRE d'abord, où ces salles annoncent le genre
-  en clair (« Projection Ciné-Club », « [Punk Rock] », « comedy club »),
-  puis un défaut de LIEU, réservé aux salles réellement mono-genre : à
-  Marché Gare les événements sans catégorie comprenaient une projection et
-  deux formations, au Bieristan des quiz. Ce qui ne se déduit pas reste
-  vide, « LP » ou « Face B » ne disant rien. Attention : les étiquettes
-  produites doivent être reconnues par `TYPE_BUCKETS` (index.html),
-  sinon le comblement ne sert à rien. Deux pièges vérifiés : « ciné » ne
-  correspond pas à sa propre regex et « électro » accentué non plus.
-  Un titre peut aussi porter un indice CONTRAIRE : la boxe et le yoga
-  ne déduisent rien, pas même le défaut du lieu (« Gala de boxe… boxing
-  club » et « House Yoga Club » partaient en club). Le rap passe avant le
-  rock (« Rap Urban Pop »), « noise » est un mot entier (il se lisait
-  dans « chinoise »), et « chorégraphe » est enfin reconnu (audit A-33).
-  Un cran sous les salles mono-genre, `LIEUX_MAJORITAIRES` donne le
-  défaut d'un lieu MAJORITAIREMENT d'un genre, en tout dernier recours.
-  La Bourse du Travail y figure, en humour : son collecteur mettait
-  « humour » d'office à 98 événements sur 105, Medine et Gauvain Sers
-  compris, et la catégorie du Petit Bulletin ne pouvait plus rien y
-  changer. Sans défaut du tout, 53 cartes sur 72 partaient dans « autres »,
-  humoristes compris. Désormais le collecteur ne dit rien quand le titre
-  ne dit rien, la fusion avec le Petit Bulletin et le titre décident, et
-  le défaut ne vient qu'après : six cartes de la collecte du 1er octobre
-  changent de famille (Medine en rap, Julien Lieb en chanson…), aucune
-  n'est moins bien rangée (audit A-20).
-- **`scrapers/le_sucre.py`** : Le Sucre. Un titre qui ne nomme personne,
-  « Concert », « club » ou « S.society » (le nom d'une série), cède la
-  place aux artistes du sous-titre, et passe lui-même en sous-titre :
-  17 cartes sur 31 s'intitulaient ainsi (audit A-41). Un sous-titre qui
-  n'annonce encore personne (« Line-up soon ! ») laisse le titre tel quel.
-- **`scrapers/geo.py`** : géocodage Nominatim des lieux inconnus →
-  arrondissement et position (`pos`, latitude et longitude arrondies au
-  mètre, pour la vue carte de la page), mis en cache dans
-  `venue_arrondissements.json`. Les lieux auxquels `lieux.json` donne un
-  arrondissement ne sont jamais interrogés. Une panne de Nominatim n'est
-  jamais mise en cache, sur la seconde requête (« …, Villeurbanne ») comme
-  sur la première : le lieu était sinon noté introuvable pour trente
-  jours. Une entrée sans date de dernier passage en reçoit une, sans quoi
-  elle n'était jamais purgée (audit A-35).
-- **`scrapers/detail_cache.py`** : cache persistant `url → heure` pour les
-  12 modules qui ouvrent des pages détail (TTL 30 j si heure trouvée,
-  7 j sinon, purge à 60 j). Divise le temps de run par ~8 dès le 2ᵉ passage.
-  Le TNG n'y passe plus : ses fiches portent les séances, qui changent.
-  Une liste de séances est relue après trois jours, quoi que porte la
-  fiche ; une date ajoutée ou annulée restait sinon invisible sept ou
-  trente jours, selon que la fiche donnait une heure. Une lecture qui
-  échoue n'écrit rien : une fiche nouvelle en panne passagère était notée
-  vide pour sept jours, et le spectacle n'apparaissait qu'une semaine plus
-  tard, ou sans son heure (audit A-30). Il garde aussi, une semaine, ce
-  qui servait à choisir une affiche et ne change pas d'une nuit à l'autre :
-  les fiches du TNP, les vérifications d'images de la Croix-Rousse et des
-  Confluences (audit A-37).
-- **`aggregate.py`** : orchestre le tout, redresse les plages à l'envers
-  (une fin avant le début : le contrôle du fil refuserait de publier, et
-  tout le site resterait à la veille pour UNE soirée mal datée ; le cas
-  connu est une source qui n'écrit pas l'année, lue le lendemain du
-  premier jour d'une plage, dont le début part un an trop tard et revient
-  donc d'un an ; une autre inversion, de quelques jours, garde son début
-  comme une date unique ; chaque correction remonte en annotation
-  « plage à l'envers redressée »), écarte avant cela un événement dont
-  une date n'est pas au format AAAA-MM-JJ (annotation « date illisible
-  écartée ») et efface une heure qui n'est pas HH:MM (audit A-11 : une
-  seule date mal formée, venue de n'importe quelle source, faisait
-  planter tout le passage), filtre le passé (les événements
-  en cours sont conservés jusqu'à leur `date_end`) et ce qui commence
-  au-delà de l'horizon de 180 jours, écarte les événements
-  que leur source dit annulés (voir « Politique éditoriale »), écrit
-  `events.json`. Quatre garde-fous, du plus local au plus large :
-  - une salle scrappée en direct qui tombe sous le quart de ce que la
-    veille comptait encore à venir garde ses événements de la veille, sept
-    jours au plus (journal `reprises` dans `events.json`, rangé dans
-    l'ordre alphabétique). Les soirées de la veille, passées depuis, ne
-    comptent pas : une salle qui jouait beaucoup hier semblait sinon
-    s'effondrer (audit A-34). Une petite salle, sous dix
-    événements à venir, n'est reprise que si son collecteur échoue (erreur,
-    page introuvable, panne partielle) ou ne rend plus rien alors qu'elle
-    annonçait la veille des dates encore à venir ; pas quand elle a
-    simplement moins de dates. Pour
-    savoir quels lieux reprendre, le fil garde ceux que chaque collecteur
-    a rendus (`lieux_des_collecteurs`) : le handball, par exemple, joue
-    dans deux gymnases. Une salle reprise écarte aussi les plages
-    d'agrégateur qu'elle porte, comme un jour où elle répond. Ce que la
-    source publie encore ce jour-là n'est pas repris : une exposition
-    déjà ouverte commence, pour sa source, chaque jour « aujourd'hui », et
-    sa copie de la veille s'affichait sinon en double ;
-  - de même pour le Petit Bulletin et Ville Morte, avec la même règle ;
-  - un fil qui tombe sous les trois quarts de ce que la veille comptait
-    encore à venir n'est pas publié ; passé trois jours sans publication,
-    il l'est quand même, avec une alerte ;
-  - si toutes les sources échouent, le `events.json` précédent n'est pas
-    écrasé.
+**Horaires.** Trois passages sont programmés (00:17, 01:17 et 09:17 UTC) :
+le premier arrivé travaille, les suivants s'arrêtent si le programme du
+jour est déjà publié (`passage.py`). Le site est en général à jour entre
+6 h 30 et 9 h 40. Les tests tournent avant la collecte, le fil est
+contrôlé avant d'être publié, et la publication fait trois essais. Les
+tests tournent aussi à chaque envoi de code
+([tests.yml](.github/workflows/tests.yml)).
 
-  Tous comparent le passage au fil de la veille : quand ce fichier ne se
-  lit pas, une alerte « garde-fous à l'arrêt » le dit (audit A-34). Ils se
-  taisaient jusque-là sans un mot, et une salle en panne ce jour-là
-  serait partie du site sans reprise.
+## Fichiers
 
-  `NOCTURNE_FORCER_ECRITURE=1` publie ce qui a été réellement scrappé,
-  pour une perte réelle : salle fermée, saison finie. Sur GitHub, c'est la
-  case « Forcer la publication » d'un lancement à la main (Actions →
-  Update events daily → Run workflow). Elle coupe tous les garde-fous du
-  passage : une salle en panne passagère ce jour-là ne serait pas reprise
-  non plus.
+| Fichier | Rôle |
+|---|---|
+| `aggregate.py` | le passage : collecte, filtres, garde-fous, écriture du fil |
+| `scrapers/*.py` | un collecteur par salle ; `base.py` pour le commun |
+| `scrapers/aggregators/` | Petit Bulletin et Ville Morte |
+| `scrapers/dedup.py`, `categorie.py` | doublons, catégories |
+| `scrapers/geo.py`, `detail_cache.py` | géocodage, cache des fiches |
+| `alertes.py`, `passage.py` | alertes des salles en panne ; créneau et publication du passage |
+| `index.html` | la page, autonome (HTML, CSS et JavaScript sans dépendance) |
+| `lieux.json` | où est chaque lieu (arrondissement, commune, position) |
+| `sw.js`, `manifest.webmanifest` | l'application installable, hors ligne |
+| `mentions-legales.html`, `404.html` | pages annexes |
+| `fonts/`, `logos/` | polices (licence SIL OFL, textes joints) et logos de salle |
+| `tests/` | les tests, et les pages enregistrées des salles (`tests/pages/`) |
 
-  Sur GitHub, chaque passage écrit aussi l'état de ses sources (en
-  échec, reprises, abandonnées) dans un fichier hors du dépôt
-  (`NOCTURNE_ETAT`), que lit l'alerte ci-dessous.
-- **`alertes.py`** : l'alerte des salles en panne, à la fin du passage de
-  nuit. Un passage VERT n'envoie aucun e-mail : l'IAC, injoignable du 23
-  octobre au 9 novembre 2026, a quitté le site au 7e jour sans que
-  personne le sache (audit A-02). Le script tient une issue GitHub par
-  salle en panne, « [salle en panne] <salle> » : il l'ouvre au 2e jour de
-  reprise de la veille (une nuit de panne ne dérange personne) ou le jour
-  de l'abandon, récrit son texte tant que dure la panne, la commente le
-  jour où la salle cesse d'être reprise, et la ferme quand elle est
-  revenue dans le fil. L'issue mentionne le propriétaire du dépôt, et
-  GitHub lui envoie l'e-mail. Le passage affiche aussi un tableau des
-  sources sur sa page. L'alerte ne fait jamais échouer le passage.
-- **`passage.py`** : deux étapes du passage de nuit, écrites en Python
-  pour être essayées par les tests (audit, lot 8). `creneau` : le passage
-  programmé travaille-t-il ? Oui s'il est le premier du jour à Paris
-  (voir plus haut). `publier` : envoie le commit du robot en trois
-  essais ; chaque essai raté est défait, et le dépôt n'est jamais laissé
-  au milieu d'une opération.
-- **`index.html`** : frontend vanilla JS autonome : filtres par date/lieu/
-  arrondissement/type, recherche insensible aux accents (titre, lieu,
-  line-up), expansion des événements multi-jours, groupes de lieux.
-  Son style est le style « signal » (25 novembre 2026), mis au
-  point sur une copie de la page puis validé : vert acide en accent
-  (`--warm`, #c8ff3a), rose pour ce qui ressort (`--hot`, #ff3d6e), bleu
-  pour les réglages ; un fond quadrillé avec un grain de film ; le titre
-  « *nocturne » en vert, décalé rose et bleu ; sous lui, deux rubans qui
-  défilent en sens inverse, les chiffres du programme (vert) et ce qui se
-  joue ce soir (rose) ; au-dessus du programme, un bandeau « liquide »
-  dont le grand chiffre suit le réglage choisi (« 44 ce soir », « 176 ce
-  weekend »…), avec sa couleur, sa chaîne (ch. 01 à 06) et un
-  autocollant qui tourne. Les cartes : l'affiche sur toute la carte,
-  fondue en sombre sous le texte seulement (les cartes sans affiche
-  aussi), le titre en grand, et en petit le lieu, l'arrondissement en
-  tampon rose, le genre en bout de scotch à la couleur de sa catégorie
-  (les dix-neuf teintes d'avant, poussées vers le fluo), l'heure en
-  contour vert ; au survol, la carte penche avec un liseré vert, rose et
-  bleu. Le style tient dans un bloc, à la fin de la feuille de style, qui
-  l'emporte sur le reste ; « réduire les animations » arrête tout, et le
-  téléphone n'a ni grain ni étoile (batterie). Les rubans et le bandeau
-  sont remplis par un petit script, à la fin de la page, qui suit le
-  fil à chaque filtre.
-  La page construit son programme par morceaux : la première journée,
-  puis de quoi couvrir deux hauteurs d'écran (`ECRANS_INITIAUX`), la
-  suite au fil du défilement, et tout d'un coup là où la page entière est
-  attendue (Ctrl+F, la touche Fin, l'impression). Le premier morceau
-  valait 400 événements quel que soit l'écran : chaque clic de filtre en
-  reconstruisait au moins autant, quand un téléphone en montre trois ou
-  quatre (audit A-15). Le texte que cherche la recherche est mis en
-  minuscules sans accents une fois, au chargement, et le jour de Paris et
-  la période choisie sont calculés une fois par filtrage, et non pour
-  chacune des 4 500 occurrences. L'enseigne d'une carte sans affiche (le
-  nom du lieu répété en filigrane) est déclarée une fois par lieu, en
-  quatre dessins, dans une planche cachée (`<symbol>`), et chaque carte
-  n'y fait plus qu'une référence (`<use>`) : ses vingt et quelques textes
-  faisaient 45 % des éléments de la page. Mesuré sur un PC, le 14
-  novembre 2026 : 85 cartes au premier rendu au lieu de 264, 1 842
-  éléments au lieu de 6 971, un rendu en 32 ms au lieu de 60, une
-  recherche en 17 ms au lieu de 61, le filtrage seul en 0,3 ms au lieu de
-  20.
-  « Aujourd'hui » est le jour de PARIS, où que soit le téléphone
-  (`aujourdhui()`, audit A-16) : calculé à l'heure du téléphone, un
-  visiteur à Tokyo voyait dès 17 h, heure de Paris, « ce soir » au
-  lendemain, et à New York la veille jusqu'au matin. Au chargement, la
-  page écarte un événement dont une date n'existe pas, met en texte les
-  autres champs et oublie une heure illisible (`evenementsLisibles`,
-  audit A-11) : un seul champ abîmé faisait tomber toute la page. La
-  place du programme est réservée tant qu'il n'est pas arrivé : la page
-  ne saute plus au chargement, quand le pied de page s'affichait sous les
-  filtres puis était repoussé (décalage mesuré à 0,95, audit A-14). Les
-  textes de troisième rang (`--ink-mute`) atteignent 4,5:1 de contraste
-  au moins, et l'étoile, l'agenda et YouTube se touchent sur 24 × 24 px
-  au moins, sans changer leur dessin (audit A-18).
-  Le bouton « date » affiche la période choisie (« 12 → 18 oct. »,
-  « 15 oct. » pour un jour) et redevient « date → » quand on l'efface ;
-  un filtre sans résultat le dit (« aucun événement pour ces filtres »)
-  et offre un bouton « tout effacer », sans passer par le tiroir des
-  filtres. Sur téléphone, une période choisie fait passer le bouton sur
-  une troisième ligne de filtres.
-  L'adresse de la page garde les filtres (`?quand=weekend&arr=7e&q=jazz`,
-  et `du`, `au`, `lieu`, `tag`, `sans`, et `vue=carte` et `jour` pour la
-  vue carte) : elle suit chaque clic, sans
-  encombrer l'historique, et se relit à l'ouverture, si bien qu'un lien
-  envoyé montre exactement la même chose ; une date impossible
-  (`?du=2026-13-45`) y est ignorée, au lieu d'afficher « NaN undefined »
-  (audit A-40). Le bouton « partager ↗ », au
-  bout de la ligne du titre, ouvre le menu de partage d'un téléphone et
-  copie le lien sur un ordinateur. Les favoris n'y figurent pas : ils
-  sont à chacun.
-  Chaque carte porte une icône d'agenda, au bout du pied, à droite de
-  l'heure. Elle ouvre un petit menu (Échap, un clic ailleurs ou un
-  défilement le ferment ; flèches au clavier) : « Google Agenda » et
-  « Outlook.com » ouvrent l'agenda en ligne dans un autre onglet, la
-  soirée déjà remplie (sur un téléphone, l'application prend souvent le
-  relais) ; « iPhone et autres » fait écrire sur place par la page un
-  fichier `.ics`, que lisent l'agenda de l'iPhone, Outlook et les autres.
-  Dans les trois cas : la soirée à son heure de Paris (fuseau décrit dans
-  le fichier, `ctz=Europe/Paris` chez Google, décalage d'été ou d'hiver
-  chez Outlook), une durée de deux heures, la salle et sa ville, et le
-  lien ; sans heure connue, la journée entière. Le fichier ne part vers
-  aucun serveur ; Google et Outlook reçoivent, eux, la soirée choisie.
-  Chaque bouton retrouve SA séance, heure comprise : deux séances du même
-  titre le même soir (« COMEDY CLUB » à 20:00 et à 22:00) partageaient sa
-  clé, et l'agenda de l'une recevait l'heure de l'autre (audit A-17). Le
-  fichier plie ses lignes à 75 octets sans couper un caractère, un lien
-  y passe nettoyé de tout saut de ligne, « 24:00 » n'est pas une heure,
-  et le décalage donné à Outlook est celui de l'instant même, la nuit
-  d'un changement d'heure comprise (audit A-39).
-  Les cartes de musique, et elles seules, portent aussi le logo de
-  YouTube, entre l'heure et l'agenda, de la couleur des autres boutons :
-  une recherche YouTube sur le titre de la soirée, dans un autre onglet.
-  Les deux icônes portent leur nom pour les lecteurs d'écran et au
-  survol. Une carte n'est plus un lien entier (audit A-19) : le lien
-  porte sur son TITRE, et couvre toute la carte par une boîte invisible
-  (`.event-lien::after`), si bien qu'un clic n'importe où l'ouvre comme
-  avant ; l'étoile, l'agenda et YouTube sont de vrais boutons posés
-  au-dessus, hors du lien. Un lecteur d'écran lisait la carte d'un bloc,
-  boutons compris, et ne pouvait atteindre ni l'étoile ni l'agenda (938
-  boutons dans 415 liens). Toucher un bouton n'ouvre pas la page de
-  l'événement, et sur un téléphone seul le bouton touché réagit (la carte
-  ne s'allume qu'à la souris). La couche visuelle (affiche ou enseigne)
-  passe sous le texte de la carte, qui l'isole (`isolation: isolate`).
-  Les favoris, sans compte : l'étoile ☆, tout en haut à droite d'une
-  carte (elle s'allume et grossit au survol), garde l'événement (★ ocre,
-  sur toutes ses cartes) ; l'étoile à
-  côté d'une salle, dans la liste des lieux, la suit, et la remonte en
-  tête de liste. Le bouton « ★ favoris » ne montre plus que les
-  événements gardés et les soirées des salles suivies ; il reste allumé
-  quand on change de période, et « tout effacer » l'éteint. Tout est gardé dans la mémoire du navigateur
-  (`localStorage`, clés `nocturne:favoris` et `nocturne:salles`), sur ce
-  téléphone seulement, et rien n'en sort. Une étoile vaut pour le soir :
-  deux séances du même titre le même soir s'allument ensemble (choix du
-  14 novembre 2026). Un favori dont l'événement n'est plus au programme et
-  a commencé il y a plus de trente jours quitte la mémoire au chargement
-  (audit A-40) ; une exposition encore ouverte reste au programme, donc
-  en favori.
-  Le repère « nouveau » depuis la dernière visite a été retiré (novembre
-  2026) ; ce qu'il gardait dans le navigateur (`nocturne:vus`,
-  `nocturne:vus-avant`) est effacé à l'ouverture.
-  Au bout de la ligne de chaque date, un petit bouton (un entonnoir)
-  épingle le haut de la page, filtres et barre des jours, en haut de
-  l'écran pendant qu'on fait défiler la liste ; un second toucher le rend
-  à sa place, et rien ne bouge sous le doigt. La barre de la journée se
-  cale alors juste dessous, une journée rejointe par la barre des jours
-  aussi ; le bouton est plein, vert, tant qu'ils sont épinglés.
-  La vue carte : l'interrupteur « liste | carte », à côté de « ★
-  favoris », remplace les journées par un plan de Lyon où sont posés les
-  lieux d'UNE soirée (« ce soir », par défaut), chacun avec son nombre
-  d'événements, et son nom quand il y a la place (les noms ne se
-  chevauchent jamais). Toucher un lieu ouvre sa fiche, sous le plan : les
-  cartes de ses soirées, les mêmes que dans la liste (étoile, YouTube,
-  agenda compris) ; si elle commence trop bas, la page défile jusqu'à
-  elle. Des lieux trop
-  proches ne font qu'une pastille, cerclée, qui zoome sur eux. La barre
-  des 14 jours et les flèches de l'en-tête choisissent la soirée (la
-  pastille du jour montré est pleine, verte ; aujourd'hui garde son
-  cadre vert) ; les
-  filtres et les familles s'appliquent comme à la liste, et le plan
-  compte exactement les événements de la journée de la liste. Un lieu
-  sans position (voir `lieux.json`) est nommé sous le plan, dans « pas
-  sur la carte ». Le doigt fait glisser le plan, deux doigts le zooment ;
-  à la souris, Ctrl + molette zoome (la molette seule fait défiler la
-  page) ; au clavier, les flèches le déplacent, + et − zooment, Échap
-  ferme la fiche ; les boutons + et − sont là pour tous. Le fond est
-  celui d'OpenStreetMap, en tuiles, assombri pour aller avec la page,
-  avec la mention « © OpenStreetMap » ; aucune bibliothèque, le plan se
-  résume à poser des images et des boutons. Le zoom n'est pas forcément
-  entier : les tuiles du cran supérieur sont alors affichées un peu
-  réduites. Il est fluide : deux doigts et Ctrl + molette agrandissent le
-  plan sous le geste, tel quel (les pastilles gardent leur taille, les
-  noms s'effacent), et il est reconstruit à la fin du geste ; les boutons
-  + et −, le double clic et le clavier zooment en un fondu de 220 ms
-  (d'un coup pour qui demande moins d'animations). Le fond d'avant reste
-  dessous, agrandi, tant que les nouvelles tuiles ne sont pas arrivées :
-  le plan ne passe jamais par le noir.
-  Pour les lecteurs d'écran, le champ de recherche porte un nom, les
-  boutons de filtre disent s'ils sont enfoncés, chaque journée est un
-  titre de niveau 2, et le jour courant est signalé (`aria-current`)
-  dans la frise des jours comme dans le calendrier. Au clavier, Échap
-  ferme le calendrier et rend la main au bouton « date ». Les boutons de
-  famille font 24 px de haut, la plus petite cible recommandée. Après
-  chaque filtre, une zone invisible (`#annonce`, `role="status"`) dit le
-  nombre de résultats, « aucun événement pour ces filtres » ou « toutes
-  les familles sont masquées » (audit A-19) : seul le message « lien
-  copié » était annoncé.
-  La page donne aux moteurs de recherche son adresse officielle
-  (`rel="canonical"`, la même que celle de l'aperçu au partage), à
-  l'iPhone son icône d'écran d'accueil (`apple-touch-icon.png`, « *N »,
-  180 px de côté), et, à qui a coupé
-  JavaScript, un message (« le programme a besoin de JavaScript ») au
-  lieu d'un fil vide.
-  Sa politique de sécurité (`Content-Security-Policy`, en tête de page)
-  ne lui permet de charger que ses propres fichiers (scripts, styles,
-  polices, fil, logos) et des images en `https` (les affiches des
-  salles, les tuiles du plan d'OpenStreetMap : en vue carte, le
-  navigateur les demande aux serveurs d'OpenStreetMap, qui voient donc
-  passer l'adresse du visiteur, comme pour une affiche) ; elle ne peut
-  rien envoyer ailleurs que vers le site, ni
-  charger un script d'un autre site, ni contenir formulaire, objet ou
-  cadre. Limite : le code et les styles étant écrits dans la page, la
-  règle doit tolérer ce qui y est écrit (« unsafe-inline ») ;
-  l'échappement des textes venus des sites reste la première protection.
-  Le bouton « retour » (du navigateur, ou le geste et la touche retour
-  du téléphone) referme ce qui s'est ouvert par-dessus la page, le
-  dernier d'abord, comme la croix ou Échap : le calendrier, le menu
-  « ajouter à », la vue carte (retour à la liste) et la fiche d'un lieu.
-  Chaque ouverture ajoute une étape à l'historique, qui retient combien
-  d'éléments sont ouverts ; fermé autrement (croix, Échap, clic à côté,
-  défilement pour le menu, nouveau rendu pour la fiche), un élément
-  retire son étape, si bien que « retour » ne tombe jamais sur un
-  élément déjà fermé. À la page de départ, « retour » quitte le site
-  comme avant. Les filtres n'ajoutent toujours pas d'étape, et le tiroir
-  des filtres non plus (il s'ouvre dans la page) ; l'adresse revient aux
-  filtres du moment à chaque retour. Tant qu'un élément est ouvert,
-  « retour » ne fait pas défiler la page. Sur iPhone, l'application
-  installée n'a pas de geste retour : la croix reste le moyen de fermer.
-  Le pied de page (lignes centrées,
-  séparées par « · ») : « *nocturne · mentions légales · données &
-  confidentialité » (les deux liens mènent à `mentions-legales.html`, le
-  second directement à sa partie `#donnees`), puis « code source ↗ ·
-  haut de page » (un bouton à flèche qui remonte en douceur, d'un coup
-  pour qui demande moins d'animations), puis, comme avant, la source des
-  données, le nombre d'événements, de lieux et de sources, la date de
-  dernière mise à jour et l'astuce d'installation sur écran tactile.
-  La ligne de chaque date colle en haut de l'écran pendant qu'on fait
-  défiler sa journée, deux pixels au-dessus du bord : sans cela, sur
-  certains écrans, un fil d'un ou deux pixels laissait voir les cartes
-  au-dessus d'elle.
-  Les quatre polices du premier écran (alphabet latin de base) sont
-  demandées dès l'ouverture (`<link rel="preload">`) : à une première
-  visite sur un réseau de téléphone (simulée, 100 ms par aller-retour),
-  elles sont là à 0,56 s au lieu de 1,26 s, avant le premier affichage,
-  et le texte ne change plus de police sous les yeux du visiteur. Les
-  polices elles-mêmes sont sur le site (`fonts/`), décrites par
-  `fonts/polices.css`.
-- **L'application installable** (`manifest.webmanifest`, `sw.js`,
-  `icone-192.png`, `icone-512.png`) : le site s'ajoute à l'écran d'accueil
-  d'un téléphone et s'ouvre ensuite en plein écran, comme une
-  application. Sur Android, Chrome le propose de lui-même (« Installer
-  l'application ») ; sur iPhone, Safari : Partager, puis « Sur l'écran
-  d'accueil », ce que le pied de page rappelle sur les écrans tactiles.
-  L'icône « *N » en style « signal » : en
-  Bungee, vert acide décalé rose et bleu, sur le fond quadrillé, dans la
-  zone que ni Android ni l'iPhone ne rognent. L'icône d'onglet est
-  l'astérisque seul, dans les mêmes trois couleurs, et l'aperçu au
-  partage (`apercu.png`, 1200 × 630) reprend le titre géant, une
-  étiquette verte et les deux rubans. Les images sont appelées avec
-  « ?v=2 » : sans cela, les téléphones et les réseaux sociaux gardaient
-  les anciennes. `manifest.webmanifest` donne le nom, les couleurs
-  et les icônes ; `sw.js` garde sur le téléphone la page, ses polices et
-  le dernier programme chargé, pour qu'elle s'ouvre sans réseau (la date
-  de mise à jour, en pied de page, dit de quand il date). En ligne, la
-  page et le programme viennent du site : rien de périmé n'est servi tant
-  qu'il répond en moins de trois secondes ; au-delà (le métro, une barre
-  de réseau), la copie du téléphone prend le relais, et la réponse du
-  site, quand elle vient, la remplace pour la fois suivante (audit A-40 :
-  on attendait le réseau sans fin). Les mentions légales se gardent et se
-  servent sous leur propre adresse : sans réseau, l'accueil les
-  remplaçait. Le ménage d'une nouvelle version ne vide que les réserves
-  de nocturne (`nocturne-…`) : il vidait aussi celles des autres projets
-  de l'adresse ricojrlyon.github.io (audit A-12). Les
-  affiches ne sont pas gardées. Modifier `sw.js` ou l'un des fichiers
-  qu'il garde dès l'installation (`AU_DEPART`, la page exceptée) : changer
-  aussi le nom `CACHE` (`nocturne-4` depuis le 25 novembre 2026, pour les
-  icônes « signal »). Sinon, le
-  nouveau fichier n'arrive chez le visiteur qu'une visite plus tard, et
-  l'ancienne réserve n'est pas vidée. Un test l'exige (audit, lot 8) : il
-  garde l'empreinte de ces fichiers sous chaque nom, et dit quoi faire.
-- **`lieux.json`** : où est chaque lieu, une ligne par lieu : son nom tel
-  que l'écrivent les sources, son arrondissement (1er à 9e, Villeurbanne
-  ou Autre), sa commune quand il est hors de Lyon et de Villeurbanne
-  (écrite en entier, la page l'abrège), sa position (`pos`, latitude et
-  longitude, pour la vue carte : trouvée une fois à l'adresse du lieu,
-  avec le même service que le robot, Nominatim, et contrôlée par le code
-  postal de l'arrondissement ou par la commune ; un lieu sans position
-  est nommé sous le plan, dans « pas sur la carte »), et une note
-  (l'adresse). La page
-  le lit au chargement, et le robot aussi : il ne cherche pas sur la
-  carte un lieu qui y a un arrondissement. Ces deux tables étaient
-  écrites dans index.html, que le robot devait fouiller ; elles sont
-  maintenant à un seul endroit. La page en a besoin comme du fil : s'il
-  manque, elle affiche « le programme n'a pas pu se charger ».
-- **`404.html`** : la page des adresses introuvables, que GitHub Pages sert
-  d'elle-même : « erreur 404 », « page introuvable » et un lien vers la page
-  d'accueil. Son lien et ses polices sont en adresses complètes
-  (`/nocturne-lyon/…`), car elle s'affiche à n'importe quelle profondeur
-  d'adresse ; elle est exclue des moteurs de recherche. Elle porte la
-  règle de sécurité des mentions légales (audit A-40) : elle n'en avait
-  aucune.
-- **`mentions-legales.html`** : mentions légales et données personnelles,
-  une page à part, aux couleurs et polices du site, sans aucun script
-  (sa règle de sécurité n'autorise que ses styles et les polices du site).
-  Éditeur (un particulier, site personnel et gratuit), hébergeur
-  (GitHub), d'où viennent les informations, propriété intellectuelle,
-  données et confidentialité (`#donnees` : ce que le site ne fait pas, ce
-  qui reste sur l'appareil, ce que GitHub, les sites des lieux,
-  OpenStreetMap et les services d'agenda voient, les personnes citées
-  dans le programme), crédits (OpenStreetMap, Nominatim, polices). Le nom
-  du site, en haut, et « ← retour au programme », en bas, ramènent à la
-  page. À reprendre si le site change ce qu'il garde ou ce qu'il contacte.
-  Les droits sur les données (accès, rectification, opposition)
-  s'exercent auprès de l'éditeur, et la CNIL reçoit les réclamations : la
-  page envoyait à la CNIL pour exercer ces droits (audit A-13). Aucun
-  contact de l'éditeur n'est publié pour l'instant (choix du 14 novembre
-  2026) : à ajouter le jour où il y en aura un.
-- **`.nojekyll`** : fichier vide qui demande à GitHub Pages de publier les
-  fichiers tels quels, sans les passer par Jekyll, son moteur de modèles.
-  Jekyll ne modifiait rien aujourd'hui, mais il aurait pu un jour
-  interpréter un fichier, et il écartait ceux dont le nom commence par
-  « _ » ou par un point ; la publication est aussi plus rapide (35 s au
-  lieu de 50 environ). Ces fichiers-là (`.gitignore`,
-  `scrapers/__init__.py`) sont désormais consultables sur le site, comme
-  ils l'étaient déjà sur GitHub, le dépôt étant public ; le dossier
-  `.github` reste exclu par GitHub. Vérifié à la mise en place : les
-  autres fichiers servis sont identiques à l'octet près.
-- **`logos/`** : marques de salle affichées sur les cartes groupées, une
-  par lieu, déclarées dans `VENUE_LOGOS` (index.html). Voir « Logos de
-  salle » plus bas.
+Données écrites par le robot, jamais à la main : `events.json`,
+`venue_arrondissements.json`, `detail_times.json`.
+
+## La page
+
+`index.html` se suffit à lui-même : pas de framework ni d'étape de build.
+On y trouve :
+- les filtres « tout », « ce weekend », « semaine pro », une date, les
+  favoris, la recherche, l'arrondissement, les lieux et les tags ;
+- les familles (musique, scène, expos, sport, autres) dans la barre de
+  chaque journée : toucher une famille ne montre plus qu'elle, en toucher
+  une seconde l'ajoute ;
+- une vue carte (fond OpenStreetMap) ;
+- sur chaque carte : l'étoile des favoris (gardés sur le téléphone),
+  l'ajout à l'agenda et l'écoute sur YouTube ;
+- des liens partageables qui rouvrent la même vue.
+
+Le style « signal » : vert acide, rose et bleu sur fond sombre quadrillé,
+deux rubans sous le titre, un bandeau au-dessus du programme dont le
+chiffre suit le réglage choisi. Il tient dans un bloc à la fin de la
+feuille de style.
+
+L'application s'installe depuis le navigateur et s'ouvre sans réseau
+(`sw.js`). Modifier `sw.js` ou un fichier qu'il garde (polices, icônes,
+manifeste) demande de changer son nom `CACHE` ; un test l'exige et donne
+la ligne à ajouter.
+
+## Respect des sites lus
+
+- Le robot s'annonce sous son vrai nom (`base.UA`), avec l'adresse du
+  projet. Seule exception : la billetterie du LOU, protégée contre les
+  robots, reçoit une identité de navigateur (`scrapers/rugby.py`).
+- robots.txt est respecté, et le délai demandé aussi (Maison de la Danse
+  et La Rayonne : dix secondes).
+- Une fiche déjà lue est gardée en cache.
+- Nominatim est interrogé une fois par seconde au plus.
+- Quand l'hébergeur du Complexe demande une vérification anti-robot, le
+  robot n'insiste pas : la salle est reprise de la veille.
 
 ## Lancer localement
 
 ```bash
-pip install -r requirements.txt   # requests + beautifulsoup4, versions figées
-pip install tzdata                # Windows uniquement (zoneinfo)
-
-python aggregate.py               # run complet → events.json + caches
-python -m scrapers.le_sucre       # tester un scraper isolément
+pip install -r requirements.txt   # versions figées, avec leur empreinte
+pip install tzdata                # sous Windows seulement
+python aggregate.py               # un passage complet
+python -m scrapers.le_sucre       # une salle seule
 ```
-
-Premier run : nettement plus long, le temps de remplir le cache des heures.
-Runs suivants : une dizaine de minutes ; plusieurs salles imposent un délai
-entre deux pages. Sur GitHub, un passage entier, tests compris, a duré de
-8 à 23 minutes, 13 en médiane (30 passages, du 15 octobre au 14 novembre
-2026).
 
 ## Tests
 
 ```bash
-python -m unittest discover -s tests -t . -v      # la logique, sans réseau
-python -m unittest tests.verif_fil tests.verif_page -v   # le fil du jour
+python -m unittest discover -s tests -t . -v           # la logique, sans réseau
+python -m unittest tests.verif_fil tests.verif_page -v # le fil du jour
 ```
 
-- **La logique**, en quatre minutes environ et sans réseau : la
-  lecture des dates en français, le dédoublonnage règle par règle, les
-  nouveaux essais réseau, les pannes partielles de chaque collecteur
-  (une page suivante qui tombe fait lever), le cache des fiches, la
-  vérification anti-robot du Complexe, les
-  annulés, l'heure de chaque séance, les catégories, le périmètre (ce
-  qui est gardé, ce qui est écarté), les garde-fous
-  d'`aggregate.py` (plages à l'envers redressées comprises), les dates
-  sans année de La Rayonne, l'IAC injoignable qui le dit, ce que la page
-  et les collecteurs doivent avoir en
-  commun (l'horizon, le marqueur « ailleurs », le fichier des lieux que
-  tous deux lisent, bien formé, positions comprises), ce que le géocodage
-  garde d'une réponse de Nominatim, ce que la politique de sécurité de la page
-  interdit, et deux RÉFÉRENCES figées.
-  La chaîne de publication entière est rejouée sur une collecte réelle
-  (celle du 1er octobre 2026, dans `tests/donnees/`) et doit rendre le
-  même fil au caractère près ; la page est jouée dans un navigateur sans
-  fenêtre, sur ces données et à cette date (la vue carte comprise : le
-  plan doit compter les événements de la liste, et ses gestes, sa fiche,
-  la barre des jours et le lien qui le rouvre sont essayés), et ses neuf
-  scénarios de
-  visiteur doivent afficher les mêmes cartes, sans erreur et sans rien
-  que sa politique de sécurité bloque. L'application, elle, doit
-  s'ouvrir sans réseau : le banc laisse le service hors ligne
-  s'installer, coupe toutes ses connexions, recharge la page, et exige
-  les mêmes cartes qu'en ligne. Un lien partagé aussi : la page ouverte
-  avec `?quand=weekend`, `?q=comedy`, `?lieu=Le+Sucre` ou `?tag=theatre`
-  doit montrer les cartes du scénario correspondant.
-  Le premier morceau du fil doit couvrir deux écrans sans plus, les
-  enseignes être déclarées une fois, la recherche ne rien normaliser à
-  chaque frappe, et aucun bouton n'être enfermé dans un lien.
-  Le service hors ligne est essayé en trois temps : il ne vide que ses
-  propres réserves, sert la copie du téléphone quand le site met plus de
-  trois secondes, et rend les mentions légales sans réseau. Un fil abîmé
-  (une heure en nombre, une date mal écrite) doit s'afficher sans erreur,
-  et un téléphone à Honolulu voir le programme de Paris ; ce dernier
-  essai demande un navigateur qui suive la variable TZ, ce que fait celui
-  de GitHub, pas celui de Windows : il est alors sauté, et le dit.
-- **Le fil du jour**, après la collecte : la forme d'`events.json`, et la
-  page qui s'affiche avec, sans erreur et avec les bons compteurs.
+- La logique : dates, dédoublonnage, garde-fous, pannes, catégories,
+  périmètre, et deux références figées (la chaîne de publication rejouée
+  sur une collecte réelle, et la page jouée dans un navigateur de la
+  famille Chrome).
+- Les pages enregistrées : `python -m tests.enregistrer <salle>`
+  enregistre une fois les pages d'une salle (robots.txt respecté), et le
+  test les rejoue sans réseau.
+- Après un changement voulu d'affichage ou de lecture :
+  `python -m tests.regenerer` pour les références, ou réenregistrer la
+  salle ; puis relire le diff.
 
-Le workflow lance les premiers AVANT de collecter et les seconds AVANT de
-publier : un échec arrête le passage, qui passe au rouge, et le site garde
-sa version de la veille plutôt que d'en publier une cassée.
-
-Les deux suites tournent aussi à chaque envoi de code sur `main`
-([.github/workflows/tests.yml](.github/workflows/tests.yml), audit
-A-03) : GitHub Pages met un envoi en ligne dans les secondes qui suivent,
-sans test, et une erreur n'était vue que par le passage de la nuit,
-qui ne publiait alors rien non plus. Un envoi fautif passe au rouge, et
-GitHub envoie un e-mail en quelques minutes. Ce workflow prévient, il ne
-bloque pas la mise en ligne. Les envois du robot (`events.json`,
-`venue_arrondissements.json`, `detail_times.json`) ne le déclenchent pas.
-
-Les tests de page demandent un navigateur de la famille Chrome (Chrome,
-Chromium ou Edge). Quand la page ne rend rien, elle a droit à un nouvel
-essai, puis le navigateur joue une page témoin, la plus simple qui soit
-(audit A-26) :
-- s'il la rend, il marche, et c'est la page du site qui ne rend rien : le
-  test échoue ;
-- s'il ne la rend pas, ou s'il n'y a pas de navigateur, c'est la machine
-  qui fait défaut. Sur un poste, le test est sauté et le dit. Sur GitHub,
-  il échoue : sauté, il laissait partir la publication sans aucun
-  contrôle de la page.
-
-**Les pages enregistrées** (audit A-28). Dix-huit sources sur
-trente-sept n'avaient aucun test de lecture, et les autres n'étaient
-essayées que sur de petits bouts de HTML écrits à la main autour d'un bug
-ancien. Une retouche du code qui changeait la lecture d'une salle ne se
-voyait qu'en production. Désormais, les vraies pages d'une salle sont
-enregistrées une fois :
-
-```bash
-python -m tests.enregistrer la_commune   # une source, par le nom de son module
-python -m tests.enregistrer --liste      # les sources, enregistrées ou non
-```
-
-L'outil lance le collecteur comme le passage de nuit, une seule fois, et
-garde dans `tests/pages/<source>.json.xz` chaque réponse reçue, les fiches
-que le cache connaissait déjà (il ne les redemande pas), les fichiers du
-dépôt qu'il lit, le jour, et les événements qu'il en a tirés. Avant chaque
-site, il lit le robots.txt, refuse ce qu'il interdit et respecte son
-délai ; il n'écrit jamais les fichiers du robot. Il refuse d'écrire un
-enregistrement que le rejeu ne redonne pas à l'identique. Trois sources
-ne seront jamais enregistrées : le LOU (sa billetterie ne doit jamais être
-sollicitée), le Sonic (son robots.txt interdit tout robot) et le Complexe
-(son hébergeur filtre les robots).
-
-Le test (`tests/test_pages_enregistrees.py`) rejoue chaque enregistrement
-sans réseau, à sa date, et exige les mêmes événements au caractère près ;
-une page que le collecteur demande et qui n'a pas été enregistrée est une
-erreur. Il ne couvre que ce que les pages montraient ce jour-là : un cas
-qu'elles ne contiennent pas (une date de janvier enregistrée en novembre,
-une heure donnée en UTC) reste l'affaire des tests écrits à la main. Il
-ne voit pas non plus la refonte du site d'une salle : c'est le rôle des
-garde-fous du passage et de l'alerte des salles en panne. Quand la lecture
-d'une salle change VOLONTAIREMENT, réenregistrer la source et relire le
-diff des événements. Les enregistrements sont des copies de pages
-publiques, compressées, qui ne servent qu'aux tests.
-
-Les tests essaient aussi le passage lui-même (`tests/test_passage.py`) :
-le créneau sur deux ans de dates, changements d'heure compris, et la
-publication contre de vrais dépôts git créés pour l'occasion, avec
-quelqu'un qui pousse pendant le passage.
-
-Les fins de ligne sont celles de Linux sur toutes les machines
-(`.gitattributes`, audit, lot 8) : Windows récrivait chaque fichier avec
-les siennes, et un même fichier n'avait pas les mêmes octets sur un poste
-et sur GitHub.
-
-Quand un changement est VOULU (une règle de dédoublonnage, le dessin
-d'une carte), les références se recalculent avec
-`python -m tests.regenerer` (ou `chaine`, ou `page`) ; relire ensuite le
-diff de `tests/donnees/`.
+Sur GitHub, un navigateur absent fait échouer les tests de page ; sur un
+poste, ils sont sautés et le disent.
 
 ## Ajouter une salle
 
-1. Créer `scrapers/ma_salle.py` exposant `fetch() -> List[Event]`
-   (s'inspirer de `heat.py` pour un listing simple, `transbordeur.py` pour
-   une API WP REST paginée). Utiliser `detail_cache.get_time()` si les
-   heures nécessitent des pages détail.
-2. L'enregistrer dans `SCRAPERS` (aggregate.py).
-3. Ajouter le lieu dans `lieux.json` (une ligne : nom, arrondissement,
-   commune s'il est hors de Lyon et de Villeurbanne, position `pos`
-   [latitude, longitude] pour la vue carte, adresse en note) : le
-   géocodage ne le cherchera pas. Le ranger aussi dans `VENUE_GROUPS`
-   (index.html), qui ne sert plus qu'au filtre des lieux de la page.
-4. Si les agrégateurs orthographient le lieu autrement, ajouter les
-   variantes dans `VENUE_CANONICAL` (scrapers/dedup.py). C'est ce qui
-   permet à la dédup de regrouper les deux sources : sans l'entrée, elles
-   tombent dans deux groupes distincts et ne se croisent jamais.
-5. Facultatif : si la salle joue plusieurs fois par soir, lui donner un
-   logo (voir « Logos de salle »). Sans entrée, ses cartes groupées
-   gardent le motif, comme la majorité des lieux.
-6. Enregistrer ses pages pour les tests : `python -m tests.enregistrer
-   ma_salle` (voir « Tests »), après avoir lu son robots.txt.
-
-## Logos de salle
-
-Une carte groupée réunit plusieurs spectacles d'un même lieu le même
-jour. N'ayant pas d'affiche à montrer, elle tirait un motif de secours.
-Les salles qui jouent plusieurs fois par soir y portent désormais leur
-marque : dix-sept lieux, 653 des 837 cartes groupées au 1er octobre 2026.
-
-Le logo est traité comme une affiche (assombri, avec le voile qui monte
-vers le bas de la carte, sous le texte), à deux détails près.
-
-- **Un cartouche blanc sur toute la carte.** Les logos ajourés posaient
-  sinon leurs traits sombres sur un fond sombre ; le cartouche leur rend
-  le support pour lequel ils ont été dessinés. C'est lui qui porte le
-  filtre, pas la marque : un filtre s'appliquant à tout son sous-arbre,
-  son blanc et celui qu'un fichier contient déjà subissent le même
-  traitement, sans quoi un rectangle se dessinerait autour de la marque.
-- **`brightness(0.40) contrast(1.06)`**, un cran sous les affiches
-  (`brightness(0.42) saturate(0.85) contrast(1.08)`) : un aplat n'a pas
-  le bruit d'une photographie et ressort plus fort à luminosité égale.
-  La trame sérigraphie qui doublait ces filtres a été retirée : elle
-  mangeait le détail des visages, et les valeurs ont été baissées
-  d'autant.
-
-Deux règles à respecter en ajoutant un logo :
-
-1. **Recadrer le fichier sur la boîte de son dessin.** Les fichiers
-   d'origine portent des marges vides très inégales (67 % pour
-   Improvidence, 55 % pour Le Complexe, 0 % pour Gerson), et sans
-   recadrage une même valeur de hauteur donne des dessins de tailles
-   très différentes.
-2. **Choisir `k` d'après le ratio**, `k` étant la hauteur en pour cent de
-   la carte. 150 % convient aux marques compactes (ratios 0,98 à 1,37).
-   Les Subsistances sont à 102 % : leur lettrage est un ruban de ratio
-   2,12 qui sortirait largement de la carte à 150 %.
-
-Le fichier est committé dans le dépôt plutôt que lié chez la salle : un
-lien direct casse au premier changement de thème et ferait dépendre nos
-cartes d'un serveur tiers. SVG quand la salle en publie un (l'Institut
-Lumière et les Célestins, 1 à 25 ko et nets à toute échelle), PNG
-recadré sinon.
-
-Le motif reste sous le logo, éteint par une classe que l'`onerror`
-retire : si le fichier manque, la carte retombe d'elle-même sur le
-motif.
-
-## Politique éditoriale
-
-- **Périmètre : Lyon, Villeurbanne et cinq communes voisines**
-  (`COMMUNES_GARDEES`, aggregate.py) : Caluire-et-Cuire,
-  Oullins-Pierre-Bénite, Vaulx-en-Velin, Décines-Charpieu et La
-  Mulatière, celles qu'on rejoint facilement en transports en commun
-  (choix du 14 octobre 2026). Un événement qui se joue dans une autre
-  commune est écarté avant publication, et le journal du passage le dit,
-  commune par commune. Ce jour-là : 84 sur 3 018, dont 55 du Petit
-  Bulletin, 28 de Ville Morte et un concert de l'Opéra à Saint-Priest.
-  Le lieu compte est celui où l'on va (un concert de l'Opéra donné à
-  Oullins reste), situé par `lieux.json` puis par le géocodage, les noms
-  comparés sans casse ni accents. Un lieu que rien ne situe est GARDÉ :
-  la plupart sont en réalité dans Lyon. Pour élargir ou resserrer le
-  périmètre, modifier `COMMUNES_GARDEES` ; pour situer à la main un lieu
-  que la carte ne trouve pas, lui donner une commune dans `lieux.json`.
-- **Événements annulés : écartés, quelle que soit la source.** Le mot
-  doit être placé là où une source l'écrit pour annuler : en tête du
-  titre (« Annulé … », « ANNULE // … », « (Annulé) … »), seul entre
-  parenthèses ou crochets, en fin de titre après un tiret, ou comme titre
-  ou sous-titre entier (« Concert annulé »). Ailleurs, il ne suffit pas,
-  et un titre qui annonce un remplacement est gardé : « Almond Butyl -
-  annulé / remplacé par Viviane Cavale » était une soirée qui a bien eu
-  lieu. « Reporté » n'est pas traité, la date affichée pouvant être la
-  nouvelle. Le filtre passe APRÈS la déduplication : quand la salle écrit
-  « Annulé » et qu'un agrégateur republie le même spectacle sans le dire,
-  les deux disparaissent. Chaque événement écarté est nommé dans le
-  journal du passage.
-- **Ville Morte : aucun filtre propre**, tout son agenda remonte, hors
-  annulés. C'est la déduplication qui écarte les doublons quand un
-  événement est aussi publié par la salle elle-même.
-- **Petit Bulletin : un seul filtre propre, par catégorie**
-  (`CATEGORIES_ECARTEES`, scrapers/aggregators/petit_bulletin.py), douze
-  des trente catégories de son agenda :
-  - toutes celles que le site range en « expos » : Peinture & Dessin, Art
-    contemporain et numérique, Photographie, Design & Architecture
-    (depuis septembre 2026), Visites, Street Art, Art graphique,
-    Sculpture (depuis le 14 octobre 2026) ;
-  - les rendez-vous de parole, depuis le 14 octobre 2026 : Rencontres et
-    Dédicaces, Conférences, Sciences et Histoire, Lecture et conte, en
-    librairie pour la plupart.
-  Mesuré le 14 octobre : 149 des 751 événements de l'agenda écartés, dont
-  70 qui parvenaient jusqu'au site. Seul le Petit Bulletin est filtré :
-  les salles que le robot lit directement gardent leurs expositions et
-  leurs rencontres.
-  La décision a changé plusieurs fois, et pour des raisons différentes. Deux
-  filtres existaient à l'origine (musées et galeries d'un côté, une
-  liste de catégories de l'autre) parce que les accrochages saturaient
-  le feed ; ils ont été levés en août 2026, au motif que le lecteur peut
-  écarter la famille « expos » d'un bouton. Le filtre de catégories
-  revient en septembre parce que les événements longs sont désormais
-  déployés sur chacun de leurs jours : un accrochage de trois mois pesait
-  une carte, il en pèse quatre-vingt-dix. Mesuré à la réintroduction :
-  100 événements écartés, dont 68 en galerie et 9 en musée non scrappé,
-  soit 1 443 jours cumulés d'accrochage sur l'horizon.
-- **Affiches : la taille réduite que publie la salle.** Une carte fait
-  400 px de large au plus, et l'original d'une affiche pèse parfois
-  plusieurs mégaoctets. Chaque robot prend donc, parmi les tailles que le
-  site publie lui-même, celle qui s'approche le plus de 800 px, assez pour
-  les écrans denses : au Transbordeur, à la Comédie Odéon et au TNP dans
-  les tailles que la page liste, aux Subsistances quand la carte montre
-  l'original, aux Célestins par la transformation d'image du site
-  (600 px). Deux sites fabriquent une version légère sans la citer : la
-  copie WebP de 768 px de la Croix-Rousse (une centaine de Ko au lieu de
-  2 à 2,7 Mo) et la version « carte » de 800 × 500 de l'agenda des
-  Confluences. Le robot la vérifie avant de la prendre. Faute de version
-  réduite, l'original reste.
-- **Familles d'affichage** (`FAMILLES`, index.html) : musique, scène,
-  expos, sport, autres. Cinq et non dix-neuf : les buckets restent la
-  maille fine, mais autant de sections dans une journée seraient
-  illisibles.
-  Chaque barre de journée porte un bouton par famille : l'état est
-  GLOBAL, le compte est celui du JOUR. Une famille se CHOISIT (depuis le
-  25 novembre 2026 ; elle se masquait) : toucher « musique » ne montre
-  plus que la musique, le bouton passe au vert et les autres pâlissent ;
-  en toucher une seconde l'ajoute ; retirer la dernière rend tout. La
-  page garde, en dessous, la liste des familles NON choisies : le lien
-  partagé (`?sans=`) et « tout effacer » n'ont pas changé. Au-delà de dix cartes la journée
-  se découpe en sections titrées par famille (`SEUIL_SECTIONS`) ; en
-  deçà elle reste une grille continue, la journée médiane ne faisant que
-  cinq cartes. Tout bucket non rangé dans une
-  famille tombe dans « autres », et une alerte console le signale : le
-  repli évite de perdre un événement, il ne doit pas masquer un oubli.
-  « Impro », la catégorie du Petit Bulletin pour le théâtre
-  d'improvisation, est rangée en théâtre (famille scène) ; elle tombait
-  en jazz, donc en musique, jusqu'au 14 octobre 2026.
-- **Événements longs** (expos, festivals au long cours) : conservés sous
-  forme de plage `date_start`..`date_end`, et affichés sur CHACUN de leurs
-  jours. Un seuil `LONG_RUN_THRESHOLD` repliait les séries de plus de
-  trente jours en une carte unique datée d'aujourd'hui : une exposition
-  de cinq mois n'apparaissait qu'une fois puis disparaissait du site. Il
-  est supprimé (septembre 2026). La carte porte alors sa fin plutôt que
-  son rang (« → 30/10 », et « dernière » le dernier jour), car
-  « 12/29 » ne renseigne pas le lecteur. L'année s'ajoute quand elle
-  diffère de celle de la carte : un agrégateur annonce des accrochages à
-  deux ans, et « → 22/10 » lu en 2026 se comprendrait mal pour une
-  fermeture en 2028. Les cartes groupées portent la même échéance dans
-  leur colonne de droite, là où l'heure manque.
-- **Horizon d'affichage** (`HORIZON_JOURS`, index.html) : 180 jours, la
-  valeur des scrapers. Il n'en existait pas, faute d'utilité tant qu'une
-  longue plage ne pesait qu'une carte ; sans lui, une exposition annoncée
-  jusqu'en octobre 2028 fabriquerait six cent soixante-quinze journées.
-  Ce qui commence au-delà garde une carte à sa date d'ouverture, pour ne
-  pas disparaître ; depuis que le robot applique le même horizon (voir
-  ci-dessous), le cas ne se présente plus, mais la page reste sûre si
-  le fil en contenait un.
-- **Horizon** (`HORIZON_JOURS`, scrapers/base.py) : une seule valeur,
-  180 jours, appliquée par le robot à TOUTES les sources au moment
-  d'écrire le fil : ce qui commence au-delà n'est pas publié, et le sera
-  quand il entrera dans les six mois. Certains collecteurs s'en servent en
-  plus pour ne pas ouvrir les fiches lointaines. Jusqu'en novembre 2026
-  seule une partie d'entre eux coupait, et le Petit Bulletin, la Bourse
-  du Travail, la Halle, les Subsistances ou La Rayonne publiaient jusqu'à
-  dix-sept mois à l'avance (85 événements sur la collecte de référence du
-  1er octobre) ; une date passée lue avec un an de trop y restait aussi
-  (audit A-04). La page a la même valeur (`HORIZON_JOURS`, index.html),
-  et un test vérifie qu'elles restent égales.
-- **Plages d'agrégateur sur un lieu scrappé** : écartées. Un agrégateur
-  qui voit un spectacle joué plusieurs soirs le publie souvent comme une
-  seule plage « du 18 au 28 août ». Le frontend déployant une plage sur
-  chacun de ses jours, elle doublerait les séances que le scraper de la
-  salle rapporte précisément, et en inventerait les soirs sans
-  représentation. La dédup ne peut pas rattraper ce cas : il suffit que la
-  plage gagne un seul jour pour être émise, puis repeindre toute sa durée.
-  La règle vaut aussi un soir où la salle ne répond pas et où ses séances
-  sont reprises de la veille : elle ne reconnaissait la salle qu'à ses
-  événements du jour, et la plage « Un grand cri d'amour » du Petit
-  Bulletin, du 2 octobre au 28 décembre, s'affichait alors tous les soirs
-  pour un spectacle du lundi.
-- **La Rayonne et le Marché Gare** : leurs formations et ateliers
-  professionnels sont écartés : c'est une programmation parallèle, pas
-  un choix éditorial.
-- **Séances scolaires** : écartées (elles sont réservées aux classes) à
-  l'Auditorium, au TNG, et au Radiant pour les spectacles qu'il classe
-  « Scolaires ».
-- **Ce qu'une salle écarte vaut sur son lieu pour les agrégateurs**
-  (`FILTRES_DE_SALLE`, aggregate.py) : les visites de l'IAC, les soirées
-  hors les murs et les formations du Marché Gare. Sans cela, le Petit
-  Bulletin republiait ce que la salle venait d'écarter : neuf visites de
-  l'IAC, et Ivanoé « au Marché Gare ».
-
-## Données générées (committées par le bot)
-
-| Fichier | Contenu |
-|---|---|
-| `events.json` | les événements agrégés, consommés par index.html |
-| `venue_arrondissements.json` | cache géocodage lieu → arrondissement et position |
-| `detail_times.json` | cache url → heure des pages détail |
+1. Créer `scrapers/ma_salle.py` avec `fetch() -> List[Event]`, en lisant
+   le robots.txt du site.
+2. L'ajouter à `SCRAPERS` dans `aggregate.py`.
+3. Ajouter le lieu à `lieux.json` (arrondissement, commune hors Lyon et
+   Villeurbanne, position), et à `VENUE_GROUPS` dans `index.html`.
+4. Si les agendas l'écrivent autrement, ajouter les variantes à
+   `VENUE_CANONICAL` (`scrapers/dedup.py`).
+5. Enregistrer ses pages : `python -m tests.enregistrer ma_salle`.
