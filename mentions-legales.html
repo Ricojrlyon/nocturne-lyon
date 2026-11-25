@@ -7,7 +7,7 @@
      polices du site ; aucun script, rien d'autre à charger. -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
 <title>Mentions légales · *nocturne</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-16 -16 32 32'><g fill='%23d4a574'><rect x='-2' y='-13' width='4' height='26' rx='2'/><rect x='-2' y='-13' width='4' height='26' rx='2' transform='rotate(60)'/><rect x='-2' y='-13' width='4' height='26' rx='2' transform='rotate(120)'/></g></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-16 -16 32 32'><defs><g id='a'><rect x='-2' y='-13' width='4' height='26' rx='2'/><rect x='-2' y='-13' width='4' height='26' rx='2' transform='rotate(60)'/><rect x='-2' y='-13' width='4' height='26' rx='2' transform='rotate(120)'/></g></defs><use href='%23a' x='-1.5' fill='%23ff3d6e'/><use href='%23a' x='1.5' fill='%2336c9ff'/><use href='%23a' fill='%23c8ff3a'/></svg>">
 <meta name="theme-color" content="#161f25">
 <!-- Mentions légales et données personnelles, une page à part : le pied de
      page d'index.html y mène (« mentions légales », et « données &
@@ -21,7 +21,7 @@
     --ink-mute: #8c97a1;
     --rule: #2a363f;
     --rule-strong: #3a4853;
-    --warm: #d4a574;
+    --warm: #c8ff3a;          /* vert acide, style « signal » */
     --radius: 3px;
   }
   * { box-sizing: border-box; }
@@ -100,6 +100,18 @@
   footer .ast { color: var(--warm); }
   footer a { color: var(--ink-soft); text-decoration: none; }
   footer a:hover { color: var(--ink); }
+  /* Style « signal » (25/11/2026), comme la page d'accueil : le fond
+     quadrillé et le vert acide. */
+  body {
+    background-image: linear-gradient(rgba(200, 255, 58, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200, 255, 58, 0.035) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  header { border-bottom: 0; }
+  .wordmark { background: none; color: var(--warm); padding: 20px 0 12px; font-size: 24px;
+    text-shadow: -2px 0 #ff3d6e, 2px 0 #36c9ff; }
+  .wordmark .ast { color: var(--warm); }
+  @media (max-width: 720px) { .wordmark { font-size: 20px; padding: 16px 0 10px; } }
 </style>
 </head>
 <body>

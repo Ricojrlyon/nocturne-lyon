@@ -19,7 +19,9 @@
 // nocturne-3 : le ménage ne touche plus que les réserves de nocturne, le
 // réseau a trois secondes, et une page autre que l'accueil n'est plus
 // servie par l'accueil (audit A-12, A-40).
-const CACHE = 'nocturne-3';
+// nocturne-4 : les icônes en style « signal » (*N vert acide, 25/11/2026),
+// à reprendre tout de suite.
+const CACHE = 'nocturne-4';
 // Le préfixe de nos réserves : le ménage ne touche qu'à elles.
 const PREFIXE = 'nocturne-';
 const ATTENTE_RESEAU = 3000;

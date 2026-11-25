@@ -31,6 +31,7 @@ PAGE = (RACINE / "index.html").read_text(encoding="utf-8")
 # ajouter ici la ligne que le test donne.
 EMPREINTES_DU_SERVICE = {
     "nocturne-3": "6cf657e26e2ca481",
+    "nocturne-4": "591b4467f3923caf",     # icônes « signal », 25/11/2026
 }
 
 
@@ -103,7 +104,8 @@ class Coherence(unittest.TestCase):
         partage = re.search(r'<meta property="og:url" content="([^"]+)">', PAGE).group(1)
         self.assertEqual(canonique, partage)
         icone = re.search(r'<link rel="apple-touch-icon" href="([^"]+)">', PAGE).group(1)
-        png = (RACINE / icone).read_bytes()
+        # « ?v=2 » : la version qui fait reprendre l'image aux téléphones
+        png = (RACINE / icone.split("?")[0]).read_bytes()
         self.assertEqual(png[1:4] + png[12:16], b"PNGIHDR")
         self.assertEqual((int.from_bytes(png[16:20], "big"), int.from_bytes(png[20:24], "big")),
                          (180, 180))
@@ -119,7 +121,7 @@ class Coherence(unittest.TestCase):
         self.assertTrue(m["name"] and m["short_name"])
         tailles = set()
         for icone in m["icons"]:
-            png = (RACINE / icone["src"]).read_bytes()
+            png = (RACINE / icone["src"].split("?")[0]).read_bytes()
             self.assertEqual(png[1:4] + png[12:16], b"PNGIHDR", icone["src"])
             cote = int.from_bytes(png[16:20], "big"), int.from_bytes(png[20:24], "big")
             self.assertEqual("%dx%d" % cote, icone["sizes"], icone["src"])

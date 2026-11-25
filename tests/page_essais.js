@@ -155,7 +155,12 @@
       res.scenarios.recherche_comedy = await releve();
       await effacer();
 
-      await cliquer(document.querySelector('.fam-chip[data-famille="sport"]:not([disabled])'));
+      // « Sans sport » : depuis le 25/11/2026, une famille se CHOISIT ;
+      // la même vue s'obtient en choisissant les quatre autres, chacune à
+      // sa première pastille active.
+      for (const f of ['musique', 'scene', 'expos', 'autres']) {
+        await cliquer(document.querySelector('.fam-chip[data-famille="' + f + '"]:not([disabled])'));
+      }
       res.scenarios.sans_sport = await releve();
       await effacer();
 
@@ -652,6 +657,33 @@
       champ.dispatchEvent(new Event('input', { bubbles: true }));
       await pause(700);
       res.annonces = { role: annonce.getAttribute('role'), vide, plein: norme(annonce.textContent) };
+
+      // Les familles se CHOISISSENT (25/11/2026) : toucher une famille
+      // dans la barre d'une journée ne montre plus qu'elle ; en toucher une
+      // seconde l'ajoute ; les retirer toutes les deux rend toute la
+      // journée. Les deux premières familles actives de la première journée.
+      await effacer();
+      await pause(500);
+      const jourF = () => document.querySelector('#feed section.day');
+      const puceF = k => jourF().querySelector('.fam-chip[data-famille="' + k + '"]');
+      const etatF = () => ({
+        cartes: jourF().querySelectorAll('.event').length,
+        choisies: [...jourF().querySelectorAll('.fam-chip[aria-pressed="true"]')].map(c => c.dataset.famille),
+        masquees: jourF().querySelectorAll('.fam-chip.masquee').length,
+      });
+      const actives = [...jourF().querySelectorAll('.fam-chip:not([disabled])')]
+        .map(c => [c.dataset.famille, Number(c.querySelector('.fam-n').textContent)]);
+      const [[f1, n1], [f2, n2]] = actives;
+      const avantF = etatF();
+      puceF(f1).click(); await pause(800);
+      const unF = etatF();
+      puceF(f2).click(); await pause(800);
+      const deuxF = etatF();
+      puceF(f1).click(); await pause(800);
+      puceF(f2).click(); await pause(800);
+      res.familles_choisies = { f1, n1, f2, n2, avant: avantF, un: unF, deux: deuxF, fin: etatF(),
+                                familles: document.querySelectorAll('#feed section.day:first-of-type .fam-chip').length };
+      await effacer();
     } else if (SCENARIOS === 'lot6') {
       // Audit, lot 6 : la page, sa logique et sa conformité.
       if (!sessionStorage.getItem('lot6')) {
@@ -917,7 +949,8 @@
         if (groupe) groupe.click();
         await pause(300);
         c.groupe = groupe ? [carte.z - zg, fiche.hidden] : null;
-        // Une famille éteinte dans l'en-tête du plan : ses lieux s'en vont.
+        // Une famille choisie dans l'en-tête du plan : les lieux des autres
+        // s'en vont (depuis le 25/11/2026, une famille se choisit).
         const fam = document.querySelector('.carte-vue .fam-chip:not([disabled])');
         const cle = fam.dataset.famille, avantFamille = total();
         fam.click();

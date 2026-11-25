@@ -19,7 +19,7 @@
      description (manifest-src) et son service hors ligne (worker-src). -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
 <title>*nocturne · lyon</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-16 -16 32 32'><g fill='%23d4a574'><rect x='-2' y='-13' width='4' height='26' rx='2'/><rect x='-2' y='-13' width='4' height='26' rx='2' transform='rotate(60)'/><rect x='-2' y='-13' width='4' height='26' rx='2' transform='rotate(120)'/></g></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-16 -16 32 32'><defs><g id='a'><rect x='-2' y='-13' width='4' height='26' rx='2'/><rect x='-2' y='-13' width='4' height='26' rx='2' transform='rotate(60)'/><rect x='-2' y='-13' width='4' height='26' rx='2' transform='rotate(120)'/></g></defs><use href='%23a' x='-1.5' fill='%23ff3d6e'/><use href='%23a' x='1.5' fill='%2336c9ff'/><use href='%23a' fill='%23c8ff3a'/></svg>">
 <meta name="description" content="Guide nocturne - concerts, théâtre, danse, clubs, expos et sport à Lyon.">
 <!-- L'adresse officielle du site, pour les moteurs de recherche (audit
      n° 19) : la même page, atteinte par une autre adresse (un « ?… » en
@@ -34,7 +34,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#161f25">
 <meta name="apple-mobile-web-app-title" content="*nocturne">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
 <!-- Aperçu au partage (WhatsApp, Messenger, réseaux) : sans ces balises,
      un lien envoyé s'affichait nu, sans titre ni image. L'image reprend
      le bandeau du site ; les adresses doivent être absolues. -->
@@ -44,7 +44,7 @@
 <meta property="og:description" content="Guide nocturne - concerts, théâtre, danse, clubs, expos et sport à Lyon.">
 <meta property="og:url" content="https://ricojrlyon.github.io/nocturne-lyon/">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:image" content="https://ricojrlyon.github.io/nocturne-lyon/apercu.png">
+<meta property="og:image" content="https://ricojrlyon.github.io/nocturne-lyon/apercu.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="*nocturne · lyon - concerts, théâtre, danse, clubs, expos, sport">
@@ -97,12 +97,17 @@
     --rule-strong:  #3a4853;
     --accent:       #e7dfbe;        /* cream accent (same as ink) */
     --accent-glow:  rgba(231, 223, 190, 0.12);
-    --warm:         #d4a574;        /* warm tan for badges/highlights */
-    /* Corail adouci : il ne sert plus au badge de durée, passé en crème
-       filaire comme l'étiquette d'arrondissement, mais reste la couleur
-       d'INTERFACE du site - filtre coché, cadre d'un groupe déplié. Son
-       filet compagnon --hot-line est parti avec le badge. */
-    --hot:          #e08d70;        /* coral adouci - signaux d'interface */
+    /* Style « signal » (25/11/2026) : un vert acide en
+       accent (14:1 sur le fond ; il remplace le hâle #d4a574), un rose
+       pour ce qui ressort (4,9:1 ; il remplace le corail #e08d70), un
+       bleu pour les réglages, un orange et un violet pour les chaînes
+       du bandeau, et un fond plus sombre pour les panneaux. */
+    --warm:         #c8ff3a;        /* vert acide : accent, focus, aujourd'hui */
+    --hot:          #ff3d6e;        /* rose : comptes, tampons, favoris */
+    --cyan:         #36c9ff;
+    --orange:       #ff8a1f;
+    --violet:       #a98be0;
+    --profond:      #10171c;        /* panneaux plus sombres que le fond */
     /* Angles très légèrement adoucis - validé sur maquette (3 px). */
     --radius:       3px;
   }
@@ -607,7 +612,7 @@
   .day-pill.empty { opacity: 0.38; cursor: default; }
   .day-pill.today {
     border-color: var(--warm);
-    background: rgba(212, 165, 116, 0.09);
+    background: rgba(200, 255, 58, 0.09);     /* --warm à 9 % */
   }
 
   main.feed { padding: 34px 0 80px; }
@@ -1864,7 +1869,7 @@
     cursor: pointer;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
   }
-  .carte-pin.groupe { box-shadow: 0 0 0 4px rgba(212, 165, 116, 0.35), 0 1px 4px rgba(0, 0, 0, 0.6); }
+  .carte-pin.groupe { box-shadow: 0 0 0 4px rgba(200, 255, 58, 0.35), 0 1px 4px rgba(0, 0, 0, 0.6); }
   .carte-pin.choisi { background: var(--ink); }
   .carte-pin:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
   .carte-nom {
@@ -2083,6 +2088,337 @@
       font-size: 10px;
     }
   }
+
+  /* =====================================================================
+     LE STYLE « SIGNAL » (25/11/2026)
+     =====================================================================
+     Vert acide en accent, rose pour ce qui ressort, bleu pour les
+     réglages ; fond à grille et grain, deux rubans qui défilent sous le
+     titre, un bandeau « liquide » au-dessus du programme, des cartes
+     numérotées, à bord holographique au survol, et des étiquettes
+     « signal » (scotch, tampons, pastilles). Mis au point sur une copie
+     de la page et validé par le propriétaire le 25/11/2026 : les infos
+     des cartes en petit, le titre seul garde sa taille, l'affiche moins
+     voilée, la couleur de la catégorie gardée. Ce bloc vient APRÈS le
+     reste et l'emporte sur lui ; les couleurs sont dans :root. */
+
+  /* ---------- Fond : grille fine, grain de film, bords assombris */
+  body {
+    background-image: linear-gradient(rgba(200, 255, 58, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200, 255, 58, 0.035) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  body::before {
+    content: ''; position: fixed; inset: -50%; z-index: 45; pointer-events: none; opacity: 0.07;
+    animation: sg-grain 1s steps(6) infinite;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  body::after {
+    content: ''; position: fixed; inset: 0; z-index: 44; pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.45));
+  }
+  @keyframes sg-grain {
+    20% { transform: translate(-3%, 2%); } 40% { transform: translate(2%, -3%); }
+    60% { transform: translate(-2%, -1%); } 80% { transform: translate(3%, 3%); }
+  }
+
+  /* ---------- Haut de page : le titre en vert acide, décalé rose et bleu */
+  header.masthead { border-bottom: 0; }
+  .wordmark {
+    background: none; color: var(--warm); padding: 20px 0 12px; font-size: 26px;
+    text-shadow: -2px 0 var(--hot), 2px 0 var(--cyan);
+  }
+  .wordmark .ast { color: var(--warm); }
+  .partager {
+    border-radius: 999px; padding: 8px 15px; color: var(--ink);
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; font-size: 10px;
+  }
+  .partager:hover { background: var(--warm); border-color: var(--warm); color: #161f25;
+    box-shadow: 0 0 18px rgba(200, 255, 58, 0.55); }
+
+  /* Deux rubans de chantier en diagonale : les chiffres du programme
+     (vert) et ce qui se joue ce soir (rose), en sens inverse */
+  .sg-rubans { position: relative; height: 92px; margin: 0 0 4px; overflow: hidden; pointer-events: none; }
+  .sg-ruban {
+    position: absolute; left: -2%; width: 104%; overflow: hidden; white-space: nowrap; padding: 8px 0;
+    border-top: 2px solid var(--bg); border-bottom: 2px solid var(--bg);
+    font: 700 13px 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.1em; color: #161f25;
+  }
+  .sg-ruban div { display: inline-block; animation: sg-defile 70s linear infinite; }
+  .sg-ruban-1 { top: 14px; background: var(--warm); transform: rotate(-1.6deg); z-index: 1; }
+  .sg-ruban-2 { top: 46px; background: var(--hot); transform: rotate(1.2deg); }
+  .sg-ruban-2 div { animation-direction: reverse; animation-duration: 90s; }
+  @keyframes sg-defile { to { transform: translateX(-50%); } }
+
+  /* ---------- Réglages : une barre pleine et sombre, des pastilles */
+  nav.filters { border-bottom: 0; background: none; }
+  nav.filters > .container {
+    padding-top: 14px; padding-bottom: 12px;
+    background: var(--profond); border: 1px solid var(--rule-strong); border-radius: 18px;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.3);
+  }
+  .chip {
+    border-radius: 999px; padding: 8px 14px; border-color: var(--rule-strong);
+    font-weight: 700; letter-spacing: 0.06em;
+  }
+  .chip:hover { border-color: var(--ink-soft); }
+  .chip.active, .chip[aria-pressed="true"] {
+    background: var(--warm); border-color: var(--warm); color: #161f25;
+    box-shadow: 0 0 18px rgba(200, 255, 58, 0.5);
+  }
+  .drawer-toggle { border-color: var(--cyan); color: var(--cyan); }
+  .drawer-toggle:hover, .drawer-toggle[aria-expanded="true"] {
+    background: var(--cyan); border-color: var(--cyan); color: #10171c; box-shadow: 0 0 18px rgba(54, 201, 255, 0.45);
+  }
+  #voirFavoris { border-style: dashed; }
+  #voirFavoris[aria-pressed="true"] {
+    border-style: solid; background: var(--hot); border-color: var(--hot); color: #161f25;
+    box-shadow: 0 0 18px rgba(255, 61, 110, 0.55);
+  }
+  #dateBtn { border-style: dashed; }
+  .vue-switch .chip { border-radius: 0; }
+  .vue-switch .chip:first-child { border-radius: 999px 0 0 999px; }
+  .vue-switch .chip:last-child { border-radius: 0 999px 999px 0; }
+  .filter-search {
+    background: var(--bg); border: 1px dashed var(--rule-strong); border-radius: 999px;
+    caret-color: var(--hot);
+  }
+  .filter-search:focus {
+    border-style: solid; border-color: var(--warm); outline: none;
+    box-shadow: 0 0 0 3px rgba(200, 255, 58, 0.15), 0 0 18px rgba(200, 255, 58, 0.25);
+  }
+  .filter-search::placeholder { color: var(--ink-mute); }
+  /* Le tiroir des filtres : panneau en pointillé bleu, étiqueté */
+  .filter-drawer {
+    position: relative; margin: 26px 0 4px; padding: 22px 14px 10px;
+    background: rgba(36, 48, 56, 0.45); border: 1px dashed rgba(54, 201, 255, 0.55); border-radius: 16px;
+  }
+  .filter-drawer::before {
+    content: 'filtres'; position: absolute; top: -12px; left: 16px; padding: 4px 10px 5px; border-radius: 6px;
+    background: var(--cyan); color: #10171c; box-shadow: 2px 3px 0 var(--profond);
+    font: 700 10px 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.14em;
+  }
+  .filter-label { color: var(--warm); font-weight: 700; }
+  .clear-link { color: var(--hot); }
+
+  /* ---------- Bandeau des jours : pastilles arrondies, compte en rose */
+  .daystrip-wrap { border-bottom: 0; background: none; }
+  .day-pill { border-radius: 12px; background: var(--profond); border-color: var(--rule-strong);
+    transition: transform 0.2s, border-color 0.2s; }
+  .day-pill:hover:not(.empty) { transform: rotate(-2deg) translateY(-2px); border-color: var(--warm); }
+  .day-pill .dp-count { color: var(--hot); font-weight: 700; }
+  .day-pill .dp-num { font-family: 'Bungee', sans-serif; font-weight: 400; }
+  .day-pill.today { border-color: var(--warm); box-shadow: 0 0 0 1px var(--warm), 0 0 16px rgba(200, 255, 58, 0.35); }
+  /* Le mois n'est écrit qu'au premier jour et au 1er du mois ; ailleurs
+     il gardait sa place, invisible, et poussait le quantième à gauche */
+  .day-pill .dp-mon.muet { display: none; }
+  .day-pill.choisi { background: var(--warm); border-color: var(--warm); }
+  .day-pill.choisi .dp-count { color: #161f25; }
+
+  /* ---------- Le bandeau « liquide » : la
+     journée en tête du programme, en grand, avec son chiffre en glitch */
+  .sg-bandeau {
+    --sg-couleur: var(--warm);
+    position: relative; height: 280px; margin: 22px 0 30px; overflow: hidden;
+    border: 2px solid var(--sg-couleur); background: var(--profond);
+    box-shadow: 0 0 0 6px var(--bg), 0 0 0 7px var(--rule), 0 0 40px color-mix(in srgb, var(--sg-couleur) 30%, transparent);
+  }
+  .sg-teinte { position: absolute; inset: 0; filter: hue-rotate(var(--sg-teinte, 0deg)); transition: filter 0.6s; }
+  .sg-liquide {
+    position: absolute; left: -10%; top: -10%; width: 120%; height: 120%;
+    animation: sg-liquide 30s ease-in-out infinite alternate; will-change: transform, filter;
+  }
+  @keyframes sg-liquide { to { transform: translate3d(4%, 3%, 0) scale(1.15); filter: hue-rotate(160deg); } }
+  .sg-bandeau::after {
+    content: ''; position: absolute; left: 0; right: 0; top: -40px; bottom: 0; pointer-events: none; opacity: 0.55;
+    background: repeating-linear-gradient(var(--profond) 0 2px, transparent 2px 4px);
+    animation: sg-balaye 6s linear infinite;
+  }
+  @keyframes sg-balaye { to { transform: translateY(40px); } }
+  .sg-coords {
+    position: absolute; left: 22px; top: 16px; z-index: 2; padding: 4px 8px; background: var(--profond); color: var(--ink);
+    font: 600 11px 'JetBrains Mono', monospace; letter-spacing: 0.14em;
+  }
+  .sg-barres {
+    position: absolute; right: 230px; top: 22px; z-index: 2; width: 120px; height: 40px;
+    background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 4px, var(--ink) 4px 5px, transparent 5px 9px, var(--ink) 9px 12px, transparent 12px 13px);
+  }
+  .sg-txt { position: absolute; left: 22px; right: 22px; bottom: 14px; z-index: 3; }
+  .sg-n { margin: 0; font-weight: 400; }
+  .sg-raye {
+    position: relative; display: block; padding-top: 0.12em; font: 180px/0.8 'Bungee', sans-serif; color: var(--ink);
+    text-shadow: -6px 0 var(--hot), 6px 0 var(--cyan), 0 0 30px rgba(0, 0, 0, 0.6);
+  }
+  .sg-raye.sg-mot { font-size: clamp(52px, 9vw, 130px); }
+  .sg-raye.sg-mot-long { font-size: clamp(36px, 6vw, 88px); }
+  .sg-raye::after {
+    content: attr(data-t); position: absolute; left: 0; top: 0.12em; color: var(--sg-couleur); text-shadow: none;
+    clip-path: inset(100% 0 0 0); animation: sg-glitch 2.6s steps(1) infinite;
+  }
+  @keyframes sg-glitch {
+    0%, 86% { clip-path: inset(100% 0 0 0); }
+    88% { clip-path: inset(40% 0 45% 0); transform: translateX(-14px); }
+    91% { clip-path: inset(10% 0 70% 0); transform: translateX(12px); }
+    94% { clip-path: inset(70% 0 10% 0); transform: translateX(-6px); }
+  }
+  .sg-sous {
+    display: inline-block; margin-top: 10px; padding: 5px 10px; background: var(--sg-couleur); color: #161f25;
+    transform: rotate(-1.5deg); font: 700 12px 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.14em;
+  }
+  .sg-autocollant {
+    position: absolute; right: 26px; top: 18px; z-index: 4; width: 160px;
+    animation: sg-tourne 22s linear infinite; filter: drop-shadow(4px 6px 0 var(--profond));
+  }
+  .sg-autocollant circle { fill: var(--sg-couleur); }
+  .sg-autocollant text { font: 700 13px 'JetBrains Mono', monospace; fill: #161f25; letter-spacing: 0.1em; text-transform: uppercase; }
+  .sg-autocollant .sg-auto-gros { font: 40px 'Bungee', sans-serif; letter-spacing: 0; }
+  @keyframes sg-tourne { to { transform: rotate(360deg); } }
+  .sg-etoile { position: absolute; right: 210px; bottom: 22px; z-index: 4; width: 112px; animation: sg-tourne 18s linear infinite; }
+  .sg-etoile polygon { fill: var(--hot); }
+  .sg-etoile text { font: 20px 'Bungee', sans-serif; fill: #fff; }
+  .sg-op { position: absolute; right: 40px; bottom: -56px; z-index: 2; width: 170px; animation: sg-tourne 26s linear infinite reverse; }
+  .sg-op circle { fill: none; stroke: var(--sg-couleur); stroke-width: 7; }
+
+  /* ---------- La barre de chaque journée : la date en étiquette verte
+     penchée, le jour en grand, les familles en pastilles */
+  .day-bar { border-top: 3px solid var(--warm); padding-top: 13px; }
+  .day-bar .db-date {
+    background: var(--warm); color: #161f25; border-radius: 0 0 10px 10px; margin-top: -16px; padding: 7px 12px 6px;
+    font: 15px 'Bungee', sans-serif; letter-spacing: 0; box-shadow: 2px 3px 0 var(--profond);
+  }
+  .day-bar .db-label {
+    font: 17px 'Bungee', sans-serif; letter-spacing: 0; text-transform: lowercase; color: var(--ink);
+    text-shadow: -1.5px 0 rgba(255, 61, 110, 0.75), 1.5px 0 rgba(54, 201, 255, 0.75);
+  }
+  .day-bar .db-count { color: var(--warm); font-weight: 700; }
+  /* Les familles se CHOISISSENT (voir le clic sur .fam-chip) : sans choix, toutes
+     sont neutres et montrées ; une famille choisie s'allume en vert, celles
+     qui ne le sont pas pâlissent */
+  .fam-chip { border-radius: 999px; font-weight: 700; }
+  /* Sans marge haute ni basse : le bouton garde ses 24 px (cible au doigt) */
+  .fam-chip .fam-n {
+    display: inline-block; margin-left: 4px; padding: 0 5px; line-height: 14px; border-radius: 999px;
+    background: var(--hot); color: #161f25; transform: rotate(8deg); opacity: 1;
+  }
+  .fam-chip[aria-pressed="false"] { opacity: 1; border-style: solid; }
+  .fam-chip.masquee { opacity: 0.45; border-style: dashed; }
+  .fam-chip[aria-pressed="true"] {
+    background: var(--warm); border-color: var(--warm); color: #161f25; box-shadow: 0 0 14px rgba(200, 255, 58, 0.45);
+  }
+  .fam-chip[aria-pressed="true"] .fam-n { background: #161f25; color: var(--warm); }
+  .fam-chip:disabled { opacity: 0.3; }
+  .db-filtres { border-radius: 999px; }
+  .db-filtres[aria-expanded="true"] { background: var(--warm); border-color: var(--warm); color: #161f25; }
+
+  /* Le titre d'une famille : surligné de vert, son nombre en pastille rose */
+  .fam-titre {
+    font: 19px/1.15 'Bungee', sans-serif; letter-spacing: 0; text-transform: lowercase; color: var(--ink);
+    display: inline-block; transform: rotate(-1deg); padding: 0 4px;
+    background: linear-gradient(transparent 55%, rgba(200, 255, 58, 0.42) 55% 92%, transparent 92%);
+  }
+  .fam-titre .ft-n {
+    display: inline-block; margin-left: 8px; padding: 2px 7px; border-radius: 999px; vertical-align: 3px;
+    background: var(--hot); color: #161f25; transform: rotate(8deg);
+    font: 700 10px 'JetBrains Mono', monospace; letter-spacing: 0.06em; box-shadow: 2px 2px 0 var(--profond);
+  }
+  .fam-titre::after { display: none; }
+
+  /* ---------- Les cartes : bord sombre et ombre portée, qui penchent au
+     survol avec un liseré vert, rose et bleu. Les infos y sont en petit
+     (24/11 : « trop grosses »), seul le titre garde sa taille. */
+  /* La journée rogne ce qui dépasse de sa boîte (content-visibility, voir
+     .day) : la carte qui penche au survol y perdait son bord. La boîte est
+     élargie de 14 px de chaque côté, et sa marge les reprend : rien ne
+     bouge, la carte a de la place. */
+  .day { padding-inline: 14px; margin-inline: -14px; }
+  .event {
+    border-radius: 10px; border: 2px solid #0b0f12; padding-bottom: 7px;
+    box-shadow: 0 0 0 1px var(--rule-strong), 6px 8px 0 rgba(0, 0, 0, 0.35);
+    transition: transform 0.25s, box-shadow 0.25s, background 0.18s;
+  }
+  .event:hover, .event:focus-within {
+    transform: perspective(700px) rotateX(4deg) rotateY(-6deg) scale(1.015); z-index: 3;
+    box-shadow: 0 0 0 2px var(--warm), -5px 0 0 2px var(--hot), 5px 0 0 2px var(--cyan), 0 0 28px rgba(200, 255, 58, 0.35);
+  }
+  .event-title { color: #fff; }
+  /* La couleur de la catégorie, comme avant (TEINTES), poussée vers le
+     fluo du style : plus claire et plus saturée, même teinte. Sans les
+     couleurs relatives (navigateur ancien), la teinte d'origine. */
+  .event { --fluo: var(--t, var(--ink)); }
+  @supports (color: oklch(from red l c h)) {
+    .event { --fluo: oklch(from var(--t, #e7dfbe) max(l, 0.82) calc(c * 1.9) h); }
+  }
+  .event-venue { font-size: 10px; letter-spacing: 0.12em; color: var(--fluo); }
+  .event-foot::before { border-top-color: color-mix(in srgb, var(--fluo) 55%, transparent); }
+  /* L'arrondissement ou la ville : un petit tampon encré, penché, en
+     caractères fins (le Bungee était trop gras) */
+  .event-arr {
+    padding: 0 5px; line-height: 13px; border: 1px solid #ff6d8f; border-radius: 3px; color: #ff6d8f;
+    background: rgba(16, 23, 28, 0.65); font: 500 8.5px/13px 'JetBrains Mono', monospace; letter-spacing: 0.08em;
+    text-transform: uppercase; transform: rotate(-4deg);
+  }
+  /* Le genre : un bout de scotch à la couleur de sa catégorie, penché */
+  .event-cat, .event-foot .event-cat {
+    padding: 1px 6px; line-height: 12px; border: 0; border-radius: 0; background: var(--fluo); color: #161f25;
+    font: 700 7px/12px 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase;
+    transform: rotate(-3deg); box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  }
+  /* L'heure : un contour vert acide sur fond transparent, sans ombre,
+     du même trait que la durée (« → 29/11 ») : même bord à 45 %, un
+     demi-point de plus seulement (25/11 : « encore trop gras ») */
+  .event-time, .event-foot .event-time {
+    padding: 1px 6px; line-height: 11px; border: 1px solid rgba(200, 255, 58, 0.45); border-radius: 999px;
+    background: transparent; color: var(--warm);
+    font: 400 8px/11px 'JetBrains Mono', monospace; letter-spacing: 0.04em; text-shadow: none;
+  }
+  .event-time.empty, .event-foot .event-time.empty { background: none; color: var(--ink-mute); border: 1px dashed var(--rule-strong); }
+  .event-run, .event-source { font-size: 7.5px; line-height: 13px; padding: 0 5px; font-weight: 400; }
+  .event-line .h { font-weight: 400; }
+  .event-run { color: var(--warm); border-color: rgba(200, 255, 58, 0.45); }
+  .carte-bouton.icone { height: 15px; padding: 0 3px; border-radius: 999px; }
+  .carte-bouton.icone svg { width: 9px; height: 9px; }
+  .carte-bouton.carte-etoile { font-size: 13px; }
+  .carte-etoile[aria-pressed="true"] { color: var(--hot); }
+  /* L'affiche : elle couvre toute la carte (le masque
+     qui l'effaçait vers le bas est retiré), à 80 % de sa lumière, et un
+     fondu sombre ne monte que sous le texte */
+  .visual-bg { -webkit-mask-image: none; mask-image: none; }
+  .visual-bg img { filter: brightness(0.8) saturate(1) contrast(1.04); }
+  .visual-bg .scrim, .visual-bg:not(:has(.scrim))::after {
+    background: linear-gradient(to bottom,
+        rgba(10, 14, 17, 0) 22%, rgba(10, 14, 17, 0.82) 58%, rgba(10, 14, 17, 0.96) 100%);
+  }
+  /* Le même fondu sur les cartes sans affiche (l'enseigne du lieu) : la
+     page n'y posait pas de voile */
+  .visual-bg:not(:has(.scrim))::after { content: ''; position: absolute; inset: 0; pointer-events: none; }
+
+  /* ---------- Le pied de page */
+  footer .ast, .pied-liens .ast { color: var(--warm); }
+  footer a:hover { color: var(--warm); }
+
+  /* ---------- Téléphone : plus petit, sans grain ni étoile (batterie) */
+  @media (max-width: 720px) {
+    body::before { display: none; }
+    nav.filters > .container { margin: 0 10px; border-radius: 16px; }
+    .sg-rubans { height: 78px; }
+    .sg-ruban { font-size: 11px; }
+    .sg-ruban-2 { top: 40px; }
+    .sg-bandeau { height: 200px; margin: 16px 0 22px; }
+    .sg-raye { font-size: 110px; }
+    .sg-autocollant { width: 110px; right: 10px; top: 12px; }
+    .sg-etoile, .sg-barres { display: none; }
+    .sg-op { width: 130px; bottom: -50px; }
+    .sg-coords { left: 12px; top: 12px; font-size: 9.5px; }
+    .sg-txt { left: 14px; bottom: 10px; }
+    .sg-sous { font-size: 10px; }
+  }
+
+  /* « Réduire les animations » : tout s'arrête, le glitch aussi */
+  @media (prefers-reduced-motion: reduce) {
+    body::before, .sg-ruban div, .sg-liquide, .sg-bandeau::after, .sg-raye::after,
+    .sg-autocollant, .sg-etoile, .sg-op { animation: none !important; }
+    .event:hover, .event:focus-within, .day-pill:hover:not(.empty) { transform: none; }
+  }
 </style>
 </head>
 <body>
@@ -2093,6 +2429,14 @@
     <button class="partager" id="partager" type="button">partager ↗</button>
   </div>
 </header>
+<!-- Style « signal » : deux rubans sous le titre, remplis par le
+     script « signal », en bas de page (les chiffres du programme, puis ce
+     qui se joue ce soir). Décoratifs : les lecteurs d'écran les sautent. -->
+<div class="sg-rubans" aria-hidden="true">
+  <div class="sg-ruban sg-ruban-1"><div id="sgRubanChiffres"></div></div>
+  <div class="sg-ruban sg-ruban-2"><div id="sgRubanSoir"></div></div>
+</div>
+
 
 <!-- Le haut de la page, que le bouton des filtres d'une journée épingle
      en haut de l'écran. -->
@@ -2165,6 +2509,45 @@
   <!-- Ce que les filtres donnent, dit aux lecteurs d'écran (audit A-19) :
        le nombre de résultats, ou qu'il n'y en a aucun. Rien ne s'affiche. -->
   <p class="pour-lecteurs" id="annonce" role="status" aria-live="polite"></p>
+  <!-- Style « signal » : le bandeau du programme (liquide, coordonnées, code-barres, autocollant qui tourne,
+       étoile, cercles) ; textes, couleur et motif posés par le script
+       « signal » selon ce que montre la page (tout, ce weekend, une date…). -->
+  <div class="container">
+  <section class="sg-bandeau" id="sgBandeau" aria-labelledby="sgTitre">
+    <div class="sg-teinte"><svg class="sg-liquide" viewBox="0 0 800 420" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <filter id="sg-liquide-f" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.0035 0.006" numOctaves="2" seed="3"/>
+        <feColorMatrix type="matrix" values=".5 .5 0 0 0  0 .5 .5 0 0  .5 0 .5 0 0  0 0 0 0 1" result="bruit"/>
+        <feFlood flood-color="#161f25" result="fond"/>
+        <feComponentTransfer in="bruit">
+          <feFuncR type="discrete" tableValues="0 0 1 0 0 0 1 1 0 0 0 1 0 0 1 0 0 0 1 0"/>
+          <feFuncG type="discrete" tableValues="0 1 0 0 1 0 0 1 0 0 1 0 0 1 1 0 1 0 0 0"/>
+          <feFuncB type="discrete" tableValues="1 0 0 1 1 0 0 0 1 0 0 1 1 0 0 0 0 1 0 1"/>
+        </feComponentTransfer>
+        <feBlend in2="fond" mode="lighten"/>
+      </filter>
+      <rect width="800" height="420" filter="url(#sg-liquide-f)"/>
+    </svg></div>
+    <span class="sg-coords" id="sgCoords" aria-hidden="true">lat 45.76 · long 4.83 · ch. 01</span>
+    <span class="sg-barres" aria-hidden="true"></span>
+    <svg class="sg-autocollant" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+      <defs><path id="sg-cercle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+      <circle cx="100" cy="100" r="96"/>
+      <text><textPath href="#sg-cercle" id="sgAnneau"></textPath></text>
+      <text x="100" y="94" text-anchor="middle" class="sg-auto-gros" id="sgAutoN"></text>
+      <text x="100" y="122" text-anchor="middle" id="sgAutoL"></text>
+    </svg>
+    <svg class="sg-etoile" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+      <polygon points="198.0,100.0 170.9,112.5 192.1,133.5 162.4,136.0 175.1,163.0 146.3,155.2 149.0,184.9 124.6,167.7 117.0,196.5 100.0,172.0 83.0,196.5 75.4,167.7 51.0,184.9 53.7,155.2 24.9,163.0 37.6,136.0 7.9,133.5 29.1,112.5 2.0,100.0 29.1,87.5 7.9,66.5 37.6,64.0 24.9,37.0 53.7,44.8 51.0,15.1 75.4,32.3 83.0,3.5 100.0,28.0 117.0,3.5 124.6,32.3 149.0,15.1 146.3,44.8 175.1,37.0 162.4,64.0 192.1,66.5 170.9,87.5"/>
+      <text x="100" y="96" text-anchor="middle" id="sgE1"></text><text x="100" y="124" text-anchor="middle" id="sgE2"></text>
+    </svg>
+    <svg class="sg-op" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="8"/><circle cx="100" cy="100" r="22"/><circle cx="100" cy="100" r="36"/><circle cx="100" cy="100" r="50"/><circle cx="100" cy="100" r="64"/><circle cx="100" cy="100" r="78"/><circle cx="100" cy="100" r="92"/></svg>
+    <div class="sg-txt">
+      <h2 class="sg-n" id="sgTitre"><span class="sg-raye" id="sgGros" data-t=""></span><span class="sg-sous" id="sgSous"></span></h2>
+    </div>
+  </section>
+  </div>
+
   <div class="container" id="feed"></div>
   <!-- Sans JavaScript, la page ne peut pas construire le programme : elle
        le dit, au lieu de rester vide (audit n° 19). -->
@@ -2617,9 +3000,12 @@ function famillesHtml(comptes) {
     // Désactivée seulement quand il n'y a rien à masquer. Une famille
     // éteinte reste cliquable même à zéro, sans quoi on ne pourrait plus
     // la rallumer depuis une journée où elle est absente.
-    const inerte = n === 0 && !eteinte;
-    return '<button type="button" class="fam-chip" data-famille="' + f.key + '"'
-         + ' aria-pressed="' + (!eteinte) + '"' + (inerte ? ' disabled' : '')
+    // Choisie : une sélection existe et elle en fait partie. Une famille
+    // choisie reste cliquable même à zéro, pour pouvoir la retirer.
+    const choisie = state.famillesOff.size > 0 && !eteinte;
+    const inerte = n === 0 && !choisie;
+    return '<button type="button" class="fam-chip' + (eteinte ? ' masquee' : '') + '" data-famille="' + f.key + '"'
+         + ' aria-pressed="' + choisie + '"' + (inerte ? ' disabled' : '')
          + ' title="' + escapeHtml(f.label) + ' - ' + n + ' carte'
          + (n > 1 ? 's' : '') + (eteinte ? ', masquée' : '') + '">'
          + escapeHtml(f.label) + '<span class="fam-n">' + n + '</span></button>';
@@ -2994,8 +3380,12 @@ const state = {
   lieux: new Set(),
   tags: new Set(),
   // Familles ÉTEINTES. Vide = tout s'affiche. L'état est global et non
-  // par journée : éteindre « autres » le 12 septembre le garde éteint le
+  // par journée : choisir « musique » le 12 septembre la garde choisie le
   // 13, ce qui est ce qu'on attend d'un tri qu'on vient de faire.
+  // Depuis le 25/11/2026, une famille se CHOISIT (toucher « musique » ne
+  // montre plus qu'elle) : ce sont les familles NON choisies qui sont
+  // éteintes ici. L'adresse partagée (« sans ») et « tout effacer »
+  // gardent ainsi leur sens.
   famillesOff: new Set(),
   search: '',          // free text search: venue name or event title
   events: [],
@@ -5768,8 +6158,12 @@ document.getElementById('feed').addEventListener('click', ev => {
   const fam = ev.target.closest('.fam-chip');
   if (fam) {
     const k = fam.dataset.famille;
-    if (state.famillesOff.has(k)) state.famillesOff.delete(k);
-    else state.famillesOff.add(k);
+    const toutes = FAMILLES.map(f => f.key);
+    const choix = new Set(state.famillesOff.size ? toutes.filter(x => !state.famillesOff.has(x)) : []);
+    if (choix.has(k)) choix.delete(k); else choix.add(k);
+    state.famillesOff.clear();
+    if (choix.size && choix.size < toutes.length)
+      for (const x of toutes) if (!choix.has(x)) state.famillesOff.add(x);
     // La journée dont on touche la barre reste sous le doigt.
     const jour = fam.closest('section.day');
     if (jour) ancreDuRendu = { iso: jour.id.slice(4), haut: jour.getBoundingClientRect().top };
@@ -5831,5 +6225,125 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
+
+<script>
+/* Style « signal » (25/11/2026) : remplit les rubans et le bandeau d'après le
+   programme chargé (state.occurrences) et ce que la page montre
+   (filtered()). Il ne change rien au reste : il suit le fil, qui est
+   reconstruit à chaque filtre, et récrit ses textes. */
+(() => {
+  const feed = document.getElementById('feed');
+  const $ = id => document.getElementById(id);
+  const ecrire = (id, txt) => { const e = $(id); if (e && e.textContent !== txt) e.textContent = txt; };
+  const nb = n => n.toLocaleString('fr-FR');
+  // Texte de l'anneau de l'autocollant : une cinquantaine de signes en font le tour
+  const anneau = t => (t + ' ').repeat(Math.max(1, Math.round(52 / (t.length + 1))));
+  const JOURS_COURTS = ['dim.', 'lun.', 'mar.', 'mer.', 'jeu.', 'ven.', 'sam.'];
+
+  // Chaque réglage a sa chaîne, sa couleur, sa teinte et son motif
+  const CHAINES = {
+    all:      { ch: '01', couleur: 'var(--warm)',   teinte: 150, graine: 3 },
+    weekend:  { ch: '02', couleur: 'var(--hot)',    teinte: 300, graine: 7 },
+    nextweek: { ch: '03', couleur: 'var(--cyan)',   teinte: 150, graine: 23 },
+    custom:   { ch: '04', couleur: 'var(--orange)', teinte: 220, graine: 31 },
+    favoris:  { ch: '05', couleur: 'var(--violet)', teinte: 80,  graine: 47 },
+    recherche:{ ch: '06', couleur: 'var(--cyan)',   teinte: 40,  graine: 11 },
+  };
+
+  function weekendDe(iso) {
+    const now = parseIso(iso), day = now.getDay();
+    const fri = new Date(now);
+    if (day === 0) fri.setDate(now.getDate() - 2);
+    else if (day === 6) fri.setDate(now.getDate() - 1);
+    else fri.setDate(now.getDate() + (5 - day));
+    const sun = new Date(fri); sun.setDate(fri.getDate() + 2);
+    return [isoOf(fri), isoOf(sun)];
+  }
+  const jourEnClair = iso => {
+    const d = parseIso(iso);
+    return FR_DAYS_FULL[d.getDay()] + ' ' + d.getDate() + ' ' + FR_MONTHS[d.getMonth()];
+  };
+  const court = iso => { const d = parseIso(iso); return JOURS_COURTS[d.getDay()] + ' ' + d.getDate(); };
+
+  let rubansFaits = false;
+  function rubans(aujourd, aVenir, ceSoir, we) {
+    if (rubansFaits) return;
+    rubansFaits = true;
+    const lieux = new Set(aVenir.map(o => o.venue)).size;
+    const morceaux = [nb(state.events.length) + ' événements', nb(lieux) + ' lieux',
+      ($('footerSources') || {}).textContent + ' sources', ceSoir.length + ' ce soir',
+      we.length + ' ce weekend', 'mis à jour ' + (($('lastUpdated') || {}).textContent || '')];
+    ecrire('sgRubanChiffres', (morceaux.join(' ✦ ') + ' ✦ ').repeat(4));
+    const titres = [...new Set(ceSoir.map(o => (o.title || '').trim()).filter(Boolean))].slice(0, 14);
+    ecrire('sgRubanSoir', ('ce soir ▸ ' + titres.join(' ✦ ') + ' ✦ ').repeat(3));
+  }
+
+  function maj() {
+    if (!state.occurrences || !state.occurrences.length) return;
+    const aujourd = isoOf(aujourdhui());
+    const aVenir = state.occurrences.filter(o => o._date >= aujourd);
+    const ceSoir = aVenir.filter(o => o._date === aujourd);
+    const [ven, dim] = weekendDe(aujourd);
+    const we = aVenir.filter(o => o._date >= ven && o._date <= dim);
+    rubans(aujourd, aVenir, ceSoir, we);
+
+    // Ce que la page montre : la première journée, ou tout le résultat
+    const vus = filtered();
+    const jours = [...new Set(vus.map(o => o._date))].sort();
+    const premier = jours[0];
+    const duPremier = vus.filter(o => o._date === premier);
+    const cle = state.search ? 'recherche' : state.voirFavoris ? 'favoris' : state.when;
+    const c = CHAINES[cle] || CHAINES.all;
+    let gros, mot = false, sous, n, l, texteAnneau, e1, e2;
+    if (!vus.length) {
+      gros = '0'; sous = 'rien pour ces filtres'; n = '0'; l = 'lieux';
+      texteAnneau = '★ aucun événement ★ essayez « tout »'; e1 = 'tout'; e2 = nb(aVenir.length);
+    } else if (cle === 'all') {
+      gros = String(duPremier.length);
+      sous = (premier === aujourd ? 'ce soir · ' : '') + jourEnClair(premier);
+      n = String(new Set(duPremier.map(o => o.venue)).size); l = 'lieux';
+      texteAnneau = `★ ${ceSoir.length} ce soir ★ ${we.length} ce weekend`;
+      e1 = 'w-e'; e2 = String(we.length);
+    } else if (cle === 'recherche') {
+      gros = '« ' + state.search + ' »'; mot = true;
+      sous = vus.length + ' résultat' + (vus.length > 1 ? 's' : '') + ' · dès ' + court(premier);
+      n = String(vus.length); l = 'trouvés';
+      texteAnneau = '★ lieu ★ artiste ★ événement'; e1 = 'jours'; e2 = String(jours.length);
+    } else {
+      gros = String(vus.length);
+      const libelle = { weekend: 'ce weekend', nextweek: 'semaine pro', custom: 'à ces dates', favoris: 'favoris' }[cle];
+      sous = libelle + ' · ' + (jours.length > 1 ? 'du ' + court(premier) + ' au ' + court(jours[jours.length - 1]) : jourEnClair(premier));
+      n = String(new Set(vus.map(o => o.venue)).size); l = 'lieux';
+      texteAnneau = `★ ${vus.length} ${libelle} ★ ${jours.length} jour${jours.length > 1 ? 's' : ''}`;
+      e1 = 'ce soir'; e2 = String(ceSoir.length);
+    }
+
+    const b = $('sgBandeau');
+    b.style.setProperty('--sg-couleur', c.couleur);
+    b.style.setProperty('--sg-teinte', c.teinte + 'deg');
+    const turb = b.querySelector('feTurbulence');
+    if (turb.getAttribute('seed') !== String(c.graine)) turb.setAttribute('seed', c.graine);
+    ecrire('sgCoords', 'lat 45.76 · long 4.83 · ch. ' + c.ch);
+    const g = $('sgGros');
+    ecrire('sgGros', gros);
+    g.dataset.t = gros;
+    g.classList.toggle('sg-mot', mot && gros.length <= 12);
+    g.classList.toggle('sg-mot-long', mot && gros.length > 12);
+    ecrire('sgSous', sous);
+    ecrire('sgAutoN', n);
+    ecrire('sgAutoL', l);
+    ecrire('sgAnneau', anneau(texteAnneau));
+    ecrire('sgE1', e1);
+    ecrire('sgE2', e2);
+  }
+
+  let prevu = false;
+  // Un minuteur, et non requestAnimationFrame : un onglet caché ne dessine
+  // plus d'images, et les rubans restaient vides jusqu'à son retour.
+  const planifier = () => { if (prevu) return; prevu = true; setTimeout(() => { prevu = false; maj(); }, 0); };
+  new MutationObserver(planifier).observe(feed, { childList: true });
+  planifier();
+})();
+</script>
 </body>
 </html>

@@ -231,7 +231,11 @@ class PageNavigation(unittest.TestCase):
         # La ligne de la journée passe d'un ou deux pixels SOUS les filtres
         # épinglés (selon l'arrondi de leur hauteur) : jamais d'écart.
         self.assertIn(f.pop(3), (-2, -1))
-        self.assertEqual(f, [True, "true", 0, True, 8, "false", False, "0px", True, "static"])
+        # La journée choisie se pose 8 px sous les filtres épinglés, à
+        # l'arrondi près : leur hauteur peut tomber sur un demi-pixel
+        # (273,5 px en style « signal », arrondie à 274 par la page).
+        self.assertIn(f.pop(4), (8, 9))
+        self.assertEqual(f, [True, "true", 0, True, "false", False, "0px", True, "static"])
 
     def test_la_ligne_de_la_date_colle_sans_laisser_de_fil(self):
         self.assertEqual(self.releve["ligne_collee"], -2)
@@ -413,6 +417,19 @@ class PageLot7(unittest.TestCase):
         self.assertEqual(a["vide"], "aucun événement pour ces filtres")
         self.assertRegex(a["plein"], r"^[0-9]+ événements$")
 
+    def test_une_famille_se_choisit(self):
+        # 25/11/2026 : toucher une famille la MONTRE seule (elle se masquait) ;
+        # une seconde s'ajoute ; les retirer rend toute la journée. Sans
+        # choix, aucune pastille n'est pressée ni pâlie.
+        f = self.releve["familles_choisies"]
+        autres = f["familles"] - 1
+        self.assertEqual((f["avant"]["choisies"], f["avant"]["masquees"]), ([], 0))
+        self.assertEqual(f["un"], {"cartes": f["n1"], "choisies": [f["f1"]], "masquees": autres})
+        self.assertEqual(f["deux"]["cartes"], f["n1"] + f["n2"])
+        self.assertEqual(sorted(f["deux"]["choisies"]), sorted([f["f1"], f["f2"]]))
+        self.assertEqual(f["deux"]["masquees"], autres - 1)
+        self.assertEqual(f["fin"], f["avant"])
+
 
 class PageServiceHorsLigne(unittest.TestCase):
     """Le service hors ligne (sw.js) : il ne vide que ses propres réserves
@@ -588,14 +605,19 @@ class PageCarte(unittest.TestCase):
         self.assertEqual(self.c["fondu"], [[True, True], 1, False])
         self.assertEqual(self.c["ancien_fond"], [2, 1])
 
-    def test_une_famille_eteinte_sur_le_plan(self):
-        self.assertEqual(self.c["famille"], ["false", True, True])
+    def test_une_famille_choisie_sur_le_plan(self):
+        # Depuis le 25/11/2026, toucher une famille la CHOISIT (pastille
+        # pressée) : les lieux des autres s'en vont, et reviennent quand on
+        # la retire.
+        self.assertEqual(self.c["famille"], ["true", True, True])
 
     def test_la_barre_des_jours_et_les_fleches(self):
         self.assertEqual(self.c["pastille"], ["samedi 3 octobre", "?vue=carte&jour=2026-10-03",
                                               ["2026-10-03"]])
         self.assertEqual(self.c["suivant"], "dimanche 4 octobre")
-        self.assertEqual(self.c["couleurs_des_jours"], ["rgb(231, 223, 190)", "rgba(212, 165, 116, 0.09)"])
+        # Le jour choisi en vert acide plein, aujourd'hui en vert à 9 % :
+        # style « signal » (25/11/2026 ; avant, le crème et le hâle).
+        self.assertEqual(self.c["couleurs_des_jours"], ["rgb(200, 255, 58)", "rgba(200, 255, 58, 0.09)"])
         self.assertEqual(self.c["precedent"], "samedi 3 octobre")
 
     def test_un_lien_rouvre_la_carte_du_jour(self):

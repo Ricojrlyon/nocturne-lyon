@@ -638,6 +638,26 @@ Un test vérifie chacun de ces points.
 - **`index.html`** : frontend vanilla JS autonome : filtres par date/lieu/
   arrondissement/type, recherche insensible aux accents (titre, lieu,
   line-up), expansion des événements multi-jours, groupes de lieux.
+  Son style est le style « signal » (25 novembre 2026), mis au
+  point sur une copie de la page puis validé : vert acide en accent
+  (`--warm`, #c8ff3a), rose pour ce qui ressort (`--hot`, #ff3d6e), bleu
+  pour les réglages ; un fond quadrillé avec un grain de film ; le titre
+  « *nocturne » en vert, décalé rose et bleu ; sous lui, deux rubans qui
+  défilent en sens inverse, les chiffres du programme (vert) et ce qui se
+  joue ce soir (rose) ; au-dessus du programme, un bandeau « liquide »
+  dont le grand chiffre suit le réglage choisi (« 44 ce soir », « 176 ce
+  weekend »…), avec sa couleur, sa chaîne (ch. 01 à 06) et un
+  autocollant qui tourne. Les cartes : l'affiche sur toute la carte,
+  fondue en sombre sous le texte seulement (les cartes sans affiche
+  aussi), le titre en grand, et en petit le lieu, l'arrondissement en
+  tampon rose, le genre en bout de scotch à la couleur de sa catégorie
+  (les dix-neuf teintes d'avant, poussées vers le fluo), l'heure en
+  contour vert ; au survol, la carte penche avec un liseré vert, rose et
+  bleu. Le style tient dans un bloc, à la fin de la feuille de style, qui
+  l'emporte sur le reste ; « réduire les animations » arrête tout, et le
+  téléphone n'a ni grain ni étoile (batterie). Les rubans et le bandeau
+  sont remplis par un petit script, à la fin de la page, qui suit le
+  fil à chaque filtre.
   La page construit son programme par morceaux : la première journée,
   puis de quoi couvrir deux hauteurs d'écran (`ECRANS_INITIAUX`), la
   suite au fil du défilement, et tout d'un coup là où la page entière est
@@ -740,7 +760,7 @@ Un test vérifie chacun de ces points.
   l'écran pendant qu'on fait défiler la liste ; un second toucher le rend
   à sa place, et rien ne bouge sous le doigt. La barre de la journée se
   cale alors juste dessous, une journée rejointe par la barre des jours
-  aussi ; le bouton est plein, crème, tant qu'ils sont épinglés.
+  aussi ; le bouton est plein, vert, tant qu'ils sont épinglés.
   La vue carte : l'interrupteur « liste | carte », à côté de « ★
   favoris », remplace les journées par un plan de Lyon où sont posés les
   lieux d'UNE soirée (« ce soir », par défaut), chacun avec son nombre
@@ -751,8 +771,8 @@ Un test vérifie chacun de ces points.
   elle. Des lieux trop
   proches ne font qu'une pastille, cerclée, qui zoome sur eux. La barre
   des 14 jours et les flèches de l'en-tête choisissent la soirée (la
-  pastille du jour montré est pleine, crème ; aujourd'hui garde son cadre
-  ocre) ; les
+  pastille du jour montré est pleine, verte ; aujourd'hui garde son
+  cadre vert) ; les
   filtres et les familles s'appliquent comme à la liste, et le plan
   compte exactement les événements de la journée de la liste. Un lieu
   sans position (voir `lieux.json`) est nommé sous le plan, dans « pas
@@ -837,9 +857,14 @@ Un test vérifie chacun de ces points.
   application. Sur Android, Chrome le propose de lui-même (« Installer
   l'application ») ; sur iPhone, Safari : Partager, puis « Sur l'écran
   d'accueil », ce que le pied de page rappelle sur les écrans tactiles.
-  L'icône « *N » reprend le bandeau du site, couleurs inversées : fond
-  nuit, N crème, astérisque ocre, en Bungee, dans la zone que ni Android
-  ni l'iPhone ne rognent. `manifest.webmanifest` donne le nom, les couleurs
+  L'icône « *N » en style « signal » : en
+  Bungee, vert acide décalé rose et bleu, sur le fond quadrillé, dans la
+  zone que ni Android ni l'iPhone ne rognent. L'icône d'onglet est
+  l'astérisque seul, dans les mêmes trois couleurs, et l'aperçu au
+  partage (`apercu.png`, 1200 × 630) reprend le titre géant, une
+  étiquette verte et les deux rubans. Les images sont appelées avec
+  « ?v=2 » : sans cela, les téléphones et les réseaux sociaux gardaient
+  les anciennes. `manifest.webmanifest` donne le nom, les couleurs
   et les icônes ; `sw.js` garde sur le téléphone la page, ses polices et
   le dernier programme chargé, pour qu'elle s'ouvre sans réseau (la date
   de mise à jour, en pied de page, dit de quand il date). En ligne, la
@@ -854,7 +879,8 @@ Un test vérifie chacun de ces points.
   de l'adresse ricojrlyon.github.io (audit A-12). Les
   affiches ne sont pas gardées. Modifier `sw.js` ou l'un des fichiers
   qu'il garde dès l'installation (`AU_DEPART`, la page exceptée) : changer
-  aussi le nom `CACHE` (`nocturne-3` depuis novembre 2026). Sinon, le
+  aussi le nom `CACHE` (`nocturne-4` depuis le 25 novembre 2026, pour les
+  icônes « signal »). Sinon, le
   nouveau fichier n'arrive chez le visiteur qu'une visite plus tard, et
   l'ancienne réserve n'est pas vidée. Un test l'exige (audit, lot 8) : il
   garde l'empreinte de ces fichiers sous chaque nom, et dit quoi faire.
@@ -1163,7 +1189,7 @@ motif.
   filtres existaient à l'origine (musées et galeries d'un côté, une
   liste de catégories de l'autre) parce que les accrochages saturaient
   le feed ; ils ont été levés en août 2026, au motif que le lecteur peut
-  éteindre la famille « expos » d'un bouton. Le filtre de catégories
+  écarter la famille « expos » d'un bouton. Le filtre de catégories
   revient en septembre parce que les événements longs sont désormais
   déployés sur chacun de leurs jours : un accrochage de trois mois pesait
   une carte, il en pèse quatre-vingt-dix. Mesuré à la réintroduction :
@@ -1186,7 +1212,12 @@ motif.
   maille fine, mais autant de sections dans une journée seraient
   illisibles.
   Chaque barre de journée porte un bouton par famille : l'état est
-  GLOBAL, le compte est celui du JOUR. Au-delà de dix cartes la journée
+  GLOBAL, le compte est celui du JOUR. Une famille se CHOISIT (depuis le
+  25 novembre 2026 ; elle se masquait) : toucher « musique » ne montre
+  plus que la musique, le bouton passe au vert et les autres pâlissent ;
+  en toucher une seconde l'ajoute ; retirer la dernière rend tout. La
+  page garde, en dessous, la liste des familles NON choisies : le lien
+  partagé (`?sans=`) et « tout effacer » n'ont pas changé. Au-delà de dix cartes la journée
   se découpe en sections titrées par famille (`SEUIL_SECTIONS`) ; en
   deçà elle reste une grille continue, la journée médiane ne faisant que
   cinq cartes. Tout bucket non rangé dans une
