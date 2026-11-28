@@ -129,7 +129,7 @@
       45.76305,
       4.83696
     ],
-    "seen_at": "2026-11-21"
+    "seen_at": "2026-11-28"
   },
   "Bibliothèque Diderot de Lyon": {
     "arr": "7e",
@@ -155,7 +155,7 @@
       45.76044,
       4.85733
     ],
-    "seen_at": "2026-10-29"
+    "seen_at": "2026-11-28"
   },
   "Bibliothèque du 3e Lacassagne": {
     "arr": "3e",
@@ -633,6 +633,16 @@
     "confidence": "failed",
     "seen_at": "2026-09-08"
   },
+  "Galerie Lumière": {
+    "arr": "3e",
+    "checked_at": "2026-11-28",
+    "confidence": "high",
+    "pos": [
+      45.76209,
+      4.84177
+    ],
+    "seen_at": "2026-11-28"
+  },
   "Galerie Masurel": {
     "arr": null,
     "checked_at": "2026-08-12",
@@ -748,7 +758,7 @@
     "arr": null,
     "checked_at": "2026-11-21",
     "confidence": "failed",
-    "seen_at": "2026-11-21"
+    "seen_at": "2026-11-28"
   },
   "Institut d\\'Art Contemporain": {
     "arr": "Villeurbanne",
@@ -770,6 +780,12 @@
       4.82169
     ],
     "seen_at": "2026-09-22"
+  },
+  "Item la galerie": {
+    "arr": null,
+    "checked_at": "2026-11-28",
+    "confidence": "failed",
+    "seen_at": "2026-11-28"
   },
   "Jack Jack": {
     "arr": "Autre",
@@ -837,6 +853,16 @@
     ],
     "seen_at": "2026-10-07"
   },
+  "L'alcôve": {
+    "arr": "1er",
+    "checked_at": "2026-11-28",
+    "confidence": "high",
+    "pos": [
+      45.76972,
+      4.83271
+    ],
+    "seen_at": "2026-11-28"
+  },
   "L'attrape-couleurs": {
     "arr": null,
     "checked_at": "2026-08-25",
@@ -890,7 +916,7 @@
       45.75101,
       4.84257
     ],
-    "seen_at": "2026-11-10"
+    "seen_at": "2026-11-28"
   },
   "La Galerue": {
     "arr": "4e",
@@ -1908,9 +1934,9 @@
   },
   "Showroom galerie 7": {
     "arr": null,
-    "checked_at": "2026-09-08",
+    "checked_at": "2026-11-28",
     "confidence": "failed",
-    "seen_at": "2026-09-08"
+    "seen_at": "2026-11-28"
   },
   "Spacejunk": {
     "arr": "1er",
